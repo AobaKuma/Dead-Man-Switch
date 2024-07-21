@@ -807,8 +807,8 @@
 
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Dawnblade</defName>
-    <label>Dawnblade</label>
-    <description>anti-tank cannon.</description>
+    <label>a normally ship mounted multi-role quick-firing gun system, it uses drum magazines and autoloaders to permit a high rate of fire. the removal of additional amror plating allows them to be deployed to provide heavy fire support for colonies.</label>
+    <description>MPQFS-85 "Dawnblade"</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Turrets/DMS_Base_Tunguska_GateKeeper</texPath>
