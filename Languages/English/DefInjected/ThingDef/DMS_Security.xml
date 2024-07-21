@@ -7,6 +7,9 @@
   <!-- EN: uranium APT shell -->
   <DMS_Bullet_Kord.label>uranium APT shell</DMS_Bullet_Kord.label>
   
+  <!-- EN: armor piercing shell -->
+  <DMS_Bullet_Dawnblade.label>armor piercing shell</DMS_Bullet_Dawnblade.label>
+  
   <!-- EN: GateKeeper -->
   <DMS_Gun_GateKeeper.label>GateKeeper</DMS_Gun_GateKeeper.label>
   <!-- EN: GateKeeper -->
@@ -34,6 +37,13 @@
   <DMS_Gun_Vasilek.description>an ancient design of rapid fire indirect artillery suppression, can fire 4 mortar rounds in one burst.</DMS_Gun_Vasilek.description>
   <!-- EN: 2B9M vasilek -->
   <DMS_Gun_Vasilek.verbs.Verb_Shoot.label>2B9M vasilek</DMS_Gun_Vasilek.verbs.Verb_Shoot.label>
+  
+  <!-- EN: Dawnblade -->
+  <DMS_Gun_Dawnblade.label>Dawnblade</DMS_Gun_Dawnblade.label>
+  <!-- EN: Dawnblade -->
+  <DMS_Gun_Dawnblade.description>Dawnblade</DMS_Gun_Dawnblade.description>
+  <!-- EN: Dawnblade -->
+  <DMS_Gun_Dawnblade.verbs.Verb_Shoot.label>Dawnblade</DMS_Gun_Dawnblade.verbs.Verb_Shoot.label>
   
   <!-- EN: GateKeeper -->
   <DMS_Turret_GateKeeper.label>GateKeeper</DMS_Turret_GateKeeper.label>
@@ -78,5 +88,16 @@
   <DMS_Turret_Vasilek.comps.CompRefuelable.fuelLabel>Shots until barrel change</DMS_Turret_Vasilek.comps.CompRefuelable.fuelLabel>
   <!-- EN: Cannot shoot: Needs new reinforced barrel -->
   <DMS_Turret_Vasilek.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new reinforced barrel</DMS_Turret_Vasilek.comps.CompRefuelable.outOfFuelMessage>
+  
+  <!-- EN: Tunguska -->
+  <DMS_Turret_Dawnblade.label>MPQFS-85 "Dawnblade"</DMS_Turret_Dawnblade.label>
+  <!-- EN: a normally ship mounted multi-role quick-firing gun system, it uses drum magazines and autoloaders to permit a high rate of fire. the removal of additional amror plating allows them to be deployed to provide heavy fire support for colonies. -->
+  <DMS_Turret_Dawnblade.description>a normally ship mounted multi-role quick-firing gun system, it uses drum magazines and autoloaders to permit a high rate of fire. the removal of additional amror plating allows them to be deployed to provide heavy fire support for colonies.</DMS_Turret_Dawnblade.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_Dawnblade.comps.CompRefuelable.fuelGizmoLabel>Barrel durability</DMS_Turret_Dawnblade.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_Dawnblade.comps.CompRefuelable.fuelLabel>Shots until barrel change</DMS_Turret_Dawnblade.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot shoot: Needs new reinforced barrel -->
+  <DMS_Turret_Dawnblade.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new reinforced barrel</DMS_Turret_Dawnblade.comps.CompRefuelable.outOfFuelMessage>
   
 </LanguageData>

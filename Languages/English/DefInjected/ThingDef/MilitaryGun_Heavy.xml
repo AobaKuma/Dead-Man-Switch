@@ -7,6 +7,15 @@
   <!-- EN: recoilless grenade round -->
   <DMS_Bullet_RR.label>recoilless grenade round</DMS_Bullet_RR.label>
   
+  <!-- EN: recoilless grenade round -->
+  <DMS_Bullet_RR.label>recoilless grenade round</DMS_Bullet_RR.label>
+  
+  <!-- EN: heavy grenade round -->
+  <DMS_Bullet_Dragoon_Rifle.label>armor piercing shell</DMS_Bullet_Dragoon_Rifle.label>
+  
+  <!-- EN: heavy grenade round -->
+  <DMS_Bullet_DGL.label>heavy grenade round</DMS_Bullet_DGL.label>
+  
   <!-- EN: 2A38M -->
   <DMS_Gun_2A38M.label>2A38M</DMS_Gun_2A38M.label>
   <!-- EN: a dual-barrel heavy autocannon for infantry suppress / anti air platform.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate. -->
@@ -58,5 +67,44 @@ This weapon is designed specially for automatroid use, and it's too heavy so onl
   <DMS_SniperCannon.tools.barrel.label>barrel</DMS_SniperCannon.tools.barrel.label>
   <!-- EN: sniper cannon -->
   <DMS_SniperCannon.verbs.Verb_Shoot.label>sniper cannon</DMS_SniperCannon.verbs.Verb_Shoot.label>
+  
+  <!-- EN: anti-tank gun -->
+  <DMS_Gun_DragoonRifle.label>anti-tank gun</DMS_Gun_DragoonRifle.label>
+  <!-- EN: A lightweight mass produced anti-tank gun for heavy mechs and dragoon armor.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate. -->
+  <DMS_Gun_DragoonRifle.description>A lightweight mass produced anti-tank gun for heavy mechs and dragoon armor.
+
+This weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</DMS_Gun_DragoonRifle.description>
+  <!-- EN: stock -->
+  <DMS_Gun_DragoonRifle.tools.stock.label>stock</DMS_Gun_DragoonRifle.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_DragoonRifle.tools.barrel.label>barrel</DMS_Gun_DragoonRifle.tools.barrel.label>
+  <!-- EN: 2A38M -->
+  <DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>anti-tank gun</DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>
+  
+  <!-- EN: heavy grenade launcher -->
+  <DMS_Gun_DragoonRifle.label>heavy grenade launcher</DMS_Gun_DragoonRifle.label>
+  <!-- EN: A hand held gun-mortar designed for mech operation. A six round revolver action allows for quick successive shots.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate. -->
+  <DMS_Gun_DragoonRifle.description>A hand held gun-mortar designed for mech operation. A six round revolver action allows for quick successive shots.
+
+This weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</DMS_Gun_DragoonRifle.description>
+  <!-- EN: stock -->
+  <DMS_Gun_DragoonRifle.tools.stock.label>stock</DMS_Gun_DragoonRifle.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_DragoonRifle.tools.barrel.label>barrel</DMS_Gun_DragoonRifle.tools.barrel.label>
+  <!-- EN: 2A38M -->
+  <DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>heavy grenade launcher</DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>
+  
+  <!-- EN: MPQFS-85M "Dawnblade" -->
+  <DMS_Gun_DragoonRifle.label>MPQFS-85M "Dawnblade"</DMS_Gun_DragoonRifle.label>
+  <!-- EN: A multi-role quick-firing gun modified mech use, only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate. -->
+  <DMS_Gun_DragoonRifle.description>A multi-role quick-firing gun modified mech use, only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars. 
+
+This weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</DMS_Gun_DragoonRifle.description>
+  <!-- EN: stock -->
+  <DMS_Gun_DragoonRifle.tools.stock.label>stock</DMS_Gun_DragoonRifle.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_DragoonRifle.tools.barrel.label>barrel</DMS_Gun_DragoonRifle.tools.barrel.label>
+  <!-- EN: 2A38M -->
+  <DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>MPQFS-85M "Dawnblade"</DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>
   
 </LanguageData>
