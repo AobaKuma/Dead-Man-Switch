@@ -69,7 +69,7 @@ This weapon is designed specially for automatroid use, and it's too heavy so onl
   <DMS_SniperCannon.verbs.Verb_Shoot.label>sniper cannon</DMS_SniperCannon.verbs.Verb_Shoot.label>
   
   <!-- EN: anti-tank gun -->
-  <DMS_Gun_DragoonRifle.label>anti-tank gun</DMS_Gun_DragoonRifle.label>
+  <DMS_Gun_DragoonRifle.label>mech anti-tank gun</DMS_Gun_DragoonRifle.label>
   <!-- EN: A lightweight mass produced anti-tank gun for heavy mechs and dragoon armor.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate. -->
   <DMS_Gun_DragoonRifle.description>A lightweight mass produced anti-tank gun for heavy mechs and dragoon armor.
 
@@ -79,32 +79,32 @@ This weapon is designed specially for automatroid use, and it's too heavy so onl
   <!-- EN: barrel -->
   <DMS_Gun_DragoonRifle.tools.barrel.label>barrel</DMS_Gun_DragoonRifle.tools.barrel.label>
   <!-- EN: 2A38M -->
-  <DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>anti-tank gun</DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>
+  <DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>mech anti-tank gun</DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>
   
   <!-- EN: heavy grenade launcher -->
-  <DMS_Gun_DragoonRifle.label>heavy grenade launcher</DMS_Gun_DragoonRifle.label>
+  <DMS_Gun_DragoonGrenade.label>mech heavy grenade launcher</DMS_Gun_DragoonGrenade.label>
   <!-- EN: A hand held gun-mortar designed for mech operation. A six round revolver action allows for quick successive shots.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate. -->
-  <DMS_Gun_DragoonRifle.description>A hand held gun-mortar designed for mech operation. A six round revolver action allows for quick successive shots.
+  <DMS_Gun_DragoonGrenade.description>A hand held gun-mortar designed for mech operation. A six round revolver action allows for quick successive shots.
 
-This weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</DMS_Gun_DragoonRifle.description>
+This weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</DMS_Gun_DragoonGrenade.description>
   <!-- EN: stock -->
-  <DMS_Gun_DragoonRifle.tools.stock.label>stock</DMS_Gun_DragoonRifle.tools.stock.label>
+  <DMS_Gun_DragoonGrenade.tools.stock.label>stock</DMS_Gun_DragoonGrenade.tools.stock.label>
   <!-- EN: barrel -->
-  <DMS_Gun_DragoonRifle.tools.barrel.label>barrel</DMS_Gun_DragoonRifle.tools.barrel.label>
+  <DMS_Gun_DragoonGrenade.tools.barrel.label>barrel</DMS_Gun_DragoonGrenade.tools.barrel.label>
   <!-- EN: 2A38M -->
-  <DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>heavy grenade launcher</DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>
+  <DMS_Gun_DragoonGrenade.verbs.Verb_Shoot.label>mech heavy grenade launcher</DMS_Gun_DragoonGrenade.verbs.Verb_Shoot.label>
   
   <!-- EN: MPQFS-85M "Dawnblade" -->
-  <DMS_Gun_DragoonRifle.label>MPQFS-85M "Dawnblade"</DMS_Gun_DragoonRifle.label>
+  <DMS_Gun_DawnbladeM.label>MPQFS-85M "Dawnblade"</DMS_Gun_DawnbladeM.label>
   <!-- EN: A multi-role quick-firing gun modified mech use, only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate. -->
-  <DMS_Gun_DragoonRifle.description>A multi-role quick-firing gun modified mech use, only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars. 
+  <DMS_Gun_DawnbladeM.description>A multi-role quick-firing gun modified mech use, only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars. 
 
-This weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</DMS_Gun_DragoonRifle.description>
+This weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</DMS_Gun_DawnbladeM.description>
   <!-- EN: stock -->
-  <DMS_Gun_DragoonRifle.tools.stock.label>stock</DMS_Gun_DragoonRifle.tools.stock.label>
+  <DMS_Gun_DawnbladeM.tools.stock.label>stock</DMS_Gun_DawnbladeM.tools.stock.label>
   <!-- EN: barrel -->
-  <DMS_Gun_DragoonRifle.tools.barrel.label>barrel</DMS_Gun_DragoonRifle.tools.barrel.label>
+  <DMS_Gun_DawnbladeM.tools.barrel.label>barrel</DMS_Gun_DawnbladeM.tools.barrel.label>
   <!-- EN: 2A38M -->
-  <DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>MPQFS-85M "Dawnblade"</DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>
+  <DMS_Gun_DawnbladeM.verbs.Verb_Shoot.label>MPQFS-85M "Dawnblade"</DMS_Gun_DawnbladeM.verbs.Verb_Shoot.label>
   
 </LanguageData>
