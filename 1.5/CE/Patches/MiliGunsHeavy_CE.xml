@@ -184,6 +184,111 @@
                     <aiAimMode>AimedShot</aiAimMode>
                 </FireModes>
             </li>
+            <!--===== 37mm Gun =====-->
+            <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+                <defName>DMS_Gun_DragoonRifle</defName>
+                <statBases>
+                    <Mass>75</Mass>
+                    <Bulk>32.5</Bulk>
+                    <SwayFactor>1.81</SwayFactor>
+                    <ShotSpread>0.01</ShotSpread>
+                    <SightsEfficiency>1</SightsEfficiency>
+                    <RangedWeapon_Cooldown>2.55</RangedWeapon_Cooldown>
+                </statBases>
+                <Properties>
+                    <recoilAmount>2.75</recoilAmount>
+                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                    <hasStandardCommand>true</hasStandardCommand>
+                    <defaultProjectile>Bullet_37x223mmR_AP</defaultProjectile>
+                    <burstShotCount>1</burstShotCount>
+                    <warmupTime>2.1</warmupTime>
+                    <range>86</range>
+                    <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
+                    <soundCastTail>GunTail_Heavy</soundCastTail>
+                    <muzzleFlashScale>20</muzzleFlashScale>
+                </Properties>
+                <AmmoUser>
+                    <magazineSize>8</magazineSize>
+                    <reloadTime>8</reloadTime>
+                    <ammoSet>AmmoSet_37x223mmR</ammoSet>
+                </AmmoUser>
+                <FireModes>
+                    <aiAimMode>AimedShot</aiAimMode>
+                </FireModes>
+                <weaponTags>
+                </weaponTags>
+            </li>
+			<!--===== 60mm Launcher =====-->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+                <defName>DMS_Gun_DragoonGrenade</defName>
+                <statBases>
+                    <Mass>45</Mass>
+                    <Bulk>21.28</Bulk>
+                    <SwayFactor>1.81</SwayFactor>
+                    <ShotSpread>0.20</ShotSpread>
+                    <SightsEfficiency>1</SightsEfficiency>
+                    <RangedWeapon_Cooldown>0.55</RangedWeapon_Cooldown>
+                </statBases>
+                <Properties>
+                    <recoilAmount>3.25</recoilAmount>
+                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                    <hasStandardCommand>true</hasStandardCommand>
+                    <defaultProjectile>Bullet_60mmMortarShell_DF_HE</defaultProjectile>
+                    <burstShotCount>1</burstShotCount>
+                    <warmupTime>2.1</warmupTime>
+                    <range>44</range>
+                    <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
+                    <soundCastTail>GunTail_Heavy</soundCastTail>
+                    <muzzleFlashScale>20</muzzleFlashScale>
+                </Properties>
+				<AmmoUser>
+					<magazineSize>6</magazineSize>
+					<reloadOneAtATime>false</reloadOneAtATime>
+					<reloadTime>18</reloadTime>
+					<ammoSet>AmmoSet_60mmMortarShell_DF</ammoSet>
+				</AmmoUser>
+				<FireModes>
+					<aiUseBurstMode>FALSE</aiUseBurstMode>
+					<aiAimMode>SuppressFire</aiAimMode>
+				</FireModes>
+				<weaponTags>
+					<li>CE_AI_AOE</li>
+				</weaponTags>
+            </li>
+			<!--===== 76mm Cannon =====-->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+                <defName>DMS_Gun_DawnbladeM</defName>
+                <statBases>
+                    <Mass>245</Mass>
+                    <Bulk>67.12</Bulk>
+                    <SwayFactor>2.25</SwayFactor>
+                    <ShotSpread>0.01</ShotSpread>
+                    <SightsEfficiency>3</SightsEfficiency>
+                    <RangedWeapon_Cooldown>2.15</RangedWeapon_Cooldown>
+                </statBases>
+                <Properties>
+                    <recoilAmount>6.25</recoilAmount>
+                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                    <hasStandardCommand>true</hasStandardCommand>
+                    <defaultProjectile>Bullet_762x385mmRCannonShell_HEAT</defaultProjectile>
+                    <burstShotCount>1</burstShotCount>
+                    <warmupTime>3</warmupTime>
+                    <range>110</range>
+                    <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
+                    <soundCastTail>GunTail_Heavy</soundCastTail>
+                    <muzzleFlashScale>24</muzzleFlashScale>
+                </Properties>
+				<AmmoUser>
+					<magazineSize>4</magazineSize>
+					<reloadTime>13</reloadTime>
+					<ammoSet>AmmoSet_762x385mmRCannonShell</ammoSet>
+				</AmmoUser>
+				<FireModes>
+					<aiAimMode>AimedShot</aiAimMode>
+				</FireModes>
+				<weaponTags>
+				</weaponTags>
+            </li>
         </operations>
     </Operation>
 </Patch>
