@@ -509,7 +509,7 @@
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Gun_DragoonGrenade</defName>
 		<label>heavy grenade launcher</label>
-		<description>heavy grenade launcher.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>
+		<description>A hand held gun-mortar designed for mech operation. A six round revolver action allows for quick successive shots.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_Dragoon_GL</texPath>
 			<drawSize>2</drawSize>
@@ -571,7 +571,7 @@
 	
 	<ThingDef ParentName="BaseBullet">
 		<defName>DMS_Bullet_DGL</defName>
-		<label>grenade round</label>
+		<label>heavy grenade round</label>
 		<graphicData>
 			<texPath>Things/Projectile/LauncherShot</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -597,7 +597,7 @@
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Gun_DawnbladeM</defName>
 		<label>MPQFS-85M "Dawnblade"</label>
-		<description>anti-tank cannon.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>
+		<description>A multi-role quick-firing gun modified mech use, only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>
 		<descriptionHyperlinks>	
 			<ThingDef>DMS_Mech_Tarbosaurus</ThingDef>
 		</descriptionHyperlinks>
