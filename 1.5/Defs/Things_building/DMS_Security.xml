@@ -803,4 +803,157 @@
     </verbs>
   </ThingDef>
 
+	<!--Dawnblade Fixed Mount-->
+
+  <ThingDef ParentName="DMS_BaseCannonBuilding">
+    <defName>DMS_Turret_Dawnblade</defName>
+    <label>Dawnblade</label>
+    <description>anti-tank cannon.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Turrets/DMS_Base_Tunguska_GateKeeper</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>4</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+    </graphicData>
+    <size>(3,3)</size>
+    <rotatable>true</rotatable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases>   <!--================血量與重量工作量================-->
+      <MaxHitPoints>2000</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>7500</WorkToBuild>
+      <Beauty>-2</Beauty>
+      <ShootingAccuracyTurret>1.00</ShootingAccuracyTurret>
+      <Mass>10000</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>240</wickTicks>
+        <explosiveRadius>2.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <startWickHitPointsPercent>0.1</startWickHitPointsPercent>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <outOfFuelMessage>Cannot shoot: Needs new reinforced barrel</outOfFuelMessage>
+        <fuelFilter>
+          <thingDefs>
+            <li>ReinforcedBarrel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelIsMortarBarrel>true</fuelIsMortarBarrel>
+        <fuelCapacity>80</fuelCapacity>    <!-- 20 burst -->
+        <fuelMultiplier>8</fuelMultiplier><!-- 1 Barrel=8 ammo -->
+        <initialFuelPercent>1</initialFuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <initialAllowAutoRefuel>true</initialAllowAutoRefuel>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>              <!--重裝填設定-->
+        <initialConfigurableTargetFuelLevel>80</initialConfigurableTargetFuelLevel>
+        <autoRefuelPercent>100</autoRefuelPercent>
+        <fuelIconPath>Things/Item/Resource/ReinforcedBarrel/ReinforcedBarrel</fuelIconPath>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>1000</basePowerConsumption>
+      </li>
+    </comps>
+    <building>
+      <turretGunDef>DMS_Gun_Dawnblade</turretGunDef>
+      <turretTopDrawSize>7</turretTopDrawSize>
+      <turretBurstWarmupTime>2.0</turretBurstWarmupTime>   <!--================冷卻與瞄準時間================-->
+      <turretBurstCooldownTime>3.2</turretBurstCooldownTime>
+    </building>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <costList>
+      <Steel>450</Steel>
+      <Tungsteel>300</Tungsteel>
+      <ComponentStamped>15</ComponentStamped>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <ComponentFireControl>3</ComponentFireControl>
+    </costList>
+    <researchPrerequisites>
+      <li>DMS_EquipmentElite</li>
+      <li>MultibarrelWeapons</li>
+    </researchPrerequisites>
+    <uiIconPath>Things/Turrets/DMS_DawnBlade</uiIconPath>
+    <uiIconScale>2</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>  <!--================可攜帶性================-->
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>DMS_Gun_Dawnblade</defName>
+    <label>Dawnblade</label>
+    <description>anti-tank cannon.</description>
+    <graphicData>
+      <texPath>Things/Turrets/DMS_Gun_DawnBlade</texPath>
+      <drawSize>4</drawSize>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+	<AccuracyTouch>0.45</AccuracyTouch>
+	<AccuracyShort>0.6</AccuracyShort>
+	<AccuracyMedium>0.78</AccuracyMedium>
+	<AccuracyLong>0.95</AccuracyLong>
+      <RangedWeapon_Cooldown>3.2</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>DMS_Bullet_Dawnblade</defaultProjectile>
+        <requireLineOfSight>true</requireLineOfSight>
+        <warmupTime>2.0</warmupTime>
+        <minRange>3.9</minRange>
+	<range>59.9</range>
+        <ai_AvoidFriendlyFireRadius>2.9</ai_AvoidFriendlyFireRadius>
+        <ticksBetweenBurstShots>60</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>Shot_TurretSniper</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>15</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <forcedMissRadius>0.1</forcedMissRadius>
+      </li>
+    </verbs>
+  </ThingDef>
+
+<ThingDef ParentName="BaseBullet">
+	<defName>DMS_Bullet_Dawnblade</defName>
+	<label>armor piercing shell</label>
+	<graphicData>
+		<texPath>Things/Projectile/Bullet_Big</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<drawSize>2</drawSize>
+	</graphicData>
+	<projectile>
+		<damageDef>Bullet</damageDef>
+		<damageAmountBase>50</damageAmountBase>
+		<armorPenetrationBase>0.75</armorPenetrationBase>
+		<stoppingPower>10</stoppingPower>
+		<speed>100</speed>
+		<arcHeightFactor>0.2</arcHeightFactor>
+		<shadowSize>0.6</shadowSize>
+	</projectile>
+	<comps>
+		<li Class="CompProperties_Explosive">
+			<explosiveRadius>1.1</explosiveRadius>
+			<explosiveDamageType>Bomb</explosiveDamageType>
+			<armorPenetrationBase>0.5</armorPenetrationBase>
+			<damageAmountBase>50</damageAmountBase>
+			<explodeOnDestroyed>true</explodeOnDestroyed>
+			<explodeOnKilled>true</explodeOnKilled>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+		</li>
+	</comps>
+</ThingDef>
+
 </Defs>	
