@@ -206,6 +206,9 @@
                     <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
                     <soundCastTail>GunTail_Heavy</soundCastTail>
                     <muzzleFlashScale>20</muzzleFlashScale>
+		    <targetParams>
+			<canTargetLocations>true</canTargetLocations>
+		    </targetParams>
                 </Properties>
                 <AmmoUser>
                     <magazineSize>8</magazineSize>
@@ -218,8 +221,8 @@
                 <weaponTags>
                 </weaponTags>
             </li>
-			<!--===== 60mm Launcher =====-->
-			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+	    <!--===== 60mm Launcher =====-->
+	    <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
                 <defName>DMS_Gun_DragoonGrenade</defName>
                 <statBases>
                     <Mass>45</Mass>
@@ -240,6 +243,9 @@
                     <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
                     <soundCastTail>GunTail_Heavy</soundCastTail>
                     <muzzleFlashScale>20</muzzleFlashScale>
+		    <targetParams>
+			<canTargetLocations>true</canTargetLocations>
+		    </targetParams>
                 </Properties>
 				<AmmoUser>
 					<magazineSize>6</magazineSize>
@@ -277,6 +283,9 @@
                     <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
                     <soundCastTail>GunTail_Heavy</soundCastTail>
                     <muzzleFlashScale>24</muzzleFlashScale>
+		    <targetParams>
+			<canTargetLocations>true</canTargetLocations>
+		    </targetParams>
                 </Properties>
 				<AmmoUser>
 					<magazineSize>4</magazineSize>
