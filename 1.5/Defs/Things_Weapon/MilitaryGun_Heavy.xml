@@ -409,7 +409,7 @@
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Gun_DragoonRifle</defName>
 		<label>anti-tank gun</label>
-		<description>lightweight anti-tank gun.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>
+		<description>A lightweight mass produced anti-tank gun for heavy mechs and dragoon armor.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>
 		<weaponClasses>
 			<li>RangedHeavy</li>
 			<li>LongShots</li>
