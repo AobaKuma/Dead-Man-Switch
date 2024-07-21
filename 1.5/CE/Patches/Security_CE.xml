@@ -22,17 +22,19 @@
 
 			<li Class="PatchOperationRemove">
 				<xpath>Defs/ThingDef[defName="DMS_Turret_Tunguska" or
-					defName="DMS_Turret_GateKeeper" or
-					defName="DMS_Turret_Okhotnik" or
-					defName="DMS_Turret_Vasilek"
+			                        defName="DMS_Turret_GateKeeper" or
+			                        defName="DMS_Turret_Okhotnik" or
+						defName="DMS_Turret_Vasilek" or
+						defName="DMS_Turret_Dawnblade"
 					]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
 			</li>
 			
 			<li Class="PatchOperationRemove">
 					<xpath>Defs/ThingDef[defName="DMS_Turret_Tunguska" or
-                        defName="DMS_Turret_GateKeeper" or
-                        defName="DMS_Turret_Okhotnik" or
-						defName="DMS_Turret_Vasilek"
+	                        		defName="DMS_Turret_GateKeeper" or
+	                        		defName="DMS_Turret_Okhotnik" or
+						defName="DMS_Turret_Vasilek" or
+						defName="DMS_Turret_Dawnblade"
                         ]/comps/li[@Class="CompProperties_Explosive"]</xpath>
 			</li>
 
@@ -136,6 +138,45 @@
 					<aimedBurstShotCount>35</aimedBurstShotCount>
 				</FireModes>
 			</li>
+
+			<!--===== 76mm Cannon =====-->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_Dawnblade</defName>
+				<statBases>
+				    <Mass>1245</Mass>
+				    <Bulk>72</Bulk>
+				    <SwayFactor>1.35</SwayFactor>
+				    <ShotSpread>0.01</ShotSpread>
+				    <SightsEfficiency>3</SightsEfficiency>
+				    <RangedWeapon_Cooldown>0.7</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+				    <recoilAmount>3.25</recoilAmount>
+				    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				    <hasStandardCommand>true</hasStandardCommand>
+				    <defaultProjectile>Bullet_762x385mmRCannonShell_HEAT</defaultProjectile>
+				    <burstShotCount>1</burstShotCount>
+				    <warmupTime>2.1</warmupTime>
+				    <range>110</range>
+				    <targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				    </targetParams>
+				    <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
+				    <soundCastTail>GunTail_Heavy</soundCastTail>
+				    <muzzleFlashScale>24</muzzleFlashScale>
+				</Properties>
+						<AmmoUser>
+							<magazineSize>16</magazineSize>
+							<reloadOneAtATime>false</reloadOneAtATime>
+							<reloadTime>25</reloadTime>
+							<ammoSet>AmmoSet_762x385mmRCannonShell</ammoSet>
+						</AmmoUser>
+						<FireModes>
+							<aiAimMode>AimedShot</aiAimMode>
+						</FireModes>
+						<weaponTags>
+						</weaponTags>
+			    </li>
 
 
 			<!-- Kord Remote control Turret -->
