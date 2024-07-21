@@ -403,4 +403,275 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
+
+	<!--Dragoon AT Gun-->
+	
+	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
+		<defName>DMS_Gun_DragoonRifle</defName>
+		<label>anti-tank gun</label>
+		<description>lightweight anti-tank gun.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+			<li>LongShots</li>
+			<li>Ranged</li>
+		</weaponClasses>
+		<weaponTags>
+			<li>DMS_DragoonGun</li>
+			<li>DMS_MechWeaponHeavy</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_Dragoon_Rifle</texPath>
+			<drawSize>2.75</drawSize>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<statBases>
+			<WorkToMake>60000</WorkToMake>
+			<AccuracyTouch>0.50</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.90</AccuracyMedium>
+			<AccuracyLong>0.80</AccuracyLong>
+			<Mass>55</Mass>
+			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.2</MoveSpeed>
+		</equippedStatOffsets>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>DMS_EquipmentHeavy</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>160</Tungsteel>
+			<ComponentStamped>5</ComponentStamped>		
+		</costList>	
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DMS_Bullet_Dragoon_Rifle</defaultProjectile>
+				<warmupTime>3</warmupTime>
+				<range>39.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>Shot_TurretSniper</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>14</muzzleFlashScale>
+				<forcedMissRadius>0.1</forcedMissRadius>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.75,0.75)</drawSize>
+				<offsets>
+					<li>(1.45,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="DMS.HeavyEquippableExtension">
+				<EquippableDef>HeavyAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>DMS_Bullet_Dragoon_Rifle</defName>
+		<label>armor piercing shell</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.2</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>35</damageAmountBase>
+			<armorPenetrationBase>0.65</armorPenetrationBase>
+			<stoppingPower>10</stoppingPower>
+			<speed>93</speed>
+			<arcHeightFactor>0.3</arcHeightFactor>
+			<shadowSize>0.6</shadowSize>
+		</projectile>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>1.1</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<armorPenetrationBase>0.5</armorPenetrationBase>
+				<damageAmountBase>5</damageAmountBase>
+				<explodeOnDestroyed>true</explodeOnDestroyed>
+				<explodeOnKilled>true</explodeOnKilled>
+				<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<!--Dragoon Grenade Launcher-->
+
+	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
+		<defName>DMS_Gun_DragoonGrenade</defName>
+		<label>heavy grenade launcher</label>
+		<description>heavy grenade launcher.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_Dragoon_GL</texPath>
+			<drawSize>2</drawSize>
+		</graphicData>
+		<soundInteract>Artillery_ShellLoaded</soundInteract>
+		<statBases>
+			<RangedWeapon_Cooldown>2.1</RangedWeapon_Cooldown>
+			<Mass>35</Mass>
+		</statBases>
+		<weaponTags>
+			<li>DMS_DragoonGun</li>
+			<li>Gun_Recoilless</li>
+		</weaponTags>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>MultibarrelWeapons</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>120</Tungsteel>
+			<ComponentStamped>5</ComponentStamped>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DMS_Bullet_DGL</defaultProjectile>
+				<warmupTime>3</warmupTime>
+				<minRange>8</minRange>
+				<range>25.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>Shot_IncendiaryLauncher</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>18</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
+				<forcedMissRadius>1.5</forcedMissRadius>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(1.5,1.5)</drawSize>
+				<offsets>
+					<li>(0.85,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="DMS.HeavyEquippableExtension">
+				<EquippableDef>HeavyAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>DMS_Bullet_DGL</defName>
+		<label>grenade round</label>
+		<graphicData>
+			<texPath>Things/Projectile/LauncherShot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>1.5</drawSize>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<speed>40</speed>
+			<damageDef>Flame</damageDef>
+			<stoppingPower>1.5</stoppingPower>
+			<explosionRadius>2.9</explosionRadius>
+			<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+			<preExplosionSpawnChance>0.25</preExplosionSpawnChance>
+			<ai_IsIncendiary>true</ai_IsIncendiary>
+			<arcHeightFactor>0.5</arcHeightFactor>
+			<shadowSize>0.6</shadowSize>
+		</projectile>
+	</ThingDef>
+
+	<!--Dawnblade Mech Mount-->
+	
+	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
+		<defName>DMS_Gun_DawnbladeM</defName>
+		<label>MPQFS-85M "Dawnblade"</label>
+		<description>anti-tank cannon.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>
+		<descriptionHyperlinks>	
+			<ThingDef>DMS_Mech_Tarbosaurus</ThingDef>
+		</descriptionHyperlinks>
+		<weaponTags>
+			<li>DMS_Tarbosaurus_Gun</li>
+			<li>NoSwitch</li>
+			<li>DMS_MechWeaponUltraHeavy</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_DawnBladeM</texPath>
+			<drawSize>5.5</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>259</Mass>
+			<WorkToMake>100000</WorkToMake>
+			<MarketValue>1200</MarketValue>
+		    <AccuracyTouch>0.89</AccuracyTouch>
+		    <AccuracyShort>1.00</AccuracyShort>
+		    <AccuracyMedium>1.00</AccuracyMedium>
+		    <AccuracyLong>0.99</AccuracyLong>
+		    <RangedWeapon_Cooldown>2.2</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>MultibarrelWeapons</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>200</Tungsteel>
+			<ComponentStamped>16</ComponentStamped>
+		</costList>
+		<comps Inherit="False">
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Styleable"/>
+		</comps>
+		<verbs>
+			<li>
+				<hasStandardCommand>true</hasStandardCommand>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>DMS_Bullet_Dawnblade</defaultProjectile>
+				<requireLineOfSight>true</requireLineOfSight>
+				<warmupTime>1.9</warmupTime>
+				<minRange>2.9</minRange>
+				<range>50</range>
+				<ai_AvoidFriendlyFireRadius>6.9</ai_AvoidFriendlyFireRadius>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>Shot_TurretSniper</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>20</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<forcedMissRadius>0.1</forcedMissRadius>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(1.5,1.5)</drawSize>
+				<offsets>
+					<li>(1.0,0)</li>
+					<li>(1.1,-0.1)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="DMS.HeavyEquippableExtension">
+				<EquippableDef>UltraHeavyAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
 </Defs>
