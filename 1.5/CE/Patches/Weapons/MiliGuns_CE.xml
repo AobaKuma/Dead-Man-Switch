@@ -694,34 +694,34 @@
                     <tools>
                         <li Class="CombatExtended.ToolCE">
                             <label>handle</label>
-							<capacities>
-								<li>Poke</li>
-							</capacities>
-							<power>4</power>
-							<cooldownTime>1.78</cooldownTime>
-							<chanceFactor>0.10</chanceFactor>
-							<armorPenetrationBlunt>2.0</armorPenetrationBlunt>
-							<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
-						</li>
+			    <capacities>
+				<li>Poke</li>
+			    </capacities>
+			    <power>4</power>
+			    <cooldownTime>1.78</cooldownTime>
+			    <chanceFactor>0.10</chanceFactor>
+			    <armorPenetrationBlunt>2.0</armorPenetrationBlunt>
+			    <linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+			</li>
                         <li Class="CombatExtended.ToolCE">
-							<label>edge</label>
-							<capacities>
-								<li>Cut</li>
-							</capacities>
-							<power>40</power>
-							<cooldownTime>1.64</cooldownTime>
-							<armorPenetrationBlunt>6.48</armorPenetrationBlunt>
-                            <armorPenetrationSharp>14</armorPenetrationSharp>
-                            <linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+			    <label>edge</label>
+			    <capacities>
+			        <li>Cut</li>
+			    </capacities>
+			    <power>40</power>
+			    <cooldownTime>1.64</cooldownTime>
+			    <armorPenetrationBlunt>6.48</armorPenetrationBlunt>
+			    <armorPenetrationSharp>14</armorPenetrationSharp>
+			    <linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
                         </li>
                         <li Class="CombatExtended.ToolCE">
-							<label>point</label>
-							<capacities>
-								<li>Stab</li>
-							</capacities>
-							<power>18</power>
-							<cooldownTime>1.78</cooldownTime>
-							<armorPenetrationBlunt>2.0</armorPenetrationBlunt>
+			    <label>point</label>
+			    <capacities>
+				<li>Stab</li>
+			    </capacities>
+			    <power>18</power>
+			    <cooldownTime>1.78</cooldownTime>
+			    <armorPenetrationBlunt>2.0</armorPenetrationBlunt>
                             <armorPenetrationSharp>16</armorPenetrationSharp>
                         </li>
                     </tools>
@@ -736,17 +736,17 @@
             <li Class="PatchOperationAdd">
                 <xpath>Defs/ThingDef[defName="DMS_Machete"]/statBases</xpath>
                 <value>
-					<Bulk>8</Bulk>
-					<MeleeCounterParryBonus>0.8</MeleeCounterParryBonus>
+		    <Bulk>8</Bulk>
+		    <MeleeCounterParryBonus>0.8</MeleeCounterParryBonus>
                 </value>
             </li>
             <li Class="PatchOperationAdd">
                 <xpath>Defs/ThingDef[defName="DMS_Machete"]</xpath>
                 <value>
                     <equippedStatOffsets>
-						<MeleeCritChance>0.2</MeleeCritChance>
-						<MeleeParryChance>0.35</MeleeParryChance>
-						<MeleeDodgeChance>0.2</MeleeDodgeChance>
+			<MeleeCritChance>0.2</MeleeCritChance>
+			<MeleeParryChance>0.35</MeleeParryChance>
+			<MeleeDodgeChance>0.2</MeleeDodgeChance>
                     </equippedStatOffsets>
                 </value>
             </li>
