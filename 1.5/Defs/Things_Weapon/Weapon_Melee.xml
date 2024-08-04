@@ -53,7 +53,7 @@
 					</li>
 					<li>
 						<def>Stun</def>
-						<amount>5</amount>
+						<amount>4</amount>
 					</li>
 				</extraMeleeDamages>
 			</li>
@@ -67,19 +67,19 @@
 				<extraMeleeDamages>
 					<li>
 						<def>EMP</def>
-						<amount>9</amount>
+						<amount>18</amount>
 					</li>
 					<li>
 						<def>Stun</def>
-						<amount>9</amount>
+						<amount>6</amount>
 					</li>
 				</extraMeleeDamages>
 			</li>
 		</tools>
 		<costList>
 			<Polyester>20</Polyester>
-			<Tungsteel>20</Tungsteel>
-			<ComponentStamped>1</ComponentStamped>
+			<Tungsteel>35</Tungsteel>
+			<ComponentStamped>2</ComponentStamped>
 		</costList>
 		<recipeMaker>
 			<researchPrerequisites>
@@ -124,6 +124,7 @@
 					<li>Stab</li>
 				</capacities>
 				<power>23</power>
+				<armorPenetration>0.55</armorPenetration>
 				<cooldownTime>2.6</cooldownTime>
 			</li>
 			<li>
@@ -132,22 +133,28 @@
 					<li>Cut</li>
 				</capacities>
 				<power>23</power>
+				<armorPenetration>0.55</armorPenetration>
 				<cooldownTime>2.6</cooldownTime>
 			</li>
 		</tools>
 		<costList>
-			<Tungsteel>45</Tungsteel>
-			<ComponentStamped>1</ComponentStamped>
+			<Tungsteel>90</Tungsteel>
+			<ComponentStamped>2</ComponentStamped>
 		</costList>
 		<recipeMaker>
 			<researchPrerequisites>
 				<li>LongBlades</li>
-				<li>DMS_EquipmentAdvanced</li>
+				<li>DMS_EquipmentElite</li>
 			</researchPrerequisites>
 			<skillRequirements>
 				<Crafting>8</Crafting>
 			</skillRequirements>
 		</recipeMaker>
+		<modExtensions>
+			<li Class="DMS.HeavyEquippableExtension">
+				<EquippableDef>StandardAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
 	</ThingDef>
 	
 	<!-- Door Breaker, breach weapon for siegebreaker-->
