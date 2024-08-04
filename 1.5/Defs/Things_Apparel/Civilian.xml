@@ -283,7 +283,8 @@
 		<description>Physical enhancement equipment from array of neural prosthetic skeltons. It can increase the wearer's carry weight and mobility with effectively.</description>
 		<techLevel>Industrial</techLevel>
 		<recipeMaker>
-			<workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
 			<effectWorking>ConstructMetal</effectWorking>
 			<soundWorking>Recipe_Machining</soundWorking>
 			<researchPrerequisite>DMS_MechBasis</researchPrerequisite>
