@@ -694,35 +694,35 @@
                     <tools>
                         <li Class="CombatExtended.ToolCE">
                             <label>handle</label>
-                            <capacities>
-                                <li>Poke</li>
-                            </capacities>
-                            <power>2</power>
-                            <chanceFactor>0.1</chanceFactor>
-                            <cooldownTime>1.5</cooldownTime>
-                            <armorPenetrationBlunt>0.5</armorPenetrationBlunt>
-                            <linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
-                        </li>
+							<capacities>
+								<li>Poke</li>
+							</capacities>
+							<power>4</power>
+							<cooldownTime>1.78</cooldownTime>
+							<chanceFactor>0.10</chanceFactor>
+							<armorPenetrationBlunt>2.0</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+						</li>
                         <li Class="CombatExtended.ToolCE">
-                            <label>edge</label>
-                            <capacities>
-                                <li>Cut</li>
-                            </capacities>
-                            <power>31</power>
-                            <cooldownTime>0.83</cooldownTime>
-                            <armorPenetrationBlunt>2.88</armorPenetrationBlunt>
-                            <armorPenetrationSharp>16</armorPenetrationSharp>
+							<label>edge</label>
+							<capacities>
+								<li>Cut</li>
+							</capacities>
+							<power>40</power>
+							<cooldownTime>1.64</cooldownTime>
+							<armorPenetrationBlunt>6.48</armorPenetrationBlunt>
+                            <armorPenetrationSharp>14</armorPenetrationSharp>
                             <linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
                         </li>
                         <li Class="CombatExtended.ToolCE">
-                            <label>point</label>
-                            <capacities>
-                                <li>Stab</li>
-                            </capacities>
-                            <power>11</power>
-                            <cooldownTime>0.94</cooldownTime>
-                            <armorPenetrationBlunt>1.28</armorPenetrationBlunt>
-                            <armorPenetrationSharp>12</armorPenetrationSharp>
+							<label>point</label>
+							<capacities>
+								<li>Stab</li>
+							</capacities>
+							<power>18</power>
+							<cooldownTime>1.78</cooldownTime>
+							<armorPenetrationBlunt>2.0</armorPenetrationBlunt>
+                            <armorPenetrationSharp>16</armorPenetrationSharp>
                         </li>
                     </tools>
                 </value>
@@ -736,17 +736,17 @@
             <li Class="PatchOperationAdd">
                 <xpath>Defs/ThingDef[defName="DMS_Machete"]/statBases</xpath>
                 <value>
-                    <Bulk>5.4</Bulk>
-                    <MeleeCounterParryBonus>0.33</MeleeCounterParryBonus>
+					<Bulk>8</Bulk>
+					<MeleeCounterParryBonus>0.8</MeleeCounterParryBonus>
                 </value>
             </li>
             <li Class="PatchOperationAdd">
                 <xpath>Defs/ThingDef[defName="DMS_Machete"]</xpath>
                 <value>
                     <equippedStatOffsets>
-                        <MeleeCritChance>0.56</MeleeCritChance>
-                        <MeleeParryChance>0.25</MeleeParryChance>
-                        <MeleeDodgeChance>0.34</MeleeDodgeChance>
+						<MeleeCritChance>0.2</MeleeCritChance>
+						<MeleeParryChance>0.35</MeleeParryChance>
+						<MeleeDodgeChance>0.2</MeleeDodgeChance>
                     </equippedStatOffsets>
                 </value>
             </li>
@@ -769,33 +769,23 @@
                             </capacities>
                             <power>2</power>
                             <chanceFactor>0.1</chanceFactor>
-                            <cooldownTime>1.5</cooldownTime>
+                            <cooldownTime>1.54</cooldownTime>
                             <armorPenetrationBlunt>0.5</armorPenetrationBlunt>
                             <linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
-                            <extraMeleeDamages>
-                                <li>
-                                    <def>Stun</def>
-                                    <amount>5</amount>
-                                </li>
-                            </extraMeleeDamages>
                         </li>
                         <li Class="CombatExtended.ToolCE">
                             <label>edge</label>
                             <capacities>
                                 <li>Blunt</li>
                             </capacities>
-                            <power>10</power>
-                            <cooldownTime>0.83</cooldownTime>
+                            <power>8</power>
+                            <cooldownTime>1.36</cooldownTime>
                             <armorPenetrationBlunt>2.88</armorPenetrationBlunt>
                             <linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
                             <extraMeleeDamages>
                                 <li>
                                     <def>EMP</def>
-                                    <amount>9</amount>
-                                </li>
-                                <li>
-                                    <def>Stun</def>
-                                    <amount>9</amount>
+                                    <amount>6</amount>
                                 </li>
                             </extraMeleeDamages>
                         </li>
@@ -804,21 +794,13 @@
                             <capacities>
                                 <li>Blunt</li>
                             </capacities>
-                            <power>14</power>
-                            <cooldownTime>0.94</cooldownTime>
+                            <power>10</power>
+                            <cooldownTime>1.54</cooldownTime>
                             <armorPenetrationBlunt>1.28</armorPenetrationBlunt>
                             <extraMeleeDamages>
                                 <li>
                                     <def>EMP</def>
-                                    <amount>18</amount>
-                                </li>
-                                <li>
-                                    <def>Burn</def>
-                                    <amount>5</amount>
-                                </li>
-                                <li>
-                                    <def>Stun</def>
-                                    <amount>5</amount>
+                                    <amount>6</amount>
                                 </li>
                             </extraMeleeDamages>
                         </li>
@@ -842,9 +824,9 @@
                 <xpath>Defs/ThingDef[defName="DMS_StunBaton"]</xpath>
                 <value>
                     <equippedStatOffsets>
-                        <MeleeCritChance>0.73</MeleeCritChance>
-                        <MeleeParryChance>0.5</MeleeParryChance>
-                        <MeleeDodgeChance>0.34</MeleeDodgeChance>
+                        <MeleeCritChance>1.46</MeleeCritChance>
+                        <MeleeParryChance>0.25</MeleeParryChance>
+                        <MeleeDodgeChance>0.20</MeleeDodgeChance>
                     </equippedStatOffsets>
                 </value>
             </li>
