@@ -2,12 +2,12 @@
 <LanguageData>
   
   <!-- EN: process array -->
-  <DMS_BandNode.label>process array</DMS_BandNode.label>
+  <DMS_BandNode.label>Process Array</DMS_BandNode.label>
   <!-- EN: An array machine processes the received signal and directs to a specific mechanitor. This will add 4 bandwidth to that mechanitor's total bandwidth, allowing them to control more mechanoids.\n\nOnce a process array is constructed, it can be quickly tuned to a mechanitor. However, returning a band node to a different mechanitor takes significantly longer.\n\nThis Device followed the N.A.C.S. protocol to operate, so only Mechlink with the following protocol can revice the service. -->
-  <DMS_BandNode.description>An array machine processes the received signal and directs to a specific mechanitor. This will add 4 bandwidth to that mechanitor's total bandwidth, allowing them to control more mechanoids.
+  <DMS_BandNode.description>An array machine that processes the received signal and directs it to a specific mechanitor. This will add 4 bandwidth to that mechanitor's total bandwidth, allowing them to control more mechanoids.
 
-Once a process array is constructed, it can be quickly tuned to a mechanitor. However, returning a band node to a different mechanitor takes significantly longer.
+Once a process array is constructed, it can be quickly tuned to a specific mechanitor. However, returning a band node to a different mechanitor takes significantly longer.
 
-This Device followed the N.A.C.S. protocol to operate, so only Mechlink with the following protocol can revice the service.</DMS_BandNode.description>
+This device only follows the N.A.C.S. protocol to operate, so only a similar mechlink with the following protocol can receive the signal.</DMS_BandNode.description>
   
 </LanguageData>
