@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <DMS_AddonBroken>the modification durability on one of your mech has exhausted</DMS_AddonBroken>
-  <DMS_PlatingTooltip>Disposable ceramic armor, which protects the mecha from damage until its durability is exhausted.</DMS_PlatingTooltip>
-  <DMS_HasAppliedModification>modification applied</DMS_HasAppliedModification>
-  <DMS_WeaponNotSupported>system not supported</DMS_WeaponNotSupported>
-  <DMS_FrameNotSupported>frame not supported</DMS_FrameNotSupported>
+  <DMS_AddonBroken>The modification durability on one of your mechs has exhausted</DMS_AddonBroken>
+  <DMS_PlatingTooltip>Disposable ceramic armor protects the mecha from damage as ablative armor until its durability is exhausted and needs replacement.</DMS_PlatingTooltip>
+  <DMS_HasAppliedModification>Modification applied</DMS_HasAppliedModification>
+  <DMS_WeaponNotSupported>Weapon system not supported</DMS_WeaponNotSupported>
+  <DMS_FrameNotSupported>Mech frame not supported</DMS_FrameNotSupported>
   <DMS_WillTerminateTheBetrayedUnit>DMS: Trigger Safe Actived</DMS_WillTerminateTheBetrayedUnit>
-  <DMS_AutomatroidDisconnected>automatroid has disconnected to protect mechanitor</DMS_AutomatroidDisconnected>
-  <CommandCallRoyalAid_NoMechanitorAvaliable>need mechanitor in map</CommandCallRoyalAid_NoMechanitorAvaliable>
-  <DMS_PawnIsNotMechanitor>must be Mechanitor</DMS_PawnIsNotMechanitor>
+  <DMS_AutomatroidDisconnected>Automatroid has disconnected to protect the echanitor</DMS_AutomatroidDisconnected>
+  <CommandCallRoyalAid_NoMechanitorAvaliable>Need mechanitor in map</CommandCallRoyalAid_NoMechanitorAvaliable>
+  <DMS_PawnIsNotMechanitor>Must be Mechanitor</DMS_PawnIsNotMechanitor>
   <DMS_BandwidthSupported>Orbital downlink has established connection with mechanitor</DMS_BandwidthSupported>
-  <DMS_MountedWeapon>mounted wepaon</DMS_MountedWeapon>
-  <DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>this weapon can only be equipped with listed automatroid or mechframe</DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>
-  <DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>this weapon can be equipped with listed specific apparel or bionics</DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>
+  <DMS_MountedWeapon>Mounted weapon</DMS_MountedWeapon>
+  <DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>This weapon can only be equipped with listed automatroid or mechframe</DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>
+  <DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>This weapon can be equipped with listed specific apparel or bionics</DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>
   
 </LanguageData>
