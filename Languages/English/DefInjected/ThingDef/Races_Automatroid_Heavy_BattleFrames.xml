@@ -2,10 +2,10 @@
 <LanguageData>
   
   <!-- EN: battle friend -->
-  <DMS_Mech_BattleFrame.label>battle friend</DMS_Mech_BattleFrame.label>
-  <!-- EN: Designed to be a light infantry fighting unit. battle friend has a considerable load capacity and ability to use most of human equipments, \n which isn't surpised that it has been mass-services by forces and depoly in various environments when it can equip heavy weapon with amount of ammo. -->
-  <DMS_Mech_BattleFrame.description>Designed to be a light infantry fighting unit. battle friend has a considerable load capacity and ability to use most of human equipments, 
- which isn't surpised that it has been mass-services by forces and depoly in various environments when it can equip heavy weapon with amount of ammo.</DMS_Mech_BattleFrame.description>
+  <DMS_Mech_BattleFrame.label>Battle Friend</DMS_Mech_BattleFrame.label>
+  <!-- EN: Designed to be a light infantry fighting unit. battle friend has a considerable load capacity and ability to use most human equipments, \n which isn't surpised that it has been mass-services by forces and depoly in various environments when it can equip heavy weapon with amount of ammo. -->
+  <DMS_Mech_BattleFrame.description>Designed to be a light infantry fighting unit, the Battle Friend model has a considerable load capacity and ability to use most of available human equipments, 
+ which isn't a surpise that it has served in mass numbers by forces that have the capacity to do so and deployed in various environments as it can equip heavy weapons with a considerable amount of ammo found in common logistics networks it is fighting in.</DMS_Mech_BattleFrame.description>
   <!-- EN: head -->
   <DMS_Mech_BattleFrame.tools.head.label>head</DMS_Mech_BattleFrame.tools.head.label>
   <!-- EN: left fist -->
@@ -14,9 +14,9 @@
   <DMS_Mech_BattleFrame.tools.right_fist.label>right fist</DMS_Mech_BattleFrame.tools.right_fist.label>
   
   <!-- EN: escort lifter -->
-  <DMS_Mech_EscortLifter.label>escort lifter</DMS_Mech_EscortLifter.label>
+  <DMS_Mech_EscortLifter.label>Escort Lifter</DMS_Mech_EscortLifter.label>
   <!-- EN: As an early stage mass-production automatroid, even though it's no longer a standard service equipment, there're still lots of them modified to used for transportation purpose. -->
-  <DMS_Mech_EscortLifter.description>As an early stage mass-production automatroid, even though it's no longer a standard service equipment, there're still lots of them modified to used for transportation purpose.</DMS_Mech_EscortLifter.description>
+  <DMS_Mech_EscortLifter.description>An early stage mass-production automatroid considered obsolete, there are still a lot of these units now modified for transportation purposes.</DMS_Mech_EscortLifter.description>
   <!-- EN: head -->
   <DMS_Mech_EscortLifter.tools.head.label>head</DMS_Mech_EscortLifter.tools.head.label>
   <!-- EN: left fist -->
@@ -25,9 +25,9 @@
   <DMS_Mech_EscortLifter.tools.right_fist.label>right fist</DMS_Mech_EscortLifter.tools.right_fist.label>
   
   <!-- EN: field command -->
-  <DMS_Mech_FieldCommand.label>field command</DMS_Mech_FieldCommand.label>
+  <DMS_Mech_FieldCommand.label>Field Command</DMS_Mech_FieldCommand.label>
   <!-- EN: a battle friend sub-variant model. it can be the mechnitor command relay but due to its weight with reduced fire control system, which can only equip a light weapon for self defense. -->
-  <DMS_Mech_FieldCommand.description>a battle friend sub-variant model. it can be the mechnitor command relay but due to its weight with reduced fire control system, which can only equip a light weapon for self defense.</DMS_Mech_FieldCommand.description>
+  <DMS_Mech_FieldCommand.description>A Battle Friend sub-variant model. It serves as a mobile mechanitor command relay, but due to its weight with its reduced fire control system and additional specialised relay systems, it can only equip a light weapon for self defense.</DMS_Mech_FieldCommand.description>
   <!-- EN: head -->
   <DMS_Mech_FieldCommand.tools.head.label>head</DMS_Mech_FieldCommand.tools.head.label>
   <!-- EN: left fist -->
@@ -36,9 +36,9 @@
   <DMS_Mech_FieldCommand.tools.right_fist.label>right fist</DMS_Mech_FieldCommand.tools.right_fist.label>
   
   <!-- EN: shaft worker -->
-  <DMS_Mech_ShaftWorker.label>shaft worker</DMS_Mech_ShaftWorker.label>
+  <DMS_Mech_ShaftWorker.label>Shaft Worker</DMS_Mech_ShaftWorker.label>
   <!-- EN: As an early stage mass-production automatroid, even though it's no longer a standard service equipment, there're still lots of them modified to used for mining and construct purpose. -->
-  <DMS_Mech_ShaftWorker.description>As an early stage mass-production automatroid, even though it's no longer a standard service equipment, there're still lots of them modified to used for mining and construct purpose.</DMS_Mech_ShaftWorker.description>
+  <DMS_Mech_ShaftWorker.description>An early stage mass-production automatroid considered obsolete, there are still a lot of units in considerable numbers that have been modified for mining and construction purposes.</DMS_Mech_ShaftWorker.description>
   <!-- EN: head -->
   <DMS_Mech_ShaftWorker.tools.head.label>head</DMS_Mech_ShaftWorker.tools.head.label>
   <!-- EN: left fist -->
