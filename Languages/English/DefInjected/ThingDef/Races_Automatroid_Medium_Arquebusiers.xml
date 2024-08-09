@@ -2,9 +2,9 @@
 <LanguageData>
   
   <!-- EN: arquebusier -->
-  <DMS_Mech_Arquebusier.label>arquebusier</DMS_Mech_Arquebusier.label>
+  <DMS_Mech_Arquebusier.label>Arquebusier</DMS_Mech_Arquebusier.label>
   <!-- EN: Standard Arquebusier model, has good precision fire capability in all ranges, makes it the backbone of robot army. -->
-  <DMS_Mech_Arquebusier.description>Standard Arquebusier model, has good precision fire capability in all ranges, makes it the backbone of robot army.</DMS_Mech_Arquebusier.description>
+  <DMS_Mech_Arquebusier.description>Standard Arquebusier model, has good precision fire capability in all ranges, it forms the backbone of any robot army.</DMS_Mech_Arquebusier.description>
   <!-- EN: head -->
   <DMS_Mech_Arquebusier.tools.head.label>head</DMS_Mech_Arquebusier.tools.head.label>
   <!-- EN: left fist -->
@@ -13,9 +13,9 @@
   <DMS_Mech_Arquebusier.tools.right_fist.label>right fist</DMS_Mech_Arquebusier.tools.right_fist.label>
   
   <!-- EN: jaeger -->
-  <DMS_Mech_Jaeger.label>jaeger</DMS_Mech_Jaeger.label>
+  <DMS_Mech_Jaeger.label>Jaeger</DMS_Mech_Jaeger.label>
   <!-- EN: an arquebusier variant focuses on stealth action and guerilla deployment for sabotage behind enemy lines. has higher mobility and invisibility. -->
-  <DMS_Mech_Jaeger.description>an arquebusier variant focuses on stealth action and guerilla deployment for sabotage behind enemy lines. has higher mobility and invisibility.</DMS_Mech_Jaeger.description>
+  <DMS_Mech_Jaeger.description>An arquebusier variant that focuses on stealth action and guerilla deployment for sabotage behind enemy lines. It has higher mobility and invisibility.</DMS_Mech_Jaeger.description>
   <!-- EN: head -->
   <DMS_Mech_Jaeger.tools.head.label>head</DMS_Mech_Jaeger.tools.head.label>
   <!-- EN: left fist -->
@@ -24,9 +24,9 @@
   <DMS_Mech_Jaeger.tools.right_fist.label>right fist</DMS_Mech_Jaeger.tools.right_fist.label>
   
   <!-- EN: pioneer -->
-  <DMS_Mech_Pioneer.label>pioneer</DMS_Mech_Pioneer.label>
+  <DMS_Mech_Pioneer.label>Pioneer</DMS_Mech_Pioneer.label>
   <!-- EN: forward reconnaissance variant of Arquebusier. with improved sight sensor equipped, it has better capability in field operations, capable to hunting if needed. -->
-  <DMS_Mech_Pioneer.description>forward reconnaissance variant of Arquebusier. with improved sight sensor equipped, it has better capability in field operations, capable to hunting if needed.</DMS_Mech_Pioneer.description>
+  <DMS_Mech_Pioneer.description>A forward reconnaissance variant of Arquebusier with improved sight sensors equipped. It has better capability in field operations, capable of hunting if needed.</DMS_Mech_Pioneer.description>
   <!-- EN: head -->
   <DMS_Mech_Pioneer.tools.head.label>head</DMS_Mech_Pioneer.tools.head.label>
   <!-- EN: left fist -->
@@ -35,9 +35,9 @@
   <DMS_Mech_Pioneer.tools.right_fist.label>right fist</DMS_Mech_Pioneer.tools.right_fist.label>
   
   <!-- EN: sniper -->
-  <DMS_Mech_Sniper.label>sniper</DMS_Mech_Sniper.label>
+  <DMS_Mech_Sniper.label>Sniper</DMS_Mech_Sniper.label>
   <!-- EN: Having the improved sight sensor and fire control system, this Arquebusier variant has the best long range fire precision among all other variants. -->
-  <DMS_Mech_Sniper.description>Having the improved sight sensor and fire control system, this Arquebusier variant has the best long range fire precision among all other variants.</DMS_Mech_Sniper.description>
+  <DMS_Mech_Sniper.description>Having not just an improved sight sensor but also a specialized fire control system, this Arquebusier variant has the best precision long range fire among all other variants.</DMS_Mech_Sniper.description>
   <!-- EN: head -->
   <DMS_Mech_Sniper.tools.head.label>head</DMS_Mech_Sniper.tools.head.label>
   <!-- EN: left fist -->
