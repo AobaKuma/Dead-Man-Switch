@@ -2,11 +2,11 @@
 <LanguageData>
   
   <!-- EN: grenadier -->
-  <DMS_Mech_Grenadier.label>grenadier</DMS_Mech_Grenadier.label>
+  <DMS_Mech_Grenadier.label>Grenadier</DMS_Mech_Grenadier.label>
   <!-- EN: A biped humanoid robot imitated design from the combat unit of mechanoids, can equipped with weapons that humans can use. \n\n Although the carried battery backpack having a long battery life, but is also makes it unable to fight like a genuine mech walkers without cover. -->
-  <DMS_Mech_Grenadier.description>A biped humanoid robot imitated design from the combat unit of mechanoids, can equipped with weapons that humans can use. 
+  <DMS_Mech_Grenadier.description>A biped humanoid-imitated robot design to form as another mechanoid combat unit, it can equipped with the standard weapons that humans can use. 
 
- Although the carried battery backpack having a long battery life, but is also makes it unable to fight like a genuine mech walkers without cover.</DMS_Mech_Grenadier.description>
+ These models carry a battery backpack with a long-lasting battery lifespans, but makes it unable to fight effectively without cover as the battery backpack is a vulnerable point.</DMS_Mech_Grenadier.description>
   <!-- EN: head -->
   <DMS_Mech_Grenadier.tools.head.label>head</DMS_Mech_Grenadier.tools.head.label>
   <!-- EN: left fist -->
@@ -15,11 +15,11 @@
   <DMS_Mech_Grenadier.tools.right_fist.label>right fist</DMS_Mech_Grenadier.tools.right_fist.label>
   
   <!-- EN: kanonier -->
-  <DMS_Mech_Kanonier.label>kanonier</DMS_Mech_Kanonier.label>
+  <DMS_Mech_Kanonier.label>Kanonier</DMS_Mech_Kanonier.label>
   <!-- EN: A biped humanoid robot imitated design from the combat unit of mechanoids, can equipped with weapons that humans can use. \n\n Although the carried battery backpack having a long battery life, but is also makes it unable to fight like a genuine mech walkers without cover. -->
-  <DMS_Mech_Kanonier.description>A biped humanoid robot imitated design from the combat unit of mechanoids, can equipped with weapons that humans can use. 
+  <DMS_Mech_Kanonier.description>A biped humanoid-imitated robot design to form as another mechanoid combat unit, it can equipped with standard weapons that humans can use. 
 
- Although the carried battery backpack having a long battery life, but is also makes it unable to fight like a genuine mech walkers without cover.</DMS_Mech_Kanonier.description>
+ These models carry a battery backpack with a long-lasting battery lifespans, but makes it unable to fight effectively without cover as the battery backpack is a vulnerable point.</DMS_Mech_Kanonier.description>
   <!-- EN: head -->
   <DMS_Mech_Kanonier.tools.head.label>head</DMS_Mech_Kanonier.tools.head.label>
   <!-- EN: left fist -->
