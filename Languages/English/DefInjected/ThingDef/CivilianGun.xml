@@ -2,10 +2,10 @@
 <LanguageData>
   
   <!-- EN: heavy rifle bullet -->
-  <Bullet_DMS_AMR.label>heavy rifle bullet</Bullet_DMS_AMR.label>
+  <Bullet_DMS_AMR.label>Heavy rifle bullet</Bullet_DMS_AMR.label>
   
   <!-- EN: riot machinegun bullet -->
-  <DMS_Bullet_MiniMachineGun.label>riot machinegun bullet</DMS_Bullet_MiniMachineGun.label>
+  <DMS_Bullet_MiniMachineGun.label>Riot machinegun bullet</DMS_Bullet_MiniMachineGun.label>
   
   <!-- EN: 20 gauge beanbag -->
   <DMS_Bullet_RiotRevolver.label>20 gauge beanbag</DMS_Bullet_RiotRevolver.label>
@@ -14,9 +14,9 @@
   <DMS_Bullet_RiotShotgun.label>4 gauge bean bag</DMS_Bullet_RiotShotgun.label>
   
   <!-- EN: elephant rifle -->
-  <DMS_ElephantGun.label>elephant rifle</DMS_ElephantGun.label>
+  <DMS_ElephantGun.label>Elephant Gun</DMS_ElephantGun.label>
   <!-- EN: Single-shot high caliber heavy hunting rifle. While made to hunt giant games or stop large hostile lifeform with sheer kinetic energy, it is also used by early industrial colonies against mechanoids thanks to its simple manufacture requirements. -->
-  <DMS_ElephantGun.description>Single-shot high caliber heavy hunting rifle. While made to hunt giant games or stop large hostile lifeform with sheer kinetic energy, it is also used by early industrial colonies against mechanoids thanks to its simple manufacture requirements.</DMS_ElephantGun.description>
+  <DMS_ElephantGun.description>Single-shot high caliber heavy hunting rifle. While made to hunt giant game or stop a large hostile lifeform with sheer kinetic energy, it is also used by early industrial colonies against mechanoids thanks to its simple manufacturing requirements.</DMS_ElephantGun.description>
   <!-- EN: stock -->
   <DMS_ElephantGun.tools.stock.label>stock</DMS_ElephantGun.tools.stock.label>
   <!-- EN: barrel -->
@@ -29,9 +29,9 @@
   <DMS_ElephantGun.verbs.Verb_Shoot.label>elephant rifle</DMS_ElephantGun.verbs.Verb_Shoot.label>
   
   <!-- EN: knuckleduster Revolver -->
-  <DMS_KnuckledusterRevolver.label>knuckleduster Revolver</DMS_KnuckledusterRevolver.label>
+  <DMS_KnuckledusterRevolver.label>Knuckleduster Revolver</DMS_KnuckledusterRevolver.label>
   <!-- EN: Minature self-defense weapon commonly found on midworlds, barely takes up any space when folded. Accepts multiple calibers and may also used as a knuckle in a pinch. -->
-  <DMS_KnuckledusterRevolver.description>Minature self-defense weapon commonly found on midworlds, barely takes up any space when folded. Accepts multiple calibers and may also used as a knuckle in a pinch.</DMS_KnuckledusterRevolver.description>
+  <DMS_KnuckledusterRevolver.description>Miniature self-defense weapon commonly found on midworlds, it barely takes up any space when folded. Accepts multiple calibers and may also used as a knuckleduster in a pinch.</DMS_KnuckledusterRevolver.description>
   <!-- EN: stock -->
   <DMS_KnuckledusterRevolver.tools.stock.label>stock</DMS_KnuckledusterRevolver.tools.stock.label>
   <!-- EN: barrel -->
@@ -48,7 +48,7 @@
   <!-- EN: Riot LMG -->
   <DMS_MiniMachineGun.label>Riot LMG</DMS_MiniMachineGun.label>
   <!-- EN: Pistol caliber machinegun designed for colony defense. can chop down unarmored enemy hords and prisoner riots with ease. -->
-  <DMS_MiniMachineGun.description>Pistol caliber machinegun designed for colony defense. can chop down unarmored enemy hords and prisoner riots with ease.</DMS_MiniMachineGun.description>
+  <DMS_MiniMachineGun.description>Pistol caliber machinegun designed for colony defense. It can chop down unarmored enemy hordes and prisoner riots with ease.</DMS_MiniMachineGun.description>
   <!-- EN: stock -->
   <DMS_MiniMachineGun.tools.stock.label>stock</DMS_MiniMachineGun.tools.stock.label>
   <!-- EN: barrel -->
@@ -59,7 +59,7 @@
   <!-- EN: Riot Revolver -->
   <DMS_Revolver.label>Riot Revolver</DMS_Revolver.label>
   <!-- EN: a double-action revolver designed to load shotgun ammo. it was designed for personal Defense purpose but soon became an optional weapon for mech solders because it can be used against most of enemy types at the same time. -->
-  <DMS_Revolver.description>a double-action revolver designed to load shotgun ammo. it was designed for personal Defense purpose but soon became an optional weapon for mech solders because it can be used against most of enemy types at the same time.</DMS_Revolver.description>
+  <DMS_Revolver.description>A double-action revolver designed to load shotgun ammo. It was pursposefully designed as a Personal Defense Weapon for rear echelon personnel but soon became an optional weapon for frontline mech solders because it can be used against most enemy types encountered in the field.</DMS_Revolver.description>
   <!-- EN: stock -->
   <DMS_Revolver.tools.stock.label>stock</DMS_Revolver.tools.stock.label>
   <!-- EN: barrel -->
@@ -72,9 +72,9 @@
   <DMS_Revolver.verbs.Verb_Shoot.label>Riot Revolver</DMS_Revolver.verbs.Verb_Shoot.label>
   
   <!-- EN: slug gun -->
-  <DMS_RiotShotgun.label>slug gun</DMS_RiotShotgun.label>
+  <DMS_RiotShotgun.label>Rifled Slug Shotgun</DMS_RiotShotgun.label>
   <!-- EN: a high caliber rifled shotgun manufactured with stamped component,design for riot operation and disable hostile mech unit. -->
-  <DMS_RiotShotgun.description>a high caliber rifled shotgun manufactured with stamped component,design for riot operation and disable hostile mech unit.</DMS_RiotShotgun.description>
+  <DMS_RiotShotgun.description>A high caliber rifled shotgun manufactured with stamped components, designed for anti-riot operations and disabling hostile mech units.</DMS_RiotShotgun.description>
   <!-- EN: stock -->
   <DMS_RiotShotgun.tools.stock-0.label>stock</DMS_RiotShotgun.tools.stock-0.label>
   <!-- EN: barrel -->
@@ -87,9 +87,9 @@
   <DMS_RiotShotgun.verbs.Verb_Shoot.label>slug gun</DMS_RiotShotgun.verbs.Verb_Shoot.label>
   
   <!-- EN: survival rifle -->
-  <DMS_SurvivalRifle.label>survival rifle</DMS_SurvivalRifle.label>
+  <DMS_SurvivalRifle.label>Survival Rifle</DMS_SurvivalRifle.label>
   <!-- EN: Foldable rifle issued to war machine crew members for survival need. Accepts multiple common calibers. -->
-  <DMS_SurvivalRifle.description>Foldable rifle issued to war machine crew members for survival need. Accepts multiple common calibers.</DMS_SurvivalRifle.description>
+  <DMS_SurvivalRifle.description>Foldable rifle issued to vehicle crew members for self-defense in case it is needed. Accepts multiple common calibers.</DMS_SurvivalRifle.description>
   <!-- EN: stock -->
   <DMS_SurvivalRifle.tools.stock-0.label>stock</DMS_SurvivalRifle.tools.stock-0.label>
   <!-- EN: barrel -->
