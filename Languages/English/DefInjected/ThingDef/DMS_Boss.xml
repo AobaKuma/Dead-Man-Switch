@@ -2,17 +2,17 @@
 <LanguageData>
   
   <!-- EN: decoy radar -->
-  <DMS_DecoyRadar.label>decoy radar</DMS_DecoyRadar.label>
+  <DMS_DecoyRadar.label>Decoy Radar</DMS_DecoyRadar.label>
   <!-- EN: A phased array radar. When activated, it puts out a powerful Millimeter wave radiation signal, which will attract an automatroid to attack with escorts. If you can defeat it, you can collect special technologies from its corpse. The signal pulse burns out the transmitter, so this building can only be used once. -->
-  <DMS_DecoyRadar.description>A phased array radar. When activated, it puts out a powerful Millimeter wave radiation signal, which will attract an automatroid to attack with escorts. If you can defeat it, you can collect special technologies from its corpse. The signal pulse burns out the transmitter, so this building can only be used once.</DMS_DecoyRadar.description>
+  <DMS_DecoyRadar.description>A phased array radar. When activated, it puts out a powerful millimeter wave radiation signal, which will attract an automatroid to attack with escorts. If you can defeat it, you can collect special technologies from its corpse. The signal pulse fully burns out the transmitter, so this building can only be used once.</DMS_DecoyRadar.description>
   <!-- EN: Attract tarbosaurus threat -->
   <DMS_DecoyRadar.comps.CompUsable.useLabel>Attract tarbosaurus threat</DMS_DecoyRadar.comps.CompUsable.useLabel>
   
   <!-- EN: decoy antenna -->
-  <DMS_DecoyRadio.label>decoy antenna</DMS_DecoyRadio.label>
+  <DMS_DecoyRadio.label>Decoy Antenna</DMS_DecoyRadio.label>
   <!-- EN: A modified signaling transponder. When activated, it puts out a powerful decoy signal, which will attract an out-command automatroid forces to attack. If you can defeat it, you can collect special technologies from its corpse. The signal pulse burns out the transmitter, so this building can only be used once. -->
-  <DMS_DecoyRadio.description>A modified signaling transponder. When activated, it puts out a powerful decoy signal, which will attract an out-command automatroid forces to attack. If you can defeat it, you can collect special technologies from its corpse. The signal pulse burns out the transmitter, so this building can only be used once.</DMS_DecoyRadio.description>
+  <DMS_DecoyRadio.description>A modified signaling transponder. When activated, it puts out a powerful decoy signal, which will attract an out-of-command group of automatroid forces to attack. If you can defeat them, you can collect special technologies from their corpses. The signal pulse fully burns out the transmitter, so this building can only be used once.</DMS_DecoyRadio.description>
   <!-- EN: Attract geochelone threat -->
-  <DMS_DecoyRadio.comps.CompUsable.useLabel>Attract geochelone threat</DMS_DecoyRadio.comps.CompUsable.useLabel>
+  <DMS_DecoyRadio.comps.CompUsable.useLabel>Attract Geochelone threat</DMS_DecoyRadio.comps.CompUsable.useLabel>
   
 </LanguageData>
