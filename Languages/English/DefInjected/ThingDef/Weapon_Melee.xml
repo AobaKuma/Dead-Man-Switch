@@ -4,7 +4,7 @@
   <!-- EN: Door Breaker -->
   <DMS_DoorBreaker.label>Door Breaker</DMS_DoorBreaker.label>
   <!-- EN: A special design battering ram for mech breacher which has a built-in launcher, and an explosive ramming head. -->
-  <DMS_DoorBreaker.description>A special design battering ram for mech breacher which has a built-in launcher, and an explosive ramming head.</DMS_DoorBreaker.description>
+  <DMS_DoorBreaker.description>A special design battering ram for the mech breacher which has a built-in launcher, and an explosive ramming head.</DMS_DoorBreaker.description>
   <!-- EN: head -->
   <DMS_DoorBreaker.tools.head.label>head</DMS_DoorBreaker.tools.head.label>
   <!-- EN: barrel -->
@@ -15,7 +15,7 @@
   <!-- EN: machete -->
   <DMS_Machete.label>machete</DMS_Machete.label>
   <!-- EN: May look like a normal machete, but it's a weapon with unique design which specify for mech's melee combat capability.\n\nWith its high frequency vibrating edge, it can cut through most things with ease. -->
-  <DMS_Machete.description>May look like a normal machete, but it's a weapon with unique design which specify for mech's melee combat capability.
+  <DMS_Machete.description>It may look like a normal machete, but it's a weapon with unique design which is specifically built for mech's melee combat capability.
 
 With its high frequency vibrating edge, it can cut through most things with ease.</DMS_Machete.description>
   <!-- EN: handle -->
@@ -26,9 +26,9 @@ With its high frequency vibrating edge, it can cut through most things with ease
   <DMS_Machete.tools.edge.label>edge</DMS_Machete.tools.edge.label>
   
   <!-- EN: stun baton -->
-  <DMS_StunBaton.label>stun baton</DMS_StunBaton.label>
+  <DMS_StunBaton.label>Stun Baton</DMS_StunBaton.label>
   <!-- EN: An Electric Stun baton designed for non-lethal riot control and to Subdue out-of-control machines, it's commonly used by automatroid protectors to secure occupied areas safety without casualties. -->
-  <DMS_StunBaton.description>An Electric Stun baton designed for non-lethal riot control and to Subdue out-of-control machines, it's commonly used by automatroid protectors to secure occupied areas safety without casualties.</DMS_StunBaton.description>
+  <DMS_StunBaton.description>An electric stun baton designed for non-lethal riot control and to Subdue out-of-control machines, it's commonly used by automatroid protectors to secure occupied areas safety without casualties.</DMS_StunBaton.description>
   <!-- EN: handle -->
   <DMS_StunBaton.tools.handle.label>handle</DMS_StunBaton.tools.handle.label>
   <!-- EN: point -->
