@@ -2,31 +2,31 @@
 <LanguageData>
   
   <!-- EN: dogge -->
-  <DMS_Mech_Dogge.label>dogge</DMS_Mech_Dogge.label>
+  <DMS_Mech_Dogge.label>Dogge</DMS_Mech_Dogge.label>
   <!-- EN: A four-legged robot dog provide forward reconnaissance and urban combat support during armed operations, can equipped with small-caliber firearms or flamethrowers to provide certain containment capabilities. -->
-  <DMS_Mech_Dogge.description>A four-legged robot dog provide forward reconnaissance and urban combat support during armed operations, can equipped with small-caliber firearms or flamethrowers to provide certain containment capabilities.</DMS_Mech_Dogge.description>
+  <DMS_Mech_Dogge.description>A four-legged robot dog that provides forward reconnaissance and urban combat support during armed operations, can be equipped with small-caliber firearms or flamethrowers to provide certain containment capabilities.</DMS_Mech_Dogge.description>
   <!-- EN: aim target -->
-  <DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.command_Target>aim target</DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.command_Target>
+  <DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.command_Target>Aim target</DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.command_Target>
   <!-- EN: fire at will -->
-  <DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>fire at will</DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>
+  <DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>Fire at will</DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>
   <!-- EN: aim at desinated target -->
-  <DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>aim at desinated target</DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>
+  <DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>Aim at designated target</DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>
   <!-- EN: toggle turret to manually control mode to prevent unnecessary shooting. -->
-  <DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>toggle turret to manually control mode to prevent unnecessary shooting.</DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>
+  <DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>
   <!-- EN: head -->
   <DMS_Mech_Dogge.tools.head.label>head</DMS_Mech_Dogge.tools.head.label>
   
   <!-- EN: falcon -->
-  <DMS_Mech_Falcon.label>falcon</DMS_Mech_Falcon.label>
+  <DMS_Mech_Falcon.label>Falcon</DMS_Mech_Falcon.label>
   <!-- EN: A heavy-duty tri-rotor drone for cooperating in field recon and anti-tank strikes. -->
-  <DMS_Mech_Falcon.description>A heavy-duty tri-rotor drone for cooperating in field recon and anti-tank strikes.</DMS_Mech_Falcon.description>
+  <DMS_Mech_Falcon.description>A heavy-duty tri-rotor drone for coordination in field recon and anti-tank strikes.</DMS_Mech_Falcon.description>
   <!-- EN: head -->
   <DMS_Mech_Falcon.tools.head.label>head</DMS_Mech_Falcon.tools.head.label>
   
   <!-- EN: noctula -->
-  <DMS_Mech_Noctula.label>noctula</DMS_Mech_Noctula.label>
+  <DMS_Mech_Noctula.label>Noctula</DMS_Mech_Noctula.label>
   <!-- EN: Stealth operaton command-relay Noctula nicknamed "Night bat" is a command-relay variant of tri-rotor drone falcon. -->
-  <DMS_Mech_Noctula.description>Stealth operaton command-relay Noctula nicknamed "Night bat" is a command-relay variant of tri-rotor drone falcon.</DMS_Mech_Noctula.description>
+  <DMS_Mech_Noctula.description>Stealth operation command-relay Noctula (nicknamed "Night bat") is a command-relay variant of the Falcon tri-rotor.</DMS_Mech_Noctula.description>
   <!-- EN: head -->
   <DMS_Mech_Noctula.tools.head.label>head</DMS_Mech_Noctula.tools.head.label>
   
