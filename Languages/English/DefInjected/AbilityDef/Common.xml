@@ -2,27 +2,27 @@
 <LanguageData>
   
   <!-- EN: bionic longjump -->
-  <DMS_LongJump.label>bionic longjump</DMS_LongJump.label>
+  <DMS_LongJump.label>Bionic Longjump</DMS_LongJump.label>
   <!-- EN: Jump to a distant location using bionic muscles. -->
   <DMS_LongJump.description>Jump to a distant location using bionic muscles.</DMS_LongJump.description>
   <!-- EN: jump -->
   <DMS_LongJump.verbProperties.label>jump</DMS_LongJump.verbProperties.label>
   
   <!-- EN: launch missile -->
-  <DMS_MissileLauncher.label>launch missile</DMS_MissileLauncher.label>
+  <DMS_MissileLauncher.label>Launch missile</DMS_MissileLauncher.label>
   <!-- EN: launch a guided missile to destroy enemies in long range. -->
-  <DMS_MissileLauncher.description>launch a guided missile to destroy enemies in long range.</DMS_MissileLauncher.description>
+  <DMS_MissileLauncher.description>Launch a guided missile to destroy enemies from long ranges.</DMS_MissileLauncher.description>
   
   <!-- EN: self-repair -->
-  <DMS_RepairMode.label>self-repair</DMS_RepairMode.label>
+  <DMS_RepairMode.label>Self-repair</DMS_RepairMode.label>
   <!-- EN: initial self-repair mode to rebuild missing parts by electroactive memory metal, thus all sensors will temporarily work disabled to prevent electrical damage. -->
-  <DMS_RepairMode.description>initial self-repair mode to rebuild missing parts by electroactive memory metal, thus all sensors will temporarily work disabled to prevent electrical damage.</DMS_RepairMode.description>
+  <DMS_RepairMode.description>Initialize self-repair mode to rebuild missing parts by electroactive memory metal, thus all sensors will temporarily be disabled to prevent electrical damage.</DMS_RepairMode.description>
   <!-- EN: initialize self-repair mode -->
   <DMS_RepairMode.verbProperties.label>initialize self-repair mode</DMS_RepairMode.verbProperties.label>
   
   <!-- EN: particle smoke barrage -->
-  <DMS_SmokeLauncher.label>particle smoke barrage</DMS_SmokeLauncher.label>
+  <DMS_SmokeLauncher.label>Particle smoke barrage</DMS_SmokeLauncher.label>
   <!-- EN: launch an anti-charged weapon particle smoke emitter to interfere with incoming charged ammunition. -->
-  <DMS_SmokeLauncher.description>launch an anti-charged weapon particle smoke emitter to interfere with incoming charged ammunition.</DMS_SmokeLauncher.description>
+  <DMS_SmokeLauncher.description>Launch an anti-charged weapon particle smoke emitter to interfere with incoming charged ammunition.</DMS_SmokeLauncher.description>
   
 </LanguageData>
