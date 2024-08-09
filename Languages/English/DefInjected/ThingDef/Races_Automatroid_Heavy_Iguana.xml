@@ -2,17 +2,17 @@
 <LanguageData>
   
   <!-- EN: gecko -->
-  <DMS_Mech_Gecko.label>gecko</DMS_Mech_Gecko.label>
+  <DMS_Mech_Gecko.label>Gecko</DMS_Mech_Gecko.label>
   <!-- EN: an urban combat variant of Bipedal walker Iguana, additional armor are applied to protect against shaped charge rounds. -->
-  <DMS_Mech_Gecko.description>an urban combat variant of Bipedal walker Iguana, additional armor are applied to protect against shaped charge rounds.</DMS_Mech_Gecko.description>
+  <DMS_Mech_Gecko.description>An urban combat variant of the bipedal walker Iguana, additional armor has been applied to protect against shaped charge rounds.</DMS_Mech_Gecko.description>
   <!-- EN: aim target -->
-  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_Target>aim target</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_Target>
+  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_Target>Aim target</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_Target>
   <!-- EN: fire at will -->
-  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>fire at will</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>
+  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>Fire at will</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>
   <!-- EN: aim at desinated target -->
-  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>aim at desinated target</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>
+  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>Aim at designated target</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>
   <!-- EN: toggle turret to manually control mode to prevent unnecessary shooting. -->
-  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>toggle turret to manually control mode to prevent unnecessary shooting.</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>
+  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>
 <!-- EN: Mechanical Head -->
   <DMS_Mech_Gecko.tools.Mechanical_Head.label>Mechanical Head</DMS_Mech_Gecko.tools.Mechanical_Head.label>
   <!-- EN: Left Leg -->
@@ -23,15 +23,15 @@
   <!-- EN: Iguana -->
   <DMS_Mech_Iguana.label>Iguana</DMS_Mech_Iguana.label>
   <!-- EN: the moderize-redesigned bipedal walking tank based on Tarbosaurus, it's rather small and cost-friendly for mass production. but the experimental electromagnetic armor been removed to maintain it's mobility. -->
-  <DMS_Mech_Iguana.description>the moderize-redesigned bipedal walking tank based on Tarbosaurus, it's rather small and cost-friendly for mass production. but the experimental electromagnetic armor been removed to maintain it's mobility.</DMS_Mech_Iguana.description>
+  <DMS_Mech_Iguana.description>The modernized and redesigned bipedal walking tank based on Tarbosaurus, it's rather small and cost-friendly for mass production. But the experimental electromagnetic armor has been removed to maintain it's mobility and keep down production costs.</DMS_Mech_Iguana.description>
   <!-- EN: aim target -->
-  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_Target>aim target</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_Target>
+  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_Target>Aim target</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_Target>
   <!-- EN: fire at will -->
-  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>fire at will</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>
+  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>Fire at will</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>
   <!-- EN: aim at desinated target -->
-  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>aim at desinated target</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>
+  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>Aim at designated target</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>
   <!-- EN: toggle turret to manually control mode to prevent unnecessary shooting. -->
-  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>toggle turret to manually control mode to prevent unnecessary shooting.</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>
+  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>
 <!-- EN: Mechanical Head -->
   <DMS_Mech_Iguana.tools.Mechanical_Head.label>Mechanical Head</DMS_Mech_Iguana.tools.Mechanical_Head.label>
   <!-- EN: Left Leg -->
