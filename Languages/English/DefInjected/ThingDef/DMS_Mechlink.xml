@@ -2,18 +2,18 @@
 <LanguageData>
   
   <!-- EN: cluster transceiver -->
-  <DMS_MechLink.label>cluster transceiver</DMS_MechLink.label>
+  <DMS_MechLink.label>Cluster Transceiver</DMS_MechLink.label>
   <!-- EN: A man-made bionic implant that allows direct control of mechanoids. No one know if it is the early model of Mechlink or it's reverse engineered product by later generations. anyway it is mechlink in all degree but humans in rimworld can understand and imitate.\n\nDue to processing precision issues, these imitations from rimworld often have some installation side effects... -->
-  <DMS_MechLink.description>A man-made bionic implant that allows direct control of mechanoids. No one know if it is the early model of Mechlink or it's reverse engineered product by later generations. anyway it is mechlink in all degree but humans in rimworld can understand and imitate.
+  <DMS_MechLink.description>A man-made bionic implant that allows for the direct control of mechanoids. No one knows if it is the early model of Mechlink technology or its reverse engineered product by later generations. Anyways it is a proper mechlink in all degrees but one that humans based in technologically-disparate rimworlds can understand and imitate.
 
-Due to processing precision issues, these imitations from rimworld often have some installation side effects...</DMS_MechLink.description>
+Due to processing precision issues, these imitations from rimworlds often have some side effects after installation...</DMS_MechLink.description>
   <!-- EN: Install {0_label} to become mechanitor -->
   <DMS_MechLink.comps.CompUsableImplant.useLabel>Install {0_label} to become mechanitor</DMS_MechLink.comps.CompUsableImplant.useLabel>
   
   <!-- EN: boid controller -->
-  <DMS_MechLink_Nerfed.label>boid controller</DMS_MechLink_Nerfed.label>
+  <DMS_MechLink_Nerfed.label>Boid Controller</DMS_MechLink_Nerfed.label>
   <!-- EN: A man-made bionic implant that allows direct control of mechanoids. This is a simplified version which allowed to be manufacture and used at a lower tech level. But due to limited production quality, it will fail and terminate after a certain period of time. -->
-  <DMS_MechLink_Nerfed.description>A man-made bionic implant that allows direct control of mechanoids. This is a simplified version which allowed to be manufacture and used at a lower tech level. But due to limited production quality, it will fail and terminate after a certain period of time.</DMS_MechLink_Nerfed.description>
+  <DMS_MechLink_Nerfed.description>A man-made bionic implant that allows for the direct control of mechanoids. This is a simplified version which allows the device to be manufactured and used at a lower tech level. But due to its limited production quality, it will fail and terminate after a certain period of time.</DMS_MechLink_Nerfed.description>
   <!-- EN: Install {0_label} to become mechanitor -->
   <DMS_MechLink_Nerfed.comps.CompUsableImplant.useLabel>Install {0_label} to become mechanitor</DMS_MechLink_Nerfed.comps.CompUsableImplant.useLabel>
   
