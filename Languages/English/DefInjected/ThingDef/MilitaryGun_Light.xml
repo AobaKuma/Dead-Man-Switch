@@ -2,25 +2,25 @@
 <LanguageData>
   
   <!-- EN: assault piercer -->
-  <DMS_AssaultPiercer.label>assault piercer</DMS_AssaultPiercer.label>
+  <DMS_AssaultPiercer.label>Assault Piercer</DMS_AssaultPiercer.label>
   <!-- EN: a submachine gun chambered in the high-caliber round, capable of quick draw penetrating most of the armored targets in short range. Refered as piercer due to lack of comparable weapon in human arsenal.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong. -->
-  <DMS_AssaultPiercer.description>a submachine gun chambered in the high-caliber round, capable of quick draw penetrating most of the armored targets in short range. Refered as piercer due to lack of comparable weapon in human arsenal.
+  <DMS_AssaultPiercer.description>A submachine gun chambered in a high-caliber round, capable of quick draw and penetrating most armored targets in short range. Referred as a piercer due to lack of a comparable weapon in the human arsenal.
 
-This weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</DMS_AssaultPiercer.description>
+This weapon is designed specifically for automatroid use, thus a standard baseline human may be unable to use them normally without external assistance from specialized equipment or being extra strong.</DMS_AssaultPiercer.description>
   <!-- EN: stock -->
   <DMS_AssaultPiercer.tools.stock.label>stock</DMS_AssaultPiercer.tools.stock.label>
   <!-- EN: barrel -->
   <DMS_AssaultPiercer.tools.barrel.label>barrel</DMS_AssaultPiercer.tools.barrel.label>
   <!-- EN: assault piercer -->
-  <DMS_AssaultPiercer.verbs.Verb_Shoot.label>assault piercer</DMS_AssaultPiercer.verbs.Verb_Shoot.label>
+  <DMS_AssaultPiercer.verbs.Verb_Shoot.label>Assault Piercer</DMS_AssaultPiercer.verbs.Verb_Shoot.label>
   
   <!-- EN: tactical autopistol bullet -->
-  <DMS_Bullet_Pistol.label>tactical autopistol bullet</DMS_Bullet_Pistol.label>
+  <DMS_Bullet_Pistol.label>Tactical autopistol bullet</DMS_Bullet_Pistol.label>
   
   <!-- EN: flameblaster -->
-  <DMS_Flameblaster.label>flameblaster</DMS_Flameblaster.label>
+  <DMS_Flameblaster.label>Flameblaster</DMS_Flameblaster.label>
   <!-- EN: A flame launcher used by mechs that can effectively ignite flammable materials within a range -->
-  <DMS_Flameblaster.description>A flame launcher used by mechs that can effectively ignite flammable materials within a range</DMS_Flameblaster.description>
+  <DMS_Flameblaster.description>A flame launcher used by mechs that can effectively ignite flammable materials within its range</DMS_Flameblaster.description>
   <!-- EN: stock -->
   <DMS_Flameblaster.tools.stock.label>stock</DMS_Flameblaster.tools.stock.label>
   <!-- EN: barrel -->
@@ -28,12 +28,12 @@ This weapon is designed specially for automatroid use, thus normal human may be 
   <!-- EN: barrel -->
   <DMS_Flameblaster.tools.barrel-1.label>barrel</DMS_Flameblaster.tools.barrel-1.label>
   <!-- EN: flameblaster -->
-  <DMS_Flameblaster.verbs.Verb_SpewFire.label>flameblaster</DMS_Flameblaster.verbs.Verb_SpewFire.label>
+  <DMS_Flameblaster.verbs.Verb_SpewFire.label>Flameblaster</DMS_Flameblaster.verbs.Verb_SpewFire.label>
   
   <!-- EN: PDW -->
   <DMS_PDW.label>PDW</DMS_PDW.label>
   <!-- EN: A mass-produced submachine gun, which was designed only capable of hip-fire so it's inaccurate in range but its caliber and ability to draw quick make it the perfect weapon for urban combat against milltor. -->
-  <DMS_PDW.description>A mass-produced submachine gun, which was designed only capable of hip-fire so it's inaccurate in range but its caliber and ability to draw quick make it the perfect weapon for urban combat against milltor.</DMS_PDW.description>
+  <DMS_PDW.description>A mass-produced submachine gun, which was designed to be only capable of hip-fire so it's inaccurate in range; but its caliber and ability to quick draw the gun makes it the perfect weapon for urban combat against militors.</DMS_PDW.description>
   <!-- EN: stock -->
   <DMS_PDW.tools.stock.label>stock</DMS_PDW.tools.stock.label>
   <!-- EN: barrel -->
@@ -42,16 +42,16 @@ This weapon is designed specially for automatroid use, thus normal human may be 
   <DMS_PDW.verbs.Verb_Shoot.label>PDW</DMS_PDW.verbs.Verb_Shoot.label>
   
   <!-- EN: mech pistol -->
-  <DMS_TaticalPistol.label>mech pistol</DMS_TaticalPistol.label>
+  <DMS_TaticalPistol.label>Mech Pistol</DMS_TaticalPistol.label>
   <!-- EN: Defensive firearm with refined manufacture process and additional tactical attachments, it's too heavy for human but suitable to mech soldier. offers better stop power than comparable weapons.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong. -->
-  <DMS_TaticalPistol.description>Defensive firearm with refined manufacture process and additional tactical attachments, it's too heavy for human but suitable to mech soldier. offers better stop power than comparable weapons.
+  <DMS_TaticalPistol.description>A defensive firearm with refined manufacture processing and additional tactical attachments, it's too heavy for a baseline human but suitable for a mech soldier. Offers better stopping power than comparable weapons.
 
-This weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</DMS_TaticalPistol.description>
+This weapon is designed specifically for automatroid use, thus a standard baseline human may be unable to use them normally without external assistance from specialized equipment or being extra strong.</DMS_TaticalPistol.description>
   <!-- EN: grip -->
   <DMS_TaticalPistol.tools.grip.label>grip</DMS_TaticalPistol.tools.grip.label>
   <!-- EN: barrel -->
   <DMS_TaticalPistol.tools.barrel.label>barrel</DMS_TaticalPistol.tools.barrel.label>
   <!-- EN: mech pistol -->
-  <DMS_TaticalPistol.verbs.Verb_Shoot.label>mech pistol</DMS_TaticalPistol.verbs.Verb_Shoot.label>
+  <DMS_TaticalPistol.verbs.Verb_Shoot.label>Mech Pistol</DMS_TaticalPistol.verbs.Verb_Shoot.label>
   
 </LanguageData>
