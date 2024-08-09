@@ -2,44 +2,44 @@
 <LanguageData>
   
   <!-- EN: nutrition port -->
-  <DMS_NutrientPort.label>nutrition port</DMS_NutrientPort.label>
+  <DMS_NutrientPort.label>Nutrition Port</DMS_NutrientPort.label>
   <!-- EN: A total overhaul of the patient's digestive system, replacing it with a fueling port and nutrient storage. -->
-  <DMS_NutrientPort.description>A total overhaul of the patient's digestive system, replacing it with a fueling port and nutrient storage.</DMS_NutrientPort.description>
+  <DMS_NutrientPort.description>A bionic that does a total overhaul of the patient's digestive system, replacing it with a fueling port and nutrient storage.</DMS_NutrientPort.description>
   
   <!-- EN: mechaneural arm -->
-  <DMS_ProstheticArm.label>mechaneural arm</DMS_ProstheticArm.label>
+  <DMS_ProstheticArm.label>Mechaneural Arm</DMS_ProstheticArm.label>
   <!-- EN: An advanced artificial arm. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way. -->
   <DMS_ProstheticArm.description>An advanced artificial arm. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way.</DMS_ProstheticArm.description>
   
   <!-- EN: mechaneural visual sensor -->
-  <DMS_ProstheticEye.label>mechaneural visual sensor</DMS_ProstheticEye.label>
+  <DMS_ProstheticEye.label>Mechaneural Visual Sensor</DMS_ProstheticEye.label>
   <!-- EN: An artificial light receiver with nerve-link, with night vision and aim assist it might be better than the original one...maybe ? -->
-  <DMS_ProstheticEye.description>An artificial light receiver with nerve-link, with night vision and aim assist it might be better than the original one...maybe ?</DMS_ProstheticEye.description>
+  <DMS_ProstheticEye.description>An artificial light receiver with nerve-link, with integrated night vision and aim assist it might be better than the original one...maybe?</DMS_ProstheticEye.description>
   
   <!-- EN: mechaneural leg -->
-  <DMS_ProstheticLeg.label>mechaneural leg</DMS_ProstheticLeg.label>
+  <DMS_ProstheticLeg.label>Mechaneural Leg</DMS_ProstheticLeg.label>
   <!-- EN: An advanced artificial leg. With its biogel nerve-link, powerful mini-servos, and lattice-dust healing system, it is better than a biological leg in almost every way. -->
   <DMS_ProstheticLeg.description>An advanced artificial leg. With its biogel nerve-link, powerful mini-servos, and lattice-dust healing system, it is better than a biological leg in almost every way.</DMS_ProstheticLeg.description>
   
   <!-- EN: bio-mechanical neurochord -->
-  <DMS_ProstheticSpine.label>bio-mechanical neurochord</DMS_ProstheticSpine.label>
+  <DMS_ProstheticSpine.label>Bio-mechanical Neurochord</DMS_ProstheticSpine.label>
   <!-- EN: An advanced bio-mechanical spine which also work as a sub-brain to compatible with other prostheses by sharing reflex nerves. -->
-  <DMS_ProstheticSpine.description>An advanced bio-mechanical spine which also work as a sub-brain to compatible with other prostheses by sharing reflex nerves.</DMS_ProstheticSpine.description>
+  <DMS_ProstheticSpine.description>An advanced bio-mechanical spine which also works as a sub-brain to be compatible with other prostheses by sharing reflex nerves.</DMS_ProstheticSpine.description>
   <!-- EN: Implant {0_label} -->
   <DMS_ProstheticSpine.comps.CompUsableImplant.useLabel>Implant {0_label}</DMS_ProstheticSpine.comps.CompUsableImplant.useLabel>
   
   <!-- EN: sensory filter -->
-  <DMS_SensoryFilter.label>sensory filter</DMS_SensoryFilter.label>
+  <DMS_SensoryFilter.label>Sensory Filter</DMS_SensoryFilter.label>
   <!-- EN: A signal filter which filtered the specific emotional feedback but will still have some need of moods in order to communicate with other normally, allowing user become a perfect soldier during war. However it is still regarded as an inhuman surgery nowaday and classified as a serious crime. -->
-  <DMS_SensoryFilter.description>A signal filter which filtered the specific emotional feedback but will still have some need of moods in order to communicate with other normally, allowing user become a perfect soldier during war. However it is still regarded as an inhuman surgery nowaday and classified as a serious crime.</DMS_SensoryFilter.description>
+  <DMS_SensoryFilter.description>A signal filter which filters specific emotional feedback to deaden knee-jerk emotive responses, but will still allow some need of socio-emotional moods in order to communicate with others normally, allowing user become a perfect soldier during war. However it is still regarded as an inhuman surgical procedure nowadays and classified as a serious crime.</DMS_SensoryFilter.description>
   
   <!-- EN: biosynthetic arm -->
-  <DMS_SyntheticArm.label>biosynthetic arm</DMS_SyntheticArm.label>
+  <DMS_SyntheticArm.label>Biosynthetic Arm</DMS_SyntheticArm.label>
   <!-- EN: An advanced artificial arm. Composed of synthetic muscles and plasfiber skin grown on bone made by tungsteel. -->
   <DMS_SyntheticArm.description>An advanced artificial arm. Composed of synthetic muscles and plasfiber skin grown on bone made by tungsteel.</DMS_SyntheticArm.description>
   
   <!-- EN: biosynthetic leg -->
-  <DMS_SyntheticLeg.label>biosynthetic leg</DMS_SyntheticLeg.label>
+  <DMS_SyntheticLeg.label>Biosynthetic Leg</DMS_SyntheticLeg.label>
   <!-- EN: An advanced artificial leg. With its biogel nerve-link, powerful mini-servos, and lattice-dust healing system, it is better than a biological leg in almost every way. -->
   <DMS_SyntheticLeg.description>An advanced artificial leg. With its biogel nerve-link, powerful mini-servos, and lattice-dust healing system, it is better than a biological leg in almost every way.</DMS_SyntheticLeg.description>
   
