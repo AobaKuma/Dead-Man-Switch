@@ -4,22 +4,22 @@
   <!-- EN: Last Command -->
   <DMS_Scenario.label>Last Command</DMS_Scenario.label>
   <!-- EN: A group of pioneers have done their part and it's time to start a new chapter. -->
-  <DMS_Scenario.description>A group of pioneers have done their part and it's time to start a new chapter.</DMS_Scenario.description>
+  <DMS_Scenario.description>A group of pioneers have done their part and now it's time to start a new chapter.</DMS_Scenario.description>
   <!-- EN: As the vanguard of the colonial fleet, the last instruction you receive is to wait in cryosleep for the arrival of the fleet.\nand until recently, a strange yet familiar broadcast ended the long and anxious wait not long ago.\n        \n"Code five: The fleet has entered synchronized orbit. Express my greatest gratitude to all the vanguards who guard the lighthouse." -->
   <DMS_Scenario.scenario.description>As the vanguard of the colonial fleet, the last instruction you receive is to wait in cryosleep for the arrival of the fleet.
 and until recently, a strange yet familiar broadcast ended the long and anxious wait not long ago.
         
-"Code five: The fleet has entered synchronized orbit. Express my greatest gratitude to all the vanguards who guard the lighthouse."</DMS_Scenario.scenario.description>
+"Code five: The fleet has entered geosynchronous orbit. Express my greatest gratitude to all the vanguards who guard the lighthouse."</DMS_Scenario.scenario.description>
   <!-- EN: Last Command -->
   <DMS_Scenario.scenario.name>Last Command</DMS_Scenario.scenario.name>
   <!-- EN: A signal tower -->
   <DMS_Scenario.scenario.parts.VFEC_AddStartingStructure.structureLabel>A signal tower</DMS_Scenario.scenario.parts.VFEC_AddStartingStructure.structureLabel>
   <!-- EN: When you wake up, all left to you by this cruel world are remnants of the lighthouse.\ntime and scavengers have stripped away almost every trace of you and your companions's past presence...\n            \nit is just like a long time ago, you came here with nothing. but those who spent all this with you in the past are no longer... -->
-  <DMS_Scenario.scenario.parts.GameStartDialog.text>When you wake up, all left to you by this cruel world are remnants of the lighthouse.
-time and scavengers have stripped away almost every trace of you and your companions's past presence...
+  <DMS_Scenario.scenario.parts.GameStartDialog.text>When you wake up, all that is left to you by this cruel world are remnants of the lighthouse.
+Time and scavengers have stripped away almost every trace of you and your companions' past presence...
             
-it is just like a long time ago, you came here with nothing. but those who spent all this with you in the past are no longer...</DMS_Scenario.scenario.parts.GameStartDialog.text>
+It was just like a long time ago, you came here with nothing. But those who have spent all of this with you in the past are no longer here: you are alone...</DMS_Scenario.scenario.parts.GameStartDialog.text>
   <!-- EN: A group of pioneers has done their part and it's time to start a new chapter. -->
-  <DMS_Scenario.scenario.summary>A group of pioneers has done their part and it's time to start a new chapter.</DMS_Scenario.scenario.summary>
+  <DMS_Scenario.scenario.summary>A group of pioneers has done their part and now it's time to start a new chapter.</DMS_Scenario.scenario.summary>
   
 </LanguageData>
