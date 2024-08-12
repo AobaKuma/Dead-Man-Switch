@@ -2,108 +2,108 @@
 <LanguageData>
   
   <!-- EN: convert component -->
-  <DMS_Convert_ComponentIndustrial.label>convert component</DMS_Convert_ComponentIndustrial.label>
+  <DMS_Convert_ComponentIndustrial.label>Convert into component</DMS_Convert_ComponentIndustrial.label>
   <!-- EN: Convert stamponent into more commonly used standard. -->
-  <DMS_Convert_ComponentIndustrial.description>Convert stamponent into more commonly used standard.</DMS_Convert_ComponentIndustrial.description>
+  <DMS_Convert_ComponentIndustrial.description>Convert a stamponent into the more commonly used standard component.</DMS_Convert_ComponentIndustrial.description>
   <!-- EN: Making component. -->
   <DMS_Convert_ComponentIndustrial.jobString>Making component.</DMS_Convert_ComponentIndustrial.jobString>
   
   <!-- EN: grow artifuscle x25 -->
-  <DMS_Make_Artifuscle.label>grow artifuscle x25</DMS_Make_Artifuscle.label>
+  <DMS_Make_Artifuscle.label>Grow Artifuscle x25</DMS_Make_Artifuscle.label>
   <!-- EN: grow artificial muscle,uses plasfiber as skin tungsteel as bone, gold as neurofilament and neutroamine as blood -->
-  <DMS_Make_Artifuscle.description>grow artificial muscle,uses plasfiber as skin tungsteel as bone, gold as neurofilament and neutroamine as blood</DMS_Make_Artifuscle.description>
+  <DMS_Make_Artifuscle.description>Grow strands of artificial muscles which uses plasfiber as skin, tungsteel as bone, gold as neurofilament and neutroamine as blood</DMS_Make_Artifuscle.description>
   <!-- EN: growing artifuscle. -->
-  <DMS_Make_Artifuscle.jobString>growing artifuscle.</DMS_Make_Artifuscle.jobString>
+  <DMS_Make_Artifuscle.jobString>Growing artifuscle.</DMS_Make_Artifuscle.jobString>
   
   <!-- EN: grow artifuscle x100 -->
-  <DMS_Make_ArtifuscleMass.label>grow artifuscle x100</DMS_Make_ArtifuscleMass.label>
+  <DMS_Make_ArtifuscleMass.label>Grow Artifuscle x100</DMS_Make_ArtifuscleMass.label>
   <!-- EN: grow artificial muscle,uses plasfiber as skin tungsteel as bone, gold as neurofilament and neutroamine as blood -->
-  <DMS_Make_ArtifuscleMass.description>grow artificial muscle,uses plasfiber as skin tungsteel as bone, gold as neurofilament and neutroamine as blood</DMS_Make_ArtifuscleMass.description>
+  <DMS_Make_ArtifuscleMass.description>Grow a large batch of artificial muscles which uses plasfiber as skin, tungsteel as bone, gold as neurofilament and neutroamine as blood</DMS_Make_ArtifuscleMass.description>
   <!-- EN: growing artifuscle. -->
-  <DMS_Make_ArtifuscleMass.jobString>growing artifuscle.</DMS_Make_ArtifuscleMass.jobString>
+  <DMS_Make_ArtifuscleMass.jobString>Growing artifuscle.</DMS_Make_ArtifuscleMass.jobString>
   
   <!-- EN: make ceramics x20 -->
-  <DMS_Make_Ceramics.label>make ceramics x20</DMS_Make_Ceramics.label>
+  <DMS_Make_Ceramics.label>Make Ceramics x20</DMS_Make_Ceramics.label>
   <!-- EN: making ceramics. -->
-  <DMS_Make_Ceramics.description>making ceramics.</DMS_Make_Ceramics.description>
+  <DMS_Make_Ceramics.description>Create a standard batch of ceramics, useful for armoring autromatroids or as a building material.</DMS_Make_Ceramics.description>
   <!-- EN: making. -->
-  <DMS_Make_Ceramics.jobString>making.</DMS_Make_Ceramics.jobString>
+  <DMS_Make_Ceramics.jobString>Making ceramics.</DMS_Make_Ceramics.jobString>
   
   <!-- EN: make ceramics x80 -->
-  <DMS_Make_CeramicsMass.label>make ceramics x80</DMS_Make_CeramicsMass.label>
+  <DMS_Make_CeramicsMass.label>Make ceramics x80</DMS_Make_CeramicsMass.label>
   <!-- EN: making ceramics. -->
-  <DMS_Make_CeramicsMass.description>making ceramics.</DMS_Make_CeramicsMass.description>
+  <DMS_Make_CeramicsMass.description>Create a large batch of cermaics, useful for armoring automatroids or as a building material.</DMS_Make_CeramicsMass.description>
   <!-- EN: making. -->
-  <DMS_Make_CeramicsMass.jobString>making.</DMS_Make_CeramicsMass.jobString>
+  <DMS_Make_CeramicsMass.jobString>Making ceramics.</DMS_Make_CeramicsMass.jobString>
   
   <!-- EN: make component -->
   <DMS_Make_ComponentIndustrial.label>make component</DMS_Make_ComponentIndustrial.label>
   <!-- EN: Make a component from machinery printer, take longer time and resources. -->
-  <DMS_Make_ComponentIndustrial.description>Make a component from machinery printer, take longer time and resources.</DMS_Make_ComponentIndustrial.description>
+  <DMS_Make_ComponentIndustrial.description>Make a standard component from the machinery printer, which takes longer time and resources.</DMS_Make_ComponentIndustrial.description>
   <!-- EN: Making component. -->
   <DMS_Make_ComponentIndustrial.jobString>Making component.</DMS_Make_ComponentIndustrial.jobString>
   
   <!-- EN: make stamponent -->
-  <DMS_Make_ComponentStamped.label>make stamponent</DMS_Make_ComponentStamped.label>
+  <DMS_Make_ComponentStamped.label>Make Stamponent</DMS_Make_ComponentStamped.label>
   <!-- EN: make stamponent -->
-  <DMS_Make_ComponentStamped.description>make stamponent</DMS_Make_ComponentStamped.description>
+  <DMS_Make_ComponentStamped.description>Make a single stamponent unit.</DMS_Make_ComponentStamped.description>
   <!-- EN: stamping compoments. -->
-  <DMS_Make_ComponentStamped.jobString>stamping compoments.</DMS_Make_ComponentStamped.jobString>
+  <DMS_Make_ComponentStamped.jobString>Stamping compoments.</DMS_Make_ComponentStamped.jobString>
   
   <!-- EN: make stamponent x4 -->
   <DMS_Make_ComponentStampedMass.label>make stamponent x4</DMS_Make_ComponentStampedMass.label>
   <!-- EN: make stamponent -->
-  <DMS_Make_ComponentStampedMass.description>make stamponent</DMS_Make_ComponentStampedMass.description>
+  <DMS_Make_ComponentStampedMass.description>Make a batch of stamponents.</DMS_Make_ComponentStampedMass.description>
   <!-- EN: stamping compoments. -->
-  <DMS_Make_ComponentStampedMass.jobString>stamping compoments.</DMS_Make_ComponentStampedMass.jobString>
+  <DMS_Make_ComponentStampedMass.jobString>Stamping compoments.</DMS_Make_ComponentStampedMass.jobString>
   
   <!-- EN: make plasfiber x20 -->
-  <DMS_Make_Plasfiber.label>make plasfiber x20</DMS_Make_Plasfiber.label>
+  <DMS_Make_Plasfiber.label>Make Plasfiber x20</DMS_Make_Plasfiber.label>
   <!-- EN: Synthetic plasfiber. -->
   <DMS_Make_Plasfiber.description>Synthetic plasfiber.</DMS_Make_Plasfiber.description>
   <!-- EN: Synthesising. -->
   <DMS_Make_Plasfiber.jobString>Synthesising.</DMS_Make_Plasfiber.jobString>
   
   <!-- EN: make plasfiber x80 -->
-  <DMS_Make_PlasfiberMass.label>make plasfiber x80</DMS_Make_PlasfiberMass.label>
+  <DMS_Make_PlasfiberMass.label>Make Plasfiber x80</DMS_Make_PlasfiberMass.label>
   <!-- EN: Synthetic plasfiber. -->
   <DMS_Make_PlasfiberMass.description>Synthetic plasfiber.</DMS_Make_PlasfiberMass.description>
   <!-- EN: Synthesising. -->
   <DMS_Make_PlasfiberMass.jobString>Synthesising.</DMS_Make_PlasfiberMass.jobString>
   
   <!-- EN: make polyester x50 -->
-  <DMS_Make_Polyester.label>make polyester x50</DMS_Make_Polyester.label>
+  <DMS_Make_Polyester.label>Make Polyester x50</DMS_Make_Polyester.label>
   <!-- EN: Synthetic polyester fibers using chemfuel. -->
-  <DMS_Make_Polyester.description>Synthetic polyester fibers using chemfuel.</DMS_Make_Polyester.description>
+  <DMS_Make_Polyester.description>Create a standard bundle of synthetic polyester fibers using chemfuel.</DMS_Make_Polyester.description>
   <!-- EN: Synthesising. -->
   <DMS_Make_Polyester.jobString>Synthesising.</DMS_Make_Polyester.jobString>
   
   <!-- EN: make polyester x200 -->
-  <DMS_Make_PolyesterMass.label>make polyester x200</DMS_Make_PolyesterMass.label>
+  <DMS_Make_PolyesterMass.label>Make Polyester x200</DMS_Make_PolyesterMass.label>
   <!-- EN: Synthetic polyester fibers using chemfuel. -->
-  <DMS_Make_PolyesterMass.description>Synthetic polyester fibers using chemfuel.</DMS_Make_PolyesterMass.description>
+  <DMS_Make_PolyesterMass.description>Create a large bundle of synthetic polyester fibers using chemfuel.</DMS_Make_PolyesterMass.description>
   <!-- EN: Synthesising. -->
   <DMS_Make_PolyesterMass.jobString>Synthesising.</DMS_Make_PolyesterMass.jobString>
   
   <!-- EN: make tungsteel X20 -->
-  <DMS_Make_Tungsteel.label>make tungsteel X20</DMS_Make_Tungsteel.label>
+  <DMS_Make_Tungsteel.label>Make Tungsteel x20</DMS_Make_Tungsteel.label>
   <!-- EN: sintering tungsteel. -->
-  <DMS_Make_Tungsteel.description>sintering tungsteel.</DMS_Make_Tungsteel.description>
+  <DMS_Make_Tungsteel.description>Sintering tungsteel.</DMS_Make_Tungsteel.description>
   <!-- EN: sintering. -->
-  <DMS_Make_Tungsteel.jobString>sintering.</DMS_Make_Tungsteel.jobString>
+  <DMS_Make_Tungsteel.jobString>Sintering.</DMS_Make_Tungsteel.jobString>
   
   <!-- EN: make tungsteel x 80 -->
-  <DMS_Make_TungsteelMass.label>make tungsteel x 80</DMS_Make_TungsteelMass.label>
+  <DMS_Make_TungsteelMass.label>Make tungsteel x80</DMS_Make_TungsteelMass.label>
   <!-- EN: sintering tungsteel. -->
   <DMS_Make_TungsteelMass.description>sintering tungsteel.</DMS_Make_TungsteelMass.description>
   <!-- EN: sintering. -->
-  <DMS_Make_TungsteelMass.jobString>sintering.</DMS_Make_TungsteelMass.jobString>
+  <DMS_Make_TungsteelMass.jobString>Sintering.</DMS_Make_TungsteelMass.jobString>
   
   <!-- EN: grow wetware computer -->
-  <DMS_Make_WetWare.label>grow wetware computer</DMS_Make_WetWare.label>
+  <DMS_Make_WetWare.label>Grow Wetware Computer</DMS_Make_WetWare.label>
   <!-- EN: grow wetware computer, A high-precision computer that can be produced and used on a large scale. -->
-  <DMS_Make_WetWare.description>grow wetware computer, A high-precision computer that can be produced and used on a large scale.</DMS_Make_WetWare.description>
+  <DMS_Make_WetWare.description>Grow a wetware computer, a high-precision computer that can be produced and used on large scale computations.</DMS_Make_WetWare.description>
   <!-- EN: wetware computer. -->
-  <DMS_Make_WetWare.jobString>wetware computer.</DMS_Make_WetWare.jobString>
+  <DMS_Make_WetWare.jobString>Growing wetware computer.</DMS_Make_WetWare.jobString>
   
 </LanguageData>
