@@ -82,6 +82,7 @@ public static partial class CheckUtility
             throw new ArgumentNullException(nameof(pawn));
         }
 
+        if (hediffDefs.NullOrEmpty()) return false;
         foreach (var item in hediffDefs)
         {
             if (pawn.health.hediffSet.HasHediff(item)) return true;
@@ -95,6 +96,7 @@ public static partial class CheckUtility
             throw new ArgumentNullException(nameof(pawn));
         }
 
+        if (apparels.NullOrEmpty()) return false; 
         foreach (ThingDef apparel in apparels)//裝備上可用
         {
             if (CheckUtility.WearsApparel(pawn, apparel)) return true;

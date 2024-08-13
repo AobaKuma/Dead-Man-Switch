@@ -21,7 +21,7 @@ namespace DMS
             {
                 if (pawn is IWeaponUsable)
                 {
-                    Log.Error("pawn is weapon usable");
+                    //Log.Error("pawn is weapon usable");
                     if (CheckUtility.IsMechUseable(pawn, thing as ThingWithComps))
                     {
                         __result = true;
@@ -34,7 +34,7 @@ namespace DMS
                 }
                 else if (thing.def.HasModExtension<HeavyEquippableExtension>())
                 {
-                    Log.Error("pawn isn't weapon usable, and weapon is heavy");
+                    //Log.Error("pawn isn't weapon usable, and weapon is heavy");
                     if (thing.def.GetModExtension<HeavyEquippableExtension>().CanEquippedBy(pawn))
                     {
                         __result = true;

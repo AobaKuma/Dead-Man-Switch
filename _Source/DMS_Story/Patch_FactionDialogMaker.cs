@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 
 namespace DMS_Story
 {
@@ -25,7 +26,6 @@ namespace DMS_Story
         }
     }
     public static class CommsConsole
-    { 
-    
+    {
     }
 }

@@ -36,32 +36,32 @@
     <li>r_name(p=6)->[namefile]-[Code]</li>
     <li>r_name->[exoticname]-[Code]</li>
     <li>name->[Code]-[Color]</li>
-    <li>Code->alpha</li>
-    <li>Code->bravo</li>
-    <li>Code->charlie</li>
-    <li>Code->delta</li>
-    <li>Code->echo</li>
-    <li>Code->foxtrot</li>
-    <li>Code->golf</li>
-    <li>Code->hotel</li>
-    <li>Code->india</li>
-    <li>Code->junker</li>
-    <li>Code->kilo</li>
-    <li>Code->lima</li>
-    <li>Code->mike</li>
-    <li>Code->nova</li>
-    <li>Code->oscar</li>
-    <li>Code->pela</li>
-    <li>Code->quiet</li>
-    <li>Code->rotor</li>
-    <li>Code->sierra</li>
-    <li>Code->tango</li>
-    <li>Code->uniform</li>
-    <li>Code->vega</li>
-    <li>Code->whiskey</li>
-    <li>Code->xeno</li>
-    <li>Code->yezi</li>
-    <li>Code->zulu</li>
+    <li>Code->Alpha</li>
+    <li>Code->Bravo</li>
+    <li>Code->Charlie</li>
+    <li>Code->Delta</li>
+    <li>Code->Echo</li>
+    <li>Code->Foxtrot</li>
+    <li>Code->Golf</li>
+    <li>Code->Hotel</li>
+    <li>Code->India</li>
+    <li>Code->Junker</li>
+    <li>Code->Kilo</li>
+    <li>Code->Lima</li>
+    <li>Code->Mike</li>
+    <li>Code->Nova</li>
+    <li>Code->Oscar</li>
+    <li>Code->Pela</li>
+    <li>Code->Quiet</li>
+    <li>Code->Rotor</li>
+    <li>Code->Sierra</li>
+    <li>Code->Tango</li>
+    <li>Code->Uniform</li>
+    <li>Code->Vega</li>
+    <li>Code->Whiskey</li>
+    <li>Code->Xeno</li>
+    <li>Code->Yezi</li>
+    <li>Code->Zulu</li>
   </DMS_AutomaticArmy.rulePack.rulesStrings>
   
   <!-- EN:
@@ -146,7 +146,7 @@
     <li>BrigadeType->Colonial</li>
     <li>BrigadeType->Frontier</li>
     <li>BrigadeType->Vanguard</li>
-    <li>BrigadeType->Logistic</li>
+    <li>BrigadeType->Logistics</li>
     <li>BrigadeNum0->1</li>
     <li>BrigadeNum0->2</li>
     <li>BrigadeNum0->3</li>

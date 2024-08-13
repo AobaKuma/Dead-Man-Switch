@@ -67,8 +67,7 @@
                 </value>
             </li>
 
-            <!--=====
-            TaticalPistol =====-->
+            <!--=====TaticalPistol =====-->
             <li Class="PatchOperationReplace">
                 <xpath>Defs/ThingDef[defName="DMS_TaticalPistol"]/tools</xpath>
                 <value>
@@ -103,7 +102,7 @@
                     <WorkToMake>8600</WorkToMake>
                     <Mass>4.1</Mass>
                     <Bulk>3.7</Bulk>
-                    <SwayFactor>1.39</SwayFactor>
+                    <SwayFactor>1.59</SwayFactor>
                     <ShotSpread>0.18</ShotSpread>
                     <SightsEfficiency>0.85</SightsEfficiency>
                     <RangedWeapon_Cooldown>0.41</RangedWeapon_Cooldown>
@@ -132,17 +131,16 @@
                     <li>CE_AI_Pistol</li>
                 </weaponTags>
             </li>
-            <!--=====
-            PDW =====-->
+            <!--===== PDW =====-->
             <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
                 <defName>DMS_PDW</defName>
                 <statBases>
                     <WorkToMake>20000</WorkToMake>
                     <Mass>5.9</Mass>
                     <Bulk>5</Bulk>
-                    <SwayFactor>1.2</SwayFactor>
+                    <SwayFactor>1.76</SwayFactor>
                     <ShotSpread>0.3</ShotSpread>
-                    <SightsEfficiency>0.25</SightsEfficiency>
+                    <SightsEfficiency>0.7</SightsEfficiency>
                     <RangedWeapon_Cooldown>0.41</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
@@ -150,13 +148,13 @@
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_50AE_FMJ</defaultProjectile>
                     <warmupTime>0.35</warmupTime>
-                    <range>9</range>
+                    <range>17</range>
                     <burstShotCount>3</burstShotCount>
                     <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
                     <soundCast>DMS_Pistol_Shot</soundCast>
                     <soundCastTail>GunTail_Light</soundCastTail>
                     <muzzleFlashScale>9</muzzleFlashScale>
-                    <recoilAmount>3.1</recoilAmount>
+                    <recoilAmount>2.24</recoilAmount>
                 </Properties>
                 <AmmoUser>
                     <magazineSize>21</magazineSize>
@@ -202,17 +200,16 @@
                 </value>
             </li>
 
-            <!--=====
-            AssaultPiercer =====-->
+            <!--===== AssaultPiercer =====-->
             <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
                 <defName>DMS_AssaultPiercer</defName>
                 <statBases>
                     <WorkToMake>45000</WorkToMake>
                     <Mass>6.8</Mass>
                     <Bulk>6.7</Bulk>
-                    <SwayFactor>1.5</SwayFactor>
-                    <ShotSpread>0.3</ShotSpread>
-                    <SightsEfficiency>0.5</SightsEfficiency>
+                    <SwayFactor>1.62</SwayFactor>
+                    <ShotSpread>0.48</ShotSpread>
+                    <SightsEfficiency>0.85</SightsEfficiency>
                     <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
@@ -220,12 +217,12 @@
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_338Lapua_FMJ</defaultProjectile>
                     <warmupTime>0.75</warmupTime>
-                    <range>6.9</range>
+                    <range>25</range>
                     <burstShotCount>6</burstShotCount>
-                    <ticksBetweenBurstShots>14</ticksBetweenBurstShots>
+                    <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
                     <soundCast>Shot_Autocannon</soundCast>
                     <soundCastTail>GunTail_Heavy</soundCastTail>
-					<recoilAmount>1.48</recoilAmount>
+					<recoilAmount>1.89</recoilAmount>
                     <muzzleFlashScale>9</muzzleFlashScale>
                 </Properties>
                 <AmmoUser>
@@ -293,7 +290,7 @@
                     <recoilAmount>2.89</recoilAmount>
                 </Properties>
                 <AmmoUser>
-                    <magazineSize>23</magazineSize>
+                    <magazineSize>24</magazineSize>
                     <reloadTime>6</reloadTime>
                     <ammoSet>AmmoSet_12Gauge</ammoSet>
                 </AmmoUser>
@@ -312,8 +309,8 @@
                 <statBases>
                     <Mass>8.15</Mass>
                     <Bulk>9.85</Bulk>
-                    <SwayFactor>1.47</SwayFactor>
-                    <ShotSpread>0.03</ShotSpread>
+                    <SwayFactor>1.57</SwayFactor>
+                    <ShotSpread>0.09</ShotSpread>
                     <SightsEfficiency>1.0</SightsEfficiency>
                     <RangedWeapon_Cooldown>0.35</RangedWeapon_Cooldown>
                 </statBases>
@@ -328,7 +325,7 @@
                     <soundCast>Shot_AssaultRifle</soundCast>
                     <soundCastTail>GunTail_Medium</soundCastTail>
                     <muzzleFlashScale>9</muzzleFlashScale>
-                    <recoilAmount>1.3</recoilAmount>
+                    <recoilAmount>1.77</recoilAmount>
                 </Properties>
                 <AmmoUser>
                     <magazineSize>30</magazineSize>
@@ -344,19 +341,62 @@
                     <li>CE_AI_AR</li>
                 </weaponTags>
             </li>
+            <!--===== Marksman Rifle =====-->
 
-            <!--=====
-            Semi-auto Rifle =====-->
+            <!--===== Marksman Rifle =====-->
+            <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+                <defName>DMS_MarksmanRifle</defName>
+                <statBases>
+                    <Mass>12.54</Mass>
+                    <Bulk>14.65</Bulk>
+                    <SwayFactor>1.86</SwayFactor>
+                    <ShotSpread>0.02</ShotSpread>
+                    <SightsEfficiency>2.45</SightsEfficiency>
+                    <RangedWeapon_Cooldown>1.16</RangedWeapon_Cooldown>
+                </statBases>
+                <Properties>
+                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                    <hasStandardCommand>true</hasStandardCommand>
+                    <defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
+                    <warmupTime>2.5</warmupTime>
+                    <range>86</range>
+                    <soundCast>Shot_AssaultRifle</soundCast>
+                    <soundCastTail>GunTail_Medium</soundCastTail>
+                    <muzzleFlashScale>9</muzzleFlashScale>
+                    <recoilAmount>2.36</recoilAmount>
+                </Properties>
+                <AmmoUser>
+                    <magazineSize>15</magazineSize>
+                    <reloadTime>5.3</reloadTime>
+                    <ammoSet>AmmoSet_50BMG</ammoSet>
+                </AmmoUser>
+                <FireModes>
+                    <aiAimMode>AimedShot</aiAimMode>
+                </FireModes>
+                <weaponTags>
+                    <li>CE_AI_SR</li>
+                </weaponTags>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="DMS_MarksmanRifle"]/modExtensions/li[@Class="DMS.HeavyEquippableExtension"]</xpath>
+                <value>
+                    <li Class="DMS.HeavyEquippableExtension">
+                        <EquippableDef>AverageHumanCanUse</EquippableDef>
+                    </li>
+                </value>
+            </li>
+
+            <!--===== Semi-auto Rifle =====-->
             <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
                 <defName>DMS_SemiAutoRifle</defName>
                 <statBases>
                     <WorkToMake>36000</WorkToMake>
                     <Mass>13.3</Mass>
                     <Bulk>13.12</Bulk>
-                    <SwayFactor>2.16</SwayFactor>
+                    <SwayFactor>2.02</SwayFactor>
                     <ShotSpread>0.03</ShotSpread>
                     <SightsEfficiency>1.0</SightsEfficiency>
-                    <RangedWeapon_Cooldown>0.65</RangedWeapon_Cooldown>
+                    <RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -367,7 +407,7 @@
                     <soundCast>Shot_TurretSniper</soundCast>
                     <soundCastTail>GunTail_Heavy</soundCastTail>
                     <muzzleFlashScale>9</muzzleFlashScale>
-                    <recoilAmount>2.33</recoilAmount>
+                    <recoilAmount>2.36</recoilAmount>
                 </Properties>
                 <AmmoUser>
                     <magazineSize>10</magazineSize>
@@ -388,8 +428,8 @@
                 <statBases>
                     <Mass>11.8</Mass>
                     <Bulk>12.7</Bulk>
-                    <SwayFactor>1.98</SwayFactor>
-                    <ShotSpread>0.02</ShotSpread>
+                    <SwayFactor>2.16</SwayFactor>
+                    <ShotSpread>0.11</ShotSpread>
                     <SightsEfficiency>1.0</SightsEfficiency>
                     <RangedWeapon_Cooldown>0.65</RangedWeapon_Cooldown>
                 </statBases>
@@ -398,57 +438,26 @@
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
                     <warmupTime>1.3</warmupTime>
-                    <range>72</range>
+                    <range>62</range>
+                    <burstShotCount>4</burstShotCount>
+				    <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
                     <soundCast>Shot_AssaultRifle</soundCast>
                     <soundCastTail>GunTail_Medium</soundCastTail>
                     <muzzleFlashScale>9</muzzleFlashScale>
-                    <recoilAmount>1.3</recoilAmount>
+                    <recoilAmount>1.96</recoilAmount>
                 </Properties>
                 <AmmoUser>
-                    <magazineSize>10</magazineSize>
-                    <reloadTime>4</reloadTime>
+                    <magazineSize>20</magazineSize>
+                    <reloadTime>5.5</reloadTime>
                     <ammoSet>AmmoSet_50BMG</ammoSet>
                 </AmmoUser>
                 <FireModes>
-                    <aiAimMode>AimedShot</aiAimMode>
+                    <aiUseBurstMode>TRUE</aiUseBurstMode>
+				    <aiAimMode>AimedShot</aiAimMode>
+				    <aimedBurstShotCount>2</aimedBurstShotCount>
                 </FireModes>
                 <weaponTags>
-                    <li>CE_AI_SR</li>
-                </weaponTags>
-            </li>
-
-            <!--===== Marksman Rifle =====-->
-            <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
-                <defName>DMS_MarksmanRifle</defName>
-                <statBases>
-                    <Mass>12.54</Mass>
-                    <Bulk>14.65</Bulk>
-                    <SwayFactor>1.86</SwayFactor>
-                    <ShotSpread>0.02</ShotSpread>
-                    <SightsEfficiency>2.45</SightsEfficiency>
-                    <RangedWeapon_Cooldown>0.65</RangedWeapon_Cooldown>
-                </statBases>
-                <Properties>
-                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
-                    <hasStandardCommand>true</hasStandardCommand>
-                    <defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
-                    <warmupTime>1.4</warmupTime>
-                    <range>86</range>
-                    <soundCast>Shot_AssaultRifle</soundCast>
-                    <soundCastTail>GunTail_Medium</soundCastTail>
-                    <muzzleFlashScale>9</muzzleFlashScale>
-                    <recoilAmount>2.36</recoilAmount>
-                </Properties>
-                <AmmoUser>
-                    <magazineSize>5</magazineSize>
-                    <reloadTime>4</reloadTime>
-                    <ammoSet>AmmoSet_50BMG</ammoSet>
-                </AmmoUser>
-                <FireModes>
-                    <aiAimMode>AimedShot</aiAimMode>
-                </FireModes>
-                <weaponTags>
-                    <li>CE_AI_SR</li>
+                    <li>CE_AI_AR</li>
                 </weaponTags>
             </li>
 
@@ -458,16 +467,16 @@
                 <statBases>
                     <Mass>33</Mass>
                     <Bulk>17.34</Bulk>
-                    <SwayFactor>3.24</SwayFactor>
-                    <ShotSpread>0.01</ShotSpread>
+                    <SwayFactor>2.13</SwayFactor>
+                    <ShotSpread>0.02</ShotSpread>
                     <SightsEfficiency>2.85</SightsEfficiency>
                     <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
-                    <recoilAmount>2.25</recoilAmount>
+                    <recoilAmount>2.77</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
-                    <defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
+                    <defaultProjectile>Bullet_145x114mm_FMJ</defaultProjectile>
                     <warmupTime>3.55</warmupTime>
                     <range>95</range>
                     <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
@@ -476,9 +485,8 @@
                 </Properties>
                 <AmmoUser>
                     <magazineSize>8</magazineSize>
-                    <reloadOneAtATime>True</reloadOneAtATime>
-                    <reloadTime>0.6</reloadTime>
-                    <ammoSet>AmmoSet_50BMG</ammoSet>
+                    <reloadTime>5</reloadTime>
+                    <ammoSet>AmmoSet_145x114mm</ammoSet>
                 </AmmoUser>
                 <FireModes>
                     <aiAimMode>AimedShot</aiAimMode>
@@ -488,6 +496,14 @@
                     <li>CE_AI_SR</li>
                 </weaponTags>
             </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="DMS_AntiMaterialRifle"]/modExtensions/li[@Class="DMS.HeavyEquippableExtension"]</xpath>
+                <value>
+                    <li Class="DMS.HeavyEquippableExtension">
+                        <EquippableDef>AverageHumanCanUse</EquippableDef>
+                    </li>
+                </value>
+            </li>
 
             <!--===== sniper cannon =====-->
             <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
@@ -495,17 +511,17 @@
                 <statBases>
                     <Mass>40</Mass>
                     <Bulk>23.34</Bulk>
-                    <SwayFactor>2.24</SwayFactor>
+                    <SwayFactor>2.37</SwayFactor>
                     <ShotSpread>0.01</ShotSpread>
                     <SightsEfficiency>2.85</SightsEfficiency>
-                    <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+                    <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
-                    <recoilAmount>2.50</recoilAmount>
+                    <recoilAmount>3.15</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_20x102mmNATO_AP</defaultProjectile>
-                    <warmupTime>3.55</warmupTime>
+                    <warmupTime>3.75</warmupTime>
                     <range>95</range>
                     <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
                     <soundCastTail>GunTail_Heavy</soundCastTail>
@@ -572,13 +588,13 @@
                 <statBases>
                     <Mass>12.75</Mass>
                     <Bulk>14.3</Bulk>
-                    <SwayFactor>1.38</SwayFactor>
+                    <SwayFactor>1.41</SwayFactor>
                     <ShotSpread>0.05</ShotSpread>
                     <SightsEfficiency>1</SightsEfficiency>
                     <RangedWeapon_Cooldown>0.46</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
-                    <recoilAmount>1.35</recoilAmount>
+                    <recoilAmount>1.45</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_338Lapua_FMJ</defaultProjectile>
@@ -602,6 +618,7 @@
                     <aiAimMode>SuppressFire</aiAimMode>
                     <aimedBurstShotCount>5</aimedBurstShotCount>
                     <noSingleShot>true</noSingleShot>
+                    <aiUseBurstMode>TRUE</aiUseBurstMode>
                 </FireModes>
             </li>
             <!--===== Heavy MG =====-->
@@ -610,7 +627,7 @@
                 <statBases>
                     <Mass>32.4</Mass>
                     <Bulk>25.6</Bulk>
-                    <SwayFactor>1.94</SwayFactor>
+                    <SwayFactor>2.59</SwayFactor>
                     <ShotSpread>0.05</ShotSpread>
                     <SightsEfficiency>1</SightsEfficiency>
                     <RangedWeapon_Cooldown>0.46</RangedWeapon_Cooldown>
@@ -621,7 +638,7 @@
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
                     <burstShotCount>8</burstShotCount>
-                    <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+                    <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
                     <warmupTime>1.55</warmupTime>
                     <range>75</range>
                     <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
@@ -630,6 +647,7 @@
                     <targetParams>
                         <canTargetLocations>true</canTargetLocations>
                     </targetParams>
+                    <recoilPattern>Mounted</recoilPattern>
                 </Properties>
                 <AmmoUser>
                     <magazineSize>80</magazineSize>
@@ -637,10 +655,10 @@
                     <ammoSet>AmmoSet_50BMG</ammoSet>
                 </AmmoUser>
                 <FireModes>
-                    <!--<aiUseBurstMode>FALSE</aiUseBurstMode>-->
                     <aiAimMode>SuppressFire</aiAimMode>
                     <aimedBurstShotCount>4</aimedBurstShotCount>
-                    <noSingleShot>false</noSingleShot>
+                    <!--<noSingleShot>false</noSingleShot>-->
+                    <aiUseBurstMode>TRUE</aiUseBurstMode>
                 </FireModes>
                 <weaponTags>
                     <li>CE_AI_Suppressive</li>
@@ -653,18 +671,18 @@
                 <statBases>
                     <Mass>50</Mass>
                     <Bulk>23.34</Bulk>
-                    <SwayFactor>1.61</SwayFactor>
-                    <ShotSpread>0.01</ShotSpread>
+                    <SwayFactor>3.12</SwayFactor>
+                    <ShotSpread>0.04</ShotSpread>
                     <SightsEfficiency>1</SightsEfficiency>
                     <RangedWeapon_Cooldown>1.85</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
-                    <recoilAmount>1.96</recoilAmount>
+                    <recoilAmount>2.11</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_20x102mmNATO_AP</defaultProjectile>
                     <burstShotCount>6</burstShotCount>
-                    <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+                    <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
                     <warmupTime>2.1</warmupTime>
                     <range>78</range>
                     <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
@@ -673,14 +691,14 @@
                 </Properties>
                 <AmmoUser>
                     <magazineSize>60</magazineSize>
-                    <reloadTime>8</reloadTime>
+                    <reloadTime>9</reloadTime>
                     <ammoSet>AmmoSet_20x102mmNATO</ammoSet>
                 </AmmoUser>
                 <FireModes>
-                    <aiUseBurstMode>FALSE</aiUseBurstMode>
+                    <aiUseBurstMode>TRUE</aiUseBurstMode>
                     <aiAimMode>SuppressFire</aiAimMode>
                     <aimedBurstShotCount>3</aimedBurstShotCount>
-                    <noSingleShot>false</noSingleShot>
+                    <!--<noSingleShot>false</noSingleShot>-->
                 </FireModes>
                 <weaponTags>
                     <li>CE_AI_Suppressive</li>
@@ -703,7 +721,7 @@
 			    <armorPenetrationBlunt>2.0</armorPenetrationBlunt>
 			    <linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
 			</li>
-                        <li Class="CombatExtended.ToolCE">
+            <li Class="CombatExtended.ToolCE">
 			    <label>edge</label>
 			    <capacities>
 			        <li>Cut</li>
@@ -713,8 +731,8 @@
 			    <armorPenetrationBlunt>6.48</armorPenetrationBlunt>
 			    <armorPenetrationSharp>14</armorPenetrationSharp>
 			    <linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
-                        </li>
-                        <li Class="CombatExtended.ToolCE">
+            </li>
+            <li Class="CombatExtended.ToolCE">
 			    <label>point</label>
 			    <capacities>
 				<li>Stab</li>
@@ -722,8 +740,8 @@
 			    <power>18</power>
 			    <cooldownTime>1.78</cooldownTime>
 			    <armorPenetrationBlunt>2.0</armorPenetrationBlunt>
-                            <armorPenetrationSharp>16</armorPenetrationSharp>
-                        </li>
+                <armorPenetrationSharp>16</armorPenetrationSharp>
+            </li>
                     </tools>
                 </value>
             </li>
@@ -736,17 +754,17 @@
             <li Class="PatchOperationAdd">
                 <xpath>Defs/ThingDef[defName="DMS_Machete"]/statBases</xpath>
                 <value>
-		    <Bulk>8</Bulk>
-		    <MeleeCounterParryBonus>0.8</MeleeCounterParryBonus>
+		          <Bulk>8</Bulk>
+		          <MeleeCounterParryBonus>0.8</MeleeCounterParryBonus>
                 </value>
             </li>
             <li Class="PatchOperationAdd">
                 <xpath>Defs/ThingDef[defName="DMS_Machete"]</xpath>
                 <value>
                     <equippedStatOffsets>
-			<MeleeCritChance>0.2</MeleeCritChance>
-			<MeleeParryChance>0.35</MeleeParryChance>
-			<MeleeDodgeChance>0.2</MeleeDodgeChance>
+			          <MeleeCritChance>0.2</MeleeCritChance>
+			          <MeleeParryChance>0.35</MeleeParryChance>
+			          <MeleeDodgeChance>0.2</MeleeDodgeChance>
                     </equippedStatOffsets>
                 </value>
             </li>
