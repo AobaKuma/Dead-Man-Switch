@@ -2,103 +2,103 @@
 <LanguageData>
   
   <!-- EN: bandwidth support -->
-  <DMS_Bandwidth.label>bandwidth support</DMS_Bandwidth.label>
+  <DMS_Bandwidth.label>Bandwidth Support</DMS_Bandwidth.label>
   <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depend on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
-  <DMS_Bandwidth.description>Apply the access of orbital bandwidth support, the amount of bandwidth is depend on applicant's title. This support will be valid unless death or defection occurs on applicant.</DMS_Bandwidth.description>
+  <DMS_Bandwidth.description>Apply for the access of orbital bandwidth support, the amount of bandwidth is dependent on the applicant's current title. This support will be valid unless death or defection occurs on the applicant.</DMS_Bandwidth.description>
   
   <!-- EN: call aerodrone salvo -->
-  <DMS_CallOrbitalSalvo.label>call aerodrone salvo</DMS_CallOrbitalSalvo.label>
+  <DMS_CallOrbitalSalvo.label>call Aerodrone Salvo</DMS_CallOrbitalSalvo.label>
   <!-- EN: Call a salvo of aerodrone strikes around a target position. -->
   <DMS_CallOrbitalSalvo.description>Call a salvo of aerodrone strikes around a target position.</DMS_CallOrbitalSalvo.description>
   
   <!-- EN: call aerodrone strike -->
-  <DMS_CallOrbitalStrike.label>call aerodrone strike</DMS_CallOrbitalStrike.label>
+  <DMS_CallOrbitalStrike.label>Call Aerodrone Strike</DMS_CallOrbitalStrike.label>
   <!-- EN: Call a single-impact aerodrone strike at a target position. -->
-  <DMS_CallOrbitalStrike.description>Call a single-impact aerodrone strike at a target position.</DMS_CallOrbitalStrike.description>
+  <DMS_CallOrbitalStrike.description>Call a single-impact aerodrone strike on a target position.</DMS_CallOrbitalStrike.description>
   
   <!-- EN: call transport shuttle -->
-  <DMS_CallTransportShuttle.label>call transport shuttle</DMS_CallTransportShuttle.label>
+  <DMS_CallTransportShuttle.label>Call Transport Shuttle</DMS_CallTransportShuttle.label>
   <!-- EN: Call a shuttle for your own use. It will transport colonists, items, and animals anywhere you like within 70 world tiles. -->
   <DMS_CallTransportShuttle.description>Call a shuttle for your own use. It will transport colonists, items, and animals anywhere you like within 70 world tiles.</DMS_CallTransportShuttle.description>
   
   <!-- EN: supply cargo mech -->
-  <DMS_CargoMech.label>supply cargo mech</DMS_CargoMech.label>
+  <DMS_CargoMech.label>Supply Cargo Mech</DMS_CargoMech.label>
   <!-- EN: Apply a cargo lifter mech belong to your side. -->
-  <DMS_CargoMech.description>Apply a cargo lifter mech belong to your side.</DMS_CargoMech.description>
+  <DMS_CargoMech.description>Apply for a Cargo Lifter mech that will belong to your side.</DMS_CargoMech.description>
   
   <!-- EN: combat supply drop -->
-  <DMS_CombatDrop.label>combat supply drop</DMS_CombatDrop.label>
+  <DMS_CombatDrop.label>Combat Supply Drop</DMS_CombatDrop.label>
   <!-- EN: Call for a drop of standard combat supply. -->
-  <DMS_CombatDrop.description>Call for a drop of standard combat supply.</DMS_CombatDrop.description>
+  <DMS_CombatDrop.description>Call for a drop of standard combat supplies to your current area.</DMS_CombatDrop.description>
   
   <!-- EN: supply combat mech -->
-  <DMS_CombatMech.label>supply combat mech</DMS_CombatMech.label>
+  <DMS_CombatMech.label>Supply Combat Mech</DMS_CombatMech.label>
   <!-- EN: Apply a battle friend mech belong to your side. -->
-  <DMS_CombatMech.description>Apply a battle friend mech belong to your side.</DMS_CombatMech.description>
+  <DMS_CombatMech.description>Apply for a Battle Friend mech to belong to your side.</DMS_CombatMech.description>
   
   <!-- EN: componments drop -->
-  <DMS_CompDrop.label>componments drop</DMS_CompDrop.label>
+  <DMS_CompDrop.label>Componments Drop</DMS_CompDrop.label>
   <!-- EN: Call for a drop of stamp componments and wetware computer. -->
   <DMS_CompDrop.description>Call for a drop of stamp componments and wetware computer.</DMS_CompDrop.description>
   
   <!-- EN: food supply drop -->
-  <DMS_FoodDrop.label>food supply drop</DMS_FoodDrop.label>
+  <DMS_FoodDrop.label>Food Supply Drop</DMS_FoodDrop.label>
   <!-- EN: Call for a drop of 20 packaged survival meals. -->
   <DMS_FoodDrop.description>Call for a drop of 20 packaged survival meals.</DMS_FoodDrop.description>
   
   <!-- EN: combat equipment drop -->
-  <DMS_GearDrop.label>combat equipment drop</DMS_GearDrop.label>
+  <DMS_GearDrop.label>Combat Equipment Drop</DMS_GearDrop.label>
   <!-- EN: Call for a combat supply for a combatant, include a set of tactical armor and emergency gears. -->
-  <DMS_GearDrop.description>Call for a combat supply for a combatant, include a set of tactical armor and emergency gears.</DMS_GearDrop.description>
+  <DMS_GearDrop.description>Call for a combat supply for a combatant, which includes a set of tactical armor and emergency gears.</DMS_GearDrop.description>
   
   <!-- EN: call combatant recruit -->
-  <DMS_Join_Combat.label>call combatant recruit</DMS_Join_Combat.label>
+  <DMS_Join_Combat.label>Call Combatant Recruit</DMS_Join_Combat.label>
   <!-- EN: Apply a combatant whose life is on yours. -->
-  <DMS_Join_Combat.description>Apply a combatant whose life is on yours.</DMS_Join_Combat.description>
+  <DMS_Join_Combat.description>Apply for a combatant whose life is yours to command from here on out.</DMS_Join_Combat.description>
   
   <!-- EN: call logistic recruit -->
-  <DMS_Join_Logistic.label>call logistic recruit</DMS_Join_Logistic.label>
+  <DMS_Join_Logistic.label>Call Logistics Recruit</DMS_Join_Logistic.label>
   <!-- EN: Apply a worker whose life is on yours. -->
-  <DMS_Join_Logistic.description>Apply a worker whose life is on yours.</DMS_Join_Logistic.description>
+  <DMS_Join_Logistic.description>Apply for a worker whose life is yours to command from here on out.</DMS_Join_Logistic.description>
   
   <!-- EN: logistic supply drop -->
-  <DMS_LogiDrop.label>logistic supply drop</DMS_LogiDrop.label>
+  <DMS_LogiDrop.label>Logistics Supply Drop</DMS_LogiDrop.label>
   <!-- EN: Call for a drop of 20 survival pack, 8 medicine and 4 compoment. -->
-  <DMS_LogiDrop.description>Call for a drop of 20 survival pack, 8 medicine and 4 compoment.</DMS_LogiDrop.description>
+  <DMS_LogiDrop.description>Call for a drop of 20 survival packs, 8 medicine and 4 compoments.</DMS_LogiDrop.description>
   
   <!-- EN: construct material drop -->
-  <DMS_MaterialDrop.label>construct material drop</DMS_MaterialDrop.label>
+  <DMS_MaterialDrop.label>Construction Material Drop</DMS_MaterialDrop.label>
   <!-- EN: Call for a drop of 500 silver and 250 steel. -->
   <DMS_MaterialDrop.description>Call for a drop of 500 silver and 250 steel.</DMS_MaterialDrop.description>
   
   <!-- EN: call heavy unit support -->
-  <DMS_Platoon_AC.label>call heavy unit support</DMS_Platoon_AC.label>
+  <DMS_Platoon_AC.label>Call Heavy Unit Support</DMS_Platoon_AC.label>
   <!-- EN: Call 4 heavy Automatroid to aid you in battle. -->
-  <DMS_Platoon_AC.description>Call 4 heavy Automatroid to aid you in battle.</DMS_Platoon_AC.description>
+  <DMS_Platoon_AC.description>Call down 4 Heavy Automatroids to aid you in battle.</DMS_Platoon_AC.description>
   
   <!-- EN: call squad support -->
-  <DMS_Platoon_MT.label>call squad support</DMS_Platoon_MT.label>
+  <DMS_Platoon_MT.label>Call Squad Support</DMS_Platoon_MT.label>
   <!-- EN: Call a squad of soldiers to aid you in battle. -->
-  <DMS_Platoon_MT.description>Call a squad of soldiers to aid you in battle.</DMS_Platoon_MT.description>
+  <DMS_Platoon_MT.description>Call for a squad of soldiers to aid you in battle.</DMS_Platoon_MT.description>
   
   <!-- EN: riot control support -->
-  <DMS_Squad_RC.label>riot control support</DMS_Squad_RC.label>
+  <DMS_Squad_RC.label>Riot Control Support</DMS_Squad_RC.label>
   <!-- EN: Call a group of 4 riot control unit to aid you in prison outbreak. -->
-  <DMS_Squad_RC.description>Call a group of 4 riot control unit to aid you in prison outbreak.</DMS_Squad_RC.description>
+  <DMS_Squad_RC.description>Call for a group of 4 riot control units to aid you in stopping a prison outbreak.</DMS_Squad_RC.description>
   
   <!-- EN: urban combat support -->
-  <DMS_Squad_UC.label>urban combat support</DMS_Squad_UC.label>
+  <DMS_Squad_UC.label>Urban Combat Support</DMS_Squad_UC.label>
   <!-- EN: Call a group of 4 urban combat unit to aid you in raid or colony defense. -->
-  <DMS_Squad_UC.description>Call a group of 4 urban combat unit to aid you in raid or colony defense.</DMS_Squad_UC.description>
+  <DMS_Squad_UC.description>Call for a group of 4 urban combat units to aid you in a raid or colony defense.</DMS_Squad_UC.description>
   
   <!-- EN: call worker group -->
-  <DMS_WorkerGroup.label>call worker group</DMS_WorkerGroup.label>
+  <DMS_WorkerGroup.label>Call Worker Group</DMS_WorkerGroup.label>
   <!-- EN: Call a group of 8 worker to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe. -->
-  <DMS_WorkerGroup.description>Call a group of 8 worker to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe.</DMS_WorkerGroup.description>
+  <DMS_WorkerGroup.description>Call for a group of 8 workers to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe.</DMS_WorkerGroup.description>
   
   <!-- EN: call worker team -->
-  <DMS_WorkerTeam.label>call worker team</DMS_WorkerTeam.label>
+  <DMS_WorkerTeam.label>Call Worker Team</DMS_WorkerTeam.label>
   <!-- EN: Call a group of 4 worker to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe. -->
-  <DMS_WorkerTeam.description>Call a group of 4 worker to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe.</DMS_WorkerTeam.description>
+  <DMS_WorkerTeam.description>Call for a group of 4 workers to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe.</DMS_WorkerTeam.description>
   
 </LanguageData>
