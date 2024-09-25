@@ -16,13 +16,13 @@
   <!-- EN: self-repair -->
   <DMS_RepairMode.label>Self-repair</DMS_RepairMode.label>
   <!-- EN: initial self-repair mode to rebuild missing parts by electroactive memory metal, thus all sensors will temporarily work disabled to prevent electrical damage. -->
-  <DMS_RepairMode.description>Initialize self-repair mode to rebuild missing parts by electroactive memory metal, thus all sensors will temporarily be disabled to prevent electrical damage.</DMS_RepairMode.description>
+  <DMS_RepairMode.description>Initialize self-repair mode to rebuild missing parts, all sensors will temporarily be disabled to prevent electrical damage.</DMS_RepairMode.description>
   <!-- EN: initialize self-repair mode -->
   <DMS_RepairMode.verbProperties.label>initialize self-repair mode</DMS_RepairMode.verbProperties.label>
   
   <!-- EN: particle smoke barrage -->
   <DMS_SmokeLauncher.label>Particle smoke barrage</DMS_SmokeLauncher.label>
   <!-- EN: launch an anti-charged weapon particle smoke emitter to interfere with incoming charged ammunition. -->
-  <DMS_SmokeLauncher.description>Launch an anti-charged weapon particle smoke emitter to interfere with incoming charged ammunition.</DMS_SmokeLauncher.description>
+  <DMS_SmokeLauncher.description>Launch an antiparticle smoke screen to interfere with incoming charged munitions.</DMS_SmokeLauncher.description>
   
 </LanguageData>
