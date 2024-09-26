@@ -74,11 +74,11 @@
 		<description>A group of pioneers have done their part and it's time to start a new chapter.</description>
 		<scenario>
 			<name>Last Command</name>
-			<summary>A group of pioneers has done their part and it's time to start a new chapter.</summary>
-			<description>As the vanguard of the colonial fleet, the last instruction you receive is to wait in cryosleep for the arrival of the fleet.
-and until recently, a strange yet familiar broadcast ended the long and anxious wait not long ago.
+			<summary>A group of pioneers have done their part and it's time for them to begin a new chapter of their lives.</summary>
+			<description>As the vanguard of the colonial fleet, the last instruction you received was to wait in cryosleep for the arrival of the fleet.
+Until recently, a strange yet familiar broadcast ended the long and anxious wait-
         
-"Code five: The fleet has entered synchronized orbit. Express my greatest gratitude to all the vanguards who guard the lighthouse."</description>
+"Code five: The fleet has entered synchronized orbit. Express my greatest gratitude to all the vanguards protecting the lighthouse."</description>
 			<playerFaction>
 				<def>PlayerFaction</def>
 				<factionDef>PlayerColony</factionDef>
@@ -199,10 +199,10 @@ and until recently, a strange yet familiar broadcast ended the long and anxious 
         </li>
 				<li Class="ScenPart_GameStartDialog">
 					<def>GameStartDialog</def>
-					<text>When you wake up, all left to you by this cruel world are remnants of the lighthouse.
-time and scavengers have stripped away almost every trace of you and your companions's past presence...
+					<text>When you wake up, all that remains of the world you built are remnants of The Lighthouse.
+Time and scavengers have stripped away almost every trace of you and your companions past presence...
             
-it is just like a long time ago, you came here with nothing. but those who spent all this with you in the past are no longer...</text>
+Just like a long ago when you came here with nothing, you must rebuild anew. Only this time those who toiled and fought along side you are distant memories of the forgotten past.</text>
 					<textKey>GameStartDialog</textKey>
 					<closeSound>GameStartSting</closeSound>
 				</li>

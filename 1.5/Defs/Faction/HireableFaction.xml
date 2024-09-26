@@ -2,8 +2,8 @@
 <Defs>
   <VFECore.Misc.HireableFactionDef>
     <defName>DMS_Army</defName>
-    <label>colonization force mercenaries</label>
-    <description>A group of organized mercenaries, the core members of which are mostly non-commissioned officers and amateur militiamen in the colonial fleet. They take on any job, from cargo escort to clearing insect hives. And if you can afford it, they won't mind taking down a fortress with some heavy firepower.</description>
+    <label>Colonial Mercenaries</label>
+    <description>A group of organized mercenaries comprised of mostly non-commissioned officers and amateur militiamen. They'll take on any job from cargo escort to clearing insect hives, and if you can afford it they won't mind taking down a fortress with some heavy firepower.</description>
     <texPath>UI/Faction/VanguardIcon</texPath>
     <color>(0.5, 0.65, 0.5)</color>
     <pawnKinds>

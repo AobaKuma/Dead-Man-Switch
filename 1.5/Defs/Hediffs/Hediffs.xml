@@ -4,8 +4,8 @@
   <HediffDef MayRequire="Ludeon.Rimworld.Biotech">
     <defName>DMS_MechlinkKillSwitch</defName>
     <hediffClass>HediffWithComps</hediffClass>
-    <label>kill switch</label>
-    <description>This device will destruct mechlink by overloading after the death of the user.</description>
+    <label>Kill Switch</label>
+    <description>This device will destroy the mechlink by overloading the neural interface after the user's death.</description>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>1</initialSeverity>
     <isBad>false</isBad>
@@ -36,8 +36,8 @@
   <HediffDef MayRequire="Ludeon.Rimworld.Biotech">
     <defName>DMS_MechlinkFatalTrigger</defName>
     <hediffClass>HediffWithComps</hediffClass>
-    <label>fatal trigger</label>
-    <description>Due to the instability of this device, this safty protocol will automatically eject and destroy the disabled mechlink before it causes damage to the user's brain.</description>
+    <label>Fatal Trigger</label>
+    <description>Due to the instability of this device, this safty protocol was created to automatically eject and destroy the disabled mechlink before it can cause catastrophic damage to the user's brain.</description>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>1</initialSeverity>
     <isBad>false</isBad>
@@ -77,8 +77,8 @@
   <HediffDef MayRequire="Ludeon.Rimworld.Biotech">
     <defName>DMS_MechlinkRejection</defName>
     <hediffClass>HediffWithComps</hediffClass>
-    <label>mechlink rejection</label>
-    <description>Due to the limited technology and lack of medical nanomachines, there is some side-effect after installing this mechlink, it will last of a while before implanter's nervous system adjusts to its presence.</description>
+    <label>Mechlink Rejection</label>
+    <description>Due to limited technology and the lack of medical nanites, there are some side-effect after installing this mechlink. It will take some time before the implantee's nervous system adjusts to its presence.</description>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>1</initialSeverity>
     <isBad>false</isBad>
@@ -110,7 +110,7 @@
     <defName>DMS_MechlinkOverload</defName>
     <hediffClass>DMS.Hediff_SeverityByBandwidth</hediffClass>
     <label>N.A.C.S.</label>
-    <description>Neural-Auxiliary Compute and Control System, this system with it's unique protocol allow user to connect with not only existing mech techs, but also Automatroid tech.</description>
+    <description>Neural-Auxiliary Computation and Control System- this system's unique protocol allows the user to connect with existing mech and Automatroid tech.</description>
     <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
     <initialSeverity>0.1</initialSeverity><!-- Severity is bound to level of implant -->
     <isBad>false</isBad>
@@ -202,8 +202,8 @@
   <HediffDef>
     <defName>DMS_SyntheticRejection</defName>
     <hediffClass>HediffWithComps</hediffClass>
-    <label>synthetic rejection</label>
-    <description>Due to access to the internal circulatory system, synthetic bionic sometimes produce rejection in the body, which usually does not last long but reduces immunity.</description>
+    <label>Synthetic Rejection</label>
+    <description>Due to modifications of circulatory system, synthetic bionic enhancements can be rejected temporarily by the body. The effect does not last long, and the body's abiity to fight infections is reduced for its duration.</description>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>1</initialSeverity><!-- Severity is bound to level of implant -->
     <isBad>true</isBad>
@@ -212,7 +212,7 @@
         <hediffs>
           <li>NeuroglueHigh</li>
         </hediffs>
-        <message>bionic syndrome has been cured</message>
+        <message>Bionic Rejection Syndrome has been cured.</message>
         <messageType>PositiveEvent</messageType>
       </li>
       <li Class="HediffCompProperties_DisappearsOnDeath"/>
@@ -242,8 +242,8 @@
   <HediffDef>
     <defName>DMS_BionicShockRemove</defName>
     <hediffClass>HediffWithComps</hediffClass>
-    <label>phantom limb syndrome</label>
-    <description>a psychological syndrome that is common to occur in pre-spacer world when removed a neural machinery bionic Prosthesis.</description>
+    <label>Phantom Limb Syndrome</label>
+    <description>A commonly occurring syndrome in pre-spacer worlds when neurally interfaced bionics are removed.</description>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>1</initialSeverity><!-- Severity is bound to level of implant -->
     <isBad>true</isBad>
@@ -252,7 +252,7 @@
         <hediffs>
           <li>NeuroglueHigh</li>
         </hediffs>
-        <message>bionic syndrome has been cured</message>
+        <message>Phantom Limb Syndrome has been cured</message>
         <messageType>PositiveEvent</messageType>
       </li>
       <li Class="HediffCompProperties_DisappearsOnDeath"/>
@@ -282,8 +282,8 @@
   <HediffDef>
     <defName>DMS_BionicShock</defName>
     <hediffClass>HediffWithComps</hediffClass>
-    <label>xeno limb syndrome</label>
-    <description>a psychological syndrome that is common to occur in pre-spacer world when having one or more neural machinery bionic prosthesis installed, Due to the lack of biological receptors, the body system will temporarily reject the connection after the nerve is connected.\n\nThe severity of these symptoms can be divided into five levels.</description>
+    <label>Xeno Limb Syndrome</label>
+    <description>A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for thes symptoms..</description>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <minSeverity>0</minSeverity>
     <maxSeverity>6</maxSeverity>
@@ -305,11 +305,11 @@
     </comps>
     <stages>
       <li>
-        <label>initial</label>
+        <label>Initial</label>
         <becomeVisible>false</becomeVisible>
       </li>
       <li><!-- 第一級，患病部位會出現明顯搔癢感，一般來說會隨著時間過去自行消退 -->
-        <label>LV.1 initial</label>
+        <label>LV.1 Initial</label>
         <minSeverity>0.04</minSeverity>
         <painOffset>0.15</painOffset>
         <capMods>
@@ -324,7 +324,7 @@
         </capMods>
       </li>
       <li><!-- 第二級，大腦對患病部位產生排異反應，並對於精神層面上產生影響 -->
-        <label>LV.2 minor</label>
+        <label>LV.2 Minor</label>
         <minSeverity>1.2</minSeverity>
         <painOffset>0.30</painOffset>
         <capMods>
@@ -339,7 +339,7 @@
         </capMods>
       </li>
       <li>  <!-- 第三級，患者會出現明顯的焦慮並反覆希望醫生切除患病部位 -->
-        <label>LV.3 serious</label>
+        <label>LV.3 Serious</label>
         <minSeverity>2.35</minSeverity>
         <mentalBreakMtbDays>3.0</mentalBreakMtbDays>
         <painOffset>0.50</painOffset>
@@ -355,7 +355,7 @@
         </capMods>
       </li>
       <li>  <!-- 第四級，患者會進入精神錯亂並試圖自行切除患病部位 -->
-        <label>LV.4 catatonic</label>
+        <label>LV.4 Catatonic</label>
         <minSeverity>3.62</minSeverity>
         <mentalBreakMtbDays>0.25</mentalBreakMtbDays>
         <painOffset>0.90</painOffset>
@@ -371,7 +371,7 @@
         </capMods>
       </li>
       <li>  <!-- 第五級，患者進入昏迷狀態，嚴重時大腦可能會自行中止活動，並使患者腦死亡 -->
-        <label>LV.5 disabled</label>
+        <label>LV.5 Disabled</label>
         <minSeverity>4.80</minSeverity>
         <lifeThreatening>true</lifeThreatening>
         <capMods>
@@ -388,8 +388,8 @@
   <HediffDef>
     <defName>DMS_FilterShock</defName>
     <hediffClass>HediffWithComps</hediffClass>
-    <label>emotional misalignment</label>
-    <description>a psychological syndrome caused by sensory filter shutdown, known as the "price of pawn", will have some mental break but it won't last long.</description>
+    <label>Emotional Misalignment</label>
+    <description>A syndrome caused by a cognitive dissonance created by the user's mind conflicting with the installed bionics. This internal conflict causes emotional trauma as the user struggles to adjust to their new baseline.</description>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <minSeverity>0.001</minSeverity>
     <isBad>true</isBad>

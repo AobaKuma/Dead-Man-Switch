@@ -3,9 +3,9 @@
 
   <BackstoryDef>
     <defName>DMS_Military01</defName>
-    <title>Reformed bandit</title>
-    <titleShort>bandit</titleShort>
-    <description>[PAWN_nameDef] failed as a bandit and was unfortunately captured by a colonial group. However, after realizing the lifestyle and goals of these people while serving a labor sentence, [PAWN_pronoun] decided to stay after being released from prison.</description>
+    <title>Reformed Bandit</title>
+    <titleShort>Bandit</titleShort>
+    <description>[PAWN_nameDef] failed as a bandit and was unfortunately captured by a colonial group. While serving a labor sentence, [PAWN_nameDef] realized how much better the life of these people had and decided to stay after being released from prison.</description>
     <slot>Adulthood</slot>
     <spawnCategories>
       <li>DMS_Fighter</li>
@@ -23,8 +23,8 @@
 
   <BackstoryDef>
     <defName>DMS_Military02</defName>
-    <title>Retired medic</title>
-    <titleShort>medic</titleShort>
+    <title>Retired Medic</title>
+    <titleShort>Medic</titleShort>
     <description>[PAWN_nameDef] served as a medic in the Armed Forces and retired from military life prematurely after a serious injury.</description>
     <slot>Adulthood</slot>
     <spawnCategories>
@@ -42,8 +42,8 @@
 
   <BackstoryDef>
     <defName>DMS_Military03</defName>
-    <title>Prison security</title>
-    <titleShort>security</titleShort>
+    <title>Correctional Officer</title>
+    <titleShort>Deputy</titleShort>
     <description>[PAWN_nameDef] was a security for guarding the bandits and raiders who were captured, Supervising them until they were free to go after serving their sentences.</description>
     <slot>Adulthood</slot>
     <spawnCategories>
@@ -62,9 +62,9 @@
 
   <BackstoryDef>
     <defName>DMS_Military04</defName>
-    <title>Voluntary militia</title>
-    <titleShort>militia</titleShort>
-    <description>Out of seeing the vastness of this planet, [PAWN_nameDef] became a voluntary militia in the colonial group, moved to various colonial strongholds with the pace of stronghold development, and used the gun on hand to protect himself and [PAWN_pronoun] companions when necessary.</description>
+    <title>Voluntary Militia</title>
+    <titleShort>Militia</titleShort>
+    <description>After seeing the astonishing extent of this planet, [PAWN_nameDef] became a Voluntary Militia Trooper in the Colonial Forces. [PAWN_nameDef] transfered to various colonial strongholds in need of bodies, and had to use whatever was on hand to protect them.</description>
     <slot>Adulthood</slot>
     <spawnCategories>
       <li>DMS_Fighter</li>
@@ -82,9 +82,9 @@
 
   <BackstoryDef>
     <defName>DMS_Military05</defName>
-    <title>Reserved colonist</title>
-    <titleShort>colonist</titleShort>
-    <description>Since the physical examination was passed by rounded off, [PAWN_nameDef], who had no special skills, followed the enlistment order of the colonial fleet and after receiving simple training, became a substitute and was sent to the ground to assist in the colonization work.</description>
+    <title>Reserve Colonist</title>
+    <titleShort>Reservist</titleShort>
+    <description>[PAWN_nameDef] participated in the Colonist Physical Exam and only passed due to a clerical error. [PAWN_nameDef] has no special skills and followed the enlistment orders of the Colonial Fleet to receive simple training, enough to function as a substitute colonist. [PAWN_nameDef] was sent planetside to assist in the ongoing colonization work</description>
     <slot>Adulthood</slot>
     <spawnCategories>
       <li>DMS_Fighter</li>
@@ -108,9 +108,9 @@
 
   <BackstoryDef>
     <defName>DMS_Military06</defName>
-    <title>Riot commando</title>
-    <titleShort>commando</titleShort>
-    <description>Due to the chaotic distribution of the faction-controlled areas in the rimworld, [PAWN_nameDef] job is to accompany the special police to use limited violence to uproot the bandit sites that spread like weeds one by one.</description>
+    <title>Riot Suppression Specialist</title>
+    <titleShort>Specialist</titleShort>
+    <description>Due to the chaotic distribution of the faction-controlled areas in most rim worlds, [PAWN_nameDef] was assigned to accompany the special police tasked with using limited violence to uproot the countless bandit camps infesting the planet one by one.</description>
     <slot>Adulthood</slot>
     <spawnCategories>
       <li>DMS_Fighter</li>
@@ -127,9 +127,9 @@
 
   <BackstoryDef>
     <defName>DMS_Military07</defName>
-    <title>Shuttle pilot</title>
-    <titleShort>pilot</titleShort>
-    <description>During [PAWN_pronoun] long life as a pilot, [PAWN_nameDef] was responsible for transporting people and materials over a large sector, and also learned to solve annoying mechanical and human problems along the way.</description>
+    <title>Shuttle Pilot</title>
+    <titleShort>Pilot</titleShort>
+    <description>[PAWN_nameDef] was responsible for flying a transport shuttle containing people and materials across a large sector of the planet. [PAWN_nameDef] learned to solve a lot of annoying mechanical and human problems along the way.</description>
     <slot>Adulthood</slot>
     <spawnCategories>
       <li>DMS_Fighter</li>
@@ -147,9 +147,9 @@
 
   <BackstoryDef>
     <defName>DMS_Military08</defName>
-    <title>Armed escort</title>
-    <titleShort>escort</titleShort>
-    <description>[PAWN_nameDef] is from a professional pioneering group. To deal with the existential threats during the pioneering period, [PAWN_pronoun] job is to use guns to drive away those things that are harmful to the colonists...if guns can still be used to solve them.</description>
+    <title>Armed Escort</title>
+    <titleShort>Escort</titleShort>
+    <description>[PAWN_nameDef] is from a professional pioneering group. To deal with the constant threats to their squad during the pioneering period, [PAWN_nameDef] used a healthy variety of firearms to kill anything that posed a threat to the colonists [PAWN_nameDef] was assigned to protect.</description>
     <slot>Adulthood</slot>
     <spawnCategories>
       <li>DMS_Fighter</li>
