@@ -4,66 +4,65 @@
   <!-- EN: nutrition port -->
   <DMS_NutrientPort.label>nutrition port</DMS_NutrientPort.label>
   <!-- EN: A total overhaul of the patient's digestive system, replacing it with a fueling port and nutrient storage. -->
-  <DMS_NutrientPort.description>A total overhaul of the patient's digestive system, replacing it with a fueling port and nutrient storage.</DMS_NutrientPort.description>
+  <DMS_NutrientPort.description>A total overhaul of the patient's digestive system which replaces the stomach with fuel port and bionic macronutrient storage batteries.</DMS_NutrientPort.description>
   <!-- EN: an nutrition port -->
-  <DMS_NutrientPort.labelNoun>an nutrition port</DMS_NutrientPort.labelNoun>
+  <DMS_NutrientPort.labelNoun>a nutrition injection port</DMS_NutrientPort.labelNoun>
   
   <!-- EN: mechaneural arm -->
   <DMS_ProstheticArm.label>mechaneural arm</DMS_ProstheticArm.label>
   <!-- EN: An installed neural-mechanical arm. -->
-  <DMS_ProstheticArm.description>An installed neural-mechanical arm.</DMS_ProstheticArm.description>
+  <DMS_ProstheticArm.description>An installed neuro-mechanical arm.</DMS_ProstheticArm.description>
   <!-- EN: fist -->
   <DMS_ProstheticArm.comps.HediffComp_VerbGiver.tools.fist.label>fist</DMS_ProstheticArm.comps.HediffComp_VerbGiver.tools.fist.label>
   <!-- EN: a neural-mechanical arm -->
-  <DMS_ProstheticArm.labelNoun>a neural-mechanical arm</DMS_ProstheticArm.labelNoun>
+  <DMS_ProstheticArm.labelNoun>a neuro-mechanical arm</DMS_ProstheticArm.labelNoun>
   
   <!-- EN: visual sensor -->
   <DMS_ProstheticEye.label>visual sensor</DMS_ProstheticEye.label>
   <!-- EN: An installed visual sensor, as a replacement of eye. -->
-  <DMS_ProstheticEye.description>An installed visual sensor, as a replacement of eye.</DMS_ProstheticEye.description>
+  <DMS_ProstheticEye.description>An installed optical sensor relay.</DMS_ProstheticEye.description>
   <!-- EN: a bionic sensor -->
   <DMS_ProstheticEye.labelNoun>a bionic sensor</DMS_ProstheticEye.labelNoun>
   
   <!-- EN: mechaneural kidney -->
   <DMS_ProstheticKidney.label>mechaneural kidney</DMS_ProstheticKidney.label>
   <!-- EN: An installed neural-mechanical kidney. -->
-  <DMS_ProstheticKidney.description>An installed neural-mechanical kidney.</DMS_ProstheticKidney.description>
+  <DMS_ProstheticKidney.description>An installed neuro-mechanical kidney.</DMS_ProstheticKidney.description>
   <!-- EN: a neural-mechanical kidney -->
-  <DMS_ProstheticKidney.labelNoun>a neural-mechanical kidney</DMS_ProstheticKidney.labelNoun>
+  <DMS_ProstheticKidney.labelNoun>a neuro-mechanical kidney</DMS_ProstheticKidney.labelNoun>
   
   <!-- EN: mechaneural leg -->
   <DMS_ProstheticLeg.label>mechaneural leg</DMS_ProstheticLeg.label>
   <!-- EN: An installed neural-mechanical leg. -->
-  <DMS_ProstheticLeg.description>An installed neural-mechanical leg.</DMS_ProstheticLeg.description>
+  <DMS_ProstheticLeg.description>An installed neuro-mechanical leg.</DMS_ProstheticLeg.description>
   <!-- EN: a neural-mechanical leg -->
-  <DMS_ProstheticLeg.labelNoun>a neural-mechanical leg</DMS_ProstheticLeg.labelNoun>
+  <DMS_ProstheticLeg.labelNoun>a neuro-mechanical leg</DMS_ProstheticLeg.labelNoun>
   
   <!-- EN: mechaneural lung -->
   <DMS_ProstheticLung.label>mechaneural lung</DMS_ProstheticLung.label>
   <!-- EN: An installed neural-mechanical lung. -->
-  <DMS_ProstheticLung.description>An installed neural-mechanical lung.</DMS_ProstheticLung.description>
+  <DMS_ProstheticLung.description>An installed neuro-mechanical lung.</DMS_ProstheticLung.description>
   <!-- EN: a neural-mechanical lung -->
-  <DMS_ProstheticLung.labelNoun>a neural-mechanical lung</DMS_ProstheticLung.labelNoun>
+  <DMS_ProstheticLung.labelNoun>a neuro-mechanical lung</DMS_ProstheticLung.labelNoun>
   
   <!-- EN: mechaneural neurochord -->
   <DMS_ProstheticSpine.label>mechaneural neurochord</DMS_ProstheticSpine.label>
   <!-- EN: An installed bionic spine. -->
   <DMS_ProstheticSpine.description>An installed bionic spine.</DMS_ProstheticSpine.description>
   <!-- EN: An advanced neural-mechanical spine work as a sub-brain \n\n It can take over the user's reflex nerves and thereby reduce the operator's brain burden, but has some side effects. -->
-  <DMS_ProstheticSpine.labelNoun>An advanced neural-mechanical spine work as a sub-brain 
+  <DMS_ProstheticSpine.labelNoun>An advanced neuro-mechanical spine which can work as a sub-brain. 
 
- It can take over the user's reflex nerves and thereby reduce the operator's brain burden, but has some side effects.</DMS_ProstheticSpine.labelNoun>
+ It can take over the user's reflex nerves and thereby reduce the load on the operator's brain with some side effects.</DMS_ProstheticSpine.labelNoun>
   
   <!-- EN: sensory filter -->
   <DMS_SensoryFilter.label>sensory filter</DMS_SensoryFilter.label>
   <!-- EN: No will for fear,\nNo more to disgust,\nNo way to feel,\nNo tears to cry... \n\nAnd what else... \nWill this little pawn have to sacrifice? -->
-  <DMS_SensoryFilter.description>No will for fear,
-No more to disgust,
+  <DMS_SensoryFilter.description>No need for fear,
+No use for disgust,
 No way to feel,
-No tears to cry... 
-
-And what else... 
-Will this little pawn have to sacrifice?</DMS_SensoryFilter.description>
+No tears to cry 
+And what else 
+will this little pawn have to sacrifice?</DMS_SensoryFilter.description>
   <!-- EN: a sensory filter -->
   <DMS_SensoryFilter.labelNoun>a sensory filter</DMS_SensoryFilter.labelNoun>
   

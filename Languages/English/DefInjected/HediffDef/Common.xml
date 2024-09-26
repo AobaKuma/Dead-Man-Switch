@@ -2,8 +2,8 @@
 <LanguageData>
   
   <!-- EN: system maintenance -->
-  <DMS_SelfRepair.label>system maintenance</DMS_SelfRepair.label>
+  <DMS_SelfRepair.label>System Maintenance</DMS_SelfRepair.label>
   <!-- EN: This mech has entered self-maintenance mode and is checking missing parts reconstructed by electroactive memory metal. All sensors are disabled to activate self-testing systems, which will last at least a day to restart the system fully. -->
-  <DMS_SelfRepair.description>This mech has entered self-maintenance mode and is checking missing parts reconstructed by electroactive memory metal. All sensors are disabled to activate self-testing systems, which will last at least a day to restart the system fully.</DMS_SelfRepair.description>
+  <DMS_SelfRepair.description>This mech has entered self-maintenance mode and is checking for missing parts needing to be reconstructed by electroactive memory metal. All sensors are disabled while in diagnosis mode, and the process takes a day to complete and allow for the mech to reboot.</DMS_SelfRepair.description>
   
 </LanguageData>
