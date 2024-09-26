@@ -3,8 +3,8 @@
 	<!-- 衝刺 -->
 	<AbilityDef>
 		<defName>DMS_BurstSprint</defName>
-		<label>Burst sprint</label>
-		<description>By releasing the mechanical energy accumulated in leg units, Pioneer can perform amazing sprint speeds in a short period.</description>
+		<label>Sprint Burst</label>
+		<description>Release accumulated mechanical energy allowing the Pioneer to sprint for a short duration.</description>
 		<iconPath>UI/Ability/Burst</iconPath>
 		<cooldownTicksRange>1800</cooldownTicksRange> <!-- 30 seconds -->
 		<hostile>false</hostile>
@@ -40,8 +40,8 @@
 	  <HediffDef>
 		<defName>DMS_BurstSprint</defName>
 		<hediffClass>HediffWithComps</hediffClass>
-		<label>burst sprint</label>
-		<description>By releasing the mechanical energy accumulated in storage unit of the legs, Pioneer can maintain amazing sprint speeds in a short period of time.</description>
+		<label>Sprint Burst</label>
+		<description>Release accumulated mechanical energy allowing the Pioneer to sprint for a short duration.</description>
 		<everCurableByItem>false</everCurableByItem>
 		<stages>
 		  <li>

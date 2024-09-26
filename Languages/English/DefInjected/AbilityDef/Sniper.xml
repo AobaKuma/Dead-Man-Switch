@@ -4,11 +4,11 @@
   <!-- EN: recon calibration -->
   <DMS_RangeFinder.label>Recon Calibration</DMS_RangeFinder.label>
   <!-- EN: Share fire control data to friendly forces within range to improve squad shooting accuracy in short time. -->
-  <DMS_RangeFinder.description>Share fire control data with friendly forces within range to improve squad shooting accuracy for a short time.</DMS_RangeFinder.description>
+  <DMS_RangeFinder.description>Share fire control data with friendly forces within range to improve squad accuracy for a short time.</DMS_RangeFinder.description>
   
   <!-- EN: precise sniping -->
-  <DMS_SharpShooting.label>Precise Sniping</DMS_SharpShooting.label>
+  <DMS_SharpShooting.label>Precision Marksmanship</DMS_SharpShooting.label>
   <!-- EN: uses built-in ballistic computer to measure extremely detailed shooting data to highly improve shooting accuracy in short time. -->
-  <DMS_SharpShooting.description>The Sniper uses its built-in ballistic computer to adjust for the conditions of its environment, greatly improving accuracy for a short time.</DMS_SharpShooting.description>
+  <DMS_SharpShooting.description>The mech uses its built-in ballistic calculator to adjust for the conditions of its environment, greatly improving accuracy for a short time.</DMS_SharpShooting.description>
   
 </LanguageData>

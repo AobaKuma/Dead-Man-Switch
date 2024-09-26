@@ -6,7 +6,7 @@
 	<AbilityDef>
 		<defName>DMS_FlashLauncher</defName>
 		<label>Flashbang barrage</label>
-		<description>launch an indirect-fired flashbang grenade to stun the enemy to cover the retreat or assault.</description>
+		<description>Launch an indirect-fired flashbang to stun the enemy.</description>
 		<iconPath>UI/Ability/Grenade</iconPath>
 		<aiCanUse>true</aiCanUse>
 		<cooldownTicksRange>6000~7200</cooldownTicksRange>
@@ -58,8 +58,8 @@
 
 	<AbilityDef>
 		<defName>DMS_SmokeLauncher</defName>
-		<label>Particle smoke barrage</label>
-		<description>launch an anti-charged weapon particle smole emitter to nullify incoming charged ammunition in short time.</description>
+		<label>Particle Smoke Barrage</label>
+		<description>Launch an antiparticle smoke screen to interfere with incoming charged munitions.</description>
 		<iconPath>UI/Ability/Smoke</iconPath>
 		<aiCanUse>true</aiCanUse>
 		<cooldownTicksRange>3000~3600</cooldownTicksRange>
@@ -88,8 +88,8 @@
 
 	<AbilityDef>
 		<defName>DMS_MissileLauncher</defName>
-		<label>Launch missile</label>
-		<description>Launch a guided missile to destroy enemies from long ranges.</description>
+		<label>Launch Missile</label>
+		<description>Launch a long range guided missile with a high explosive payload.</description>
 		<iconPath>UI/Ability/Missile</iconPath>
 		<aiCanUse>true</aiCanUse>
 		<cooldownTicksRange>120000~120000</cooldownTicksRange>
@@ -148,8 +148,8 @@
 
 	<AbilityDef>
 		<defName>DMS_RepairMode</defName>
-		<label>Self-repair</label>
-		<description>Initialize self-repair mode to rebuild missing parts by electroactive memory metal, thus all sensors will temporarily be disabled to prevent electrical damage.</description>
+		<label>Self-Repair</label>
+		<description>Initialize self-repair mode to rebuild missing parts, all sensors will temporarily be disabled to prevent electrical damage.</description>
 		<iconPath>UI/Ability/SelfRepair</iconPath>
 		<cooldownTicksRange>120000</cooldownTicksRange> <!-- 2 day -->
 		<showPsycastEffects>false</showPsycastEffects>
@@ -185,9 +185,9 @@
 
 	<HediffDef>
 		<defName>DMS_SelfRepair</defName>
-		<label>system maintenance</label>
+		<label>System Maintenance</label>
 		<hediffClass>HediffWithComps</hediffClass>
-		<description>This mech has entered self-maintenance mode and is checking missing parts reconstructed by electroactive memory metal. All sensors are disabled to activate self-testing systems, which will last at least a day to restart the system fully.</description>
+		<description>This mech has entered self-maintenance mode and is repairing itself using electroactive memory metal. All sensors are temporarily disabled to during this process which will last at least a day.</description>
 		<isBad>false</isBad>
 		<preventsDeath>true</preventsDeath>
 		<forceRemoveOnResurrection>true</forceRemoveOnResurrection>
@@ -238,8 +238,8 @@
 
 	<AbilityDef>
 		<defName>DMS_NuclearOverload</defName>
-		<label>fission overload</label>
-		<description>In order to avoid environmental pollution caused by nuclear battery leakage after the body is severely damaged, the fission battery can be manually overloaded to react the nuclear fuel in an instant, and the external manifestation is a nuclear explosion. \n\nSuch explosion is enough to clean up the unreacted nuclear material, including the surrounding areas. everything of...</description>
+		<label>Fission Overload</label>
+		<description>In order to avoid catastrophic environmental pollution or capture by the enemy, the fission battery can be manually forced into a meltdown. \n\nA meltdown will cause all unreacted nuclear material to atomize instantl, causing a violent explosive reaction.</description>
 		<iconPath>UI/Ability/FissonOverload</iconPath>
 		<cooldownTicksRange>60</cooldownTicksRange> <!-- 2 day -->
 		<showPsycastEffects>false</showPsycastEffects>
@@ -247,7 +247,7 @@
 		<targetRequired>false</targetRequired>
 		<showWhenDrafted>true</showWhenDrafted>
 		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
-		<confirmationDialogText>overload the fission battery will result a large scale explosion and destroy this unit. \n\nare you sure to do this?</confirmationDialogText>
+		<confirmationDialogText>Overloading the fission battery will create a devastating explosion and destroy this unit. \n\nAre you sure to do this?</confirmationDialogText>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<label>fission overload</label>

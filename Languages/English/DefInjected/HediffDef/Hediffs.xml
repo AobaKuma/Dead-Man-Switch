@@ -2,41 +2,41 @@
 <LanguageData>
   
   <!-- EN: xeno limb syndrome -->
-  <DMS_BionicShock.label>xeno limb syndrome</DMS_BionicShock.label>
+  <DMS_BionicShock.label>Xeno limb syndrome</DMS_BionicShock.label>
   <!-- EN: a psychological syndrome that is common to occur in pre-spacer world when having one or more neural machinery bionic prosthesis installed, Due to the lack of biological receptors, the body system will temporarily reject the connection after the nerve is connected.\n\nThe severity of these symptoms can be divided into five levels. -->
-  <DMS_BionicShock.description>a psychological syndrome that is common to occur in pre-spacer world when having one or more neural machinery bionic prosthesis installed, Due to the lack of biological receptors, the body system will temporarily reject the connection after the nerve is connected.
+  <DMS_BionicShock.description>A psychological reaction commonly to occurring in pre-spacer worlds Neural Machinery Bionic Prosthesis are installed. Due to the lack of biological receptors, the body will temporarily reject the connection to the prosthesis after the nerves are adjoined.
 
-The severity of these symptoms can be divided into five levels.</DMS_BionicShock.description>
+The severity of these symptoms fit into five levels.</DMS_BionicShock.description>
   <!-- EN: bionic syndrome has been cured -->
   <DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>bionic syndrome has been cured</DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>
   <!-- EN: initial -->
   <DMS_BionicShock.stages.initial.label>initial</DMS_BionicShock.stages.initial.label>
   <!-- EN: LV.1 initial -->
-  <DMS_BionicShock.stages.LV1_initial.label>LV.1 initial</DMS_BionicShock.stages.LV1_initial.label>
+  <DMS_BionicShock.stages.LV1_initial.label>LV.1 Initial</DMS_BionicShock.stages.LV1_initial.label>
   <!-- EN: LV.2 minor -->
-  <DMS_BionicShock.stages.LV2_minor.label>LV.2 minor</DMS_BionicShock.stages.LV2_minor.label>
+  <DMS_BionicShock.stages.LV2_minor.label>LV.2 Minor</DMS_BionicShock.stages.LV2_minor.label>
   <!-- EN: LV.3 serious -->
-  <DMS_BionicShock.stages.LV3_serious.label>LV.3 serious</DMS_BionicShock.stages.LV3_serious.label>
+  <DMS_BionicShock.stages.LV3_serious.label>LV.3 Serious</DMS_BionicShock.stages.LV3_serious.label>
   <!-- EN: LV.4 catatonic -->
-  <DMS_BionicShock.stages.LV4_catatonic.label>LV.4 catatonic</DMS_BionicShock.stages.LV4_catatonic.label>
+  <DMS_BionicShock.stages.LV4_catatonic.label>LV.4 Catatonic</DMS_BionicShock.stages.LV4_catatonic.label>
   <!-- EN: LV.5 disabled -->
-  <DMS_BionicShock.stages.LV5_disabled.label>LV.5 disabled</DMS_BionicShock.stages.LV5_disabled.label>
+  <DMS_BionicShock.stages.LV5_disabled.label>LV.5 Disabled</DMS_BionicShock.stages.LV5_disabled.label>
   
   <!-- EN: phantom limb syndrome -->
-  <DMS_BionicShockRemove.label>phantom limb syndrome</DMS_BionicShockRemove.label>
+  <DMS_BionicShockRemove.label>Phantom Limb Syndrome</DMS_BionicShockRemove.label>
   <!-- EN: a psychological syndrome that is common to occur in pre-spacer world when removed a neural machinery bionic Prosthesis. -->
-  <DMS_BionicShockRemove.description>a psychological syndrome that is common to occur in pre-spacer world when removed a neural machinery bionic Prosthesis.</DMS_BionicShockRemove.description>
+  <DMS_BionicShockRemove.description>A psychological reaction commonly occurring when Neural Machinery Bionic Prosthesis are removed.</DMS_BionicShockRemove.description>
   <!-- EN: bionic syndrome has been cured -->
-  <DMS_BionicShockRemove.comps.HediffComp_RemoveIfOtherHediff.message>bionic syndrome has been cured</DMS_BionicShockRemove.comps.HediffComp_RemoveIfOtherHediff.message>
+  <DMS_BionicShockRemove.comps.HediffComp_RemoveIfOtherHediff.message>Phantom Limb Syndrom has been cured.</DMS_BionicShockRemove.comps.HediffComp_RemoveIfOtherHediff.message>P
   <!-- EN: initial -->
   <DMS_BionicShockRemove.stages.initial.label>initial</DMS_BionicShockRemove.stages.initial.label>
   <!-- EN: pain -->
   <DMS_BionicShockRemove.stages.pain.label>pain</DMS_BionicShockRemove.stages.pain.label>
   
   <!-- EN: emotional misalignment -->
-  <DMS_FilterShock.label>emotional misalignment</DMS_FilterShock.label>
+  <DMS_FilterShock.label>Emotional Misalignment</DMS_FilterShock.label>
   <!-- EN: a psychological syndrome caused by sensory filter shutdown, known as the "price of pawn", will have some mental break but it won't last long. -->
-  <DMS_FilterShock.description>a psychological syndrome caused by sensory filter shutdown, known as the "price of pawn", will have some mental break but it won't last long.</DMS_FilterShock.description>
+  <DMS_FilterShock.description>A psychological reaction caused by cognitive dissonance in the users mind from the enhancements. The reaction is nicknamed the "Price of Pawn"and causes some emotional trauma that is eventually cycled out of the users mind..</DMS_FilterShock.description>
   <!-- EN: catatonic -->
   <DMS_FilterShock.stages.catatonic.label>catatonic</DMS_FilterShock.stages.catatonic.label>
   

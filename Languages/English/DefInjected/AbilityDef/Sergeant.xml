@@ -7,8 +7,8 @@
   <DMS_CallDrop.description>Send a reinforcement request to an automated industrial facility in orbit, reinforcements will be dispatched based on the identification code of the transceiver.</DMS_CallDrop.description>
   
   <!-- EN: backup support -->
-  <DMS_CallDrop_Falcon.label>Falcon Backup Support</DMS_CallDrop_Falcon.label>
+  <DMS_CallDrop_Falcon.label>Request Air Support</DMS_CallDrop_Falcon.label>
   <!-- EN: Send a reinforcement request to an automated industrial facility located in orbit, and the central command will automatically deduct the reinforcement quota based on the identification code on the transceiver. -->
-  <DMS_CallDrop_Falcon.description>Send a reinforcement request for a Falcon to an automated industrial facility in orbit, reinforcements will be dispatched based on the identification code of the transceiver.</DMS_CallDrop_Falcon.description>
+  <DMS_CallDrop_Falcon.description>Send a reinforcement request for three Falcons to an automated industrial facility in orbit, reinforcements will be dispatched based on the identification code of the transceiver.</DMS_CallDrop_Falcon.description>
   
 </LanguageData>

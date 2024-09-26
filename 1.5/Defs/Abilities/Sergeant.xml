@@ -7,8 +7,8 @@
 	</AbilityGroupDef>
 	<AbilityDef ParentName="DMS_AddHediffSelfBase">
 		<defName>DMS_CallDrop</defName>
-		<label>Backup support</label>
-		<description>Send a reinforcement request for 3 soldats to an automated industrial facility located in orbit, and Central Command will automatically deduct the reinforcement quota based on the identification code on the transceiver.</description>
+		<label>Request Reinforcements</label>
+		<description>Send a reinforcement request to an automated industrial facility in orbit, reinforcements will be dispatched based on the identification code of the transceiver.</description>
 		<iconPath>UI/Ability/CallSupport</iconPath>
 		<aiCanUse>true</aiCanUse>
 		<groupDef>DMS_AutomatroidCallDrop</groupDef>
@@ -45,8 +45,8 @@
 	</AbilityDef>
 	<AbilityDef ParentName="DMS_AddHediffSelfBase">
 		<defName>DMS_CallDrop_Falcon</defName>
-		<label>Backup support</label>
-		<description>Send a reinforcement request for 3 Falcon to an automated industrial facility located in orbit, and Central Command will automatically deduct the reinforcement quota based on the identification code on the transceiver.</description>
+		<label>Request Air Support</label>
+		<description>Send a reinforcement request for three Falcons to an automated industrial facility in orbit, reinforcements will be dispatched based on the identification code of the transceiver.</description>
 		<iconPath>UI/Ability/CallSupportFalcon</iconPath>
 		<aiCanUse>true</aiCanUse>
 		<groupDef>DMS_AutomatroidCallDrop</groupDef>

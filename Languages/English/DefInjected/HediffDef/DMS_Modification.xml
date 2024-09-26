@@ -4,43 +4,43 @@
   <!-- EN: extended armor plate -->
   <DMS_BF_ExtendArmor.label>extended armor plate</DMS_BF_ExtendArmor.label>
   <!-- EN: composite armor attachments that suitable for battle frame pylons, which can effectively resist direct hits to the chassis from various threats such as fragments and medium-caliber gunfire. -->
-  <DMS_BF_ExtendArmor.description>composite armor attachments that suitable for battle frame pylons, which can effectively resist direct hits to the chassis from various threats such as fragments and medium-caliber gunfire.</DMS_BF_ExtendArmor.description>
+  <DMS_BF_ExtendArmor.description>Composite armor plate suitable for battle-frame pylons. Effectively resist direct hits to the chassis from low-level threats such as fragmentation and medium-caliber gunfire.</DMS_BF_ExtendArmor.description>
   
   <!-- EN: extended cargo rack -->
   <DMS_BF_ExtendCargo.label>extended cargo rack</DMS_BF_ExtendCargo.label>
   <!-- EN: Side mounted cargo racks that suitable for battle frame pylons, which can effectively increase the carrying capacity of battle frame and its variants. -->
-  <DMS_BF_ExtendCargo.description>Side mounted cargo racks that suitable for battle frame pylons, which can effectively increase the carrying capacity of battle frame and its variants.</DMS_BF_ExtendCargo.description>
+  <DMS_BF_ExtendCargo.description>Side mounted cargo racks suitable for battle frame pylons which increase the carrying capacity of the frame.</DMS_BF_ExtendCargo.description>
   
   <!-- EN: ceramic plates -->
   <DMS_CeramicsPlating.label>ceramic plates</DMS_CeramicsPlating.label>
   <!-- EN: deposable ceramic armorplate that effectively inhibits thermal erosion of bullets or shaped charges. \n\nAlthough it is an excellent protective armor, it is still essentially a disposable defensive plate and must be completely replaced once damaged. -->
-  <DMS_CeramicsPlating.description>deposable ceramic armorplate that effectively inhibits thermal erosion of bullets or shaped charges. 
+  <DMS_CeramicsPlating.description>Disposable ceramic armor plating which offers increased protection at the cost of survivability. 
 
-Although it is an excellent protective armor, it is still essentially a disposable defensive plate and must be completely replaced once damaged.</DMS_CeramicsPlating.description>
+It is an excellent protective armor,but must be completely replaced once damaged.</DMS_CeramicsPlating.description>
   <!-- EN: deposable ceramic armorplate that effectively inhibits thermal erosion of bullets or shaped charges. \n\nAlthough it is an excellent protective armor, it is still essentially a disposable defensive plate and must be completely replaced once damaged. -->
-  <DMS_CeramicsPlating.descriptionCached>deposable ceramic armorplate that effectively inhibits thermal erosion of bullets or shaped charges. 
+  <DMS_CeramicsPlating.descriptionCached>Disposable ceramic armor plating which offers increased protection at the cost of survivability. 
 
-Although it is an excellent protective armor, it is still essentially a disposable defensive plate and must be completely replaced once damaged.</DMS_CeramicsPlating.descriptionCached>
+It is an excellent protective armor,but must be completely replaced once damaged.</DMS_CeramicsPlating.descriptionCached>
   
   <!-- EN: nuclear battery -->
   <DMS_NuclearBattery.label>nuclear battery</DMS_NuclearBattery.label>
   <!-- EN: The abundant output of installed nuclear fission battery eliminates the need for recharge. it can also be overloaded to produce a nuclear explosion comparable to an anti-gram weapon to destroy the enemy together. -->
-  <DMS_NuclearBattery.description>The abundant output of installed nuclear fission battery eliminates the need for recharge. it can also be overloaded to produce a nuclear explosion comparable to an anti-gram weapon to destroy the enemy together.</DMS_NuclearBattery.description>
+  <DMS_NuclearBattery.description>The output of an installed nuclear fission battery eliminates the need for recharging. It can also be overloaded to produce a chain reaction causing a detonation comparable to an anti-grain warhead. Survival odds for all parties in its vicinity are low. </DMS_NuclearBattery.description>
   
   <!-- EN: reinforced frame -->
   <DMS_ReinforcedFrame.label>reinforced frame</DMS_ReinforcedFrame.label>
   <!-- EN: Using tungsten steel to replace parts of the robot's frame that are prone to wear can effectively improve the durability during high-intensity combat and reduce the time spent on maintenance. But in exchange it will significantly increase the weight of the mech and affect its speed. -->
-  <DMS_ReinforcedFrame.description>Using tungsten steel to replace parts of the robot's frame that are prone to wear can effectively improve the durability during high-intensity combat and reduce the time spent on maintenance. But in exchange it will significantly increase the weight of the mech and affect its speed.</DMS_ReinforcedFrame.description>
+  <DMS_ReinforcedFrame.description>Tungsten steel parts replace those that are prone to wear and tear, improving reliability during high-intensity combat and reducing time spent on maintenance. The parts are significantly heavier and will slow down the mech.</DMS_ReinforcedFrame.description>
   
   <!-- EN: synthetic tendon -->
   <DMS_SyntheticTendon.label>synthetic tendon</DMS_SyntheticTendon.label>
   <!-- EN: A biosynthetic muscles attached on the outer layer of mechanical limbs. can effectively increase output but will bring additional energy consumption. -->
-  <DMS_SyntheticTendon.description>A biosynthetic muscles attached on the outer layer of mechanical limbs. can effectively increase output but will bring additional energy consumption.</DMS_SyntheticTendon.description>
+  <DMS_SyntheticTendon.description>A biosynthetic muscle attached on the outer layer of the mechanical limb. Increases output at the cost of additional energy consumption.</DMS_SyntheticTendon.description>
   
   <!-- EN: heavy hydraulic frame -->
   <DMS_TB_HeavyHydraulicFrame.label>heavy hydraulic frame</DMS_TB_HeavyHydraulicFrame.label>
   <!-- EN: a heavy hydraulic module and power pack for bipedal mechs, gain capability for heavier lifting and also mount heavy weapons. -->
-  <DMS_TB_HeavyHydraulicFrame.description>a heavy hydraulic module and power pack for bipedal mechs, gain capability for heavier lifting and also mount heavy weapons.</DMS_TB_HeavyHydraulicFrame.description>
+  <DMS_TB_HeavyHydraulicFrame.description>A heavy hydraulic module with a power-pack for bipedal mechs providing the capability for heavier lifting and also mounting heavy weapons.</DMS_TB_HeavyHydraulicFrame.description>
   <!-- EN: hydraulic frame -->
   <DMS_TB_HeavyHydraulicFrame.renderNodeProperties.0.debugLabel>hydraulic frame</DMS_TB_HeavyHydraulicFrame.renderNodeProperties.0.debugLabel>
   

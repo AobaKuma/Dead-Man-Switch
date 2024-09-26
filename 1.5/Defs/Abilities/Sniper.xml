@@ -4,8 +4,8 @@
  <!-- 大幅增加自身的射擊準度 -->
 	<AbilityDef ParentName="DMS_AddHediffSelfBase">
 		<defName>DMS_SharpShooting</defName>
-		<label>precise sniping</label>
-		<description>Execute highly complex trajectory calculations by using the built-in ballistic computer, improving shooting accuracy in a short period.</description>
+		<label>Precision Marksmanship</label>
+		<description>The mech uses its built-in ballistic calculator to adjust for the conditions of its environment, greatly improving accuracy for a short time.</description>
 		<iconPath>UI/Ability/PiercingSnipe</iconPath>
 		<aiCanUse>true</aiCanUse>
 		<comps>
@@ -24,9 +24,9 @@
 
 	<HediffDef>
 		<defName>DMS_SharpShooting</defName>
-		<label>precise sniping mode</label>
+		<label>Precision Marksmanship Mode</label>
 		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-		<description>this unit is at an absolute-standstill mode and uses its built-in ballistic computer to measure extremely detailed shooting data, allowing it to snipe intended target in accuracy.</description>
+		<description>This unit is performing intracate ballistic calculations and cannot move. Once its calculations are complete, it will take a precision shot with deadly accuracy. </description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
@@ -54,8 +54,8 @@
 
 	<AbilityDef ParentName="DMS_AddHediffSelfBase">
 		<defName>DMS_RangeFinder</defName>
-		<label>recon calibration</label>
-		<description>Share fire control data with friendly forces within range to improve squad shooting accuracy in a short period.</description>
+		<label>Recon Calibration</label>
+		<description>Share fire control data with friendly forces within range to improve squad accuracy for short period.</description>
 		<iconPath>UI/Ability/RangeFinder</iconPath>
 		<comps>
 		<li Class="CompProperties_AbilityGiveHediff">
@@ -77,8 +77,8 @@
   
  <HediffDef>
 	<defName>DMS_RangeFinder</defName>
-	<label>recon calibration</label>
-	<description>A large amount of fire control data is being shared with surrounding friendly forces through this unit, which will temporarily slow down the OS response speed.</description>
+	<label>Recon Calibration</label>
+	<description>A large amount of fire control data is being shared with surrounding friendly forces through this unit which temporarily slows down its ability to respond to commands.</description>
 	<hediffClass>HediffWithComps</hediffClass>
 	<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
 	<comps>
@@ -120,7 +120,7 @@
 <!-- 施加在友軍上的Buff -->
   <HediffDef>
 	<defName>DMS_RangeFinderBuff</defName>
-	<label>received calibration</label>
+	<label>Received Calibration</label>
 	<description>The missile knows where it is at all times. It knows this because it knows where it isn't. By subtracting where it is from where it isn't, or where it isn't from where it is...</description>
 	<hediffClass>HediffWithComps</hediffClass>    
 	<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
