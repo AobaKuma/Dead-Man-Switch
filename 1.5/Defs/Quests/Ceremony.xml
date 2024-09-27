@@ -12,7 +12,7 @@
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->[faction_name] is ready to grant [pawn_definite] the title of [newTitle] in a promotion ceremony.\n\nThe ceremonist will arrive by shuttle and perform the ceremony.\n\nThe ceremonist will only give a title if any throneroom requirements are satisfied. There's a chance of gaining extra honor, depending on how many viewers attend the ceremony. Additionally, every viewer gains a mood bonus.\n\nYou can betray the ceremonist, but this will make [faction_name] your enemy.\n\nIf you miss or fail this ceremony, there will be another opportunity later. If the ceremonist or guards are harmed for any reason, there will be diplomatic consequences.</li>
+        <li>questDescription->[faction_name] is ready to grant [pawn_definite] the title of [newTitle] in a promotion ceremony.\n\nThe officiator of the ceremony will arrive by shuttle to perform the ceremony.\n\nThe officiator will only give a title if there exists a throneroom meeting the requirements of the position. There's a chance of gaining extra honor depending on how many viewers attend the ceremony. Additionally, every viewer gains a mood bonus.\n\nYou can betray the officiator but this will make [faction_name] your enemy.\n\nIf you miss or fail this ceremony, there will be another opportunity later. If the officiator or guards are harmed for any reason, there will be diplomatic consequences.</li>
       </rulesStrings>
     </questDescriptionRules>
     <root Class="DMS.QuestNode_Root_PromotionCeremony"/>

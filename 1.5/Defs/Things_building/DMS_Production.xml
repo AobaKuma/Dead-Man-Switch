@@ -60,9 +60,9 @@
 
   <ThingDef ParentName="DMS_BenchBase">
     <defName>DMS_ReactionChamber</defName>
-    <label>pressure chamber</label>
+    <label>Pressure Chamber</label>
     <!-- 巨大的工業生產設備,用於在常溫常壓環境下製造出高壓環境來使材料發生交互反應. -->
-    <description>A massive industrial equipment use to create a high-pressure environment to cause materials to react together.</description>
+    <description>A massive industrial-grade vacuum chamber used to create a high-pressure environment to create mineral alloys.</description>
     <graphicData>
       <texPath>Things/Building/ReactionChamber</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -114,9 +114,9 @@
 
   <ThingDef ParentName="DMS_BenchBase">
     <defName>DMS_Furnace</defName>
-    <label>sintering furnace</label>
+    <label>Sintering Furnace</label>
     <!--巨大的工業生產設備,用於在封閉空間中製造超高溫環境來使金屬或陶瓷燒結,也可以用來熔煉金屬.  -->
-    <description>A massive industrial equipment use to create an ultra-high temperature environment in a closed space to sinter alloy or ceramics. can also smelt metal.</description>
+    <description>A massive industrial furnace used to heat metals and minerals to a near liquid form to create advanced alloys. Can also be used to smelt metals.</description>
     <graphicData>
       <texPath>Things/Building/Sintering_Furnace</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -176,9 +176,9 @@
 
   <ThingDef ParentName="DMS_BenchBase">
     <defName>DMS_TableArtifuscle</defName>
-    <label>artifuscle chamber</label>
+    <label>Artifuscle Chamber</label>
     <!-- 用於培育人工肌肉束與人工肌肉仿生體的高端生產設備. -->
-    <description>High-end production equipment for cultivating artifuscle and bionic.</description>
+    <description>High-end production equipment for cultivating Artifuscle and bionics.</description>
     <graphicData>
       <texPath>Things/Building/ArtifuscleTable</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -222,8 +222,8 @@
 
   <ThingDef ParentName="DMS_BenchBase">
     <defName>DMS_TableMachinePrinter</defName>
-    <label>machinery printer</label>
-    <description>a composite metal printer, which can manufacture and assemble metal products and weapons through cold forging to mass-produce machinery.</description>
+    <label>Machinery Printer</label>
+    <description>A composite metal printer which can manufacture and assemble metal products and weapons through cold forging in order to mass-produce machinery.</description>
     <graphicData>
       <texPath>Things/Building/StampTable</texPath>
       <graphicClass>Graphic_Multi</graphicClass>

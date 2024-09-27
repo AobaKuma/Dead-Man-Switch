@@ -5,7 +5,7 @@
     <defName>DMS_Tab</defName>
     <label>Dead Man Switch</label>
     <generalTitle>Nara Industries Engineering</generalTitle>
-    <generalDescription>Nara Industries spread technology to every planet they occupied, forcing native residents to complete a selection process to determine their compatability with their technology. Nara never stopped pursuing  short period.\n\nSome people say that the colonial fleets are several groups of industrial complexes controlled by AIs whom capable of interstellar traveling between galaxies.</generalDescription>
+    <generalDescription>Nara Industries spread technology to every planet they occupied, forcing native residents to complete a selection process to determine their compatability with their technology. Nara never stopped pursuing technological advancements during their operations. \n\nSome people say that the colonial fleets are several groups of industrial complexes controlled by AIs whom capable of interstellar traveling between galaxies.</generalDescription>
   </ResearchTabDef>
 
   <ResearchProjectDef Name="DMS_BaseTech" Abstract="True">

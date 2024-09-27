@@ -84,8 +84,8 @@
   <!-- trashbin charge station -->
   <ThingDef ParentName="DMS_BaseChargeStation">
     <defName>DMS_TrashBin_Base</defName>
-    <label>trashbin charging station</label>
-    <description>A station for assembling and recharging trashbin.</description>
+    <label>Trashbin Charging Station</label>
+    <description>A station for assembling and recharging trashbin units.</description>
     <designatorDropdown>DMS_MachineHound</designatorDropdown>
     <statBases>
       <WorkToBuild>1000</WorkToBuild>
@@ -113,8 +113,8 @@
   <!-- Verling Bird charge station -->
   <ThingDef ParentName="DMS_BaseChargeStation">
     <defName>DMS_VerlingBird_Base</defName>
-    <label>verlingbird charging station</label>
-    <description>A station for assembling and recharging verlingbird.</description>
+    <label>Verlingbird Charging Station</label>
+    <description>A station for assembling and recharging Verlingbirds.</description>
     <designatorDropdown>DMS_MachineHound</designatorDropdown>
     <statBases>
       <WorkToBuild>1000</WorkToBuild>
@@ -142,8 +142,8 @@
   <!-- Hound charge station -->
   <ThingDef ParentName="DMS_BaseChargeStation">
     <defName>DMS_Hound_Base</defName>
-    <label>Hound charging station</label>
-    <description>A station for assembling and recharging Hound.</description>
+    <label>Hound Charging Station</label>
+    <description>A station for assembling and recharging Hounds.</description>
     <designatorDropdown>DMS_MachineHound</designatorDropdown>
     <statBases>
       <WorkToBuild>1000</WorkToBuild>
@@ -170,8 +170,8 @@
 
   <ThingDef ParentName="BaseMechCharger">
     <defName>DMS_Recharger</defName>
-    <label>automatroid recharger</label>
-    <description>Automatroids can recharge here. During recharge, this recharger produces toxic wastepacks and stores them internally. Haulers must remove the wastepacks from time to time.</description>
+    <label>Automatroid Recharger</label>
+    <description>Automatroids can recharge here. During the charging cycle, toxic wastepacks are produced and stored internally. Haulers must remove the wastepacks from time to time.</description>
     <graphicData>
       <texPath>Things/Building/MechCharger</texPath>
       <graphicClass>Graphic_Multi</graphicClass>

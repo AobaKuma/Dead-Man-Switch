@@ -3,8 +3,8 @@
 	<!-- 仿生作戰服 -->
 	<ThingDef ParentName="ApparelBase">
 		<defName>DMS_Apparel_BionicSuit</defName>
-		<label>bionic suit</label>
-		<description>Physical enhancement equipment sewn from artificial muscle fibers. Can effectively increase the wearer's muscle strength and mobility.</description>
+		<label>Bionic Suit</label>
+		<description>A step above the civilian model Powered Exoskeleton Suit, this military grade bionic suit is sewn from artificial muscle fibers and amplifies the wearers pre-existing muscular strength. Greatly increases the wearers carrying capacity and movement speed.</description>
 		<techLevel>Industrial</techLevel>
 		<recipeMaker>
 			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -70,7 +70,7 @@
 
 	<!-- DMS帽子 -->
 	<ThingDef ParentName="ApparelMakeableBase" Name="DMS_CapBase" Abstract="True">
-		<description>a soft cap for military man when combat helmet is not required.</description>
+		<description>A soft cap for enlisted men for the times a helmet is not required or available.</description>
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
@@ -139,8 +139,8 @@
 
 	<ThingDef ParentName="DMS_CapBase"><!-- ArmyCap -->
 		<defName>DMS_Apparel_ArmyCap</defName>
-		<label>army cap</label>
-		<description>a soft cap for service man when combat helmet is not required.</description>
+		<label>Army Cap</label>
+		<description>A standard issue army patrol cap, great for keeping the sun off your face or the rain out of your eyes.</description>
 		<graphicData>
 			<texPath>Things/Apparel/ArmyCap/headgear_icon</texPath>
 		</graphicData>
@@ -171,8 +171,8 @@
 
 	<ThingDef ParentName="DMS_CapBase"><!-- SoftKepi -->
 		<defName>DMS_Apparel_SoftKepi</defName>
-		<label>soft kepi</label>
-		<description>a soft cap for military man when combat helmet is not required.</description>
+		<label>Soft Kepi</label>
+		<description>A traditional hat with a flat circular top and a visor.</description>
 		<graphicData>
 			<texPath>Things/Apparel/SoftKepi/headgear_icon</texPath>
 		</graphicData>
@@ -204,8 +204,8 @@
 
 	<ThingDef ParentName="DMS_CapBase"><!-- Beret -->
 		<defName>DMS_Apparel_Beret</defName>
-		<label>beret</label>
-		<description>a soft cap for military man when combat helmet is not required.</description>
+		<label>Beret</label>
+		<description>A more stylish cap typically used to identify the wearer as belonging in a specialty unit</description>
 		<graphicData>
 			<texPath>Things/Apparel/Beret/headgear_icon</texPath>
 		</graphicData>
@@ -271,8 +271,8 @@
 	<!-- 戰術裝備 -->
 	<ThingDef ParentName="DMS_ArmorHelmetMakeableBase">
 		<defName>DMS_Apparel_TacticalHelmet</defName>
-		<label>tactical helmet</label>
-		<description>A lightweight combat helmet with a complex design, reinforced with plasteel. Not effective against blunt weapons.</description>
+		<label>Tactical Helmet</label>
+		<description>A lightweight combat helmet reinforced with plasteel to prevent backface deformation after its impacted by a round. Great at protecting the wearer from bullets and shrapnel, not so great at protecting the wearer from blunt force trauma. </description>
 		<recipeMaker>
 			<researchPrerequisite>FlakArmor</researchPrerequisite>
 			<skillRequirements>
@@ -343,8 +343,8 @@
 	<!-- 全覆天線頭盔 -->
 	<ThingDef ParentName="DMS_ArmorHelmetMakeableBase">
 		<defName>DMS_Apparel_ArrayHelmet</defName>
-		<label>operator helmet</label>
-		<description>A full-covered helmet designed for field drone operators, Features built-in head-mounted display and neural-connected operating system. can not only increase the control bandwidth but also give full protection.</description>
+		<label>Operator Helmet</label>
+		<description>A full face helmet designed for field drone operators featuring a built-in head-mounted display and neural-connected operating system. Provides a massive increase to the control bandwidth for mechanoids and gives full ballistic protection to the head and face.</description>
 		<recipeMaker>
 			<researchPrerequisites>
 				<li>FlakArmor</li>
@@ -427,7 +427,7 @@
 
 	<ThingDef ParentName="ArmorMachineableBase">
 		<defName>DMS_Apparel_TacticalVest</defName>
-		<label>tactical vest</label>
+		<label>Tactical Vest</label>
 		<description>A vest with armor plates inserted on the chest and back. While quite effective at deflecting gunshots and stabbing attacks against the chest, it does nothing to protect the limbs.</description>
 		<techLevel>Industrial</techLevel>
 		<recipeMaker>
@@ -527,8 +527,8 @@
 	<!-- 戰術斗篷，給戰術女巫和狙擊手用的 -->
 	<ThingDef ParentName="ApparelMakeableBase">
 		<defName>DMS_Apparel_TacticalCloak</defName>
-		<label>tactical cloak</label>
-		<description>An tactical camouflage cloak equipped by magiers and special forces in colonial fleet.</description>
+		<label>Tactical Cloak</label>
+		<description>A cloak capable of low-level active camouflage typically equipped by sappers and special operators in the Colonial Forces.</description>
 		<!-- 暫時不給造 -->
 		<recipeMaker />
 		<graphicData>

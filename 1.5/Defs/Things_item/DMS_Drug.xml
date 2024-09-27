@@ -4,7 +4,7 @@
   <ThingDef ParentName="MakeableDrugPillBase">
     <defName>Neuroglue</defName>
     <label>Neuroglue</label>
-    <description>A protein-like receptor gel mediates biological tissues and neural machinery, which can effectively block phantom limb syndrome and synthetic rejection. also block nanomechanical infections.\n\nSuch products have been circulating Rimworld and Midworld for many decades, but any organization claiming to have produced this product has been sanctioned by agents from the Coreworld. They Declare that such a product will increase the bionical level of pirates which isn't safe for regional balance.</description>
+    <description>A protein-like receptor gel which connects biological tissues and neural machinery. Neuroglue can effectively block phantom limb syndrome and synthetic rejections.\n\nSuch products have been circulating Rimworld and Midworld for many decades, but any organization claiming to have produced this product has been sanctioned by agents from the Coreworld. They Declare that such a product will increase the bionic level of pirates which isn't safe for regional balance.</description>
     <possessionCount>10</possessionCount>
     <descriptionHyperlinks><HediffDef>NeuroglueHigh</HediffDef></descriptionHyperlinks>
     <graphicData>
@@ -49,8 +49,8 @@
   <HediffDef>
     <defName>NeuroglueHigh</defName>
     <hediffClass>Hediff_High</hediffClass>
-    <label>receptor gel</label>
-    <description>Receptor gel mediates between biological and mechanical nerves, which can cure the Bionic syndrome with only minor side-effects.</description>
+    <label>Receptor gel</label>
+    <description>Receptor gel which connects biological and mechanical nerves, which can cure the Bionic syndrome with only minor side-effects.</description>
     <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
     <scenarioCanAdd>true</scenarioCanAdd>
     <maxSeverity>1.0</maxSeverity>
@@ -78,7 +78,7 @@
   <ThingDef ParentName="MakeableDrugPillBase">
     <defName>DMS_CombatRation</defName>
     <label>C-Ration</label>
-    <description>A block high energy organic polymer ration, invented during World War III as a nutritional supplement for reinforced human troops during combat. For soldiers equipped with nutritional interfaces, it can provide just enough calories for internal organs to function for a long while. But for normal humans, it might cause some slight gastrointestinal discomfort.</description>
+    <description>A high energy organic polymer ration, invented during World War III as a nutritional supplement for augmented human troops during combat. For soldiers equipped with nutritional interfaces, it provides enough calories for internal organs to function for a long. But for normal humans, it might cause some slight gastrointestinal discomfort.</description>
     <possessionCount>10</possessionCount>
     <descriptionHyperlinks><HediffDef>NeuroglueHigh</HediffDef></descriptionHyperlinks>
     <graphicData> 
@@ -138,7 +138,7 @@
     <stages>
       <li>
         <label>overeat</label>
-        <description>the amount of this ration is too much that I think my stomach isn't paired with it.</description>
+        <description>This ration tastes horrible and is making my stomach turn. I don't like it.</description>
         <baseMoodEffect>-12</baseMoodEffect>
       </li>
     </stages>

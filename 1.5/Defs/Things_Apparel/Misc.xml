@@ -4,7 +4,7 @@
 	<ThingDef ParentName="ApparelArmorHelmetReconBase">
 		<defName>DMS_Apparel_Gunlink</defName>
 		<label>Night Vision Goggles</label>
-		<description>An auxiliary aiming device for night combat, which can be worn with a helmet.</description>
+		<description>An optical enhancement device which amplifies existing light in low-light conditions and projects it through the display on to the users eyes. Compatible with most helmets and can be worn stand-alone. </description>
 		<graphicData>
 			<texPath>Things/Apparel/NightVisionGoggles/headgear_icon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -56,8 +56,8 @@
 	<!-- 匿蹤面罩 -->
 	<ThingDef ParentName="HatMakeableBase">
 		<defName>DMS_Apparel_StealthMask</defName>
-		<label>stealth mask</label>
-		<description>A piece of fabric which covers the wearer's face.</description>
+		<label>Stealth Mask</label>
+		<description>A piece of fabric which obscures the wearer's face.</description>
 		<techLevel>Industrial</techLevel>
 		<graphicData>
 			<texPath>Things/Apparel/StealthMask/headgear_icon</texPath>

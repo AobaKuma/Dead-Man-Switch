@@ -281,7 +281,7 @@
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Tunguska</defName>
     <label>Tunguska</label>
-    <description>A remote-controlled turret composed of two 2A38 autoaconnon and eight missile launchers. Due to its cheap maintenance and modification costs, it is commonly seen in colonial fleet outposts in rimworlds.</description>
+    <description>A remote-controlled turret composed of two 2A38 autoaconnon and eight missile launchers. Due to its cheap maintenance and modification costs, it is commonly seen in colonial fleet outposts in rim worlds.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Turrets/DMS_Base_Tunguska_GateKeeper</texPath>
@@ -310,7 +310,7 @@
       <li Class="CompProperties_Refuelable">
         <fuelLabel>Shots until barrel change</fuelLabel>
         <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
-        <outOfFuelMessage>Cannot shoot: Needs new reinforced barrel</outOfFuelMessage>
+        <outOfFuelMessage>Cannot shoot: Needs new reinforced barrel.</outOfFuelMessage>
         <fuelFilter>
           <thingDefs>
             <li>ReinforcedBarrel</li>
@@ -359,7 +359,7 @@
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>DMS_Gun_Tunguska</defName>
     <label>Tunguska</label>
-    <description>A weapon system that include two 2A38 autoaconnon and eight missile launchers.</description>
+    <description>A weapon system including two 2A38 autoaconnons and eight missile launchers.</description>
     <graphicData>
       <texPath>Things/Turrets/DMS_Gun_Tunguska</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -397,8 +397,8 @@
   <!--守門員&方陣融合體-->
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_GateKeeper</defName>
-    <label>GateKeeper</label>
-    <description>A live-fire large-caliber multi-barreled machine gun turret used on spacecraft and maritime ships, with extremely high rates of fire and devastating suppression capabilities.</description>
+    <label>Gatekeeper</label>
+    <description>A large-caliber multi-barreled machine gun turret typically used on spacecraft and maritime ships. It has an extremely high rates of fire and devastating suppression capabilities.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Turrets/DMS_Base_Tunguska_GateKeeper</texPath>
@@ -427,7 +427,7 @@
       <li Class="CompProperties_Refuelable">
         <fuelLabel>Shots until barrel change</fuelLabel>
         <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
-        <outOfFuelMessage>Cannot shoot: Needs new reinforced barrel</outOfFuelMessage>
+        <outOfFuelMessage>Cannot shoot: Needs new reinforced barrel.</outOfFuelMessage>
         <fuelFilter>
           <thingDefs>
             <li>ReinforcedBarrel</li>
@@ -479,8 +479,8 @@
 
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>DMS_Gun_GateKeeper</defName>
-    <label>GateKeeper</label>
-    <description>A large-caliber multi-barreled autocannon, more known as GAU-8 "Avanger". It is an old and practical design with extremely high rates of fire and devastating suppression capabilities.</description>
+    <label>Gatekeeper</label>
+    <description>A large-caliber multi-barreled autocannon, also known as the GAU-8 "Avenger". Its an ancient practical design with an extremely high rate of fire and a devastating effect on anything unfortunate enough to stand infront of it.</description>
     <graphicData>
       <texPath>Things/Turrets/DMS_Gun_GateKeeper</texPath>
       <drawSize>6</drawSize>
@@ -546,7 +546,7 @@
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Okhotnik</defName>
     <label>Okhotnik</label>
-    <description>an ancient design of remote control turret, widely used on armored vehicle and mechs armor platforms.</description>
+    <description>An ancient design of a remote controlled turret widely used on armored vehicles and mech armor platforms.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Turrets/DMS_Weapon_Base</texPath>
@@ -569,7 +569,7 @@
       <li Class="CompProperties_Refuelable">
         <fuelLabel>Shots until barrel change</fuelLabel>
         <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
-        <outOfFuelMessage>Cannot shoot: Needs new reinforced barrel</outOfFuelMessage>
+        <outOfFuelMessage>Cannot shoot: Needs new reinforced barrel.</outOfFuelMessage>
         <fuelFilter>
           <thingDefs>
             <li>ReinforcedBarrel</li>
@@ -678,7 +678,7 @@
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Vasilek</defName>
     <label>Vasilek</label>
-    <description>an ancient design of rapid fire indirect artillery suppression, can fire 4 mortar rounds in one burst.</description>
+    <description>An ancient design of a rapid fire indirect artillery piece capable of firing four mortar rounds in one burst.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Turrets/Bipod_Base</texPath>
@@ -711,7 +711,7 @@
       <li Class="CompProperties_Refuelable">
         <fuelLabel>Shots until barrel change</fuelLabel>
         <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
-        <outOfFuelMessage>Cannot shoot: Needs new reinforced barrel</outOfFuelMessage>
+        <outOfFuelMessage>Cannot fire: Needs new reinforced barrel.</outOfFuelMessage>
         <fuelFilter>
           <thingDefs>
             <li>ReinforcedBarrel</li>
@@ -767,7 +767,7 @@
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>DMS_Gun_Vasilek</defName>
     <label>2B9M vasilek</label>
-    <description>an ancient design of rapid fire indirect artillery suppression, can fire 4 mortar rounds in one burst.</description>
+    <description>An ancient design of rapid fire indirect artillery piece capabler of firing four mortar rounds in one burst.</description>
     <graphicData>
       <texPath>Things/Turrets/DMS_Vasilek</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -808,7 +808,7 @@
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Dawnblade</defName>
     <label>Dawnblade</label>
-    <description>MPQFS-85 "Dawnblade" is an onboard multi-role quick-firing cannon system, it uses drum magazines and automatic revolver loaders to permit a high rate of fire.\n\nthe armor plating is removed to allow them to be stational deployed to provide heavy fire support for colony defense.</description>
+    <description>MPQFS-85 "Dawnblade" is an onboard multi-role quick-firing cannon system. It uses drum magazines and an automatic revolver loader to permit a high rate of sustained fire.\n\nThe armor plating has been removed to allow emplacement to be redeployed as needed for heavy fire support.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Turrets/DMS_Base_Tunguska_GateKeeper</texPath>
@@ -837,7 +837,7 @@
       <li Class="CompProperties_Refuelable">
         <fuelLabel>Shots until barrel change</fuelLabel>
         <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
-        <outOfFuelMessage>Cannot shoot: Needs new reinforced barrel</outOfFuelMessage>
+        <outOfFuelMessage>Cannot fire: Needs new reinforced barrel.</outOfFuelMessage>
         <fuelFilter>
           <thingDefs>
             <li>ReinforcedBarrel</li>
@@ -890,8 +890,8 @@
 
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>DMS_Gun_Dawnblade</defName>
-    <label>Type 85 Multi-Purposed Quick-Firing System</label>
-    <description>A highly automated artillery system widely used on small and medium-sized space ships in colonial fleets.</description>
+    <label>Type 85 Multi-Purpose-Quick-Firing System</label>
+    <description>An automated artillery system widely used on small to medium-sized frigates and corvettes in colonial fleets.</description>
     <graphicData>
       <texPath>Things/Turrets/DMS_Gun_DawnBlade</texPath>
       <drawSize>6</drawSize>

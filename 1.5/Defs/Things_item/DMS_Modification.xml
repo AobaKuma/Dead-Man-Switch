@@ -36,8 +36,8 @@
   <!-- 陶瓷裝甲板 -->
   <ThingDef ParentName="BaseModificationItem">
     <defName>DMS_CeramicsPlating</defName>
-    <label>ceramic plates</label>
-    <description>A set of ceramic plates can be mounted on the mech's external shell to provide additional protection, but once damaged it can only be replaced with a new one. \n\nThe maximum amount of the plating on mech can apply depends on its body size.</description>
+    <label>Ceramic Plates</label>
+    <description>A set of ceramic plates designed to be mounted on to a mech's external shell to provide additional protection. Once damaged, the armor plating must be completely replaced.\n\nThe maximum amount of plating able to be installed on a mech can depends on its body size.</description>
     <descriptionHyperlinks>
       <HediffDef>DMS_CeramicsPlating</HediffDef>
     </descriptionHyperlinks>
@@ -76,8 +76,8 @@
   <HediffDef>
     <defName>DMS_CeramicsPlating</defName>
     <hediffClass>HediffWithComps</hediffClass>
-    <label>ceramic plates</label>
-    <description>deposable ceramic armorplate that effectively inhibits thermal erosion of bullets or shaped charges. \n\nAlthough it is an excellent protective armor, it is still essentially a disposable defensive plate and must be completely replaced once damaged.</description>
+    <label>Ceramic Plates</label>
+    <description>Disposable ceramic armor that effectively protects the wearer from small arms fire and shrapnel.\n\nAlthough it is an excellent protective armor, it must be completely replaced once damaged.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_CeramicsPlating</ThingDef>
     </descriptionHyperlinks>
@@ -123,8 +123,8 @@
   <!-- 強化框架 -->
   <ThingDef ParentName="BaseModificationItem">
     <defName>DMS_ReinforcedFrame</defName>
-    <label>reinforced frame</label>
-    <description>A set of tungsteel frame to replace parts that are prone to wear can effectively improve the durability during high-intensity combat and reduce the time spent on maintenance. But in exchange it will significantly increase the weight of the mech and affect its speed</description>
+    <label>Reinforced Frame</label>
+    <description>A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy duty replacement parts will significantly increase the weight of the mech and affect its speed.</description>
     <descriptionHyperlinks>
       <HediffDef>DMS_ReinforcedFrame</HediffDef>
     </descriptionHyperlinks>
@@ -163,8 +163,8 @@
   <HediffDef>
     <defName>DMS_ReinforcedFrame</defName>
     <hediffClass>Hediff</hediffClass>
-    <label>reinforced frame</label>
-    <description>Using tungsten steel to replace parts of the robot's frame that are prone to wear can effectively improve the durability during high-intensity combat and reduce the time spent on maintenance. But in exchange it will significantly increase the weight of the mech and affect its speed.</description>
+    <label>Reinforced Frame</label>
+    <description>A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy duty replacement parts will significantly increase the weight of the mech and affect its speed.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_ReinforcedFrame</ThingDef>
     </descriptionHyperlinks>
@@ -188,8 +188,8 @@
   <!-- 裂變電池 -->
   <ThingDef ParentName="BaseModificationItem">
     <defName>DMS_NuclearBattery</defName>
-    <label>nuclear battery</label>
-    <description>A nuclear fission battery with a simple structure, commonly found in many unmanned signal stations and defense robots, consists of six high-density uranium-235 columns near critical mass and thermocouples integrated and wrapped in a high-strength shell. Its energy is enough to make most models of automatroid operate for decades.</description>
+    <label>Nuclear Battery</label>
+    <description>A nuclear fission reactor powering a quantum battery, this device is commonly found in many unmanned signal stations and defense robots. It consists of six high-density uranium-235 columns with integrated thermocouples all wrapped in a high-strength shell. Its energy is enough to make most models of automatroid operate for decades.</description>
     <descriptionHyperlinks>
       <HediffDef>DMS_NuclearBattery</HediffDef>
     </descriptionHyperlinks>
@@ -218,8 +218,8 @@
   <HediffDef>
     <defName>DMS_NuclearBattery</defName>
     <hediffClass>Hediff</hediffClass>
-    <label>nuclear battery</label>
-    <description>The abundant output of installed nuclear fission battery eliminates the need for recharge. it can also be overloaded to produce a nuclear explosion comparable to an anti-gram weapon to destroy the enemy together.</description>
+    <label>Nuclear Battery</label>
+    <description>The abundant output of installed nuclear powered quantum batteries eliminates the need to recharge. The reactor can be overloaded to produce a chain reaction meltdown comparable to an anti-grain warhead.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_NuclearBattery</ThingDef>
     </descriptionHyperlinks>
@@ -241,8 +241,8 @@
 
   <RecipeDef MayRequire="aoba.fortress.industrial.nucleardawn">
     <defName>DMS_Make_NuclearBattery</defName>
-    <label>make nuclear battery</label>
-    <description>make nuclear battery using enriched uranium.</description>
+    <label>Make a Nuclear Powered Quantum Battery</label>
+    <description>Creates a Nuclear Powered Quantum Battery.</description>
     <jobString>Fabricating.</jobString>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
@@ -298,8 +298,8 @@
   <!-- 合成肌腱-->
   <ThingDef ParentName="BaseModificationItem">
     <defName>DMS_SyntheticTendon</defName>
-    <label>synthetic tendon</label>
-    <description>A biosynthetic muscles attached on the outer layer of mechanical limbs. can effectively increase output but will bring additional energy consumption.</description>
+    <label>Synthetic Tendon</label>
+    <description>Biosynthetic muscles attached on the outer layer of mechanical limbs. Synthetic tendons effectively increase output at the cost of additional energy consumption.</description>
     <descriptionHyperlinks>
       <HediffDef>DMS_SyntheticTendon</HediffDef>
     </descriptionHyperlinks>
@@ -342,8 +342,8 @@
   <HediffDef>
     <defName>DMS_SyntheticTendon</defName>
     <hediffClass>Hediff</hediffClass>
-    <label>synthetic tendon</label>
-    <description>A biosynthetic muscles attached on the outer layer of mechanical limbs. can effectively increase output but will bring additional energy consumption.</description>
+    <label>Synthetic Tendon</label>
+    <description>Biosynthetic muscles attached on the outer layer of mechanical limbs. Synthetic tendons effectively increase output at the cost of additional energy consumption.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_SyntheticTendon</ThingDef>
     </descriptionHyperlinks>
@@ -365,8 +365,8 @@
 
   <ThingDef ParentName="BaseModificationItem">
     <defName>DMS_TB_HeavyHydraulicFrame</defName>
-    <label>heavy hydraulic frame</label>
-    <description>Heavy add-on module for capability to mount heavy weapons on mech iguana and gecko.</description>
+    <label>Heavy Hydraulic Frame</label>
+    <description>A high durability reinforced hydraulic frame designed as a platform for mounting heavy weapons on Iguanas and Geckos.</description>
     <descriptionHyperlinks>
       <HediffDef>DMS_TB_HeavyHydraulicFrame</HediffDef>
       <ThingDef>DMS_Mech_Iguana</ThingDef>
@@ -415,8 +415,8 @@
   <HediffDef>
     <defName>DMS_TB_HeavyHydraulicFrame</defName>
     <hediffClass>Hediff</hediffClass>
-    <label>heavy hydraulic frame</label>
-    <description>a heavy hydraulic module and power pack for bipedal mechs, gain capability for heavier lifting and also mount heavy weapons.</description>
+    <label>Heavy Hydraulic Frame</label>
+    <description>A heavy hydraulic module and power pack for bipedal mechs to gain the capability to lift heavier objects or mount heavy weapons.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_TB_HeavyHydraulicFrame</ThingDef>
       <ThingDef>DMS_Mech_Iguana</ThingDef>
@@ -477,8 +477,8 @@
   <!-- 戰鬥框架-擴容貨箱掛載-->
   <ThingDef ParentName="BaseModificationItem">
     <defName>DMS_BF_ExtendCargo</defName>
-    <label>extended cargo rack</label>
-    <description>Side mounted cargo racks that suitable for battle frame pylons, which can effectively increase the carrying capacity of battle frame and its variants.</description>
+    <label>Extended Cargo Rack</label>
+    <description>Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants.</description>
     <descriptionHyperlinks>
       <HediffDef>DMS_BF_ExtendCargo</HediffDef>
       <ThingDef>DMS_Mech_BattleFrame</ThingDef>
@@ -526,8 +526,8 @@
   <HediffDef>
     <defName>DMS_BF_ExtendCargo</defName>
     <hediffClass>Hediff</hediffClass>
-    <label>extended cargo rack</label>
-    <description>Side mounted cargo racks that suitable for battle frame pylons, which can effectively increase the carrying capacity of battle frame and its variants.</description>
+    <label>Extended Cargo Rack</label>
+    <description>Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_BF_ExtendCargo</ThingDef>
       <ThingDef>DMS_Mech_BattleFrame</ThingDef>
@@ -585,8 +585,8 @@
   <!-- 戰鬥框架-附加裝甲掛載 -->
   <ThingDef ParentName="BaseModificationItem">
     <defName>DMS_BF_ExtendArmor</defName>
-    <label>extended armor plate</label>
-    <description>composite armor attachments that suitable for battle frame pylons, which can effectively resist direct hits to the chassis from various threats such as fragments and medium-caliber gunfire.</description>
+    <label>Additional Armor Plating</label>
+    <description>Composite armor plates designed for battle frame pylons add survivability to the battle frame by protecting it from fragmentation and medium-caliber gunfire.</description>
     <descriptionHyperlinks>
       <HediffDef>DMS_BF_ExtendArmor</HediffDef>
       <ThingDef>DMS_Mech_BattleFrame</ThingDef>
@@ -636,8 +636,8 @@
   <HediffDef>
     <defName>DMS_BF_ExtendArmor</defName>
     <hediffClass>Hediff</hediffClass>
-    <label>extended armor plate</label>
-    <description>composite armor attachments that suitable for battle frame pylons, which can effectively resist direct hits to the chassis from various threats such as fragments and medium-caliber gunfire.</description>
+    <label>Additional Armor Plating</label>
+    <description>Composite armor plates designed for battle frame pylons add survivability to the battle frame by protecting it from fragmentation and medium-caliber gunfire.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_BF_ExtendArmor</ThingDef>
       <ThingDef>DMS_Mech_BattleFrame</ThingDef>

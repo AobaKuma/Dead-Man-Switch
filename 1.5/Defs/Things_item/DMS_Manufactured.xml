@@ -4,8 +4,8 @@
   <!-- 尼龍纖維 玩家能量產的丐版合成纖維，美觀度低但作為衣服十分耐用-->
   <ThingDef ParentName="ResourceBase">
     <defName>Polyester</defName>
-    <label>polyester</label>
-    <description>A type of synthetic fiber, which might ugly but still widely used in textile materials such as clothing, bedding, and special fabrics for military industry.</description>
+    <label>Polyester</label>
+    <description>A type of synthetic fiber that is ugly but still widely used in textile materials such as clothing, bedding, and special fabrics for the military.</description>
     <descriptionHyperlinks><ThingDef>DMS_ReactionChamber</ThingDef></descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Resource/Polyester</texPath>
@@ -52,8 +52,8 @@
   <!-- 塑化纖維 玩家能生產的進階纖維，性質接近魔鬼布。製造需要塑鋼。-->  
   <ThingDef ParentName="ResourceBase">
     <defName>Plasfiber</defName>
-    <label>plasticfiber</label>
-    <description>A type of synthetic fiber made of plasteel, which is air-tight and certain degree of sharp-proof performance. However, it does not have much resistance to blunt impact.\n\n Plasticfiber has a importance in the medical field. As a biomimetic surface material, it does not produce rejection reactions from the immune system.</description>
+    <label>Plasticfiber</label>
+    <description>A type of synthetic fiber made with plasteel and is intrinsically resistant to sharp attacks but not blunt impacts.\n\n Plastifiber has a important role in the medical field as a biomimetic surface material as it does not produce rejection reactions from the immune system.</description>
     <descriptionHyperlinks><ThingDef>DMS_ReactionChamber</ThingDef></descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Resource/Plasfiber</texPath>
@@ -100,8 +100,8 @@
   <!-- 鎢鋼合金 強度介於塑鋼與鋼鐵之間的材料，是大多數DMS機兵的製造用料-->  
   <ThingDef ParentName="ResourceBase">
     <defName>Tungsteel</defName>
-    <label>tungsteel</label>
-    <description>a military standard alloy, Usually used to manufacture high-performance weapons, armor and special mechanical parts.</description>
+    <label>Tungsteel</label>
+    <description>A military grade standard alloy, usually used to manufacture high-performance weapons, armor, and special mechanical parts.</description>
     <descriptionHyperlinks><ThingDef>DMS_Furnace</ThingDef></descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Resource/Tungsteel</texPath>
@@ -156,7 +156,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>DMS_Ceramics</defName>
     <label>Ceramics</label>
-    <description>a military standard composite ceramic plate widely used as Defensive Additions for war machines.\n\n As a military standard material, it's durability is somewhat poor, but it is superior in its protection and light weight.</description>
+    <description>A military standard composite ceramic plate widely used as a defensive additions for war machines.\n\nits durability is somewhat poor, but it provides excellent protection and is light weight.</description>
     <descriptionHyperlinks><ThingDef>DMS_Furnace</ThingDef></descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Resource/Ceramic</texPath>
@@ -211,8 +211,8 @@
   <!-- 人工肌肉 能拿來造仿生體的人工合成肌肉束，也同時是一些特種機兵的製造用料-->  
   <ThingDef ParentName="ResourceBase">
     <defName>Artifuscle</defName>
-    <label>artifuscle</label>
-    <description>a type of prosthetic material made by genetically engineered sauromorph muscle bundles</description>
+    <label>Artifuscle</label>
+    <description>Artifuscle is a type of prosthetic material made from genetically enhanced lab grown muscle-fiber bundles.</description>
     <descriptionHyperlinks><ThingDef>DMS_TableArtifuscle</ThingDef></descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Resource/Artifuscle</texPath>
@@ -277,8 +277,8 @@
   <!-- 沖壓機件 DMS裡廣泛使用的零件，機兵與建築等複雜機器都會需要用到，也可以轉換成工業零件-->
   <ThingDef ParentName="ResourceBase">
     <defName>ComponentStamped</defName>
-    <label>stamponent</label>
-    <description>Hydraulic integrally formed component. Used in products that require mass production on the assembly line.</description>
+    <label>Stamponent</label>
+    <description>Hydraulic integrally formed component used in products that require mass production on the assembly line.</description>
     <descriptionHyperlinks><ThingDef>DMS_TableMachinePrinter</ThingDef></descriptionHyperlinks>
     <possessionCount>2</possessionCount>
     <graphicData>
@@ -310,8 +310,8 @@
   <!-- 生物濕件 重型機兵的關鍵零件，前期只能靠打機兵軍團獲取，後期可以自己生產-->
   <ThingDef ParentName="ResourceBase">
     <defName>Neurocomputer</defName>
-    <label>wetware computer</label>
-    <description>an organic computer also be known as an artificial organic brain or a neurocomputer, it's the perfect computer unit source for factions without access to rare metals and precision machining.</description>
+    <label>Wetware computer</label>
+    <description>An organic computer which functions as an artificial organic brain. It fills the role of a cheap computational brain for factions without access to rare metals and precision machining.</description>
     <descriptionHyperlinks><ThingDef>DMS_TableArtifuscle</ThingDef></descriptionHyperlinks>
     <possessionCount>2</possessionCount>
     <graphicData>
@@ -443,8 +443,8 @@
 
   <ThingDef ParentName="ResourceBase">
     <defName>ComponentControlChip</defName>
-    <label>cluster control chipsets</label>
-    <description>a chipsets for remote machine controller and the core of industrial machines.</description>
+    <label>Cluster Control Chipsets</label>
+    <description>A chipset for remote machine controllers and the core of industrial machines.</description>
     <possessionCount>2</possessionCount>
     <graphicData>
       <texPath>Things/Resource/ComponentCCC</texPath>
@@ -510,8 +510,8 @@
   <!-- 火控芯片 可以透過擊殺長程曲射攻擊的機兵有一定機率獲取，可以用來造戰鬥輔助用仿生體-->
   <ThingDef ParentName="ResourceBase">
     <defName>ComponentFireControl</defName>
-    <label>fire control system</label>
-    <description>a chipsets designed for weapon control assist and trajectory tracking.</description>
+    <label>Fire Control System</label>
+    <description>A chipsets designed for weapon control assistance and trajectory tracking.</description>
     <possessionCount>2</possessionCount>
     <graphicData>
       <texPath>Things/Resource/ComponentFCS</texPath>
@@ -549,9 +549,9 @@
         <activateTexPath>UI/Icons/Study</activateTexPath>
 
         <activateLabelString>Analyze...</activateLabelString>
-        <activateDescString>Analyze the fire control system</activateDescString>
-        <jobString>Analyze the fire control system</jobString>
-        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <activateDescString>Analyze the Fire Control System</activateDescString>
+        <jobString>Analyze the Fire Control System</jobString>
+        <guiLabelString>Choose who should analyze this.</guiLabelString>
         <inspectString>Can be analyzed by a colonist.</inspectString>
 
         <targetingParameters>
@@ -577,8 +577,8 @@
   <!-- Boss召喚器 -->
   <ThingDef ParentName="ResourceBase"> 
     <defName>DMS_EncryptedTransmitter</defName>
-    <label>encrypted transmitter</label>
-    <description>A high-power communicator used in the colony for emergency call support. Of course, the identification code of this rescue protocol has long been abandoned, so only those mechanized units that are out of command will take the bait.</description>
+    <label>Encrypted Transmitter</label>
+    <description>A high-power communication relay to be used in the colony for emergency reinforcements. The identification code of this rescue protocol has long been abandoned, so only those mechanized units that are feral will take the bait.</description>
     <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Resource/EncryptedTransmitter</texPath>

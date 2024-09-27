@@ -3,8 +3,8 @@
 
 	<ThingDef ParentName="ApparelBase">
 		<defName>DMS_Apparel_UnitSuit</defName>
-		<label>uniform</label>
-		<description>a jumpsuit uniform for colonization fleet crew member and standard combat unit.</description>
+		<label>Uniform</label>
+		<description>A jumpsuit for colonization fleet crew members and standard basic infantrymen.</description>
 		<techLevel>Industrial</techLevel>
 		<recipeMaker>
 			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -75,8 +75,8 @@
 
 	<ThingDef ParentName="DMS_CapBase"><!-- GarrisionCap -->
 		<defName>DMS_Apparel_GarrisionCap</defName>
-		<label>garrision cap</label>
-		<description>a soft cap for service man when combat helmet is not required.</description>
+		<label>Garrision Cap</label>
+		<description>A soft cap for servicemen for the times when a helmet is not required or available.</description>
 		<graphicData>
 			<texPath>Things/Apparel/GarrisionCap/headgear_icon</texPath>
 		</graphicData>
@@ -108,8 +108,8 @@
 
 	<ThingDef ParentName="ApparelMakeableBase">
 		<defName>DMS_Apparel_GarrisionCoat</defName>
-		<label>garrision coat</label>
-		<description>A typical coats for army, keep one warm in chilly weather.</description>
+		<label>Garrision Coat</label>
+		<description>A typical coat for an enlisted man, designed to keep one warm in chilly weather.</description>
 		<possessionCount>1</possessionCount>
 		<recipeMaker>
 		  <researchPrerequisite>DMS_EquipmentBasis</researchPrerequisite>
@@ -192,8 +192,8 @@
 
 	<ThingDef ParentName="ApparelBase">
 		<defName>DMS_Apparel_HazardSuit</defName>
-		<label>hazard suit</label>
-		<description>A large garment that conceals the wearer's entire head and body. worn as reliable protection against hazardous materials such as disease or parasitic infection entities.</description>
+		<label>Hazard Suit</label>
+		<description>A hazardous material suit covering the wearer's entire body. Used for protection against hazardous biological and chemical agents.</description>
 		<techLevel>Industrial</techLevel>
 		<recipeMaker>
 			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -281,8 +281,8 @@
 
 	<ThingDef ParentName="ApparelBase">
 		<defName>DMS_Apparel_PowerSkelton</defName>
-		<label>power skelton unit</label>
-		<description>Physical enhancement equipment from array of neural prosthetic skeltons. It can increase the wearer's carry weight and mobility with effectively.</description>
+		<label>Powered Exoskeletal Unit</label>
+		<description>A powered exoskeletal suit which mimics the human form and can be worn by an untrained operator. It significantly increases the wearer's strength and running speed.</description>
 		<techLevel>Industrial</techLevel>
 		<recipeMaker>
 			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>

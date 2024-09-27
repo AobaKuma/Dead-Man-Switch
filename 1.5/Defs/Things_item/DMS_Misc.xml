@@ -3,8 +3,8 @@
 
   <ThingDef ParentName="MakeableShellBase">
     <defName>Shell_BlasterSmoke</defName>
-    <label>blaster screen shell</label>
-    <description>An artillery shell containing reagents that, when impacted, generates an active-particle field that can trigger charged ammo burned out in mid-air, making it a perfect countermeasure while fighting against mech legion or mid-world megacorp. however, these products are not commonly spread in the rimworld not only because those who need them are not usually capable of producing them, but also cannot intercept projectiles from traditional firearms.</description>
+    <label>Blaster Screen Shell</label>
+    <description>An artillery shell containing reagents that generate an active-particle field which triggers charged ammo's detonation mid-flight. These shells are a preferred countermeasure while fighting against mech legions and mid-world megacorps. Does not effect other projectiles.</description>
     <possessionCount>2</possessionCount>
     <graphicData>
       <texPath>Things/BlasterInterceptor/Shell</texPath>

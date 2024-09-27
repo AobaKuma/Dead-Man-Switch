@@ -12,8 +12,8 @@
 
     <ThingDef Name="ShuttleBase" ParentName="BuildingBase">
         <defName>DMS_Shuttle</defName>
-        <label>heavy transport lifter</label>
-        <description>A heavy shuttle designed for transit between surface and orbit, it can lift up to 2 tons of cargo in flight.</description>
+        <label>Heavy Transport Lifter</label>
+        <description>A heavy transport shuttle designed for transit between the surface and orbit, it can lift up to 2 tons of cargo in flight.</description>
         <altitudeLayer>Building</altitudeLayer>
         <pathCost>50</pathCost>
         <blockWind>true</blockWind>
