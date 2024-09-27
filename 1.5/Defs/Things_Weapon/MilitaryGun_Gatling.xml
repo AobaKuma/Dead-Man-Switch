@@ -4,7 +4,7 @@
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_M214Gatlinggun</defName>
 		<label>M214</label>
-		<description>a rapid-firing multiple-barrel firearm chambered in assault rifle rounds.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<description>A multiple-barrel firearm chambered in rifle rounds designed for area denial through immense saturation of fire.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponTags>
 			<li>A_SuppressWeapon</li>
 			<li>V_Gatling556mm</li>
@@ -68,7 +68,7 @@
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_GAU19Gatlinggun</defName>
 		<label>GAU-19/A "Attacker"</label>
-		<description>a rapid-firing multiple-barrel firearm chambered in heavy machinegun rounds.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<description>A rapid-firing multiple-barrel firearm chambered in heavy machinegun rounds.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponTags>
 			<li>H_Gatling127mm</li>
 		</weaponTags>
@@ -134,7 +134,7 @@
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_GAU4Gatlinggun_Hold</defName>
 		<label>GAU-4 "Vulcan"</label>
-		<description>a rapid-firing multiple-barrel firearm chambered in autocannon rounds.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>
+		<description>A rapid-firing multiple-barrel firearm chambered in autocannon rounds. Precision built to spray death at anything unfortunate enough to be in front of it.\n\nThis weapon is designed specifically for automatroid use, it's so heavy only specific automatroids can operate it.</description>
 		<weaponTags>
 			<li>DMS_VehicleWeapon</li>
 			<li>H_Gatling20mm</li>
@@ -205,7 +205,7 @@
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_GAU4Gatlinggun</defName>
 		<label>GAU-4 "Vulcan"</label>
-		<description>a rapid-firing multiple-barrel weapon platfrom chambered in autocannon rounds.</description>
+		<description>A rapid-firing multiple-barrel firearm chambered in autocannon rounds. Precision built to spray death at anything unfortunate enough to be in front of it.\n\nThis weapon is designed specifically for automatroid use, it's so heavy only specific automatroids can operate it.</description>
 		<weaponTags>
 			<li>DMS_VehicleWeapon</li>
 			<li>V_Gatling20mm</li>
@@ -264,7 +264,7 @@
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_GAU8Gatlinggun</defName>
 		<label>GAU-8 "Avenger"</label>
-		<description>a rapid-firing multiple-barrel firearm chambered in high-cailber autocannon rounds, deadly and destructive.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>
+		<description>A rapid-firing multiple-barrel firearm chambered in massive autocannon rounds, deadly and destructive. This cannon was co-opted from ancient aircraft rumored to have been built around it.\n\nThis weapon is designed specifically for automatroid use, and it's so heavy only specific automatroids can wield it.</description>
 		<weaponTags>
 			<li>V_Gatling30mm</li>
 			<li>DMS_MechWeaponUltraHeavy</li>

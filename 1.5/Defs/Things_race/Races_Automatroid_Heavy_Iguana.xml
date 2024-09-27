@@ -6,7 +6,7 @@
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Iguana</defName>
     <label>Iguana</label>
-    <description>the moderize-redesigned bipedal walking tank based on Tarbosaurus, it's rather small and cost-friendly for mass production. but the experimental electromagnetic armor been removed to maintain it's mobility.</description>
+    <description>The modernized and redesigned bipedal walking tank based on the Tarbosaurus. This model is produced without the experimental electromagnetic armor allowing it to maintain greater mobility.</description>
     <statBases>
       <MoveSpeed>3.5</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>1.1</ArmorRating_Blunt>                                     <!--護甲-->
@@ -49,10 +49,10 @@
             <ID>machine gun</ID>
             <turret>DMS_SubMachineGunMounted</turret>
             <autoAttack>true</autoAttack>
-            <command_ToggleFire>fire at will</command_ToggleFire>
-            <commandDesc_ToggleFire>toggle turret to manually control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
-            <command_Target>aim target</command_Target>
-            <commandDesc_Target>aim at desinated target</commandDesc_Target>
+            <command_ToggleFire>Fire at will</command_ToggleFire>
+            <commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
+            <command_Target>Aim at target</command_Target>
+            <commandDesc_Target>Aim at designated target</commandDesc_Target>
             <warmingTime>3.2</warmingTime>
             <targetCommandIconPath>UI/Gizmos/ToggleTurret</targetCommandIconPath>
             <angleOffset>-90</angleOffset>
@@ -220,8 +220,8 @@
 
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Gecko</defName>
-    <label>gecko</label>
-    <description>an urban combat variant of Bipedal walker Iguana, additional armor are applied to protect against shaped charge rounds.</description>
+    <label>Gecko</label>
+    <description>An urban combat variant of the Iguana, this model is up-armored with additional electromagnetic plating to protect against shaped charge rounds and explosives.</description>
     <statBases>
       <MoveSpeed>4</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>1.1</ArmorRating_Blunt>                                     <!--護甲-->
@@ -263,10 +263,10 @@
             <ID>flame thrower</ID>
             <autoAttack>true</autoAttack>
             <turret>DMS_Flameblaster</turret>      
-            <command_ToggleFire>fire at will</command_ToggleFire>
-            <commandDesc_ToggleFire>toggle turret to manually control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
-            <command_Target>aim target</command_Target>
-            <commandDesc_Target>aim at desinated target</commandDesc_Target>
+            <command_ToggleFire>Fire at will</command_ToggleFire>
+            <commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
+            <command_Target>Aim at a target</command_Target>
+            <commandDesc_Target>Aim at a designated target</commandDesc_Target>
             <targetCommandIconPath>UI/Gizmos/ToggleTurret</targetCommandIconPath>
             <angleOffset>-90</angleOffset>
             <renderNodeProperties>

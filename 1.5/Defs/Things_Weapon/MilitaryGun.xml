@@ -21,8 +21,8 @@
 	<!-- DMS_AssaultShotgun -->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_AssaultShotgun</defName>
-		<label>mech assault shotgun</label>
-		<description>Automatic shotgun rapidly manufactured with stamped component.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<label>Mech Assault Shotgun</label>
+		<description>A fully automatic shotgun able to be mass produced with stamped components.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
 			<li>ShortShots</li>
 			<li>RangedHeavy</li>
@@ -92,8 +92,8 @@
 	<!-- DMS_AssaultRifle -->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_AssaultRifle</defName>
-		<label>mech assault rifle</label>
-		<description>a full metal assault rifle designed for mech soldiers, with a picatinny rail as long as the gun itself for all tacticool needs.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<label>Mech Assault Rifle</label>
+		<description>An easily mass produced assault rifle designed for mech soldiers equipped with an extra long picatinny rail for all tacticool needs.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
 			<li>LongShots</li>
 			<li>RangedHeavy</li>
@@ -159,8 +159,8 @@
 	<!--SAR-->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_SemiAutoRifle</defName>
-		<label>mech SemiAutoRifle</label>
-		<description>a gas action semi-auto rifle used by mech soldier, reliable but too heavy for human.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<label>Mech Semiauto Rifle</label>
+		<description>A gas blowback semi-automatic rifle used by mech soldiers. \n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
 			<li>LongShots</li>
 			<li>RangedHeavy</li>
@@ -231,8 +231,8 @@
 	<!-- DMS_BattleRifle -->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_BattleRifle</defName>
-		<label>mech battle rifle</label>
-		<description>a full metal battle rifle designed for mech soldiers, it's designed for dangerous mech to mech combat.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<label>Mech Battle Rifle</label>
+		<description>A battle rifle built for mech soldiers intended for mech to mech combat.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
 			<li>LongShots</li>
 			<li>RangedHeavy</li>
@@ -298,8 +298,8 @@
 	<!--DMR-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_MarksmanRifle</defName>
-		<label>mech marksman rifle</label>
-		<description>An automatic rifle with high shooting accuracy and burst capability. \n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<label>Mech Marksman Rifle</label>
+		<description>An automatic rifle with a free floating barrel to improve accuracy over a distance. Comes equipped from the factory with a three-round-burst option.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
 		  <li>RangedHeavy</li>
 		  <li>LongShots</li>
@@ -364,8 +364,8 @@
 	<!--AMR-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_AntiMaterialRifle</defName>
-		<label>mech AMR</label>
-		<description>High caliber sniper rifle made to be used by MS-4E Jadger automatroids to snipe armored target at long range.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<label>Mech AMR</label>
+		<description>A high caliber sniper rifle made to be used by MS-4E Jadger automatroids to destroy armored target at long ranges.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
 		  <li>RangedHeavy</li>
 		  <li>LongShots</li>
@@ -433,8 +433,8 @@
 	<!--狙擊榴彈發射器-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_SniperGrenadeLauncher</defName>
-		<label>sniper grenade launcher</label>
-		<description>precise grenade launcher designed to fit in anti-sniper role.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<label>Sniper Grenade Launcher</label>
+		<description>A precision grenade launcher designed to serve as a counter-sniper.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
 			<li>RangedHeavy</li>
 			<li>LongShots</li>
@@ -501,8 +501,8 @@
 	<!--AGL-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_AutomaticGrenadeLauncher</defName>
-		<label>mech grenade launcher</label>
-		<description>Handheld automatic grenade launcher for clearing out clustered targets.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<label>Mech Grenade Launcher</label>
+		<description>A handheld automatic grenade launcher for clearing out clustered targets.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
 			<li>RangedHeavy</li>
 			<li>LongShots</li>
@@ -591,8 +591,8 @@
 	<!--LMG-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_LightMachineGun</defName>
-		<label>mech LMG</label>
-		<description>Supressive weapon chambered in full power rifle round.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>		
+		<label>Mech LMG</label>
+		<description>A weapon specializing in supression chambered in a large caliber rifle round.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>		
 		<weaponClasses>
 			<li>RangedHeavy</li>
 			<li>LongShots</li>

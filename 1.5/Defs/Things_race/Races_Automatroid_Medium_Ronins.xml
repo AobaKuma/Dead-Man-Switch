@@ -3,8 +3,8 @@
   <!-- 浪人 ronin-->
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Ronin</defName>
-    <label>ronin</label>
-    <description>Humanoid mech model specialized for urban combat scenarios, packed with assault armor and high mobility, makes it a fierce unit in close quater.</description>
+    <label>Ronin</label>
+    <description>A Humanoid mech model specialized for urban combat, this unit is outfitted with assault armor and a mobility package making it a formidible foe in close quaters.</description>
     <statBases>
       <MoveSpeed>5</MoveSpeed>
       <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
@@ -113,7 +113,7 @@
 
   <PawnKindDef ParentName="BaseAutomatroidKind">  <!-- DMS_Mech_Ronin 浪人:均衡型  -->
     <defName>DMS_Mech_Ronin</defName>
-    <label>ronin</label>
+    <label>Ronin</label>
     <race>DMS_Mech_Ronin</race>
     <isFighter>true</isFighter>
     <combatPower>150</combatPower>
@@ -149,8 +149,8 @@
   <!--角鬥-->
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Gladiator</defName>
-    <label>gladiator</label>
-    <description>Melee specialized variant based on Ronin. While maintain Ronin's mobility and armor, it has better melee combat module, also equip with an assault shield.</description>
+    <label>Gladiator</label>
+    <description>A melee specialized variant of the Ronin. The Gladiator maintains the Ronin's mobility and armor and comes with an upgraded melee combat module and is equipped with an assault shield.</description>
     <statBases>
       <MoveSpeed>5</MoveSpeed>
       <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
@@ -266,8 +266,8 @@
    <!-- 破城者 Siegebreaker-->
    <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Siegebreaker</defName>
-    <label>siegebreaker</label>
-    <description>With better armor protection, siegebreaker stands in the most front of the line for sapping and breaching jobs, breaking through enemy defenses.</description>
+    <label>Siegebreaker</label>
+    <description> The Siegebreaker comes with top of the line armor making it ideal for sapping and breaching jobs.</description>
     <statBases>
       <StaggerDurationFactor>0.25</StaggerDurationFactor>
       <MoveSpeed>4.2</MoveSpeed>                                                    <!--移動速度-->
@@ -355,8 +355,8 @@
   <!-- 塔盾手 Protector-->
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Protector</defName>
-    <label>protector</label>
-    <description>Designed for peacekeeping operations and riot control need, Protector has overall strong armor around the frame, equip with a huge flash shield and close quater weapons like batons or shotguns.</description>
+    <label>Protector</label>
+    <description>The protector is designed for peacekeeping operations and riot control. This model is equipped with strong armor around its frame and has a huge flash shield to compliment the use of close quater weapons like batons or shotguns.</description>
     <statBases>
       <StaggerDurationFactor>0.25</StaggerDurationFactor>
       <MoveSpeed>4</MoveSpeed>                                                    <!--移動速度-->
@@ -480,8 +480,8 @@
   <!-- 方陣 phalanx-->
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Phalanx</defName>
-    <label>phalanx</label>
-    <description>A cost-saving mass-produced variant specialized for urban combat scenarios, packed with assault armor and high mobility, makes it a fierce unit in close quarters.</description>
+    <label>Phalanx</label>
+    <description>The Phalanx is a cheap mass-producable variant specialized for urban combat. It comes packed with assault armor and high mobility package making it a fierce unit in close quarters combat.</description>
     <statBases>
       <MoveSpeed>4.5</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>0.65</ArmorRating_Blunt>                                     <!--護甲-->
@@ -528,7 +528,7 @@
 
   <PawnKindDef ParentName="BaseAutomatroidKind">  <!-- DMS_Mech_Phalanx 方陣:量產近戰型  -->
     <defName>DMS_Mech_Phalanx</defName>
-    <label>phalanx</label>
+    <label>Phalanx</label>
     <race>DMS_Mech_Phalanx</race>
     <isFighter>true</isFighter>
     <combatPower>120</combatPower>

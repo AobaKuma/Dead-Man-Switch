@@ -61,7 +61,7 @@
   <ThingDef ParentName="BaseMechRace_Falcon">
     <defName>DMS_Mech_Falcon</defName>
     <label>Falcon</label>
-    <description>A heavy-duty tri-rotor drone for cooperating in field recon and anti-tank strikes.</description>
+    <description>A heavy-duty tri-rotor drone built for working in conjunction with recon units and anti-tank units.</description>
     <statBases>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">1</BandwidthCost>
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
@@ -127,8 +127,8 @@
   <!-- 夜蝠 -->
   <ThingDef ParentName="BaseMechRace_Falcon">
     <defName>DMS_Mech_Noctula</defName>
-    <label>noctula</label>
-    <description>Stealth operaton command-relay Noctula nicknamed "Night bat" is a command-relay variant of tri-rotor drone falcon.</description>
+    <label>Noctula</label>
+    <description>A stealth operaton command-relay drone nicknamed "Night bat". The drone is a command-relay variant of the Falcon.</description>
     <statBases>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
@@ -188,7 +188,7 @@
   <ThingDef Name="DMS_MechDoggeBase" ParentName="BaseAutomatroidRace">  <!-- DMS_Machine_Hound 獵犬常規型 -->
     <defName>DMS_Mech_Dogge</defName>
     <label>Dogge</label>
-    <description>A four-legged robot dog provide forward reconnaissance and urban combat support during armed operations, can equipped with small-caliber firearms or flamethrowers to provide certain containment capabilities.</description>
+    <description>A four-legged robot dog which excels at providing forward reconnaissance and urban combat support during operations. It can equipped with small-caliber firearms or flamethrowers to provide offensive capabilities.</description>
     <statBases>
       <MoveSpeed>6</MoveSpeed>
       <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
@@ -229,10 +229,10 @@
             <ID>machine gun</ID>
             <turret>DMS_SubMachineGunMounted</turret>
             <autoAttack>true</autoAttack>
-            <command_ToggleFire>fire at will</command_ToggleFire>
-            <commandDesc_ToggleFire>toggle turret to manually control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
-            <command_Target>aim target</command_Target>
-            <commandDesc_Target>aim at desinated target</commandDesc_Target>
+            <command_ToggleFire>Fire at will</command_ToggleFire>
+            <commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
+            <command_Target>Aim at target</command_Target>
+            <commandDesc_Target>Aim at a desinated target</commandDesc_Target>
             <warmingTime>3.2</warmingTime>
             <targetCommandIconPath>UI/Gizmos/ToggleTurret</targetCommandIconPath>
             <angleOffset>-90</angleOffset>

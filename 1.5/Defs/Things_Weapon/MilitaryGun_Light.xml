@@ -4,8 +4,8 @@
 	<!-- DMS_TaticalPistol -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_TaticalPistol</defName>
-		<label>mech pistol</label>
-		<description>Defensive firearm with refined manufacture process and additional tactical attachments, it's too heavy for human but suitable to mech soldier. offers better stop power than comparable weapons.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<label>Mech pistol</label>
+		<description>A sidearm designed for Automatroid or exoskeleton use. \n\nThis weapon is designed specially for Automatroid use, a normal human will be unable to use it without external equipment or augmentation.</description>
 		<weaponClasses>
 			<li>RangedLight</li>
 			<li>ShortShots</li>
@@ -105,7 +105,7 @@
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_PDW</defName>
 		<label>PDW</label>
-		<description>A mass-produced submachine gun, which was designed only capable of hip-fire so it's inaccurate in range but its caliber and ability to draw quick make it the perfect weapon for urban combat against milltor.</description>
+		<description>A mass-producable submachine gun which was designed to be used as a "Point Shooting" weapon. It's inaccurate at range but its caliber and draw speed it the ideal weapon for urban combat against milltors. </description>
 		<weaponClasses>
 			<li>RangedLight</li>
 			<li>ShortShots</li>
@@ -175,8 +175,8 @@
 	<!--DMS_AssaultPiercer 突擊衝鋒槍-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_AssaultPiercer</defName>
-		<label>assault piercer</label>
-		<description>a submachine gun chambered in the high-caliber round, capable of quick draw penetrating most of the armored targets in short range. Refered as piercer due to lack of comparable weapon in human arsenal.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<label>Assault Piercer</label>
+		<description>A submachine gun chambered in a higher caliber round, the Piercer was made for quick drawing ability so its heavy round can penetrate the armor of its targets at short range.\n\nThis weapon is designed specially for Automatroid use, a normal human will be unable to use it without external equipment or augmentation.</description>
 		<weaponClasses>
 			<li>RangedLight</li>
 			<li>ShortShots</li>

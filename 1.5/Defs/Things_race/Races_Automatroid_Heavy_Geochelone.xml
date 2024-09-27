@@ -4,8 +4,8 @@
   <!-- 象龜 geochelone-->
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Geochelone</defName>
-    <label>geochelone</label>
-    <description>an unmanned all-terrain tracked pulse shield support platform, featuring a diverse range of production models and variants.</description>
+    <label>Geochelone</label>
+    <description>An unmanned all-terrain tracked pulse shield support platform featuring a diverse range of production models and variants.</description>
     <!-- <size>(2,3)</size> -->
     <statBases>
       <MoveSpeed>2.5</MoveSpeed>
@@ -46,9 +46,9 @@
             <turret>DMS_SubMachineGunMounted</turret>
             <autoAttack>true</autoAttack>
             <command_ToggleFire>fire at will</command_ToggleFire>
-            <commandDesc_ToggleFire>toggle turret to manually control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
-            <command_Target>aim target</command_Target>
-            <commandDesc_Target>aim at desinated target</commandDesc_Target>
+            <commandDesc_ToggleFire>Toggle turret to manually control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
+            <command_Target>Aim at target</command_Target>
+            <commandDesc_Target>Aim at desinated target</commandDesc_Target>
             <warmingTime>3</warmingTime>
             <targetCommandIconPath>UI/Gizmos/ToggleTurret</targetCommandIconPath>
             <angleOffset>-90</angleOffset>
@@ -146,8 +146,8 @@
   <!-- 蠵龜Caretta  -->
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Caretta</defName>
-    <label>caretta</label>
-    <description>mobile anti-air support platform equipped with a formidable heavy Gatling turret, designed to neutralize enemy aircraft and ground forces.</description>
+    <label>Caretta</label>
+    <description>Mobile anti-air platform equipped with a formidable heavy gatling turret designed to neutralize enemy aircraft and obliterate ground forces.</description>
     <statBases>
       <MoveSpeed>2.5</MoveSpeed><!--移動速度-->
       <ArmorRating_Sharp>1.5</ArmorRating_Sharp><!--銳抗-->
@@ -236,8 +236,8 @@
   <!-- Killdozer -->
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Killdozer</defName>
-    <label>killdozer</label>
-    <description>An unmanned assault sapper with a dozer blade for fortification breakthrough in the frontline, and the armor on various parts of the body has also been strengthened.</description>
+    <label>Killdozer</label>
+    <description>An unmanned assault sapper with a dozer blade for breaking through frontline fortifications. The armor on various parts of the vehicle have been strengthened.</description>
     <statBases>
       <MoveSpeed>2.2</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>1.5</ArmorRating_Blunt>                                     <!--護甲-->

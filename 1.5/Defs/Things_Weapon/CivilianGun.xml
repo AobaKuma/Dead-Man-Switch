@@ -3,8 +3,8 @@
 	<!-- 口袋手槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_KnuckledusterRevolver</defName>
-		<label>knuckleduster Revolver</label>
-		<description>Minature self-defense weapon commonly found on midworlds, barely takes up any space when folded. Accepts multiple calibers and may also used as a knuckle in a pinch.</description>
+		<label>Knuckleduster Revolver</label>
+		<description>A minature self-defense weapon commonly found on midworlds, it barely takes up any space when folded. Knuckledsters accept multiple calibers and may also used as brassknuckles in a pinch.</description>
 		<weaponClasses>
 			<li>Ranged</li>
 			<li>RangedLight</li>
@@ -99,7 +99,7 @@
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_MiniMachineGun</defName>
 		<label>Riot LMG</label>
-		<description>Pistol caliber machinegun designed for colony defense. can chop down unarmored enemy hords and prisoner riots with ease.</description>
+		<description>Pistol caliber machinegun designed for colony defense. The Riot LMG can cut down unarmored enemy hordes and prisoner riots with ease.</description>
 	    <uiIconScale>1.4</uiIconScale>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_MiniMachineGun</texPath>
@@ -162,7 +162,7 @@
 	
 	<ThingDef ParentName="BaseBullet">
 		<defName>DMS_Bullet_MiniMachineGun</defName>
-		<label>riot machinegun bullet</label>
+		<label>Riot machinegun bullet</label>
 		<graphicData>
 		  <texPath>Things/Projectile/Bullet_Small</texPath>
 		  <graphicClass>Graphic_Single</graphicClass>
@@ -179,8 +179,8 @@
 	<!-- 生存步槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_SurvivalRifle</defName>
-		<label>survival rifle</label>
-		<description>Foldable rifle issued to war machine crew members for survival need. Accepts multiple common calibers.</description>
+		<label>Survival rifle</label>
+		<description>Foldable rifle issued to war machine crew members in case of emergency. Accepts multiple common calibers.</description>
 		<weaponClasses>
 		  <li>LongShots</li>
 		</weaponClasses>
@@ -270,7 +270,7 @@
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_Revolver</defName>
 		<label>Riot Revolver</label>
-		<description>a double-action revolver designed to load shotgun ammo. it was designed for personal Defense purpose but soon became an optional weapon for mech solders because it can be used against most of enemy types at the same time.</description>
+		<description>S double-action revolver designed to load shotgun ammo. It was designed for personal defense purposes but soon became a favored sidearm for mech solders because it can be used against most enemy types at the same time.</description>
 		<graphicData>
 			<texPath>Things/Weapons/HumanWeapon/RiotRevolver</texPath>
 		</graphicData>
@@ -376,8 +376,8 @@
 	<!-- 鎮暴霰彈槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_RiotShotgun</defName>
-		<label>rifled slug gun</label>
-		<description>a high caliber rifled shotgun manufactured with stamped component,design for riot operation and disable hostile mech unit.</description>
+		<label>Rifled slug gun</label>
+		<description>A high caliber rifled shotgun manufactured with stamped components designed for riot operations and disabling hostile mechs.</description>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_RiotShogun</texPath>
 			<drawSize>(1.3,1.3)</drawSize>
@@ -480,8 +480,8 @@
 	<!-- 獵象槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_ElephantGun</defName>
-		<label>elephant rifle</label>
-		<description>Single-shot high caliber heavy hunting rifle. While made to hunt giant games or stop large hostile lifeform with sheer kinetic energy, it is also used by early industrial colonies against mechanoids thanks to its simple manufacture requirements.</description>
+		<label>Elephant Rifle</label>
+		<description>Single-shot high caliber hunting rifle. While made to hunt big game or stop large hostile lifeforms with sheer kinetic energy, it is also used by early industrial colonies against mechanoids thanks to its simple manufacture requirements.</description>
 		<weaponClasses>
 		  <li>RangedHeavy</li>
 		  <li>LongShots</li>

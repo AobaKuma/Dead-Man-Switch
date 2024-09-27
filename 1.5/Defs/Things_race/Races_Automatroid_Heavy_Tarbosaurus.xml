@@ -3,8 +3,8 @@
   
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Tarbosaurus</defName>
-    <label>tarbosaurus</label>
-    <description>A bipedal ultra heavy automatoid nicknamed "Armored Rex" for their distinctive body structure vaguely resembling a carnotaurus. Once seen as the nextgen war-changer in the heyday of the arms race back in the early spacer era, it sports numerous cutting-edge technology such as the artificial muscle fibre that drove its oversized legs - the first automatroid of its kind in service.\n\nIt failed to eventually change the field of modern warfare as expected: it was oversized, its artificial muscle fibres were hard to upkeep, and on top of that, railguns and beam weaponry weren't reliable weapons back in those days;\n\nYet all those millennia have passed, there are still numerous manufacturers replicating such automatroids and adding their own improvements to its design. As such, traces of technology adopted in this automatroid can be seen in a great number of weaponry nowadays.</description>
+    <label>Tarbosaurus</label>
+    <description>A bipedal ultra heavy automatoid nicknamed the "Armored Rex" as its distinctive body structure vaguely resembles a carnotaurus. Once seen as the nextgen war-changer in the twilight of the arms races in the early spacer era, it uses artificial muscle fibres to drive its oversized legs.\n\nWhile it failed to change the field of modern warfare as expected, there are still numerous manufacturers replicating it and adding their own improvements to the design. As such, traces of technology adopted in this automatroid can be seen in a great number of weaponry.</description>
     <statBases>
       <MoveSpeed>4</MoveSpeed>
       <ArmorRating_Sharp>1.4</ArmorRating_Sharp><!--銳抗-->
@@ -47,10 +47,10 @@
               <ID>heavy machinegun</ID>
               <turret>DMS_HeavyMachineGunMounted</turret>
               <autoAttack>true</autoAttack>
-              <command_ToggleFire>fire at will</command_ToggleFire>
-              <commandDesc_ToggleFire>toggle turret to manually control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
-              <command_Target>aim target</command_Target>
-              <commandDesc_Target>aim at desinated target</commandDesc_Target>
+              <command_ToggleFire>Fire at will</command_ToggleFire>
+              <commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
+              <command_Target>Aim at a target</command_Target>
+              <commandDesc_Target>Aim at a desinated target</commandDesc_Target>
               <warmingTime>5</warmingTime>
               <targetCommandIconPath>UI/Gizmos/ToggleTurret</targetCommandIconPath>
               <angleOffset>-90</angleOffset>
@@ -84,10 +84,10 @@
               <ID>close inbound system</ID>
               <turret>DMS_ShotgunGunMounted</turret>
               <autoAttack>true</autoAttack>
-              <command_ToggleFire>fire at will</command_ToggleFire>
-              <commandDesc_ToggleFire>toggle turret to manually control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
-              <command_Target>aim target</command_Target>
-              <commandDesc_Target>aim at desinated target</commandDesc_Target>
+              <command_ToggleFire>Fire at will</command_ToggleFire>
+              <commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
+              <command_Target>Aim at a target</command_Target>
+              <commandDesc_Target>Aim at a desinated target</commandDesc_Target>
               <warmingTime>2</warmingTime>
               <targetCommandIconPath>UI/Gizmos/ToggleTurret</targetCommandIconPath>
               <angleOffset>-90</angleOffset>

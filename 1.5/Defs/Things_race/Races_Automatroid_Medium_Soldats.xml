@@ -21,8 +21,8 @@
   <!-- DMS_Mech_Soldat 士兵常規型 -->
   <ThingDef ParentName="BaseMechRace_Soldat">
     <defName>DMS_Mech_Soldat</defName>
-    <label>soldat</label>
-    <description>A biped humanoid robot imitated design from the combat unit of mechanoids, can equipped with weapons that humans can use. \n\n Although the carried battery backpack having a long battery life, but is also makes it unable to fight like a genuine mech walkers without cover.</description>
+    <label>Soldat</label>
+    <description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Soldats can be equipped with weapons rated for human use.\n\nThe Soldat has to carry a battery backpack which makes it unable to fight like other mechs without cover.</description>
     <statBases>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">1</BandwidthCost> 
     </statBases>
@@ -162,8 +162,8 @@
   <!-- DMS_Mech_Grenadier 士兵擲彈型 : 能夠使用各類發射器與手榴彈 -->
   <ThingDef ParentName="BaseMechRace_Soldat">
     <defName>DMS_Mech_Grenadier</defName>
-    <label>grenadier</label>
-    <description>A biped humanoid robot imitated design from the combat unit of mechanoids, can equipped with weapons that humans can use. \n\n Although the carried battery backpack having a long battery life, but is also makes it unable to fight like a genuine mech walkers without cover.</description>
+    <label>Grenadier</label>
+    <description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Grenadiers are specialized to use light weapons and grenade launchers.\n\nThe Grenadier has to carry a battery backpack which makes it unable to fight like other mechs without cover.<description>
     <statBases>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost> 
     </statBases>
@@ -239,8 +239,8 @@
   <!-- DMS_Mech_Kanonier 士兵砲兵型 : 能夠使用末日火箭等各式大威力武器 -->
   <ThingDef ParentName="BaseMechRace_Soldat">
     <defName>DMS_Mech_Kanonier</defName>
-    <label>kanonier</label>
-    <description>A biped humanoid robot imitated design from the combat unit of mechanoids, can equipped with weapons that humans can use. \n\n Although the carried battery backpack having a long battery life, but is also makes it unable to fight like a genuine mech walkers without cover.</description>
+    <label>Kanonier</label>
+    <description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Kanoniers are specialized to use rocket launchers or recoilless rifles.\n\nThe Kanonier has to carry a battery backpack which makes it unable to fight like other mechs without cover.</description>
     <modExtensions>
       <li Class="DMS.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
@@ -271,7 +271,7 @@
   </ThingDef>
   <PawnKindDef ParentName="BaseAutomatroidKind">
     <defName>DMS_Mech_Kanonier</defName>
-    <label>kanonier</label>
+    <label>Kanonier</label>
     <race>DMS_Mech_Kanonier</race>
     <isFighter>true</isFighter>
     <combatPower>140</combatPower>                                               <!--威脅點數-->
@@ -304,8 +304,8 @@
   <!-- DMS_Mech_Sergeant 士兵指揮型 : 只能裝備單手武器 -->
   <ThingDef ParentName="BaseMechRace_Soldat">
     <defName>DMS_Mech_Sergeant</defName>
-    <label>sergeant</label>
-    <description>As a relay command variant of a mech soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. it can be the mechnitor command relay but due to its weight with reduced fire control system, which can only equip a light weapon for self defense.</description>
+    <label>Sergeant</label>
+    <description>As a relay command variant of the Soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. Sergeants extend a mechanitor's effective range, but due to the weight of its radar equipment it can only equip a light weapon for self defense.</description>
     <statBases>
       <MoveSpeed>4</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Sharp>0.35</ArmorRating_Sharp><!--銳抗-->

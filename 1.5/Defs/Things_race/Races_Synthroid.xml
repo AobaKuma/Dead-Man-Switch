@@ -4,8 +4,8 @@
   <!-- lady -->
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Lady</defName>
-    <label>lady</label>
-    <description>The MG-1 Lady is a mech that makes heavy use of synthetic mechanical technology. It was originally designed to reduce the cognitive bias syndrome caused by long-term cooperation with machines in the military. Therefore, most of its anatomical structures are similar to humans, and its internal organs can almost be directly transplanted into the human body. However, due to its overly human-like appearance, it is only limitedly equipped for sniper troops and officers as sniper observers or bodyguards.</description>
+    <label>Lady</label>
+    <description>The MG-1 Lady is a mech that makes use of synthetic mechanical technology. It was originally designed to reduce the cognitive bias syndrome caused by long-term cooperation with machines in the military. Much of its anatomical structures is similar to a humans, and its internal parts can almost be directly transplanted into a human body. Due to its overly human appearance, it was primarily used as a sniper's observer or an officer's bodyguard.</description>
     <thingClass>DMS.HumanlikeMech</thingClass>
     <uiIconPath>Things/Automatroid/Icon_Lady</uiIconPath>
     <statBases>
@@ -162,7 +162,7 @@
 
   <RecipeDef ParentName="DMS_HumanoidMechanoidRecipe" Abstract="true">
     <defName>DMS_Make_Lady</defName>
-    <label>gestate lady</label>
+    <label>Gestate lady</label>
     <description>Gestate a lady mechanoid.</description>
     <products>
       <DMS_Mech_Lady>1</DMS_Mech_Lady>

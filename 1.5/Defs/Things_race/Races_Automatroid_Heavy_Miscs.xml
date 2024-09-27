@@ -4,8 +4,8 @@
   <!-- 猿人 ape-->
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Ape</defName>
-    <label>ape</label>
-    <description>An prototype design on testing the feasibility of humanoid automatroid, it's designed to equip with heavy weapon.</description>
+    <label>Ape</label>
+    <description>A prototype design which tested the feasibility of a large humanoid automatroid capable of equipping heavy weapons.</description>
     <statBases>
       <StaggerDurationFactor>0.25</StaggerDurationFactor>
       <MoveSpeed>3.1</MoveSpeed>                                                              <!--移動速度-->
@@ -77,8 +77,8 @@
   <!-- 寄居蟹 -->
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_HermitCrab</defName>
-    <label>hermit crab</label>
-    <description>These large, expensive, heavy mobile industrial machines are designed and manufactured by worlds that intend to colonize solar systems. Their large and expensive magnetic stabilizer shells integrate many complex-axis CNC tools and precision machinery. its high precision allows it to perform surgical procedures, but only if the patient overcomes their fear of a machine weighing several tons acting as their surgeon.</description>
+    <label>Hermit Crab</label>
+    <description>These large, expensive, and heavy mobile industrial machines are designed to be an all-in-one unit for colonizing new worlds. Their large and expensive magnetic stabilized shells integrate many complex-axis CNC tools and precision machinery. In a pinch, its precision tools allow it to perform surgical procedures as long as the patient overcomes their fear of a machine weighing several tons acting as their surgeon.</description>
     <statBases>
       <MoveSpeed>2.5</MoveSpeed>
       <ArmorRating_Sharp>1.0</ArmorRating_Sharp><!--銳抗-->

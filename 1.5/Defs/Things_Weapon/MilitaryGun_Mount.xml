@@ -4,8 +4,8 @@
 <!--DMS_Flameblaster 火焰發射器.-->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_Flameblaster</defName>
-		<label>flameblaster</label>
-		<description>A flame launcher used by mechs that can effectively ignite flammable materials within a range</description>
+		<label>Flameblaster</label>
+		<description>A flame launcher used by mechs that can and will ignite flammable materials within its range.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
 		<graphicData>
 		  <texPath>Things/Weapons/DMS_Flameblaster</texPath>
 		  <graphicClass>Graphic_Single</graphicClass>
@@ -94,8 +94,8 @@
 	<!--霰彈槍。-->
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_ShotgunGunMounted</defName>
-		<label>close inbound defense system</label>
-		<description>a multi-barrel turret designed to suppress enemies in close-range.</description>
+		<label>Close Inbound Defense System</label>
+		<description>A multi-barrel shotgun designed to suppress enemies at close-range.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
 		<graphicData>
 			<texPath>Things/Turrets/DMS_Gun_CIDS</texPath>
 			<drawSize>1.2</drawSize>
@@ -137,8 +137,8 @@
 	<!--SMG	這個是固定在不可替換武器類型機兵上的版本。-->
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_SubMachineGunMounted</defName>
-		<label>mounted SMG</label>
-		<description>Supressive weapon chambered in pistol caliber round.\n\nThis weapon is designed specially for mounted use, so only specific unit can equip it.</description>
+		<label>Mounted SMG</label>
+		<description>A Supressive weapon chambered in pistol rounds.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
 		<graphicData>
 			<texPath>Things/Turrets/DMS_Gun_LMG</texPath>
 			<drawSize>1.3</drawSize>
@@ -177,8 +177,8 @@
 	<!--LMG	這個是固定在不可替換武器類型機兵上的版本。-->
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_LightMachineGunMounted</defName>
-		<label>mounted LMG</label>
-		<description>Supressive weapon chambered in full power rifle round.\n\nThis weapon is designed specially for mounted use, so only specific unit can equip it.</description>
+		<label>Mounted LMG</label>
+		<description>A Supressive weapon chambered in a standard rifle round.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
 		<graphicData>
 			<texPath>Things/Turrets/DMS_Gun_LMG</texPath>
 			<drawSize>1.5</drawSize>
@@ -217,8 +217,8 @@
 	<!--HMG	這個是固定在不可替換武器類型機兵上的版本。-->
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_HeavyMachineGunMounted</defName>
-		<label>mounted HMG</label>
-		<description>heavy machine gun for mech soldier or infantry support platform.\n\nThis weapon is designed specially for mounted use, so only specific unit can equip it.</description>
+		<label>Mounted HMG</label>
+		<description>A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
 		<graphicData>
 			<texPath>Things/Turrets/DMS_Gun_HMG</texPath>
 			<drawSize>2</drawSize>
@@ -258,8 +258,8 @@
 	<!-- Kord 象龜&推土機的砲塔-->
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_Gun_Kord_Vehicle</defName>
-		<label>kord</label>
-		<description>kord</description>
+		<label>Kord</label>
+		<description>Kord anti-everything machinegun chambered in death.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
 		<graphicData>
 			<texPath>Things/Turrets/DMS_Gun_Kord</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -304,8 +304,8 @@
 
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_Gun_Vasilek_B</defName>
-		<label>2B9A vasilek</label>
-		<description>an ancient design of rapid fire indirect artillery suppression, can fire 4 mortar rounds in one burst.</description>
+		<label>2B9A Vasilek</label>
+		<description>An ancient design for rapid fire indirect artillery fire. The Vasilek can fire four mortar rounds in one burst.</description>
 		<graphicData>
 		  <texPath>Things/Turrets/DMS_Vasilek_B</texPath>
 		  <graphicClass>Graphic_Single</graphicClass>

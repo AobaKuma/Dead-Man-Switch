@@ -3,8 +3,8 @@
 	<!--鎮暴棍-->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>DMS_StunBaton</defName>
-		<label>stun baton</label>
-		<description>An Electric Stun baton designed for non-lethal riot control and to Subdue out-of-control machines, it's commonly used by automatroid protectors to secure occupied areas safety without casualties.</description>
+		<label>Stun Baton</label>
+		<description>An electric stun baton designed for non-lethal riot control and to Subdue out-of-control machines. It's commonly used by automatroid protectors to secure occupied areas safely without casualties.</description>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_StunBaton</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -94,8 +94,8 @@
 	<!--高周波開山刀-->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>DMS_Machete</defName>
-		<label>machete</label>
-		<description>May look like a normal machete, but it's a weapon with unique design which specify for mech's melee combat capability.\n\nWith its high frequency vibrating edge, it can cut through most things with ease.</description>
+		<label>Machete</label>
+		<description>It May look like a normal machete, but this weapon is purpose built for a mech melee combat capability.\n\nWith its high frequency vibrating edge, it can cut through most things with ease.</description>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_Machete</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -161,8 +161,8 @@
 	<!-- Door Breaker, breach weapon for siegebreaker-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_DoorBreaker</defName>
-		<label>Door Breaker</label>
-		<description>A special design battering ram for mech breacher which has a built-in launcher, and an explosive ramming head.</description>
+		<label>Door Buster</label>
+		<description>A specially design battering ram for mech breachers which has a built-in launcher and explosive ram head.</description>
 		<weaponClasses>
 			<li>RangedHeavy</li>
 		</weaponClasses>

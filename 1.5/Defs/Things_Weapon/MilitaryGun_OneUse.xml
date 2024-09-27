@@ -3,8 +3,8 @@
 	<!-- 拋棄式火箭空爆榴彈(DRAG) -->
 	<ThingDef ParentName="ApparelNoQualityBase">
 		<defName>DMS_DeposableRocketLauncher</defName>
-		<label>deposable launcher</label>
-		<description>A counterweighted-recoilless rocket-propelled grenade launcher, light-weighted and effective againist bunker or heavy mechs. It has a long fire range, but requires line of sight.</description>
+		<label>Disposable Launcher</label>
+		<description>A single use recoilless rifle designed to be fired and discarded. It's light-weight and effective againist bunkers and heavy mechs. It has a long fire range and requires line of sight.</description>
 		<graphicData>
 		  <texPath>Things/Apparel/RocketLauncher/DMS_Launcher_Icon</texPath>
 		  <drawSize>1.2</drawSize>
@@ -159,7 +159,7 @@
 	  
 	<ThingDef ParentName="BaseBullet">
 		<defName>DMS_Bullet_DR</defName>
-		<label>demolish rocket round</label>
+		<label>Demolisher Rocket Round</label>
 		<graphicData>
 			<texPath>Things/Ammo/84mmRecoillessRocket/Projectile</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

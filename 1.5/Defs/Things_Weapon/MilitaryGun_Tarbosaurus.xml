@@ -13,8 +13,8 @@
 	<!--2A38 / TWS 30mm 駭蜥的主武器-->
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun" Abstract="True">
 		<defName>DMS_Tarbosaurus_Gun</defName>
-		<label>2A38 / TWS</label>
-		<description>2A38 / Tarbosaurus Weapon System included heavy autocannon with anti air missile launcher for infantry suppress / anti air platform.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>	
+		<label>2A38/TWS</label>
+		<description>The 2A38/Tarbosaurus Weapon System includes a heavy autocannon with an anti-air missile launcher for infantry suppression and aircraft area denial.\n\nThis weapon is designed specifically for the Tarbosaurus</description>	
 		<descriptionHyperlinks>	
 			<ThingDef>DMS_Mech_Tarbosaurus</ThingDef>
 		</descriptionHyperlinks>

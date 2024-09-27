@@ -31,8 +31,8 @@
   <!-- DMS_Mech_Arquebusier 火槍手常規型 -->
   <ThingDef ParentName="BaseMechRace_Arquebusier">
     <defName>DMS_Mech_Arquebusier</defName>
-    <label>arquebusier</label>
-    <description>Standard Arquebusier model, has good precision fire capability in all ranges, makes it the backbone of automatroid army.</description>
+    <label>Arquebusier</label>
+    <description>Standard Arquebusier model, has good precision fire capability at all ranges making it the backbone of an automatroid army.</description>
     <modExtensions>
       <li Class="DMS.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
@@ -98,8 +98,8 @@
   <!-- DMS_Mech_Jaeger 火槍手獵兵型 速度較快且可以隱身-->
   <ThingDef ParentName="BaseMechRace_Arquebusier">
     <defName>DMS_Mech_Jaeger</defName>
-    <label>jaeger</label>
-    <description>an arquebusier variant focuses on stealth action and guerilla deployment for sabotage behind enemy lines. has higher mobility and invisibility.</description>
+    <label>Jaeger</label>
+    <description>An Arquebusier variant specializing in stealth operations and guerilla warfare sabotaging equipment behind enemy lines. It has high mobility and and an active camouflage ability.</description>
     <statBases>
       <MoveSpeed>5.3</MoveSpeed>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>
@@ -164,8 +164,8 @@
   <!-- DMS_Mech_Pioneer 火槍手先鋒型，可以用於狩獵 -->
   <ThingDef ParentName="BaseMechRace_Arquebusier">
     <defName>DMS_Mech_Pioneer</defName>
-    <label>pioneer</label>
-    <description>forward reconnaissance variant of Arquebusier. with improved sight sensor equipped, it has better capability in field operations, capable of hunting if needed.</description>
+    <label>Pioneer</label>
+    <description>A gorward reconnaissance variant of the Arquebusier, Pioneers are equipped with an improved sight sensor package giving it better capability in field operations. In a pinch, it can be used to hunt wildlife.</description>
     <statBases>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost> 
     </statBases>
@@ -200,7 +200,7 @@
   
   <PawnKindDef ParentName="BaseAutomatroidKind">
     <defName>DMS_Mech_Pioneer</defName>
-    <label>pioneer</label>
+    <label>Pioneer</label>
     <race>DMS_Mech_Pioneer</race>
     <isFighter>true</isFighter>
     <combatPower>210</combatPower>
@@ -234,8 +234,8 @@
   <!-- DMS_Mech_Sniper 火槍手狙擊型 -->
   <ThingDef ParentName="BaseMechRace_Arquebusier">
     <defName>DMS_Mech_Sniper</defName>
-    <label>sniper</label>
-    <description>Having the improved sight sensor and fire control system, this Arquebusier variant has the best long range fire precision among all other variants.</description>
+    <label>Sniper</label>
+    <description>Snipers have an improved sight sensor package and fire control system. This model Arquebusier has the best long range fire precision among all other variants.</description>
     <statBases>
       <ShootingAccuracyPawn>8</ShootingAccuracyPawn>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost> 
@@ -266,7 +266,7 @@
   
   <PawnKindDef ParentName="BaseAutomatroidKind">
     <defName>DMS_Mech_Sniper</defName>
-    <label>sniper</label>
+    <label>Sniper</label>
     <race>DMS_Mech_Sniper</race>
     <isFighter>true</isFighter>
     <combatPower>210</combatPower>

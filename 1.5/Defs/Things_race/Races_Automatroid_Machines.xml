@@ -98,8 +98,8 @@
   <!-- 垃圾桶 -->
   <ThingDef ParentName="BaseDMSMachine">
     <defName>DMS_Machine_TrashBin</defName>
-    <label>trash bin</label>
-    <description>Cylindrical service robots used in Midworld cities to provide road cleaning, express and food delivery services, and to be the first to assist in evacuation and maintain order when emergencies occur.</description>
+    <label>Trash Bin</label>
+    <description>Cylindrical service robots used in midworld cities to provide road cleaning express food delivery services, and to be the first to assist in evacuation and maintain order when emergencies occur.</description>
     <statBases>
       <CleaningSpeed>0.85</CleaningSpeed>
       <MoveSpeed>3.7</MoveSpeed>
@@ -176,8 +176,8 @@
 
   <!-- 武裝四軸 -->
   <ThingDef Name="VerlingBirdBase" ParentName="BaseDMSMachine" Abstract="True">
-    <label>verling bird</label>
-    <description>A quad-drone for reconnaissance. It is quite fragile for combat but moves extremely fast. It can be equipped with a small-caliber gun or grenade to provide certain containment capabilities.</description>
+    <label>Verling bird</label>
+    <description>A quad-drone built for reconnaissance. It is quite fragile in combat but moves extremely fast. It can be equipped with a small-caliber gun or grenade to provide combat capabilities.</description>
     <statBases>
       <MoveSpeed>10</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>0</ArmorRating_Blunt>                                     <!--護甲-->
@@ -320,8 +320,8 @@
   <!-- 獵犬 -->
   <ThingDef Name="DMS_MechHoundBase" ParentName="BaseDMSMachine">  <!-- DMS_Machine_Hound 獵犬常規型 -->    
     <defName>DMS_Machine_Hound</defName>
-    <label>hound</label>
-    <description>A four-legged robot dog provide forward reconnaissance and urban combat support during armed operations, can equipped with small-caliber firearms or flamethrowers to provide certain containment capabilities.</description>
+    <label>Hound</label>
+    <description>A four-legged robot dog able to provide forward reconnaissance and urban combat support during operations. It can be equipped with small-caliber firearms or flamethrowers to provide combat capabilities.</description>
     <thingClass>DMS.WeaponUsableMachine</thingClass>
     <statBases>
       <MoveSpeed>5</MoveSpeed>
