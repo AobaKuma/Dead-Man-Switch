@@ -4,8 +4,8 @@
     <HediffDef MayRequire="Ludeon.Rimworld.Biotech">
         <defName>DMS_OrbitalService</defName>
         <hediffClass>HediffWithComps</hediffClass>
-        <label>supported bandwidth</label>
-        <description>Orbital support ships from colonial fleets are providing bandwidth to allied mechanitors</description>
+        <label>Supported Bandwidth</label>
+        <description>Orbital support ships from colonial fleets are providing bandwidth to allied mechanitors.</description>
         <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
         <initialSeverity>0</initialSeverity>
         <levelIsQuantity>true</levelIsQuantity>

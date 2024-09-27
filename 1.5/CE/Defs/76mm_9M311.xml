@@ -19,7 +19,7 @@
 	<!-- ==================== Ammo ========================== -->
 
 	<ThingDef Class="CombatExtended.AmmoDef" Name="9M311Base" ParentName="HeavyAmmoBase" Abstract="True">
-		<description>The 9M311 "Treugol'nik" is a Russian surface to air missile (SAM), is designed to engage in the visual visibility of aircraft and helicopters at speed up to 500m/s.</description>
+		<description>The 9M311 "Treugol'nik" is a Russian surface to air missile (SAM) designed to engage aircraft at a top speed of 500m/s.</description>
 		<statBases>
 			<MaxHitPoints>200</MaxHitPoints>
 		</statBases>

@@ -4,8 +4,8 @@
   <!-- Mechlink -->
   <ThingDef ParentName="MechanitorImplantBase">
     <defName>DMS_MechLink</defName>
-    <label>cluster transceiver</label>
-    <description>A man-made bionic implant that allows direct control of mechanoids. No one know if it is the early model of Mechlink or it's reverse engineered product by later generations. anyway it is mechlink in all degree but humans in rimworld can understand and imitate.\n\nDue to processing precision issues, these imitations from rimworld often have some installation side effects...</description>
+    <label>Cluster Transceiver</label>
+    <description>A man-made bionic implant that allows direct control of mechanoids. No one know if this is the early form of mechlinking or if it's a reverse engineered product of later generations. It functions as a regular mechlink when installed in a colonist.\n\nDue to processing precision issues, these imitation mechlink devices from rim worlds often have installation side effects.</description>
     <thingClass>Mechlink</thingClass>
     <descriptionHyperlinks><HediffDef>MechlinkImplant</HediffDef></descriptionHyperlinks>
     <statBases>
@@ -82,8 +82,8 @@
   <!-- Mechlink -->
   <ThingDef ParentName="MechanitorImplantBase">
     <defName>DMS_MechLink_Nerfed</defName>
-    <label>boid controller</label>
-    <description>A man-made bionic implant that allows direct control of mechanoids. This is a simplified version which allowed to be manufacture and used at a lower tech level. But due to limited production quality, it will fail and terminate after a certain period of time.</description>
+    <label>Boid Controller</label>
+    <description>A man-made bionic implant that allows direct control of mechanoids. This is a simplified version which is cheaper to manufacture and obtainable at a lower tech level. Due to limited production quality, it will fail and terminate after a while.</description>
     <thingClass>Mechlink</thingClass>
     <descriptionHyperlinks>
       <HediffDef>MechlinkImplant</HediffDef>

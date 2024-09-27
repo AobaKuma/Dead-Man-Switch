@@ -2,7 +2,7 @@
 <Defs>
   <PawnKindDef ParentName="DMS_SoldierBase">
     <defName>DMS_Squad_ServiceSynth</defName>
-    <label>service synth</label>
+    <label>Service Synth</label>
     <combatPower>50</combatPower>
     <xenotypeSet>
       <xenotypeChances>
@@ -52,8 +52,8 @@
   </PawnKindDef>
   <RoyalTitlePermitDef MayRequire="ludeon.rimworld.royalty">
     <defName>DMS_Join_Android</defName>
-    <label>call combatant synth</label>
-    <description>Apply a squad of combatant synth.</description>
+    <label>Call for Combat Capable Synths</label>
+    <description>Request a squad of combat ready synths.</description>
     <workerClass>DMS.RoyalTitlePermitWorker_PawnJoin</workerClass>
     <minTitle>DMS_Major</minTitle>
     <faction>DMS_Army</faction>

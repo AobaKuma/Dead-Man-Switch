@@ -3,8 +3,8 @@
   <!--DMS_Make_Iguana-->
   <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe">
     <defName>DMS_Make_Iguana</defName>
-    <label>gestate Iguana</label>
-    <description>Gestate a Iguana mechanoid.</description>
+    <label>Gestate Iguana</label>
+    <description>Gestate a Iguana Automatroid.</description>
     <products>
       <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
     </products>
@@ -52,8 +52,8 @@
   <!--DMS_Make_Gecko-->
   <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe">
     <defName>DMS_Make_Gecko</defName>
-    <label>gestate Gecko</label>
-    <description>Gestate a gecko mechanoid.</description>
+    <label>Gestate Gecko</label>
+    <description>Gestate a Gecko Automatroid.</description>
     <products>
       <DMS_Mech_Gecko>1</DMS_Mech_Gecko>
     </products>
@@ -110,8 +110,8 @@
   <!--DMS_Mech_Geochelone-->
   <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe">
     <defName>DMS_Make_Geochelone</defName>
-    <label>gestate geochelone</label>
-    <description>Gestate a geochelone mechanoid.</description>
+    <label>Gestate Geochelone</label>
+    <description>Gestate a Geochelone Automatroid.</description>
     <products>
       <DMS_Mech_Geochelone>1</DMS_Mech_Geochelone>
     </products>
@@ -158,8 +158,8 @@
   <!--DMS_Mech_Killdozer-->
   <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe">
     <defName>DMS_Make_Killdozer</defName>
-    <label>gestate killdozer</label>
-    <description>Gestate a killdozer mechanoid.</description>
+    <label>Gestate Killdozer</label>
+    <description>Gestate a Killdozer Automatroid.</description>
     <products>
       <DMS_Mech_Killdozer>1</DMS_Mech_Killdozer>
     </products>
@@ -214,7 +214,7 @@
   <!--DMS_Mech_Caretta-->
   <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe">
     <defName>DMS_Make_Caretta</defName>
-    <label>gestate caretta</label>
+    <label>Gestate Caretta</label>
     <description>Gestate a caretta mechanoid.</description>
     <products>
       <DMS_Mech_Caretta>1</DMS_Mech_Caretta>
@@ -271,8 +271,8 @@
   <!--DMS_Mech_HermitCrab-->
   <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe">
     <defName>DMS_Make_HermitCrab</defName>
-    <label>gestate hermit crab</label>
-    <description>Gestate a hermit crab mechanoid.</description>
+    <label>Gestate Hermit Crab</label>
+    <description>Gestate a Hermit Crab Automatroid.</description>
     <products>
       <DMS_Mech_HermitCrab>1</DMS_Mech_HermitCrab>
     </products>
@@ -336,8 +336,8 @@
   <!--DMS_Mech_Tarbosaurus-->
   <RecipeDef ParentName="DMS_NextGenMechanoidRecipe">
     <defName>DMS_Make_Tarbosaurus</defName>
-    <label>gestate tarbosaurus</label>
-    <description>Gestate a tarbosaurus mechanoid.</description>
+    <label>Gestate Tarbosaurus</label>
+    <description>Gestate a Tarbosaurus Automatroid.</description>
     <products>
       <DMS_Mech_Tarbosaurus>1</DMS_Mech_Tarbosaurus>
     </products>

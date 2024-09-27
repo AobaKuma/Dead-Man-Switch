@@ -5,7 +5,7 @@
     <defName>DMS_Make_Falcon</defName>
     <label>gestate falcon</label>
     <researchPrerequisite>DMS_Automatroid</researchPrerequisite>
-    <description>Gestate a falcon mechanoid.</description>
+    <description>Gestate a Falcon Automatroid.</description>
     <products>
       <DMS_Mech_Falcon>1</DMS_Mech_Falcon>
     </products>
@@ -36,9 +36,9 @@
   <!--夜蝠-->
   <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
     <defName>DMS_Make_Noctula</defName>
-    <label>gestate noctula</label>
+    <label>Gestate Noctula</label>
     <researchPrerequisite>DMS_Automatroid</researchPrerequisite>
-    <description>Gestate a noctula mechanoid.</description>
+    <description>Gestate a Noctula Automatroid.</description>
     <products>
       <DMS_Mech_Noctula>1</DMS_Mech_Noctula>
     </products>
@@ -77,9 +77,9 @@
   <!--獒犬-->
   <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
     <defName>DMS_Make_Dogge</defName>
-    <label>gestate dogge</label>
+    <label>Gestate Dogge</label>
     <researchPrerequisite>DMS_Automatroid</researchPrerequisite>
-    <description>Gestate a dogge mechanoid.</description>
+    <description>Gestate a Dogge Automatroid.</description>
     <products>
       <DMS_Mech_Dogge>1</DMS_Mech_Dogge>
     </products>
@@ -110,8 +110,8 @@
   <!--士兵-->
   <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
     <defName>DMS_Make_Soldat</defName>
-    <label>gestate soldat</label>
-    <description>Gestate a soldat mechanoid.</description>
+    <label>Gestate Soldat</label>
+    <description>Gestate a Soldat Automatroid.</description>
     <products>
       <DMS_Mech_Soldat>1</DMS_Mech_Soldat>
     </products>
@@ -142,8 +142,8 @@
   <!--擲彈手-->
   <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
     <defName>DMS_Make_Grenadier</defName>
-    <label>gestate grenadier</label>
-    <description>Gestate a grenadier mechanoid.</description>
+    <label>Gestate Grenadier</label>
+    <description>Gestate a Grenadier Automatroid.</description>
     <products>
       <DMS_Mech_Grenadier>1</DMS_Mech_Grenadier>
     </products>
@@ -196,8 +196,8 @@
   <!--軍士-->
   <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
     <defName>DMS_Make_Sergeant</defName>
-    <label>gestate sergeant</label>
-    <description>Gestate a sergeant mechanoid.</description>
+    <label>Gestate Sergeant</label>
+    <description>Gestate a sergeant Automatroid.</description>
     <products>
       <DMS_Mech_Sergeant>1</DMS_Mech_Sergeant>
     </products>

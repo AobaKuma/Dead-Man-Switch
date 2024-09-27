@@ -3,8 +3,8 @@
   <!-- 猿人 -->
   <RecipeDef ParentName="DMS_HumanoidMechanoidRecipe">
     <defName>DMS_Make_Ape</defName>
-    <label>gestate ape</label>
-    <description>Gestate an ape mechanoid.</description>
+    <label>Gestate Ape Automatroid</label>
+    <description>Gestate an Ape Automatroid.</description>
     <products>
       <DMS_Mech_Ape>1</DMS_Mech_Ape>
     </products>
@@ -47,8 +47,8 @@
   <!--戰鬥框架-->
   <RecipeDef ParentName="DMS_HeavyMechanoidRecipe">
     <defName>DMS_Make_BattleFrame</defName>
-    <label>gestate battle friend</label>
-    <description>Gestate a battle friend mechanoid.</description>
+    <label>Gestate a Battle Friend Automatroid</label>
+    <description>Gestate a battle friend Automatroid.</description>
     <products>
       <DMS_Mech_BattleFrame>1</DMS_Mech_BattleFrame>
     </products>
@@ -101,8 +101,8 @@
   <!--中繼指揮-->
   <RecipeDef ParentName="DMS_HeavyMechanoidRecipe">
     <defName>DMS_Make_FieldCommand</defName>
-    <label>gestate field command</label>
-    <description>Gestate a field command mechanoid.</description>
+    <label>Gestate a Field Command Automatroid</label>
+    <description>Gestate a Field Command Automatroid.</description>
     <products>
       <DMS_Mech_FieldCommand>1</DMS_Mech_FieldCommand>
     </products>
@@ -164,8 +164,8 @@
   <!--貨運框架-->
   <RecipeDef ParentName="DMS_HeavyMechanoidRecipe">
     <defName>DMS_Make_EscortLifter</defName>
-    <label>gestate escort lifter</label>
-    <description>Gestate a escort lifter mechanoid.</description>
+    <label>Gestate an Escort Lifter Automatroid</label>
+    <description>Gestate an Escort Lifter Automatroid.</description>
     <products>
       <DMS_Mech_EscortLifter>1</DMS_Mech_EscortLifter>
     </products>
@@ -218,8 +218,8 @@
   <!--礦井工人-->
   <RecipeDef ParentName="DMS_HeavyMechanoidRecipe">
     <defName>DMS_Make_ShaftWorker</defName>
-    <label>gestate shaft worker</label>
-    <description>Gestate a shaft worker mechanoid.</description>
+    <label>Gestate a Shaft Worker Automatroid</label>
+    <description>Gestate a shaft worker Automatroid.</description>
     <products>
       <DMS_Mech_ShaftWorker>1</DMS_Mech_ShaftWorker>
     </products>
@@ -275,8 +275,8 @@
   <!--浪人-->
   <RecipeDef ParentName="DMS_RoninMechanoidRecipe">
     <defName>DMS_Make_Ronin</defName>
-    <label>gestate ronin</label>
-    <description>Gestate a ronin mechanoid.</description>
+    <label>Gestate a Ronin</label>
+    <description>Gestate a Ronin Automatroid.</description>
     <products>
       <DMS_Mech_Ronin>1</DMS_Mech_Ronin>
     </products>
@@ -329,8 +329,8 @@
   <!--角鬥-->
   <RecipeDef ParentName="DMS_RoninMechanoidRecipe">
     <defName>DMS_Make_Gladiator</defName>
-    <label>gestate gladiator</label>
-    <description>Gestate a gladiator mechanoid.</description>
+    <label>Gestate Gladiator</label>
+    <description>Gestate a gladiator Automatroid.</description>
     <products>
       <DMS_Mech_Gladiator>1</DMS_Mech_Gladiator>
     </products>
@@ -383,8 +383,8 @@
   <!--破城者-->
   <RecipeDef ParentName="DMS_RoninMechanoidRecipe">
     <defName>DMS_Make_Siegebreaker</defName>
-    <label>gestate siegebreaker</label>
-    <description>Gestate a siegebreaker mechanoid.</description>
+    <label>Gestate Siegebreaker</label>
+    <description>Gestate a siegebreaker Automatroid.</description>
     <products>
       <DMS_Mech_Siegebreaker>1</DMS_Mech_Siegebreaker>
     </products>
@@ -445,8 +445,8 @@
   <!--塔盾手-->
   <RecipeDef ParentName="DMS_RoninMechanoidRecipe">
     <defName>DMS_Make_Protector</defName>
-    <label>gestate protector</label>
-    <description>Gestate a protector mechanoid.</description>
+    <label>Gestate Protector</label>
+    <description>Gestate a protector Automatroid.</description>
     <products>
       <DMS_Mech_Protector>1</DMS_Mech_Protector>
     </products>
@@ -499,8 +499,8 @@
   <!--方陣步兵-->
   <RecipeDef ParentName="DMS_RoninMechanoidRecipe">
     <defName>DMS_Make_Phalanx</defName>
-    <label>gestate phalanx</label>
-    <description>Gestate a phalanx mechanoid.</description>
+    <label>Gestate Phalanx</label>
+    <description>Gestate a Phalanx Automatroid.</description>
     <products>
       <DMS_Mech_Phalanx>1</DMS_Mech_Phalanx>
     </products>
@@ -565,8 +565,8 @@
   <!--火槍手-->
   <RecipeDef ParentName="DMS_HumanoidMechanoidRecipe">
     <defName>DMS_Make_Arquebusier</defName>
-    <label>gestate arquebusier</label>
-    <description>Gestate a arquebusier mechanoid, it is a standard version of mechanized Soldier,having the ability to operate most of common weapons</description>
+    <label>Gestate Arquebusier</label>
+    <description>Gestate a arquebusier mechanoid, the standard version of mechanized soldiers with the ability to operate most common weapons.</description>
     <products>
       <DMS_Mech_Arquebusier>1</DMS_Mech_Arquebusier>
     </products>
@@ -619,8 +619,8 @@
   <!-- 先鋒 -->
   <RecipeDef ParentName="DMS_HumanoidMechanoidRecipe">
     <defName>DMS_Make_Pioneer</defName>
-    <label>gestate pioneer</label>
-    <description>Gestate a pioneer mechanoid.</description>
+    <label>Gestate Pioneer</label>
+    <description>Gestate a pioneer Automatroid.</description>
     <products>
       <DMS_Mech_Pioneer>1</DMS_Mech_Pioneer>
     </products>
@@ -682,8 +682,8 @@
   <!-- 狙擊手 -->
   <RecipeDef ParentName="DMS_HumanoidMechanoidRecipe">
     <defName>DMS_Make_Sniper</defName>
-    <label>gestate sniper</label>
-    <description>Gestate a sniper mechanoid.</description>
+    <label>Gestate Sniper</label>
+    <description>Gestate a Sniper Automatroid.</description>
     <products>
       <DMS_Mech_Sniper>1</DMS_Mech_Sniper>
     </products>
@@ -745,8 +745,8 @@
   <!-- 獵兵 -->
   <RecipeDef ParentName="DMS_HumanoidMechanoidRecipe">
     <defName>DMS_Make_Jaeger</defName>
-    <label>gestate jaeger</label>
-    <description>Gestate a jaeger mechanoid.</description>
+    <label>Gestate Jaeger</label>
+    <description>Gestate a Jaeger Automatroid.</description>
     <products>
       <DMS_Mech_Jaeger>1</DMS_Mech_Jaeger>
     </products>

@@ -10,7 +10,7 @@
 			<texPath>Things/Weapons/DMS_Flameblaster</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<description>A flame launcher used by mechs that can effectively ignite flammable materials within a range</description>
+		<description>A flamethrower used by mechs that will ignite flammable materials within its range.</description>
 		<statBases>
 			<SightsEfficiency>1</SightsEfficiency>
 			<ShotSpread>1.0</ShotSpread>
@@ -51,12 +51,12 @@
 	<!-- ==鬣蜥下挂轻机枪== -->
 	<ThingDef ParentName="BaseAutoTurretGun">
 		<defName>DMS_Iguana_SubMachineGun</defName>
-		<label>light MachineGun turret</label>
+		<label>Light Machinegun Turret</label>
 		<graphicData>
 			<texPath>Things/Turrets/DMS_Gun_LMG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<description>Supressive weapon chambered in pistol caliber round.\n\nThis weapon is designed specially for mounted use, so only specific unit can equip it.</description>
+		<description>A weapon specializing in supression chambered in a pistol caliber round.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
 		<statBases>
 			<SightsEfficiency>1</SightsEfficiency>
 			<ShotSpread>0.06</ShotSpread>
@@ -90,12 +90,12 @@
 	<!-- ==骇蜥下挂重机枪== -->
 	<ThingDef ParentName="BaseAutoTurretGun">
 		<defName>DMS_Tarbosaurus_SubMachineGun</defName>
-		<label>Heavy MachineGun turret</label>
+		<label>Heavy Machinegun turret</label>
 		<graphicData>
 			<texPath>Things/Turrets/DMS_Gun_HMG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<description>heavy machine gun for mech soldier or infantry support platform.\n\nThis weapon is designed specially for mounted use, so only specific unit can equip it.</description>
+		<description>A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
 		<statBases>
 			<SightsEfficiency>1</SightsEfficiency>
 			<ShotSpread>0.06</ShotSpread>
@@ -129,12 +129,12 @@
 	<!-- ==骇蜥迫近防御系统== -->
 	<ThingDef ParentName="BaseAutoTurretGun">
 		<defName>DMS_Tarbosaurus_ShotgunGun</defName>
-		<label>close inbound defense system</label>
+		<label>Close Inbound Defense System</label>
 		<graphicData>
 			<texPath>Things/Turrets/DMS_Gun_CIDS</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<description>a multi-barrel turret designed to suppress enemies in close-range.</description>
+		<description>A multi-barrel shotgun turret designed to suppress enemies at close-range.</description>
 		<statBases>
 			<SightsEfficiency>0.7</SightsEfficiency>
 			<ShotSpread>0.06</ShotSpread>

@@ -15,7 +15,7 @@
   <RoyalTitleDef ParentName="BaseDMSTitle">
     <defName>DMS_Reservist</defName>
     <label>Reservist</label>
-    <description>All citizens are reservist. it's not only a duty which also reconize you as a fully-respected individual. Most  citizens earn it while training for military service. The title is also offered to outsiders who act with honor in the eyes of the Armies.</description>
+    <description>All citizens are reservists. It's not only a duty, but a requirement to be a citizen. Most citizens earn it while training for military service, though the title is also offered to outsiders who act with honor in the eyes of the Colonial Forces.</description>
     <seniority>0</seniority>
     <favorCost>1</favorCost>
     <changeHeirQuestPoints>1000</changeHeirQuestPoints>
@@ -25,8 +25,8 @@
 
   <RoyalTitleDef ParentName="BaseDMSTitle">
     <defName>DMS_Private</defName>
-    <label>private</label>
-    <description>A private is a soldier, usually with the lowest rank in many armies. Soldiers with the rank of private may be conscripts or they may be professional (career) soldiers..</description>
+    <label>Private</label>
+    <description>A private is a soldier with the lowest rank in the Colonial Forces. Soldiers with the rank of Private may be conscripts or they may be professional soldiers.</description>
     <seniority>10</seniority>
     <favorCost>5</favorCost>
     <changeHeirQuestPoints>1000</changeHeirQuestPoints>
@@ -37,8 +37,8 @@
 
   <RoyalTitleDef ParentName="BaseDMSTitle">
     <defName>DMS_Corporal</defName>
-    <label>corporal</label>
-    <description>corporal is the lowest officer rank in the military system, leading a squad or a task forces.</description>
+    <label>Corporal</label>
+    <description>Corporal is the lowest non-commissioned officer rank in the Colonial Forces and carries the expectation of leading a fireteam in combat.</description>
     <seniority>50</seniority>
     <favorCost>10</favorCost>
     <changeHeirQuestPoints>1000</changeHeirQuestPoints>
@@ -83,8 +83,8 @@
 
   <RoyalTitleDef ParentName="BaseDMSTitle">
     <defName>DMS_PreSergeant</defName>
-    <label>pre-sergeant</label>
-    <description>pre-sergeant is a rank specially for outsider enlistment with no formal training, Served as the representative of outsider military forces in the military system.</description>
+    <label>Pre-Sergeant</label>
+    <description>Pre-sergeant is a rank specifically for outsiders enlisting with no formal training, but who served as the representative of an outside military force within the Colonial Forces.</description>
     <seniority>75</seniority>
     <favorCost>9</favorCost>
     <permitPointsAwarded>1</permitPointsAwarded>
@@ -96,8 +96,8 @@
   
   <RoyalTitleDef ParentName="BaseDMSTitlePlus">
     <defName>DMS_Sergeant</defName>
-    <label>sergeant</label>
-    <description>a non-commissioned officer placed above the rank of a corporal.</description>
+    <label>Sergeant</label>
+    <description>A non-commissioned officer above the rank of a Corporal. Responsible for squad level decision making in combat.</description>
     <seniority>100</seniority>
     <favorCost>12</favorCost>
     <permitPointsAwarded>1</permitPointsAwarded>
@@ -163,7 +163,7 @@
 
   <RoyalTitleDef ParentName="BaseDMSTitlePlusWithRoomReq">
     <defName>DMS_WarrantOfficer</defName>
-    <label>warrant officer</label>
+    <label>Warrant Officer</label>
     <description>The warrant officer is the first title of military officer duty.</description>
     <seniority>200</seniority>
     <favorCost>14</favorCost>
@@ -176,8 +176,8 @@
 
   <RoyalTitleDef ParentName="BaseDMSTitlePlusWithRoomReq">
     <defName>DMS_Lieutenant</defName>
-    <label>lieutenant</label>
-    <description>A commissioned officer rank, which is typically the most senior of junior officer ranks.</description>
+    <label>Lieutenant</label>
+    <description>A commissioned officer typically the most senior of junior officer ranks.</description>
     <seniority>250</seniority>
     <favorCost>16</favorCost>
     <permitPointsAwarded>1</permitPointsAwarded>
@@ -203,7 +203,7 @@
 
   <RoyalTitleDef ParentName="BaseDMSTitlePlusWithDisabledWorkTag">
     <defName>DMS_Captain</defName>
-    <label>captain</label>
+    <label>Captain</label>
     <description>A commissioned officer rank historically corresponding to the command of a company of soldiers.</description>
     <seniority>300</seniority>
     <favorCost>16</favorCost>
@@ -218,8 +218,8 @@
 
   <RoyalTitleDef ParentName="BaseDMSTitlePlusWithDisabledWorkTag">
     <defName>DMS_Major</defName>
-    <label>major</label>
-    <description>A senior military officer rank, major is one rank above captain in armies and air forces, and one rank below colonel.</description>
+    <label>Major</label>
+    <description>A senior military officer rank, Major is one rank above captain in armies and air forces, and one rank below Colonel.</description>
     <seniority>400</seniority>
     <favorCost>18</favorCost>
     <permitPointsAwarded>2</permitPointsAwarded>
@@ -261,8 +261,8 @@
 
   <RoyalTitleDef ParentName="BaseDMSTitlePlusWithDisabledWorkTag">
     <defName>DMS_Colonel</defName>
-    <label>colonel</label>
-    <description>A colonel was typically in charge of a regiment in an army.</description>
+    <label>Colonel</label>
+    <description>A colonel is typically in charge of a regiment in an army.</description>
     <seniority>500</seniority>
     <favorCost>18</favorCost>
     <permitPointsAwarded>2</permitPointsAwarded>
@@ -273,8 +273,8 @@
 
   <RoyalTitleDef ParentName="BaseDMSTitlePlusWithDisabledWorkTag">
     <defName>DMS_Brigadier</defName>
-    <label>brigadier</label>
-    <description>A senior rank above colonel, equivalent to a brigadier general or commodore, typically commanding a brigade of several thousand soldiers..</description>
+    <label>Brigadier</label>
+    <description>A senior rank above Colonel, equivalent to a Brigadier General or Commodore, typically commanding a brigade of several thousand soldiers or an outpost.</description>
     <seniority>1000</seniority>
     <favorCost>20</favorCost>
     <permitPointsAwarded>2</permitPointsAwarded>

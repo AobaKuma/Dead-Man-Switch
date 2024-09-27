@@ -17,8 +17,8 @@
 
   <RoyalTitlePermitDef ParentName="DropResourcesBase">
     <defName>DMS_CombatDrop</defName>
-    <label>combat supply drop</label>
-    <description>Call for a drop of standard combat supply.</description>
+    <label>Combat Supply Drop</label>
+    <description>Call for a drop of combat supplies.</description>
     <faction>DMS_Army</faction>
     <uiPosition>(0,1)</uiPosition>
     <minTitle>DMS_Private</minTitle>
@@ -35,8 +35,8 @@
   
   <RoyalTitlePermitDef ParentName="DropResourcesBase">
     <defName>DMS_LogiDrop</defName>
-    <label>logistic supply drop</label>
-    <description>Call for a drop of 20 survival pack, 8 medicine and 4 compoment.</description>
+    <label>Logistic Supply Drop</label>
+    <description>Call for a drop of 20 survival packs, 8 medicine and 4 components.</description>
     <faction>DMS_Army</faction>
     <uiPosition>(1,3)</uiPosition> 
     <minTitle>DMS_Corporal</minTitle>
@@ -56,7 +56,7 @@
 
   <RoyalTitlePermitDef ParentName="DropResourcesBase">
     <defName>DMS_FoodDrop</defName>
-    <label>food supply drop</label>
+    <label>Food Supply Drop</label>
     <description>Call for a drop of 20 packaged survival meals.</description>
     <faction>DMS_Army</faction>
     <minTitle>DMS_Corporal</minTitle>
@@ -75,8 +75,8 @@
   <!-- 帶寬支援 -->
   <RoyalTitlePermitDef>
     <defName>DMS_Bandwidth</defName>
-    <label>bandwidth support</label>
-    <description>Apply the access of orbital bandwidth support, the amount of bandwidth is depend on applicant's title. This support will be valid unless death or defection occurs on applicant.</description>
+    <label>Bandwidth Support</label>
+    <description>Apply for access to the orbital bandwidth support network, increasing the the amount of mechanoid bandwidth available to the user based on their applicant's title. This support will be available unless death or defection occurs.</description>
     <workerClass>DMS.RoyalTitlePermitWorker_Bandwidth</workerClass>
     <minTitle>DMS_Corporal</minTitle>
     <faction>DMS_Army</faction>
@@ -133,7 +133,7 @@
 
   <RoyalTitlePermitDef ParentName="DropResourcesBase">
     <defName>DMS_MaterialDrop</defName>
-    <label>construct material drop</label>
+    <label>Construction Material Drop</label>
     <description>Call for a drop of 500 silver and 250 steel.</description>
     <faction>DMS_Army</faction>
     <minTitle>DMS_PreSergeant</minTitle>
@@ -151,8 +151,8 @@
 
   <RoyalTitlePermitDef ParentName="DropResourcesBase">
     <defName>DMS_GearDrop</defName>
-    <label>combat equipment drop</label>
-    <description>Call for a  set of combat supply and emergency gears.</description>
+    <label>Combat Equipment Drop</label>
+    <description>Call for a  set of combat supplies and emergency equipment.</description>
     <faction>DMS_Army</faction>
     <minTitle>DMS_WarrantOfficer</minTitle>
     <uiPosition>(4,1)</uiPosition>
@@ -173,8 +173,8 @@
 
   <RoyalTitlePermitDef ParentName="DropResourcesBase">
     <defName>DMS_CompDrop</defName>
-    <label>componments drop</label>
-    <description>Call for a drop of stamp componments and wetware computer.</description>
+    <label>Components Drop</label>
+    <description>Call for a drop of stamped components and wetware computers.</description>
     <faction>DMS_Army</faction>
     <minTitle>DMS_Lieutenant</minTitle>
     <uiPosition>(5,3)</uiPosition>
@@ -194,8 +194,8 @@
 
   <RoyalTitlePermitDef>
     <defName>DMS_WorkerTeam</defName>
-    <label>call worker team</label>
-    <description>Call a group of 4 worker to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe.</description>
+    <label>Call Worker Team</label>
+    <description>Call for a group of 4 workers to assist you for 6 days. These workers can only do general labor tasks and can be controlled as though they were your own colonists. You are required to keep them safe.</description>
     <workerClass>RoyalTitlePermitWorker_CallLaborers</workerClass>
     <minTitle>DMS_PreSergeant</minTitle>
     <faction>DMS_Army</faction>
@@ -215,8 +215,8 @@
 
   <RoyalTitlePermitDef>
     <defName>DMS_WorkerGroup</defName>
-    <label>call worker group</label>
-    <description>Call a group of 8 worker to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe.</description>
+    <label>Call a Large Worker Group</label>
+    <description>Call for a group of 8 workers to assist you for 6 days. These workers can only do general labor tasksand can be controlled as though they were your own colonists. You are required to keep them safe.</description>
     <workerClass>RoyalTitlePermitWorker_CallLaborers</workerClass>
     <minTitle>DMS_Major</minTitle>
     <faction>DMS_Army</faction>
@@ -238,8 +238,8 @@
   <!-- 滴滴拉人 -->
   <RoyalTitlePermitDef>
     <defName>DMS_CargoMech</defName>
-    <label>supply cargo mech</label>
-    <description>Apply a cargo lifter mech belong to your side.</description>
+    <label>Supply Cargo Mech</label>
+    <description>Request a cargo lifter mech be sent to your location.</description>
     <workerClass>DMS.RoyalTitlePermitWorker_MechJoin</workerClass>
     <minTitle>DMS_WarrantOfficer</minTitle>
     <faction>DMS_Army</faction>
@@ -255,8 +255,8 @@
 
   <RoyalTitlePermitDef>
     <defName>DMS_Join_Logistic</defName>
-    <label>call logistic recruit</label>
-    <description>Apply a worker whose life is on yours.</description>
+    <label>Call for a Logistic Recruit</label>
+    <description>Request a worker whose life is now yours.</description>
     <workerClass>DMS.RoyalTitlePermitWorker_PawnJoin</workerClass>
     <minTitle>DMS_Lieutenant</minTitle>
     <faction>DMS_Army</faction>
@@ -273,8 +273,8 @@
 
   <RoyalTitlePermitDef>
     <defName>DMS_CombatMech</defName>
-    <label>supply combat mech</label>
-    <description>Apply a battle friend mech belong to your side.</description>
+    <label>Combat Supply Mech</label>
+    <description>Request a battle friend mech.</description>
     <workerClass>DMS.RoyalTitlePermitWorker_MechJoin</workerClass>
     <minTitle>DMS_Captain</minTitle>
     <faction>DMS_Army</faction>
@@ -291,8 +291,8 @@
 
   <RoyalTitlePermitDef>
     <defName>DMS_Join_Combat</defName>
-    <label>call combatant recruit</label>
-    <description>Apply a combatant whose life is on yours.</description>
+    <label>Call Combatant Recruit</label>
+    <description>Request a solider who will join your colony.</description>
     <workerClass>DMS.RoyalTitlePermitWorker_PawnJoin</workerClass>
     <minTitle>DMS_Major</minTitle>
     <faction>DMS_Army</faction>
@@ -311,8 +311,8 @@
 
   <RoyalTitlePermitDef>
     <defName>DMS_Squad_RC</defName>
-    <label>riot control support</label>
-    <description>Call a group of 4 riot control unit to aid you in prison outbreak.</description>
+    <label>Riot Control Support</label>
+    <description>Call for a group of 4 riot control units to aid you in quelling a prison outbreak or raid.</description>
     <workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
     <minTitle>DMS_Sergeant</minTitle>
     <faction>DMS_Army</faction>
@@ -329,8 +329,8 @@
 
   <RoyalTitlePermitDef>
     <defName>DMS_Squad_UC</defName>
-    <label>urban combat support</label>
-    <description>Call a group of 4 urban combat unit to aid you in raid or colony defense.</description>
+    <label>Urban Combat Support</label>
+    <description>Call for a group of 4 urban combat units to aid you in a raid or colony defense.</description>
     <workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
     <minTitle>DMS_Sergeant</minTitle>
     <faction>DMS_Army</faction>
@@ -348,8 +348,8 @@
 
   <RoyalTitlePermitDef>
     <defName>DMS_Platoon_MT</defName>
-    <label>call squad support</label>
-    <description>Call a squad of soldiers to aid you in battle.</description>
+    <label>Request Combat Support</label>
+    <description>Call for a squad of soldiers to aid you in battle.</description>
     <workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
     <minTitle>DMS_Colonel</minTitle>
     <faction>DMS_Army</faction>
@@ -366,8 +366,8 @@
   
   <RoyalTitlePermitDef>
     <defName>DMS_Platoon_AC</defName>
-    <label>call heavy unit support</label>
-    <description>Call 4 heavy Automatroid to aid you in battle.</description>
+    <label>Request Heavy Unit Reinforcement</label>
+    <description>Request 4 heavy Automatroids to aid you in battle.</description>
     <workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
     <minTitle>DMS_Brigadier</minTitle>
     <faction>DMS_Army</faction>
@@ -384,8 +384,8 @@
 
   <RoyalTitlePermitDef>
     <defName>DMS_CallOrbitalStrike</defName>
-    <label>call aerodrone strike</label>
-    <description>Call a single-impact aerodrone strike at a target position.</description>
+    <label>Call Aerodrone Strike</label>
+    <description>Request a precision single-impact aerodrone strike at a targeted position.</description>
     <workerClass>RoyalTitlePermitWorker_OrbitalStrike</workerClass>
     <minTitle>DMS_Captain</minTitle>
     <faction>DMS_Army</faction>
@@ -405,8 +405,8 @@
 
   <RoyalTitlePermitDef>
     <defName>DMS_CallOrbitalSalvo</defName>
-    <label>call aerodrone salvo</label>
-    <description>Call a salvo of aerodrone strikes around a target position.</description>
+    <label>Call Aerodrone Salvo</label>
+    <description>Request a salvo of aerodrone strikes around a target position.</description>
     <workerClass>RoyalTitlePermitWorker_OrbitalStrike</workerClass>
     <minTitle>DMS_Brigadier</minTitle>
     <faction>DMS_Army</faction>
@@ -430,8 +430,8 @@
 
   <RoyalTitlePermitDef>
     <defName>DMS_CallTransportShuttle</defName>
-    <label>call transport shuttle</label>
-    <description>Call a shuttle for your own use. It will transport colonists, items, and animals anywhere you like within 70 world tiles.</description>
+    <label>Call Transport Shuttle</label>
+    <description>Request a shuttle for your own use. It will transport colonists, items, and animals anywhere you'd like within 70 world tiles.</description>
     <workerClass>RoyalTitlePermitWorker_CallShuttle</workerClass>
     <minTitle>DMS_Lieutenant</minTitle>
     <faction>DMS_Army</faction>

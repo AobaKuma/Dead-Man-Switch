@@ -55,8 +55,8 @@
 
 	<VREAndroids.AndroidGeneDef MayRequire="vanillaracesexpanded.android" ParentName="VREA_HardwareBase">
 		<defName>DMS_SyntheticSkin</defName>
-		<label>plasticfiber skin</label>
-		<description>A plasticfiber synthetic skin that military android common to have, it has a nice protection to it's inner parts without affecting mobility, but looks terror for people.</description>
+		<label>Plasticfiber skin</label>
+		<description>A plasticfiber synthetic skin that military androids commonly have. It has good protection for the inner mechanisms without affecting mobility, but looks horrifying to people.</description>
 		<iconPath>UI/Gene/Gene_PlasfiberSkin</iconPath>
 		<displayOrderInCategory>22</displayOrderInCategory>
 		<biostatCpx>0</biostatCpx>
@@ -116,9 +116,9 @@
 
 	<XenotypeDef>
 		<defName>DMS_AndroidSynth</defName>
-		<label>synth</label>
-		<description>Synths are biological hybrid omnics produced by integrating Android and robot technologies.</description>
-		<descriptionShort>Synths are biological hybrid omnics produced by integrating Android and robot technologies.</descriptionShort>
+		<label>Synth</label>
+		<description>Synths are biological hybrids omnics produced by integrating android and robot technologies.</description>
+		<descriptionShort>Synths are biological hybrid omnics produced by integrating android and robot technologies.</descriptionShort>
 		<iconPath>UI/XenotypeIcons/Androidtype_AmIRobot</iconPath>
 		<genes>
 			<li>VREA_MentalBreaksDisabled</li>

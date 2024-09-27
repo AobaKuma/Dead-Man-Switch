@@ -11,7 +11,7 @@
     <stages>
       <li>
         <label>Received {TITLE} title</label>
-        <description>I've got promoted to {TITLE}. I love the recognition!</description>
+        <description>I've been promoted to {TITLE}. I love the recognition!</description>
         <baseMoodEffect>8</baseMoodEffect>
       </li>
     </stages>
@@ -25,7 +25,7 @@
     <stages>
       <li>
         <label>Lost military rank</label>
-        <description>I lost my military rank.</description>
+        <description>I busted down from my rank. This sucks.</description>
         <baseMoodEffect>-8</baseMoodEffect>
       </li>
     </stages>

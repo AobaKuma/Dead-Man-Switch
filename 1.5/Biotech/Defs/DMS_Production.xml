@@ -32,7 +32,7 @@
 
   <WorkGiverDef>
     <defName>DMS_DoBillsMechConstructor</defName>
-    <label>make things at automatroid constructor</label>
+    <label>Make things at an Automatroid constructor.</label>
     <giverClass>WorkGiver_DoBill</giverClass>
     <workType>Smithing</workType>
     <priorityInType>200</priorityInType>
@@ -49,8 +49,8 @@
 
   <ThingDef ParentName="MechGestatorBase">
     <defName>DMS_MechGestatorSamll</defName>
-    <label>automatroid constructor</label>
-    <description>A massive industrial equipment use to assemble automatroid.</description>
+    <label>Automatroid Constructor</label>
+    <description>A massive piece of industrial equipment used to assemble Automatroids.</description>
 		<designationCategory>DMS_Category</designationCategory>
     <graphicData>
       <texPath>Things/Building/MechBuilder_Base</texPath>
