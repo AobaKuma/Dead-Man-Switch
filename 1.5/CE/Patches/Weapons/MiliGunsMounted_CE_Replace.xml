@@ -15,6 +15,13 @@
 			<turret>DMS_Iguana_SubMachineGun</turret>
 		</value>
 	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DMS_Mech_Geochelone_b"]/comps/li[@Class="DMS.CompProperties_VehicleWeapon"]/defaultWeapon</xpath>
+		<value>
+			<defaultWeapon>DMS_Iguana_SubMachineGun</defaultWeapon>
+		</value>
+	</Operation>
 	
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="DMS_Mech_Dogge"]/comps/li[@Class="DMS.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="machine gun"]/turret</xpath>
@@ -41,6 +48,13 @@
 		<xpath>Defs/ThingDef[defName="DMS_Mech_Tarbosaurus"]/comps/li[@Class="DMS.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="close inbound system"]/turret</xpath>
 		<value>
 			<turret>DMS_Tarbosaurus_ShotgunGun</turret>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DMS_Mech_Killdozer_b"]/comps/li[@Class="DMS.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="defense machinegun"]/turret</xpath>
+		<value>
+			<turret>DMS_Dozer_KordMG</turret>
 		</value>
 	</Operation>
 	

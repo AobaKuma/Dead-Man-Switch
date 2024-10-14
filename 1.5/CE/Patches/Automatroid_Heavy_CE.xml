@@ -16,6 +16,13 @@
 				</value>
 			</li>
 
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Tarbosaurus"]/combatPower</xpath>
+				<value>
+					<combatPower>950</combatPower>
+				</value>
+			</li>
+
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Tarbosaurus"]</xpath>
 				<value>
@@ -35,18 +42,18 @@
 			
 
 			<!-- ======Tarbosaurus (mech boss1)======-->
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="DMS_Mech_Tarbosaurus"]/statBases</xpath>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Tarbosaurus"]/statBases/ShootingAccuracyPawn</xpath>
 				<value>
 					<CarryWeight>300</CarryWeight> <!--ridiculously overweight and over bulk weapon system and ammo :(-->
 					<CarryBulk>230</CarryBulk>
-					<AimingAccuracy>1.35</AimingAccuracy>
-					<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+					<AimingAccuracy>1.8</AimingAccuracy>
+					<ShootingAccuracyPawn>2.5</ShootingAccuracyPawn>
 					<MeleeDodgeChance>0.04</MeleeDodgeChance>
 					<MeleeCritChance>0.46</MeleeCritChance>
 					<MeleeParryChance>0.34</MeleeParryChance>
 					<MaxHitPoints>500</MaxHitPoints>
-					<NightVisionEfficiency>0.8</NightVisionEfficiency>
+					<NightVisionEfficiency>0.9</NightVisionEfficiency>
 					<ReloadSpeed>2</ReloadSpeed>
 				</value>
 			</li>
@@ -54,7 +61,7 @@
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Tarbosaurus"]/statBases/ArmorRating_Blunt</xpath>
 				<value>
-					<ArmorRating_Blunt>65</ArmorRating_Blunt>
+					<ArmorRating_Blunt>155</ArmorRating_Blunt>
 				</value>
 			</li>
 
@@ -62,14 +69,21 @@
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Tarbosaurus"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
-					<ArmorRating_Sharp>36</ArmorRating_Sharp>
+					<ArmorRating_Sharp>48</ArmorRating_Sharp>
 				</value>
 			</li>
 
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Tarbosaurus"]/statBases/ArmorRating_Heat</xpath>
 				<value>
-					<ArmorRating_Heat>0.5</ArmorRating_Heat>
+					<ArmorRating_Heat>0.8</ArmorRating_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Tarbosaurus"]/statBases</xpath>
+				<value>
+					<ArmorRating_Electric>0.5</ArmorRating_Electric>
 				</value>
 			</li>
 
@@ -87,7 +101,7 @@
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Tarbosaurus"]/comps</xpath>
 				<value>
 					<li Class="CombatExtended.CompProperties_ArmorDurability">
-						<Durability>4500</Durability>
+						<Durability>4650</Durability>
 						<Regenerates>true</Regenerates>
 						<RegenInterval>1250</RegenInterval>
 						<RegenValue>25</RegenValue>
@@ -118,16 +132,16 @@
 							<capacities>
 								<li>Blunt</li>
 							</capacities>
-							<power>35</power>
+							<power>56</power>
 							<surpriseAttack>
 								<extraMeleeDamages>
 									<li>
 										<def>Stun</def>
-										<amount>15</amount>
+										<amount>20</amount>
 									</li>
 								</extraMeleeDamages>
 							</surpriseAttack>
-							<cooldownTime>1.65</cooldownTime>
+							<cooldownTime>3.55</cooldownTime>
 							<linkedBodyPartsGroup>LeftMechanicalLeg</linkedBodyPartsGroup>
 							<armorPenetrationBlunt>49</armorPenetrationBlunt>
 							<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
@@ -137,16 +151,16 @@
 							<capacities>
 								<li>Blunt</li>
 							</capacities>
-							<power>35</power>
+							<power>56</power>
 							<surpriseAttack>
 								<extraMeleeDamages>
 									<li>
 										<def>Stun</def>
-										<amount>15</amount>
+										<amount>20</amount>
 									</li>
 								</extraMeleeDamages>
 							</surpriseAttack>
-							<cooldownTime>1.65</cooldownTime>
+							<cooldownTime>3.55</cooldownTime>
 							<linkedBodyPartsGroup>RightMechanicalLeg</linkedBodyPartsGroup>
 							<armorPenetrationBlunt>49</armorPenetrationBlunt>
 							<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
@@ -157,7 +171,7 @@
 								<li>Blunt</li>
 							</capacities>
 							<power>48</power>
-							<cooldownTime>1.53</cooldownTime>
+							<cooldownTime>2.53</cooldownTime>
 							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 							<chanceFactor>0.08</chanceFactor>
 							<armorPenetrationBlunt>27.5</armorPenetrationBlunt>
@@ -165,6 +179,160 @@
 					</tools>
 				</value>
 			</li>
+
+
+			<!--add partial armor-->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Tarbosaurus"]</xpath>
+				<value>
+					<li Class="CombatExtended.PartialArmorExt">
+						<stats>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+								<parts>
+									<li>HearingSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+								<parts>
+									<li>HearingSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+								<parts>
+									<li>DMS_HeadRadar</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+								<parts>
+									<li>DMS_HeadRadar</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.65</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalHead</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalHead</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+								<parts>
+									<li>DMS_HeavyChassis</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+								<parts>
+									<li>DMS_HeavyChassis</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalShoulder</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalShoulder</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalArm</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalArm</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalHand</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalHand</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalLeg</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalLeg</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>1</ArmorRating_Sharp>
+								<parts>
+									<li>DMS_ArmourPlate</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>1</ArmorRating_Blunt>
+								<parts>
+									<li>DMS_ArmourPlate</li>
+								</parts>
+							</li>
+						</stats>
+					</li>
+				</value>
+			</li>
+
+
 		</operations>
 	</Operation>
 </Patch>

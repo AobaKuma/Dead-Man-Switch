@@ -4,6 +4,8 @@ using Verse.AI.Group;
 using Verse.AI;
 using System.Collections.Generic;
 using Verse.Noise;
+using System.Linq;
+using RimWorld.Planet;
 
 namespace DMS
 {
@@ -20,29 +22,42 @@ namespace DMS
             }
             if (delayCheck <= 0)
             {
-                //TryTriggerDMS();
-
+                TryTriggerDMS();
                 delayCheck = Props.minDelayUntilDMS;
             }
         }
         private void TryTriggerDMS()
         {
-            var a = parent.GetComp<CompOverseerSubject>();
-            var p = a.parent as Pawn;
-            if (p.IsColonyMech && p.relations?.GetFirstDirectRelationPawn(PawnRelationDefOf.Overseer) != null)
+            Pawn mech = parent as Pawn;
+            if (mech.IsWorldPawn() && mech.Faction != Faction.OfPlayer && mech.GetOverseer() != null)//媽的，又有機兵覺醒啦。
             {
-                if (a?.State == OverseerSubjectState.RequiresBandwidth)
-                {
-                    ((Pawn)a.parent).relations.RemoveDirectRelation(PawnRelationDefOf.Overseer, ((Pawn)parent)?.relations?.GetFirstDirectRelationPawn(PawnRelationDefOf.Overseer));
-                    Messages.Message("DMS_AutomatroidDisconnected".Translate(), new LookTargets(parent), MessageTypeDefOf.TaskCompletion);
-                }
+                //得寫個生成讓他自己找回來
             }
-        }
-        public override IEnumerable<Gizmo> CompGetGizmosExtra()
-        {
-            foreach (Gizmo item in base.CompGetGizmosExtra())
+            
+            if (!mech.Faction.IsPlayer) return;
+            CompOverseerSubject a = parent.GetComp<CompOverseerSubject>();
+
+            var overseer = mech.GetOverseer()?.mechanitor;
+            if (overseer != null) return;
+            if (mech.Spawned && !overseer.CanOverseeSubject) //在無法連接時自己找其他人連接。
             {
-                yield return item;
+                var li = mech.Map.mapPawns.FreeColonistsSpawned.Where(c => MechanitorUtility.IsMechanitor(c));
+                if (li.Any())
+                {
+                    foreach (var c in li)
+                    {
+                        Log.Message(c.Name);
+                        if (c.mechanitor.CanOverseeSubject(mech))
+                        {
+                            mech.GetOverseer()?.relations.RemoveDirectRelation(PawnRelationDefOf.Overseer, mech);
+                            c.relations.AddDirectRelation(PawnRelationDefOf.Overseer, mech);
+                            Messages.Message("DMS_AutomatroidReconnected".Translate(), new LookTargets(parent), MessageTypeDefOf.PositiveEvent);
+                            return;
+                        }
+                    }
+                }
+                Messages.Message("DMS_AutomatroidDisconnected".Translate(), new LookTargets(parent), MessageTypeDefOf.NeutralEvent);
+                return;
             }
         }
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -52,7 +67,7 @@ namespace DMS
         }
         public override string CompInspectStringExtra()
         {  
-            if (parent.Faction != Faction.OfPlayer || parent.GetComp<CompOverseerSubject>() == null) return null;
+            if (!parent.Faction.IsPlayer || parent.GetComp<CompOverseerSubject>() == null) return null;
             if (parent.GetComp<CompOverseerSubject>().State != OverseerSubjectState.Overseen)
             {
                 string str = "DMS_WillTerminateTheBetrayedUnit".Translate();

@@ -50,7 +50,7 @@
   <ThingDef ParentName="DMS_BioMechBionicBase">
     <defName>DMS_ProstheticEye</defName>
     <label>Mechaneural Visual Sensor</label>
-    <description>An artificial light receiver with an integrated nerve-link. The sensor is equipped with night vision and aim assistance making it superior to its biological counterpart. </description>
+    <description>An artificial light receiver with an integrated nerve-link. The sensor is equipped with night vision and aim assistance making it superior to its biological counterpart.</description>
     <descriptionHyperlinks><RecipeDef>DMS_InstallProstheticEye</RecipeDef></descriptionHyperlinks>
     <costList>
       <Tungsteel>15</Tungsteel>
@@ -74,7 +74,7 @@
     <displayWound>true</displayWound>
     <hediffGivers>
       <li Class="HediffGiver_Random">
-        <mtbDays>15</mtbDays>
+        <mtbDays>30</mtbDays>
         <hediff>DMS_BionicShock</hediff>
         <partsToAffect>
           <li>Torso</li>
@@ -177,7 +177,7 @@
     </comps>
     <hediffGivers>
       <li Class="HediffGiver_Random">
-        <mtbDays>31</mtbDays>
+        <mtbDays>60</mtbDays>
         <hediff>DMS_BionicShock</hediff>
         <partsToAffect>
           <li>Torso</li>
@@ -256,7 +256,7 @@
     <spawnThingOnRemoved>DMS_ProstheticLeg</spawnThingOnRemoved>
     <hediffGivers>
       <li Class="HediffGiver_Random">
-        <mtbDays>32</mtbDays>
+        <mtbDays>64</mtbDays>
         <hediff>DMS_BionicShock</hediff>
         <partsToAffect>
           <li>Torso</li>
@@ -339,7 +339,7 @@
     <spawnThingOnRemoved>DMS_ProstheticLung</spawnThingOnRemoved>
     <hediffGivers>
       <li Class="HediffGiver_Random">
-        <mtbDays>32</mtbDays>
+        <mtbDays>64</mtbDays>
         <hediff>DMS_BionicShock</hediff>
         <partsToAffect>
           <li>Torso</li>
@@ -423,7 +423,7 @@
     <spawnThingOnRemoved>DMS_ProstheticKidney</spawnThingOnRemoved>
     <hediffGivers>
       <li Class="HediffGiver_Random">
-        <mtbDays>32</mtbDays>
+        <mtbDays>64</mtbDays>
         <hediff>DMS_BionicShock</hediff>
         <partsToAffect>
           <li>Torso</li>
@@ -519,7 +519,7 @@
         </statOffsets>
         <hediffGivers>
           <li Class="HediffGiver_Random">
-            <mtbDays>60</mtbDays>
+            <mtbDays>120</mtbDays>
             <hediff>DMS_BionicShock</hediff>
             <partsToAffect>
               <li>Torso</li>
@@ -534,7 +534,7 @@
         </statOffsets>
         <hediffGivers>
           <li Class="HediffGiver_Random">
-            <mtbDays>50</mtbDays>
+            <mtbDays>100</mtbDays>
             <hediff>DMS_BionicShock</hediff>
             <partsToAffect>
               <li>Torso</li>
@@ -549,7 +549,7 @@
         </statOffsets>
         <hediffGivers>
           <li Class="HediffGiver_Random">
-            <mtbDays>40</mtbDays>
+            <mtbDays>80</mtbDays>
             <hediff>DMS_BionicShock</hediff>
             <partsToAffect>
               <li>Torso</li>
@@ -564,7 +564,7 @@
         </statOffsets>
         <hediffGivers>
           <li Class="HediffGiver_Random">
-            <mtbDays>35</mtbDays>
+            <mtbDays>60</mtbDays>
             <hediff>DMS_BionicShock</hediff>
             <partsToAffect>
               <li>Torso</li>
@@ -579,7 +579,7 @@
         </statOffsets>
         <hediffGivers>
           <li Class="HediffGiver_Random">
-            <mtbDays>25</mtbDays>
+            <mtbDays>45</mtbDays>
             <hediff>DMS_BionicShock</hediff>
             <partsToAffect>
               <li>Torso</li>
@@ -594,7 +594,7 @@
         </statOffsets>
         <hediffGivers>
           <li Class="HediffGiver_Random">
-            <mtbDays>15</mtbDays>
+            <mtbDays>30</mtbDays>
             <hediff>DMS_BionicShock</hediff>
             <partsToAffect>
               <li>Torso</li>
@@ -608,10 +608,6 @@
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
     <comps>
-      <li Class="HediffCompProperties_ReactOnDamage">
-        <damageDefIncoming>EMP</damageDefIncoming>
-        <createHediff>BrainShock</createHediff>
-      </li>
       <li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" MayRequire="V1024.EBFramework">            <!-- 部件血量加多少% -->
         <scaleAdjustment>0.5</scaleAdjustment>
       </li>
@@ -676,7 +672,7 @@
     </disablesNeeds>
     <hediffGivers>
       <li Class="HediffGiver_Random">
-        <mtbDays>30</mtbDays>
+        <mtbDays>90</mtbDays>
         <hediff>DMS_FilterShock</hediff>
         <partsToAffect>
           <li>Torso</li>
@@ -699,10 +695,6 @@
       </li>
     </stages>
     <comps>
-      <li Class="HediffCompProperties_ReactOnDamage">
-        <damageDefIncoming>EMP</damageDefIncoming>
-        <createHediff>DMS_FilterShock</createHediff>
-      </li>
 		<li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" MayRequire="V1024.EBFramework">            <!-- 部件血量加多少% -->
 			<scaleAdjustment>0.20</scaleAdjustment>
 		</li>
@@ -919,7 +911,7 @@
     </comps>
     <hediffGivers>
       <li Class="HediffGiver_Random">
-        <mtbDays>20</mtbDays>
+        <mtbDays>40</mtbDays>
         <hediff>DMS_SyntheticRejection</hediff>
         <partsToAffect>
           <li>Torso</li>
@@ -998,7 +990,7 @@
     <spawnThingOnRemoved>DMS_SyntheticLeg</spawnThingOnRemoved>
     <hediffGivers>
       <li Class="HediffGiver_Random">
-        <mtbDays>32</mtbDays>
+        <mtbDays>40</mtbDays>
         <hediff>DMS_SyntheticRejection</hediff>
         <partsToAffect>
           <li>Torso</li>

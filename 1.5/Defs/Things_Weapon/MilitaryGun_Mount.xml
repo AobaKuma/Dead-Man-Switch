@@ -23,7 +23,7 @@
 		  <AccuracyShort>0.48</AccuracyShort>
 		  <AccuracyMedium>0.35</AccuracyMedium>
 		  <AccuracyLong>0.26</AccuracyLong>
-		  <RangedWeapon_Cooldown>4.0</RangedWeapon_Cooldown>      
+		  <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>      
 		</statBases>
 		<tradeability>None</tradeability>
 		<destroyOnDrop>false</destroyOnDrop>
@@ -47,7 +47,7 @@
 		  <li>
 			<verbClass>Verb_SpewFire</verbClass>
 			<hasStandardCommand>true</hasStandardCommand>
-			<warmupTime>0.5</warmupTime>
+			<warmupTime>0</warmupTime>
 			<range>7.9</range>
 			<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 			<burstShotCount>10</burstShotCount>
@@ -106,14 +106,14 @@
 			<AccuracyShort>0.4</AccuracyShort>
 			<AccuracyMedium>0.3</AccuracyMedium>
 			<AccuracyLong>0.2</AccuracyLong>
-			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
 		</statBases>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_Shotgun</defaultProjectile>
-				<warmupTime>0.5</warmupTime>
+				<warmupTime>0</warmupTime>
 				<range>12.9</range>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 				<burstShotCount>3</burstShotCount>
@@ -148,13 +148,14 @@
 			<AccuracyShort>0.6</AccuracyShort>
 			<AccuracyMedium>0.3</AccuracyMedium>
 			<AccuracyLong>0.2</AccuracyLong>
+			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
 		</statBases>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_Autopistol</defaultProjectile>
-				<warmupTime>0.5</warmupTime>
+				<warmupTime>0</warmupTime>
 				<range>15.9</range>
 				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
 				<burstShotCount>4</burstShotCount>
@@ -188,13 +189,14 @@
 			<AccuracyShort>0.58</AccuracyShort>
 			<AccuracyMedium>0.45</AccuracyMedium>
 			<AccuracyLong>0.36</AccuracyLong>
+			<RangedWeapon_Cooldown>2.3</RangedWeapon_Cooldown>
 		</statBases>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_DMS_LightMachineGun</defaultProjectile>
-				<warmupTime>2.3</warmupTime>
+				<warmupTime>0</warmupTime>
 				<range>19.9</range>
 				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
 				<burstShotCount>12</burstShotCount>
@@ -228,13 +230,14 @@
 			<AccuracyShort>0.70</AccuracyShort>
 			<AccuracyMedium>0.86</AccuracyMedium>
 			<AccuracyLong>0.88</AccuracyLong>
+			<RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
 		</statBases>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_DMS_HeavyMachineGun</defaultProjectile>
-				<warmupTime>2.3</warmupTime>
+				<warmupTime>0</warmupTime>
 				<range>27.9</range>
 				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
 				<burstShotCount>4</burstShotCount>

@@ -14,13 +14,13 @@
       <ArmorRating_Heat>1.8</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
-      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
     <race>
       <body>DMS_Bipedal</body>                                                      <!--身體(另外的def)-->
       <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
       <baseBodySize>2.25</baseBodySize>
-      <baseHealthScale>2.5</baseHealthScale>
+      <baseHealthScale>2.75</baseHealthScale>
       <mechWeightClass>Heavy</mechWeightClass>
     </race>
     <comps>  
@@ -169,6 +169,11 @@
         </surpriseAttack>
       </li>
     </tools>
+    <butcherProducts>
+      <Tungsteel>15</Tungsteel>
+      <Steel>15</Steel>
+      <ComponentStamped>1</ComponentStamped>
+    </butcherProducts>
   </ThingDef>
 
   <PawnKindDef ParentName="BaseAutomatroidKind">
@@ -229,13 +234,13 @@
       <ArmorRating_Heat>2.4</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
-      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
     <race>
       <body>DMS_Bipedal</body>                                                      <!--身體(另外的def)-->
       <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
       <baseBodySize>2.25</baseBodySize>
-      <baseHealthScale>2</baseHealthScale>
+      <baseHealthScale>2.3</baseHealthScale>
       <mechWeightClass>Heavy</mechWeightClass>
     </race>
     <comps>  
@@ -383,6 +388,17 @@
         </surpriseAttack>
       </li>
     </tools>
+    <butcherProducts>
+      <Tungsteel>15</Tungsteel>
+      <Steel>10</Steel>
+      <ComponentStamped>1</ComponentStamped>
+    </butcherProducts>
+    <damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.85</multiplier>
+      </li>
+    </damageMultipliers>
   </ThingDef>
 
   <PawnKindDef ParentName="BaseAutomatroidKind">

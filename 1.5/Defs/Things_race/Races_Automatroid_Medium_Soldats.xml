@@ -163,7 +163,7 @@
   <ThingDef ParentName="BaseMechRace_Soldat">
     <defName>DMS_Mech_Grenadier</defName>
     <label>Grenadier</label>
-    <description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Grenadiers are specialized to use light weapons and grenade launchers.\n\nThe Grenadier has to carry a battery backpack which makes it unable to fight like other mechs without cover.<description>
+    <description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Grenadiers are specialized to use light weapons and grenade launchers.\n\nThe Grenadier has to carry a battery backpack which makes it unable to fight like other mechs without cover.</description>
     <statBases>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost> 
     </statBases>

@@ -24,6 +24,20 @@
 				</value>
 			</li>
 
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Jaeger"]/combatPower</xpath>
+				<value>
+					<combatPower>220</combatPower>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Sniper"]/combatPower</xpath>
+				<value>
+					<combatPower>240</combatPower>
+				</value>
+			</li>
+
 			<!-- ======Arquebusier======-->
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[@Name="BaseMechRace_Arquebusier"]/statBases/ShootingAccuracyPawn</xpath>

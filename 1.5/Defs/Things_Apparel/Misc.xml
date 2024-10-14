@@ -4,7 +4,7 @@
 	<ThingDef ParentName="ApparelArmorHelmetReconBase">
 		<defName>DMS_Apparel_Gunlink</defName>
 		<label>Night Vision Goggles</label>
-		<description>An optical enhancement device which amplifies existing light in low-light conditions and projects it through the display on to the users eyes. Compatible with most helmets and can be worn stand-alone. </description>
+		<description>An optical enhancement device which amplifies existing light in low-light conditions and projects it through the display on to the users eyes. Compatible with most helmets and can be worn stand-alone.</description>
 		<graphicData>
 			<texPath>Things/Apparel/NightVisionGoggles/headgear_icon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

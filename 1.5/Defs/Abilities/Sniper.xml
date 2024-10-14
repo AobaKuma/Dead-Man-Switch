@@ -26,7 +26,7 @@
 		<defName>DMS_SharpShooting</defName>
 		<label>Precision Marksmanship Mode</label>
 		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-		<description>This unit is performing intracate ballistic calculations and cannot move. Once its calculations are complete, it will take a precision shot with deadly accuracy. </description>
+		<description>This unit is performing intracate ballistic calculations and cannot move. Once its calculations are complete, it will take a precision shot with deadly accuracy.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
@@ -38,12 +38,15 @@
 		<stages>
 			<li>
 				<statOffsets>
-					<ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+					<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
 				</statOffsets>
+				<statFactors>
+					<MoveSpeed>0.05</MoveSpeed>
+				</statFactors>
 				<capMods>
 					<li>
-						<capacity>Moving</capacity>
-						<offset>-0.8</offset>
+						<capacity>Sight</capacity>
+						<offset>2</offset>
 					</li>
 				</capMods>
 			</li>
@@ -107,12 +110,9 @@
 			<statOffsets>
 			  	<ShootingAccuracyPawn>-1</ShootingAccuracyPawn>
 			</statOffsets>
-			<capMods>
-				<li>
-					  <capacity>Consciousness</capacity>
-					  <offset>-0.4</offset>
-				</li>
-			</capMods>
+			<statFactors>
+				<MoveSpeed>0.5</MoveSpeed>
+			</statFactors>
 		</li>
 	</stages>
   </HediffDef>
@@ -134,7 +134,8 @@
 	<stages>
 	  <li>
 		<statOffsets>
-		  <ShootingAccuracyPawn>0.25</ShootingAccuracyPawn>
+		  <ShootingAccuracyPawn>0.5</ShootingAccuracyPawn>
+		  <RangedCooldownFactor>-0.25</RangedCooldownFactor>
 		</statOffsets>
 	  </li>
 	</stages>

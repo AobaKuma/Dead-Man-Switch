@@ -11,7 +11,7 @@
 		</weaponTags>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_Weapon_M214</texPath>
-			<drawSize>1.25</drawSize>
+			<drawSize>1.3</drawSize>
 		</graphicData>
 		<statBases>
 			<Mass>10</Mass>
@@ -20,7 +20,7 @@
 			<AccuracyShort>0.3</AccuracyShort>
 			<AccuracyMedium>0.2</AccuracyMedium>
 			<AccuracyLong>0.15</AccuracyLong>
-			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
 			<skillRequirements>
@@ -83,7 +83,7 @@
 			<AccuracyShort>0.3</AccuracyShort>
 			<AccuracyMedium>0.25</AccuracyMedium>
 			<AccuracyLong>0.18</AccuracyLong>
-			<RangedWeapon_Cooldown>2.2</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
 			<skillRequirements>
@@ -150,7 +150,7 @@
 			<AccuracyShort>0.3</AccuracyShort>
 			<AccuracyMedium>0.5</AccuracyMedium>
 			<AccuracyLong>0.45</AccuracyLong>
-			<RangedWeapon_Cooldown>2.4</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
 			<skillRequirements>
@@ -173,7 +173,7 @@
 				<minRange>8</minRange>
 				<range>34.9</range>
 				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
-				<burstShotCount>12</burstShotCount>
+				<burstShotCount>24</burstShotCount>
 				<soundCast>Shot_Autocannon</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
@@ -221,7 +221,7 @@
 			<AccuracyShort>0.3</AccuracyShort>
 			<AccuracyMedium>0.5</AccuracyMedium>
 			<AccuracyLong>0.55</AccuracyLong>
-			<RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
 		</statBases>
 		<verbs>
 			<li>
@@ -232,7 +232,7 @@
 				<range>34.9</range>
 				<minRange>1.9</minRange>
 				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
-				<burstShotCount>12</burstShotCount>
+				<burstShotCount>30</burstShotCount>
 				<soundCast>Shot_Minigun</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>12</muzzleFlashScale>
@@ -280,7 +280,7 @@
 			<AccuracyShort>0.48</AccuracyShort>
 			<AccuracyMedium>0.38</AccuracyMedium>
 			<AccuracyLong>0.28</AccuracyLong>
-			<RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
 			<skillRequirements>

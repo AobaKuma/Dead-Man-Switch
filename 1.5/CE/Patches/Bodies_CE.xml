@@ -778,6 +778,16 @@
 	</Operation>
 
 	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_KillDozer"]/corePart/parts/li[def="MechanicalLeg"]/parts/li[def="DMS_ArmourPlate_Additional"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_KillDozer"]/corePart/parts/li[def="MechanicalLeg"]/parts/li[def="DMS_ArmourPlate_Additional"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/BodyDef[defName="DMS_Caterpillar" or defName="DMS_KillDozer"]/corePart/parts/li[def="MechanicalLeg"]/parts/li[def="MechanicalFoot"]/groups</xpath>
 		<nomatch Class="PatchOperationAdd">
 			<xpath>Defs/BodyDef[defName="DMS_Caterpillar" or defName="DMS_KillDozer"]/corePart/parts/li[def="MechanicalLeg"]/parts/li[def="MechanicalFoot"]</xpath>
@@ -858,6 +868,13 @@
 
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/BodyDef[defName="DMS_Caterpillar" or defName="DMS_KillDozer"]/corePart/parts/li[def="MechanicalLeg"]/parts/li[def="MechanicalFoot"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_KillDozer"]/corePart/parts/li[def="MechanicalLeg"]/parts/li[def="DMS_ArmourPlate_Additional"]/groups</xpath>
 		<value>
 			<li>CoveredByNaturalArmor</li>
 		</value>

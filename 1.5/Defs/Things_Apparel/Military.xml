@@ -272,7 +272,7 @@
 	<ThingDef ParentName="DMS_ArmorHelmetMakeableBase">
 		<defName>DMS_Apparel_TacticalHelmet</defName>
 		<label>Tactical Helmet</label>
-		<description>A lightweight combat helmet reinforced with plasteel to prevent backface deformation after its impacted by a round. Great at protecting the wearer from bullets and shrapnel, not so great at protecting the wearer from blunt force trauma. </description>
+		<description>A lightweight combat helmet reinforced with plasteel to prevent backface deformation after its impacted by a round. Great at protecting the wearer from bullets and shrapnel, not so great at protecting the wearer from blunt force trauma.</description>
 		<recipeMaker>
 			<researchPrerequisite>FlakArmor</researchPrerequisite>
 			<skillRequirements>
@@ -529,7 +529,6 @@
 		<defName>DMS_Apparel_TacticalCloak</defName>
 		<label>Tactical Cloak</label>
 		<description>A cloak capable of low-level active camouflage typically equipped by sappers and special operators in the Colonial Forces.</description>
-		<!-- 暫時不給造 -->
 		<recipeMaker />
 		<graphicData>
 			<texPath>Things/Apparel/MagierCloak/icon</texPath>

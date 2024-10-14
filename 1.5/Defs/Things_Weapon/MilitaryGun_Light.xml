@@ -105,7 +105,7 @@
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_PDW</defName>
 		<label>PDW</label>
-		<description>A mass-producable submachine gun which was designed to be used as a "Point Shooting" weapon. It's inaccurate at range but its caliber and draw speed it the ideal weapon for urban combat against milltors. </description>
+		<description>A mass-producable submachine gun which was designed to be used as a "Point Shooting" weapon. It's inaccurate at range but its caliber and draw speed it the ideal weapon for urban combat against milltors.</description>
 		<weaponClasses>
 			<li>RangedLight</li>
 			<li>ShortShots</li>

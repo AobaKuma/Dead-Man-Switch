@@ -37,12 +37,6 @@
 					<li>Feet</li>
 				</value>
 			</li>
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="DMS_Apparel_HazardSuit"]/apparel/layers</xpath>
-				<value>
-					<li>StrappedHead</li>
-				</value>
-			</li>
 			<!--power skelton-->
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Apparel_PowerSkelton"]/statBases/ArmorRating_Sharp</xpath>

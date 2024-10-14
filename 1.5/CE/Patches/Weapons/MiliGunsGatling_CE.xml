@@ -9,18 +9,18 @@
                 <statBases>
                     <Mass>180</Mass>
                     <Bulk>93</Bulk>
-                    <SwayFactor>1.86</SwayFactor>
-                    <ShotSpread>0.05</ShotSpread>
+                    <SwayFactor>2.36</SwayFactor>
+                    <ShotSpread>0.07</ShotSpread>
                     <SightsEfficiency>1.2</SightsEfficiency>
-                    <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
+                    <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
-				    <recoilAmount>1.46</recoilAmount>
+                    <recoilAmount>1.18</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_30x173mmNATO_AP</defaultProjectile>
-					<burstShotCount>50</burstShotCount>
-					<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+                    <burstShotCount>40</burstShotCount>
+                    <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
                     <warmupTime>1.35</warmupTime>
                     <range>75</range>
                     <soundCast>Shot_Autocannon</soundCast>
@@ -39,8 +39,8 @@
                 <FireModes>
                     <aiUseBurstMode>FALSE</aiUseBurstMode>
                     <noSingleShot>true</noSingleShot>
-				    <aiAimMode>Snapshot</aiAimMode>
-					<aimedBurstShotCount>25</aimedBurstShotCount>
+				    <aiAimMode>AimedShot</aiAimMode>
+					<aimedBurstShotCount>20</aimedBurstShotCount>
                 </FireModes>		
                 <weaponTags>
                     <li>CE_AI_Suppressive</li>
@@ -54,64 +54,17 @@
             <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
                 <defName>DMS_GAU4Gatlinggun</defName>
                 <statBases>
-                    <SwayFactor>1.68</SwayFactor>
-                    <ShotSpread>0.05</ShotSpread>
+                    <SwayFactor>1.82</SwayFactor>
+                    <ShotSpread>0.06</ShotSpread>
                     <SightsEfficiency>1.2</SightsEfficiency>
                     <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
-				    <recoilAmount>1.39</recoilAmount>
+                    <recoilAmount>1.09</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_20x102mmNATO_AP</defaultProjectile>
-					<burstShotCount>40</burstShotCount>
-					<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
-                    <warmupTime>0.8</warmupTime>
-                    <range>62</range>
-                    <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
-                    <soundCastTail>GunTail_Medium</soundCastTail>
-                    <muzzleFlashScale>14</muzzleFlashScale>
-                    <recoilPattern>Mounted</recoilPattern>
-                    <targetParams>
-                        <canTargetLocations>true</canTargetLocations>
-                    </targetParams>
-                </Properties>
-                <AmmoUser>
-                    <magazineSize>200</magazineSize>
-                    <reloadTime>12</reloadTime>
-                    <ammoSet>AmmoSet_20x102mmNATO</ammoSet>
-                </AmmoUser>
-                <FireModes>
-                    <aiUseBurstMode>FALSE</aiUseBurstMode>
-                    <noSingleShot>true</noSingleShot>
-				    <aiAimMode>Snapshot</aiAimMode>
-					<aimedBurstShotCount>20</aimedBurstShotCount>
-                </FireModes>
-                <weaponTags>
-					<li>CE_AI_Suppressive</li>
-                    <li>NoSwitch</li>
-                    <li>DMS_VehicleWeapon</li>
-                    <li>V_Gatling20mm</li>
-                </weaponTags>    
-            </li>
-
-            <!-- GAU-4B -->
-            <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
-                <defName>DMS_GAU4Gatlinggun_Hold</defName>
-                <statBases>
-                    <Mass>92</Mass>
-                    <Bulk>71</Bulk>
-                    <SwayFactor>1.62</SwayFactor>
-                    <ShotSpread>0.05</ShotSpread>
-                    <SightsEfficiency>1.2</SightsEfficiency>
-                    <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
-                </statBases>
-                <Properties>
-				    <recoilAmount>1.39</recoilAmount>
-                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
-                    <hasStandardCommand>true</hasStandardCommand>
-                    <defaultProjectile>Bullet_20x102mmNATO_AP</defaultProjectile>
-					<burstShotCount>40</burstShotCount>
+					<burstShotCount>25</burstShotCount>
 					<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
                     <warmupTime>0.8</warmupTime>
                     <range>62</range>
@@ -131,8 +84,55 @@
                 <FireModes>
                     <aiUseBurstMode>FALSE</aiUseBurstMode>
                     <noSingleShot>true</noSingleShot>
-				    <aiAimMode>Snapshot</aiAimMode>
-					<aimedBurstShotCount>20</aimedBurstShotCount>
+				    <aiAimMode>AimedShot</aiAimMode>
+					<aimedBurstShotCount>15</aimedBurstShotCount>
+                </FireModes>
+                <weaponTags>
+					<li>CE_AI_Suppressive</li>
+                    <li>NoSwitch</li>
+                    <li>DMS_VehicleWeapon</li>
+                    <li>V_Gatling20mm</li>
+                </weaponTags>    
+            </li>
+
+            <!-- GAU-4B -->
+            <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+                <defName>DMS_GAU4Gatlinggun_Hold</defName>
+                <statBases>
+                    <Mass>92</Mass>
+                    <Bulk>71</Bulk>
+                    <SwayFactor>1.96</SwayFactor>
+                    <ShotSpread>0.06</ShotSpread>
+                    <SightsEfficiency>1.2</SightsEfficiency>
+                    <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
+                </statBases>
+                <Properties>
+				    <recoilAmount>1.09</recoilAmount>
+                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                    <hasStandardCommand>true</hasStandardCommand>
+                    <defaultProjectile>Bullet_20x102mmNATO_AP</defaultProjectile>
+					<burstShotCount>25</burstShotCount>
+					<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+                    <warmupTime>0.8</warmupTime>
+                    <range>62</range>
+                    <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
+                    <soundCastTail>GunTail_Medium</soundCastTail>
+                    <muzzleFlashScale>14</muzzleFlashScale>
+                    <recoilPattern>Mounted</recoilPattern>
+                    <targetParams>
+                        <canTargetLocations>true</canTargetLocations>
+                    </targetParams>
+                </Properties>
+                <AmmoUser>
+                    <magazineSize>300</magazineSize>
+                    <reloadTime>12</reloadTime>
+                    <ammoSet>AmmoSet_20x102mmNATO</ammoSet>
+                </AmmoUser>
+                <FireModes>
+                    <aiUseBurstMode>FALSE</aiUseBurstMode>
+                    <noSingleShot>true</noSingleShot>
+				    <aiAimMode>AimedShot</aiAimMode>
+					<aimedBurstShotCount>15</aimedBurstShotCount>
                 </FireModes>
                 <weaponTags>
 					<li>CE_AI_Suppressive</li>
@@ -147,18 +147,18 @@
                 <defName>DMS_GAU19Gatlinggun</defName>
                 <statBases>
                     <Mass>58</Mass>
-                    <Bulk>30</Bulk>
-                    <SwayFactor>1.62</SwayFactor>
-                    <ShotSpread>0.05</ShotSpread>
+                    <Bulk>37</Bulk>
+                    <SwayFactor>1.87</SwayFactor>
+                    <ShotSpread>0.06</ShotSpread>
                     <SightsEfficiency>1.2</SightsEfficiency>
                     <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
-				    <recoilAmount>1.28</recoilAmount>
+				    <recoilAmount>0.95</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
-					<burstShotCount>40</burstShotCount>
+					<burstShotCount>30</burstShotCount>
 					<ticksBetweenBurstShots>4</ticksBetweenBurstShots>
                     <warmupTime>1</warmupTime>
                     <range>75</range>
@@ -179,7 +179,7 @@
                     <aiUseBurstMode>FALSE</aiUseBurstMode>
                     <noSingleShot>true</noSingleShot>
 				    <aiAimMode>Snapshot</aiAimMode>
-					<aimedBurstShotCount>20</aimedBurstShotCount>
+					<aimedBurstShotCount>15</aimedBurstShotCount>
                 </FireModes>
                 <weaponTags>
 					<li>CE_AI_Suppressive</li>
@@ -200,11 +200,11 @@
                     <RangedWeapon_Cooldown>0.48</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
-				    <recoilAmount>1.18</recoilAmount>
+				    <recoilAmount>0.83</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_556x45mmNATO_FMJ</defaultProjectile>
-					<burstShotCount>25</burstShotCount>
+					<burstShotCount>40</burstShotCount>
 					<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
                     <warmupTime>1.2</warmupTime>
                     <range>75</range>
@@ -225,7 +225,7 @@
                     <aiUseBurstMode>FALSE</aiUseBurstMode>
                     <noSingleShot>true</noSingleShot>
 				    <aiAimMode>Snapshot</aiAimMode>
-					<aimedBurstShotCount>10</aimedBurstShotCount>
+					<aimedBurstShotCount>20</aimedBurstShotCount>
                 </FireModes>
                 <weaponTags>
 					<li>CE_AI_Suppressive</li>

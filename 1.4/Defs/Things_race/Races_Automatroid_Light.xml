@@ -43,11 +43,6 @@
           <li>DMS_MechWeaponUltraLight</li>
           <li>RiotLMG</li>
           <li>SurvivalRifle</li>
-          <li>CE_AI_AOE</li>
-          <li>CE_AI_Grenade</li>
-          <li>CE_SMG</li>
-          <li>CE_AI_SMG</li>
-          <li>CE_AI_Pistol</li>
           <li>PLA_SMG</li>
           <li>PLA_Pistol</li>
           <li>PLA_RocketLauncher</li>
@@ -92,8 +87,6 @@
     </lifeStages>
     <weaponTags>
         <li>RiotLMG</li>
-        <li>CE_AI_SMG</li>
-        <li>CE_AI_AOE</li>
         <li>PLA_RocketLauncher</li>
     </weaponTags>
   </PawnKindDef>
@@ -117,7 +110,7 @@
       <li Class="DMS.MechWeaponExtension" Inherit="False">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
-          <li>DMS_MechWeaponUltraLight</li>
+          <li>DMS_PT</li>
           <li>PLA_Pistol</li>
         </UsableWeaponTags>
         <BypassUsableWeapons>

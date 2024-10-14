@@ -942,7 +942,7 @@
     <soundExplode>Explosion_Rocket</soundExplode>
 		<damageDef>Bullet</damageDef>
 		<damageAmountBase>50</damageAmountBase>
-		<armorPenetrationBase>0.9</armorPenetrationBase>
+		<armorPenetrationBase>1.2</armorPenetrationBase>
 		<stoppingPower>10</stoppingPower>
 		<speed>100</speed>
 		<arcHeightFactor>0.2</arcHeightFactor>
@@ -952,7 +952,7 @@
     <li Class="DMS.ExplosiveExtension">
       <damage>Bullet</damage>
       <damageAmount>30</damageAmount>
-      <armorPen>1.8</armorPen>
+      <armorPen>0.35</armorPen>
       <preExplosionOffset>4</preExplosionOffset>
       <range>15</range>
       <swayAngle>12</swayAngle>

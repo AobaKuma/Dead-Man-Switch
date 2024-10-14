@@ -107,6 +107,14 @@
         </filter>
         <count>75</count>
       </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
@@ -146,6 +154,14 @@
           </thingDefs>
         </filter>
         <count>250</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
@@ -531,7 +547,7 @@
   <RecipeDef>
     <defName>DMS_Convert_ComponentIndustrial</defName>
     <label>Convert stamponent</label>
-    <description>Convert a stamponent into a component. </description>
+    <description>Convert a stamponent into a component.</description>
     <jobString>Making component.</jobString>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
@@ -715,7 +731,7 @@
     <recipeUsers>
       <li>DMS_TableArtifuscle</li>
     </recipeUsers>
-    <workAmount>7500</workAmount>
+    <workAmount>10000</workAmount>
      <ingredients>
       <li>
         <filter>
@@ -723,7 +739,15 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>1</count>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
       </li>
       <li>
         <filter>
@@ -745,6 +769,7 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>Gold</li>
+        <li>ComponentStamped</li>
         <li>Plasfiber</li>
         <li>Neutroamine</li>        
       </thingDefs>

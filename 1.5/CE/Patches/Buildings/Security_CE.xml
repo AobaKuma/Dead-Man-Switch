@@ -44,7 +44,7 @@
 				<xpath>Defs/ThingDef[@Name="DMS_BaseCannonBuilding"]/statBases </xpath>
 				<value>
 					<AimingAccuracy>1.5</AimingAccuracy>
-					<ShootingAccuracyTurret>1.3</ShootingAccuracyTurret>
+					<ShootingAccuracyTurret>1.8</ShootingAccuracyTurret>
 				</value>
 			</li>
 
@@ -61,7 +61,7 @@
 					<Bulk>221</Bulk>
 				</statBases>
 				<Properties>
-					<recoilAmount>1.43</recoilAmount>
+					<recoilAmount>1.23</recoilAmount>
 					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
 					<hasStandardCommand>true</hasStandardCommand>
 					<defaultProjectile>Bullet_30x165mm_AP</defaultProjectile>
@@ -111,7 +111,7 @@
 					<Bulk>174</Bulk>
 				</statBases>
 				<Properties>
-					<recoilAmount>1.38</recoilAmount>
+					<recoilAmount>1.18</recoilAmount>
 					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
 					<hasStandardCommand>true</hasStandardCommand>
 					<defaultProjectile>Bullet_30x173mmNATO_AP</defaultProjectile>
@@ -119,7 +119,7 @@
 					<range>86</range>
 					<minRange>9</minRange>
 					<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
-					<burstShotCount>70</burstShotCount>
+					<burstShotCount>50</burstShotCount>
 					<soundCast>Shot_Minigun</soundCast>
 					<soundCastTail>GunTail_Heavy</soundCastTail>
 					<targetParams>
@@ -129,7 +129,7 @@
 					<recoilPattern>Mounted</recoilPattern>
 				</Properties>
 				<AmmoUser>
-					<magazineSize>980</magazineSize>
+					<magazineSize>1000</magazineSize>
 					<reloadTime>20</reloadTime>
 					<ammoSet>AmmoSet_30x173mmNATO</ammoSet>
 				</AmmoUser>
@@ -137,7 +137,7 @@
 					<noSingleShot>true</noSingleShot>
 					<aiUseBurstMode>FALSE</aiUseBurstMode>
 					<aiAimMode>SuppressFire</aiAimMode>
-					<aimedBurstShotCount>35</aimedBurstShotCount>
+					<aimedBurstShotCount>25</aimedBurstShotCount>
 				</FireModes>
 			</li>
 
@@ -147,13 +147,13 @@
 				<statBases>
 				    <Mass>1245</Mass>
 				    <Bulk>72</Bulk>
-				    <SwayFactor>1.35</SwayFactor>
-				    <ShotSpread>0.01</ShotSpread>
+				    <SwayFactor>2.61</SwayFactor>
+				    <ShotSpread>0.03</ShotSpread>
 				    <SightsEfficiency>3</SightsEfficiency>
 				    <RangedWeapon_Cooldown>0.7</RangedWeapon_Cooldown>
 				</statBases>
 				<Properties>
-                    <recoilAmount>3.25</recoilAmount>
+                    <recoilAmount>2.15</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_762x385mmRCannonShell_HEAT</defaultProjectile>
@@ -172,7 +172,7 @@
 				<AmmoUser>
 					<magazineSize>16</magazineSize>
 					<reloadOneAtATime>false</reloadOneAtATime>
-					<reloadTime>10</reloadTime>
+					<reloadTime>24</reloadTime>
 					<ammoSet>AmmoSet_762x385mmRCannonShell</ammoSet>
 				</AmmoUser>
 				<FireModes>
@@ -239,7 +239,7 @@
 				<statBases>
 					<AimingAccuracy>1</AimingAccuracy>
 					<ShootingAccuracyTurret>1</ShootingAccuracyTurret>
-					<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+					<RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
 					<SightsEfficiency>0.5</SightsEfficiency>
 					<ShotSpread>2</ShotSpread>
 					<SwayFactor>2</SwayFactor>
@@ -250,30 +250,34 @@
 					<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
 					<hasStandardCommand>true</hasStandardCommand>
 					<defaultProjectile>Bullet_81mmMortarShell_HE</defaultProjectile>
-					<warmupTime>1.5</warmupTime>
+					<warmupTime>2.1</warmupTime>
 					<minRange>20</minRange>
 					<range>200</range>
 					<burstShotCount>4</burstShotCount>
 					<ticksBetweenBurstShots>15</ticksBetweenBurstShots>
 					<soundCast>DMS_Shot_VasilekSound</soundCast>
-					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<soundCastTail>GunTail_Heavy</soundCastTail>  
+					<muzzleFlashScale>50</muzzleFlashScale>
 					<requireLineOfSight>false</requireLineOfSight>
-					<indirectFirePenalty>0.75</indirectFirePenalty>
+					<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+					<ignorePartialLoSBlocker>True</ignorePartialLoSBlocker>
+					<circularError>5</circularError>
+					<indirectFirePenalty>0.35</indirectFirePenalty>
 					<targetParams>
 						<canTargetLocations>true</canTargetLocations>
 					</targetParams>
 					<recoilPattern>Mounted</recoilPattern>
-					<recoilAmount>1.5</recoilAmount>
+					<recoilAmount>1.21</recoilAmount>
 				</Properties>
 				<AmmoUser>
 					<magazineSize>4</magazineSize>
-					<reloadTime>4</reloadTime>
+					<reloadTime>12</reloadTime>
 					<ammoSet>AmmoSet_81mmMortarShell</ammoSet>
 				</AmmoUser>
 				<FireModes>
 					<noSingleShot>false</noSingleShot>
 					<aiUseBurstMode>true</aiUseBurstMode>
-					<aiAimMode>SuppressFire</aiAimMode>
+					<aiAimMode>AimedShot</aiAimMode>
 					<aimedBurstShotCount>2</aimedBurstShotCount>
 				</FireModes>
 			</li>

@@ -60,7 +60,7 @@
 		<statBases>
 			<SightsEfficiency>1</SightsEfficiency>
 			<ShotSpread>0.06</ShotSpread>
-			<SwayFactor>0.86</SwayFactor>
+			<SwayFactor>1.16</SwayFactor>
 			<RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
 			<Mass>10</Mass>
 		</statBases>
@@ -71,7 +71,7 @@
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_556x45mmNATO_FMJ</defaultProjectile>
 				<warmupTime>0.7</warmupTime>
-				<range>20</range>
+				<range>28</range>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 				<burstShotCount>10</burstShotCount>
 				<soundCast>Shot_MachinePistol</soundCast>
@@ -99,18 +99,18 @@
 		<statBases>
 			<SightsEfficiency>1</SightsEfficiency>
 			<ShotSpread>0.06</ShotSpread>
-			<SwayFactor>0.86</SwayFactor>
+			<SwayFactor>1.86</SwayFactor>
 			<RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
 			<Mass>10</Mass>
 		</statBases>
 		<verbs>
 			<li Class="CombatExtended.VerbPropertiesCE">
-				<recoilAmount>0.90</recoilAmount>
+				<recoilAmount>1.25</recoilAmount>
 				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
-				<warmupTime>2</warmupTime>
-				<range>75</range>
+				<warmupTime>2.2</warmupTime>
+				<range>55</range>
 				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
 				<burstShotCount>10</burstShotCount>
 				<soundCast>50Cal_Browning</soundCast>
@@ -137,14 +137,14 @@
 		<description>A multi-barrel shotgun turret designed to suppress enemies at close-range.</description>
 		<statBases>
 			<SightsEfficiency>0.7</SightsEfficiency>
-			<ShotSpread>0.06</ShotSpread>
-			<SwayFactor>0.86</SwayFactor>
+			<ShotSpread>0.15</ShotSpread>
+			<SwayFactor>1.36</SwayFactor>
 			<RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
 			<Mass>10</Mass>
 		</statBases>
 		<verbs>
 			<li Class="CombatExtended.VerbPropertiesCE">
-				<recoilAmount>0.90</recoilAmount>
+				<recoilAmount>2.60</recoilAmount>
 				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_12Gauge_Buck</defaultProjectile>
@@ -160,6 +160,45 @@
 		</verbs>
 		<modExtensions>
 			<li Class="DMS.HeavyEquippableExtension">
+				<EquippableDef>MountedWeapon</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!-- ==推土機車載機槍== -->
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>DMS_Dozer_KordMG</defName>
+		<label>Kord HMG turret</label>
+		<graphicData>
+			<texPath>Things/Turrets/DMS_Gun_Kord</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<description>heavy machine gun for mech soldier or infantry support platform.\n\nThis weapon is designed specially for mounted use, so only specific unit can equip it.</description>
+		<statBases>
+			<SightsEfficiency>1</SightsEfficiency>
+			<ShotSpread>0.06</ShotSpread>
+			<SwayFactor>1.46</SwayFactor>
+			<RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+			<Mass>10</Mass>
+		</statBases>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>1.25</recoilAmount>
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_127x108mm_FMJ</defaultProjectile>
+				<warmupTime>2.4</warmupTime>
+				<range>75</range>
+				<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+				<burstShotCount>12</burstShotCount>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>12</muzzleFlashScale>
+				<recoilPattern>Mounted</recoilPattern>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="DMS.HeavyEquippableExtension">				
 				<EquippableDef>MountedWeapon</EquippableDef>
 			</li>
 		</modExtensions>

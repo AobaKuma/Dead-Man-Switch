@@ -13,7 +13,7 @@
       <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
       <ArmorRating_Heat>1.2</ArmorRating_Heat>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>                 <!--帶寬消耗-->
-      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">5</WastepacksPerRecharge> <!--充電/培養時產出廢料-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge> <!--充電/培養時產出廢料-->
       <AimingDelayFactor>1.2</AimingDelayFactor>                                            <!--瞄準延遲-->
     </statBases>
     <race>
@@ -51,6 +51,7 @@
     <label>ape</label>
     <race>DMS_Mech_Ape</race>
     <isFighter>true</isFighter>
+    <combatPower>140</combatPower>
     <lifeStages>
       <li>
         <bodyGraphicData>
@@ -85,7 +86,7 @@
       <ArmorRating_Blunt>1.3</ArmorRating_Blunt><!--鈍抗-->
       <ArmorRating_Heat>1.2</ArmorRating_Heat>  <!--能抗-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>
-      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">5</WastepacksPerRecharge>
       <FoodPoisonChance>0</FoodPoisonChance>
       <WorkSpeedGlobal MayRequire="Ludeon.Rimworld.Biotech">2.00</WorkSpeedGlobal>
     </statBases>
@@ -130,6 +131,7 @@
     </comps>
     <butcherProducts>
       <Tungsteel>20</Tungsteel>
+      <ComponentStamped>1</ComponentStamped> 
     </butcherProducts>
     <tools Inherit="False">
       <li>

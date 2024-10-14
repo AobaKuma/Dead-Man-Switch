@@ -37,9 +37,7 @@
 
 			<li Class="PatchOperationAdd">
 				<xpath>
-					Defs/PawnKindDef[
-					defName="DMS_Mech_HermitCrab"
-					]
+					Defs/PawnKindDef[defName="DMS_Mech_HermitCrab"]
 				</xpath>
 				<value>
 					<aiAvoidCover>true</aiAvoidCover>

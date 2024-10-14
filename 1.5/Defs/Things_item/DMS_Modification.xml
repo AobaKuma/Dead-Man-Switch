@@ -9,6 +9,27 @@
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
 
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>UnfinishedModification</defName>
+    <label>unfinished modification</label>
+    <description>An unfinished modification.</description>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedComponent</texPath> <!-- change? -->
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories Inherit="false" />
+  </ThingDef>
+
+  <ThingCategoryDef>
+    <defName>DMS_Mods</defName>
+    <label>Automatroid mods</label>
+    <parent>Manufactured</parent>
+	  <iconPath>Things/Resource/ComponentModule</iconPath> <!-- change? -->
+  </ThingCategoryDef>
+
   <ThingDef ParentName="ResourceBase" Name="BaseModificationItem" Abstract="True">
     <thingClass>ThingWithComps</thingClass>
     <graphicData>
@@ -19,11 +40,21 @@
     <tradeTags>
       <li>Serum</li>
     </tradeTags>
-    <tradeability>Sellable</tradeability>
+    <tradeability>Buyable</tradeability>
     <stackLimit>10</stackLimit>
+    <!-- aforementioned category change -->
     <thingCategories>
-      <li>Manufactured</li>
+      <li>DMS_Mods</li>
     </thingCategories>
+    <!-- almost everything uses crafting, general labor speed, and machine printer so far -->
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <recipeUsers>
+        <li>DMS_TableMachinePrinter</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedModification</unfinishedThingDef>
+    </recipeMaker>
     <comps>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
@@ -33,6 +64,7 @@
       </li>
     </comps>
   </ThingDef>
+
   <!-- 陶瓷裝甲板 -->
   <ThingDef ParentName="BaseModificationItem">
     <defName>DMS_CeramicsPlating</defName>
@@ -63,6 +95,11 @@
         <li>DMS_TableMachinePrinter</li>
       </recipeUsers>
     </recipeMaker>
+    <!--
+    <isTechHediff>true</isTechHediff>
+    <techHediffsTags>
+      <li>CeramicPlating</li>
+    </techHediffsTags>-->
     <comps>
       <li Class="DMS.CompProperties_AddHediffOnTarget">
         <compClass>DMS.CompTargetable_AddHediffOnTarget</compClass>
@@ -185,8 +222,8 @@
     </stages>
   </HediffDef>
 
-  <!-- 裂變電池 -->
-  <ThingDef ParentName="BaseModificationItem">
+  <!-- 裂變電池 ，由於需要聯動才能自行生產，因此沒有自己的Costlist-->
+  <ThingDef ParentName="ResourceBase">
     <defName>DMS_NuclearBattery</defName>
     <label>Nuclear Battery</label>
     <description>A nuclear fission reactor powering a quantum battery, this device is commonly found in many unmanned signal stations and defense robots. It consists of six high-density uranium-235 columns with integrated thermocouples all wrapped in a high-strength shell. Its energy is enough to make most models of automatroid operate for decades.</description>
@@ -194,15 +231,32 @@
       <HediffDef>DMS_NuclearBattery</HediffDef>
     </descriptionHyperlinks>
     <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
       <texPath>Things/Resource/NuclearBattery</texPath>
     </graphicData>
+    <useHitPoints>true</useHitPoints>
     <statBases>
       <MarketValue>2000</MarketValue>
       <MaxHitPoints>120</MaxHitPoints>
       <Mass>8.5</Mass>
     </statBases>
     <costList/>
+    <tradeTags>
+      <li>Serum</li>
+    </tradeTags>
+    <tradeability>Sellable</tradeability>
+    <stackLimit>10</stackLimit>
+    <thingCategories>
+      <li>DMS_Mods</li>
+    </thingCategories>
     <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Use {0_label}</useLabel>
+        <useDuration>40</useDuration>
+        <showUseGizmo>true</showUseGizmo>
+      </li>
       <li Class="DMS.CompProperties_AddHediffOnTarget">
         <compClass>DMS.CompTargetable_AddHediffOnTarget</compClass>
         <hediffDef>DMS_NuclearBattery</hediffDef>
@@ -380,7 +434,7 @@
     <statBases>
       <!-- <MarketValue>2000</MarketValue> -->
       <MaxHitPoints>120</MaxHitPoints>
-      <Mass>8.5</Mass>
+      <Mass>35</Mass>
     </statBases>    
     <costList>
       <ComponentStamped>5</ComponentStamped>

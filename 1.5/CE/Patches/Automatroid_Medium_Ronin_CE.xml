@@ -37,6 +37,31 @@
 					</li>
 				</value>
 			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Ronin" or 
+										defName="DMS_Mech_Gladiator" 
+										]/combatPower</xpath>
+				<value>
+					<combatPower>200</combatPower>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Protector" or 
+										defName="DMS_Mech_Siegebreaker" 
+										]/combatPower</xpath>
+				<value>
+					<combatPower>230</combatPower>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Phalanx"]/combatPower</xpath>
+				<value>
+					<combatPower>180</combatPower>
+				</value>
+			</li>
 			
 			<!-- ====== 浪人型 ======-->
 			<!--設計為萬能手的初始型號，近戰和中距離騷擾能力都很優秀-->
@@ -89,7 +114,7 @@
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Ronin"]/statBases/ArmorRating_Heat</xpath>
 				<value>
-					<ArmorRating_Heat>0.2</ArmorRating_Heat>
+					<ArmorRating_Heat>0.3</ArmorRating_Heat>
 				</value>
 			</li>
 
@@ -146,7 +171,7 @@
 							<capacities>
 								<li>Blunt</li>
 							</capacities>
-							<power>5</power>
+							<power>10</power>
 							<cooldownTime>0.85</cooldownTime>
 							<chanceFactor>0.2</chanceFactor>
 							<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
@@ -170,7 +195,7 @@
 							<capacities>
 								<li>Blunt</li>
 							</capacities>
-							<power>5</power>
+							<power>10</power>
 							<cooldownTime>0.85</cooldownTime>
 							<chanceFactor>0.2</chanceFactor>
 							<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
@@ -345,7 +370,7 @@
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Gladiator"]/statBases/ArmorRating_Heat</xpath>
 				<value>
-					<ArmorRating_Heat>0.2</ArmorRating_Heat>
+					<ArmorRating_Heat>0.3</ArmorRating_Heat>
 				</value>
 			</li>
 			
@@ -387,7 +412,7 @@
 							<capacities>
 								<li>Blunt</li>
 							</capacities>
-							<power>7</power>
+							<power>10</power>
 							<cooldownTime>1.11</cooldownTime>
 							<chanceFactor>0.2</chanceFactor>
 							<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
@@ -665,7 +690,7 @@
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Protector"]/statBases/ArmorRating_Heat</xpath>
 				<value>
-					<ArmorRating_Heat>0.3</ArmorRating_Heat>
+					<ArmorRating_Heat>0.4</ArmorRating_Heat>
 				</value>
 			</li>
 
@@ -729,7 +754,7 @@
 							<capacities>
 								<li>Blunt</li>
 							</capacities>
-							<power>5</power>
+							<power>7</power>
 							<cooldownTime>1.11</cooldownTime>
 							<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
 							<armorPenetrationBlunt>1.688</armorPenetrationBlunt>
@@ -907,7 +932,7 @@
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Siegebreaker"]/statBases/ArmorRating_Heat</xpath>
 				<value>
-					<ArmorRating_Heat>0.45</ArmorRating_Heat>
+					<ArmorRating_Heat>0.6</ArmorRating_Heat>
 				</value>
 			</li>
 

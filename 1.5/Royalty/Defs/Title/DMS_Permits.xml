@@ -8,11 +8,11 @@
     <workerClass>RoyalTitlePermitWorker_DropResources</workerClass>
     <faction>DMS_Army</faction>
     <permitPointCost>1</permitPointCost>
-    <cooldownDays>30</cooldownDays>
     <usableOnWorldMap>true</usableOnWorldMap>
     <royalAid>
       <targetingRange>39.9</targetingRange>
     </royalAid>
+    <cooldownDays>5</cooldownDays>
   </RoyalTitlePermitDef>
 
   <RoyalTitlePermitDef ParentName="DropResourcesBase">
@@ -157,7 +157,6 @@
     <minTitle>DMS_WarrantOfficer</minTitle>
     <uiPosition>(4,1)</uiPosition>
     <permitPointCost>1</permitPointCost>
-    <cooldownDays>30</cooldownDays>
     <royalAid>
       <itemsToDrop>
         <MealSurvivalPack>12</MealSurvivalPack>
@@ -169,6 +168,7 @@
       </itemsToDrop>
       <favorCost>4</favorCost>
     </royalAid>
+    <cooldownDays>30</cooldownDays>
   </RoyalTitlePermitDef>
 
   <RoyalTitlePermitDef ParentName="DropResourcesBase">
@@ -179,7 +179,6 @@
     <minTitle>DMS_Lieutenant</minTitle>
     <uiPosition>(5,3)</uiPosition>
     <permitPointCost>1</permitPointCost>
-    <cooldownDays>30</cooldownDays>
     <prerequisite>DMS_LogiDrop</prerequisite>
     <royalAid>
       <itemsToDrop>
@@ -188,6 +187,7 @@
       </itemsToDrop>
       <favorCost>8</favorCost>
     </royalAid>
+    <cooldownDays>30</cooldownDays>
   </RoyalTitlePermitDef>
 
   <!-- 臨時人手支援 -->
@@ -235,7 +235,7 @@
     <cooldownDays>30</cooldownDays>
   </RoyalTitlePermitDef>
 
-  <!-- 滴滴拉人 -->
+  <!-- Boss直聘 -->
   <RoyalTitlePermitDef>
     <defName>DMS_CargoMech</defName>
     <label>Supply Cargo Mech</label>
@@ -250,7 +250,7 @@
       <pawnKindDef>DMS_Mech_EscortLifter</pawnKindDef>
       <pawnCount>1</pawnCount>
     </royalAid>
-    <cooldownDays>60</cooldownDays>
+    <cooldownDays>30</cooldownDays>
   </RoyalTitlePermitDef>
 
   <RoyalTitlePermitDef>
@@ -268,7 +268,7 @@
       <pawnKindDef>DMS_Civilian</pawnKindDef>
       <pawnCount>1</pawnCount>
     </royalAid>
-    <cooldownDays>60</cooldownDays>
+    <cooldownDays>45</cooldownDays>
   </RoyalTitlePermitDef>
 
   <RoyalTitlePermitDef>
@@ -286,7 +286,7 @@
       <pawnKindDef>DMS_Mech_BattleFrame</pawnKindDef><!-- WIP -->
       <pawnCount>1</pawnCount>
     </royalAid>
-    <cooldownDays>60</cooldownDays>
+    <cooldownDays>45</cooldownDays>
   </RoyalTitlePermitDef>
 
   <RoyalTitlePermitDef>
@@ -351,7 +351,7 @@
     <label>Request Combat Support</label>
     <description>Call for a squad of soldiers to aid you in battle.</description>
     <workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
-    <minTitle>DMS_Colonel</minTitle>
+    <minTitle>DMS_Captain</minTitle>
     <faction>DMS_Army</faction>
     <permitPointCost>1</permitPointCost>
     <uiPosition>(0,7)</uiPosition>
@@ -369,7 +369,7 @@
     <label>Request Heavy Unit Reinforcement</label>
     <description>Request 4 heavy Automatroids to aid you in battle.</description>
     <workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
-    <minTitle>DMS_Brigadier</minTitle>
+    <minTitle>DMS_Colonel</minTitle>
     <faction>DMS_Army</faction>
     <permitPointCost>1</permitPointCost>
     <uiPosition>(1,7)</uiPosition>
@@ -377,6 +377,24 @@
       <favorCost>8</favorCost>
       <pawnKindDef>DMS_Mech_Gecko</pawnKindDef>
       <pawnCount>4</pawnCount>
+      <targetingRange>39.9</targetingRange>
+    </royalAid>
+    <cooldownDays>30</cooldownDays>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef MayRequire="aoba.deadmanswitch.mobiledragoon">
+    <defName>DMS_Platoon_MD</defName>
+    <label>call dragoon support</label>
+    <description>Call a squad of mobile dragoons to aid you in battle.</description>
+    <workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
+    <minTitle>DMS_Brigadier</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(2,7)</uiPosition>
+    <royalAid>
+      <favorCost>6</favorCost>
+      <pawnKindDef>DMS_Squad_ArmyDragoon</pawnKindDef>
+      <pawnCount>3</pawnCount>
       <targetingRange>39.9</targetingRange>
     </royalAid>
     <cooldownDays>30</cooldownDays>

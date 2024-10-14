@@ -76,13 +76,13 @@
                     <SwayFactor>0.96</SwayFactor>
                     <ShotSpread>0.15</ShotSpread>
                     <SightsEfficiency>1.0</SightsEfficiency>
-                    <RangedWeapon_Cooldown>0.37</RangedWeapon_Cooldown>
+                    <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_22LR_FMJ</defaultProjectile>
-                    <warmupTime>0.62</warmupTime>
+                    <warmupTime>0</warmupTime>
                     <range>20</range>
                     <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
                     <burstShotCount>10</burstShotCount>
@@ -119,13 +119,13 @@
                     <SwayFactor>0.96</SwayFactor>
                     <ShotSpread>0.15</ShotSpread>
                     <SightsEfficiency>1.0</SightsEfficiency>
-                    <RangedWeapon_Cooldown>0.37</RangedWeapon_Cooldown>
+                    <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_12Gauge_Beanbag</defaultProjectile>
-                    <warmupTime>0.6</warmupTime>
+                    <warmupTime>0</warmupTime>
                     <range>17</range>
                     <soundCast>Shot_Shotgun</soundCast>
                     <soundCastTail>GunTail_Heavy</soundCastTail>
@@ -162,7 +162,7 @@
                     <SwayFactor>1.28</SwayFactor>
                     <ShotSpread>0.05</ShotSpread>
                     <SightsEfficiency>1</SightsEfficiency>
-                    <RangedWeapon_Cooldown>0.63</RangedWeapon_Cooldown>
+                    <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
                     <recoilAmount>1.24</recoilAmount>
@@ -171,7 +171,7 @@
                     <defaultProjectile>Bullet_338Lapua_FMJ</defaultProjectile>
                     <burstShotCount>15</burstShotCount>
                     <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
-                    <warmupTime>1.3</warmupTime>
+                    <warmupTime>0</warmupTime>
                     <range>75</range>
                     <soundCast>DMS_MachineGunLight_Shot</soundCast>
                     <soundCastTail>GunTail_Medium</soundCastTail>
@@ -203,7 +203,7 @@
                     <SwayFactor>1.64</SwayFactor>
                     <ShotSpread>0.05</ShotSpread>
                     <SightsEfficiency>1</SightsEfficiency>
-                    <RangedWeapon_Cooldown>0.75</RangedWeapon_Cooldown>
+                    <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
                     <recoilAmount>1.55</recoilAmount>
@@ -212,7 +212,7 @@
                     <defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
                     <burstShotCount>10</burstShotCount>
                     <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
-                    <warmupTime>1.2</warmupTime>
+                    <warmupTime>0</warmupTime>
                     <range>75</range>
                     <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
                     <soundCastTail>GunTail_Medium</soundCastTail>
@@ -292,7 +292,7 @@
 					<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
 					<hasStandardCommand>true</hasStandardCommand>
 					<defaultProjectile>Bullet_81mmMortarShell_HE</defaultProjectile>
-					<warmupTime>2.2</warmupTime>
+					<warmupTime>3.2</warmupTime>
 					<minRange>20</minRange>
 					<range>200</range>
 					<burstShotCount>4</burstShotCount>
@@ -318,7 +318,7 @@
                 </FireModes>
 				<AmmoUser>
 					<magazineSize>4</magazineSize>
-					<reloadTime>3</reloadTime>
+					<reloadTime>12</reloadTime>
 					<ammoSet>AmmoSet_81mmMortarShell</ammoSet>
 				</AmmoUser>
 				<weaponTags>

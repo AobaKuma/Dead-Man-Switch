@@ -7,7 +7,21 @@ namespace DMS
     //中控機體，能夠無視機械師控制範圍活動的同時自身也能作為控制範圍的延伸，但是在遠征時控制範圍會因距離而衰減
     public class CompCommandRelay : ThingComp
     {
-        public float currentRadius;
+        public float SquaredDistance
+        {
+            get
+            {
+                return cacheDistance != 0 ? cacheDistance : GetCacheDistance();
+            }
+        }
+        private float cacheDistance = 0;
+        private float GetCacheDistance()
+        {
+            cacheDistance = Mathf.Pow(CurrentRadius, 2);
+            return cacheDistance;
+        }
+
+        public float CurrentRadius;
         public CompProperties_CommandRelay Props => (CompProperties_CommandRelay)this.props;
         public override void PostDraw()
         {
@@ -16,12 +30,12 @@ namespace DMS
             {
                 if (SameMap)
                 {
-                    currentRadius = Props.maxRelayRadius; 
+                    CurrentRadius = Props.maxRelayRadius; 
                     //Log.Message("SameMap");
                 }
                 else if (!Pawn.GetOverseer().Spawned)
                 {
-                    currentRadius = Props.minRelayRadius;
+                    CurrentRadius = Props.minRelayRadius;
                     //Log.Message("Overseer not spawned");
                 }
                 else
@@ -30,14 +44,14 @@ namespace DMS
                     //Log.Message("Overseer at:" + num);
                     if (num > Props.maxWorldMapRadius)
                     {
-                        currentRadius = Props.minRelayRadius;
+                        CurrentRadius = Props.minRelayRadius;
                     }
                     else
                     {
-                        currentRadius = Mathf.Lerp(Props.minRelayRadius, Props.maxRelayRadius, (float)num / (float)Props.maxWorldMapRadius);
+                        CurrentRadius = Mathf.Lerp(Props.minRelayRadius, Props.maxRelayRadius, (float)num / (float)Props.maxWorldMapRadius);
                     }
                 }
-                GenDraw.DrawRadiusRing(this.parent.Position, currentRadius);
+                GenDraw.DrawRadiusRing(this.parent.Position, CurrentRadius, Color.cyan);
             }
         }
         

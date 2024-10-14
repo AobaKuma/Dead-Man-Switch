@@ -21,7 +21,15 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>175</count>
+        <count>225</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>155</count>
       </li>
       <li>
         <filter>
@@ -70,7 +78,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>150</count>
+        <count>185</count>
       </li>  
       <li>
         <filter>
@@ -78,7 +86,23 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>75</count>
+        <count>110</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasfiber</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
       </li>
       <li>
         <filter>
@@ -116,6 +140,7 @@
       <DMS_Mech_Geochelone>1</DMS_Mech_Geochelone>
     </products>
     <descriptionHyperlinks>
+      <ThingDef MayRequire="ludeon.rimworld.royalty">BroadshieldCore</ThingDef>
       <ThingDef>Neurocomputer</ThingDef>
       <ThingDef>DMS_Mech_Geochelone</ThingDef>
     </descriptionHyperlinks>
@@ -127,6 +152,22 @@
           </thingDefs>
         </filter>
         <count>325</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+      <li MayRequire="ludeon.rimworld.royalty"> 
+        <filter>
+          <thingDefs>
+            <li>BroadshieldCore</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
       </li>
       <li>
         <filter>
@@ -175,6 +216,14 @@
           </thingDefs>
         </filter>
         <count>325</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>145</count>
       </li>
       <li>
         <filter>
@@ -236,10 +285,18 @@
       <li>
         <filter>
           <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>8</count>
+        <count>10</count>
       </li>
       <li>
         <filter>
@@ -247,7 +304,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>12</count>
+        <count>8</count>
       </li>
       <li>
         <filter>
@@ -343,6 +400,7 @@
     </products>
     <descriptionHyperlinks>
       <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>ComponentFireControl</ThingDef>
       <ThingDef>DMS_Mech_Tarbosaurus</ThingDef>
     </descriptionHyperlinks>
     <ingredients Inherit="False">
@@ -352,7 +410,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>250</count>
+        <count>575</count>
       </li>
       <li>
         <filter>
@@ -360,15 +418,15 @@
             <li>Artifuscle</li>
           </thingDefs>
         </filter>
-        <count>150</count>
+        <count>175</count>
       </li>
       <li>
         <filter>
           <thingDefs>
-            <li>ComponentIndustrial</li>
+            <li>Plasfiber</li>
           </thingDefs>
         </filter>
-        <count>20</count>
+        <count>50</count>
       </li>
       <li>
         <filter>
@@ -376,12 +434,28 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
       </li>
       <li>
         <filter>
           <thingDefs>
             <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentFireControl</li>
           </thingDefs>
         </filter>
         <count>1</count>

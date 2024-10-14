@@ -2,10 +2,9 @@
 <Defs>
 
   <!-- 象龜 geochelone-->
-  <ThingDef ParentName="BaseAutomatroidRace">
-    <defName>DMS_Mech_Geochelone</defName>
-    <label>Geochelone</label>
-    <description>An unmanned all-terrain tracked pulse shield support platform featuring a diverse range of production models and variants.</description>
+  <ThingDef Name="BaseGeochelone" ParentName="BaseAutomatroidRace" Abstract="True">
+    <label>geochelone</label>
+    <description>an unmanned all-terrain tracked pulse shield support platform, featuring a diverse range of production models and variants.</description>
     <!-- <size>(2,3)</size> -->
     <statBases>
       <MoveSpeed>2.5</MoveSpeed>
@@ -14,7 +13,7 @@
       <ArmorRating_Heat>1.2</ArmorRating_Heat>  <!--能抗-->
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>
-      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge>
     </statBases>
     <race>
       <body>DMS_Caterpillar</body>
@@ -32,12 +31,36 @@
         <activeSound>BulletShield_Ambience</activeSound>
         <hitPoints>900</hitPoints>
         <hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
-        <chargeDurationTicks>1800</chargeDurationTicks><!-- 30s -->
+        <chargeDurationTicks>1800</chargeDurationTicks>   <!--30s-->
         <rechargeHitPointsIntervalTicks>120</rechargeHitPointsIntervalTicks>
         <minIdleAlpha>0.5</minIdleAlpha>
         <drawWithNoSelection>True</drawWithNoSelection>
         <disarmedByEmpForTicks>3000</disarmedByEmpForTicks>
         <gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+      <!--
+      <li Class="DMS.CompProperties_VehicleWeapon">
+        <defaultWeapon>DMS_SubMachineGunMounted</defaultWeapon>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.2</rotationSmoothTime>
+        <drawData>
+          <defaultData>
+            <pivot>(0.5,0.5)</pivot>
+          </defaultData>                  
+          <dataEast>
+            <offset>(0.5,0,-0.5)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.75,0,0.6)</offset>
+            <rotationOffset>180</rotationOffset>
+          </dataWest>
+          <dataSouth>
+            <offset>(-0.6,0,-0.5)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(0.6,0,0.9)</offset>
+          </dataNorth>
+        </drawData>
       </li>
       <li Class="DMS.CompPropertiesMultipleTurretGun">
         <subTurrets>
@@ -82,7 +105,7 @@
             </renderNodeProperties>
           </li>
         </subTurrets>
-      </li>
+      </li> -->
     </comps>
     <tools Inherit="False">
       <li>
@@ -96,10 +119,15 @@
         <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
       </li>
     </tools>
+    <butcherProducts>
+      <Tungsteel>30</Tungsteel>
+      <Steel>10</Steel>
+      <ComponentStamped>1</ComponentStamped>
+    </butcherProducts>
     <damageMultipliers>
       <li>
         <damageDef>Blunt</damageDef>
-        <multiplier>0.6</multiplier>
+        <multiplier>0.75</multiplier>
       </li>
       <li>
         <damageDef>Stab</damageDef>
@@ -110,11 +138,90 @@
       <Neurocomputer>1</Neurocomputer>
     </killedLeavingsPlayerHostile>
   </ThingDef>
-  <PawnKindDef ParentName="BaseAutomatroidKind">
+
+  <ThingDef ParentName="BaseGeochelone">
     <defName>DMS_Mech_Geochelone</defName>
+    <comps>
+      <li Class="DMS.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>defense machinegun</ID>
+            <turret>DMS_SubMachineGunMounted</turret>
+            <autoAttack>true</autoAttack>
+            <command_ToggleFire>fire at will</command_ToggleFire>
+            <commandDesc_ToggleFire>toggle turret to manually control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
+            <command_Target>aim target</command_Target>
+            <commandDesc_Target>aim at desinated target</commandDesc_Target>
+            <warmingTime>3</warmingTime>
+            <targetCommandIconPath>UI/Gizmos/ToggleTurret</targetCommandIconPath>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>DMS.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>DMS.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <overrideMeshSize>1</overrideMeshSize>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <defaultData>
+                    <pivot>(0.5,0.5)</pivot>
+                  </defaultData>                  
+                  <dataEast>
+                    <offset>(0.5,0,-0.5)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(-0.75,0,0.6)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                  <dataSouth>
+                    <offset>(-0.6,0,-0.5)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(0.6,0,0.9)</offset>
+                  </dataNorth>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGeochelone">
+    <defName>DMS_Mech_Geochelone_b</defName>
+    <comps>
+      <li Class="DMS.CompProperties_VehicleWeapon">
+        <defaultWeapon>DMS_SubMachineGunMounted</defaultWeapon>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.2</rotationSmoothTime>
+        <drawData>
+          <defaultData>
+            <pivot>(0.5,0.5)</pivot>
+          </defaultData>                  
+          <dataEast>
+            <offset>(0.5,0,-0.5)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.75,0,0.6)</offset>
+            <rotationOffset>180</rotationOffset>
+          </dataWest>
+          <dataSouth>
+            <offset>(-0.6,0,-0.5)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(0.6,0,0.9)</offset>
+          </dataNorth>
+        </drawData>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+  <PawnKindDef Name="BaseGeocheloneKind" ParentName="BaseAutomatroidKind" Abstract="True">
     <label>geochelone</label>
-    <race>DMS_Mech_Geochelone</race>
-    <combatPower>500</combatPower>
+    <combatPower>420</combatPower>
     <maxPerGroup>2</maxPerGroup>
     <destroyGearOnDrop>true</destroyGearOnDrop>
     <isBoss>true</isBoss>
@@ -143,11 +250,22 @@
     <weaponTags />
   </PawnKindDef>
 
+  <PawnKindDef ParentName="BaseGeocheloneKind">
+    <defName>DMS_Mech_Geochelone</defName>
+    <race>DMS_Mech_Geochelone</race>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseGeocheloneKind">
+    <defName>DMS_Mech_Geochelone_b</defName>
+    <race>DMS_Mech_Geochelone_b</race>
+  </PawnKindDef>
+
+
   <!-- 蠵龜Caretta  -->
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Caretta</defName>
     <label>Caretta</label>
-    <description>Mobile anti-air platform equipped with a formidable heavy gatling turret designed to neutralize enemy aircraft and obliterate ground forces.</description>
+    <description>mobile artillery platform equipped with a rapid fire mortar launcher, designed to bombardment enemy base and ground forces from afar.</description>
     <statBases>
       <MoveSpeed>2.5</MoveSpeed><!--移動速度-->
       <ArmorRating_Sharp>1.5</ArmorRating_Sharp><!--銳抗-->
@@ -155,7 +273,7 @@
       <ArmorRating_Heat>1.2</ArmorRating_Heat>  <!--能抗-->
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>        <!--帶寬消耗-->
-      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
     <race>
       <body>DMS_Caterpillar</body>
@@ -188,10 +306,15 @@
         <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
       </li>
     </tools>
+    <butcherProducts>
+      <Tungsteel>35</Tungsteel>
+      <Steel>10</Steel>
+      <ComponentStamped>1</ComponentStamped>
+    </butcherProducts>
     <damageMultipliers>
       <li>
         <damageDef>Blunt</damageDef>
-        <multiplier>0.6</multiplier>
+        <multiplier>0.75</multiplier>
       </li>
       <li>
         <damageDef>Stab</damageDef>
@@ -234,10 +357,9 @@
   </PawnKindDef>
 
   <!-- Killdozer -->
-  <ThingDef ParentName="BaseAutomatroidRace">
-    <defName>DMS_Mech_Killdozer</defName>
-    <label>Killdozer</label>
-    <description>An unmanned assault sapper with a dozer blade for breaking through frontline fortifications. The armor on various parts of the vehicle have been strengthened.</description>
+  <ThingDef Name="BaseKillDozer" ParentName="BaseAutomatroidRace" Abstract="True">
+    <label>killdozer</label>
+    <description>An unmanned assault sapper with a dozer blade for fortification breakthrough in the frontline, and the armor on various parts of the body has also been strengthened.</description>
     <statBases>
       <MoveSpeed>2.2</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>1.5</ArmorRating_Blunt>                                     <!--護甲-->
@@ -245,15 +367,108 @@
       <ArmorRating_Heat>1.5</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">7</BandwidthCost>        <!--帶寬消耗-->
-      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
     <race>
       <body>DMS_KillDozer</body>                                                      <!--身體(另外的def)-->
       <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
       <baseBodySize>3.3</baseBodySize>
-      <baseHealthScale>5</baseHealthScale>
+      <baseHealthScale>5.3</baseHealthScale>
       <mechWeightClass>UltraHeavy</mechWeightClass>
     </race>
+    <!--
+    <comps>
+      <li Class="DMS.CompProperties_VehicleWeapon">
+        <defaultWeapon>DMS_Gun_Kord_Vehicle</defaultWeapon>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.2</rotationSmoothTime>
+        <drawData>
+          <defaultData>
+            <offset>(0,0,0)</offset>
+          </defaultData>
+        </drawData>
+      </li>
+      <li Class="DMS.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>defense machinegun</ID>
+            <turret>DMS_Gun_Kord_Vehicle</turret>
+            <autoAttack>true</autoAttack>
+            <command_ToggleFire>fire at will</command_ToggleFire>
+            <commandDesc_ToggleFire>toggle turret to manually control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
+            <command_Target>aim target</command_Target>
+            <commandDesc_Target>aim at desinated target</commandDesc_Target>
+            <warmingTime>3</warmingTime>
+            <targetCommandIconPath>UI/Gizmos/ToggleTurret</targetCommandIconPath>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>DMS.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>DMS.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawSize>1.7</drawSize>
+                <drawData>
+                  <defaultData>
+                    <offset>(0,0,0)</offset>
+                  </defaultData>                  
+                  <dataEast>
+                    <offset>(0,0,0)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(0,0,0)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                  <dataSouth>
+                    <offset>(0,0,0)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(0,0,0)</offset>
+                  </dataNorth>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>    
+    </comps>-->
+    <tools Inherit="False">
+      <li>
+        <label>dozer blade</label>
+        <capacities>
+          <li>Demolish</li>
+        </capacities>
+        <power>55</power>
+        <cooldownTime>6.2</cooldownTime>
+        <linkedBodyPartsGroup>DozerBlade</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <butcherProducts>
+      <Tungsteel>30</Tungsteel>
+      <Steel>15</Steel>
+      <DMS_Ceramics>10</DMS_Ceramics>
+      <ComponentStamped>1</ComponentStamped> 
+    </butcherProducts>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+      <li>
+        <damageDef>Stab</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseKillDozer">
+    <defName>DMS_Mech_Killdozer</defName>
     <comps>
       <li Class="DMS.CompProperties_VehicleWeapon">
         <defaultWeapon>DMS_Gun_Kord_Vehicle</defaultWeapon>
@@ -266,38 +481,66 @@
         </drawData>
       </li>
     </comps>
-    <tools Inherit="False">
-      <li>
-        <label>dozer blade</label>
-        <capacities>
-          <li>Blunt</li>
-          <li>Demolish</li>
-        </capacities>
-        <power>55</power>
-        <cooldownTime>6.2</cooldownTime>
-        <linkedBodyPartsGroup>DozerBlade</linkedBodyPartsGroup>
-        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-      </li>
-    </tools>
-    <damageMultipliers>
-      <li>
-        <damageDef>Blunt</damageDef>
-        <multiplier>0.4</multiplier>
-      </li>
-      <li>
-        <damageDef>Stab</damageDef>
-        <multiplier>0.5</multiplier>
-      </li>
-    </damageMultipliers>
   </ThingDef>
+
+  <ThingDef ParentName="BaseKillDozer">
+    <defName>DMS_Mech_Killdozer_b</defName>
+    <comps>
+      <li Class="DMS.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>defense machinegun</ID>
+            <turret>DMS_Gun_Kord_Vehicle</turret>
+            <autoAttack>true</autoAttack>
+            <command_ToggleFire>fire at will</command_ToggleFire>
+            <commandDesc_ToggleFire>toggle turret to manually control mode to prevent unnecessary shooting.</commandDesc_ToggleFire>
+            <command_Target>aim target</command_Target>
+            <commandDesc_Target>aim at desinated target</commandDesc_Target>
+            <warmingTime>3</warmingTime>
+            <targetCommandIconPath>UI/Gizmos/ToggleTurret</targetCommandIconPath>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>DMS.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>DMS.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawSize>1.5</drawSize>
+                <drawData>
+                  <defaultData>
+                    <offset>(0,0,0)</offset>
+                  </defaultData>                  
+                  <dataEast>
+                    <offset>(0,0,0)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(0,0,0)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                  <dataSouth>
+                    <offset>(0,0,0)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(0,0,0)</offset>
+                  </dataNorth>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>   
+    </comps>
+  </ThingDef>
+
   
-  <PawnKindDef ParentName="BaseAutomatroidKind">
-    <defName>DMS_Mech_Killdozer</defName>
+  <PawnKindDef Name="BaseKillDozerKind" ParentName="BaseAutomatroidKind" Abstract="True">
     <label>killdozer</label>
-    <race>DMS_Mech_Killdozer</race>
     <isBoss>true</isBoss>
     <destroyGearOnDrop>true</destroyGearOnDrop>
-    <combatPower>250</combatPower>
+    <canBeSapper>true</canBeSapper>
+    <isGoodBreacher>true</isGoodBreacher>
+    <combatPower>480</combatPower>
     <maxPerGroup>4</maxPerGroup>
     <abilities>
       <li>DMS_RepairMode</li>
@@ -325,4 +568,15 @@
     <weaponTags/>
     <weaponMoney>9999~9999</weaponMoney>
   </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseKillDozerKind">
+    <defName>DMS_Mech_Killdozer</defName>
+    <race>DMS_Mech_Killdozer</race>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseKillDozerKind">
+    <defName>DMS_Mech_Killdozer_b</defName>
+    <race>DMS_Mech_Killdozer_b</race>
+  </PawnKindDef>
+
 </Defs>

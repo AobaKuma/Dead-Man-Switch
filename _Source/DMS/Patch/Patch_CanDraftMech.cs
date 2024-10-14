@@ -14,7 +14,6 @@ namespace DMS
 
             if (mech.kindDef.race.HasComp(typeof(CompCommandRelay)))
             {
-                //Log.Message("IsCommandRelay");
                 __result = true;
                 return;
             }
@@ -26,7 +25,6 @@ namespace DMS
                 {
                     if (commandRelay.Contains(pawn))
                     {
-                        // Log.Message("SameMapAsCommandRelay");
                         __result = true;
                         return;
                     }

@@ -26,20 +26,20 @@
   </RecipeDef>
 
   <RecipeDef Name="DMS_SuperHeavyMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
-    <gestationCycles>5</gestationCycles>
+    <gestationCycles>7</gestationCycles>
     <researchPrerequisite>DMS_HeavyAutomatroid</researchPrerequisite>
     <recipeUsers><li>DMS_MechGestatorSamll</li></recipeUsers>
   </RecipeDef>
   
   <RecipeDef Name="DMS_NextGenMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
-    <gestationCycles>8</gestationCycles>
+    <gestationCycles>11</gestationCycles>
     <researchPrerequisite>DMS_Synthroid</researchPrerequisite>
     <recipeUsers><li>DMS_MechGestatorSamll</li></recipeUsers>
   </RecipeDef>
 
 
   <RecipeDef Name="DMS_RoninMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
-    <gestationCycles>3</gestationCycles>
+    <gestationCycles>4</gestationCycles>
     <researchPrerequisite>DMS_Ronin</researchPrerequisite>
     <recipeUsers><li>DMS_MechGestatorSamll</li></recipeUsers>
   </RecipeDef>
@@ -76,6 +76,7 @@
       <thingDefs>
         <li>Corpse_DMS_Mech_Dogge</li>
         <li>Corpse_DMS_Mech_Falcon</li>
+        <li>Corpse_DMS_Mech_Noctula</li>
 
         <li>Corpse_DMS_Mech_Sergeant</li>
         <li>Corpse_DMS_Mech_Soldat</li>
@@ -153,7 +154,15 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>150</count>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>

@@ -179,7 +179,7 @@
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_Prosthetic</defName>
     <label>Neural Prosthesis</label>
-    <description>Neural prosthetics  designed for disabled soldiers. They're durable and easily adapted to, requiring minimal training for the patient to become comfortable. However, due to the natural wear and tear of its mechanical components, these prosthetic replacements are not as efficient as their original flesh counterparts. </description>
+    <description>Neural prosthetics designed for disabled soldiers. They're durable and easily adapted to, requiring minimal training for the patient to become comfortable. However, due to the natural wear and tear of its mechanical components, these prosthetic replacements are not as efficient as their original flesh counterparts.</description>
     <baseCost>750</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
@@ -194,7 +194,7 @@
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_DeadMansSwitch</defName>
     <label>Dead Man's Switch</label>
-    <description>The Dead Man's Switch is a failsafe mechanism intended to induce a self-destruct sequence in connected mechs when the operator becomes incapacitated. \n\nResearchers realized this failsafe mechanism made artificial intelligence understand the meaning of death and self preservation, which had significant ramifications for humanity.\n\nUnlocks the ability to construct Decoy Antennas which will attract a group of rogue automatroids to the transponder. </description>
+    <description>The Dead Man's Switch is a failsafe mechanism intended to induce a self-destruct sequence in connected mechs when the operator becomes incapacitated. \n\nResearchers realized this failsafe mechanism made artificial intelligence understand the meaning of death and self preservation, which had significant ramifications for humanity.\n\nUnlocks the ability to construct Decoy Antennas which will attract a group of rogue automatroids to the transponder.</description>
     <baseCost>1000</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
@@ -224,7 +224,7 @@
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_EquipmentBasis</defName>
     <label>Pioneer Equipment</label>
-    <description>Uniforms and equipment designed for humans, mainly for civilian use and emergency survival situations. Includes basic uniforms and firearms typically handled by militamen and colonists alike. </description>
+    <description>Uniforms and equipment designed for humans, mainly for civilian use and emergency survival situations. Includes basic uniforms and firearms typically handled by militamen and colonists alike.</description>
     <baseCost>200</baseCost>
     <techLevel>Industrial</techLevel>
     <requiredResearchBuilding Inherit="False"/>
@@ -359,7 +359,7 @@
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_Hypothesis</defName>
     <label>Wetware Hypothesis</label>
-    <description>After the discovery of the Dead Man's Switch, an AI algorithm engineer proposed a hypothetical solution to the halting problem caused by a loss of directional control of the automatroids. \n\n Wetware was created as a proof of concept, serving as an organic brain activated in a series with the Dead Man's Switch enabling Automatroids to awaken and continue fighting after their operator has died. Preliminary tests indicated a portion of the operator's personality was transposed into the Automatroid- but such reports dissapeared as quickly as they were made. Allows for the construction of Decoy Radars and heavier Automatroids, as well as the synthesis of Wetware Computers. </description>
+    <description>After the discovery of the Dead Man's Switch, an AI algorithm engineer proposed a hypothetical solution to the halting problem caused by a loss of directional control of the automatroids. \n\n Wetware was created as a proof of concept, serving as an organic brain activated in a series with the Dead Man's Switch enabling Automatroids to awaken and continue fighting after their operator has died. Preliminary tests indicated a portion of the operator's personality was transposed into the Automatroid- but such reports dissapeared as quickly as they were made. Allows for the construction of Decoy Radars and heavier Automatroids, as well as the synthesis of Wetware Computers.</description>
     <baseCost>1000</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
@@ -376,7 +376,7 @@
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_HeavyAutomatroid</defName>
     <label>Heavy Automatroid</label>
-    <description>These massive machines were purpose built for full-scale warfare amongst nations. Unlocks various assault Automatroids which took inspiration from old-war vehicles and technology, but with a modernized twist.  </description>
+    <description>These massive machines were purpose built for full-scale warfare amongst nations. Unlocks various assault Automatroids which took inspiration from old-war vehicles and technology, but with a modernized twist.</description>
     <baseCost>1000</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
@@ -420,7 +420,7 @@
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_Synthroid</defName>
     <label>Next-Gen Weaponry</label>
-    <description>Weapons development centered around biomechanical hybrids continued until World War IV, where it had reached incomprehensible heights.\n\nThis was the beginning of the next-generation weapons that would ultimately lead to the destruction of the planet. Unlocks the Tarbosaurus, a fearsome predatory Automatroid shaped after the mighty carnotaurus capable of hosting enough firepower to destroy entire cities if left unchecked.  <description>
+    <description>Weapons development centered around biomechanical hybrids continued until World War IV, where it had reached incomprehensible heights.\n\nThis was the beginning of the next-generation weapons that would ultimately lead to the destruction of the planet. Unlocks the Tarbosaurus, a fearsome predatory Automatroid shaped after the mighty carnotaurus capable of hosting enough firepower to destroy entire cities if left unchecked.</description>
     <baseCost>6000</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>

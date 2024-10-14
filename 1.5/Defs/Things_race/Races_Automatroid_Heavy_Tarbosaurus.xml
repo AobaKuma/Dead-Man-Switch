@@ -7,18 +7,19 @@
     <description>A bipedal ultra heavy automatoid nicknamed the "Armored Rex" as its distinctive body structure vaguely resembles a carnotaurus. Once seen as the nextgen war-changer in the twilight of the arms races in the early spacer era, it uses artificial muscle fibres to drive its oversized legs.\n\nWhile it failed to change the field of modern warfare as expected, there are still numerous manufacturers replicating it and adding their own improvements to the design. As such, traces of technology adopted in this automatroid can be seen in a great number of weaponry.</description>
     <statBases>
       <MoveSpeed>4</MoveSpeed>
-      <ArmorRating_Sharp>1.4</ArmorRating_Sharp><!--銳抗-->
-      <ArmorRating_Blunt>0.85</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Sharp>1.8</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.2</ArmorRating_Blunt><!--鈍抗-->
       <ArmorRating_Heat>2</ArmorRating_Heat>  <!--能抗-->
       <StaggerDurationFactor>0</StaggerDurationFactor>
+      <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">8</BandwidthCost>        <!--帶寬消耗-->
-      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
     <race>
       <body>DMS_Bipedal</body>
       <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
       <baseBodySize>3.5</baseBodySize>
-      <baseHealthScale>5</baseHealthScale>
+      <baseHealthScale>5.7</baseHealthScale>
       <mechWeightClass>UltraHeavy</mechWeightClass>
     </race>
     <comps>
@@ -204,7 +205,15 @@
         <damageDef>Blunt</damageDef>
         <multiplier>0.6</multiplier>
       </li>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
     </damageMultipliers>
+    <butcherProducts>
+      <Tungsteel>60</Tungsteel>
+      <ComponentStamped>3</ComponentStamped>
+    </butcherProducts>
     <killedLeavingsPlayerHostile>
       <ComponentFireControl>1</ComponentFireControl>
     </killedLeavingsPlayerHostile>
@@ -220,6 +229,10 @@
     <combatPower>500</combatPower>                                               <!--威脅點數-->
     <maxPerGroup>2</maxPerGroup>                                                 <!--單個集群內的數量-->
     <isBoss>true</isBoss>
+    <!--
+    <techHediffsRequired>
+      <li>DMS_CeramicsPlating</li>
+    </techHediffsRequired>-->
     <lifeStages>                                                                 <!--身體圖片-->
       <li>
         <bodyGraphicData>

@@ -267,7 +267,7 @@
    <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Siegebreaker</defName>
     <label>Siegebreaker</label>
-    <description> The Siegebreaker comes with top of the line armor making it ideal for sapping and breaching jobs.</description>
+    <description>The Siegebreaker comes with top of the line armor making it ideal for sapping and breaching jobs.</description>
     <statBases>
       <StaggerDurationFactor>0.25</StaggerDurationFactor>
       <MoveSpeed>4.2</MoveSpeed>                                                    <!--移動速度-->
@@ -322,6 +322,8 @@
     <defName>DMS_Mech_Siegebreaker</defName>
     <label>siegebreaker</label>
     <race>DMS_Mech_Siegebreaker</race>
+    <canBeSapper>true</canBeSapper>
+    <isGoodBreacher>true</isGoodBreacher>
     <combatPower>200</combatPower>
     <maxPerGroup>10</maxPerGroup>
     <lifeStages>                                                                 <!--身體圖片-->
@@ -449,6 +451,7 @@
     <label>protector</label>
     <race>DMS_Mech_Protector</race>
     <isFighter>true</isFighter>
+    <combatPower>180</combatPower>
     <lifeStages>
       <li>
         <bodyGraphicData>

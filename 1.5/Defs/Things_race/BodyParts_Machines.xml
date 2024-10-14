@@ -200,7 +200,7 @@
   <BodyPartDef>
     <defName>DMS_DozerBlade</defName>
     <label>dozer blade</label>
-    <hitPoints>100</hitPoints>
+    <hitPoints>75</hitPoints>
     <frostbiteVulnerability>0</frostbiteVulnerability>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>false</skinCovered>
@@ -2342,7 +2342,7 @@
         <li> <!-- 思考核心0.005 -->
           <def>DMS_ChestBrain</def>
           <customLabel>wetware computer core</customLabel>
-          <coverage>0.005</coverage>
+          <coverage>0.003</coverage>
           <depth>Inside</depth>
         </li>
         <li> <!-- 砲塔0.05 -->
@@ -2388,24 +2388,30 @@
         <li> <!-- 主動力系統0.05 -->
           <def>DMS_Battery</def>
           <customLabel>main generator</customLabel>
-          <coverage>0.04</coverage>
+          <coverage>0.03</coverage>
           <depth>Inside</depth>
         </li>
         <li> <!-- 副動力系統0.05 -->
           <def>DMS_Battery</def>
           <customLabel>secondary generator</customLabel>
-          <coverage>0.05</coverage>
+          <coverage>0.03</coverage>
           <depth>Inside</depth>
         </li>
         <li> <!-- 散熱系統0.05 -->
           <def>FluidReprocessor</def>
-          <coverage>0.05</coverage>
+          <coverage>0.03</coverage>
           <depth>Inside</depth>
         </li>
         <li> <!-- 附加裝甲0.1 -->
           <def>DMS_ArmourPlate_Additional</def>
           <customLabel>front ERA plate</customLabel>
-          <coverage>0.1</coverage>
+          <coverage>0.08</coverage>
+          <depth>Outside</depth>
+        </li>
+        <li> <!-- 附加裝甲0.1 -->
+          <def>DMS_ArmourPlate_Additional</def>
+          <customLabel>front ERA plate</customLabel>
+          <coverage>0.08</coverage>
           <depth>Outside</depth>
         </li>
         <li> <!-- 附加裝甲0.1 -->
@@ -2420,12 +2426,18 @@
           <coverage>0.1</coverage>
           <depth>Outside</depth>
         </li>
-        <li> <!-- 左履帶0.15 -->
+        <li> <!-- 左履帶0.1 -->
           <def>MechanicalLeg</def>
           <customLabel>left track</customLabel>
           <coverage>0.1</coverage>
           <height>Bottom</height>
           <parts>
+            <li> <!-- 側裙 0.5 -->
+              <def>DMS_ArmourPlate_Additional</def>
+              <customLabel>left side skirt ERA</customLabel>
+              <coverage>0.5</coverage>
+              <depth>Outside</depth>
+            </li>
             <li>
               <def>MechanicalFoot</def>
               <customLabel>left wheel</customLabel>
@@ -2433,12 +2445,18 @@
             </li>
           </parts>
         </li>
-        <li> <!-- 右履帶0.15 -->
+        <li> <!-- 右履帶0.1 -->
           <def>MechanicalLeg</def>
           <customLabel>right track</customLabel>
           <coverage>0.1</coverage>
           <height>Bottom</height>
           <parts>
+            <li> <!-- 側裙 0.5 -->
+              <def>DMS_ArmourPlate_Additional</def>
+              <customLabel>right side skirt ERA</customLabel>
+              <coverage>0.5</coverage>
+              <depth>Outside</depth>
+            </li>
             <li>
               <def>MechanicalFoot</def>
               <customLabel>right wheel</customLabel>
@@ -2449,7 +2467,7 @@
         <li>
           <def>DMS_DozerBlade</def>
           <customLabel>dozer blade</customLabel>
-          <coverage>0.25</coverage>
+          <coverage>0.15</coverage>
           <depth>Outside</depth>
           <groups>
             <li>DozerBlade</li>

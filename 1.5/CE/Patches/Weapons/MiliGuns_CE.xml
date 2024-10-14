@@ -110,7 +110,7 @@
                 <defName>DMS_TaticalPistol</defName>
                 <statBases>
                     <WorkToMake>8600</WorkToMake>
-                    <Mass>4.1</Mass>
+                    <Mass>2.43</Mass>
                     <Bulk>3.7</Bulk>
                     <SwayFactor>1.59</SwayFactor>
                     <ShotSpread>0.18</ShotSpread>
@@ -147,10 +147,10 @@
                 <defName>DMS_PDW</defName>
                 <statBases>
                     <WorkToMake>20000</WorkToMake>
-                    <Mass>5.9</Mass>
+                    <Mass>4.3</Mass>
                     <Bulk>5</Bulk>
                     <SwayFactor>1.76</SwayFactor>
-                    <ShotSpread>0.3</ShotSpread>
+                    <ShotSpread>0.19</ShotSpread>
                     <SightsEfficiency>0.75</SightsEfficiency>
                     <RangedWeapon_Cooldown>0.41</RangedWeapon_Cooldown>
                 </statBases>
@@ -161,7 +161,7 @@
                     <warmupTime>0.35</warmupTime>
                     <range>17</range>
                     <burstShotCount>3</burstShotCount>
-                    <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+                    <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
                     <soundCast>DMS_Pistol_Shot</soundCast>
                     <soundCastTail>GunTail_Light</soundCastTail>
                     <muzzleFlashScale>9</muzzleFlashScale>
@@ -216,12 +216,12 @@
                 <defName>DMS_AssaultPiercer</defName>
                 <statBases>
                     <WorkToMake>45000</WorkToMake>
-                    <Mass>6.8</Mass>
+                    <Mass>5.12</Mass>
                     <Bulk>6.7</Bulk>
-                    <SwayFactor>1.62</SwayFactor>
-                    <ShotSpread>0.48</ShotSpread>
+                    <SwayFactor>1.41</SwayFactor>
+                    <ShotSpread>0.17</ShotSpread>
                     <SightsEfficiency>0.85</SightsEfficiency>
-                    <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+                    <RangedWeapon_Cooldown>0.3</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -230,10 +230,10 @@
                     <warmupTime>0.75</warmupTime>
                     <range>25</range>
                     <burstShotCount>6</burstShotCount>
-                    <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+                    <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
                     <soundCast>Shot_Autocannon</soundCast>
                     <soundCastTail>GunTail_Heavy</soundCastTail>
-					<recoilAmount>1.89</recoilAmount>
+                    <recoilAmount>1.89</recoilAmount>
                     <muzzleFlashScale>9</muzzleFlashScale>
                 </Properties>
                 <AmmoUser>
@@ -697,7 +697,7 @@
                     <RangedWeapon_Cooldown>1.85</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
-                    <recoilAmount>2.11</recoilAmount>
+                    <recoilAmount>1.87</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_20x102mmNATO_AP</defaultProjectile>

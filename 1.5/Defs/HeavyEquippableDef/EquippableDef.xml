@@ -87,9 +87,7 @@
 		<EquippableBaseBodySize>2</EquippableBaseBodySize>
 		<EquippableByRace/>
 		<EquippableWithHediff/>
-		<EquippableWithApparel>
-			<li MayNotRequire="aoba.deadmanswitch.mobiledragoon">DMS_Apparel_PowerSkelton</li>
-		</EquippableWithApparel>
+		<EquippableWithApparel/>
 	</DMS.HeavyEquippableDef>
 
 	<DMS.HeavyEquippableDef>
