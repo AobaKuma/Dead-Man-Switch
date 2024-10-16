@@ -12,8 +12,7 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponLight</li>
-			<li>A_Pistol</li>
+			<li>DMS_HP</li>
 		</weaponTags>
 		<uiIconScale>1.8</uiIconScale>
 		<graphicData>
@@ -112,12 +111,8 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_IndustrialGun</li>
-			<li>DMS_MechWeaponLight</li>
-			<li>A_Pistol</li>
-			<li>A_PDW</li>
+			<li>DMS_PDW</li>
 		</weaponTags>
-
 		<graphicData>
 			<texPath>Things/Weapons/DMS_PDW</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

@@ -27,7 +27,10 @@ TAGS //要注意這裡的分類是基於"人類"範疇的
  -DMS_DL    DisposableLauncher        //重量不超過10KG的一次性火箭筒/無後座力砲 等均歸於此類。
   DMS_GL    GrenadeLauncher           //單發榴彈槍(M79之類的)
   DMS_MGL   MagazinedGrenadeLauncher  //彈夾/轉輪供彈的榴彈槍(MGL之類的)
- -DMS_SG    Shotgun         //霰彈槍，包含短管霰彈槍與霰彈手槍等。
+  DMS_SGL   SniperGrenadeLauncher  //彈夾/轉輪供彈的精確狙擊榴彈槍
+  
+ -DMS_PSG   PistolShotgun   //霰彈手槍等。
+  DMS_SG    Shotgun         //霰彈槍，包含短管霰彈槍。
   DMS_ASG   AssaultShotgun  //突擊霰彈槍
   DMS_MSG   MachineShotgun  //霰彈機槍 (雖然工坊上應該還沒有這東西)
  -DMS_LRF   LightRifle            //使用小口徑步槍彈的栓動步槍 比如啥5.56步槍 .22LR步槍的
@@ -39,11 +42,13 @@ TAGS //要注意這裡的分類是基於"人類"範疇的
   DMS_LMG   LightMachineGun //使用全威力步槍彈 的機槍 如M60，如果有GPMG也會被歸類於此。
  -DMS_DMR   DesignatedMarksmanRifle //帶鏡SAR或BR
   DMS_SR    SniperRifle             //帶鏡SAR或RF，除了使用全威力步槍彈外也可能使用大口徑機槍彈。
- -DMS_RL    ReroillessLauncher      //就RPG-7或M3卡爾古斯塔夫無後座力砲，AT4等等。
+ -DMS_RL    RecoillessLauncher      //就RPG-7或M3卡爾古斯塔夫無後座力砲，AT4等等。
   DMS_HDL   HeavyDisposableLauncher //重量超過10KG的一次性火箭筒/無後座力砲。
  -DMS_HRF   HeavyRifle        //使用12.7mm及以上口徑的栓動步槍
   DMS_HMG   HeavyMachineGun   //使用12.7mm及以上口徑的機槍
+  DMS_HAR   HeavyAutoRifle    //使用12.7mm及以上口徑的自動步槍
   DMS_AMR   AntiMaterialRifle //使用12.7mm及以上口徑的狙擊槍
+
  -DMS_LAC   LightAutoCannon //使用20mm及以上口徑的機砲，但理論上不超過35KG因此能夠被特定人類所使用。
   DMS_HAC   HeavyAutoCannon //使用30mm及以上口徑的機砲
   DMS_HGL   HeavyGrenadeLauncher      //使用迫擊砲彈的放大化榴彈發射器。

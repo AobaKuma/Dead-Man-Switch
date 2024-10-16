@@ -128,8 +128,12 @@
       <li Class="DMS.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
-          <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
-          <li>DMS_Tarbosaurus_Gun</li>
+          <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li>
+          <li>DMS_HMG</li> <!--重機槍-->
+          <li>DMS_LAC</li> <!--輕機砲-->
+          <li>DMS_HAC</li> <!--重機砲-->
+          <li>DMS_HR</li> <!--大型無後座力砲-->
+          <li>DMS_HGL</li> <!--大型榴彈砲-->
           <li>DMS_MechWeaponUltraHeavy</li>
           <li>DMS_MechWeaponHeavy</li>
           <li>H_Gatling20mm</li>

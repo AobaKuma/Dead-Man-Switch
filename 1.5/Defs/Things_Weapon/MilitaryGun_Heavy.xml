@@ -13,7 +13,7 @@
 		  <li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>A_SC_LongRifle</li>
+			<li>DMS_AMR</li>
 		</weaponTags>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_AntiWalkerRifle</texPath>
@@ -84,9 +84,9 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
+			<li>DMS_HMG</li>
 			<li>DMS_MechWeaponHeavy</li>
 			<li>A_SuppressWeaponHeavy</li>
-			<li>A_MG_Heavy</li>
 		</weaponTags>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_HeavyMachineGun</texPath>
@@ -157,7 +157,7 @@
 		</projectile>
 	</ThingDef>
 
-	<!--HAC-->
+	<!--LAC-->
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Autocannon</defName>
 		<label>Mech Autocannon</label>
@@ -168,6 +168,7 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
+			<li>DMS_LAC</li>
 			<li>DMS_MechWeaponHeavy</li>
 			<li>A_SuppressWeaponHeavy</li>
 		</weaponTags>
@@ -245,8 +246,8 @@
 			<Mass>80</Mass>
 		</statBases>
 		<weaponTags>
+			<li>DMS_HR</li>
 			<li>DMS_MechWeaponUltraHeavy</li>
-			<li>DMS_Gun_Recoilless</li>
 			<li>NoSwitch</li>
 		</weaponTags>
 		<recipeMaker>
@@ -335,6 +336,7 @@
 		<label>2A38M</label>
 		<description>A dual-barrel heavy autocannon for infantry suppression and anti air needs.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it.</description>
 		<weaponTags>
+			<li>DMS_HAC</li>
 			<li>2A38M</li>
 			<li>NoSwitch</li>
 			<li>DMS_MechWeaponUltraHeavy</li>
@@ -423,6 +425,7 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
+			<li>HRF</li>
 			<li>DMS_DragoonGun</li>
 			<li>DMS_Tarbosaurus_Gun</li>
 		</weaponTags>
@@ -531,6 +534,7 @@
 			<Mass>35</Mass>
 		</statBases>
 		<weaponTags>
+			<li>DMS_HGL</li>
 			<li>DMS_DragoonGun</li>
 		</weaponTags>
 		<recipeMaker>

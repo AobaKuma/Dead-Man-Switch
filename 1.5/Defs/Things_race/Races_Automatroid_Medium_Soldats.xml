@@ -30,9 +30,15 @@
       <li Class="DMS.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
-          <li>SimpleGun</li>
-          <li>ShortShots</li>
-          <li>CE_SMG</li>
+          <li>DMS_PT</li> <!-- 手槍 -->
+          <li>DMS_HP</li> <!-- 大口徑手槍 -->
+          <li>DMS_PSG</li> <!-- 霰彈手槍 -->
+          <li>DMS_SMG</li> <!-- 衝鋒槍 -->
+          <li>DMS_SG</li> <!-- 霰彈槍 -->
+    
+          <li>DMS_RF</li> <!-- 栓動步槍 -->
+          <li>DMS_SAR</li> <!-- 半自動步槍 -->
+
           <li>DMS_MechWeaponLight</li>
           <li>IndustrialGun</li>
         </UsableWeaponTags>
@@ -82,9 +88,13 @@
       </li>
     </lifeStages>
     <weaponTags><!--武器-->
-      <li>SimpleGun</li>
-      <li>ShortShots</li>
-      <li>IndustrialGun</li>
+      <li>DMS_PT</li> <!-- 手槍 -->
+      <li>DMS_HP</li> <!-- 大口徑手槍 -->
+      <li>DMS_PSG</li> <!-- 霰彈手槍 -->
+      <li>DMS_SMG</li> <!-- 衝鋒槍 -->
+      <li>DMS_SG</li> <!-- 霰彈槍 -->
+      <li>DMS_RF</li> <!-- 栓動步槍 -->
+      <li>DMS_SAR</li> <!-- 半自動步槍 -->
     </weaponTags>
   </PawnKindDef>
 
@@ -120,8 +130,8 @@
       </li>
     </lifeStages>
     <weaponTags><!--武器-->
-      <li>A_SAR_LongRifle</li>
-      <li>A_PDW</li>
+      <li>DMS_SAR</li>
+      <li>DMS_PDW</li>
     </weaponTags>
   </PawnKindDef>
 
@@ -155,7 +165,6 @@
     </lifeStages>
     <weaponTags><!--武器-->
       <li>SimpleGun</li>
-      <li>ShortShots</li>
     </weaponTags>
   </PawnKindDef>
 
@@ -171,9 +180,13 @@
       <li Class="DMS.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
-          <li>SimpleGun</li>
-          <li>Autopistol</li>
-          <li>DMS_MechWeaponLight</li>
+          <li>DMS_PT</li> <!-- 手槍 -->
+          <li>DMS_PSG</li> <!-- 霰彈手槍 -->
+          <li>DMS_SMG</li> <!-- 衝鋒槍 -->
+          <li>DMS_SG</li> <!-- 霰彈槍 -->
+          <li>DMS_GL</li> <!-- 榴彈槍 -->
+          <li>DMS_MGL</li> <!-- 彈夹榴彈槍 -->
+          <li>DMS_DL</li> <!-- 拋棄式發射器 -->
           <li>A_MG_GrenadeLauncher</li>
           <li>A_SR_GrenadeLauncher</li>
           <li>GrenadeDestructive</li>
@@ -225,6 +238,12 @@
       </li>
     </lifeStages>
     <weaponTags><!--武器--> 
+      <li>DMS_PT</li> <!-- 手槍 -->
+      <li>DMS_PSG</li> <!-- 霰彈手槍 -->
+      <li>DMS_SMG</li> <!-- 衝鋒槍 -->
+      <li>DMS_SG</li> <!-- 霰彈槍 -->
+      <li>DMS_GL</li> <!-- 榴彈槍 -->
+      <li>DMS_DL</li> <!-- 拋棄式發射器 -->
       <li>GrenadeDestructive</li>
       <li>GrenadeEMP</li>
       <li>GrenadeSmoke</li>
@@ -245,11 +264,13 @@
       <li Class="DMS.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
-          <li>SimpleGun</li>
-          <li>Autopistol</li>
-          <li>DMS_MechWeaponLight</li>
+          <li>DMS_PT</li> <!-- 手槍 -->
+          <li>DMS_PSG</li> <!-- 霰彈手槍 -->
+          <li>DMS_SMG</li> <!-- 衝鋒槍 -->
+          <li>DMS_SG</li> <!-- 霰彈槍 -->
+          <li>DMS_DL</li> <!-- 拋棄式發射器 -->
+          <li>DMS_RL</li> <!-- 無后座發射器 -->
           <li>GunSingleUse</li>
-          <li>DMS_Gun_Recoilless</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -296,6 +317,9 @@
     </lifeStages>
     <weaponMoney>1700~3000</weaponMoney>
     <weaponTags><!--武器-->
+      <li>DMS_GL</li> <!-- 榴彈槍 -->
+      <li>DMS_DL</li> <!-- 拋棄式發射器 -->
+      <li>DMS_RL</li> <!-- 無后座發射器 -->
       <li>GunSingleUse</li>
       <li>DMS_Gun_Recoilless</li>                                                          
     </weaponTags>
@@ -325,7 +349,11 @@
       <li Class="DMS.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
-          <li>DMS_MechWeaponLight</li>
+          <li>DMS_PT</li> <!-- 手槍 -->
+          <li>DMS_PSG</li> <!-- 霰彈手槍 -->
+          <li>DMS_SMG</li> <!-- 衝鋒槍 -->
+          <li>DMS_PDW</li> <!-- 大口徑衝鋒槍 -->
+          <li>DMS_SG</li> <!-- 霰彈槍 -->
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -367,7 +395,11 @@
       </li>
     </lifeStages>
     <weaponTags>
-      <li>DMS_MechWeaponLight</li>                                                                     <!--武器-->
+      <li>DMS_PT</li> <!-- 手槍 -->
+      <li>DMS_PSG</li> <!-- 霰彈手槍 -->
+      <li>DMS_SMG</li> <!-- 衝鋒槍 -->
+      <li>DMS_PDW</li> <!-- 大口徑衝鋒槍 -->
+      <li>DMS_SG</li> <!-- 霰彈槍 -->
     </weaponTags>
     <abilities>
       <li>DMS_CallDrop</li>

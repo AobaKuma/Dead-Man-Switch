@@ -28,11 +28,12 @@
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
           <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
-          <li>DMS_MechWeaponLight</li>
-          <li>DMS_MechWeaponMeduim</li>
-          <li>A_SuppressWeapon</li>
-          <li>DMS_MechWeaponHeavy</li>
-          <li>DMS_Gun_Recoilless</li>
+          <li>DMS_SAW</li>
+          <li>DMS_LMG</li>
+          <li>DMS_BR</li>
+          <li>DMS_HMG</li>
+          <li>DMS_RL</li>
+          <li>DMS_AGL</li>
         </UsableWeaponTags>
         <BypassUsableWeapons/>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
@@ -71,6 +72,12 @@
       </li>
     </lifeStages>
     <weaponTags>
+      <li>DMS_SAW</li>
+      <li>DMS_LMG</li>
+      <li>DMS_BR</li>
+      <li>DMS_HMG</li>
+      <li>DMS_RL</li>
+      <li>DMS_AGL</li>
       <li>DMS_MechWeaponHeavy</li>
     </weaponTags>
   </PawnKindDef>

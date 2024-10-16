@@ -1,23 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-<!-- 軍用武器為機兵範疇，在原版情況下相同定位的武器傷害都x1.5,重量x1.75，穿甲與鈍傷能力都有額外的0.5 -->
-
-<!-- weaponTags -->
-<!-- 機兵用輕型武器 DMS_MechWeaponLight //狗狗與部分非戰鬥單位使用，霰彈手槍與衝鋒槍範疇-->
-
-<!-- 機兵用副武器 DMS_Sub_Weapon //霰彈手槍與單手衝鋒槍,戰術手槍等-->
-
-<!-- 機兵用霰彈武器 DMS_MechWeaponShotgun //鎮暴霰彈槍,霰彈手槍等-->
-
-<!-- 中等體型機兵用武器 DMS_MechWeaponMeduim //中等體型機兵使用的武器，精確射手步槍與半自動步槍，突擊步槍與重型衝鋒槍等-->
-<!-- 中等體型機兵用長身管武器 DMS_MechWeaponLongRifle//中等體型機兵使用的長身管武器，輕機槍，反器材步槍與狙擊槍-->
-
-<!-- 機兵用反坦克武器 DMS_MechWeaponAntiTank //反器材步槍,反坦克火箭砲，自動榴彈發射器與狙擊榴彈發射器-->
-
-<!-- 重型機兵用武器 DMS_MechWeaponHeavy //猿人使用的槍型重武器裝備-->
-<!-- 載具型機兵用重型武器 DMS_VehicleWeapon //象龜使用的砲塔型重武器裝備，復仇者機砲與無後座力炮，2A38M等-->
-
 	<!-- DMS_AssaultShotgun -->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_AssaultShotgun</defName>
@@ -29,11 +11,7 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponMeduim</li>
-			<li>DMS_MechWeaponShotgun</li>
-			<li>A_RC</li>
-			<li>A_RC_LongRifle</li>
-			<li>A_SG_LongRifle</li>
+			<li>DMS_ASG</li>
 		</weaponTags>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_AssaultShotgun</texPath>
@@ -100,8 +78,8 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponMeduim</li>
-			<li>A_AR_LongRifle</li>
+			<li>A_AR</li>
+			<li>DMS_BR</li>
 		</weaponTags>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_AssaultRifle</texPath>
@@ -167,10 +145,8 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponMeduim</li>
-			<li>A_SR_LongRifle</li>
-			<li>A_SAR_LongRifle</li>
-			<li>A_DMR_LongRifle</li>
+			<li>A_SAR</li>
+			<li>DMS_HAR</li>
 		</weaponTags>	
 		<graphicData>
 			<texPath>Things/Weapons/DMS_SemiAutoRifle</texPath>
@@ -239,8 +215,8 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponMeduim</li>
-			<li>A_BR_LongRifle</li>
+			<li>A_BR</li>
+			<li>DMS_HAR</li>
 		</weaponTags>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_BattleRifle</texPath>
@@ -306,8 +282,7 @@
 		  <li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponMeduim</li>	
-			<li>A_DMR_LongRifle</li>
+			<li>DMS_DMR</li>
 		</weaponTags>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_MarksmanRifle</texPath>
@@ -361,6 +336,7 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
+
 	<!--AMR-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_AntiMaterialRifle</defName>
@@ -372,8 +348,7 @@
 		  <li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponLongRifle</li>
-			<li>A_SR_LongRifle</li>
+			<li>DMS_AMR</li>
 		</weaponTags>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_AntiMaterialRifle</texPath>
@@ -440,8 +415,7 @@
 			<li>LongShots</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponAntiTank</li>
-			<li>A_SR_GrenadeLauncher</li>
+			<li>DMS_SGL</li>
 		</weaponTags>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_SniperGrenadeLauncher</texPath>
@@ -508,8 +482,7 @@
 			<li>LongShots</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponAntiTank</li>
-			<li>A_MG_GrenadeLauncher</li>
+			<li>DMS_AGL</li>
 		</weaponTags>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_AutomaticGrenadeLauncher</texPath>
@@ -599,10 +572,7 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponLongRifle</li>
-			<li>A_SuppressWeapon</li>
-			<li>A_MG_Light</li>
-			<li>CE_AI_LMG</li>
+			<li>DMS_LMG</li>
 			<li>Bipod_SAW</li>
 		</weaponTags>
 		<graphicData>

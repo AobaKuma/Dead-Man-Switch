@@ -93,12 +93,12 @@
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
           <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
-          <li>A_MG_GrenadeLauncher</li>
-          <li>A_SR_GrenadeLauncher</li>
+          <li>DMS_AGL</li>
+          <li>DMS_HMG</li>
+          <li>DMS_HR</li>
           <li>DMS_MechWeaponHeavy</li>
           <li>H_Gatling20mm</li>
           <li>V_Gatling556mm</li>
-          <li>DMS_Gun_Recoilless</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -216,9 +216,10 @@
     <weaponTags>
       <li>DMS_MechWeaponHeavy</li>                                                                     <!--武器-->
       <li>H_Gatling20mm</li>
-      <li>DMS_VehicleWeapon</li>
+      <li>DMS_AGL</li>
+      <li>DMS_HMG</li>
+      <li>DMS_HR</li>
       <li>H_Gatling127mm</li>
-      <li>DMS_Gun_Recoilless</li>
     </weaponTags>   
     <weaponMoney>3000~9999</weaponMoney>
   </PawnKindDef>
@@ -311,13 +312,14 @@
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
           <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
-          <li>A_MG_GrenadeLauncher</li>
-          <li>A_SR_GrenadeLauncher</li>
+          <li>DMS_LAC</li>
+          <li>DMS_AGL</li>
+          <li>DMS_HMG</li>
+          <li>DMS_HR</li>
           <li>DMS_MechWeaponHeavy</li>
           <li>H_Gatling127mm</li>
           <li>H_Gatling20mm</li>
           <li>V_Gatling556mm</li>
-          <li>DMS_Gun_Recoilless</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>

@@ -106,7 +106,7 @@
 			<drawSize>(1.3,1.3)</drawSize>
 		</graphicData>
 		<weaponTags>
-			<li>A_RC</li>
+			<li>DMS_SMG</li>
 			<li>A_RC_LongRifle</li>
 			<li>IndustrialGun</li>
 			<li>RiotLMG</li>
@@ -185,8 +185,8 @@
 		  <li>LongShots</li>
 		</weaponClasses>
 		<weaponTags>
+			<li>DMS_LRF</li>
 			<li>CivilianGun</li>
-			<li>Simple_LongRange</li>
 			<li>IndustrialGun</li>
 			<li>SurvivalRifle</li>
 		</weaponTags>
@@ -276,10 +276,10 @@
 		</graphicData>
 		<uiIconScale>1.5</uiIconScale>
 		<weaponTags>
+			<li>DMS_PSG</li>
 			<li>A_RC</li>
 			<li>A_RC_Pistol</li>
 			<li>A_Pistol</li>
-			<li>A_SG_Pistol</li>
 			<li>DMS_MechWeaponLight</li>
 			<li>CivilianGun</li>
 		</weaponTags>
@@ -383,7 +383,7 @@
 			<drawSize>(1.3,1.3)</drawSize>
 		</graphicData>
 		<weaponTags>
-			<li>A_RC</li>
+			<li>DMS_SG</li>
 			<li>A_RC_LongRifle</li>
 			<li>A_SG_LongRifle</li>
 			<li>DMS_MechWeaponShotgun</li>
@@ -487,6 +487,7 @@
 		  <li>LongShots</li>
 		</weaponClasses>
 		<weaponTags>
+			<li>DMS_ATR</li>
 			<li>ElephantGun</li>
 			<li>IndustrialGun</li>
 		</weaponTags>

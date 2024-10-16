@@ -32,15 +32,16 @@
       <li Class="DMS.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags> 
+          <li>DMS_SMG</li>
+          <li>DMS_SAW</li>
+          <li>DMS_LMG</li>
+          <li>DMS_HMG</li>
+          
           <li>SimpleGun</li>
           <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
           <li>DMS_MechWeaponLongRifle</li>
           <li>DMS_MechWeaponLight</li>
-          <li>A_BR_LongRifle</li>
           <li>GrenadeSmoke</li>
-          <li>A_MG_Heavy</li>
-          <li>A_SuppressWeapon</li>
-          <li>ShortShots</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
