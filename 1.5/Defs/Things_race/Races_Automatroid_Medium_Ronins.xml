@@ -26,16 +26,28 @@
       <li Class="DMS.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
+          <!-- 人形機 -->
+          <li>DMS_PT</li> <!-- 手槍 -->
+          <li>DMS_HP</li> <!-- 大口徑手槍 -->
+          <li>DMS_PSG</li> <!-- 霰彈手槍 -->
+          <li>DMS_SMG</li> <!-- 衝鋒槍 -->
+          <li>DMS_SG</li> <!-- 霰彈槍 -->
+          <li>DMS_LRF</li>  <!-- 小口徑栓動步槍 -->
+          <!-- 近代人型機 -->
+          <li>DMS_RF</li>   <!-- 栓動步槍 -->
+          <li>DMS_AR</li>   <!-- 小口徑突擊步槍 -->
+          <!-- 浪人家族 -->
+          <li>DMS_GL</li>   <!-- 榴彈槍 -->
+          <li>DMS_ASG</li>   <!-- 突擊霰彈槍 -->
+          
           <li>SimpleGun</li>
-          <li>ShortShots</li>
-          <li>DMS_MechWeaponShotgun</li>
-          <li>DMS_MechWeaponLight</li>
-          <li>A_AR_LongRifle</li>
+          <li>A_AR</li>
+          <li>A_AP</li>
+
           <li>MedievalMeleeBasic</li>
           <li>MedievalMeleeAdvanced</li>
           <li>DMS_MeleeWeapon</li>
           <li>UltratechMelee</li>
-          <li>A_AP</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -173,6 +185,10 @@
       <li Class="DMS.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
+          <li>DMS_PT</li> <!-- 手槍 -->
+          <li>DMS_HP</li> <!-- 大口徑手槍 -->
+          <li>DMS_PSG</li> <!-- 霰彈手槍 -->
+          <li>DMS_SMG</li> <!-- 衝鋒槍 -->
           <li>MedievalMeleeBasic</li>
           <li>MedievalMeleeAdvanced</li>
           <li>DMS_MeleeWeapon</li>
@@ -287,12 +303,28 @@
       <li Class="DMS.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
-          <li>SimpleGun</li>
+          <!-- 人形機 -->
+          <li>DMS_PT</li>   <!-- 手槍 -->
+          <li>DMS_HP</li>   <!-- 大口徑手槍 -->
+          <li>DMS_PSG</li>  <!-- 霰彈手槍 -->
+          <li>DMS_SMG</li>  <!-- 衝鋒槍 -->
+          <li>DMS_SG</li>   <!-- 霰彈槍 -->
+          <li>DMS_LRF</li>  <!-- 小口徑栓動步槍 -->
+          <!-- 近代人型機 -->
+          <li>DMS_RF</li>   <!-- 栓動步槍 -->
+          <li>DMS_AR</li>   <!-- 小口徑突擊步槍 -->
+          <!-- 浪人家族 -->
+          <li>DMS_GL</li>   <!-- 榴彈槍 -->
+          <li>DMS_ASG</li>  <!-- 突擊霰彈槍 -->
+          <!-- 襲城者 -->
+          <li>DMS_MGL</li>  <!-- 彈夾榴彈槍 -->
+          <li>DMS_AGL</li>  <!-- 自動榴彈槍 -->
+
           <li>DMS_MechWeaponBreach</li>
-          <li>DMS_MechWeaponLight</li>
           <li>MedievalMeleeBasic</li>
           <li>MedievalMeleeAdvanced</li>
           <li>DMS_MeleeWeapon</li>
+          <li>SimpleGun</li>
           <li>Flamethrower</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
@@ -503,18 +535,32 @@
       <li Class="DMS.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
-          <li>SimpleGun</li>
-          <li>ShortShots</li>
-          <li>DMS_MechWeaponShotgun</li>
-          <li>DMS_MechWeaponLight</li>
-          <li>A_AR_LongRifle</li>
+          <!-- 人形機 -->
+          <li>DMS_PT</li> <!-- 手槍 -->
+          <li>DMS_HP</li> <!-- 大口徑手槍 -->
+          <li>DMS_PSG</li> <!-- 霰彈手槍 -->
+          <li>DMS_SMG</li> <!-- 衝鋒槍 -->
+          <li>DMS_SG</li> <!-- 霰彈槍 -->
+          <li>DMS_LRF</li>  <!-- 小口徑栓動步槍 -->
+          <!-- 近代人型機 -->
+          <li>DMS_RF</li>   <!-- 栓動步槍 -->
+          <li>DMS_AR</li>   <!-- 小口徑突擊步槍 -->
+          <!-- 浪人家族 -->
+          <li>DMS_GL</li>   <!-- 榴彈槍 -->
+          <li>DMS_ASG</li>   <!-- 突擊霰彈槍 -->
+          <!-- 方陣步兵 -->
+          <li>DMS_BR</li>   <!-- 戰鬥步槍 -->
+          <li>DMS_LMG</li>   <!-- 輕機槍 -->
+
+          <li>A_AR</li>
+          <li>A_AP</li>
+          
           <li>MedievalMeleeBasic</li>
           <li>MedievalMeleeAdvanced</li>
           <li>DMS_MeleeWeapon</li>
           <li>AssaultRifle</li>
           <li>Minigun</li>
           <li>V_Gatling556mm</li>
-          <li>A_AP</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>

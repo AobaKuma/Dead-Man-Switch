@@ -36,7 +36,7 @@
     <modExtensions>
       <li Class="DMS.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
-        <UsableWeaponTags> 
+        <UsableWeaponTags>
           <!-- 人形機 -->
           <li>DMS_PT</li> <!-- 手槍 -->
           <li>DMS_HP</li> <!-- 大口徑手槍 -->
@@ -54,8 +54,9 @@
           <li>DMS_LMG</li>  <!-- 輕機槍 -->
           <li>DMS_SAW</li>  <!-- 小口徑輕機槍 -->
 
-          <li>SniperRifle</li>
+          <li>SimpleGun</li>
           <li>AssaultRifle</li>
+          <li>SniperRifle</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -97,8 +98,8 @@
       </li>
     </lifeStages>
     <weaponTags>
-      <li>DMS_SAW</li>
-      <li>DMS_DMR</li>
+      <li>DMS_LMG</li>  <!-- 輕機槍 -->
+      <li>DMS_SAW</li>  <!-- 小口徑輕機槍 -->
     </weaponTags>
     <abilities>
       <li>DMS_RepairMode</li>
@@ -137,8 +138,9 @@
           <li>DMS_ATR</li>   <!-- 老式反坦克步槍 -->
           <li>DMS_DMR</li>   <!-- 精確射手步槍 -->
 
-          <li>SniperRifle</li>
+          <li>SimpleGun</li>
           <li>AssaultRifle</li>
+          <li>SniperRifle</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>false</EnableTechLevelFilter>
         <BypassUsableWeapons>
@@ -175,7 +177,8 @@
       </li>
     </lifeStages>
     <weaponTags>
-      <li>A_SR_LongRifle</li>
+      <li>DMS_ATR</li>   <!-- 老式反坦克步槍 -->
+      <li>DMS_DMR</li>   <!-- 精確射手步槍 -->
     </weaponTags>
     <abilities>
       <li MayRequire="Ludeon.RimWorld.Royalty">DMS_Camouflage</li>
@@ -210,9 +213,10 @@
           <!-- 先鋒 -->
           <li>DMS_SAR</li>  <!-- 半自動步槍 -->
           <li>DMS_BR</li>   <!-- 戰鬥步槍 -->
-          
-          <li>SniperRifle</li>
+
+          <li>SimpleGun</li>
           <li>AssaultRifle</li>
+          <li>SniperRifle</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -255,7 +259,9 @@
       </li>
     </lifeStages>
     <weaponTags>
-      <li>A_AR_LongRifle</li>
+      <li>DMS_SAR</li>  <!-- 半自動步槍 -->
+      <li>DMS_BR</li>   <!-- 戰鬥步槍 -->
+      <li>DMS_AR</li>   <!-- 突擊步槍 -->
     </weaponTags>
     <abilities>
       <li>DMS_BurstSprint</li>
@@ -279,12 +285,10 @@
           <li>DMS_PT</li> <!-- 手槍 -->
           <li>DMS_HP</li> <!-- 大口徑手槍 -->
           <li>DMS_PSG</li> <!-- 霰彈手槍 -->
-          <li>DMS_SMG</li> <!-- 衝鋒槍 -->
-          <li>DMS_SG</li> <!-- 霰彈槍 -->
           <li>DMS_LRF</li>  <!-- 小口徑栓動步槍 -->
           <!-- 近代人型機 -->
           <li>DMS_RF</li>   <!-- 栓動步槍 -->
-          <!-- <li>DMS_AR</li>   小口徑突擊步槍 -->
+
           <!-- 火槍手家族 -->
           <li>DMS_SR</li>   <!-- 狙擊槍 -->
           <li>DMS_DMR</li>   <!-- 精確射手步槍 -->
@@ -293,6 +297,7 @@
           <li>DMS_SGL</li>   <!-- 狙擊榴彈發射器 -->
           
           <li>SniperRifle</li>
+          <li>DMS_SniperCannon</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -332,9 +337,9 @@
       </li>
     </lifeStages>
     <weaponTags>
-      <li>A_SR_GrenadeLauncher</li>
-      <li>A_SR_LongRifle</li>
-      <li>A_SC_LongRifle</li>
+      <li>DMS_SniperCannon</li>
+      <li>DMS_AMR</li>   <!-- 反器材步槍 -->
+      <li>DMS_SGL</li>   <!-- 狙擊榴彈發射器 -->
     </weaponTags>
     <abilities>
       <li>DMS_SharpShooting</li>

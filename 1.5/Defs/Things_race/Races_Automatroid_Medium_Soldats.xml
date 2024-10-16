@@ -38,9 +38,6 @@
     
           <li>DMS_RF</li> <!-- 栓動步槍 -->
           <li>DMS_SAR</li> <!-- 半自動步槍 -->
-
-          <li>DMS_MechWeaponLight</li>
-          <li>IndustrialGun</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>

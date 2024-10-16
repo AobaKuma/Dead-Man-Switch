@@ -13,7 +13,7 @@
 		  <li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_AMR</li>
+			<li>DMS_SniperCannon</li>
 		</weaponTags>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_AntiWalkerRifle</texPath>
@@ -49,9 +49,6 @@
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_AutocannonTurret</defaultProjectile>
 				<warmupTime>2.0</warmupTime>
-				<!--
-				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-				<burstShotCount>2</burstShotCount>-->
 				<range>49.9</range>
 				<soundCast>DMS_MachineGunHeavy_Shot</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
