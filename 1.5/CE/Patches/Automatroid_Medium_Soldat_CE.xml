@@ -152,6 +152,58 @@
 				</value>
 			</li>
 
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]</xpath>
+				<value>
+					<li Class="CombatExtended.PartialArmorExt">
+						<stats>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+								<parts>
+									<li>HearingSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+								<parts>
+									<li>HearingSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+								<parts>
+									<li>SmellSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+								<parts>
+									<li>SmellSensor</li>
+								</parts>
+							</li>
+						</stats>
+					</li>
+				</value>
+			</li>
+
 			<!--a bit better aim for grenadier to make sure it can land its shot, also extra bulk due to grenades' and weapon's high bulk-->
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Grenadier"]/statBases</xpath>

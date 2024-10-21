@@ -1485,7 +1485,7 @@
     </corePart>
   </BodyDef>
 
-  <!-- B型機械步兵框架，浪人形額外加上了手臂刀刃-->
+  <!-- B型機械步兵框架，浪人型額外加上了手臂刀刃-->
   <BodyDef>
     <defName>DMS_Humanoid_TypeB_Ronin</defName>
     <label>erectus ronin(blade)</label>

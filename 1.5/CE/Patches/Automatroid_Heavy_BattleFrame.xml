@@ -3,6 +3,7 @@
 
 	<Operation Class="PatchOperationSequence">
 		<operations>
+			
 			<!-- ========== PawnKind Patches ========== -->
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_EscortLifter" or
@@ -25,12 +26,13 @@
 				<value>
 					<li Class="CombatExtended.LoadoutPropertiesExtension">
 						<primaryMagazineCount>
-							<min>5</min>
-							<max>8</max>
+							<min>3</min>
+							<max>5</max>
 						</primaryMagazineCount>
 					</li>
 				</value>
 			</li>
+
 			<!-- ======Battleframe (early stage of attempt on humanoid mech production)======-->
 			<!-- yet being a weapon platform compatible with all kinds of weapons, it has very bad
 			combat capability, so mainly used for cargo transporting right now -->
@@ -100,8 +102,60 @@
 				</value>
 			</li>
 
-			<!--command
-			version has its command devices take up all the capacity-->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[@Name="BaseBattleFrame"]</xpath>
+				<value>
+					<li Class="CombatExtended.PartialArmorExt">
+						<stats>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+								<parts>
+									<li>HearingSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+								<parts>
+									<li>HearingSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+								<parts>
+									<li>SmellSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+								<parts>
+									<li>SmellSensor</li>
+								</parts>
+							</li>
+						</stats>
+					</li>
+				</value>
+			</li>
+
+
+			<!--command version has its command devices take up all the capacity-->
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_FieldCommand"]/statBases</xpath>
 				<value>
@@ -135,6 +189,7 @@
 					<ArmorRating_Heat>0.05</ArmorRating_Heat>
 				</value>
 			</li>
+
 			<!-- ======Escort Lifter (outlander carrier modified battle frame)======-->
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_EscortLifter"]/statBases</xpath>

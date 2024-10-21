@@ -217,6 +217,20 @@
 							</li>
 							<li>
 								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+								<parts>
+									<li>SmellSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+								<parts>
+									<li>SmellSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
 								<ArmorRating_Blunt>0.85</ArmorRating_Blunt>
 								<parts>
 									<li>DMS_HeadRadar</li>

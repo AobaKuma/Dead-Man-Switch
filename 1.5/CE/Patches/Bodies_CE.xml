@@ -184,6 +184,36 @@
 	</Operation>
 
 	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Hound"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="SightSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Hound"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="SightSensor"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Hound"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="HearingSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Hound"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="HearingSensor"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Hound"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="SmellSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Hound"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="SmellSensor"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/BodyDef[defName="DMS_Hound"]/corePart/parts/li[def="MechanicalArm"]/groups</xpath>
 		<nomatch Class="PatchOperationAdd">
 			<xpath>Defs/BodyDef[defName="DMS_Hound"]/corePart/parts/li[def="MechanicalArm"]</xpath>
@@ -253,6 +283,27 @@
 
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/BodyDef[defName="DMS_Hound"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Hound"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="SightSensor"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Hound"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="HearingSensor"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Hound"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="SmellSensor"]/groups</xpath>
 		<value>
 			<li>CoveredByNaturalArmor</li>
 		</value>
@@ -406,11 +457,83 @@
 		</nomatch>
 	</Operation>
 
+    <!--give Type B head radar armor-->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB" or defName="DMS_Humanoid_TypeB_Ronin" or defName="DMS_Humanoid_TypeB_ShieldL"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="DMS_HeadRadar"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB" or defName="DMS_Humanoid_TypeB_Ronin" or defName="DMS_Humanoid_TypeB_ShieldL"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="DMS_HeadRadar"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
 	<!--Type A has head armor plates -->
 	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeA"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_ArmourPlate"]/groups</xpath>
 		<nomatch Class="PatchOperationAdd">
 			<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeA"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_ArmourPlate"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!--Type A and Gladiator sensor armor-->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeA"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_SniperHead"]/parts/li[def="SightSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeA"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_SniperHead"]/parts/li[def="SightSensor"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeA"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_SniperHead"]/parts/li[def="HearingSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeA"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_SniperHead"]/parts/li[def="HearingSensor"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeA"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_SniperHead"]/parts/li[def="SmellSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeA"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_SniperHead"]/parts/li[def="SmellSensor"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB_ShieldS" or defName="DMS_Humanoid_Soldat"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="SightSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB_ShieldS"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="SightSensor"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB_ShieldS" or defName="DMS_Humanoid_Soldat"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="HearingSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB_ShieldS"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="HearingSensor"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB_ShieldS" or defName="DMS_Humanoid_Soldat"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="SmellSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB_ShieldS"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="SmellSensor"]</xpath>
 			<value>
 				<groups />
 			</value>
@@ -505,6 +628,14 @@
 		</value>
 	</Operation>
 
+	<!--Type B head radar armor-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB" or defName="DMS_Humanoid_TypeB_Ronin" or defName="DMS_Humanoid_TypeB_ShieldL"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="DMS_HeadRadar"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
 	<!--Humanoid A has sniper head-->
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeA"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_SniperHead"]/groups</xpath>
@@ -512,6 +643,50 @@
 			<li>CoveredByNaturalArmor</li>
 		</value>
 	</Operation>
+
+    <!--sensor armor-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeA"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_SniperHead"]/parts/li[def="SightSensor"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeA"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_SniperHead"]/parts/li[def="HearingSensor"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeA"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_SniperHead"]/parts/li[def="SmellSensor"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB_ShieldS" or defName="DMS_Humanoid_Soldat"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="SightSensor"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB_ShieldS" or defName="DMS_Humanoid_Soldat"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="HearingSensor"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB_ShieldS" or defName="DMS_Humanoid_Soldat"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="SmellSensor"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
 
     <!--Add armor for shield-->
 	<Operation Class="PatchOperationAdd">
@@ -564,6 +739,36 @@
 		<xpath>Defs/BodyDef[defName="DMS_Bipedal"]/corePart/parts/li[def="DMS_HeadRadar"]/parts/li[def="MechanicalHead"]/groups</xpath>
 		<nomatch Class="PatchOperationAdd">
 			<xpath>Defs/BodyDef[defName="DMS_Bipedal"]/corePart/parts/li[def="DMS_HeadRadar"]/parts/li[def="MechanicalHead"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Bipedal"]/corePart/parts/li[def="DMS_HeadRadar"]/parts/li[def="MechanicalHead"]/parts/li[def="SightSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Bipedal"]/corePart/parts/li[def="DMS_HeadRadar"]/parts/li[def="MechanicalHead"]/parts/li[def="SightSensor"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Bipedal"]/corePart/parts/li[def="DMS_HeadRadar"]/parts/li[def="MechanicalHead"]/parts/li[def="HearingSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Bipedal"]/corePart/parts/li[def="DMS_HeadRadar"]/parts/li[def="MechanicalHead"]/parts/li[def="HearingSensor"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Bipedal"]/corePart/parts/li[def="DMS_HeadRadar"]/parts/li[def="MechanicalHead"]/parts/li[def="SmellSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Bipedal"]/corePart/parts/li[def="DMS_HeadRadar"]/parts/li[def="MechanicalHead"]/parts/li[def="SmellSensor"]</xpath>
 			<value>
 				<groups />
 			</value>
@@ -655,6 +860,27 @@
 
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/BodyDef[defName="DMS_Bipedal"]/corePart/parts/li[def="DMS_HeadRadar"]/parts/li[def="MechanicalHead"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Bipedal"]/corePart/parts/li[def="DMS_HeadRadar"]/parts/li[def="MechanicalHead"]/parts/li[def="SightSensor"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Bipedal"]/corePart/parts/li[def="DMS_HeadRadar"]/parts/li[def="MechanicalHead"]/parts/li[def="HearingSensor"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Bipedal"]/corePart/parts/li[def="DMS_HeadRadar"]/parts/li[def="MechanicalHead"]/parts/li[def="SmellSensor"]/groups</xpath>
 		<value>
 			<li>CoveredByNaturalArmor</li>
 		</value>
@@ -758,6 +984,16 @@
 	</Operation>
 
 	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Caterpillar" or defName="DMS_KillDozer"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="DMS_HeadRadar"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Caterpillar" or defName="DMS_KillDozer"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="DMS_HeadRadar"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/BodyDef[defName="DMS_Caterpillar" or defName="DMS_KillDozer"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_ArmourPlate"]/groups</xpath>
 		<nomatch Class="PatchOperationAdd">
 			<xpath>Defs/BodyDef[defName="DMS_Caterpillar" or defName="DMS_KillDozer"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_ArmourPlate"]</xpath>
@@ -840,6 +1076,13 @@
 
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/BodyDef[defName="DMS_Caterpillar" or defName="DMS_KillDozer"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Caterpillar" or defName="DMS_KillDozer"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="MechanicalHead"]/parts/li[def="DMS_HeadRadar"]/groups</xpath>
 		<value>
 			<li>CoveredByNaturalArmor</li>
 		</value>
