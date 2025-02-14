@@ -43,6 +43,11 @@
       <HintPath>..\..\..\_Dead-Man-Switch-AncientCorps\_source\Reference\CombatExtended.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DMS">
+      <HintPath>..\..\1.5\Assemblies\DMS.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -73,8 +78,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompAbilityEffect_ActiveProtectionSystem.cs" />
+    <Compile Include="CompAntiBlasterSmoke.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Verb\Verb_CastAbilityArcSprayProjectileCE.cs" />
+    <Compile Include="Verb\Verb_CastAbilityArcSprayProjectile.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

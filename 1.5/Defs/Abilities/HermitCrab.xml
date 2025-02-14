@@ -7,60 +7,57 @@
 		<description>Release an ampule of repair nanites to assist nearby friendly mechs. The nanites induce the mechs into self-maintenance mode.</description>
 		<iconPath>UI/Ability/FieldRepair</iconPath>
 		<comps>
-		<li Class="CompProperties_AbilityGiveHediff">
-			<compClass>CompAbilityEffect_GiveHediff</compClass>
-			<hediffDef>DMS_RangeRepair</hediffDef>
-			<onlyBrain>True</onlyBrain>
-			<onlyApplyToSelf>True</onlyApplyToSelf>
-			<replaceExisting>true</replaceExisting>
-		</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>DMS_RangeRepair</hediffDef>
+				<onlyBrain>True</onlyBrain>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
 		</comps>
 		<statBases>
 			<Ability_EffectRadius>3.9</Ability_EffectRadius>
-			<Ability_Duration>1</Ability_Duration>
+			<Ability_Duration>60</Ability_Duration>
 		</statBases>
 		<verbProperties>
 			<range>3.9</range>
 		</verbProperties>
 		<cooldownTicksRange>720000~800000</cooldownTicksRange>
 	</AbilityDef>
-  
- <HediffDef>
-	<defName>DMS_RangeRepair</defName>
-	<label>Repair Field</label>
-	<description>A cluster field of nanites.</description>
-	<hediffClass>HediffWithComps</hediffClass>
-	<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-	<comps>
-	  <li Class="HediffCompProperties_Disappears">
-		<showRemainingTime>True</showRemainingTime>
-	  </li>
-	  <li Class="HediffCompProperties_DisappearsOnDeath"/>
-	  <li Class="HediffCompProperties_GiveHediffsInRange">
-		<compClass>DMS.HediffComp_GiveHediffsInRangeMech</compClass>
-		<range>3.9</range>
-		<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
-		<onlyPawnsInSameFaction>true</onlyPawnsInSameFaction>
-		<targetingParameters>
-			<canTargetSelf>false</canTargetSelf>
-			<canTargetPawns>true</canTargetPawns>
-			<canTargetAnimals>false</canTargetAnimals>
-			<canTargetHumans>true</canTargetHumans>
-			<canTargetMechs>true</canTargetMechs>
-		</targetingParameters>
-		<hediff>DMS_SelfRepair</hediff>
-	  </li>
-	</comps>
-	<isBad>false</isBad>
-	<stages>
-		<li>
-			<capMods>
-				<li>
-					<capacity>Moving</capacity>
-					<offset>-1</offset>
-				</li>
-			</capMods>
-		</li>
-	</stages>
-  </HediffDef>
+
+	<HediffDef>
+		<defName>DMS_RangeRepair</defName>
+		<label>Repair Field</label>
+		<description>A cluster field of nanites.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<compClass>DMS.HediffComp_GiveHediffsInRangeMech</compClass>
+				<range>3.9</range>
+				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+				<onlyPawnsInSameFaction>true</onlyPawnsInSameFaction>
+				<targetingParameters>
+					<canTargetSelf>false</canTargetSelf>
+					<canTargetPawns>true</canTargetPawns>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetHumans>true</canTargetHumans>
+					<canTargetMechs>true</canTargetMechs>
+				</targetingParameters>
+				<hediff>DMS_SelfRepair</hediff>
+			</li>
+		</comps>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statFactors>
+					<MoveSpeed>0.05</MoveSpeed>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
 </Defs>

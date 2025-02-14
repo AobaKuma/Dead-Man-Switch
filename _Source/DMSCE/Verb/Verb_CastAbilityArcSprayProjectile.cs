@@ -103,10 +103,30 @@ namespace DMSCE
             path.SortBy((IntVec3 c) => (c.ToVector3Shifted() - caster.DrawPos).Yto0().normalized.AngleToFlat(tan));
         }
     }
-    public class Verb_CastAbilityArcSprayProjectileCE : Verb_ArcSprayCE, IAbilityVerb
+    public class Verb_CastAbilityArcSprayProjectile : Verb_ArcSprayCE, IAbilityVerb
     {
         private Ability ability;
 
+        public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
+        {
+            if(base.ValidateTarget(target, showMessages)) return true;
+            return false;
+        }
+        public override bool TryCastShot()
+        {
+            return base.TryCastShot();
+        }
+        protected override bool OnCastSuccessful()
+        {
+            Ability.StartCooldown(ability.def.cooldownTicksRange.RandomInRange);
+            return base.OnCastSuccessful();
+        }
+        public override bool Available()
+        {
+            return base.Available() && (Bursting||Ability.CanCast);
+        }
+        public override int ShotsPerBurst => verbProps.burstShotCount;
+        public override ThingDef Projectile => verbProps.defaultProjectile;
         public Ability Ability
         {
             get
@@ -118,14 +138,9 @@ namespace DMSCE
                 ability = value;
             }
         }
-        public override bool TryCastShot()
+        public override void WarmupComplete()
         {
-            bool flag = base.TryCastShot();
-            if (flag)
-            {
-                ability.StartCooldown(ability.def.cooldownTicksRange.RandomInRange);
-            }
-            return flag;
+            base.WarmupComplete();
         }
         public override void ExposeData()
         {

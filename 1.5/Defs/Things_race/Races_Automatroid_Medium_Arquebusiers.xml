@@ -10,8 +10,8 @@
       <ArmorRating_Heat>1.5</ArmorRating_Heat>
       <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
       <AimingDelayFactor>0.8</AimingDelayFactor>
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost> 
-      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost> 
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
     <race>
       <mechFixedSkillLevel>10</mechFixedSkillLevel>
@@ -103,7 +103,7 @@
     <description>An Arquebusier variant specializing in stealth operations and guerilla warfare sabotaging equipment behind enemy lines. It has high mobility and and an active camouflage ability.</description>
     <statBases>
       <MoveSpeed>5.3</MoveSpeed>
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
       <AimingDelayFactor>0.65</AimingDelayFactor>
       <HuntingStealth>0.5</HuntingStealth> 
     </statBases>
@@ -168,7 +168,7 @@
     <label>Pioneer</label>
     <description>A gorward reconnaissance variant of the Arquebusier, Pioneers are equipped with an improved sight sensor package giving it better capability in field operations. In a pinch, it can be used to hunt wildlife.</description>
     <statBases>
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost> 
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
     </statBases>
     <race>
       <mechFixedSkillLevel>8</mechFixedSkillLevel>

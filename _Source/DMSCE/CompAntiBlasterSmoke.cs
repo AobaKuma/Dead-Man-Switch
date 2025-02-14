@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using UnityEngine;
+using CombatExtended;
 using System.Reflection;
 
-namespace DMS
+namespace DMSCE
 {
     public class CompAntiBlasterSmoke : ThingComp
     {
@@ -68,40 +69,36 @@ namespace DMS
 
             foreach (IntVec3 cell in GenAdj.OccupiedRect(parent).ExpandedBy(Props.Size))
             {
-                List<Thing> list = parent.MapHeld.thingGrid.ThingsListAt(cell).Where((v) => v is Projectile).ToList();
+                List<Thing> list = parent.MapHeld.thingGrid.ThingsListAt(cell).Where((v) => v is ProjectileCE).ToList();
                 for (int i = 0; i < list.Count; i++)
                 {
                     Thing thing2 = list[i];
                     if (IsTargetProjectile(thing2) && Vector3.Distance(thing2.DrawPos, parent.DrawPos) < Props.Size)
                     {
                         if (Rand.Range(0f, 1f) > Props.chanceToFail)
-                            DoIntercept(thing2 as Projectile);
+                            DoIntercept(thing2 as ProjectileCE);
                     }
                 }
             }
             tickRemain--;
             if (tickRemain <= 0) isActive = false;
         }
-        private void DoIntercept(Projectile target)
+        private void DoIntercept(ProjectileCE target)
         {
             if (target == null) return;
-            var projectile = target as Projectile;
             if (Props.fleckDef != null)
             {
                 if (parent.DrawPos.ShouldSpawnMotesAt(parent.Map, false))
                 {
-                    FieldInfo origin = typeof(Projectile).GetField("origin", BindingFlags.NonPublic | BindingFlags.Instance);
-                    var originVector = (Vector3)origin.GetValue(projectile);
-                    FieldInfo destination = typeof(Projectile).GetField("destination", BindingFlags.NonPublic | BindingFlags.Instance);
-                    var destinationVector = (Vector3)destination.GetValue(projectile);
-                    var velo = (destinationVector - originVector).normalized;
+                    var projectile = target as ProjectileCE;
+                    Vector3 velo = (projectile.Destination - projectile.origin).normalized;
 
                     FleckCreationData dataStatic = FleckMaker.GetDataStatic(target.DrawPos, parent.Map, Props.fleckDef, Rand.Range(0.5f, 1.5f));
                     dataStatic.rotation = target.Rotation.AsAngle;
                     dataStatic.targetSize = 0;
                     dataStatic.velocityAngle = velo.ToAngleFlat();
                     dataStatic.velocitySpeed = Rand.Range(target.def.projectile.speed / 2, target.def.projectile.speed);
-                    dataStatic.scale = dataStatic.velocitySpeed / 2;
+                    dataStatic.scale = Rand.Range(1, 3);
                     parent.Map.flecks.CreateFleck(dataStatic);
                 }
             }
@@ -116,7 +113,7 @@ namespace DMS
         {
             if (target is null) return false;
 
-            if (target is Projectile)
+            if (target is ProjectileCE)
             {
                 if (target.def.defName.Contains("Charge") || target.def.defName.Contains("Blaster") || target.def.defName.Contains("Blaster"))
                 {
@@ -131,7 +128,7 @@ namespace DMS
         {
             base.PostExposeData();
             Scribe_Values.Look(ref isActive, "isActive", true);
-            Scribe_Values.Look(ref tickRemain, "tickRemain", 100); 
+            Scribe_Values.Look(ref tickRemain, "tickRemain", 100);
         }
     }
     public class CompProperties_AntiBlasterSmoke : CompProperties
