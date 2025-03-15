@@ -6,12 +6,6 @@ using RimWorld.QuestGen;
 
 namespace DMS
 {
-    [DefOf]
-    internal static class QuestDefOf
-    {
-        public static FactionDef DMS_Army;
-        public static QuestScriptDef DMS_PromotionCeremony;
-    }
     [HarmonyPatch(typeof(RoyalTitleUtility), nameof(RoyalTitleUtility.GenerateBestowingCeremonyQuest), MethodType.Normal)]
     internal static class Patch_GenerateBestowingCeremonyQuest //確保生成的NPC具有正確的官銜陣營
     {

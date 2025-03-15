@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>DMS_ThreatReward_Raid_Joiner</defName>
+    <rootSelectionWeight>0.6</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <expireDaysRange>0.3</expireDaysRange>
+    <rootIncreasesPopulation>true</rootIncreasesPopulation>
+    <defaultCharity>true</defaultCharity>
+    <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityFulfilled_ThreatReward_Joiner</successHistoryEvent>
+    <failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityRefused_ThreatReward_Joiner</failedOrExpiredHistoryEvent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->通緝犯</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->一名叫做[joiner_nameDef]的[joiner_age]歲[joiner_title]設法聯繫上了你，稱自己被[enemyFaction_label]所迫害的走投無路，他願意加入你的殖民地並希望你能夠為其提供庇護。[joiner_relationInfo]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_GetWalkInSpot"/>
+
+        <li Class="DMS.QuestNode_FindDMSFaction">
+          <storeAs>enemyFaction</storeAs>
+        </li>
+
+        <li Class="QuestNode_RecordHistoryEvent" MayRequire="Ludeon.RimWorld.Ideology">
+          <historyDef>CharityFulfilled_ThreatReward_Joiner</historyDef>
+        </li>
+
+        <!-- 加入间谍 -->
+        <li Class="QuestNode_Sequence">
+          <nodes>
+            <li Class="QuestNode_Set">
+              <name>spyJoinedDelayTicks</name>
+              <value>$(randInt(600,1200))</value>
+            </li>
+            <li Class="QuestNode_Delay">
+              <delayTicks>$spyJoinedDelayTicks</delayTicks>
+              <node Class="QuestNode_Sequence">
+                <nodes>
+                  <li Class="QuestNode_SubScript">
+                    <def>DMS_Util_SpyJoinerWalkIn</def>
+                  </li>
+                  <li Class="QuestNode_SendSignals">
+                    <outSignals>JoinerArrived</outSignals>
+                  </li>
+                </nodes>
+              </node>
+            </li>
+          </nodes>
+        </li>
+
+        <li Class="QuestNode_Signal">
+          <inSignal>JoinerArrived</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Set">
+                <name>letterDelayTicks</name>
+                <value>$(randInt(1800,2400))</value>
+                <!-- <value>$(randInt(18000,48000))</value> -->
+              </li>
+              <!-- 发信要求分支 -->
+              <li Class="QuestNode_Delay">
+                <delayTicks>$letterDelayTicks</delayTicks>
+                <node Class="DMS.QuestNode_LetterToDoChoices">
+                  <title>这里写标题：</title>
+                  <letterText>这里写公文：</letterText>
+                  <inSignal>JoinerArrived</inSignal>
+                  <!-- 这里是信封延迟时间 -->
+                  <letterDelayTicks>1000</letterDelayTicks>
+                </node>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- 是：穿梭机接人 -->
+        <li Class="QuestNode_Signal">
+          <inSignal>LetterAccepted</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_SubScript">
+                <def>DMS_Util_TransportShip_Pickup</def>
+                <parms>
+                  <leaveDelayTicks>$(1*60000)</leaveDelayTicks>
+                  <requiredPawns>$joiner</requiredPawns>
+                </parms>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- 否或背叛：改好感度，打人 -->
+        <li Class="QuestNode_Signal">
+          <inSignal>LetterRejected</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Set">
+                <name>raidDelayTicks</name>
+                <value>$(roundToTicksRough(randInt(6000, 6000)))</value>
+              </li>
+              <li Class="QuestNode_Delay">
+                <delayTicks>$($raidDelayTicks-1)</delayTicks>
+                <node Class="DMS.QuestNode_ChangeRelation">
+                  <inSignal>$inSignal</inSignal>
+                  <factionStorAs>enemyFaction</factionStorAs>
+                  <chageNum>-200</chageNum>
+                </node>
+              </li>
+              <li Class="QuestNode_Delay">
+                <delayTicks>$raidDelayTicks</delayTicks>
+                <node Class="DMS.QuestNode_RaidWithLetterForTechSpy"/>
+              </li>
+              <li Class="QuestNode_Delay">
+                <delayTicks>$($raidDelayTicks+600)</delayTicks>
+                <node Class="QuestNode_End" />
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- 胜利条件 -->
+        <li Class="QuestNode_Signal">
+          <inSignal>Success</inSignal>
+          <!-- Give honor to accepter (and development points if applicable) -->
+          <node Class="DMS.QuestNode_DMS_GiveHonor">
+            <inSignal>Success</inSignal>
+            <factionStorAs>enemyFaction</factionStorAs>
+            <amount>8</amount>
+          </node>
+        </li>
+
+        <li Class="QuestNode_Signal">
+          <inSignal>Success</inSignal>
+          <node Class="QuestNode_End">
+            <outcome>Success</outcome>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <!-- 间谍加入 -->
+  <QuestScriptDef>
+    <defName>DMS_Util_SpyJoinerWalkIn</defName>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>rewardDescription->a [joiner_age]-year-old [joiner_title] named [joiner_nameDef] will arrive and join you. [joiner_relationInfo]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GeneratePawnRandDevelopmentStage">
+          <storeAs>joiner</storeAs>
+          <kindDef>SpaceRefugee</kindDef>
+          <childChance>0</childChance>
+          <adultChance>0.5</adultChance>
+        </li>
+        <li Class="QuestNode_SetChildCount">
+          <pawns>$joiner</pawns>
+        </li>
+        <li Class="QuestNode_PawnsArrive">
+          <pawns>$joiner</pawns>
+          <joinPlayer>true</joinPlayer>
+          <customLetterLabel>$customLetterLabel</customLetterLabel>
+          <customLetterText>$customLetterText</customLetterText>
+          <customLetterLabelRules>$customLetterLabelRules</customLetterLabelRules>
+          <customLetterTextRules>$customLetterTextRules</customLetterTextRules>
+          <isSingleReward>true</isSingleReward>
+          <rewardDetailsHidden>true</rewardDetailsHidden>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <!-- 新信封 -->
+  <LetterDef ParentName="CustomChoiceLetterBase">
+    <defName>QuestBranch</defName>
+    <color>(51,102,51)</color>
+    <letterClass>DMS.Choiceletter_Branch</letterClass>
+  </LetterDef>
+
+  <!-- 飞机 -->
+  <QuestScriptDef>
+    <defName>DMS_Util_TransportShip_Pickup</defName>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <!-- Generate the shuttle -->
+        <li Class="DMS.QuestNode_DMSShuttle">
+          <storeAs>pickupShipThing</storeAs>
+          <requiredPawns>$requiredPawns</requiredPawns>
+          <requiredItems>$requiredItems</requiredItems>
+          <requireColonistCount>$requireColonistCount</requireColonistCount>
+          <acceptColonists>$acceptColonists</acceptColonists>
+          <acceptChildren>$acceptChildren</acceptChildren>
+          <onlyAcceptColonists>$onlyAcceptColonists</onlyAcceptColonists>
+          <onlyAcceptHealthy>$onlyAcceptHealthy</onlyAcceptHealthy>
+          <owningFaction>$owningFaction</owningFaction>
+          <permitShuttle>$permitShuttle</permitShuttle>
+          <overrideMass>$overrideMass</overrideMass>
+          <minAge>$minAge</minAge>
+        </li>
+
+        <!-- Generate the transport ship -->
+        <li Class="QuestNode_GenerateTransportShip">
+          <def>Ship_Shuttle</def>
+          <shipThing>$pickupShipThing</shipThing>
+          <storeAs>pickUpShip</storeAs>
+        </li>
+
+        <!-- Add jobs -->
+        <li Class="QuestNode_AddShipJob_Arrive">
+          <transportShip>$pickUpShip</transportShip>
+          <shipJobStartMode>Instant</shipJobStartMode>
+        </li>
+
+        <li Class="DMS.QuestNode_DMSAddShipJob_Wait">
+          <jobDef>WaitTime</jobDef>
+          <ticks>$leaveDelayTicks</ticks>
+          <transportShip>$pickUpShip</transportShip>
+          <leaveImmediatelyWhenSatisfied>$leaveImmediatelyWhenSatisfied</leaveImmediatelyWhenSatisfied>
+          <sendAwayIfAllDespawned>$sendAwayIfAllDespawned</sendAwayIfAllDespawned>
+        </li>
+
+        <li Class="DMS.QuestNode_DMS_AddShipJob_FlyAway">
+          <transportShip>$pickUpShip</transportShip>
+        </li>
+
+        <!-- Send away on cleanup -->
+        <li Class="QuestNode_SendTransportShipAwayOnCleanup">
+          <transportShip>$pickUpShip</transportShip>
+          <unsatisfiedDropMode>All</unsatisfiedDropMode>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>
