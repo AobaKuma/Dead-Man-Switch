@@ -66,38 +66,31 @@ namespace DMS
                         interceptCount++;
                         if (Rand.Range(0f, 1f) > Props.chanceToFail)
                         {
-                            if (Props.interceptedTargetEffecterDef != null)
+                            Vector3 pos = thing2.DrawPos;
+                            FleckMaker.Static(Pawn.DrawPos + Rand.UnitVector3, Pawn.Map, FleckDefOf.ShotFlash, 3f);
+                            for (int j = 0; j < 3; j++)
                             {
-                               Effecter effecter = Props.interceptedTargetEffecterDef.Spawn(targetA: Pawn.Position, targetB: thing2.Position, Pawn.Map);
+                                FleckCreationData dataStatic = FleckMaker.GetDataStatic(Pawn.DrawPos, Pawn.Map, Props.fleckDef);
+                                dataStatic.spawnPosition = Vector3.Lerp(Pawn.DrawPos, pos, 0.2f);
+                                dataStatic.scale = Rand.Range(0.5f, 1);
+                                dataStatic.solidTimeOverride = 0f;
+                                var noise = Rand.Range(-15, 15);
+                                dataStatic.rotation = (dataStatic.spawnPosition - Pawn.DrawPos).AngleFlat() + noise;
+                                dataStatic.velocityAngle = (dataStatic.spawnPosition - Pawn.DrawPos).AngleFlat() + noise;
+                                dataStatic.velocitySpeed = 50f;
+                                Pawn.Map.flecks.CreateFleck(dataStatic);
                             }
-                            else
+                            for (int k = 0; k < 3; k++)
                             {
-                                Vector3 pos = thing2.DrawPos;
-                                FleckMaker.Static(Pawn.DrawPos + Rand.UnitVector3, Pawn.Map, FleckDefOf.ShotFlash, 3f);
-                                for (int j = 0; j < 3; j++)
-                                {
-                                    FleckCreationData dataStatic = FleckMaker.GetDataStatic(Pawn.DrawPos, Pawn.Map, Props.fleckDef);
-                                    dataStatic.spawnPosition = Vector3.Lerp(Pawn.DrawPos, pos, 0.2f);
-                                    dataStatic.scale = Rand.Range(0.5f, 1);
-                                    dataStatic.solidTimeOverride = 0f;
-                                    var noise = Rand.Range(-15, 15);
-                                    dataStatic.rotation = (dataStatic.spawnPosition - Pawn.DrawPos).AngleFlat() + noise;
-                                    dataStatic.velocityAngle = (dataStatic.spawnPosition - Pawn.DrawPos).AngleFlat() + noise;
-                                    dataStatic.velocitySpeed = 50f;
-                                    Pawn.Map.flecks.CreateFleck(dataStatic);
-                                }
-                                for (int k = 0; k < 3; k++)
-                                {
-                                    float angle = (Vector3.Lerp(Pawn.DrawPos, pos, 0.2f) - Pawn.DrawPos).AngleFlat() + Rand.Range(-90f, 90f);
+                                float angle = (Vector3.Lerp(Pawn.DrawPos, pos, 0.2f) - Pawn.DrawPos).AngleFlat() + Rand.Range(-90f, 90f);
 
-                                    FleckCreationData dataStatic = FleckMaker.GetDataStatic(Pawn.DrawPos, Pawn.Map, FleckDefOf.AirPuff);
-                                    dataStatic.spawnPosition = Pawn.DrawPos + CircleConst.GetAngle(angle) * 2f;
-                                    dataStatic.scale = Rand.Range(1f, 4.9f);
-                                    dataStatic.rotationRate = Rand.Range(-30f, 30f) / dataStatic.scale;
-                                    dataStatic.velocityAngle = angle;
-                                    dataStatic.velocitySpeed = 5 - dataStatic.scale;
-                                    Pawn.Map.flecks.CreateFleck(dataStatic);
-                                }
+                                FleckCreationData dataStatic = FleckMaker.GetDataStatic(Pawn.DrawPos, Pawn.Map, FleckDefOf.AirPuff);
+                                dataStatic.spawnPosition = Pawn.DrawPos + CircleConst.GetAngle(angle) * 2f;
+                                dataStatic.scale = Rand.Range(1f, 4.9f);
+                                dataStatic.rotationRate = Rand.Range(-30f, 30f) / dataStatic.scale;
+                                dataStatic.velocityAngle = angle;
+                                dataStatic.velocitySpeed = 5 - dataStatic.scale;
+                                Pawn.Map.flecks.CreateFleck(dataStatic);
                             }
                             DoIntercept(thing2 as Projectile);
                         }
@@ -199,10 +192,6 @@ namespace DMS
         public int activeTicks = 2400;
         public List<string> interceptThings = new List<string>();
         public List<string> ignoreThings = new List<string>();
-
-        public EffecterDef interceptedTargetEffecterDef = null;
-        public EffecterDef triggerEffecterDef = null;
-        public EffecterDef launchMuzzleEffecterDef = null;
 
         public CompProperties_ActiveProtectionSystem()
         {
