@@ -38,7 +38,12 @@ namespace DMS
             var xDifference = Math.Abs((xEdge - target.Cell.x) / (origin.x - target.Cell.x));
             var zDifference = Math.Abs((-target.Cell.z) / (origin.z - target.Cell.z));
 
+            string str = $"prev origin {origin}, target {target.Cell}, difference {xDifference},{zDifference}";
+
             var deltaZ = origin - target.Cell.ToVector3Shifted();
+
+            str += $", delta {deltaZ}";
+
             var deltaX = deltaZ * xDifference + target.Cell.ToVector3Shifted();
             deltaX.x = xEdge;
 
@@ -55,8 +60,15 @@ namespace DMS
             {
                 origin = deltaZ;
             }
-            Log.Message($"{deltaX.ToIntVec3()} {deltaZ.ToIntVec3()} {origin}");
-            base.Trigger();
+            str += $",x {deltaX.ToIntVec3()}, z {deltaZ.ToIntVec3()}, cur origin {origin}";
+            try
+            {
+                base.Trigger();
+            }
+            catch
+            {
+                Log.Error(str);
+            }
         }
     }
 
