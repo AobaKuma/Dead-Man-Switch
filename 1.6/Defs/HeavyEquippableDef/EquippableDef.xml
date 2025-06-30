@@ -81,10 +81,18 @@
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphractPhoenix</li>
 		</EquippableWithApparel>
 	</Fortified.HeavyEquippableDef>
+
+	<Fortified.HeavyEquippableDef>
+		<defName>TransHeavyAutomatroid</defName>
+		<EquippableBaseBodySize>2</EquippableBaseBodySize>
+		<EquippableByRace/>
+		<EquippableWithHediff/>
+		<EquippableWithApparel/>
+	</Fortified.HeavyEquippableDef>
     
 	<Fortified.HeavyEquippableDef>
 		<defName>HeavyAutomatroid</defName>
-		<EquippableBaseBodySize>2</EquippableBaseBodySize>
+		<EquippableBaseBodySize>2.5</EquippableBaseBodySize>
 		<EquippableByRace/>
 		<EquippableWithHediff/>
 		<EquippableWithApparel/>

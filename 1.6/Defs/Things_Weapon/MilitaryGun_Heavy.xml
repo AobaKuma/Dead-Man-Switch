@@ -67,7 +67,7 @@
 				<isAlternately>true</isAlternately>
 			</li>
 			<li Class="Fortified.HeavyEquippableExtension">
-				<EquippableDef>HeavyAutomatroid</EquippableDef>
+				<EquippableDef>TransHeavyAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -83,7 +83,7 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponHeavy</li>
+			<li>DMS_MechWeaponTransHeavy</li>
 			<li>A_SuppressWeaponHeavy</li>
 			<li>A_MG_Heavy</li>
 		</weaponTags>
@@ -138,7 +138,7 @@
 				<isAlternately>true</isAlternately>
 			</li>
 			<li Class="Fortified.HeavyEquippableExtension">
-				<EquippableDef>HeavyAutomatroid</EquippableDef>
+				<EquippableDef>TransHeavyAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -168,7 +168,7 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponHeavy</li>
+			<li>DMS_MechWeaponTransHeavy</li>
 			<li>A_SuppressWeaponHeavy</li>
 		</weaponTags>
 		<uiIconScale>0.5</uiIconScale>
@@ -222,7 +222,7 @@
 				<isAlternately>true</isAlternately>
 			</li>
 			<li Class="Fortified.HeavyEquippableExtension">
-				<EquippableDef>HeavyAutomatroid</EquippableDef>
+				<EquippableDef>TransHeavyAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -571,7 +571,7 @@
 				<isAlternately>true</isAlternately>
 			</li>
 			<li Class="Fortified.HeavyEquippableExtension">
-				<EquippableDef>HeavyAutomatroid</EquippableDef>
+				<EquippableDef>TransHeavyAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -667,7 +667,7 @@
 				<isAlternately>true</isAlternately>
 			</li>
 			<li Class="Fortified.HeavyEquippableExtension">
-				<EquippableDef>HeavyAutomatroid</EquippableDef>
+				<EquippableDef>TransHeavyAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
 	</ThingDef>
