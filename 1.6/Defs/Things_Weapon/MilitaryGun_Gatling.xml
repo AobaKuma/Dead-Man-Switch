@@ -210,7 +210,7 @@
 				<isAlternately>true</isAlternately>
 			</li>
 			<li Class="Fortified.HeavyEquippableExtension">
-				<EquippableDef>HeavyAutomatroid</EquippableDef>
+				<EquippableDef>TransHeavyAutomatroid</EquippableDef>
 			</li>
 			<li Class="CombatExtended.GunDrawExtension" MayRequire="ceteam.combatextended">
 				<CasingAngleOffset>110</CasingAngleOffset>
