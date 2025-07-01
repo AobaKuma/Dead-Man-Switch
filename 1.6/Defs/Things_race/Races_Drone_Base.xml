@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThinkTreeDef>
+    <defName>DMS_DroneConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+        <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+          <subNodes>
+            <li Class="ThinkNode_ConditionalOfPlayerFaction">
+              <subNodes>
+                <li Class="ThinkNode_Tagger">
+                  <tagToGive>DraftedOrder</tagToGive>
+                  <subNodes>
+                    <li Class="JobGiver_MoveToStandable" />
+                    <li Class="JobGiver_Orders" />
+                  </subNodes>
+                </li>
+                <li Class="ThinkNode_QueuedJob" />
+              </subNodes>
+            </li>
+            <!-- Keep distance -->
+            <li Class="JobGiver_FleeForDistance">
+              <enemyDistToFleeRange>2.9~7.9</enemyDistToFleeRange>
+              <fleeDistRange>13.5~20</fleeDistRange>
+            </li>
+            <li Class="JobGiver_AIFightEnemies">
+              <targetAcquireRadius>30</targetAcquireRadius>
+              <targetKeepRadius>72</targetKeepRadius>
+            </li>
+            <li Class="JobGiver_AIGotoNearestHostile" />
+            <li Class="Fortified.JobGiver_WanderNearPlatform" />
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <!-- 簡單來說是需要部屬的機械體，不需要機械師但沒法自己充電，能夠透過平台放置與回收。 -->
+  <!-- Base -->
+  <ThingDef Name="DMS_BaseDroidRace" ParentName="BaseMechanoid" Abstract="True">
+    <thingClass>Fortified.WeaponUsableMech</thingClass>
+    <statBases>
+      <MoveSpeed>4.7</MoveSpeed>
+      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+      <StaggerDurationFactor>0.5</StaggerDurationFactor>
+      <!-- <MarketValue>800</MarketValue> -->
+      <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+      <MechEnergyLossPerHP MayRequire="Ludeon.Rimworld.Biotech">0.2</MechEnergyLossPerHP>
+      <WorkSpeedGlobal MayRequire="Ludeon.Rimworld.Biotech">0.8</WorkSpeedGlobal>
+      <PsychicSensitivity>0</PsychicSensitivity>
+    </statBases>
+    <race>
+      <specialShadowData>
+        <volume>(0.3, 0.8, 0.4)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </specialShadowData>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>DMS_Mechanoid</thinkTreeMain>
+      <!-- 要改 -->
+      <nameGenerator>DMS_VanguardMechStandard</nameGenerator>
+
+      <soundCallIntervalRange>2000~4000</soundCallIntervalRange>
+      <soundCallIntervalFriendlyFactor>2</soundCallIntervalFriendlyFactor>
+      <soundCallIntervalAggressiveFactor>0.5</soundCallIntervalAggressiveFactor>
+      <thinkTreeConstant MayRequire="Ludeon.RimWorld.Biotech">DMS_DroneConstant</thinkTreeConstant>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+      <mechFixedSkillLevel>8</mechFixedSkillLevel>
+      <lifeStageAges>
+        <li>
+          <def>DMS_Automatroid_BrandNew</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Cleansweeper_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Cleansweeper_Death</soundDeath>
+          <soundCall>DMS_Pawn_Mech_Call</soundCall>
+        </li>
+        <li>
+          <def>DMS_Automatroid_Damaged</def>
+          <minAge>70</minAge>
+          <soundWounded>Pawn_Mech_Cleansweeper_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Cleansweeper_Death</soundDeath>
+          <soundCall>DMS_Pawn_Mech_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps Inherit="False">
+      <li Class="CompProperties_MechRepairable" />
+      <li Class="CompProperties_CanBeDormant" />
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpOnDamage>true</wakeUpOnDamage>
+        <wakeUpCheckRadius>30</wakeUpCheckRadius>
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>
+      <li Class="Fortified.CompProperties_Drone">
+        <returnToDraftPlatformJob>FFF_ReturnToDronePlatform</returnToDraftPlatformJob>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>50</Steel>
+    </butcherProducts>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <PawnKindDef Name="DMS_DroidKind" Abstract="True">
+    <defaultFactionDef>Mechanoid</defaultFactionDef>
+    <aiAvoidCover>true</aiAvoidCover>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <canStrip>false</canStrip>
+    <minGenerationAge MayRequire="Ludeon.RimWorld.Biotech">200</minGenerationAge>
+    <forceNormalGearQuality>true</forceNormalGearQuality>
+  </PawnKindDef>
+
+  <ThingDef ParentName="DMS_BaseDroidRace">
+    <defName>DMS_Mech_Hound</defName>
+    <label>hound</label>
+    <description>A small, deployable combat mechanoid</description>
+    <statBases>
+      <MoveSpeed>4.2</MoveSpeed>
+    </statBases>
+    <race>
+      <body>DMS_Hound</body>
+      <baseBodySize>0.75</baseBodySize>
+      <baseHealthScale>0.75</baseHealthScale>
+      <thinkTreeConstant>DMS_DroneConstant</thinkTreeConstant>
+      <baseHealthScale>1.3</baseHealthScale>
+    </race>
+    <comps>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>15000</totalPowerTicks>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>VerlingBird_Weapon</li>
+          <li>DMS_MechWeaponUltraLight</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>DMS_Flameblaster</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons>
+          <li MayRequire="ceteam.combatextended">Gun_BinocularsRadio</li>
+          <li>Gun_Autopistol</li>
+          <li>Gun_MachinePistol</li>
+        </BypassUsableWeapons>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+
+  <!-- 被通稱為真獸類(Eutheria)的早期機兵設計，這類非人形構造的機兵在電子控制系統尚不完善的冷戰時期中被廣泛的投入實驗性戰鬥使用。 -->
+  <PawnKindDef ParentName="DMS_DroidKind">
+    <defName>DMS_Mech_Hound</defName>
+    <label>hound</label>
+    <labelPlural>hounds</labelPlural>
+    <race>DMS_Mech_Hound</race>
+    <combatPower>10</combatPower>
+    <allowInMechClusters>false</allowInMechClusters>
+    <forceNoDeathNotification>true</forceNoDeathNotification>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/hound</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+          <shadowData>
+            <volume>(0.2, 0.3, 0.2)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/hound</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+          <shadowData>
+            <volume>(0.2, 0.3, 0.2)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>Pistol</li>
+    </weaponTags>
+  </PawnKindDef>
+</Defs>

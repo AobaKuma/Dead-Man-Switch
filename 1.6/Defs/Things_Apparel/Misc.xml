@@ -1,131 +1,153 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<!-- 夜視儀 -->
-	<ThingDef ParentName="ApparelArmorHelmetReconBase">
-		<defName>DMS_Apparel_Gunlink</defName>
-		<label>Night Vision Goggles</label>
-		<description>An optical enhancement device which amplifies existing light in low-light conditions and projects it through the display on to the users eyes. Compatible with most helmets and can be worn stand-alone.</description>
+	<!-- TODO 7/2 獵犬的，槳鳥的，蹄兔的，另外還有建築版本的要做。 -->
+	<ThingDef ParentName="ApparelNoQualityBase">
+		<defName>DMS_DronePlatform</defName>
+		<label>Drone pack</label>
+		<!-- 一種用於攜帶與部署遙控無人機的容器與組裝工具箱，能夠在戰鬥中快速部署一架獵犬無人機並作為遙控控制的基站來控制與回收無人機。 -->
+		<description>A container and assembly kit for carrying and deploying remote-controlled drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone.</description>
 		<graphicData>
-			<texPath>Things/Apparel/NightVisionGoggles/headgear_icon</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+		  <texPath>Things/Apparel/DronePack/Icon</texPath>
+		  <drawSize>1.2</drawSize>
+		  <graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<equippedStatOffsets>
-			<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
-		</equippedStatOffsets>
+		<techLevel>Industrial</techLevel>
+		<tradeTags>
+			<li>DMS_WeaponRanged</li>
+		</tradeTags>
 		<statBases>
-			<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
-			<ArmorRating_Blunt>0.08</ArmorRating_Blunt>
-			<ArmorRating_Heat>0.1</ArmorRating_Heat>
-			<Insulation_Cold>0</Insulation_Cold>
-			<Insulation_Heat>0</Insulation_Heat>
+		  <Mass>3.5</Mass>
+		  <EquipDelay>1</EquipDelay>
+		  <MarketValue>250</MarketValue>
+		  <MaxHitPoints>80</MaxHitPoints>
 		</statBases>
 		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<recipeUsers Inherit="False">
+				<li>TableMachining</li>
+			</recipeUsers>
+			<unfinishedThingDef>UnfinishedPack</unfinishedThingDef>
 			<researchPrerequisites>
-				<li MayRequire="Ludeon.RimWorld.Royalty">Gunlink</li>
-				<li>DMS_EquipmentAdvanced</li>
+				<li>DMS_UAVBasis</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<ComponentSpacer>1</ComponentSpacer>
-			<Plasteel>10</Plasteel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+			<Steel>60</Steel>
 		</costList>
+		<tickerType>Never</tickerType>
+		<thingCategories>
+		  <li>ApparelUtility</li>
+		</thingCategories>
 		<apparel>
-			<wornGraphicPath>Things/Apparel/NightVisionGoggles/headgear</wornGraphicPath>
-			<renderSkipFlags>
-				<li>Eyes</li>
-			</renderSkipFlags>
-			<countsAsClothingForNudity>false</countsAsClothingForNudity>
-			<bodyPartGroups Inherit="False">
-				<li>Eyes</li>
-			</bodyPartGroups>
-			<tags Inherit="False">
-				<li>DMS_NVG</li>
-			</tags>
-			<layers Inherit="False">
-				<li>EyeCover</li>
-			</layers>
+		  <countsAsClothingForNudity>false</countsAsClothingForNudity>
+		  <scoreOffset>4</scoreOffset>
+		  <careIfWornByCorpse>false</careIfWornByCorpse>
+		  <careIfDamaged>false</careIfDamaged>
+		  <ignoredByNonViolent>true</ignoredByNonViolent>
+		  <wearPerDay>0</wearPerDay>
+		  <bodyPartGroups>
+			<li>Waist</li>
+		  </bodyPartGroups>
+		  <layers>
+			<li>Belt</li>
+		  </layers>
+		  <wornGraphicPath>Things/Apparel/DronePack/apparel</wornGraphicPath>
+		  <wornGraphicData>
+			<renderUtilityAsPack>true</renderUtilityAsPack>
+			<north>
+			  <scale>0.75</scale>
+			  <offset>(-0.1,0)</offset>
+			  <hulk>
+				<offset>(-0.15,-0.10)</offset>
+			  </hulk>
+			  <fat>
+				<offset>(-0.15,-0.10)</offset>
+			  </fat>
+			</north>
+			<south>
+			  <scale>0.75</scale>
+			  <offset>(0.10,0.15)</offset>
+			  <hulk>
+				<offset>(0.15,0)</offset>
+			  </hulk>
+			  <fat>
+				<offset>(0.15,0)</offset>
+			  </fat>
+			</south>
+			<east>
+			  <offset>(-0.35,0)</offset>
+			  <scale>0.75</scale>
+			  <thin>
+				<offset>(0,0.1)</offset>
+			  </thin>
+			  <hulk>
+				<offset>(-0.15,0)</offset>
+			  </hulk>
+			  <fat>
+				<offset>(-0.15,0)</offset>
+			  </fat>
+			  <male>
+				<offset>(0,0.1)</offset>
+			  </male>
+			</east>
+			<west>
+			  <offset>(0.35,0)</offset>
+			  <scale>0.75</scale>
+			  <thin>
+				<offset>(0,0.1)</offset>
+			  </thin>
+			  <hulk>
+				<offset>(0.15,0)</offset>
+			  </hulk>
+			  <fat>
+				<offset>(0.15,0)</offset>
+			  </fat>
+			  <male>
+				<offset>(0,0.1)</offset>
+			  </male>
+			</west>
+		  </wornGraphicData>
 		</apparel>
-		<tradeTags>
-			<li>Clothing</li>
-		</tradeTags>
-		<thingSetMakerTags Inherit="False">
-			<li>RewardStandardLowFreq</li>
-		</thingSetMakerTags>
-	</ThingDef>
-
-	<!-- 匿蹤面罩 -->
-	<ThingDef ParentName="HatMakeableBase">
-		<defName>DMS_Apparel_StealthMask</defName>
-		<label>Stealth Mask</label>
-		<description>A piece of fabric which obscures the wearer's face.</description>
-		<techLevel>Industrial</techLevel>
-		<graphicData>
-			<texPath>Things/Apparel/StealthMask/headgear_icon</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.9</drawSize>
-		</graphicData>
-		<uiIconScale>1.15</uiIconScale>
-		<stuffCategories>
-			<li>Fabric</li>
-		</stuffCategories>
-		<costStuffCount>20</costStuffCount>
-		<statBases>
-			<WorkToMake>1400</WorkToMake>
-			<MaxHitPoints>100</MaxHitPoints>
-			<Mass>0.08</Mass>
-			<StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
-			<StuffEffectMultiplierInsulation_Cold>0.05</StuffEffectMultiplierInsulation_Cold>
-			<StuffEffectMultiplierInsulation_Heat>0.05</StuffEffectMultiplierInsulation_Heat>
-			<EquipDelay>1.5</EquipDelay>
-		</statBases>
-		<equippedStatOffsets>
-			<PainShockThreshold>0.05</PainShockThreshold>
-			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
-			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">0.35</ToxicEnvironmentResistance>
-		</equippedStatOffsets>
-		<apparel>
-			<bodyPartGroups>
-				<li>Mouth</li>
-				<li>Neck</li>
-			</bodyPartGroups>
-			<wornGraphicPath>Things/Apparel/StealthMask/headgear</wornGraphicPath>
-			<renderSkipFlags>
-				<li>None</li>
-				<li>Beard</li>
-			</renderSkipFlags>
-			<drawData>
-				<defaultData>
-					<layer>65</layer>
-				</defaultData>
-				<dataNorth>
-					<layer>-3</layer>
-				</dataNorth>
-			</drawData>
-			<countsAsClothingForNudity>false</countsAsClothingForNudity>
-			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
-			<canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
-			<layers>
-				<li>Overhead</li>
-			</layers>
-			<defaultOutfitTags>
-				<li>Soldier</li>
-			</defaultOutfitTags>
-			<forceEyesVisibleForRotations>
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-			</forceEyesVisibleForRotations>
-		</apparel>
-		<recipeMaker>
-			<recipeUsers>
-				<li>ElectricTailoringBench</li>
-				<li>HandTailoringBench</li>
-			</recipeUsers>
-			<researchPrerequisite>DMS_EquipmentBasis</researchPrerequisite>
-		</recipeMaker>
-		<tradeTags>
-			<li>BasicClothing</li>
-		</tradeTags>
-	</ThingDef>
-
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<smeltable>false</smeltable>
+		<burnableByRecipe>false</burnableByRecipe>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<verbs>
+			<li>
+				<commandIcon>Things/Apparel/DronePack/Icon</commandIcon>
+				<verbClass>Fortified.Verb_Deploy</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<spawnDef>DMS_Mech_Hound</spawnDef>
+				<warmupTime>2.2</warmupTime>
+				<range>3.9</range>
+				<soundCast>RocketswarmLauncher_Fire</soundCast>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+				<targetable>true</targetable>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<ai_IsWeapon>true</ai_IsWeapon>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+					<canTargetBuildings>true</canTargetBuildings>
+					<canTargetPawns>true</canTargetPawns>
+				</targetParams>
+				<forcedMissRadius>0</forcedMissRadius>
+			</li>
+		</verbs>
+		<comps>
+		  <li Class="CompProperties_ApparelReloadable">
+			<maxCharges>2</maxCharges>
+			<ammoDef>Steel</ammoDef>
+			<baseReloadTicks>2500</baseReloadTicks>
+			<ammoCountPerCharge>50</ammoCountPerCharge>
+			<hotKey>Misc4</hotKey>
+			<chargeNoun>drone</chargeNoun>
+			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		  </li>
+		  <li Class="CompProperties_Styleable"></li>
+		</comps>
+	  </ThingDef>
 </Defs>

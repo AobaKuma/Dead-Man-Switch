@@ -95,7 +95,7 @@
       <AncientGiantWheel>
         <position>(110, 0, 44)</position>
       </AncientGiantWheel>
-      <AncientCommsConsole>
+      <AncientCommsConsole MayRequire="ludeon.rimworld.ideology">
         <position>(60, 0, 28)</position>
       </AncientCommsConsole>
       <AncientShipBeacon>

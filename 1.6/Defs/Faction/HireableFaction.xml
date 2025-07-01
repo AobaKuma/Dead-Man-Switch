@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Defs>
-    <VFECore.Misc.HireableFactionDef MayRequire="oskarpotocki.vanillafactionsexpanded.core">
+    <VEF.Planet.HireableFactionDef MayRequire="oskarpotocki.vanillafactionsexpanded.core">
         <defName>DMS_Army</defName>
         <label>Colonial Mercenaries</label>
         <description>A group of organized mercenaries comprised of mostly non-commissioned officers and amateur militiamen. They'll take on any job from cargo escort to clearing insect hives, and if you can afford it they won't mind taking down a fortress with some heavy firepower.</description>
@@ -13,5 +13,5 @@
             <li>DMS_Soldier</li>
         </pawnKinds>
         <referencedFaction>DMS_Army</referencedFaction>
-    </VFECore.Misc.HireableFactionDef>
+    </VEF.Planet.HireableFactionDef>
 </Defs>

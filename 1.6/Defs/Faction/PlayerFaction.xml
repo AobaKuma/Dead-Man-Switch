@@ -183,7 +183,7 @@
                         <li>DMS_LightTower</li>
                     </maps>
                 </li>
-                <li Class="VFECore.ScenPart_ForcedFactionGoodwill" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
+                <li Class="VEF.Factions.ScenPart_ForcedFactionGoodwill" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
                     <factionDef>DMS_Army</factionDef>
                     <affectHiddenFactions>True</affectHiddenFactions>
                     <affectStartingGoodwill>True</affectStartingGoodwill>

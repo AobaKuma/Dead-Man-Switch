@@ -64,7 +64,6 @@
           <subNodes>
             <li Class="ThinkNode_ConditionalNotFormingCaravan">
               <subNodes>
-
                 <!-- Keep charging if we're already charging -->
                 <li Class="ThinkNode_ConditionalRecharging">
                   <subNodes>
@@ -140,6 +139,17 @@
                 </li>
 
               </subNodes>
+            </li>
+          </subNodes>
+        </li>
+
+        <!-- Non player controlled mechs fight nearby hostiles -->
+        <li Class="ThinkNode_ConditionalPlayerControlledMech">
+          <invert>true</invert>
+          <subNodes>
+            <li Class="JobGiver_AIFightEnemies">
+              <targetAcquireRadius>45</targetAcquireRadius>
+              <targetKeepRadius>60</targetKeepRadius>
             </li>
           </subNodes>
         </li>

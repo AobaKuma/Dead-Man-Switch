@@ -352,7 +352,7 @@
 			<canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
 		</apparel>
 		<modExtensions>
-			<li Class="VFECore.ApparelExtension" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
+			<li Class="VEF.Apparels.ApparelExtension" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
 				<pawnCapacityMinLevels>
 					<li>
 						<capacity>Moving</capacity>
