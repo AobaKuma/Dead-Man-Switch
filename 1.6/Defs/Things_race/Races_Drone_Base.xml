@@ -127,10 +127,12 @@
     <forceNormalGearQuality>true</forceNormalGearQuality>
   </PawnKindDef>
 
+
+  <!-- 被通稱為真獸類(Eutheria)的早期機兵設計，這類非人形構造的機兵在電子控制系統尚不完善的冷戰時期中被廣泛的投入各類代理人戰爭中使用。 -->
   <ThingDef ParentName="DMS_BaseDroidRace">
-    <defName>DMS_Mech_Hound</defName>
+    <defName>DMS_Drone_Hound</defName>
     <label>hound</label>
-    <description>A small, deployable combat mechanoid</description>
+    <description>A deployable combat robot with capacity to using small firearms. commonly known as Eutherians, these non-humanoid robots were widely used in various proxy wars during the Cold War when electronic control systems were not yet perfect.</description>
     <statBases>
       <MoveSpeed>4.2</MoveSpeed>
     </statBases>
@@ -139,7 +141,6 @@
       <baseBodySize>0.75</baseBodySize>
       <baseHealthScale>0.75</baseHealthScale>
       <thinkTreeConstant>DMS_DroneConstant</thinkTreeConstant>
-      <baseHealthScale>1.3</baseHealthScale>
     </race>
     <comps>
       <li Class="CompProperties_MechPowerCell">
@@ -168,13 +169,11 @@
     </modExtensions>
   </ThingDef>
 
-
-  <!-- 被通稱為真獸類(Eutheria)的早期機兵設計，這類非人形構造的機兵在電子控制系統尚不完善的冷戰時期中被廣泛的投入實驗性戰鬥使用。 -->
   <PawnKindDef ParentName="DMS_DroidKind">
-    <defName>DMS_Mech_Hound</defName>
+    <defName>DMS_Drone_Hound</defName>
     <label>hound</label>
     <labelPlural>hounds</labelPlural>
-    <race>DMS_Mech_Hound</race>
+    <race>DMS_Drone_Hound</race>
     <combatPower>10</combatPower>
     <allowInMechClusters>false</allowInMechClusters>
     <forceNoDeathNotification>true</forceNoDeathNotification>
@@ -199,6 +198,91 @@
           <shadowData>
             <volume>(0.2, 0.3, 0.2)</volume>
           </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>Pistol</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <ThingDef ParentName="DMS_BaseDroidRace">
+    <defName>DMS_Drone_VerlingBrid</defName>
+    <label>Verling bird</label>
+    <description>A quad-drone built for reconnaissance. It is quite fragile in combat but moves extremely fast. It can be equipped with a small-caliber gun or grenade to provide combat capabilities.</description>
+    <statBases>
+      <MoveSpeed>8.2</MoveSpeed>
+    </statBases>
+    <race>
+      <body>DMS_Chop</body>
+      <baseBodySize>0.25</baseBodySize>
+      <baseHealthScale>0.5</baseHealthScale>
+      <mechWeightClass>Light</mechWeightClass>
+      <thinkTreeConstant>DMS_DroneConstant</thinkTreeConstant>
+    </race>
+    <comps>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>15000</totalPowerTicks>
+      </li>
+      <li MayRequire="oskarpotocki.vanillafactionsexpanded.core" Class="VEF.AnimalBehaviours.CompProperties_Floating">
+        <canCrossWater>true</canCrossWater>
+        <isFloater>true</isFloater>
+      </li>
+      <li Class="Fortified.CompProperties_FlyingFleckThrower">
+        <burstOffsetRange>(1,1.5)</burstOffsetRange>
+        <fleckOnSoil>DustPuff</fleckOnSoil>
+        <fleckOnSnow>AirPuff</fleckOnSnow>
+        <activeAnimation>DMS_Hover</activeAnimation>
+        <sizeRange>(1,1.2)</sizeRange>
+        <speedRange>(0.75,1)</speedRange>
+        <throwRate>1</throwRate>
+        <throwTick>5</throwTick>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>VerlingBird_Weapon</li>
+          <li>DMS_MechWeaponUltraLight</li>
+          <li>PLA_RocketLauncherSingleUse</li>
+          <li>CE_AI_Grenade</li>
+          <li>DMS_Flameblaster</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons>
+          <li MayRequire="ceteam.combatextended">Gun_BinocularsRadio</li>
+        </BypassUsableWeapons>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="DMS_DroidKind">
+    <defName>DMS_Drone_VerlingBrid</defName>
+    <label>Verling bird</label>
+    <labelPlural>Verling boids</labelPlural>
+    <race>DMS_Drone_VerlingBrid</race>
+    <combatPower>5</combatPower>
+    <allowInMechClusters>false</allowInMechClusters>
+    <forceNoDeathNotification>true</forceNoDeathNotification>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/chad</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/chad</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
         </bodyGraphicData>
       </li>
     </lifeStages>

@@ -191,7 +191,7 @@
       <li>ITab_Pawn_Log</li>
     </inspectorTabs>
     <race>
-      <body>DMS_Chop</body>                                                      <!--身體(另外的def)-->
+      <body>DMS_Chop</body>
       <baseBodySize>0.25</baseBodySize>
       <baseHealthScale>0.5</baseHealthScale>
       <mechWeightClass>Light</mechWeightClass>

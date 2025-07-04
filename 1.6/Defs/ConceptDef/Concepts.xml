@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>DMS_WeaponSystems</defName>
+    <label>Weapon system</label>
+    <helpText>很顯然你獲得了一架可自定義武器的機械體。要注意這些機械體可裝備的武器通常具有限制，你能夠在infocard中的weapon system屬性中查閱所有支援於該機械體的武器。</helpText>
+  </ConceptDef>
+  
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>DMS_Drone</defName>
+    <label>Drone</label>
+    <helpText>Drone是一種不依賴於機械師的早期機械體類型，它們依賴於遙控平台與操作者的控制並具有有限的續航電量，你可以命令Drone回到平台內來補充平台的使用次數並讓Drone得到修復與更換電池。</helpText>
+  </ConceptDef>
+
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>DMS_HeavyWeapon</defName>
+    <label>Heavy weapon</label>
+    <helpText>很顯然你獲得了一把重量十足的武器。這種武器並不是設計直接給人類使用的，因此你可能需要一個裝備有外骨骼或者仿生體的人才能夠裝備這類武器。具體裝備條件可以在武器的infocard中查閱</helpText>
+  </ConceptDef>
+</Defs>
