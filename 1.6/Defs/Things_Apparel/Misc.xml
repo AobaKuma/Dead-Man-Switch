@@ -7,19 +7,19 @@
 		<!-- 一種用於攜帶與部署遙控無人機的容器與組裝工具箱，能夠在戰鬥中快速部署一架獵犬無人機並作為遙控控制的基站來控制與回收無人機。 -->
 		<description>A container and assembly kit for carrying and deploying remote-controlled drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone.</description>
 		<graphicData>
-		  <texPath>Things/Apparel/DronePack/Icon</texPath>
-		  <drawSize>1.2</drawSize>
-		  <graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Apparel/DronePack/Icon</texPath>
+			<drawSize>1.2</drawSize>
+			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<techLevel>Industrial</techLevel>
 		<tradeTags>
 			<li>DMS_WeaponRanged</li>
 		</tradeTags>
 		<statBases>
-		  <Mass>3.5</Mass>
-		  <EquipDelay>1</EquipDelay>
-		  <MarketValue>250</MarketValue>
-		  <MaxHitPoints>80</MaxHitPoints>
+			<Mass>3.5</Mass>
+			<EquipDelay>1</EquipDelay>
+			<MarketValue>250</MarketValue>
+			<MaxHitPoints>80</MaxHitPoints>
 		</statBases>
 		<recipeMaker>
 			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -40,65 +40,65 @@
 		</costList>
 		<tickerType>Never</tickerType>
 		<thingCategories>
-		  <li>ApparelUtility</li>
+			<li>ApparelUtility</li>
 		</thingCategories>
 		<apparel>
-		  <countsAsClothingForNudity>false</countsAsClothingForNudity>
-		  <scoreOffset>4</scoreOffset>
-		  <careIfWornByCorpse>false</careIfWornByCorpse>
-		  <careIfDamaged>false</careIfDamaged>
-		  <ignoredByNonViolent>true</ignoredByNonViolent>
-		  <wearPerDay>0</wearPerDay>
-		  <bodyPartGroups>
-			<li>Waist</li>
-		  </bodyPartGroups>
-		  <layers>
-			<li>Belt</li>
-		  </layers>
-		  <wornGraphicPath>Things/Apparel/DronePack/apparel</wornGraphicPath>
-		  <wornGraphicData>
-			<renderUtilityAsPack>true</renderUtilityAsPack>
-			<north>
-			  <offset>(0,0)</offset>
-			  <scale>.9</scale>
-			</north>
-			<south>
-			  <offset>(0,0.15)</offset>
-			  <scale>.9</scale>
-			</south>
-			<east>
-			  <offset>(-0.35,0.1)</offset>
-			  <scale>.8</scale>
-			  <thin>
-				<offset>(0.05,0)</offset>
-			  </thin>
-			  <hulk>
-				<offset>(0,0)</offset>
-			  </hulk>
-			  <fat>
-				<offset>(0,0)</offset>
-			  </fat>
-			  <male>
-				<offset>(0,0)</offset>
-			  </male>
-			</east>
-			<west>
-			  <offset>(0.35,0.1)</offset>
-			  <scale>.8</scale>
-			  <thin>
-				<offset>(-0.05,0)</offset>
-			  </thin>
-			  <hulk>
-				<offset>(0,0)</offset>
-			  </hulk>
-			  <fat>
-				<offset>(0,0)</offset>
-			  </fat>
-			  <male>
-				<offset>(0,0)</offset>
-			  </male>
-			</west>
-		  </wornGraphicData>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+			<scoreOffset>4</scoreOffset>
+			<careIfWornByCorpse>false</careIfWornByCorpse>
+			<careIfDamaged>false</careIfDamaged>
+			<ignoredByNonViolent>true</ignoredByNonViolent>
+			<wearPerDay>0</wearPerDay>
+			<bodyPartGroups>
+				<li>Waist</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Belt</li>
+			</layers>
+			<wornGraphicPath>Things/Apparel/DronePack/apparel</wornGraphicPath>
+			<wornGraphicData>
+				<renderUtilityAsPack>true</renderUtilityAsPack>
+				<north>
+					<offset>(0,0)</offset>
+					<scale>.9</scale>
+				</north>
+				<south>
+					<offset>(0,0.15)</offset>
+					<scale>.9</scale>
+				</south>
+				<east>
+					<offset>(-0.35,0.1)</offset>
+					<scale>.8</scale>
+					<thin>
+						<offset>(0.05,0)</offset>
+					</thin>
+					<hulk>
+						<offset>(0,0)</offset>
+					</hulk>
+					<fat>
+						<offset>(0,0)</offset>
+					</fat>
+					<male>
+						<offset>(0,0)</offset>
+					</male>
+				</east>
+				<west>
+					<offset>(0.35,0.1)</offset>
+					<scale>.8</scale>
+					<thin>
+						<offset>(-0.05,0)</offset>
+					</thin>
+					<hulk>
+						<offset>(0,0)</offset>
+					</hulk>
+					<fat>
+						<offset>(0,0)</offset>
+					</fat>
+					<male>
+						<offset>(0,0)</offset>
+					</male>
+				</west>
+			</wornGraphicData>
 		</apparel>
 		<resourceReadoutPriority>Middle</resourceReadoutPriority>
 		<smeltable>false</smeltable>
@@ -110,32 +110,28 @@
 				<verbClass>Fortified.Verb_Deploy</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<spawnDef>DMS_Drone_Hound</spawnDef>
-				<warmupTime>2.2</warmupTime>
-				<range>3.9</range>
-				<soundCast>RocketswarmLauncher_Fire</soundCast>
+				<soundCast>ThrowGrenade</soundCast>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
-				<targetable>true</targetable>
+				<warmupTime>3.0</warmupTime>
+				<targetable>false</targetable>
 				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
 				<ai_IsWeapon>true</ai_IsWeapon>
 				<targetParams>
-					<canTargetLocations>true</canTargetLocations>
-					<canTargetBuildings>true</canTargetBuildings>
-					<canTargetPawns>true</canTargetPawns>
+					<canTargetSelf>true</canTargetSelf>
 				</targetParams>
-				<forcedMissRadius>0</forcedMissRadius>
 			</li>
 		</verbs>
 		<comps>
-		  <li Class="CompProperties_ApparelReloadable">
-			<maxCharges>2</maxCharges>
-			<ammoDef>Steel</ammoDef>
-			<baseReloadTicks>2500</baseReloadTicks>
-			<ammoCountPerCharge>50</ammoCountPerCharge>
-			<hotKey>Misc4</hotKey>
-			<chargeNoun>drone</chargeNoun>
-			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-		  </li>
-		  <li Class="CompProperties_Styleable"></li>
+			<li Class="CompProperties_ApparelReloadable">
+				<maxCharges>2</maxCharges>
+				<ammoDef>Steel</ammoDef>
+				<baseReloadTicks>2500</baseReloadTicks>
+				<ammoCountPerCharge>50</ammoCountPerCharge>
+				<hotKey>Misc4</hotKey>
+				<chargeNoun>drone</chargeNoun>
+				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+			</li>
+			<li Class="CompProperties_Styleable"></li>
 		</comps>
-	  </ThingDef>
+	</ThingDef>
 </Defs>

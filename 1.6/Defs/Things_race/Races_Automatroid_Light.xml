@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <!-- 游隼 -->
   <ThingDef Name="BaseMechRace_Falcon" ParentName="BaseAutomatroidRace" Abstract="True">
     <statBases>
       <MoveSpeed>8</MoveSpeed>
@@ -60,7 +61,6 @@
     </keyframeParts>
   </AnimationDef>
 
-  <!-- 游隼 -->
   <ThingDef ParentName="BaseMechRace_Falcon">
     <defName>DMS_Mech_Falcon</defName>
     <label>Falcon</label>
@@ -100,7 +100,7 @@
     <label>falcon</label>
     <race>DMS_Mech_Falcon</race>
     <isFighter>true</isFighter>
-    <combatPower>40</combatPower>
+    <combatPower>20</combatPower>
     <maxPerGroup>30</maxPerGroup>
     <lifeStages>
       <li>
@@ -162,7 +162,7 @@
     <label>noctula</label>
     <race>DMS_Mech_Noctula</race>
     <isFighter>true</isFighter>
-    <combatPower>100</combatPower>
+    <combatPower>40</combatPower>
     <maxPerGroup>30</maxPerGroup>
     <lifeStages>
       <li>
@@ -188,4 +188,80 @@
     </abilities>
   </PawnKindDef>
 
+  <!-- 蹄兔 -->
+  <ThingDef Name="BaseMechRace_Hyrax" ParentName="BaseAutomatroidRace" Abstract="True">
+    <statBases>
+      <MoveSpeed>4</MoveSpeed>
+      <ArmorRating_Sharp>0.3</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>0.5</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>0.8</ArmorRating_Heat>  <!--能抗-->
+    </statBases>
+    <race>
+      <body>DMS_Caterpillar</body>
+      <baseBodySize>0.8</baseBodySize>
+      <baseHealthScale>0.5</baseHealthScale>
+      <mechWeightClass>Light</mechWeightClass>
+    </race>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseMechRace_Hyrax">
+    <defName>DMS_Mech_Hyrax</defName>
+    <label>hyrax</label>
+    <description>A lightweight tracked platform, this type of automatic weapon can be usually said to be the first practical product developed by any killer machine manufacturer.</description>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <defaultWeapon>DMS_SubMachineGunMounted</defaultWeapon>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.1</rotationSmoothTime>
+        <drawData>
+          <defaultData>
+            <pivot>(0.5,0.5)</pivot>
+          </defaultData>
+          <dataEast>
+            <offset>(0.5,0,-0.5)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.75,0,0.6)</offset>
+            <rotationOffset>180</rotationOffset>
+          </dataWest>
+          <dataSouth>
+            <offset>(-0.6,0,-0.5)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(0.6,0,0.9)</offset>
+          </dataNorth>
+        </drawData>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_Mech_Hyrax</defName>
+    <label>hyrax</label>
+    <race>DMS_Mech_Hyrax</race>
+    <isFighter>true</isFighter>
+    <combatPower>70</combatPower>
+    <maxPerGroup>10</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/hyrax</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/hyrax</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>RiotLMG</li>
+    </weaponTags>
+  </PawnKindDef>
 </Defs>

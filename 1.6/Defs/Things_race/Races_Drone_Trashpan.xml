@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 一種輕量化的居家掃地機器人，基於固定的充電基站來控制與分配任務。 -->
+  <ThingDef ParentName="DMS_BaseDroidRace">
+    <defName>DMS_Drone_Trashpan</defName>
+    <label>trashpan</label>
+    <description>A lightweight home sweeping robot that is controlled and assigned tasks based on a fixed charging base station.</description>
+    <statBases>
+      <CleaningSpeed>0.85</CleaningSpeed>
+      <MoveSpeed>3.7</MoveSpeed>
+      <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+    </statBases>
+    <race>
+      <body>DMS_TrashBin</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <thinkTreeConstant>DMS_DroneConstant</thinkTreeConstant>
+      <mechEnabledWorkTypes>
+        <li>Cleaning</li>
+      </mechEnabledWorkTypes>
+    </race>
+    <comps>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>30000</totalPowerTicks>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>25</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="DMS_DroidKind">
+    <defName>DMS_Drone_Trashpan</defName>
+    <label>trashpan</label>
+    <labelPlural>trashpans</labelPlural>
+    <race>DMS_Drone_Trashpan</race>
+    <isFighter>false</isFighter>
+    <combatPower>5</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/trashPan</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/trashPan</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>

@@ -1,5 +1,8 @@
 {
-    "rwxml.paths.workshopMods": "",
-    "rwxml.paths.rimWorldManaged": "",
-    "rwxml.diagnostics.enabled": true
+    "rwxml.paths.workshopMods": "D:\\Steam\\steamapps\\workshop\\content\\294100",
+    "rwxml.paths.rimWorldManaged": "D:\\Steam\\steamapps\\common\\RimWorld\\RimWorldWin64_Data\\Managed",
+    "rwxml.diagnostics.enabled": true,
+    "rwxml.paths.localMods": "D:\\Steam\\steamapps\\common\\RimWorld\\Mods",
+    "rwxml.paths.rimWorldData": "D:\\Steam\\steamapps\\common\\RimWorld\\Data",
+    "rwxml.paths.rimWorld": "D:\\Steam\\steamapps\\common\\RimWorld"
 }

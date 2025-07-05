@@ -13,6 +13,11 @@
       <li>Manipulation</li>
     </requiredCapacities>
     <prioritizeSustains>true</prioritizeSustains>
+    <fixedBillGiverDefs>
+      <li>DMS_TableArtifuscle</li>
+      <li>DMS_LabReactor</li>
+      <li>DMS_LabFurnace</li>
+    </fixedBillGiverDefs>
   </WorkGiverDef>
 
   <WorkGiverDef>
@@ -22,7 +27,6 @@
     <workType>Crafting</workType>
     <priorityInType>140</priorityInType>
     <fixedBillGiverDefs>
-      <li>DMS_TableArtifuscle</li>
       <li>DMS_TableMachinePrinter</li>
       <li>DMS_ReactionChamber</li>
       <li>DMS_Furnace</li>

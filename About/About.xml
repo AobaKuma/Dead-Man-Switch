@@ -15,12 +15,20 @@
 		<li>1.5</li>
 		<li>1.6</li>
 	</supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>ludeon.rimworld.biotech</packageId>
+			<displayName>Biotech</displayName>
+		</li>
+	</modDependencies>
 	<modDependenciesByVersion>
 		<v1.4>
-			<li>
-				<packageId>ludeon.rimworld.biotech</packageId>
-				<displayName>Biotech</displayName>
-			</li>
 			<li>
 				<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
 				<displayName>Vanilla Expanded Framework</displayName>
@@ -30,10 +38,6 @@
 		</v1.4>
 		<v1.5>
 			<li>
-				<packageId>ludeon.rimworld.biotech</packageId>
-				<displayName>Biotech</displayName>
-			</li>
-			<li>
 				<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
 				<displayName>Vanilla Expanded Framework</displayName>
 				<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
@@ -41,17 +45,6 @@
 			</li>
 		</v1.5>
 		<v1.6>
-			<li>
-				<packageId>brrainz.harmony</packageId>
-				<displayName>Harmony</displayName>
-				<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-				<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
-			</li>
-			<li>
-				<displayName>Biotech</displayName>
-				<downloadUrl>https://store.steampowered.com/app/1826140/RimWorld__Biotech/</downloadUrl>
-				<packageId>Ludeon.Rimworld.Biotech</packageId>
-			</li>
 			<li>
 				<packageId>AOBA.Framework</packageId>
 				<displayName>Fortified Feature Framework</displayName>
@@ -66,5 +59,8 @@
 		<li>ceteam.combatextended</li>
 		<li>vanillaracesexpanded.android</li>
 	</loadAfter>
-	<description>Millennia earlier, as the threat of archotech war machines, pirates and awry bio-organic weapons arise. Nara Industries initiated a project of semi-automated war-machines, which aimed at creating a legion of war-machines with low technology and maintenance requirements to aid humans in all galaxy to the war against all those threats.</description>
+	<description>Millennia earlier, as the threat of archotech war machines, pirates and awry
+		bio-organic weapons arise. Nara Industries initiated a project of semi-automated
+		war-machines, which aimed at creating a legion of war-machines with low technology and
+		maintenance requirements to aid humans in all galaxy to the war against all those threats.</description>
 </ModMetaData>

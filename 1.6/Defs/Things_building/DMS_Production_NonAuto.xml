@@ -109,7 +109,6 @@
 
     </ThingDef>
 
-
     <!-- DMS_LabFurnace -->
     <ThingDef ParentName="DMS_BenchBase">
         <defName>DMS_LabFurnace</defName>
@@ -175,5 +174,4 @@
         </modExtensions>
 
     </ThingDef>
-
 </Defs>

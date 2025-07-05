@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 被通稱為真獸類(Eutheria)的早期機兵設計，這類非人形構造的機兵在電子控制系統尚不完善的冷戰時期中被廣泛的投入各類代理人戰爭中使用。 -->
+  <ThingDef ParentName="DMS_BaseDroidRace">
+    <defName>DMS_Drone_Hound</defName>
+    <label>hound</label>
+    <description>A deployable combat robot with capacity to using small firearms. commonly known as Eutherians, these non-humanoid robots were widely used in various proxy wars during the Cold War when electronic control systems were not yet perfect.</description>
+    <statBases>
+      <MoveSpeed>4.2</MoveSpeed>
+    </statBases>
+    <race>
+      <body>DMS_Hound</body>
+      <baseBodySize>0.75</baseBodySize>
+      <baseHealthScale>0.75</baseHealthScale>
+      <thinkTreeConstant>DMS_DroneConstant</thinkTreeConstant>
+    </race>
+    <comps>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>30000</totalPowerTicks>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>VerlingBird_Weapon</li>
+          <li>DMS_MechWeaponUltraLight</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>DMS_Flameblaster</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons>
+          <li MayRequire="ceteam.combatextended">Gun_BinocularsRadio</li>
+          <li>Gun_Autopistol</li>
+          <li>Gun_MachinePistol</li>
+        </BypassUsableWeapons>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="DMS_DroidKind">
+    <defName>DMS_Drone_Hound</defName>
+    <label>hound</label>
+    <labelPlural>hounds</labelPlural>
+    <race>DMS_Drone_Hound</race>
+    <combatPower>10</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/hound</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+          <shadowData>
+            <volume>(0.2, 0.3, 0.2)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/hound</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+          <shadowData>
+            <volume>(0.2, 0.3, 0.2)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>Pistol</li>
+    </weaponTags>
+  </PawnKindDef>
+</Defs>
