@@ -78,6 +78,40 @@
   </ThingDef>
 
 
+  <!-- hound charge station -->
+  <ThingDef ParentName="DMS_BaseDronePlatform">
+    <defName>DMS_Hound_Base</defName>
+    <label>Hound Station</label>
+    <description>A station for storaging and recharging hound units.</description>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>20</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="Fortified.CompProperties_MechPlatform">
+        <gizmoIconPath>UI/Ability/Drone_Send_dog</gizmoIconPath>
+        <fixedIngredient>Steel</fixedIngredient>
+        <costPerPawn>50</costPerPawn>
+        <cooldownTicks>5000</cooldownTicks>
+        <maxPawnsToSpawn>2</maxPawnsToSpawn>
+        <startingIngredientCount>50</startingIngredientCount>
+        <maxIngredientCount>200</maxIngredientCount>
+        <spawnPawnKind>DMS_Drone_Hound</spawnPawnKind>
+      </li>
+    </comps>
+  </ThingDef>
+
+
   <ThingDef ParentName="BaseMechCharger">
     <defName>DMS_Recharger</defName>
     <label>Automatroid Recharger</label>
