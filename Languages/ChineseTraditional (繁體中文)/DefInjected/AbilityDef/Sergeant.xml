@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: backup support -->
+  <!-- EN: Request Reinforcements -->
   <DMS_CallDrop.label>士兵增援</DMS_CallDrop.label>
-  <!-- EN: Send a 3 Soldiers reinforcement-request to an automated industrial facility located in orbit, and the central command will automatically deduct the reinforcement quota based on the identification code on the transceiver. -->
+  <!-- EN: Send a reinforcement request to an automated industrial facility in orbit, reinforcements will be dispatched based on the identification code of the transceiver. -->
   <DMS_CallDrop.description>向位於同步軌道上的全自動工業設施發出增援三架士兵型機兵的請求。殖民艦隊中控指揮將會空投支援單位，並根據T/R收發器上的辨識代碼扣除年度免審核增援配額。</DMS_CallDrop.description>
   
-  <!-- EN: backup support -->
+  <!-- EN: Request Air Support -->
   <DMS_CallDrop_Falcon.label>游隼增援</DMS_CallDrop_Falcon.label>
-  <!-- EN: Send a 3 Falcons-reinforcement request to an automated industrial facility located in orbit, and the central command will automatically deduct the reinforcement quota based on the identification code on the transceiver. -->
+  <!-- EN: Send a reinforcement request for three Falcons to an automated industrial facility in orbit, reinforcements will be dispatched based on the identification code of the transceiver. -->
   <DMS_CallDrop_Falcon.description>向位於同步軌道上的全自動工業設施發出增援三架游隼型機兵的請求。殖民艦隊中控指揮將會空投支援單位，並根據T/R收發器上的辨識代碼扣除年度免審核增援配額。</DMS_CallDrop_Falcon.description>
   
 </LanguageData>

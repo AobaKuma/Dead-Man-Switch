@@ -3,12 +3,12 @@
   
   <!-- EN: supported bodysize -->
   <DMS_HeavyGears.label>支援體型</DMS_HeavyGears.label>
-  <!-- EN: required pawn body size to be equipped with this weapon. -->
+  <!-- EN: Required pawn body size to equip this weapon. -->
   <DMS_HeavyGears.description>殖民者至少要具有相當程度的體型才能夠裝備這個武器</DMS_HeavyGears.description>
   
   <!-- EN: supported weapons -->
   <DMS_UsableWeapons.label>武器系統</DMS_UsableWeapons.label>
-  <!-- EN: useable weapons that supported by OS of this model. -->
+  <!-- EN: Usable weapons that are supported by the OS of this model. -->
   <DMS_UsableWeapons.description>這架機兵操作系統所支持的武器</DMS_UsableWeapons.description>
   
 </LanguageData>

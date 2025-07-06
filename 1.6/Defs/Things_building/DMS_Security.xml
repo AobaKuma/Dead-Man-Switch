@@ -285,7 +285,7 @@
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Sentry</defName>
     <label>Sentry turret</label>
-    <description>一種快速部屬的一次性遙控砲塔，展開後可以持續使用12小時左右。並在能量用光之後自動關機。這類裝備通常被部屬在巷戰環境中來伏擊進入街道的敵人來阻滯對方的突襲。</description>
+    <description>A quick-deployed, disposable remote-controlled turret that can be used continuously for about 12 hours after being deployed. It will automatically shut down after the energy is used up. These type of equipments are usually deployed in urban combat environments to ambush enemies.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Turrets/Tripod</texPath>
@@ -484,7 +484,6 @@
       <WorkToBuild>7500</WorkToBuild>
       <Beauty>-2</Beauty>
       <ShootingAccuracyTurret>1.00</ShootingAccuracyTurret>
-      <!-- <Mass>10000</Mass> -->
     </statBases>
     <comps>
       <li Class="CompProperties_Explosive">

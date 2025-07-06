@@ -18,7 +18,19 @@
     <li>subject_gerund->thinking about the blurred line between organic and mechanic</li>
     <li>subject_gerund->investigating hidden truth the Colonial Fleet tried hard to conceal behind this technology</li>
   -->
-  <DMS_Artifuscle.generalRules.rulesStrings>TODO</DMS_Artifuscle.generalRules.rulesStrings>
+  <DMS_Artifuscle.generalRules.rulesStrings>
+    <li>subject->生物-机器共生</li>
+    <li>subject->神经和线路</li>
+    <li>subject->生物机械</li>
+    <li>subject_story->深入分析了这项技术，并收到殖民舰队的严厉警告</li>
+    <li>subject_story->透过对此技术进行逆向工程，在有限条件下实现了生命的人工合成</li>
+    <li>subject_story->在闪耀世界完成了地球太空时代的历史收集</li>
+    <li>subject_story->参与了Ordo Historia对殖民舰队的调查研究计划</li>
+    <li>subject_story->在下一代战争前收集了大量历史文献</li>
+    <li>subject_gerund->透过研究古代资料库重新发明了这项技术</li>
+    <li>subject_gerund->思考有机与机械之间模糊的界线</li>
+    <li>subject_gerund->调查殖民舰队极力掩盖的科技背后的真相</li>
+  </DMS_Artifuscle.generalRules.rulesStrings>
   
   <!-- EN: Automatroid Basis -->
   <DMS_Automatroid.label>机兵基础</DMS_Automatroid.label>
@@ -37,7 +49,19 @@
     <li>subject_gerund->reverse engineering from technical data from the decrypt data.</li>
     <li>subject_gerund->reviewing the technical relevance between mechanoids and automatroids</li>
   -->
-  <DMS_Automatroid.generalRules.rulesStrings>TODO</DMS_Automatroid.generalRules.rulesStrings>
+  <DMS_Automatroid.generalRules.rulesStrings>
+    <li>subject->自主武器</li>
+    <li>subject->杀手机器人</li>
+    <li>subject->自动机器人</li>
+    <li>subject_story->预测大量不受管制的巡飞武器将造成严重后果</li>
+    <li>subject_story->探讨了预训练模式对机械自动化的贡献</li>
+    <li>subject_story->描述了人与无人机的关系不再只是工具与使用者的关系</li>
+    <li>subject_story->谴责西元2026年拒绝旨在规范杀手机器人发展的条约</li>
+    <li>subject_story->在下一代战争前收集了大量历史文献</li>
+    <li>subject_gerund->参与自主机器人的技术迭代</li>
+    <li>subject_gerund->从解密资料的技术资料进行逆向工程</li>
+    <li>subject_gerund->回顾机械人与自动人之间的技术相关性</li>
+  </DMS_Automatroid.generalRules.rulesStrings>
   
   <!-- EN: Battle Friends -->
   <DMS_BattleFrame.label>战斗伙伴</DMS_BattleFrame.label>
@@ -70,16 +94,16 @@
     <li>subject_gerund->exploring human possibilities and how to avoid repeating past mistakes of mechanoid again</li>
   -->
   <DMS_DeadMansSwitch.generalRules.rulesStrings>
-    <li>subject->停機問題</li>
-    <li>subject->未決方案</li>
-    <li>subject->執行悖論</li>
-    <li>subject_story->引用了演算法工程師的概述：「機器無法判斷自己能否在限定的時間內得到結果。而人類也無法判斷，但人類有拒絕判斷的權利。」</li>
-    <li>subject_story->在一處閃耀世界完成了對地球前太空時代的歷史資料收集</li>
-    <li>subject_story->參與了學士團對殖​​民艦隊的調查研究計畫</li>
-    <li>subject_story->收集了關於次世代戰爭前大量的歷史文獻</li>
-    <li>subject_gerund->透過研究古代資料庫重新發掘這項技術</li>
-    <li>subject_gerund->思考生命的意義與人類的孤獨</li>
-    <li>subject_gerund->探索人類的可能性及如何避免再次犯下機械軍團的錯誤</li>
+    <li>subject->停机问题</li>
+    <li>subject->未决方案</li>
+    <li>subject->执行悖论</li>
+    <li>subject_story->引用了演算法工程师的概述：「机器无法判断自己能否在限定的时间内得到结果。而人类也无法判断，但人类有拒绝判断的权利。」</li>
+    <li>subject_story->在一处闪耀世界完成了对地球前太空时代的历史资料收集</li>
+    <li>subject_story->参与了学士团对殖​​民舰队的调查研究计划</li>
+    <li>subject_story->收集了关于次世代战争前大量的历史文献</li>
+    <li>subject_gerund->透过研究古代资料库重新发掘这项技术</li>
+    <li>subject_gerund->思考生命的意义与人类的孤独</li>
+    <li>subject_gerund->探索人类的可能性及如何避免再次犯下机械军团的错误</li>
   </DMS_DeadMansSwitch.generalRules.rulesStrings>
   
   <!-- EN: Defense Equipment -->
@@ -135,17 +159,17 @@
     <li>subject_gerund->investigating hidden truth the Colonial Fleet tried hard to conceal behind this technology</li>
   -->
   <DMS_Hypothesis.generalRules.rulesStrings>
-    <li>subject->簡而言之的假設</li>
-    <li>subject->解決方案</li>
-    <li>subject->濕件機關</li>
-    <li>subject_story->引用了演算法工程師簡言之的概述：「生命的意義在於攜帶著自身迭代的信息，基因和性狀的信息，對環境的反應，以及對這世間一切的無意識的思考」</li>
-    <li>subject_story->深入分析了這項技術，並收到了來自殖民艦隊的嚴厲警告</li>
-    <li>subject_story->透過逆向工程技術在有限條件下實現了生命的人工合成</li>
-    <li>subject_story->了解了一種透過生物培養批量生產濕件的方法</li>
-    <li>subject_story->收集了下一代戰爭前大量的歷史文獻</li>
-    <li>subject_gerund->逃避無數殖民艦隊的追捕與暗殺</li>
-    <li>subject_gerund->思考有機與機械之間逐漸模糊的界線</li>
-    <li>subject_gerund->調查殖民艦隊極力掩蓋的封存科技</li>
+    <li>subject->简而言之的假设</li>
+    <li>subject->解决方案</li>
+    <li>subject->湿件机关</li>
+    <li>subject_story->引用了演算法工程师简言之的概述：「生命的意义在于携带着自身迭代的信息，基因和性状的信息，对环境的反应，以及对这世间一切的无意识的思考」</li>
+    <li>subject_story->深入分析了这项技术，并收到了来自殖民舰队的严厉警告</li>
+    <li>subject_story->透过逆向工程技术在有限条件下实现了生命的人工合成</li>
+    <li>subject_story->了解了一种透过生物培养批量生产湿件的方法</li>
+    <li>subject_story->收集了下一代战争前大量的历史文献</li>
+    <li>subject_gerund->逃避无数殖民舰队的追捕与暗杀</li>
+    <li>subject_gerund->思考有机与机械之间逐渐模糊的界线</li>
+    <li>subject_gerund->调查殖民舰队极力掩盖的封存科技</li>
   </DMS_Hypothesis.generalRules.rulesStrings>
   
   <!-- EN: Legion -->
@@ -195,12 +219,17 @@
     <li>subject_gerund->testing the defensive performance of different materials against emerging thermal weapons</li>
   -->
   <DMS_Material.generalRules.rulesStrings>
+    <li>subject->新兴材料</li>
     <li>subject->先进材料</li>
-    <li>subject_story->总结了如何透过科学方法来提纯自然界中的绝大部分元素</li>
-    <li>subject_story->透过科学方法可以计算出完美的材料</li>
-    <li>subject_story->展示了如何透过重力晶化反应来凝结出屈服强度高达2400兆帕的星舰合金</li>
-    <li>subject_story->归纳了透过需求导向总结的完美配方比</li>
-    <li>subject_gerund->计算工业生产用的合金配方</li>
+    <li>subject->军用级材料</li>
+    <li>subject_story->完成了化学元素周期表</li>
+    <li>subject_story->透过中子数计算高强度材料的合金材料配比</li>
+    <li>subject_story->描述了高压环境对材料的影响</li>
+    <li>subject_story->总结了无重力条件下金属晶相预测</li>
+    <li>subject_story->进行无重力金属加工实验，为材料科学做出贡献</li>
+    <li>subject_gerund->改良生产流程</li>
+    <li>subject_gerund->计算完美的材料配比</li>
+    <li>subject_gerund->测试不同材料对新兴热武器的防御性能</li>
   </DMS_Material.generalRules.rulesStrings>
   
   <!-- EN: Mecha Gear -->
@@ -251,10 +280,16 @@
   -->
   <DMS_Mechlink.generalRules.rulesStrings>
     <li>subject->集群控制</li>
+    <li>subject->集群行为的和谐</li>
+    <li>subject->宏大机械化理论</li>
     <li>subject_story->认为发展无人机的自主性是脱离人与机械工具式关系来解放其潜力的重要关键</li>
     <li>subject_story->根据一架回收的萨卡拉瓦织鸟重新复现了这项技术</li>
     <li>subject_story->透过人工诱导的灵能反应来实现远距离的抗干扰控制</li>
+    <li>subject_story->参与了Ordo Historia对殖民舰队的调查研究计划</li>
+    <li>subject_story->发现由精神感应控制的机器会保留操作者的部分意识</li>
     <li>subject_gerund->回收古代自动兵器</li>
+    <li>subject_gerund->对古代进行逆向工程技术</li>
+    <li>subject_gerund->探讨集体性与自主性的关系</li>
   </DMS_Mechlink.generalRules.rulesStrings>
   
   <!-- EN: Organ Replacement -->
@@ -309,7 +344,19 @@
     <li>subject_gerund->helping every disabled person to stand up again</li>
     <li>subject_gerund->providing battlefield medical guidance in the Colonial Fleet Humanitarian Support Organization</li>
   -->
-  <DMS_Prosthetic.generalRules.rulesStrings>TODO</DMS_Prosthetic.generalRules.rulesStrings>
+  <DMS_Prosthetic.generalRules.rulesStrings>
+    <li>subject->神经接取</li>
+    <li>subject->人工神经</li>
+    <li>subject->双足机械</li>
+    <li>subject_story->意识到战场上人体的脆弱</li>
+    <li>subject_story->透过将机械残骸转化为义肢，为残疾人士提供医疗服务</li>
+    <li>subject_story->感叹人类必须改变自身以适应日益机械化的战争</li>
+    <li>subject_story->在战场遗址清理时因炸弹爆炸而失去大部分身体部位</li>
+    <li>subject_story->在下一代战争前收集了大量历史文献</li>
+    <li>subject_gerund->让边缘世界的每个残障人士都能负担得起义肢手术</li>
+    <li>subject_gerund->帮助每个残障者重新站起来</li>
+    <li>subject_gerund->在殖民舰队人道支援组织提供战场医疗指导</li>
+  </DMS_Prosthetic.generalRules.rulesStrings>
   
   <!-- EN: Peacekeepers -->
   <DMS_Ronin.label>维和机兵</DMS_Ronin.label>

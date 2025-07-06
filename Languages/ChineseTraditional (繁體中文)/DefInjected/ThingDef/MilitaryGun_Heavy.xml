@@ -98,6 +98,17 @@
   <DMS_Gun_DragoonRifle.tools.muzzle-1.label>槍口</DMS_Gun_DragoonRifle.tools.muzzle-1.label>
   <DMS_Gun_DragoonRifle.verbs.Verb_ShootCE.label>龍騎兵重步槍</DMS_Gun_DragoonRifle.verbs.Verb_ShootCE.label>
   
+  <!-- EN: MK44 BushMasterII AutoCannon -->
+  <DMS_Gun_MK44_Autocannon.label>大毒蛇機砲</DMS_Gun_MK44_Autocannon.label>
+  <!-- EN: The MK44 Bushmaster II autocannon is a low-rate-of-fire (200 RPM), high-power, and high-precision weapon. It can be equipped on medium-sized mechanoids and fires 30×173mm NATO ammunition, effectively filling the role of a precision burst-fire autocannon. -->
+  <DMS_Gun_MK44_Autocannon.description>MK44大毒蛇II型機砲是一款低射速（200 發/分）、高威力、高精準度的武器。它可以裝備在中型機械體上，發射30×173毫米北約彈藥，有效地充當了一門精確點射自動砲的角色。</DMS_Gun_MK44_Autocannon.description>
+  <!-- EN: stock -->
+  <DMS_Gun_MK44_Autocannon.tools.stock.label>槍托</DMS_Gun_MK44_Autocannon.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_MK44_Autocannon.tools.barrel.label>槍管</DMS_Gun_MK44_Autocannon.tools.barrel.label>
+  <!-- EN: MK44 BushMasterII AutoCannon -->
+  <DMS_Gun_MK44_Autocannon.verbs.Verb_Shoot.label>大毒蛇機砲</DMS_Gun_MK44_Autocannon.verbs.Verb_Shoot.label>
+  
   <!-- EN: Recoilless Rifle -->
   <DMS_Gun_Recoilless.label>無後坐力炮</DMS_Gun_Recoilless.label>
   <!-- EN: A recoilless rifle designed to counter heavy-armored targets at range.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->

@@ -1,42 +1,47 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: flashbang barrage -->
+  <!-- EN: Flashbang barrage -->
   <DMS_FlashLauncher.label>曲射閃光彈</DMS_FlashLauncher.label>
-  <!-- EN: launch an indirect-fired flashbang grenade to stun the enemy to cover the retreat or assault. -->
+  <!-- EN: Launch an indirect-fired flashbang to stun the enemy. -->
   <DMS_FlashLauncher.description>透過腰間的曲射榴彈筒來拋射閃光彈使敵人短暫致盲，以便安全撤退或讓隊友進行突擊。</DMS_FlashLauncher.description>
   
-  <!-- EN: bionic longjump -->
+  <!-- EN: Bionic Longjump -->
   <DMS_LongJump.label>爆發跳躍</DMS_LongJump.label>
   <!-- EN: Jump to a distant location using bionic muscles. -->
   <DMS_LongJump.description>使用人工肌肉的爆發性進行一次長距離的跳躍</DMS_LongJump.description>
   <!-- EN: jump -->
   <DMS_LongJump.verbProperties.label>跳躍</DMS_LongJump.verbProperties.label>
   
-  <!-- EN: launch missile -->
+  <!-- EN: Launch Missile -->
   <DMS_MissileLauncher.label>攻頂導彈</DMS_MissileLauncher.label>
-  <!-- EN: launch a long range top-down attack missile to destory enemies, the missile takes long time to reload. -->
+  <!-- EN: Launch a long range guided missile with a high explosive payload. -->
   <DMS_MissileLauncher.description>發射一枚製導導彈從上而下的遠程曲射打擊目標，這種導彈十分致命但需要一定的時間來復裝。</DMS_MissileLauncher.description>
   
-  <!-- EN: fission overload -->
+  <!-- EN: Fission Overload -->
   <DMS_NuclearOverload.label>臨界超載</DMS_NuclearOverload.label>
-  <!-- EN: In order to avoid environmental pollution caused by nuclear battery leakage after the body is severely damaged, the fission battery can be manually overloaded to react the nuclear fuel in an instant, and the external manifestation is a nuclear explosion. \n\nSuch explosion is enough to clean up the unreacted nuclear material, including the surrounding areas. everything of... -->
+  <!-- EN: In order to avoid catastrophic environmental pollution or capture by the enemy, the fission battery can be manually forced into a meltdown. \n\nA meltdown will cause all unreacted nuclear material to atomize instantl, causing a violent explosive reaction. -->
   <DMS_NuclearOverload.description>為避免機體重創後核電池洩漏導致的環境汙染，裂變電池能夠手動過載來在瞬間將核燃料反應，而外在表現來說就是核爆，這樣的爆炸足以將尚未反應的核物質連帶周圍的一切清理一空。</DMS_NuclearOverload.description>
-  <!-- EN: overload the fission battery will result a large scale explosion and destroy this unit. \n\nare you sure to do this? -->
+  <!-- EN: Overloading the fission battery will create a devastating explosion and destroy this unit. \n\nAre you sure to do this? -->
   <DMS_NuclearOverload.confirmationDialogText>將裂變電池超載將產生一場規模十足的爆炸並導致該單位徹底損失。\n\n你確定要這麼做嗎?</DMS_NuclearOverload.confirmationDialogText>
   <!-- EN: fission overload -->
   <DMS_NuclearOverload.verbProperties.label>臨界超載</DMS_NuclearOverload.verbProperties.label>
   
-  <!-- EN: self-repair -->
+  <!-- EN: Self-Repair -->
   <DMS_RepairMode.label>維修模式</DMS_RepairMode.label>
-  <!-- EN: initial self-repair mode to rebuild missing parts by electroactive memory metal, thus all sensors will temporarily work disabled to prevent electrical damage. -->
+  <!-- EN: Initialize self-repair mode to rebuild missing parts, all sensors will temporarily be disabled to prevent electrical damage. -->
   <DMS_RepairMode.description>啟動自我修復協議來透過電感應記憶合金來重組損毀的機械部位，所有感測器將暫時停用以防止修復過程中造成的二次損壞。\n\n要注意對於遭受重大受損的機體而言啟動本協議具有一定的停機危險性。</DMS_RepairMode.description>
   <!-- EN: initialize self-repair mode -->
   <DMS_RepairMode.verbProperties.label>啟動維修模式</DMS_RepairMode.verbProperties.label>
   
-  <!-- EN: particle smoke barrage -->
+  <!-- EN: Particle Smoke Barrage -->
   <DMS_SmokeLauncher.label>反電荷煙幕彈</DMS_SmokeLauncher.label>
-  <!-- EN: launch an anti-charged weapon particle smole emitter to nullify incoming charged ammunition in short time. -->
+  <!-- EN: Launch an antiparticle smoke screen to interfere with incoming charged munitions. -->
   <DMS_SmokeLauncher.description>發射載有反電荷粒子的煙霧彈，能夠在短時間內有效的攔截範圍內的電荷彈。</DMS_SmokeLauncher.description>
+  
+  <!-- EN: strafing -->
+  <DMS_Strafing.label>掃射</DMS_Strafing.label>
+  <!-- EN: Concentrate firepower to conduct a strafing attack in a specific direction. -->
+  <DMS_Strafing.description>集中火力對特定方向進行掃射攻擊。</DMS_Strafing.description>
   
 </LanguageData>

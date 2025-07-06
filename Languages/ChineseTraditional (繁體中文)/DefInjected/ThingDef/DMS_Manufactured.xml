@@ -24,19 +24,14 @@
   <ComponentControlChip.label>集群控制晶片組</ComponentControlChip.label>
   <!-- EN: A chipset for remote machine controllers and the core of industrial machines. -->
   <ComponentControlChip.description>一種用於遠程機器控制器的晶片組，是工業機器的核心。</ComponentControlChip.description>
-  <!-- EN: Analyze the cluster control chipsets -->
+  
+  <!-- UNUSED -->
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateDescString>分析集群控制晶片組，從晶片隨附的安裝碟片學習看起來十分過時的工程繪圖軟體，並透過輸出工程檔案來研究如何將控制晶片應用到我們現有的技術中。</ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateDescString>
-  <!-- EN: Analyze... -->
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateLabelString>分析…</ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateLabelString>
-  <!-- EN: By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetter>通過研究 {PARENT_label} ， {STUDIER_labelShort} 獲得了研究項目 {RESEARCH} 所需的見解。\n\n您的研究人員現在可以使用研究平臺開始研究如何實際使用該技術。</ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetter>
-  <!-- EN: Cluster control chipsets studied: {RESEARCH} unlocked -->
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetterLabel>已研究 {PARENT_label} ： {RESEARCH} 已解鎖</ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
-  <!-- EN: Choose who should analyze this -->
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.guiLabelString>選擇負責分析的人員</ComponentControlChip.comps.CompAnalyzableUnlockResearch.guiLabelString>
-  <!-- EN: Can be analyzed by a colonist. -->
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.inspectString>可以由殖民者進行分析。</ComponentControlChip.comps.CompAnalyzableUnlockResearch.inspectString>
-  <!-- EN: Analyze the cluster control chipsets -->
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.jobString>分析集群控制晶片組</ComponentControlChip.comps.CompAnalyzableUnlockResearch.jobString>
   
   <!-- EN: Fire Control System -->

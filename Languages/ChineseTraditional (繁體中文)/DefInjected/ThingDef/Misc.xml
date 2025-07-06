@@ -1,14 +1,26 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: Night Vision Goggles -->
-  <DMS_Apparel_Gunlink.label>夜視鏡</DMS_Apparel_Gunlink.label>
-  <!-- EN: An optical enhancement device which amplifies existing light in low-light conditions and projects it through the display on to the users eyes. Compatible with most helmets and can be worn stand-alone. -->
-  <DMS_Apparel_Gunlink.description>夜間作戰用的輔助瞄準裝置，可與頭盔一同配戴。</DMS_Apparel_Gunlink.description>
+  <!-- EN: hound drone pack -->
+  <DMS_Apparel_PackHound.label>獵犬部署背包</DMS_Apparel_PackHound.label>
+  <!-- EN: A container and assembly kit for carrying and deploying remote-controlled  hound drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone. -->
+  <DMS_Apparel_PackHound.description>用於在戰鬥中攜帶和部署獵犬無人機的大號背包，並能夠作為遙控基站來指揮和回收無人機。</DMS_Apparel_PackHound.description>
+  <!-- EN: drone -->
+  <DMS_Apparel_PackHound.comps.CompApparelReloadable.chargeNoun>無人機</DMS_Apparel_PackHound.comps.CompApparelReloadable.chargeNoun>
+  <!-- EN: on cooldown -->
+  <DMS_Apparel_PackHound.comps.CompApparelReloadable.cooldownGerund>準備中</DMS_Apparel_PackHound.comps.CompApparelReloadable.cooldownGerund>
+  <!-- EN: hound drone pack -->
+  <DMS_Apparel_PackHound.verbs.Verb_Deploy.label>部署獵犬</DMS_Apparel_PackHound.verbs.Verb_Deploy.label>
   
-  <!-- EN: Stealth Mask -->
-  <DMS_Apparel_StealthMask.label>匿蹤面罩</DMS_Apparel_StealthMask.label>
-  <!-- EN: A piece of fabric which obscures the wearer's face. -->
-  <DMS_Apparel_StealthMask.description>用於掩飾穿戴者面部特徵的迷彩布料，通常用於特殊部隊。</DMS_Apparel_StealthMask.description>
+  <!-- EN: verlingbrid drone belt -->
+  <DMS_Apparel_PackVerling.label>槳鳥部署腰帶</DMS_Apparel_PackVerling.label>
+  <!-- EN: A remote controller and assembly module for deploying verlingbrid drones, capable deploying drones in combat and acting as a remote-controlled base station to control the drones. -->
+  <DMS_Apparel_PackVerling.description>用於在戰鬥中攜帶和部署槳鳥無人機的遙控器和組裝模組，並能夠作為遙控基站來指揮和回收無人機。</DMS_Apparel_PackVerling.description>
+  <!-- EN: drone -->
+  <DMS_Apparel_PackVerling.comps.CompApparelReloadable.chargeNoun>無人機</DMS_Apparel_PackVerling.comps.CompApparelReloadable.chargeNoun>
+  <!-- EN: on cooldown -->
+  <DMS_Apparel_PackVerling.comps.CompApparelReloadable.cooldownGerund>準備中</DMS_Apparel_PackVerling.comps.CompApparelReloadable.cooldownGerund>
+  <!-- EN: verlingbrid drone belt -->
+  <DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>部署槳鳥</DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>
   
 </LanguageData>

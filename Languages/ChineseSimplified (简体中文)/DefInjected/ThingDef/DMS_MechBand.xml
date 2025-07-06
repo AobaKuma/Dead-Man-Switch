@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-  
-  <!-- EN: Process Array -->
-  <DMS_BandNode.label>处理阵列</DMS_BandNode.label>
-  <!-- EN: An array machine processes the received signal and directs it to a specific mechanitor. This adds 4 bandwidth to that mechanitor's total, allowing them to control more mechanoids.\n\nOnce a process array is constructed, it can be quickly tuned to a mechanitor. However, returning a band node to a different mechanitor takes significantly longer.\n\nThis Device follows the N.A.C.S. protocol so only Mechlinks with following the protocol can receieve the service. -->
-  <DMS_BandNode.description>阵列机处理接收到的信号。这些信号是指向特定机械师的方向。这将为机械师的总频宽增加4个频宽，使他们能够控制更多机械体。\n\n一旦构建了处理阵列，就可以将其快速调整到该机械师。然而，将宽带节点重新调谐到不同的机械师需要更长的时间。</DMS_BandNode.description>
-  
-</LanguageData>

@@ -40,15 +40,12 @@
   <!-- UNUSED -->
   <DMS_Gun_Kord.verbs.Verb_ShootCE.label>Kord</DMS_Gun_Kord.verbs.Verb_ShootCE.label>
   
-  <!-- EN: Tunguska -->
-  <DMS_Gun_Tunguska.label>2K22通古斯卡</DMS_Gun_Tunguska.label>
-  <!-- EN: A weapon system including two 2A38 autoaconnons and eight missile launchers. -->
-  <DMS_Gun_Tunguska.description>一種四聯裝彈炮一體防空系統，通常是安裝在地面載具平臺上提供機動防空火力而存在的，具有八具導彈發射器能夠在必要條件下發射威力十足的防禦導彈。</DMS_Gun_Tunguska.description>
-  <!-- EN: Tunguska -->
-  <DMS_Gun_Tunguska.verbs.Verb_Shoot.label>通古斯卡</DMS_Gun_Tunguska.verbs.Verb_Shoot.label>
-  
-  <!-- UNUSED -->
-  <DMS_Gun_Tunguska.verbs.Verb_ShootCE.label>2K22通古斯卡</DMS_Gun_Tunguska.verbs.Verb_ShootCE.label>
+  <!-- EN: MK44 BushMaster-II -->
+  <DMS_Gun_MK44_Navy.label>MK44 大毒蛇-II</DMS_Gun_MK44_Navy.label>
+  <!-- EN: The 30x173mm MK44 Bushmaster II autocannon, despite its modest 200 RPM rate of fire, achieves reliable defensive performance through good accuracy and adequate lethality. -->
+  <DMS_Gun_MK44_Navy.description>大毒蛇-II自動加農炮，雖然射速僅為200RPM，但憑藉良好的精度和足夠的殺傷力實現了可靠的防禦性能。</DMS_Gun_MK44_Navy.description>
+  <!-- EN: MK44 BushMaster-II -->
+  <DMS_Gun_MK44_Navy.verbs.Verb_Shoot.label>MK44 大毒蛇-II</DMS_Gun_MK44_Navy.verbs.Verb_Shoot.label>
   
   <!-- EN: 2B9M vasilek -->
   <DMS_Gun_Vasilek.label>2B9M矢車菊</DMS_Gun_Vasilek.label>
@@ -82,6 +79,17 @@
   <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
   <DMS_Turret_GateKeeper.comps.CompRefuelable.outOfFuelMessage>無法射擊: 需要替換炮管</DMS_Turret_GateKeeper.comps.CompRefuelable.outOfFuelMessage>
   
+  <!-- EN: MK44 BushMaster-II -->
+  <DMS_Turret_MK44_Navy.label>大毒蛇</DMS_Turret_MK44_Navy.label>
+  <!-- EN: The 30x173mm MK44 Bushmaster II autocannon, despite its modest 200 RPM rate of fire, achieves reliable defensive performance through good accuracy and adequate lethality. -->
+  <DMS_Turret_MK44_Navy.description>大毒蛇II型機炮，發射30×173毫米北約彈藥，雖然射速僅為200RPM，但憑藉良好的精度和足夠的殺傷力實現了可靠的防禦性能，有效地充當一門精確點射自動砲的角色。</DMS_Turret_MK44_Navy.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_MK44_Navy.comps.CompRefuelable.fuelGizmoLabel>炮管耐久度</DMS_Turret_MK44_Navy.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_MK44_Navy.comps.CompRefuelable.fuelLabel>剩余耐久度</DMS_Turret_MK44_Navy.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
+  <DMS_Turret_MK44_Navy.comps.CompRefuelable.outOfFuelMessage>無法射擊: 需要替換炮管</DMS_Turret_MK44_Navy.comps.CompRefuelable.outOfFuelMessage>
+  
   <!-- EN: Okhotnik -->
   <DMS_Turret_Okhotnik.label>獵手</DMS_Turret_Okhotnik.label>
   <!-- EN: An ancient design of a remote controlled turret widely used on armored vehicles and mech armor platforms. -->
@@ -93,16 +101,14 @@
   <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
   <DMS_Turret_Okhotnik.comps.CompRefuelable.outOfFuelMessage>無法射擊: 需要替換炮管</DMS_Turret_Okhotnik.comps.CompRefuelable.outOfFuelMessage>
   
-  <!-- EN: Tunguska -->
-  <DMS_Turret_Tunguska.label>通古斯卡</DMS_Turret_Tunguska.label>
-  <!-- EN: A remote-controlled turret composed of two 2A38 autoaconnon and eight missile launchers. Due to its cheap maintenance and modification costs, it is commonly seen in colonial fleet outposts in rim worlds. -->
-  <DMS_Turret_Tunguska.description>一種彈炮一體防空炮塔，被安裝在固定基座上提供一定程度的火力，能夠發射致命的空地兩用導彈來精確打擊遠距離外的目標。</DMS_Turret_Tunguska.description>
-  <!-- EN: Barrel durability -->
-  <DMS_Turret_Tunguska.comps.CompRefuelable.fuelGizmoLabel>炮管耐久度</DMS_Turret_Tunguska.comps.CompRefuelable.fuelGizmoLabel>
-  <!-- EN: Shots until barrel change -->
-  <DMS_Turret_Tunguska.comps.CompRefuelable.fuelLabel>剩余耐久度</DMS_Turret_Tunguska.comps.CompRefuelable.fuelLabel>
-  <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
-  <DMS_Turret_Tunguska.comps.CompRefuelable.outOfFuelMessage>無法射擊: 需要替換炮管</DMS_Turret_Tunguska.comps.CompRefuelable.outOfFuelMessage>
+  <!-- EN: Sentry turret -->
+  <DMS_Turret_Sentry.label>哨戒機槍</DMS_Turret_Sentry.label>
+  <!-- EN: 一種快速部屬的一次性遙控砲塔，展開後可以持續使用12小時左右。並在能量用光之後自動關機。這類裝備通常被部屬在巷戰環境中來伏擊進入街道的敵人來阻滯對方的突襲。 -->
+  <DMS_Turret_Sentry.description>一種快速部屬的一次性遙控砲塔，展開後可以持續使用12小時左右。並在能量用光之後自動關機。這類裝備通常被部屬在巷戰環境中來伏擊進入街道的敵人來阻滯對方的突襲。</DMS_Turret_Sentry.description>
+  <!-- EN: Battery power -->
+  <DMS_Turret_Sentry.comps.CompMechPowerCell.labelOverride>電池</DMS_Turret_Sentry.comps.CompMechPowerCell.labelOverride>
+  <!-- EN: This turret has a limited battery life. Once it runs out, it will stop working entirely. -->
+  <DMS_Turret_Sentry.comps.CompMechPowerCell.tooltipOverride>這個砲塔的電池壽命有限。一旦耗盡，它將完全停止工作。</DMS_Turret_Sentry.comps.CompMechPowerCell.tooltipOverride>
   
   <!-- EN: Vasilek -->
   <DMS_Turret_Vasilek.label>矢車菊</DMS_Turret_Vasilek.label>

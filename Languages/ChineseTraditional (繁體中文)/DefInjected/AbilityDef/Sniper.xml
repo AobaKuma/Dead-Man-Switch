@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: recon calibration -->
+  <!-- EN: Recon Calibration -->
   <DMS_RangeFinder.label>火控觀測</DMS_RangeFinder.label>
-  <!-- EN: Share fire control data with friendly forces within range to improve squad shooting accuracy in a short period. -->
+  <!-- EN: Share fire control data with friendly forces within range to improve squad accuracy for short period. -->
   <DMS_RangeFinder.description>與範圍內的友軍共享火控數據，短時間內提高友方射擊精度。</DMS_RangeFinder.description>
   
-  <!-- EN: precise sniping -->
+  <!-- EN: Precision Marksmanship -->
   <DMS_SharpShooting.label>精確射擊</DMS_SharpShooting.label>
-  <!-- EN: Execute highly complex trajectory calculations by using the built-in ballistic computer, improving shooting accuracy in a short period. -->
+  <!-- EN: The mech uses its built-in ballistic calculator to adjust for the conditions of its environment, greatly improving accuracy for a short time. -->
   <DMS_SharpShooting.description>利用內建彈道計算機測量極為詳細的射擊數據，在短時間內大幅提高射擊精度。</DMS_SharpShooting.description>
   
 </LanguageData>
