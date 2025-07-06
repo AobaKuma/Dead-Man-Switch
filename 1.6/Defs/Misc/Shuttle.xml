@@ -16,7 +16,6 @@
         <description>A light transport shuttle designed for transit between surface and orbit, it can lift up to 2 tons of cargo in flight.</description>
         <altitudeLayer>Building</altitudeLayer>
         <preventDroppingThingsOn>true</preventDroppingThingsOn>
-        <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
         <pathCost>50</pathCost>
         <blockWind>true</blockWind>
         <passability>Impassable</passability>

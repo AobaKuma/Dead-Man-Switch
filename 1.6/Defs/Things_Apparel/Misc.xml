@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<!-- TODO 7/2 獵犬的，槳鳥的，蹄兔的，另外還有建築版本的要做。 -->
 	<ThingDef ParentName="ApparelNoQualityBase">
-		<defName>DMS_Hound_Platform</defName>
+		<defName>DMS_Apparel_PackHound</defName>
 		<label>hound drone pack</label>
 		<!-- 一種用於攜帶與部署遙控無人機的容器與組裝工具箱，能夠在戰鬥中快速部署一架獵犬無人機並作為遙控控制的基站來控制與回收無人機。 -->
 		<description>A container and assembly kit for carrying and deploying remote-controlled  hound drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone.</description>
@@ -16,7 +15,7 @@
 			<li>DMS_WeaponRanged</li>
 		</tradeTags>
 		<statBases>
-			<Mass>3.5</Mass>
+			<Mass>11</Mass>
 			<EquipDelay>1</EquipDelay>
 			<MarketValue>250</MarketValue>
 			<MaxHitPoints>80</MaxHitPoints>
@@ -136,12 +135,12 @@
 	</ThingDef>
 
 	<ThingDef ParentName="ApparelNoQualityBase">
-		<defName>DMS_VerlingBrid_Platform</defName>
-		<label>verlingbrid drone pack</label>
+		<defName>DMS_Apparel_PackVerling</defName>
+		<label>verlingbrid drone belt</label>
 		<!-- 一種用於攜帶與部署遙控無人機的容器與組裝工具箱，能夠在戰鬥中快速部署一架獵犬無人機並作為遙控控制的基站來控制與回收無人機。 -->
-		<description>A container and assembly kit for carrying and deploying remote-controlled verlingbrid drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone.</description>
+		<description>A remote controller and assembly module for deploying verlingbrid drones, capable deploying drones in combat and acting as a remote-controlled base station to control the drones.</description>
 		<graphicData>
-			<texPath>Things/Apparel/DronePack/Icon</texPath>
+			<texPath>Things/Apparel/DroneBelt/Icon</texPath>
 			<drawSize>1.2</drawSize>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
@@ -150,7 +149,7 @@
 			<li>DMS_WeaponRanged</li>
 		</tradeTags>
 		<statBases>
-			<Mass>3.5</Mass>
+			<Mass>5</Mass>
 			<EquipDelay>1</EquipDelay>
 			<MarketValue>250</MarketValue>
 			<MaxHitPoints>80</MaxHitPoints>
@@ -189,47 +188,65 @@
 			<layers>
 				<li>Belt</li>
 			</layers>
-			<wornGraphicPath>Things/Apparel/DronePack/apparel</wornGraphicPath>
+			<wornGraphicPath>Things/Apparel/DroneBelt/apparel</wornGraphicPath>
 			<wornGraphicData>
 				<renderUtilityAsPack>true</renderUtilityAsPack>
 				<north>
 					<offset>(0,0)</offset>
-					<scale>.9</scale>
+					<scale>.6</scale>
+					<female>
+						<offset>(0,-0.1)</offset>
+					</female>
+					<fat>
+						<offset>(0.15,-0.1)</offset>
+					</fat>
+					<hulk>
+						<offset>(0,-0.2)</offset>
+					</hulk>
 				</north>
 				<south>
-					<offset>(0,0.15)</offset>
-					<scale>.9</scale>
-				</south>
-				<east>
-					<offset>(-0.35,0.1)</offset>
+					<offset>(-0.05,0)</offset>
 					<scale>.8</scale>
 					<thin>
-						<offset>(0.05,0)</offset>
+						<offset>(-0.15,0)</offset>
+					</thin>
+					<fat>
+						<offset>(0.1,0)</offset>
+					</fat>
+					<hulk>
+						<offset>(0.1,-0.1)</offset>
+					</hulk>
+				</south>
+				<east>
+					<offset>(-0.1,-0.2)</offset>
+					<scale>.6</scale>
+					<thin>
+						<offset>(0,0.1)</offset>
 					</thin>
 					<hulk>
-						<offset>(0,0)</offset>
+						<offset>(0,-0.1)</offset>
 					</hulk>
 					<fat>
-						<offset>(0,0)</offset>
+						<offset>(-0.1,0)</offset>
 					</fat>
 					<male>
-						<offset>(0,0)</offset>
+						<offset>(0,0.1)</offset>
 					</male>
 				</east>
 				<west>
-					<offset>(0.35,0.1)</offset>
-					<scale>.8</scale>
+					<offset>(0.1,-0.2)</offset>
+					<scale>.6</scale>
 					<thin>
-						<offset>(-0.05,0)</offset>
+						<offset>(0,0.1)</offset>
 					</thin>
 					<hulk>
-						<offset>(0,0)</offset>
+						<offset>(0,-0.1)</offset>
 					</hulk>
 					<fat>
-						<offset>(0,0)</offset>
+						<offset>(0.1,0)</offset>
 					</fat>
 					<male>
-						<offset>(0,0)</offset>
+						<offset>(0,0.1)</offset>
 					</male>
 				</west>
 			</wornGraphicData>

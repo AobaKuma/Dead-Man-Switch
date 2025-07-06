@@ -2,22 +2,6 @@
 <Defs>
   <ThingDef Name="DMS_BaseDronePlatform" ParentName="BuildingBase" Abstract="True">
     <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/Building/Facility_Base</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(2.9,2.9)</drawSize>
-      <shadowData>
-        <volume>(0.5,0.3,0.7)</volume>
-        <offset>(0,0,-0.15)</offset>
-      </shadowData>
-      <damageData>
-        <rect>(0.234375,0,0.515625,0.984375)</rect>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
     <tickerType>Rare</tickerType>
     <building>
       <destroySound>BuildingDestroyed_Metal_Small</destroySound>
@@ -30,17 +14,22 @@
       <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Breakdownable"/>
     </comps>
-    <altitudeLayer>FloorEmplacement</altitudeLayer>
-    <passability>Standable</passability>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>90</pathCost>
     <blockWind>false</blockWind>
     <rotatable>true</rotatable>
-    <fillPercent>0.1</fillPercent>
+    <fillPercent>1</fillPercent>
     <uiIconScale>0.8</uiIconScale>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <designationCategory>DMS_Category</designationCategory>
     <researchPrerequisites>
       <li>DMS_UAVBasis</li>
     </researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_BandNode</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
   </ThingDef>
 
@@ -49,6 +38,24 @@
     <defName>DMS_TrashBin_Base</defName>
     <label>Trashpan Station</label>
     <description>A station for storaging and recharging trashpan units.</description>
+    <uiIconScale>0.75</uiIconScale>
+    <graphicData>
+      <texPath>Things/Building/Drone_Platform_Pan</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2.5)</drawSize>
+      <drawOffset>(0,0,0.25)</drawOffset>
+      <shadowData>
+        <volume>(1,1.5,1)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.234375,0,0.515625,0.984375)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
     <statBases>
       <WorkToBuild>1000</WorkToBuild>
       <MaxHitPoints>100</MaxHitPoints>
@@ -83,6 +90,24 @@
     <defName>DMS_Hound_Base</defName>
     <label>Hound Station</label>
     <description>A station for storaging and recharging hound units.</description>
+    <uiIconScale>0.75</uiIconScale>
+    <graphicData>
+      <texPath>Things/Building/Drone_Platform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2.5)</drawSize>
+      <drawOffset>(0,0,0.25)</drawOffset>
+      <shadowData>
+        <volume>(1,1.5,1)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.234375,0,0.515625,0.984375)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
     <statBases>
       <WorkToBuild>1000</WorkToBuild>
       <MaxHitPoints>100</MaxHitPoints>
