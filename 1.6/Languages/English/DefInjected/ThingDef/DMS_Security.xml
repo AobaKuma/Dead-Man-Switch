@@ -40,15 +40,12 @@
   <!-- UNUSED -->
   <DMS_Gun_Kord.verbs.Verb_ShootCE.label>kord</DMS_Gun_Kord.verbs.Verb_ShootCE.label>
   
-  <!-- EN: Tunguska -->
-  <DMS_Gun_Tunguska.label>Tunguska</DMS_Gun_Tunguska.label>
-  <!-- EN: A weapon system including two 2A38 autoaconnons and eight missile launchers. -->
-  <DMS_Gun_Tunguska.description>A weapon system including two 2A38 autoaconnons and eight missile launchers.</DMS_Gun_Tunguska.description>
-  <!-- EN: Tunguska -->
-  <DMS_Gun_Tunguska.verbs.Verb_Shoot.label>Tunguska</DMS_Gun_Tunguska.verbs.Verb_Shoot.label>
-  
-  <!-- UNUSED -->
-  <DMS_Gun_Tunguska.verbs.Verb_ShootCE.label>Tunguska</DMS_Gun_Tunguska.verbs.Verb_ShootCE.label>
+  <!-- EN: MK44 BushMaster-II -->
+  <DMS_Gun_MK44_Navy.label>MK44 BushMaster-II</DMS_Gun_MK44_Navy.label>
+  <!-- EN: The 30x173mm MK44 Bushmaster II autocannon, despite its modest 200 RPM rate of fire, achieves reliable defensive performance through good accuracy and adequate lethality. -->
+  <DMS_Gun_MK44_Navy.description>The 30x173mm MK44 Bushmaster II autocannon, despite its modest 200 RPM rate of fire, achieves reliable defensive performance through good accuracy and adequate lethality.</DMS_Gun_MK44_Navy.description>
+  <!-- EN: MK44 BushMaster-II -->
+  <DMS_Gun_MK44_Navy.verbs.Verb_Shoot.label>MK44 BushMaster-II</DMS_Gun_MK44_Navy.verbs.Verb_Shoot.label>
   
   <!-- EN: 2B9M vasilek -->
   <DMS_Gun_Vasilek.label>2B9M vasilek</DMS_Gun_Vasilek.label>
@@ -84,6 +81,17 @@ The armor plating has been removed to allow emplacement to be redeployed as need
   <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
   <DMS_Turret_GateKeeper.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new reinforced barrel.</DMS_Turret_GateKeeper.comps.CompRefuelable.outOfFuelMessage>
   
+  <!-- EN: MK44 BushMaster-II -->
+  <DMS_Turret_MK44_Navy.label>MK44 BushMaster-II</DMS_Turret_MK44_Navy.label>
+  <!-- EN: The 30x173mm MK44 Bushmaster II autocannon, despite its modest 200 RPM rate of fire, achieves reliable defensive performance through good accuracy and adequate lethality. -->
+  <DMS_Turret_MK44_Navy.description>The 30x173mm MK44 Bushmaster II autocannon, despite its modest 200 RPM rate of fire, achieves reliable defensive performance through good accuracy and adequate lethality.</DMS_Turret_MK44_Navy.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_MK44_Navy.comps.CompRefuelable.fuelGizmoLabel>Barrel durability</DMS_Turret_MK44_Navy.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_MK44_Navy.comps.CompRefuelable.fuelLabel>Shots until barrel change</DMS_Turret_MK44_Navy.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
+  <DMS_Turret_MK44_Navy.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new reinforced barrel.</DMS_Turret_MK44_Navy.comps.CompRefuelable.outOfFuelMessage>
+  
   <!-- EN: Okhotnik -->
   <DMS_Turret_Okhotnik.label>Okhotnik</DMS_Turret_Okhotnik.label>
   <!-- EN: An ancient design of a remote controlled turret widely used on armored vehicles and mech armor platforms. -->
@@ -95,16 +103,14 @@ The armor plating has been removed to allow emplacement to be redeployed as need
   <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
   <DMS_Turret_Okhotnik.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new reinforced barrel.</DMS_Turret_Okhotnik.comps.CompRefuelable.outOfFuelMessage>
   
-  <!-- EN: Tunguska -->
-  <DMS_Turret_Tunguska.label>Tunguska</DMS_Turret_Tunguska.label>
-  <!-- EN: A remote-controlled turret composed of two 2A38 autoaconnon and eight missile launchers. Due to its cheap maintenance and modification costs, it is commonly seen in colonial fleet outposts in rim worlds. -->
-  <DMS_Turret_Tunguska.description>A remote-controlled turret composed of two 2A38 autoaconnon and eight missile launchers. Due to its cheap maintenance and modification costs, it is commonly seen in colonial fleet outposts in rim worlds.</DMS_Turret_Tunguska.description>
-  <!-- EN: Barrel durability -->
-  <DMS_Turret_Tunguska.comps.CompRefuelable.fuelGizmoLabel>Barrel durability</DMS_Turret_Tunguska.comps.CompRefuelable.fuelGizmoLabel>
-  <!-- EN: Shots until barrel change -->
-  <DMS_Turret_Tunguska.comps.CompRefuelable.fuelLabel>Shots until barrel change</DMS_Turret_Tunguska.comps.CompRefuelable.fuelLabel>
-  <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
-  <DMS_Turret_Tunguska.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new reinforced barrel.</DMS_Turret_Tunguska.comps.CompRefuelable.outOfFuelMessage>
+  <!-- EN: Sentry turret -->
+  <DMS_Turret_Sentry.label>Sentry turret</DMS_Turret_Sentry.label>
+  <!-- EN: A quick-deployed, disposable remote-controlled turret that can be used continuously for about 12 hours after being deployed. It will automatically shut down after the energy is used up. These type of equipments are usually deployed in urban combat environments to ambush enemies. -->
+  <DMS_Turret_Sentry.description>A quick-deployed, disposable remote-controlled turret that can be used continuously for about 12 hours after being deployed. It will automatically shut down after the energy is used up. These type of equipments are usually deployed in urban combat environments to ambush enemies.</DMS_Turret_Sentry.description>
+  <!-- EN: Battery power -->
+  <DMS_Turret_Sentry.comps.CompMechPowerCell.labelOverride>Battery power</DMS_Turret_Sentry.comps.CompMechPowerCell.labelOverride>
+  <!-- EN: This turret has a limited battery life. Once it runs out, it will stop working entirely. -->
+  <DMS_Turret_Sentry.comps.CompMechPowerCell.tooltipOverride>This turret has a limited battery life. Once it runs out, it will stop working entirely.</DMS_Turret_Sentry.comps.CompMechPowerCell.tooltipOverride>
   
   <!-- EN: Vasilek -->
   <DMS_Turret_Vasilek.label>Vasilek</DMS_Turret_Vasilek.label>

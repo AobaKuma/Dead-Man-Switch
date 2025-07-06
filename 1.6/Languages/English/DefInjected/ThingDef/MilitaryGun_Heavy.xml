@@ -108,6 +108,17 @@ This weapon is designed specifically for automatroid use,it's so heavy only spec
   <DMS_Gun_DragoonRifle.tools.muzzle-1.label>muzzle</DMS_Gun_DragoonRifle.tools.muzzle-1.label>
   <DMS_Gun_DragoonRifle.verbs.Verb_ShootCE.label>mech anti-tank gun</DMS_Gun_DragoonRifle.verbs.Verb_ShootCE.label>
   
+  <!-- EN: MK44 BushMasterII AutoCannon -->
+  <DMS_Gun_MK44_Autocannon.label>MK44 BushMasterII AutoCannon</DMS_Gun_MK44_Autocannon.label>
+  <!-- EN: The MK44 Bushmaster II autocannon is a low-rate-of-fire (200 RPM), high-power, and high-precision weapon. It can be equipped on medium-sized mechanoids and fires 30×173mm NATO ammunition, effectively filling the role of a precision burst-fire autocannon. -->
+  <DMS_Gun_MK44_Autocannon.description>The MK44 Bushmaster II autocannon is a low-rate-of-fire (200 RPM), high-power, and high-precision weapon. It can be equipped on medium-sized mechanoids and fires 30×173mm NATO ammunition, effectively filling the role of a precision burst-fire autocannon.</DMS_Gun_MK44_Autocannon.description>
+  <!-- EN: stock -->
+  <DMS_Gun_MK44_Autocannon.tools.stock.label>stock</DMS_Gun_MK44_Autocannon.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_MK44_Autocannon.tools.barrel.label>barrel</DMS_Gun_MK44_Autocannon.tools.barrel.label>
+  <!-- EN: MK44 BushMasterII AutoCannon -->
+  <DMS_Gun_MK44_Autocannon.verbs.Verb_Shoot.label>MK44 BushMasterII AutoCannon</DMS_Gun_MK44_Autocannon.verbs.Verb_Shoot.label>
+  
   <!-- EN: Recoilless Rifle -->
   <DMS_Gun_Recoilless.label>Recoilless Rifle</DMS_Gun_Recoilless.label>
   <!-- EN: A recoilless rifle designed to counter heavy-armored targets at range.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->

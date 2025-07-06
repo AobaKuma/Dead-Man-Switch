@@ -3,12 +3,12 @@
   
   <!-- EN: supported bodysize -->
   <DMS_HeavyGears.label>supported bodysize</DMS_HeavyGears.label>
-  <!-- EN: required pawn body size to be equipped with this weapon. -->
-  <DMS_HeavyGears.description>required pawn body size to be equipped with this weapon.</DMS_HeavyGears.description>
+  <!-- EN: Required pawn body size to equip this weapon. -->
+  <DMS_HeavyGears.description>Required pawn body size to equip this weapon.</DMS_HeavyGears.description>
   
   <!-- EN: supported weapons -->
   <DMS_UsableWeapons.label>supported weapons</DMS_UsableWeapons.label>
-  <!-- EN: useable weapons that supported by OS of this model. -->
-  <DMS_UsableWeapons.description>useable weapons that supported by OS of this model.</DMS_UsableWeapons.description>
+  <!-- EN: Usable weapons that are supported by the OS of this model. -->
+  <DMS_UsableWeapons.description>Usable weapons that are supported by the OS of this model.</DMS_UsableWeapons.description>
   
 </LanguageData>

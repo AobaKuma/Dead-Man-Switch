@@ -1,14 +1,26 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: Night Vision Goggles -->
-  <DMS_Apparel_Gunlink.label>Night Vision Goggles</DMS_Apparel_Gunlink.label>
-  <!-- EN: An optical enhancement device which amplifies existing light in low-light conditions and projects it through the display on to the users eyes. Compatible with most helmets and can be worn stand-alone. -->
-  <DMS_Apparel_Gunlink.description>An optical enhancement device which amplifies existing light in low-light conditions and projects it through the display on to the users eyes. Compatible with most helmets and can be worn stand-alone.</DMS_Apparel_Gunlink.description>
+  <!-- EN: hound drone pack -->
+  <DMS_Apparel_PackHound.label>hound drone pack</DMS_Apparel_PackHound.label>
+  <!-- EN: A container and assembly kit for carrying and deploying remote-controlled  hound drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone. -->
+  <DMS_Apparel_PackHound.description>A container and assembly kit for carrying and deploying remote-controlled  hound drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone.</DMS_Apparel_PackHound.description>
+  <!-- EN: drone -->
+  <DMS_Apparel_PackHound.comps.CompApparelReloadable.chargeNoun>drone</DMS_Apparel_PackHound.comps.CompApparelReloadable.chargeNoun>
+  <!-- EN: on cooldown -->
+  <DMS_Apparel_PackHound.comps.CompApparelReloadable.cooldownGerund>on cooldown</DMS_Apparel_PackHound.comps.CompApparelReloadable.cooldownGerund>
+  <!-- EN: hound drone pack -->
+  <DMS_Apparel_PackHound.verbs.Verb_Deploy.label>hound drone pack</DMS_Apparel_PackHound.verbs.Verb_Deploy.label>
   
-  <!-- EN: Stealth Mask -->
-  <DMS_Apparel_StealthMask.label>Stealth Mask</DMS_Apparel_StealthMask.label>
-  <!-- EN: A piece of fabric which obscures the wearer's face. -->
-  <DMS_Apparel_StealthMask.description>A piece of fabric which obscures the wearer's face.</DMS_Apparel_StealthMask.description>
+  <!-- EN: verlingbrid drone belt -->
+  <DMS_Apparel_PackVerling.label>verlingbrid drone belt</DMS_Apparel_PackVerling.label>
+  <!-- EN: A remote controller and assembly module for deploying verlingbrid drones, capable deploying drones in combat and acting as a remote-controlled base station to control the drones. -->
+  <DMS_Apparel_PackVerling.description>A remote controller and assembly module for deploying verlingbrid drones, capable deploying drones in combat and acting as a remote-controlled base station to control the drones.</DMS_Apparel_PackVerling.description>
+  <!-- EN: drone -->
+  <DMS_Apparel_PackVerling.comps.CompApparelReloadable.chargeNoun>drone</DMS_Apparel_PackVerling.comps.CompApparelReloadable.chargeNoun>
+  <!-- EN: on cooldown -->
+  <DMS_Apparel_PackVerling.comps.CompApparelReloadable.cooldownGerund>on cooldown</DMS_Apparel_PackVerling.comps.CompApparelReloadable.cooldownGerund>
+  <!-- EN: verlingbrid drone belt -->
+  <DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>verlingbrid drone belt</DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>
   
 </LanguageData>

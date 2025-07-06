@@ -26,21 +26,14 @@ Your researchers can now use research benches to begin researching how to actual
   <ComponentControlChip.label>Cluster Control Chipsets</ComponentControlChip.label>
   <!-- EN: A chipset for remote machine controllers and the core of industrial machines. -->
   <ComponentControlChip.description>A chipset for remote machine controllers and the core of industrial machines.</ComponentControlChip.description>
-  <!-- EN: Analyze the cluster control chipsets -->
+  
+  <!-- UNUSED -->
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the cluster control chipsets</ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateDescString>
-  <!-- EN: Analyze... -->
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateLabelString>
-  <!-- EN: By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
-  <ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.
-
-Your researchers can now use research benches to begin researching how to actually use the technology.</ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetter>
-  <!-- EN: Cluster control chipsets studied: {RESEARCH} unlocked -->
+  <ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetter>
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Cluster control chipsets studied: {RESEARCH} unlocked</ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
-  <!-- EN: Choose who should analyze this -->
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.guiLabelString>Choose who should analyze this</ComponentControlChip.comps.CompAnalyzableUnlockResearch.guiLabelString>
-  <!-- EN: Can be analyzed by a colonist. -->
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.inspectString>Can be analyzed by a colonist.</ComponentControlChip.comps.CompAnalyzableUnlockResearch.inspectString>
-  <!-- EN: Analyze the cluster control chipsets -->
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.jobString>Analyze the cluster control chipsets</ComponentControlChip.comps.CompAnalyzableUnlockResearch.jobString>
   
   <!-- EN: Fire Control System -->

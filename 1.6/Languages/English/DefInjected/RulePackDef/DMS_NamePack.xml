@@ -36,7 +36,78 @@
     <li>r_name(p=6)->[namefile]-[Code]</li>
     <li>r_name->[exoticname]-[Code]</li>
     <li>name->[Code]-[Color]</li>
-    <li>Code->Alpha</li>
+    <li>Code->alpha</li>
+    <li>Code->bravo</li>
+    <li>Code->charlie</li>
+    <li>Code->delta</li>
+    <li>Code->echo</li>
+    <li>Code->foxtrot</li>
+    <li>Code->golf</li>
+    <li>Code->hotel</li>
+    <li>Code->india</li>
+    <li>Code->junker</li>
+    <li>Code->kilo</li>
+    <li>Code->lima</li>
+    <li>Code->mike</li>
+    <li>Code->nova</li>
+    <li>Code->oscar</li>
+    <li>Code->pela</li>
+    <li>Code->quiet</li>
+    <li>Code->rotor</li>
+    <li>Code->sierra</li>
+    <li>Code->tango</li>
+    <li>Code->uniform</li>
+    <li>Code->vega</li>
+    <li>Code->whiskey</li>
+    <li>Code->xeno</li>
+    <li>Code->yezi</li>
+    <li>Code->zulu</li>
+  </DMS_AutomaticArmy.rulePack.rulesStrings>
+  
+  <!-- EN:
+    <li>r_name->[MechType] [BrigadeNum0]</li>
+    <li>r_name->[MechType] [BrigadeNum0]-[BrigadeNum1]</li>
+    <li>r_name->[Callsign] [BrigadeNum0]</li>
+    <li>r_name->[Callsign] [BrigadeNum0]-[BrigadeNum1]</li>
+    <li>r_name->[Callsign] [Code]</li>
+    <li>r_name->[Code]</li>
+    <li>r_name->[Code] [BrigadeNum0]</li>
+    <li>r_name->[Code] [BrigadeNum0]-[BrigadeNum1]</li>
+    <li>MechType->Standard</li>
+    <li>MechType->Army</li>
+    <li>MechType->Combat</li>
+    <li>MechType->Unit</li>
+    <li>BrigadeNum0->One</li>
+    <li>BrigadeNum0->Two</li>
+    <li>BrigadeNum0->Three</li>
+    <li>BrigadeNum0->Four</li>
+    <li>BrigadeNum0->Five</li>
+    <li>BrigadeNum0->Six</li>
+    <li>BrigadeNum0->Seven</li>
+    <li>BrigadeNum0->Eight</li>
+    <li>BrigadeNum0->Niner</li>
+    <li>BrigadeNum1->O</li>
+    <li>BrigadeNum1->One</li>
+    <li>BrigadeNum1->Two</li>
+    <li>BrigadeNum1->Three</li>
+    <li>BrigadeNum1->Four</li>
+    <li>BrigadeNum1->Five</li>
+    <li>BrigadeNum1->Six</li>
+    <li>BrigadeNum1->Seven</li>
+    <li>BrigadeNum1->Eight</li>
+    <li>BrigadeNum1->Nine</li>
+    <li>Callsign->Skull</li>
+    <li>Callsign->Shield</li>
+    <li>Callsign->Iron</li>
+    <li>Callsign->Stony</li>
+    <li>Callsign->Helmet</li>
+    <li>Callsign->Bulky</li>
+    <li>Callsign->Wolf</li>
+    <li>Callsign->Fox</li>
+    <li>Callsign->Hound</li>
+    <li>Callsign->Lynx</li>
+    <li>Callsign->Skelton</li>
+    <li>Code->Alfa</li>
     <li>Code->Bravo</li>
     <li>Code->Charlie</li>
     <li>Code->Delta</li>
@@ -45,24 +116,94 @@
     <li>Code->Golf</li>
     <li>Code->Hotel</li>
     <li>Code->India</li>
-    <li>Code->Junker</li>
+    <li>Code->Juliett</li>
     <li>Code->Kilo</li>
     <li>Code->Lima</li>
     <li>Code->Mike</li>
-    <li>Code->Nova</li>
+    <li>Code->November</li>
     <li>Code->Oscar</li>
-    <li>Code->Pela</li>
-    <li>Code->Quiet</li>
-    <li>Code->Rotor</li>
+    <li>Code->Papa</li>
+    <li>Code->Quebec</li>
+    <li>Code->Romeo</li>
     <li>Code->Sierra</li>
     <li>Code->Tango</li>
     <li>Code->Uniform</li>
-    <li>Code->Vega</li>
+    <li>Code->Victor</li>
     <li>Code->Whiskey</li>
-    <li>Code->Xeno</li>
-    <li>Code->Yezi</li>
+    <li>Code->X-ray</li>
+    <li>Code->Yankee</li>
     <li>Code->Zulu</li>
-  </DMS_AutomaticArmy.rulePack.rulesStrings>
+  -->
+  <DMS_MechAwaken.rulePack.rulesStrings>
+    <li>r_name->[MechType] [BrigadeNum0]</li>
+    <li>r_name->[MechType] [BrigadeNum0]-[BrigadeNum1]</li>
+    <li>r_name->[Callsign] [BrigadeNum0]</li>
+    <li>r_name->[Callsign] [BrigadeNum0]-[BrigadeNum1]</li>
+    <li>r_name->[Callsign] [Code]</li>
+    <li>r_name->[Code]</li>
+    <li>r_name->[Code] [BrigadeNum0]</li>
+    <li>r_name->[Code] [BrigadeNum0]-[BrigadeNum1]</li>
+    <li>MechType->Standard</li>
+    <li>MechType->Army</li>
+    <li>MechType->Combat</li>
+    <li>MechType->Unit</li>
+    <li>BrigadeNum0->One</li>
+    <li>BrigadeNum0->Two</li>
+    <li>BrigadeNum0->Three</li>
+    <li>BrigadeNum0->Four</li>
+    <li>BrigadeNum0->Five</li>
+    <li>BrigadeNum0->Six</li>
+    <li>BrigadeNum0->Seven</li>
+    <li>BrigadeNum0->Eight</li>
+    <li>BrigadeNum0->Niner</li>
+    <li>BrigadeNum1->O</li>
+    <li>BrigadeNum1->One</li>
+    <li>BrigadeNum1->Two</li>
+    <li>BrigadeNum1->Three</li>
+    <li>BrigadeNum1->Four</li>
+    <li>BrigadeNum1->Five</li>
+    <li>BrigadeNum1->Six</li>
+    <li>BrigadeNum1->Seven</li>
+    <li>BrigadeNum1->Eight</li>
+    <li>BrigadeNum1->Nine</li>
+    <li>Callsign->Skull</li>
+    <li>Callsign->Shield</li>
+    <li>Callsign->Iron</li>
+    <li>Callsign->Stony</li>
+    <li>Callsign->Helmet</li>
+    <li>Callsign->Bulky</li>
+    <li>Callsign->Wolf</li>
+    <li>Callsign->Fox</li>
+    <li>Callsign->Hound</li>
+    <li>Callsign->Lynx</li>
+    <li>Callsign->Skelton</li>
+    <li>Code->Alfa</li>
+    <li>Code->Bravo</li>
+    <li>Code->Charlie</li>
+    <li>Code->Delta</li>
+    <li>Code->Echo</li>
+    <li>Code->Foxtrot</li>
+    <li>Code->Golf</li>
+    <li>Code->Hotel</li>
+    <li>Code->India</li>
+    <li>Code->Juliett</li>
+    <li>Code->Kilo</li>
+    <li>Code->Lima</li>
+    <li>Code->Mike</li>
+    <li>Code->November</li>
+    <li>Code->Oscar</li>
+    <li>Code->Papa</li>
+    <li>Code->Quebec</li>
+    <li>Code->Romeo</li>
+    <li>Code->Sierra</li>
+    <li>Code->Tango</li>
+    <li>Code->Uniform</li>
+    <li>Code->Victor</li>
+    <li>Code->Whiskey</li>
+    <li>Code->X-ray</li>
+    <li>Code->Yankee</li>
+    <li>Code->Zulu</li>
+  </DMS_MechAwaken.rulePack.rulesStrings>
   
   <!-- EN:
     <li>r_name-> [Type]-[Number][Number]</li>
@@ -146,7 +287,7 @@
     <li>BrigadeType->Colonial</li>
     <li>BrigadeType->Frontier</li>
     <li>BrigadeType->Vanguard</li>
-    <li>BrigadeType->Logistics</li>
+    <li>BrigadeType->Logistic</li>
     <li>BrigadeNum0->1</li>
     <li>BrigadeNum0->2</li>
     <li>BrigadeNum0->3</li>
