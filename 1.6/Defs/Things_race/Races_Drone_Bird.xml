@@ -9,12 +9,14 @@
     </statBases>
     <race>
       <body>DMS_Chop</body>
-      <baseBodySize>0.25</baseBodySize>
-      <baseHealthScale>0.5</baseHealthScale>
+      <baseBodySize>0.15</baseBodySize>
+      <baseHealthScale>0.25</baseHealthScale>
       <mechWeightClass>Light</mechWeightClass>
-      <thinkTreeConstant>DMS_DroneConstant</thinkTreeConstant>
     </race>
     <comps>
+      <li>
+        <compClass>Fortified.CompExplosiveOnMelee</compClass>
+      </li>
       <li Class="CompProperties_MechPowerCell">
         <totalPowerTicks>15000</totalPowerTicks>
       </li>
@@ -41,7 +43,6 @@
           <li>DMS_MechWeaponUltraLight</li>
           <li>PLA_RocketLauncherSingleUse</li>
           <li>CE_AI_Grenade</li>
-          <li>DMS_Flameblaster</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -71,7 +72,7 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Automatroid/OldTexture/chad</texPath>
+          <texPath>Things/Automatroid/chad</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>

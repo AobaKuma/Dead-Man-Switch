@@ -64,6 +64,7 @@
 
 	<!-- 即使穿著動力外骨骼也沒法操作的重型槍械-->
 	<ThingDef Name="DMS_AutomatroidHeavyGun" ParentName="DMS_AutomatroidGun" Abstract="True">
+    	<storedConceptLearnOpportunity>DMS_HeavyWeapon</storedConceptLearnOpportunity>
 		<statBases>
 		    <MaxHitPoints>300</MaxHitPoints>
 			<WorkToMake>80000</WorkToMake>

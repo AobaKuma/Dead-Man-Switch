@@ -15,7 +15,6 @@
       <body>DMS_TrashBin</body>
       <baseBodySize>1</baseBodySize>
       <baseHealthScale>1</baseHealthScale>
-      <thinkTreeConstant>DMS_DroneConstant</thinkTreeConstant>
       <mechEnabledWorkTypes>
         <li>Cleaning</li>
       </mechEnabledWorkTypes>

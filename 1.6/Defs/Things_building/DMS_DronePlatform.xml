@@ -4,6 +4,7 @@
     <thingClass>Building</thingClass>
     <tickerType>Rare</tickerType>
     <building>
+      <spawnedConceptLearnOpportunity>DMS_DronePlatform</spawnedConceptLearnOpportunity>
       <destroySound>BuildingDestroyed_Metal_Small</destroySound>
       <sowTag>SupportPlantsOnly</sowTag>
       <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>

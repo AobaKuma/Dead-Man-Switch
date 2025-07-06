@@ -77,6 +77,9 @@
   <ThingDef ParentName="DMS_BenchBase" Name="DMS_AutofacturerBenchBase" Abstract="True">
     <thingClass>Fortified.Building_WorkTableAutonomous</thingClass>
     <tickerType>Normal</tickerType>
+    <building>
+      <spawnedConceptLearnOpportunity>DMS_Autofacturer</spawnedConceptLearnOpportunity>
+    </building>
   </ThingDef>
   
 </Defs>

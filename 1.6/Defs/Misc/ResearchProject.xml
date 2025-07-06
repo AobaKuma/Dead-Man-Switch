@@ -77,9 +77,11 @@
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_Autofacturer</defName>
     <label>mass production</label>
-    <description>透過改進的生產工藝使得材料的加工生產流程能夠盡可能自動化與規模化。</description>
+    <!-- 透過改進的生產工藝使得材料的加工生產流程能夠盡可能自動化與規模化。 -->
+    <description>Through improved production technology, the material processing and production process can be automated and scaled as much as possible.</description>
     <baseCost>2000</baseCost>
     <requiredResearchBuilding Inherit="False"/>
+    <teachConcept>DMS_Autofacturer</teachConcept>
     <prerequisites>
       <li>DMS_Material</li>
     </prerequisites> 
@@ -126,6 +128,7 @@
     <baseCost>300</baseCost>
     <requiredResearchBuilding Inherit="False"/>
     <techLevel>Industrial</techLevel>
+    <teachConcept>DMS_WeaponSystems</teachConcept>
     <prerequisites>
       <li>DMS_UAVBasis</li>
     </prerequisites>

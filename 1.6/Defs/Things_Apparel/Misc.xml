@@ -54,6 +54,9 @@
 			<layers>
 				<li>Belt</li>
 			</layers>
+			<tags>
+				<li>DMS_UAVPack</li>
+			</tags>
 			<wornGraphicPath>Things/Apparel/DronePack/apparel</wornGraphicPath>
 			<wornGraphicData>
 				<renderUtilityAsPack>true</renderUtilityAsPack>
@@ -107,30 +110,33 @@
 			<li>
 				<commandIcon>UI/Ability/Drone_Send_dog</commandIcon>
 				<verbClass>Fortified.Verb_Deploy</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
 				<spawnDef>DMS_Drone_Hound</spawnDef>
-				<soundCast>ThrowGrenade</soundCast>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
-				<warmupTime>3.0</warmupTime>
+				<warmupTime>5.0</warmupTime>
+				<hasStandardCommand>true</hasStandardCommand>
 				<targetable>false</targetable>
-				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
-				<ai_IsWeapon>true</ai_IsWeapon>
+				<onlyManualCast>true</onlyManualCast>
+				<useableInVacuum>false</useableInVacuum>
+				<soundCast>ThrowGrenade</soundCast>
 				<targetParams>
 					<canTargetSelf>true</canTargetSelf>
 				</targetParams>
 			</li>
 		</verbs>
 		<comps>
+			<li Class="CompProperties_AIUSablePack">
+				<compClass>Fortified.CompDronePack</compClass>
+				<checkInterval>60</checkInterval>
+			</li>
 			<li Class="CompProperties_ApparelReloadable">
-				<maxCharges>2</maxCharges>
-				<ammoDef>Steel</ammoDef>
+				<maxCharges>1</maxCharges>
+				<ammoDef>ComponentIndustrial</ammoDef>
 				<baseReloadTicks>2500</baseReloadTicks>
-				<ammoCountPerCharge>50</ammoCountPerCharge>
+				<ammoCountPerCharge>5</ammoCountPerCharge>
 				<hotKey>Misc4</hotKey>
 				<chargeNoun>drone</chargeNoun>
 				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
 			</li>
-			<li Class="CompProperties_Styleable"></li>
 		</comps>
 	</ThingDef>
 
@@ -171,7 +177,7 @@
 			<ComponentIndustrial>4</ComponentIndustrial>
 			<Steel>60</Steel>
 		</costList>
-		<tickerType>Never</tickerType>
+		<tickerType>Normal</tickerType>
 		<thingCategories>
 			<li>ApparelUtility</li>
 		</thingCategories>
@@ -188,6 +194,10 @@
 			<layers>
 				<li>Belt</li>
 			</layers>
+			<tags>
+				<li>IndustrialAdvanced</li>
+				<li>DMS_UAVPack</li>
+			</tags>
 			<wornGraphicPath>Things/Apparel/DroneBelt/apparel</wornGraphicPath>
 			<wornGraphicData>
 				<renderUtilityAsPack>true</renderUtilityAsPack>
@@ -257,33 +267,35 @@
 		<drawGUIOverlay>false</drawGUIOverlay>
 		<verbs>
 			<li>
-				<commandIcon>UI/Ability/Drone_Send_bird</commandIcon>
 				<verbClass>Fortified.Verb_Deploy</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
+				<commandIcon>UI/Ability/Drone_Send_bird</commandIcon>
 				<spawnDef>DMS_Drone_VerlingBrid</spawnDef>
-				<soundCast>ThrowGrenade</soundCast>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
 				<warmupTime>3.0</warmupTime>
+				<hasStandardCommand>true</hasStandardCommand>
 				<targetable>false</targetable>
-				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
-				<ai_IsWeapon>true</ai_IsWeapon>
+				<onlyManualCast>true</onlyManualCast>
+				<useableInVacuum>false</useableInVacuum>
+				<soundCast>ThrowGrenade</soundCast>
 				<targetParams>
 					<canTargetSelf>true</canTargetSelf>
 				</targetParams>
 			</li>
 		</verbs>
 		<comps>
+			<li Class="CompProperties_AIUSablePack">
+				<compClass>Fortified.CompDronePack</compClass>
+				<checkInterval>60</checkInterval>
+			</li>
 			<li Class="CompProperties_ApparelReloadable">
-				<maxCharges>4</maxCharges>
-				<ammoDef>Steel</ammoDef>
+				<maxCharges>2</maxCharges>
+				<ammoDef>ComponentIndustrial</ammoDef>
 				<baseReloadTicks>2400</baseReloadTicks>
-				<ammoCountPerCharge>40</ammoCountPerCharge>
+				<ammoCountPerCharge>3</ammoCountPerCharge>
 				<hotKey>Misc4</hotKey>
 				<chargeNoun>drone</chargeNoun>
 				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
 			</li>
-			<li Class="CompProperties_Styleable"></li>
 		</comps>
 	</ThingDef>
-	
 </Defs>

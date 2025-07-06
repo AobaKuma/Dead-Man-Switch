@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-
 <Defs>
   <ThinkTreeDef>
     <defName>DMS_Mechanoid</defName>
@@ -143,17 +142,47 @@
           </subNodes>
         </li>
 
-        <!-- Non player controlled mechs fight nearby hostiles -->
+        <!-- AI機械體行為 -->
         <li Class="ThinkNode_ConditionalPlayerControlledMech">
           <invert>true</invert>
           <subNodes>
+            <!-- 索敵 -->
             <li Class="JobGiver_AIFightEnemies">
               <targetAcquireRadius>45</targetAcquireRadius>
               <targetKeepRadius>60</targetKeepRadius>
             </li>
+            <!-- 持有遠程武器的話會放風箏 -->
+            <li Class="Fortified.ThinkNode_ConditionalHasWeapon">
+              <onlyRanged>true</onlyRanged>
+              <subNodes>
+                <li Class="JobGiver_FleeForDistance">
+                  <enemyDistToFleeRange>2.9~7.9</enemyDistToFleeRange>
+                  <fleeDistRange>13.5~20</fleeDistRange>
+                </li>
+              </subNodes>
+            </li>
+            <!-- 沒武器的話就撤離 -->
+            <li Class="Fortified.ThinkNode_ConditionalHasWeapon">
+              <invert>true</invert>
+              <subNodes>
+                <li Class="ThinkNode_ConditionalCannotReachMapEdge">
+                  <subNodes>
+                    <li Class="JobGiver_ExitMapBest">
+                      <defaultLocomotion>Jog</defaultLocomotion>
+                      <forceCanDig>true</forceCanDig>
+                      <canBash>true</canBash>
+                    </li>
+                  </subNodes>
+                </li>
+                <li Class="JobGiver_ExitMapBest">
+                  <defaultLocomotion>Jog</defaultLocomotion>
+                  <forceCanDig>false</forceCanDig>
+                  <canBash>false</canBash>
+                </li>
+              </subNodes>
+            </li>
           </subNodes>
         </li>
-
         <!-- Idle player mech -->
         <li Class="ThinkNode_ConditionalPlayerControlledMech">
           <subNodes>
@@ -167,7 +196,6 @@
             </li>
           </subNodes>
         </li>
-
         <!-- Idle -->
         <li Class="ThinkNode_Tagger">
           <tagToGive>Idle</tagToGive>
@@ -177,7 +205,6 @@
             </li>
           </subNodes>
         </li>
-
         <!-- Idle error -->
         <li Class="JobGiver_IdleError" />
       </subNodes>

@@ -12,7 +12,6 @@
       <body>DMS_Hound</body>
       <baseBodySize>0.75</baseBodySize>
       <baseHealthScale>0.75</baseHealthScale>
-      <thinkTreeConstant>DMS_DroneConstant</thinkTreeConstant>
     </race>
     <comps>
       <li Class="CompProperties_MechPowerCell">

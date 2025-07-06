@@ -3,18 +3,35 @@
   <ConceptDef ParentName="NotedOpportunisticBase">
     <defName>DMS_WeaponSystems</defName>
     <label>Weapon system</label>
-    <helpText>很顯然你獲得了一架可自定義武器的機械體。要注意這些機械體可裝備的武器通常具有限制，你能夠在infocard中的weapon system屬性中查閱所有支援於該機械體的武器。</helpText>
+    <!-- 很顯然你將能夠生產那些能自定義武器的機械體。要注意這些機械體可裝備的武器通常具有限制，你能夠在infocard中的weapon system屬性中查閱所有支援於該機械體的武器。 -->
+    <helpText>Apparently you'll be able to create mechs that can customize weapons. Note that these mechs usually have restrictions on the weapons that can be equipped. You can view all the weapons supported by the mech in the weapon system properties in the infocard.</helpText>
   </ConceptDef>
   
   <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>DMS_Autofacturer</defName>
+    <label>Autonomous production</label>
+    <!-- 自動化生產機械與一般的WorkTable有些不同，它的運作方式更類似於Mech Gestator。即輸入材料與初始化後殖民者便可以做其他事情了，只需要階段性的重置初始化流程便可以完成製造。 -->
+    <helpText>Automated production tables are somewhat different from ordinary work tables. Its operation is more similar to Mech Gestator. That is, after inputting materials and initialization, the colonists can do other things. Only periodic reset of the initialization process is required to complete the manufacturing.</helpText>
+  </ConceptDef>
+  
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>DMS_DronePlatform</defName>
+    <label>Drone Platform</label>
+    <!-- 控制平台是一種能夠讓你靈活使用它們的固定基站，你能夠命令你的殖民者為平台裝載消耗性資源。並設置平台在可用時自動釋放與回收Drone。 -->
+    <helpText>Control platform is a fixed base station that allows you to manage Drones flexibly. You can command your colonists to load consumable resources to the platform and set platform gizmos to automatically release and retract Drones when available, just be aware that drones will destroy once the platform got destroyed.</helpText>
+  </ConceptDef>
+
+  <ConceptDef ParentName="NotedOpportunisticBase">
     <defName>DMS_Drone</defName>
     <label>Drone</label>
-    <helpText>Drone是一種不依賴於機械師的早期機械體類型，它們依賴於遙控平台與操作者的控制並具有有限的續航電量，你可以命令Drone回到平台內來補充平台的使用次數並讓Drone得到修復與更換電池。</helpText>
+    <!-- Drone是一種不依賴於機械師的早期機械體類型，它們依賴於遙控平台與操作者的控制並具有有限的續航電量，你可以命令Drone回到平台內來補充平台的使用次數並讓Drone得到修復與更換電池。 -->
+    <helpText>Drones are an early type of mechs that does not rely on mechanitor. They rely on remote control platforms and operator control, also having limited battery. You can command the Drone to return to the platform to replenish the platform and allow the Drone to be repaired and the battery recharged.</helpText>
   </ConceptDef>
 
   <ConceptDef ParentName="NotedOpportunisticBase">
     <defName>DMS_HeavyWeapon</defName>
     <label>Heavy weapon</label>
-    <helpText>很顯然你獲得了一把重量十足的武器。這種武器並不是設計直接給人類使用的，因此你可能需要一個裝備有外骨骼或者仿生體的人才能夠裝備這類武器。具體裝備條件可以在武器的infocard中查閱</helpText>
+    <!-- 很顯然你獲得了一把重量十足的武器。這種武器並不是設計直接給人類使用的，因此你可能需要一個裝備有外骨骼或者仿生體的人才能夠裝備這類武器。具體裝備條件可以在武器的infocard中查閱 -->
+    <helpText>Obviously you got a very heavy weapon. These weapons are not designed for direct use or even not useable by human, so you may need a person or equipped with exoskeleton or a dedicated mech to equip these kind of weapons. The specific equipment conditions can be checked in the weapon's infocard</helpText>
   </ConceptDef>
 </Defs>

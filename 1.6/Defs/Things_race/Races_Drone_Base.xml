@@ -1,44 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ThinkTreeDef>
-    <defName>DMS_DroneConstant</defName>
-    <thinkRoot Class="ThinkNode_Priority">
-      <subNodes>
-        <!-- Despawned -->
-        <li Class="ThinkNode_Subtree">
-          <treeDef>Despawned</treeDef>
-        </li>
-        <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
-          <subNodes>
-            <li Class="ThinkNode_ConditionalOfPlayerFaction">
-              <subNodes>
-                <li Class="ThinkNode_ConditionalDoingJob">
-                  <invert>true</invert>
-                  <jobDef>FFF_ReturnToDronePlatform</jobDef>
-                  <subNodes>
-                    <li Class="ThinkNode_QueuedJob" />
-                    <li Class="JobGiver_Work" />
-                  </subNodes>
-                </li>
-              </subNodes>
-            </li>
-            <!-- Keep distance -->
-            <li Class="JobGiver_FleeForDistance">
-              <enemyDistToFleeRange>2.9~7.9</enemyDistToFleeRange>
-              <fleeDistRange>13.5~20</fleeDistRange>
-            </li>
-            <li Class="JobGiver_AIFightEnemies">
-              <targetAcquireRadius>30</targetAcquireRadius>
-              <targetKeepRadius>72</targetKeepRadius>
-            </li>
-            <li Class="JobGiver_AIGotoNearestHostile" />
-            <li Class="Fortified.JobGiver_WanderNearPlatform" />
-          </subNodes>
-        </li>
-      </subNodes>
-    </thinkRoot>
-  </ThinkTreeDef>
-
   <!-- 簡單來說是需要部屬的機械體，不需要機械師但沒法自己充電，能夠透過平台放置與回收。 -->
   <!-- Base -->
   <ThingDef Name="DMS_BaseDroidRace" ParentName="BaseMechanoid" Abstract="True">
@@ -61,14 +22,13 @@
       </specialShadowData>
       <intelligence>ToolUser</intelligence>
       <thinkTreeMain>DMS_Mechanoid</thinkTreeMain>
-
       <!-- 要改 -->
       <nameGenerator>DMS_VanguardMechStandard</nameGenerator>
 
       <soundCallIntervalRange>2000~4000</soundCallIntervalRange>
       <soundCallIntervalFriendlyFactor>2</soundCallIntervalFriendlyFactor>
       <soundCallIntervalAggressiveFactor>0.5</soundCallIntervalAggressiveFactor>
-      <thinkTreeConstant MayRequire="Ludeon.RimWorld.Biotech">DMS_DroneConstant</thinkTreeConstant>
+      <thinkTreeConstant>FFF_DroneConstant</thinkTreeConstant>
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
@@ -126,7 +86,7 @@
     <aiAvoidCover>true</aiAvoidCover>
     <destroyGearOnDrop>true</destroyGearOnDrop>
     <canStrip>false</canStrip>
-    <minGenerationAge MayRequire="Ludeon.RimWorld.Biotech">200</minGenerationAge>
+    <minGenerationAge MayRequire="Ludeon.RimWorld.Biotech">0</minGenerationAge>
     <forceNormalGearQuality>true</forceNormalGearQuality>
   </PawnKindDef>
 </Defs>
