@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Autonomous production -->
+  <DMS_Autofacturer.label>自动化生产建筑</DMS_Autofacturer.label>
+  <!-- EN: Automated production tables are somewhat different from ordinary work tables. Its operation is more similar to Mech Gestator. That is, after inputting materials and initialization, the colonists can do other things. Only periodic reset of the initialization process is required to complete the manufacturing. -->
+  <DMS_Autofacturer.helpText>自动化生产机械与一般的生产桌有些不同，它的运作方式更类似於机械培育器。即输入材料与初始化後殖民者便可以做其他事情了，只需要阶段性的重置初始化流程便可以完成制造。</DMS_Autofacturer.helpText>
+  
+  <!-- EN: Drone -->
+  <DMS_Drone.label>无人机</DMS_Drone.label>
+  <!-- EN: Drones are an early type of mechs that does not rely on mechanitor. They rely on remote control platforms and operator control, also having limited battery. You can command the Drone to return to the platform to replenish the platform and allow the Drone to be repaired and the battery recharged. -->
+  <DMS_Drone.helpText>无人机是一种不依赖於机械师的早期机械体类型，它们依赖於遥控平台与操作者的控制并具有有限的续航电量，你可以命令无人机回到平台内来补充平台的使用次数并让无人机得到修复与更换电池。</DMS_Drone.helpText>
+  
+  <!-- EN: Drone Platform -->
+  <DMS_DronePlatform.label>无人机平台</DMS_DronePlatform.label>
+  <!-- EN: Control platform is a fixed base station that allows you to manage Drones flexibly. You can command your colonists to load consumable resources to the platform and set platform gizmos to automatically release and retract Drones when available, just be aware that drones will destroy once the platform got destroyed. -->
+  <DMS_DronePlatform.helpText>控制平台是一种能够让你灵活管理无人机的固定基站，你能够命令你的殖民者为平台装载消耗性资源。并设置平台在可用时自动释放与回收无人机。</DMS_DronePlatform.helpText>
+  
+  <!-- EN: Heavy weapon -->
+  <DMS_HeavyWeapon.label>重型武器</DMS_HeavyWeapon.label>
+  <!-- EN: Obviously you got a very heavy weapon. These weapons are not designed for direct use or even not useable by human, so you may need a person or equipped with exoskeleton or a dedicated mech to equip these kind of weapons. The specific equipment conditions can be checked in the weapon's infocard -->
+  <DMS_HeavyWeapon.helpText>很显然你获得了一把重量十足的武器。这种武器并不是设计直接给正常人类使用的，因此你可能需要一个装备有外骨骼或者专门的机械体才能够装备这类武器。具体装备条件可以在武器的详情窗口中的"支援体型"查阅</DMS_HeavyWeapon.helpText>
+  
+  <!-- EN: Weapon system -->
+  <DMS_WeaponSystems.label>武器系统</DMS_WeaponSystems.label>
+  <!-- EN: Apparently you'll be able to create mechs that can customize weapons. Note that these mechs usually have restrictions on the weapons that can be equipped. You can view all the weapons supported by the mech in the weapon system properties in the infocard. -->
+  <DMS_WeaponSystems.helpText>很显然你将能够生产那些能自定义武器的机械体。要注意这些机械体可装备的武器通常具有限制，所有支援於该机械体的武器能够在机械体详情窗口中的"武器系统"查阅。</DMS_WeaponSystems.helpText>
+  
+</LanguageData>

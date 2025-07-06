@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Falcon -->
+  <DMS_Mech_Falcon.label>游隼</DMS_Mech_Falcon.label>
+  <!-- EN: A heavy-duty tri-rotor drone built for working in conjunction with recon units and anti-tank units. -->
+  <DMS_Mech_Falcon.description>一种轻型三旋翼飞行器，用於空中武装侦察和反坦克打击。</DMS_Mech_Falcon.description>
+  <!-- EN: head -->
+  <DMS_Mech_Falcon.tools.head.label>头部</DMS_Mech_Falcon.tools.head.label>
+  
+  <!-- EN: hyrax -->
+  <DMS_Mech_Hyrax.label>蹄兔</DMS_Mech_Hyrax.label>
+  <!-- EN: A lightweight tracked platform, this type of automatic weapon can be usually said to be the first practical product developed by any killer machine manufacturer. -->
+  <DMS_Mech_Hyrax.description>一种轻型履带平台的遥控机枪运载车，这种构造自动武器通常可以说是大多无人机军火商开发的第一个实用产品。</DMS_Mech_Hyrax.description>
+  <!-- EN: head -->
+  <DMS_Mech_Hyrax.tools.head.label>头部</DMS_Mech_Hyrax.tools.head.label>
+  
+  <!-- EN: Noctula -->
+  <DMS_Mech_Noctula.label>夜蝠</DMS_Mech_Noctula.label>
+  <!-- EN: A stealth operaton command-relay drone nicknamed "Night bat". The drone is a command-relay variant of the Falcon. -->
+  <DMS_Mech_Noctula.description>一种具备光学匿踪能力的三旋翼飞行器，代号“夜蝠”，是游隼的指令中继改装型，用於为猎兵行动时提供指挥链支持。</DMS_Mech_Noctula.description>
+  <!-- EN: head -->
+  <DMS_Mech_Noctula.tools.head.label>头部</DMS_Mech_Noctula.tools.head.label>
+  
+</LanguageData>

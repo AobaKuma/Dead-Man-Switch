@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Lab Furnace -->
+  <DMS_LabFurnace.label>实验用箱型炉</DMS_LabFurnace.label>
+  <!-- EN: Experimental non-auto furnace, designed to meet the needs of transitional-phase equipment or certain compact bases. -->
+  <DMS_LabFurnace.description>一种用於小规模试制材料的箱型感应炉，相对於量产用的大型设备来说十分低耗且不占空间。对於在试制材料阶段没有大量特种材料需求的阵营来说非常合适。</DMS_LabFurnace.description>
+  
+  <!-- EN: Lab reactor -->
+  <DMS_LabReactor.label>实验用反应釜</DMS_LabReactor.label>
+  <!-- EN: reaction chamder for experimental production, designed to meet the needs of transitional-phase equipment or certain compact bases. -->
+  <DMS_LabReactor.description>一种用於小规模试制材料的实验室环境反应釜，相对於量产用的大型设备来说十分低耗且不占空间。对於在试制材料阶段没有大量特种材料需求的阵营来说非常合适。</DMS_LabReactor.description>
+  
+  <!-- EN: Artifuscle Chamber -->
+  <DMS_TableArtifuscle.label>生物培养装置</DMS_TableArtifuscle.label>
+  <!-- EN: High-end production equipment for cultivating Artifuscle and bionics. -->
+  <DMS_TableArtifuscle.description>培育义肢、仿生的高阶生产设备。</DMS_TableArtifuscle.description>
+  
+</LanguageData>

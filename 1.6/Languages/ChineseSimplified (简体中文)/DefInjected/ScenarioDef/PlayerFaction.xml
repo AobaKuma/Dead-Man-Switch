@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Last Command -->
+  <DMS_Scenario.label>最後指令</DMS_Scenario.label>
+  <!-- EN: A group of pioneers have done their part and it's time to start a new chapter. -->
+  <DMS_Scenario.description>一群先遣殖民者们完成了他们的任务，等来了大部队的到来</DMS_Scenario.description>
+  <!-- EN: As the vanguard of the colonial fleet, your final orders you received were to wait in cryosleep for the arrival of the main fleet. And until recently, a strange yet familiar announcement broadcast ended the long and anxious wait...\n\n"Code five: The fleet has entered synchronized orbit. Express our greatest gratitude to all the vanguard pioneers protecting the Lighthouse." -->
+  <DMS_Scenario.scenario.description>身为殖民舰队的先锋，你收到的最後指令就是在冷冻睡眠中等待舰队的到来。\n而直到最近，一则陌生而又熟悉的广播结束了不久前漫长而焦灼的等待...\n\n "代码五：舰队已进入同步轨道，向所有守护灯塔的先锋致以最崇高的谢意。"</DMS_Scenario.scenario.description>
+  <!-- EN: Last Command -->
+  <DMS_Scenario.scenario.name>最後指令</DMS_Scenario.scenario.name>
+  <!-- EN: \n                        When you wake up, all that remains of the world you built are remnants of The Lighthouse.\n                        Time and scavengers have stripped away almost every trace of you and your companions past presence...\n\n                        Just like a long ago when you came here with nothing, you must rebuild anew. Only this time those who toiled and fought along side you are distant memories of the forgotten past.\n                     -->
+  <DMS_Scenario.scenario.parts.GameStartDialog.text>当你醒来时，这个残酷世界留下只是灯塔的残骸。\n时间和拾荒者几乎剥夺了你和同伴过去存在的所有痕迹......\n\就像很久以前一样，你什麽都没有来到这里。但那些曾经和你一起度过这一切的人已经不在了。</DMS_Scenario.scenario.parts.GameStartDialog.text>
+  <!-- EN: A group of pioneers have done their part and it's time for them to begin a new chapter of their lives. -->
+  <DMS_Scenario.scenario.summary>拓荒先驱们已经尽了自己的一份力量，是时候开始新的篇章了。</DMS_Scenario.scenario.summary>
+  
+  <!-- UNUSED -->
+  <DMS_Scenario.scenario.parts.VFEC_AddStartingStructure.structureLabel>灯塔</DMS_Scenario.scenario.parts.VFEC_AddStartingStructure.structureLabel>
+  
+</LanguageData>
