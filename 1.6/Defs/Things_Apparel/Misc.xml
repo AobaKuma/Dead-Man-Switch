@@ -3,7 +3,7 @@
 	<!-- TODO 7/2 獵犬的，槳鳥的，蹄兔的，另外還有建築版本的要做。 -->
 	<ThingDef ParentName="ApparelNoQualityBase">
 		<defName>DMS_Hound_Platform</defName>
-		<label>Hound Drone pack</label>
+		<label>hound drone pack</label>
 		<!-- 一種用於攜帶與部署遙控無人機的容器與組裝工具箱，能夠在戰鬥中快速部署一架獵犬無人機並作為遙控控制的基站來控制與回收無人機。 -->
 		<description>A container and assembly kit for carrying and deploying remote-controlled  hound drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone.</description>
 		<graphicData>
@@ -137,7 +137,7 @@
 
 	<ThingDef ParentName="ApparelNoQualityBase">
 		<defName>DMS_VerlingBrid_Platform</defName>
-		<label>VerlingBrid Drone pack</label>
+		<label>verlingbrid drone pack</label>
 		<!-- 一種用於攜帶與部署遙控無人機的容器與組裝工具箱，能夠在戰鬥中快速部署一架獵犬無人機並作為遙控控制的基站來控制與回收無人機。 -->
 		<description>A container and assembly kit for carrying and deploying remote-controlled verlingbrid drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone.</description>
 		<graphicData>
