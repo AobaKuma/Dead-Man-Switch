@@ -2,10 +2,10 @@
 <Defs>
 	<!-- TODO 7/2 獵犬的，槳鳥的，蹄兔的，另外還有建築版本的要做。 -->
 	<ThingDef ParentName="ApparelNoQualityBase">
-		<defName>DMS_DronePlatform</defName>
-		<label>Drone pack</label>
+		<defName>DMS_Hound_Platform</defName>
+		<label>Hound Drone pack</label>
 		<!-- 一種用於攜帶與部署遙控無人機的容器與組裝工具箱，能夠在戰鬥中快速部署一架獵犬無人機並作為遙控控制的基站來控制與回收無人機。 -->
-		<description>A container and assembly kit for carrying and deploying remote-controlled drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone.</description>
+		<description>A container and assembly kit for carrying and deploying remote-controlled  hound drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone.</description>
 		<graphicData>
 			<texPath>Things/Apparel/DronePack/Icon</texPath>
 			<drawSize>1.2</drawSize>
@@ -134,4 +134,139 @@
 			<li Class="CompProperties_Styleable"></li>
 		</comps>
 	</ThingDef>
+
+	<ThingDef ParentName="ApparelNoQualityBase">
+		<defName>DMS_VerlingBrid_Platform</defName>
+		<label>VerlingBrid Drone pack</label>
+		<!-- 一種用於攜帶與部署遙控無人機的容器與組裝工具箱，能夠在戰鬥中快速部署一架獵犬無人機並作為遙控控制的基站來控制與回收無人機。 -->
+		<description>A container and assembly kit for carrying and deploying remote-controlled verlingbrid drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone.</description>
+		<graphicData>
+			<texPath>Things/Apparel/DronePack/Icon</texPath>
+			<drawSize>1.2</drawSize>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Industrial</techLevel>
+		<tradeTags>
+			<li>DMS_WeaponRanged</li>
+		</tradeTags>
+		<statBases>
+			<Mass>3.5</Mass>
+			<EquipDelay>1</EquipDelay>
+			<MarketValue>250</MarketValue>
+			<MaxHitPoints>80</MaxHitPoints>
+		</statBases>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<recipeUsers Inherit="False">
+				<li>TableMachining</li>
+			</recipeUsers>
+			<unfinishedThingDef>UnfinishedPack</unfinishedThingDef>
+			<researchPrerequisites>
+				<li>DMS_UAVBasis</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+			<ComponentIndustrial>4</ComponentIndustrial>
+			<Steel>60</Steel>
+		</costList>
+		<tickerType>Never</tickerType>
+		<thingCategories>
+			<li>ApparelUtility</li>
+		</thingCategories>
+		<apparel>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+			<scoreOffset>4</scoreOffset>
+			<careIfWornByCorpse>false</careIfWornByCorpse>
+			<careIfDamaged>false</careIfDamaged>
+			<ignoredByNonViolent>true</ignoredByNonViolent>
+			<wearPerDay>0</wearPerDay>
+			<bodyPartGroups>
+				<li>Waist</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Belt</li>
+			</layers>
+			<wornGraphicPath>Things/Apparel/DronePack/apparel</wornGraphicPath>
+			<wornGraphicData>
+				<renderUtilityAsPack>true</renderUtilityAsPack>
+				<north>
+					<offset>(0,0)</offset>
+					<scale>.9</scale>
+				</north>
+				<south>
+					<offset>(0,0.15)</offset>
+					<scale>.9</scale>
+				</south>
+				<east>
+					<offset>(-0.35,0.1)</offset>
+					<scale>.8</scale>
+					<thin>
+						<offset>(0.05,0)</offset>
+					</thin>
+					<hulk>
+						<offset>(0,0)</offset>
+					</hulk>
+					<fat>
+						<offset>(0,0)</offset>
+					</fat>
+					<male>
+						<offset>(0,0)</offset>
+					</male>
+				</east>
+				<west>
+					<offset>(0.35,0.1)</offset>
+					<scale>.8</scale>
+					<thin>
+						<offset>(-0.05,0)</offset>
+					</thin>
+					<hulk>
+						<offset>(0,0)</offset>
+					</hulk>
+					<fat>
+						<offset>(0,0)</offset>
+					</fat>
+					<male>
+						<offset>(0,0)</offset>
+					</male>
+				</west>
+			</wornGraphicData>
+		</apparel>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<smeltable>false</smeltable>
+		<burnableByRecipe>false</burnableByRecipe>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<verbs>
+			<li>
+				<commandIcon>UI/Ability/Drone_Send_bird</commandIcon>
+				<verbClass>Fortified.Verb_Deploy</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<spawnDef>DMS_Drone_VerlingBrid</spawnDef>
+				<soundCast>ThrowGrenade</soundCast>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+				<warmupTime>3.0</warmupTime>
+				<targetable>false</targetable>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<ai_IsWeapon>true</ai_IsWeapon>
+				<targetParams>
+					<canTargetSelf>true</canTargetSelf>
+				</targetParams>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CompProperties_ApparelReloadable">
+				<maxCharges>4</maxCharges>
+				<ammoDef>Steel</ammoDef>
+				<baseReloadTicks>2400</baseReloadTicks>
+				<ammoCountPerCharge>40</ammoCountPerCharge>
+				<hotKey>Misc4</hotKey>
+				<chargeNoun>drone</chargeNoun>
+				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+			</li>
+			<li Class="CompProperties_Styleable"></li>
+		</comps>
+	</ThingDef>
+	
 </Defs>
