@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: [PAWN_nameDef] participated in the grand colonization and came to a rim world. [PAWN_pronoun] underwent extensive survival physical fitness training during voyage. Compared to most people who live on this planet [PAWN_pronoun] is fully prepared. -->
+  <DMS_Civilian01.description>[PAWN_nameDef] participated in the grand colonization and came to a rim world. [PAWN_pronoun] underwent extensive survival physical fitness training during voyage. Compared to most people who live on this planet [PAWN_pronoun] is fully prepared.</DMS_Civilian01.description>
+  <!-- EN: Colonial Pioneer -->
+  <DMS_Civilian01.title>Colonial Pioneer</DMS_Civilian01.title>
+  <!-- EN: Pioneer -->
+  <DMS_Civilian01.titleShort>Pioneer</DMS_Civilian01.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] participated in the grand colonization and came to a rim world. [PAWN_pronoun] is one of the most experienced colonists in the Colonization Force, having participated in numerous successful and failed colonization attempts in their lifetime. -->
+  <DMS_Civilian02.description>[PAWN_nameDef] participated in the grand colonization and came to a rim world. [PAWN_pronoun] is one of the most experienced colonists in the Colonization Force, having participated in numerous successful and failed colonization attempts in their lifetime.</DMS_Civilian02.description>
+  <!-- EN: Survival Expert -->
+  <DMS_Civilian02.title>Survival Expert</DMS_Civilian02.title>
+  <!-- EN: Survivalist -->
+  <DMS_Civilian02.titleShort>Survivalist</DMS_Civilian02.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] participated in the grand colonization and came to a rimworld. Their job was to establish an functional forward outpost well in advance of the main Colonial Force and send data back to show the fleet that the planet was still worth the long voyage. -->
+  <DMS_Civilian03.description>[PAWN_nameDef] participated in the grand colonization and came to a rimworld. Their job was to establish an functional forward outpost well in advance of the main Colonial Force and send data back to show the fleet that the planet was still worth the long voyage.</DMS_Civilian03.description>
+  <!-- EN: Colonial Astropath -->
+  <DMS_Civilian03.title>Colonial Astropath</DMS_Civilian03.title>
+  <!-- EN: Astropath -->
+  <DMS_Civilian03.titleShort>Astropath</DMS_Civilian03.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] participated in the grand colonization and came to a rimworld. Their duty was to exterminate any alien diseases or biological hazards found by the forward outpost in advance of the main Colonial Force's arrival. -->
+  <DMS_Civilian04.description>[PAWN_nameDef] participated in the grand colonization and came to a rimworld. Their duty was to exterminate any alien diseases or biological hazards found by the forward outpost in advance of the main Colonial Force's arrival.</DMS_Civilian04.description>
+  <!-- EN: Xeno Biologist -->
+  <DMS_Civilian04.title>Xeno Biologist</DMS_Civilian04.title>
+  <!-- EN: Biologist -->
+  <DMS_Civilian04.titleShort>Biologist</DMS_Civilian04.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] is from a professional pioneering group. [PAWN_nameDef] was responsible for researching the flora and fauna of the planet before the arrival of the main Colonial Force to make their future colonization work easier. -->
+  <DMS_Civilian05.description>[PAWN_nameDef] is from a professional pioneering group. [PAWN_nameDef] was responsible for researching the flora and fauna of the planet before the arrival of the main Colonial Force to make their future colonization work easier.</DMS_Civilian05.description>
+  <!-- EN: Xeno Ecologist -->
+  <DMS_Civilian05.title>Xeno Ecologist</DMS_Civilian05.title>
+  <!-- EN: Ecologist -->
+  <DMS_Civilian05.titleShort>Ecologist</DMS_Civilian05.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] is from a professional pioneering group. [PAWN_nameDef] was responsible for operating the orbital detector relays to complete geological surveys on the planet before the arrival of the main Colonial Force. -->
+  <DMS_Civilian06.description>[PAWN_nameDef] is from a professional pioneering group. [PAWN_nameDef] was responsible for operating the orbital detector relays to complete geological surveys on the planet before the arrival of the main Colonial Force.</DMS_Civilian06.description>
+  <!-- EN: Geologist -->
+  <DMS_Civilian06.title>Geologist</DMS_Civilian06.title>
+  <!-- EN: Geologist -->
+  <DMS_Civilian06.titleShort>Geologist</DMS_Civilian06.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] is from a professional pioneering group. [PAWN_nameDef] was responsible for the planning and construction of permanent and temporary structures at the landing sites. Life on a hostile rim world forced [PAWN_pronoun] to learn how to save their own life. -->
+  <DMS_Civilian07.description>[PAWN_nameDef] is from a professional pioneering group. [PAWN_nameDef] was responsible for the planning and construction of permanent and temporary structures at the landing sites. Life on a hostile rim world forced [PAWN_pronoun] to learn how to save their own life.</DMS_Civilian07.description>
+  <!-- EN: Colonial Architect -->
+  <DMS_Civilian07.title>Colonial Architect</DMS_Civilian07.title>
+  <!-- EN: Architect -->
+  <DMS_Civilian07.titleShort>Architect</DMS_Civilian07.titleShort>
+  
+  <!-- EN: Most rimworlds are in a state of disorganized anarchy, but [PAWN_nameDef] worked to establish good relations with the indigenous groups on behalf of the Colonial Force. -->
+  <DMS_Civilian08.description>Most rimworlds are in a state of disorganized anarchy, but [PAWN_nameDef] worked to establish good relations with the indigenous groups on behalf of the Colonial Force.</DMS_Civilian08.description>
+  <!-- EN: Local Diplomat -->
+  <DMS_Civilian08.title>Local Diplomat</DMS_Civilian08.title>
+  <!-- EN: Diplomat -->
+  <DMS_Civilian08.titleShort>Diplomat</DMS_Civilian08.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] was responsible for cultivating crops for the community as well as testing soil compatibility levels for future projects. [PAWN_pronoun] tracked monitored the growth of different crops and grew those suitable for local conditions. -->
+  <DMS_Civilian09.description>[PAWN_nameDef] was responsible for cultivating crops for the community as well as testing soil compatibility levels for future projects. [PAWN_pronoun] tracked monitored the growth of different crops and grew those suitable for local conditions.</DMS_Civilian09.description>
+  <!-- EN: Colonial Farmer -->
+  <DMS_Civilian09.title>Colonial Farmer</DMS_Civilian09.title>
+  <!-- EN: Farmer -->
+  <DMS_Civilian09.titleShort>Farmer</DMS_Civilian09.titleShort>
+  
+  <!-- EN: >[PAWN_nameDef] was responsible for smithing tools and replacement parts for a colony site where a stamping printer was not allocated. [PAWN_pronoun] developed a working knowledge of cutting and assembly machinery. -->
+  <DMS_Civilian10.description>>[PAWN_nameDef] was responsible for smithing tools and replacement parts for a colony site where a stamping printer was not allocated. [PAWN_pronoun] developed a working knowledge of cutting and assembly machinery.</DMS_Civilian10.description>
+  <!-- EN: Colonial Mechanic -->
+  <DMS_Civilian10.title>Colonial Mechanic</DMS_Civilian10.title>
+  <!-- EN: Mechanic -->
+  <DMS_Civilian10.titleShort>Mechanic</DMS_Civilian10.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] has been working in mines almost all their life. [PAWN_nameDef] Has been digging manually, with machinery, and with explosives and become something of an expert on the matter. -->
+  <DMS_Civilian11.description>[PAWN_nameDef] has been working in mines almost all their life. [PAWN_nameDef] Has been digging manually, with machinery, and with explosives and become something of an expert on the matter.</DMS_Civilian11.description>
+  <!-- EN: Colonial Miner -->
+  <DMS_Civilian11.title>Colonial Miner</DMS_Civilian11.title>
+  <!-- EN: Miner -->
+  <DMS_Civilian11.titleShort>Miner</DMS_Civilian11.titleShort>
+  
+</LanguageData>

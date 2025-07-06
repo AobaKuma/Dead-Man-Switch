@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: synth -->
+  <DMS_Synthroid.label>synth</DMS_Synthroid.label>
+  <!-- EN: left lung -->
+  <DMS_Synthroid.corePart.parts.left_lung.customLabel>left lung</DMS_Synthroid.corePart.parts.left_lung.customLabel>
+  <!-- EN: right lung -->
+  <DMS_Synthroid.corePart.parts.right_lung.customLabel>right lung</DMS_Synthroid.corePart.parts.right_lung.customLabel>
+  <!-- EN: left fluid reprocessor -->
+  <DMS_Synthroid.corePart.parts.left_fluid_reprocessor.customLabel>left fluid reprocessor</DMS_Synthroid.corePart.parts.left_fluid_reprocessor.customLabel>
+  <!-- EN: right fluid reprocessor -->
+  <DMS_Synthroid.corePart.parts.right_fluid_reprocessor.customLabel>right fluid reprocessor</DMS_Synthroid.corePart.parts.right_fluid_reprocessor.customLabel>
+  <!-- EN: left sight sensor -->
+  <DMS_Synthroid.corePart.parts.Neck.parts.Head.parts.left_sight_sensor.customLabel>left sight sensor</DMS_Synthroid.corePart.parts.Neck.parts.Head.parts.left_sight_sensor.customLabel>
+  <!-- EN: right sight sensor -->
+  <DMS_Synthroid.corePart.parts.Neck.parts.Head.parts.right_sight_sensor.customLabel>right sight sensor</DMS_Synthroid.corePart.parts.Neck.parts.Head.parts.right_sight_sensor.customLabel>
+  <!-- EN: left hearing sensor -->
+  <DMS_Synthroid.corePart.parts.Neck.parts.Head.parts.left_hearing_sensor.customLabel>left hearing sensor</DMS_Synthroid.corePart.parts.Neck.parts.Head.parts.left_hearing_sensor.customLabel>
+  <!-- EN: right hearing sensor -->
+  <DMS_Synthroid.corePart.parts.Neck.parts.Head.parts.right_hearing_sensor.customLabel>right hearing sensor</DMS_Synthroid.corePart.parts.Neck.parts.Head.parts.right_hearing_sensor.customLabel>
+  <!-- EN: left mechanical shoulder -->
+  <DMS_Synthroid.corePart.parts.left_mechanical_shoulder.customLabel>left mechanical shoulder</DMS_Synthroid.corePart.parts.left_mechanical_shoulder.customLabel>
+  <!-- EN: left clavicle -->
+  <DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_clavicle.customLabel>left clavicle</DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_clavicle.customLabel>
+  <!-- EN: left arm -->
+  <DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.customLabel>left arm</DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.customLabel>
+  <!-- EN: left humerus -->
+  <DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_humerus.customLabel>left humerus</DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_humerus.customLabel>
+  <!-- EN: left radius -->
+  <DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_radius.customLabel>left radius</DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_radius.customLabel>
+  <!-- EN: left hand -->
+  <DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_hand.customLabel>left hand</DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_hand.customLabel>
+  <!-- EN: left pinky -->
+  <DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_hand.parts.left_pinky.customLabel>left pinky</DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_hand.parts.left_pinky.customLabel>
+  <!-- EN: left ring finger -->
+  <DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_hand.parts.left_ring_finger.customLabel>left ring finger</DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_hand.parts.left_ring_finger.customLabel>
+  <!-- EN: left middle finger -->
+  <DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_hand.parts.left_middle_finger.customLabel>left middle finger</DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_hand.parts.left_middle_finger.customLabel>
+  <!-- EN: left index finger -->
+  <DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_hand.parts.left_index_finger.customLabel>left index finger</DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_hand.parts.left_index_finger.customLabel>
+  <!-- EN: left thumb -->
+  <DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_hand.parts.left_thumb.customLabel>left thumb</DMS_Synthroid.corePart.parts.left_mechanical_shoulder.parts.left_arm.parts.left_hand.parts.left_thumb.customLabel>
+  <!-- EN: right mechanical shoulder -->
+  <DMS_Synthroid.corePart.parts.right_mechanical_shoulder.customLabel>right mechanical shoulder</DMS_Synthroid.corePart.parts.right_mechanical_shoulder.customLabel>
+  <!-- EN: right clavicle -->
+  <DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_clavicle.customLabel>right clavicle</DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_clavicle.customLabel>
+  <!-- EN: right arm -->
+  <DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.customLabel>right arm</DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.customLabel>
+  <!-- EN: right humerus -->
+  <DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_humerus.customLabel>right humerus</DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_humerus.customLabel>
+  <!-- EN: right radius -->
+  <DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_radius.customLabel>right radius</DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_radius.customLabel>
+  <!-- EN: right hand -->
+  <DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.customLabel>right hand</DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.customLabel>
+  <!-- EN: right pinky -->
+  <DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_pinky.customLabel>right pinky</DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_pinky.customLabel>
+  <!-- EN: right ring finger -->
+  <DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_ring_finger.customLabel>right ring finger</DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_ring_finger.customLabel>
+  <!-- EN: right middle finger -->
+  <DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_middle_finger.customLabel>right middle finger</DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_middle_finger.customLabel>
+  <!-- EN: right index finger -->
+  <DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_index_finger.customLabel>right index finger</DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_index_finger.customLabel>
+  <!-- EN: right thumb -->
+  <DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_thumb.customLabel>right thumb</DMS_Synthroid.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_thumb.customLabel>
+  <!-- EN: left leg -->
+  <DMS_Synthroid.corePart.parts.left_leg.customLabel>left leg</DMS_Synthroid.corePart.parts.left_leg.customLabel>
+  <!-- EN: left femur -->
+  <DMS_Synthroid.corePart.parts.left_leg.parts.left_femur.customLabel>left femur</DMS_Synthroid.corePart.parts.left_leg.parts.left_femur.customLabel>
+  <!-- EN: left tibia -->
+  <DMS_Synthroid.corePart.parts.left_leg.parts.left_tibia.customLabel>left tibia</DMS_Synthroid.corePart.parts.left_leg.parts.left_tibia.customLabel>
+  <!-- EN: left foot -->
+  <DMS_Synthroid.corePart.parts.left_leg.parts.left_foot.customLabel>left foot</DMS_Synthroid.corePart.parts.left_leg.parts.left_foot.customLabel>
+  <!-- EN: right leg -->
+  <DMS_Synthroid.corePart.parts.right_leg.customLabel>right leg</DMS_Synthroid.corePart.parts.right_leg.customLabel>
+  <!-- EN: right femur -->
+  <DMS_Synthroid.corePart.parts.right_leg.parts.right_femur.customLabel>right femur</DMS_Synthroid.corePart.parts.right_leg.parts.right_femur.customLabel>
+  <!-- EN: right tibia -->
+  <DMS_Synthroid.corePart.parts.right_leg.parts.right_tibia.customLabel>right tibia</DMS_Synthroid.corePart.parts.right_leg.parts.right_tibia.customLabel>
+  <!-- EN: right foot -->
+  <DMS_Synthroid.corePart.parts.right_leg.parts.right_foot.customLabel>right foot</DMS_Synthroid.corePart.parts.right_leg.parts.right_foot.customLabel>
+  
+</LanguageData>

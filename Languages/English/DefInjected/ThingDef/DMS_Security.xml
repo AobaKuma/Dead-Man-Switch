@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: APT shell -->
+  <DMS_Bullet_CIWS.label>APT shell</DMS_Bullet_CIWS.label>
+  
+  <!-- EN: armor piercing shell -->
+  <DMS_Bullet_Dawnblade.label>armor piercing shell</DMS_Bullet_Dawnblade.label>
+  
+  <!-- EN: uranium APT shell -->
+  <DMS_Bullet_Kord.label>uranium APT shell</DMS_Bullet_Kord.label>
+  
+  <!-- EN: Type 85 Multi-Purpose-Quick-Firing System -->
+  <DMS_Gun_Dawnblade.label>Type 85 Multi-Purpose-Quick-Firing System</DMS_Gun_Dawnblade.label>
+  <!-- EN: An automated artillery system widely used on small to medium-sized frigates and corvettes in colonial fleets. -->
+  <DMS_Gun_Dawnblade.description>An automated artillery system widely used on small to medium-sized frigates and corvettes in colonial fleets.</DMS_Gun_Dawnblade.description>
+  <!-- EN: Type 85 Multi-Purpose-Quick-Firing System -->
+  <DMS_Gun_Dawnblade.verbs.Verb_Shoot.label>Type 85 Multi-Purpose-Quick-Firing System</DMS_Gun_Dawnblade.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_Dawnblade.verbs.Verb_ShootCE.label>Type 85 Multi-Purposed Quick-Firing System</DMS_Gun_Dawnblade.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Gatekeeper -->
+  <DMS_Gun_GateKeeper.label>Gatekeeper</DMS_Gun_GateKeeper.label>
+  <!-- EN: A large-caliber multi-barreled autocannon, also known as the GAU-8 "Avenger". Its an ancient practical design with an extremely high rate of fire and a devastating effect on anything unfortunate enough to stand infront of it. -->
+  <DMS_Gun_GateKeeper.description>A large-caliber multi-barreled autocannon, also known as the GAU-8 "Avenger". Its an ancient practical design with an extremely high rate of fire and a devastating effect on anything unfortunate enough to stand infront of it.</DMS_Gun_GateKeeper.description>
+  <!-- EN: Gatekeeper -->
+  <DMS_Gun_GateKeeper.verbs.Verb_Shoot.label>Gatekeeper</DMS_Gun_GateKeeper.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_GateKeeper.verbs.Verb_ShootCE.label>GateKeeper</DMS_Gun_GateKeeper.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: kord -->
+  <DMS_Gun_Kord.label>kord</DMS_Gun_Kord.label>
+  <!-- EN: kord -->
+  <DMS_Gun_Kord.description>kord</DMS_Gun_Kord.description>
+  <!-- EN: kord -->
+  <DMS_Gun_Kord.verbs.Verb_Shoot.label>kord</DMS_Gun_Kord.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_Kord.verbs.Verb_ShootCE.label>kord</DMS_Gun_Kord.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: MK44 BushMaster-II -->
+  <DMS_Gun_MK44_Navy.label>MK44 BushMaster-II</DMS_Gun_MK44_Navy.label>
+  <!-- EN: The 30x173mm MK44 Bushmaster II autocannon, despite its modest 200 RPM rate of fire, achieves reliable defensive performance through good accuracy and adequate lethality. -->
+  <DMS_Gun_MK44_Navy.description>The 30x173mm MK44 Bushmaster II autocannon, despite its modest 200 RPM rate of fire, achieves reliable defensive performance through good accuracy and adequate lethality.</DMS_Gun_MK44_Navy.description>
+  <!-- EN: MK44 BushMaster-II -->
+  <DMS_Gun_MK44_Navy.verbs.Verb_Shoot.label>MK44 BushMaster-II</DMS_Gun_MK44_Navy.verbs.Verb_Shoot.label>
+  
+  <!-- EN: 2B9M vasilek -->
+  <DMS_Gun_Vasilek.label>2B9M vasilek</DMS_Gun_Vasilek.label>
+  <!-- EN: An ancient design of rapid fire indirect artillery piece capabler of firing four mortar rounds in one burst. -->
+  <DMS_Gun_Vasilek.description>An ancient design of rapid fire indirect artillery piece capabler of firing four mortar rounds in one burst.</DMS_Gun_Vasilek.description>
+  <!-- EN: 2B9M vasilek -->
+  <DMS_Gun_Vasilek.verbs.Verb_Shoot.label>2B9M vasilek</DMS_Gun_Vasilek.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_Vasilek.verbs.Verb_ShootMortarCE.label>2B9M vasilek</DMS_Gun_Vasilek.verbs.Verb_ShootMortarCE.label>
+  
+  <!-- EN: Dawnblade -->
+  <DMS_Turret_Dawnblade.label>Dawnblade</DMS_Turret_Dawnblade.label>
+  <!-- EN: MPQFS-85 "Dawnblade" is an onboard multi-role quick-firing cannon system. It uses drum magazines and an automatic revolver loader to permit a high rate of sustained fire.\n\nThe armor plating has been removed to allow emplacement to be redeployed as needed for heavy fire support. -->
+  <DMS_Turret_Dawnblade.description>MPQFS-85 "Dawnblade" is an onboard multi-role quick-firing cannon system. It uses drum magazines and an automatic revolver loader to permit a high rate of sustained fire.
+
+The armor plating has been removed to allow emplacement to be redeployed as needed for heavy fire support.</DMS_Turret_Dawnblade.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_Dawnblade.comps.CompRefuelable.fuelGizmoLabel>Barrel durability</DMS_Turret_Dawnblade.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_Dawnblade.comps.CompRefuelable.fuelLabel>Shots until barrel change</DMS_Turret_Dawnblade.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot fire: Needs new reinforced barrel. -->
+  <DMS_Turret_Dawnblade.comps.CompRefuelable.outOfFuelMessage>Cannot fire: Needs new reinforced barrel.</DMS_Turret_Dawnblade.comps.CompRefuelable.outOfFuelMessage>
+  
+  <!-- EN: Gatekeeper -->
+  <DMS_Turret_GateKeeper.label>Gatekeeper</DMS_Turret_GateKeeper.label>
+  <!-- EN: A large-caliber multi-barreled machine gun turret typically used on spacecraft and maritime ships. It has an extremely high rates of fire and devastating suppression capabilities. -->
+  <DMS_Turret_GateKeeper.description>A large-caliber multi-barreled machine gun turret typically used on spacecraft and maritime ships. It has an extremely high rates of fire and devastating suppression capabilities.</DMS_Turret_GateKeeper.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_GateKeeper.comps.CompRefuelable.fuelGizmoLabel>Barrel durability</DMS_Turret_GateKeeper.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_GateKeeper.comps.CompRefuelable.fuelLabel>Shots until barrel change</DMS_Turret_GateKeeper.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
+  <DMS_Turret_GateKeeper.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new reinforced barrel.</DMS_Turret_GateKeeper.comps.CompRefuelable.outOfFuelMessage>
+  
+  <!-- EN: MK44 BushMaster-II -->
+  <DMS_Turret_MK44_Navy.label>MK44 BushMaster-II</DMS_Turret_MK44_Navy.label>
+  <!-- EN: The 30x173mm MK44 Bushmaster II autocannon, despite its modest 200 RPM rate of fire, achieves reliable defensive performance through good accuracy and adequate lethality. -->
+  <DMS_Turret_MK44_Navy.description>The 30x173mm MK44 Bushmaster II autocannon, despite its modest 200 RPM rate of fire, achieves reliable defensive performance through good accuracy and adequate lethality.</DMS_Turret_MK44_Navy.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_MK44_Navy.comps.CompRefuelable.fuelGizmoLabel>Barrel durability</DMS_Turret_MK44_Navy.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_MK44_Navy.comps.CompRefuelable.fuelLabel>Shots until barrel change</DMS_Turret_MK44_Navy.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
+  <DMS_Turret_MK44_Navy.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new reinforced barrel.</DMS_Turret_MK44_Navy.comps.CompRefuelable.outOfFuelMessage>
+  
+  <!-- EN: Okhotnik -->
+  <DMS_Turret_Okhotnik.label>Okhotnik</DMS_Turret_Okhotnik.label>
+  <!-- EN: An ancient design of a remote controlled turret widely used on armored vehicles and mech armor platforms. -->
+  <DMS_Turret_Okhotnik.description>An ancient design of a remote controlled turret widely used on armored vehicles and mech armor platforms.</DMS_Turret_Okhotnik.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_Okhotnik.comps.CompRefuelable.fuelGizmoLabel>Barrel durability</DMS_Turret_Okhotnik.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_Okhotnik.comps.CompRefuelable.fuelLabel>Shots until barrel change</DMS_Turret_Okhotnik.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
+  <DMS_Turret_Okhotnik.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new reinforced barrel.</DMS_Turret_Okhotnik.comps.CompRefuelable.outOfFuelMessage>
+  
+  <!-- EN: Sentry turret -->
+  <DMS_Turret_Sentry.label>Sentry turret</DMS_Turret_Sentry.label>
+  <!-- EN: A quick-deployed, disposable remote-controlled turret that can be used continuously for about 12 hours after being deployed. It will automatically shut down after the energy is used up. These type of equipments are usually deployed in urban combat environments to ambush enemies. -->
+  <DMS_Turret_Sentry.description>A quick-deployed, disposable remote-controlled turret that can be used continuously for about 12 hours after being deployed. It will automatically shut down after the energy is used up. These type of equipments are usually deployed in urban combat environments to ambush enemies.</DMS_Turret_Sentry.description>
+  <!-- EN: Battery power -->
+  <DMS_Turret_Sentry.comps.CompMechPowerCell.labelOverride>Battery power</DMS_Turret_Sentry.comps.CompMechPowerCell.labelOverride>
+  <!-- EN: This turret has a limited battery life. Once it runs out, it will stop working entirely. -->
+  <DMS_Turret_Sentry.comps.CompMechPowerCell.tooltipOverride>This turret has a limited battery life. Once it runs out, it will stop working entirely.</DMS_Turret_Sentry.comps.CompMechPowerCell.tooltipOverride>
+  
+  <!-- EN: Vasilek -->
+  <DMS_Turret_Vasilek.label>Vasilek</DMS_Turret_Vasilek.label>
+  <!-- EN: An ancient design of a rapid fire indirect artillery piece capable of firing four mortar rounds in one burst. -->
+  <DMS_Turret_Vasilek.description>An ancient design of a rapid fire indirect artillery piece capable of firing four mortar rounds in one burst.</DMS_Turret_Vasilek.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_Vasilek.comps.CompRefuelable.fuelGizmoLabel>Barrel durability</DMS_Turret_Vasilek.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_Vasilek.comps.CompRefuelable.fuelLabel>Shots until barrel change</DMS_Turret_Vasilek.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot fire: Needs new reinforced barrel. -->
+  <DMS_Turret_Vasilek.comps.CompRefuelable.outOfFuelMessage>Cannot fire: Needs new reinforced barrel.</DMS_Turret_Vasilek.comps.CompRefuelable.outOfFuelMessage>
+  
+</LanguageData>

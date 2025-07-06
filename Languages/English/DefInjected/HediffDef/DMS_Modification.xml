@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Additional Armor Plating -->
+  <DMS_BF_ExtendArmor.label>Additional Armor Plating</DMS_BF_ExtendArmor.label>
+  <!-- EN: Composite armor plates designed for battle frame pylons add survivability to the battle frame by protecting it from fragmentation and medium-caliber gunfire. -->
+  <DMS_BF_ExtendArmor.description>Composite armor plates designed for battle frame pylons add survivability to the battle frame by protecting it from fragmentation and medium-caliber gunfire.</DMS_BF_ExtendArmor.description>
+  
+  <!-- EN: Extended Cargo Rack -->
+  <DMS_BF_ExtendCargo.label>Extended Cargo Rack</DMS_BF_ExtendCargo.label>
+  <!-- EN: Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants. -->
+  <DMS_BF_ExtendCargo.description>Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants.</DMS_BF_ExtendCargo.description>
+  
+  <!-- EN: Ceramic Plates -->
+  <DMS_CeramicsPlating.label>Ceramic Plates</DMS_CeramicsPlating.label>
+  <!-- EN: Disposable ceramic armor that effectively protects the wearer from small arms fire and shrapnel.\n\nAlthough it is an excellent protective armor, it must be completely replaced once damaged. -->
+  <DMS_CeramicsPlating.description>Disposable ceramic armor that effectively protects the wearer from small arms fire and shrapnel.
+
+Although it is an excellent protective armor, it must be completely replaced once damaged.</DMS_CeramicsPlating.description>
+  <DMS_CeramicsPlating.descriptionCached />
+  
+  <!-- EN: Nuclear Battery -->
+  <DMS_NuclearBattery.label>Nuclear Battery</DMS_NuclearBattery.label>
+  <!-- EN: The abundant output of installed nuclear powered quantum batteries eliminates the need to recharge. The reactor can be overloaded to produce a chain reaction meltdown comparable to an anti-grain warhead. -->
+  <DMS_NuclearBattery.description>The abundant output of installed nuclear powered quantum batteries eliminates the need to recharge. The reactor can be overloaded to produce a chain reaction meltdown comparable to an anti-grain warhead.</DMS_NuclearBattery.description>
+  
+  <!-- EN: Reinforced Frame -->
+  <DMS_ReinforcedFrame.label>Reinforced Frame</DMS_ReinforcedFrame.label>
+  <!-- EN: A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy duty replacement parts will significantly increase the weight of the mech and affect its speed. -->
+  <DMS_ReinforcedFrame.description>A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy duty replacement parts will significantly increase the weight of the mech and affect its speed.</DMS_ReinforcedFrame.description>
+  
+  <!-- EN: Synthetic Tendon -->
+  <DMS_SyntheticTendon.label>Synthetic Tendon</DMS_SyntheticTendon.label>
+  <!-- EN: Biosynthetic muscles attached on the outer layer of mechanical limbs. Synthetic tendons effectively increase output at the cost of additional energy consumption. -->
+  <DMS_SyntheticTendon.description>Biosynthetic muscles attached on the outer layer of mechanical limbs. Synthetic tendons effectively increase output at the cost of additional energy consumption.</DMS_SyntheticTendon.description>
+  
+  <!-- EN: Heavy Hydraulic Frame -->
+  <DMS_TB_HeavyHydraulicFrame.label>Heavy Hydraulic Frame</DMS_TB_HeavyHydraulicFrame.label>
+  <!-- EN: A heavy hydraulic module and power pack for bipedal mechs to gain the capability to lift heavier objects or mount heavy weapons. -->
+  <DMS_TB_HeavyHydraulicFrame.description>A heavy hydraulic module and power pack for bipedal mechs to gain the capability to lift heavier objects or mount heavy weapons.</DMS_TB_HeavyHydraulicFrame.description>
+  <!-- EN: hydraulic frame -->
+  <DMS_TB_HeavyHydraulicFrame.renderNodeProperties.0.debugLabel>hydraulic frame</DMS_TB_HeavyHydraulicFrame.renderNodeProperties.0.debugLabel>
+  
+</LanguageData>

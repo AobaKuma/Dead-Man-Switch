@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: C-Ration -->
+  <DMS_CombatRation.label>C-Ration</DMS_CombatRation.label>
+  <!-- EN: A high energy organic polymer ration, invented during World War III as a nutritional supplement for augmented human troops during combat. For soldiers equipped with nutritional interfaces, it provides enough calories for internal organs to function for a long. But for normal humans, it might cause some slight gastrointestinal discomfort. -->
+  <DMS_CombatRation.description>A high energy organic polymer ration, invented during World War III as a nutritional supplement for augmented human troops during combat. For soldiers equipped with nutritional interfaces, it provides enough calories for internal organs to function for a long. But for normal humans, it might cause some slight gastrointestinal discomfort.</DMS_CombatRation.description>
+  <!-- EN: Take {0} -->
+  <DMS_CombatRation.ingestible.ingestCommandString>Take {0}</DMS_CombatRation.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <DMS_CombatRation.ingestible.ingestReportString>Taking {0}.</DMS_CombatRation.ingestible.ingestReportString>
+  
+  <!-- EN: Neuroglue -->
+  <Neuroglue.label>Neuroglue</Neuroglue.label>
+  <!-- EN: A protein-like receptor gel which connects biological tissues and neural machinery. Neuroglue can effectively block phantom limb syndrome and synthetic rejections.\n\nSuch products have been circulating Rimworld and Midworld for many decades, but any organization claiming to have produced this product has been sanctioned by agents from the Coreworld. They Declare that such a product will increase the bionic level of pirates which isn't safe for regional balance. -->
+  <Neuroglue.description>A protein-like receptor gel which connects biological tissues and neural machinery. Neuroglue can effectively block phantom limb syndrome and synthetic rejections.
+
+Such products have been circulating Rimworld and Midworld for many decades, but any organization claiming to have produced this product has been sanctioned by agents from the Coreworld. They Declare that such a product will increase the bionic level of pirates which isn't safe for regional balance.</Neuroglue.description>
+  <!-- EN: Take {0} -->
+  <Neuroglue.ingestible.ingestCommandString>Take {0}</Neuroglue.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <Neuroglue.ingestible.ingestReportString>Taking {0}.</Neuroglue.ingestible.ingestReportString>
+  
+</LanguageData>

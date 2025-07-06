@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Additional Armor Plating -->
+  <DMS_BF_ExtendArmor.label>Additional Armor Plating</DMS_BF_ExtendArmor.label>
+  <!-- EN: Composite armor plates designed for battle frame pylons add survivability to the battle frame by protecting it from fragmentation and medium-caliber gunfire. -->
+  <DMS_BF_ExtendArmor.description>Composite armor plates designed for battle frame pylons add survivability to the battle frame by protecting it from fragmentation and medium-caliber gunfire.</DMS_BF_ExtendArmor.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_BF_ExtendArmor.comps.CompUsable.useLabel>Use {0_label}</DMS_BF_ExtendArmor.comps.CompUsable.useLabel>
+  
+  <!-- EN: Extended Cargo Rack -->
+  <DMS_BF_ExtendCargo.label>Extended Cargo Rack</DMS_BF_ExtendCargo.label>
+  <!-- EN: Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants. -->
+  <DMS_BF_ExtendCargo.description>Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants.</DMS_BF_ExtendCargo.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_BF_ExtendCargo.comps.CompUsable.useLabel>Use {0_label}</DMS_BF_ExtendCargo.comps.CompUsable.useLabel>
+  
+  <!-- EN: broken ceramics -->
+  <DMS_BrokenCeramics.label>broken ceramics</DMS_BrokenCeramics.label>
+  
+  <!-- EN: Ceramic Plates -->
+  <DMS_CeramicsPlating.label>Ceramic Plates</DMS_CeramicsPlating.label>
+  <!-- EN: A set of ceramic plates designed to be mounted on to a mech's external shell to provide additional protection. Once damaged, the armor plating must be completely replaced.\n\nThe maximum amount of plating able to be installed on a mech can depends on its body size. -->
+  <DMS_CeramicsPlating.description>A set of ceramic plates designed to be mounted on to a mech's external shell to provide additional protection. Once damaged, the armor plating must be completely replaced.
+
+The maximum amount of plating able to be installed on a mech can depends on its body size.</DMS_CeramicsPlating.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_CeramicsPlating.comps.CompUsable.useLabel>Use {0_label}</DMS_CeramicsPlating.comps.CompUsable.useLabel>
+  
+  <!-- EN: Nuclear Battery -->
+  <DMS_NuclearBattery.label>Nuclear Battery</DMS_NuclearBattery.label>
+  <!-- EN: A nuclear fission reactor powering a quantum battery, this device is commonly found in many unmanned signal stations and defense robots. It consists of six high-density uranium-235 columns with integrated thermocouples all wrapped in a high-strength shell. Its energy is enough to make most models of automatroid operate for decades. -->
+  <DMS_NuclearBattery.description>A nuclear fission reactor powering a quantum battery, this device is commonly found in many unmanned signal stations and defense robots. It consists of six high-density uranium-235 columns with integrated thermocouples all wrapped in a high-strength shell. Its energy is enough to make most models of automatroid operate for decades.</DMS_NuclearBattery.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_NuclearBattery.comps.CompUsable.useLabel>Use {0_label}</DMS_NuclearBattery.comps.CompUsable.useLabel>
+  
+  <!-- EN: Reinforced Frame -->
+  <DMS_ReinforcedFrame.label>Reinforced Frame</DMS_ReinforcedFrame.label>
+  <!-- EN: A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy duty replacement parts will significantly increase the weight of the mech and affect its speed. -->
+  <DMS_ReinforcedFrame.description>A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy duty replacement parts will significantly increase the weight of the mech and affect its speed.</DMS_ReinforcedFrame.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_ReinforcedFrame.comps.CompUsable.useLabel>Use {0_label}</DMS_ReinforcedFrame.comps.CompUsable.useLabel>
+  
+  <!-- EN: Synthetic Tendon -->
+  <DMS_SyntheticTendon.label>Synthetic Tendon</DMS_SyntheticTendon.label>
+  <!-- EN: Biosynthetic muscles attached on the outer layer of mechanical limbs. Synthetic tendons effectively increase output at the cost of additional energy consumption. -->
+  <DMS_SyntheticTendon.description>Biosynthetic muscles attached on the outer layer of mechanical limbs. Synthetic tendons effectively increase output at the cost of additional energy consumption.</DMS_SyntheticTendon.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_SyntheticTendon.comps.CompUsable.useLabel>Use {0_label}</DMS_SyntheticTendon.comps.CompUsable.useLabel>
+  
+  <!-- EN: Heavy Hydraulic Frame -->
+  <DMS_TB_HeavyHydraulicFrame.label>Heavy Hydraulic Frame</DMS_TB_HeavyHydraulicFrame.label>
+  <!-- EN: A high durability reinforced hydraulic frame designed as a platform for mounting heavy weapons on Iguanas and Geckos. -->
+  <DMS_TB_HeavyHydraulicFrame.description>A high durability reinforced hydraulic frame designed as a platform for mounting heavy weapons on Iguanas and Geckos.</DMS_TB_HeavyHydraulicFrame.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_TB_HeavyHydraulicFrame.comps.CompUsable.useLabel>Use {0_label}</DMS_TB_HeavyHydraulicFrame.comps.CompUsable.useLabel>
+  
+  <!-- EN: unfinished modification -->
+  <UnfinishedModification.label>unfinished modification</UnfinishedModification.label>
+  <!-- EN: An unfinished modification. -->
+  <UnfinishedModification.description>An unfinished modification.</UnfinishedModification.description>
+  
+</LanguageData>

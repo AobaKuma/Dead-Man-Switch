@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Decoy Radar -->
+  <DMS_DecoyRadar.label>Decoy Radar</DMS_DecoyRadar.label>
+  <!-- EN: A phase array radar. Once activated, it puts out a powerful wave radiation signal which will attract a feral automatroid to attack along with its escorts. If you can defeat it, you can collect the advanced technology from its corpse. The signal pulse burns out the transmitter, so this building can only be used once. -->
+  <DMS_DecoyRadar.description>A phase array radar. Once activated, it puts out a powerful wave radiation signal which will attract a feral automatroid to attack along with its escorts. If you can defeat it, you can collect the advanced technology from its corpse. The signal pulse burns out the transmitter, so this building can only be used once.</DMS_DecoyRadar.description>
+  <!-- EN: Attract tarbosaurus threat -->
+  <DMS_DecoyRadar.comps.CompUsable.useLabel>Attract tarbosaurus threat</DMS_DecoyRadar.comps.CompUsable.useLabel>
+  
+  <!-- EN: Decoy Antenna -->
+  <DMS_DecoyRadio.label>Decoy Antenna</DMS_DecoyRadio.label>
+  <!-- EN: A modified signal transponder which is rigged to send a high power burst transmission. Once activated it puts out a powerful decoy signal which will attract a feral group of automatroid forces to attack your colony. If you can defeat them, you can collect the advanced technology from their corpses. The signal pulse burns out the transmitter, so this building can only be used once. -->
+  <DMS_DecoyRadio.description>A modified signal transponder which is rigged to send a high power burst transmission. Once activated it puts out a powerful decoy signal which will attract a feral group of automatroid forces to attack your colony. If you can defeat them, you can collect the advanced technology from their corpses. The signal pulse burns out the transmitter, so this building can only be used once.</DMS_DecoyRadio.description>
+  <!-- EN: Attract geochelone threat -->
+  <DMS_DecoyRadio.comps.CompUsable.useLabel>Attract geochelone threat</DMS_DecoyRadio.comps.CompUsable.useLabel>
+  
+</LanguageData>

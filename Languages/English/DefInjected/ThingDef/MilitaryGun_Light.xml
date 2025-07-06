@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Assault Piercer -->
+  <DMS_AssaultPiercer.label>Assault Piercer</DMS_AssaultPiercer.label>
+  <!-- EN: A submachine gun chambered in a higher caliber round, the Piercer was made for quick drawing ability so its heavy round can penetrate the armor of its targets at short range.\n\nThis weapon is designed specially for Automatroid use, a normal human will be unable to use it without external equipment or augmentation. -->
+  <DMS_AssaultPiercer.description>A submachine gun chambered in a higher caliber round, the Piercer was made for quick drawing ability so its heavy round can penetrate the armor of its targets at short range.
+
+This weapon is designed specially for Automatroid use, a normal human will be unable to use it without external equipment or augmentation.</DMS_AssaultPiercer.description>
+  <!-- EN: stock -->
+  <DMS_AssaultPiercer.tools.stock.label>stock</DMS_AssaultPiercer.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_AssaultPiercer.tools.barrel.label>barrel</DMS_AssaultPiercer.tools.barrel.label>
+  <!-- EN: Assault Piercer -->
+  <DMS_AssaultPiercer.verbs.Verb_Shoot.label>Assault Piercer</DMS_AssaultPiercer.verbs.Verb_Shoot.label>
+  
+  <!-- EN: tactical autopistol bullet -->
+  <DMS_Bullet_Pistol.label>tactical autopistol bullet</DMS_Bullet_Pistol.label>
+  
+  <!-- EN: PDW -->
+  <DMS_PDW.label>PDW</DMS_PDW.label>
+  <!-- EN: A mass-producable submachine gun which was designed to be used as a "Point Shooting" weapon. It's inaccurate at range but its caliber and draw speed it the ideal weapon for urban combat against milltors. -->
+  <DMS_PDW.description>A mass-producable submachine gun which was designed to be used as a "Point Shooting" weapon. It's inaccurate at range but its caliber and draw speed it the ideal weapon for urban combat against milltors.</DMS_PDW.description>
+  <!-- EN: stock -->
+  <DMS_PDW.tools.stock.label>stock</DMS_PDW.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_PDW.tools.barrel.label>barrel</DMS_PDW.tools.barrel.label>
+  <!-- EN: PDW -->
+  <DMS_PDW.verbs.Verb_Shoot.label>PDW</DMS_PDW.verbs.Verb_Shoot.label>
+  
+  <!-- EN: Mech pistol -->
+  <DMS_TaticalPistol.label>Mech pistol</DMS_TaticalPistol.label>
+  <!-- EN: A sidearm designed for Automatroid or exoskeleton use. \n\nThis weapon is designed specially for Automatroid use, a normal human will be unable to use it without external equipment or augmentation. -->
+  <DMS_TaticalPistol.description>A sidearm designed for Automatroid or exoskeleton use. 
+
+This weapon is designed specially for Automatroid use, a normal human will be unable to use it without external equipment or augmentation.</DMS_TaticalPistol.description>
+  <!-- EN: grip -->
+  <DMS_TaticalPistol.tools.grip.label>grip</DMS_TaticalPistol.tools.grip.label>
+  <!-- EN: barrel -->
+  <DMS_TaticalPistol.tools.barrel.label>barrel</DMS_TaticalPistol.tools.barrel.label>
+  <!-- EN: Mech pistol -->
+  <DMS_TaticalPistol.verbs.Verb_Shoot.label>Mech pistol</DMS_TaticalPistol.verbs.Verb_Shoot.label>
+  
+</LanguageData>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Recon Calibration -->
+  <DMS_RangeFinder.label>Recon Calibration</DMS_RangeFinder.label>
+  <!-- EN: A large amount of fire control data is being shared with surrounding friendly forces through this unit which temporarily slows down its ability to respond to commands. -->
+  <DMS_RangeFinder.description>A large amount of fire control data is being shared with surrounding friendly forces through this unit which temporarily slows down its ability to respond to commands.</DMS_RangeFinder.description>
+  
+  <!-- EN: Received Calibration -->
+  <DMS_RangeFinderBuff.label>Received Calibration</DMS_RangeFinderBuff.label>
+  <!-- EN: The missile knows where it is at all times. It knows this because it knows where it isn't. By subtracting where it is from where it isn't, or where it isn't from where it is... -->
+  <DMS_RangeFinderBuff.description>The missile knows where it is at all times. It knows this because it knows where it isn't. By subtracting where it is from where it isn't, or where it isn't from where it is...</DMS_RangeFinderBuff.description>
+  
+  <!-- EN: Precision Marksmanship Mode -->
+  <DMS_SharpShooting.label>Precision Marksmanship Mode</DMS_SharpShooting.label>
+  <!-- EN: This unit is performing intracate ballistic calculations and cannot move. Once its calculations are complete, it will take a precision shot with deadly accuracy. -->
+  <DMS_SharpShooting.description>This unit is performing intracate ballistic calculations and cannot move. Once its calculations are complete, it will take a precision shot with deadly accuracy.</DMS_SharpShooting.description>
+  
+</LanguageData>

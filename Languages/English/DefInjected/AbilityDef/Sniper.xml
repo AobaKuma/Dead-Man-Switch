@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Recon Calibration -->
+  <DMS_RangeFinder.label>Recon Calibration</DMS_RangeFinder.label>
+  <!-- EN: Share fire control data with friendly forces within range to improve squad accuracy for short period. -->
+  <DMS_RangeFinder.description>Share fire control data with friendly forces within range to improve squad accuracy for short period.</DMS_RangeFinder.description>
+  
+  <!-- EN: Precision Marksmanship -->
+  <DMS_SharpShooting.label>Precision Marksmanship</DMS_SharpShooting.label>
+  <!-- EN: The mech uses its built-in ballistic calculator to adjust for the conditions of its environment, greatly improving accuracy for a short time. -->
+  <DMS_SharpShooting.description>The mech uses its built-in ballistic calculator to adjust for the conditions of its environment, greatly improving accuracy for a short time.</DMS_SharpShooting.description>
+  
+</LanguageData>

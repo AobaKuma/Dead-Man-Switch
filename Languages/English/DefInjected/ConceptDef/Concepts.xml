@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Autonomous production -->
+  <DMS_Autofacturer.label>Autonomous production</DMS_Autofacturer.label>
+  <!-- EN: Automated production tables are somewhat different from ordinary work tables. Their operation are more similar to Mech Gestator. That is, after inputting materials and initialization, the colonists can do other things. Only periodic reset of the initialization process is required to complete the manufacturing. -->
+  <DMS_Autofacturer.helpText>Automated production tables are somewhat different from ordinary work tables. Their operation are more similar to Mech Gestator. That is, after inputting materials and initialization, the colonists can do other things. Only periodic reset of the initialization process is required to complete the manufacturing.</DMS_Autofacturer.helpText>
+  
+  <!-- EN: Drone -->
+  <DMS_Drone.label>Drone</DMS_Drone.label>
+  <!-- EN: Drones are an early type of mechs that does not rely on mechanitor. They rely on remote control platforms and operator control, also having limited battery. You can command the Drone to return to the platform to replenish the platform and allow the Drone to be repaired and the battery recharged. -->
+  <DMS_Drone.helpText>Drones are an early type of mechs that does not rely on mechanitor. They rely on remote control platforms and operator control, also having limited battery. You can command the Drone to return to the platform to replenish the platform and allow the Drone to be repaired and the battery recharged.</DMS_Drone.helpText>
+  
+  <!-- EN: Drone Platform -->
+  <DMS_DronePlatform.label>Drone Platform</DMS_DronePlatform.label>
+  <!-- EN: Control platform is a fixed base station that allows you to manage Drones flexibly. You can command your colonists to load consumable resources to the platform and set platform gizmos to automatically release and retract Drones when available, just be aware that drones will destroy once the platform got destroyed. -->
+  <DMS_DronePlatform.helpText>Control platform is a fixed base station that allows you to manage Drones flexibly. You can command your colonists to load consumable resources to the platform and set platform gizmos to automatically release and retract Drones when available, just be aware that drones will destroy once the platform got destroyed.</DMS_DronePlatform.helpText>
+  
+  <!-- EN: Heavy weapon -->
+  <DMS_HeavyWeapon.label>Heavy weapon</DMS_HeavyWeapon.label>
+  <!-- EN: Obviously you got a very heavy weapon. These weapons are not designed for direct use or even not useable by human, so you may need a person or equipped with exoskeleton or a dedicated mech to equip these kind of weapons. The specific equipment conditions can be checked in the weapon's infocard -->
+  <DMS_HeavyWeapon.helpText>Obviously you got a very heavy weapon. These weapons are not designed for direct use or even not useable by human, so you may need a person or equipped with exoskeleton or a dedicated mech to equip these kind of weapons. The specific equipment conditions can be checked in the weapon's infocard</DMS_HeavyWeapon.helpText>
+  
+  <!-- EN: Weapon system -->
+  <DMS_WeaponSystems.label>Weapon system</DMS_WeaponSystems.label>
+  <!-- EN: Apparently you'll be able to create mechs that can customize weapons. Note that these mechs usually have restrictions on the weapons that can be equipped. You can view all the weapons supported by the mech in the weapon system properties in the infocard. -->
+  <DMS_WeaponSystems.helpText>Apparently you'll be able to create mechs that can customize weapons. Note that these mechs usually have restrictions on the weapons that can be equipped. You can view all the weapons supported by the mech in the weapon system properties in the infocard.</DMS_WeaponSystems.helpText>
+  
+</LanguageData>

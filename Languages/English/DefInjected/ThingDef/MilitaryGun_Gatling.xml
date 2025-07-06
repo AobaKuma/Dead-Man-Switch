@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: GAU-19/A "Attacker" -->
+  <DMS_GAU19Gatlinggun.label>GAU-19/A "Attacker"</DMS_GAU19Gatlinggun.label>
+  <!-- EN: A rapid-firing multiple-barrel firearm chambered in heavy machinegun rounds.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_GAU19Gatlinggun.description>A rapid-firing multiple-barrel firearm chambered in heavy machinegun rounds.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_GAU19Gatlinggun.description>
+  <!-- EN: stock -->
+  <DMS_GAU19Gatlinggun.tools.stock.label>stock</DMS_GAU19Gatlinggun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_GAU19Gatlinggun.tools.barrel.label>barrel</DMS_GAU19Gatlinggun.tools.barrel.label>
+  <!-- EN: GAU-19/A "Attacker" -->
+  <DMS_GAU19Gatlinggun.verbs.Verb_ArcSprayProjectile.label>GAU-19/A "Attacker"</DMS_GAU19Gatlinggun.verbs.Verb_ArcSprayProjectile.label>
+  
+  <!-- UNUSED -->
+  <DMS_GAU19Gatlinggun.verbs.Verb_Shoot.label>GAU-19/A "Attacker"</DMS_GAU19Gatlinggun.verbs.Verb_Shoot.label>
+  
+  <!-- EN: GAU-4 "Vulcan" -->
+  <DMS_GAU4Gatlinggun.label>GAU-4 "Vulcan"</DMS_GAU4Gatlinggun.label>
+  <!-- EN: A rapid-firing multiple-barrel firearm chambered in autocannon rounds. Precision built to spray death at anything unfortunate enough to be in front of it.\n\nThis weapon is designed specifically for automatroid use, it's so heavy only specific automatroids can operate it. -->
+  <DMS_GAU4Gatlinggun.description>A rapid-firing multiple-barrel firearm chambered in autocannon rounds. Precision built to spray death at anything unfortunate enough to be in front of it.
+
+This weapon is designed specifically for automatroid use, it's so heavy only specific automatroids can operate it.</DMS_GAU4Gatlinggun.description>
+  <!-- EN: GAU-4 "Vulcan" -->
+  <DMS_GAU4Gatlinggun.verbs.Verb_ArcSprayProjectile.label>GAU-4 "Vulcan"</DMS_GAU4Gatlinggun.verbs.Verb_ArcSprayProjectile.label>
+  
+  <!-- UNUSED -->
+  <DMS_GAU4Gatlinggun.verbs.Verb_Shoot.label>GAU-4 "Vulcan"</DMS_GAU4Gatlinggun.verbs.Verb_Shoot.label>
+  <DMS_GAU4Gatlinggun.tools.barrel.label>barrel</DMS_GAU4Gatlinggun.tools.barrel.label>
+  
+  <!-- EN: GAU-4 "Vulcan" -->
+  <DMS_GAU4Gatlinggun_Hold.label>GAU-4 "Vulcan"</DMS_GAU4Gatlinggun_Hold.label>
+  <!-- EN: A rapid-firing multiple-barrel firearm chambered in autocannon rounds. Precision built to spray death at anything unfortunate enough to be in front of it.\n\nThis weapon is designed specifically for automatroid use, it's so heavy only specific automatroids can operate it. -->
+  <DMS_GAU4Gatlinggun_Hold.description>A rapid-firing multiple-barrel firearm chambered in autocannon rounds. Precision built to spray death at anything unfortunate enough to be in front of it.
+
+This weapon is designed specifically for automatroid use, it's so heavy only specific automatroids can operate it.</DMS_GAU4Gatlinggun_Hold.description>
+  <!-- EN: stock -->
+  <DMS_GAU4Gatlinggun_Hold.tools.stock.label>stock</DMS_GAU4Gatlinggun_Hold.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_GAU4Gatlinggun_Hold.tools.barrel.label>barrel</DMS_GAU4Gatlinggun_Hold.tools.barrel.label>
+  <!-- EN: GAU-4 "Vulcan" -->
+  <DMS_GAU4Gatlinggun_Hold.verbs.Verb_ArcSprayProjectile.label>GAU-4 "Vulcan"</DMS_GAU4Gatlinggun_Hold.verbs.Verb_ArcSprayProjectile.label>
+  
+  <!-- UNUSED -->
+  <DMS_GAU4Gatlinggun_Hold.verbs.Verb_Shoot.label>GAU-4 "Vulcan"</DMS_GAU4Gatlinggun_Hold.verbs.Verb_Shoot.label>
+  
+  <!-- EN: GAU-8 "Avenger" -->
+  <DMS_GAU8Gatlinggun.label>GAU-8 "Avenger"</DMS_GAU8Gatlinggun.label>
+  <!-- EN: A rapid-firing multiple-barrel firearm chambered in massive autocannon rounds, deadly and destructive. This cannon was co-opted from ancient aircraft rumored to have been built around it.\n\nThis weapon is designed specifically for automatroid use, and it's so heavy only specific automatroids can wield it. -->
+  <DMS_GAU8Gatlinggun.description>A rapid-firing multiple-barrel firearm chambered in massive autocannon rounds, deadly and destructive. This cannon was co-opted from ancient aircraft rumored to have been built around it.
+
+This weapon is designed specifically for automatroid use, and it's so heavy only specific automatroids can wield it.</DMS_GAU8Gatlinggun.description>
+  <!-- EN: stock -->
+  <DMS_GAU8Gatlinggun.tools.stock.label>stock</DMS_GAU8Gatlinggun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_GAU8Gatlinggun.tools.barrel.label>barrel</DMS_GAU8Gatlinggun.tools.barrel.label>
+  <!-- EN: GAU-8 "Avenger" -->
+  <DMS_GAU8Gatlinggun.verbs.Verb_ArcSprayProjectile.label>GAU-8 "Avenger"</DMS_GAU8Gatlinggun.verbs.Verb_ArcSprayProjectile.label>
+  
+  <!-- UNUSED -->
+  <DMS_GAU8Gatlinggun.verbs.Verb_Shoot.label>GAU-8 "Avenger"</DMS_GAU8Gatlinggun.verbs.Verb_Shoot.label>
+  
+  <!-- EN: M214 -->
+  <DMS_M214Gatlinggun.label>M214</DMS_M214Gatlinggun.label>
+  <!-- EN: A multiple-barrel firearm chambered in rifle rounds designed for area denial through immense saturation of fire.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_M214Gatlinggun.description>A multiple-barrel firearm chambered in rifle rounds designed for area denial through immense saturation of fire.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_M214Gatlinggun.description>
+  <!-- EN: stock -->
+  <DMS_M214Gatlinggun.tools.stock.label>stock</DMS_M214Gatlinggun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_M214Gatlinggun.tools.barrel.label>barrel</DMS_M214Gatlinggun.tools.barrel.label>
+  <!-- EN: M214 -->
+  <DMS_M214Gatlinggun.verbs.Verb_ArcSprayProjectile.label>M214</DMS_M214Gatlinggun.verbs.Verb_ArcSprayProjectile.label>
+  
+  <!-- UNUSED -->
+  <DMS_M214Gatlinggun.verbs.Verb_Shoot.label>M214</DMS_M214Gatlinggun.verbs.Verb_Shoot.label>
+  
+</LanguageData>

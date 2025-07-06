@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Hound Station -->
+  <DMS_Hound_Base.label>Hound Station</DMS_Hound_Base.label>
+  <!-- EN: A station for storaging and recharging hound units. -->
+  <DMS_Hound_Base.description>A station for storaging and recharging hound units.</DMS_Hound_Base.description>
+  
+  <!-- EN: Automatroid Recharger -->
+  <DMS_Recharger.label>Automatroid Recharger</DMS_Recharger.label>
+  <!-- EN: Automatroids can recharge here. During the charging cycle, toxic wastepacks are produced and stored internally. Haulers must remove the wastepacks from time to time. -->
+  <DMS_Recharger.description>Automatroids can recharge here. During the charging cycle, toxic wastepacks are produced and stored internally. Haulers must remove the wastepacks from time to time.</DMS_Recharger.description>
+  
+  <!-- EN: Trashpan Station -->
+  <DMS_TrashBin_Base.label>Trashpan Station</DMS_TrashBin_Base.label>
+  <!-- EN: A station for storaging and recharging trashpan units. -->
+  <DMS_TrashBin_Base.description>A station for storaging and recharging trashpan units.</DMS_TrashBin_Base.description>
+  
+</LanguageData>

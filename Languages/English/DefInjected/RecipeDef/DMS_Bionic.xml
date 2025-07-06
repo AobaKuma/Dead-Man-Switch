@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Install nutrition port -->
+  <DMS_InstallNutrientPort.label>Install nutrition port</DMS_InstallNutrientPort.label>
+  <!-- EN: Install a nutrition port. -->
+  <DMS_InstallNutrientPort.description>Install a nutrition port.</DMS_InstallNutrientPort.description>
+  <!-- EN: Installing nutrition port. -->
+  <DMS_InstallNutrientPort.jobString>Installing nutrition port.</DMS_InstallNutrientPort.jobString>
+  
+  <!-- EN: Install mechaneural arm -->
+  <DMS_InstallProstheticArm.label>Install mechaneural arm</DMS_InstallProstheticArm.label>
+  <!-- EN: Install a neural-mechanical arm. -->
+  <DMS_InstallProstheticArm.description>Install a neural-mechanical arm.</DMS_InstallProstheticArm.description>
+  <!-- EN: Installing neural-mechanical arm. -->
+  <DMS_InstallProstheticArm.jobString>Installing neural-mechanical arm.</DMS_InstallProstheticArm.jobString>
+  
+  <!-- EN: Install Mechaneural Visual Sensor -->
+  <DMS_InstallProstheticEye.label>Install Mechaneural Visual Sensor</DMS_InstallProstheticEye.label>
+  <!-- EN: Install a neuromechanical visual sensor. -->
+  <DMS_InstallProstheticEye.description>Install a neuromechanical visual sensor.</DMS_InstallProstheticEye.description>
+  <!-- EN: Installing bionic eye. -->
+  <DMS_InstallProstheticEye.jobString>Installing bionic eye.</DMS_InstallProstheticEye.jobString>
+  
+  <!-- EN: Install mechaneural kidney -->
+  <DMS_InstallProstheticKidney.label>Install mechaneural kidney</DMS_InstallProstheticKidney.label>
+  <!-- EN: Install a neural-mechanical kidney. -->
+  <DMS_InstallProstheticKidney.description>Install a neural-mechanical kidney.</DMS_InstallProstheticKidney.description>
+  <!-- EN: Installing neural-mechanical kidney. -->
+  <DMS_InstallProstheticKidney.jobString>Installing neural-mechanical kidney.</DMS_InstallProstheticKidney.jobString>
+  
+  <!-- EN: Install mechaneural leg -->
+  <DMS_InstallProstheticLeg.label>Install mechaneural leg</DMS_InstallProstheticLeg.label>
+  <!-- EN: Install a neural-mechanical leg. -->
+  <DMS_InstallProstheticLeg.description>Install a neural-mechanical leg.</DMS_InstallProstheticLeg.description>
+  <!-- EN: Installing neural-mechanical leg. -->
+  <DMS_InstallProstheticLeg.jobString>Installing neural-mechanical leg.</DMS_InstallProstheticLeg.jobString>
+  
+  <!-- EN: Install mechaneural lung -->
+  <DMS_InstallProstheticLung.label>Install mechaneural lung</DMS_InstallProstheticLung.label>
+  <!-- EN: Install a neural-mechanical lung. -->
+  <DMS_InstallProstheticLung.description>Install a neural-mechanical lung.</DMS_InstallProstheticLung.description>
+  <!-- EN: Installing neural-mechanical lung. -->
+  <DMS_InstallProstheticLung.jobString>Installing neural-mechanical lung.</DMS_InstallProstheticLung.jobString>
+  
+  <!-- EN: Install Emotional Neutralizer -->
+  <DMS_InstallSensoryFilter.label>Install Emotional Neutralizer</DMS_InstallSensoryFilter.label>
+  <!-- EN: Install an Emotional Neutralizer. -->
+  <DMS_InstallSensoryFilter.description>Install an Emotional Neutralizer.</DMS_InstallSensoryFilter.description>
+  <!-- EN: Installing sensory filter. -->
+  <DMS_InstallSensoryFilter.jobString>Installing sensory filter.</DMS_InstallSensoryFilter.jobString>
+  
+  <!-- EN: Install biosynthetic arm -->
+  <DMS_InstallSyntheticArm.label>Install biosynthetic arm</DMS_InstallSyntheticArm.label>
+  <!-- EN: Install a biosynthetic arm. -->
+  <DMS_InstallSyntheticArm.description>Install a biosynthetic arm.</DMS_InstallSyntheticArm.description>
+  <!-- EN: Installing biosynthetic arm. -->
+  <DMS_InstallSyntheticArm.jobString>Installing biosynthetic arm.</DMS_InstallSyntheticArm.jobString>
+  
+  <!-- EN: Install biosynthetic leg -->
+  <DMS_InstallSyntheticLeg.label>Install biosynthetic leg</DMS_InstallSyntheticLeg.label>
+  <!-- EN: Install a biosynthetic leg. -->
+  <DMS_InstallSyntheticLeg.description>Install a biosynthetic leg.</DMS_InstallSyntheticLeg.description>
+  <!-- EN: Installing neural-mechanical leg. -->
+  <DMS_InstallSyntheticLeg.jobString>Installing neural-mechanical leg.</DMS_InstallSyntheticLeg.jobString>
+  
+  <!-- EN: Remove Emotional Neutralizer. -->
+  <DMS_RemoveSensoryFilter.label>Remove Emotional Neutralizer.</DMS_RemoveSensoryFilter.label>
+  <!-- EN: Remove an Emotional Neutralizer. May cause serious mental trauma. -->
+  <DMS_RemoveSensoryFilter.description>Remove an Emotional Neutralizer. May cause serious mental trauma.</DMS_RemoveSensoryFilter.description>
+  <!-- EN: Removing sensory filter. -->
+  <DMS_RemoveSensoryFilter.jobString>Removing sensory filter.</DMS_RemoveSensoryFilter.jobString>
+  
+</LanguageData>
