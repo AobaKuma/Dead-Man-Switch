@@ -156,7 +156,7 @@
         <bodyGraphicData>
           <texPath>Things/Automatroid/trashBin</texPath>
           <maskPath>Things/Automatroid/AllegianceOverlays/trashBin</maskPath>
-          <shaderType>CutoutWithOverlay</shaderType>
+          <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
         </bodyGraphicData>
@@ -165,7 +165,7 @@
         <bodyGraphicData>
           <texPath>Things/Automatroid/OldTexture/trashBin</texPath>
           <maskPath>Things/Automatroid/AllegianceOverlays/trashBin</maskPath>
-          <shaderType>CutoutWithOverlay</shaderType>
+          <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
         </bodyGraphicData>
