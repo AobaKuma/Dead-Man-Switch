@@ -383,6 +383,7 @@
     <defName>ComponentTransmitter</defName>
     <label>T/R Component</label>
     <description>Precision electronic components for radar and communication devices.</description>
+    <descriptionHyperlinks><ThingDef>DMS_EncryptedTransmitter</ThingDef></descriptionHyperlinks>
     <possessionCount>2</possessionCount>
     <graphicData>
       <texPath>Things/Resource/ComponentTR</texPath>

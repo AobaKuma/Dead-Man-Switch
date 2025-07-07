@@ -778,6 +778,7 @@
       <Beauty>-2</Beauty>
       <ShootingAccuracyTurret>0.9</ShootingAccuracyTurret>
     </statBases>
+    <designationCategory Inherit="false"/>
     <comps>
       <li Class="CompProperties_Refuelable">
         <fuelLabel>Shots until barrel change</fuelLabel>
@@ -1035,7 +1036,6 @@
       <WorkToBuild>7500</WorkToBuild>
       <Beauty>-2</Beauty>
       <ShootingAccuracyTurret>1.00</ShootingAccuracyTurret>
-      <!-- <Mass>10000</Mass> -->
     </statBases>
     <comps>
       <li Class="CompProperties_Explosive">
@@ -1092,10 +1092,6 @@
     </researchPrerequisites>
     <uiIconPath>Things/Turrets/DMS_DawnBlade</uiIconPath>
     <uiIconScale>1.2</uiIconScale>
-    <!-- <minifiedDef>MinifiedThing</minifiedDef> -->
-    <!-- <thingCategories>
-      <li>BuildingsSecurity</li>
-    </thingCategories> -->
   </ThingDef>
 
   <ThingDef ParentName="BaseWeaponTurret">
