@@ -190,17 +190,25 @@
 
   <!-- 蹄兔 -->
   <ThingDef Name="BaseMechRace_Hyrax" ParentName="BaseAutomatroidRace" Abstract="True">
+    <thingClass>Pawn</thingClass>
     <statBases>
       <MoveSpeed>4</MoveSpeed>
       <ArmorRating_Sharp>0.3</ArmorRating_Sharp><!--銳抗-->
       <ArmorRating_Blunt>0.5</ArmorRating_Blunt><!--鈍抗-->
       <ArmorRating_Heat>0.8</ArmorRating_Heat>  <!--能抗-->
+      
+      <!-- 履帶平台的特色就是用電低。並且被攻擊不減速 -->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <MechEnergyUsageFactor>0.5</MechEnergyUsageFactor>
     </statBases>
     <race>
       <body>DMS_Caterpillar</body>
       <baseBodySize>0.8</baseBodySize>
       <baseHealthScale>0.5</baseHealthScale>
       <mechWeightClass>Light</mechWeightClass>
+      <mechEnabledWorkTypes>
+        <li>Hauling</li>
+      </mechEnabledWorkTypes>
     </race>
   </ThingDef>
   
@@ -218,17 +226,17 @@
             <pivot>(0.5,0.5)</pivot>
           </defaultData>
           <dataEast>
-            <offset>(0.5,0,-0.5)</offset>
+            <offset>(0.15,0,0.15)</offset>
           </dataEast>
           <dataWest>
-            <offset>(-0.75,0,0.6)</offset>
-            <rotationOffset>180</rotationOffset>
+            <offset>(-0.15,0,0.15)</offset>
+            <rotationOffset>0</rotationOffset>
           </dataWest>
           <dataSouth>
-            <offset>(-0.6,0,-0.5)</offset>
+            <offset>(0,0,0)</offset>
           </dataSouth>
           <dataNorth>
-            <offset>(0.6,0,0.9)</offset>
+            <offset>(0,0,0.2)</offset>
           </dataNorth>
         </drawData>
       </li>
@@ -248,7 +256,7 @@
           <texPath>Things/Automatroid/hyrax</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1</drawSize>
+          <drawSize>1.5</drawSize>
         </bodyGraphicData>
       </li>
       <li>
@@ -256,12 +264,10 @@
           <texPath>Things/Automatroid/hyrax</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1</drawSize>
+          <drawSize>1.5</drawSize>
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <weaponTags>
-      <li>RiotLMG</li>
-    </weaponTags>
+    <weaponTags/>
   </PawnKindDef>
 </Defs>

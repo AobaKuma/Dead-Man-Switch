@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!-- 小猛瑪 -->
+  <RecipeDef ParentName="DMS_HumanoidMechanoidRecipe">
+    <defName>DMS_Make_Mammoth</defName>
+    <label>Gestate tiny mammoth Automatroid</label>
+    <description>Gestate a tiny mammoth Automatroid.</description>
+    <products>
+      <DMS_Mech_Mammoth>1</DMS_Mech_Mammoth>
+    </products>
+    <researchPrerequisite>DMS_MechBasis</researchPrerequisite>
+    <gestationCycles>3</gestationCycles>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Mammoth</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>400</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
   <!-- 猿人 -->
   <RecipeDef ParentName="DMS_HumanoidMechanoidRecipe">
     <defName>DMS_Make_Ape</defName>
@@ -33,18 +74,18 @@
       <li>
         <filter>
           <thingDefs>
-            <li>ComponentStamped</li>
-          </thingDefs>
-        </filter>
-        <count>2</count>
-      </li>
-      <li>
-        <filter>
-          <thingDefs>
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
         <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
       </li>
     </ingredients>
   </RecipeDef>

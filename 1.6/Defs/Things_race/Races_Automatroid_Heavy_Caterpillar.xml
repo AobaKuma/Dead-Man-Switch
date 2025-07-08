@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 小猛瑪 -->
+  <ThingDef Name="BaseMechRace_Mammoth" ParentName="BaseAutomatroidRace" Abstract="True">
+    <thingClass>Pawn</thingClass>
+    <statBases>
+      <MoveSpeed>3</MoveSpeed>
+      <ArmorRating_Sharp>0.6</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.1</ArmorRating_Heat>  <!--能抗-->
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
+      <CaravanBonusSpeedFactor>6</CaravanBonusSpeedFactor>
+      <CarryingCapacity>200</CarryingCapacity>
+      <!-- 履帶平台的特色就是用電低。並且被攻擊不減速 -->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <MechEnergyUsageFactor>0.5</MechEnergyUsageFactor>
+    </statBases>
+    <race>
+      <body>DMS_Caterpillar</body>
+      <baseBodySize>2</baseBodySize>
+      <baseHealthScale>2.5</baseHealthScale>
+      <mechWeightClass>Heavy</mechWeightClass>
+    </race>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseMechRace_Mammoth">
+    <defName>DMS_Mech_Mammoth</defName>
+    <label>tiny mammoth</label>
+    <description>an unmanned tracked armed carrier used for armed transportation. It is used to transport ammunition and supplies to the front line. It has a certain self-protection capability and a high endurance, which makes them often used by colonial fleets for caravan transportation in rimworld.</description>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <defaultWeapon>DMS_HeavyMachineGunMounted</defaultWeapon>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.2</rotationSmoothTime>
+        <drawSize>2.5</drawSize>
+        <drawData>
+          <defaultData>
+            <pivot>(0.5,0.5)</pivot>
+          </defaultData>
+          <dataEast>
+            <offset>(0.4,0,0.05)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.4,0,0.05)</offset>
+          </dataWest>
+          <dataSouth>
+            <offset>(-0.25,0,-0.3)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(0.25,0,0.4)</offset>
+          </dataNorth>
+        </drawData>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_Mech_Mammoth</defName>
+    <label>tiny mammoth</label>
+    <race>DMS_Mech_Mammoth</race>
+    <isFighter>true</isFighter>
+    <combatPower>120</combatPower>
+    <maxPerGroup>10</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/tinyMamoth</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.9</drawSize>
+          <shadowData>
+            <volume>(1,0.5,1)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/tinyMamoth</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.9</drawSize>
+          <shadowData>
+            <volume>(1,0.5,1)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags/>
+  </PawnKindDef>
+</Defs>

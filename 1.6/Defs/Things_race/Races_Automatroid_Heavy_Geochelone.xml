@@ -10,9 +10,12 @@
       <ArmorRating_Sharp>1.5</ArmorRating_Sharp><!--銳抗-->
       <ArmorRating_Blunt>1.3</ArmorRating_Blunt><!--鈍抗-->
       <ArmorRating_Heat>1.2</ArmorRating_Heat>  <!--能抗-->
-      <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge>
+      
+      <!-- 履帶平台的特色就是用電低。並且被攻擊不減速 -->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <MechEnergyUsageFactor>0.5</MechEnergyUsageFactor>
     </statBases>
     <race>
       <body>DMS_Caterpillar</body>
@@ -218,7 +221,6 @@
       </li>
     </comps>
   </ThingDef>
-
 
   <PawnKindDef Name="BaseGeocheloneKind" ParentName="BaseAutomatroidKind" Abstract="True">
     <label>geochelone</label>

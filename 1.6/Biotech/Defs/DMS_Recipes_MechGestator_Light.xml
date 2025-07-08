@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <RecipeDef ParentName="DMS_MidiumMechanoidRecipe">
+    <defName>DMS_Make_Hyrax</defName>
+    <label>gestate hyrax</label>
+    <description>Gestate a hyrax Automatroid.</description>
+    <products>
+      <DMS_Mech_Hyrax>1</DMS_Mech_Hyrax>
+    </products>
+    <gestationCycles>1</gestationCycles>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Hyrax</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
   <!--遊隼-->
-  <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
+  <RecipeDef ParentName="DMS_MidiumMechanoidRecipe">
     <defName>DMS_Make_Falcon</defName>
     <label>gestate falcon</label>
     <researchPrerequisite>DMS_Automatroid</researchPrerequisite>
@@ -34,7 +65,7 @@
   </RecipeDef>
 
   <!--夜蝠-->
-  <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
+  <RecipeDef ParentName="DMS_MidiumMechanoidRecipe">
     <defName>DMS_Make_Noctula</defName>
     <label>Gestate Noctula</label>
     <researchPrerequisite>DMS_Automatroid</researchPrerequisite>
@@ -75,7 +106,7 @@
   </RecipeDef>
 
   <!--獒犬-->
-  <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
+  <RecipeDef ParentName="DMS_MidiumMechanoidRecipe">
     <defName>DMS_Make_Dogge</defName>
     <label>Gestate Dogge</label>
     <researchPrerequisite>DMS_MechBasis</researchPrerequisite>
@@ -95,6 +126,14 @@
           </thingDefs>
         </filter>
         <count>150</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Artifuscle</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
       </li>
       <li>
         <filter>
@@ -165,7 +204,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>75</count>
+        <count>100</count>
       </li>
       <li>
         <filter>
@@ -182,7 +221,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>15</count>
+        <count>25</count>
       </li>
       <li>
         <filter>
@@ -221,7 +260,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>115</count>
       </li>
       <li>
         <filter>
