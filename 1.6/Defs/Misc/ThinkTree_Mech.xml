@@ -21,6 +21,41 @@
             <li Class="JobGiver_SelfShutdown" />
           </subNodes>
         </li>
+        
+        <!-- Mental state -->
+        <li Class="ThinkNode_ConditionalMentalState">
+          <state>PanicFlee</state>
+          <subNodes>
+            <li Class="ThinkNode_Priority">
+              <subNodes>
+                <!-- 持有遠程武器的話會放風箏 -->
+                <li Class="Fortified.ThinkNode_ConditionalHasWeapon">
+                  <onlyRanged>true</onlyRanged>
+                  <subNodes>
+                    <li Class="JobGiver_FleeForDistance">
+                      <enemyDistToFleeRange>2.9~7.9</enemyDistToFleeRange>
+                      <fleeDistRange>13.5~20</fleeDistRange>
+                    </li>
+                  </subNodes>
+                </li>
+                <li Class="ThinkNode_ConditionalCannotReachMapEdge">
+                      <subNodes>
+                        <li Class="JobGiver_ExitMapBest">
+                          <defaultLocomotion>Jog</defaultLocomotion>
+                          <forceCanDig>true</forceCanDig>
+                          <canBash>true</canBash>
+                        </li>
+                      </subNodes>
+                    </li>
+                    <li Class="JobGiver_ExitMapBest">
+                      <defaultLocomotion>Jog</defaultLocomotion>
+                      <forceCanDig>false</forceCanDig>
+                      <canBash>false</canBash>
+                    </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
 
         <!-- Mental state -->
         <li Class="ThinkNode_ConditionalMentalState">
@@ -36,6 +71,8 @@
             </li>
           </subNodes>
         </li>
+
+        
 
         <!-- Do a queued job -->
         <li Class="ThinkNode_QueuedJob" />

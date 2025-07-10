@@ -322,7 +322,7 @@
 			<EquipDelay>30</EquipDelay>
 		</statBases>
 		<equippedStatOffsets>
-			<MoveSpeed>-0.5</MoveSpeed>
+			<MoveSpeed>0.5</MoveSpeed>
 			<VEF_MassCarryCapacity MayRequire="oskarpotocki.vanillafactionsexpanded.core">75</VEF_MassCarryCapacity>
 		</equippedStatOffsets>
 		<apparel>

@@ -5,7 +5,7 @@
 			<li Class="PatchOperationAttributeSet">
 				<xpath>Defs/ThingDef[@Name="Shell_BlasterSmoke_Releasing_Base"]/comps/li[@Class="Fortified.CompProperties_AntiBlasterSmoke"]</xpath>
 				<attribute>Class</attribute>
-				<value>DMSCE.CompProperties_AntiBlasterSmoke</value>
+				<value>FortifiedCE.CompProperties_AntiBlasterSmoke</value>
 			</li>
 		</operations>
 	</Operation>

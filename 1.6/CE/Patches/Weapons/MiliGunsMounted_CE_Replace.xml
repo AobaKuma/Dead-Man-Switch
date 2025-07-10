@@ -31,14 +31,14 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="DMS_Mech_Iguana"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="machine gun"]/turret</xpath>
+		<xpath>Defs/ThingDef[defName="DMS_Mech_Iguana"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="General-purpose machine gun"]/turret</xpath>
 		<value>
-			<turret>DMS_Iguana_SubMachineGun</turret>
+			<turret>DMS_Tarbosaurus_SubMachineGun</turret>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="DMS_Mech_Tarbosaurus"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="heavy machinegun"]/turret</xpath>
+		<xpath>Defs/ThingDef[defName="DMS_Mech_Tarbosaurus"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="General-purpose machine gun"]/turret</xpath>
 		<value>
 			<turret>DMS_Tarbosaurus_SubMachineGun</turret>
 		</value>

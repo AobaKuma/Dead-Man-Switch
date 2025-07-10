@@ -159,7 +159,7 @@
 			<!-- ========== Base DMS Machine ========== -->
 
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[@Name="BaseDMSMachine"]/statBases</xpath>
+				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]/statBases</xpath>
 				<value>
 					<SmokeSensitivity>0</SmokeSensitivity>
 					<NightVisionEfficiency>0.25</NightVisionEfficiency>
@@ -167,14 +167,14 @@
 			</li>
 
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[@Name="BaseDMSMachine"]/statBases/ArmorRating_Heat</xpath>
+				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]/statBases/ArmorRating_Heat</xpath>
 				<value>
 					<ArmorRating_Heat>0.00</ArmorRating_Heat>
 				</value>
 			</li>
 
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[@Name="BaseDMSMachine"]/comps</xpath>
+				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]/comps</xpath>
 				<value>
 					<li>
 						<compClass>CombatExtended.CompPawnGizmo</compClass>
@@ -190,7 +190,7 @@
 			</li>
 			
 			<li Class="PatchOperationAddModExtension"> <!-- new -->
-				<xpath>Defs/ThingDef[@Name="BaseDMSMachine"]</xpath>
+				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]</xpath>
 				<value>
 					<li Class="CombatExtended.PartialArmorExt">
 						<stats>
@@ -216,7 +216,7 @@
 			</li>
 
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[@Name="BaseDMSMachine"]/tools</xpath>
+				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]/tools</xpath>
 				<value>
 					<tools>
 						<li Class="CombatExtended.ToolCE">
