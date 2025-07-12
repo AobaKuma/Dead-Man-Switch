@@ -3,7 +3,7 @@
 
   <BossgroupDef ParentName="BaseBossgroup" Name="BaseBossgroupNonMechanitor" Abstract="True">
     <modExtensions>
-      <li Class="Fortified.CallableExtension"></li>
+      <li Class="Fortified.CallableExtension"/>
     </modExtensions>
   </BossgroupDef>
 

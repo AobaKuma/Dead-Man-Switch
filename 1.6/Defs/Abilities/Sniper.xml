@@ -26,7 +26,7 @@
 		<defName>DMS_SharpShooting</defName>
 		<label>Precision Marksmanship Mode</label>
 		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-		<description>This unit is performing intracate ballistic calculations and cannot move. Once its calculations are complete, it will take a precision shot with deadly accuracy.</description>
+		<description>This unit is performing intricate ballistic calculations and cannot move. Once its calculations are complete, it will take a precision shot with deadly accuracy.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>

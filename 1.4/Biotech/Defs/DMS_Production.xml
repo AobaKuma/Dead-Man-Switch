@@ -37,7 +37,7 @@
     <workType>Smithing</workType>
     <priorityInType>200</priorityInType>
     <fixedBillGiverDefs>
-      <li>DMS_MechGestatorSamll</li>
+      <li>DMS_MechGestatorSmall</li>
     </fixedBillGiverDefs>
     <verb>work at</verb>
     <gerund>working at</gerund>
@@ -48,7 +48,7 @@
   </WorkGiverDef>
 
   <ThingDef ParentName="MechGestatorBase">
-    <defName>DMS_MechGestatorSamll</defName>
+    <defName>DMS_MechGestatorSmall</defName>
     <label>automatroid constructor</label>
     <description>A massive industrial equipment use to assemble automatroid.</description>
 		<designationCategory>DMS_Category</designationCategory>

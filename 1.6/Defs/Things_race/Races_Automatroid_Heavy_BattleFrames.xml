@@ -176,7 +176,7 @@
   <ThingDef ParentName="BaseBattleFrame">
     <defName>DMS_Mech_EscortLifter</defName>
     <label>Escort Lifter</label>
-    <description>An early stage mass-production automatroid. Its no longer in regular service but there're still plenty of them modified for transport purposes.</description>
+    <description>An early stage mass-production automatroid. It's no longer in regular service but there are still plenty of them modified for transport purposes.</description>
     <statBases>
       <MoveSpeed>4.2</MoveSpeed>
       <ArmorRating_Sharp>0.3</ArmorRating_Sharp><!--銳抗-->
@@ -252,7 +252,7 @@
   <ThingDef ParentName="BaseBattleFrame">
     <defName>DMS_Mech_ShaftWorker</defName>
     <label>Shaft Worker</label>
-    <description>An early stage mass-produced automatroid. Its no longer in regular service but there're still lots of them modified to used for mining and construct purpose.</description>
+    <description>An early stage mass-produced automatroid. It's no longer in regular service but there are still lots of them modified to used for mining and construct purpose.</description>
     <statBases>
       <MoveSpeed>3.0</MoveSpeed>
       <ArmorRating_Sharp>0.3</ArmorRating_Sharp><!--銳抗-->

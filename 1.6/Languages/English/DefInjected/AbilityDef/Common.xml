@@ -20,10 +20,10 @@
   
   <!-- EN: Fission Overload -->
   <DMS_NuclearOverload.label>Fission Overload</DMS_NuclearOverload.label>
-  <!-- EN: In order to avoid catastrophic environmental pollution or capture by the enemy, the fission battery can be manually forced into a meltdown. \n\nA meltdown will cause all unreacted nuclear material to atomize instantl, causing a violent explosive reaction. -->
+  <!-- EN: In order to avoid catastrophic environmental pollution or capture by the enemy, the fission battery can be manually forced into a meltdown. \n\nA meltdown will cause all unreacted nuclear material to atomize instantly, causing a violent explosive reaction. -->
   <DMS_NuclearOverload.description>In order to avoid catastrophic environmental pollution or capture by the enemy, the fission battery can be manually forced into a meltdown. 
 
-A meltdown will cause all unreacted nuclear material to atomize instantl, causing a violent explosive reaction.</DMS_NuclearOverload.description>
+A meltdown will cause all unreacted nuclear material to atomize instantly, causing a violent explosive reaction.</DMS_NuclearOverload.description>
   <!-- EN: Overloading the fission battery will create a devastating explosion and destroy this unit. \n\nAre you sure to do this? -->
   <DMS_NuclearOverload.confirmationDialogText>Overloading the fission battery will create a devastating explosion and destroy this unit. 
 

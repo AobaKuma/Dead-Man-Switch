@@ -55,7 +55,7 @@
   <!-- 塑化纖維 玩家能生產的進階纖維，性質接近魔鬼布。製造需要塑鋼。-->  
   <ThingDef ParentName="ResourceBase">
     <defName>Plasfiber</defName>
-    <label>Plasticfiber</label>
+    <label>Plastic fiber</label>
     <description>A type of synthetic fiber made with plasteel and is intrinsically resistant to sharp attacks but not blunt impacts.\n\n Plastifiber has a important role in the medical field as a biomimetic surface material as it does not produce rejection reactions from the immune system.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_ReactionChamber</ThingDef>
@@ -166,7 +166,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>DMS_Ceramics</defName>
     <label>Ceramics</label>
-    <description>A military standard composite ceramic plate widely used as a defensive additions for war machines.\n\nits durability is somewhat poor, but it provides excellent protection and is light weight.</description>
+    <description>A military standard composite ceramic plate widely used as a defensive additions for war machines.\n\nits durability is somewhat poor, but it provides excellent protection and is lightweight.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_Furnace</ThingDef>
       <ThingDef>DMS_LabFurnace</ThingDef>

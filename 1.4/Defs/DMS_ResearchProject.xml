@@ -226,7 +226,7 @@
   </ResearchProjectDef>
   
   <ResearchProjectDef ParentName="DMS_BaseTech">
-    <defName>DMS_Hybird</defName>
+    <defName>DMS_Hybrid</defName>
     <label>Hybird Engineering</label>
     <description>The establishment of biological-mechanical hybrid technology was during WW3, where mercenary who was soldiers in countries whrere involved in the war established an armed state with military personnel,using drone and hybrid prosthetic helping the retired wounded return to battle. \n\n And soon, countries military realized the influence of bio-mechanical hybrids on modern warfare and rushed to armed in their armies.</description>
     <baseCost>2000</baseCost>
@@ -249,7 +249,7 @@
     <baseCost>1250</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
-      <li>DMS_Hybird</li>
+      <li>DMS_Hybrid</li>
     </prerequisites>
     <researchViewX>6.00</researchViewX>
     <researchViewY>1.75</researchViewY>
@@ -339,7 +339,7 @@
     <baseCost>6000</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>
-      <li>DMS_Hybird</li>
+      <li>DMS_Hybrid</li>
       <li>DMS_HumanoidEngineering</li>
     </prerequisites>
     <researchViewX>10.00</researchViewX>

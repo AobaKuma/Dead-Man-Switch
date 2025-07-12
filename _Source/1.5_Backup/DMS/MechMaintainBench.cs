@@ -60,7 +60,7 @@ namespace DMS
     {
         protected override Job TryGiveJob(Pawn pawn)
         {
-            foreach (var b in pawn.Map.listerThings.ThingsOfDef(MaintainDefOf.DMS_MechGestatorSamll))
+            foreach (var b in pawn.Map.listerThings.ThingsOfDef(MaintainDefOf.DMS_MechGestatorSmall))
             {
                 if (b.TryGetComp<CompPowerTrader>().PowerOn && pawn.CanReserveAndReach(b,PathEndMode.OnCell,Danger.Deadly))
                 {
@@ -78,7 +78,7 @@ namespace DMS
             DefOfHelper.EnsureInitializedInCtor(typeof(MaintainDefOf));
         }
         public static JobDef DMS_GotoMaintenance;
-        public static ThingDef DMS_MechGestatorSamll;
+        public static ThingDef DMS_MechGestatorSmall;
     }
     
 }

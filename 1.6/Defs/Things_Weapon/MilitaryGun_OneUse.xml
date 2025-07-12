@@ -4,7 +4,7 @@
 	<ThingDef ParentName="ApparelNoQualityBase">
 		<defName>DMS_DeposableRocketLauncher</defName>
 		<label>Disposable Launcher</label>
-		<description>A single use recoilless rifle designed to be fired and discarded. It's light-weight and effective againist bunkers and heavy mechs. It has a long fire range and requires line of sight.</description>
+		<description>A single use recoilless rifle designed to be fired and discarded. It's light-weight and effective against bunkers and heavy mechs. It has a long fire range and requires line of sight.</description>
 		<graphicData>
 		  <texPath>Things/Apparel/RocketLauncher/DMS_Launcher_Icon</texPath>
 		  <drawSize>1.2</drawSize>
@@ -152,7 +152,7 @@
 			<chargeNoun>charge</chargeNoun>
 			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
 		  </li>
-		  <li Class="CompProperties_Styleable"></li>
+		  <li Class="CompProperties_Styleable"/>
 		</comps>
 		<allowedArchonexusCount>1</allowedArchonexusCount>
 	  </ThingDef>

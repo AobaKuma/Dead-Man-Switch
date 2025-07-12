@@ -42,18 +42,18 @@
   <DMS_PDW.verbs.Verb_ShootCE.label>个人防卫武器</DMS_PDW.verbs.Verb_ShootCE.label>
   
   <!-- EN: Mech pistol -->
-  <DMS_TaticalPistol.label>机兵手枪</DMS_TaticalPistol.label>
+  <DMS_TacticalPistol.label>机兵手枪</DMS_TacticalPistol.label>
   <!-- EN: A sidearm designed for Automatroid or exoskeleton use. \n\nThis weapon is designed specially for Automatroid use, a normal human will be unable to use it without external equipment or augmentation. -->
-  <DMS_TaticalPistol.description>一把大口径手枪，具有精良的制造工艺和额外的战术附件，对人类来说过於沉重，但适合机兵使用。\n\n这种武器是专门为机兵设计的，因此如果没有外部辅助设备或超强的力量，普通人可能无法正常使用。</DMS_TaticalPistol.description>
+  <DMS_TacticalPistol.description>一把大口径手枪，具有精良的制造工艺和额外的战术附件，对人类来说过於沉重，但适合机兵使用。\n\n这种武器是专门为机兵设计的，因此如果没有外部辅助设备或超强的力量，普通人可能无法正常使用。</DMS_TacticalPistol.description>
   <!-- EN: grip -->
-  <DMS_TaticalPistol.tools.grip.label>握把</DMS_TaticalPistol.tools.grip.label>
+  <DMS_TacticalPistol.tools.grip.label>握把</DMS_TacticalPistol.tools.grip.label>
   <!-- EN: barrel -->
-  <DMS_TaticalPistol.tools.barrel.label>枪管</DMS_TaticalPistol.tools.barrel.label>
+  <DMS_TacticalPistol.tools.barrel.label>枪管</DMS_TacticalPistol.tools.barrel.label>
   <!-- EN: Mech pistol -->
-  <DMS_TaticalPistol.verbs.Verb_Shoot.label>机兵手枪</DMS_TaticalPistol.verbs.Verb_Shoot.label>
+  <DMS_TacticalPistol.verbs.Verb_Shoot.label>机兵手枪</DMS_TacticalPistol.verbs.Verb_Shoot.label>
   
   <!-- UNUSED -->
-  <DMS_TaticalPistol.tools.muzzle.label>枪口</DMS_TaticalPistol.tools.muzzle.label>
-  <DMS_TaticalPistol.verbs.Verb_ShootCE.label>机兵手枪</DMS_TaticalPistol.verbs.Verb_ShootCE.label>
+  <DMS_TacticalPistol.tools.muzzle.label>枪口</DMS_TacticalPistol.tools.muzzle.label>
+  <DMS_TacticalPistol.verbs.Verb_ShootCE.label>机兵手枪</DMS_TacticalPistol.verbs.Verb_ShootCE.label>
   
 </LanguageData>

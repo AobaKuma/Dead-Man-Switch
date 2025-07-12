@@ -402,7 +402,7 @@
   </ResearchProjectDef>
   
   <ResearchProjectDef ParentName="DMS_BaseTech">
-    <defName>DMS_Hybird</defName>
+    <defName>DMS_Hybrid</defName>
     <label>Hybird Engineering</label>
     <description>The establishment of biological-mechanical hybrid technology during World War III saw independent mercenaries establish create a sovereign state with personnel using drones and hybrid prosthetics. Their forces consisted of discared wounded veterans who returned to fight for their cause due to the advances in biomechanical engineering and prothesis. They also developed a munition that rendered the advanced charged ammuniton of the worlds' armies inert.\n\nAfter their eventual slaughter, their creation of a Blaster Screen Shell remained as their only legacy.</description>
     <baseCost>2000</baseCost>
@@ -425,7 +425,7 @@
     <baseCost>1250</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
-      <li>DMS_Hybird</li>
+      <li>DMS_Hybrid</li>
     </prerequisites>
     <researchViewX>5.00</researchViewX>
     <researchViewY>0.50</researchViewY>
@@ -532,7 +532,7 @@
     <baseCost>6000</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>
-      <li>DMS_Hybird</li>
+      <li>DMS_Hybrid</li>
       <li>DMS_HeavyAutomatroid</li>
     </prerequisites>
     <researchViewX>10.00</researchViewX>

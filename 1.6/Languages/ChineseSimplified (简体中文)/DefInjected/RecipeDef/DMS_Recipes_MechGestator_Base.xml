@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: Resurrect Heavy Automatroid -->
-  <DMS_ResurrectHeavyMech.label>修复重型机兵</DMS_ResurrectHeavyMech.label>
-  <!-- EN: Resurrect a friendly automatroid from the heavy weight class. So long as the automatroid's body is not completely destroyed, it can be resurrected. -->
-  <DMS_ResurrectHeavyMech.description>修复严重受损的机兵。</DMS_ResurrectHeavyMech.description>
+  <!-- EN: resurrect medium automatroid -->
+  <DMS_ResurrectLightMech.label>修复轻型机兵</DMS_ResurrectLightMech.label>
+  <!-- EN: Resurrect a friendly automatroid of the medium weight class. So long as the automatroid's body is not completely destroyed, it can be resurrected. -->
+  <DMS_ResurrectLightMech.description>修复严重受损的机兵。</DMS_ResurrectLightMech.description>
   <!-- EN: Resurrecting mech. -->
-  <DMS_ResurrectHeavyMech.jobString>修复机械体中</DMS_ResurrectHeavyMech.jobString>
+  <DMS_ResurrectLightMech.jobString>修复机械体中</DMS_ResurrectLightMech.jobString>
   
   <!-- EN: Resurrect Medium Automatroid -->
   <DMS_ResurrectMediumMech.label>修复中型机兵</DMS_ResurrectMediumMech.label>
@@ -14,6 +14,13 @@
   <DMS_ResurrectMediumMech.description>修复严重受损的机兵。</DMS_ResurrectMediumMech.description>
   <!-- EN: Resurrecting mech. -->
   <DMS_ResurrectMediumMech.jobString>修复机械体中</DMS_ResurrectMediumMech.jobString>
+
+  <!-- EN: Resurrect Heavy Automatroid -->
+  <DMS_ResurrectHeavyMech.label>修复重型机兵</DMS_ResurrectHeavyMech.label>
+  <!-- EN: Resurrect a friendly automatroid from the heavy weight class. So long as the automatroid's body is not completely destroyed, it can be resurrected. -->
+  <DMS_ResurrectHeavyMech.description>修复严重受损的机兵。</DMS_ResurrectHeavyMech.description>
+  <!-- EN: Resurrecting mech. -->
+  <DMS_ResurrectHeavyMech.jobString>修复机械体中</DMS_ResurrectHeavyMech.jobString>
   
   <!-- EN: Resurrect Ultraheavy Automatroid -->
   <DMS_ResurrectUltraheavyMech.label>修复超重型机兵</DMS_ResurrectUltraheavyMech.label>

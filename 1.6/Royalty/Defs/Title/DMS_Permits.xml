@@ -139,7 +139,7 @@
   <RoyalTitlePermitDef>
     <defName>DMS_Bandwidth</defName>
     <label>Bandwidth Support</label>
-    <description>Apply for access to the orbital bandwidth support network, increasing the the amount of mechanoid bandwidth available to the user based on their applicant's title. This support will be available unless death or defection occurs.</description>
+    <description>Apply for access to the orbital bandwidth support network, increasing the amount of mechanoid bandwidth available to the user based on their applicant's title. This support will be available unless death or defection occurs.</description>
     <workerClass>Fortified.RoyalTitlePermitWorker_Bandwidth</workerClass>
     <minTitle>DMS_Corporal</minTitle>
     <faction>DMS_Army</faction>
@@ -279,7 +279,7 @@
   <RoyalTitlePermitDef>
     <defName>DMS_WorkerGroup</defName>
     <label>Call a Large Worker Group</label>
-    <description>Call for a group of 8 workers to assist you for 6 days. These workers can only do general labor tasksand can be controlled as though they were your own colonists. You are required to keep them safe.</description>
+    <description>Call for a group of 8 workers to assist you for 6 days. These workers can only do general labor tasks and can be controlled as though they were your own colonists. You are required to keep them safe.</description>
     <workerClass>RoyalTitlePermitWorker_CallLaborers</workerClass>
     <minTitle>DMS_Major</minTitle>
     <faction>DMS_Army</faction>

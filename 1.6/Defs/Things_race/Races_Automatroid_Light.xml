@@ -132,7 +132,7 @@
   <ThingDef ParentName="BaseMechRace_Falcon">
     <defName>DMS_Mech_Noctula</defName>
     <label>Noctula</label>
-    <description>A stealth operaton command-relay drone nicknamed "Night bat". The drone is a command-relay variant of the Falcon.</description>
+    <description>A stealth operation command-relay drone nicknamed "Night bat". The drone is a command-relay variant of the Falcon.</description>
     <statBases>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>

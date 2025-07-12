@@ -3,17 +3,17 @@
 
   <!-- EN: Call artillery bombard -->
   <DMS_Call_MortarSupport.label>Call mortar bombard</DMS_Call_MortarSupport.label>
-  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depend on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
+  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depended on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
   <DMS_Call_MortarSupport.description>Request 81mm mortar support from the nearest base, they will deliver incendiary shells to the targeted position. The number of available mortars is not fixed, and the bombardment accuracy also has certain differences.</DMS_Call_MortarSupport.description>
   
   <!-- EN: Call artillery bombard -->
   <DMS_Call_ArtillerySupport.label>Call artillery bombard</DMS_Call_ArtillerySupport.label>
-  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depend on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
+  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depended on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
   <DMS_Call_ArtillerySupport.description>Request 155mm artillery support from the nearest base. The number of available artillery pieces is not fixed, and the bombardment accuracy also has certain differences.</DMS_Call_ArtillerySupport.description>
   
   <!-- EN: bandwidth support -->
   <DMS_Bandwidth.label>Bandwidth Support</DMS_Bandwidth.label>
-  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depend on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
+  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depended on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
   <DMS_Bandwidth.description>Apply for the access of orbital bandwidth support, the amount of bandwidth is dependent on the applicant's current title. This support will be valid unless death or defection occurs on the applicant.</DMS_Bandwidth.description>
   
   <!-- EN: call aerodrone salvo -->
@@ -51,10 +51,10 @@
   <!-- EN: Apply a battle friend mech belong to your side. -->
   <DMS_CombatMech.description>Apply for a Battle Friend mech to belong to your side.</DMS_CombatMech.description>
   
-  <!-- EN: componments drop -->
-  <DMS_CompDrop.label>Componments Drop</DMS_CompDrop.label>
-  <!-- EN: Call for a drop of stamp componments and wetware computer. -->
-  <DMS_CompDrop.description>Call for a drop of stamp componments and wetware computer.</DMS_CompDrop.description>
+  <!-- EN: components drop -->
+  <DMS_CompDrop.label>Components Drop</DMS_CompDrop.label>
+  <!-- EN: Call for a drop of stamp components and wetware computer. -->
+  <DMS_CompDrop.description>Call for a drop of stamp components and wetware computer.</DMS_CompDrop.description>
   
   <!-- EN: food supply drop -->
   <DMS_FoodDrop.label>Food Supply Drop</DMS_FoodDrop.label>
@@ -78,8 +78,8 @@
   
   <!-- EN: logistic supply drop -->
   <DMS_LogiDrop.label>Logistics Supply Drop</DMS_LogiDrop.label>
-  <!-- EN: Call for a drop of 20 survival pack, 8 medicine and 4 compoment. -->
-  <DMS_LogiDrop.description>Call for a drop of 20 survival packs, 8 medicine and 4 compoments.</DMS_LogiDrop.description>
+  <!-- EN: Call for a drop of 20 survival pack, 8 medicine and 4 component. -->
+  <DMS_LogiDrop.description>Call for a drop of 20 survival packs, 8 medicine and 4 components.</DMS_LogiDrop.description>
   
   <!-- EN: construct material drop -->
   <DMS_MaterialDrop.label>Construction Material Drop</DMS_MaterialDrop.label>

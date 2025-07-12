@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: Garrision Cap -->
-  <DMS_Apparel_GarrisionCap.label>駐軍帽</DMS_Apparel_GarrisionCap.label>
+  <!-- EN: Garrison Cap -->
+  <DMS_Apparel_GarrisonCap.label>駐軍帽</DMS_Apparel_GarrisonCap.label>
   <!-- EN: A soft cap for servicemen for the times when a helmet is not required or available. -->
-  <DMS_Apparel_GarrisionCap.description>當不需要使用戰鬥頭盔時，為軍人提供的軟帽。</DMS_Apparel_GarrisionCap.description>
+  <DMS_Apparel_GarrisonCap.description>當不需要使用戰鬥頭盔時，為軍人提供的軟帽。</DMS_Apparel_GarrisonCap.description>
   
-  <!-- EN: Garrision Coat -->
-  <DMS_Apparel_GarrisionCoat.label>駐軍大衣</DMS_Apparel_GarrisionCoat.label>
+  <!-- EN: Garrison Coat -->
+  <DMS_Apparel_GarrisonCoat.label>駐軍大衣</DMS_Apparel_GarrisonCoat.label>
   <!-- EN: A typical coat for an enlisted man, designed to keep one warm in chilly weather. -->
-  <DMS_Apparel_GarrisionCoat.description>典型的軍大衣，在寒冷的天氣里也能保暖。</DMS_Apparel_GarrisionCoat.description>
+  <DMS_Apparel_GarrisonCoat.description>典型的軍大衣，在寒冷的天氣里也能保暖。</DMS_Apparel_GarrisonCoat.description>
   
   <!-- EN: Hazard Suit -->
   <DMS_Apparel_HazardSuit.label>生物防護服</DMS_Apparel_HazardSuit.label>
@@ -17,9 +17,9 @@
   <DMS_Apparel_HazardSuit.description>一種能遮住穿著者整個頭部和身體的大型服裝，用於防護有害物質。</DMS_Apparel_HazardSuit.description>
   
   <!-- EN: Powered Exoskeletal Unit -->
-  <DMS_Apparel_PowerSkelton.label>機械外骨骼</DMS_Apparel_PowerSkelton.label>
+  <DMS_Apparel_PowerSkeleton.label>機械外骨骼</DMS_Apparel_PowerSkeleton.label>
   <!-- EN: A powered exoskeletal suit which mimics the human form and can be worn by an untrained operator. It significantly increases the wearer's strength and running speed. -->
-  <DMS_Apparel_PowerSkelton.description>由一系列神經義肢組成的體能增強設備。它能有效增加佩戴者的負重能力並保證最低限度的行走與操作能力。</DMS_Apparel_PowerSkelton.description>
+  <DMS_Apparel_PowerSkeleton.description>由一系列神經義肢組成的體能增強設備。它能有效增加佩戴者的負重能力並保證最低限度的行走與操作能力。</DMS_Apparel_PowerSkeleton.description>
   
   <!-- EN: Uniform -->
   <DMS_Apparel_UnitSuit.label>連身製服</DMS_Apparel_UnitSuit.label>

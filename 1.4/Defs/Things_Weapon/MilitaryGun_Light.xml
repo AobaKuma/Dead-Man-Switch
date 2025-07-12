@@ -2,9 +2,9 @@
 <Defs>
 
 
-	<!-- DMS_TaticalPistol -->
+	<!-- DMS_TacticalPistol -->
 	<ThingDef ParentName="DMS_AutomatroidGun">
-		<defName>DMS_TaticalPistol</defName>
+		<defName>DMS_TacticalPistol</defName>
 		<label>mech pistol</label>
 		<description>Defensive firearm with refined manufacture process and additional tactical attachments, it's too heavy for human but suitable to mech soldier. offers better stop power than comparable weapons.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
 		<weaponClasses>
@@ -18,7 +18,7 @@
 		</weaponTags>
 		<uiIconScale>1.8</uiIconScale>
 		<graphicData>
-			<texPath>Things/Weapons/DMS_TaticalPistol</texPath>
+			<texPath>Things/Weapons/DMS_TacticalPistol</texPath>
 			<drawSize>(0.8,0.8)</drawSize>
 		</graphicData>
 		<statBases>
@@ -178,7 +178,7 @@
 			<li>Ranged</li>
 		</weaponClasses>		
 		<weaponTags>
-			<li>DMS_MechWeaponMeduim</li>
+			<li>DMS_MechWeaponMedium</li>
 			<li>A_AP</li>
 		</weaponTags>
 		<graphicData>

@@ -5,7 +5,7 @@
         <defName>DMS_Officer01</defName>
         <title>Weapon Systems Officer</title>
         <titleShort>Wizzo</titleShort>
-        <description>[PAWN_nameDef] was a weapons controller at a Command and Control Facility. [PAWN_nameDef] was temporarily laid off due to a lack of maintenance parts for the control system and had to cross-train as a weapons system operator for the task force's autonomous robots at the weapons control station to mitigate friendly fire inicidents.</description>
+        <description>[PAWN_nameDef] was a weapons controller at a Command and Control Facility. [PAWN_nameDef] was temporarily laid off due to a lack of maintenance parts for the control system and had to cross-train as a weapons system operator for the task force's autonomous robots at the weapons control station to mitigate friendly fire incidents.</description>
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>DMS_Officer</li>
@@ -71,7 +71,7 @@
         <defName>DMS_Officer04</defName>
         <title>Automatroid engineer</title>
         <titleShort>Engineer</titleShort>
-        <description>[PAWN_nameDef] worked for the Astromechnical Design Department of the Colonial Forces and made adjustments and optimizations to the Automatroid fleet for the local colony.</description>
+        <description>[PAWN_nameDef] worked for the Astro-mechanical Design Department of the Colonial Forces and made adjustments and optimizations to the Automatroid fleet for the local colony.</description>
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>DMS_Officer</li>

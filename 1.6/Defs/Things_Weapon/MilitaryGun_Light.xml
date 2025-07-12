@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- DMS_TaticalPistol -->
+	<!-- DMS_TacticalPistol -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
-		<defName>DMS_TaticalPistol</defName>
+		<defName>DMS_TacticalPistol</defName>
 		<label>Mech pistol</label>
 		<description>A sidearm designed for Automatroid or exoskeleton use. \n\nThis weapon is designed specially for Automatroid use, a normal human will be unable to use it without external equipment or augmentation.</description>
 		<weaponClasses>
@@ -17,7 +17,7 @@
 		</weaponTags>
 		<uiIconScale>1.8</uiIconScale>
 		<graphicData>
-			<texPath>Things/Weapons/DMS_TaticalPistol</texPath>
+			<texPath>Things/Weapons/DMS_TacticalPistol</texPath>
 			<drawSize>0.8</drawSize>
 		</graphicData>
 		<statBases>
@@ -105,7 +105,7 @@
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_PDW</defName>
 		<label>PDW</label>
-		<description>A mass-producable submachine gun which was designed to be used as a "Point Shooting" weapon. It's inaccurate at range but its caliber and draw speed it the ideal weapon for urban combat against milltors.</description>
+		<description>A mass-producible submachine gun which was designed to be used as a "Point Shooting" weapon. It's inaccurate at range but its caliber and draw speed it the ideal weapon for urban combat against milltors.</description>
 		<weaponClasses>
 			<li>RangedLight</li>
 			<li>ShortShots</li>
@@ -183,7 +183,7 @@
 			<li>Ranged</li>
 		</weaponClasses>		
 		<weaponTags>
-			<li>DMS_MechWeaponMeduim</li>
+			<li>DMS_MechWeaponMedium</li>
 			<li>A_AP</li>
 		</weaponTags>
 		<graphicData>

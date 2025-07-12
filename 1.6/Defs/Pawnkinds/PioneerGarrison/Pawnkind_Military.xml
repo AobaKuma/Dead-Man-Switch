@@ -19,7 +19,7 @@
       <li>Mili_Expert</li>
     </backstoryCategories>
     <apparelTags>
-      <li>DMS_Garrision</li>
+      <li>DMS_Garrison</li>
     </apparelTags>
     <techHediffsTags>
       <li>DMS_BM_Bionic</li>
@@ -139,7 +139,7 @@
     <combatPower>80</combatPower>
     <apparelRequired Inherit="false">
       <li>Apparel_ArmorHelmetRecon</li>
-      <li>DMS_Apparel_PowerSkelton</li>
+      <li>DMS_Apparel_PowerSkeleton</li>
       <li>DMS_Apparel_TacticalVest</li>
       <li MayRequire="ceteam.combatextended">CE_Apparel_Backpack</li>
       <li>DMS_Apparel_BionicSuit</li>
@@ -188,7 +188,7 @@
     <label>scout</label>
     <apparelRequired>
       <li>DMS_Apparel_TacticalHelmet</li>
-      <li>DMS_Apparel_PowerSkelton</li>
+      <li>DMS_Apparel_PowerSkeleton</li>
       <li MayRequire="ceteam.combatextended">CE_Apparel_Backpack</li>
       <li>DMS_Apparel_TacticalVest</li>
     </apparelRequired>
@@ -240,7 +240,7 @@
     <label>gunner</label>
     <apparelRequired>
       <li>DMS_Apparel_TacticalHelmet</li>
-      <li>DMS_Apparel_PowerSkelton</li>
+      <li>DMS_Apparel_PowerSkeleton</li>
       <li MayRequire="ceteam.combatextended">CE_Apparel_Backpack</li>
       <li>DMS_Apparel_TacticalVest</li>
     </apparelRequired>

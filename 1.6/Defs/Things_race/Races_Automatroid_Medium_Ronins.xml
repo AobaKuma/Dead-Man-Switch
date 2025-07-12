@@ -4,7 +4,7 @@
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Ronin</defName>
     <label>Ronin</label>
-    <description>A Humanoid mech model specialized for urban combat, this unit is outfitted with assault armor and a mobility package making it a formidible foe in close quaters.</description>
+    <description>A Humanoid mech model specialized for urban combat, this unit is outfitted with assault armor and a mobility package making it a formidable foe in close quarters.</description>
     <statBases>
       <MoveSpeed>5</MoveSpeed>
       <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
@@ -374,7 +374,7 @@
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Protector</defName>
     <label>Protector</label>
-    <description>The protector is designed for peacekeeping operations and riot control. This model is equipped with strong armor around its frame and has a huge flash shield to compliment the use of close quater weapons like batons or shotguns.</description>
+    <description>The protector is designed for peacekeeping operations and riot control. This model is equipped with strong armor around its frame and has a huge flash shield to compliment the use of close quarter weapons like batons or shotguns.</description>
     <statBases>
       <StaggerDurationFactor>0.25</StaggerDurationFactor>
       <MoveSpeed>4</MoveSpeed>                                                    <!--移動速度-->
@@ -505,7 +505,7 @@
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Phalanx</defName>
     <label>Phalanx</label>
-    <description>The Phalanx is a cheap mass-producable variant specialized for urban combat. It comes packed with assault armor and high mobility package making it a fierce unit in close quarters combat.</description>
+    <description>The Phalanx is a cheap mass-producible variant specialized for urban combat. It comes packed with assault armor and high mobility package making it a fierce unit in close quarters combat.</description>
     <statBases>
       <MoveSpeed>4.5</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>0.65</ArmorRating_Blunt>                                     <!--護甲-->

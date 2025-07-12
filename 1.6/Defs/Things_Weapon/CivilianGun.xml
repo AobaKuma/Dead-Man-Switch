@@ -4,7 +4,7 @@
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_KnuckledusterRevolver</defName>
 		<label>Knuckleduster Revolver</label>
-		<description>A minature self-defense weapon commonly found on midworlds, it barely takes up any space when folded. Knuckledsters accept multiple calibers and may also used as brassknuckles in a pinch.</description>
+		<description>A miniature self-defense weapon commonly found on midworld, it barely takes up any space when folded. Knuckleduster accept multiple calibers and may also be used as brass-knuckles in a pinch.</description>
 		<weaponClasses>
 			<li>Ranged</li>
 			<li>RangedLight</li>

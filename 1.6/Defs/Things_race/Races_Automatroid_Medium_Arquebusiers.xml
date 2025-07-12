@@ -108,7 +108,7 @@
   <ThingDef ParentName="BaseMechRace_Arquebusier">
     <defName>DMS_Mech_Jaeger</defName>
     <label>Jaeger</label>
-    <description>An Arquebusier variant specializing in stealth operations and guerilla warfare sabotaging equipment behind enemy lines. It has high mobility and and an active camouflage ability.</description>
+    <description>An Arquebusier variant specializing in stealth operations and guerilla warfare sabotaging equipment behind enemy lines. It has high mobility and an active camouflage ability.</description>
     <statBases>
       <MoveSpeed>5.3</MoveSpeed>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
@@ -182,7 +182,7 @@
   <ThingDef ParentName="BaseMechRace_Arquebusier">
     <defName>DMS_Mech_Pioneer</defName>
     <label>Pioneer</label>
-    <description>A gorward reconnaissance variant of the Arquebusier, Pioneers are equipped with an improved sight sensor package giving it better capability in field operations. In a pinch, it can be used to hunt wildlife.</description>
+    <description>A forward reconnaissance variant of the Arquebusier, Pioneers are equipped with an improved sight sensor package giving it better capability in field operations. In a pinch, it can be used to hunt wildlife.</description>
     <statBases>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
     </statBases>

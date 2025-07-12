@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: garrision cap -->
-  <DMS_Apparel_GarrisionCap.label>驻军帽</DMS_Apparel_GarrisionCap.label>
+  <!-- EN: Garrison cap -->
+  <DMS_Apparel_GarrisonCap.label>驻军帽</DMS_Apparel_GarrisonCap.label>
   <!-- EN: a soft cap for service man when combat helmet is not required. -->
-  <DMS_Apparel_GarrisionCap.description>当不需要使用战斗头盔时，为军人提供的软帽。</DMS_Apparel_GarrisionCap.description>
+  <DMS_Apparel_GarrisonCap.description>当不需要使用战斗头盔时，为军人提供的软帽。</DMS_Apparel_GarrisonCap.description>
   
-  <!-- EN: garrision coat -->
-  <DMS_Apparel_GarrisionCoat.label>驻军大衣</DMS_Apparel_GarrisionCoat.label>
+  <!-- EN: Garrison coat -->
+  <DMS_Apparel_GarrisonCoat.label>驻军大衣</DMS_Apparel_GarrisonCoat.label>
   <!-- EN: A typical coats for army, keep one warm in chilly weather. -->
-  <DMS_Apparel_GarrisionCoat.description>典型的军大衣，在寒冷的天气里也能保暖。</DMS_Apparel_GarrisionCoat.description>
+  <DMS_Apparel_GarrisonCoat.description>典型的军大衣，在寒冷的天气里也能保暖。</DMS_Apparel_GarrisonCoat.description>
   
   <!-- EN: hazard suit -->
   <DMS_Apparel_HazardSuit.label>生物防护服</DMS_Apparel_HazardSuit.label>
   <!-- EN: A large garment that conceals the wearer's entire head and body. worn as protection against hazardous materials. -->
   <DMS_Apparel_HazardSuit.description>一种能遮住穿著者整个头部和身体的大型服装，用于防护有害物质。</DMS_Apparel_HazardSuit.description>
   
-  <!-- EN: power skelton unit -->
-  <DMS_Apparel_PowerSkelton.label>机械外骨骼</DMS_Apparel_PowerSkelton.label>
-  <!-- EN: Physical enhancement equipment from array of neural prosthetic skeltons. It can increase the wearer's carry weight and mobility with effectively. -->
-  <DMS_Apparel_PowerSkelton.description>由一系列神经义肢组成的体能增强设备。它能有效增加佩戴者的负重和移动能力。</DMS_Apparel_PowerSkelton.description>
+  <!-- EN: power skeleton unit -->
+  <DMS_Apparel_PowerSkeleton.label>机械外骨骼</DMS_Apparel_PowerSkeleton.label>
+  <!-- EN: Physical enhancement equipment from array of neural prosthetic skeletons. It can increase the wearer's carry weight and mobility with effectively. -->
+  <DMS_Apparel_PowerSkeleton.description>由一系列神经义肢组成的体能增强设备。它能有效增加佩戴者的负重和移动能力。</DMS_Apparel_PowerSkeleton.description>
   
   <!-- EN: uniform -->
   <DMS_Apparel_UnitSuit.label>连身制服</DMS_Apparel_UnitSuit.label>

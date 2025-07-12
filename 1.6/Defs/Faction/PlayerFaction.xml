@@ -22,7 +22,7 @@
         </apparelTags>
         <apparelRequired>
             <li>DMS_Apparel_TacticalVest</li>
-            <li>DMS_Apparel_PowerSkelton</li>
+            <li>DMS_Apparel_PowerSkeleton</li>
             <li>DMS_Apparel_BionicSuit</li>
         </apparelRequired>
         <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
@@ -71,10 +71,10 @@
     <ScenarioDef ParentName="ScenarioBase">
         <defName>DMS_Scenario</defName>
         <label>Last Command</label>
-        <description>A group of pioneers have done their part and it's time to start a new chapter.</description>
+        <description>A group of pioneers have done their part, and it's time to start a new chapter.</description>
         <scenario>
             <name>Last Command</name>
-            <summary>A group of pioneers have done their part and it's time for them to begin a new chapter of their lives.</summary>
+            <summary>A group of pioneers have done their part, and it's time for them to begin a new chapter of their lives.</summary>
             <description>As the vanguard of the colonial fleet, your final orders you received were to wait in cryosleep for the arrival of the main fleet. And until recently, a strange yet familiar announcement broadcast ended the long and anxious wait...\n\n"Code five: The fleet has entered synchronized orbit. Express our greatest gratitude to all the vanguard pioneers protecting the Lighthouse."</description>
             <playerFaction>
                 <def>PlayerFaction</def>
@@ -198,7 +198,7 @@
                         When you wake up, all that remains of the world you built are remnants of The Lighthouse.
                         Time and scavengers have stripped away almost every trace of you and your companions past presence...
 
-                        Just like a long ago when you came here with nothing, you must rebuild anew. Only this time those who toiled and fought along side you are distant memories of the forgotten past.
+                        Just like a long ago when you came here with nothing, you must rebuild anew. Only this time those who toiled and fought alongside you are distant memories of the forgotten past.
                     </text>
                     <textKey>GameStartDialog</textKey>
                     <closeSound>GameStartSting</closeSound>

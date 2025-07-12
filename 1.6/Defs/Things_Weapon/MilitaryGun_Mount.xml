@@ -138,7 +138,7 @@
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_SubMachineGunMounted</defName>
 		<label>Mounted SMG</label>
-		<description>A Supressive weapon chambered in pistol rounds.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
+		<description>A suppressive weapon chambered in pistol rounds.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
 		<graphicData>
 			<texPath>Things/Turrets/DMS_Gun_LMG</texPath>
 			<drawSize>1</drawSize>
@@ -179,7 +179,7 @@
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_LightMachineGunMounted</defName>
 		<label>Mounted LMG</label>
-		<description>A Supressive weapon chambered in a standard rifle round.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
+		<description>A suppressive weapon chambered in a standard rifle round.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
 		<graphicData>
 			<texPath>Things/Turrets/DMS_Gun_LMG</texPath>
 			<drawSize>1.5</drawSize>

@@ -37,7 +37,7 @@
     <defName>DMS_MechlinkFatalTrigger</defName>
     <hediffClass>HediffWithComps</hediffClass>
     <label>Fatal Trigger</label>
-    <description>Due to the instability of this device, this safty protocol was created to automatically eject and destroy the disabled mechlink before it can cause catastrophic damage to the user's brain.</description>
+    <description>Due to the instability of this device, this safety protocol was created to automatically eject and destroy the disabled mechlink before it can cause catastrophic damage to the user's brain.</description>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>1</initialSeverity>
     <isBad>false</isBad>
@@ -72,13 +72,12 @@
       </li>
     </stages>
   </HediffDef>
-
   <!-- 安裝DMS機絆後的永久副作用Hediff，會在安裝者死亡後銷毀機絆 -->
   <HediffDef MayRequire="Ludeon.Rimworld.Biotech">
     <defName>DMS_MechlinkRejection</defName>
     <hediffClass>HediffWithComps</hediffClass>
     <label>Mechlink Rejection</label>
-    <description>Due to limited technology and the lack of medical nanites, there are some side-effect after installing this mechlink. It will take some time before the implantee's nervous system adjusts to its presence.</description>
+    <description>Due to limited technology and the lack of medical nanites, there are some side effect after installing this mechlink. It will take some time before the implantee's nervous system adjusts to its presence.</description>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>1</initialSeverity>
     <isBad>false</isBad>
@@ -110,7 +109,7 @@
     <defName>DMS_MechlinkOverload</defName>
     <hediffClass>Fortified.Hediff_SeverityByBandwidth</hediffClass>
     <label>N.A.C.S.</label>
-    <description>Neural-Auxiliary Computation and Control System- this system's unique protocol allows the user to connect with existing mech and Automatroid tech.</description>
+    <description>Neural-Auxiliary Computation and Control System, this system's unique protocol allows the user to connect with existing mech and Automatroid tech.</description>
     <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
     <initialSeverity>0.1</initialSeverity><!-- Severity is bound to level of implant -->
     <isBad>false</isBad>
@@ -203,7 +202,7 @@
     <defName>DMS_SyntheticRejection</defName>
     <hediffClass>HediffWithComps</hediffClass>
     <label>Synthetic Rejection</label>
-    <description>Due to modifications of circulatory system, synthetic bionic enhancements can be rejected temporarily by the body. The effect does not last long, and the body's abiity to fight infections is reduced for its duration.</description>
+    <description>Due to modifications of circulatory system, synthetic bionic enhancements can be rejected temporarily by the body. The effect does not last long, and the body's ability to fight infections is reduced for its duration.</description>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>1</initialSeverity><!-- Severity is bound to level of implant -->
     <isBad>true</isBad>
@@ -283,7 +282,7 @@
     <defName>DMS_BionicShock</defName>
     <hediffClass>HediffWithComps</hediffClass>
     <label>Xeno Limb Syndrome</label>
-    <description>A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for thes symptoms..</description>
+    <description>A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for these symptoms.</description>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <minSeverity>0</minSeverity>
     <maxSeverity>6</maxSeverity>

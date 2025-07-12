@@ -132,7 +132,7 @@
       </li>
       <li Class="StockGenerator_MarketValue">
         <tradeTag>WeaponRanged</tradeTag>
-        <weaponTag>DMS_MechWeaponMeduim</weaponTag>
+        <weaponTag>DMS_MechWeaponMedium</weaponTag>
         <countRange>3~6</countRange>
       </li>
       <li Class="StockGenerator_MarketValue">
@@ -149,7 +149,7 @@
       </li>
       <li Class="StockGenerator_MarketValue">
         <tradeTag>Clothing</tradeTag>
-        <apparelTag>DMS_Garrision</apparelTag>
+        <apparelTag>DMS_Garrison</apparelTag>
         <countRange>3~4</countRange>
       </li>
       <li Class="StockGenerator_SingleDef">
@@ -344,7 +344,7 @@
       </li>
       <li Class="StockGenerator_MarketValue">
         <tradeTag>WeaponRanged</tradeTag>
-        <weaponTag>DMS_MechWeaponMeduim</weaponTag>
+        <weaponTag>DMS_MechWeaponMedium</weaponTag>
         <countRange>1~3</countRange>
       </li>
       <li Class="StockGenerator_Tag">
@@ -361,7 +361,7 @@
       </li>
       <li Class="StockGenerator_MarketValue">
         <tradeTag>Clothing</tradeTag>
-        <apparelTag>DMS_Garrision</apparelTag>
+        <apparelTag>DMS_Garrison</apparelTag>
         <countRange>1~3</countRange>
       </li>
       <li Class="StockGenerator_Tag">

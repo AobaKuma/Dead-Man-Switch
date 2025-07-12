@@ -76,7 +76,7 @@
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_HeavyMachineGun</defName>
 		<label>Mech HMG</label>
-		<description>A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless its mounted to a support platform.</description>
+		<description>A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform.</description>
 		<weaponClasses>
 			<li>RangedHeavy</li>
 			<li>LongShots</li>
@@ -161,7 +161,7 @@
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Autocannon</defName>
 		<label>Mech Autocannon</label>
-		<description>An autocannon designed for mech soldier or mounting on to an infantry support platform.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless its mounted to a support platform.</description>
+		<description>An autocannon designed for mech soldier or mounting on to an infantry support platform.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform.</description>
 		<weaponClasses>
 			<li>RangedHeavy</li>
 			<li>LongShots</li>
@@ -510,7 +510,7 @@
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Gun_DragoonRifle</defName>
 		<label>Mech Anti-Tank Rifle</label>
-		<description>A lightweight mass producable anti-tank rifle for heavy mechs and dragoons.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it.</description>
+		<description>A lightweight mass producible anti-tank rifle for heavy mechs and dragoons.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it.</description>
 		<weaponClasses>
 			<li>RangedHeavy</li>
 			<li>LongShots</li>
@@ -718,7 +718,7 @@
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Gun_DawnbladeM</defName>
 		<label>MPQFS-85M "Dawnblade"</label>
-		<description>A multi-role quick-firing autocannon modified for mech use. The weapon is only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.\n\nThis weapon is designed exclusively for use on super-heavy units or to be installed as an emplacement.</description>
+		<description>A multirole quick-firing autocannon modified for mech use. The weapon is only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.\n\nThis weapon is designed exclusively for use on super-heavy units or to be installed as an emplacement.</description>
 		<weaponTags>
 			<li>DMS_Tarbosaurus_Gun</li>
 			<li>NoSwitch</li>

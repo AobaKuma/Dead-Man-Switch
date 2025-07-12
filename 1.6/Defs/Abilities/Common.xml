@@ -239,8 +239,8 @@
 	<AbilityDef>
 		<defName>DMS_NuclearOverload</defName>
 		<label>Fission Overload</label>
-		<description>In order to avoid catastrophic environmental pollution or capture by the enemy, the fission battery can be manually forced into a meltdown. \n\nA meltdown will cause all unreacted nuclear material to atomize instantl, causing a violent explosive reaction.</description>
-		<iconPath>UI/Ability/FissonOverload</iconPath>
+		<description>In order to avoid catastrophic environmental pollution or capture by the enemy, the fission battery can be manually forced into a meltdown. \n\nA meltdown will cause all unreacted nuclear material to atomize instantly, causing a violent explosive reaction.</description>
+		<iconPath>UI/Ability/FissionOverload</iconPath>
 		<cooldownTicksRange>60</cooldownTicksRange> <!-- 2 day -->
 		<showPsycastEffects>false</showPsycastEffects>
 		<aiCanUse>false</aiCanUse>
