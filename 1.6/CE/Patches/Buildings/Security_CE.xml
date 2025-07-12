@@ -147,6 +147,14 @@
 			</li>
 
 			<!--===== 30x173mm MK44 BushMasterII (Navy) Turret =====-->
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_MK44_Navy"]</xpath>
+				<value>
+					<fillPercent>0.72</fillPercent>
+				</value>
+			</li>
+			
 			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 				<defName>DMS_Gun_MK44_Navy</defName>
 				<statBases>
