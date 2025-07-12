@@ -56,7 +56,7 @@
 			<texPath>Things/Turrets/DMS_Gun_LMG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<description>A weapon specializing in supression chambered in a pistol caliber round.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
+		<description>A weapon specializing in suppression chambered in a pistol caliber round.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
 		<statBases>
 			<SightsEfficiency>1</SightsEfficiency>
 			<ShotSpread>0.06</ShotSpread>

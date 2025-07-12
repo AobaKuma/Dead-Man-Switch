@@ -6,10 +6,10 @@
   
   <!-- EN: Mech Autocannon -->
   <DMS_Autocannon.label>Mech Autocannon</DMS_Autocannon.label>
-  <!-- EN: An autocannon designed for mech soldier or mounting on to an infantry support platform.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless its mounted to a support platform. -->
+  <!-- EN: An autocannon designed for mech soldier or mounting on to an infantry support platform.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform. -->
   <DMS_Autocannon.description>An autocannon designed for mech soldier or mounting on to an infantry support platform.
 
-This weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless its mounted to a support platform.</DMS_Autocannon.description>
+This weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform.</DMS_Autocannon.description>
   <!-- EN: stock -->
   <DMS_Autocannon.tools.stock.label>stock</DMS_Autocannon.tools.stock.label>
   <!-- EN: barrel -->
@@ -35,7 +35,7 @@ This weapon is designed specifically for automatroid use,it's so heavy only spec
   <!-- EN: 2A38M -->
   <DMS_Gun_2A38M.label>2A38M</DMS_Gun_2A38M.label>
   <!-- EN: A dual-barrel heavy autocannon for infantry suppression and anti air needs.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
-  <DMS_Gun_2A38M.description>A dual-barrel heavy autocannon for infantry suppression and anti air needs.
+  <DMS_Gun_2A38M.description>A dual-barrel heavy autocannon for infantry suppression and anti-air needs.
 
 This weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it.</DMS_Gun_2A38M.description>
   <!-- EN: stock -->
@@ -53,8 +53,8 @@ This weapon is designed specifically for automatroid use,it's so heavy only spec
   
   <!-- EN: MPQFS-85M "Dawnblade" -->
   <DMS_Gun_DawnbladeM.label>MPQFS-85M "Dawnblade"</DMS_Gun_DawnbladeM.label>
-  <!-- EN: A multi-role quick-firing autocannon modified for mech use. The weapon is only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.\n\nThis weapon is designed exclusively for use on super-heavy units or to be installed as an emplacement. -->
-  <DMS_Gun_DawnbladeM.description>A multi-role quick-firing autocannon modified for mech use. The weapon is only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.
+  <!-- EN: A multirole quick-firing autocannon modified for mech use. The weapon is only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.\n\nThis weapon is designed exclusively for use on super-heavy units or to be installed as an emplacement. -->
+  <DMS_Gun_DawnbladeM.description>A multirole quick-firing autocannon modified for mech use. The weapon is only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.
 
 This weapon is designed exclusively for use on super-heavy units or to be installed as an emplacement.</DMS_Gun_DawnbladeM.description>
   <!-- EN: stock -->
@@ -91,8 +91,8 @@ This weapon is designed specifically for automatroid use,it's so heavy only spec
   
   <!-- EN: Mech Anti-Tank Rifle -->
   <DMS_Gun_DragoonRifle.label>Mech Anti-Tank Rifle</DMS_Gun_DragoonRifle.label>
-  <!-- EN: A lightweight mass producable anti-tank rifle for heavy mechs and dragoons.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
-  <DMS_Gun_DragoonRifle.description>A lightweight mass producable anti-tank rifle for heavy mechs and dragoons.
+  <!-- EN: A lightweight mass producible anti-tank rifle for heavy mechs and dragoons.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
+  <DMS_Gun_DragoonRifle.description>A lightweight mass producible anti-tank rifle for heavy mechs and dragoons.
 
 This weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it.</DMS_Gun_DragoonRifle.description>
   <!-- EN: stock -->
@@ -140,10 +140,10 @@ This weapon is designed specifically for automatroid use,it's so heavy only spec
   
   <!-- EN: Mech HMG -->
   <DMS_HeavyMachineGun.label>Mech HMG</DMS_HeavyMachineGun.label>
-  <!-- EN: A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless its mounted to a support platform. -->
+  <!-- EN: A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform. -->
   <DMS_HeavyMachineGun.description>A heavy machine gun for mech soldiers or infantry support platforms.
 
-This weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless its mounted to a support platform.</DMS_HeavyMachineGun.description>
+This weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform.</DMS_HeavyMachineGun.description>
   <!-- EN: stock -->
   <DMS_HeavyMachineGun.tools.stock.label>stock</DMS_HeavyMachineGun.tools.stock.label>
   <!-- EN: barrel -->
