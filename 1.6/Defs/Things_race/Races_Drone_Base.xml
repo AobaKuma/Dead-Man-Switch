@@ -83,6 +83,8 @@
     <defaultFactionDef>Mechanoid</defaultFactionDef>
     <allowInMechClusters>false</allowInMechClusters>
     <forceNoDeathNotification>true</forceNoDeathNotification>
+    <factionHostileOnKill>false</factionHostileOnKill>
+    <factionHostileOnDeath>false</factionHostileOnDeath>
     <aiAvoidCover>true</aiAvoidCover>
     <destroyGearOnDrop>true</destroyGearOnDrop>
     <canStrip>false</canStrip>

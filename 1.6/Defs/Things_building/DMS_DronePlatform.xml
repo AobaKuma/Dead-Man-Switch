@@ -19,7 +19,7 @@
     <passability>PassThroughOnly</passability>
     <pathCost>90</pathCost>
     <blockWind>false</blockWind>
-    <rotatable>true</rotatable>
+    <rotatable>false</rotatable>
     <fillPercent>1</fillPercent>
     <uiIconScale>0.8</uiIconScale>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>

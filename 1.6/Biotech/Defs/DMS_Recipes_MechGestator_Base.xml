@@ -50,6 +50,38 @@
     <recipeUsers><li>DMS_MechGestatorSamll</li></recipeUsers>
   </RecipeDef>
 
+<RecipeDef ParentName="BaseMechanoidResurrectionRecipe">
+    <defName>DMS_ResurrectLightMech</defName>
+    <label>Resurrect Light Automatroid</label>
+    <description>Resurrect a friendly Automatroid from the light weight class. So long as the automatroid's body is not completely destroyed, it can be resurrected.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Corpses</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Corpse_DMS_Mech_Dogge</li>
+        <li>Corpse_DMS_Mech_Falcon</li>
+        <li>Corpse_DMS_Mech_Noctula</li>
+        <li>Corpse_DMS_Mech_Hyrax</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
   <RecipeDef ParentName="BaseMechanoidResurrectionRecipe">
     <defName>DMS_ResurrectMediumMech</defName>
     <label>Resurrect Medium Automatroid</label>
@@ -74,11 +106,6 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>Corpse_DMS_Mech_Hyrax</li>
-        <li>Corpse_DMS_Mech_Dogge</li>
-        <li>Corpse_DMS_Mech_Falcon</li>
-        <li>Corpse_DMS_Mech_Noctula</li>
-
         <li>Corpse_DMS_Mech_Sergeant</li>
         <li>Corpse_DMS_Mech_Soldat</li>
         <li>Corpse_DMS_Mech_Sergeant</li>
@@ -155,7 +182,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>150</count>
       </li>
       <li>
         <filter>

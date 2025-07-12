@@ -39,7 +39,6 @@
                 <compClass>CompPowerTrader</compClass>
                 <shortCircuitInRain>true</shortCircuitInRain>
                 <basePowerConsumption>800</basePowerConsumption>
-                <idlePowerDraw>50</idlePowerDraw>
             </li>
         </comps>
         <researchPrerequisites>
@@ -86,8 +85,7 @@
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <shortCircuitInRain>true</shortCircuitInRain>
-                <basePowerConsumption>220</basePowerConsumption>
-                <idlePowerDraw>50</idlePowerDraw>
+                <basePowerConsumption>300</basePowerConsumption>
             </li>
             <li Class="CompProperties_HeatPusher">
                 <compClass>CompHeatPusherPowered</compClass>
@@ -106,7 +104,6 @@
                 </inheritRecipesFrom>
             </li>
         </modExtensions>
-
     </ThingDef>
 
     <!-- DMS_LabFurnace -->
@@ -150,8 +147,7 @@
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <shortCircuitInRain>true</shortCircuitInRain>
-                <basePowerConsumption>450</basePowerConsumption>
-                <idlePowerDraw>50</idlePowerDraw>
+                <basePowerConsumption>500</basePowerConsumption>
             </li>
             <li Class="CompProperties_HeatPusher">
                 <compClass>CompHeatPusherPowered</compClass>

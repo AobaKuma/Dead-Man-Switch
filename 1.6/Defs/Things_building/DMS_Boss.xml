@@ -13,6 +13,7 @@
     </building>
     <designationCategory>DMS_Category</designationCategory>
     <uiOrder>2450</uiOrder>
+    <rotatable>false</rotatable>
     <statBases>
       <MaxHitPoints>80</MaxHitPoints>
       <WorkToBuild>8000</WorkToBuild>
