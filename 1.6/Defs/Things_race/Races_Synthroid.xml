@@ -60,6 +60,7 @@
       </li>
     </tools>
     <race>
+      <mechWeightClass>Light</mechWeightClass>
       <renderTree>HumanlikeMech</renderTree>
       <thinkTreeMain>DMS_HumanlikeMech</thinkTreeMain>
       <makesFootprints>true</makesFootprints>
