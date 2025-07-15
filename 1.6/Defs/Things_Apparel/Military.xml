@@ -38,7 +38,7 @@
 			<ArmorRating_Sharp>0.4</ArmorRating_Sharp>
 			<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.6</ArmorRating_Heat>
-			<Insulation_Cold>18</Insulation_Cold>
+			<Insulation_Cold>60</Insulation_Cold>
 			<Insulation_Heat>18</Insulation_Heat>
 			<EquipDelay>15</EquipDelay>
 			<DeteriorationRate>0</DeteriorationRate>
@@ -46,8 +46,9 @@
 		</statBases>
 		<useHitPoints>false</useHitPoints>
 		<equippedStatOffsets>
-			<MoveSpeed>1.75</MoveSpeed>
+			<MoveSpeed>1.25</MoveSpeed>
 			<RestFallRateFactor>0.25</RestFallRateFactor>
+			<VacuumResistance MayRequire="ludeon.rimworld.odyssey">0.32</VacuumResistance>
 			<ToxicEnvironmentResistance>0.25</ToxicEnvironmentResistance>
 		</equippedStatOffsets>
 		<apparel>
@@ -76,6 +77,7 @@
 		<description>A soft cap for enlisted men for the times a helmet is not required or available.</description>
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.9</drawSize>
 		</graphicData>
 		<thingCategories>
 			<li>Headgear</li>

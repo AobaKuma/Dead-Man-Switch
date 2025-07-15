@@ -50,6 +50,7 @@
       </li>
     </specificApparelRequirements>
   </PawnKindDef>
+  
   <RoyalTitlePermitDef MayRequire="ludeon.rimworld.royalty">
     <defName>DMS_Join_Android</defName>
     <label>Call for Combat Capable Synths</label>

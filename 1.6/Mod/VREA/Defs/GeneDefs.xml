@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
 	<FurDef>
 		<defName>DMS_robotSkin</defName>
 		<noGraphic>true</noGraphic>
@@ -24,6 +23,7 @@
 			<li>DMS_SyntheticSkin</li>
 		</requiredGenes>
 	</HeadTypeDef>
+	
 	<HeadTypeDef ParentName="AverageBase">
 		<defName>DMS_robotHeadFemale</defName>
 		<graphicPath>Things/Synthroid/Head/Head_Average_Normal</graphicPath>
@@ -106,10 +106,9 @@
 			<li>DMS_boxHeadMale</li>
 		</forcedHeadTypes>
 		<modExtensions Inherit="False">
-			<li Class="VanillaGenesExpanded.GeneExtension">
+			<li Class="VEF.Genes.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
 				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
-				<useSkinColorForFur>true</useSkinColorForFur>
 			</li>
 		</modExtensions>
 	</VREAndroids.AndroidGeneDef>

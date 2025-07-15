@@ -8,6 +8,7 @@
       <MoveSpeed>4.7</MoveSpeed>
       <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.2</ArmorRating_Heat>
       <StaggerDurationFactor>0.5</StaggerDurationFactor>
       <!-- <MarketValue>800</MarketValue> -->
       <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
