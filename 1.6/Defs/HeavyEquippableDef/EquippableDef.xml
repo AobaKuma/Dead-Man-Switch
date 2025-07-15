@@ -87,7 +87,9 @@
 		<EquippableBaseBodySize>2</EquippableBaseBodySize>
 		<EquippableByRace/>
 		<EquippableWithHediff/>
-		<EquippableWithApparel/>
+		<EquippableWithApparel>
+			<li>DMS_Apparel_HeavyPowerSkeleton<li>
+		</EquippableWithApparel>
 	</Fortified.HeavyEquippableDef>
     
 	<Fortified.HeavyEquippableDef>
