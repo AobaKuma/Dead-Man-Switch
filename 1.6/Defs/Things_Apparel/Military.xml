@@ -722,4 +722,209 @@
 			<li>BasicClothing</li>
 		</tradeTags>
 	</ThingDef>
+
+	<ThingDef ParentName="ApparelBase">
+		<defName>DMS_Apparel_HeavyPowerSkeleton</defName>
+		<label>Heavy Powered Exoskeletal Unit</label>
+		<description>A heavy powered exoskeletal suit which mimics the human form and can be worn by an untrained operator. It significantly increases the wearer's strength. \n\nCompared to the exoskeleton on BigSister, this model has removed the jump system and shield system to reduce costs. When using it, don't assume you've gained the protective level of heavy mechanical units.</description>
+		<techLevel>Industrial</techLevel>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>ConstructMetal</effectWorking>
+			<soundWorking>Recipe_Machining</soundWorking>
+			<researchPrerequisite>DMS_EquipmentHeavy</researchPrerequisite>
+			<recipeUsers>
+			  <li>DMS_TableMachinePrinter</li>
+			</recipeUsers>
+			<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+		</recipeMaker>
+
+		<generateAllowChance>0</generateAllowChance>
+
+		<costList>
+			<Tungsteel>90</Tungsteel>
+			<Plasfiber>75</Plasfiber>
+			<Artifuscle>80</Artifuscle>
+			<Uranium>15</Uranium>
+			<ComponentStamped>9</ComponentStamped>
+		</costList>
+		<tradeTags>
+			<li>DMS_Armor</li>
+		</tradeTags>
+		<graphicData>
+			<texPath>Things/Synthroid/BigSister/exosuit_btm_south</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>300</MaxHitPoints>
+			<WorkToMake>16000</WorkToMake>
+			<Mass>30</Mass>
+			<ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.6</ArmorRating_Heat>
+			<Insulation_Cold>0</Insulation_Cold>
+			<Insulation_Heat>0</Insulation_Heat>
+			<EquipDelay>33</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.1</MoveSpeed>
+			<VEF_MassCarryCapacity MayRequire="oskarpotocki.vanillafactionsexpanded.core">150</VEF_MassCarryCapacity>
+			<CarryingCapacity>150</CarryingCapacity>
+		</equippedStatOffsets>
+		<apparel>
+			<bodyPartGroups>
+				<li>Hands</li>
+				<li>Feet</li>
+			</bodyPartGroups>
+			<renderNodeProperties>
+				<li>
+					<debugLabel>exoframe top</debugLabel>
+					<nodeClass>PawnRenderNode_Apparel</nodeClass>
+					<workerClass>PawnRenderNodeWorker</workerClass>
+					<parentTagDef>Body</parentTagDef>
+					<baseLayer>60</baseLayer>
+					<drawSize>1.75</drawSize>
+					<pawnType>Any</pawnType>
+					<useGraphic>true</useGraphic>
+					<texPath>Things/Synthroid/BigSister/exosuit_top</texPath>
+					<drawData>
+						<defaultData>
+							<layer>60</layer>
+							<offset>(0,0,0)</offset>
+						</defaultData>
+					</drawData>
+				</li>
+				<li>
+					<debugLabel>exoframe bottom</debugLabel>
+					<nodeClass>PawnRenderNode_Apparel</nodeClass>
+					<workerClass>PawnRenderNodeWorker</workerClass>
+					<parentTagDef>Body</parentTagDef>
+					<baseLayer>-5</baseLayer>
+					<drawSize>1.75</drawSize>
+					<pawnType>Any</pawnType>
+					<useGraphic>true</useGraphic>
+					<texPath>Things/Synthroid/BigSister/exosuit_btm</texPath>
+					<drawData>
+						<defaultData>
+							<layer>-5</layer>
+							<offset>(0,0,0)</offset>
+						</defaultData>
+					</drawData>
+				</li>
+			</renderNodeProperties>
+
+			<parentTagDef>ApparelBody</parentTagDef>
+
+			<blocksAddedPartWoundGraphics>true</blocksAddedPartWoundGraphics>
+			
+			<layers>
+				<li>Shell</li>
+			</layers>
+
+			<defaultOutfitTags/>
+
+			<canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+			<canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+		</apparel>
+
+		<comps>
+			<li Class="Fortified.CompPropertiesMultipleTurretGun">
+				<subTurrets>
+					<li>
+						<ID>machine gun</ID>
+						<turret>DMS_SubMachineGunMounted</turret>
+						<autoAttack>true</autoAttack>
+						<warmingTime>3.2</warmingTime>
+						<angleOffset>-90</angleOffset>
+						<renderNodeProperties>
+							<li>
+								<nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+								<workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+								<parentTagDef>ApparelBody</parentTagDef>
+								<drawSize>1.1</drawSize>
+								<baseLayer>-21</baseLayer>
+								<pawnType>Any</pawnType>
+								<drawData>
+									<defaultData>
+										<pivot>(0.4,0.5)</pivot>
+									</defaultData>
+									<dataEast>
+										<offset>(-0.5,0,0.75)</offset>
+									</dataEast>
+									<dataWest>
+										<offset>(0.60,0,0)</offset>
+										<layer>63</layer>
+									</dataWest>
+									<dataSouth>
+										<offset>(0.75,0,0.65)</offset>
+										<layer>1</layer>
+									</dataSouth>
+									<dataNorth>
+										<offset>(-0.8,0,0.65)</offset>
+										<layer>1</layer>
+									</dataNorth>
+								</drawData>
+							</li>
+						</renderNodeProperties>
+					</li>
+					<li>
+						<ID>close inbound system</ID>
+						<turret>DMS_ShotgunGunMounted</turret>
+						<autoAttack>true</autoAttack>
+						<warmingTime>2</warmingTime>
+						<angleOffset>-90</angleOffset>
+						<renderNodeProperties>
+							<li>
+								<nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+								<workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+								<parentTagDef>ApparelBody</parentTagDef>
+								<drawSize>0.8</drawSize>
+								<baseLayer>20</baseLayer>
+								<pawnType>Any</pawnType>
+								<drawData>
+									<dataEast>
+										<offset>(-0.25,0,0.25)</offset>
+										<layer>-22</layer>
+									</dataEast>
+									<dataWest>
+										<offset>(0.35,0,-0.75)</offset>
+										<layer>63</layer>
+									</dataWest>
+									<dataSouth>
+										<offset>(0.7,0,-0.35)</offset>
+										<rotationOffset>-10</rotationOffset>
+										<layer>-5</layer>
+									</dataSouth>
+									<dataNorth>
+										<offset>(-0.7,0,-0.25)</offset>
+										<rotationOffset>-10</rotationOffset>
+									</dataNorth>
+								</drawData>
+							</li>
+						</renderNodeProperties>
+					</li>
+				</subTurrets>
+			</li>
+		</comps>
+		
+		<modExtensions>
+			<li Class="VEF.Apparels.ApparelExtension" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
+				<pawnCapacityMinLevels>
+					<li>
+						<capacity>Moving</capacity>
+						<minLevel>0.78</minLevel>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<minLevel>0.78</minLevel>
+					</li>
+				</pawnCapacityMinLevels>
+			</li>
+		</modExtensions>
+	</ThingDef>
+	
 </Defs>

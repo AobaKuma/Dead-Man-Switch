@@ -65,6 +65,35 @@
 				</value>
 			</li>
 
+			<!--heavy power skeleton-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_HeavyPowerSkeleton"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>12</ArmorRating_Sharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_HeavyPowerSkeleton"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>45</ArmorRating_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_HeavyPowerSkeleton"]/statBases</xpath>
+				<value>
+					<Bulk>25</Bulk>
+					<WornBulk>8</WornBulk>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_HeavyPowerSkeleton"]/equippedStatOffsets</xpath>
+				<value>
+					<CarryWeight>100</CarryWeight>
+					<CarryBulk>100</CarryBulk>
+				</value>
+			</li>
+
 			<!--Bionic suit-->
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Apparel_BionicSuit"]/statBases/ArmorRating_Sharp</xpath>

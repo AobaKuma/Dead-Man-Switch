@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<!-- ========== PawnKind Patches ========== -->
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Mammoth"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>2</min>
+							<max>3</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Mammoth"]/combatPower</xpath>
+				<value>
+					<combatPower>200</combatPower>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="BaseMechRace_Mammoth"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Quadruped</bodyShape>
+					</li>
+				</value>
+			</li>
+
+			<!-- ======Mammoth======-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="BaseMechRace_Mammoth"]/statBases</xpath>
+				<value>
+					<CarryWeight>240</CarryWeight>
+					<CarryBulk>150</CarryBulk>
+					<AimingAccuracy>0.8</AimingAccuracy>
+					<ShootingAccuracyPawn>0.85</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.00</MeleeDodgeChance>
+					<MeleeCritChance>0.15</MeleeCritChance>
+					<MeleeParryChance>0.25</MeleeParryChance>
+					<MaxHitPoints>400</MaxHitPoints>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="BaseMechRace_Mammoth"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>85</ArmorRating_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="BaseMechRace_Mammoth"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>20</ArmorRating_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="BaseMechRace_Mammoth"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.2</ArmorRating_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="BaseMechRace_Mammoth"]/statBases</xpath>
+				<value>
+					<ArmorRating_Electric>0.2</ArmorRating_Electric>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Mammoth"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>2000</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>10</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>3</Steel>
+							<Tungsteel>3</Tungsteel>
+						</RepairIngredients>
+						<RepairTime>150</RepairTime>
+						<RepairValue>120</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>425</MaxOverHeal>
+						<MinArmorPct>0.85</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

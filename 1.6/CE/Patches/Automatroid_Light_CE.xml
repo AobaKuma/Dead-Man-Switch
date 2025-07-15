@@ -3,6 +3,86 @@
 
 	<Operation Class="PatchOperationSequence">
 		<operations>
+			<!--Hyrax-->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="BaseMechRace_Hyrax"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>QuadrupedLow</bodyShape>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="BaseMechRace_Hyrax"]/statBases</xpath>
+				<value>
+					<CarryWeight>60</CarryWeight>
+					<CarryBulk>20</CarryBulk>
+					<AimingAccuracy>0.8</AimingAccuracy>
+					<ShootingAccuracyPawn>0.85</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.8</MeleeDodgeChance>
+					<MeleeCritChance>0.03</MeleeCritChance>
+					<MeleeParryChance>0.01</MeleeParryChance>
+					<MaxHitPoints>200</MaxHitPoints>
+					<ReloadSpeed>0.8</ReloadSpeed>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="BaseMechRace_Hyrax"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>4</ArmorRating_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="BaseMechRace_Hyrax"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>3</ArmorRating_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="BaseMechRace_Hyrax"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.1</ArmorRating_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Hyrax"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>2</min>
+							<max>3</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Hyrax"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>360</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>5</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>10</Steel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>82</MaxOverHeal>
+						<MinArmorPct>0.75</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+			
 			<!--Falcon-->
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/ThingDef[@Name="BaseMechRace_Falcon"]</xpath>
