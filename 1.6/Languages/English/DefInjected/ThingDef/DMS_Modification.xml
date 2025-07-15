@@ -20,10 +20,10 @@
   
   <!-- EN: Ceramic Plates -->
   <DMS_CeramicsPlating.label>Ceramic Plates</DMS_CeramicsPlating.label>
-  <!-- EN: A set of ceramic plates designed to be mounted on to a mech's external shell to provide additional protection. Once damaged, the armor plating must be completely replaced.\n\nThe maximum amount of plating able to be installed on a mech can depends on its body size. -->
+  <!-- EN: A set of ceramic plates designed to be mounted on to a mech's external shell to provide additional protection. Once damaged, the armor plating must be completely replaced.\n\nThe maximum amount of plating able to be installed on a mech can depend on its body size. -->
   <DMS_CeramicsPlating.description>A set of ceramic plates designed to be mounted on to a mech's external shell to provide additional protection. Once damaged, the armor plating must be completely replaced.
 
-The maximum amount of plating able to be installed on a mech can depends on its body size.</DMS_CeramicsPlating.description>
+The maximum amount of plating able to be installed on a mech can depend on its body size.</DMS_CeramicsPlating.description>
   <!-- EN: Use {0_label} -->
   <DMS_CeramicsPlating.comps.CompUsable.useLabel>Use {0_label}</DMS_CeramicsPlating.comps.CompUsable.useLabel>
   
@@ -36,8 +36,8 @@ The maximum amount of plating able to be installed on a mech can depends on its 
   
   <!-- EN: Reinforced Frame -->
   <DMS_ReinforcedFrame.label>Reinforced Frame</DMS_ReinforcedFrame.label>
-  <!-- EN: A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy duty replacement parts will significantly increase the weight of the mech and affect its speed. -->
-  <DMS_ReinforcedFrame.description>A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy duty replacement parts will significantly increase the weight of the mech and affect its speed.</DMS_ReinforcedFrame.description>
+  <!-- EN: A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy-duty replacement parts will significantly increase the weight of the mech and affect its speed. -->
+  <DMS_ReinforcedFrame.description>A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy-duty replacement parts will significantly increase the weight of the mech and affect its speed.</DMS_ReinforcedFrame.description>
   <!-- EN: Use {0_label} -->
   <DMS_ReinforcedFrame.comps.CompUsable.useLabel>Use {0_label}</DMS_ReinforcedFrame.comps.CompUsable.useLabel>
   

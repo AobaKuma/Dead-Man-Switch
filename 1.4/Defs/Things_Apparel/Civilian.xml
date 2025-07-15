@@ -72,12 +72,12 @@
 		</apparel>
 	</ThingDef>
 
-	<ThingDef ParentName="DMS_CapBase"><!-- GarrisionCap -->
-		<defName>DMS_Apparel_GarrisionCap</defName>
-		<label>garrision cap</label>
+	<ThingDef ParentName="DMS_CapBase"><!-- GarrisonCap -->
+		<defName>DMS_Apparel_GarrisonCap</defName>
+		<label>Garrison cap</label>
 		<description>a soft cap for service man when combat helmet is not required.</description>
 		<graphicData>
-			<texPath>Things/Apparel/GarrisionCap/headgear_icon</texPath>
+			<texPath>Things/Apparel/GarrisonCap/headgear_icon</texPath>
 		</graphicData>
 		<recipeMaker>
 			<researchPrerequisite>DMS_EquipmentBasis</researchPrerequisite>
@@ -97,24 +97,24 @@
 			<MentalBreakThreshold>-0.10</MentalBreakThreshold>
 		</equippedStatOffsets>
 		<apparel>
-			<wornGraphicPath>Things/Apparel/GarrisionCap/headgear</wornGraphicPath>
+			<wornGraphicPath>Things/Apparel/GarrisonCap/headgear</wornGraphicPath>
 			<tags>
-				<li>DMS_Garrision</li>
-				<li>GarrisionCap</li>
+				<li>DMS_Garrison</li>
+				<li>GarrisonCap</li>
 			</tags>
 		</apparel>
 	</ThingDef>
 
 	<ThingDef ParentName="ApparelMakeableBase">
-		<defName>DMS_Apparel_GarrisionCoat</defName>
-		<label>garrision coat</label>
+		<defName>DMS_Apparel_GarrisonCoat</defName>
+		<label>Garrison coat</label>
 		<description>A typical coats for army, keep one warm in chilly weather.</description>
 		<possessionCount>1</possessionCount>
 		<recipeMaker>
 		  <researchPrerequisite>DMS_EquipmentBasis</researchPrerequisite>
 		</recipeMaker>
 		<graphicData>
-			<texPath>Things/Apparel/GarrisionCoat/Apparel</texPath>
+			<texPath>Things/Apparel/GarrisonCoat/Apparel</texPath>
 		  <graphicClass>Graphic_Single</graphicClass>
 		  <drawSize>0.85</drawSize>
 		</graphicData>
@@ -142,14 +142,14 @@
 			<li>Shoulders</li>
 			<li>Arms</li>
 		  </bodyPartGroups>
-		  <wornGraphicPath>Things/Apparel/GarrisionCoat/Apparel</wornGraphicPath>
+		  <wornGraphicPath>Things/Apparel/GarrisonCoat/Apparel</wornGraphicPath>
 		  <blocksAddedPartWoundGraphics>true</blocksAddedPartWoundGraphics>
 		  <layers>
 			<li>Shell</li>
 		  </layers>
 		  <tags>
 			<li>IndustrialAdvanced</li>
-			<li>DMS_Garrision</li>
+			<li>DMS_Garrison</li>
 			<li>DMS_Officer</li>
 		  </tags>
 		  <defaultOutfitTags>
@@ -262,9 +262,9 @@
 	</ThingDef>
 
 	<ThingDef ParentName="ApparelBase">
-		<defName>DMS_Apparel_PowerSkelton</defName>
-		<label>power skelton unit</label>
-		<description>Physical enhancement equipment from array of neural prosthetic skeltons. It can increase the wearer's carry weight and mobility with effectively.</description>
+		<defName>DMS_Apparel_PowerSkeleton</defName>
+		<label>power skeleton unit</label>
+		<description>Physical enhancement equipment from array of neural prosthetic skeletons. It can increase the wearer's carry weight and mobility with effectively.</description>
 		<techLevel>Industrial</techLevel>
 		<recipeMaker>
 			<workSpeedStat>WorkSpeedGlobal</workSpeedStat>
@@ -286,7 +286,7 @@
 			<li>Clothing</li>
 		</tradeTags>
 		<graphicData>
-			<texPath>Things/Apparel/ExoSkelton/Apparel</texPath>
+			<texPath>Things/Apparel/ExoSkeleton/Apparel</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<thingCategories>
@@ -313,7 +313,7 @@
 				<li>Legs</li>
 				<li>Arms</li>
 			</bodyPartGroups>
-			<wornGraphicPath>Things/Apparel/ExoSkelton/Apparel</wornGraphicPath>
+			<wornGraphicPath>Things/Apparel/ExoSkeleton/Apparel</wornGraphicPath>
 			<blocksAddedPartWoundGraphics>true</blocksAddedPartWoundGraphics>
 			<layers>
 				<li>Shell</li>

@@ -19,8 +19,8 @@ This weapon is designed specially for Automatroid use, a normal human will be un
   
   <!-- EN: PDW -->
   <DMS_PDW.label>PDW</DMS_PDW.label>
-  <!-- EN: A mass-producable submachine gun which was designed to be used as a "Point Shooting" weapon. It's inaccurate at range but its caliber and draw speed it the ideal weapon for urban combat against milltors. -->
-  <DMS_PDW.description>A mass-producable submachine gun which was designed to be used as a "Point Shooting" weapon. It's inaccurate at range but its caliber and draw speed it the ideal weapon for urban combat against milltors.</DMS_PDW.description>
+  <!-- EN: A mass-producible submachine gun which was designed to be used as a "Point Shooting" weapon. It's inaccurate at range but its caliber and draw speed it the ideal weapon for urban combat against milltors. -->
+  <DMS_PDW.description>A mass-producible submachine gun which was designed to be used as a "Point Shooting" weapon. It's inaccurate at range but its caliber and draw speed it the ideal weapon for urban combat against milltors.</DMS_PDW.description>
   <!-- EN: stock -->
   <DMS_PDW.tools.stock.label>stock</DMS_PDW.tools.stock.label>
   <!-- EN: barrel -->
@@ -29,16 +29,16 @@ This weapon is designed specially for Automatroid use, a normal human will be un
   <DMS_PDW.verbs.Verb_Shoot.label>PDW</DMS_PDW.verbs.Verb_Shoot.label>
   
   <!-- EN: Mech pistol -->
-  <DMS_TaticalPistol.label>Mech pistol</DMS_TaticalPistol.label>
+  <DMS_TacticalPistol.label>Mech pistol</DMS_TacticalPistol.label>
   <!-- EN: A sidearm designed for Automatroid or exoskeleton use. \n\nThis weapon is designed specially for Automatroid use, a normal human will be unable to use it without external equipment or augmentation. -->
-  <DMS_TaticalPistol.description>A sidearm designed for Automatroid or exoskeleton use. 
+  <DMS_TacticalPistol.description>A sidearm designed for Automatroid or exoskeleton use. 
 
-This weapon is designed specially for Automatroid use, a normal human will be unable to use it without external equipment or augmentation.</DMS_TaticalPistol.description>
+This weapon is designed specially for Automatroid use, a normal human will be unable to use it without external equipment or augmentation.</DMS_TacticalPistol.description>
   <!-- EN: grip -->
-  <DMS_TaticalPistol.tools.grip.label>grip</DMS_TaticalPistol.tools.grip.label>
+  <DMS_TacticalPistol.tools.grip.label>grip</DMS_TacticalPistol.tools.grip.label>
   <!-- EN: barrel -->
-  <DMS_TaticalPistol.tools.barrel.label>barrel</DMS_TaticalPistol.tools.barrel.label>
+  <DMS_TacticalPistol.tools.barrel.label>barrel</DMS_TacticalPistol.tools.barrel.label>
   <!-- EN: Mech pistol -->
-  <DMS_TaticalPistol.verbs.Verb_Shoot.label>Mech pistol</DMS_TaticalPistol.verbs.Verb_Shoot.label>
+  <DMS_TacticalPistol.verbs.Verb_Shoot.label>Mech pistol</DMS_TacticalPistol.verbs.Verb_Shoot.label>
   
 </LanguageData>

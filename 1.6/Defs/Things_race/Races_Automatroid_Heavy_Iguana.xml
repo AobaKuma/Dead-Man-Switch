@@ -363,7 +363,7 @@
       </li>
     </modExtensions>
     <!--need
-    new melee tools based on their legs, not arms(those "arms" are supporting mechnical arms)-->
+    new melee tools based on their legs, not arms(those "arms" are supporting mechanical arms)-->
     <tools Inherit="False">
       <li>
         <label>Mechanical Head</label>

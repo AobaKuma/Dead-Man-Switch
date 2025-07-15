@@ -60,7 +60,7 @@
   <ThingDef ParentName="BaseModificationItem">
     <defName>DMS_CeramicsPlating</defName>
     <label>Ceramic Plates</label>
-    <description>A set of ceramic plates designed to be mounted on to a mech's external shell to provide additional protection. Once damaged, the armor plating must be completely replaced.\n\nThe maximum amount of plating able to be installed on a mech can depends on its body size.</description>
+    <description>A set of ceramic plates designed to be mounted on to a mech's external shell to provide additional protection. Once damaged, the armor plating must be completely replaced.\n\nThe maximum amount of plating able to be installed on a mech can depend on its body size.</description>
     <descriptionHyperlinks>
       <HediffDef>DMS_CeramicsPlating</HediffDef>
     </descriptionHyperlinks>
@@ -155,7 +155,7 @@
   <ThingDef ParentName="BaseModificationItem">
     <defName>DMS_ReinforcedFrame</defName>
     <label>Reinforced Frame</label>
-    <description>A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy duty replacement parts will significantly increase the weight of the mech and affect its speed.</description>
+    <description>A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy-duty replacement parts will significantly increase the weight of the mech and affect its speed.</description>
     <descriptionHyperlinks>
       <HediffDef>DMS_ReinforcedFrame</HediffDef>
     </descriptionHyperlinks>
@@ -195,7 +195,7 @@
     <defName>DMS_ReinforcedFrame</defName>
     <hediffClass>HediffWithComps</hediffClass>
     <label>Reinforced Frame</label>
-    <description>A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy duty replacement parts will significantly increase the weight of the mech and affect its speed.</description>
+    <description>A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy-duty replacement parts will significantly increase the weight of the mech and affect its speed.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_ReinforcedFrame</ThingDef>
     </descriptionHyperlinks>
@@ -272,7 +272,7 @@
     <defName>DMS_NuclearBattery</defName>
     <hediffClass>HediffWithComps</hediffClass>
     <label>Nuclear Battery</label>
-    <description>The abundant output of installed nuclear powered quantum batteries eliminates the need to recharge. The reactor can be overloaded to produce a chain reaction meltdown comparable to an anti-grain warhead.</description>
+    <description>The abundant output of installed nuclear-powered quantum batteries eliminates the need to recharge. The reactor can be overloaded to produce a chain reaction meltdown comparable to an anti-grain warhead.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_NuclearBattery</ThingDef>
     </descriptionHyperlinks>

@@ -37,7 +37,7 @@
   <ThingDef ParentName="BaseMechRace_Soldat">
     <defName>DMS_Mech_Soldat</defName>
     <label>Soldat</label>
-    <description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Soldats can be equipped with weapons rated for human use.\n\nThe Soldat has to carry a battery backpack which makes it unable to fight like other mechs without cover.</description>
+    <description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Soldat's can be equipped with weapons rated for human use.\n\nThe Soldat has to carry a battery backpack which makes it unable to fight like other mechs without cover.</description>
     <statBases>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">1</BandwidthCost> 
     </statBases>
@@ -320,7 +320,7 @@
   <ThingDef ParentName="BaseMechRace_Soldat">
     <defName>DMS_Mech_Sergeant</defName>
     <label>Sergeant</label>
-    <description>As a relay command variant of the Soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. Sergeants extend a mechanitor's effective range, but due to the weight of its radar equipment it can only equip a light weapon for self defense.</description>
+    <description>As a relay command variant of the Soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. Sergeants extend a mechanitor's effective range, but due to the weight of its radar equipment it can only equip a light weapon for self-defense.</description>
     <statBases>
       <MoveSpeed>4</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Sharp>0.35</ArmorRating_Sharp><!--銳抗-->

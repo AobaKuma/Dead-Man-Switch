@@ -9,8 +9,8 @@
   
   <!-- EN: Mech AMR -->
   <DMS_AntiMaterialRifle.label>Mech AMR</DMS_AntiMaterialRifle.label>
-  <!-- EN: A high caliber sniper rifle made to be used by MS-4E Jadger automatroids to destroy armored target at long ranges.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
-  <DMS_AntiMaterialRifle.description>A high caliber sniper rifle made to be used by MS-4E Jadger automatroids to destroy armored target at long ranges.
+  <!-- EN: A high caliber sniper rifle made to be used by MS-4E Jaeger automatroids to destroy armored target at long ranges.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_AntiMaterialRifle.description>A high caliber sniper rifle made to be used by MS-4E Jaeger automatroids to destroy armored target at long ranges.
 
 This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_AntiMaterialRifle.description>
   <!-- EN: stock -->
@@ -22,8 +22,8 @@ This weapon is specially designed for automatroid use, normal humans will strugg
   
   <!-- EN: Mech Assault Rifle -->
   <DMS_AssaultRifle.label>Mech Assault Rifle</DMS_AssaultRifle.label>
-  <!-- EN: An easily mass produced assault rifle designed for mech soldiers equipped with an extra long picatinny rail for all tacticool needs.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
-  <DMS_AssaultRifle.description>An easily mass produced assault rifle designed for mech soldiers equipped with an extra long picatinny rail for all tacticool needs.
+  <!-- EN: An easily mass-produced assault rifle designed for mech soldiers equipped with an extra long picatinny rail for all tacticool needs.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_AssaultRifle.description>An easily mass-produced assault rifle designed for mech soldiers equipped with an extra long picatinny rail for all tacticool needs.
 
 This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_AssaultRifle.description>
   <!-- EN: stock -->
@@ -35,8 +35,8 @@ This weapon is specially designed for automatroid use, normal humans will strugg
   
   <!-- EN: Mech Assault Shotgun -->
   <DMS_AssaultShotgun.label>Mech Assault Shotgun</DMS_AssaultShotgun.label>
-  <!-- EN: A fully automatic shotgun able to be mass produced with stamped components.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
-  <DMS_AssaultShotgun.description>A fully automatic shotgun able to be mass produced with stamped components.
+  <!-- EN: A fully automatic shotgun able to be mass-produced with stamped components.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_AssaultShotgun.description>A fully automatic shotgun able to be mass-produced with stamped components.
 
 This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_AssaultShotgun.description>
   <!-- EN: stock -->
@@ -74,8 +74,8 @@ This weapon is specially designed for automatroid use, normal humans will strugg
   
   <!-- EN: Mech LMG -->
   <DMS_LightMachineGun.label>Mech LMG</DMS_LightMachineGun.label>
-  <!-- EN: A weapon specializing in supression chambered in a large caliber rifle round.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
-  <DMS_LightMachineGun.description>A weapon specializing in supression chambered in a large caliber rifle round.
+  <!-- EN: A weapon specializing in suppression chambered in a large caliber rifle round.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_LightMachineGun.description>A weapon specializing in suppression chambered in a large caliber rifle round.
 
 This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_LightMachineGun.description>
   <!-- EN: stock -->
@@ -98,8 +98,8 @@ This weapon is specially designed for automatroid use, normal humans will strugg
   <!-- EN: Mech Marksman Rifle -->
   <DMS_MarksmanRifle.verbs.Verb_Shoot.label>Mech Marksman Rifle</DMS_MarksmanRifle.verbs.Verb_Shoot.label>
   
-  <!-- EN: Mech Semiauto Rifle -->
-  <DMS_SemiAutoRifle.label>Mech Semiauto Rifle</DMS_SemiAutoRifle.label>
+  <!-- EN: Mech Semi-auto Rifle -->
+  <DMS_SemiAutoRifle.label>Mech Semi-auto Rifle</DMS_SemiAutoRifle.label>
   <!-- EN: A gas blowback semi-automatic rifle used by mech soldiers. \n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
   <DMS_SemiAutoRifle.description>A gas blowback semi-automatic rifle used by mech soldiers. 
 
@@ -108,8 +108,8 @@ This weapon is specially designed for automatroid use, normal humans will strugg
   <DMS_SemiAutoRifle.tools.stock.label>stock</DMS_SemiAutoRifle.tools.stock.label>
   <!-- EN: barrel -->
   <DMS_SemiAutoRifle.tools.barrel.label>barrel</DMS_SemiAutoRifle.tools.barrel.label>
-  <!-- EN: Mech Semiauto Rifle -->
-  <DMS_SemiAutoRifle.verbs.Verb_Shoot.label>Mech Semiauto Rifle</DMS_SemiAutoRifle.verbs.Verb_Shoot.label>
+  <!-- EN: Mech Semi-auto Rifle -->
+  <DMS_SemiAutoRifle.verbs.Verb_Shoot.label>Mech Semi-auto Rifle</DMS_SemiAutoRifle.verbs.Verb_Shoot.label>
   
   <!-- EN: Sniper Grenade Launcher -->
   <DMS_SniperGrenadeLauncher.label>Sniper Grenade Launcher</DMS_SniperGrenadeLauncher.label>

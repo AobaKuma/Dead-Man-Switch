@@ -25,7 +25,7 @@
     <trader>true</trader>
     <combatPower>40</combatPower>
     <apparelTags>
-      <li>DMS_Garrision</li>
+      <li>DMS_Garrison</li>
     </apparelTags>
     <apparelAllowHeadgearChance>0.7</apparelAllowHeadgearChance>
     <factionLeader>false</factionLeader>
@@ -162,7 +162,7 @@
       <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
       <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
       <apparelRequired Inherit="false">
-        <li>DMS_Apparel_GarrisionCap</li>
+        <li>DMS_Apparel_GarrisonCap</li>
         <li MayRequire="Ludeon.RimWorld.Royalty">Apparel_ShirtRuffle</li>
         <li>Apparel_Pants</li>
       </apparelRequired>

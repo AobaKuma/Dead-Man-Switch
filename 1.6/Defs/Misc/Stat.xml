@@ -11,7 +11,7 @@
 	</StatDef>
 	<StatDef>
 		<defName>DMS_HeavyGears</defName>
-		<label>supported bodysize</label>
+		<label>supported body size</label>
 		<workerClass>Fortified.StatWorker_HeavyGear</workerClass>
 		<description>Required pawn body size to equip this weapon.</description>
 		<category>Weapon</category>

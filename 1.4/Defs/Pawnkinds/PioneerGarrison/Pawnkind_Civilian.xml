@@ -210,7 +210,7 @@
 
   <PawnKindDef ParentName="DMS_CivilianBase">
     <defName>DMS_Security</defName>
-    <label>garrision guard</label>
+    <label>Garrison guard</label>
     <itemQuality>Normal</itemQuality>
     <weaponTags Inherit="False">
       <li>A_RC_Pistol</li>
@@ -220,8 +220,8 @@
     <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
     <apparelRequired>
       <li>Apparel_FlakVest</li>
-      <li>DMS_Apparel_GarrisionCoat</li>
-      <li>DMS_Apparel_GarrisionCap</li>
+      <li>DMS_Apparel_GarrisonCoat</li>
+      <li>DMS_Apparel_GarrisonCap</li>
     </apparelRequired>
     <specificApparelRequirements Inherit="False">
        <!-- light red uniform-->

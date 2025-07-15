@@ -67,9 +67,9 @@
                 </value>
             </li>
 			
-			<!--===== TaticalPistol =====-->
+			<!--===== TacticalPistol =====-->
             <li Class="PatchOperationReplace">
-                <xpath>Defs/ThingDef[defName="DMS_TaticalPistol"]/tools</xpath>
+                <xpath>Defs/ThingDef[defName="DMS_TacticalPistol"]/tools</xpath>
                 <value>
                     <tools Inherit="False"> 
 			            <li Class="CombatExtended.ToolCE">
@@ -97,7 +97,7 @@
                 </value>
             </li>	
             <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
-                <defName>DMS_TaticalPistol</defName>
+                <defName>DMS_TacticalPistol</defName>
                 <statBases>
                     <WorkToMake>8600</WorkToMake>
                     <Mass>4.1</Mass>

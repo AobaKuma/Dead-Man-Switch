@@ -4,7 +4,7 @@
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Tarbosaurus</defName>
     <label>Tarbosaurus</label>
-    <description>A bipedal ultra heavy automatoid nicknamed the "Armored Rex" as its distinctive body structure vaguely resembles a carnotaurus. Once seen as the nextgen war-changer in the twilight of the arms races in the early spacer era, it uses artificial muscle fibres to drive its oversized legs.\n\nWhile it failed to change the field of modern warfare as expected, there are still numerous manufacturers replicating it and adding their own improvements to the design. As such, traces of technology adopted in this automatroid can be seen in a great number of weaponry.</description>
+    <description>A bipedal ultra heavy automatroid nicknamed the "Armored Rex" as its distinctive body structure vaguely resembles a carnotaurus. Once seen as the nextgen war-changer in the twilight of the arms races in the early spacer era, it uses artificial muscle fibres to drive its oversized legs.\n\nWhile it failed to change the field of modern warfare as expected, there are still numerous manufacturers replicating it and adding their own improvements to the design. As such, traces of technology adopted in this automatroid can be seen in a great number of weaponry.</description>
     <statBases>
       <MoveSpeed>4</MoveSpeed>
       <ArmorRating_Sharp>1.8</ArmorRating_Sharp><!--銳抗-->

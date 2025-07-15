@@ -60,6 +60,7 @@
       </li>
     </tools>
     <race>
+      <mechWeightClass>Light</mechWeightClass>
       <renderTree>HumanlikeMech</renderTree>
       <thinkTreeMain>DMS_HumanlikeMech</thinkTreeMain>
       <makesFootprints>true</makesFootprints>
@@ -178,7 +179,7 @@
   <ThingDef Name="DMS_MechDoggeBase" ParentName="BaseAutomatroidRace">  <!-- DMS_Machine_Hound 獵犬常規型 -->
     <defName>DMS_Mech_Dogge</defName>
     <label>Dogge</label>
-    <description>A four-legged robot dog which excels at providing forward reconnaissance and urban combat support during operations. It can equipped with small-caliber firearms or flamethrowers to provide offensive capabilities.</description>
+    <description>A four-legged robot dog which excels at providing forward reconnaissance and urban combat support during operations. It can equip with small-caliber firearms or flamethrowers to provide offensive capabilities.</description>
     <statBases>
       <MoveSpeed>6</MoveSpeed>
       <ArmorRating_Blunt>0.4</ArmorRating_Blunt>

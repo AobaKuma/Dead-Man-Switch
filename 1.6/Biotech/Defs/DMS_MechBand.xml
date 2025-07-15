@@ -3,7 +3,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_BandNode</defName>
     <label>Process Array</label>
-    <description>An array machine processes the received signal and directs it to a specific mechanitor. This adds 4 bandwidth to that mechanitor's total, allowing them to control more mechanoids.\n\nOnce a process array is constructed, it can be quickly tuned to a mechanitor. However, returning a band node to a different mechanitor takes significantly longer.\n\nThis device follows the N.A.C.S. protocol so only Mechlinks with following the protocol can receieve the service.</description>
+    <description>An array machine processes the received signal and directs it to a specific mechanitor. This adds 4 bandwidth to that mechanitor's total, allowing them to control more mechanoids.\n\nOnce a process array is constructed, it can be quickly tuned to a mechanitor. However, returning a band node to a different mechanitor takes significantly longer.\n\nThis device follows the N.A.C.S. protocol so only Mechlinks with following the protocol can receive the service.</description>
     <tickerType>Normal</tickerType>
     <rotatable>false</rotatable>
     <canOverlapZones>false</canOverlapZones>

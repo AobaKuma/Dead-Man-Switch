@@ -47,7 +47,7 @@
                 <li Class="PatchOperationAdd">
                     <xpath>Defs/ThingDef[@Name="FT_MinifiedTurretEquippable"]/weaponTags</xpath>
                     <value>
-                        <li>DMS_MechWeaponMeduim</li>
+                        <li>DMS_MechWeaponMedium</li>
                         <li>A_SuppressWeapon</li>
                     </value>
                 </li>

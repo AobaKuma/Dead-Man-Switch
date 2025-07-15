@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <RecipeDef ParentName="DMS_MidiumMechanoidRecipe">
+  <RecipeDef ParentName="DMS_MediumMechanoidRecipe">
     <defName>DMS_Make_Hyrax</defName>
     <label>gestate hyrax</label>
     <description>Gestate a hyrax Automatroid.</description>
@@ -32,7 +32,7 @@
   </RecipeDef>
 
   <!--遊隼-->
-  <RecipeDef ParentName="DMS_MidiumMechanoidRecipe">
+  <RecipeDef ParentName="DMS_MediumMechanoidRecipe">
     <defName>DMS_Make_Falcon</defName>
     <label>gestate falcon</label>
     <researchPrerequisite>DMS_Automatroid</researchPrerequisite>
@@ -65,7 +65,7 @@
   </RecipeDef>
 
   <!--夜蝠-->
-  <RecipeDef ParentName="DMS_MidiumMechanoidRecipe">
+  <RecipeDef ParentName="DMS_MediumMechanoidRecipe">
     <defName>DMS_Make_Noctula</defName>
     <label>Gestate Noctula</label>
     <researchPrerequisite>DMS_Automatroid</researchPrerequisite>
@@ -106,7 +106,7 @@
   </RecipeDef>
 
   <!--獒犬-->
-  <RecipeDef ParentName="DMS_MidiumMechanoidRecipe">
+  <RecipeDef ParentName="DMS_MediumMechanoidRecipe">
     <defName>DMS_Make_Dogge</defName>
     <label>Gestate Dogge</label>
     <researchPrerequisite>DMS_MechBasis</researchPrerequisite>

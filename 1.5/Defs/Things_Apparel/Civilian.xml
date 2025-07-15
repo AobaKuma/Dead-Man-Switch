@@ -72,12 +72,12 @@
 		</apparel>
 	</ThingDef>
 
-	<ThingDef ParentName="DMS_CapBase"><!-- GarrisionCap -->
-		<defName>DMS_Apparel_GarrisionCap</defName>
-		<label>Garrision Cap</label>
+	<ThingDef ParentName="DMS_CapBase"><!-- GarrisonCap -->
+		<defName>DMS_Apparel_GarrisonCap</defName>
+		<label>Garrison Cap</label>
 		<description>A soft cap for servicemen for the times when a helmet is not required or available.</description>
 		<graphicData>
-			<texPath>Things/Apparel/GarrisionCap/headgear_icon</texPath>
+			<texPath>Things/Apparel/GarrisonCap/headgear_icon</texPath>
 		</graphicData>
 		<recipeMaker>
 			<researchPrerequisite>DMS_EquipmentBasis</researchPrerequisite>
@@ -97,24 +97,24 @@
 			<MentalBreakThreshold>-0.10</MentalBreakThreshold>
 		</equippedStatOffsets>
 		<apparel>
-			<wornGraphicPath>Things/Apparel/GarrisionCap/headgear</wornGraphicPath>
+			<wornGraphicPath>Things/Apparel/GarrisonCap/headgear</wornGraphicPath>
 			<tags>
-				<li>DMS_Garrision</li>
-				<li>GarrisionCap</li>
+				<li>DMS_Garrison</li>
+				<li>GarrisonCap</li>
 			</tags>
 		</apparel>
 	</ThingDef>
 
 	<ThingDef ParentName="ApparelMakeableBase">
-		<defName>DMS_Apparel_GarrisionCoat</defName>
-		<label>Garrision Coat</label>
+		<defName>DMS_Apparel_GarrisonCoat</defName>
+		<label>Garrison Coat</label>
 		<description>A typical coat for an enlisted man, designed to keep one warm in chilly weather.</description>
 		<possessionCount>1</possessionCount>
 		<recipeMaker>
 		  <researchPrerequisite>DMS_EquipmentBasis</researchPrerequisite>
 		</recipeMaker>
 		<graphicData>
-			<texPath>Things/Apparel/GarrisionCoat/Apparel</texPath>
+			<texPath>Things/Apparel/GarrisonCoat/Apparel</texPath>
 		  <graphicClass>Graphic_Single</graphicClass>
 		  <drawSize>0.85</drawSize>
 		</graphicData>
@@ -142,14 +142,14 @@
 			<li>Shoulders</li>
 			<li>Arms</li>
 		  </bodyPartGroups>
-		  <wornGraphicPath>Things/Apparel/GarrisionCoat/Apparel</wornGraphicPath>
+		  <wornGraphicPath>Things/Apparel/GarrisonCoat/Apparel</wornGraphicPath>
 		  <blocksAddedPartWoundGraphics>true</blocksAddedPartWoundGraphics>
 		  <layers>
 			<li>Shell</li>
 		  </layers>
 		  <tags>
 			<li>IndustrialAdvanced</li>
-			<li>DMS_Garrision</li>
+			<li>DMS_Garrison</li>
 			<li>DMS_Officer</li>
 		  </tags>
 		  <defaultOutfitTags>
@@ -279,7 +279,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="ApparelBase">
-		<defName>DMS_Apparel_PowerSkelton</defName>
+		<defName>DMS_Apparel_PowerSkeleton</defName>
 		<label>Powered Exoskeletal Unit</label>
 		<description>A powered exoskeletal suit which mimics the human form and can be worn by an untrained operator. It significantly increases the wearer's strength and running speed.</description>
 		<techLevel>Industrial</techLevel>
@@ -304,7 +304,7 @@
 			<li>DMS_Armor</li>
 		</tradeTags>
 		<graphicData>
-			<texPath>Things/Apparel/ExoSkelton/Apparel</texPath>
+			<texPath>Things/Apparel/ExoSkeleton/Apparel</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<thingCategories>
@@ -340,7 +340,7 @@
 					<layer>88</layer>
 				</dataNorth>
 			</drawData>
-			<wornGraphicPath>Things/Apparel/ExoSkelton/Apparel</wornGraphicPath>
+			<wornGraphicPath>Things/Apparel/ExoSkeleton/Apparel</wornGraphicPath>
 			<blocksAddedPartWoundGraphics>true</blocksAddedPartWoundGraphics>
 			<layers>
 				<li>Shell</li>

@@ -10,7 +10,7 @@
 
 <!-- 機兵用霰彈武器 DMS_MechWeaponShotgun //鎮暴霰彈槍,霰彈手槍等-->
 
-<!-- 中等體型機兵用武器 DMS_MechWeaponMeduim //中等體型機兵使用的武器，精確射手步槍與半自動步槍，突擊步槍與重型衝鋒槍等-->
+<!-- 中等體型機兵用武器 DMS_MechWeaponMedium //中等體型機兵使用的武器，精確射手步槍與半自動步槍，突擊步槍與重型衝鋒槍等-->
 <!-- 中等體型機兵用長身管武器 DMS_MechWeaponLongRifle//中等體型機兵使用的長身管武器，輕機槍，反器材步槍與狙擊槍-->
 
 <!-- 機兵用反坦克武器 DMS_MechWeaponAntiTank //反器材步槍,反坦克火箭砲，自動榴彈發射器與狙擊榴彈發射器-->
@@ -29,7 +29,7 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponMeduim</li>
+			<li>DMS_MechWeaponMedium</li>
 			<li>DMS_MechWeaponShotgun</li>
 			<li>A_RC</li>
 			<li>A_RC_LongRifle</li>
@@ -100,7 +100,7 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponMeduim</li>
+			<li>DMS_MechWeaponMedium</li>
 			<li>A_AR_LongRifle</li>
 		</weaponTags>
 		<graphicData>
@@ -167,7 +167,7 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponMeduim</li>
+			<li>DMS_MechWeaponMedium</li>
 			<li>A_SR_LongRifle</li>
 			<li>A_SAR_LongRifle</li>
 			<li>A_DMR_LongRifle</li>
@@ -239,7 +239,7 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponMeduim</li>
+			<li>DMS_MechWeaponMedium</li>
 			<li>A_BR_LongRifle</li>
 		</weaponTags>
 		<graphicData>
@@ -306,7 +306,7 @@
 		  <li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponMeduim</li>	
+			<li>DMS_MechWeaponMedium</li>	
 			<li>A_DMR_LongRifle</li>
 		</weaponTags>
 		<graphicData>

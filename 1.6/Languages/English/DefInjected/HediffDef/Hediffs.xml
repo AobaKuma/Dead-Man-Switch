@@ -3,10 +3,10 @@
   
   <!-- EN: Xeno Limb Syndrome -->
   <DMS_BionicShock.label>Xeno Limb Syndrome</DMS_BionicShock.label>
-  <!-- EN: A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for thes symptoms.. -->
+  <!-- EN: A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for these symptoms… -->
   <DMS_BionicShock.description>A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.
 
-There are five classifications of severity for thes symptoms..</DMS_BionicShock.description>
+There are five classifications of severity for these symptoms..</DMS_BionicShock.description>
   <!-- EN: bionic syndrome has been cured -->
   <DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>bionic syndrome has been cured</DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>
   <!-- EN: Initial -->
@@ -50,8 +50,8 @@ There are five classifications of severity for thes symptoms..</DMS_BionicShock.
   
   <!-- EN: Fatal Trigger -->
   <DMS_MechlinkFatalTrigger.label>Fatal Trigger</DMS_MechlinkFatalTrigger.label>
-  <!-- EN: Due to the instability of this device, this safty protocol was created to automatically eject and destroy the disabled mechlink before it can cause catastrophic damage to the user's brain. -->
-  <DMS_MechlinkFatalTrigger.description>Due to the instability of this device, this safty protocol was created to automatically eject and destroy the disabled mechlink before it can cause catastrophic damage to the user's brain.</DMS_MechlinkFatalTrigger.description>
+  <!-- EN: Due to the instability of this device, this safety protocol was created to automatically eject and destroy the disabled mechlink before it can cause catastrophic damage to the user's brain. -->
+  <DMS_MechlinkFatalTrigger.description>Due to the instability of this device, this safety protocol was created to automatically eject and destroy the disabled mechlink before it can cause catastrophic damage to the user's brain.</DMS_MechlinkFatalTrigger.description>
   
   <!-- EN: Kill Switch -->
   <DMS_MechlinkKillSwitch.label>Kill Switch</DMS_MechlinkKillSwitch.label>
@@ -77,15 +77,15 @@ There are five classifications of severity for thes symptoms..</DMS_BionicShock.
   
   <!-- EN: Mechlink Rejection -->
   <DMS_MechlinkRejection.label>Mechlink Rejection</DMS_MechlinkRejection.label>
-  <!-- EN: Due to limited technology and the lack of medical nanites, there are some side-effect after installing this mechlink. It will take some time before the implantee's nervous system adjusts to its presence. -->
-  <DMS_MechlinkRejection.description>Due to limited technology and the lack of medical nanites, there are some side-effect after installing this mechlink. It will take some time before the implantee's nervous system adjusts to its presence.</DMS_MechlinkRejection.description>
+  <!-- EN: Due to limited technology and the lack of medical nanites, there are some side effect after installing this mechlink. It will take some time before the implantee's nervous system adjusts to its presence. -->
+  <DMS_MechlinkRejection.description>Due to limited technology and the lack of medical nanites, there are some side effect after installing this mechlink. It will take some time before the implantee's nervous system adjusts to its presence.</DMS_MechlinkRejection.description>
   <!-- EN: fever -->
   <DMS_MechlinkRejection.stages.fever.label>fever</DMS_MechlinkRejection.stages.fever.label>
   
   <!-- EN: Synthetic Rejection -->
   <DMS_SyntheticRejection.label>Synthetic Rejection</DMS_SyntheticRejection.label>
-  <!-- EN: Due to modifications of circulatory system, synthetic bionic enhancements can be rejected temporarily by the body. The effect does not last long, and the body's abiity to fight infections is reduced for its duration. -->
-  <DMS_SyntheticRejection.description>Due to modifications of circulatory system, synthetic bionic enhancements can be rejected temporarily by the body. The effect does not last long, and the body's abiity to fight infections is reduced for its duration.</DMS_SyntheticRejection.description>
+  <!-- EN: Due to modifications of circulatory system, synthetic bionic enhancements can be rejected temporarily by the body. The effect does not last long, and the body's ability to fight infections is reduced for its duration. -->
+  <DMS_SyntheticRejection.description>Due to modifications of circulatory system, synthetic bionic enhancements can be rejected temporarily by the body. The effect does not last long, and the body's ability to fight infections is reduced for its duration.</DMS_SyntheticRejection.description>
   <!-- EN: Bionic Rejection Syndrome has been cured. -->
   <DMS_SyntheticRejection.comps.HediffComp_RemoveIfOtherHediff.message>Bionic Rejection Syndrome has been cured.</DMS_SyntheticRejection.comps.HediffComp_RemoveIfOtherHediff.message>
   <!-- EN: fever -->

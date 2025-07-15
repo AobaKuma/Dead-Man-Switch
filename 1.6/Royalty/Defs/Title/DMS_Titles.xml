@@ -26,7 +26,7 @@
   <RoyalTitleDef ParentName="BaseDMSTitle">
     <defName>DMS_Private</defName>
     <label>Private</label>
-    <description>A private is a soldier with the lowest rank in the Colonial Forces. Soldiers with the rank of Private may be conscripts or they may be professional soldiers.</description>
+    <description>A private is a soldier with the lowest rank in the Colonial Forces. Soldiers with the rank of Private may be conscripts, or they may be professional soldiers.</description>
     <seniority>10</seniority>
     <favorCost>5</favorCost>
     <changeHeirQuestPoints>1000</changeHeirQuestPoints>
@@ -61,7 +61,7 @@
           <li>IndustrialMilitaryBasic</li>
           <li>IndustrialAdvanced</li>
           <li>DMS_Tactical</li>
-          <li>DMS_Garrision</li>
+          <li>DMS_Garrison</li>
           <li>DMS_DragoonArmour</li>
         </allowedTags>
       </li>
@@ -74,7 +74,7 @@
           <li>IndustrialMilitaryBasic</li>
           <li>IndustrialAdvanced</li>
           <li>DMS_Tactical</li>
-          <li>DMS_Garrision</li>
+          <li>DMS_Garrison</li>
           <li>DMS_Soldier</li>
         </allowedTags>
       </li>
@@ -97,7 +97,7 @@
   <RoyalTitleDef ParentName="BaseDMSTitlePlus">
     <defName>DMS_Sergeant</defName>
     <label>Sergeant</label>
-    <description>A non-commissioned officer above the rank of a Corporal. Responsible for squad level decision making in combat.</description>
+    <description>A non-commissioned officer above the rank of a Corporal. Responsible for squad level decision-making in combat.</description>
     <seniority>100</seniority>
     <favorCost>12</favorCost>
     <permitPointsAwarded>1</permitPointsAwarded>
@@ -142,7 +142,7 @@
           <li>IndustrialMilitaryBasic</li>
           <li>IndustrialAdvanced</li>
           <li>DMS_Tactical</li>
-          <li>DMS_Garrision</li>
+          <li>DMS_Garrison</li>
           <li>DMS_Soldier</li>
         </allowedTags>
       </li>
@@ -154,7 +154,7 @@
           <li>IndustrialMilitaryBasic</li>
           <li>IndustrialAdvanced</li>
           <li>DMS_Tactical</li>
-          <li>DMS_Garrision</li>
+          <li>DMS_Garrison</li>
           <li>DMS_DragoonArmour</li>
         </allowedTags>
       </li>
@@ -240,7 +240,7 @@
           <li>IndustrialMilitaryBasic</li>
           <li>IndustrialAdvanced</li>
           <li>DMS_Tactical</li>
-          <li>DMS_Garrision</li>
+          <li>DMS_Garrison</li>
           <li>DMS_Soldier</li>
         </allowedTags>
       </li>
@@ -252,7 +252,7 @@
           <li>IndustrialMilitaryBasic</li>
           <li>IndustrialAdvanced</li>
           <li>DMS_Tactical</li>
-          <li>DMS_Garrision</li>
+          <li>DMS_Garrison</li>
           <li>DMS_DragoonArmour</li>
         </allowedTags>
       </li>

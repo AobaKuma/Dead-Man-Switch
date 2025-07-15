@@ -50,7 +50,7 @@
     <defName>NeuroglueHigh</defName>
     <hediffClass>Hediff_High</hediffClass>
     <label>Receptor gel</label>
-    <description>Receptor gel which connects biological and mechanical nerves, which can cure the Bionic syndrome with only minor side-effects.</description>
+    <description>Receptor gel which connects biological and mechanical nerves, which can cure the Bionic syndrome with only minor side effects.</description>
     <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
     <scenarioCanAdd>true</scenarioCanAdd>
     <maxSeverity>1.0</maxSeverity>

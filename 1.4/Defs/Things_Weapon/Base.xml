@@ -71,7 +71,7 @@
 			<li Class="HeavyWeapons.HeavyWeapon">
 				<isHeavy>true</isHeavy>
 				<supportedArmors>
-					<li>DMS_Apparel_PowerSkelton</li>
+					<li>DMS_Apparel_PowerSkeleton</li>
 					<li MayRequire="VanillaExpanded.VWEHW" >VWE_Apparel_Exoframe</li>
 					<li MayRequire="AOBA.RimThunder.MobileInfantry" >RTMI_MobileSuit</li>
 				</supportedArmors>

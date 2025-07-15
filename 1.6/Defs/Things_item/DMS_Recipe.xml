@@ -84,7 +84,7 @@
   <RecipeDef>
     <defName>DMS_Make_Plasfiber</defName>
     <label>Make plasfiber x20</label>
-    <description>Synthesize plasfibers.</description>
+    <description>Synthesize plasic fibers.</description>
     <jobString>Synthesizing.</jobString>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
@@ -741,7 +741,7 @@
     <defName>DMS_Make_WetWare</defName>
     <label>Synthesize wetware computer</label>
     <description>Synthesize a wetware computer- A high-precision computer that can be produced and used on a large scale.</description>
-    <jobString>Sythesizing wetware computer.</jobString>
+    <jobString>Synthesizing wetware computer.</jobString>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
     <soundWorking>Recipe_Machining</soundWorking>

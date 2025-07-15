@@ -37,29 +37,29 @@
 					<li>Feet</li>
 				</value>
 			</li>
-			<!--power skelton-->
+			<!--power skeleton-->
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="DMS_Apparel_PowerSkelton"]/statBases/ArmorRating_Sharp</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_PowerSkeleton"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
 					<ArmorRating_Sharp>1</ArmorRating_Sharp>
 				</value>
 			</li>
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="DMS_Apparel_PowerSkelton"]/statBases/ArmorRating_Blunt</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_PowerSkeleton"]/statBases/ArmorRating_Blunt</xpath>
 				<value>
 					<ArmorRating_Blunt>5</ArmorRating_Blunt>
 				</value>
 			</li>
 
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="DMS_Apparel_PowerSkelton"]/statBases</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_PowerSkeleton"]/statBases</xpath>
 				<value>
 					<Bulk>15</Bulk>
 					<WornBulk>5</WornBulk>
 				</value>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="DMS_Apparel_PowerSkelton"]/equippedStatOffsets</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_PowerSkeleton"]/equippedStatOffsets</xpath>
 				<value>
 					<CarryWeight>60</CarryWeight>
 				</value>
@@ -325,23 +325,23 @@
 				</value>
 			</li>
 
-			<!--DMS_Apparel_GarrisionCoat-->
+			<!--DMS_Apparel_GarrisonCoat-->
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="DMS_Apparel_GarrisionCoat"]/statBases/StuffEffectMultiplierArmor</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_GarrisonCoat"]/statBases/StuffEffectMultiplierArmor</xpath>
 				<value>
 					<StuffEffectMultiplierArmor>4</StuffEffectMultiplierArmor>
 				</value>
 			</li>
 
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="DMS_Apparel_GarrisionCoat"]/statBases</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_GarrisonCoat"]/statBases</xpath>
 				<value>
 					<Bulk>4</Bulk>
 					<WornBulk>0</WornBulk>
 				</value>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="DMS_Apparel_GarrisionCoat"]</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_GarrisonCoat"]</xpath>
 				<value>
 					<equippedStatOffsets>
 						<CarryBulk>20</CarryBulk>
@@ -349,7 +349,7 @@
 				</value>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="DMS_Apparel_GarrisionCoat"]/apparel/bodyPartGroups</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_GarrisonCoat"]/apparel/bodyPartGroups</xpath>
 				<value>
 					<li>Hands</li>
 					<li>Feet</li>
@@ -357,7 +357,7 @@
 			</li>
 			
 			<li Class="PatchOperationAddModExtension">
-				<xpath>Defs/ThingDef[defName="DMS_Apparel_GarrisionCoat"]</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_GarrisonCoat"]</xpath>
 				<value>
 					<li Class="CombatExtended.PartialArmorExt">
 						<stats>

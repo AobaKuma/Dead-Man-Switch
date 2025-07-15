@@ -6,9 +6,9 @@
         <label>Colonization Forces</label>
         <!-- <categoryTag>Empire</categoryTag> 不要加這個，不然官位會亂-->
         <categoryTag>DMS</categoryTag>
-        <description>A militarized colonial organization led by an AI Overlord who optimises warfare with brutal efficiency. They are a warlike people operating as a military meritocracy. Every individual is expected to take responibility for their actions and their battlespace, and anyone willing to fight can find their place among their ranks.</description>
+        <description>A militarized colonial organization led by an AI Overlord who optimises warfare with brutal efficiency. They are a warlike people operating as a military meritocracy. Every individual is expected to take responsibility for their actions and their battlespace, and anyone willing to fight can find their place among their ranks.</description>
         <pawnSingular>serviceman</pawnSingular>
-        <pawnsPlural>servicemens</pawnsPlural>
+        <pawnsPlural>servicemen</pawnsPlural>
         <settlementGenerationWeight>1.2</settlementGenerationWeight>
         <requiredCountAtGameStart>1</requiredCountAtGameStart>
         <maxCountAtGameStart>1</maxCountAtGameStart>
@@ -20,7 +20,7 @@
         <leaderForceGenerateNewPawn>true</leaderForceGenerateNewPawn>
         <factionIconPath>UI/Faction/VanguardIcon</factionIconPath>
         <modExtensions>
-            <!-- <li Class="DMS_Story.ModExtenson_FactionNegotiant">
+            <!-- <li Class="DMS_Story.ModExtension_FactionNegotiator">
         <goods>
           <li>VanguardRaidLootMaker</li>
         </goods>
