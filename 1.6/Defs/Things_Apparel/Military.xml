@@ -4,7 +4,7 @@
 	<ThingDef ParentName="ApparelBase">
 		<defName>DMS_Apparel_BionicSuit</defName>
 		<label>Bionic Suit</label>
-		<description>A step above the civilian model Powered Exoskeleton Suit, this military grade bionic suit is sewn from artificial muscle fibers and amplifies the wearers pre-existing muscular strength. Greatly increases the wearers carrying capacity and movement speed.</description>
+		<description>A military-grade bionic suit sewn from artificial muscle fibers that amplify the wearer's pre-existing muscular strength. Greatly increases the wearer's carrying capacity and movement speed.</description>
 		<techLevel>Industrial</techLevel>
 		<recipeMaker>
 			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -429,6 +429,84 @@
 		</colorGenerator>
 	</ThingDef>
 
+	<!-- 軌道游騎兵頭盔 -->
+	<ThingDef ParentName="DMS_ArmorHelmetMakeableBase">
+		<defName>DMS_Apparel_RangerHelmet</defName>
+		<label>Orbital ranger Helmet</label>
+		<!-- 一種由殖民艦隊軌道游騎兵普遍配備的全覆式真空密封防彈頭盔，具有完整的保護與內部集成的電子系統輔助，是殖民艦隊海軍陸戰隊與軌道龍騎兵在真空微重力環境下作戰的標準裝備。 -->
+		<description>A full-covering vacuum-sealed helmet used by the Orbital Rangers,With complete protection and internal integrated electronic system assistance, it is the standard equipment for Colonial Fleet Marines and Orbital Dragoons operating in microgravity environments.</description>
+		<recipeMaker>
+			<researchPrerequisite>FlakArmor</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<graphicData>
+			<texPath>Things/Apparel/RangerHelmet/Icon</texPath>
+		</graphicData>
+		<uiIconScale>1</uiIconScale>
+		<equippedStatOffsets>
+			<MentalBreakThreshold>-0.10</MentalBreakThreshold>
+			<VacuumResistance MayRequire="ludeon.rimworld.odyssey">0.86</VacuumResistance>
+		</equippedStatOffsets>
+		<statBases>
+			<WorkToMake>20000</WorkToMake>
+			<MaxHitPoints>175</MaxHitPoints>
+			<Mass>3</Mass>
+			<StuffEffectMultiplierArmor>0.86</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierInsulation_Cold>1.1</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.8</StuffEffectMultiplierInsulation_Heat>
+			<EquipDelay>3.75</EquipDelay>
+		</statBases>
+		<costStuffCount>75</costStuffCount>
+		<costList>
+			<ComponentSpacer>1</ComponentSpacer>
+			<ComponentStamped>2</ComponentStamped>
+			<Polyester>20</Polyester>
+		</costList>
+		<apparel>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+			<bodyPartGroups>
+				<li>UpperHead</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Apparel/PASGT/Apparel</wornGraphicPath>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<tags>
+				<li>DMS_VacuumGears</li>
+				<li>DMS_Tactical</li>
+				<li>IndustrialMilitaryAdvanced</li>
+			</tags>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_Options">
+			<options>
+				<li>
+					<weight>10</weight>
+					<only>(0.33,0.33,0.33)</only>
+				</li>
+				<li>
+					<weight>10</weight>
+					<only>(0.65,0.65,0.65)</only>
+				</li>
+				<li>
+					<weight>10</weight>
+					<only>(0.4,0.3,0.15)</only>
+				</li>
+				<li>
+					<weight>15</weight>
+					<min>(0.3,0.3,0.3)</min>
+					<max>(0.5,0.5,0.5)</max>
+				</li>
+				<li>
+					<weight>6</weight>
+					<min>(0.5,0.5,0.5)</min>
+					<max>(1,1,1)</max>
+				</li>
+			</options>
+		</colorGenerator>
+	</ThingDef>
+
 	<ThingDef ParentName="ArmorMachineableBase">
 		<defName>DMS_Apparel_TacticalVest</defName>
 		<label>Tactical Vest</label>
@@ -598,14 +676,14 @@
 	<!-- 夜視儀 -->
 	<ThingDef ParentName="ApparelArmorHelmetReconBase">
 		<defName>DMS_Apparel_Gunlink</defName>
-		<label>Night Vision Goggles</label>
+		<label>Night vision goggles</label>
 		<description>An optical enhancement device which amplifies existing light in low-light conditions and projects it through the display on to the users eyes. Compatible with most helmets and can be worn stand-alone.</description>
 		<graphicData>
 			<texPath>Things/Apparel/NightVisionGoggles/headgear_icon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<equippedStatOffsets>
-			<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+			<ShootingAccuracyPawn>1.2</ShootingAccuracyPawn>
 		</equippedStatOffsets>
 		<statBases>
 			<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
