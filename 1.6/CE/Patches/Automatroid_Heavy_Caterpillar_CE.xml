@@ -25,7 +25,7 @@
 			</li>
 
 			<li Class="PatchOperationAddModExtension">
-				<xpath>Defs/ThingDef[defName="BaseMechRace_Mammoth"]</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Mammoth"]</xpath>
 				<value>
 					<li Class="CombatExtended.RacePropertiesExtensionCE">
 						<bodyShape>Quadruped</bodyShape>
@@ -35,9 +35,9 @@
 
 			<!-- ======Mammoth======-->
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="BaseMechRace_Mammoth"]/statBases</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Mammoth"]/statBases</xpath>
 				<value>
-					<CarryWeight>240</CarryWeight>
+					<CarryWeight>120</CarryWeight>
 					<CarryBulk>150</CarryBulk>
 					<AimingAccuracy>0.8</AimingAccuracy>
 					<ShootingAccuracyPawn>0.85</ShootingAccuracyPawn>
@@ -45,35 +45,46 @@
 					<MeleeCritChance>0.15</MeleeCritChance>
 					<MeleeParryChance>0.25</MeleeParryChance>
 					<MaxHitPoints>400</MaxHitPoints>
+					<NightVisionEfficiency>0.4</NightVisionEfficiency>
 				</value>
 			</li>
 
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="BaseMechRace_Mammoth"]/statBases/ArmorRating_Blunt</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Mammoth"]/statBases/ArmorRating_Blunt</xpath>
 				<value>
-					<ArmorRating_Blunt>85</ArmorRating_Blunt>
+					<ArmorRating_Blunt>55</ArmorRating_Blunt>
 				</value>
 			</li>
 
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="BaseMechRace_Mammoth"]/statBases/ArmorRating_Sharp</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Mammoth"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
 					<ArmorRating_Sharp>20</ArmorRating_Sharp>
 				</value>
 			</li>
 
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="BaseMechRace_Mammoth"]/statBases/ArmorRating_Heat</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Mammoth"]/statBases/ArmorRating_Heat</xpath>
 				<value>
 					<ArmorRating_Heat>0.2</ArmorRating_Heat>
 				</value>
 			</li>
 
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="BaseMechRace_Mammoth"]/statBases</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Mammoth"]/statBases</xpath>
 				<value>
 					<ArmorRating_Electric>0.2</ArmorRating_Electric>
 				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Mammoth"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="DMS_Mech_Mammoth"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
 			</li>
 
 			<li Class="PatchOperationAdd">
@@ -89,7 +100,7 @@
 							<Steel>3</Steel>
 							<Tungsteel>3</Tungsteel>
 						</RepairIngredients>
-						<RepairTime>150</RepairTime>
+						<RepairTime>320</RepairTime>
 						<RepairValue>120</RepairValue>
 						<CanOverHeal>true</CanOverHeal>
 						<MaxOverHeal>425</MaxOverHeal>
