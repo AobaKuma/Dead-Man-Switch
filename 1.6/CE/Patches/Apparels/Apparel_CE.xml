@@ -69,7 +69,7 @@
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Apparel_HeavyPowerSkeleton"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
-					<ArmorRating_Sharp>12</ArmorRating_Sharp>
+					<ArmorRating_Sharp>15</ArmorRating_Sharp>
 				</value>
 			</li>
 			<li Class="PatchOperationReplace">
@@ -89,8 +89,8 @@
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="DMS_Apparel_HeavyPowerSkeleton"]/equippedStatOffsets</xpath>
 				<value>
-					<CarryWeight>100</CarryWeight>
-					<CarryBulk>100</CarryBulk>
+					<CarryWeight>150</CarryWeight>
+					<CarryBulk>150</CarryBulk>
 				</value>
 			</li>
 

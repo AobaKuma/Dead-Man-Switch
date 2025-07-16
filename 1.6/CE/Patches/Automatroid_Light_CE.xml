@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-
 	<Operation Class="PatchOperationSequence">
 		<operations>
 			<!--Hyrax-->
 			<li Class="PatchOperationAddModExtension">
-				<xpath>Defs/ThingDef[defName="BaseMechRace_Hyrax"]</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Hyrax"]</xpath>
 				<value>
 					<li Class="CombatExtended.RacePropertiesExtensionCE">
 						<bodyShape>QuadrupedLow</bodyShape>
 					</li>
 				</value>
 			</li>
-
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="BaseMechRace_Hyrax"]/statBases</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Hyrax"]/statBases</xpath>
 				<value>
-					<CarryWeight>60</CarryWeight>
+					<CarryWeight>75</CarryWeight>
 					<CarryBulk>20</CarryBulk>
 					<AimingAccuracy>0.8</AimingAccuracy>
 					<ShootingAccuracyPawn>0.85</ShootingAccuracyPawn>
@@ -27,28 +25,24 @@
 					<ReloadSpeed>0.8</ReloadSpeed>
 				</value>
 			</li>
-
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="BaseMechRace_Hyrax"]/statBases/ArmorRating_Blunt</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Hyrax"]/statBases/ArmorRating_Blunt</xpath>
 				<value>
 					<ArmorRating_Blunt>4</ArmorRating_Blunt>
 				</value>
 			</li>
-
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="BaseMechRace_Hyrax"]/statBases/ArmorRating_Sharp</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Hyrax"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
 					<ArmorRating_Sharp>3</ArmorRating_Sharp>
 				</value>
 			</li>
-
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="BaseMechRace_Hyrax"]/statBases/ArmorRating_Heat</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Hyrax"]/statBases/ArmorRating_Heat</xpath>
 				<value>
 					<ArmorRating_Heat>0.1</ArmorRating_Heat>
 				</value>
 			</li>
-
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Hyrax"]</xpath>
 				<value>
@@ -60,7 +54,15 @@
 					</li>
 				</value>
 			</li>
-
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Hyrax"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="DMS_Mech_Hyrax"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Hyrax"]/comps</xpath>
 				<value>
@@ -81,8 +83,6 @@
 					</li>
 				</value>
 			</li>
-
-			
 			<!--Falcon-->
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/ThingDef[@Name="BaseMechRace_Falcon"]</xpath>
@@ -92,7 +92,6 @@
 					</li>
 				</value>
 			</li>
-
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[@Name="BaseMechRace_Falcon"]/statBases</xpath>
 				<value>
@@ -108,28 +107,24 @@
 					<ReloadSpeed>0.75</ReloadSpeed>
 				</value>
 			</li>
-
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[@Name="BaseMechRace_Falcon"]/statBases/ArmorRating_Blunt</xpath>
 				<value>
 					<ArmorRating_Blunt>4</ArmorRating_Blunt>
 				</value>
 			</li>
-
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[@Name="BaseMechRace_Falcon"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
 					<ArmorRating_Sharp>3</ArmorRating_Sharp>
 				</value>
 			</li>
-
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[@Name="BaseMechRace_Falcon"]/statBases/ArmorRating_Heat</xpath>
 				<value>
 					<ArmorRating_Heat>0.1</ArmorRating_Heat>
 				</value>
 			</li>
-
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Falcon"]</xpath>
 				<value>
@@ -141,7 +136,6 @@
 					</li>
 				</value>
 			</li>
-
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[@Name="BaseMechRace_Falcon"]/comps</xpath>
 				<value>
@@ -162,7 +156,6 @@
 					</li>
 				</value>
 			</li>
-
 			<!-- Dogge -->
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/ThingDef[@Name="DMS_MechDoggeBase"]</xpath>
@@ -172,7 +165,6 @@
 					</li>
 				</value>
 			</li>
-
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[@Name="DMS_MechDoggeBase"]/statBases</xpath>
 				<value>
@@ -187,28 +179,24 @@
 					<NightVisionEfficiency>0.4</NightVisionEfficiency>
 				</value>
 			</li>
-
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[@Name="DMS_MechDoggeBase"]/statBases/ArmorRating_Blunt</xpath>
 				<value>
 					<ArmorRating_Blunt>6</ArmorRating_Blunt>
 				</value>
 			</li>
-
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[@Name="DMS_MechDoggeBase"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
 					<ArmorRating_Sharp>5</ArmorRating_Sharp>
 				</value>
 			</li>
-
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[@Name="DMS_MechDoggeBase"]/statBases/ArmorRating_Heat</xpath>
 				<value>
 					<ArmorRating_Heat>0.1</ArmorRating_Heat>
 				</value>
 			</li>
-
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[@Name="DMS_MechDoggeBase"]/comps</xpath>
 				<value>
@@ -229,7 +217,6 @@
 					</li>
 				</value>
 			</li>
-
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Dogge"]</xpath>
 				<value>
