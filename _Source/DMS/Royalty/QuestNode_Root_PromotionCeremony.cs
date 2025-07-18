@@ -14,6 +14,7 @@ namespace DMS
         public static PawnKindDef DMS_Escort;
         public static ThingDef DMS_Shuttle;
         public static TransportShipDef DMS_Ship_TransportShuttle;
+        public static FactionDef DMS_Army;
     }
 
     public class QuestNode_Root_PromotionCeremony : QuestNode
@@ -92,7 +93,6 @@ namespace DMS
             });
             QuestUtility.AddQuestTag(ref thing.questTags, text);
             QuestUtility.AddQuestTag(ref pawn.questTags, text);
-
             ThingOwner<Thing> innerContainer = pawn2.inventory.innerContainer;
             for (int num = innerContainer.Count - 1; num >= 0; num--)
             {
@@ -128,7 +128,10 @@ namespace DMS
             quest.EnsureNotDowned(list);
             slate.Set("defenders", list2);
             thing.TryGetComp<CompShuttle>().requiredPawns = list;
-            TransportShip transportShip = quest.GenerateTransportShip(QuestKindDefOf.DMS_Ship_TransportShuttle, list, thing).transportShip;
+            TransportShip transportShip = quest.GenerateTransportShip(QuestKindDefOf.DMS_Ship_TransportShuttle, list, thing).transportShip; Quest quest2 = quest;
+            Pawn mapOfPawn = pawn;
+            
+            Faction ofEmpire = Find.FactionManager.FirstFactionOfDef(QuestKindDefOf.DMS_Army);
             quest.AddShipJob_Arrive(transportShip, null, pawn, null, ShipJobStartMode.Instant, Faction.OfEmpire);
             quest.AddShipJob(transportShip, ShipJobDefOf.Unload);
             quest.AddShipJob_WaitForever(transportShip, leaveImmediatelyWhenSatisfied: true, showGizmos: false, list.Cast<Thing>().ToList()).sendAwayIfAnyDespawnedDownedOrDead = new List<Thing> { pawn2 };
@@ -186,6 +189,8 @@ namespace DMS
             quest.Letter(LetterDefOf.NegativeEvent, text2, null, null, null, useColonistsFromCaravanArg: false, QuestPart.SignalListenMode.OngoingOnly, null, filterDeadPawnsFromLookTargets: false, label: "LetterLabelBestowingCeremonyExpired".Translate(), text: "LetterTextBestowingCeremonyExpired".Translate(pawn.Named("TARGET")));
             quest.End(QuestEndOutcome.Fail, 0, null, QuestGenUtility.HardcodedSignalWithQuestID("target.Killed"), QuestPart.SignalListenMode.OngoingOrNotYetAccepted, sendStandardLetter: true);
             quest.End(QuestEndOutcome.Fail, 0, null, QuestGenUtility.HardcodedSignalWithQuestID("bestower.Killed"), QuestPart.SignalListenMode.OngoingOrNotYetAccepted, sendStandardLetter: true);
+            quest.End(QuestEndOutcome.Fail, 0, null, QuestGenUtility.HardcodedSignalWithQuestID("bestower.LeftBehind"), QuestPart.SignalListenMode.OngoingOrNotYetAccepted, sendStandardLetter: true);
+            quest.End(QuestEndOutcome.Fail, 0, null, QuestGenUtility.HardcodedSignalWithQuestID("shuttle.LeftBehind"), QuestPart.SignalListenMode.OngoingOrNotYetAccepted, sendStandardLetter: true);
             quest.End(QuestEndOutcome.Fail, 0, null, text2);
             quest.End(QuestEndOutcome.Fail, 0, null, inSignal8, QuestPart.SignalListenMode.OngoingOrNotYetAccepted, sendStandardLetter: true);
             quest.End(QuestEndOutcome.Fail, 0, null, inSignal, QuestPart.SignalListenMode.OngoingOnly, sendStandardLetter: true);
@@ -196,13 +201,13 @@ namespace DMS
             QuestPart_Choice.Choice item2 = new QuestPart_Choice.Choice
             {
                 rewards = { (Reward)new Reward_BestowingCeremony
-            {
+                {
                 targetPawnName = pawn.NameShortColored.Resolve(),
                 titleName = titleAwardedWhenUpdating.GetLabelCapFor(pawn),
                 awardingFaction = bestowingFaction,
                 givePsylink = (titleAwardedWhenUpdating.maxPsylinkLevel > pawn.GetPsylinkLevel()),
                 royalTitle = titleAwardedWhenUpdating
-            } }
+                } }
             };
             questPart_Choice.choices.Add(item2);
             List<Rule> list3 = new List<Rule>();

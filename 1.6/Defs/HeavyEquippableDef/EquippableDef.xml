@@ -26,6 +26,7 @@
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorMarineGrenadier</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphract</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphractPhoenix</li>
+			<li MayRequire="Aoba.DeadManSwitch.Expedition">DMS_Apparel_HeavyPowerSkeleton</li>
 		</EquippableWithApparel>
 	</Fortified.HeavyEquippableDef>
     
@@ -45,6 +46,7 @@
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorMarineGrenadier</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphract</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphractPhoenix</li>
+			<li MayRequire="Aoba.DeadManSwitch.Expedition">DMS_Apparel_HeavyPowerSkeleton</li>
 		</EquippableWithApparel>
 	</Fortified.HeavyEquippableDef>
 
@@ -64,6 +66,7 @@
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorMarineGrenadier</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphract</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphractPhoenix</li>
+			<li MayRequire="Aoba.DeadManSwitch.Expedition">DMS_Apparel_HeavyPowerSkeleton</li>
 		</EquippableWithApparel>
 	</Fortified.HeavyEquippableDef>
 
@@ -79,6 +82,7 @@
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorMarineGrenadier</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphract</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphractPhoenix</li>
+			<li MayRequire="Aoba.DeadManSwitch.Expedition">DMS_Apparel_HeavyPowerSkeleton</li>
 		</EquippableWithApparel>
 	</Fortified.HeavyEquippableDef>
 
@@ -88,7 +92,7 @@
 		<EquippableByRace/>
 		<EquippableWithHediff/>
 		<EquippableWithApparel>
-			<li>DMS_Apparel_HeavyPowerSkeleton<li>
+			<li MayRequire="Aoba.DeadManSwitch.Expedition">DMS_Apparel_HeavyPowerSkeleton</li>
 		</EquippableWithApparel>
 	</Fortified.HeavyEquippableDef>
     

@@ -43,7 +43,7 @@
 		</thingCategories>
 		<apparel>
 			<countsAsClothingForNudity>false</countsAsClothingForNudity>
-			<scoreOffset>4</scoreOffset>
+			<scoreOffset>-4</scoreOffset>
 			<careIfWornByCorpse>false</careIfWornByCorpse>
 			<careIfDamaged>false</careIfDamaged>
 			<ignoredByNonViolent>true</ignoredByNonViolent>
@@ -102,6 +102,7 @@
 				</west>
 			</wornGraphicData>
 		</apparel>
+		<generateCommonality>0.1</generateCommonality>
 		<resourceReadoutPriority>Middle</resourceReadoutPriority>
 		<smeltable>false</smeltable>
 		<burnableByRecipe>false</burnableByRecipe>
@@ -183,7 +184,7 @@
 		</thingCategories>
 		<apparel>
 			<countsAsClothingForNudity>false</countsAsClothingForNudity>
-			<scoreOffset>4</scoreOffset>
+			<scoreOffset>-1</scoreOffset>
 			<careIfWornByCorpse>false</careIfWornByCorpse>
 			<careIfDamaged>false</careIfDamaged>
 			<ignoredByNonViolent>true</ignoredByNonViolent>
@@ -261,6 +262,7 @@
 				</west>
 			</wornGraphicData>
 		</apparel>
+		<generateCommonality>0.1</generateCommonality>
 		<resourceReadoutPriority>Middle</resourceReadoutPriority>
 		<smeltable>false</smeltable>
 		<burnableByRecipe>false</burnableByRecipe>

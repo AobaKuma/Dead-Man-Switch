@@ -192,6 +192,7 @@
       <body>DMS_Hound</body>
       <baseBodySize>1.1</baseBodySize>
       <baseHealthScale>1.2</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
     </race>
     <comps>
       <li Class="Fortified.CompProperties_VehicleWeapon">

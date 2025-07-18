@@ -126,6 +126,7 @@
       <mechEnabledWorkTypes>
         <li>BasicWorker</li>
       </mechEnabledWorkTypes>
+      <mechWeightClass>Medium</mechWeightClass>
       <detritusLeavings>
         <li>
           <def>DMS_ChunkSlag</def>

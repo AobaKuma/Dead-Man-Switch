@@ -48,7 +48,7 @@
 			<damageDef>Stun</damageDef>
 			<damageAmountBase>10</damageAmountBase>
 			<stoppingPower>1.5</stoppingPower>
-			<explosionRadius>3.1</explosionRadius>
+			<explosionRadius>1.5</explosionRadius>
 			<ai_IsIncendiary>false</ai_IsIncendiary>
 			<arcHeightFactor>0.8</arcHeightFactor>
 			<shadowSize>0.6</shadowSize>
