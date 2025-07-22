@@ -24,7 +24,7 @@
       <li>Machining</li>
     </prerequisites>
     <researchViewX>0.00</researchViewX>
-    <researchViewY>3.50</researchViewY>
+    <researchViewY>3.20</researchViewY>
     <generalRules>
       <rulesStrings>
         <li>subject->Hive network and drone warfare</li>
@@ -86,7 +86,7 @@
       <li>DMS_Material</li>
     </prerequisites> 
     <researchViewX>2.00</researchViewX>
-    <researchViewY>1.70</researchViewY>
+    <researchViewY>1.90</researchViewY>
     <generalRules/>
   </ResearchProjectDef>
 
@@ -101,7 +101,7 @@
       <li>DMS_Material</li>
     </prerequisites>
     <researchViewX>2.00</researchViewX>
-    <researchViewY>1.15</researchViewY>
+    <researchViewY>1.20</researchViewY>
     <generalRules>
       <rulesStrings>
         <li>subject->artificial fiber</li>
@@ -133,7 +133,7 @@
       <li>DMS_UAVBasis</li>
     </prerequisites>
     <researchViewX>1.00</researchViewX>
-    <researchViewY>3.50</researchViewY>
+    <researchViewY>3.90</researchViewY>
     <generalRules>
       <rulesStrings>
         <li>subject->autonomous Weapons</li>
@@ -166,7 +166,7 @@
       <li>Prosthetics</li>
     </prerequisites>
     <researchViewX>2.00</researchViewX>
-    <researchViewY>3.50</researchViewY>
+    <researchViewY>3.20</researchViewY>
     <generalRules>
       <rulesStrings>
         <li>subject->mecha gear</li>
@@ -197,7 +197,7 @@
       <li>DMS_Automatroid</li>
     </prerequisites>
     <researchViewX>2.00</researchViewX>
-    <researchViewY>4.15</researchViewY>
+    <researchViewY>4.50</researchViewY>
     <generalRules>
       <rulesStrings>
         <li>subject->metallic tide</li>
@@ -224,11 +224,10 @@
     <baseCost>750</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
-      <li>DMS_Material</li>
       <li>DMS_MechBasis</li>
     </prerequisites>
     <researchViewX>3.00</researchViewX>
-    <researchViewY>2.50</researchViewY>
+    <researchViewY>4.50</researchViewY>
     <generalRules>
       <rulesStrings>
         <li>subject->nerves-accessed</li>
@@ -259,8 +258,8 @@
       <li>MicroelectronicsBasics</li>
       <li>DMS_MechBasis</li>
     </prerequisites>
-    <researchViewX>3.00</researchViewX>
-    <researchViewY>3.50</researchViewY>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>3.20</researchViewY>
     <generalRules>
       <rulesStrings>
         <li>subject->Halted problem</li>
@@ -291,8 +290,8 @@
       <li>SterileMaterials</li>
       <li>DMS_Plasfiber</li>
     </prerequisites>
-    <researchViewX>3.00</researchViewX>
-    <researchViewY>1.15</researchViewY>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
     <generalRules>
       <rulesStrings>
         <li>subject->bio-machine symbiosis</li>
@@ -323,7 +322,7 @@
       <li>ComplexClothing</li>
     </prerequisites>
     <researchViewX>0.00</researchViewX>
-    <researchViewY>4.80</researchViewY>
+    <researchViewY>5.50</researchViewY>
   </ResearchProjectDef>
 
   <!-- T2 -->
@@ -338,7 +337,7 @@
       <li>DMS_Hypothesis</li>
       <li>SterileMaterials</li>
     </prerequisites>
-    <researchViewX>7.00</researchViewX>
+    <researchViewX>8.00</researchViewX>
     <researchViewY>3.50</researchViewY>
     <requiredAnalyzed>
       <li>ComponentTransmitter</li>
@@ -372,7 +371,7 @@
       <li>Gunsmithing</li>
     </prerequisites>
     <researchViewX>1.00</researchViewX>
-    <researchViewY>4.80</researchViewY>
+    <researchViewY>5.50</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech">
@@ -385,7 +384,7 @@
       <li>Gunsmithing</li>
     </prerequisites>
     <researchViewX>2.00</researchViewX>
-    <researchViewY>4.80</researchViewY>
+    <researchViewY>5.50</researchViewY>
   </ResearchProjectDef> 
 
   <ResearchProjectDef ParentName="DMS_BaseTech">
@@ -398,7 +397,7 @@
       <li>Gunsmithing</li>
     </prerequisites>
     <researchViewX>3.00</researchViewX>
-    <researchViewY>4.80</researchViewY>
+    <researchViewY>5.50</researchViewY>
   </ResearchProjectDef> 
 
   <ResearchProjectDef ParentName="DMS_BaseTech" MayRequire="Ludeon.Rimworld.Biotech">
@@ -410,7 +409,7 @@
     <prerequisites>
       <li>DMS_DeadMansSwitch</li>
     </prerequisites>
-    <researchViewX>4.00</researchViewX>
+    <researchViewX>5.00</researchViewX>
     <researchViewY>2.80</researchViewY>
   </ResearchProjectDef>
   
@@ -424,8 +423,8 @@
       <li>DMS_DeadMansSwitch</li>
       <li>DMS_Artifuscle</li>
     </prerequisites>
-    <researchViewX>4.00</researchViewX>
-    <researchViewY>1.15</researchViewY>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
     <requiredAnalyzed>
       <li>Artifuscle</li>
     </requiredAnalyzed>
@@ -440,7 +439,7 @@
     <prerequisites>
       <li>DMS_Hybrid</li>
     </prerequisites>
-    <researchViewX>5.00</researchViewX>
+    <researchViewX>6.00</researchViewX>
     <researchViewY>0.50</researchViewY>
   </ResearchProjectDef>
 
@@ -454,7 +453,7 @@
       <li>DMS_Bionics</li>
       <li>SterileMaterials</li>
     </prerequisites>
-    <researchViewX>6.00</researchViewX>
+    <researchViewX>7.00</researchViewX>
     <researchViewY>0.50</researchViewY>
   </ResearchProjectDef>
 
@@ -470,8 +469,8 @@
       <li>DMS_DeadMansSwitch</li>
       <li>MultiAnalyzer</li>
     </prerequisites>
-    <researchViewX>6.00</researchViewX>
-    <researchViewY>3.50</researchViewY>
+    <researchViewX>7.00</researchViewX>
+    <researchViewY>3.20</researchViewY>
     <requiredAnalyzed>
       <li>Neurocomputer</li>
     </requiredAnalyzed>
@@ -504,7 +503,7 @@
       <li>DMS_Hypothesis</li>
       <li>DMS_BattleFrame</li>
     </prerequisites>
-    <researchViewX>7.00</researchViewX>
+    <researchViewX>8.00</researchViewX>
     <researchViewY>2.80</researchViewY>
     <requiredAnalyzed>
       <li>ComponentFireControl</li>
@@ -520,8 +519,8 @@
     <prerequisites>
       <li>DMS_DeadMansSwitch</li>
     </prerequisites>
-    <researchViewX>4.00</researchViewX>
-    <researchViewY>4.80</researchViewY>  
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>1.90</researchViewY>
   </ResearchProjectDef>
 
   <!-- 浪人是用於都市巷戰的戰鬥機械體系列，特徵是那盤狀的傳感器頭部與重型裝甲。經常被用於治安戰，鎮暴與維安行動。-->
@@ -534,8 +533,8 @@
     <prerequisites>
       <li>DMS_DeadMansSwitch</li>
     </prerequisites>
-    <researchViewX>4.00</researchViewX>
-    <researchViewY>4.10</researchViewY>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>3.90</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech">
@@ -549,7 +548,7 @@
       <li>DMS_HeavyAutomatroid</li>
     </prerequisites>
     <researchViewX>10.00</researchViewX>
-    <researchViewY>1.10</researchViewY>
+    <researchViewY>1.20</researchViewY>
   </ResearchProjectDef>
 
 </Defs>

@@ -104,7 +104,7 @@
 		</apparel>
 		<generateCommonality>0.1</generateCommonality>
 		<resourceReadoutPriority>Middle</resourceReadoutPriority>
-		<smeltable>false</smeltable>
+		<smeltable>true</smeltable>
 		<burnableByRecipe>false</burnableByRecipe>
 		<drawGUIOverlay>false</drawGUIOverlay>
 		<verbs>
@@ -264,7 +264,7 @@
 		</apparel>
 		<generateCommonality>0.1</generateCommonality>
 		<resourceReadoutPriority>Middle</resourceReadoutPriority>
-		<smeltable>false</smeltable>
+		<smeltable>true</smeltable>
 		<burnableByRecipe>false</burnableByRecipe>
 		<drawGUIOverlay>false</drawGUIOverlay>
 		<verbs>
