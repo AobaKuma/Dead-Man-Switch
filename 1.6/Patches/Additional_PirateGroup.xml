@@ -4,8 +4,7 @@
         <operations>
 
             <li Class="PatchOperationAdd">
-                <xpath>
-                    Defs/FactionDef[@Name="PirateBandBase" or @ParentName="PirateBandBase"]/pawnGroupMakers/li[kindDef="Combat"]/options</xpath>
+                <xpath>Defs/FactionDef[@Name="PirateBandBase" or @ParentName="PirateBandBase"]/pawnGroupMakers/li[kindDef="Combat"]/options</xpath>
                 <value>
                     <DMS_Mech_Raider>8</DMS_Mech_Raider>
                     <DMS_Mech_Tachanka>1</DMS_Mech_Tachanka>
@@ -13,8 +12,7 @@
             </li>
 
             <li Class="PatchOperationAdd">
-                <xpath>
-                    Defs/FactionDef[@Name="OutlanderFactionBase"]/pawnGroupMakers/li[kindDef="Trader"]/guards</xpath>
+                <xpath>Defs/FactionDef[@Name="OutlanderFactionBase"]/pawnGroupMakers/li[kindDef="Trader"]/guards</xpath>
                 <value>
                     <DMS_Mech_Soldat>4</DMS_Mech_Soldat>
                     <DMS_Mech_BattleFrame>2</DMS_Mech_BattleFrame>
@@ -22,10 +20,16 @@
             </li>
 
             <li Class="PatchOperationAdd">
-                <xpath>
-                    Defs/FactionDef[@Name="OutlanderFactionBase"]/pawnGroupMakers/li[kindDef="Trader"]/carriers</xpath>
+                <xpath>Defs/FactionDef[@Name="OutlanderFactionBase"]/pawnGroupMakers/li[kindDef="Trader"]/carriers</xpath>
                 <value>
                     <DMS_Mech_EscortLifter>3</DMS_Mech_EscortLifter>
+                </value>
+            </li>
+
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/PawnKindDef[defName="Mercenary_Heavy"]/apparelTags</xpath>
+                <value>
+                    <li>DMS_UAVPack</li>
                 </value>
             </li>
         </operations>

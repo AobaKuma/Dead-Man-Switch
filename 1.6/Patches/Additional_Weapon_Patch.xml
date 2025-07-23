@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-
     <!--give grenades to birdy-->
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[@Name="BaseMakeableGrenade"]</xpath>
@@ -11,8 +10,7 @@
         </value>
     </Operation>
 
-    <!--vanilla
-    blunt weapon tag for RC units-->
+    <!--vanilla blunt weapon tag for RC units-->
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="MeleeWeapon_Mace"]/weaponTags</xpath>
         <value>
