@@ -311,7 +311,6 @@
 			<armorPenetrationBase>0.7</armorPenetrationBase>
 			<stoppingPower>1.5</stoppingPower>
 			<ai_IsIncendiary>false</ai_IsIncendiary>
-			<!-- <arcHeightFactor>0.75</arcHeightFactor> -->
 			<soundExplode>Explosion_Rocket</soundExplode>
 			<shadowSize>0.6</shadowSize>
 		</projectile>
