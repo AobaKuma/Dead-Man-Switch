@@ -681,7 +681,7 @@
       <turretGunDef>DMS_Gun_MK44_Navy</turretGunDef>
       <turretTopDrawSize>3</turretTopDrawSize>
       <turretBurstWarmupTime>1.5</turretBurstWarmupTime>   <!--================冷卻與瞄準時間================-->
-      <turretBurstCooldownTime>0.95</turretBurstCooldownTime>
+      <turretBurstCooldownTime>1.4</turretBurstCooldownTime>
     </building>
     <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
     <costList>
@@ -715,8 +715,8 @@
       <AccuracyTouch>0.95</AccuracyTouch>
       <AccuracyShort>0.90</AccuracyShort>
       <AccuracyMedium>0.87</AccuracyMedium>
-      <AccuracyLong>0.82</AccuracyLong>
-      <RangedWeapon_Cooldown>0.95</RangedWeapon_Cooldown>
+      <AccuracyLong>0.80</AccuracyLong>
+      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
     </statBases>
 
     <verbs>
@@ -724,12 +724,12 @@
         <verbClass>Verb_Shoot</verbClass>
         <defaultProjectile>DMS_Bullet_CIWS</defaultProjectile>
         <requireLineOfSight>true</requireLineOfSight>
-        <warmupTime>1.5</warmupTime>
+        <warmupTime>1.75</warmupTime>
         <minRange>2</minRange>
         <range>48.5</range>
         <ai_AvoidFriendlyFireRadius>1</ai_AvoidFriendlyFireRadius>
         <ticksBetweenBurstShots>18</ticksBetweenBurstShots>
-        <burstShotCount>5</burstShotCount>
+        <burstShotCount>3</burstShotCount>
         <soundCast>DMS_Shot_Bushmaster</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>22</muzzleFlashScale>
@@ -737,7 +737,7 @@
         <targetParams>
           <canTargetLocations>true</canTargetLocations>
         </targetParams>
-        <forcedMissRadius>1</forcedMissRadius>
+        <forcedMissRadius>1.1</forcedMissRadius>
       </li>
     </verbs>
 
