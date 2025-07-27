@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <Defs>
     <!-- DMS_TableArtifuscle -->
     <ThingDef ParentName="DMS_BenchBase">
@@ -135,9 +134,7 @@
             <Cleanliness>-5</Cleanliness>
             <WorkTableWorkSpeedFactor>0.95</WorkTableWorkSpeedFactor>
         </statBases>
-
         <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-
         <size>(2,1)</size>
         <interactionCellOffset>(1,0,-1)</interactionCellOffset>
         <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
@@ -158,9 +155,7 @@
             <li>Smithing</li>
             <li>DMS_Material</li>
         </researchPrerequisites>
-
         <minifiedDef>MinifiedThing</minifiedDef>
-
         <modExtensions>
             <li Class="VEF.Buildings.RecipeInheritanceExtension" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
                 <inheritRecipesFrom>
@@ -168,6 +163,5 @@
                 </inheritRecipesFrom>
             </li>
         </modExtensions>
-
     </ThingDef>
 </Defs>

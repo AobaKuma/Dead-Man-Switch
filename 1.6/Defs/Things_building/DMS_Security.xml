@@ -281,7 +281,7 @@
     </researchPrerequisites>
   </ThingDef>
 
-<!--哨戒砲塔-->
+  <!--哨戒砲塔-->
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Sentry</defName>
     <label>Sentry turret</label>
@@ -324,9 +324,6 @@
       <Steel>50</Steel>
       <ComponentStamped>1</ComponentStamped>
     </costList>
-    <researchPrerequisites Inherit="false">
-      <li>DMS_EquipmentBasis</li>
-    </researchPrerequisites>
     <uiIconPath>Things/Turrets/DMS_SentryTurret</uiIconPath>
     <uiIconScale>1.25</uiIconScale>
   </ThingDef>
@@ -613,7 +610,7 @@
       <stoppingPower>8</stoppingPower>
       <explosionRadius>1.4</explosionRadius>
       <ai_IsIncendiary>false</ai_IsIncendiary>
-      <arcHeightFactor>0.5</arcHeightFactor>
+      <arcHeightFactor>0.1</arcHeightFactor>
       <shadowSize>0.6</shadowSize>
       <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
       <soundAmbient>MortarRound_Ambient</soundAmbient>
@@ -624,7 +621,6 @@
       </li>
     </comps>
   </ThingDef>
-
 
   <!--MK44 大毒蛇2 海軍型炮塔-->
   <ThingDef ParentName="DMS_BaseCannonBuilding">
@@ -710,7 +706,6 @@
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>3.8</drawSize>
     </graphicData>
-
     <statBases>
       <AccuracyTouch>0.95</AccuracyTouch>
       <AccuracyShort>0.90</AccuracyShort>
@@ -718,7 +713,6 @@
       <AccuracyLong>0.80</AccuracyLong>
       <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
     </statBases>
-
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -753,7 +747,6 @@
     </modExtensions>
 
   </ThingDef>	
-
 
   <!--遙控砲塔-->
   <ThingDef ParentName="DMS_BaseCannonBuilding">
@@ -794,7 +787,7 @@
         <fuelMultiplier>150</fuelMultiplier><!-- 1 Barrel=150 ammo -->
         <initialFuelPercent>0.5</initialFuelPercent>
         <showFuelGizmo>true</showFuelGizmo>
-        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <minimumFueledThreshold>0.5</minimumFueledThreshold>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
         <initialAllowAutoRefuel>true</initialAllowAutoRefuel>
         <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>              <!--重裝填設定-->
@@ -820,9 +813,6 @@
       <ComponentStamped>5</ComponentStamped>
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
-    <researchPrerequisites>
-      <li>DMS_EquipmentElite</li>
-    </researchPrerequisites>
     <uiIconPath>Things/Turrets/DMS_5ETs16U</uiIconPath>
     <uiIconScale>1.2</uiIconScale>
   </ThingDef>
@@ -1015,7 +1005,6 @@
   </ThingDef>
 
   <!--Dawnblade Mount-->
-
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Dawnblade</defName>
     <label>Dawnblade</label>
@@ -1058,12 +1047,11 @@
         <fuelMultiplier>8</fuelMultiplier><!-- 1 Barrel=8 ammo -->
         <initialFuelPercent>0.1</initialFuelPercent>
         <showFuelGizmo>true</showFuelGizmo>
-        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <minimumFueledThreshold>0.1</minimumFueledThreshold>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
         <initialAllowAutoRefuel>true</initialAllowAutoRefuel>
         <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>              <!--重裝填設定-->
         <initialConfigurableTargetFuelLevel>80</initialConfigurableTargetFuelLevel>
-        <autoRefuelPercent>0.8</autoRefuelPercent>
         <fuelIconPath>Things/Item/Resource/ReinforcedBarrel/ReinforcedBarrel</fuelIconPath>
       </li>
       <li Class="CompProperties_Power">
@@ -1192,5 +1180,4 @@
       </li>
     </comps>
   </ThingDef>
-
 </Defs>	

@@ -48,9 +48,6 @@
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_AutocannonTurret</defaultProjectile>
 				<warmupTime>2.0</warmupTime>
-				<!--
-				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-				<burstShotCount>2</burstShotCount>-->
 				<range>49.9</range>
 				<soundCast>DMS_MachineGunHeavy_Shot</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
@@ -138,7 +135,7 @@
 				<isAlternately>true</isAlternately>
 			</li>
 			<li Class="Fortified.HeavyEquippableExtension">
-				<EquippableDef>TransHeavyAutomatroid</EquippableDef>
+				<EquippableDef>BulkyAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -351,15 +348,12 @@
 			<li>LongShots</li>
 			<li>Ranged</li>
 		</weaponClasses>
-
 		<weaponTags>
 			<li>DMS_MechWeaponHeavy</li>
 			<li>A_SuppressWeaponHeavy</li>
 			<li>DMS_VehicleWeapon</li>
 		</weaponTags>
-
 		<soundInteract>Interact_Rifle</soundInteract>
-
 		<statBases>
 			<WorkToMake>90000</WorkToMake>
 			<AccuracyTouch>0.80</AccuracyTouch>
@@ -369,23 +363,19 @@
 			<Mass>130</Mass>
 			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
 		</statBases>
-
 		<equippedStatOffsets>
 			<MoveSpeed>-0.2</MoveSpeed>
 		</equippedStatOffsets>
-
 		<recipeMaker>
 			<researchPrerequisites>
 				<li>DMS_EquipmentHeavy</li>
 				<li>HeavyTurrets</li>
 			</researchPrerequisites>
 		</recipeMaker>
-
 		<costList>
 			<Tungsteel>230</Tungsteel>
 			<ComponentStamped>14</ComponentStamped>	
 		</costList>	
-
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -405,7 +395,6 @@
 				<forcedMissRadius>1.1</forcedMissRadius>
 			</li>
 		</verbs>
-
 		<modExtensions>
 			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
 				<def>MF_StandardMuzzleFalsh</def>
@@ -418,8 +407,7 @@
 			<li Class="Fortified.HeavyEquippableExtension">
 				<EquippableDef>HeavyAutomatroid</EquippableDef>
 			</li>
-		</modExtensions>
-		
+		</modExtensions>		
 	</ThingDef>
 
 	<!--2A38M 給駭蜥Boss的武器-->
@@ -506,7 +494,6 @@
 	</ThingDef>
 
 	<!--Dragoon AT Gun-->
-	
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Gun_DragoonRifle</defName>
 		<label>Mech Anti-Tank Rifle</label>
@@ -611,7 +598,6 @@
 	</ThingDef>
 	
 	<!--Dragoon Grenade Launcher-->
-
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Gun_DragoonGrenade</defName>
 		<label>Mech Heavy Grenade Launcher</label>
@@ -714,7 +700,6 @@
 	</ThingDef>
 
 	<!--Dawnblade Mech Mount-->
-	
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Gun_DawnbladeM</defName>
 		<label>MPQFS-85M "Dawnblade"</label>

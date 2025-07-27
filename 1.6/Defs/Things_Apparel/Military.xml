@@ -49,7 +49,7 @@
 			<MoveSpeed>1.25</MoveSpeed>
 			<RestFallRateFactor>0.25</RestFallRateFactor>
 			<VacuumResistance MayRequire="ludeon.rimworld.odyssey">0.32</VacuumResistance>
-			<ToxicEnvironmentResistance>0.25</ToxicEnvironmentResistance>
+			<ToxicEnvironmentResistance>0.5</ToxicEnvironmentResistance>
 		</equippedStatOffsets>
 		<apparel>
 			<bodyPartGroups>
@@ -292,8 +292,8 @@
 			<MaxHitPoints>150</MaxHitPoints>
 			<Mass>1.5</Mass>
 			<StuffEffectMultiplierArmor>0.8</StuffEffectMultiplierArmor>
-			<StuffEffectMultiplierInsulation_Cold>0.3</StuffEffectMultiplierInsulation_Cold>
-			<StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
+			<StuffEffectMultiplierInsulation_Cold>0.18</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.18</StuffEffectMultiplierInsulation_Heat>
 			<EquipDelay>1.75</EquipDelay>
 		</statBases>
 		<costStuffCount>50</costStuffCount>
@@ -366,9 +366,9 @@
 			<WorkToMake>30000</WorkToMake>
 			<MaxHitPoints>150</MaxHitPoints>
 			<Mass>1.5</Mass>
-			<StuffEffectMultiplierArmor>1.0</StuffEffectMultiplierArmor>
-			<StuffEffectMultiplierInsulation_Cold>0.3</StuffEffectMultiplierInsulation_Cold>
-			<StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
+			<StuffEffectMultiplierArmor>0.85</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierInsulation_Cold>0.23</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.23</StuffEffectMultiplierInsulation_Heat>
 			<EquipDelay>3</EquipDelay>
 		</statBases>
 		<costStuffCount>75</costStuffCount>
@@ -605,11 +605,11 @@
 			<texPath>Things/Apparel/NightVisionGoggles/headgear_icon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<equippedStatOffsets>
-			<ShootingAccuracyPawn>1.2</ShootingAccuracyPawn>
+		<equippedStatOffsets Inherit="false">
+			<ShootingAccuracyPawn>1</ShootingAccuracyPawn>
 		</equippedStatOffsets>
 		<statBases>
-			<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+			<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
 			<ArmorRating_Blunt>0.08</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.1</ArmorRating_Heat>
 			<Insulation_Cold>0</Insulation_Cold>

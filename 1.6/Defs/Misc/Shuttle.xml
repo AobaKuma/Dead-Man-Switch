@@ -2,7 +2,7 @@
 <Defs>
     <TransportShipDef>
         <defName>DMS_Ship_TransportShuttle</defName>
-        <label>heavy transport lifter</label>
+        <label>orbital transport lifter</label>
         <shipThing>DMS_Shuttle</shipThing>
         <arrivingSkyfaller>DMS_Ship_TransportShuttleIncoming</arrivingSkyfaller>
         <leavingSkyfaller>DMS_Ship_TransportShuttleLeaving</leavingSkyfaller>
@@ -95,7 +95,7 @@
     </ThingDef>
     <ThingDef ParentName="DMS_ShuttleSkyfallerBase">
         <defName>DMS_Ship_TransportShuttleIncoming</defName>
-        <label>heavy transport lifter (incoming)</label>
+        <label>orbital transport lifter (incoming)</label>
         <thingClass>ShuttleIncoming</thingClass>
         <skyfaller>
             <anticipationSound>Shuttle_Landing</anticipationSound>
@@ -131,7 +131,7 @@
     </ThingDef>
     <ThingDef ParentName="DMS_ShuttleSkyfallerBase">
         <defName>DMS_Ship_TransportShuttleLeaving</defName>
-        <label>heavy transport lifter (leaving)</label>
+        <label>orbital transport lifter (leaving)</label>
         <thingClass>FlyShipLeaving</thingClass>
         <skyfaller>
             <reversed>true</reversed>
@@ -172,7 +172,7 @@
 
     <WorldObjectDef>
         <defName>DMS_TravelingTransportShuttle</defName>
-        <label>heavy transport lifter</label>
+        <label>orbital transport lifter</label>
         <description>A shuttle in flight.</description>
         <worldObjectClass>TravellingTransporters</worldObjectClass>
         <texture>World/WorldObjects/Caravan</texture>

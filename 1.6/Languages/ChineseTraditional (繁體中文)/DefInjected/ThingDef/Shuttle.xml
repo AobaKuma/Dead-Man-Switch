@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: heavy transport lifter (incoming) -->
-  <DMS_Ship_TransportShuttleIncoming.label>重型運輸機(降落中)</DMS_Ship_TransportShuttleIncoming.label>
+  <!-- EN: orbital transport lifter (incoming) -->
+  <DMS_Ship_TransportShuttleIncoming.label>軌道運輸機(降落中)</DMS_Ship_TransportShuttleIncoming.label>
   
-  <!-- EN: heavy transport lifter (leaving) -->
-  <DMS_Ship_TransportShuttleLeaving.label>重型運輸機(起飛中)</DMS_Ship_TransportShuttleLeaving.label>
+  <!-- EN: orbital transport lifter (leaving) -->
+  <DMS_Ship_TransportShuttleLeaving.label>軌道運輸機(起飛中)</DMS_Ship_TransportShuttleLeaving.label>
   
-  <!-- EN: crew transport shuttle -->
-  <DMS_Shuttle.label>重型運輸機</DMS_Shuttle.label>
+  <!-- EN: orbital transport shuttle -->
+  <DMS_Shuttle.label>軌道運輸機</DMS_Shuttle.label>
   <!-- EN: A light transport shuttle designed for transit between surface and orbit, it can lift up to 2 tons of cargo in flight. -->
   <DMS_Shuttle.description>殖民艦隊用於軌道往返與亞軌道運輸的四引擎運輸機，具有2噸的最大起費載荷重量。</DMS_Shuttle.description>
   
