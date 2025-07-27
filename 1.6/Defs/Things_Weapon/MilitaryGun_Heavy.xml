@@ -367,7 +367,7 @@
 			<AccuracyMedium>0.88</AccuracyMedium>
 			<AccuracyLong>0.80</AccuracyLong>
 			<Mass>130</Mass>
-			<RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
 		</statBases>
 
 		<equippedStatOffsets>
@@ -382,7 +382,7 @@
 		</recipeMaker>
 
 		<costList>
-			<Tungsteel>200</Tungsteel>
+			<Tungsteel>230</Tungsteel>
 			<ComponentStamped>14</ComponentStamped>	
 		</costList>	
 
@@ -391,11 +391,11 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>DMS_Bullet_CIWS</defaultProjectile>
-				<warmupTime>1.85</warmupTime>
+				<warmupTime>1.95</warmupTime>
 				<minRange>2.9</minRange>
 				<range>39.9</range>
 				<ticksBetweenBurstShots>18</ticksBetweenBurstShots>
-				<burstShotCount>5</burstShotCount>
+				<burstShotCount>3</burstShotCount>
 				<soundCast>DMS_Shot_Bushmaster</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>22</muzzleFlashScale>
