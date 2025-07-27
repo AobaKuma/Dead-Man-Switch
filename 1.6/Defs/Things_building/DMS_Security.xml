@@ -680,7 +680,7 @@
     <building>
       <turretGunDef>DMS_Gun_MK44_Navy</turretGunDef>
       <turretTopDrawSize>3</turretTopDrawSize>
-      <turretBurstWarmupTime>1.5</turretBurstWarmupTime>   <!--================冷卻與瞄準時間================-->
+      <turretBurstWarmupTime>1.75</turretBurstWarmupTime>   <!--================冷卻與瞄準時間================-->
       <turretBurstCooldownTime>1.4</turretBurstCooldownTime>
     </building>
     <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
