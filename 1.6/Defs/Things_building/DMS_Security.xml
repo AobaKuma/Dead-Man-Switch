@@ -645,7 +645,7 @@
     <statBases>
       <MaxHitPoints>400</MaxHitPoints>
       <Flammability>0.5</Flammability>
-      <WorkToBuild>4500</WorkToBuild>
+      <WorkToBuild>6000</WorkToBuild>
       <Beauty>-2</Beauty>
       <ShootingAccuracyTurret>1</ShootingAccuracyTurret>
     </statBases>
@@ -664,7 +664,7 @@
         <fuelMultiplier>70</fuelMultiplier><!-- 1 Barrel=70 ammo -->
         <initialFuelPercent>0.2</initialFuelPercent>
         <showFuelGizmo>true</showFuelGizmo>
-        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <minimumFueledThreshold>0.5</minimumFueledThreshold>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
         <initialAllowAutoRefuel>true</initialAllowAutoRefuel>
         <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>              <!--重裝填設定-->
@@ -681,12 +681,12 @@
       <turretGunDef>DMS_Gun_MK44_Navy</turretGunDef>
       <turretTopDrawSize>3</turretTopDrawSize>
       <turretBurstWarmupTime>1.5</turretBurstWarmupTime>   <!--================冷卻與瞄準時間================-->
-      <turretBurstCooldownTime>0.75</turretBurstCooldownTime>
+      <turretBurstCooldownTime>0.95</turretBurstCooldownTime>
     </building>
     <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
     <costList>
       <Steel>280</Steel>
-      <Tungsteel>130</Tungsteel>
+      <Tungsteel>140</Tungsteel>
       <ComponentStamped>7</ComponentStamped>
       <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
@@ -716,7 +716,7 @@
       <AccuracyShort>0.90</AccuracyShort>
       <AccuracyMedium>0.87</AccuracyMedium>
       <AccuracyLong>0.82</AccuracyLong>
-      <RangedWeapon_Cooldown>0.75</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>0.95</RangedWeapon_Cooldown>
     </statBases>
 
     <verbs>
@@ -737,7 +737,7 @@
         <targetParams>
           <canTargetLocations>true</canTargetLocations>
         </targetParams>
-        <forcedMissRadius>0.9</forcedMissRadius>
+        <forcedMissRadius>1</forcedMissRadius>
       </li>
     </verbs>
 
