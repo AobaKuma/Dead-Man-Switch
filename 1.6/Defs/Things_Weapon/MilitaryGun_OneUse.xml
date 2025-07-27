@@ -122,7 +122,7 @@
 		<verbs>
 			<li>
 				<commandIcon>Things/Apparel/RocketLauncher/DMS_Launcher_Icon</commandIcon>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>Verb_LaunchProjectile</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>DMS_Bullet_DR</defaultProjectile>
 				<warmupTime>2.2</warmupTime>
@@ -135,7 +135,7 @@
 				<consumeFuelPerShot>1</consumeFuelPerShot>
 				<targetable>true</targetable>
 				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
-				<ai_IsWeapon>true</ai_IsWeapon>
+				<ai_IsWeapon>false</ai_IsWeapon>
 				<targetParams>
 					<canTargetLocations>true</canTargetLocations>
 					<canTargetBuildings>true</canTargetBuildings>
@@ -178,5 +178,10 @@
 			<armorPenetrationBase>0.8</armorPenetrationBase>
 			<shadowSize>0.6</shadowSize>
 		</projectile>
+		<comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>DMS_LaunchDust_Recoilless</effecterDef>
+			</li>
+		</comps>
 	</ThingDef>
 </Defs>
