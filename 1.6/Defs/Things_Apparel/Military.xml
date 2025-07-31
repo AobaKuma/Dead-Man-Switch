@@ -291,7 +291,7 @@
 			<WorkToMake>12000</WorkToMake>
 			<MaxHitPoints>150</MaxHitPoints>
 			<Mass>1.5</Mass>
-			<StuffEffectMultiplierArmor>0.8</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierArmor>1.1</StuffEffectMultiplierArmor>
 			<StuffEffectMultiplierInsulation_Cold>0.18</StuffEffectMultiplierInsulation_Cold>
 			<StuffEffectMultiplierInsulation_Heat>0.18</StuffEffectMultiplierInsulation_Heat>
 			<EquipDelay>1.75</EquipDelay>
@@ -366,7 +366,7 @@
 			<WorkToMake>30000</WorkToMake>
 			<MaxHitPoints>150</MaxHitPoints>
 			<Mass>1.5</Mass>
-			<StuffEffectMultiplierArmor>0.85</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierArmor>1.15</StuffEffectMultiplierArmor>
 			<StuffEffectMultiplierInsulation_Cold>0.23</StuffEffectMultiplierInsulation_Cold>
 			<StuffEffectMultiplierInsulation_Heat>0.23</StuffEffectMultiplierInsulation_Heat>
 			<EquipDelay>3</EquipDelay>
@@ -430,6 +430,7 @@
 			</options>
 		</colorGenerator>
 	</ThingDef>
+	
 	<!-- 戰術裝備 -->
 	<ThingDef ParentName="ArmorMachineableBase">
 		<defName>DMS_Apparel_TacticalVest</defName>
@@ -460,7 +461,7 @@
 			<MaxHitPoints>200</MaxHitPoints>
 			<Mass>4</Mass>
 			<Flammability>0.3</Flammability>
-			<StuffEffectMultiplierArmor>0.85</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierArmor>1.15</StuffEffectMultiplierArmor>
 			<StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
 			<StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
 			<EquipDelay>5</EquipDelay>
