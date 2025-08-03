@@ -6,16 +6,17 @@
   
   <!-- EN: Disposable Launcher -->
   <DMS_DeposableRocketLauncher.label>拋棄式火箭筒</DMS_DeposableRocketLauncher.label>
-  <!-- EN: A single use recoilless rifle designed to be fired and discarded. It's light-weight and effective againist bunkers and heavy mechs. It has a long fire range and requires line of sight. -->
-  <DMS_DeposableRocketLauncher.description>一種配重式無後座力火箭推進榴彈發射器，是殖民艦隊設計用於發配給游擊隊與機兵小隊使用的反裝甲裝甲，相比於可填裝型號其重量更輕，可有效對抗掩體或裝甲載具。</DMS_DeposableRocketLauncher.description>
+  <!-- EN: A single use recoilless rifle designed to be fired and discarded. It's light-weight and effective against bunkers and heavy mechs. It has a long fire range and requires line of sight. -->
+  <DMS_DeposableRocketLauncher.description>一種配重式無後座力火箭推進榴彈發射器，是殖民艦隊設計用於發配給游擊隊與機兵小隊使用的反裝甲武器，相比於可填裝型號其重量更輕，可有效對抗掩體或裝甲載具。</DMS_DeposableRocketLauncher.description>
   <!-- EN: charge -->
   <DMS_DeposableRocketLauncher.comps.CompApparelReloadable.chargeNoun>彈藥</DMS_DeposableRocketLauncher.comps.CompApparelReloadable.chargeNoun>
   <!-- EN: on cooldown -->
   <DMS_DeposableRocketLauncher.comps.CompApparelReloadable.cooldownGerund>冷卻中</DMS_DeposableRocketLauncher.comps.CompApparelReloadable.cooldownGerund>
   <!-- EN: Disposable Launcher -->
-  <DMS_DeposableRocketLauncher.verbs.Verb_Shoot.label>拋棄式火箭筒</DMS_DeposableRocketLauncher.verbs.Verb_Shoot.label>
+  <DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectile.label>拋棄式火箭筒</DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectile.label>
   
   <!-- UNUSED -->
+  <DMS_DeposableRocketLauncher.verbs.Verb_Shoot.label>拋棄式火箭筒</DMS_DeposableRocketLauncher.verbs.Verb_Shoot.label>
   <DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectileStaticCE.label>拋棄式火箭筒</DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectileStaticCE.label>
   
 </LanguageData>

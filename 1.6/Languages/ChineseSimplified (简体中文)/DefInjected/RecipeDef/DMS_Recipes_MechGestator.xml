@@ -49,7 +49,14 @@
   <DMS_Make_Jaeger.description>组装猎兵，一种火枪手的匿踪作战特化型号</DMS_Make_Jaeger.description>
   <!-- EN: Gestating mech. -->
   <DMS_Make_Jaeger.jobString>组装机械体中</DMS_Make_Jaeger.jobString>
-  
+
+    <!-- EN: Gestate tiny mammoth Automatroid -->
+  <DMS_Make_Mammoth.label>组装小猛玛</DMS_Make_Mammoth.label>
+  <!-- EN: Gestate a tiny mammoth Automatroid. -->
+  <DMS_Make_Mammoth.description>组装小猛玛，一种具有中等装甲与通用机枪的履带运输平台。</DMS_Make_Mammoth.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Mammoth.jobString>组装机械体中</DMS_Make_Mammoth.jobString>
+
   <!-- EN: Gestate Phalanx -->
   <DMS_Make_Phalanx.label>组装方阵步兵</DMS_Make_Phalanx.label>
   <!-- EN: Gestate a Phalanx Automatroid. -->
