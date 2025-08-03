@@ -135,20 +135,18 @@
 					<WornBulk>1</WornBulk>
 				</value>
 			</li>
-
-
+			
 			<!--DMS_ArmorHelmetMakeableBase-->
 			<li Class="PatchOperationAdd">
-				<xpath>
-					Defs/ThingDef[@Name="DMS_ArmorHelmetMakeableBase"]/stuffCategories</xpath>
+				<xpath>Defs/ThingDef[@Name="DMS_ArmorHelmetMakeableBase"]/stuffCategories</xpath>
 				<value>
 					<li>Steeled</li>
 				</value>
 			</li>
+
 			<!--PASGT-->
 			<li Class="PatchOperationReplace">
-				<xpath>
-					Defs/ThingDef[defName="DMS_Apparel_TacticalHelmet"]/statBases/StuffEffectMultiplierArmor</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_TacticalHelmet"]/statBases/StuffEffectMultiplierArmor</xpath>
 				<value>
 					<StuffEffectMultiplierArmor>5</StuffEffectMultiplierArmor>
 					<Bulk>3</Bulk>
@@ -157,8 +155,7 @@
 			</li>
 			<!--PASGT Array-->
 			<li Class="PatchOperationReplace">
-				<xpath>
-					Defs/ThingDef[defName="DMS_Apparel_ArrayHelmet"]/statBases/StuffEffectMultiplierArmor</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_ArrayHelmet"]/statBases/StuffEffectMultiplierArmor</xpath>
 				<value>
 					<StuffEffectMultiplierArmor>5</StuffEffectMultiplierArmor>
 					<Bulk>5</Bulk>
@@ -184,8 +181,7 @@
 
 			<!--Tactical Vest-->
 			<li Class="PatchOperationReplace">
-				<xpath>
-					Defs/ThingDef[defName="DMS_Apparel_TacticalVest"]/statBases/StuffEffectMultiplierArmor</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_TacticalVest"]/statBases/StuffEffectMultiplierArmor</xpath>
 				<value>
 					<StuffEffectMultiplierArmor>8.5</StuffEffectMultiplierArmor>
 					<Bulk>6</Bulk>
@@ -205,8 +201,7 @@
 				</value>
 			</li>
 			<li Class="PatchOperationReplace">
-				<xpath>
-					Defs/ThingDef[defName="DMS_Apparel_TacticalVest"]/stuffCategories</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_TacticalVest"]/stuffCategories</xpath>
 				<value>
 					<stuffCategories>
 						<li>Steeled</li>
@@ -244,8 +239,7 @@
 
 			<!--unit suit-->
 			<li Class="PatchOperationReplace">
-				<xpath>
-					Defs/ThingDef[defName="DMS_Apparel_UnitSuit"]/statBases/StuffEffectMultiplierArmor</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_UnitSuit"]/statBases/StuffEffectMultiplierArmor</xpath>
 				<value>
 					<StuffEffectMultiplierArmor>2</StuffEffectMultiplierArmor>
 				</value>
@@ -274,8 +268,7 @@
 
 			<!--DMS_Apparel_TacticalCloak-->
 			<li Class="PatchOperationReplace">
-				<xpath>
-					Defs/ThingDef[defName="DMS_Apparel_TacticalCloak"]/statBases/StuffEffectMultiplierArmor</xpath>
+				<xpath>Defs/ThingDef[defName="DMS_Apparel_TacticalCloak"]/statBases/StuffEffectMultiplierArmor</xpath>
 				<value>
 					<StuffEffectMultiplierArmor>6</StuffEffectMultiplierArmor>
 				</value>

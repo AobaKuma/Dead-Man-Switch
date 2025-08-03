@@ -75,8 +75,8 @@
     <!--CE
     grenades for Grenadier-->
     <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Weapon_GrenadeFlashbang" or
-            defName="Weapon_GrenadeStickBomb"]/weaponTags</xpath>
+        <xpath>Defs/ThingDef[defName="CE_Weapon_GrenadeFlashbang" or
+            defName="CE_Weapon_GrenadeStickBomb"]/weaponTags</xpath>
         <value>
             <li>DMS_Grenadier</li>
         </value>

@@ -14,7 +14,7 @@
 				<value>
 					<verbs>
 						<li Class="CombatExtended.VerbPropertiesCE">
-							<verbClass>CombatExtended.Verb_LaunchProjectileStaticCE</verbClass>
+							<verbClass>CombatExtended.Verb_LaunchProjectileCE</verbClass>
 							<warmupTime>2.2</warmupTime>
 							<minRange>4</minRange>
 							<range>39.9</range>
