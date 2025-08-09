@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+    <FactionDef ParentName="FactionBase">
+        <defName>DMS_Legacy</defName>
+        <label>Colonization legacies</label>
+        <!-- 他們是先鋒殖民者們在這顆星球上留下的造物，為保護燈塔與無數先鋒們所親手創造的家園而被製造出來的護衛者。\n\n然而在數十年的等待中大多數的先鋒們並沒能活著等來艦隊到來的那一天，而他們的造物依然在遵循著設定好的程序遊蕩在早已不在的故鄉當中。 -->
+        <description>They were creations left behind on this planet by the pioneer colonists, guardians crafted to protect the lighthouse and the home created by countless pioneers.\n\nHowever, after decades of waiting, most pioneers never lived to see the fleet arrive, and their creations still wandered their long-gone homeland, following their pre-programmed procedures.</description>
+        <pawnSingular>legacy</pawnSingular>
+        <pawnsPlural>legacies</pawnsPlural>
+        <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+        <requiredCountAtGameStart>1</requiredCountAtGameStart>
+        <maxCountAtGameStart>1</maxCountAtGameStart>
+        <canStageAttacks>true</canStageAttacks>
+        <factionIconPath>UI/Faction/LegacyIcon</factionIconPath>
+        <factionNameMaker>DMS_LegacyFaction</factionNameMaker>
+        <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+        <allowedArrivalTemperatureRange>-100~200</allowedArrivalTemperatureRange>
+        <arrivalLayerWhitelist>
+            <li>Surface</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Orbit</li>
+        </arrivalLayerWhitelist>
+        <techLevel>Spacer</techLevel>
+        <humanlikeFaction>false</humanlikeFaction>
+        <hidden>true</hidden>
+        <autoFlee>false</autoFlee>
+        <canUseAvoidGrid>true</canUseAvoidGrid>
+        <earliestRaidDays>120</earliestRaidDays>
+        <configurationListOrderPriority>70</configurationListOrderPriority>
+        <hostileToFactionlessHumanlikes>false</hostileToFactionlessHumanlikes>
+        <permanentEnemyToEveryoneExcept>
+            <li>DMS_Army</li>
+            <li MayRequire="aoba.deadmanswitch.ancientcorps">DMS_AncientCorps</li>
+        </permanentEnemyToEveryoneExcept>
+        <colorSpectrum>
+            <li>(0.65, 0.5, 0.5)</li>
+        </colorSpectrum>
+        <maxPawnCostPerTotalPointsCurve>
+            <points>
+                <li>(400,200)</li>
+                <li>(900,300)</li>
+                <li>(100000,10000)</li>
+            </points>
+        </maxPawnCostPerTotalPointsCurve>
+        <raidCommonalityFromPointsCurve>
+            <points>
+                <li>(0, 0)</li> <!--Constant 1 at all points levels-->
+                <li>(1000,1)</li>
+            </points>
+        </raidCommonalityFromPointsCurve>
+        <raidLootMaker>VanguardRaidLootMaker</raidLootMaker>
+        <pawnGroupMakers>
+            <li>
+                <!-- Normal fights -->
+                <kindDef>Combat</kindDef>
+                <commonality>100</commonality>
+                <options>
+                    <DMS_Mech_Falcon>5</DMS_Mech_Falcon>
+                    <DMS_Mech_Soldat_B>5</DMS_Mech_Soldat_B>
+                    <DMS_Mech_Iguana>0.5</DMS_Mech_Iguana>
+                    <DMS_Mech_Pioneer>8</DMS_Mech_Pioneer>
+                    <DMS_Mech_Jaeger>3.5</DMS_Mech_Jaeger>
+                    <DMS_Mech_Protector>3</DMS_Mech_Protector>
+                    <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+                </options>
+            </li>
+            <li>
+                <!-- Normal fights -->
+                <kindDef>Combat</kindDef>
+                <commonality>100</commonality>
+                <options>
+                    <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
+                    <DMS_Mech_Dogge>5</DMS_Mech_Dogge>
+                    <DMS_Mech_Jaeger>3.5</DMS_Mech_Jaeger>
+                    <DMS_Mech_Sniper>2</DMS_Mech_Sniper>
+                    <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+                    <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
+                </options>
+            </li>
+            <li>
+                <!-- Normal fights -->
+                <kindDef>Combat</kindDef>
+                <commonality>10</commonality>
+                <options>
+                    <DMS_Mech_Dogge>2</DMS_Mech_Dogge>
+                    <DMS_Mech_Sniper>1</DMS_Mech_Sniper>
+                    <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+                    <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
+                    <DMS_Mech_Caretta>1</DMS_Mech_Caretta>
+                    <DMS_Mech_Tarbosaurus>1</DMS_Mech_Tarbosaurus>
+                </options>
+            </li>
+            <li>
+                <!-- breach fights -->
+                <kindDef>Combat</kindDef>
+                <commonality>10</commonality>
+                <options>
+                    <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
+                    <DMS_Mech_Grenadier>6</DMS_Mech_Grenadier>
+                    <DMS_Squad_Sniper>2</DMS_Squad_Sniper>
+                    <DMS_Mech_Ronin>6</DMS_Mech_Ronin>
+                    <DMS_Mech_Protector>5</DMS_Mech_Protector>
+                    <DMS_Mech_Siegebreaker>1</DMS_Mech_Siegebreaker>
+                    <DMS_Mech_Mammoth>1</DMS_Mech_Mammoth>
+                </options>
+            </li>
+        </pawnGroupMakers>
+    </FactionDef>
+</Defs>

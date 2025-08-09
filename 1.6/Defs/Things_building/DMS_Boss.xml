@@ -53,9 +53,9 @@
         <useJob>TriggerObject</useJob>
         <useLabel>Attract geochelone threat</useLabel>
         <useDuration>900</useDuration>
-        <floatMenuFactionIcon>Mechanoid</floatMenuFactionIcon>
+        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
       </li>
-      <li Class="Fortified.CompProperties_UseEffectSummonRaid">
+      <li Class="DMS.CompPropertiesUseable_SummonRaid">
         <bossgroupDef>DMS_Geochelone</bossgroupDef>
         <effecterDef>BurnoutMechlinkBoosterUsed</effecterDef>
       </li>
@@ -94,9 +94,9 @@
         <useJob>TriggerObject</useJob>
         <useLabel>Attract tarbosaurus threat</useLabel>
         <useDuration>900</useDuration>
-        <floatMenuFactionIcon>Mechanoid</floatMenuFactionIcon>
+        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
       </li>
-      <li Class="Fortified.CompProperties_UseEffectSummonRaid">
+      <li Class="DMS.CompPropertiesUseable_SummonRaid">
         <bossgroupDef>DMS_Tarbosaurus</bossgroupDef>
         <effecterDef>BurnoutMechlinkBoosterUsed</effecterDef>
       </li>

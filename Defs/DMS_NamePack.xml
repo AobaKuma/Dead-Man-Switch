@@ -1,5 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <RulePackDef><!-- 遺物陣營名稱生成 -->
+    <defName>DMS_LegacyFaction</defName>
+    <rulePack>
+      <rulesStrings>
+        <!-- Legacy of 153rd Pioneer Team-->
+        <li>r_name->[AdjPrefix] of [BrigadeNum0][BrigadeNum1][BrigadeNum2] [BrigadeType] [Scale]</li>
+
+        <li>AdjPrefix->Legacies</li>
+        <li>AdjPrefix->Remnants</li>
+        <li>AdjPrefix->Last will</li>
+        <li>AdjPrefix->Memoirs</li>
+
+        <li>BrigadeType->Pioneer</li>
+        <li>BrigadeType->Expedition</li>
+        <li>BrigadeType->Frontier</li>
+        <li>BrigadeType->Logistic</li>
+        
+        <li>Scale->Team</li>
+        <li>Scale->Squad</li>
+        <li>Scale->Platoon</li>
+        <li>Scale->Group</li>
+
+        <li>BrigadeNum0->1</li>
+        <li>BrigadeNum0->2</li>
+        <li>BrigadeNum0->3</li>
+        <li>BrigadeNum0->4</li>
+        <li>BrigadeNum0->5</li>
+        <li>BrigadeNum0->6</li>
+        <li>BrigadeNum0->7</li>
+        <li>BrigadeNum0->8</li>
+        <li>BrigadeNum0->9</li>
+
+        <li>BrigadeNum1->0</li>
+        <li>BrigadeNum1->1</li>
+        <li>BrigadeNum1->2</li>
+        <li>BrigadeNum1->3</li>
+        <li>BrigadeNum1->4</li>
+        <li>BrigadeNum1->5</li>
+        <li>BrigadeNum1->6</li>
+        <li>BrigadeNum1->7</li>
+        <li>BrigadeNum1->8</li>
+        <li>BrigadeNum1->9</li>
+
+        <li>BrigadeNum2->0th</li>
+        <li>BrigadeNum2->1st</li>
+        <li>BrigadeNum2->2nd</li>
+        <li>BrigadeNum2->3rd</li>
+        <li>BrigadeNum2->4th</li>
+        <li>BrigadeNum2->5th</li>
+        <li>BrigadeNum2->6th</li>
+        <li>BrigadeNum2->7th</li>
+        <li>BrigadeNum2->8th</li>
+        <li>BrigadeNum2->9th</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
 
   <RulePackDef><!-- 先鋒艦隊陣營名稱生成 -->
     <defName>DMS_VanguardFaction</defName>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+		<defName>DMS_Boss</defName>
+		<defaultHidden>true</defaultHidden>
+		<autoAccept>true</autoAccept>
+		<questNameRules>
+			<rulesStrings>
+				<li>questName->bossgroup</li>
+				<!-- hidden -->
+			</rulesStrings>
+		</questNameRules>
+		<questDescriptionRules>
+			<rulesStrings>
+				<li>questDescription->bossgroup</li>
+				<!-- hidden -->
+			</rulesStrings>
+		</questDescriptionRules>
+		<questContentRules>
+			<rulesStrings>
+
+				<li>bossDefeatedLetterLabel->[escortees0_label] defeated</li>
+
+				<li>bossDefeatedStudyChipLetterText->[defeated][study][manufacture]</li>
+				<li>bossDefeatedLetterText->[defeated][manufacture]</li>
+
+				<li>defeated->The wandering [escortees0_label] has been defeated and has dropped a [reward_label]!</li>
+        <!-- 如果沒有在無力化的過程中損壞的話,你應該能在機體殘骸中找到那個關鍵的零件。 -->
+				<li>manufacture->\n\nIf it wasn't get destroyed during the neutralization process, you should be able to find that [reward_label] among the wreckage.</li>
+				<li>study->\n\nYou can unlock subsequent technologies by studying [reward_label].</li>
+
+			</rulesStrings>
+		</questContentRules>
+		<root Class="DMS.QuestNode_Root_BossgroupFactionExposed">
+			<factionDef>DMS_Legacy</factionDef>
+			<LetterLabelBossgroupSummoned>The wandering legacies has been attracted</LetterLabelBossgroupSummoned>
+			<LetterBossgroupSummoned>Your signal has been sent out, and the attracted Automatroids will arriving in no time. Prepare to engage.</LetterBossgroupSummoned>
+
+			<LetterLabelBossgroupArrived>Wandering legacies</LetterLabelBossgroupArrived>
+			<LetterBossgroupArrived>wandering legacies have arrived！</LetterBossgroupArrived>
+
+			<AlertBossgroupIncoming>Wandering legacies approaching.</AlertBossgroupIncoming>
+			<AlertBossgroupIncomingDesc>unmanned units of Automatroids are following established protocols, attracted by the signal you sent and approaching.</AlertBossgroupIncomingDesc>
+		</root>
+	</QuestScriptDef>
+</Defs>

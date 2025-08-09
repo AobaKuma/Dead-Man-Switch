@@ -178,8 +178,7 @@
   </ThingDef>
 
   <PawnKindDef Name="BaseAutomatroidKind" ParentName="BaseMechanoidKind" Abstract="True">
-    <!-- <defaultFactionType>DMS_Army</defaultFactionType> 設置成殖民艦隊可能會導致任務隨機Pawnkind時隨機到。 -->
-    <defaultFactionType>Mechanoid</defaultFactionType>
+    <defaultFactionType>DMS_Legacy</defaultFactionType>
     <allowInMechClusters>false</allowInMechClusters>
     <isFighter>true</isFighter>
     <destroyGearOnDrop>false</destroyGearOnDrop>
