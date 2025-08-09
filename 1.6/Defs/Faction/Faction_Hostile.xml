@@ -5,9 +5,9 @@
         <defName>DMS_Legacy</defName>
         <label>Colonization legacies</label>
         <!-- 他們是先鋒殖民者們在這顆星球上留下的造物，為保護燈塔與無數先鋒們所親手創造的家園而被製造出來的護衛者。\n\n然而在數十年的等待中大多數的先鋒們並沒能活著等來艦隊到來的那一天，而他們的造物依然在遵循著設定好的程序遊蕩在早已不在的故鄉當中。 -->
-        <description>They were creations left behind on this planet by the pioneer colonists, guardians crafted to protect the lighthouse and the home created by countless pioneers.\n\nHowever, after decades of waiting, most pioneers never lived to see the fleet arrive, and their creations still wandered their long-gone homeland, following their pre-programmed procedures.</description>
-        <pawnSingular>legacy</pawnSingular>
-        <pawnsPlural>legacies</pawnsPlural>
+        <description>Automatroid remnants from colonization pioneers, guardians crafted to protect light towers on this planet.\n\nHowever, after decades of waiting, most pioneers never lived to see the fleet arrive, and their creations still wandered their long-gone homeland, following their pre-programmed procedures.</description>
+        <pawnSingular>remnant</pawnSingular>
+        <pawnsPlural>remnants</pawnsPlural>
         <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
         <requiredCountAtGameStart>1</requiredCountAtGameStart>
         <maxCountAtGameStart>1</maxCountAtGameStart>

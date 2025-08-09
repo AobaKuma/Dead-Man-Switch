@@ -33,14 +33,14 @@
 		</questContentRules>
 		<root Class="DMS.QuestNode_Root_BossgroupFactionExposed">
 			<factionDef>DMS_Legacy</factionDef>
-			<LetterLabelBossgroupSummoned>The wandering legacies has been attracted</LetterLabelBossgroupSummoned>
+			<LetterLabelBossgroupSummoned>The wandering remnants has been attracted</LetterLabelBossgroupSummoned>
 			<LetterBossgroupSummoned>Your signal has been sent out, and the attracted Automatroids will arriving in no time. Prepare to engage.</LetterBossgroupSummoned>
 
-			<LetterLabelBossgroupArrived>Wandering legacies</LetterLabelBossgroupArrived>
-			<LetterBossgroupArrived>wandering legacies have arrived！</LetterBossgroupArrived>
+			<LetterLabelBossgroupArrived>Wandering remnants</LetterLabelBossgroupArrived>
+			<LetterBossgroupArrived>wandering remnants have arrived！</LetterBossgroupArrived>
 
-			<AlertBossgroupIncoming>Wandering legacies approaching.</AlertBossgroupIncoming>
-			<AlertBossgroupIncomingDesc>unmanned units of Automatroids are following established protocols, attracted by the signal you sent and approaching.</AlertBossgroupIncomingDesc>
+			<AlertBossgroupIncoming>Wandering remnants approaching.</AlertBossgroupIncoming>
+			<AlertBossgroupIncomingDesc>unmanned units of automatroid remnants are still following their protocols, attracted by the signal you sent and approaching.</AlertBossgroupIncomingDesc>
 		</root>
 	</QuestScriptDef>
 </Defs>
