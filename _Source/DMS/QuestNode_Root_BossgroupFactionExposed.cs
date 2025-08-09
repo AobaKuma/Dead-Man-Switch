@@ -7,8 +7,10 @@ using System.Linq;
 
 namespace DMS
 {
+
     public class QuestNode_Root_BossgroupFactionExposed : QuestNode
     {
+        
         //fuck tynan
         private static readonly IntRange MaxDelayTicksRange = new IntRange(60000, 180000);
 
@@ -115,8 +117,7 @@ namespace DMS
             questPart_Bossgroup.stageLocation = intVec;
             questPart_Bossgroup.inSignal = text;
             quest.AddPart(questPart_Bossgroup);
-            quest.Alert(AlertBossgroupIncoming.Formatted(BossLabelCap),
-                AlertBossgroupIncomingDesc.Formatted(BossLabel), null, critical: true, getLookTargetsFromSignal: false, null, text);
+            quest.Alert(AlertBossgroupIncoming.Formatted(BossLabelCap),AlertBossgroupIncomingDesc.Formatted(BossLabel), null, critical: true, getLookTargetsFromSignal: false, null, text);
             string inSignal4 = QuestGenUtility.HardcodedSignalWithQuestID("escortees.KilledLeavingsLeft");
             quest.ThingAnalyzed(thingDef, delegate
             {

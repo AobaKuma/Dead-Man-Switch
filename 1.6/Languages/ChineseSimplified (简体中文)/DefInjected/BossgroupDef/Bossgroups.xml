@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
   <!-- EN: This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral -->
-  <DMS_Geochelone.leaderDescription>这架{LEADERKIND_label}隶属於先遣部队原先投放到星球上的一支机兵部队。但随着指挥官的阵亡该单位已经脱离了指挥控制。</DMS_Geochelone.leaderDescription>
+  <DMS_Geochelone.leaderDescription>{LEADERKIND_label}是一种具有厚实装甲与脉冲护盾发射装置的超重型履带机兵，被用于在巷战中掩护伴随的机兵推进，虽然只有非常少的自保火力但装备了能有效无力化充能子弹的烟幕发射器。</DMS_Geochelone.leaderDescription>
   
   <!-- EN: This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral. -->
-  <DMS_Sergeant.leaderDescription>这架{LEADERKIND_label}隶属於先遣部队原先投放到星球上的一支机兵部队。但随着指挥官的阵亡该单位已经脱离了指挥控制。</DMS_Sergeant.leaderDescription>
+  <DMS_Sergeant.leaderDescription>{LEADERKIND_label}是一种中枢指挥机兵，能够作为机械师的控制中继与代理指挥来控制庞大的军团，本身虽然并没有太大威胁但应当注意伴随它的大量士兵。</DMS_Sergeant.leaderDescription>
   
   <!-- EN: This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral -->
-  <DMS_Tarbosaurus.leaderDescription>这架{LEADERKIND_label}隶属於先遣部队原先投放到星球上的一支机兵部队。但随着指挥官的阵亡该单位已经脱离了指挥控制。</DMS_Tarbosaurus.leaderDescription>
+  <DMS_Tarbosaurus.leaderDescription>{LEADERKIND_label}是自次世代战争以来便存在的恐惧，与其交战过的士兵都将这些怪物称之为"一架行走的武装直升机"，你应该注意它那强而有力的双足能够进行多次跳跃来辗压远处的射手，注意那些提供火力压制的霰弹与机枪砲塔。最重要的是注意它挂载的超重型武器，那可不是一个西部牛仔故事里会出现的东西。</DMS_Tarbosaurus.leaderDescription>
   
 </LanguageData>

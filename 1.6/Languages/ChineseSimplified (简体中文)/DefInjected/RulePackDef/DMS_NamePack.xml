@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
   <!-- EN:
@@ -58,6 +58,95 @@
     <li>Callsign->恩尼格</li>
     <li>Callsign->机关</li>
   </DMS_AutomaticArmy.rulePack.rulesStrings>
+  
+  <!-- EN:
+    <li>r_name->[AdjPrefix] of [BrigadeNum0][BrigadeNum1][BrigadeNum2] [BrigadeType] [Scale]</li>
+    <li>AdjPrefix->Legacies</li>
+    <li>AdjPrefix->Remnants</li>
+    <li>AdjPrefix->Last will</li>
+    <li>AdjPrefix->Memoirs</li>
+    <li>BrigadeType->Pioneer</li>
+    <li>BrigadeType->Expedition</li>
+    <li>BrigadeType->Frontier</li>
+    <li>BrigadeType->Logistic</li>
+    <li>Scale->Team</li>
+    <li>Scale->Squad</li>
+    <li>Scale->Platoon</li>
+    <li>Scale->Group</li>
+    <li>BrigadeNum0->1</li>
+    <li>BrigadeNum0->2</li>
+    <li>BrigadeNum0->3</li>
+    <li>BrigadeNum0->4</li>
+    <li>BrigadeNum0->5</li>
+    <li>BrigadeNum0->6</li>
+    <li>BrigadeNum0->7</li>
+    <li>BrigadeNum0->8</li>
+    <li>BrigadeNum0->9</li>
+    <li>BrigadeNum1->0</li>
+    <li>BrigadeNum1->1</li>
+    <li>BrigadeNum1->2</li>
+    <li>BrigadeNum1->3</li>
+    <li>BrigadeNum1->4</li>
+    <li>BrigadeNum1->5</li>
+    <li>BrigadeNum1->6</li>
+    <li>BrigadeNum1->7</li>
+    <li>BrigadeNum1->8</li>
+    <li>BrigadeNum1->9</li>
+    <li>BrigadeNum2->0th</li>
+    <li>BrigadeNum2->1st</li>
+    <li>BrigadeNum2->2nd</li>
+    <li>BrigadeNum2->3rd</li>
+    <li>BrigadeNum2->4th</li>
+    <li>BrigadeNum2->5th</li>
+    <li>BrigadeNum2->6th</li>
+    <li>BrigadeNum2->7th</li>
+    <li>BrigadeNum2->8th</li>
+    <li>BrigadeNum2->9th</li>
+  -->
+  <DMS_LegacyFaction.rulePack.rulesStrings>
+    <li>r_name->第[BrigadeNum0][BrigadeNum2][BrigadeType][Scale]的[AdjPrefix]</li>
+    <li>AdjPrefix->遗物</li>
+    <li>AdjPrefix->残余</li>
+    <li>AdjPrefix->遗志</li>
+    <li>AdjPrefix->寄托</li>
+    <li>BrigadeType->先锋</li>
+    <li>BrigadeType->远征</li>
+    <li>BrigadeType->开拓</li>
+    <li>BrigadeType->后勤</li>
+    <li>Scale->组</li>
+    <li>Scale->队</li>
+    <li>Scale->排</li>
+    <li>Scale->团</li>
+    <li>BrigadeNum0->1</li>
+    <li>BrigadeNum0->2</li>
+    <li>BrigadeNum0->3</li>
+    <li>BrigadeNum0->4</li>
+    <li>BrigadeNum0->5</li>
+    <li>BrigadeNum0->6</li>
+    <li>BrigadeNum0->7</li>
+    <li>BrigadeNum0->8</li>
+    <li>BrigadeNum0->9</li>
+    <li>BrigadeNum1->0</li>
+    <li>BrigadeNum1->1</li>
+    <li>BrigadeNum1->2</li>
+    <li>BrigadeNum1->3</li>
+    <li>BrigadeNum1->4</li>
+    <li>BrigadeNum1->5</li>
+    <li>BrigadeNum1->6</li>
+    <li>BrigadeNum1->7</li>
+    <li>BrigadeNum1->8</li>
+    <li>BrigadeNum1->9</li>
+    <li>BrigadeNum2->0</li>
+    <li>BrigadeNum2->1</li>
+    <li>BrigadeNum2->2</li>
+    <li>BrigadeNum2->3</li>
+    <li>BrigadeNum2->4</li>
+    <li>BrigadeNum2->5</li>
+    <li>BrigadeNum2->6</li>
+    <li>BrigadeNum2->7</li>
+    <li>BrigadeNum2->8</li>
+    <li>BrigadeNum2->9</li>
+  </DMS_LegacyFaction.rulePack.rulesStrings>
   
   <!-- EN:
     <li>r_name->[MechType] [BrigadeNum0]</li>
@@ -214,7 +303,7 @@
   -->
   <DMS_VanguardBase.rulePack.rulesStrings>
     <li>r_name-> [Type]-[Number][Number]</li>
-    <li>Type->後勤</li>
+    <li>Type->后勤</li>
     <li>Type->侦查</li>
     <li>Type->中继</li>
     <li>Type->前沿</li>
@@ -275,7 +364,7 @@
     <li>BrigadeType->殖民</li>
     <li>BrigadeType->侦查</li>
     <li>BrigadeType->近卫</li>
-    <li>BrigadeType->後勤</li>
+    <li>BrigadeType->后勤</li>
     <li>BrigadeNum0->1</li>
     <li>BrigadeNum0->2</li>
     <li>BrigadeNum0->3</li>
@@ -500,7 +589,7 @@
     <li>Callsign->钢盔</li>
     <li>Callsign->壮汉</li>
     <li>Callsign->野狼</li>
-    <li>Callsign->狐狸</li>
+    <li>Callsign->狐貍</li>
     <li>Callsign->猎犬</li>
     <li>Callsign->豹猫</li>
     <li>Callsign->骨架</li>

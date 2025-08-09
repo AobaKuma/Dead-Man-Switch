@@ -18,6 +18,7 @@
   <BossgroupDef ParentName="BaseBossgroupNonMechanitor">
     <defName>DMS_Sergeant</defName>
     <boss>DMS_Boss_Sergeant</boss>
+    <leaderDescription>The {LEADERKIND_label} is a relay-command automatroid, capable of acting as a control relay and proxy commander for controlling large armies of automatroids. While not a significant threat on its own, caution should be exercised against the large number of units accompanying it.</leaderDescription>
     <waves>
       <li> <!-- 0 -->
         <bossCount>1</bossCount>
@@ -114,7 +115,6 @@
         </bossApparel>
       </li>
     </waves>
-    <leaderDescription>This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral.</leaderDescription>
     <rewardDef>ComponentTransmitter</rewardDef>
   </BossgroupDef>
 
@@ -128,6 +128,7 @@
   <BossgroupDef ParentName="BaseBossgroupNonMechanitor">
     <defName>DMS_Geochelone</defName>
     <boss>DMS_Boss_Geochelone</boss>
+    <leaderDescription>The {LEADERKIND_label} is a tracked super-heavy automatroid with thick armor and a pulse shield generator. It is ultra durable to cover the advancing mechs in urban combat. Although it has very little self-defense firepower, it also equipped with a smokescreen launcher that can effectively disable charged rounds.</leaderDescription>
     <waves>
       <li> <!-- 0 -->
         <bossCount>1</bossCount>
@@ -213,7 +214,6 @@
         </bossApparel>
       </li>
     </waves>
-    <leaderDescription>This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral</leaderDescription>
     <rewardDef>Neurocomputer</rewardDef>
   </BossgroupDef>
 
@@ -227,6 +227,7 @@
   <BossgroupDef ParentName="BaseBossgroupNonMechanitor">
     <defName>DMS_Tarbosaurus</defName>
     <boss>DMS_Boss_Tarbosaurus</boss>
+    <leaderDescription>The {LEADERKIND_label} is a fear that has existed since the beginning of the Next Generation War. Soldiers who have fought against it have called these monsters "walking helicopter gunships". Be aware of their powerful legs, capable of multiple leaps to crush distant shooters, shotgun and machinegun turrets providing suppressive fire.\n\nMost importantly, keep an eye on those super-heavy weaponry they mount; it's not something you'd find in a Western tale.</leaderDescription>
     <waves>
       <li> <!-- 0 -->
         <bossCount>1</bossCount>
@@ -288,7 +289,6 @@
         </bossApparel>
       </li>
     </waves>
-    <leaderDescription>This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral</leaderDescription>
     <rewardDef>ComponentFireControl</rewardDef>
   </BossgroupDef>
 

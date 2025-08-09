@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN:
+    <li>bossDefeatedLetterLabel->[escortees0_label] defeated</li>
+    <li>bossDefeatedStudyChipLetterText->[defeated][study][manufacture]</li>
+    <li>bossDefeatedLetterText->[defeated][manufacture]</li>
+    <li>defeated->The wandering [escortees0_label] has been defeated and has dropped a [reward_label]!</li>
+    <li>manufacture->\n\nIf it wasn't get destroyed during the neutralization process, you should be able to find that [reward_label] among the wreckage.</li>
+    <li>study->\n\nYou can unlock subsequent technologies by studying [reward_label].</li>
+  -->
+
+  <DMS_Boss.questContentRules.rulesStrings>
+    <li>bossDefeatedLetterLabel->[escortees0_label]被击败︰[reward_label]</li>
+    <li>bossDefeatedStudyChipLetterText->[defeated][study][manufacture]</li>
+    <li>bossDefeatedLetterText->[defeated][manufacture]</li>
+    <li>defeated->游荡的[escortees0_label]已被击败并掉落了[reward_label]!</li>
+    <li>manufacture->\n\n如果没有在战斗中被摧毁的话，你应该能够在残骸中找到[reward_label]并将其用于一些高级技术的实践。</li>
+    <li>study->\n\n你能够透过分析研究[reward_label]解锁更先进的科技研究。</li>
+  </DMS_Boss.questContentRules.rulesStrings>
+
+  <DMS_Boss.questDescriptionRules.rulesStrings>
+    <li>questDescription->头目群</li>
+  </DMS_Boss.questDescriptionRules.rulesStrings>
+  
+  <DMS_Boss.questNameRules.rulesStrings>
+    <li>questName->头目群</li>
+  </DMS_Boss.questNameRules.rulesStrings>
+  
+  <!-- EN: Wandering legacies approaching. -->
+  <DMS_Boss.root.AlertBossgroupIncoming>[escortees0_label]正在接近</DMS_Boss.root.AlertBossgroupIncoming>
+  <!-- EN: unmanned units of Automatroids are following established protocols, attracted by the signal you sent and approaching. -->
+  <DMS_Boss.root.AlertBossgroupIncomingDesc>一支无人指挥的余械部队正在被你所广播的信号所吸引并遵循着既定协议接近。为首的是一架[escortees0_label]。这些机兵的武装完善且具有一定规模，战斗烈度将非同寻常。\n\n要注意的是它们在指挥链上仍然是殖民舰队的友军，因此原则上殖民舰队将不会为这场战斗提供任何的直接援助。</DMS_Boss.root.AlertBossgroupIncomingDesc>
+  <!-- EN: wandering legacies have arrived！ -->
+  <DMS_Boss.root.LetterBossgroupArrived>[escortees0_label]已经抵达。这些残破的兵器是曾经[escortees0_faction_name]，而如今它们的任务该结束了。\n\n {LEADERDESC}\n\n这支余械部队由以下机兵所组成\n{WAVEDESC}</DMS_Boss.root.LetterBossgroupArrived>
+  <!-- EN: Your signal has been sent out, and the attracted Automatroids will arriving in no time. Prepare to engage. -->
+  <DMS_Boss.root.LetterBossgroupSummoned>你的讯号已发出，受到威胁讯号的[escortees0_label]与伴随的余械机兵们随时都可能抵达。准备交战。</DMS_Boss.root.LetterBossgroupSummoned>
+  <!-- EN: Wandering legacies -->
+  <DMS_Boss.root.LetterLabelBossgroupArrived>游荡的[escortees0_label]</DMS_Boss.root.LetterLabelBossgroupArrived>
+  <!-- EN: The wandering legacies has been attracted -->
+  <DMS_Boss.root.LetterLabelBossgroupSummoned>余械机兵被吸引</DMS_Boss.root.LetterLabelBossgroupSummoned>
+  
+</LanguageData>
