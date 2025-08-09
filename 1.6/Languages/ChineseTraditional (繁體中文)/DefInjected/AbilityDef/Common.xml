@@ -20,7 +20,7 @@
   
   <!-- EN: Fission Overload -->
   <DMS_NuclearOverload.label>臨界超載</DMS_NuclearOverload.label>
-  <!-- EN: In order to avoid catastrophic environmental pollution or capture by the enemy, the fission battery can be manually forced into a meltdown. \n\nA meltdown will cause all unreacted nuclear material to atomize instantl, causing a violent explosive reaction. -->
+  <!-- EN: In order to avoid catastrophic environmental pollution or capture by the enemy, the fission battery can be manually forced into a meltdown. \n\nA meltdown will cause all unreacted nuclear material to atomize instantly, causing a violent explosive reaction. -->
   <DMS_NuclearOverload.description>為避免機體重創後核電池洩漏導致的環境汙染，裂變電池能夠手動過載來在瞬間將核燃料反應，而外在表現來說就是核爆，這樣的爆炸足以將尚未反應的核物質連帶周圍的一切清理一空。</DMS_NuclearOverload.description>
   <!-- EN: Overloading the fission battery will create a devastating explosion and destroy this unit. \n\nAre you sure to do this? -->
   <DMS_NuclearOverload.confirmationDialogText>將裂變電池超載將產生一場規模十足的爆炸並導致該單位徹底損失。\n\n你確定要這麼做嗎?</DMS_NuclearOverload.confirmationDialogText>

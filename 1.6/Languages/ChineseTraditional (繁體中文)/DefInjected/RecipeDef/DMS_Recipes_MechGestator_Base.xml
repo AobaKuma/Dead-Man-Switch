@@ -1,9 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: resurrect light automatroid -->
+  <!-- EN: Resurrect Heavy Automatroid -->
+  <DMS_ResurrectHeavyMech.label>修復重型機兵</DMS_ResurrectHeavyMech.label>
+  <!-- EN: Resurrect a friendly automatroid from the heavyweight class. So long as the automatroid's body is not completely destroyed, it can be resurrected. -->
+  <DMS_ResurrectHeavyMech.description>修復嚴重受損的機兵。</DMS_ResurrectHeavyMech.description>
+  <!-- EN: Resurrecting mech. -->
+  <DMS_ResurrectHeavyMech.jobString>修復機械體中</DMS_ResurrectHeavyMech.jobString>
+  
+  <!-- EN: Resurrect Light Automatroid -->
   <DMS_ResurrectLightMech.label>修復輕型機兵</DMS_ResurrectLightMech.label>
-  <!-- EN: Resurrect a friendly automatroid of the medium weight class. So long as the automatroid's body is not completely destroyed, it can be resurrected. -->
+  <!-- EN: Resurrect a friendly Automatroid from the lightweight class. So long as the automatroid's body is not completely destroyed, it can be resurrected. -->
   <DMS_ResurrectLightMech.description>修復嚴重受損的機兵。</DMS_ResurrectLightMech.description>
   <!-- EN: Resurrecting mech. -->
   <DMS_ResurrectLightMech.jobString>修復機械體中</DMS_ResurrectLightMech.jobString>
@@ -14,13 +21,6 @@
   <DMS_ResurrectMediumMech.description>修復嚴重受損的機兵。</DMS_ResurrectMediumMech.description>
   <!-- EN: Resurrecting mech. -->
   <DMS_ResurrectMediumMech.jobString>修復機械體中</DMS_ResurrectMediumMech.jobString>
-
-  <!-- EN: Resurrect Heavy Automatroid -->
-  <DMS_ResurrectHeavyMech.label>修復重型機兵</DMS_ResurrectHeavyMech.label>
-  <!-- EN: Resurrect a friendly automatroid from the heavy weight class. So long as the automatroid's body is not completely destroyed, it can be resurrected. -->
-  <DMS_ResurrectHeavyMech.description>修復嚴重受損的機兵。</DMS_ResurrectHeavyMech.description>
-  <!-- EN: Resurrecting mech. -->
-  <DMS_ResurrectHeavyMech.jobString>修復機械體中</DMS_ResurrectHeavyMech.jobString>
   
   <!-- EN: Resurrect Ultraheavy Automatroid -->
   <DMS_ResurrectUltraheavyMech.label>修復超重型機兵</DMS_ResurrectUltraheavyMech.label>

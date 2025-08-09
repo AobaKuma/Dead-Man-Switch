@@ -25,7 +25,7 @@
   
   <!-- EN: Sergeant -->
   <DMS_Mech_Sergeant.label>軍士</DMS_Mech_Sergeant.label>
-  <!-- EN: As a relay command variant of the Soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. Sergeants extend a mechanitor's effective range, but due to the weight of its radar equipment it can only equip a light weapon for self defense. -->
+  <!-- EN: As a relay command variant of the Soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. Sergeants extend a mechanitor's effective range, but due to the weight of its radar equipment it can only equip a light weapon for self-defense. -->
   <DMS_Mech_Sergeant.description>作為士兵系列的中繼指揮改裝型，它擁有非常容易辨認的盤形全向雷達和收發天線。它可以作為機械體的指揮中繼，但由於其重量和火控系統的削減只能裝備輕武器用於自衛。</DMS_Mech_Sergeant.description>
   <!-- EN: head -->
   <DMS_Mech_Sergeant.tools.head.label>頭部</DMS_Mech_Sergeant.tools.head.label>
@@ -36,7 +36,7 @@
   
   <!-- EN: Soldat -->
   <DMS_Mech_Soldat.label>士兵</DMS_Mech_Soldat.label>
-  <!-- EN: A bipedal humanoid robot built in the image of other pre-existing mechanoids. Soldats can be equipped with weapons rated for human use.\n\nThe Soldat has to carry a battery backpack which makes it unable to fight like other mechs without cover. -->
+  <!-- EN: A bipedal humanoid robot built in the image of other pre-existing mechanoids. Soldat's can be equipped with weapons rated for human use.\n\nThe Soldat has to carry a battery backpack which makes it unable to fight like other mechs without cover. -->
   <DMS_Mech_Soldat.description>古老的人形機兵型號，能夠追溯至人類開展殖民時代前的內戰時期，用於在開闊平原戰場上協同裝甲集團推進戰線與清理地下工事。出於其設計理念與戰術應用士兵型的生產與維護成本都相當的低廉，但也只能操作較為簡單的武器。\n\n雖然攜帶的電池背包具有較長的電池壽命，但也使其無法在沒有掩護的情況下進行戰鬥。</DMS_Mech_Soldat.description>
   <!-- EN: head -->
   <DMS_Mech_Soldat.tools.head.label>頭部</DMS_Mech_Soldat.tools.head.label>

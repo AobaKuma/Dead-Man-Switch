@@ -3,7 +3,7 @@
   
   <!-- EN: Xeno Limb Syndrome -->
   <DMS_BionicShock.label>異肢癥候群</DMS_BionicShock.label>
-  <!-- EN: A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for thes symptoms.. -->
+  <!-- EN: A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for these symptoms. -->
   <DMS_BionicShock.description>由於缺乏生物受體，患者會強烈排斥安裝的神經機械仿生義體，這是一種在前太空世界中常見的一種心理癥候群。\n\n這些癥狀的嚴重程度可分為五個等級。</DMS_BionicShock.description>
   <!-- EN: bionic syndrome has been cured -->
   <DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>異肢癥候群已被治愈</DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>
@@ -40,7 +40,7 @@
   
   <!-- EN: Fatal Trigger -->
   <DMS_MechlinkFatalTrigger.label>致命板機</DMS_MechlinkFatalTrigger.label>
-  <!-- EN: Due to the instability of this device, this safty protocol was created to automatically eject and destroy the disabled mechlink before it can cause catastrophic damage to the user's brain. -->
+  <!-- EN: Due to the instability of this device, this safety protocol was created to automatically eject and destroy the disabled mechlink before it can cause catastrophic damage to the user's brain. -->
   <DMS_MechlinkFatalTrigger.description>由於裝置的不穩定性，本安全協議將會在對用戶的大腦造成損害前自動彈出並燒毀失效的機絆。</DMS_MechlinkFatalTrigger.description>
   
   <!-- EN: Kill Switch -->
@@ -50,7 +50,7 @@
   
   <!-- EN: N.A.C.S. -->
   <DMS_MechlinkOverload.label>輔助控制系統</DMS_MechlinkOverload.label>
-  <!-- EN: Neural-Auxiliary Computation and Control System- this system's unique protocol allows the user to connect with existing mech and Automatroid tech. -->
+  <!-- EN: Neural-Auxiliary Computation and Control System, this system's unique protocol allows the user to connect with existing mech and Automatroid tech. -->
   <DMS_MechlinkOverload.description>神經輔助運算和控制系統，該系統具有特殊協議允許使用者不僅可以與現有的機械族技術連接，還可以與機兵技術連接。</DMS_MechlinkOverload.description>
   <!-- EN: low -->
   <DMS_MechlinkOverload.stages.low.label>負載:低</DMS_MechlinkOverload.stages.low.label>
@@ -67,14 +67,14 @@
   
   <!-- EN: Mechlink Rejection -->
   <DMS_MechlinkRejection.label>機控排異反應</DMS_MechlinkRejection.label>
-  <!-- EN: Due to limited technology and the lack of medical nanites, there are some side-effect after installing this mechlink. It will take some time before the implantee's nervous system adjusts to its presence. -->
+  <!-- EN: Due to limited technology and the lack of medical nanites, there are some side effect after installing this mechlink. It will take some time before the implantee's nervous system adjusts to its presence. -->
   <DMS_MechlinkRejection.description>由於有限的技術以及醫療環境，安裝這個機絆後會有一些副作用，在植入者的神經系統適應它的存在之前會持續一段時間。</DMS_MechlinkRejection.description>
   <!-- EN: fever -->
   <DMS_MechlinkRejection.stages.fever.label>免疫反應</DMS_MechlinkRejection.stages.fever.label>
   
   <!-- EN: Synthetic Rejection -->
   <DMS_SyntheticRejection.label>仿生排異反應</DMS_SyntheticRejection.label>
-  <!-- EN: Due to modifications of circulatory system, synthetic bionic enhancements can be rejected temporarily by the body. The effect does not last long, and the body's abiity to fight infections is reduced for its duration. -->
+  <!-- EN: Due to modifications of circulatory system, synthetic bionic enhancements can be rejected temporarily by the body. The effect does not last long, and the body's ability to fight infections is reduced for its duration. -->
   <DMS_SyntheticRejection.description>由於進入內循環系統，合成仿生有時會在體內產生排斥反應，這種排斥反應通常不會持續很長時間，但會明顯降低免疫力。</DMS_SyntheticRejection.description>
   <!-- EN: Bionic Rejection Syndrome has been cured. -->
   <DMS_SyntheticRejection.comps.HediffComp_RemoveIfOtherHediff.message>仿生排異反應已被治愈</DMS_SyntheticRejection.comps.HediffComp_RemoveIfOtherHediff.message>

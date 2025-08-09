@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN:
+    <li>bossDefeatedLetterLabel->[escortees0_label] defeated</li>
+    <li>bossDefeatedStudyChipLetterText->[defeated][study][manufacture]</li>
+    <li>bossDefeatedLetterText->[defeated][manufacture]</li>
+    <li>defeated->The wandering [escortees0_label] has been defeated and has dropped a [reward_label]!</li>
+    <li>manufacture->\n\nIf it wasn't get destroyed during the neutralization process, you should be able to find that [reward_label] among the wreckage.</li>
+    <li>study->\n\nYou can unlock subsequent technologies by studying [reward_label].</li>
+  -->
+  <DMS_Boss.questContentRules.rulesStrings>
+    <li>bossDefeatedLetterLabel->[escortees0_label]被擊敗</li>
+    <li>bossDefeatedStudyChipLetterText->[defeated][study][manufacture]</li>
+    <li>bossDefeatedLetterText->[defeated][manufacture]</li>
+    <li>defeated->遊蕩的[escortees0_label]被擊敗並在殘骸中留下了[reward_label]!</li>
+    <li>manufacture->\n\n如果沒有在戰鬥中被摧毀的話，你應該能夠在殘骸中找到[reward_label]。</li>
+    <li>study->\n\n你能夠透過分析[reward_label]推進一些關鍵科技的研究。</li>
+  </DMS_Boss.questContentRules.rulesStrings>
+
+  <DMS_Boss.questDescriptionRules.rulesStrings>
+    <li>questDescription->bossgroup</li>
+  </DMS_Boss.questDescriptionRules.rulesStrings>
+  
+  <DMS_Boss.questNameRules.rulesStrings>
+    <li>questName->bossgroup</li>
+  </DMS_Boss.questNameRules.rulesStrings>
+  
+  <!-- EN: Wandering legacies approaching. -->
+  <DMS_Boss.root.AlertBossgroupIncoming>[BOSSLABEL]正在接近</DMS_Boss.root.AlertBossgroupIncoming>
+  <!-- EN: unmanned units of Automatroids are following established protocols, attracted by the signal you sent and approaching. -->
+  <DMS_Boss.root.AlertBossgroupIncomingDesc>一支無人指揮的餘械機兵部隊正在被你所廣播的信號所吸引並遵循著既定協議接近。為首的是一架[BOSSLABEL]</DMS_Boss.root.AlertBossgroupIncomingDesc>
+  <!-- EN: wandering legacies have arrived！ -->
+  <DMS_Boss.root.LetterBossgroupArrived>[BOSSLABEL]已經抵達</DMS_Boss.root.LetterBossgroupArrived>
+  <!-- EN: Your signal has been sent out, and the attracted Automatroids will arriving in no time. Prepare to engage. -->
+  <DMS_Boss.root.LetterBossgroupSummoned>你的訊號已發出，受到威脅訊號的[BOSSLABEL]與伴隨的餘械機兵們隨時都可能抵達。準備交戰。</DMS_Boss.root.LetterBossgroupSummoned>
+  <!-- EN: Wandering legacies -->
+  <DMS_Boss.root.LetterLabelBossgroupArrived>遊蕩的[BOSSLABEL]</DMS_Boss.root.LetterLabelBossgroupArrived>
+  <!-- EN: The wandering legacies has been attracted -->
+  <DMS_Boss.root.LetterLabelBossgroupSummoned>一支遊蕩的餘械機兵部隊被你所廣播的信號所吸引</DMS_Boss.root.LetterLabelBossgroupSummoned>
+  
+</LanguageData>

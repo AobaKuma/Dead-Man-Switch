@@ -6,7 +6,7 @@
   
   <!-- EN: Mech Autocannon -->
   <DMS_Autocannon.label>機兵輕機炮</DMS_Autocannon.label>
-  <!-- EN: An autocannon designed for mech soldier or mounting on to an infantry support platform.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless its mounted to a support platform. -->
+  <!-- EN: An autocannon designed for mech soldier or mounting on to an infantry support platform.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform. -->
   <DMS_Autocannon.description>適用於機兵與步兵支援平臺的輕型機炮。\n\n這種武器是專門為機兵設計的，因為其重量因此所以只有特定的機兵才能操作。</DMS_Autocannon.description>
   <!-- EN: stock -->
   <DMS_Autocannon.tools.stock.label>槍托</DMS_Autocannon.tools.stock.label>
@@ -49,7 +49,7 @@
   
   <!-- EN: MPQFS-85M "Dawnblade" -->
   <DMS_Gun_DawnbladeM.label>黎明之刃</DMS_Gun_DawnbladeM.label>
-  <!-- EN: A multi-role quick-firing autocannon modified for mech use. The weapon is only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.\n\nThis weapon is designed exclusively for use on super-heavy units or to be installed as an emplacement. -->
+  <!-- EN: A multirole quick-firing autocannon modified for mech use. The weapon is only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.\n\nThis weapon is designed exclusively for use on super-heavy units or to be installed as an emplacement. -->
   <DMS_Gun_DawnbladeM.description>搭載於重型機兵與龍騎兵平臺的輕量化速射艦炮系統，只有那些重型機兵能夠負載並使用這種毀滅性的陸基火力。\n\n這種武器是專門為機兵設計的，因為其重量因此所以只有特定的機兵才能操作。</DMS_Gun_DawnbladeM.description>
   <!-- EN: stock -->
   <DMS_Gun_DawnbladeM.tools.stock.label>槍托</DMS_Gun_DawnbladeM.tools.stock.label>
@@ -83,7 +83,7 @@
   
   <!-- EN: Mech Anti-Tank Rifle -->
   <DMS_Gun_DragoonRifle.label>龍騎兵重型步槍</DMS_Gun_DragoonRifle.label>
-  <!-- EN: A lightweight mass producable anti-tank rifle for heavy mechs and dragoons.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
+  <!-- EN: A lightweight mass producible anti-tank rifle for heavy mechs and dragoons.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
   <DMS_Gun_DragoonRifle.description>一種用於重型機兵與機動龍騎兵的輕量級反戰車炮，使用彈夾供彈來提供持續的反裝甲火力輸出。\n\n這種武器是專門為機兵設計的，因為其重量因此所以只有特定的機兵才能操作。</DMS_Gun_DragoonRifle.description>
   <!-- EN: stock -->
   <DMS_Gun_DragoonRifle.tools.stock.label>槍托</DMS_Gun_DragoonRifle.tools.stock.label>
@@ -128,7 +128,7 @@
   
   <!-- EN: Mech HMG -->
   <DMS_HeavyMachineGun.label>機兵重機槍</DMS_HeavyMachineGun.label>
-  <!-- EN: A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless its mounted to a support platform. -->
+  <!-- EN: A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform. -->
   <DMS_HeavyMachineGun.description>一挺發射大口徑機槍彈的重型機槍，普遍用於重型機兵或步兵支援平臺。\n\n這種武器是專門為機兵設計的，因為其重量因此所以只有特定的機兵才能操作。</DMS_HeavyMachineGun.description>
   <!-- EN: stock -->
   <DMS_HeavyMachineGun.tools.stock.label>槍托</DMS_HeavyMachineGun.tools.stock.label>

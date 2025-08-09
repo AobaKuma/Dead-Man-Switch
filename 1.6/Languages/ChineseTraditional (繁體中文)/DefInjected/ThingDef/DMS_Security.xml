@@ -22,7 +22,7 @@
   
   <!-- EN: Gatekeeper -->
   <DMS_Gun_GateKeeper.label>守門人</DMS_Gun_GateKeeper.label>
-  <!-- EN: A large-caliber multi-barreled autocannon, also known as the GAU-8 "Avenger". Its an ancient practical design with an extremely high rate of fire and a devastating effect on anything unfortunate enough to stand infront of it. -->
+  <!-- EN: A large-caliber multi-barreled autocannon, also known as the GAU-8 "Avenger". It's an ancient practical design with an extremely high rate of fire and a devastating effect on anything unfortunate enough to stand infront of it. -->
   <DMS_Gun_GateKeeper.description>一種重型加特林機炮，具有極高的射速與毀滅性的壓制能力而被殖民艦隊作為太空船與水面艦艇的迫近防禦系統，也經常隨著殖民活動而安裝在殖民地作為防禦系統的一部分。</DMS_Gun_GateKeeper.description>
   <!-- EN: Gatekeeper -->
   <DMS_Gun_GateKeeper.verbs.Verb_Shoot.label>守門人</DMS_Gun_GateKeeper.verbs.Verb_Shoot.label>
@@ -59,7 +59,7 @@
   
   <!-- EN: Dawnblade -->
   <DMS_Turret_Dawnblade.label>黎明之刃</DMS_Turret_Dawnblade.label>
-  <!-- EN: MPQFS-85 "Dawnblade" is an onboard multi-role quick-firing cannon system. It uses drum magazines and an automatic revolver loader to permit a high rate of sustained fire.\n\nThe armor plating has been removed to allow emplacement to be redeployed as needed for heavy fire support. -->
+  <!-- EN: MPQFS-85 "Dawnblade" is an onboard multirole quick-firing cannon system. It uses drum magazines and an automatic revolver loader to permit a high rate of sustained fire.\n\nThe armor plating has been removed to allow emplacement to be redeployed as needed for heavy fire support. -->
   <DMS_Turret_Dawnblade.description>一種殖民艦隊廣泛裝備的多用途速射炮系統，使用彈鼓與轉輪裝彈機來實現對中小型高速目標的攔截與打擊。為殖民地防禦提供猛烈的大口徑直射火力支援。</DMS_Turret_Dawnblade.description>
   <!-- EN: Barrel durability -->
   <DMS_Turret_Dawnblade.comps.CompRefuelable.fuelGizmoLabel>炮管耐久度</DMS_Turret_Dawnblade.comps.CompRefuelable.fuelGizmoLabel>
@@ -103,7 +103,7 @@
   
   <!-- EN: Sentry turret -->
   <DMS_Turret_Sentry.label>哨戒機槍</DMS_Turret_Sentry.label>
-  <!-- EN: 一種快速部屬的一次性遙控砲塔，展開後可以持續使用12小時左右。並在能量用光之後自動關機。這類裝備通常被部屬在巷戰環境中來伏擊進入街道的敵人來阻滯對方的突襲。 -->
+  <!-- EN: A quick-deployed, disposable remote-controlled turret that can be used continuously for about 12 hours after being deployed. It will automatically shut down after the energy is used up. These type of equipments are usually deployed in urban combat environments to ambush enemies. -->
   <DMS_Turret_Sentry.description>一種快速部屬的一次性遙控砲塔，展開後可以持續使用12小時左右。並在能量用光之後自動關機。這類裝備通常被部屬在巷戰環境中來伏擊進入街道的敵人來阻滯對方的突襲。</DMS_Turret_Sentry.description>
   <!-- EN: Battery power -->
   <DMS_Turret_Sentry.comps.CompMechPowerCell.labelOverride>電池</DMS_Turret_Sentry.comps.CompMechPowerCell.labelOverride>

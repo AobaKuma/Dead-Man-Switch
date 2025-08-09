@@ -20,7 +20,7 @@
   
   <!-- EN: Ceramic Plates -->
   <DMS_CeramicsPlating.label>拋棄式陶瓷裝甲</DMS_CeramicsPlating.label>
-  <!-- EN: A set of ceramic plates designed to be mounted on to a mech's external shell to provide additional protection. Once damaged, the armor plating must be completely replaced.\n\nThe maximum amount of plating able to be installed on a mech can depends on its body size. -->
+  <!-- EN: A set of ceramic plates designed to be mounted on to a mech's external shell to provide additional protection. Once damaged, the armor plating must be completely replaced.\n\nThe maximum amount of plating able to be installed on a mech can depend on its body size. -->
   <DMS_CeramicsPlating.description>一組拋棄式陶瓷裝甲板與安裝用的支架和工具組等，陶瓷裝甲板可以安裝在機兵的機體上以提供額外的防護，但一經損壞就只能更換新的。 \n\n最大可安裝數量取決於安裝機體的體型。</DMS_CeramicsPlating.description>
   <!-- EN: Use {0_label} -->
   <DMS_CeramicsPlating.comps.CompUsable.useLabel>安裝{0}</DMS_CeramicsPlating.comps.CompUsable.useLabel>
@@ -34,7 +34,7 @@
   
   <!-- EN: Reinforced Frame -->
   <DMS_ReinforcedFrame.label>強化骨架</DMS_ReinforcedFrame.label>
-  <!-- EN: A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy duty replacement parts will significantly increase the weight of the mech and affect its speed. -->
+  <!-- EN: A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy-duty replacement parts will significantly increase the weight of the mech and affect its speed. -->
   <DMS_ReinforcedFrame.description>一系列使用鎢鋼合金來替換機兵骨架中較易磨損部位的強化零組件，可以有效提高在高強度戰鬥時的耐用性並且能在火力壓制下也不受干擾的行動。但作為代價會顯著提高機兵的重量並影響速度。</DMS_ReinforcedFrame.description>
   <!-- EN: Use {0_label} -->
   <DMS_ReinforcedFrame.comps.CompUsable.useLabel>安裝{0}</DMS_ReinforcedFrame.comps.CompUsable.useLabel>

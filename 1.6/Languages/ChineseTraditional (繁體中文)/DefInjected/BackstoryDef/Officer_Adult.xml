@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: [PAWN_nameDef] was a weapons controller at a Command and Control Facility. [PAWN_nameDef] was temporarily laid off due to a lack of maintenance parts for the control system and had to cross-train as a weapons system operator for the task force's autonomous robots at the weapons control station to mitigate friendly fire inicidents. -->
+  <!-- EN: [PAWN_nameDef] was a weapons controller at a Command and Control Facility. [PAWN_nameDef] was temporarily laid off due to a lack of maintenance parts for the control system and had to cross-train as a weapons system operator for the task force's autonomous robots at the weapons control station to mitigate friendly fire incidents. -->
   <DMS_Officer01.description>[PAWN_nameDef]曾是機動指揮中心的武器管製員，在因為控制系統缺乏維修零件而被暫時遣散前[PAWN_pronoun]的工作就是在武器管製站對特遣小組的超重型機兵進行武器系統管製以避免發生無意義的殺戮...順便處理一些機械問題。</DMS_Officer01.description>
   <!-- EN: Weapon Systems Officer -->
   <DMS_Officer01.title>兵器管製官</DMS_Officer01.title>
@@ -22,7 +22,7 @@
   <!-- EN: Doctor -->
   <DMS_Officer03.titleShort>醫官</DMS_Officer03.titleShort>
   
-  <!-- EN: [PAWN_nameDef] worked for the Astromechnical Design Department of the Colonial Forces and made adjustments and optimizations to the Automatroid fleet for the local colony. -->
+  <!-- EN: [PAWN_nameDef] worked for the Astro-mechanical Design Department of the Colonial Forces and made adjustments and optimizations to the Automatroid fleet for the local colony. -->
   <DMS_Officer04.description>[PAWN_nameDef]為殖民艦隊的技術部門工作，並為現有的機兵針對殖民星球的當地環境進行技術調整與優化。若不是實地考察需要或許[PAWN_pronoun]也不會親自來到地面上。</DMS_Officer04.description>
   <!-- EN: Automatroid engineer -->
   <DMS_Officer04.title>機兵工程師</DMS_Officer04.title>
