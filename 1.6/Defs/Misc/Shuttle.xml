@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <TransportShipDef>
-        <defName>DMS_Ship_TransportShuttle</defName>
-        <label>orbital transport lifter</label>
-        <shipThing>DMS_Shuttle</shipThing>
+    <TransportShipDef Name="DMS_transportBase" Abstract="True">
         <arrivingSkyfaller>DMS_Ship_TransportShuttleIncoming</arrivingSkyfaller>
         <leavingSkyfaller>DMS_Ship_TransportShuttleLeaving</leavingSkyfaller>
+    </TransportShipDef>
+	
+	<TransportShipDef ParentName="DMS_transportBase">
+        <defName>DMS_Ship_TransportShuttle</defName>
+        <label>heavy transport lifter</label>
+        <shipThing>DMS_Shuttle</shipThing>
         <worldObject>DMS_TravelingTransportShuttle</worldObject>
-        <maxLaunchDistance>85</maxLaunchDistance>
+		<maxLaunchDistance>85</maxLaunchDistance>
+    </TransportShipDef>
+	
+	<TransportShipDef ParentName="DMS_transportBase" MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>DMS_Ship_TransportShuttle_Player</defName>
+        <label>heavy transport lifter</label>
+        <shipThing>DMS_Shuttle_Player</shipThing>
+		<arrivingSkyfaller>DMS_PlayerShip_TransportShuttleIncoming</arrivingSkyfaller>
+        <leavingSkyfaller>DMS_PlayerShip_TransportShuttleLeaving</leavingSkyfaller>
+        <worldObject>DMS_TravelingTransportShuttle</worldObject>
+        <playerShuttle>true</playerShuttle>
     </TransportShipDef>
 
-    <ThingDef Name="DMS_ShuttleBase" ParentName="BuildingBase">
-        <defName>DMS_Shuttle</defName>
+    <ThingDef Name="DMS_ShuttleNPCBase" ParentName="BuildingBase" Abstract="True">
         <label>crew transport shuttle</label>
         <description>A light transport shuttle designed for transit between surface and orbit, it can lift up to 2 tons of cargo in flight.</description>
         <altitudeLayer>Building</altitudeLayer>
@@ -23,6 +35,28 @@
         <size>(5,3)</size>
         <drawHighlight>true</drawHighlight>
         <highlightColor>(0.56, 0.62, 0.9)</highlightColor>
+        <statBases>
+            <MaxHitPoints>1500</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <tickerType>Normal</tickerType>
+        <canOverlapZones>true</canOverlapZones>
+        <killedLeavings>
+			<!-- empty for now -->
+        </killedLeavings>
+        <rotatable>false</rotatable>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+        <drawerType>RealtimeOnly</drawerType>
+        <repairEffect>ConstructMetal</repairEffect>
+        <forceDebugSpawnable>true</forceDebugSpawnable>
+    </ThingDef>
+	
+	<ThingDef ParentName="DMS_ShuttleNPCBase">
+        <defName>DMS_Shuttle</defName>
+		<label>crew transport shuttle</label>
+        <description>A light transport shuttle designed for transit between surface and orbit, it can lift up to 2 tons of cargo in flight.</description>
         <graphicData>
             <texPath>Things/Skyfaller/HeavyTransportLifter</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -33,12 +67,6 @@
                 <offset>(0, 0, -0.1)</offset>
             </shadowData>
         </graphicData>
-        <statBases>
-            <MaxHitPoints>1500</MaxHitPoints>
-            <Flammability>0.5</Flammability>
-        </statBases>
-        <tickerType>Normal</tickerType>
-        <canOverlapZones>true</canOverlapZones>
         <killedLeavings>
             <Plasteel>75</Plasteel>
             <Uranium>50</Uranium>
@@ -46,14 +74,7 @@
             <ComponentIndustrial>4</ComponentIndustrial>
             <ShuttleEngine MayRequire="Ludeon.RimWorld.Odyssey">1</ShuttleEngine>
         </killedLeavings>
-        <rotatable>false</rotatable>
-        <selectable>true</selectable>
-        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
-        <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
-        <drawerType>RealtimeOnly</drawerType>
-        <repairEffect>ConstructMetal</repairEffect>
-        <forceDebugSpawnable>true</forceDebugSpawnable>
+		<selectable>true</selectable>
         <uiIconScale>1.3</uiIconScale>
         <building>
             <claimable>false</claimable>
@@ -77,9 +98,115 @@
             </li>
         </comps>
     </ThingDef>
-
-    <ThingDef Name="DMS_ShuttleSkyfallerBase" ParentName="SkyfallerBase" Abstract="True">
-        <size>(5,3)</size>
+		
+	<ThingDef ParentName="DMS_ShuttleNPCBase" MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>DMS_Shuttle_Player</defName>
+        <label>crew transport shuttle</label>
+        <description>A light transport shuttle designed for transit between surface and orbit, it can lift up to 2 tons of cargo in flight.</description>
+		<thingClass>Building_PassengerShuttle</thingClass>
+		<size>(3,5)</size>
+        <graphicData>
+            <texPath>Things/Skyfaller/Player/HeavyTransportLifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+            <drawSize>(5,7)</drawSize>
+            <color>(255,255,255)</color>
+            <shadowData>
+                <volume>(4.1, 1.0, 1.8)</volume>
+                <offset>(0, 0, -0.1)</offset>
+            </shadowData>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>1500</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <tickerType>Normal</tickerType>
+		<designationCategory>DMS_Category</designationCategory>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<costList>
+		  <Steel>250</Steel>
+		  <Tungsteel>300</Tungsteel>
+		  <Plasfiber>150</Plasfiber>
+		  <ComponentStamped>6</ComponentStamped>
+		  <ShuttleEngine>2</ShuttleEngine>
+		</costList>
+        <canOverlapZones>true</canOverlapZones>
+        <killedLeavings>
+            <Tungsteel>75</Tungsteel>
+            <Uranium>50</Uranium>
+            <ChunkSlagSteel>4</ChunkSlagSteel>
+            <ComponentIndustrial>4</ComponentIndustrial>
+            <!--<ShuttleEngine MayRequire="Ludeon.RimWorld.Odyssey">1</ShuttleEngine>-->
+        </killedLeavings>
+        <rotatable>true</rotatable>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0, 0, -3)</interactionCellOffset>
+		<defaultPlacingRot>East</defaultPlacingRot>
+        <selectable>true</selectable>
+        <uiIconScale>1</uiIconScale>
+        <building>
+            <claimable>false</claimable>
+            <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+			<paintable>true</paintable>
+			<isInert>true</isInert>
+        </building>
+        <inspectorTabs>
+            <li>ITab_ContentsTransporter</li>
+        </inspectorTabs>
+		<researchPrerequisites>
+		  <li>Shuttles</li>
+		</researchPrerequisites>
+        <comps>
+            <li Class="CompProperties_Shuttle">
+				<shipDef>DMS_Ship_TransportShuttle_Player</shipDef>
+			</li>
+			<li Class="CompProperties_Launchable">
+				<fuelPerTile>12</fuelPerTile>
+				<minFuelCost>50</minFuelCost>
+				<skyfallerLeaving>DMS_PlayerShip_TransportShuttleLeaving</skyfallerLeaving>
+				<worldObjectDef>DMS_TravelingTransportShuttle</worldObjectDef>
+				<cooldownTicks>2500</cooldownTicks> <!-- 1.5 hours -->
+				<fixedLaunchDistanceMax>62</fixedLaunchDistanceMax>
+				<cooldownEndedMessage>{0} is ready to launch again.</cooldownEndedMessage>
+			</li>
+            <li Class="CompProperties_Transporter">
+                <massCapacity>2000</massCapacity>
+                <max1PerGroup>true</max1PerGroup>
+                <canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+                <!-- <showOverallStats>false</showOverallStats>-->
+                <pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound>
+                <pawnExitSound>Shuttle_PawnExit</pawnExitSound>
+				<showMassInInspectString>true</showMassInInspectString>
+            </li>
+			 <li Class="CompProperties_Refuelable">
+				<fuelCapacity>800</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>800</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+				  <thingDefs>
+					<li>Chemfuel</li>
+				  </thingDefs>
+				</fuelFilter>
+				<fuelLabel>Chemfuel</fuelLabel>
+				<fuelGizmoLabel>Chemfuel</fuelGizmoLabel>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<canEjectFuel>true</canEjectFuel>
+			</li>
+            <li Class="CompProperties_AmbientSound">
+                <sound>ShuttleIdle_Ambience</sound>
+            </li>
+        </comps>
+		<placeWorkers>
+		  <li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<uiOrder>2600</uiOrder>
+    </ThingDef>
+	
+	<ThingDef Name="DMS_ShuttleSkyfallerBase" ParentName="SkyfallerBase" Abstract="True">
         <graphicData>
             <texPath>Things/Skyfaller/HeavyTransportLifter</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -93,9 +220,10 @@
             <motesPerCell>1</motesPerCell>
         </skyfaller>
     </ThingDef>
-    <ThingDef ParentName="DMS_ShuttleSkyfallerBase">
+	
+	<ThingDef ParentName="DMS_ShuttleSkyfallerBase">
         <defName>DMS_Ship_TransportShuttleIncoming</defName>
-        <label>orbital transport lifter (incoming)</label>
+        <label>heavy transport lifter (incoming)</label>
         <thingClass>ShuttleIncoming</thingClass>
         <skyfaller>
             <anticipationSound>Shuttle_Landing</anticipationSound>
@@ -131,7 +259,7 @@
     </ThingDef>
     <ThingDef ParentName="DMS_ShuttleSkyfallerBase">
         <defName>DMS_Ship_TransportShuttleLeaving</defName>
-        <label>orbital transport lifter (leaving)</label>
+        <label>heavy transport lifter (leaving)</label>
         <thingClass>FlyShipLeaving</thingClass>
         <skyfaller>
             <reversed>true</reversed>
@@ -169,10 +297,92 @@
             </speedCurve>
         </skyfaller>
     </ThingDef>
+	
+	<ThingDef ParentName="DMS_ShuttleSkyfallerBase">
+		<defName>DMS_PlayerShip_TransportShuttleIncoming</defName>
+		<label>heavy transport lifter (incoming)</label>
+		<thingClass>PassengerShuttleIncoming</thingClass>
+		<graphicData>
+			<texPath>Things/Skyfaller/Player/HeavyTransportLifter</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(5,7)</drawSize>
+		</graphicData>
+		<size>(3,5)</size>
+		<skyfaller>
+		  <anticipationSound>Shuttle_Landing</anticipationSound>
+		  <anticipationSoundTicks>250</anticipationSoundTicks>
+		  <ticksToImpactRange>200~250</ticksToImpactRange>
+		  <shadowSize>(3.5,5.5)</shadowSize>
+		  <rotationCurve>
+			<points>
+			  <li>(0,30)</li>
+			  <li>(0.5,5)</li>
+			  <li>(0.9,-5)</li>
+			  <li>(0.95,0)</li>
+			</points>
+		  </rotationCurve>
+		  <zPositionCurve>
+			<points>
+			  <li>(0.95,2.5)</li>
+			  <li>(1,0)</li>
+			</points>
+		  </zPositionCurve>
+		  <speedCurve>
+			<points>
+			  <li>(0.6,0.6)</li>
+			  <li>(0.95,0.94)</li>
+			</points>
+		  </speedCurve>
+		</skyfaller>
+	</ThingDef>
 
-    <WorldObjectDef>
-        <defName>DMS_TravelingTransportShuttle</defName>
-        <label>orbital transport lifter</label>
+	<ThingDef ParentName="DMS_ShuttleSkyfallerBase">
+		<defName>DMS_PlayerShip_TransportShuttleLeaving</defName>
+        <label>heavy transport lifter (leaving)</label>
+		<thingClass>PassengerShuttleLeaving</thingClass>
+		<rotatable>true</rotatable>
+		<graphicData>
+            <texPath>Things/Skyfaller/Player/HeavyTransportLifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>(5,7)</drawSize>
+        </graphicData>
+		<size>(3,5)</size>
+		<skyfaller>
+		<reversed>true</reversed>
+		  <anticipationSound>Shuttle_Leaving</anticipationSound>
+		  <anticipationSoundTicks>-10</anticipationSoundTicks>
+		  <ticksToImpactRange>-40~-15</ticksToImpactRange>
+		  <moteSpawnTime>0.05</moteSpawnTime>
+		  <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
+		  <shadowSize>(3.5,5.5)</shadowSize>
+		  <motesPerCell>1</motesPerCell>
+		  <rotationCurve>
+                <points>
+                    <li>(0,0)</li>
+                    <li>(0.15,10)</li>
+                    <li>(0.5,-5)</li>
+                </points>
+            </rotationCurve>
+            <zPositionCurve>
+                <points>
+                    <li>(0,0)</li>
+                    <li>(0.08,2)</li>
+                </points>
+            </zPositionCurve>
+            <speedCurve>
+                <points>
+                    <li>(0,0.2)</li>
+                    <li>(0.6,1.0)</li>
+                </points>
+            </speedCurve>
+		</skyfaller>
+	</ThingDef>
+		
+	<WorldObjectDef>
+	    <defName>DMS_TravelingTransportShuttle</defName>
+        <label>heavy transport lifter</label>
         <description>A shuttle in flight.</description>
         <worldObjectClass>TravellingTransporters</worldObjectClass>
         <texture>World/WorldObjects/Caravan</texture>
@@ -187,4 +397,5 @@
         <rotateGraphicWhenTraveling>true</rotateGraphicWhenTraveling>
         <validLaunchTarget>false</validLaunchTarget>
     </WorldObjectDef>
+
 </Defs>
