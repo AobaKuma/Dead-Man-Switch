@@ -4,7 +4,7 @@
   <!-- EN: Convert stamponent -->
   <DMS_Convert_ComponentIndustrial.label>加工零件</DMS_Convert_ComponentIndustrial.label>
   <!-- EN: Convert a stamponent into a component. -->
-  <DMS_Convert_ComponentIndustrial.description>将冲压机件加工为更加适用於殖民地建设的规格。</DMS_Convert_ComponentIndustrial.description>
+  <DMS_Convert_ComponentIndustrial.description>将冲压机件加工为更加适用于殖民地建设的规格。</DMS_Convert_ComponentIndustrial.description>
   <!-- EN: Making component. -->
   <DMS_Convert_ComponentIndustrial.jobString>加工零件中</DMS_Convert_ComponentIndustrial.jobString>
   
@@ -37,9 +37,9 @@
   <DMS_Make_CeramicsMass.jobString>制造防弹陶瓷中</DMS_Make_CeramicsMass.jobString>
   
   <!-- EN: Make Component -->
-  <DMS_Make_ComponentIndustrial.label>制造零件</DMS_Make_ComponentIndustrial.label>
+  <DMS_Make_ComponentIndustrial.label>制造零件x4</DMS_Make_ComponentIndustrial.label>
   <!-- EN: Make a component using the machinery printer which takes a longer time and more resources. -->
-  <DMS_Make_ComponentIndustrial.description>用机器印表机制造零件，需要很长的时间和资源。</DMS_Make_ComponentIndustrial.description>
+  <DMS_Make_ComponentIndustrial.description>用机械冲压机制造零件，需要很长的时间和资源。</DMS_Make_ComponentIndustrial.description>
   <!-- EN: Making component. -->
   <DMS_Make_ComponentIndustrial.jobString>制造零件中</DMS_Make_ComponentIndustrial.jobString>
   

@@ -4,7 +4,7 @@
     <defName>DMS_MachineCabinet</defName>
     <label>machine cabinet</label>
     <!-- 一個機械櫃，包含了許多複雜的儀器用於提高自動工作站的產品質量，比如輔助校準位置的激光定位器與溫度檢測儀等。這些儀器也可以提升工作效率，每個生產建築最多可以連結8個機械櫃。 -->
-    <description>A cabinet that contains many complex mechanical devices to improve product quality, such as laser positioners and temperature detectors to assist with calibration. These instruments also improve work efficiency. Each production building can connect up to 8 machine cabinets.</description>
+    <description>A cabinet that contains many complex mechanical devices to improve product quality, such as laser positioners and temperature detectors to assist with calibration. These instruments also improve work efficiency.\n\nEach production building can connect up to 8 machine cabinets. when producing product that have quality, each cabinets provide 40% chance of increasing quality.</description>
     <graphicData>
       <texPath>Things/Building/MachineCabinet</texPath>
       <graphicClass>Graphic_Random</graphicClass>
@@ -50,15 +50,16 @@
       <li>BuildingsMisc</li>
     </thingCategories>
     <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>250</basePowerConsumption>
-      </li>
+      <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Facility">
         <statOffsets>
           <WorkTableWorkSpeedFactor>0.05</WorkTableWorkSpeedFactor>
         </statOffsets>
         <maxSimultaneous>8</maxSimultaneous>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
       </li>
     </comps>
     <placeWorkers>

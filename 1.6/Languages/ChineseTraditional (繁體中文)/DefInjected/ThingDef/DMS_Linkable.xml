@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Lab Furnace -->
+  <DMS_MachineCabinet.label>機械櫃</DMS_MachineCabinet.label>
+  <!-- EN: Experimental non-auto furnace, designed to meet the needs of transitional-phase equipment or certain compact bases. -->
+  <DMS_MachineCabinet.description>一個機械櫃，包含了許多複雜的儀器用於提高自動工作站的產品質量，比如輔助校準位置的激光定位器與溫度檢測儀等。這些儀器也可以提升工作效率。\n\n每個生產建築最多可以連結8個機械櫃。並且在製造具有品質的產物時每個連接的機械櫃都有40%機率提升一級品質。</DMS_MachineCabinet.description>
+
+</LanguageData>

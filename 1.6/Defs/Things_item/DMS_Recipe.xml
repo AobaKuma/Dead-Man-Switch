@@ -516,8 +516,8 @@
 
   <RecipeDef>
     <defName>DMS_Make_ComponentIndustrial</defName>
-    <label>Make Component</label>
-    <description>Make a component using the machinery printer which takes a longer time and more resources.</description>
+    <label>Make Component x4</label>
+    <description>Make components using machinery printer, which takes a longer time and more resources.</description>
     <jobString>Making component.</jobString>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
@@ -525,7 +525,7 @@
     <recipeUsers>
       <li>DMS_TableMachinePrinter</li>
     </recipeUsers>
-    <workAmount>15000</workAmount>
+    <workAmount>80000</workAmount>
     <skillRequirements>
       <Crafting>5</Crafting>
     </skillRequirements>
@@ -538,7 +538,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>20</count>
+        <count>75</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
@@ -547,14 +547,14 @@
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <ComponentIndustrial>1</ComponentIndustrial>
+      <ComponentIndustrial>4</ComponentIndustrial>
     </products>
   </RecipeDef>
 
   <RecipeDef>
     <defName>DMS_Convert_ComponentIndustrial</defName>
     <label>Convert stamponent</label>
-    <description>Convert a stamponent into a component.</description>
+    <description>Convert a stamponent into 4 components.</description>
     <jobString>Making component.</jobString>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
