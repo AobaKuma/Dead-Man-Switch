@@ -14,14 +14,14 @@
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeUsers>
       <li>DMS_ReactionChamber</li>
-	<li>DMS_LabReactor</li>
+      <li>DMS_LabReactor</li>
     </recipeUsers>
     <skillRequirements>
       <Crafting>3</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
     <researchPrerequisite>DMS_Plasfiber</researchPrerequisite>
-    <workAmount>3000</workAmount>
+    <workAmount>6000</workAmount>
     <ingredients>
       <li>
         <filter>
@@ -53,14 +53,14 @@
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeUsers>
       <li>DMS_ReactionChamber</li>
-	<li>DMS_LabReactor</li>
+      <li>DMS_LabReactor</li>
     </recipeUsers>
     <skillRequirements>
       <Crafting>5</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
     <researchPrerequisite>DMS_Plasfiber</researchPrerequisite>
-    <workAmount>12000</workAmount>
+    <workAmount>60000</workAmount>
     <ingredients>
       <li>
         <filter>
@@ -92,14 +92,14 @@
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeUsers>
       <li>DMS_ReactionChamber</li>
-	<li>DMS_LabReactor</li>
+      <li>DMS_LabReactor</li>
     </recipeUsers>
     <skillRequirements>
       <Crafting>3</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
     <researchPrerequisite>DMS_Plasfiber</researchPrerequisite>
-    <workAmount>8000</workAmount>
+    <workAmount>16000</workAmount>
     <ingredients>
       <li>
         <filter>
@@ -141,14 +141,14 @@
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeUsers>
       <li>DMS_ReactionChamber</li>
-	<li>DMS_LabReactor</li>
+    	<li>DMS_LabReactor</li>
     </recipeUsers>
     <skillRequirements>
       <Crafting>5</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
     <researchPrerequisite>DMS_Plasfiber</researchPrerequisite>
-    <workAmount>32000</workAmount>
+    <workAmount>64000</workAmount>
     <ingredients>
       <li>
         <filter>
@@ -180,7 +180,6 @@
   </RecipeDef>
 
   <!-- 燒結爐 -->
-
  <RecipeDef>
     <defName>DMS_Make_Tungsteel</defName>
     <label>Make tungsteel X20</label>
@@ -192,7 +191,7 @@
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeUsers>
       <li>DMS_Furnace</li>
-	<li>DMS_LabFurnace</li>
+      <li>DMS_LabFurnace</li>
     </recipeUsers>
     <skillRequirements>
       <Crafting>3</Crafting>
@@ -256,14 +255,14 @@
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeUsers>
       <li>DMS_Furnace</li>
-	<li>DMS_LabFurnace</li> 
+      <li>DMS_LabFurnace</li> 
     </recipeUsers>
     <skillRequirements>
       <Crafting>5</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
     <researchPrerequisite>DMS_Material</researchPrerequisite>
-    <workAmount>16000</workAmount>
+    <workAmount>40000</workAmount>
     <ingredients>
       <li>
         <filter>
@@ -320,7 +319,7 @@
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeUsers>
       <li>DMS_Furnace</li>
-	<li>DMS_LabFurnace</li>
+      <li>DMS_LabFurnace</li>
     </recipeUsers>
     <skillRequirements>
       <Crafting>2</Crafting>
@@ -375,7 +374,7 @@
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeUsers>
       <li>DMS_Furnace</li>
-	<li>DMS_LabFurnace</li>
+      <li>DMS_LabFurnace</li>
     </recipeUsers>
     <skillRequirements>
       <Crafting>4</Crafting>
@@ -433,7 +432,7 @@
     <recipeUsers>
       <li>DMS_TableMachinePrinter</li>
     </recipeUsers>
-    <workAmount>5000</workAmount>
+    <workAmount>10000</workAmount>
     <skillRequirements>
       <Crafting>6</Crafting>
     </skillRequirements>
@@ -480,7 +479,7 @@
     <recipeUsers>
       <li>DMS_TableMachinePrinter</li>
     </recipeUsers>
-    <workAmount>16000</workAmount>
+    <workAmount>40000</workAmount>
     <skillRequirements>
       <Crafting>8</Crafting>
     </skillRequirements>
