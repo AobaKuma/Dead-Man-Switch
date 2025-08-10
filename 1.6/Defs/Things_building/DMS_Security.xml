@@ -664,7 +664,7 @@
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
         <initialAllowAutoRefuel>true</initialAllowAutoRefuel>
         <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>              <!--重裝填設定-->
-        <initialConfigurableTargetFuelLevel>1000</initialConfigurableTargetFuelLevel>
+        <initialConfigurableTargetFuelLevel>70</initialConfigurableTargetFuelLevel>
         <autoRefuelPercent>0.5</autoRefuelPercent>
         <fuelIconPath>Things/Item/Resource/ReinforcedBarrel/ReinforcedBarrel</fuelIconPath>
       </li>

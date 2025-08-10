@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <Defs>
-
   <WorkGiverDef>
     <defName>DMS_Operate</defName>
     <label>Operate Machine</label>
@@ -219,7 +218,6 @@
   </ThingDef>
 
   <!-- 機械打印機 -->
-
   <ThingDef ParentName="DMS_BenchBase">
     <defName>DMS_TableMachinePrinter</defName>
     <label>machinery printer</label>

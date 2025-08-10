@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+<ThingDef ParentName="BuildingBase">
+    <defName>DMS_MachineCabinet</defName>
+    <label>machine cabinet</label>
+    <!-- 一個機械櫃，包含了許多複雜的儀器用於提高自動工作站的產品質量，比如輔助校準位置的激光定位器與溫度檢測儀等。這些儀器也可以提升工作效率，每個生產建築最多可以連結8個機械櫃。 -->
+    <description>A cabinet that contains many complex mechanical devices to improve product quality, such as laser positioners and temperature detectors to assist with calibration. These instruments also improve work efficiency. Each production building can connect up to 8 machine cabinets.</description>
+    <graphicData>
+      <texPath>Things/Building/MachineCabinet</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(3,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <pathCost>42</pathCost>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>4000</WorkToBuild>
+      <Mass>60</Mass>
+      <Flammability>0.25</Flammability>
+    </statBases>
+    <size>(2,1)</size>
+    <costList>
+      <Steel>100</Steel>
+      <Tungsteel>25</Tungsteel>
+      <ComponentStamped>5</ComponentStamped>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <researchPrerequisites>
+      <li>DMS_MechBasis</li>
+    </researchPrerequisites>
+    <designationCategory>DMS_Category</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.1</WorkTableWorkSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>8</maxSimultaneous>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+  </ThingDef>
+</Defs>
