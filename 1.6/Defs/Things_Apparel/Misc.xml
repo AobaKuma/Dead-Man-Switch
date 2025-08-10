@@ -16,8 +16,9 @@
 		</tradeTags>
 		<statBases>
 			<Mass>11</Mass>
+			<WorkToMake>40000</WorkToMake>
 			<EquipDelay>1</EquipDelay>
-			<MarketValue>250</MarketValue>
+			<MarketValue>1000</MarketValue>
 			<MaxHitPoints>80</MaxHitPoints>
 		</statBases>
 		<recipeMaker>
@@ -157,8 +158,9 @@
 		</tradeTags>
 		<statBases>
 			<Mass>5</Mass>
+			<WorkToMake>30000</WorkToMake>
 			<EquipDelay>1</EquipDelay>
-			<MarketValue>250</MarketValue>
+			<MarketValue>800</MarketValue>
 			<MaxHitPoints>80</MaxHitPoints>
 		</statBases>
 		<recipeMaker>

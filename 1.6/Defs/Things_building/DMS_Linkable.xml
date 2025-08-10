@@ -32,7 +32,7 @@
     </statBases>
     <size>(2,1)</size>
     <costList>
-      <Steel>100</Steel>
+      <Steel>75</Steel>
       <Tungsteel>25</Tungsteel>
       <ComponentStamped>5</ComponentStamped>
       <ComponentSpacer>1</ComponentSpacer>
@@ -65,5 +65,10 @@
     <placeWorkers>
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_QualityChance">
+        <qualityChance>0.5</qualityChance>
+      </li>
+    </modExtensions>
   </ThingDef>
 </Defs>
