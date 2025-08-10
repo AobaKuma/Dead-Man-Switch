@@ -146,6 +146,7 @@
       <appearance>Metal</appearance>
       <commonality>0</commonality>
       <constructEffect>ConstructMetal</constructEffect>
+	  <isAirtight>true</isAirtight>
       <color>(80,80,80)</color>
       <soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
       <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>

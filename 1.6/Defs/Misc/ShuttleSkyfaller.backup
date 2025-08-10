@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<!-- Royalty Shuttle -->
+	
+    <ThingDef ParentName="DMS_ShuttleSkyfallerBase">
+        <defName>DMS_Ship_TransportShuttleIncoming</defName>
+        <label>heavy transport lifter (incoming)</label>
+        <thingClass>ShuttleIncoming</thingClass>
+        <skyfaller>
+            <anticipationSound>Shuttle_Landing</anticipationSound>
+            <anticipationSoundTicks>250</anticipationSoundTicks>
+            <ticksToImpactRange>200~250</ticksToImpactRange>
+            <angleCurve>
+                <points>
+                    <li>(0,-30)</li>
+                    <li>(1,-90)</li>
+                </points>
+            </angleCurve>
+            <rotationCurve>
+                <points>
+                    <li>(0,30)</li>
+                    <li>(0.5,5)</li>
+                    <li>(0.9,-10)</li>
+                    <li>(0.95,0)</li>
+                </points>
+            </rotationCurve>
+            <zPositionCurve>
+                <points>
+                    <li>(0.95,2.5)</li>
+                    <li>(1,0)</li>
+                </points>
+            </zPositionCurve>
+            <speedCurve>
+                <points>
+                    <li>(0.6,1.0)</li>
+                    <li>(0.9,0.1)</li>
+                </points>
+            </speedCurve>
+        </skyfaller>
+    </ThingDef>
+    <ThingDef ParentName="DMS_ShuttleSkyfallerBase">
+        <defName>DMS_Ship_TransportShuttleLeaving</defName>
+        <label>heavy transport lifter (leaving)</label>
+        <thingClass>FlyShipLeaving</thingClass>
+        <skyfaller>
+            <reversed>true</reversed>
+            <anticipationSound>Shuttle_Leaving</anticipationSound>
+            <anticipationSoundTicks>-10</anticipationSoundTicks>
+            <ticksToImpactRange>-40~-15</ticksToImpactRange>
+            <moteSpawnTime>0.05</moteSpawnTime>
+            <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
+            <shadowSize>(5.5,3.5)</shadowSize>
+            <motesPerCell>1</motesPerCell>
+            <angleCurve>
+                <points>
+                    <li>(0,90)</li>
+                    <li>(1,70)</li>
+                </points>
+            </angleCurve>
+            <rotationCurve>
+                <points>
+                    <li>(0,0)</li>
+                    <li>(0.15,10)</li>
+                    <li>(0.5,-5)</li>
+                </points>
+            </rotationCurve>
+            <zPositionCurve>
+                <points>
+                    <li>(0,0)</li>
+                    <li>(0.08,2)</li>
+                </points>
+            </zPositionCurve>
+            <speedCurve>
+                <points>
+                    <li>(0,0.2)</li>
+                    <li>(0.6,1.0)</li>
+                </points>
+            </speedCurve>
+        </skyfaller>
+    </ThingDef>
+	
+	<!-- Odyssey Shuttle -->
+	
+	<ThingDef ParentName="DMS_ShuttleSkyfallerBase">
+		<defName>DMS_PlayerShip_TransportShuttleIncoming</defName>
+		<label>heavy transport lifter (incoming)</label>
+		<thingClass>PassengerShuttleIncoming</thingClass>
+		<graphicData>
+			<texPath>Things/Skyfaller/Player/HeavyTransportLifter</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(5,7)</drawSize>
+		</graphicData>
+		<size>(3,5)</size>
+		<skyfaller>
+		  <anticipationSound>Shuttle_Landing</anticipationSound>
+		  <anticipationSoundTicks>250</anticipationSoundTicks>
+		  <ticksToImpactRange>200~250</ticksToImpactRange>
+		  <shadowSize>(3.5,5.5)</shadowSize>
+		  <rotationCurve>
+			<points>
+			  <li>(0,30)</li>
+			  <li>(0.5,5)</li>
+			  <li>(0.9,-5)</li>
+			  <li>(0.95,0)</li>
+			</points>
+		  </rotationCurve>
+		  <zPositionCurve>
+			<points>
+			  <li>(0.95,2.5)</li>
+			  <li>(1,0)</li>
+			</points>
+		  </zPositionCurve>
+		  <speedCurve>
+			<points>
+			  <li>(0.6,0.6)</li>
+			  <li>(0.95,0.94)</li>
+			</points>
+		  </speedCurve>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="DMS_ShuttleSkyfallerBase">
+		<defName>DMS_PlayerShip_TransportShuttleLeaving</defName>
+        <label>heavy transport lifter (leaving)</label>
+		<thingClass>PassengerShuttleLeaving</thingClass>
+		<rotatable>true</rotatable>
+		<graphicData>
+            <texPath>Things/Skyfaller/Player/HeavyTransportLifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>(5,7)</drawSize>
+        </graphicData>
+		<size>(3,5)</size>
+		<skyfaller>
+		<reversed>true</reversed>
+		  <anticipationSound>Shuttle_Leaving</anticipationSound>
+		  <anticipationSoundTicks>-10</anticipationSoundTicks>
+		  <ticksToImpactRange>-40~-15</ticksToImpactRange>
+		  <moteSpawnTime>0.05</moteSpawnTime>
+		  <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
+		  <shadowSize>(3.5,5.5)</shadowSize>
+		  <motesPerCell>1</motesPerCell>
+		  <rotationCurve>
+                <points>
+                    <li>(0,0)</li>
+                    <li>(0.15,10)</li>
+                    <li>(0.5,-5)</li>
+                </points>
+            </rotationCurve>
+            <zPositionCurve>
+                <points>
+                    <li>(0,0)</li>
+                    <li>(0.08,2)</li>
+                </points>
+            </zPositionCurve>
+            <speedCurve>
+                <points>
+                    <li>(0,0.2)</li>
+                    <li>(0.6,1.0)</li>
+                </points>
+            </speedCurve>
+		</skyfaller>
+	</ThingDef>
+</Defs>
