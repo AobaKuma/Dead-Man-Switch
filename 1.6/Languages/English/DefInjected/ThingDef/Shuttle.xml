@@ -3,13 +3,17 @@
   
   <!-- EN: orbital transport lifter (incoming) -->
   <DMS_Ship_TransportShuttleIncoming.label>orbital transport lifter (incoming)</DMS_Ship_TransportShuttleIncoming.label>
+  <DMS_PlayerShip_TransportShuttleIncoming.label>orbital transport lifter (incoming)</DMS_PlayerShip_TransportShuttleIncoming.label>
   
   <!-- EN: orbital transport lifter (leaving) -->
   <DMS_Ship_TransportShuttleLeaving.label>orbital transport lifter (leaving)</DMS_Ship_TransportShuttleLeaving.label>
+  <DMS_PlayerShip_TransportShuttleLeaving.label>orbital transport lifter (leaving)</DMS_PlayerShip_TransportShuttleLeaving.label>
   
   <!-- EN: crew transport shuttle -->
   <DMS_Shuttle.label>orbital transport shuttle</DMS_Shuttle.label>
+  <DMS_Shuttle_Player.label>orbital transport shuttle</DMS_Shuttle_Player.label>
   <!-- EN: A light transport shuttle designed for transit between surface and orbit, it can lift up to 2 tons of cargo in flight. -->
   <DMS_Shuttle.description>A light transport shuttle designed for transit between surface and orbit, it can lift up to 2 tons of cargo in flight.</DMS_Shuttle.description>
+  <DMS_Shuttle_Player.description>A light transport shuttle designed for transit between surface and orbit, it can lift up to 2 tons of cargo in flight.</DMS_Shuttle_Player.description>
   
 </LanguageData>
