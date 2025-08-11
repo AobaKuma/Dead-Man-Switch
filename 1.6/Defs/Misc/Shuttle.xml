@@ -7,7 +7,7 @@
 	
 	<TransportShipDef ParentName="DMS_transportBase">
         <defName>DMS_Ship_TransportShuttle</defName>
-        <label>heavy transport lifter</label>
+        <label>orbital transport lifter</label>
         <shipThing>DMS_Shuttle</shipThing>
         <worldObject>DMS_TravelingTransportShuttle</worldObject>
 		<maxLaunchDistance>85</maxLaunchDistance>
@@ -15,7 +15,7 @@
 	
 	<TransportShipDef ParentName="DMS_transportBase" MayRequire="Ludeon.RimWorld.Odyssey">
         <defName>DMS_Ship_TransportShuttle_Player</defName>
-        <label>heavy transport lifter</label>
+        <label>orbital transport lifter</label>
         <shipThing>DMS_Shuttle_Player</shipThing>
 		<arrivingSkyfaller>DMS_PlayerShip_TransportShuttleIncoming</arrivingSkyfaller>
         <leavingSkyfaller>DMS_PlayerShip_TransportShuttleLeaving</leavingSkyfaller>
@@ -24,7 +24,7 @@
     </TransportShipDef>
 
     <ThingDef Name="DMS_ShuttleNPCBase" ParentName="BuildingBase" Abstract="True">
-        <label>crew transport shuttle</label>
+        <label>orbital transport lifter</label>
         <description>A light transport shuttle designed for transit between surface and orbit, it can lift up to 2 tons of cargo in flight.</description>
         <altitudeLayer>Building</altitudeLayer>
         <preventDroppingThingsOn>true</preventDroppingThingsOn>
@@ -55,7 +55,7 @@
 	
 	<ThingDef ParentName="DMS_ShuttleNPCBase">
         <defName>DMS_Shuttle</defName>
-		<label>crew transport shuttle</label>
+		<label>orbital transport lifter</label>
         <description>A light transport shuttle designed for transit between surface and orbit, it can lift up to 2 tons of cargo in flight.</description>
         <graphicData>
             <texPath>Things/Skyfaller/HeavyTransportLifter</texPath>
@@ -101,7 +101,7 @@
 		
 	<ThingDef ParentName="DMS_ShuttleNPCBase" MayRequire="Ludeon.RimWorld.Odyssey">
         <defName>DMS_Shuttle_Player</defName>
-        <label>crew transport shuttle</label>
+        <label>orbital transport lifter</label>
         <description>A light transport shuttle designed for transit between surface and orbit, it can lift up to 2 tons of cargo in flight.</description>
 		<thingClass>Building_PassengerShuttle</thingClass>
 		<size>(3,5)</size>
@@ -223,7 +223,7 @@
 	
 	<ThingDef ParentName="DMS_ShuttleSkyfallerBase">
         <defName>DMS_Ship_TransportShuttleIncoming</defName>
-        <label>heavy transport lifter (incoming)</label>
+        <label>orbital transport lifter (incoming)</label>
         <thingClass>ShuttleIncoming</thingClass>
         <skyfaller>
             <anticipationSound>Shuttle_Landing</anticipationSound>
@@ -259,7 +259,7 @@
     </ThingDef>
     <ThingDef ParentName="DMS_ShuttleSkyfallerBase">
         <defName>DMS_Ship_TransportShuttleLeaving</defName>
-        <label>heavy transport lifter (leaving)</label>
+        <label>orbital transport lifter (leaving)</label>
         <thingClass>FlyShipLeaving</thingClass>
         <skyfaller>
             <reversed>true</reversed>
@@ -300,7 +300,7 @@
 	
 	<ThingDef ParentName="DMS_ShuttleSkyfallerBase">
 		<defName>DMS_PlayerShip_TransportShuttleIncoming</defName>
-		<label>heavy transport lifter (incoming)</label>
+		<label>orbital transport lifter (incoming)</label>
 		<thingClass>PassengerShuttleIncoming</thingClass>
 		<graphicData>
 			<texPath>Things/Skyfaller/Player/HeavyTransportLifter</texPath>
@@ -339,7 +339,7 @@
 
 	<ThingDef ParentName="DMS_ShuttleSkyfallerBase">
 		<defName>DMS_PlayerShip_TransportShuttleLeaving</defName>
-        <label>heavy transport lifter (leaving)</label>
+        <label>orbital transport lifter (leaving)</label>
 		<thingClass>PassengerShuttleLeaving</thingClass>
 		<rotatable>true</rotatable>
 		<graphicData>
@@ -382,8 +382,8 @@
 		
 	<WorldObjectDef>
 	    <defName>DMS_TravelingTransportShuttle</defName>
-        <label>heavy transport lifter</label>
-        <description>A shuttle in flight.</description>
+        <label>orbital transport lifter</label>
+        <description>An orbital transport shuttle in flight.</description>
         <worldObjectClass>TravellingTransporters</worldObjectClass>
         <texture>World/WorldObjects/Caravan</texture>
         <useDynamicDrawer>true</useDynamicDrawer>

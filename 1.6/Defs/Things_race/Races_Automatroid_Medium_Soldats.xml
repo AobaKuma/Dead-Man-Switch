@@ -140,7 +140,6 @@
     </weaponTags>
   </PawnKindDef>
 
-
   <PawnKindDef ParentName="BaseAutomatroidKind"><!--海盜特供型-->
     <defName>DMS_Mech_Raider</defName>
     <label>raider</label>

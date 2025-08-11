@@ -552,6 +552,7 @@
       <ThingDef>DMS_Mech_BattleFrame</ThingDef>
       <ThingDef>DMS_Mech_EscortLifter</ThingDef>
       <ThingDef>DMS_Mech_FieldCommand</ThingDef>
+      <ThingDef>DMS_Mech_Iguana</ThingDef>
     </descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Modifications/ExtendCargo/icon</texPath>
@@ -584,9 +585,11 @@
           <li>DMS_Mech_BattleFrame</li>
           <li>DMS_Mech_EscortLifter</li>
           <li>DMS_Mech_FieldCommand</li>
+          <li>DMS_Mech_Iguana</li>
         </supportRaceDefs>
         <targetBodyPartDefs>
           <li>MechanicalThorax</li>
+          <li>DMS_HeavyChassis</li>
         </targetBodyPartDefs>
       </li>
     </comps>
@@ -602,6 +605,7 @@
       <ThingDef>DMS_Mech_BattleFrame</ThingDef>
       <ThingDef>DMS_Mech_EscortLifter</ThingDef>
       <ThingDef>DMS_Mech_FieldCommand</ThingDef>
+      <ThingDef>DMS_Mech_Iguana</ThingDef>
     </descriptionHyperlinks>
     <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
     <isBad>false</isBad>
@@ -667,6 +671,7 @@
       <ThingDef>DMS_Mech_BattleFrame</ThingDef>
       <ThingDef>DMS_Mech_EscortLifter</ThingDef>
       <ThingDef>DMS_Mech_FieldCommand</ThingDef>
+      <ThingDef>DMS_Mech_Iguana</ThingDef>
     </descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Modifications/ExtendArmor/icon</texPath>
@@ -701,9 +706,11 @@
           <li>DMS_Mech_BattleFrame</li>
           <li>DMS_Mech_EscortLifter</li>
           <li>DMS_Mech_FieldCommand</li>
+          <li>DMS_Mech_Iguana</li>
         </supportRaceDefs>
         <targetBodyPartDefs>
           <li>MechanicalThorax</li>
+          <li>DMS_HeavyChassis</li>
         </targetBodyPartDefs>
       </li>
     </comps>
@@ -719,6 +726,7 @@
       <ThingDef>DMS_Mech_BattleFrame</ThingDef>
       <ThingDef>DMS_Mech_EscortLifter</ThingDef>
       <ThingDef>DMS_Mech_FieldCommand</ThingDef>
+      <ThingDef>DMS_Mech_Iguana</ThingDef>
     </descriptionHyperlinks>
     <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
     <isBad>false</isBad>
@@ -774,6 +782,7 @@
       </li>
     </renderNodeProperties>
   </HediffDef>
+
   <!-- TODO戰鬥框架-蜂窩火箭掛載 -->
 
   <!-- TODO戰鬥框架-重型彈藥掛載(增加額外的加特林兼容) -->

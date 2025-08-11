@@ -369,7 +369,21 @@
     </royalAid>
     <cooldownDays>60</cooldownDays>
   </RoyalTitlePermitDef>
-
+  
+  <RoyalTitlePermitDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>DMS_Join_Shuttle</defName>
+    <label>Request shuttle reward</label>
+    <description>Request a crew transport shuttle to be owned directly by your colony.</description>
+    <workerClass>DMS.RoyalTitlePermitWorker_RewardShuttle</workerClass>
+    <minTitle>DMS_Major</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>3</permitPointCost>
+    <uiPosition>(7,5)</uiPosition>
+    <royalAid>
+      <favorCost>24</favorCost>
+    </royalAid>
+    <cooldownDays>120</cooldownDays>
+  </RoyalTitlePermitDef>
   <!-- 滴滴打人 -->
 
   <RoyalTitlePermitDef>

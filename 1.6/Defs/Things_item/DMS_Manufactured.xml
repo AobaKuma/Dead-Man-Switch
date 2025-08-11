@@ -329,7 +329,10 @@
     <defName>Neurocomputer</defName>
     <label>Wetware computer</label>
     <description>An organic computer which functions as an artificial organic brain. It fills the role of a cheap computational brain for factions without access to rare metals and precision machining.</description>
-    <descriptionHyperlinks><ThingDef>DMS_TableArtifuscle</ThingDef></descriptionHyperlinks>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_DecoyRadio</ThingDef>
+      <ThingDef>DMS_TableArtifuscle</ThingDef>
+    </descriptionHyperlinks>
     <possessionCount>2</possessionCount>
     <graphicData>
       <texPath>Things/Resource/ComponentBioCPU</texPath>
@@ -366,9 +369,7 @@
         <completedLetterDef>PositiveEvent</completedLetterDef>
 
         <!-- Interactable -->
-
         <activateTexPath>UI/Icons/Study</activateTexPath>
-
         <activateLabelString>Analyze...</activateLabelString>
         <activateDescString>Analyze the wetware computer</activateDescString>
         <jobString>Analyze the wetware computer</jobString>
@@ -396,8 +397,10 @@
     <defName>ComponentTransmitter</defName>
     <label>T/R Component</label>
     <description>Precision electronic components for radar and communication devices.</description>
-    <descriptionHyperlinks><ThingDef>DMS_EncryptedTransmitter</ThingDef></descriptionHyperlinks>
-    <possessionCount>2</possessionCount>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_EncryptedTransmitter</ThingDef>
+    </descriptionHyperlinks>
+    <possessionCount>2</possessionCount> 
     <graphicData>
       <texPath>Things/Resource/ComponentTR</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -422,7 +425,6 @@
         <requiresMechanitor>false</requiresMechanitor>
 
         <!-- Analyzable -->
-
         <analysisDurationHours>0.5</analysisDurationHours>
         <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
         <completedLetterLabel>T/R Component studied: {RESEARCH} unlocked</completedLetterLabel>
@@ -430,9 +432,7 @@
         <completedLetterDef>PositiveEvent</completedLetterDef>
 
         <!-- Interactable -->
-
         <activateTexPath>UI/Icons/Study</activateTexPath>
-
         <activateLabelString>Analyze...</activateLabelString>
         <activateDescString>Analyze the T/R Component</activateDescString>
         <jobString>Analyze the T/R Component</jobString>
@@ -499,6 +499,9 @@
     <defName>ComponentFireControl</defName>
     <label>Fire Control System</label>
     <description>A chipsets designed for weapon control assistance and trajectory tracking.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_DecoyRadar</ThingDef>
+    </descriptionHyperlinks>
     <possessionCount>2</possessionCount>
     <graphicData>
       <texPath>Things/Resource/ComponentFCS</texPath>
@@ -524,7 +527,6 @@
         <requiresMechanitor>false</requiresMechanitor>
 
         <!-- Analyzable -->
-
         <analysisDurationHours>0.5</analysisDurationHours>
         <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
         <completedLetterLabel>Fire control system studied: {RESEARCH} unlocked</completedLetterLabel>
@@ -532,15 +534,12 @@
         <completedLetterDef>PositiveEvent</completedLetterDef>
 
         <!-- Interactable -->
-
         <activateTexPath>UI/Icons/Study</activateTexPath>
-
         <activateLabelString>Analyze...</activateLabelString>
         <activateDescString>Analyze the Fire Control System</activateDescString>
         <jobString>Analyze the Fire Control System</jobString>
         <guiLabelString>Choose who should analyze this.</guiLabelString>
         <inspectString>Can be analyzed by a colonist.</inspectString>
-
         <targetingParameters>
           <canTargetBuildings>false</canTargetBuildings>
           <canTargetAnimals>false</canTargetAnimals>
@@ -566,6 +565,10 @@
     <defName>DMS_EncryptedTransmitter</defName>
     <label>Encrypted Transmitter</label>
     <description>A high-power communication relay to be used in the colony for emergency reinforcements. The identification code of this rescue protocol has long been abandoned, so only those mechanized units that are feral will take the bait.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Sergeant</ThingDef>
+      <ThingDef>ComponentTransmitter</ThingDef>
+    </descriptionHyperlinks>
     <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Resource/EncryptedTransmitter</texPath>
