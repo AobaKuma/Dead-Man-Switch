@@ -15,6 +15,7 @@ namespace DMS
         public static PawnKindDef DMS_Officer_Ceremonist;
         public static PawnKindDef DMS_Escort;
         public static ThingDef DMS_Shuttle;
-        public static TransportShipDef DMS_Ship_TransportShuttle;
+        public static TransportShipDef DMS_Ship_TransportShuttle; 
+        public static TransportShipDef DMS_Ship_TransportShuttle_Player;
     }
 }

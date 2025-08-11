@@ -14,7 +14,7 @@ namespace DMS
 
         private static readonly Texture2D CommandTex = ContentFinder<Texture2D>.Get("UI/Commands/CallShuttle");
 
-        TransportShipDef shipDef => TransportShipDefOf.DMS_Ship_TransportShuttle_Player;
+        TransportShipDef shipDef => DMS_DefOf.DMS_Ship_TransportShuttle_Player;
         public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
         {
             if (!CanHitTarget(target))
