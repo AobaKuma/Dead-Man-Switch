@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <DMS_Boss.questContentRules.rulesStrings>
+    <li>bossDefeatedLetterLabel->[escortees0_label] defeated</li>
+    <li>bossDefeatedStudyChipLetterText->[defeated][study][manufacture]</li>
+    <li>bossDefeatedLetterText->[defeated][manufacture]</li>
+    <li>defeated->The wandering [escortees0_label] has been defeated and has dropped a [reward_label]!</li>
+    <li>manufacture->\n\nIf it wasn't get destroyed during the neutralization process, you should be able to find that [reward_label] among the wreckage.</li>
+    <li>study->\n\nYou can unlock subsequent technologies by studying [reward_label].</li>
+  </DMS_Boss.questContentRules.rulesStrings>
+
+  <DMS_Boss.questDescriptionRules.rulesStrings>
+    <li>questDescription->boss group</li>
+  </DMS_Boss.questDescriptionRules.rulesStrings>
+  
+  <DMS_Boss.questNameRules.rulesStrings>
+    <li>questName->boss group</li>
+  </DMS_Boss.questNameRules.rulesStrings>
+  
+  <!-- EN: Wandering legacies approaching. -->
+  <DMS_Boss.root.AlertBossgroupIncoming>[escortees0_label] approaching.</DMS_Boss.root.AlertBossgroupIncoming>
+  <!-- EN: unmanned units of Automatroids are following established protocols, attracted by the signal you sent and approaching. -->
+  <DMS_Boss.root.AlertBossgroupIncomingDesc>Automatroid Units are following established protocols, attracted by the signal you sent and approaching.\n\nLeading the charge is a [escortees0_label]. These mechs are well-armed and of considerable size, so the intensity of the battle will be extraordinary. \n\nIt should be noted that they are still allies of the Colonial Fleet in the chain of command, so in principle the Colonial Fleet will not provide any direct assistance in this battle.</DMS_Boss.root.AlertBossgroupIncomingDesc>
+  <!-- EN: wandering legacies have arrived！ -->
+  <DMS_Boss.root.LetterBossgroupArrived>[escortees0_label] has arrived. These broken weapons are [escortees0_faction_name], and their mission now should come to an end.\n\n {LEADERDESC}\n\nThis unit consists of the following mechs\n{WAVEDESC}</DMS_Boss.root.LetterBossgroupArrived>
+  <!-- EN: Your signal has been sent out, and the attracted Automatroids will arriving in no time. Prepare to engage. -->
+  <DMS_Boss.root.LetterBossgroupSummoned>Your signal has been sent. [escortees0_label] and the accompanying automatroids has receiving the threat signal, may arrive at any moment.\n\nPrepare for engagement.</DMS_Boss.root.LetterBossgroupSummoned>
+  <!-- EN: Wandering legacies -->
+  <DMS_Boss.root.LetterLabelBossgroupArrived>Approaching [escortees0_label]</DMS_Boss.root.LetterLabelBossgroupArrived>
+  <!-- EN: The wandering legacies has been attracted -->
+  <DMS_Boss.root.LetterLabelBossgroupSummoned>The wandering [escortees0_label] has been attracted</DMS_Boss.root.LetterLabelBossgroupSummoned>
+  
+</LanguageData>
