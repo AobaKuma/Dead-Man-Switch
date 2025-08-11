@@ -56,7 +56,6 @@
 		<building>
 			<artificialForMeditationPurposes>false</artificialForMeditationPurposes>
 			<ai_chillDestination>false</ai_chillDestination>
-			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
 			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
 			<buildingTags>
 				<li>Mechanitor</li>
@@ -72,6 +71,10 @@
 			<li>DMS_Mechlink</li>
 		</researchPrerequisites>
 		<comps>
+			<li Class="CompProperties_AmbientSound">
+				<sound>GeothermalPlant_Ambience</sound>
+				<disabledOnUnpowered>true</disabledOnUnpowered>
+			</li>
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities/>
 			</li>
