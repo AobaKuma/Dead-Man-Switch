@@ -7,10 +7,8 @@ using System.Linq;
 
 namespace DMS
 {
-
     public class QuestNode_Root_BossgroupFactionExposed : QuestNode
     {
-        
         //fuck tynan
         private static readonly IntRange MaxDelayTicksRange = new IntRange(60000, 180000);
 

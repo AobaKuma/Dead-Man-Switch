@@ -17,14 +17,14 @@ namespace DMS
                 return true;
             }
 
-            if (faction.def == QuestDefOf.DMS_Army)
+            if (faction.def == DMS_DefOf.DMS_Army)
             {
                 Slate slate = new Slate();
                 slate.Set("titleHolder", pawn);
                 slate.Set("bestowingFaction", faction);
-                if (QuestDefOf.DMS_PromotionCeremony.CanRun(slate, pawn.MapHeld))
+                if (DMS_DefOf.DMS_PromotionCeremony.CanRun(slate, pawn.MapHeld))
                 {
-                    Quest quest = QuestUtility.GenerateQuestAndMakeAvailable(QuestDefOf.DMS_PromotionCeremony, slate);
+                    Quest quest = QuestUtility.GenerateQuestAndMakeAvailable(DMS_DefOf.DMS_PromotionCeremony, slate);
                     if (quest.root.sendAvailableLetter)
                     {
                         QuestUtility.SendLetterQuestAvailable(quest);

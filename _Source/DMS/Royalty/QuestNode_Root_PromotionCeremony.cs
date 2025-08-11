@@ -7,16 +7,6 @@ using Verse.Grammar;
 
 namespace DMS
 {
-    [DefOf]
-    public static class QuestKindDefOf
-    {
-        public static PawnKindDef DMS_Officer_Ceremonist;
-        public static PawnKindDef DMS_Escort;
-        public static ThingDef DMS_Shuttle;
-        public static TransportShipDef DMS_Ship_TransportShuttle;
-        public static FactionDef DMS_Army;
-    }
-
     public class QuestNode_Root_PromotionCeremony : QuestNode
     {
         public const string QuestTag = "Bestowing";
@@ -81,10 +71,10 @@ namespace DMS
             string inSignal3 = QuestGenUtility.QuestTagSignal(text, "BeingAttacked");
             string inSignal4 = QuestGenUtility.QuestTagSignal(text, "Fleeing");
             string inSignal5 = QuestGenUtility.QuestTagSignal(text, "TitleAwardedWhenUpdatingChanged");
-            Thing thing = QuestGen_Shuttle.GenerateShuttle(bestowingFaction,shuttleDef:QuestKindDefOf.DMS_Shuttle);
+            Thing thing = QuestGen_Shuttle.GenerateShuttle(bestowingFaction,shuttleDef:DMS_DefOf.DMS_Shuttle);
             Pawn pawn2 = quest.GetPawn(new QuestGen_Pawns.GetPawnParms
             {
-                mustBeOfKind = QuestKindDefOf.DMS_Officer_Ceremonist,
+                mustBeOfKind = DMS_DefOf.DMS_Officer_Ceremonist,
                 canGeneratePawn = true,
                 mustBeOfFaction = bestowingFaction,
                 mustBeWorldPawn = true,
@@ -120,7 +110,7 @@ namespace DMS
             List<Pawn> list2 = new List<Pawn>();
             for (int j = 0; j < 6; j++)
             {
-                Pawn item = quest.GeneratePawn(QuestKindDefOf.DMS_Escort, bestowingFaction);
+                Pawn item = quest.GeneratePawn(DMS_DefOf.DMS_Escort, bestowingFaction);
                 list.Add(item);
                 list2.Add(item);
             }
@@ -128,10 +118,10 @@ namespace DMS
             quest.EnsureNotDowned(list);
             slate.Set("defenders", list2);
             thing.TryGetComp<CompShuttle>().requiredPawns = list;
-            TransportShip transportShip = quest.GenerateTransportShip(QuestKindDefOf.DMS_Ship_TransportShuttle, list, thing).transportShip; Quest quest2 = quest;
+            TransportShip transportShip = quest.GenerateTransportShip(DMS_DefOf.DMS_Ship_TransportShuttle, list, thing).transportShip; Quest quest2 = quest;
             Pawn mapOfPawn = pawn;
             
-            Faction ofEmpire = Find.FactionManager.FirstFactionOfDef(QuestKindDefOf.DMS_Army);
+            Faction ofEmpire = Find.FactionManager.FirstFactionOfDef(DMS_DefOf.DMS_Army);
             quest.AddShipJob_Arrive(transportShip, null, pawn, null, ShipJobStartMode.Instant, Faction.OfEmpire);
             quest.AddShipJob(transportShip, ShipJobDefOf.Unload);
             quest.AddShipJob_WaitForever(transportShip, leaveImmediatelyWhenSatisfied: true, showGizmos: false, list.Cast<Thing>().ToList()).sendAwayIfAnyDespawnedDownedOrDead = new List<Thing> { pawn2 };
@@ -230,7 +220,7 @@ namespace DMS
             }
 
             QuestGen_Pawns.GetPawnParms parms = default(QuestGen_Pawns.GetPawnParms);
-            parms.mustBeOfKind = QuestKindDefOf.DMS_Officer_Ceremonist;
+            parms.mustBeOfKind = DMS_DefOf.DMS_Officer_Ceremonist;
             parms.canGeneratePawn = true;
             parms.mustBeOfFaction = bestowingFaction;
             if (!QuestGen_Pawns.GetPawnTest(parms, out pawn))
