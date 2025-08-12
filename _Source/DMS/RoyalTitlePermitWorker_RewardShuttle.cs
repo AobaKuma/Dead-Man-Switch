@@ -7,14 +7,12 @@ using UnityEngine;
 
 namespace DMS
 {
-    [StaticConstructorOnStartup]
     public class RoyalTitlePermitWorker_RewardShuttle : RoyalTitlePermitWorker_Targeted
     {
         private Faction calledFaction;
 
-        private static readonly Texture2D CommandTex = ContentFinder<Texture2D>.Get("UI/Commands/CallShuttle");
 
-        TransportShipDef shipDef => DMS_DefOf.DMS_Ship_TransportShuttle_Player;
+        TransportShipDef ShipDef => DMS_DefOf.DMS_Ship_TransportShuttle_Player;
         public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
         {
             if (!CanHitTarget(target))
@@ -39,7 +37,7 @@ namespace DMS
         public override void DrawHighlight(LocalTargetInfo target)
         {
             GenDraw.DrawRadiusRing(caller.Position, base.RangeClamped, Color.white);
-            DrawShuttleGhost(target, map, shipDef.shipThing, shipDef.shipThing.defaultPlacingRot);
+            DrawShuttleGhost(target, map, ShipDef.shipThing, ShipDef.shipThing.defaultPlacingRot);
         }
 
         public override void OrderForceTarget(LocalTargetInfo target)
@@ -104,11 +102,11 @@ namespace DMS
         {
             if (caller.Spawned)
             {
-                Thing thing = ThingMaker.MakeThing(shipDef.shipThing);
+                Thing thing = ThingMaker.MakeThing(ShipDef.shipThing);
                 thing.SetFactionDirect(Faction.OfPlayer);
                 CompShuttle compShuttle = thing.TryGetComp<CompShuttle>();
                 compShuttle.acceptChildren = true;
-                TransportShip transportShip = TransportShipMaker.MakeTransportShip(shipDef, null, thing);
+                TransportShip transportShip = TransportShipMaker.MakeTransportShip(ShipDef, null, thing);
                 transportShip.ArriveAt(landingCell, map.Parent);
                 caller.royalty.GetPermit(def, calledFaction).Notify_Used();
                 if (!free)
