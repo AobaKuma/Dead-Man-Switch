@@ -44,8 +44,8 @@
         </maxPawnCostPerTotalPointsCurve>
         <raidCommonalityFromPointsCurve>
             <points>
-                <li>(0, 0)</li> <!--Constant 1 at all points levels-->
-                <li>(1000,1)</li>
+                <li>(0, 0)</li>
+                <li>(100000,0.25)</li>
             </points>
         </raidCommonalityFromPointsCurve>
         <raidLootMaker>VanguardRaidLootMaker</raidLootMaker>
