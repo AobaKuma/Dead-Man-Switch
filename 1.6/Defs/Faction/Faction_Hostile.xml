@@ -59,8 +59,6 @@
                     <DMS_Mech_Soldat_B>5</DMS_Mech_Soldat_B>
                     <DMS_Mech_Iguana>0.5</DMS_Mech_Iguana>
                     <DMS_Mech_Pioneer>8</DMS_Mech_Pioneer>
-                    <DMS_Mech_Jaeger>3.5</DMS_Mech_Jaeger>
-                    <DMS_Mech_Protector>3</DMS_Mech_Protector>
                     <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
                 </options>
             </li>
@@ -70,11 +68,11 @@
                 <commonality>100</commonality>
                 <options>
                     <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
-                    <DMS_Mech_Dogge>5</DMS_Mech_Dogge>
-                    <DMS_Mech_Jaeger>3.5</DMS_Mech_Jaeger>
-                    <DMS_Mech_Sniper>2</DMS_Mech_Sniper>
-                    <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+                    <DMS_Mech_Dogge>2</DMS_Mech_Dogge>
+                    <DMS_Mech_Pioneer>4</DMS_Mech_Pioneer>
+                    <DMS_Mech_Sniper>1</DMS_Mech_Sniper>
                     <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
+                    <DMS_Mech_Siegebreaker>1</DMS_Mech_Siegebreaker>
                 </options>
             </li>
             <li>
@@ -86,7 +84,6 @@
                     <DMS_Mech_Sniper>1</DMS_Mech_Sniper>
                     <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
                     <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
-                    <DMS_Mech_Caretta>1</DMS_Mech_Caretta>
                     <DMS_Mech_Tarbosaurus>1</DMS_Mech_Tarbosaurus>
                 </options>
             </li>
@@ -96,12 +93,11 @@
                 <commonality>10</commonality>
                 <options>
                     <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
-                    <DMS_Mech_Grenadier>6</DMS_Mech_Grenadier>
-                    <DMS_Squad_Sniper>2</DMS_Squad_Sniper>
+                    <DMS_Mech_Phalanx>6</DMS_Mech_Phalanx>
                     <DMS_Mech_Ronin>6</DMS_Mech_Ronin>
-                    <DMS_Mech_Protector>5</DMS_Mech_Protector>
+                    <DMS_Mech_Protector>1</DMS_Mech_Protector>
                     <DMS_Mech_Siegebreaker>1</DMS_Mech_Siegebreaker>
-                    <DMS_Mech_Mammoth>1</DMS_Mech_Mammoth>
+                    <DMS_Mech_Mammoth>0.5</DMS_Mech_Mammoth>
                 </options>
             </li>
         </pawnGroupMakers>
