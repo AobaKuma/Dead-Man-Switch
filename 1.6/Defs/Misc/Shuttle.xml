@@ -42,7 +42,11 @@
         <tickerType>Normal</tickerType>
         <canOverlapZones>true</canOverlapZones>
         <killedLeavings>
-			<!-- empty for now -->
+            <Plasteel>75</Plasteel>
+            <Uranium>50</Uranium>
+            <ChunkSlagSteel>4</ChunkSlagSteel>
+            <ComponentIndustrial>4</ComponentIndustrial>
+            <ShuttleEngine MayRequire="Ludeon.RimWorld.Odyssey">1</ShuttleEngine>
         </killedLeavings>
         <rotatable>false</rotatable>
         <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
@@ -67,13 +71,6 @@
                 <offset>(0, 0, -0.1)</offset>
             </shadowData>
         </graphicData>
-        <killedLeavings>
-            <Plasteel>75</Plasteel>
-            <Uranium>50</Uranium>
-            <ChunkSlagSteel>4</ChunkSlagSteel>
-            <ComponentIndustrial>4</ComponentIndustrial>
-            <ShuttleEngine MayRequire="Ludeon.RimWorld.Odyssey">1</ShuttleEngine>
-        </killedLeavings>
 		<selectable>true</selectable>
         <uiIconScale>1.3</uiIconScale>
         <building>
@@ -121,7 +118,7 @@
             <Flammability>0.5</Flammability>
         </statBases>
         <tickerType>Normal</tickerType>
-		<designationCategory>DMS_Category</designationCategory>
+		<!-- <designationCategory>DMS_Category</designationCategory> --> <!-- 先去掉等長征 -->
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 		<costList>
 		  <Steel>250</Steel>
@@ -132,11 +129,7 @@
 		</costList>
         <canOverlapZones>true</canOverlapZones>
         <killedLeavings>
-            <Tungsteel>75</Tungsteel>
-            <Uranium>50</Uranium>
-            <ChunkSlagSteel>4</ChunkSlagSteel>
-            <ComponentIndustrial>4</ComponentIndustrial>
-            <!--<ShuttleEngine MayRequire="Ludeon.RimWorld.Odyssey">1</ShuttleEngine>-->
+			<!-- empty for now -->
         </killedLeavings>
         <rotatable>true</rotatable>
 		<hasInteractionCell>true</hasInteractionCell>
@@ -153,9 +146,9 @@
         <inspectorTabs>
             <li>ITab_ContentsTransporter</li>
         </inspectorTabs>
-		<researchPrerequisites>
+		<!-- <researchPrerequisites>
 		  <li>Shuttles</li>
-		</researchPrerequisites>
+		</researchPrerequisites> --> <!-- 先去掉等長征 -->
         <comps>
             <li Class="CompProperties_Shuttle">
 				<shipDef>DMS_Ship_TransportShuttle_Player</shipDef>
