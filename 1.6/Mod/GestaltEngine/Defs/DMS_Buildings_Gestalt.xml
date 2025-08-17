@@ -41,9 +41,9 @@
 		</statBases>
 		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
 		<costList>
-			<Tungsteel>250</Tungsteel>
-			<Steel>350</Steel> 
-			<Neurocomputer>6</Neurocomputer>
+			<Steel>800</Steel> 
+			<Tungsteel>450</Tungsteel>
+			<Neurocomputer>8</Neurocomputer>
 			<ComponentControlChip>1</ComponentControlChip>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -162,7 +162,7 @@
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
 						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<heatPerSecond>75</heatPerSecond>
 						<researchPointsPerSecond>0.25</researchPointsPerSecond>
 						<totalMechBandwidth>56</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
@@ -183,6 +183,7 @@
 						<researchPointsPerSecond>0.3</researchPointsPerSecond>
 						<totalMechBandwidth>66</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 6 -->
@@ -196,10 +197,11 @@
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
 						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<heatPerSecond>105</heatPerSecond>
 						<researchPointsPerSecond>0.35</researchPointsPerSecond>
 						<totalMechBandwidth>76</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 7 -->
@@ -213,10 +215,11 @@
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
 						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<heatPerSecond>110</heatPerSecond>
 						<researchPointsPerSecond>0.4</researchPointsPerSecond>
 						<totalMechBandwidth>86</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 8 -->
@@ -230,10 +233,11 @@
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
 						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<heatPerSecond>115</heatPerSecond>
 						<researchPointsPerSecond>0.45</researchPointsPerSecond>
 						<totalMechBandwidth>96</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 9 -->
@@ -247,10 +251,11 @@
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
 						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<heatPerSecond>120</heatPerSecond>
 						<researchPointsPerSecond>0.5</researchPointsPerSecond>
 						<totalMechBandwidth>106</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 10 -->
@@ -263,11 +268,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>6000</powerConsumption>
+						<heatPerSecond>125</heatPerSecond>
 						<researchPointsPerSecond>0.55</researchPointsPerSecond>
 						<totalMechBandwidth>116</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 11 -->
@@ -280,11 +286,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>6000</powerConsumption>
+						<heatPerSecond>130</heatPerSecond>
 						<researchPointsPerSecond>0.6</researchPointsPerSecond>
 						<totalMechBandwidth>126</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 12 -->
@@ -297,11 +304,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>6000</powerConsumption>
+						<heatPerSecond>135</heatPerSecond>
 						<researchPointsPerSecond>0.65</researchPointsPerSecond>
 						<totalMechBandwidth>136</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 13 -->
@@ -314,11 +322,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>6000</powerConsumption>
+						<heatPerSecond>140</heatPerSecond>
 						<researchPointsPerSecond>0.7</researchPointsPerSecond>
 						<totalMechBandwidth>146</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 14 -->
@@ -331,11 +340,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>6000</powerConsumption>
+						<heatPerSecond>145</heatPerSecond>
 						<researchPointsPerSecond>0.75</researchPointsPerSecond>
 						<totalMechBandwidth>156</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 15 -->
@@ -348,11 +358,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>6000</powerConsumption>
+						<heatPerSecond>150</heatPerSecond>
 						<researchPointsPerSecond>0.8</researchPointsPerSecond>
 						<totalMechBandwidth>166</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 16 -->
@@ -365,11 +376,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>6000</powerConsumption>
+						<heatPerSecond>155</heatPerSecond>
 						<researchPointsPerSecond>0.85</researchPointsPerSecond>
 						<totalMechBandwidth>176</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 17 -->
@@ -382,11 +394,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>6000</powerConsumption>
+						<heatPerSecond>160</heatPerSecond>
 						<researchPointsPerSecond>0.9</researchPointsPerSecond>
 						<totalMechBandwidth>186</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 18 -->
@@ -399,11 +412,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>6000</powerConsumption>
+						<heatPerSecond>175</heatPerSecond>
 						<researchPointsPerSecond>0.95</researchPointsPerSecond>
 						<totalMechBandwidth>196</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 19 -->
@@ -416,11 +430,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>6000</powerConsumption>
+						<heatPerSecond>180</heatPerSecond>
 						<researchPointsPerSecond>1</researchPointsPerSecond>
 						<totalMechBandwidth>206</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 20 -->
@@ -433,11 +448,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>7000</powerConsumption>
+						<heatPerSecond>185</heatPerSecond>
 						<researchPointsPerSecond>1.5</researchPointsPerSecond>
 						<totalMechBandwidth>216</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 21 -->
@@ -450,11 +466,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>7000</powerConsumption>
+						<heatPerSecond>190</heatPerSecond>
 						<researchPointsPerSecond>1.55</researchPointsPerSecond>
 						<totalMechBandwidth>226</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 22 -->
@@ -467,11 +484,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>7000</powerConsumption>
+						<heatPerSecond>195</heatPerSecond>
 						<researchPointsPerSecond>1.6</researchPointsPerSecond>
 						<totalMechBandwidth>236</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 23 -->
@@ -484,11 +502,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>7000</powerConsumption>
+						<heatPerSecond>200</heatPerSecond>
 						<researchPointsPerSecond>1.75</researchPointsPerSecond>
 						<totalMechBandwidth>246</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 24 -->
@@ -501,11 +520,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>7000</powerConsumption>
+						<heatPerSecond>205</heatPerSecond>
 						<researchPointsPerSecond>1.8</researchPointsPerSecond>
 						<totalMechBandwidth>256</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 25 -->
@@ -518,11 +538,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>7000</powerConsumption>
+						<heatPerSecond>210</heatPerSecond>
 						<researchPointsPerSecond>1.85</researchPointsPerSecond>
 						<totalMechBandwidth>266</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 26 -->
@@ -535,11 +556,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>7000</powerConsumption>
+						<heatPerSecond>215</heatPerSecond>
 						<researchPointsPerSecond>1.9</researchPointsPerSecond>
 						<totalMechBandwidth>276</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 27 -->
@@ -552,11 +574,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>7000</powerConsumption>
+						<heatPerSecond>220</heatPerSecond>
 						<researchPointsPerSecond>1.95</researchPointsPerSecond>
 						<totalMechBandwidth>286</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 28 -->
@@ -569,11 +592,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>7000</powerConsumption>
+						<heatPerSecond>225</heatPerSecond>
 						<researchPointsPerSecond>2</researchPointsPerSecond>
 						<totalMechBandwidth>296</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 29 -->
@@ -586,11 +610,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>7000</powerConsumption>
+						<heatPerSecond>230</heatPerSecond>
 						<researchPointsPerSecond>2.05</researchPointsPerSecond>
 						<totalMechBandwidth>306</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 30 -->
@@ -603,11 +628,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>8000</powerConsumption>
+						<heatPerSecond>235</heatPerSecond>
 						<researchPointsPerSecond>2.1</researchPointsPerSecond>
 						<totalMechBandwidth>316</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 31 -->
@@ -620,11 +646,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>8000</powerConsumption>
+						<heatPerSecond>240</heatPerSecond>
 						<researchPointsPerSecond>2.15</researchPointsPerSecond>
 						<totalMechBandwidth>326</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 32 -->
@@ -637,11 +664,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>8000</powerConsumption>
+						<heatPerSecond>245</heatPerSecond>
 						<researchPointsPerSecond>2.2</researchPointsPerSecond>
 						<totalMechBandwidth>336</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 33 -->
@@ -654,11 +682,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>8000</powerConsumption>
+						<heatPerSecond>250</heatPerSecond>
 						<researchPointsPerSecond>2.25</researchPointsPerSecond>
 						<totalMechBandwidth>346</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 34 -->
@@ -671,11 +700,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>8000</powerConsumption>
+						<heatPerSecond>255</heatPerSecond>
 						<researchPointsPerSecond>2.3</researchPointsPerSecond>
 						<totalMechBandwidth>356</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 35 -->
@@ -688,11 +718,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>8000</powerConsumption>
+						<heatPerSecond>260</heatPerSecond>
 						<researchPointsPerSecond>2.35</researchPointsPerSecond>
 						<totalMechBandwidth>376</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 36 -->
@@ -705,11 +736,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>8000</powerConsumption>
+						<heatPerSecond>265</heatPerSecond>
 						<researchPointsPerSecond>2.4</researchPointsPerSecond>
 						<totalMechBandwidth>386</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 37 -->
@@ -722,11 +754,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>8000</powerConsumption>
+						<heatPerSecond>270</heatPerSecond>
 						<researchPointsPerSecond>2.45</researchPointsPerSecond>
 						<totalMechBandwidth>396</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 38 -->
@@ -739,11 +772,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>8000</powerConsumption>
+						<heatPerSecond>275</heatPerSecond>
 						<researchPointsPerSecond>2.5</researchPointsPerSecond>
 						<totalMechBandwidth>406</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 39 -->
@@ -756,11 +790,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>8000</powerConsumption>
+						<heatPerSecond>280</heatPerSecond>
 						<researchPointsPerSecond>2.55</researchPointsPerSecond>
 						<totalMechBandwidth>416</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 40 -->
@@ -773,11 +808,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>9000</powerConsumption>
+						<heatPerSecond>285</heatPerSecond>
 						<researchPointsPerSecond>2.6</researchPointsPerSecond>
 						<totalMechBandwidth>426</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 41 -->
@@ -790,11 +826,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>9000</powerConsumption>
+						<heatPerSecond>290</heatPerSecond>
 						<researchPointsPerSecond>2.65</researchPointsPerSecond>
 						<totalMechBandwidth>436</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 42 -->
@@ -807,11 +844,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>9000</powerConsumption>
+						<heatPerSecond>295</heatPerSecond>
 						<researchPointsPerSecond>2.7</researchPointsPerSecond>
 						<totalMechBandwidth>446</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 43 -->
@@ -824,11 +862,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>9000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>2.75</researchPointsPerSecond>
 						<totalMechBandwidth>456</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 44 -->
@@ -841,11 +880,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>9000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>2.8</researchPointsPerSecond>
 						<totalMechBandwidth>466</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 45 -->
@@ -858,11 +898,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>9000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>2.85</researchPointsPerSecond>
 						<totalMechBandwidth>476</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 46 -->
@@ -875,11 +916,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>9000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>2.9</researchPointsPerSecond>
 						<totalMechBandwidth>486</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 47 -->
@@ -892,11 +934,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>9000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>2.95</researchPointsPerSecond>
 						<totalMechBandwidth>496</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 48 -->
@@ -909,11 +952,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>9000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3</researchPointsPerSecond>
 						<totalMechBandwidth>506</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 49 -->
@@ -926,11 +970,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>9000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.05</researchPointsPerSecond>
 						<totalMechBandwidth>516</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 50 -->
@@ -943,11 +988,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>10000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.1</researchPointsPerSecond>
 						<totalMechBandwidth>526</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 51 -->
@@ -960,11 +1006,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>10000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.15</researchPointsPerSecond>
 						<totalMechBandwidth>536</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 52 -->
@@ -977,11 +1024,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>10000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.2</researchPointsPerSecond>
 						<totalMechBandwidth>546</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 53 -->
@@ -994,11 +1042,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>10000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.25</researchPointsPerSecond>
 						<totalMechBandwidth>556</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 54 -->
@@ -1011,11 +1060,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>10000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.3</researchPointsPerSecond>
 						<totalMechBandwidth>566</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 55 -->
@@ -1028,11 +1078,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>10000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.35</researchPointsPerSecond>
 						<totalMechBandwidth>576</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 56 -->
@@ -1045,11 +1096,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>10000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.4</researchPointsPerSecond>
 						<totalMechBandwidth>586</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 57 -->
@@ -1062,11 +1114,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>10000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.45</researchPointsPerSecond>
 						<totalMechBandwidth>596</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 58 -->
@@ -1079,11 +1132,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>10000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.5</researchPointsPerSecond>
 						<totalMechBandwidth>606</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 59 -->
@@ -1096,11 +1150,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>10000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.55</researchPointsPerSecond>
 						<totalMechBandwidth>616</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 60 -->
@@ -1113,11 +1168,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>11000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.6</researchPointsPerSecond>
 						<totalMechBandwidth>626</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 61 -->
@@ -1130,11 +1186,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>11000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.65</researchPointsPerSecond>
 						<totalMechBandwidth>636</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 62 -->
@@ -1147,11 +1204,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>11000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.7</researchPointsPerSecond>
 						<totalMechBandwidth>646</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 63-->
@@ -1164,11 +1222,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>11000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.75</researchPointsPerSecond>
 						<totalMechBandwidth>656</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 64-->
@@ -1181,11 +1240,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>11000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.8</researchPointsPerSecond>
 						<totalMechBandwidth>666</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 65 -->
@@ -1198,11 +1258,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>11000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.85</researchPointsPerSecond>
 						<totalMechBandwidth>676</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 66 -->
@@ -1215,11 +1276,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>11000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.9</researchPointsPerSecond>
 						<totalMechBandwidth>686</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 67 -->
@@ -1232,11 +1294,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>11000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>3.95</researchPointsPerSecond>
 						<totalMechBandwidth>696</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 68 -->
@@ -1249,11 +1312,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>11000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4</researchPointsPerSecond>
 						<totalMechBandwidth>706</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 69 -->
@@ -1266,11 +1330,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>11000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.05</researchPointsPerSecond>
 						<totalMechBandwidth>716</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 70 -->
@@ -1283,11 +1348,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>12000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.1</researchPointsPerSecond>
 						<totalMechBandwidth>726</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 71 -->
@@ -1300,11 +1366,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>12000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.15</researchPointsPerSecond>
 						<totalMechBandwidth>736</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 72 -->
@@ -1317,11 +1384,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>12000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.2</researchPointsPerSecond>
 						<totalMechBandwidth>746</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 73 -->
@@ -1334,11 +1402,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>12000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.25</researchPointsPerSecond>
 						<totalMechBandwidth>756</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 74 -->
@@ -1351,11 +1420,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>12000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.35</researchPointsPerSecond>
 						<totalMechBandwidth>766</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 75 -->
@@ -1368,11 +1438,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>12000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.4</researchPointsPerSecond>
 						<totalMechBandwidth>776</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 76 -->
@@ -1385,11 +1456,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>12000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.45</researchPointsPerSecond>
 						<totalMechBandwidth>786</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 77 -->
@@ -1402,11 +1474,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>12000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.5</researchPointsPerSecond>
 						<totalMechBandwidth>796</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 78 -->
@@ -1419,11 +1492,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>12000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.55</researchPointsPerSecond>
 						<totalMechBandwidth>806</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 79 -->
@@ -1436,11 +1510,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>12000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.6</researchPointsPerSecond>
 						<totalMechBandwidth>816</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 80 -->
@@ -1453,11 +1528,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>13000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.65</researchPointsPerSecond>
 						<totalMechBandwidth>826</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 81 -->
@@ -1470,11 +1546,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>13000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.75</researchPointsPerSecond>
 						<totalMechBandwidth>836</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 82 -->
@@ -1487,11 +1564,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>13000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.8</researchPointsPerSecond>
 						<totalMechBandwidth>846</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 83 -->
@@ -1504,11 +1582,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>13000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.85</researchPointsPerSecond>
 						<totalMechBandwidth>856</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 84 -->
@@ -1521,11 +1600,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>13000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>4.95</researchPointsPerSecond>
 						<totalMechBandwidth>866</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 85 -->
@@ -1538,11 +1618,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>13000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5</researchPointsPerSecond>
 						<totalMechBandwidth>876</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 86 -->
@@ -1555,11 +1636,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>13000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.05</researchPointsPerSecond>
 						<totalMechBandwidth>886</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 87 -->
@@ -1572,11 +1654,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>13000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.1</researchPointsPerSecond>
 						<totalMechBandwidth>896</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 88 -->
@@ -1589,11 +1672,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>13000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.15</researchPointsPerSecond>
 						<totalMechBandwidth>906</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 89 -->
@@ -1606,11 +1690,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>13000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.2</researchPointsPerSecond>
 						<totalMechBandwidth>916</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 90 -->
@@ -1623,11 +1708,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>14000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.25</researchPointsPerSecond>
 						<totalMechBandwidth>926</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 91 -->
@@ -1640,11 +1726,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>14000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.3</researchPointsPerSecond>
 						<totalMechBandwidth>936</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 92 -->
@@ -1657,11 +1744,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>14000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.35</researchPointsPerSecond>
 						<totalMechBandwidth>946</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 93 -->
@@ -1674,11 +1762,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>14000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.4</researchPointsPerSecond>
 						<totalMechBandwidth>956</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 94 -->
@@ -1691,11 +1780,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>14000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.45</researchPointsPerSecond>
 						<totalMechBandwidth>966</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 95 -->
@@ -1708,11 +1798,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>14000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.5</researchPointsPerSecond>
 						<totalMechBandwidth>976</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 96 -->
@@ -1725,11 +1816,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>14000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.55</researchPointsPerSecond>
 						<totalMechBandwidth>986</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 97 -->
@@ -1742,11 +1834,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>14000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.55</researchPointsPerSecond>
 						<totalMechBandwidth>996</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 98 -->
@@ -1759,11 +1852,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>14000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.6</researchPointsPerSecond>
 						<totalMechBandwidth>1006</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 99 -->
@@ -1776,11 +1870,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>14000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.65</researchPointsPerSecond>
 						<totalMechBandwidth>1016</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 					<li>
 						<!-- level 100 -->
@@ -1793,11 +1888,12 @@
 						<downgradeCooldownTicks>18000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks><!--升级所需时间-->
 						<downgradeDurationTicks>60000</downgradeDurationTicks><!--降级所需时间-->
-						<powerConsumption>5000</powerConsumption>
-						<heatPerSecond>100</heatPerSecond>
+						<powerConsumption>15000</powerConsumption>
+						<heatPerSecond>300</heatPerSecond>
 						<researchPointsPerSecond>5.7</researchPointsPerSecond>
 						<totalMechBandwidth>1026</totalMechBandwidth><!--带宽-->
 						<totalControlGroups>5</totalControlGroups><!--控制组-->
+						<allowCaravans>true</allowCaravans>
 					</li>
 				</upgrades>
 			</li>

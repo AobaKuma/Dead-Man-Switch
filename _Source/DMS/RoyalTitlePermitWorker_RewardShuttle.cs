@@ -11,8 +11,7 @@ namespace DMS
     {
         private Faction calledFaction;
 
-
-        TransportShipDef ShipDef => DMS_DefOf.DMS_Ship_TransportShuttle_Player;
+        TransportShipDef ShipDef => DefDatabase<TransportShipDef>.GetNamedSilentFail("DMS_Ship_TransportShuttle_Player");
         public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
         {
             if (!CanHitTarget(target))

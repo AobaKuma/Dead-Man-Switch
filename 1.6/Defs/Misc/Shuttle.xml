@@ -163,7 +163,7 @@
 				<cooldownEndedMessage>{0} is ready to launch again.</cooldownEndedMessage>
 			</li>
             <li Class="CompProperties_Transporter">
-                <massCapacity>2000</massCapacity>
+                <massCapacity>2500</massCapacity>
                 <max1PerGroup>true</max1PerGroup>
                 <canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
                 <!-- <showOverallStats>false</showOverallStats>-->

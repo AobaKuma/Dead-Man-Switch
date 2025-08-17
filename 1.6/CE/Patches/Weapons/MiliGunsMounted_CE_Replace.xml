@@ -1,7 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Patch>
-	
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DMS_Mech_Hyrax"]/comps/li[@Class="Fortified.CompProperties_VehicleWeapon"]/defaultWeapon</xpath>
+		<value>
+			<turret>DMS_Iguana_SubMachineGun</turret>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DMS_Mech_Mammoth"]/comps/li[@Class="Fortified.CompProperties_VehicleWeapon"]/defaultWeapon</xpath>
+		<value>
+			<turret>DMS_Tarbosaurus_SubMachineGun</turret>
+		</value>
+	</Operation>
+
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="DMS_Mech_Gecko"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="flame thrower"]/turret</xpath>
 			<value>
