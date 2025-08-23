@@ -28,6 +28,7 @@
 			<soundWorking>Recipe_Smith</soundWorking>
 			<recipeUsers Inherit="False">
 				<li>TableMachining</li>
+				<li>DMS_TableMachinePrinter</li>
 			</recipeUsers>
 			<unfinishedThingDef>UnfinishedPack</unfinishedThingDef>
 			<researchPrerequisites>
@@ -170,6 +171,7 @@
 			<soundWorking>Recipe_Smith</soundWorking>
 			<recipeUsers Inherit="False">
 				<li>TableMachining</li>
+				<li>DMS_TableMachinePrinter</li>
 			</recipeUsers>
 			<unfinishedThingDef>UnfinishedPack</unfinishedThingDef>
 			<researchPrerequisites>

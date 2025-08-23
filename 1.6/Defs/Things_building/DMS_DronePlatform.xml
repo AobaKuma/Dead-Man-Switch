@@ -85,7 +85,6 @@
     </comps>
   </ThingDef>
 
-
   <!-- hound charge station -->
   <ThingDef ParentName="DMS_BaseDronePlatform">
     <defName>DMS_Hound_Base</defName>

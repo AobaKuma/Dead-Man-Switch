@@ -281,6 +281,9 @@
 			<skillRequirements>
 				<Crafting>5</Crafting>
 			</skillRequirements>
+			<recipeUsers>
+				<li>DMS_TableMachinePrinter</li>
+			</recipeUsers>
 			<displayPriority>205</displayPriority>
 		</recipeMaker>
 		<graphicData>
@@ -356,6 +359,9 @@
 			<skillRequirements>
 				<Crafting>5</Crafting>
 			</skillRequirements>
+			<recipeUsers>
+				<li>DMS_TableMachinePrinter</li>
+			</recipeUsers>
 			<displayPriority>205</displayPriority>
 		</recipeMaker>
 		<graphicData>
@@ -443,6 +449,9 @@
 			<skillRequirements>
 				<Crafting>4</Crafting>
 			</skillRequirements>
+			<recipeUsers>
+				<li>DMS_TableMachinePrinter</li>
+			</recipeUsers>
 			<displayPriority>220</displayPriority>
 			<defaultIngredientFilter>
 				<disallowedThingDefs>

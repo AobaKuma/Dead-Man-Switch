@@ -13,7 +13,7 @@
     </statBases>
     <race>
       <body>DMS_TrashBin</body>
-      <baseBodySize>1</baseBodySize>
+      <baseBodySize>0.5</baseBodySize>
       <baseHealthScale>1</baseHealthScale>
       <mechEnabledWorkTypes>
         <li>Cleaning</li>

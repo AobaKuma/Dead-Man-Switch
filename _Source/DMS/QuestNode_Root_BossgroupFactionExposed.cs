@@ -92,7 +92,7 @@ namespace DMS
             Quest quest2 = quest;
             MapParent parent = map.Parent;
             string inSignal = text;
-            quest2.DropPods(parent, enumerable, null, null, null, null, false, useTradeDropSpot: false, joinPlayer: false, makePrisoners: false, inSignal, null, QuestPart.SignalListenMode.OngoingOnly, intVec, destroyItemsOnCleanup: true, dropAllInSamePod: false, allowFogged: false, faction);
+            quest2.DropPods(parent, enumerable, null, null, null, null, false, useTradeDropSpot: false, joinPlayer: false, makePrisoners: false, inSignal, null, QuestPart.SignalListenMode.OngoingOnly, intVec, destroyItemsOnCleanup: true, dropAllInSamePod: false, allowFogged: false,faction: faction);
 
             var BossLabelCap = bossgroupDef.boss.kindDef.LabelCap.Named("BOSSLABEL");
             var BossLabel = bossgroupDef.boss.kindDef.label.Named("BOSSLABEL");
