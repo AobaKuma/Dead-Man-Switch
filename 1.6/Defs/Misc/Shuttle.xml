@@ -154,7 +154,7 @@
 				<shipDef>DMS_Ship_TransportShuttle_Player</shipDef>
 			</li>
 			<li Class="CompProperties_Launchable">
-				<fuelPerTile>12</fuelPerTile>
+				<fuelPerTile>8</fuelPerTile>
 				<minFuelCost>50</minFuelCost>
 				<skyfallerLeaving>DMS_PlayerShip_TransportShuttleLeaving</skyfallerLeaving>
 				<worldObjectDef>DMS_TravelingTransportShuttle</worldObjectDef>
