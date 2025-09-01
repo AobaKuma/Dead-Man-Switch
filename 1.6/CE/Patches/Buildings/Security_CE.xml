@@ -91,7 +91,7 @@
 					<minRange>3.5</minRange>
 					<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
 					<burstShotCount>50</burstShotCount>
-					<soundCast>Shot_Minigun</soundCast>
+					<soundCast>DMS_Shot_GAU</soundCast>
 					<soundCastTail>GunTail_Heavy</soundCastTail>
 					<targetParams>
 						<canTargetLocations>true</canTargetLocations>
@@ -124,7 +124,7 @@
 						<range>2500</range>
 						<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
 						<burstShotCount>50</burstShotCount>
-						<soundCast>Shot_Minigun</soundCast>
+						<soundCast>DMS_Shot_GAU</soundCast>
 						<soundCastTail>GunTail_Heavy</soundCastTail>
 						<muzzleFlashScale>15</muzzleFlashScale>
 						<recoilPattern>Mounted</recoilPattern>
@@ -138,7 +138,7 @@
 						<range>100</range>
 						<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
 						<burstShotCount>50</burstShotCount>
-						<soundCast>Shot_Minigun</soundCast>
+						<soundCast>DMS_Shot_GAU</soundCast>
 						<soundCastTail>GunTail_Heavy</soundCastTail>
 						<muzzleFlashScale>15</muzzleFlashScale>
 						<recoilPattern>Mounted</recoilPattern>
