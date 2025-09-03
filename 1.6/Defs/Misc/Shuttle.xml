@@ -158,7 +158,7 @@
 				<minFuelCost>50</minFuelCost>
 				<skyfallerLeaving>DMS_PlayerShip_TransportShuttleLeaving</skyfallerLeaving>
 				<worldObjectDef>DMS_TravelingTransportShuttle</worldObjectDef>
-				<cooldownTicks>2500</cooldownTicks> <!-- 1.5 hours -->
+				<cooldownTicks>1500</cooldownTicks> <!-- 1.5 hours -->
 				<fixedLaunchDistanceMax>62</fixedLaunchDistanceMax>
 				<cooldownEndedMessage>{0} is ready to launch again.</cooldownEndedMessage>
 			</li>
@@ -372,8 +372,16 @@
             </speedCurve>
 		</skyfaller>
 	</ThingDef>
+	
+	<WorldObjectDef ParentName="ShuttleWorldObjectBase">
+		<defName>DMS_TravelingTransportShuttle</defName>
+		<label>orbital transport lifter</label>
+		<description>An orbital transport shuttle in flight.</description>
+		<expandingIconTexture>Things/Skyfaller/HeavyTransportLifter</expandingIconTexture>
+		<expandingIconDrawSize>1.6</expandingIconDrawSize>
+	</WorldObjectDef>
 		
-	<WorldObjectDef>
+	<!--<WorldObjectDef>
 	    <defName>DMS_TravelingTransportShuttle</defName>
         <label>orbital transport lifter</label>
         <description>An orbital transport shuttle in flight.</description>
@@ -389,6 +397,6 @@
         <allowCaravanIncidentsWhichGenerateMap>true</allowCaravanIncidentsWhichGenerateMap>
         <rotateGraphicWhenTraveling>true</rotateGraphicWhenTraveling>
         <validLaunchTarget>false</validLaunchTarget>
-    </WorldObjectDef>
+    </WorldObjectDef>-->
 
 </Defs>
