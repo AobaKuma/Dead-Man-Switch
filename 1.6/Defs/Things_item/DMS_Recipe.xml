@@ -638,6 +638,7 @@
         <filter>
           <thingDefs>
             <li MayRequire="breadmo.cinders">Cinder_AmorphousPolymer</li>
+			<li MayRequire="Aoba.DeadManSwitch.Expedition">DMSE_Carbohydrate</li>
             <li>Neutroamine</li>
           </thingDefs>
         </filter>
@@ -647,6 +648,7 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li MayRequire="breadmo.cinders">Cinder_AmorphousPolymer</li>
+		<li MayRequire="Aoba.DeadManSwitch.Expedition">DMSE_Carbohydrate</li>
         <li>Gold</li>
         <li>Tungsteel</li>
         <li>Plasfiber</li>
@@ -712,6 +714,7 @@
           <thingDefs>
             <li>Neutroamine</li>
             <li MayRequire="breadmo.cinders">Cinder_AmorphousPolymer</li>
+			<li MayRequire="Aoba.DeadManSwitch.Expedition">DMSE_Carbohydrate</li>
           </thingDefs>
         </filter>
         <count>80</count>
@@ -724,6 +727,7 @@
         <li>Plasfiber</li>
         <li>Neutroamine</li>
         <li MayRequire="breadmo.cinders">Cinder_AmorphousPolymer</li>    
+		<li MayRequire="Aoba.DeadManSwitch.Expedition">DMSE_Carbohydrate</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -804,4 +808,50 @@
     <workSkill>Medicine</workSkill>
     <researchPrerequisite>DMS_Hypothesis</researchPrerequisite>
   </RecipeDef>
+  
+  <RecipeDef MayRequire="Aoba.DeadManSwitch.Expedition">
+    <defName>DMS_Make_CRationCarbon</defName>
+    <label>Make C-Ration with carbohydrate</label>
+    <description>Synthesize C-Ration using carbohydrate.</description>
+    <jobString>Synthesizing.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <recipeUsers>
+		<li>DMS_TableArtifuscle</li>
+    </recipeUsers>
+    <skillRequirements/>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>DMS_Artifuscle</researchPrerequisite>
+    <workAmount>1000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMSE_Carbohydrate</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+		<li>DMSE_Carbohydrate</li>
+		<li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <DMS_CombatRation>1</DMS_CombatRation>
+    </products>
+  </RecipeDef>
+  
 </Defs>	
