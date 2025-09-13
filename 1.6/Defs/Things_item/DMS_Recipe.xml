@@ -854,4 +854,49 @@
     </products>
   </RecipeDef>
   
+  <RecipeDef MayRequire="Aoba.DeadManSwitch.Expedition">
+    <defName>DMS_Make_CRationCarbonBulk</defName>
+    <label>Make C-Ration with carbohydrate x4</label>
+    <description>Synthesize C-Ration using carbohydrate.</description>
+    <jobString>Synthesizing.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <recipeUsers>
+		<li>DMS_TableArtifuscle</li>
+    </recipeUsers>
+    <skillRequirements/>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>DMS_Artifuscle</researchPrerequisite>
+    <workAmount>1000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMSE_Carbohydrate</li>
+          </thingDefs>
+        </filter>
+        <count>16</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+		<li>DMSE_Carbohydrate</li>
+		<li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <DMS_CombatRation>4</DMS_CombatRation>
+    </products>
+  </RecipeDef>
+  
 </Defs>	
