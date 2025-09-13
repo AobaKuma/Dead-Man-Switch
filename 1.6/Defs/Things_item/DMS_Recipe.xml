@@ -141,7 +141,7 @@
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeUsers>
       <li>DMS_ReactionChamber</li>
-    	<li>DMS_LabReactor</li>
+      <li>DMS_LabReactor</li>
     </recipeUsers>
     <skillRequirements>
       <Crafting>5</Crafting>
@@ -180,7 +180,7 @@
   </RecipeDef>
 
   <!-- 燒結爐 -->
- <RecipeDef>
+  <RecipeDef>
     <defName>DMS_Make_Tungsteel</defName>
     <label>Make tungsteel X20</label>
     <description>Sinter a small amount of tungsteel.</description>
@@ -255,7 +255,7 @@
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeUsers>
       <li>DMS_Furnace</li>
-      <li>DMS_LabFurnace</li> 
+      <li>DMS_LabFurnace</li>
     </recipeUsers>
     <skillRequirements>
       <Crafting>5</Crafting>
@@ -296,7 +296,7 @@
       <disallowedThingDefs>
         <!-- <li MayRequire="aoba.fortress.industrial">FT_BlocksConcrete</li> -->
         <li MayRequire="aoba.fortress.industrial">FT_WoodConcrete</li>
-		    <li MayRequire="aoba.fortress.industrial">FT_ReinforcedConcreteBag</li>
+        <li MayRequire="aoba.fortress.industrial">FT_ReinforcedConcreteBag</li>
       </disallowedThingDefs>
       <thingDefs>
         <li>Steel</li>
@@ -352,7 +352,7 @@
       <disallowedThingDefs>
         <!-- <li MayRequire="aoba.fortress.industrial">FT_BlocksConcrete</li> -->
         <li MayRequire="aoba.fortress.industrial">FT_WoodConcrete</li>
-		    <li MayRequire="aoba.fortress.industrial">FT_ReinforcedConcreteBag</li>
+        <li MayRequire="aoba.fortress.industrial">FT_ReinforcedConcreteBag</li>
       </disallowedThingDefs>
       <thingDefs>
         <li>Chemfuel</li>
@@ -407,7 +407,7 @@
       <disallowedThingDefs>
         <!-- <li MayRequire="aoba.fortress.industrial">FT_BlocksConcrete</li> -->
         <li MayRequire="aoba.fortress.industrial">FT_WoodConcrete</li>
-		    <li MayRequire="aoba.fortress.industrial">FT_ReinforcedConcreteBag</li>
+        <li MayRequire="aoba.fortress.industrial">FT_ReinforcedConcreteBag</li>
       </disallowedThingDefs>
       <thingDefs>
         <li>Chemfuel</li>
@@ -459,7 +459,7 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>Steel</li>
-        <li>Tungsteel</li>     
+        <li>Tungsteel</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -506,7 +506,7 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>Steel</li>
-        <li>Tungsteel</li>     
+        <li>Tungsteel</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -606,7 +606,7 @@
       <li>DMS_TableArtifuscle</li>
     </recipeUsers>
     <workAmount>5000</workAmount>
-     <ingredients>
+    <ingredients>
       <li>
         <filter>
           <thingDefs>
@@ -638,7 +638,7 @@
         <filter>
           <thingDefs>
             <li MayRequire="breadmo.cinders">Cinder_AmorphousPolymer</li>
-			<li MayRequire="Aoba.DeadManSwitch.Expedition">DMSE_Carbohydrate</li>
+            <li MayRequire="Aoba.DeadManSwitch.Expedition">DMSE_Carbohydrate</li>
             <li>Neutroamine</li>
           </thingDefs>
         </filter>
@@ -648,11 +648,11 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li MayRequire="breadmo.cinders">Cinder_AmorphousPolymer</li>
-		<li MayRequire="Aoba.DeadManSwitch.Expedition">DMSE_Carbohydrate</li>
+        <li MayRequire="Aoba.DeadManSwitch.Expedition">DMSE_Carbohydrate</li>
         <li>Gold</li>
         <li>Tungsteel</li>
         <li>Plasfiber</li>
-        <li>Neutroamine</li>        
+        <li>Neutroamine</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -681,7 +681,7 @@
       <li>DMS_TableArtifuscle</li>
     </recipeUsers>
     <workAmount>20000</workAmount>
-     <ingredients>
+    <ingredients>
       <li>
         <filter>
           <thingDefs>
@@ -714,7 +714,7 @@
           <thingDefs>
             <li>Neutroamine</li>
             <li MayRequire="breadmo.cinders">Cinder_AmorphousPolymer</li>
-			<li MayRequire="Aoba.DeadManSwitch.Expedition">DMSE_Carbohydrate</li>
+            <li MayRequire="Aoba.DeadManSwitch.Expedition">DMSE_Carbohydrate</li>
           </thingDefs>
         </filter>
         <count>80</count>
@@ -726,8 +726,8 @@
         <li>Tungsteel</li>
         <li>Plasfiber</li>
         <li>Neutroamine</li>
-        <li MayRequire="breadmo.cinders">Cinder_AmorphousPolymer</li>    
-		<li MayRequire="Aoba.DeadManSwitch.Expedition">DMSE_Carbohydrate</li>
+        <li MayRequire="breadmo.cinders">Cinder_AmorphousPolymer</li>
+        <li MayRequire="Aoba.DeadManSwitch.Expedition">DMSE_Carbohydrate</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -753,7 +753,7 @@
       <li>DMS_TableArtifuscle</li>
     </recipeUsers>
     <workAmount>10000</workAmount>
-     <ingredients>
+    <ingredients>
       <li>
         <filter>
           <thingDefs>
@@ -808,7 +808,7 @@
     <workSkill>Medicine</workSkill>
     <researchPrerequisite>DMS_Hypothesis</researchPrerequisite>
   </RecipeDef>
-  
+
   <RecipeDef MayRequire="Aoba.DeadManSwitch.Expedition">
     <defName>DMS_Make_CRationCarbon</defName>
     <label>Make C-Ration with carbohydrate</label>
@@ -819,9 +819,9 @@
     <soundWorking>Recipe_Machining</soundWorking>
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeUsers>
-		<li>DMS_TableArtifuscle</li>
+      <li>DMS_TableArtifuscle</li>
     </recipeUsers>
-    <skillRequirements/>
+    <skillRequirements />
     <workSkill>Crafting</workSkill>
     <researchPrerequisite>DMS_Artifuscle</researchPrerequisite>
     <workAmount>1000</workAmount>
@@ -834,7 +834,7 @@
         </filter>
         <count>4</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Neutroamine</li>
@@ -845,15 +845,15 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-		<li>DMSE_Carbohydrate</li>
-		<li>Neutroamine</li>
+        <li>DMSE_Carbohydrate</li>
+        <li>Neutroamine</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
       <DMS_CombatRation>1</DMS_CombatRation>
     </products>
   </RecipeDef>
-  
+
   <RecipeDef MayRequire="Aoba.DeadManSwitch.Expedition">
     <defName>DMS_Make_CRationCarbonBulk</defName>
     <label>Make C-Ration with carbohydrate x4</label>
@@ -864,9 +864,9 @@
     <soundWorking>Recipe_Machining</soundWorking>
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeUsers>
-		<li>DMS_TableArtifuscle</li>
+      <li>DMS_TableArtifuscle</li>
     </recipeUsers>
-    <skillRequirements/>
+    <skillRequirements />
     <workSkill>Crafting</workSkill>
     <researchPrerequisite>DMS_Artifuscle</researchPrerequisite>
     <workAmount>1000</workAmount>
@@ -879,7 +879,7 @@
         </filter>
         <count>16</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Neutroamine</li>
@@ -890,13 +890,13 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-		<li>DMSE_Carbohydrate</li>
-		<li>Neutroamine</li>
+        <li>DMSE_Carbohydrate</li>
+        <li>Neutroamine</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
       <DMS_CombatRation>4</DMS_CombatRation>
     </products>
   </RecipeDef>
-  
+
 </Defs>	
