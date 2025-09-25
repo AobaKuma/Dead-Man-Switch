@@ -82,7 +82,7 @@
 					<Bulk>174</Bulk>
 				</statBases>
 				<Properties>
-					<recoilAmount>1.18</recoilAmount>
+					<recoilAmount>0.38</recoilAmount>
 					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
 					<hasStandardCommand>true</hasStandardCommand>
 					<defaultProjectile>Bullet_30x173mmNATO_AP</defaultProjectile>
@@ -117,7 +117,7 @@
 				<value>
 					<li Class="CombatExtended.VerbProperties_CIWSSkyfaller">
 						<verbClass>CombatExtended.VerbCIWSSkyfaller</verbClass>
-						<recoilAmount>0.88</recoilAmount>
+						<recoilAmount>0.38</recoilAmount>
 						<hasStandardCommand>true</hasStandardCommand>
 						<defaultProjectile>Bullet_30x173mmNATO_AP</defaultProjectile>
 						<warmupTime>0.01</warmupTime>
@@ -131,7 +131,7 @@
 					</li>
 					<li Class="CombatExtended.VerbProperties_CIWSProjectile">
 						<verbClass>CombatExtended.VerbCIWSProjectile</verbClass>
-						<recoilAmount>0.88</recoilAmount>
+						<recoilAmount>0.38</recoilAmount>
 						<hasStandardCommand>true</hasStandardCommand>
 						<defaultProjectile>Bullet_30x173mmNATO_AP</defaultProjectile>
 						<warmupTime>0.01</warmupTime>
@@ -166,7 +166,7 @@
 				    <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
 				</statBases>
 				<Properties>
-		                    <recoilAmount>1.2</recoilAmount>
+		                    <recoilAmount>0.31</recoilAmount>
 		                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
 		                    <hasStandardCommand>true</hasStandardCommand>
 		                    <defaultProjectile>Bullet_30x173mmNATO_AP</defaultProjectile>
@@ -208,7 +208,7 @@
 				    <RangedWeapon_Cooldown>0.7</RangedWeapon_Cooldown>
 				</statBases>
 				<Properties>
-                    <recoilAmount>2.15</recoilAmount>
+                    <recoilAmount>1.4</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_762x385mmRCannonShell_HEAT</defaultProjectile>
@@ -257,7 +257,7 @@
 					<Bulk>43</Bulk>
 				</statBases>
 				<Properties>
-					<recoilAmount>1.47</recoilAmount>
+					<recoilAmount>0.19</recoilAmount>
 					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
 					<hasStandardCommand>true</hasStandardCommand>
 					<defaultProjectile>Bullet_127x108mm_FMJ</defaultProjectile>
