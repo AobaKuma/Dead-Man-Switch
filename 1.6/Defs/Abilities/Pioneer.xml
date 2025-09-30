@@ -31,7 +31,7 @@
 		  <li Class="CompProperties_AbilityGiveHediff">
 			<compClass>CompAbilityEffect_GiveHediff</compClass>
 			<hediffDef>DMS_BurstSprint</hediffDef>
-			<onlyApplyToSelf>True</onlyApplyToSelf>
+			<onlyApplyToSelf>true</onlyApplyToSelf>
 			<replaceExisting>true</replaceExisting>
 		  </li>
 		</comps>
@@ -46,10 +46,11 @@
 		<stages>
 		  <li>
 			<statFactors>
-			  <MeleeCooldownFactor>0.7</MeleeCooldownFactor>
+			  <MeleeCooldownFactor>0.5</MeleeCooldownFactor>
 			</statFactors>
 			<statOffsets>
 			  <MoveSpeed>5</MoveSpeed>
+			  <RangedCooldownFactor>-0.1</RangedCooldownFactor>
 			</statOffsets>
 		  </li>
 		</stages>

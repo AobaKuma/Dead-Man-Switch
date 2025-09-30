@@ -65,8 +65,10 @@
       <thinkTreeMain>DMS_HumanlikeMech</thinkTreeMain>
       <makesFootprints>true</makesFootprints>
       <body>DMS_Synthroid</body>
+      <mechFixedSkillLevel>10</mechFixedSkillLevel>
       <mechEnabledWorkTypes>
         <li>Hauling</li>
+        <li>Hunting</li>
         <li>PlantCutting</li>
         <li>Growing</li>
         <li>Firefighter</li>
@@ -183,7 +185,7 @@
     <statBases>
       <MoveSpeed>6</MoveSpeed>
       <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
       <ArmorRating_Heat>1</ArmorRating_Heat>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge><!--充電/培養時產出廢料-->

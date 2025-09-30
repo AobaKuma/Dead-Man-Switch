@@ -13,8 +13,8 @@
 			<li Class="CompProperties_AbilityGiveHediff">
 				<compClass>CompAbilityEffect_GiveHediff</compClass>
 				<hediffDef>DMS_InfrasoundWave</hediffDef>
-				<onlyBrain>True</onlyBrain>
-				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<onlyBrain>true</onlyBrain>
+				<onlyApplyToSelf>true</onlyApplyToSelf>
 				<replaceExisting>true</replaceExisting>
 			</li>
 		</comps>
@@ -99,7 +99,7 @@
 					</li>
 					<li>
 						<capacity>Moving</capacity>
-						<offset>-0.2</offset>
+						<offset>-0.5</offset>
 					</li>
 				</capMods>
 			</li>

@@ -72,6 +72,7 @@
       </li>
     </stages>
   </HediffDef>
+
   <!-- 安裝DMS機絆後的永久副作用Hediff，會在安裝者死亡後銷毀機絆 -->
   <HediffDef MayRequire="Ludeon.Rimworld.Biotech">
     <defName>DMS_MechlinkRejection</defName>
@@ -237,6 +238,7 @@
       </li>
     </stages>
   </HediffDef>
+
   <!-- DMS_BionicShockRemove 幻肢症，移除神經機械仿生的臨時副作用 -->
   <HediffDef>
     <defName>DMS_BionicShockRemove</defName>
@@ -277,6 +279,7 @@
       </li>
     </stages>
   </HediffDef>
+  
   <!-- DMS_BionicShock 異肢症，神經機械仿生的臨時副作用 -->
   <HediffDef>
     <defName>DMS_BionicShock</defName>

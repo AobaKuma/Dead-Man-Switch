@@ -76,13 +76,13 @@
                     <SwayFactor>0.96</SwayFactor>
                     <ShotSpread>0.15</ShotSpread>
                     <SightsEfficiency>1.0</SightsEfficiency>
-                    <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+                    <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_22LR_FMJ</defaultProjectile>
-                    <warmupTime>0</warmupTime>
+                    <warmupTime>0.8</warmupTime>
                     <range>20</range>
                     <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
                     <burstShotCount>10</burstShotCount>
@@ -119,13 +119,13 @@
                     <SwayFactor>0.96</SwayFactor>
                     <ShotSpread>0.15</ShotSpread>
                     <SightsEfficiency>1.0</SightsEfficiency>
-                    <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+                    <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_12Gauge_Beanbag</defaultProjectile>
-                    <warmupTime>0</warmupTime>
+                    <warmupTime>0.8</warmupTime>
                     <range>17</range>
                     <soundCast>Shot_Shotgun</soundCast>
                     <soundCastTail>GunTail_Heavy</soundCastTail>
@@ -162,7 +162,7 @@
                     <SwayFactor>1.28</SwayFactor>
                     <ShotSpread>0.05</ShotSpread>
                     <SightsEfficiency>1</SightsEfficiency>
-                    <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+                    <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
                     <recoilAmount>1.24</recoilAmount>
@@ -171,7 +171,7 @@
                     <defaultProjectile>Bullet_338Lapua_FMJ</defaultProjectile>
                     <burstShotCount>15</burstShotCount>
                     <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
-                    <warmupTime>0</warmupTime>
+                    <warmupTime>1</warmupTime>
                     <range>75</range>
                     <soundCast>DMS_MachineGunLight_Shot</soundCast>
                     <soundCastTail>GunTail_Medium</soundCastTail>
@@ -203,7 +203,7 @@
                     <SwayFactor>1.64</SwayFactor>
                     <ShotSpread>0.05</ShotSpread>
                     <SightsEfficiency>1</SightsEfficiency>
-                    <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+                    <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
                     <recoilAmount>1.55</recoilAmount>
@@ -212,7 +212,7 @@
                     <defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
                     <burstShotCount>10</burstShotCount>
                     <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
-                    <warmupTime>0</warmupTime>
+                    <warmupTime>1.2</warmupTime>
                     <range>75</range>
                     <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
                     <soundCastTail>GunTail_Medium</soundCastTail>
@@ -276,6 +276,7 @@
                     <li>NoSwitch</li>
                 </weaponTags>
             </li>
+
 			<!-- Mounted Vasilek -->
 			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 				<defName>DMS_Gun_Vasilek_B</defName>
@@ -335,7 +336,7 @@
 							<li>60</li>
 							<li>70</li>
 							<li>90</li>
-						<!--	<li>110</li>
+						<!--<li>110</li>
 							<li>130</li>-->
 						</chargeSpeeds>
 					</li>

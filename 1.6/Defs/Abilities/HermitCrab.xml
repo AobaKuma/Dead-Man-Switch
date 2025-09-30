@@ -46,7 +46,7 @@
 					<canTargetSelf>false</canTargetSelf>
 					<canTargetPawns>true</canTargetPawns>
 					<canTargetAnimals>false</canTargetAnimals>
-					<canTargetHumans>true</canTargetHumans>
+					<canTargetHumans>false</canTargetHumans>
 					<canTargetMechs>true</canTargetMechs>
 				</targetingParameters>
 				<hediff>DMS_SelfRepair</hediff>

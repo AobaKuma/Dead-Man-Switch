@@ -3,9 +3,9 @@
   <ThingDef Name="BaseBattleFrame" ParentName="BaseAutomatroidHumanRace" Abstract="True">
     <statBases>
       <StaggerDurationFactor>0.35</StaggerDurationFactor>
-      <ArmorRating_Sharp>0.4</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Sharp>0.55</ArmorRating_Sharp><!--銳抗-->
       <ArmorRating_Blunt>0.2</ArmorRating_Blunt><!--鈍抗-->
-      <ArmorRating_Heat>1.3</ArmorRating_Heat>  <!--能抗-->
+      <ArmorRating_Heat>1</ArmorRating_Heat>  <!--能抗-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>

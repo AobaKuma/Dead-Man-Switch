@@ -4,7 +4,7 @@
   <!-- EN: Door Buster -->
   <DMS_DoorBreaker.label>破門錘</DMS_DoorBreaker.label>
   <!-- EN: A specially design battering ram for mech breachers which has a built-in launcher and explosive ram head. -->
-  <DMS_DoorBreaker.description>這是一種特殊設計的機兵破門錘，具有短距裝藥發射器與成形裝藥彈頭。</DMS_DoorBreaker.description>
+  <DMS_DoorBreaker.description>一種特殊設計的榴彈發射器，能夠透過減裝藥來發射具備破甲能力的成形裝藥彈頭，也可以當作真的破門錘用來砸開建築薄弱處的結構。</DMS_DoorBreaker.description>
   <!-- EN: head -->
   <DMS_DoorBreaker.tools.head.label>錘頭</DMS_DoorBreaker.tools.head.label>
   <!-- EN: barrel -->
@@ -18,7 +18,7 @@
   <!-- EN: Machete -->
   <DMS_Machete.label>機兵開山刀</DMS_Machete.label>
   <!-- EN: It May look like a normal machete, but this weapon is purpose built for a mech melee combat capability.\n\nWith its high frequency vibrating edge, it can cut through most things with ease. -->
-  <DMS_Machete.description>專門給近戰機兵用於在叢林環境作戰時開路的重型砍刀。憑藉其刀刃可以輕松砍斷大多數東西。</DMS_Machete.description>
+  <DMS_Machete.description>專為用於在叢林環境作戰時開路用的重型砍刀，憑藉其刀刃與重量可以輕松砍斷大多數東西。</DMS_Machete.description>
   <!-- EN: handle -->
   <DMS_Machete.tools.handle.label>手把</DMS_Machete.tools.handle.label>
   <!-- EN: point -->
@@ -29,7 +29,7 @@
   <!-- EN: Stun Baton -->
   <DMS_StunBaton.label>鎮暴電棍</DMS_StunBaton.label>
   <!-- EN: An electric stun baton designed for non-lethal riot control and to Subdue out-of-control machines. It's commonly used by automatroid protectors to secure occupied areas safely without casualties. -->
-  <DMS_StunBaton.description>一種專為非致命性防暴控制和製服失控機兵而設計的電擊棍，通常被執行治安任務的塔盾手使用來確保占領區域的安全而不造成人員傷亡。</DMS_StunBaton.description>
+  <DMS_StunBaton.description>專為非致命性防暴控制和制服失控機兵而設計的電擊棍，通常被執行治安任務的塔盾手使用來確保占領區域的安全而不造成人員傷亡。</DMS_StunBaton.description>
   <!-- EN: handle -->
   <DMS_StunBaton.tools.handle.label>握把</DMS_StunBaton.tools.handle.label>
   <!-- EN: point -->

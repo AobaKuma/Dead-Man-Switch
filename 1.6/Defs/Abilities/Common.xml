@@ -12,7 +12,7 @@
 		<charges>4</charges>
 		<cooldownPerCharge>true</cooldownPerCharge>
 		<verbProperties>
-			<defaultCooldownTime>5</defaultCooldownTime>
+			<defaultCooldownTime>8</defaultCooldownTime>
 			<verbClass>Verb_CastAbility</verbClass>
 			<onlyManualCast>false</onlyManualCast>
 			<range>24.9</range>
@@ -46,7 +46,7 @@
 		<projectile>
 			<speed>40</speed>
 			<damageDef>Stun</damageDef>
-			<damageAmountBase>10</damageAmountBase>
+			<damageAmountBase>6</damageAmountBase>
 			<stoppingPower>1.5</stoppingPower>
 			<explosionRadius>1.5</explosionRadius>
 			<ai_IsIncendiary>false</ai_IsIncendiary>

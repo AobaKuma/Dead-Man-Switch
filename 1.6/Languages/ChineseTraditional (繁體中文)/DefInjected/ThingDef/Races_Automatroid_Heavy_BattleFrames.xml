@@ -4,7 +4,7 @@
   <!-- EN: Battle Friend -->
   <DMS_Mech_BattleFrame.label>戰鬥夥伴</DMS_Mech_BattleFrame.label>
   <!-- EN: Designed as a light infantry fighting unit, the battle friend has a considerable load capacity and ability to use most human equipment. -->
-  <DMS_Mech_BattleFrame.description>設計為輕型步兵作戰單位。戰鬥框架擁有相當程度的負載能力，並且能夠使用大部分人類裝備，\n 當它可以裝備大量彈藥的重型武器時，已經被部隊大規模使用並部署在各種環境中也就不足為奇了。</DMS_Mech_BattleFrame.description>
+  <DMS_Mech_BattleFrame.description>一種被設計為輕型步兵支援平台的雙足戰鬥機兵，通常安裝有一個用於環視周圍的頂部探頭與用於使用槍械瞄準用的前方探頭，在歷史上曾被大量生產用於投入在丘陵及山地環境的戰鬥。戰鬥框架擁有相當程度的負載能力來背負使用的彈藥與武器，並且能夠操作大部分人類所能使用的槍械，\n戰鬥夥伴可以攜帶大量彈藥並裝備火力充分的支援武器，因此在過去被多個國家的軍隊所採用並有許多基於當地環境與功能所發展的泛生型號。</DMS_Mech_BattleFrame.description>
   <!-- EN: head -->
   <DMS_Mech_BattleFrame.tools.head.label>頭部</DMS_Mech_BattleFrame.tools.head.label>
   <!-- EN: left fist -->
@@ -15,7 +15,7 @@
   <!-- EN: Escort Lifter -->
   <DMS_Mech_EscortLifter.label>運輸框架</DMS_Mech_EscortLifter.label>
   <!-- EN: An early stage mass-production automatroid. It's no longer in regular service but there are still plenty of them modified for transport purposes. -->
-  <DMS_Mech_EscortLifter.description>戰鬥框架作為早期批次生產的機兵儘管已不再是標準的現役兵器但仍有很多經過改裝後用於運輸目的，但由於其重量與削減的火控系統因此只能裝備輕武器用於自衛。</DMS_Mech_EscortLifter.description>
+  <DMS_Mech_EscortLifter.description>一種用於後勤裝載與武裝押運的二線支援型運輸機兵，是戰鬥框架系列的泛生型號之一。安裝了額外的貨箱與搬運工具來使其具有獨立裝載貨物的能力，在殖民艦隊陸軍的序列中許多早期批次生產的戰鬥框架會在經過改裝後在各個殖民地間的商隊運輸發揮餘熱。\n由於移除了頂部探頭及許多軍規硬體因此在操作系統上能夠支持的武器並不充裕，只能裝備輕型武器用於自衛。</DMS_Mech_EscortLifter.description>
   <!-- EN: head -->
   <DMS_Mech_EscortLifter.tools.head.label>頭部</DMS_Mech_EscortLifter.tools.head.label>
   <!-- EN: left fist -->
@@ -26,7 +26,7 @@
   <!-- EN: Field Command -->
   <DMS_Mech_FieldCommand.label>中繼指揮</DMS_Mech_FieldCommand.label>
   <!-- EN: A battle friend subvariant. It functions as a mechanitor command relay, however due to the weight of the relay equipment it can only use a light weapon. -->
-  <DMS_Mech_FieldCommand.description>戰鬥夥伴的改裝型號。能夠作為機兵的指揮中繼，但由於其重量與削減的火控系統因此只能裝備輕武器用於自衛。</DMS_Mech_FieldCommand.description>
+  <DMS_Mech_FieldCommand.description>一種用於前線中繼指揮的戰鬥框架泛生型號，透過安裝在機體頂部的三面相控陣雷達來不間斷的提供準確且清晰的大範圍地形掃描訊號以及對視線內友軍的定向短波通訊能力。能夠使得指揮官能夠過將其作為指揮中繼對其他機兵進行準確的指令控制。\n由於其大量的空間與重量被用於為雷達系統提供支持，因此在有限的武器系統上只能夠裝備輕型武器用於自衛。</DMS_Mech_FieldCommand.description>
   <!-- EN: head -->
   <DMS_Mech_FieldCommand.tools.head.label>頭部</DMS_Mech_FieldCommand.tools.head.label>
   <!-- EN: left fist -->
@@ -37,7 +37,7 @@
   <!-- EN: Shaft Worker -->
   <DMS_Mech_ShaftWorker.label>工程駁機</DMS_Mech_ShaftWorker.label>
   <!-- EN: An early stage mass-produced automatroid. It's no longer in regular service but there are still lots of them modified to used for mining and construct purpose. -->
-  <DMS_Mech_ShaftWorker.description>一種被大量用於殖民據點建設與資源開采的作業型戰鬥框架。具有一定的後勤能力，但由於其重量與削減的火控系統因此只能裝備輕武器用於自衛</DMS_Mech_ShaftWorker.description>
+  <DMS_Mech_ShaftWorker.description>一種用於殖民據點建設與資源開采的殖民作業型戰鬥框架泛生...其實並不完全正確。工程駁機所使用的雙足步行設計與戰鬥框架具有差異，然而零件的高互換性使得大部分人都經常不會注意到兩者的差異。其設計被用來盡可能的簡化殖民建設計畫中的工程裝備種類與數量，具有相比戰鬥框架而言更加高大的體型與外置的動力包模塊。然而基於成本考量的簡化武器系統使其只能夠裝備輕型武器用於自衛。</DMS_Mech_ShaftWorker.description>
   <!-- EN: head -->
   <DMS_Mech_ShaftWorker.tools.head.label>頭部</DMS_Mech_ShaftWorker.tools.head.label>
   <!-- EN: left fist -->

@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!-- ==================== AmmoSet ========================== -->
-
 	<CombatExtended.AmmoSetDef>
 		<defName>AmmoSet_SurvivalRifle</defName>
 		<label>X Caliber</label>
 		<ammoTypes>
-			<!--
-			<Ammo_45Schofield_FMJ>Bullet_45Schofield_FMJ</Ammo_45Schofield_FMJ>
-			<Ammo_45Schofield_AP>Bullet_45Schofield_AP</Ammo_45Schofield_AP>
-			<Ammo_45Schofield_HP>Bullet_45Schofield_HP</Ammo_45Schofield_HP>
-			<Ammo_45Colt_FMJ>Bullet_45Colt_FMJ</Ammo_45Colt_FMJ>
-			<Ammo_45Colt_AP>Bullet_45Colt_AP</Ammo_45Colt_AP>
-			<Ammo_45Colt_HP>Bullet_45Colt_HP</Ammo_45Colt_HP>
-			<Ammo_44SWSpecial_FMJ>Bullet_44SWSpecial_FMJ</Ammo_44SWSpecial_FMJ>
-			<Ammo_44SWSpecial_AP>Bullet_44SWSpecial_AP</Ammo_44SWSpecial_AP>
-			<Ammo_44SWSpecial_HP>Bullet_44SWSpecial_HP</Ammo_44SWSpecial_HP>
-			<Ammo_38Special_FMJ>Bullet_38Special_FMJ</Ammo_38Special_FMJ>
-     		<Ammo_38Special_AP>Bullet_38Special_AP</Ammo_38Special_AP>
-			<Ammo_38Special_HP>Bullet_38Special_HP</Ammo_38Special_HP>--> 
 			<Ammo_45ACP_FMJ>Bullet_45ACP_FMJ</Ammo_45ACP_FMJ>
 			<Ammo_45ACP_AP>Bullet_45ACP_AP</Ammo_45ACP_AP>
 			<Ammo_45ACP_HP>Bullet_45ACP_HP</Ammo_45ACP_HP>
@@ -52,6 +38,5 @@
 		</ammoTypes>
 		<similarTo>AmmoSet_Shotgun</similarTo>
 	</CombatExtended.AmmoSetDef>
-
 
 </Defs>

@@ -11,8 +11,8 @@
 			<li Class="CompProperties_AbilityGiveHediff" MayRequire="Ludeon.RimWorld.Royalty">
 				<compClass>CompAbilityEffect_GiveHediff</compClass>
 				<hediffDef>PsychicInvisibility</hediffDef>
-				<onlyBrain>True</onlyBrain>
-				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<onlyBrain>true</onlyBrain>
+				<onlyApplyToSelf>true</onlyApplyToSelf>
 				<replaceExisting>true</replaceExisting>
 			</li>
 		</comps>

@@ -5,18 +5,16 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="DMS_Mech_Hyrax"]/comps/li[@Class="Fortified.CompProperties_VehicleWeapon"]/defaultWeapon</xpath>
 		<value>
-			<defaultWeapon>DMS_Iguana_SubMachineGun</defaultWeapon>
+			<defaultWeapon>DMS_SubMachineGunMounted</defaultWeapon>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="DMS_Mech_Mammoth"]/comps/li[@Class="Fortified.CompProperties_VehicleWeapon"]/defaultWeapon</xpath>
 		<value>
-			<defaultWeapon>DMS_Tarbosaurus_SubMachineGun</defaultWeapon>
+			<defaultWeapon>DMS_HeavyMachineGunMounted</defaultWeapon>
 		</value>
 	</Operation>
-
-
 
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="DMS_Mech_Gecko"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="flame thrower"]/turret</xpath>

@@ -48,8 +48,8 @@
 				<value>
 					<li Class="CombatExtended.LoadoutPropertiesExtension">
 						<primaryMagazineCount>
-							<min>2</min>
-							<max>3</max>
+							<min>1</min>
+							<max>2</max>
 						</primaryMagazineCount>
 					</li>
 				</value>
@@ -82,7 +82,34 @@
 						<MinArmorPct>0.75</MinArmorPct>
 					</li>
 				</value>
+			</li>	
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Hyrax"]</xpath>
+				<value>
+					<inventoryOptions>
+						<skipChance>0</skipChance>
+						<subOptionsChooseOne>
+							<li>
+								<choiceChance>40</choiceChance>
+								<thingDef>Ammo_22LR_FMJ</thingDef>
+								<countRange>
+									<min>80</min>
+									<max>200</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>15</choiceChance>
+								<thingDef>Ammo_22LR_HP</thingDef>
+								<countRange>
+									<min>80</min>
+									<max>200</max>
+								</countRange>
+							</li>
+						</subOptionsChooseOne>
+					</inventoryOptions>
+				</value>
 			</li>
+
 			<!--Falcon-->
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/ThingDef[@Name="BaseMechRace_Falcon"]</xpath>
@@ -156,6 +183,7 @@
 					</li>
 				</value>
 			</li>
+
 			<!-- Dogge -->
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/ThingDef[@Name="DMS_MechDoggeBase"]</xpath>

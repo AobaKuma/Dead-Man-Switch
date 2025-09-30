@@ -21,10 +21,12 @@
 		<EquippableWithApparel>
 			<li>DMS_Apparel_BionicSuit</li>
 			<li>DMS_Apparel_PowerSkeleton</li>
+			<li MayRequire="ludeon.rimworld.biotech">Apparel_MechlordSuit</li>
             <li>Apparel_PowerArmor</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorMarinePrestige</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorMarineGrenadier</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphract</li>
+			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphractPrestige</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphractPhoenix</li>
 			<li MayRequire="Aoba.DeadManSwitch.Expedition">DMS_Apparel_HeavyPowerSkeleton</li>
 		</EquippableWithApparel>
@@ -34,6 +36,9 @@
 		<defName>LightAutomatroid</defName>
 		<EquippableBaseBodySize>1.1</EquippableBaseBodySize>
 		<EquippableByRace/>
+		<EquippableWithGene>
+			<li>Robust</li>
+		</EquippableWithGene>
 		<EquippableWithHediff>
             <li>ArchotechArm</li>
             <li>DMS_SyntheticArm</li>
@@ -41,10 +46,12 @@
 		<EquippableWithApparel>
 			<li>DMS_Apparel_BionicSuit</li>
 			<li>DMS_Apparel_PowerSkeleton</li>
+			<li MayRequire="ludeon.rimworld.biotech">Apparel_MechlordSuit</li>
             <li>Apparel_PowerArmor</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorMarinePrestige</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorMarineGrenadier</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphract</li>
+			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphractPrestige</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphractPhoenix</li>
 			<li MayRequire="Aoba.DeadManSwitch.Expedition">DMS_Apparel_HeavyPowerSkeleton</li>
 		</EquippableWithApparel>
@@ -54,17 +61,21 @@
 		<defName>StandardAutomatroid</defName>
 		<EquippableBaseBodySize>1.4</EquippableBaseBodySize>
 		<EquippableByRace/>
-		<EquippableWithGene/>
+		<EquippableWithGene>
+			<li>Robust</li>
+		</EquippableWithGene>
 		<EquippableWithHediff>
             <li>DMS_SyntheticArm</li>
             <li>ArchotechArm</li>
         </EquippableWithHediff>
 		<EquippableWithApparel>
 			<li>DMS_Apparel_PowerSkeleton</li>
+			<li MayRequire="ludeon.rimworld.biotech">Apparel_MechlordSuit</li>
             <li>Apparel_PowerArmor</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorMarinePrestige</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorMarineGrenadier</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphract</li>
+			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphractPrestige</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphractPhoenix</li>
 			<li MayRequire="Aoba.DeadManSwitch.Expedition">DMS_Apparel_HeavyPowerSkeleton</li>
 		</EquippableWithApparel>
@@ -77,10 +88,8 @@
 		<EquippableWithGene/>
 		<EquippableWithApparel>
 			<li>DMS_Apparel_PowerSkeleton</li>
-            <li>Apparel_PowerArmor</li>
-			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorMarinePrestige</li>
-			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorMarineGrenadier</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphract</li>
+			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphractPrestige</li>
 			<li MayRequire="ludeon.rimworld.royalty">Apparel_ArmorCataphractPhoenix</li>
 			<li MayRequire="Aoba.DeadManSwitch.Expedition">DMS_Apparel_HeavyPowerSkeleton</li>
 		</EquippableWithApparel>
@@ -113,5 +122,4 @@
 		</EquippableWithHediff>
 		<EquippableWithApparel/>
 	</Fortified.HeavyEquippableDef>
-
 </Defs>

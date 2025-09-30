@@ -12,7 +12,6 @@
       <ArmorRating_Heat>1.2</ArmorRating_Heat>  <!--能抗-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge>
-      
       <!-- 履帶平台的特色就是用電低。並且被攻擊不減速 -->
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <MechEnergyUsageFactor>0.5</MechEnergyUsageFactor>
@@ -52,69 +51,6 @@
         <disarmedByEmpForTicks>3000</disarmedByEmpForTicks>
         <gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
       </li>
-      <!--
-      <li Class="Fortified.CompProperties_VehicleWeapon">
-        <defaultWeapon>DMS_SubMachineGunMounted</defaultWeapon>
-        <turretRotationFollowPawn>true</turretRotationFollowPawn>
-        <rotationSmoothTime>0.2</rotationSmoothTime>
-        <drawData>
-          <defaultData>
-            <pivot>(0.5,0.5)</pivot>
-          </defaultData>                  
-          <dataEast>
-            <offset>(0.5,0,-0.5)</offset>
-          </dataEast>
-          <dataWest>
-            <offset>(-0.75,0,0.6)</offset>
-            <rotationOffset>180</rotationOffset>
-          </dataWest>
-          <dataSouth>
-            <offset>(-0.6,0,-0.5)</offset>
-          </dataSouth>
-          <dataNorth>
-            <offset>(0.6,0,0.9)</offset>
-          </dataNorth>
-        </drawData>
-      </li>
-      <li Class="Fortified.CompPropertiesMultipleTurretGun">
-        <subTurrets>
-          <li>
-            <ID>defense machinegun</ID>
-            <turret>DMS_SubMachineGunMounted</turret>
-            <autoAttack>true</autoAttack>
-            <warmingTime>3</warmingTime>
-            <angleOffset>-90</angleOffset>
-            <renderNodeProperties>
-              <li>
-                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
-                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
-                <parentTagDef>Body</parentTagDef>
-                <overrideMeshSize>1</overrideMeshSize>
-                <baseLayer>20</baseLayer>
-                <pawnType>Any</pawnType>
-                <drawData>
-                  <defaultData>
-                    <pivot>(0.5,0.5)</pivot>
-                  </defaultData>                  
-                  <dataEast>
-                    <offset>(0.5,0,-0.5)</offset>
-                  </dataEast>
-                  <dataWest>
-                    <offset>(-0.75,0,0.6)</offset>
-                    <rotationOffset>180</rotationOffset>
-                  </dataWest>
-                  <dataSouth>
-                    <offset>(-0.6,0,-0.5)</offset>
-                  </dataSouth>
-                  <dataNorth>
-                    <offset>(0.6,0,0.9)</offset>
-                  </dataNorth>
-                </drawData>
-              </li>
-            </renderNodeProperties>
-          </li>
-        </subTurrets>
-      </li> -->
     </comps>
     <tools Inherit="False">
       <li>

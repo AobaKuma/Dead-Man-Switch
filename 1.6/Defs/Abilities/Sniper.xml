@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
- <!-- 大幅增加自身的射擊準度 -->
+	<!-- 大幅增加自身的射擊準度 -->
 	<AbilityDef ParentName="DMS_AddHediffSelfBase">
 		<defName>DMS_SharpShooting</defName>
 		<label>Precision Marksmanship</label>
@@ -9,16 +9,16 @@
 		<iconPath>UI/Ability/PiercingSnipe</iconPath>
 		<aiCanUse>true</aiCanUse>
 		<comps>
-		<li Class="CompProperties_AbilityGiveHediff">
-			<compClass>CompAbilityEffect_GiveHediff</compClass>
-			<hediffDef>DMS_SharpShooting</hediffDef>
-			<onlyBrain>True</onlyBrain>
-			<onlyApplyToSelf>True</onlyApplyToSelf>
-			<replaceExisting>true</replaceExisting>
-		</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>DMS_SharpShooting</hediffDef>
+				<onlyBrain>true</onlyBrain>
+				<onlyApplyToSelf>true</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
 		</comps>
 		<statBases>
-			<Ability_Duration>10</Ability_Duration>
+			<Ability_Duration>20</Ability_Duration>
 		</statBases>
 	</AbilityDef>
 
@@ -29,15 +29,16 @@
 		<description>This unit is performing intricate ballistic calculations and cannot move. Once its calculations are complete, it will take a precision shot with deadly accuracy.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
-		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
-		  <li Class="HediffCompProperties_Disappears">
-			<showRemainingTime>True</showRemainingTime>
-		  </li>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>True</showRemainingTime>
+			</li>
 		</comps>
 		<isBad>false</isBad>
 		<stages>
 			<li>
 				<statOffsets>
+					<RangedCooldownFactor>-0.40</RangedCooldownFactor>
 					<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
 				</statOffsets>
 				<statFactors>
@@ -46,28 +47,27 @@
 				<capMods>
 					<li>
 						<capacity>Sight</capacity>
-						<offset>2</offset>
+						<offset>3</offset>
 					</li>
 				</capMods>
 			</li>
 		</stages>
 	</HediffDef>
 
- <!-- 增加範圍內友軍的射擊準度 -->
-
+	<!-- 增加範圍內友軍的射擊準度 -->
 	<AbilityDef ParentName="DMS_AddHediffSelfBase">
 		<defName>DMS_RangeFinder</defName>
 		<label>Recon Calibration</label>
 		<description>Share fire control data with friendly forces within range to improve squad accuracy for short period.</description>
 		<iconPath>UI/Ability/RangeFinder</iconPath>
 		<comps>
-		<li Class="CompProperties_AbilityGiveHediff">
-			<compClass>CompAbilityEffect_GiveHediff</compClass>
-			<hediffDef>DMS_RangeFinder</hediffDef>
-			<onlyBrain>True</onlyBrain>
-			<onlyApplyToSelf>True</onlyApplyToSelf>
-			<replaceExisting>true</replaceExisting>
-		</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>DMS_RangeFinder</hediffDef>
+				<onlyBrain>true</onlyBrain>
+				<onlyApplyToSelf>true</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
 		</comps>
 		<statBases>
 			<Ability_EffectRadius>3.9</Ability_EffectRadius>
@@ -77,67 +77,67 @@
 			<range>3.9</range>
 		</verbProperties>
 	</AbilityDef>
-  
- <HediffDef>
-	<defName>DMS_RangeFinder</defName>
-	<label>Recon Calibration</label>
-	<description>A large amount of fire control data is being shared with surrounding friendly forces through this unit which temporarily slows down its ability to respond to commands.</description>
-	<hediffClass>HediffWithComps</hediffClass>
-	<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-	<comps>
-	  <li Class="HediffCompProperties_Disappears">
-		<showRemainingTime>True</showRemainingTime>
-	  </li>
-	  <li Class="HediffCompProperties_DisappearsOnDeath"/>
-	  <li Class="HediffCompProperties_GiveHediffsInRange">
-		<compClass>Fortified.HediffComp_GiveHediffsInRangeMech</compClass>
-		<range>3.9</range>
-		<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
-		<onlyPawnsInSameFaction>true</onlyPawnsInSameFaction>
-		<targetingParameters>
-			<canTargetSelf>false</canTargetSelf>
-			<canTargetPawns>true</canTargetPawns>
-			<canTargetAnimals>false</canTargetAnimals>
-			<canTargetHumans>true</canTargetHumans>
-			<canTargetMechs>true</canTargetMechs>
-		</targetingParameters>
-		<hediff>DMS_RangeFinderBuff</hediff>
-	  </li>
-	</comps>
-	<isBad>false</isBad>
-	<stages>
-		<li>
-			<statOffsets>
-			  	<ShootingAccuracyPawn>-1</ShootingAccuracyPawn>
-			</statOffsets>
-			<statFactors>
-				<MoveSpeed>0.5</MoveSpeed>
-			</statFactors>
-		</li>
-	</stages>
-  </HediffDef>
 
-<!-- 施加在友軍上的Buff -->
-  <HediffDef>
-	<defName>DMS_RangeFinderBuff</defName>
-	<label>Received Calibration</label>
-	<description>The missile knows where it is at all times. It knows this because it knows where it isn't. By subtracting where it is from where it isn't, or where it isn't from where it is...</description>
-	<hediffClass>HediffWithComps</hediffClass>    
-	<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-	<comps>
-	  <li Class="HediffCompProperties_Disappears">
-		<showRemainingTime>false</showRemainingTime>
-	  </li>
-	  <li Class="HediffCompProperties_DisappearsOnDeath"/>
-	</comps>
-	<isBad>false</isBad>
-	<stages>
-	  <li>
-		<statOffsets>
-		  <ShootingAccuracyPawn>0.5</ShootingAccuracyPawn>
-		  <RangedCooldownFactor>-0.25</RangedCooldownFactor>
-		</statOffsets>
-	  </li>
-	</stages>
-  </HediffDef>
+	<HediffDef>
+		<defName>DMS_RangeFinder</defName>
+		<label>Recon Calibration</label>
+		<description>A large amount of fire control data is being shared with surrounding friendly forces through this unit which temporarily slows down its ability to respond to commands.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<compClass>Fortified.HediffComp_GiveHediffsInRangeMech</compClass>
+				<range>3.9</range>
+				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+				<onlyPawnsInSameFaction>true</onlyPawnsInSameFaction>
+				<targetingParameters>
+					<canTargetSelf>false</canTargetSelf>
+					<canTargetPawns>true</canTargetPawns>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetHumans>true</canTargetHumans>
+					<canTargetMechs>true</canTargetMechs>
+				</targetingParameters>
+				<hediff>DMS_RangeFinderBuff</hediff>
+			</li>
+		</comps>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<ShootingAccuracyPawn>-1</ShootingAccuracyPawn>
+				</statOffsets>
+				<statFactors>
+					<MoveSpeed>0.5</MoveSpeed>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!-- 施加在友軍上的Buff -->
+	<HediffDef>
+		<defName>DMS_RangeFinderBuff</defName>
+		<label>Received Calibration</label>
+		<description>The missile knows where it is at all times. It knows this because it knows where it isn't. By subtracting where it is from where it isn't, or where it isn't from where it is...</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>false</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+		</comps>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<ShootingAccuracyPawn>0.5</ShootingAccuracyPawn>
+					<RangedCooldownFactor>-0.25</RangedCooldownFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
 </Defs>

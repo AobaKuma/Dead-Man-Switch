@@ -108,7 +108,32 @@
 					</li>
 				</value>
 			</li>
-
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Mammoth"]</xpath>
+				<value>
+					<inventoryOptions>
+						<skipChance>0</skipChance>
+						<subOptionsChooseOne>
+							<li>
+								<choiceChance>40</choiceChance>
+								<thingDef>Ammo_50BMG_FMJ</thingDef>
+								<countRange>
+									<min>80</min>
+									<max>200</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>15</choiceChance>
+								<thingDef>Ammo_50BMG_AP</thingDef>
+								<countRange>
+									<min>80</min>
+									<max>200</max>
+								</countRange>
+							</li>
+						</subOptionsChooseOne>
+					</inventoryOptions>
+				</value>
+			</li>
 		</operations>
 	</Operation>
 </Patch>

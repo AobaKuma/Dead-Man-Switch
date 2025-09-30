@@ -7,9 +7,9 @@
 		<label>Flameblaster</label>
 		<description>A flame launcher used by mechs that can and will ignite flammable materials within its range.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
 		<graphicData>
-		  <texPath>Things/Weapons/DMS_Flameblaster</texPath>
-		  <graphicClass>Graphic_Single</graphicClass>
-		  <drawSize>1</drawSize>
+			<texPath>Things/Weapons/DMS_Flameblaster</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
 		</graphicData>
 		<costList>
 			<Chemfuel>75</Chemfuel>
@@ -17,31 +17,31 @@
 			<ComponentStamped>1</ComponentStamped>
 		</costList>
 		<statBases>
-		  <MarketValue>1000</MarketValue>
-		  <Mass>1.5</Mass>
-		  <AccuracyTouch>0.40</AccuracyTouch>
-		  <AccuracyShort>0.48</AccuracyShort>
-		  <AccuracyMedium>0.35</AccuracyMedium>
-		  <AccuracyLong>0.26</AccuracyLong>
-		  <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>      
+			<MarketValue>1000</MarketValue>
+			<Mass>1.5</Mass>
+			<AccuracyTouch>0.40</AccuracyTouch>
+			<AccuracyShort>0.48</AccuracyShort>
+			<AccuracyMedium>0.35</AccuracyMedium>
+			<AccuracyLong>0.26</AccuracyLong>
+			<RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>      
 		</statBases>
 		<tradeability>None</tradeability>
 		<destroyOnDrop>false</destroyOnDrop>
 		<relicChance>0</relicChance>
 		<equippedDistanceOffset>-0.14</equippedDistanceOffset>
 		<tools>
-		  <li>
-			<label>barrel</label>
-			<capacities>
-			  <li>Blunt</li>
-			  <li>Poke</li>
-			</capacities>
-			<power>9</power>
-			<cooldownTime>3.5</cooldownTime>
-		  </li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+				<li>Blunt</li>
+				<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>3.5</cooldownTime>
+			</li>
 		</tools>
 		<weaponTags>
-		  <li>DMS_Flameblaster</li>
+			<li>DMS_Flameblaster</li>
 		</weaponTags>
 		<verbs>
 		  <li>
@@ -68,6 +68,7 @@
 			</li>
 		</modExtensions>
 	</ThingDef>	
+
 	<!--原則上這些武器是完全固定在上面也拆不下來的，所以大多數數值都相同-->
 	<ThingDef Name="DMS_AutomatroidTurretGun" ParentName="BaseGun" Abstract="True">
     	<tradeability>None</tradeability>
@@ -91,6 +92,7 @@
 		<useHitPoints>false</useHitPoints>
 		<tools/>
 	</ThingDef>
+
 	<!--霰彈槍。-->
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_ShotgunGunMounted</defName>
@@ -164,6 +166,9 @@
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
 		</verbs>
+		<weaponTags>
+			<li>DMS_SubMachineGunMounted</li>
+		</weaponTags>
 		<modExtensions>
 			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
 				<def>MF_StandardMuzzleFalsh</def>
@@ -175,6 +180,7 @@
 			</li>
 		</modExtensions>
   	</ThingDef>
+
 	<!--LMG	這個是固定在不可替換武器類型機兵上的版本。-->
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_LightMachineGunMounted</defName>
@@ -205,6 +211,9 @@
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
 		</verbs>
+		<weaponTags>
+			<li>DMS_LightMachineGunMounted</li>
+		</weaponTags>
 		<modExtensions>
 			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
 				<def>MF_StandardMuzzleFalsh</def>
@@ -216,6 +225,7 @@
 			</li>
 		</modExtensions>
   	</ThingDef>
+
 	<!--HMG	這個是固定在不可替換武器類型機兵上的版本。-->
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_HeavyMachineGunMounted</defName>
@@ -237,7 +247,7 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_DMS_HeavyMachineGun</defaultProjectile>
-				<warmupTime>0</warmupTime>
+				<warmupTime>1.3</warmupTime>
 				<range>27.9</range>
 				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
 				<burstShotCount>4</burstShotCount>
@@ -246,6 +256,9 @@
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
 		</verbs>
+		<weaponTags>
+			<li>DMS_HeavyMachineGunMounted</li>
+		</weaponTags>
 		<modExtensions>
 			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
 				<def>MF_StandardMuzzleFalsh</def>
@@ -273,6 +286,7 @@
 			<AccuracyShort>0.90</AccuracyShort>
 			<AccuracyMedium>0.85</AccuracyMedium>
 			<AccuracyLong>0.80</AccuracyLong>
+			<RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
 		</statBases>
 		<verbs>
 			<li>

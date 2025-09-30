@@ -87,6 +87,8 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <weaponTags/>
+    <weaponTags>
+      <li>DMS_HeavyMachineGunMounted</li>
+    </weaponTags>
   </PawnKindDef>
 </Defs>

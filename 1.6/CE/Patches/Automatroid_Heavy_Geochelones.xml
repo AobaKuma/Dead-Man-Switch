@@ -2,26 +2,6 @@
 <Patch>
 	<Operation Class="PatchOperationSequence">
 		<operations>
-
-			<!-- ========== PawnKind Patches ========== -->
-			 <!--
-			<li Class="PatchOperationAddModExtension">
-				<xpath>
-					Defs/PawnKindDef[
-					defName="DMS_Mech_Geochelone" or
-					defName="DMS_Mech_Killdozer"
-					]
-				</xpath>
-				<value>
-					<li Class="CombatExtended.LoadoutPropertiesExtension">
-						<primaryMagazineCount>
-							<min>5</min>
-							<max>8</max>
-						</primaryMagazineCount>
-					</li>
-				</value>
-			</li>-->
-
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Caretta"] </xpath>
 				<value>

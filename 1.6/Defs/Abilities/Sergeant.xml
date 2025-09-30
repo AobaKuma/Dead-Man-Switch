@@ -5,6 +5,7 @@
 		<defName>DMS_AutomatroidCallDrop</defName>
 		<cooldownTicks>3600000</cooldownTicks>
 	</AbilityGroupDef>
+	
 	<AbilityDef ParentName="DMS_AddHediffSelfBase">
 		<defName>DMS_CallDrop</defName>
 		<label>Request Reinforcements</label>
@@ -29,7 +30,7 @@
 					</li>
 					<li>
 						<pawnKind>DMS_Mech_Soldat</pawnKind>
-						<fixedWeapon>DMS_AssaultPiercer</fixedWeapon>
+						<fixedWeapon>DMS_SurvivalRifle</fixedWeapon>
 					</li>
 					<li>
 						<pawnKind>DMS_Mech_Soldat</pawnKind>
