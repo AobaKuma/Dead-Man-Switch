@@ -94,6 +94,12 @@
                         </li>
                     </kindCounts>
                 </li>
+                <li Class="Fortified.ScenPart_GeneratePrefab">
+                    <def>FFF_PrefabGen</def>
+                    <maps>
+                        <li>DMS_LightTower</li>
+                    </maps>
+                </li>
                 <li Class="ScenPart_PlayerPawnsArriveMethod">
                     <def>PlayerPawnsArriveMethod</def>
                     <method>Standing</method>
@@ -176,12 +182,6 @@
                     <hideOffMap>True</hideOffMap>
                     <hediff>CryptosleepSickness</hediff>
                     <severityRange>1~1</severityRange>
-                </li>
-                <li Class="Fortified.ScenPart_GeneratePrefab">
-                    <def>FFF_PrefabGen</def>
-                    <maps>
-                        <li>DMS_LightTower</li>
-                    </maps>
                 </li>
                 <li Class="VEF.Factions.ScenPart_ForcedFactionGoodwill" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
                     <factionDef>DMS_Army</factionDef>
