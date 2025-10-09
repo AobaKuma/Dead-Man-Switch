@@ -9,7 +9,7 @@
     <description>The modernized and redesigned bipedal walking tank based on the Tarbosaurus. This model is produced without the experimental electromagnetic armor allowing it to maintain greater mobility.</description>
     <statBases>
       <MoveSpeed>3.5</MoveSpeed>                                                    <!--移動速度-->
-      <ArmorRating_Blunt>1.1</ArmorRating_Blunt>                                     <!--護甲-->
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>                                     <!--護甲-->
       <ArmorRating_Sharp>1.4</ArmorRating_Sharp>
       <ArmorRating_Heat>1.8</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
@@ -233,10 +233,10 @@
     <label>Gecko</label>
     <description>An urban combat variant of the Iguana, this model is up-armored with additional electromagnetic plating to protect against shaped charge rounds and explosives.</description>
     <statBases>
-      <MoveSpeed>4</MoveSpeed>                                                    <!--移動速度-->
+      <MoveSpeed>4.3</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>1.1</ArmorRating_Blunt>                                     <!--護甲-->
       <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
-      <ArmorRating_Heat>2.4</ArmorRating_Heat>
+      <ArmorRating_Heat>2.0</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
@@ -245,7 +245,7 @@
       <body>DMS_Bipedal</body>                                                      <!--身體(另外的def)-->
       <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
       <baseBodySize>2.25</baseBodySize>
-      <baseHealthScale>2.3</baseHealthScale>
+      <baseHealthScale>3</baseHealthScale>
       <mechWeightClass>Heavy</mechWeightClass>
     </race>
     <comps>

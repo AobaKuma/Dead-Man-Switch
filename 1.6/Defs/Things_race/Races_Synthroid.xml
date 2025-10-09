@@ -73,6 +73,7 @@
         <li>Growing</li>
         <li>Firefighter</li>
         <li>Doctor</li>
+        <li MayRequire="orion.hospitality">Diplomat</li>
       </mechEnabledWorkTypes>
       <lifeStageAges Inherit="False">
         <li>

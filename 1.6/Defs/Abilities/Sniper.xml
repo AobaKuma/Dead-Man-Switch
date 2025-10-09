@@ -31,7 +31,7 @@
 		<comps>
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
 			<li Class="HediffCompProperties_Disappears">
-				<showRemainingTime>True</showRemainingTime>
+				<showRemainingTime>true</showRemainingTime>
 			</li>
 		</comps>
 		<isBad>false</isBad>
@@ -86,7 +86,7 @@
 		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
 		<comps>
 			<li Class="HediffCompProperties_Disappears">
-				<showRemainingTime>True</showRemainingTime>
+				<showRemainingTime>true</showRemainingTime>
 			</li>
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
 			<li Class="HediffCompProperties_GiveHediffsInRange">

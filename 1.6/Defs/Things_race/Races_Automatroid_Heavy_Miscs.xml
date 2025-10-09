@@ -10,7 +10,7 @@
       <StaggerDurationFactor>0.25</StaggerDurationFactor>
       <MoveSpeed>3.1</MoveSpeed>                                                              <!--移動速度-->
       <ArmorRating_Blunt>0.6</ArmorRating_Blunt>                                            <!--護甲-->
-      <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+      <ArmorRating_Sharp>0.7</ArmorRating_Sharp>
       <ArmorRating_Heat>1.2</ArmorRating_Heat>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>                 <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge> <!--充電/培養時產出廢料-->
