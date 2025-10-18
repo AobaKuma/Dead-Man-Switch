@@ -152,7 +152,7 @@
                 </li>
                 <li Class="ScenPart_StartingMech">
                     <def>StartingMech</def>
-                    <mechKind>DMS_Mech_Phalanx</mechKind>
+                    <mechKind>DMS_Mech_Gladiator</mechKind>
                     <overseenByPlayerPawnChance>0.6</overseenByPlayerPawnChance>
                 </li>
                 <li Class="ScenPart_StartingMech">
@@ -194,12 +194,10 @@
                 </li>
                 <li Class="ScenPart_GameStartDialog">
                     <def>GameStartDialog</def>
-                    <text>
-                        When you wake up, all that remains of the world you built are remnants of The Lighthouse.
+                    <text>When you wake up, all that remains of the world you built are remnants of The Lighthouse.
                         Time and scavengers have stripped away almost every trace of you and your companions past presence...
 
-                        Just like a long ago when you came here with nothing, you must rebuild anew. Only this time those who toiled and fought alongside you are distant memories of the forgotten past.
-                    </text>
+                        Just like a long ago when you came here with nothing, you must rebuild anew. Only this time those who toiled and fought alongside you are distant memories of the forgotten past.</text>
                     <textKey>GameStartDialog</textKey>
                     <closeSound>GameStartSting</closeSound>
                 </li>

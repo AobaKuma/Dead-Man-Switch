@@ -54,7 +54,7 @@
         <graphicData>
             <texPath>Things/Building/LabReactor</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(3.7,3.7)</drawSize>
+            <drawSize>(4,4)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -114,7 +114,7 @@
         <graphicData>
             <texPath>Things/Building/Lab_Furnace</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(3.8,2.5)</drawSize>
+            <drawSize>(4,3)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>

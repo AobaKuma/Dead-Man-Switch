@@ -7,7 +7,9 @@
     <label>Cluster transceiver</label>
     <description>A man-made bionic implant that allows direct control of mechanoids. No one know if this is the early form of mechlinking or if it's a reverse engineered product of later generations. It functions as a regular mechlink when installed in a colonist.\n\nDue to processing precision issues, these imitation mechlink devices from rim worlds often have installation side effects.</description>
     <thingClass>Mechlink</thingClass>
-    <descriptionHyperlinks><HediffDef>MechlinkImplant</HediffDef></descriptionHyperlinks>
+    <descriptionHyperlinks>
+      <HediffDef>MechlinkImplant</HediffDef>
+    </descriptionHyperlinks>
     <statBases>
       <MaxHitPoints>50</MaxHitPoints>
       <Beauty>-4</Beauty>
@@ -19,8 +21,8 @@
     <costList>
       <Plasfiber>20</Plasfiber>
       <ComponentSpacer>5</ComponentSpacer>
-      <ComponentTransmitter>1</ComponentTransmitter>
       <MedicineUltratech>5</MedicineUltratech>
+      <ComponentTransmitter>1</ComponentTransmitter>
     </costList>
     <recipeMaker>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
