@@ -19,7 +19,7 @@
     <race>
       <body>DMS_Bipedal</body>                                                      <!--身體(另外的def)-->
       <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
-      <baseBodySize>2.25</baseBodySize>
+      <baseBodySize>2.5</baseBodySize>
       <baseHealthScale>2.75</baseHealthScale>
       <mechWeightClass>Heavy</mechWeightClass>
       <detritusLeavings>
@@ -244,7 +244,7 @@
     <race>
       <body>DMS_Bipedal</body>                                                      <!--身體(另外的def)-->
       <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
-      <baseBodySize>2.25</baseBodySize>
+      <baseBodySize>2.5</baseBodySize>
       <baseHealthScale>3</baseHealthScale>
       <mechWeightClass>Heavy</mechWeightClass>
     </race>
