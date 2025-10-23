@@ -39,6 +39,7 @@
         <Flammability>0.2</Flammability>
         <MaxHitPoints>1.2</MaxHitPoints>
         <Beauty>0.25</Beauty>
+        <Mass>0.8</Mass>
       </statFactors>
     </stuffProps>
     <thingCategories>
@@ -90,6 +91,7 @@
         <Flammability>0.2</Flammability>
         <MaxHitPoints>2</MaxHitPoints>
         <Beauty>2</Beauty>
+        <Mass>0.6</Mass>
       </statFactors>
     </stuffProps>
     <thingCategories>
@@ -146,18 +148,19 @@
       <appearance>Metal</appearance>
       <commonality>0</commonality>
       <constructEffect>ConstructMetal</constructEffect>
-	  <isAirtight>true</isAirtight>
+	    <isAirtight>true</isAirtight>
       <color>(80,80,80)</color>
       <soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
       <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
       <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
       <statFactors>
         <MaxHitPoints>2.5</MaxHitPoints>
+        <Mass>1.8</Mass>
         <Beauty>1</Beauty>
         <Flammability>0</Flammability>
         <WorkToMake>3</WorkToMake>
         <WorkToBuild>3</WorkToBuild>
-        <MeleeWeapon_CooldownMultiplier>0.8</MeleeWeapon_CooldownMultiplier>
+        <MeleeWeapon_CooldownMultiplier>1.2</MeleeWeapon_CooldownMultiplier>
       </statFactors>
     </stuffProps>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
@@ -208,7 +211,7 @@
         <Flammability>0</Flammability>
         <MaxHitPoints>0.20</MaxHitPoints>
         <Beauty>0.75</Beauty>
-        <Mass>0.65</Mass>
+        <Mass>0.5</Mass>
       </statFactors>
     </stuffProps>
     <thingCategories>
@@ -259,25 +262,17 @@
       <li Class="CompProperties_CompAnalyzableUnlockResearch">
         <analysisID>123417699</analysisID>
         <requiresMechanitor>false</requiresMechanitor>
-
-        <!-- Analyzable -->
-
         <analysisDurationHours>0.5</analysisDurationHours>
         <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
         <completedLetterLabel>Artificial muscle studied: {RESEARCH} unlocked</completedLetterLabel>
         <completedLetter>By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
         <completedLetterDef>PositiveEvent</completedLetterDef>
-
-        <!-- Interactable -->
-
         <activateTexPath>UI/Icons/Study</activateTexPath>
-
         <activateLabelString>Analyze...</activateLabelString>
         <activateDescString>Analyze the artificial muscle</activateDescString>
         <jobString>Analyze the artificial muscle</jobString>
         <guiLabelString>Choose who should analyze this</guiLabelString>
         <inspectString>Can be analyzed by a colonist.</inspectString>
-
         <targetingParameters>
           <canTargetBuildings>false</canTargetBuildings>
           <canTargetAnimals>false</canTargetAnimals>
@@ -359,15 +354,11 @@
       <li Class="CompProperties_CompAnalyzableUnlockResearch">
         <analysisID>123417700</analysisID>
         <requiresMechanitor>false</requiresMechanitor>
-
-        <!-- Analyzable -->
-
         <analysisDurationHours>0.5</analysisDurationHours>
         <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
         <completedLetterLabel>Wetware computer studied: {RESEARCH} unlocked</completedLetterLabel>
         <completedLetter>By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
         <completedLetterDef>PositiveEvent</completedLetterDef>
-
         <!-- Interactable -->
         <activateTexPath>UI/Icons/Study</activateTexPath>
         <activateLabelString>Analyze...</activateLabelString>
@@ -375,7 +366,6 @@
         <jobString>Analyze the wetware computer</jobString>
         <guiLabelString>Choose who should analyze this</guiLabelString>
         <inspectString>Can be analyzed by a colonist.</inspectString>
-
         <targetingParameters>
           <canTargetBuildings>false</canTargetBuildings>
           <canTargetAnimals>false</canTargetAnimals>
@@ -423,22 +413,17 @@
       <li Class="CompProperties_CompAnalyzableUnlockResearch">
         <analysisID>123417701</analysisID>
         <requiresMechanitor>false</requiresMechanitor>
-
-        <!-- Analyzable -->
         <analysisDurationHours>0.5</analysisDurationHours>
         <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
         <completedLetterLabel>T/R Component studied: {RESEARCH} unlocked</completedLetterLabel>
         <completedLetter>By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
         <completedLetterDef>PositiveEvent</completedLetterDef>
-
-        <!-- Interactable -->
         <activateTexPath>UI/Icons/Study</activateTexPath>
         <activateLabelString>Analyze...</activateLabelString>
         <activateDescString>Analyze the T/R Component</activateDescString>
         <jobString>Analyze the T/R Component</jobString>
         <guiLabelString>Choose who should analyze this</guiLabelString>
         <inspectString>Can be analyzed by a colonist.</inspectString>
-
         <targetingParameters>
           <canTargetBuildings>false</canTargetBuildings>
           <canTargetAnimals>false</canTargetAnimals>
