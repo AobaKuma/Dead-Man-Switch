@@ -30,4 +30,7 @@
   <!-- EN: A composite metal printer which can manufacture and assemble metal products and weapons through cold forging in order to mass-produce machinery. -->
   <DMS_TableMachinePrinter.description>用於加工量產機械的複合金屬打印機，能以冷鍛方式快速製造與組裝金屬製品與武器。</DMS_TableMachinePrinter.description>
   
+  <DMS_TableAmmoPrinter.label>彈藥生產機</DMS_TableAmmoPrinter.label>
+  <DMS_TableAmmoPrinter.description>一種用於根據加工模板大批量生產彈藥的特製衝壓機，能夠透過簡單的更換母板來生產不同口徑的制式彈藥。由於其生產的效率極高並高度可靠，因此這些曾在地球上使用的彈藥標準至今也隨著殖民艦隊在整個銀河系範圍內大量流通。</DMS_TableAmmoPrinter.description>
+  
 </LanguageData>

@@ -29,5 +29,8 @@
   <DMS_TableMachinePrinter.label>Machinery Printer</DMS_TableMachinePrinter.label>
   <!-- EN: A composite metal printer which can manufacture and assemble metal products and weapons through cold forging in order to mass-produce machinery. -->
   <DMS_TableMachinePrinter.description>A composite metal printer which can manufacture and assemble metal products and weapons through cold forging in order to mass-produce machinery.</DMS_TableMachinePrinter.description>
+
+  <DMS_TableAmmoPrinter.label>Ammunition fabricator</DMS_TableAmmoPrinter.label>
+  <DMS_TableAmmoPrinter.description>A specialized stamping machine designed to mass-produce ammunition based on a processing template, capable of producing standard ammunition of varying calibers simply by replacing the master plate.\n\nDue to its exceptional efficiency and reliability, these ammunition standards, once used on Earth, are still widely circulated throughout the galaxy by colonial fleets.</DMS_TableAmmoPrinter.description>
   
 </LanguageData>

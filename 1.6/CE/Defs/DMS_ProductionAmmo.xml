@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- DMS_TableAmmoPrinter -->
+  <ThingDef ParentName="DMS_AutofacturerBenchBase">
+    <defName>DMS_TableAmmoPrinter</defName>
+    <label>Ammunition stamping machine</label>
+    <!-- 一種用於根據加工模板大批量生產彈藥的特製衝壓機，能夠透過簡單的更換母板來生產不同口徑的制式彈藥。由於其生產的效率極高並高度可靠，因此這些曾在地球上使用的彈藥標準至今也隨著殖民艦隊在整個銀河系範圍內大量流通。 -->
+    <description>A specialized stamping machine designed to mass-produce ammunition based on a processing template, capable of producing standard ammunition of varying calibers simply by replacing the master plate.\n\nDue to its exceptional efficiency and reliability, these ammunition standards, once used on Earth, are still widely circulated throughout the galaxy by colonial fleets.</description>
+    <graphicData>
+      <texPath>Things/Building/CNCTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5,3)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <designationCategory>DMS_Category</designationCategory>
+    <costList>
+      <Steel>300</Steel>
+      <ComponentStamped>10</ComponentStamped>
+    </costList>
+    <statBases>
+      <WorkToBuild>3000</WorkToBuild>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0.25</Flammability>
+      <WorkTableWorkSpeedFactor>2.0</WorkTableWorkSpeedFactor>
+    </statBases>
+	  <recipes>
+	  </recipes>
+    <size>(3,2)</size>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>1000</basePowerConsumption>
+        <idlePowerDraw>50</idlePowerDraw>
+      </li>
+    </comps>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+      <!-- <li>CE_AutoEnableCrafting_FabricationBench</li>
+      <li>CE_AutoEnableCrafting_TableMachining</li> -->
+    </tradeTags>
+    <researchPrerequisites>
+      <li>DMS_MechBasis</li>
+      <li>Gunsmithing</li>
+    </researchPrerequisites>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_AutoWorkTable">
+        <workAmountPerStage>40000</workAmountPerStage>
+        <phaseEffecter_east>DMS_Effect_Printer_East</phaseEffecter_east>
+        <phaseEffecter_west>DMS_Effect_Printer_West</phaseEffecter_west>
+        <phaseEffecter_north>DMS_Effect_Printer_North</phaseEffecter_north>
+        <phaseEffecter_south>DMS_Effect_Printer_South</phaseEffecter_south>
+        <skills>
+          <li>
+            <key>Crafting</key>
+            <value>12</value>
+          </li>
+        </skills>
+      </li>
+    </modExtensions>
+  </ThingDef>
+</Defs>

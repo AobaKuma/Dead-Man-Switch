@@ -18,16 +18,19 @@
   <!-- EN: Automatroid Constructor -->
   <DMS_MechGestatorSmall.label>机械组装平台</DMS_MechGestatorSmall.label>
   <!-- EN: A massive piece of industrial equipment used to assemble Automatroids. -->
-  <DMS_MechGestatorSmall.description>用於组装机械体的大型工业设备。</DMS_MechGestatorSmall.description>
+  <DMS_MechGestatorSmall.description>用于组装机械体的大型工业设备。</DMS_MechGestatorSmall.description>
   
   <!-- EN: Pressure Chamber -->
   <DMS_ReactionChamber.label>高压反应釜</DMS_ReactionChamber.label>
   <!-- EN: A massive industrial-grade vacuum chamber used to create a high-pressure environment to create mineral alloys. -->
-  <DMS_ReactionChamber.description>用於创造高压环境使材料发生反应的大型工业设备。</DMS_ReactionChamber.description>
+  <DMS_ReactionChamber.description>用于创造高压环境使材料发生反应的大型工业设备。</DMS_ReactionChamber.description>
   
   <!-- EN: Machinery Printer -->
   <DMS_TableMachinePrinter.label>机械冲压机</DMS_TableMachinePrinter.label>
   <!-- EN: A composite metal printer which can manufacture and assemble metal products and weapons through cold forging in order to mass-produce machinery. -->
-  <DMS_TableMachinePrinter.description>用於加工量产机械的复合金属打印机，能以冷锻方式快速制造与组装金属制品与武器。</DMS_TableMachinePrinter.description>
+  <DMS_TableMachinePrinter.description>用于加工量产机械的复合金属打印机，能以冷锻方式快速制造与组装金属制品与武器。</DMS_TableMachinePrinter.description>
+
+  <DMS_TableAmmoPrinter.label>弹药生产机</DMS_TableAmmoPrinter.label>
+  <DMS_TableAmmoPrinter.description>一种用于根据加工模板大批量生产弹药的特制冲压机，能够透过简单的更换母板来生产不同口径的制式弹药。由于其生产的效率极高并高度可靠，因此这些曾在地球上使用的弹药标准至今也随着殖民舰队在整个银河系范围内大量流通。</DMS_TableAmmoPrinter.description>
   
 </LanguageData>
