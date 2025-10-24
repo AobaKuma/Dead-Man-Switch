@@ -41,14 +41,8 @@
         <idlePowerDraw>50</idlePowerDraw>
       </li>
     </comps>
-    <tradeTags>
-      <li>CE_AutoEnableTrade</li>
-      <li>CE_AutoEnableCrafting</li>
-      <!-- <li>CE_AutoEnableCrafting_FabricationBench</li>
-      <li>CE_AutoEnableCrafting_TableMachining</li> -->
-    </tradeTags>
     <researchPrerequisites>
-      <li>DMS_MechBasis</li>
+      <li>DMS_Autofacturer</li>
       <li>Gunsmithing</li>
     </researchPrerequisites>
     <modExtensions>
