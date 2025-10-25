@@ -18,7 +18,7 @@
 		  <li>RewardStandardHighFreq</li>
 		</thingSetMakerTags>
 		<statBases>
-		  <Mass>3.5</Mass>
+		  <Mass>8</Mass>
 		  <EquipDelay>1</EquipDelay>
 		  <MarketValue>250</MarketValue>
 		  <MaxHitPoints>80</MaxHitPoints>
@@ -159,29 +159,56 @@
 	  
 	<ThingDef ParentName="BaseBullet">
 		<defName>DMS_Bullet_DR</defName>
-		<label>Demolisher Rocket Round</label>
+		<label>Demolisher rocket round</label>
 		<graphicData>
 			<texPath>Things/Ammo/84mmRecoillessRocket/Projectile</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>1.5</drawSize>
 		</graphicData>
-		<thingClass>Projectile_Explosive</thingClass>
+		<thingClass>Fortified.Projectile_Parabola_ConeExplosive</thingClass>
 		<projectile>
 			<speed>100</speed>
-			<damageDef>Demolish</damageDef>
+			<damageDef>FFF_ShapeChargeBullet</damageDef>
 			<soundExplode>MortarBomb_Explode</soundExplode>
-			<damageAmountBase>50</damageAmountBase>
+			<damageAmountBase>76</damageAmountBase>
 			<stoppingPower>2</stoppingPower>
-			<explosionRadius>1.5</explosionRadius>
+			<explosionRadius>1.6</explosionRadius>
 			<ai_IsIncendiary>false</ai_IsIncendiary>
-			<armorPenetrationBase>0.8</armorPenetrationBase>
+			<armorPenetrationBase>1.8</armorPenetrationBase>
 			<shadowSize>0.6</shadowSize>
 		</projectile>
 		<comps>
+			<li Class="Fortified.CompProperties_AfterBurner">
+				<lifeTime>30</lifeTime>
+				<ExhaustFleck>DMS_Fleck_RocketFlame</ExhaustFleck>
+				<ExhaustCurve>
+					<points>
+						<li>(0,5)</li>
+						<li>(0.1,4)</li>
+						<li>(0.2,3)</li>
+						<li>(0.75,0)</li>
+					</points>
+				</ExhaustCurve>
+				<SmokeFleck>DMS_Fleck_RocketSmokeTrail</SmokeFleck>
+				<SmokeCurve>
+					<points>
+						<li>(0,2)</li>
+						<li>(0.5,1)</li>
+						<li>(0.9,1)</li>
+						<li>(1,0.5)</li>
+					</points>
+				</SmokeCurve>
+			</li>
 			<li Class="CompProperties_ProjectileEffecter">
 				<effecterDef>DMS_LaunchDust_Recoilless</effecterDef>
 			</li>
 		</comps>
+		<modExtensions>
+			<li Class="Fortified.ExplosiveExtension">
+				<preExplosionOffset>1.5</preExplosionOffset>
+				<effecterDef>FFF_Effecter_Penetrate_Sabot</effecterDef>
+			</li>
+		</modExtensions>
 	</ThingDef>
 </Defs>
