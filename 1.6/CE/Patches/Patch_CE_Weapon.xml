@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-    <!--give CE Binoculars Tag for
-    Mech-->
+    <!--give CE Binoculars Tag for Mech-->
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="Gun_BinocularsRadio"]</xpath>
         <value>
@@ -11,23 +10,8 @@
             </weaponTags>
         </value>
     </Operation>
-    <!--give
-    CE grenades to birdy-->
 
-    <!-- <Operation Class="PatchOperationAdd">
-        <xpath>Defs/PawnKindDef[defName="DMS_Machine_VerlingBirdA"]/weaponTags</xpath>
-        <value>
-            <li>GrenadeDestructive</li>
-            <li>GrenadeEMP</li>
-            <li>GrenadeSmoke</li>
-            <li>GrenadeFlame</li>
-            <li>CE_GrenadeFlashbang</li>
-            <li>CE_GrenadeNeolithic</li>
-        </value>
-    </Operation> -->
-
-    <!--LAW
-    for Birdy and Kanonier-->
+    <!--LAW for Birdy and Kanonier-->
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="CE_DisposableRocketLauncher"]/weaponTags</xpath>
         <value>
@@ -71,9 +55,7 @@
         </match>
     </Operation>
 
-
-    <!--CE
-    grenades for Grenadier-->
+    <!--CE grenades for Grenadier-->
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="CE_Weapon_GrenadeFlashbang" or
             defName="CE_Weapon_GrenadeStickBomb"]/weaponTags</xpath>

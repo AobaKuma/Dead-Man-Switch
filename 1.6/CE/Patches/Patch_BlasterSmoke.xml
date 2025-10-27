@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAttributeSet">
+				<xpath>Defs/ThingDef[@Name="Shell_BlasterSmoke_Releasing_Base"]/comps/li[@Class="Fortified.CompProperties_AntiBlasterSmoke"]</xpath>
+				<attribute>Class</attribute>
+				<value>FortifiedCE.CompProperties_AntiBlasterSmoke</value>
+			</li>
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="DMS_Bullet_BlasterSmoke"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="DMS_Bullet_BlasterSmoke"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Bullet_BlasterSmoke"]/projectile</xpath>
+				<value>
+					<projectile Class="CombatExtended.ProjectilePropertiesCE">
+						<explosionRadius>0.1</explosionRadius>
+						<isInstant>True</isInstant>
+						<damageDef>Smoke</damageDef>
+					</projectile>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

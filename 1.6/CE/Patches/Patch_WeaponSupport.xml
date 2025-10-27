@@ -27,8 +27,7 @@
         <xpath>Defs/ThingDef[
           defName="DMS_Mech_Noctula"
           ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
-        <value>
-        </value>
+        <value />
       </li>
 
       <!-- Dogge-->
@@ -107,15 +106,6 @@
           <li>CE_OneHandedWeapon</li><!--CE單手武器-->
         </value>
       </li>
-      <!--
-      <li Class="PatchOperationAdd">
-        <xpath>Defs/PawnKindDef[
-          defName="DMS_Mech_Protector"
-          ]/weaponTags</xpath>
-        <value>
-          <li>CE_OneHandedWeapon</li>
-        </value>
-      </li>-->
 
       <!-- BattleFrames -->
       <li Class="PatchOperationAdd">
@@ -137,7 +127,7 @@
           <li>CE_SMG</li>
           <li>CE_OneHandedWeapon</li>
         </value>
-      </li> 
+      </li>
       <li Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[
           defName="DMS_Mech_ShaftWorker"

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <!--DMS Bodies Patch WIP -->
-
-	<!-- ========== Add groups entry if it doesn't exist already (drones) ========== -->
-
+	<!--DMS Bodies Patch -->
 	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/BodyDef[defName="DMS_Chop"]/corePart/parts/li[def="DMS_CompactSenser"]/groups</xpath>
 		<nomatch Class="PatchOperationAdd">
@@ -66,8 +63,6 @@
 	</Operation>
 
 
-
-
 	<!-- ========== Add groups entry if it doesn't exist already (Trashbin) ========== -->
 
 	<Operation Class="PatchOperationConditional">
@@ -111,7 +106,6 @@
 	</Operation>
 
 
-
 	<!-- ========== Add armor coverage (Trashbin) ========== -->
 
 	<Operation Class="PatchOperationAdd">
@@ -148,7 +142,6 @@
 			<li>CoveredByNaturalArmor</li>
 		</value>
 	</Operation>
-
 
 
 	<!-- ========== Add groups entry if it doesn't exist already (Hound) ========== -->
@@ -232,7 +225,6 @@
 			</value>
 		</nomatch>
 	</Operation>
-
 
 
 	<!-- ========== Add armor coverage (Hound) ========== -->
@@ -384,7 +376,7 @@
 			</value>
 		</nomatch>
 	</Operation>
-    
+
 	<!--Type B has head armor plates -->
 	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB" or defName="DMS_Humanoid_TypeB_Ronin" or defName="DMS_Humanoid_TypeB_ShieldL" or defName="DMS_Humanoid_TypeB_ShieldS"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_ArmourPlate"]/groups</xpath>
@@ -513,7 +505,7 @@
 		</value>
 	</Operation>
 
-    <!--Add armor for shield-->
+	<!--Add armor for shield-->
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/BodyDef[defName="DMS_Humanoid_TypeB_ShieldL"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="DMS_BallisticShield"]/groups</xpath>
 		<value>
@@ -701,8 +693,6 @@
 			<li>CoveredByNaturalArmor</li>
 		</value>
 	</Operation>
-
-
 
 
 	<!-- ========== Add groups entry if it doesn't exist already (Armored track vehicles)========== -->

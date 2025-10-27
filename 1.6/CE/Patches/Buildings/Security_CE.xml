@@ -2,10 +2,7 @@
 <Patch>
 	<Operation Class="PatchOperationSequence">
 		<operations>
-
-
 			<!-- All Patch-->
-
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[@Name="DMS_BaseCannonBuilding"]/thingClass</xpath>
 				<value>
@@ -22,24 +19,24 @@
 
 			<li Class="PatchOperationRemove">
 				<xpath>Defs/ThingDef[
-			defName="DMS_Turret_GateKeeper" or
-	                defName="DMS_Turret_Okhotnik" or
+					defName="DMS_Turret_GateKeeper" or
+					defName="DMS_Turret_Okhotnik" or
 					defName="DMS_Turret_Vasilek" or
 					defName="DMS_Turret_Dawnblade" or
 					defName="DMS_Turret_MK44_Navy"
 					]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
 			</li>
-			
+
 			<li Class="PatchOperationRemove">
 				<xpath>Defs/ThingDef[
-	                defName="DMS_Turret_GateKeeper" or
-	                defName="DMS_Turret_Okhotnik" or
+					defName="DMS_Turret_GateKeeper" or
+					defName="DMS_Turret_Okhotnik" or
 					defName="DMS_Turret_Vasilek" or
 					defName="DMS_Turret_Dawnblade" or
 					defName="DMS_Turret_MK44_Navy"
-                    ]/comps/li[@Class="CompProperties_Explosive"]</xpath>
+					]/comps/li[@Class="CompProperties_Explosive"]</xpath>
 			</li>
-			
+
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="DMS_Turret_GateKeeper"]</xpath>
 				<value>
@@ -55,23 +52,23 @@
 				</value>
 			</li>
 
-			
+
 			<!-- GateKeeper -->
-			
+
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Turret_GateKeeper"]/statBases/ShootingAccuracyTurret </xpath>
 				<value>
 					<ShootingAccuracyTurret>3</ShootingAccuracyTurret>
 				</value>
 			</li>
-			
+
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Turret_GateKeeper"]/building/turretBurstCooldownTime </xpath>
 				<value>
 					<turretBurstCooldownTime>0.02</turretBurstCooldownTime>
 				</value>
 			</li>
-			
+
 			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 				<defName>DMS_Gun_GateKeeper</defName>
 				<statBases>
@@ -111,7 +108,7 @@
 					<aimedBurstShotCount>25</aimedBurstShotCount>
 				</FireModes>
 			</li>
-			
+
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="DMS_Gun_GateKeeper"]/verbs </xpath>
 				<value>
@@ -154,33 +151,33 @@
 					<fillPercent>0.79</fillPercent>
 				</value>
 			</li>
-			
+
 			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 				<defName>DMS_Gun_MK44_Navy</defName>
 				<statBases>
-				    <Mass>100</Mass>
-				    <Bulk>50</Bulk>
-				    <SwayFactor>0.3</SwayFactor>
-				    <ShotSpread>0.01</ShotSpread>
-				    <SightsEfficiency>1.5</SightsEfficiency>
-				    <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+					<Mass>100</Mass>
+					<Bulk>50</Bulk>
+					<SwayFactor>0.3</SwayFactor>
+					<ShotSpread>0.01</ShotSpread>
+					<SightsEfficiency>1.5</SightsEfficiency>
+					<RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
 				</statBases>
 				<Properties>
-		                    <recoilAmount>0.31</recoilAmount>
-		                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
-		                    <hasStandardCommand>true</hasStandardCommand>
-		                    <defaultProjectile>Bullet_30x173mmNATO_AP</defaultProjectile>
-		                    <ticksBetweenBurstShots>18</ticksBetweenBurstShots>
-		                    <burstShotCount>8</burstShotCount>
-		                    <warmupTime>0.75</warmupTime>
-		                    <range>78</range>
-		                    <minRange>1.5</minRange>
-		                    <soundCast>DMS_Shot_Bushmaster</soundCast>
-		                    <soundCastTail>GunTail_Heavy</soundCastTail>
-		                    <muzzleFlashScale>16</muzzleFlashScale>
-		                    <targetParams>
-		                        <canTargetLocations>true</canTargetLocations>
-		                    </targetParams>
+					<recoilAmount>0.31</recoilAmount>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_30x173mmNATO_AP</defaultProjectile>
+					<ticksBetweenBurstShots>18</ticksBetweenBurstShots>
+					<burstShotCount>8</burstShotCount>
+					<warmupTime>0.75</warmupTime>
+					<range>78</range>
+					<minRange>1.5</minRange>
+					<soundCast>DMS_Shot_Bushmaster</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>16</muzzleFlashScale>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
 				</Properties>
 				<AmmoUser>
 					<magazineSize>100</magazineSize>
@@ -192,37 +189,36 @@
 					<aiAimMode>AimedShot</aiAimMode>
 					<aimedBurstShotCount>5</aimedBurstShotCount>
 				</FireModes>
-				<weaponTags>
-				</weaponTags>
+				<weaponTags />
 			</li>
 
 			<!--===== 76mm Cannon =====-->
 			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 				<defName>DMS_Gun_Dawnblade</defName>
 				<statBases>
-				    <Mass>1245</Mass>
-				    <Bulk>72</Bulk>
-				    <SwayFactor>2.61</SwayFactor>
-				    <ShotSpread>0.03</ShotSpread>
-				    <SightsEfficiency>7</SightsEfficiency>
-				    <RangedWeapon_Cooldown>0.7</RangedWeapon_Cooldown>
+					<Mass>1245</Mass>
+					<Bulk>72</Bulk>
+					<SwayFactor>2.61</SwayFactor>
+					<ShotSpread>0.03</ShotSpread>
+					<SightsEfficiency>7</SightsEfficiency>
+					<RangedWeapon_Cooldown>0.7</RangedWeapon_Cooldown>
 				</statBases>
 				<Properties>
-                    <recoilAmount>1.4</recoilAmount>
-                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
-                    <hasStandardCommand>true</hasStandardCommand>
-                    <defaultProjectile>Bullet_762x385mmRCannonShell_HEAT</defaultProjectile>
-                    <ticksBetweenBurstShots>30</ticksBetweenBurstShots>
-                    <burstShotCount>4</burstShotCount>
-                    <warmupTime>2</warmupTime>
-                    <range>110</range>
-                    <minRange>5.2</minRange>
-                    <soundCast>Explosion_Bomb</soundCast>
-                    <soundCastTail>GunTail_Heavy</soundCastTail>
-                    <muzzleFlashScale>24</muzzleFlashScale>
-                    <targetParams>
-                        <canTargetLocations>true</canTargetLocations>
-                    </targetParams>
+					<recoilAmount>1.4</recoilAmount>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_762x385mmRCannonShell_HEAT</defaultProjectile>
+					<ticksBetweenBurstShots>30</ticksBetweenBurstShots>
+					<burstShotCount>4</burstShotCount>
+					<warmupTime>2</warmupTime>
+					<range>110</range>
+					<minRange>5.2</minRange>
+					<soundCast>Explosion_Bomb</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>24</muzzleFlashScale>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
 				</Properties>
 				<AmmoUser>
 					<magazineSize>16</magazineSize>
@@ -235,8 +231,7 @@
 					<aiAimMode>AimedShot</aiAimMode>
 					<aimedBurstShotCount>2</aimedBurstShotCount>
 				</FireModes>
-				<weaponTags>
-				</weaponTags>
+				<weaponTags />
 			</li>
 
 			<li Class="PatchOperationReplace">
@@ -286,14 +281,14 @@
 					<aimedBurstShotCount>4</aimedBurstShotCount>
 				</FireModes>
 			</li>
-			
+
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Turret_Okhotnik"]/statBases/ShootingAccuracyTurret </xpath>
 				<value>
 					<ShootingAccuracyTurret>1.5</ShootingAccuracyTurret>
 				</value>
 			</li>
-			
+
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Turret_Okhotnik"]/building/turretBurstCooldownTime </xpath>
 				<value>
@@ -308,8 +303,8 @@
 					<turretBurstCooldownTime>0</turretBurstCooldownTime>
 				</value>
 			</li>
-			
-			
+
+
 			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 				<defName>DMS_Gun_Vasilek</defName>
 				<statBases>
@@ -332,7 +327,7 @@
 					<burstShotCount>4</burstShotCount>
 					<ticksBetweenBurstShots>15</ticksBetweenBurstShots>
 					<soundCast>DMS_Shot_VasilekSound</soundCast>
-					<soundCastTail>GunTail_Heavy</soundCastTail>  
+					<soundCastTail>GunTail_Heavy</soundCastTail>
 					<muzzleFlashScale>50</muzzleFlashScale>
 					<requireLineOfSight>false</requireLineOfSight>
 					<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
