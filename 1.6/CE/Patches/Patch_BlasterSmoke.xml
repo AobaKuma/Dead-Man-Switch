@@ -7,6 +7,7 @@
 				<attribute>Class</attribute>
 				<value>FortifiedCE.CompProperties_AntiBlasterSmoke</value>
 			</li>
+
 			<li Class="PatchOperationConditional">
 				<xpath>Defs/ThingDef[defName="DMS_Bullet_BlasterSmoke"]/comps</xpath>
 				<nomatch Class="PatchOperationAdd">
@@ -16,6 +17,7 @@
 					</value>
 				</nomatch>
 			</li>
+
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Bullet_BlasterSmoke"]/projectile</xpath>
 				<value>
