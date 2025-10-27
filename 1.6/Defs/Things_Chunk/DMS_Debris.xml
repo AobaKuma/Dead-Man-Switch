@@ -13,12 +13,12 @@
     <rotateInShelves>true</rotateInShelves>
     <filthLeaving>DMS_BrokenCeramics</filthLeaving>
     <smeltProducts>
-      <Tungsteel>10</Tungsteel>
-      <DMS_Ceramics>10</DMS_Ceramics>
+      <Tungsteel>7</Tungsteel>
+      <DMS_Ceramics>4</DMS_Ceramics>
     </smeltProducts>
     <butcherProducts>
-      <ComponentStamped>2</ComponentStamped>
-      <Polyester>20</Polyester>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <Polyester>5</Polyester>
     </butcherProducts>
   </ThingDef>
 
@@ -36,10 +36,9 @@
     <scatterableOnMapGen>true</scatterableOnMapGen>
     <smeltProducts>
       <Tungsteel>5</Tungsteel>
-      <DMS_Ceramics>5</DMS_Ceramics>
     </smeltProducts>
     <butcherProducts>
-      <ComponentStamped>1</ComponentStamped>
+      <Tungsteel>5</Tungsteel>
       <Polyester>10</Polyester>
     </butcherProducts>
   </ThingDef>

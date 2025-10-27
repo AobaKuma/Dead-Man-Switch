@@ -132,9 +132,9 @@
       </li>
     </comps>
     <butcherProducts>
-      <DMS_ChunkSlag>5</DMS_ChunkSlag>
+      <DMS_ChunkSlag>3</DMS_ChunkSlag>
       <Tungsteel>20</Tungsteel>
-      <ComponentStamped>1</ComponentStamped> 
+      <ComponentIndustrial>1</ComponentIndustrial> 
     </butcherProducts>
     <tools Inherit="False">
       <li>

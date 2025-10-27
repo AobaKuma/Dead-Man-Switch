@@ -131,15 +131,15 @@
         <li>
           <def>DMS_ChunkSlag</def>
           <texOverrideIndex>5</texOverrideIndex>
-          <spawnChance>0.3</spawnChance>
+          <spawnChance>0.01</spawnChance>
         </li>
         <li>
           <def>DMS_ChunkSlag</def>
-          <spawnChance>0.2</spawnChance>
+          <spawnChance>0.002</spawnChance>
         </li>
         <li>
           <def>DMS_ChunkSlag</def>
-          <spawnChance>0.2</spawnChance>
+          <spawnChance>0.001</spawnChance>
         </li>
       </detritusLeavings>
     </race>

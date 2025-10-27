@@ -269,7 +269,7 @@
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_Revolver</defName>
 		<label>Riot Revolver</label>
-		<description>S double-action revolver designed to load shotgun ammo. It was designed for personal defense purposes but soon became a favored sidearm for mech solders because it can be used against most enemy types at the same time.</description>
+		<description>A double-action revolver designed to load shotgun ammo. It was designed for personal defense purposes but soon became a favored sidearm for mech solders because it can be used against most enemy types at the same time.</description>
 		<graphicData>
 			<texPath>Things/Weapons/HumanWeapon/RiotRevolver</texPath>
 		</graphicData>

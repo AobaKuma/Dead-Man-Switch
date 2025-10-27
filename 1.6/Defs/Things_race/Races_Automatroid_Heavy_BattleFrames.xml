@@ -31,7 +31,7 @@
     <modExtensions>
       <li Class="Fortified.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
-        <UsableWeaponTags> 
+        <UsableWeaponTags>
           <li>SimpleGun</li>
           <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
           <li>DMS_MechWeaponLongRifle</li>
@@ -46,7 +46,7 @@
         <UsableTechLevels>
           <li>Industrial</li>
         </UsableTechLevels>
-        <BypassUsableWeapons/>
+        <BypassUsableWeapons />
       </li>
       <li Class="Fortified.TurretMannableExtension">
         <mannableByDefault>false</mannableByDefault>
@@ -65,7 +65,7 @@
       <Steel>30</Steel>
     </butcherProducts>
   </ThingDef>
-  
+
   <PawnKindDef ParentName="BaseAutomatroidKind">
     <defName>DMS_Mech_BattleFrame</defName>
     <label>battle friend</label>
@@ -98,8 +98,8 @@
       <li>SimpleGun</li>
     </weaponTags>
   </PawnKindDef>
-  
-    <!--戰鬥框架的機械師中繼改裝型號-->
+
+  <!--戰鬥框架的機械師中繼改裝型號-->
   <ThingDef ParentName="BaseBattleFrame">
     <defName>DMS_Mech_FieldCommand</defName>
     <label>Field Command</label>
@@ -129,7 +129,7 @@
         <UsableTechLevels>
           <li>Industrial</li>
         </UsableTechLevels>
-        <BypassUsableWeapons/>
+        <BypassUsableWeapons />
       </li>
     </modExtensions>
     <killedLeavingsChance>0.05</killedLeavingsChance>
@@ -169,7 +169,7 @@
     </lifeStages>
     <weaponTags>
       <li>DMS_MechWeaponLight</li>
-      <li>Autopistol</li>  
+      <li>Autopistol</li>
     </weaponTags>
   </PawnKindDef>
 
@@ -207,7 +207,7 @@
         <UsableTechLevels>
           <li>Industrial</li>
         </UsableTechLevels>
-        <BypassUsableWeapons/>
+        <BypassUsableWeapons />
       </li>
     </modExtensions>
     <butcherProducts>
@@ -293,7 +293,7 @@
         <UsableTechLevels>
           <li>Industrial</li>
         </UsableTechLevels>
-        <BypassUsableWeapons/>
+        <BypassUsableWeapons />
       </li>
     </modExtensions>
     <butcherProducts>
@@ -327,7 +327,7 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <weaponTags/>
+    <weaponTags />
   </PawnKindDef>
 
   <!-- 海盜型 -->

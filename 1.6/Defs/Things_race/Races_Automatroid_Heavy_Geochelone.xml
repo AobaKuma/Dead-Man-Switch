@@ -65,8 +65,7 @@
       </li>
     </tools>
     <butcherProducts>
-      <DMS_ChunkSlag>5</DMS_ChunkSlag>
-      <Tungsteel>60</Tungsteel>
+      <DMS_ChunkSlag>3</DMS_ChunkSlag>
       <Steel>24</Steel>
     </butcherProducts>
     <damageMultipliers>
@@ -246,8 +245,7 @@
       </li>
     </tools>
     <butcherProducts>
-      <DMS_ChunkSlag>5</DMS_ChunkSlag>
-      <Tungsteel>60</Tungsteel>
+      <DMS_ChunkSlag>3</DMS_ChunkSlag>
       <Steel>24</Steel>
     </butcherProducts>
     <damageMultipliers>
@@ -291,7 +289,7 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <weaponTags/>
+    <weaponTags />
     <weaponMoney>5000~9999</weaponMoney>
   </PawnKindDef>
 
@@ -380,10 +378,8 @@
       </li>
     </tools>
     <butcherProducts>
-      <DMS_ChunkSlag>5</DMS_ChunkSlag>
-      <Tungsteel>70</Tungsteel>
+      <DMS_ChunkSlag>3</DMS_ChunkSlag>
       <Steel>30</Steel>
-      <DMS_Ceramics>40</DMS_Ceramics>
     </butcherProducts>
     <damageMultipliers>
       <li>
@@ -439,7 +435,7 @@
                 <drawData>
                   <defaultData>
                     <offset>(0,0,0)</offset>
-                  </defaultData>                  
+                  </defaultData>
                   <dataEast>
                     <offset>(0,0,0)</offset>
                   </dataEast>
@@ -458,10 +454,10 @@
             </renderNodeProperties>
           </li>
         </subTurrets>
-      </li>   
+      </li>
     </comps>
   </ThingDef>
-  
+
   <PawnKindDef Name="BaseKillDozerKind" ParentName="BaseAutomatroidKind" Abstract="True">
     <label>killdozer</label>
     <isBoss>true</isBoss>
@@ -493,7 +489,7 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <weaponTags/>
+    <weaponTags />
     <weaponMoney>9999~9999</weaponMoney>
   </PawnKindDef>
 

@@ -6,7 +6,7 @@
     <label>smelt metal from automatroid debris</label>
     <description>Use heat and strong electromagnets to extract useful metal from automatroid debris.</description>
     <jobString>Smelting metal from automatroid debris.</jobString>
-    <workAmount>6000</workAmount>
+    <workAmount>2000</workAmount>
     <workSpeedStat>SmeltingSpeed</workSpeedStat>
     <effectWorking>Smelt</effectWorking>
     <soundWorking>Recipe_Smelt</soundWorking>
@@ -42,7 +42,7 @@
     <label>disassemble from automatroid debris</label>
     <description>Disassemble automatroid debris to extract useful component.</description>
     <jobString>disassembling automatroid debris.</jobString>
-    <workAmount>7200</workAmount>
+    <workAmount>6000</workAmount>
     <workSpeedStat>SmeltingSpeed</workSpeedStat>
     <effectWorking>Smelt</effectWorking>
     <soundWorking>Recipe_Smelt</soundWorking>

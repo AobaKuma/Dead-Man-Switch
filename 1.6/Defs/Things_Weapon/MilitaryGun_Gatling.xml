@@ -69,7 +69,7 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
-	
+
 	<!-- GAU-19A 12.7mm 的主武器，也可以被猿人與戰鬥框架裝備-->
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_GAU19Gatlinggun</defName>
@@ -282,7 +282,7 @@
 				<CasingOffset>(-0.5,-0.5)</CasingOffset>
 			</li>
 		</modExtensions>
-  	</ThingDef>
+	</ThingDef>
 
 	<!--Gau-8 Avenger 30mm 駭蜥的主武器-->
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
@@ -362,5 +362,5 @@
 				<CasingOffset>(-0.5,-0.5)</CasingOffset>
 			</li>
 		</modExtensions>
-  	</ThingDef>
+	</ThingDef>
 </Defs>

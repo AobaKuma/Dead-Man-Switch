@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-<!-- 軍用武器為機兵範疇，在原版情況下相同定位的武器傷害都x1.5,重量x1.75，穿甲與鈍傷能力都有額外的0.5 -->
+	<!-- 軍用武器為機兵範疇，在原版情況下相同定位的武器傷害都x1.5,重量x1.75，穿甲與鈍傷能力都有額外的0.5 -->
 
-<!-- weaponTags -->
-<!-- 機兵用輕型武器 DMS_MechWeaponLight //狗狗與部分非戰鬥單位使用，霰彈手槍與衝鋒槍範疇-->
+	<!-- weaponTags -->
+	<!-- 機兵用輕型武器 DMS_MechWeaponLight //狗狗與部分非戰鬥單位使用，霰彈手槍與衝鋒槍範疇-->
 
-<!-- 機兵用副武器 DMS_Sub_Weapon //霰彈手槍與單手衝鋒槍,戰術手槍等-->
+	<!-- 機兵用副武器 DMS_Sub_Weapon //霰彈手槍與單手衝鋒槍,戰術手槍等-->
 
-<!-- 機兵用霰彈武器 DMS_MechWeaponShotgun //鎮暴霰彈槍,霰彈手槍等-->
+	<!-- 機兵用霰彈武器 DMS_MechWeaponShotgun //鎮暴霰彈槍,霰彈手槍等-->
 
-<!-- 中等體型機兵用武器 DMS_MechWeaponMedium //中等體型機兵使用的武器，精確射手步槍與半自動步槍，突擊步槍與重型衝鋒槍等-->
-<!-- 中等體型機兵用長身管武器 DMS_MechWeaponLongRifle//中等體型機兵使用的長身管武器，輕機槍，反器材步槍與狙擊槍-->
+	<!-- 中等體型機兵用武器 DMS_MechWeaponMedium //中等體型機兵使用的武器，精確射手步槍與半自動步槍，突擊步槍與重型衝鋒槍等-->
+	<!-- 中等體型機兵用長身管武器 DMS_MechWeaponLongRifle//中等體型機兵使用的長身管武器，輕機槍，反器材步槍與狙擊槍-->
 
-<!-- 機兵用反坦克武器 DMS_MechWeaponAntiTank //反器材步槍,反坦克火箭砲，自動榴彈發射器與狙擊榴彈發射器-->
+	<!-- 機兵用反坦克武器 DMS_MechWeaponAntiTank //反器材步槍,反坦克火箭砲，自動榴彈發射器與狙擊榴彈發射器-->
 
-<!-- 大约2.0體型重型機兵用武器 DMS_MechWeaponTransHeavy //猿人使用的槍型重武器裝備-->
-<!-- 大约2.5體型重型機兵用武器 DMS_MechWeaponHeavy //鬣蜥級別的機兵使用的槍型重武器裝備-->
-<!-- 載具型機兵用重型武器 DMS_VehicleWeapon //象龜使用的砲塔型重武器裝備，復仇者機砲與無後座力炮，2A38M等-->
+	<!-- 大约2.0體型重型機兵用武器 DMS_MechWeaponTransHeavy //猿人使用的槍型重武器裝備-->
+	<!-- 大约2.5體型重型機兵用武器 DMS_MechWeaponHeavy //鬣蜥級別的機兵使用的槍型重武器裝備-->
+	<!-- 載具型機兵用重型武器 DMS_VehicleWeapon //象龜使用的砲塔型重武器裝備，復仇者機砲與無後座力炮，2A38M等-->
 
 	<!-- DMS_AssaultShotgun -->
 	<ThingDef ParentName="DMS_AutomatroidGun">
@@ -51,14 +51,14 @@
 			<RangedWeapon_Cooldown>1.35</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-		    <researchPrerequisites>
-      			<li>GasOperation</li>
-      			<li>DMS_EquipmentElite</li>
-    		</researchPrerequisites>
+			<researchPrerequisites>
+				<li>GasOperation</li>
+				<li>DMS_EquipmentElite</li>
+			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
 			<Tungsteel>70</Tungsteel>
-			<ComponentStamped>4</ComponentStamped>		
+			<ComponentStamped>4</ComponentStamped>
 		</costList>
 		<verbs>
 			<li>
@@ -117,16 +117,16 @@
 			<AccuracyMedium>0.70</AccuracyMedium>
 			<AccuracyLong>0.65</AccuracyLong>
 			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
-		</statBases>		
+		</statBases>
 		<recipeMaker>
-		    <researchPrerequisites>
-      			<li>PrecisionRifling</li>
-      			<li>DMS_EquipmentElite</li>
-    		</researchPrerequisites>
+			<researchPrerequisites>
+				<li>PrecisionRifling</li>
+				<li>DMS_EquipmentElite</li>
+			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
 			<Tungsteel>60</Tungsteel>
-			<ComponentStamped>4</ComponentStamped>	
+			<ComponentStamped>4</ComponentStamped>
 		</costList>
 		<verbs>
 			<li>
@@ -172,7 +172,7 @@
 			<li>A_SR_LongRifle</li>
 			<li>A_SAR_LongRifle</li>
 			<li>A_DMR_LongRifle</li>
-		</weaponTags>	
+		</weaponTags>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_SemiAutoRifle</texPath>
 			<drawSize>1.5</drawSize>
@@ -192,15 +192,15 @@
 			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
 		<recipeMaker>
-		    <researchPrerequisites>
-      			<li>GasOperation</li>
-      			<li>DMS_EquipmentAdvanced</li>
-    		</researchPrerequisites>
+			<researchPrerequisites>
+				<li>GasOperation</li>
+				<li>DMS_EquipmentAdvanced</li>
+			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
 			<Tungsteel>50</Tungsteel>
-			<ComponentStamped>2</ComponentStamped>		
-		</costList>	
+			<ComponentStamped>2</ComponentStamped>
+		</costList>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -227,7 +227,7 @@
 				<EquippableDef>StandardAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
-	</ThingDef>  
+	</ThingDef>
 
 	<!-- DMS_BattleRifle -->
 	<ThingDef ParentName="DMS_AutomatroidGun">
@@ -256,7 +256,7 @@
 			<AccuracyMedium>0.80</AccuracyMedium>
 			<AccuracyLong>0.65</AccuracyLong>
 			<RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
-		</statBases>		
+		</statBases>
 		<recipeMaker>
 			<researchPrerequisites>
 				<li>PrecisionRifling</li>
@@ -265,7 +265,7 @@
 		</recipeMaker>
 		<costList>
 			<Tungsteel>60</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>	
+			<ComponentStamped>5</ComponentStamped>
 		</costList>
 		<verbs>
 			<li>
@@ -302,12 +302,12 @@
 		<label>Mech Marksman Rifle</label>
 		<description>An automatic rifle with a free floating barrel to improve accuracy over a distance. Comes equipped from the factory with a three-round-burst option.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
-		  <li>RangedHeavy</li>
-		  <li>LongShots</li>
-		  <li>Ranged</li>
+			<li>RangedHeavy</li>
+			<li>LongShots</li>
+			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
-			<li>DMS_MechWeaponMedium</li>	
+			<li>DMS_MechWeaponMedium</li>
 			<li>A_DMR_LongRifle</li>
 		</weaponTags>
 		<graphicData>
@@ -323,12 +323,12 @@
 			<AccuracyMedium>0.85</AccuracyMedium>
 			<AccuracyLong>0.83</AccuracyLong>
 			<RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
-		</statBases>		
+		</statBases>
 		<recipeMaker>
-		    <researchPrerequisites>
-      			<li>PrecisionRifling</li>
-      			<li>DMS_EquipmentElite</li>
-    		</researchPrerequisites>
+			<researchPrerequisites>
+				<li>PrecisionRifling</li>
+				<li>DMS_EquipmentElite</li>
+			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
 			<Tungsteel>70</Tungsteel>
@@ -368,9 +368,9 @@
 		<label>Mech AMR</label>
 		<description>A high caliber sniper rifle made to be used by MS-4E Jadger automatroids to destroy armored target at long ranges.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
-		  <li>RangedHeavy</li>
-		  <li>LongShots</li>
-		  <li>Ranged</li>
+			<li>RangedHeavy</li>
+			<li>LongShots</li>
+			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
 			<li>DMS_MechWeaponLongRifle</li>
@@ -391,17 +391,17 @@
 			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
 		</statBases>
 		<equippedStatOffsets>
-		  <MoveSpeed>-0.15</MoveSpeed>
+			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
 		<recipeMaker>
-		    <researchPrerequisites>
-      			<li>PrecisionRifling</li>
-      			<li>DMS_EquipmentElite</li>
-    		</researchPrerequisites>
+			<researchPrerequisites>
+				<li>PrecisionRifling</li>
+				<li>DMS_EquipmentElite</li>
+			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
 			<Tungsteel>70</Tungsteel>
-			<ComponentStamped>4</ComponentStamped>		
+			<ComponentStamped>4</ComponentStamped>
 		</costList>
 		<verbs>
 			<li>
@@ -448,14 +448,14 @@
 			<texPath>Things/Weapons/DMS_SniperGrenadeLauncher</texPath>
 			<drawSize>(1.4,1.4)</drawSize>
 		</graphicData>
-		<soundInteract>Interact_Rifle</soundInteract>	
+		<soundInteract>Interact_Rifle</soundInteract>
 		<statBases>
 			<WorkToMake>60000</WorkToMake>
 			<Mass>10.70</Mass>
 			<RangedWeapon_Cooldown>1.93</RangedWeapon_Cooldown>
 		</statBases>
 		<equippedStatOffsets>
-		<MoveSpeed>-0.15</MoveSpeed>
+			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
 		<recipeMaker>
 			<researchPrerequisites>
@@ -465,7 +465,7 @@
 		</recipeMaker>
 		<costList>
 			<Tungsteel>75</Tungsteel>
-			<ComponentStamped>4</ComponentStamped>	
+			<ComponentStamped>4</ComponentStamped>
 		</costList>
 		<verbs>
 			<li>
@@ -523,14 +523,14 @@
 			<RangedWeapon_Cooldown>6</RangedWeapon_Cooldown>
 		</statBases>
 		<equippedStatOffsets>
-		  	<MoveSpeed>-0.15</MoveSpeed>
+			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
 		<recipeMaker>
-		    <researchPrerequisites>
-      			<li>PrecisionRifling</li>
-      			<li>DMS_EquipmentElite</li>
-    		</researchPrerequisites>
-		</recipeMaker>		
+			<researchPrerequisites>
+				<li>PrecisionRifling</li>
+				<li>DMS_EquipmentElite</li>
+			</researchPrerequisites>
+		</recipeMaker>
 		<costList>
 			<Tungsteel>115</Tungsteel>
 			<ComponentStamped>5</ComponentStamped>
@@ -593,7 +593,7 @@
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_LightMachineGun</defName>
 		<label>Mech LMG</label>
-		<description>A weapon specializing in supression chambered in a large caliber rifle round.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>		
+		<description>A weapon specializing in supression chambered in a large caliber rifle round.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
 			<li>RangedHeavy</li>
 			<li>LongShots</li>
@@ -619,20 +619,20 @@
 			<AccuracyMedium>0.5</AccuracyMedium>
 			<AccuracyLong>0.4</AccuracyLong>
 			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
-		</statBases>	
+		</statBases>
 		<equippedStatOffsets>
-		  <MoveSpeed>-0.15</MoveSpeed>
+			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
 		<recipeMaker>
-		    <researchPrerequisites>
-      			<li>GasOperation</li>
-      			<li>DMS_EquipmentElite</li>
-    		</researchPrerequisites>
+			<researchPrerequisites>
+				<li>GasOperation</li>
+				<li>DMS_EquipmentElite</li>
+			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
 			<Tungsteel>75</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>		
-		</costList>	
+			<ComponentStamped>5</ComponentStamped>
+		</costList>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -667,7 +667,7 @@
 		<projectile>
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>16</damageAmountBase>
-			<armorPenetrationBase>0.18</armorPenetrationBase>	
+			<armorPenetrationBase>0.18</armorPenetrationBase>
 			<stoppingPower>2</stoppingPower>
 			<speed>80</speed>
 		</projectile>

@@ -157,7 +157,7 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
-	
+
 	<!-- Door Breaker, breach weapon for siegebreaker-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_DoorBreaker</defName>
@@ -232,5 +232,5 @@
 			</li>
 		</tools>
 	</ThingDef>
-	
+
 </Defs>

@@ -64,15 +64,15 @@
 
 	<!-- 即使穿著動力外骨骼也沒法操作的重型槍械-->
 	<ThingDef Name="DMS_AutomatroidHeavyGun" ParentName="DMS_AutomatroidGun" Abstract="True">
-    	<storedConceptLearnOpportunity>DMS_HeavyWeapon</storedConceptLearnOpportunity>
+		<storedConceptLearnOpportunity>DMS_HeavyWeapon</storedConceptLearnOpportunity>
 		<statBases>
-		    <MaxHitPoints>300</MaxHitPoints>
+			<MaxHitPoints>300</MaxHitPoints>
 			<WorkToMake>80000</WorkToMake>
-	    </statBases>
+		</statBases>
 		<recipeMaker>
 			<researchPrerequisites>
 				<li>DMS_EquipmentHeavy</li>
-		  	</researchPrerequisites>
+			</researchPrerequisites>
 		</recipeMaker>
 		<tools Inherit="False">
 			<li>
