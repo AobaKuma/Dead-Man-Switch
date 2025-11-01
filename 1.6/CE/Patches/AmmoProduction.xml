@@ -14,8 +14,9 @@
 			</li>
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[
+					@Name="AmmoBase" or
 					@Name="MediumAmmoBase" or
-					@Name="HeavyAmmoBase"
+					@Name="HeavyAmmoBase" 
 					]/tradeTags</xpath>
 				<value>
 					<li>CE_AutoEnableCrafting_DMS_TableAmmoPrinter</li>
