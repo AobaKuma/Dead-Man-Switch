@@ -459,6 +459,7 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
+	
 	<ThingDef ParentName="BaseBullet">
 		<defName>DMS_Bullet_RiotShotgun</defName>
 		<label>4 gauge bean bag</label>

@@ -39,7 +39,7 @@
         <useTargetAInitialRotation>true</useTargetAInitialRotation>
         <positionRadiusMin>0.25</positionRadiusMin>
         <positionRadius>1</positionRadius>
-        <scale>0.1~2</scale> 
+        <scale>0.1~2</scale>
         <angle>-25~25</angle>
         <rotationRate>-1~1</rotationRate>
         <airTime>1~5</airTime>
@@ -51,7 +51,7 @@
     </children>
   </EffecterDef>
 
-<EffecterDef>
+  <EffecterDef>
     <defName>DMS_LaunchDust_Recoilless</defName>
     <children>
       <li>

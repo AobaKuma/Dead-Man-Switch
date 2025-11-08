@@ -365,7 +365,7 @@
 	<!--AMR-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_AntiMaterialRifle</defName>
-		<label>Mech AMR</label>
+		<label>anti-material rifle</label>
 		<description>A high caliber sniper rifle made to be used by MS-4E Jadger automatroids to destroy armored target at long ranges.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
 			<li>RangedHeavy</li>
@@ -434,7 +434,7 @@
 	<!--狙擊榴彈發射器-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_SniperGrenadeLauncher</defName>
-		<label>Sniper Grenade Launcher</label>
+		<label>Sniper grenade launcher</label>
 		<description>A precision grenade launcher designed to serve as a counter-sniper.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
 			<li>RangedHeavy</li>
@@ -567,6 +567,7 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
+
 	<ThingDef ParentName="BaseBullet">
 		<defName>Bullet_DMS_GrenadeLauncher</defName>
 		<label>grenade round</label>
@@ -666,8 +667,8 @@
 		<label>full-power rifle bullet</label>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>16</damageAmountBase>
-			<armorPenetrationBase>0.18</armorPenetrationBase>
+			<damageAmountBase>18</damageAmountBase>
+			<armorPenetrationBase>0.28</armorPenetrationBase>
 			<stoppingPower>2</stoppingPower>
 			<speed>80</speed>
 		</projectile>
