@@ -772,6 +772,7 @@
       <ShootingAccuracyTurret>0.9</ShootingAccuracyTurret>
     </statBases>
     <designationCategory Inherit="false"/>
+	<researchPrerequisites Inherit="false"/>
     <comps>
       <li Class="CompProperties_Refuelable">
         <fuelLabel>Shots until barrel change</fuelLabel>
