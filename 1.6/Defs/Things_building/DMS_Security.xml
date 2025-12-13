@@ -694,7 +694,7 @@
     <placeWorkers>
       <li>PlaceWorker_BandNode</li>
     </placeWorkers>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <drawPlaceWorkersWhileSelected>false</drawPlaceWorkersWhileSelected>
   </ThingDef>
 
   <ThingDef ParentName="BaseWeaponTurret">
