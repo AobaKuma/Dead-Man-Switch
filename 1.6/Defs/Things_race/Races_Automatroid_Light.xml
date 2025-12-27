@@ -17,6 +17,7 @@
       <baseHealthScale>0.75</baseHealthScale>
       <mechWeightClass>Light</mechWeightClass>
       <flightStartChanceOnJobStart>0.05</flightStartChanceOnJobStart>
+	  <waterCellCost>1</waterCellCost>
     </race>
     <comps>
       <li Class="Fortified.CompProperties_FlyingFleckThrower">
