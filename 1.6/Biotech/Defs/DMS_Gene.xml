@@ -5,9 +5,15 @@
     <label>wetware gestation</label>
     <labelShortAdj>wetware</labelShortAdj>
     <description>This is a special directional developmental gene that is designed to cause the embryo to mutate and develop in a predetermined manner during the developmental stage. And grow into a biological wetware computer that is compatible with mechanical interfaces.</description>
-    <geneClass>Fortified.Gene_Wetware</geneClass>
     <iconPath>UI/Gene/Gene_Wetware</iconPath>
     <displayOrderInCategory>80</displayOrderInCategory>
     <biostatMet>-15</biostatMet>
+    <modExtensions>
+      <li Class="Fortified.PregnancyOutcomeExtension">
+          <applyIfNotGeneticMother>true</applyIfNotGeneticMother>
+          <thingDef>Neurocomputer</thingDef>
+          <letterText>{PAWN_labelShort} gave birth to {ITEM_label}.</letterText>
+      </li>
+    </modExtensions>
   </GeneDef>
 </Defs>	
