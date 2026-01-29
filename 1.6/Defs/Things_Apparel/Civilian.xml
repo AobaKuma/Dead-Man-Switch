@@ -323,7 +323,7 @@
 		</statBases>
 		<equippedStatOffsets>
 			<MoveSpeed>0.5</MoveSpeed>
-			<VEF_MassCarryCapacity MayRequire="oskarpotocki.vanillafactionsexpanded.core">75</VEF_MassCarryCapacity>
+			<FFF_MassCarryCapacity>75</FFF_MassCarryCapacity>
 		</equippedStatOffsets>
 		<apparel>
 			<bodyPartGroups>
@@ -352,7 +352,7 @@
 			<canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
 		</apparel>
 		<modExtensions>
-			<li Class="VEF.Apparels.ApparelExtension" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
+			<li Class="Fortified.ApparelExtension">
 				<pawnCapacityMinLevels>
 					<li>
 						<capacity>Moving</capacity>

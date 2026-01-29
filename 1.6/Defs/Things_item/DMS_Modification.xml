@@ -617,7 +617,7 @@
           <MeleeDodgeChance>0.9</MeleeDodgeChance>
         </statFactors>
         <statOffsets>
-          <VEF_MassCarryCapacity MayRequire="oskarpotocki.vanillafactionsexpanded.core">120</VEF_MassCarryCapacity>
+          <FFF_MassCarryCapacity>120</FFF_MassCarryCapacity>
           <CarryBulk MayRequire="ceteam.combatextended">75</CarryBulk>
           <CarryWeight MayRequire="ceteam.combatextended">120</CarryWeight>
           <CarryingCapacity>120</CarryingCapacity>

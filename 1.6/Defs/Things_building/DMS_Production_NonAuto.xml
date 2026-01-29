@@ -96,13 +96,6 @@
             <li>DMS_Material</li>
         </researchPrerequisites>
         <minifiedDef>MinifiedThing</minifiedDef>
-        <modExtensions>
-            <li Class="VEF.Buildings.RecipeInheritanceExtension" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
-                <inheritRecipesFrom>
-                    <li>BiofuelRefinery</li>
-                </inheritRecipesFrom>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!-- DMS_LabFurnace -->
@@ -156,12 +149,6 @@
             <li>DMS_Material</li>
         </researchPrerequisites>
         <minifiedDef>MinifiedThing</minifiedDef>
-        <modExtensions>
-            <li Class="VEF.Buildings.RecipeInheritanceExtension" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
-                <inheritRecipesFrom>
-                    <li>ElectricSmelter</li>
-                </inheritRecipesFrom>
-            </li>
-        </modExtensions>
+
     </ThingDef>
 </Defs>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 配方继承补丁：让DMS工作台获得原版工作台的配方 -->
+<Patch>
+
+  <!-- BiofuelRefinery 的配方 -> DMS_ReactionChamber, DMS_LabReactor -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/RecipeDef[recipeUsers/li = "BiofuelRefinery"]/recipeUsers</xpath>
+    <value>
+      <li>DMS_ReactionChamber</li>
+      <li>DMS_LabReactor</li>
+    </value>
+  </Operation>
+
+  <!-- ElectricSmelter 的配方 -> DMS_Furnace, DMS_LabFurnace -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/RecipeDef[recipeUsers/li = "ElectricSmelter"]/recipeUsers</xpath>
+    <value>
+      <li>DMS_Furnace</li>
+      <li>DMS_LabFurnace</li>
+    </value>
+  </Operation>
+
+  <!-- ElectricSmithy 的配方 -> DMS_TableMachinePrinter -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/RecipeDef[recipeUsers/li = "ElectricSmithy"]/recipeUsers</xpath>
+    <value>
+      <li>DMS_TableMachinePrinter</li>
+    </value>
+  </Operation>
+
+</Patch>
