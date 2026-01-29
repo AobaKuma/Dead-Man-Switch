@@ -65,6 +65,11 @@
           </li>
         </skills>
       </li>
+      <li Class="Fortified.ModExtension_RecipeInheritance">
+        <inheritRecipesFrom>
+          <li>BiofuelRefinery</li>
+        </inheritRecipesFrom>
+      </li>
     </modExtensions>
   </ThingDef>
 
@@ -140,6 +145,11 @@
           </li>
         </skills>
       </li>
+      <li Class="Fortified.ModExtension_RecipeInheritance">
+        <inheritRecipesFrom>
+          <li>ElectricSmelter</li>
+        </inheritRecipesFrom>
+      </li>
     </modExtensions>
   </ThingDef>
 
@@ -200,6 +210,11 @@
             <value>12</value>
           </li>
         </skills>
+      </li>
+      <li Class="Fortified.ModExtension_RecipeInheritance">
+        <inheritRecipesFrom>
+          <li>ElectricSmithy</li>
+        </inheritRecipesFrom>
       </li>
     </modExtensions>
   </ThingDef>

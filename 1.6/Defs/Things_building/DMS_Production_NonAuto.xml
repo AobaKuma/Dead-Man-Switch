@@ -43,6 +43,13 @@
         <researchPrerequisites>
             <li>DMS_Artifuscle</li>
         </researchPrerequisites>
+        <modExtensions>
+            <li Class="Fortified.ModExtension_RecipeInheritance">
+                <inheritRecipesFrom>
+                    <li>ElectricSmithy</li>
+                </inheritRecipesFrom>
+            </li>
+        </modExtensions>
     </ThingDef>
 
     <!-- DMS_LabReactor -->
@@ -95,6 +102,13 @@
             <li>BiofuelRefining</li>
             <li>DMS_Material</li>
         </researchPrerequisites>
+        <modExtensions>
+            <li Class="Fortified.ModExtension_RecipeInheritance">
+                <inheritRecipesFrom>
+                    <li>BiofuelRefinery</li>
+                </inheritRecipesFrom>
+            </li>
+        </modExtensions>
         <minifiedDef>MinifiedThing</minifiedDef>
     </ThingDef>
 
@@ -148,7 +162,13 @@
             <li>Smithing</li>
             <li>DMS_Material</li>
         </researchPrerequisites>
+        <modExtensions>
+            <li Class="Fortified.ModExtension_RecipeInheritance">
+                <inheritRecipesFrom>
+                    <li>ElectricSmelter</li>
+                </inheritRecipesFrom>
+            </li>
+        </modExtensions>
         <minifiedDef>MinifiedThing</minifiedDef>
-
     </ThingDef>
 </Defs>
