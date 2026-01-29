@@ -15,7 +15,7 @@
       <EMPResistance MayRequire="Ludeon.Rimworld.Biotech">3</EMPResistance>                                             <!--EMP抵抗力-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
       <ControlTakingTime MayRequire="Ludeon.Rimworld.Biotech">30</ControlTakingTime>
-    </statBases>    
+    </statBases>
     <inspectorTabs Inherit="False">
       <li>ITab_Pawn_Health</li>
       <li>ITab_Pawn_Needs</li>
@@ -94,7 +94,7 @@
       <mechFixedSkillLevel>8</mechFixedSkillLevel>
     </race>
     <comps>
-      <li Class="Fortified.CompProperties_MechApparel"/>
+      <li Class="Fortified.CompProperties_MechApparel" />
       <li Class="Fortified.CompProperties_WeaponImprint">
         <imprintDef>DMS_WeaponInprint</imprintDef>
         <bodyPart>Brain</bodyPart>
@@ -102,7 +102,7 @@
       </li>
     </comps>
     <modExtensions>
-      <li Class="Fortified.TurretMannableExtension"/>
+      <li Class="Fortified.TurretMannableExtension" />
       <li Class="Fortified.HumanlikeMechExtension">
         <canChangeHairStyle>true</canChangeHairStyle>
         <bodyTypeOverride>Female</bodyTypeOverride>
@@ -141,7 +141,7 @@
     </modExtensions>
   </ThingDef>
 
-  <PawnKindDef ParentName="BaseAutomatroidKind">
+  <PawnKindDef ParentName="BaseAutomatroidKind" Name="DMS_BaseLadyKind">
     <defName>DMS_Mech_Lady</defName>
     <label>lady</label>
     <race>DMS_Mech_Lady</race>
@@ -169,7 +169,7 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <weaponMoney>9999~9999</weaponMoney>
+    <weaponMoney>3000~9999</weaponMoney>
     <weaponTags>
       <li>A_SR_LongRifle</li>
     </weaponTags>
@@ -178,7 +178,7 @@
     <controlGroupPortraitZoom>1.2</controlGroupPortraitZoom>
   </PawnKindDef>
 
-    <!-- 獒犬 -->
+  <!-- 獒犬 -->
   <ThingDef Name="DMS_MechDoggeBase" ParentName="BaseAutomatroidRace">  <!-- DMS_Machine_Hound 獵犬常規型 -->
     <defName>DMS_Mech_Dogge</defName>
     <label>Dogge</label>
@@ -199,7 +199,7 @@
     </race>
     <comps>
       <li Class="Fortified.CompProperties_VehicleWeapon">
-        <defaultWeapon/>
+        <defaultWeapon />
         <turretRotationFollowPawn>true</turretRotationFollowPawn>
         <rotationSmoothTime>0.2</rotationSmoothTime>
         <drawData>
@@ -251,7 +251,7 @@
                 </drawData>
               </li>
             </renderNodeProperties>
-           </li>
+          </li>
         </subTurrets>
       </li>
     </comps>
@@ -307,6 +307,6 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <weaponTags/>
+    <weaponTags />
   </PawnKindDef>
 </Defs>

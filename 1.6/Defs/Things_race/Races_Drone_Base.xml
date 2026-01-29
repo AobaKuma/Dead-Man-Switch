@@ -22,14 +22,15 @@
         <offset>(0,0,-0.3)</offset>
       </specialShadowData>
       <intelligence>ToolUser</intelligence>
-      <thinkTreeMain>DMS_Mechanoid</thinkTreeMain>
+      <thinkTreeMain>FFF_DroneMain</thinkTreeMain>
+      <thinkTreeConstant>FFF_DroneConstant</thinkTreeConstant>
+
       <!-- 要改 -->
       <nameGenerator>DMS_VanguardMechStandard</nameGenerator>
 
       <soundCallIntervalRange>2000~4000</soundCallIntervalRange>
       <soundCallIntervalFriendlyFactor>2</soundCallIntervalFriendlyFactor>
       <soundCallIntervalAggressiveFactor>0.5</soundCallIntervalAggressiveFactor>
-      <thinkTreeConstant>FFF_DroneConstant</thinkTreeConstant>
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>

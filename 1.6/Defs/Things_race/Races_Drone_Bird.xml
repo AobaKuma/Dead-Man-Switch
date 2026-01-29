@@ -12,6 +12,7 @@
       <baseBodySize>0.15</baseBodySize>
       <baseHealthScale>0.25</baseHealthScale>
       <mechWeightClass>Light</mechWeightClass>
+      <waterCellCost>1</waterCellCost>
     </race>
     <comps>
       <li>

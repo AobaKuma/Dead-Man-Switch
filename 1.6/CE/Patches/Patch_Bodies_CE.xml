@@ -883,5 +883,239 @@
 			<li>CoveredByNaturalArmor</li>
 		</value>
 	</Operation>
+	
+
+	<!-- ========== Add groups entry if it doesn't exist already (Synthroid) ========== -->
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/parts/li[def="SightSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/parts/li[def="SightSensor"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/parts/li[def="HearingSensor"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/parts/li[def="HearingSensor"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/parts/li[def="Nose"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/parts/li[def="Nose"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/parts/li[def="Jaw"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/parts/li[def="Jaw"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="DMS_SynthicArm"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="DMS_SynthicArm"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="DMS_SynthicArm"]/parts/li[def="DMS_SynthicHand"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="DMS_SynthicArm"]/parts/li[def="DMS_SynthicHand"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="DMS_SynthicArm"]/parts/li[def="DMS_SynthicHand"]/parts/li[def="Finger"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="DMS_SynthicArm"]/parts/li[def="DMS_SynthicHand"]/parts/li[def="Finger"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Waist"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Waist"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="DMS_SynthicLeg"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="DMS_SynthicLeg"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="DMS_SynthicLeg"]/parts/li[def="DMS_SynthicFoot"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="DMS_SynthicLeg"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+
+	<!-- ========== Add armor coverage (Synthroid) ========== -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/parts/li[def="SightSensor"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/parts/li[def="HearingSensor"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/parts/li[def="Nose"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Neck"]/parts/li[def="Head"]/parts/li[def="Jaw"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="MechanicalShoulder"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="DMS_SynthicArm"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="DMS_SynthicArm"]/parts/li[def="DMS_SynthicHand"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="DMS_SynthicArm"]/parts/li[def="DMS_SynthicHand"]/parts/li[def="Finger"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="Waist"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="DMS_SynthicLeg"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMS_Synthroid"]/corePart/parts/li[def="DMS_SynthicLeg"]/parts/li[def="DMS_SynthicFoot"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
 
 </Patch>
