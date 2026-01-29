@@ -43,13 +43,6 @@
         <researchPrerequisites>
             <li>DMS_Artifuscle</li>
         </researchPrerequisites>
-        <modExtensions>
-            <li Class="Fortified.ModExtension_RecipeInheritance">
-                <inheritRecipesFrom>
-                    <li>ElectricSmithy</li>
-                </inheritRecipesFrom>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!-- DMS_LabReactor -->
