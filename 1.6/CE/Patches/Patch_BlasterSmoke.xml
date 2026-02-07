@@ -22,9 +22,17 @@
 				<xpath>Defs/ThingDef[defName="DMS_Bullet_BlasterSmoke"]/projectile</xpath>
 				<value>
 					<projectile Class="CombatExtended.ProjectilePropertiesCE">
-						<explosionRadius>0.1</explosionRadius>
-						<isInstant>True</isInstant>
 						<damageDef>Smoke</damageDef>
+						<speed>41</speed>
+						<explosionRadius>0.1</explosionRadius>
+						<flyOverhead>true</flyOverhead>
+						<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+						<soundExplode>ToxicShellLanded</soundExplode>
+						<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+						<soundAmbient>MortarRound_Ambient</soundAmbient>
+						<postExplosionSpawnThingDef>Shell_BlasterSmoke_Releasing</postExplosionSpawnThingDef>
+						<postExplosionSpawnThingDefWater>Shell_BlasterSmoke_Releasing_Water</postExplosionSpawnThingDefWater>
+						<postExplosionSpawnChance>1</postExplosionSpawnChance>
 					</projectile>
 				</value>
 			</li>

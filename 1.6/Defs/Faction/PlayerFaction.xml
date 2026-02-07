@@ -183,14 +183,14 @@
                     <hediff>CryptosleepSickness</hediff>
                     <severityRange>1~1</severityRange>
                 </li>
-                <li Class="VEF.Factions.ScenPart_ForcedFactionGoodwill" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
+                <li Class="Fortified.Structures.ScenPart_ForcedFactionGoodwill">
                     <factionDef>DMS_Army</factionDef>
                     <affectHiddenFactions>True</affectHiddenFactions>
                     <affectStartingGoodwill>True</affectStartingGoodwill>
                     <startingGoodwillRange>100~100</startingGoodwillRange>
                     <affectNaturalGoodwill>True</affectNaturalGoodwill>
                     <naturalGoodwillRange>56~63</naturalGoodwillRange>
-                    <def>VFEC_ForcedFactionGoodwill</def>
+                    <def>FFF_ForcedFactionGoodwill</def>
                 </li>
                 <li Class="ScenPart_GameStartDialog">
                     <def>GameStartDialog</def>

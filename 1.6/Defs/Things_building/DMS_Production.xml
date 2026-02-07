@@ -47,11 +47,6 @@
       <li>DMS_Autofacturer</li>
     </researchPrerequisites>
     <modExtensions>
-      <li Class="VEF.Buildings.RecipeInheritanceExtension" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
-        <inheritRecipesFrom>
-          <li>BiofuelRefinery</li>
-        </inheritRecipesFrom>
-      </li>
       <li Class="Fortified.ModExtension_AutoWorkTable">
         <workAmountPerStage>10000</workAmountPerStage>
         <activeMote>DMS_Mote_ReactionChamberActive</activeMote>
@@ -69,6 +64,11 @@
             <value>12</value>
           </li>
         </skills>
+      </li>
+      <li Class="Fortified.ModExtension_RecipeInheritance">
+        <inheritRecipesFrom>
+          <li>BiofuelRefinery</li>
+        </inheritRecipesFrom>
       </li>
     </modExtensions>
   </ThingDef>
@@ -126,11 +126,6 @@
       <li>DMS_Autofacturer</li>
     </researchPrerequisites>
     <modExtensions>
-      <li Class="VEF.Buildings.RecipeInheritanceExtension" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
-        <inheritRecipesFrom>
-          <li>ElectricSmelter</li>
-        </inheritRecipesFrom>
-      </li>
       <li Class="Fortified.ModExtension_AutoWorkTable">
         <workAmountPerStage>30000</workAmountPerStage>
         <northOnly>true</northOnly>
@@ -149,6 +144,11 @@
             <value>10</value>
           </li>
         </skills>
+      </li>
+      <li Class="Fortified.ModExtension_RecipeInheritance">
+        <inheritRecipesFrom>
+          <li>ElectricSmelter</li>
+        </inheritRecipesFrom>
       </li>
     </modExtensions>
   </ThingDef>
@@ -198,11 +198,6 @@
       <li>DMS_MechBasis</li>
     </researchPrerequisites>
     <modExtensions>
-      <li Class="VEF.Buildings.RecipeInheritanceExtension" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
-        <inheritRecipesFrom>
-          <li>ElectricSmithy</li>
-        </inheritRecipesFrom>
-      </li>
       <li Class="Fortified.ModExtension_AutoWorkTable">
         <workAmountPerStage>10000</workAmountPerStage>
         <phaseEffecter_east>DMS_Effect_Printer_East</phaseEffecter_east>
@@ -215,6 +210,11 @@
             <value>12</value>
           </li>
         </skills>
+      </li>
+      <li Class="Fortified.ModExtension_RecipeInheritance">
+        <inheritRecipesFrom>
+          <li>ElectricSmithy</li>
+        </inheritRecipesFrom>
       </li>
     </modExtensions>
   </ThingDef>

@@ -21,9 +21,8 @@
       <li Class="CompProperties_MechPowerCell">
         <totalPowerTicks>15000</totalPowerTicks>
       </li>
-      <li MayRequire="oskarpotocki.vanillafactionsexpanded.core" Class="VEF.AnimalBehaviours.CompProperties_Floating">
+      <li Class="Fortified.CompProperties_Floating">
         <canCrossWater>true</canCrossWater>
-        <isFloater>true</isFloater>
       </li>
       <li Class="Fortified.CompProperties_FlyingFleckThrower">
         <burstOffsetRange>(1,1.5)</burstOffsetRange>
