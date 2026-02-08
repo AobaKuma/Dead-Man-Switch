@@ -119,9 +119,9 @@
       <displayPriority>300</displayPriority>
     </recipeMaker>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/Mechlink</texPath>
+      <texPath>Things/Misc/DMS_Mechlink_Nerfed</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>0.65</drawSize>
+      <drawSize>0.75</drawSize>
     </graphicData>
     <comps>
       <li Class="CompProperties_Forbiddable"/>
