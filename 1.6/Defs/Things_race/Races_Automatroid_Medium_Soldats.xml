@@ -109,12 +109,6 @@
     <isFighter>true</isFighter>
     <combatPower>80</combatPower>
     <maxPerGroup>20</maxPerGroup>
-    <skills>
-      <li>
-        <skill>Shooting</skill>
-        <range>18~20</range>
-      </li>
-    </skills>
     <lifeStages>
       <li>
         <bodyGraphicData>
