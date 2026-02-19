@@ -168,13 +168,7 @@
   </ThingDef>
 
   <ThingDef Name="BaseAutomatroidHumanRace" ParentName="BaseAutomatroidWalker" Abstract="True">
-    <!--<inspectorTabs Inherit="False">
-      <li>ITab_Pawn_Health</li>
-      <li>ITab_Pawn_Needs</li>
-      <li>ITab_Pawn_FormingCaravan</li>
-      <li>ITab_Pawn_Gear</li>
-      <li>ITab_Pawn_Log</li>
-    </inspectorTabs>-->
+
   </ThingDef>
 
   <PawnKindDef Name="BaseAutomatroidKind" ParentName="BaseMechanoidKind" Abstract="True">
