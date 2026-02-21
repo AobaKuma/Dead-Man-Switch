@@ -12,6 +12,12 @@ namespace DMS
             return Props.bossgroupDef.Worker.CanResolve(p);
         }
 
+        public override TaggedString ConfirmMessage(Pawn p)
+		{
+			GameComponent_Bossgroup component = Current.Game.GetComponent<GameComponent_Bossgroup>();
+			return "BossgroupWarningDialog".Translate(NamedArgumentUtility.Named(Props.bossgroupDef.boss.kindDef, "LEADERKIND"), Props.bossgroupDef.GetWaveDescription(component.NumTimesCalledBossgroup(Props.bossgroupDef)).Named("PAWNS"));
+		}
+
         public override void DoEffect(Pawn usedBy)
         {
             base.DoEffect(usedBy);
