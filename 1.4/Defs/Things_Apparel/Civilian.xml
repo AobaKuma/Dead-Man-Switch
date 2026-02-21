@@ -14,7 +14,7 @@
 			<recipeUsers>
 				<li>ElectricTailoringBench</li>
 				<li>HandTailoringBench</li>
-			</recipeUsers>	
+			</recipeUsers>
 			<researchPrerequisite>DMS_EquipmentBasis</researchPrerequisite>
 			<unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
 		</recipeMaker>
@@ -111,82 +111,82 @@
 		<description>A typical coats for army, keep one warm in chilly weather.</description>
 		<possessionCount>1</possessionCount>
 		<recipeMaker>
-		  <researchPrerequisite>DMS_EquipmentBasis</researchPrerequisite>
+			<researchPrerequisite>DMS_EquipmentBasis</researchPrerequisite>
 		</recipeMaker>
 		<graphicData>
 			<texPath>Things/Apparel/GarrisonCoat/Apparel</texPath>
-		  <graphicClass>Graphic_Single</graphicClass>
-		  <drawSize>0.85</drawSize>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.85</drawSize>
 		</graphicData>
 		<costStuffCount>80</costStuffCount>
 		<stuffCategories>
-		  <li>Fabric</li>
-		  <li>Leathery</li>
+			<li>Fabric</li>
+			<li>Leathery</li>
 		</stuffCategories>
 		<thingCategories>
-		  <li>ApparelMisc</li>
+			<li>ApparelMisc</li>
 		</thingCategories>
 		<statBases>
-		  <MaxHitPoints>160</MaxHitPoints>
-		  <WorkToMake>7000</WorkToMake>
-		  <Mass>1.5</Mass>
-		  <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
-		  <StuffEffectMultiplierInsulation_Cold>0.8</StuffEffectMultiplierInsulation_Cold>
-		  <StuffEffectMultiplierInsulation_Heat>0.5</StuffEffectMultiplierInsulation_Heat>
-		  <EquipDelay>1.5</EquipDelay>
+			<MaxHitPoints>160</MaxHitPoints>
+			<WorkToMake>7000</WorkToMake>
+			<Mass>1.5</Mass>
+			<StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierInsulation_Cold>0.8</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.5</StuffEffectMultiplierInsulation_Heat>
+			<EquipDelay>1.5</EquipDelay>
 		</statBases>
 		<apparel>
-		  <bodyPartGroups>
-			<li>Torso</li>
-			<li>Neck</li>
-			<li>Shoulders</li>
-			<li>Arms</li>
-		  </bodyPartGroups>
-		  <wornGraphicPath>Things/Apparel/GarrisonCoat/Apparel</wornGraphicPath>
-		  <blocksAddedPartWoundGraphics>true</blocksAddedPartWoundGraphics>
-		  <layers>
-			<li>Shell</li>
-		  </layers>
-		  <tags>
-			<li>IndustrialAdvanced</li>
-			<li>DMS_Garrison</li>
-			<li>DMS_Officer</li>
-		  </tags>
-		  <defaultOutfitTags>
-			<li>Soldier</li>
-		  </defaultOutfitTags>
-		  <canBeDesiredForIdeo>true</canBeDesiredForIdeo>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Apparel/GarrisonCoat/Apparel</wornGraphicPath>
+			<blocksAddedPartWoundGraphics>true</blocksAddedPartWoundGraphics>
+			<layers>
+				<li>Shell</li>
+			</layers>
+			<tags>
+				<li>IndustrialAdvanced</li>
+				<li>DMS_Garrison</li>
+				<li>DMS_Officer</li>
+			</tags>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+			<canBeDesiredForIdeo>true</canBeDesiredForIdeo>
 		</apparel>
 		<colorGenerator Class="ColorGenerator_Options">
-		  <options>
-			<li>
-			  <weight>10</weight>
-			  <only>(0.33,0.33,0.33)</only>
-			</li>
-			<li>
-			  <weight>10</weight>
-			  <only>(0.65,0.65,0.65)</only>
-			</li>
-			<li>
-			  <weight>10</weight>
-			  <only>(0.4,0.3,0.15)</only>
-			</li>
-			<li>
-			  <weight>15</weight>
-			  <min>(0.3,0.3,0.3)</min>
-			  <max>(0.5,0.5,0.5)</max>
-			</li>
-			<li>
-			  <weight>6</weight>
-			  <min>(0.5,0.5,0.5)</min>
-			  <max>(1,1,1)</max>
-			</li>
-		  </options>
+			<options>
+				<li>
+					<weight>10</weight>
+					<only>(0.33,0.33,0.33)</only>
+				</li>
+				<li>
+					<weight>10</weight>
+					<only>(0.65,0.65,0.65)</only>
+				</li>
+				<li>
+					<weight>10</weight>
+					<only>(0.4,0.3,0.15)</only>
+				</li>
+				<li>
+					<weight>15</weight>
+					<min>(0.3,0.3,0.3)</min>
+					<max>(0.5,0.5,0.5)</max>
+				</li>
+				<li>
+					<weight>6</weight>
+					<min>(0.5,0.5,0.5)</min>
+					<max>(1,1,1)</max>
+				</li>
+			</options>
 		</colorGenerator>
 		<tradeTags>
-		  <li>BasicClothing</li>
+			<li>BasicClothing</li>
 		</tradeTags>
-	  </ThingDef>
+	</ThingDef>
 
 	<ThingDef ParentName="ApparelBase">
 		<defName>DMS_Apparel_HazardSuit</defName>
@@ -272,7 +272,7 @@
 			<soundWorking>Recipe_Machining</soundWorking>
 			<researchPrerequisite>DMS_MechBasis</researchPrerequisite>
 			<recipeUsers>
-			  <li>DMS_TableMachinePrinter</li>
+				<li>DMS_TableMachinePrinter</li>
 			</recipeUsers>
 			<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
 		</recipeMaker>
