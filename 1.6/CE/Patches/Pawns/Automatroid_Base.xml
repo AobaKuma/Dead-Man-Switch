@@ -188,7 +188,7 @@
 					</li>
 				</value>
 			</li>
-			
+
 			<li Class="PatchOperationAddModExtension"> <!-- new -->
 				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]</xpath>
 				<value>
