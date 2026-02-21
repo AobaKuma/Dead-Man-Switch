@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <QuestScriptDef>
+    <defName>DMS_ProcessDocumentQuest</defName>
+    <rootSelectionWeight>0.6</rootSelectionWeight>
+    <rootMinPoints>300</rootMinPoints>
+    <expireDaysRange>4~8</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->舰队文书处理</li>
+      </rulesStrings>
+    </questNameRules>       
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->殖民舰队联系了你，计划空投一些繁杂积压的文书材料。你需要指派具有对应研究能力的人员对文书进行处理。\n\n文书一经损坏则会立即导致任务失败，请妥善保管。</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetMap" />
+        <li Class="QuestNode_GeneratePawn">
+          <kindDef>DMS_Officer_Leader</kindDef>
+          <storeAs>asker</storeAs>
+          <faction>DMS_Army</faction>
+          <allowPregnant>false</allowPregnant>
+        </li>
+        <li Class="QuestNode_EvaluateSimpleCurve">
+          <value>$points</value>
+          <storeAs>documentCount</storeAs>
+          <curve>
+            <points>
+              <li>300, 2</li>
+              <li>10000, 30</li>
+            </points>
+          </curve>
+          <roundRandom>true</roundRandom>
+        </li>
+        <li Class="QuestNode_Set">
+          <name>rewardValue</name>
+          <value>$($documentCount * 75)</value> 
+        </li>
+        <li Class="QuestNode_LoopCount">
+          <loopCount>$documentCount</loopCount>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_GenerateThing">
+                <def>DMS_QuestDocument</def>
+                <storeAs>tempDoc</storeAs>
+              </li>
+              <li Class="QuestNode_DropPods">
+                <contents>$tempDoc</contents>
+                <joinPlayer>true</joinPlayer>
+                <useTradeDropSpot>true</useTradeDropSpot>
+                <sendStandardLetter>false</sendStandardLetter>
+              </li>
+              <li Class="QuestNode_AddTag">
+                <targets>$tempDoc</targets>
+                <tag>DMS_DocTarget</tag>
+              </li>
+            </nodes>
+          </node>
+        </li>
+        <li Class="QuestNode_Letter">
+          <label TKey="LetterLabelDocsArrived">Documents arrived</label>
+          <text TKey="LetterTextDocsArrived">Classified documents from [asker_nameFull] have arrived. They have been dropped near your trade beacons or colony center.</text>
+          <letterDef>PositiveEvent</letterDef>
+        </li>
+        <li Class="QuestNode_Signal">
+          <inSignal>DMS_DocTarget.Destroyed</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label>Documents destroyed</label>
+                <text>Because the documents were destroyed, the quest has failed.</text>
+                <letterDef>NegativeEvent</letterDef>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+        <li Class="DMS.QuestNode_TrackDoc">
+          <inSignalProcess>DMS_DocTarget.Processed</inSignalProcess>
+          <outSignalComplete>AllDocsProcessed</outSignalComplete>
+          <targetCount>$documentCount</targetCount>
+        </li>
+        <li Class="QuestNode_GiveRewards">
+          <inSignal>AllDocsProcessed</inSignal>
+          <parms>
+            <allowGoodwill>true</allowGoodwill>
+            <allowRoyalFavor>true</allowRoyalFavor>
+          </parms>
+          <useDifficultyFactor>true</useDifficultyFactor>
+        </li>
+        <li Class="QuestNode_Signal">
+          <inSignal>AllDocsProcessed</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label>Documents processed</label>
+                <text>You have successfully processed all the fleet documents.</text>
+                <letterDef>PositiveEvent</letterDef>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Success</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+</Defs>

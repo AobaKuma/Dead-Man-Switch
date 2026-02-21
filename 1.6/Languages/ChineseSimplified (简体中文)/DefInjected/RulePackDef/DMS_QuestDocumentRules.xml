@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <DMS_QuestDocumentRules.rulePack.rulesStrings>
+    <!-- 根节点 -->
+    <li>docName->[fleet_prefix][subject][doc_type]</li>
+    <li>docDesc->这是一份关于[subject]的[doc_type]，[details]</li>
+
+    <li>fleet_prefix->舰队</li>
+    <li>fleet_prefix->殖民</li>
+    <li>fleet_prefix->先遣队</li>
+
+    <li>subject(context==supply)->补给</li>
+    <li>subject(context==supply)->物资</li>
+    <li>subject(context==supply)->能源</li>
+    <li>doc_type(context==supply)->审计清单</li>
+    <li>doc_type(context==supply)->汇总表</li>
+    <li>details(context==supply)->记录了近期在某些扇区的资源调度详情。</li>
+    <li>details(context==supply)->详细列出了深空航行中能源反应堆的异常波动日志。</li>
+    <li>details(context==supply)->包含了前哨站关于关键物资缺口的补全申请。</li>
+
+    <li>subject(context==combat)->战损</li>
+    <li>subject(context==combat)->战术</li>
+    <li>subject(context==combat)->装备</li>
+    <li>doc_type(context==combat)->处理记录</li>
+    <li>doc_type(context==combat)->机密报告</li>
+    <li>details(context==combat)->分析了某次作战后的资产损失与修复建议。</li>
+    <li>details(context==combat)->是一份针对当前地区机械化部队的部署优化方案。</li>
+    <li>details(context==combat)->记载了某次交火中被确认失效的失能机关编号。</li>
+
+    <li>subject(context==personnel)->人员</li>
+    <li>subject(context==personnel)->生还者</li>
+    <li>doc_type(context==personnel)->加密文件</li>
+    <li>doc_type(context==personnel)->交接凭据</li>
+    <li>details(context==personnel)->汇总了先遣队成员的生还状态与心理审计结果。</li>
+    <li>details(context==personnel)->是关于地表未知信号初步分析对人员影响的非公开结论。</li>
+    <li>details(context==personnel)->记录了冬眠仓唤醒协议中出现的人为操作偏差。</li>
+  </DMS_QuestDocumentRules.rulePack.rulesStrings>
+  
+</LanguageData>

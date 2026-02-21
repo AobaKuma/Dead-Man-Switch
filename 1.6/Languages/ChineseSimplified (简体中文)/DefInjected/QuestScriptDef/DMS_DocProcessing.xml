@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <DMS_ProcessDocumentQuest.questNameRules.rulesStrings>
+    <li>questName->舰队文书处理</li>
+  </DMS_ProcessDocumentQuest.questNameRules.rulesStrings>
+  
+  <DMS_ProcessDocumentQuest.questDescriptionRules.rulesStrings>
+    <li>questDescription->殖民舰队联系了你，计划空投一些繁杂积压的文书材料。你需要指派具有对应研究能力的人员对文书进行处理。\n\n文书一经损坏则会立即导致任务失败，请妥善保管。</li>
+  </DMS_ProcessDocumentQuest.questDescriptionRules.rulesStrings>
+
+  <DMS_ProcessDocumentQuest.root.nodes.6.label>文书资料送达</DMS_ProcessDocumentQuest.root.nodes.6.label>
+  <DMS_ProcessDocumentQuest.root.nodes.6.text>来自 [asker_nameFull] 的机密文书已送达。它们已空投至你的贸易信标或殖民地中心附近。</DMS_ProcessDocumentQuest.root.nodes.6.text>
+
+  <DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.label>文书资料损毁</DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.label>
+  <DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.text>由于文书遭到损毁，任务已失败。</DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.text>
+
+  <DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.label>文书处理完毕</DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.label>
+  <DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.text>你们已经成功处理了所有的舰队文书。</DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.text>
+  
+</LanguageData>

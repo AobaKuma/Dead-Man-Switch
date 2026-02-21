@@ -85,4 +85,8 @@
 
   <!-- EN: {1} from {0} is inbound. -->
   <DMS_AirSupportFromClosestBase>来自基地{0}的{1}正在抵达。</DMS_AirSupportFromClosestBase>
+  <!-- EN: Processed fleet document -->
+  <DMS_ProcessedDocInBeacon>已处理舰队文书</DMS_ProcessedDocInBeacon>
+  <DMS_WorkableProgress>处理进度</DMS_WorkableProgress>
+  <DMS_WorkableCompleted>处理完成</DMS_WorkableCompleted>
 </LanguageData>

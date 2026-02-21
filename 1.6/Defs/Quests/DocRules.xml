@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RulePackDef>
+    <defName>DMS_QuestDocumentRules</defName>
+    <rulePack>
+      <rulesStrings>
+        <!-- Root node -->
+        <li>docName->[fleet_prefix] [subject] [doc_type]</li>
+        <li>docDesc->This is a [doc_type] about [subject], [details]</li>
+
+        <li>fleet_prefix->Fleet</li>
+        <li>fleet_prefix->Colonial</li>
+        <li>fleet_prefix->Pioneer</li>
+
+        <li>subject(context==supply)->supply</li>
+        <li>subject(context==supply)->material</li>
+        <li>subject(context==supply)->energy</li>
+        <li>doc_type(context==supply)->audit list</li>
+        <li>doc_type(context==supply)->summary sheet</li>
+        <li>details(context==supply)->recording the resource scheduling details in certain sectors recently.</li>
+        <li>details(context==supply)->detailing the anomalous fluctuation logs of energy reactors during deep space flight.</li>
+        <li>details(context==supply)->containing replenishment applications for critical material gaps at outposts.</li>
+
+        <li>subject(context==combat)->battle loss</li>
+        <li>subject(context==combat)->tactical</li>
+        <li>subject(context==combat)->equipment</li>
+        <li>doc_type(context==combat)->processing record</li>
+        <li>doc_type(context==combat)->classified report</li>
+        <li>details(context==combat)->analyzing asset losses and repair recommendations after a certain operation.</li>
+        <li>details(context==combat)->an optimization plan for the deployment of mechanized units in the current area.</li>
+        <li>details(context==combat)->recording the serial numbers of neutralized mechanisms confirmed failed in a certain engagement.</li>
+
+        <li>subject(context==personnel)->personnel</li>
+        <li>subject(context==personnel)->survivor</li>
+        <li>doc_type(context==personnel)->encrypted file</li>
+        <li>doc_type(context==personnel)->transfer credential</li>
+        <li>details(context==personnel)->summarizing the survival status and psychological audit results of pioneer members.</li>
+        <li>details(context==personnel)->preliminary conclusions on the impact of surface unknown signal analysis on personnel.</li>
+        <li>details(context==personnel)->recording human operation deviations occurring in the hibernation pod wake-up protocol.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>

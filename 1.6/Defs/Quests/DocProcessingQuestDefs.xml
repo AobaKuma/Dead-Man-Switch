@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMS_QuestDocument</defName>
+    <label>critical document</label>
+    <description>A classified document that needs processing.</description>
+    <graphicData>
+      <!-- 使用 RimWorld 核心已确认为合法的路径结构，作为临时占位 -->
+      <texPath>Things/Resource/DMS_Book/Schematic</texPath> 
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>10</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <comps>
+      <li Class="DMS.CompProperties_QuestWorkable">
+        <workAmount>5000</workAmount> <!-- 每份文书的基础工作量 -->
+      </li>
+    </comps>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+
+  <JobDef>
+    <defName>DMS_ProcessQuestWorkable</defName>
+    <driverClass>DMS.JobDriver_ProcessQuestWorkable</driverClass>
+    <reportString>processing document.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <WorkGiverDef>
+    <defName>DMS_ProcessQuestWorkableWorkGiver</defName>
+    <label>process documents</label>
+    <giverClass>DMS.WorkGiver_ProcessQuestWorkable</giverClass>
+    <workType>Research</workType>
+    <priorityInType>110</priorityInType>
+    <verb>process</verb>
+    <gerund>processing</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+</Defs>

@@ -17,5 +17,7 @@ namespace DMS
         public static PawnKindDef DMS_Escort;
         public static ThingDef DMS_Shuttle;
         public static TransportShipDef DMS_Ship_TransportShuttle;
+        public static JobDef DMS_ProcessQuestWorkable;
+        public static RulePackDef DMS_QuestDocumentRules;
     }
 }
