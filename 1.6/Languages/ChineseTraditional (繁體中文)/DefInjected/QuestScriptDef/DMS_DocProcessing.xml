@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <DMS_ProcessDocumentQuest.questNameRules.rulesStrings>
+    <li>questName->艦隊文書處理</li>
+  </DMS_ProcessDocumentQuest.questNameRules.rulesStrings>
+  
+  <DMS_ProcessDocumentQuest.questDescriptionRules.rulesStrings>
+    <li>questDescription->殖民艦隊聯絡了你，計劃空投一些繁雜積壓的文書材料。你需要指派具有對應研究能力的人員對文書進行處理。\n\n文書一經損壞則會立即導致任務失敗，請妥善保管。</li>
+  </DMS_ProcessDocumentQuest.questDescriptionRules.rulesStrings>
+
+  <DMS_ProcessDocumentQuest.root.nodes.6.label>文書資料送達</DMS_ProcessDocumentQuest.root.nodes.6.label>
+  <DMS_ProcessDocumentQuest.root.nodes.6.text>來自 [asker_nameFull] 的機密文書已送達。它們已空投至你的貿易信標或殖民地中心附近。</DMS_ProcessDocumentQuest.root.nodes.6.text>
+
+  <DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.label>文書資料損毀</DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.label>
+  <DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.text>由於文書遭到損毀，任務已失敗。</DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.text>
+
+  <DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.label>文書處理完畢</DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.label>
+  <DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.text>你們已經成功處理了所有的艦隊文書。</DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.text>
+  
+</LanguageData>
