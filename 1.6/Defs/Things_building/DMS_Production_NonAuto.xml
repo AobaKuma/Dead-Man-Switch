@@ -50,7 +50,7 @@
         <defName>DMS_LabReactor</defName>
         <label>Lab reactor</label>
         <!-- 實驗型人工反應釜，被用於滿足過渡時期設備或某些袖珍型基地的需求。 -->
-        <description>reaction chamder for experimental production, designed to meet the needs of transitional-phase equipment or certain compact bases.</description>
+        <description>reaction chamber for experimental production, designed to meet the needs of transitional-phase equipment or certain compact bases.</description>
         <graphicData>
             <texPath>Things/Building/LabReactor</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
