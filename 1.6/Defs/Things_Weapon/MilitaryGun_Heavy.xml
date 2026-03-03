@@ -6,9 +6,9 @@
 		<label>Bolt Cannon</label>
 		<description>An ultra heavy rifle chambered in autocannon rounds. This rifle has proven the capability to reach out and touch an exostrider at immense distances. It is specifically designed for long-range anti-mech operations.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it.</description>
 		<weaponClasses>
-		  <li>RangedHeavy</li>
-		  <li>LongShots</li>
-		  <li>Ranged</li>
+			<li>RangedHeavy</li>
+			<li>LongShots</li>
+			<li>Ranged</li>
 		</weaponClasses>
 		<weaponTags>
 			<li>A_SC_LongRifle</li>
@@ -30,17 +30,17 @@
 			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
 		</statBases>
 		<equippedStatOffsets>
-		  <MoveSpeed>-0.4</MoveSpeed>
+			<MoveSpeed>-0.4</MoveSpeed>
 		</equippedStatOffsets>
 		<recipeMaker>
-		    <researchPrerequisites>
-      			<li>PrecisionRifling</li>
-      			<li>DMS_EquipmentElite</li>
-    		</researchPrerequisites>
+			<researchPrerequisites>
+				<li>PrecisionRifling</li>
+				<li>DMS_EquipmentElite</li>
+			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
 			<Tungsteel>110</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>		
+			<ComponentStamped>5</ComponentStamped>
 		</costList>
 		<verbs>
 			<li>
@@ -68,7 +68,7 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
-	
+
 	<!--HMG-->
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_HeavyMachineGun</defName>
@@ -109,8 +109,8 @@
 		</recipeMaker>
 		<costList>
 			<Tungsteel>95</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>		
-		</costList>	
+			<ComponentStamped>5</ComponentStamped>
+		</costList>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -193,8 +193,8 @@
 		</recipeMaker>
 		<costList>
 			<Tungsteel>110</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>		
-		</costList>	
+			<ComponentStamped>5</ComponentStamped>
+		</costList>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -315,16 +315,16 @@
 			<shadowSize>0.6</shadowSize>
 		</projectile>
 		<modExtensions>
-		  <li Class="Fortified.ExplosiveExtension">
-			<damage>Bullet</damage>
-			<damageAmount>40</damageAmount>
-			<armorPen>0.31</armorPen>
-			<preExplosionOffset>4</preExplosionOffset>
-			<range>10</range>
-			<swayAngle>30</swayAngle>
-			<doVisualEffects>false</doVisualEffects>
-			<effecterDef>DMS_ConeExplosion</effecterDef>
-		  </li>
+			<li Class="Fortified.ExplosiveExtension">
+				<damage>Bullet</damage>
+				<damageAmount>40</damageAmount>
+				<armorPen>0.31</armorPen>
+				<preExplosionOffset>4</preExplosionOffset>
+				<range>10</range>
+				<swayAngle>30</swayAngle>
+				<doVisualEffects>false</doVisualEffects>
+				<effecterDef>DMS_ConeExplosion</effecterDef>
+			</li>
 		</modExtensions>
 		<comps>
 			<li Class="CompProperties_ProjectileEffecter">
@@ -373,8 +373,8 @@
 		</recipeMaker>
 		<costList>
 			<Tungsteel>230</Tungsteel>
-			<ComponentStamped>14</ComponentStamped>	
-		</costList>	
+			<ComponentStamped>14</ComponentStamped>
+		</costList>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -406,7 +406,7 @@
 			<li Class="Fortified.HeavyEquippableExtension">
 				<EquippableDef>HeavyAutomatroid</EquippableDef>
 			</li>
-		</modExtensions>		
+		</modExtensions>
 	</ThingDef>
 
 	<!--2A38M 給駭蜥Boss的武器-->
@@ -451,8 +451,8 @@
 			<li>
 				<compClass>CompEquippable</compClass>
 			</li>
-			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_Styleable"/>
+			<li Class="CompProperties_Forbiddable" />
+			<li Class="CompProperties_Styleable" />
 		</comps>
 		<verbs>
 			<li>
@@ -531,8 +531,8 @@
 		</recipeMaker>
 		<costList>
 			<Tungsteel>160</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>		
-		</costList>	
+			<ComponentStamped>5</ComponentStamped>
+		</costList>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -561,7 +561,7 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="BaseBullet">
 		<defName>DMS_Bullet_Dragoon_Rifle</defName>
 		<label>Armor Piercing Shell</label>
@@ -582,25 +582,25 @@
 			<soundExplode>Explosion_Rocket</soundExplode>
 		</projectile>
 		<modExtensions>
-		  <li Class="Fortified.ExplosiveExtension">
-			<damage>Bullet</damage>
-			<damageAmount>20</damageAmount>
-			<armorPen>0.2</armorPen>
-			<preExplosionOffset>4</preExplosionOffset>
-			<range>8</range>
-			<swayAngle>60</swayAngle>
-			<doVisualEffects>false</doVisualEffects>
-			<sound>Explosion_Rocket</sound>
-			<effecterDef>Damage_HitMechanoid</effecterDef>
-		  </li>
+			<li Class="Fortified.ExplosiveExtension">
+				<damage>Bullet</damage>
+				<damageAmount>20</damageAmount>
+				<armorPen>0.2</armorPen>
+				<preExplosionOffset>4</preExplosionOffset>
+				<range>8</range>
+				<swayAngle>60</swayAngle>
+				<doVisualEffects>false</doVisualEffects>
+				<sound>Explosion_Rocket</sound>
+				<effecterDef>Damage_HitMechanoid</effecterDef>
+			</li>
 		</modExtensions>
 	</ThingDef>
-	
+
 	<!--Dragoon Grenade Launcher-->
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Gun_DragoonGrenade</defName>
 		<label>Mech Heavy Grenade Launcher</label>
-		<description>A hand held mortar designed for mech operation built with a six round revolving action to allow for quick successive shots.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it.</description>	
+		<description>A hand held mortar designed for mech operation built with a six round revolving action to allow for quick successive shots.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it.</description>
 		<uiIconScale>0.4</uiIconScale>
 		<graphicData>
 			<texPath>Things/Weapons/DMS_Dragoon_GL</texPath>
@@ -656,7 +656,7 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="BaseBullet">
 		<defName>DMS_Bullet_DGL</defName>
 		<label>heavy grenade round</label>
@@ -679,17 +679,17 @@
 			<shadowSize>0.6</shadowSize>
 		</projectile>
 		<modExtensions>
-		  <li Class="Fortified.ExplosiveExtension">
-			<damage>Bullet</damage>
-			<damageAmount>25</damageAmount>
-			<armorPen>0.1</armorPen>
-			<preExplosionOffset>4</preExplosionOffset>
-			<range>8</range>
-			<swayAngle>60</swayAngle>
-			<doVisualEffects>false</doVisualEffects>
-			<sound>Explosion_Rocket</sound>
-			<effecterDef>DMS_ConeExplosion_Wide</effecterDef>
-		  </li>
+			<li Class="Fortified.ExplosiveExtension">
+				<damage>Bullet</damage>
+				<damageAmount>25</damageAmount>
+				<armorPen>0.1</armorPen>
+				<preExplosionOffset>4</preExplosionOffset>
+				<range>8</range>
+				<swayAngle>60</swayAngle>
+				<doVisualEffects>false</doVisualEffects>
+				<sound>Explosion_Rocket</sound>
+				<effecterDef>DMS_ConeExplosion_Wide</effecterDef>
+			</li>
 		</modExtensions>
 		<comps>
 			<li Class="CompProperties_ProjectileEffecter">
@@ -716,11 +716,11 @@
 		<statBases>
 			<Mass>259</Mass>
 			<WorkToMake>100000</WorkToMake>
-		    <AccuracyTouch>0.89</AccuracyTouch>
-		    <AccuracyShort>1.00</AccuracyShort>
-		    <AccuracyMedium>1.00</AccuracyMedium>
-		    <AccuracyLong>0.99</AccuracyLong>
-		    <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+			<AccuracyTouch>0.89</AccuracyTouch>
+			<AccuracyShort>1.00</AccuracyShort>
+			<AccuracyMedium>1.00</AccuracyMedium>
+			<AccuracyLong>0.99</AccuracyLong>
+			<RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
 			<researchPrerequisites>
@@ -734,14 +734,14 @@
 		<costList>
 			<Tungsteel>325</Tungsteel>
 			<ComponentStamped>28</ComponentStamped>
-      		<ComponentFireControl>1</ComponentFireControl>
+			<ComponentFireControl>1</ComponentFireControl>
 		</costList>
 		<comps Inherit="False">
 			<li>
 				<compClass>CompEquippable</compClass>
 			</li>
-			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_Styleable"/>
+			<li Class="CompProperties_Forbiddable" />
+			<li Class="CompProperties_Styleable" />
 		</comps>
 		<verbs>
 			<li>

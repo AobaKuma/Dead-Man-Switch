@@ -26,7 +26,7 @@
     <statBases>
       <CaravanRidingSpeedFactor>1.3</CaravanRidingSpeedFactor>
       <MoveSpeed>3.7</MoveSpeed><!--移動速度-->
-      <AimingDelayFactor>1.3</AimingDelayFactor>
+      <AimingDelayFactor>1.1</AimingDelayFactor>
     </statBases>
     <modExtensions>
       <li Class="Fortified.MechWeaponExtension">

@@ -16,11 +16,17 @@
 				<xpath>Defs/ThingDef[
 					@Name="AmmoBase" or
 					@Name="MediumAmmoBase" or
-					@Name="HeavyAmmoBase" 
+					@Name="HeavyAmmoBase"
 					]/tradeTags</xpath>
 				<value>
 					<li>CE_AutoEnableCrafting_DMS_TableAmmoPrinter</li>
 				</value>
+			</li>
+			
+			<li Class="PatchOperationAttributeSet">
+				<xpath>Defs/ThingDef[defName="Shell_AntigrainWarhead"]/tradeTags</xpath>
+				<attribute>Inherit</attribute>
+				<value>false</value>
 			</li>
 
 			<li Class="PatchOperationAdd">

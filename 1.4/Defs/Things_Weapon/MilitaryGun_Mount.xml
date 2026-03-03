@@ -2,15 +2,15 @@
 <Defs>
 
 	<ThingDef Name="DMS_AutomatroidTurretGun" ParentName="BaseGun" Abstract="True">
-    	<tradeability>None</tradeability>
-    	<destroyOnDrop>true</destroyOnDrop>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<relicChance>0</relicChance>
 		<statBases>
-		    <MaxHitPoints>150</MaxHitPoints>
-	    </statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+		</statBases>
 		<tools>
 			<li>
 				<label>barrel</label>
@@ -71,7 +71,7 @@
 				<isAlternately>true</isAlternately>
 			</li>
 		</modExtensions>
-  	</ThingDef>
+	</ThingDef>
 	<!--LMG	這個是固定在不可替換武器類型機兵上的版本。-->
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_LightMachineGunMounted</defName>
@@ -119,7 +119,7 @@
 				<isAlternately>true</isAlternately>
 			</li>
 		</modExtensions>
-  	</ThingDef>
+	</ThingDef>
 	<!--HMG	這個是固定在不可替換武器類型機兵上的版本。-->
 	<ThingDef ParentName="DMS_AutomatroidTurretGun">
 		<defName>DMS_HeavyMachineGunMounted</defName>
@@ -175,9 +175,9 @@
 		<label>kord</label>
 		<description>kord</description>
 		<graphicData>
-		<texPath>Things/Turrets/DMS_Gun_Kord</texPath>
-		<graphicClass>Graphic_Single</graphicClass>
-		<drawSize>3</drawSize>
+			<texPath>Things/Turrets/DMS_Gun_Kord</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>3</drawSize>
 		</graphicData>
 		<statBases>
 			<AccuracyTouch>0.95</AccuracyTouch>
