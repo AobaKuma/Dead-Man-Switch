@@ -94,11 +94,13 @@
                         </li>
                     </kindCounts>
                 </li>
-                <li Class="Fortified.ScenPart_GeneratePrefab">
-                    <def>FFF_PrefabGen</def>
-                    <maps>
-                        <li>DMS_LightTower</li>
-                    </maps>
+                <li Class="Fortified.Structures.ScenPart_AddStartingStructure">
+                    <def>FFF_AddStartingStructure</def>
+                    <structureLabel>A destroyed signal tower</structureLabel>
+                    <nearMapCenter>True</nearMapCenter>
+                    <chooseFrom>
+                        <li>DMS_LightTower_A</li>
+                    </chooseFrom>
                 </li>
                 <li Class="ScenPart_PlayerPawnsArriveMethod">
                     <def>PlayerPawnsArriveMethod</def>
