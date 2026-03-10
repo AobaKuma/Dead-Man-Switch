@@ -58,7 +58,7 @@
         <li>.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,AncientLargeCrate,.,.,.,.,.,Wall_Steel,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
         <li>.,.,.,.,Wall_Steel,Wall_Steel,.,.,Wall_Steel,.,.,.,.,Wall_Steel,.,.,Wall_Steel,.,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.</li>
         <li>.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,MultiAnalyzer,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,Wall_Steel,.,.,.,.,.,.,.,AncientLargeCrate,Wall_Steel,.,.</li>
-        <li>.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,Wall_Steel,AncientLargeCrate,.,.,.,Hare,.,.,.,Wall_Steel,.,.</li>
+        <li>.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,Wall_Steel,AncientLargeCrate,.,.,.,.,.,.,.,Wall_Steel,.,.</li>
         <li>.,.,.,.,.,Wall_Steel,.,.,Wall_Steel,.,.,.,.,Wall_Steel,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,Wall_Steel,.,.,Wall_Steel,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,Wall_Steel,.,.</li>
         <li>.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,.,.,AncientBarrel,.,Wall_Steel,.,Wall_Steel,.,.,Wall_Steel,Wall_Steel,Wall_Steel,.,.,Wall_Steel,Wall_Steel,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,Wall_Steel,.,.</li>
         <li>.,.,.,.,.,Wall_Steel,AncientLargeCrate,.,.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.,.,.,AncientLargeCrate,Wall_Steel,.,.,.,Wall_Steel,.,.,.,.,.,.,AncientLargeCrate,.,Wall_Steel,.,.</li>
@@ -141,7 +141,7 @@
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,ChunkMarble,.,.,.,.,.,.,.</li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,.,Wall_Steel,.,Wall_Steel,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,ChunkMarble,ChunkMarble,ChunkMarble,ChunkMarble,.,.,.,.,.,.,.</li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,ChunkMarble,.,.,.,.,.,.,.,.,.,.</li>
-        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,.,Wall_Steel,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Squirrel,.,.,.,ChunkMarble,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,.,Wall_Steel,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,ChunkMarble,.,.,.,.,.,.,.,.,.,.</li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,ChunkMarble,.,.,.,.,.,.,.,.,.,.</li>
       </li>
       <li>
@@ -568,12 +568,14 @@
     <tags>
       <li>DMS_LightTower</li>
     </tags>
+    <modRequirements>
+      <li>Ludeon.RimWorld.Ideology</li>
+    </modRequirements>
   </Fortified.Structures.StructureLayoutDef>
 
   <Fortified.Structures.SymbolDef>
     <defName>DMS_Casket_West</defName>
     <thing>CryptosleepCasket</thing>
     <rotation>West</rotation>
-    <chanceToContainPawn>0.1</chanceToContainPawn>
   </Fortified.Structures.SymbolDef>
 </Defs>
