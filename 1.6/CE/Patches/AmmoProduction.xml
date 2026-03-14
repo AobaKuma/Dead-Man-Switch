@@ -3,34 +3,13 @@
 	<Operation Class="PatchOperationSequence">
 		<operations>
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[
-					@Name="SmallAmmoBase"
-					]</xpath>
+				<xpath>Defs/CombatExtended.AmmoInjectorOptions[defName="ammoInjectorOptions"]/benchesByTag/CE_AutoEnableCrafting_TableMachining</xpath>
 				<value>
-					<tradeTags>
-						<li>CE_AutoEnableCrafting_DMS_TableAmmoPrinter</li>
-					</tradeTags>
+					<li>DMS_TableAmmoPrinter</li>
 				</value>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[
-					@Name="AmmoBase" or
-					@Name="MediumAmmoBase" or
-					@Name="HeavyAmmoBase"
-					]/tradeTags</xpath>
-				<value>
-					<li>CE_AutoEnableCrafting_DMS_TableAmmoPrinter</li>
-				</value>
-			</li>
-			
-			<li Class="PatchOperationAttributeSet">
-				<xpath>Defs/ThingDef[defName="Shell_AntigrainWarhead"]/tradeTags</xpath>
-				<attribute>Inherit</attribute>
-				<value>false</value>
-			</li>
-
-			<li Class="PatchOperationAdd">
-				<xpath>/Defs/WorkGiverDef[defName="DMS_Operate"]/fixedBillGiverDefs</xpath>
+				<xpath>Defs/CombatExtended.AmmoInjectorOptions[defName="ammoInjectorOptions"]/benchesByTag/CE_AutoEnableCrafting_FabricationBench</xpath>
 				<value>
 					<li>DMS_TableAmmoPrinter</li>
 				</value>
