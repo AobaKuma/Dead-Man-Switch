@@ -423,8 +423,8 @@
                     <recoilAmount>2.36</recoilAmount>
                 </Properties>
                 <AmmoUser>
-                    <magazineSize>10</magazineSize>
-                    <reloadTime>4</reloadTime>
+                    <magazineSize>5</magazineSize>
+                    <reloadTime>3</reloadTime>
                     <ammoSet>AmmoSet_50BMG</ammoSet>
                 </AmmoUser>
                 <FireModes>
@@ -460,7 +460,7 @@
                     <recoilAmount>1.96</recoilAmount>
                 </Properties>
                 <AmmoUser>
-                    <magazineSize>20</magazineSize>
+                    <magazineSize>12</magazineSize>
                     <reloadTime>5.5</reloadTime>
                     <ammoSet>AmmoSet_50BMG</ammoSet>
                 </AmmoUser>
@@ -497,7 +497,7 @@
                     <muzzleFlashScale>9</muzzleFlashScale>
                 </Properties>
                 <AmmoUser>
-                    <magazineSize>10</magazineSize>
+                    <magazineSize>5</magazineSize>
                     <reloadTime>5</reloadTime>
                     <ammoSet>AmmoSet_50BMG</ammoSet>
                 </AmmoUser>
@@ -542,7 +542,7 @@
                 </Properties>
 
                 <AmmoUser>
-                    <magazineSize>5</magazineSize>
+                    <magazineSize>3</magazineSize>
                     <reloadTime>6</reloadTime>
                     <ammoSet>AmmoSet_30x173mmNATO</ammoSet>
                 </AmmoUser>
@@ -624,13 +624,13 @@
                     </targetParams>
                 </Properties>
                 <AmmoUser>
-                    <magazineSize>100</magazineSize>
+                    <magazineSize>48</magazineSize>
                     <reloadTime>7.4</reloadTime>
                     <ammoSet>AmmoSet_338Lapua</ammoSet>
                 </AmmoUser>
                 <FireModes>
                     <aiAimMode>SuppressFire</aiAimMode>
-                    <aimedBurstShotCount>5</aimedBurstShotCount>
+                    <aimedBurstShotCount>6</aimedBurstShotCount>
                     <noSingleShot>true</noSingleShot>
                     <aiUseBurstMode>TRUE</aiUseBurstMode>
                 </FireModes>
@@ -710,7 +710,7 @@
                     <muzzleFlashScale>20</muzzleFlashScale>
                 </Properties>
                 <AmmoUser>
-                    <magazineSize>60</magazineSize>
+                    <magazineSize>40</magazineSize>
                     <reloadTime>9</reloadTime>
                     <ammoSet>AmmoSet_20x102mmNATO</ammoSet>
                 </AmmoUser>
