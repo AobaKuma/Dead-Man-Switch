@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <DMS_ProcessDocumentQuest.questNameRules.rulesStrings>
+    <li>questName->Fleet Document Processing</li>
+  </DMS_ProcessDocumentQuest.questNameRules.rulesStrings>
+  
+  <DMS_ProcessDocumentQuest.questDescriptionRules.rulesStrings>
+    <li>questDescription->The Colonial Fleet has contacted you and plans to drop off a batch of complex, backlogged documents. You must assign personnel with suitable research capabilities to process them.\n\nIf any document is destroyed, the quest will immediately fail. Keep them safe.</li>
+  </DMS_ProcessDocumentQuest.questDescriptionRules.rulesStrings>
+
+  <DMS_ProcessDocumentQuest.root.nodes.6.label>Documents Arrived</DMS_ProcessDocumentQuest.root.nodes.6.label>
+  <DMS_ProcessDocumentQuest.root.nodes.6.text>Classified documents from [asker_nameFull] have arrived. They have been dropped near your trade beacons or colony center.</DMS_ProcessDocumentQuest.root.nodes.6.text>
+
+  <DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.label>Documents Destroyed</DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.label>
+  <DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.text>Because the documents were destroyed, the quest has failed.</DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.text>
+
+  <DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.label>Documents Processed</DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.label>
+  <DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.text>You have successfully processed all fleet documents.</DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.text>
+  
+</LanguageData>

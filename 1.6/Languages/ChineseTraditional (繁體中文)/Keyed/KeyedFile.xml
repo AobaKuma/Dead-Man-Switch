@@ -87,6 +87,8 @@
   <DMS_AirSupportFromClosestBase>來自基地{0}的{1}正在抵達。</DMS_AirSupportFromClosestBase>
   <!-- EN: Processed fleet document -->
   <DMS_ProcessedDocInBeacon>已處理艦隊文書</DMS_ProcessedDocInBeacon>
+  <LetterLabelDocsArrived>文書資料送達</LetterLabelDocsArrived>
+  <LetterTextDocsArrived>來自 [asker_nameFull] 的機密文書已送達。它們已空投至你的貿易信標或殖民地中心附近。</LetterTextDocsArrived>
   <DMS_WorkableProgress>處理進度</DMS_WorkableProgress>
   <DMS_WorkableCompleted>處理完成</DMS_WorkableCompleted>
 </LanguageData>
