@@ -129,7 +129,9 @@
 		</costList>
         <canOverlapZones>true</canOverlapZones>
         <killedLeavings>
-			<!-- empty for now -->
+			<Tungsteel>100</Tungsteel>
+			<ChunkSlagSteel>4</ChunkSlagSteel>
+			<ShuttleEngine>1</ShuttleEngine>
         </killedLeavings>
         <rotatable>true</rotatable>
 		<hasInteractionCell>true</hasInteractionCell>
