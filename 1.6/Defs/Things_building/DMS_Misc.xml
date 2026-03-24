@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase" Name="DMS_HoleBase" Abstract="True">
+    <label>facility dormer</label>
+    <description>A structure flooring with a opened hole, commonly found in underground facilities.</description>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(7,7)</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <fillPercent>0</fillPercent>
+    <rotatable>false</rotatable>
+    <passability>Impassable</passability>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <size>(5,5)</size>
+    <useHitPoints>false</useHitPoints>
+    <selectable>true</selectable>
+    <holdsRoof>true</holdsRoof>
+    <building>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <neverBuildable>true</neverBuildable>
+      <isTargetable>false</isTargetable>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+      <deconstructible>false</deconstructible>
+      <alwaysDeconstructible>false</alwaysDeconstructible>
+      <isInert>false</isInert>
+      <quickTargetable>false</quickTargetable>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+    </building>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_HoleBase">
+    <defName>DMS_Hole_7x7Empty</defName>
+    <graphicData>
+      <texPath>Things/Building/DMS_Hole_7x7Empty</texPath>
+      <drawSize>(9,9)</drawSize>
+    </graphicData>
+    <size>(7,7)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_HoleBase">
+    <defName>DMS_Hole_5x5Empty</defName>
+    <graphicData>
+      <texPath>Things/Building/DMS_Hole_5x5Empty</texPath>
+      <drawSize>(7,7)</drawSize>
+    </graphicData>
+    <size>(5,5)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_HoleBase">
+    <defName>DMS_Hole_3x3Empty</defName>
+    <graphicData>
+      <texPath>Things/Building/DMS_Hole_3x3Empty</texPath>
+      <drawSize>(5,5)</drawSize>
+    </graphicData>
+    <size>(3,3)</size>
+  </ThingDef>
+
+</Defs>
