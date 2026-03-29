@@ -29,6 +29,7 @@
       <li>DMS_TableMachinePrinter</li>
       <li>DMS_ReactionChamber</li>
       <li>DMS_Furnace</li>
+      <li MayRequire="CETeam.CombatExtended">DMS_TableAmmoPrinter</li>
     </fixedBillGiverDefs>
     <verb>Operate</verb>
     <gerund>Operating at</gerund>
