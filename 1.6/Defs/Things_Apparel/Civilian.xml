@@ -23,6 +23,9 @@
 			<li>Fabric</li>
 			<li>Leathery</li>
 		</stuffCategories>
+		<costList>
+			<DMS_Ceramics>20</DMS_Ceramics>
+		</costList>
 		<tradeTags>
 			<li>Clothing</li>
 			<li>DMS_Clothing</li>
@@ -38,7 +41,7 @@
 			<MaxHitPoints>100</MaxHitPoints>
 			<WorkToMake>5000</WorkToMake>
 			<Mass>0.5</Mass>
-			<StuffEffectMultiplierArmor>0.24</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierArmor>0.14</StuffEffectMultiplierArmor>
 			<StuffEffectMultiplierInsulation_Cold>0.21</StuffEffectMultiplierInsulation_Cold>
 			<StuffEffectMultiplierInsulation_Heat>0.17</StuffEffectMultiplierInsulation_Heat>
 			<EquipDelay>3</EquipDelay>
@@ -126,11 +129,14 @@
 		<thingCategories>
 			<li>ApparelMisc</li>
 		</thingCategories>
+		<costList>
+			<DMS_Ceramics>20</DMS_Ceramics>
+		</costList>
 		<statBases>
 			<MaxHitPoints>160</MaxHitPoints>
 			<WorkToMake>7000</WorkToMake>
 			<Mass>1.5</Mass>
-			<StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
 			<StuffEffectMultiplierInsulation_Cold>0.8</StuffEffectMultiplierInsulation_Cold>
 			<StuffEffectMultiplierInsulation_Heat>0.5</StuffEffectMultiplierInsulation_Heat>
 			<EquipDelay>1.5</EquipDelay>

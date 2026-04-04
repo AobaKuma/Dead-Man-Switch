@@ -208,6 +208,7 @@
     </thingSetMakerTags>
     <allowedArchonexusCount>80</allowedArchonexusCount>
   </ThingDef>
+  
   <!-- 人工肌肉 能拿來造仿生體的人工合成肌肉束，也同時是一些特種機兵的製造用料-->  
   <ThingDef ParentName="ResourceBase">
     <defName>Artifuscle</defName>
