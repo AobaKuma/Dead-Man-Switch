@@ -582,7 +582,7 @@
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>90</damageAmountBase>
 			<armorPenetrationBase>0.75</armorPenetrationBase>
-			<stoppingPower>10</stoppingPower>
+			<stoppingPower>5</stoppingPower>
 			<speed>93</speed>
 			<arcHeightFactor>0.3</arcHeightFactor>
 			<shadowSize>0.6</shadowSize>

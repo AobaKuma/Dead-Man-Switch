@@ -374,7 +374,7 @@
       <screenShakeFactor>0</screenShakeFactor>
       <damageAmountBase>27</damageAmountBase>
       <armorPenetrationBase>0.41</armorPenetrationBase>
-      <stoppingPower>8</stoppingPower>
+      <stoppingPower>4</stoppingPower>
       <explosionRadius>1.4</explosionRadius>
       <ai_IsIncendiary>false</ai_IsIncendiary>
       <arcHeightFactor>0.1</arcHeightFactor>
@@ -915,7 +915,7 @@
       <damageDef>Bullet</damageDef>
       <damageAmountBase>50</damageAmountBase>
       <armorPenetrationBase>0.82</armorPenetrationBase>
-      <stoppingPower>10</stoppingPower>
+      <stoppingPower>5</stoppingPower>
       <speed>100</speed>
       <arcHeightFactor>0.2</arcHeightFactor>
       <shadowSize>0.6</shadowSize>
