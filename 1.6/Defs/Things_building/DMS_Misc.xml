@@ -63,4 +63,26 @@
     <size>(3,3)</size>
   </ThingDef>
 
+  <ThingDef ParentName="DMS_HoleBase">
+    <defName>DMS_Hole_3x5Empty</defName>
+    <graphicData>
+      <texPath>Things/Building/DMS_Hole_3x5Empty</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(7,5)</drawSize>
+    </graphicData>
+    <size>(5,3)</size>
+    <rotatable>true</rotatable>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_HoleBase">
+    <defName>DMS_Hole_3x7Empty</defName>
+    <graphicData>
+      <texPath>Things/Building/DMS_Hole_3x7Empty</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(9,5)</drawSize>
+    </graphicData>
+    <size>(7,3)</size>
+    <rotatable>true</rotatable>
+  </ThingDef>
+
 </Defs>
