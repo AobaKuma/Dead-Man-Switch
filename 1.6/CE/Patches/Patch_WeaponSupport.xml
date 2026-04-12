@@ -52,6 +52,7 @@
       </li>
 
       <!-- Soldats -->
+       <!--Grenadier-->
       <li Class="PatchOperationAdd">
         <xpath>
           Defs/ThingDef[
@@ -62,30 +63,47 @@
           <li>DMS_Grenadier</li>
         </value>
       </li>
+
       <li Class="PatchOperationAdd">
         <xpath>Defs/PawnKindDef[
           defName="DMS_Mech_Grenadier"
           ]/weaponTags</xpath>
         <value>
           <li>GunGrenadeLauncher</li>
+          <li>DMS_Grenadier</li>
         </value>
       </li>
 
+      <!--Kanonier-->
       <li Class="PatchOperationAdd">
         <xpath>
           Defs/ThingDef[
           defName="DMS_Mech_Kanonier"
           ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
         <value>
+          <li>GunSingleUse</li>
           <li>DMS_Kanon</li>
         </value>
       </li>
-      <li Class="PatchOperationAdd">
+
+      <!--CE Recoiless way too heavy-->
+      <li Class="PatchOperationRemove">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_Kanonier"
+          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags/li[.="DMS_Gun_Recoilless"]
+        </xpath>
+      </li>
+
+      <li Class="PatchOperationReplace">
         <xpath>Defs/PawnKindDef[
           defName="DMS_Mech_Kanonier"
           ]/weaponTags</xpath>
         <value>
-          <li>DMS_Kanon</li>
+          <weaponTags>  
+            <li>GunSingleUse</li>
+            <li>DMS_Kanon</li>
+          </weaponTags>
         </value>
       </li>
 
@@ -94,9 +112,11 @@
           defName="DMS_Mech_Sergeant"
           ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
         <value>
-          <li>CE_OneHandedWeapon</li>
+          <li>CE_SMG</li>
         </value>
       </li>
+
+
       <!-- DMS_Mech_Protector -->
       <li Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[
@@ -115,7 +135,7 @@
           ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
         <value>
           <li>GunHeavy</li>
-          <li>CE_OneHandedWeapon</li>
+          <li>CE_AI_Grenade</li>
         </value>
       </li>
       <li Class="PatchOperationAdd">
@@ -125,7 +145,7 @@
           ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
         <value>
           <li>CE_SMG</li>
-          <li>CE_OneHandedWeapon</li>
+          <li>CE_AI_Grenade</li>
         </value>
       </li>
       <li Class="PatchOperationAdd">
@@ -133,7 +153,7 @@
           defName="DMS_Mech_ShaftWorker"
           ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
         <value>
-          <li>CE_OneHandedWeapon</li>
+          <li>CE_AI_Grenade</li>
         </value>
       </li>
 

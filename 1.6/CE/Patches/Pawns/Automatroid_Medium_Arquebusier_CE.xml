@@ -7,12 +7,7 @@
 			<!-- ========== PawnKind Patches ========== -->
 			<li Class="PatchOperationAddModExtension">
 				<xpath>
-					Defs/PawnKindDef[
-					defName="DMS_Mech_Arquebusier" or
-					defName="DMS_Mech_Jaeger" or
-					defName="DMS_Mech_Pioneer" or
-					defName="DMS_Mech_Sniper"
-					]
+					Defs/PawnKindDef[defName="DMS_Mech_Arquebusier" or defName="DMS_Mech_Pioneer"]
 				</xpath>
 				<value>
 					<li Class="CombatExtended.LoadoutPropertiesExtension">
@@ -23,6 +18,21 @@
 					</li>
 				</value>
 			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>
+					Defs/PawnKindDef[defName="DMS_Mech_Jaeger" or defName="DMS_Mech_Sniper"]
+				</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>6</min>
+							<max>8</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+
 
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Jaeger"]/combatPower</xpath>
@@ -35,6 +45,22 @@
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Sniper"]/combatPower</xpath>
 				<value>
 					<combatPower>240</combatPower>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>
+					Defs/PawnKindDef[
+					defName="DMS_Mech_Arquebusier" or
+					defName="DMS_Mech_Jaeger" or
+					defName="DMS_Mech_Pioneer" or
+					defName="DMS_Mech_Sniper"
+					]
+				</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Humanoid</bodyShape>
+					</li>
 				</value>
 			</li>
 

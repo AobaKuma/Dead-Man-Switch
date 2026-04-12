@@ -8,18 +8,24 @@
 			<!-- == 似乎是设定机兵作为敌人时携带的弹匣数量的 == -->
 
 			<li Class="PatchOperationAddModExtension">
-				<xpath>
-					Defs/PawnKindDef[
-					defName="DMS_Mech_Phalanx" or
-					defName="DMS_Mech_Ronin" or
-					defName="DMS_Mech_Protector"
-					]
-				</xpath>
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Protector"]</xpath>
 				<value>
 					<li Class="CombatExtended.LoadoutPropertiesExtension">
 						<primaryMagazineCount>
 							<min>4</min>
 							<max>6</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Phalanx" or defName="DMS_Mech_Ronin"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>5</min>
+							<max>7</max>
 						</primaryMagazineCount>
 					</li>
 				</value>
@@ -330,6 +336,17 @@
 				</value>
 			</li>
 
+			<li Class="PatchOperationAddModExtension">
+        		<xpath>Defs/ThingDef[defName="DMS_Mech_Ronin"]</xpath>
+       			<value>
+            		<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Humanoid</bodyShape>
+                		<canParry>true</canParry>
+                		<maxParry>3</maxParry>
+            		</li>
+       			</value>
+    		</li>
+
 
 			<!-- ======角鬥士======-->
 			<!--近戰特化的浪人變體，取消掉刀手後直接配備近戰武器，以及一面突擊盾牌-->
@@ -580,6 +597,18 @@
 					</li>
 				</value>
 			</li>
+
+			<li Class="PatchOperationAddModExtension">
+        		<xpath>Defs/ThingDef[defName="DMS_Mech_Gladiator"]</xpath>
+       			<value>
+            		<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Humanoid</bodyShape>
+                		<canParry>true</canParry>
+                		<maxParry>4</maxParry>
+            		</li>
+       			</value>
+    		</li>
+
 		
 			<!-- ======方阵步兵======-->
 			<!--方阵步兵是廉价版浪人，裝甲耐性較低且戰鬥能力略差-->
@@ -651,6 +680,18 @@
 					</li>
 				</value>
 			</li>
+
+			<li Class="PatchOperationAddModExtension">
+        		<xpath>Defs/ThingDef[defName="DMS_Mech_Phalanx"]</xpath>
+       			<value>
+            		<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Humanoid</bodyShape>
+                		<canParry>true</canParry>
+                		<maxParry>1</maxParry>
+            		</li>
+       			</value>
+    		</li>
+
 
 			<!-- ======搭盾手======-->			
 			<!-- 巨大的盾牌几乎覆盖了全身，能抵御凶猛的火力-->
@@ -900,6 +941,18 @@
 				</value>
 			</li>
 
+			<li Class="PatchOperationAddModExtension">
+        		<xpath>Defs/ThingDef[defName="DMS_Mech_Protector"]</xpath>
+       			<value>
+            		<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Humanoid</bodyShape>
+                		<canParry>true</canParry>
+                		<maxParry>5</maxParry>
+            		</li>
+       			</value>
+    		</li>
+
+
 			<!-- ======袭城者======-->
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Siegebreaker"]/statBases</xpath>
@@ -967,6 +1020,16 @@
 					</li>
 				</value>
 			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Siegebreaker"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Humanoid</bodyShape>
+					</li>
+				</value>
+			</li>
+
 		</operations>
 	</Operation>
 </Patch>

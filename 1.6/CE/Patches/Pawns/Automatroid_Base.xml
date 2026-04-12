@@ -96,7 +96,7 @@
 					</li>
 				</value>
 			</li>
-
+			<!--
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/ThingDef[@Name="BaseAutomatroidHumanRace"]</xpath>
 				<value>
@@ -104,7 +104,7 @@
 						<bodyShape>Humanoid</bodyShape>
 					</li>
 				</value>
-			</li>
+			</li>-->
 
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[@Name="BaseAutomatroidRace"]/tools</xpath>

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<Operation Class="PatchOperationSequence">
-		<operations>
-			<li Class="PatchOperationRemove">
-				<xpath>Defs/AbilityDef[defName="DMS_CallDrop"]/modExtensions</xpath>
-			</li>
-		</operations>
+	<!--remove from Sergeant, just in case-->
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/PawnKindDef[defName="DMS_Mech_Sergeant"]/abilities/li[.="DMS_CallDrop"]</xpath>
 	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+				<xpath>Defs/AbilityDef[defName="DMS_CallDrop"]/modExtensions</xpath>
+	</Operation>
+
 </Patch>

@@ -187,7 +187,7 @@
 		<label>Mounted LMG</label>
 		<description>A suppressive weapon chambered in a standard rifle round.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
 		<graphicData>
-			<texPath>Things/Turrets/DMS_Gun_LMG</texPath>
+			<texPath>Things/Turrets/DMS_Gun_HMG</texPath>
 			<drawSize>1.5</drawSize>
 		</graphicData>
 		<statBases>

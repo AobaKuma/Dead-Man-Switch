@@ -43,6 +43,7 @@
 					<ArmorRating_Heat>0.1</ArmorRating_Heat>
 				</value>
 			</li>
+			<!--
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Hyrax"]</xpath>
 				<value>
@@ -53,7 +54,7 @@
 						</primaryMagazineCount>
 					</li>
 				</value>
-			</li>
+			</li>-->
 			<li Class="PatchOperationConditional">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Hyrax"]/comps</xpath>
 				<nomatch Class="PatchOperationAdd">
@@ -82,7 +83,8 @@
 						<MinArmorPct>0.75</MinArmorPct>
 					</li>
 				</value>
-			</li>	
+			</li>
+			<!--	
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Hyrax"]</xpath>
 				<value>
@@ -108,7 +110,7 @@
 						</subOptionsChooseOne>
 					</inventoryOptions>
 				</value>
-			</li>
+			</li>-->
 
 			<!--Falcon-->
 			<li Class="PatchOperationAddModExtension">

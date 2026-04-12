@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+            <!--Base Patch-->
+            <li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]/statBases</xpath>
+				<value>
+					<SmokeSensitivity>0</SmokeSensitivity>
+				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_VerlingBrid" or defName="DMS_Drone_Hound"]/comps</xpath>
+				<value>
+					<li>
+						<compClass>CombatExtended.CompAmmoGiver</compClass>
+					</li>
+					<li Class="CombatExtended.CompProperties_MechAmmo">
+						<gizmoIconSetMagCount>UI/Buttons/SetMagCount</gizmoIconSetMagCount>
+						<gizmoIconTakeAmmoNow>UI/Buttons/TakeAmmoNow</gizmoIconTakeAmmoNow>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]</xpath>
+				<value>
+					<li Class="CombatExtended.PartialArmorExt">
+						<stats>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+						</stats>
+					</li>
+				</value>
+			</li>
+
+            <li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]/tools</xpath>
+				<value>
+					<tools>
+						<li Class="CombatExtended.ToolCE">
+							<label>head</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>4</power>
+							<cooldownTime>1.85</cooldownTime>
+							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+							<chanceFactor>0.2</chanceFactor>
+							<armorPenetrationBlunt>0.625</armorPenetrationBlunt>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+            
+			<!-- Trashpan -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_Trashpan"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>QuadrupedLow</bodyShape>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_Trashpan"]/statBases</xpath>
+				<value>
+					<CarryWeight>30</CarryWeight>
+					<CarryBulk>25</CarryBulk>
+					<MeleeDodgeChance>0.05</MeleeDodgeChance>
+					<MeleeCritChance>0.01</MeleeCritChance>
+					<MeleeParryChance>0.01</MeleeParryChance>
+					<MaxHitPoints>150</MaxHitPoints>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_Trashpan"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>4</ArmorRating_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_Trashpan"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>2</ArmorRating_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_Trashpan"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>300</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>950</RegenInterval>
+						<RegenValue>5</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>3</Steel>
+						</RepairIngredients>
+						<RepairTime>80</RepairTime>
+						<RepairValue>100</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>20</MaxOverHeal>
+						<MinArmorPct>0.75</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+
+			<!-- Verling Bird -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_VerlingBrid"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Vehicle</bodyShape>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_VerlingBrid"]/statBases</xpath>
+				<value>
+					<CarryWeight>40</CarryWeight>
+					<CarryBulk>50</CarryBulk>
+					<AimingAccuracy>0.2</AimingAccuracy>
+					<ShootingAccuracyPawn>0.35</ShootingAccuracyPawn>
+					<MeleeDodgeChance>8</MeleeDodgeChance>
+					<MeleeCritChance>0.01</MeleeCritChance>
+					<MeleeParryChance>0.00</MeleeParryChance>
+                    <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+					<MaxHitPoints>50</MaxHitPoints>
+				</value>
+			</li>
+
+
+			<!-- Hound -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_Hound"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>QuadrupedLow</bodyShape>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_Hound"]/statBases</xpath>
+				<value>
+					<CarryWeight>28</CarryWeight>
+					<CarryBulk>28</CarryBulk>
+					<AimingAccuracy>0.4</AimingAccuracy>
+					<ShootingAccuracyPawn>0.6</ShootingAccuracyPawn>
+					<MeleeDodgeChance>4</MeleeDodgeChance>
+					<MeleeCritChance>0.01</MeleeCritChance>
+					<MeleeParryChance>0.01</MeleeParryChance>
+                    <ArmorRating_Blunt>2</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>1</ArmorRating_Sharp>
+					<MaxHitPoints>80</MaxHitPoints>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_Hound"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>225</Durability>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>3</Steel>
+						</RepairIngredients>
+						<RepairTime>80</RepairTime>
+						<RepairValue>100</RepairValue>
+						<MinArmorPct>0.75</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+        </operations>
+    </Operation>
+</Patch>

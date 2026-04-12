@@ -95,11 +95,12 @@
                     </targetParams>
                     <recoilPattern>Mounted</recoilPattern>
                 </Properties>
+                <!--
                 <AmmoUser>
                     <magazineSize>300</magazineSize>
                     <reloadTime>6.5</reloadTime>
                     <ammoSet>AmmoSet_22LR</ammoSet>
-                </AmmoUser>
+                </AmmoUser>-->
                 <FireModes>
                     <aiAimMode>Snapshot</aiAimMode>
                     <aimedBurstShotCount>5</aimedBurstShotCount>
@@ -172,17 +173,18 @@
                     <burstShotCount>15</burstShotCount>
                     <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
                     <warmupTime>1</warmupTime>
-                    <range>75</range>
+                    <range>55</range>
                     <soundCast>DMS_MachineGunLight_Shot</soundCast>
                     <soundCastTail>GunTail_Medium</soundCastTail>
                     <muzzleFlashScale>9</muzzleFlashScale>
                     <recoilPattern>Mounted</recoilPattern>
                 </Properties>
+                <!--
                 <AmmoUser>
                     <magazineSize>300</magazineSize>
                     <reloadTime>10</reloadTime>
                     <ammoSet>AmmoSet_338Lapua</ammoSet>
-                </AmmoUser>
+                </AmmoUser>-->
                 <FireModes>
                     <!--<aiUseBurstMode>FALSE</aiUseBurstMode>-->
                     <aiAimMode>SuppressFire</aiAimMode>

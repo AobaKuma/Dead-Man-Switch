@@ -43,6 +43,25 @@
 					<aiAvoidCover>true</aiAvoidCover>
 				</value>
 			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Ape"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Humanoid</bodyShape>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_HermitCrab"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Vehicle</bodyShape>
+					</li>
+				</value>
+			</li>
+			
 			
 			<!-- ====== Ape (stronger soldat for heavy weapon)======-->
 			<li Class="PatchOperationAdd">

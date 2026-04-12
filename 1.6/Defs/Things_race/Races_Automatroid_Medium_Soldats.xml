@@ -331,6 +331,8 @@
       <li Class="Fortified.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
+          <li>Autopistol</li>
+          <li>Revolver</li>
           <li>DMS_MechWeaponLight</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>

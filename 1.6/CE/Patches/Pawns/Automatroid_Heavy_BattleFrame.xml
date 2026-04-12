@@ -3,6 +3,16 @@
 
 	<Operation Class="PatchOperationSequence">
 		<operations>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[@Name="BaseBattleFrame"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Humanoid</bodyShape>
+					</li>
+				</value>
+			</li>
+
 			<!-- ========== PawnKind Patches ========== -->
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_EscortLifter" or

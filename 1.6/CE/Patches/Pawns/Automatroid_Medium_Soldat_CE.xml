@@ -22,8 +22,8 @@
 				<value>
 					<li Class="CombatExtended.LoadoutPropertiesExtension">
 						<primaryMagazineCount>
-							<min>2</min>
-							<max>4</max>
+							<min>1</min>
+							<max>2</max>
 						</primaryMagazineCount>
 						<forcedSidearm>
 							<sidearmMoney>
@@ -163,13 +163,15 @@
 			</li>
 
 			<!--patch Grenadier's weapon tag to let it use more CE grenades and launchers-->
+			<!--move to weapon support patch-->
+			<!--
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Grenadier"]/weaponTags</xpath>
 				<value>
 					<li>GunGrenadeLauncher</li>
                     <li>DMS_Grenadier</li>
 				</value>
-			</li>
+			</li>-->
 
 			<!--higher capacity for at least 3 single use launchers-->
 			<li Class="PatchOperationAdd">
@@ -183,6 +185,8 @@
 			</li>
 
 			<!--patch Kanonier's weapon tag to let it use more CE launchers, also remove recoilless due to its immense weight-->
+			<!--move to weapon support patch-->
+			<!--
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Kanonier"]/weaponTags</xpath>
 				<value>
@@ -191,7 +195,7 @@
 						<li>DMS_Kanon</li>                                                          
 					</weaponTags>
 				</value>
-			</li>
+			</li>-->
 
 
 		</operations>
