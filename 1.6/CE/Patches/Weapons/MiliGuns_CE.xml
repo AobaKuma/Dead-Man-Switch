@@ -635,8 +635,9 @@
                     <aiUseBurstMode>TRUE</aiUseBurstMode>
                 </FireModes>
                 <weaponTags>
-                    <li>CE_AI_Suppressive</li>
-                    <li>bipodSAW</li>
+                    <li>CE_AI_LMG</li>
+                    <li>CE_MachineGun</li>
+			        <li>Bipod_SAW</li>
                 </weaponTags>
             </li>
 
@@ -681,6 +682,7 @@
                 </FireModes>
                 <weaponTags>
                     <li>CE_AI_Suppressive</li>
+                    <li>CE_MachineGun</li>
                     <li>Bipod_LMG</li>
                 </weaponTags>
             </li>

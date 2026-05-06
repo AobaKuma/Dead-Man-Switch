@@ -17,7 +17,7 @@
                             <power>24</power>
                             <cooldownTime>3.05</cooldownTime>
                             <chanceFactor>0.7</chanceFactor>
-                            <armorPenetrationBlunt>5.850</armorPenetrationBlunt>
+                            <armorPenetrationBlunt>15.850</armorPenetrationBlunt>
                             <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
                         </li>
                         <li Class="CombatExtended.ToolCE">
@@ -27,7 +27,7 @@
                             </capacities>
                             <power>16</power>
                             <cooldownTime>2.55</cooldownTime>
-                            <armorPenetrationBlunt>3.680</armorPenetrationBlunt>
+                            <armorPenetrationBlunt>10.680</armorPenetrationBlunt>
                             <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
                         </li>
                         <li Class="CombatExtended.ToolCE">
@@ -38,7 +38,7 @@
                             <power>24</power>
                             <cooldownTime>2.85</cooldownTime>
                             <chanceFactor>1.5</chanceFactor>
-                            <armorPenetrationBlunt>5.850</armorPenetrationBlunt>
+                            <armorPenetrationBlunt>15.850</armorPenetrationBlunt>
                             <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
                         </li>
                     </tools>
