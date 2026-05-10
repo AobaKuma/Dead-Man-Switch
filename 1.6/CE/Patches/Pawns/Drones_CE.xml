@@ -23,7 +23,7 @@
 			</li>
 
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="DMS_Drone_VerlingBrid" or defName="DMS_Drone_Hound"]/comps</xpath>
+				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]/comps</xpath>
 				<value>
 					<li>
 						<compClass>CombatExtended.CompAmmoGiver</compClass>
