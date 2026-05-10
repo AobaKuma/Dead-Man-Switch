@@ -71,6 +71,7 @@
 				</value>
 			</li>
 
+			<!-- 
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/ThingDef[@Name="BaseAutomatroidRace"]</xpath>
 				<value>
@@ -95,7 +96,7 @@
 						</stats>
 					</li>
 				</value>
-			</li>
+			</li>-->
 			<!--
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/ThingDef[@Name="BaseAutomatroidHumanRace"]</xpath>
@@ -157,81 +158,8 @@
 
 
 			<!-- ========== Base DMS Machine ========== -->
-
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]/statBases</xpath>
-				<value>
-					<SmokeSensitivity>0</SmokeSensitivity>
-					<NightVisionEfficiency>0.25</NightVisionEfficiency>
-				</value>
-			</li>
-
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]/statBases/ArmorRating_Heat</xpath>
-				<value>
-					<ArmorRating_Heat>0.00</ArmorRating_Heat>
-				</value>
-			</li>
-
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]/comps</xpath>
-				<value>
-					<li>
-						<compClass>CombatExtended.CompPawnGizmo</compClass>
-					</li>
-					<li>
-						<compClass>CombatExtended.CompAmmoGiver</compClass>
-					</li>
-					<li Class="CombatExtended.CompProperties_MechAmmo">
-						<gizmoIconSetMagCount>UI/Buttons/SetMagCount</gizmoIconSetMagCount>
-						<gizmoIconTakeAmmoNow>UI/Buttons/TakeAmmoNow</gizmoIconTakeAmmoNow>
-					</li>
-				</value>
-			</li>
-
-			<li Class="PatchOperationAddModExtension"> <!-- new -->
-				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]</xpath>
-				<value>
-					<li Class="CombatExtended.PartialArmorExt">
-						<stats>
-							<li>
-								<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
-								<parts>
-									<li>SightSensor</li>
-									<li>HearingSensor</li>
-									<li>SmellSensor</li>
-								</parts>
-							</li>
-							<li>
-								<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
-								<parts>
-									<li>SightSensor</li>
-									<li>HearingSensor</li>
-									<li>SmellSensor</li>
-								</parts>
-							</li>
-						</stats>
-					</li>
-				</value>
-			</li>
-
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[@Name="DMS_BaseDroidRace"]/tools</xpath>
-				<value>
-					<tools>
-						<li Class="CombatExtended.ToolCE">
-							<label>head</label>
-							<capacities>
-								<li>Blunt</li>
-							</capacities>
-							<power>6</power>
-							<cooldownTime>2.5</cooldownTime>
-							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-							<armorPenetrationBlunt>1.875</armorPenetrationBlunt>
-						</li>
-					</tools>
-				</value>
-			</li>
+			<!--removed to prevent duplication, since currently Droid Base has been isolated to single file-->
+			
 		</operations>
 	</Operation>
 </Patch>
