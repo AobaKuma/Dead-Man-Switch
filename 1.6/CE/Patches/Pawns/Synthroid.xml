@@ -15,6 +15,7 @@
 					</li>
 				</value>
 			</li>
+			
 			<!--patch tools-->
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Lady"]/tools</xpath>
@@ -76,6 +77,17 @@
 					<NightVisionEfficiency>0.85</NightVisionEfficiency>
 				</value>
 			</li>
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Lady"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Humanoid</bodyShape>
+						<vertScale>1.15</vertScale>
+					</li>
+				</value>
+			</li>
+			
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Lady"]/statBases/ArmorRating_Blunt</xpath>
 				<value>
