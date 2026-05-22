@@ -1,6 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_RollingDoors</defName>
+    <label>rolling doors</label>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef Name="DMS_BaseRollingDoor" ParentName="BuildingBase">
+    <defName>DMS_RollingDoor_Single</defName>
+    <label>rolling door</label>
+    <description>a locked rolling door.</description>
+    <thingClass>Fortified.Building_RollingDoor</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Door/RollingDoor</texPath>
+      <drawOffset>(0,0,0)</drawOffset>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <uiIconPath>Things/Building/door/RollingDoor_south</uiIconPath>
+    <category>Building</category>
+    <altitudeLayer>DoorMoveable</altitudeLayer>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <designatorDropdown>DMS_RollingDoors</designatorDropdown>
+    <fillPercent>1</fillPercent>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0.7</Flammability>
+      <DoorOpenSpeed>0.3</DoorOpenSpeed>
+    </statBases>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <rotatable>true</rotatable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <holdsRoof>true</holdsRoof>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <drawerType>RealtimeOnly</drawerType>
+    <building>
+      <isInert>true</isInert>
+      <canPlaceOverWall>true</canPlaceOverWall>
+      <soundDoorOpenPowered>Door_OpenPowered</soundDoorOpenPowered>
+      <soundDoorClosePowered>Door_ClosePowered</soundDoorClosePowered>
+      <soundDoorOpenManual>Door_OpenManual</soundDoorOpenManual>
+      <soundDoorCloseManual>Door_CloseManual</soundDoorCloseManual>
+      <ai_chillDestination>false</ai_chillDestination>
+      <unpoweredDoorCloseSpeedFactor>0.2</unpoweredDoorCloseSpeedFactor>
+      <poweredDoorCloseSpeedFactor>0.2</poweredDoorCloseSpeedFactor>
+      <paintable>true</paintable>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <comps>
+      <li Class="CompProperties_Forbiddable">
+        <allowNonPlayer>true</allowNonPlayer>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_DoorLearnOpeningSpeed</li>
+    </placeWorkers>
+    <uiOrder>1</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_BaseRollingDoor">
+    <defName>DMS_RollingDoor_Double</defName>
+    <graphicData>
+      <drawSize>(2,1)</drawSize>
+    </graphicData>
+    <size>(2,1)</size>
+    <uiOrder>2</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_BaseRollingDoor">
+    <defName>DMS_RollingDoor_Triple</defName>
+    <graphicData>
+      <drawSize>(3,1)</drawSize>
+    </graphicData>
+    <size>(3,1)</size>
+    <uiOrder>3</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_BaseRollingDoor">
+    <defName>DMS_RollingDoor_Quadruple</defName>
+    <graphicData>
+      <drawSize>(4,1)</drawSize>
+    </graphicData>
+    <size>(4,1)</size>
+    <uiOrder>4</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_LogisticContainer</defName>
+    <label>logistic container</label>
+    <thingClass>Fortified.Building_ListedContainer</thingClass>
+    <description>A Standard issue cargo container containing supplies for military logistics.</description>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/DMS_LogisticContainer</texPath>
+      <drawSize>(2.5,2.5)</drawSize>
+    </graphicData>
+    <fillPercent>0.5</fillPercent>
+    <costList>
+      <Tungsteel>40</Tungsteel>
+    </costList>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+    </statBases>
+    <building>
+      <expandHomeArea>false</expandHomeArea>
+      <claimable>true</claimable>
+      <deconstructible>false</deconstructible>
+      <paintable>false</paintable>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <pathCost>90</pathCost>
+    <size>(2,2)</size>
+    <defaultPlacingRot>0</defaultPlacingRot>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <inspectorTabs>
+      <li>Fortified.ITab_Contents</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="Fortified.CompProperties_ListedContainer">
+        <lootMaker>DMS_LogisticTerminal</lootMaker>
+        <!-- Interactable -->
+        <activeTicks>1</activeTicks>
+        <ticksToActivate>180</ticksToActivate>
+        <jobString>unlock container</jobString>
+        <activateLabelString>Unlock container...</activateLabelString>
+        <activateDescString>Unlock container.</activateDescString>
+        <activateTexPath>UI/Commands/DMS_UnlockContainer</activateTexPath>
+        <activatingString>unlocking {0}: {1}s</activatingString>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase" Name="DMS_LogisticTerminalBuildingBase">
+    <defName>DMS_LogisticTerminal</defName>
+    <label>logistic terminal</label>
+    <description>Logistic terminal linked to cargo line below.</description>
+    <thingClass>Fortified.Building_LogisticTerminal</thingClass>
+    <uiIconPath>Things/Building/DMS_LogisticTerminal/DMS_LogisticTerminal_Icon</uiIconPath>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/DMS_LogisticTerminal/DMS_LogisticTerminal</texPath>
+      <drawOffset>(0,0,0)</drawOffset>
+      <drawSize>(5,5)</drawSize>
+    </graphicData>
+    <size>(4,4)</size>
+    <category>Building</category>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <fillPercent>0.1</fillPercent>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <holdsRoof>true</holdsRoof>
+    <blockLight>false</blockLight>
+    <drawerType>RealtimeOnly</drawerType>
+    <passability>Impassable</passability>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <building>
+      <isInert>true</isInert>
+      <canPlaceOverWall>true</canPlaceOverWall>
+      <ai_chillDestination>true</ai_chillDestination>
+      <paintable>false</paintable>
+      <targetable>false</targetable>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <inspectorTabs>
+      <li>Fortified.ITab_Contents</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="Fortified.CompProperties_LogisticTerminal">
+        <lootMaker>DMS_LogisticTerminal</lootMaker>
+        <ticksTillArrivalRange>5000~10000</ticksTillArrivalRange>
+        <lootPortionsRange>2~4</lootPortionsRange>
+        <noLootLeftReport>No supply left</noLootLeftReport>
+        <noLootLeftMessage>Logistic terminal has no supply left!</noLootLeftMessage>
+        <cartArrivedMessage>Logistic terminal cart arrived!</cartArrivedMessage>
+        <!-- Interactable -->
+        <activeTicks>1</activeTicks>
+        <ticksToActivate>180</ticksToActivate>
+        <jobString>activate terminal</jobString>
+        <activateLabelString>Activate terminal...</activateLabelString>
+        <activateDescString>Activate terminal.</activateDescString>
+        <activateTexPath>UI/Commands/DMS_ActivateLogisticTerminal</activateTexPath>
+        <activatingString>activating {0}: {1}s</activatingString>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+
   <ThingDef ParentName="BuildingBase" Name="DMS_HoleBase" Abstract="True">
     <label>facility dormer</label>
     <description>A structure flooring with a opened hole, commonly found in underground facilities.</description>
