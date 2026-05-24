@@ -183,7 +183,7 @@
       <canPlaceOverWall>true</canPlaceOverWall>
       <ai_chillDestination>true</ai_chillDestination>
       <paintable>false</paintable>
-      <targetable>false</targetable>
+      <!-- <targetable>false</targetable> -->
       <neverBuildable>true</neverBuildable>
     </building>
     <noRightClickDraftAttack>true</noRightClickDraftAttack>
