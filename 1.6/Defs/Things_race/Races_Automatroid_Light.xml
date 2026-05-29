@@ -5,9 +5,12 @@
   <ThingDef Name="BaseMechRace_Falcon" ParentName="BaseAutomatroidRace" Abstract="True">
     <statBases>
       <MoveSpeed>8</MoveSpeed>
-      <ArmorRating_Sharp>0.2</ArmorRating_Sharp><!--銳抗-->
-      <ArmorRating_Blunt>0.2</ArmorRating_Blunt><!--鈍抗-->
-      <ArmorRating_Heat>1.5</ArmorRating_Heat>  <!--能抗-->
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <!--銳抗-->
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <!--鈍抗-->
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>
+      <!--能抗-->
       <MaxFlightTime>30</MaxFlightTime>
       <FlightCooldown>10</FlightCooldown>
     </statBases>
@@ -17,7 +20,7 @@
       <baseHealthScale>0.75</baseHealthScale>
       <mechWeightClass>Light</mechWeightClass>
       <flightStartChanceOnJobStart>0.05</flightStartChanceOnJobStart>
-	  <waterCellCost>1</waterCellCost>
+      <waterCellCost>1</waterCellCost>
     </race>
     <comps>
       <li Class="Fortified.CompProperties_FlyingFleckThrower">
@@ -29,8 +32,8 @@
         <speedRange>(0.75,1)</speedRange>
         <throwRate>1</throwRate>
         <throwTick>5</throwTick>
-      </li> 
-	  </comps>
+      </li>
+    </comps>
   </ThingDef>
 
   <AnimationDef>
@@ -122,10 +125,10 @@
       </li>
     </lifeStages>
     <weaponTags>
-        <li>RiotLMG</li>
-        <li>GrenadeDestructive</li>
-        <li>GrenadeEMP</li>
-        <li>GrenadeFlame</li>
+      <li>RiotLMG</li>
+      <li>GrenadeDestructive</li>
+      <li>GrenadeEMP</li>
+      <li>GrenadeFlame</li>
     </weaponTags>
   </PawnKindDef>
 
@@ -143,6 +146,15 @@
         <maxWorldMapRadius>6</maxWorldMapRadius>
         <maxRelayRadius>14</maxRelayRadius>
         <minRelayRadius>3</minRelayRadius>
+      </li>
+      <li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" Class="Fortified.CompProperties_Camouflage">
+        <ticksUntilRecover>1200</ticksUntilRecover>
+        <detectedLetterLabel>Noctula revealed</detectedLetterLabel>
+        <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
+        <detectedMessage>A noctula has appeared!</detectedMessage>
+        <baseDetectRange>6</baseDetectRange>
+        <texPath>UI/Ability/Camouflage</texPath>
+        <commandKey>FFF_Camouflage</commandKey>
       </li>
     </comps>
     <modExtensions>
@@ -184,9 +196,6 @@
       </li>
     </lifeStages>
     <weaponTags/>
-    <abilities>
-      <li MayRequire="Ludeon.RimWorld.Royalty">DMS_Camouflage</li>
-    </abilities>
   </PawnKindDef>
 
   <!-- 蹄兔 -->
@@ -194,10 +203,13 @@
     <thingClass>Pawn</thingClass>
     <statBases>
       <MoveSpeed>4</MoveSpeed>
-      <ArmorRating_Sharp>0.3</ArmorRating_Sharp><!--銳抗-->
-      <ArmorRating_Blunt>0.5</ArmorRating_Blunt><!--鈍抗-->
-      <ArmorRating_Heat>0.8</ArmorRating_Heat>  <!--能抗-->
-      
+      <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+      <!--銳抗-->
+      <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <!--鈍抗-->
+      <ArmorRating_Heat>0.8</ArmorRating_Heat>
+      <!--能抗-->
+
       <!-- 履帶平台的特色就是用電低。並且被攻擊不減速 -->
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <MechEnergyUsageFactor>0.5</MechEnergyUsageFactor>
@@ -212,7 +224,7 @@
       </mechEnabledWorkTypes>
     </race>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseMechRace_Hyrax">
     <defName>DMS_Mech_Hyrax</defName>
     <label>hyrax</label>
