@@ -115,6 +115,17 @@
       <AimingDelayFactor>0.65</AimingDelayFactor>
       <HuntingStealth>0.5</HuntingStealth> 
     </statBases>
+    <comps>
+      <li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" Class="Fortified.CompProperties_Camouflage">
+        <ticksUntilRecover>1200</ticksUntilRecover>
+        <detectedLetterLabel>Jaeger revealed</detectedLetterLabel>
+        <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
+        <detectedMessage>A jaeger has appeared!</detectedMessage>
+        <baseDetectRange>10</baseDetectRange>
+        <texPath>UI/Ability/Camouflage</texPath>
+        <commandKey>FFF_Camouflage</commandKey>
+      </li>
+    </comps>
     <modExtensions>
       <li Class="Fortified.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
@@ -173,9 +184,6 @@
     <weaponTags>
       <li>A_SR_LongRifle</li>
     </weaponTags>
-    <abilities>
-      <li MayRequire="Ludeon.RimWorld.Royalty">DMS_Camouflage</li>
-    </abilities>
   </PawnKindDef>
 
   <!-- DMS_Mech_Pioneer 火槍手先鋒型，可以用於狩獵 -->

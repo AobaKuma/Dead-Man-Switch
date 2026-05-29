@@ -454,4 +454,71 @@
       <color>(200, 200, 200, 200)</color>
     </graphicData>
   </FleckDef>
+
+  <EffecterDef>
+    <defName>DMS_PerimeterScannerAlert</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>DMS_PerimeterScannerFlare</fleckDef>
+        <ticksBetweenMotes>60</ticksBetweenMotes>
+        <spawnLocType>OnSource</spawnLocType>
+        <positionOffset>(0, 0, 0.125)</positionOffset>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>DMS_PerimeterScannerGem</fleckDef>
+        <ticksBetweenMotes>120</ticksBetweenMotes>
+        <spawnLocType>OnSource</spawnLocType>
+        <rotation>0</rotation>
+        <positionOffset>(0, 0, 0)</positionOffset>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>DMS_PerimeterScannerFlare</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>0.35</fadeOutTime>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareA</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(1, 0, 0, 0.8)</color>
+        <drawSize>4</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareB</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(1, 0, 0, 0.8)</color>
+        <drawSize>4</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareC</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(1, 0, 0, 0.8)</color>
+        <drawSize>4</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>DMS_PerimeterScannerGem</defName>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>2</solidTime>
+    <fadeOutTime>.1</fadeOutTime>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <texPath>Things/Building/DMS_PerimeterScannerAlert</texPath>
+      <shaderType>Mote</shaderType>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+  </FleckDef>
+  
 </Defs>
