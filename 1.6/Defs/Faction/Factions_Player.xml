@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <FactionDef ParentName="PlayerFactionBase" Abstract="True" Name="DMS_PlayerFactionBase">
+    <startingResearchTags>
+      <li>ClassicStart</li>
+    </startingResearchTags>
+    <startingTechprintsResearchTags>
+      <li>ClassicStart</li>
+      <li>ClassicStartTechprints</li>
+    </startingTechprintsResearchTags>
+    <factionNameMaker>DMS_VanguardFaction</factionNameMaker>
+    <settlementNameMaker>DMS_VanguardBase</settlementNameMaker>
+    <allowedCultures>
+      <li>Astropolitan</li>
+    </allowedCultures>
+    <isPlayer>true</isPlayer>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <techLevel>Spacer</techLevel>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Pioneer</li>
+          <li>FleetChild</li>
+          <li>Researcher</li>
+          <li>Mili_Standard</li>
+          <li>Mili_Expert</li>
+          <li>Civil_Expert</li>
+          <li>DMSCommon</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Polyester</li>
+        <li>Steel</li>
+        <li>Tungsteel</li>
+        <li>DMS_Ceramics</li>
+      </thingDefs>
+    </apparelStuffFilter>
+  </FactionDef>
+  
+  <FactionDef ParentName="DMS_PlayerFactionBase">
+    <defName>DMS_Colony</defName>
+    <label>fleet colony</label>
+    <description>A colony of recently-arrived off-worlders. It seems they have connection with Colonial Fleet.</description>
+    <basicMemberKind>CrewMember</basicMemberKind>
+    <pawnSingular>colonist</pawnSingular>
+    <pawnsPlural>colonists</pawnsPlural>
+  </FactionDef>
+
+  <FactionDef ParentName="DMS_PlayerFactionBase">
+    <defName>DMS_Deviants</defName>
+    <label>deviants</label>
+    <description>A group of recently-arrived Colonial Fleet deviants.</description>
+    <basicMemberKind>CrewMember</basicMemberKind>
+    <pawnSingular>deviant</pawnSingular>
+    <pawnsPlural>deviants</pawnsPlural>
+  </FactionDef>
+  
+</Defs>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ScenarioDef ParentName="ScenarioBase">
+    <defName>DMS_Scenario</defName>
+    <label>Last Command</label>
+    <description>A group of pioneers have done their part, and it's time to start a new chapter.</description>
+    <scenario>
+      <name>Last Command</name>
+      <summary>A group of pioneers have done their part, and it's time for them to begin a new chapter of their lives.</summary>
+      <description>As the vanguard of the colonial fleet, your final orders you received were to wait in cryosleep for the arrival of the main fleet. And until recently, a strange yet familiar announcement broadcast ended the long and anxious wait...\n\n"Code five: The fleet has entered synchronized orbit. Express our greatest gratitude to all the vanguard pioneers protecting the Lighthouse."</description>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>DMS_Colony</factionDef>
+      </playerFaction>
+      <parts>
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_KindDefs">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <summarized>true</summarized>
+          <pawnChoiceCount>2</pawnChoiceCount>
+          <leftBehindPawnKind>DMS_PlayerColonist</leftBehindPawnKind>
+          <kindCounts>
+            <li>
+              <kindDef>DMS_Mechanitor</kindDef>
+              <count>1</count>
+              <requiredAtStart>true</requiredAtStart>
+            </li>
+          </kindCounts>
+        </li>
+        <li Class="Fortified.Structures.ScenPart_AddStartingStructure">
+          <def>FFF_AddStartingStructure</def>
+          <structureLabel>A destroyed signal tower</structureLabel>
+          <nearMapCenter>True</nearMapCenter>
+          <chooseFrom>
+            <li>DMS_LightTower_A</li>
+          </chooseFrom>
+        </li>
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>Standing</method>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>40</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentStamped</thingDef>
+          <count>25</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineIndustrial</thingDef>
+          <count>10</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>20</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>DMS_MechLink</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Neuroglue</thingDef>
+          <count>24</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentSpacer</thingDef>
+          <count>4</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>DMS_Apparel_ArrayHelmet</thingDef>
+          <stuff>Plasteel</stuff>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>DMS_Mech_ShaftWorker</mechKind>
+          <overseenByPlayerPawnChance>0.6</overseenByPlayerPawnChance>
+        </li>
+        <li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>DMS_Mech_Gladiator</mechKind>
+          <overseenByPlayerPawnChance>0.6</overseenByPlayerPawnChance>
+        </li>
+        <li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>DMS_Mech_EscortLifter</mechKind>
+          <overseenByPlayerPawnChance>0.6</overseenByPlayerPawnChance>
+        </li>
+        <li Class="ScenPart_DisableMapGen">
+          <def>DisableExostriderRemains</def>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMS_EquipmentAdvanced</project>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMS_EquipmentBasis</project>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMS_Automatroid</project>
+        </li>
+        <li Class="ScenPart_ForcedHediff">
+          <def>ForcedHediff</def>
+          <chance>0.5</chance>
+          <context>PlayerStarter</context>
+          <hideOffMap>True</hideOffMap>
+          <hediff>CryptosleepSickness</hediff>
+          <severityRange>1~1</severityRange>
+        </li>
+        <li Class="Fortified.Structures.ScenPart_ForcedFactionGoodwill">
+          <factionDef>DMS_Army</factionDef>
+          <affectHiddenFactions>True</affectHiddenFactions>
+          <affectStartingGoodwill>True</affectStartingGoodwill>
+          <startingGoodwillRange>100~100</startingGoodwillRange>
+          <affectNaturalGoodwill>True</affectNaturalGoodwill>
+          <naturalGoodwillRange>56~63</naturalGoodwillRange>
+          <def>FFF_ForcedFactionGoodwill</def>
+        </li>
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>
+            When you wake up, all that remains of the world you built are remnants of The Lighthouse.
+            Time and scavengers have stripped away almost every trace of you and your companions past presence...
+
+            Just like a long ago when you came here with nothing, you must rebuild anew. Only this time those who toiled and fought alongside you are distant memories of the forgotten past.
+          </text>
+          <textKey>GameStartDialog</textKey>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
+</Defs>
