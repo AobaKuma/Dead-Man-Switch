@@ -10,68 +10,28 @@
 		<li>Mortis</li>
 	</authors>
 	<modIconPath IgnoreIfNoMatchingField="true">UI/NaraLogo</modIconPath>
-	<modVersion IgnoreIfNoMatchingField="true">1.8.25</modVersion>
+	<modVersion IgnoreIfNoMatchingField="true">2.0.00-pre.0</modVersion>
 	<supportedVersions>
-		<li>1.4</li>
-		<li>1.5</li>
 		<li>1.6</li>
 	</supportedVersions>
-	<modDependenciesByVersion>
-		<v1.4>
-			<li>
-				<packageId>brrainz.harmony</packageId>
-				<displayName>Harmony</displayName>
-				<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-				<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
-			</li>
-			<li>
-				<packageId>ludeon.rimworld.biotech</packageId>
-				<displayName>Biotech</displayName>
-			</li>
-			<li>
-				<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
-				<displayName>Vanilla Expanded Framework</displayName>
-				<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
-				<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
-			</li>
-		</v1.4>
-		<v1.5>
-			<li>
-				<packageId>brrainz.harmony</packageId>
-				<displayName>Harmony</displayName>
-				<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-				<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
-			</li>
-			<li>
-				<packageId>ludeon.rimworld.biotech</packageId>
-				<displayName>Biotech</displayName>
-			</li>
-			<li>
-				<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
-				<displayName>Vanilla Expanded Framework</displayName>
-				<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
-				<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
-			</li>
-		</v1.5>
-		<v1.6>
-			<li>
-				<packageId>brrainz.harmony</packageId>
-				<displayName>Harmony</displayName>
-				<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-				<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
-			</li>
-			<li>
-				<packageId>ludeon.rimworld.biotech</packageId>
-				<displayName>Biotech</displayName>
-			</li>
-			<li>
-				<packageId>AOBA.Framework</packageId>
-				<displayName>Fortified Feature Framework</displayName>
-				<downloadUrl>https://github.com/AobaKuma/Fortified-Framework</downloadUrl>
-				<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3498575851</steamWorkshopUrl>
-			</li>
-		</v1.6>
-	</modDependenciesByVersion>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>ludeon.rimworld.biotech</packageId>
+			<displayName>Biotech</displayName>
+		</li>
+		<li>
+			<packageId>AOBA.Framework</packageId>
+			<displayName>Fortified Feature Framework</displayName>
+			<downloadUrl>https://github.com/AobaKuma/Fortified-Framework</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3498575851</steamWorkshopUrl>
+		</li>
+	</modDependencies>
 	<loadAfter>
 		<li>AOBA.Framework</li>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
