@@ -82,6 +82,10 @@
         <interacteChance>0.01</interacteChance>
         <interacte>Chitchat</interacte>
       </li>
+	  <li Class="Fortified.CompProperties_Paintable">
+        <defaultColor>(100, 102, 100)</defaultColor>
+        <enableCamoSwitch>true</enableCamoSwitch>
+      </li>
     </comps>
     <butcherProducts>
       <Steel>10</Steel>
