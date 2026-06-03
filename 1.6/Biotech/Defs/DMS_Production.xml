@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <Defs>
+
+  <!-- Mech gestator - Small -->
 
   <ThingDef Name="DMS_MechConstructorFormingBase" ParentName="MechGestatorFormingBase">
     <defName>DMS_MechConstructorForming</defName>
@@ -22,7 +23,6 @@
     </graphicData>
   </ThingDef>
 
-  <!-- Mech gestator - Formed -->
   <ThingDef ParentName="DMS_MechConstructorFormingBase">
     <defName>DMS_MechConstructorFormed</defName>
     <graphicData>
@@ -50,7 +50,7 @@
   <ThingDef ParentName="MechGestatorBase">
     <defName>DMS_MechGestatorSmall</defName>
     <label>Automatroid Constructor</label>
-    <description>A massive piece of industrial equipment used to assemble Automatroids.</description>
+    <description>A massive piece of industrial equipment used to assemble light and medium Automatroids.</description>
 		<designationCategory>DMS_Category</designationCategory>
     <graphicData>
       <texPath>Things/Building/MechBuilder_Base</texPath>
@@ -138,11 +138,145 @@
         <west>DMS_MechConstructorFormed</west>
         <south>DMS_MechConstructorFormed</south>
       </gestatorFormedMote>
+      <maxFormedMechDrawSize>(2, 2)</maxFormedMechDrawSize>
     </building>
     <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     <recipes>
       <li>DMS_ResurrectLightMech</li>
       <li>DMS_ResurrectMediumMech</li>
+    </recipes>
+    <comps>
+      <li MayRequire="VanillaExpanded.VFEA" Class="VFEAncients.CompProperties_SolarPowerUp"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>500</basePowerConsumption>
+        <idlePowerDraw>50</idlePowerDraw>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Mech gestator - Large -->
+
+  <ThingDef Name="DMS_LargeMechConstructorFormingBase" ParentName="DMS_MechConstructorFormingBase">
+    <defName>DMS_LargeMechConstructorForming</defName>
+    <graphicData>
+      <texPath>Things/Building/LargeMechBuilder_Glass</texPath>
+      <shaderParameters>
+        <_MistOpacityTex>/Things/Building/LargeMechBuilder_Glass</_MistOpacityTex>
+      </shaderParameters>
+      <drawSize>(10, 10)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_LargeMechConstructorFormingBase">
+    <defName>DMS_LargeMechConstructorCycleComplete</defName>
+    <graphicData>
+      <color>(1, 0.36, 0)</color>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_LargeMechConstructorFormingBase">
+    <defName>DMS_LargeMechConstructorFormed</defName>
+    <graphicData>
+      <color>(0.2, 1, 0.15)</color>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MechGestatorBase">
+    <defName>DMS_MechGestatorLarge</defName>
+    <label>Large Automatroid Constructor</label>
+    <description>A giant piece of industrial equipment used to assemble large Automatroids.</description>
+    <designationCategory>DMS_Category</designationCategory>
+    <graphicData>
+      <texPath>Things/Building/LargeMechBuilder_Base</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(10, 10)</drawSize>
+      <shadowData>
+        <volume>(3.8, 3, 2.7)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconPath>Things/Building/LargeMechBuilder_Icon</uiIconPath>
+    <uiIconScale>2</uiIconScale>
+    <interactionCellOffset>(0,0,3)</interactionCellOffset>
+    <statBases>
+      <MaxHitPoints>350</MaxHitPoints>
+      <WorkToBuild>16000</WorkToBuild>
+      <Mass>35</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(5,5)</size>
+    <costList>
+      <Steel>500</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>DMS_Automatroid</li>
+    </researchPrerequisites>
+    <building>
+      <barDrawData>
+        <north>
+          <preRotationOffset>(0, 0)</preRotationOffset>
+          <size>(0.0, 0.0)</size>
+        </north>
+        <south>
+          <preRotationOffset>(0, 0)</preRotationOffset>
+          <size>(0.0, 0.0)</size>
+        </south>
+        <east>
+          <preRotationOffset>(0, 0)</preRotationOffset>
+          <size>(0.0, 0.0)</size>
+        </east>
+        <west>
+          <preRotationOffset>(0, 0)</preRotationOffset>
+          <size>(0.0, 0.0)</size>
+        </west>
+      </barDrawData>
+      <formingGraphicData>
+        <texPath>Things/mechForming</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <drawSize>(3,3)</drawSize>
+      </formingGraphicData>
+      <formingMechBobSpeed>0.0005</formingMechBobSpeed>
+      <formingMechYBobDistance>0.05</formingMechYBobDistance>
+      <formingMechPerRotationOffset>
+        <li>(0, 0, 1)</li>
+        <li>(0, 0, 1)</li>
+        <li>(0, 0, 1)</li>
+        <li>(0, 0, 1)</li>
+      </formingMechPerRotationOffset>
+      <mechGestatorCylinderGraphic>
+        <texPath>Things/Building/LargeMechBuilder_Glass</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(10, 10)</drawSize>
+        <shaderType>Transparent</shaderType>
+      </mechGestatorCylinderGraphic>
+      <mechGestatorTopGraphic>
+        <texPath>Things/Building/LargeMechBuilder_Top</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(10, 10)</drawSize>
+      </mechGestatorTopGraphic>
+      <gestatorFormingMote>
+        <north>DMS_LargeMechConstructorForming</north>
+        <east>DMS_LargeMechConstructorForming</east>
+        <west>DMS_LargeMechConstructorForming</west>
+        <south>DMS_LargeMechConstructorForming</south>
+      </gestatorFormingMote>
+      <gestatorCycleCompleteMote>
+        <north>DMS_LargeMechConstructorCycleComplete</north>
+        <east>DMS_LargeMechConstructorCycleComplete</east>
+        <west>DMS_LargeMechConstructorCycleComplete</west>
+        <south>DMS_LargeMechConstructorCycleComplete</south>
+      </gestatorCycleCompleteMote>
+      <gestatorFormedMote>
+        <north>DMS_LargeMechConstructorFormed</north>
+        <east>DMS_LargeMechConstructorFormed</east>
+        <west>DMS_LargeMechConstructorFormed</west>
+        <south>DMS_LargeMechConstructorFormed</south>
+      </gestatorFormedMote>
+      <maxFormedMechDrawSize>(4, 4)</maxFormedMechDrawSize>
+    </building>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <recipes>
       <li>DMS_ResurrectHeavyMech</li>
       <li>DMS_ResurrectUltraheavyMech</li>
     </recipes>
@@ -150,7 +284,7 @@
       <li MayRequire="VanillaExpanded.VFEA" Class="VFEAncients.CompProperties_SolarPowerUp"/>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>500</basePowerConsumption>
+        <basePowerConsumption>1500</basePowerConsumption>
         <idlePowerDraw>50</idlePowerDraw>
       </li>
     </comps>

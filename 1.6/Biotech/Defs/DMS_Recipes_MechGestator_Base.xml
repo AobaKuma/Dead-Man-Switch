@@ -22,19 +22,19 @@
   <RecipeDef Name="DMS_HeavyMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
     <gestationCycles>2</gestationCycles>
     <researchPrerequisite>DMS_BattleFrame</researchPrerequisite>
-    <recipeUsers><li>DMS_MechGestatorSmall</li></recipeUsers>
+    <recipeUsers><li>DMS_MechGestatorLarge</li></recipeUsers>
   </RecipeDef>
 
   <RecipeDef Name="DMS_SuperHeavyMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
     <gestationCycles>7</gestationCycles>
     <researchPrerequisite>DMS_HeavyAutomatroid</researchPrerequisite>
-    <recipeUsers><li>DMS_MechGestatorSmall</li></recipeUsers>
+    <recipeUsers><li>DMS_MechGestatorLarge</li></recipeUsers>
   </RecipeDef>
   
   <RecipeDef Name="DMS_NextGenMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
     <gestationCycles>11</gestationCycles>
     <researchPrerequisite>DMS_Synthroid</researchPrerequisite>
-    <recipeUsers><li>DMS_MechGestatorSmall</li></recipeUsers>
+    <recipeUsers><li>DMS_MechGestatorLarge</li></recipeUsers>
   </RecipeDef>
 
 
