@@ -354,9 +354,10 @@
 		<recipeMaker>
 			<researchPrerequisites>
 				<li>DMS_EquipmentElite</li>
+				<li>DMS_Mechlink</li>
 			</researchPrerequisites>
 			<skillRequirements>
-				<Crafting>5</Crafting>
+				<Crafting>11</Crafting>
 			</skillRequirements>
 			<recipeUsers>
 				<li>DMS_TableMachinePrinter</li>
