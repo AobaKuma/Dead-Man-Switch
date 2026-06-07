@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase" Name="DMS_BuildingBase" Abstract="True">
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.75</fillPercent>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <statBases>
+      <MaxHitPoints>800</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>25</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>3</ChunkSlagSteel>
+    </killedLeavings>
+    <tickerType>Normal</tickerType>
+    <filthLeaving>Filth_MachineBits</filthLeaving>
+  </ThingDef>
+
+  <!-- TODO -->
+
+
+  <!-- FPV 機庫 -->
+  <ThingDef ParentName="DMS_BuildingBase">
+    <defName>DMS_Building_FPVHanger</defName>
+    <label>FPV Hanger</label>
+    <description>一種用於自動化設施防禦的無人機機庫，能夠在接受到設施中其他傳感器的警報後自動發射FPV無人機驅趕或殺傷入侵者。在受到攻擊時也會釋放無人機迎敵。其下方與設施的地下化物流系統相連，因此每隔一段時間就會自動補充損耗的無人機庫存。</description>
+    <graphicData>
+      <texPath>Things/Building/Facility_Decoy</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerObject</useJob>
+        <useLabel>Attract geochelone threat</useLabel>
+        <useDuration>900</useDuration>
+        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 監視器 （每120tick監視5x25的正面空間，受LOS影響，如果有敵對陣營的Pawn出現在範圍內就會觸發警報並進入冷卻時間） -->
+  <ThingDef ParentName="DMS_BuildingBase">
+    <defName>DMS_Building_Camera</defName>
+    <label>通道監視器</label>
+    <description>安裝在牆壁上的閉路監控攝像頭，其連接著一套自動化的安全系統使其在響起警報後激活設施內的安全措施應急入侵者。</description>
+    <graphicData>
+      <texPath>Things/Building/Facility_Decoy</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerObject</useJob>
+        <useLabel>Attract geochelone threat</useLabel>
+        <useDuration>900</useDuration>
+        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 震動傳感器 （每300Tick監視5x5範圍內的全方向，不受LOS影響，相機靠近的時候有音效，敵對陣營的PAWN在範圍內會有體型x10%的機率觸發警報，並進入冷卻時間，期間間歇閃紅燈） -->
+  <ThingDef ParentName="DMS_BuildingBase">
+    <defName>DMS_Building_Sensor</defName>
+    <label>震動傳感器</label>
+    <description>一種安裝在各類管道及次要通道的被動傳感器，越大的東西進入其範圍內就越容易引起警報。</description>
+    <graphicData>
+      <texPath>Things/Building/Facility_Decoy</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerObject</useJob>
+        <useLabel>Attract geochelone threat</useLabel>
+        <useDuration>900</useDuration>
+        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
+      </li>
+    </comps>
+  </ThingDef>
+
+  
+  <!-- 大型無人哨塔 （每300Tick監視半徑30格LOS範圍內的Pawn） -->
+  <ThingDef ParentName="DMS_BuildingBase">
+    <defName>DMS_Building_Scanner_Large</defName>
+    <label>大型無人哨塔</label>
+    <description>一種長期自持運行的無人警戒平台，具有多種類型的傳感器來監控大片範圍內的可疑活動。一旦被驚動到就會廣播警報訊號來讓周圍的自動化防禦設施啟動迎敵。</description>
+    <graphicData>
+      <texPath>Things/Building/Facility_Decoy</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(8,8)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerObject</useJob>
+        <useLabel>Attract geochelone threat</useLabel>
+        <useDuration>900</useDuration>
+        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

@@ -44,7 +44,7 @@
           <li>Spacer</li>
           <li>Ultra</li>
         </UsableTechLevels>
-        <BypassUsableWeapons/>
+        <BypassUsableWeapons />
       </li>
     </modExtensions>
     <butcherProducts>
@@ -117,7 +117,7 @@
     <race>DMS_Mech_Ronin</race>
     <isFighter>true</isFighter>
     <combatPower>150</combatPower>
-    <lifeStages>      
+    <lifeStages>
       <li>
         <bodyGraphicData>
           <texPath>Things/Automatroid/ronin</texPath>
@@ -128,6 +128,7 @@
             <volume>(0.35,1,0.35)</volume>
             <offset>(0,0,0)</offset>
           </shadowData>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -135,11 +136,11 @@
           <texPath>Things/Automatroid/OldTexture/ronin</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>1.4</drawSize>
-        <shadowData>
-          <volume>(0.35,1,0.35)</volume>
-          <offset>(0,0,0)</offset>
-        </shadowData>
+          <drawSize>1.4</drawSize>
+          <shadowData>
+            <volume>(0.35,1,0.35)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -241,7 +242,7 @@
     <race>DMS_Mech_Gladiator</race>
     <isFighter>true</isFighter>
     <combatPower>150</combatPower>
-    <lifeStages>      
+    <lifeStages>
       <li>
         <bodyGraphicData>
           <texPath>Things/Automatroid/gladiator</texPath>
@@ -252,6 +253,7 @@
             <volume>(0.35,1,0.35)</volume>
             <offset>(0,0,0)</offset>
           </shadowData>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -259,11 +261,11 @@
           <texPath>Things/Automatroid/OldTexture/gladiator</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>1.4</drawSize>
-        <shadowData>
-          <volume>(0.35,1,0.35)</volume>
-          <offset>(0,0,0)</offset>
-        </shadowData>
+          <drawSize>1.4</drawSize>
+          <shadowData>
+            <volume>(0.35,1,0.35)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -275,8 +277,8 @@
     </abilities>
   </PawnKindDef>
 
-   <!-- 破城者 Siegebreaker-->
-   <ThingDef ParentName="BaseAutomatroidHumanRace">
+  <!-- 破城者 Siegebreaker-->
+  <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Siegebreaker</defName>
     <label>Siegebreaker</label>
     <description>The Siegebreaker comes with top of the line armor making it ideal for sapping and breaching jobs.</description>
@@ -311,7 +313,7 @@
         <UsableTechLevels>
           <li>Industrial</li>
         </UsableTechLevels>
-        <BypassUsableWeapons/>
+        <BypassUsableWeapons />
       </li>
     </modExtensions>
     <damageMultipliers>
@@ -340,11 +342,12 @@
           <texPath>Things/Automatroid/siegeBreaker</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>1.4</drawSize>
-        <shadowData>
-          <volume>(0.35,1,0.35)</volume>
-          <offset>(0,0,0)</offset>
-        </shadowData>
+          <drawSize>1.4</drawSize>
+          <shadowData>
+            <volume>(0.35,1,0.35)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -352,11 +355,11 @@
           <texPath>Things/Automatroid/OldTexture/siegeBreaker</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-        <drawSize>1.4</drawSize>
-        <shadowData>
-          <volume>(0.35,1,0.35)</volume>
-          <offset>(0,0,0)</offset>
-        </shadowData>
+          <drawSize>1.4</drawSize>
+          <shadowData>
+            <volume>(0.35,1,0.35)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -369,7 +372,7 @@
     </abilities>
   </PawnKindDef>
 
-    
+
   <!-- 塔盾手 Protector-->
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Protector</defName>
@@ -410,7 +413,7 @@
           <li>Medieval</li>
           <li>Industrial</li>
         </UsableTechLevels>
-        <BypassUsableWeapons/>
+        <BypassUsableWeapons />
       </li>
     </modExtensions>
     <tools Inherit="False">
@@ -476,6 +479,7 @@
             <volume>(0.35,1,0.35)</volume>
             <offset>(0,0,0)</offset>
           </shadowData>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -499,7 +503,7 @@
       <li>DMS_RepairMode</li>
     </abilities>
   </PawnKindDef>
-  
+
 
   <!-- 方陣 phalanx-->
   <ThingDef ParentName="BaseAutomatroidHumanRace">
@@ -542,7 +546,7 @@
           <li>Medieval</li>
           <li>Industrial</li>
         </UsableTechLevels>
-        <BypassUsableWeapons/>
+        <BypassUsableWeapons />
       </li>
     </modExtensions>
   </ThingDef>
@@ -553,7 +557,7 @@
     <race>DMS_Mech_Phalanx</race>
     <isFighter>true</isFighter>
     <combatPower>120</combatPower>
-    <lifeStages>      
+    <lifeStages>
       <li>
         <bodyGraphicData>
           <texPath>Things/Automatroid/phalanx</texPath>
@@ -564,6 +568,7 @@
             <volume>(0.35,1,0.35)</volume>
             <offset>(0,0,0)</offset>
           </shadowData>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>

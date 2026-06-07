@@ -10,7 +10,7 @@
       <ArmorRating_Heat>1.5</ArmorRating_Heat>
       <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
       <AimingDelayFactor>0.8</AimingDelayFactor>
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost> 
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
     <race>
@@ -58,7 +58,7 @@
           <li MayRequire="oskarpotocki.vfe.pirates">VFEP_WarcasketGun_UraniumSlugRifle</li><!-- 戰棺拓展鈾彈槍 -->
         </BypassUsableWeapons>
       </li>
-      <li Class="Fortified.TurretMannableExtension"/>
+      <li Class="Fortified.TurretMannableExtension" />
     </modExtensions>
   </ThingDef>
 
@@ -80,6 +80,7 @@
             <volume>(0.35,1,0.35)</volume>
             <offset>(0,0,0)</offset>
           </shadowData>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -113,7 +114,7 @@
       <MoveSpeed>5.3</MoveSpeed>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
       <AimingDelayFactor>0.65</AimingDelayFactor>
-      <HuntingStealth>0.5</HuntingStealth> 
+      <HuntingStealth>0.5</HuntingStealth>
     </statBases>
     <comps>
       <li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" Class="Fortified.CompProperties_Camouflage">
@@ -144,10 +145,10 @@
           <li MayRequire="ceteam.combatextended">Gun_BinocularsRadio</li>
         </BypassUsableWeapons>
       </li>
-      <li Class="Fortified.TurretMannableExtension"/>
+      <li Class="Fortified.TurretMannableExtension" />
     </modExtensions>
   </ThingDef>
-  
+
   <PawnKindDef ParentName="BaseAutomatroidKind">
     <defName>DMS_Mech_Jaeger</defName>
     <label>jaeger</label>
@@ -166,6 +167,7 @@
             <volume>(0.35,1,0.35)</volume>
             <offset>(0,0,0)</offset>
           </shadowData>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -219,10 +221,10 @@
           <li MayRequire="ceteam.combatextended">Gun_BinocularsRadio</li>
         </BypassUsableWeapons>
       </li>
-      <li Class="Fortified.TurretMannableExtension"/>
+      <li Class="Fortified.TurretMannableExtension" />
     </modExtensions>
   </ThingDef>
-  
+
   <PawnKindDef ParentName="BaseAutomatroidKind">
     <defName>DMS_Mech_Pioneer</defName>
     <label>Pioneer</label>
@@ -241,6 +243,7 @@
             <volume>(0.35,1,0.35)</volume>
             <offset>(0,0,0)</offset>
           </shadowData>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -271,7 +274,7 @@
     <description>Snipers have an improved sight sensor package and fire control system. This model Arquebusier has the best long range fire precision among all other variants.</description>
     <statBases>
       <ShootingAccuracyPawn>8</ShootingAccuracyPawn>
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost> 
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>
     </statBases>
     <race>
       <mechFixedSkillLevel>18</mechFixedSkillLevel>
@@ -296,10 +299,10 @@
           <li MayRequire="vanillaexpanded.vwehw">VWE_Gun_UraniumSlugRifle</li><!-- 重武器拓展鈾彈槍 -->
         </BypassUsableWeapons>
       </li>
-      <li Class="Fortified.TurretMannableExtension"/>
+      <li Class="Fortified.TurretMannableExtension" />
     </modExtensions>
   </ThingDef>
-  
+
   <PawnKindDef ParentName="BaseAutomatroidKind">
     <defName>DMS_Mech_Sniper</defName>
     <label>Sniper</label>
@@ -318,6 +321,7 @@
             <volume>(0.35,1,0.35)</volume>
             <offset>(0,0,0)</offset>
           </shadowData>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>

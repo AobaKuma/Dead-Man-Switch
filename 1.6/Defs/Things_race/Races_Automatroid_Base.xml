@@ -82,7 +82,7 @@
         <interacteChance>0.01</interacteChance>
         <interacte>Chitchat</interacte>
       </li>
-	  <li Class="Fortified.CompProperties_Paintable">
+      <li Class="Fortified.CompProperties_Paintable">
         <defaultColor>(100, 102, 100)</defaultColor>
         <enableCamoSwitch>true</enableCamoSwitch>
       </li>
@@ -171,9 +171,7 @@
     </tools>
   </ThingDef>
 
-  <ThingDef Name="BaseAutomatroidHumanRace" ParentName="BaseAutomatroidWalker" Abstract="True">
-
-  </ThingDef>
+  <ThingDef Name="BaseAutomatroidHumanRace" ParentName="BaseAutomatroidWalker" Abstract="True" />
 
   <PawnKindDef Name="BaseAutomatroidKind" ParentName="BaseMechanoidKind" Abstract="True">
     <defaultFactionType>DMS_Legacy</defaultFactionType>

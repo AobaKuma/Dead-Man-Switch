@@ -39,7 +39,7 @@
     <label>Soldat</label>
     <description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Soldat's can be equipped with weapons rated for human use.\n\nThe Soldat has to carry a battery backpack which makes it unable to fight like other mechs without cover.</description>
     <statBases>
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">1</BandwidthCost> 
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">1</BandwidthCost>
     </statBases>
     <modExtensions>
       <li Class="Fortified.MechWeaponExtension">
@@ -55,7 +55,7 @@
         <UsableTechLevels>
           <li>Industrial</li>
         </UsableTechLevels>
-        <BypassUsableWeapons/>
+        <BypassUsableWeapons />
       </li>
       <li Class="Fortified.TurretMannableExtension">
         <mannableByDefault>false</mannableByDefault>
@@ -85,6 +85,7 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -93,6 +94,7 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
+          <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -116,6 +118,7 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -124,6 +127,7 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
+          <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -138,7 +142,7 @@
     <label>raider</label>
     <race>DMS_Mech_Soldat</race>
     <isFighter>true</isFighter>
-    <combatPower>80</combatPower>                                               
+    <combatPower>80</combatPower>
     <maxPerGroup>20</maxPerGroup>
     <canBeSapper>false</canBeSapper>
     <aiAvoidCover>true</aiAvoidCover>
@@ -171,7 +175,7 @@
     <label>Grenadier</label>
     <description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Grenadiers are specialized to use light weapons and grenade launchers.\n\nThe Grenadier has to carry a battery backpack which makes it unable to fight like other mechs without cover.</description>
     <statBases>
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost> 
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
     </statBases>
     <modExtensions>
       <li Class="Fortified.MechWeaponExtension">
@@ -194,7 +198,7 @@
         <UsableTechLevels>
           <li>Industrial</li>
         </UsableTechLevels>
-      </li>      
+      </li>
       <li Class="Fortified.TurretMannableExtension">
         <mannableByDefault>false</mannableByDefault>
         <BypassMannable>
@@ -204,7 +208,7 @@
       </li>
     </modExtensions>
   </ThingDef>
-  
+
   <PawnKindDef ParentName="BaseAutomatroidKind">
     <defName>DMS_Mech_Grenadier</defName>
     <label>grenadier</label>
@@ -219,6 +223,7 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -230,11 +235,11 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <weaponTags><!--武器--> 
+    <weaponTags><!--武器-->
       <li>GrenadeDestructive</li>
       <li>GrenadeEMP</li>
       <li>GrenadeSmoke</li>
-      <li>GrenadeFlame</li>                                                              
+      <li>GrenadeFlame</li>
     </weaponTags>
     <weaponMoney>570~3000</weaponMoney>
     <abilities>
@@ -289,6 +294,7 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -297,13 +303,14 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
+          <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
     <weaponMoney>1700~3000</weaponMoney>
     <weaponTags><!--武器-->
       <li>GunSingleUse</li>
-      <li>DMS_Gun_Recoilless</li>                                                          
+      <li>DMS_Gun_Recoilless</li>
     </weaponTags>
   </PawnKindDef>
 
@@ -363,6 +370,7 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -371,6 +379,7 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
+          <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>

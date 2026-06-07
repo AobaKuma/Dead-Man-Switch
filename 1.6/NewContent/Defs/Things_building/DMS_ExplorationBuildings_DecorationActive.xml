@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="DMS_BuildingBase" Name="DMS_DecorationBuildingBase" Abstract="True">
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.5</fillPercent>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>100</Mass>
+      <Flammability>0.15</Flammability>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+    </killedLeavings>
+    <tickerType>Never</tickerType>
+    <filthLeaving>Filth_MachineBits</filthLeaving>
+  </ThingDef>
+
+  <!-- TODO -->
+
+
+  <!-- FPV 機庫 -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_FPVHangerDestoryed</defName>
+    <label>Destoryed FPV Hanger</label>
+    <description>一個被徹底摧毀的無人機發射艙，已經失去了發射無人機的能力，剩餘的殘骸是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</description>
+    <graphicData>
+      <texPath>Things/Building/Facility_Decoy</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <!-- 小型通風裝置 -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_VentSmall</defName>
+    <label>Small Vent</label>
+    <description>一種用於設施內溫度與核生化氣體過濾的主動式通風口，透過將設施保持為正壓狀態來避免有害氣體透過氣流在設施內擴散。並排出廢氣。</description>
+    <graphicData>
+      <texPath>Things/Building/VentSmall/building</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <tickerType>Normal</tickerType>
+    <size>(3,1)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="Fortified.CompProperties_Effector">
+        <effecter>DMS_AirExhaust</effecter>
+        <offset>(0,0,0.5)</offset>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusher</compClass>
+        <heatPerSecond>40</heatPerSecond>
+        <heatPushMaxTemperature>80</heatPushMaxTemperature>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <EffecterDef>
+    <defName>DMS_AirExhaust</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>AirPuff</fleckDef>
+        <ticksBetweenMotes>30</ticksBetweenMotes>
+        <spawnLocType>OnSource</spawnLocType>
+        <scale>0.5~2</scale>
+        <angle>30~70</angle>
+        <speed>0.09~0.15</speed>
+        <airTime>0.1</airTime>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>AirPuff</fleckDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <rotationRate>-10~10</rotationRate>
+        <speed>0.1~0.35</speed>
+        <scale>0.8~2</scale>
+        <chancePerTick>0.08</chancePerTick>
+        <positionOffset>(0,0,0.5)</positionOffset>
+        <airTime>0.1</airTime>
+      </li>
+    </children>
+  </EffecterDef>
+</Defs>
