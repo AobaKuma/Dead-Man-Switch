@@ -280,7 +280,7 @@
       </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>1000</basePowerConsumption>
+        <basePowerConsumption>2000</basePowerConsumption>
       </li>
     </comps>
     <building>
@@ -291,14 +291,13 @@
     </building>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <costList>
-      <Steel>450</Steel>
-      <Tungsteel>300</Tungsteel>
-      <ComponentStamped>15</ComponentStamped>
+      <Tungsteel>1000</Tungsteel>
+      <ComponentStamped>35</ComponentStamped>
       <ComponentIndustrial>10</ComponentIndustrial>
       <ComponentFireControl>1</ComponentFireControl>
     </costList>
     <researchPrerequisites>
-      <li>DMS_EquipmentElite</li>
+      <li>DMS_Synthroid</li>
       <li>MultibarrelWeapons</li>
     </researchPrerequisites>
     <uiIconPath>Things/Turrets/DMS_GateKeeper</uiIconPath>

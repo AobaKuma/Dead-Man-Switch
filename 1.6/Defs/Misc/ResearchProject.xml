@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ResearchTabDef>
     <defName>DMS_Tab</defName>
@@ -18,7 +18,7 @@
     <label>Foundational drone tech</label>
     <description>Using simple sensors and transceivers to achieve simple but practical drone systems.</description>
     <baseCost>200</baseCost>
-    <requiredResearchBuilding Inherit="False"/>
+    <requiredResearchBuilding Inherit="False" />
     <techLevel>Industrial</techLevel>
     <prerequisites>
       <li>Machining</li>
@@ -34,7 +34,7 @@
         <li>subject_story->survived in a highly unmanned military conflict zone</li>
         <li>subject_story->works as a supervisor for unmanned transportation systems in a warehouse</li>
         <li>subject_story->performed drone attack during the war against mechanoids</li>
-        <li>subject_story->established  a special service team composed of mech dogs and quickly achieved outstanding results</li>
+        <li>subject_story->established a special service team composed of mech dogs and quickly achieved outstanding results</li>
         <li>subject_story->participated in a semiconductor industrial revolution at a midworld planet</li>
 
         <li>subject_gerund->optimizing machine learning algorithms</li>
@@ -49,7 +49,7 @@
     <label>Material Engineering</label>
     <description>Using the power of extreme heat and pressure to obliterate impurities from steel and stone to create tungsteel alloy and military-grade ceramic plate.</description>
     <baseCost>1000</baseCost>
-    <requiredResearchBuilding Inherit="False"/>
+    <requiredResearchBuilding Inherit="False" />
     <prerequisites>
       <li>DMS_UAVBasis</li>
     </prerequisites>
@@ -79,23 +79,23 @@
     <label>mass production</label>
     <!-- 透過改進的生產工藝使得材料的加工生產流程能夠盡可能自動化與規模化。 -->
     <description>Through improved production technology, the material processing and production process can be automated and scaled as much as possible.</description>
-    <baseCost>2000</baseCost>
-    <requiredResearchBuilding Inherit="False"/>
+    <baseCost>3000</baseCost>
+    <requiredResearchBuilding Inherit="False" />
     <teachConcept>DMS_Autofacturer</teachConcept>
     <prerequisites>
       <li>DMS_Material</li>
-    </prerequisites> 
+    </prerequisites>
     <researchViewX>2.00</researchViewX>
     <researchViewY>1.90</researchViewY>
-    <generalRules/>
+    <generalRules />
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_Plasfiber</defName>
     <label>Artificial Fiber</label>
     <description>Create polyster and plastifiber, man-made fabrics synthesized for their unique properties across multiple disciplines.</description>
-    <baseCost>500</baseCost>
-    <requiredResearchBuilding Inherit="False"/>
+    <baseCost>1250</baseCost>
+    <requiredResearchBuilding Inherit="False" />
     <techLevel>Industrial</techLevel>
     <prerequisites>
       <li>DMS_Material</li>
@@ -125,8 +125,8 @@
     <defName>DMS_Automatroid</defName>
     <label>Automatroid Basis</label>
     <description>Automatroids are autonomous weapons capable of executing tactical missions without overseer intervals. \n\n These autonomous machines became commonplace as replacements or opponents for front-line infantry because the treaty in 2026 AD that was supposed to regulate its development was opposed by the major powers of the time.</description>
-    <baseCost>300</baseCost>
-    <requiredResearchBuilding Inherit="False"/>
+    <baseCost>1000</baseCost>
+    <requiredResearchBuilding Inherit="False" />
     <techLevel>Industrial</techLevel>
     <teachConcept>DMS_WeaponSystems</teachConcept>
     <prerequisites>
@@ -157,12 +157,12 @@
     <defName>DMS_MechBasis</defName>
     <label>Mecha Gear</label>
     <description>"Mecha Gear" originated as a term for future machinery designs which were unobtainable with old technology. \n\nHowever a millennia of advancements in material construction has seen these previously unrealistic designs become feasible.</description>
-    <baseCost>500</baseCost>
-    <requiredResearchBuilding Inherit="False"/>
+    <baseCost>1500</baseCost>
+    <requiredResearchBuilding Inherit="False" />
     <techLevel>Industrial</techLevel>
     <prerequisites>
       <li>DMS_Material</li>
-      <li>DMS_Automatroid</li>      
+      <li>DMS_Automatroid</li>
       <li>Prosthetics</li>
     </prerequisites>
     <researchViewX>2.00</researchViewX>
@@ -175,9 +175,9 @@
 
         <li>subject_story->explained the substantial optimization of the flexible self-locking structure for the durability of omnidirectional joints.</li>
         <li>subject_story->summarized the improvement of reciprocating motion structures using electromagnetic bearings</li>
-        <li>subject_story->described how multi-level, nested cushioning gears absorb and reuse impact forces during high-intensity activities</li>     
+        <li>subject_story->described how multi-level, nested cushioning gears absorb and reuse impact forces during high-intensity activities</li>
         <li>subject_story->served as a military advisor in the military</li>
-        
+
         <li>subject_gerund->improving the production process</li>
         <li>subject_gerund->working for an automatroid manufacturing complex</li>
         <li>subject_gerund->piloting a heavy exoskeleton to operate military missions</li>
@@ -191,13 +191,17 @@
     <label>Legion</label>
     <description>This series of automatroids are designed for large-scale warfare. They have simple weapon control systems and can't wield heavy weapons, but ease of production and cheap costs leads to these units being the backbone of many automatroid gunnery lines.</description>
     <baseCost>500</baseCost>
-    <requiredResearchBuilding Inherit="False"/>
+    <requiredResearchBuilding Inherit="False" />
     <techLevel>Industrial</techLevel>
     <prerequisites>
       <li>DMS_Automatroid</li>
     </prerequisites>
     <researchViewX>2.00</researchViewX>
     <researchViewY>4.50</researchViewY>
+    <techprintCount>2</techprintCount>
+    <heldByFactionCategoryTags>
+      <li>DMS</li>
+    </heldByFactionCategoryTags>
     <generalRules>
       <rulesStrings>
         <li>subject->metallic tide</li>
@@ -209,7 +213,7 @@
         <li>subject_story->recovered this technology from the buried ancient facility in a rimworld planet</li>
         <li>subject_story->researching and optimizing this technology to make use of it</li>
         <li>subject_story->obtained part of this technology during the encounter with outlaw militants</li>
-        
+
         <li>subject_gerund->operating a Legion task force</li>
         <li>subject_gerund->serving as a commander in the war</li>
         <li>subject_gerund->improving the production process</li>
@@ -317,7 +321,7 @@
     <description>Uniforms and equipment designed for humans, mainly for civilian use and emergency survival situations. Includes basic uniforms and firearms typically handled by militiamen and colonists alike.</description>
     <baseCost>200</baseCost>
     <techLevel>Industrial</techLevel>
-    <requiredResearchBuilding Inherit="False"/>
+    <requiredResearchBuilding Inherit="False" />
     <prerequisites>
       <li>ComplexClothing</li>
     </prerequisites>
@@ -327,12 +331,12 @@
 
   <!-- T2 -->
 
- <ResearchProjectDef ParentName="DMS_BaseTech" MayRequire="Ludeon.Rimworld.Biotech">
+  <ResearchProjectDef ParentName="DMS_BaseTech" MayRequire="Ludeon.Rimworld.Biotech">
     <defName>DMS_Mechlink</defName>
     <label>Cluster Transceiver</label>
     <description>Cluster transceivers are a way to control robots in a battlespace. Mechanical units that have obtained self-awareness as a result of a Dead Man Switch have been noted to resist directives provided by these transceivers.</description>
-    <baseCost>1000</baseCost>
-    <techLevel>Industrial</techLevel>
+    <baseCost>1500</baseCost>
+    <techLevel>Spacer</techLevel>
     <prerequisites>
       <li>DMS_Hypothesis</li>
       <li>SterileMaterials</li>
@@ -385,7 +389,7 @@
     </prerequisites>
     <researchViewX>2.00</researchViewX>
     <researchViewY>5.50</researchViewY>
-  </ResearchProjectDef> 
+  </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_EquipmentHeavy</defName>
@@ -398,7 +402,7 @@
     </prerequisites>
     <researchViewX>3.00</researchViewX>
     <researchViewY>5.50</researchViewY>
-  </ResearchProjectDef> 
+  </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech" MayRequire="Ludeon.Rimworld.Biotech">
     <defName>DMS_BattleFrame</defName>
@@ -412,7 +416,7 @@
     <researchViewX>5.00</researchViewX>
     <researchViewY>2.80</researchViewY>
   </ResearchProjectDef>
-  
+
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_Hybrid</defName>
     <label>Hybrid Engineering</label>
@@ -430,7 +434,7 @@
     </requiredAnalyzed>
   </ResearchProjectDef>
 
-    <ResearchProjectDef ParentName="DMS_BaseTech">
+  <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_Bionics</defName>
     <label>Biosynthetic Prosthetics</label>
     <description>With the advances in robotic and bionic engineering, biological-mechanical hybrid technology has become feasible. Unlocks biosynthetic arms and legs, as well as the serum required to aid in the body accepting such a replacement.</description>
@@ -458,13 +462,13 @@
   </ResearchProjectDef>
 
   <!-- T3 -->
-  
+
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_Hypothesis</defName>
     <label>Wetware Hypothesis</label>
     <description>After the discovery of the Dead Man's Switch, an AI algorithm engineer Yánzhi Jiang proposed a hypothetical solution to the halting problem. \n\n Wetware was created as a proof of concept, serving as an organic brain activated in a series with the Dead Man's Switch enabling Automatroids to awaken and continue fighting after their operator has disabled. Preliminary tests indicated a portion of the operator's personality was transposed into the Automatroid- but such reports disappeared as quickly as they were made. Allows for the construction of Decoy Radars and heavier Automatroids, as well as the synthesis of Wetware Computers.</description>
-    <baseCost>1000</baseCost>
-    <techLevel>Industrial</techLevel>
+    <baseCost>3000</baseCost>
+    <techLevel>Spacer</techLevel>
     <prerequisites>
       <li>DMS_DeadMansSwitch</li>
       <li>MultiAnalyzer</li>
@@ -512,29 +516,39 @@
 
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_HumanoidEngineering</defName>
-    <label>Humanoid Engineering</label>
-    <description>During the early wars, Automatroids with human shapes were shown to be effective at demoralizing human combatants and inflicting psychological trauma upon enemies lines. This lead to the development of a series of Automatroids deemed the Arquebusier Models.</description>
-    <baseCost>750</baseCost>
+    <label>Ergonomics</label>
+    <description>Compared to other animals, humans were a better subject for training in various maneuvers for neural networks. Furthermore, trained humanoid automatroids also possessed adaptability to human environments and tools.</description>
+    <baseCost>1200</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
       <li>DMS_DeadMansSwitch</li>
     </prerequisites>
     <researchViewX>5.00</researchViewX>
     <researchViewY>1.90</researchViewY>
+    <techprintCount>2</techprintCount>
+    <heldByFactionCategoryTags>
+      <li>DMS</li>
+    </heldByFactionCategoryTags>
   </ResearchProjectDef>
 
-  <!-- 浪人是用於都市巷戰的戰鬥機械體系列，特徵是那盤狀的傳感器頭部與重型裝甲。經常被用於治安戰，鎮暴與維安行動。-->
+  <!--特化機兵 -->
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMS_Ronin</defName>
-    <label>Peacekeepers</label>
-    <description>A series of Arquebusier model Automatroids designed for urban warfare, these models boast heavy armor, lightning fast mobility, and a punishing array of compatible weaponry. This line of Automatroids excel in urban environments and close quarters combat, but can also work as less lethal peacekeepers and riot control units.</description>
-    <baseCost>750</baseCost>
+    <label>Specialized design</label>
+    <!-- 在冷戰時代結束以後，微電子技術的飛速突破使得機兵的構型與技術整合不再高度受限於無定形神經電路的制約。在這之後機兵設計能以更低的研製成本分化出不同的特化型號，適應新時代戰爭中所需要的複雜需求。 -->
+    <description>Following the end of the Cold War, rapid breakthroughs in microelectronics technology freed the configuration and technological integration of mechs from the constraints of amorphous neural circuits. After that, mech designs were able to differentiate into different specialized models at a lower development cost, adapting to the complex needs of modern warfare.</description>
+    <baseCost>2500</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
-      <li>DMS_DeadMansSwitch</li>
+      <li>DMS_HumanoidEngineering</li>
     </prerequisites>
-    <researchViewX>5.00</researchViewX>
-    <researchViewY>3.90</researchViewY>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>1.90</researchViewY>
+    <techprintCount>3</techprintCount>
+    <heldByFactionCategoryTags>
+      <li>DMS</li>
+    </heldByFactionCategoryTags>
+
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech">

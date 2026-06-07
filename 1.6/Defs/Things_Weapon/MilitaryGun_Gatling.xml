@@ -313,12 +313,12 @@
 			</skillRequirements>
 			<researchPrerequisites>
 				<li>DMS_EquipmentHeavy</li>
-				<li>MultibarrelWeapons</li>
+    		 	<li>DMS_Synthroid</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>275</Tungsteel>
-			<ComponentStamped>25</ComponentStamped>
+			<Tungsteel>1275</Tungsteel>
+			<ComponentStamped>40</ComponentStamped>
 		</costList>
 		<verbs>
 			<li>

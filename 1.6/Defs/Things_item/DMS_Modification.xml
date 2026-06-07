@@ -79,18 +79,16 @@
     </costList>
     <recipeMaker>
       <workAmount>840</workAmount>
-      <researchPrerequisite>DMS_Automatroid</researchPrerequisite>
+      <researchPrerequisites>
+        <li>DMS_Automatroid</li>
+        <li>DMS_Material</li>
+      </researchPrerequisites>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
       <recipeUsers>
         <li>DMS_TableMachinePrinter</li>
       </recipeUsers>
     </recipeMaker>
-    <!--
-    <isTechHediff>true</isTechHediff>
-    <techHediffsTags>
-      <li>CeramicPlating</li>
-    </techHediffsTags>-->
     <comps>
       <li Class="Fortified.CompProperties_AddHediffOnTarget">
         <compClass>Fortified.CompTargetable_AddHediffOnTarget</compClass>

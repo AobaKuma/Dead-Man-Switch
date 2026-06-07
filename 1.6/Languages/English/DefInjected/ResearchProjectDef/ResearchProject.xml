@@ -145,9 +145,9 @@ Colonial High Command turns a blind eye to attracting and destroying their rogue
   <DMS_HeavyAutomatroid.description>These massive machines were purpose built for full-scale warfare amongst nations. Unlocks various assault Automatroids which took inspiration from old-war vehicles and technology, but with a modernized twist.</DMS_HeavyAutomatroid.description>
   
   <!-- EN: Humanoid Engineering -->
-  <DMS_HumanoidEngineering.label>Humanoid Engineering</DMS_HumanoidEngineering.label>
+  <DMS_HumanoidEngineering.label>Ergonomics</DMS_HumanoidEngineering.label>
   <!-- EN: During the early wars, Automatroids with human shapes were shown to be effective at demoralizing human combatants and inflicting psychological trauma upon enemies lines. This lead to the development of a series of Automatroids deemed the Arquebusier Models. -->
-  <DMS_HumanoidEngineering.description>During the early wars, Automatroids with human shapes were shown to be effective at demoralizing human combatants and inflicting psychological trauma upon enemies lines. This lead to the development of a series of Automatroids deemed the Arquebusier Models.</DMS_HumanoidEngineering.description>
+  <DMS_HumanoidEngineering.description>Compared to other animals, humans were a better subject for training in various maneuvers for neural networks. Furthermore, trained humanoid automatroids also possessed adaptability to human environments and tools.</DMS_HumanoidEngineering.description>
   
   <!-- EN: Hybrid Engineering -->
   <DMS_Hybrid.label>Hybrid Engineering</DMS_Hybrid.label>
@@ -380,10 +380,10 @@ However, a millennia of advancements in material construction has seen these pre
     <li>subject_gerund->providing battlefield medical guidance in the Colonial Fleet Humanitarian Support Organization</li>
   </DMS_Prosthetic.generalRules.rulesStrings>
   
-  <!-- EN: Peacekeepers -->
-  <DMS_Ronin.label>Peacekeepers</DMS_Ronin.label>
-  <!-- EN: A series of Arquebusier model Automatroids designed for urban warfare, these models boast heavy armor, lightning fast mobility, and a punishing array of compatible weaponry. This line of Automatroids excel in urban environments and close quarters combat, but can also work as less lethal peacekeepers and riot control units. -->
-  <DMS_Ronin.description>A series of Arquebusier model Automatroids designed for urban warfare, these models boast heavy armor, lightning fast mobility, and a punishing array of compatible weaponry. This line of Automatroids excel in urban environments and close quarters combat, but can also work as less lethal peacekeepers and riot control units.</DMS_Ronin.description>
+  <!-- EN: Specialized design -->
+  <DMS_Ronin.label>Specialized design</DMS_Ronin.label>
+  <!-- EN: Following the end of the Cold War, rapid breakthroughs in microelectronics technology freed the configuration and technological integration of mechs from the constraints of amorphous neural circuits. After that, mech designs were able to differentiate into different specialized models at a lower development cost, adapting to the complex needs of modern warfare. -->
+  <DMS_Ronin.description>Following the end of the Cold War, rapid breakthroughs in microelectronics technology freed the configuration and technological integration of mechs from the constraints of amorphous neural circuits. After that, mech designs were able to differentiate into different specialized models at a lower development cost, adapting to the complex needs of modern warfare.</DMS_Ronin.description>
   
   <!-- EN: Next-Gen Weaponry -->
   <DMS_Synthroid.label>Next-Gen Weaponry</DMS_Synthroid.label>

@@ -4,7 +4,7 @@
   <!-- EN: Artificial Muscle -->
   <DMS_Artifuscle.label>人工肌腱</DMS_Artifuscle.label>
   <!-- EN: Artifuscle is a type of prosthetic material made from genetically enhanced lab grown muscle-fiber bundles. Artifuscle made its rounds in military and civilian markets, and it didn't take long for military developers to realize the future of mechanical-biological hybrid weapons. -->
-  <DMS_Artifuscle.description>人工肌腱是一种由基因工程改造的义肢材料，是由人工生物纤维包裹蜥形纲肌肌肉束所制成的，对於生物体有着很高的兼容性。很快...军火商们意识到了生物机械混合技术的未来。</DMS_Artifuscle.description>
+  <DMS_Artifuscle.description>人工肌腱是一种由基因工程改造的义肢材料，是由人工生物纤维包裹蜥形纲肌肌肉束所制成的，对于生物体有着很高的兼容性。很快...军火商们意识到了生物机械混合技术的未来。</DMS_Artifuscle.description>
   <!-- EN:
     <li>subject->bio-machine symbiosis</li>
     <li>subject->nerves and wiring</li>
@@ -29,7 +29,7 @@
     <li>subject_story->收集了大量次世代战争时期的历史文献</li>
     <li>subject_gerund->透过研究古代资料库重新发明了这项技术</li>
     <li>subject_gerund->思考有机与机械之间模糊的界线</li>
-    <li>subject_gerund->调查殖民舰队极力掩盖的科技背後的真相</li>
+    <li>subject_gerund->调查殖民舰队极力掩盖的科技背后的真相</li>
 </DMS_Artifuscle.generalRules.rulesStrings>
   
   <!-- EN: mass production -->
@@ -40,7 +40,7 @@
   <!-- EN: Automatroid Basis -->
   <DMS_Automatroid.label>机兵基础</DMS_Automatroid.label>
   <!-- EN: Automatroids are autonomous weapons capable of executing tactical missions without overseer intervals. \n\n These autonomous machines became commonplace as replacements or opponents for front-line infantry because the treaty in 2026 AD that was supposed to regulate its development was opposed by the major powers of the time. -->
-  <DMS_Automatroid.description>因为它们不仅仅是一件武器，而且是一种能够自主判断与歼灭目标的自动武器，所以这些机器人被称为“机兵”\n\n这种道德上令人发指的武器在正常情况下是不应该被接受的，但由於它在第三次世界大战期间被各国广泛使用，因此它们早已成为战场上无法回避的一个普通组成部分。</DMS_Automatroid.description>
+  <DMS_Automatroid.description>因为它们不仅仅是一件武器，而且是一种能够自主判断与歼灭目标的自动武器，所以这些机器人被称为“机兵”\n\n这种道德上令人发指的武器在正常情况下是不应该被接受的，但由于它在第三次世界大战期间被各国广泛使用，因此它们早已成为战场上无法回避的一个普通组成部分。</DMS_Automatroid.description>
   <!-- EN:
     <li>subject->autonomous Weapons</li>
     <li>subject->Killer Robot</li>
@@ -58,7 +58,7 @@
     <li>subject->自主武器</li>
     <li>subject->杀手机器人</li>
     <li>subject->自动机器人</li>
-    <li>subject_story->预测了大量不受管制的巡弋武器将造成严重後果</li>
+    <li>subject_story->预测了大量不受管制的巡弋武器将造成严重后果</li>
     <li>subject_story->探讨了预训练模式对机械自动化的贡献</li>
     <li>subject_story->描述了人与无人机的关系不再只是工具与使用者的关系</li>
     <li>subject_story->谴责了西元2026年时旨在规范杀手机器人发展的条约遭到驳回</li>
@@ -71,7 +71,7 @@
   <!-- EN: Battle Friends -->
   <DMS_BattleFrame.label>战斗伙伴</DMS_BattleFrame.label>
   <!-- EN: Due to a clerical ereror, its undetermined if the proper term for these machines is "battle frames" or "battle friends"- They're automatroids outfitted with exoskeleton frames which are customizable to fit the needs of the operator. They are useful in combat and in the mundane operations of day to day colony life. -->
-  <DMS_BattleFrame.description>由於年代久远，我们一直无法知道他们正确的型号名应该是"战斗框架"还是"战斗伙伴"，但无论如何这些都是一种机兵，可以作为操作装备的框架或战斗中的伙伴。</DMS_BattleFrame.description>
+  <DMS_BattleFrame.description>由于年代久远，我们一直无法知道他们正确的型号名应该是"战斗框架"还是"战斗伙伴"，但无论如何这些都是一种机兵，可以作为操作装备的框架或战斗中的伙伴。</DMS_BattleFrame.description>
   
   <!-- EN: Biosynthetic Prosthetics -->
   <DMS_Bionics.label>生物机械学</DMS_Bionics.label>
@@ -81,11 +81,11 @@
   <!-- EN: Dead Man's Switch -->
   <DMS_DeadMansSwitch.label>失能机关</DMS_DeadMansSwitch.label>
   <!-- EN: The Dead Man's Switch is a failsafe mechanism intended to induce the self-halt sequence when the overseer is incapated. \n\nResearchers realized this failsafe mechanism not only solved the halted problem but also made artificial intelligence understand the meaning of death and self-preservation, which had significant ramifications for humanity.\n\nUnlocks the construct of Decoy Antennas which will attract a group of rogue automatroids to the transponder. -->
-  <DMS_DeadMansSwitch.description>失能机关是一种机械安全机制，旨在在操作员丧失工作能力时自动终止处於活动状态的设备。\n\n在人类探索太空之前，他们发现这种机制最终会让人工智能在某种程度上理解...死亡的意义\n 这一发现带领人类进入历史的新纪元...\n\n 一个五级人工智能的时代。</DMS_DeadMansSwitch.description>
+  <DMS_DeadMansSwitch.description>失能机关是一种机械安全机制，旨在在操作员丧失工作能力时自动终止处于活动状态的设备。\n\n在人类探索太空之前，他们发现这种机制最终会让人工智能在某种程度上理解...死亡的意义\n 这一发现带领人类进入历史的新纪元...\n\n 一个五级人工智能的时代。</DMS_DeadMansSwitch.description>
   <!-- EN: Some advanced automatroids require specific parts which are only manufactured in low gravity environments.\n\nColonial High Command turns a blind eye to attracting and destroying their rogue automatroids which will contain the components required for further progression. -->
   <DMS_DeadMansSwitch.discoveredLetterText>有些机兵需要特定的关键部件 而这些部件在重力环境下是无法制造的。\n\n 但殖民舰队告诉我们，可以随意吸引并歼灭那些脱离指挥序列的机兵以获取这些部件。</DMS_DeadMansSwitch.discoveredLetterText>
   <!-- EN: About: Advanced Parts -->
-  <DMS_DeadMansSwitch.discoveredLetterTitle>关於特殊零件</DMS_DeadMansSwitch.discoveredLetterTitle>
+  <DMS_DeadMansSwitch.discoveredLetterTitle>关于特殊零件</DMS_DeadMansSwitch.discoveredLetterTitle>
   <!-- EN:
     <li>subject->Halted problem</li>
     <li>subject->Solution unsolved</li>
@@ -114,17 +114,17 @@
   <!-- EN: Defense Equipment -->
   <DMS_EquipmentAdvanced.label>开拓装备</DMS_EquipmentAdvanced.label>
   <!-- EN: Equipment designed for humans and automatroids. Its a step above the survivalist equipment Pioneers are issued with better tolerances and quality in its designs. This equipment is better suited for defensive operations due to its limited range. -->
-  <DMS_EquipmentAdvanced.description>用於殖民地防御和防暴的装备。</DMS_EquipmentAdvanced.description>
+  <DMS_EquipmentAdvanced.description>用于殖民地防御和防暴的装备。</DMS_EquipmentAdvanced.description>
   
   <!-- EN: Pioneer Equipment -->
   <DMS_EquipmentBasis.label>警用装备</DMS_EquipmentBasis.label>
   <!-- EN: Uniforms and equipment designed for humans, mainly for civilian use and emergency survival situations. Includes basic uniforms and firearms typically handled by militamen and colonists alike. -->
-  <DMS_EquipmentBasis.description>主要用於殖民目设计的制服和装备，包含了一些恶劣环境生存用的密封服。</DMS_EquipmentBasis.description>
+  <DMS_EquipmentBasis.description>主要用于殖民目设计的制服和装备，包含了一些恶劣环境生存用的密封服。</DMS_EquipmentBasis.description>
   
   <!-- EN: Military Equipment -->
   <DMS_EquipmentElite.label>军用装备</DMS_EquipmentElite.label>
   <!-- EN: This equipment is primarily designed for automatroid use, as its too heavy to operate by an unaugemented human. It consists of heavy weapons and breaching tools as well as high caliber defense platforms. -->
-  <DMS_EquipmentElite.description>主要用於为机兵设计的设备，这些装备大多都十分沉重，因此并不适合人类使用。</DMS_EquipmentElite.description>
+  <DMS_EquipmentElite.description>主要用于为机兵设计的设备，这些装备大多都十分沉重，因此并不适合人类使用。</DMS_EquipmentElite.description>
   
   <!-- EN: Heavy Weaponry -->
   <DMS_EquipmentHeavy.label>重型装备</DMS_EquipmentHeavy.label>
@@ -139,7 +139,7 @@
   <!-- EN: Humanoid Engineering -->
   <DMS_HumanoidEngineering.label>人机工程学</DMS_HumanoidEngineering.label>
   <!-- EN: During the early wars, Automatroids with human shapes were shown to be effective at demoralizing human combatants and inflicting psychological trauma upon enemies lines. This lead to the development of a series of Automatroids deemed the Arquebusier Models. -->
-  <DMS_HumanoidEngineering.description>在战争期间的案例表明，具有人类外形的机兵被证明是一种很好的设计，它符合人体工学和心理暗示并且对於战术动作的编程十分方便。</DMS_HumanoidEngineering.description>
+  <DMS_HumanoidEngineering.description>人型机兵之所以是人形，是因为相比其他动物，人是一种非常能高度配合实验对神经网路训练各种战术动作的受试对象。以此训练及生产出来的人型机兵同时也具备着对人类环境与工具的适用性。</DMS_HumanoidEngineering.description>
   
   <!-- EN: Hybird Engineering -->
   <DMS_Hybrid.label>生物机械工程</DMS_Hybrid.label>
@@ -149,7 +149,7 @@
   <!-- EN: Wetware Hypothesis -->
   <DMS_Hypothesis.label>简言之假说</DMS_Hypothesis.label>
   <!-- EN: After the discovery of the Dead Man's Switch, an AI algorithm engineer Yánzhi Jiang proposed a hypothetical solution to the halting problem. \n\n Wetware was created as a proof of concept, serving as an organic brain activated in a series with the Dead Man's Switch enabling Automatroids to awaken and continue fighting after their operator has disabled. Preliminary tests indicated a portion of the operator's personality was transposed into the Automatroid- but such reports dissapeared as quickly as they were made. Allows for the construction of Decoy Radars and heavier Automatroids, as well as the synthesis of Wetware Computers. -->
-  <DMS_Hypothesis.description>在发现失能机关之後，AI算法工程师yánzhi jiang提出了一个针对停机问题的假设解决方案...\n\n而围绕这个猜想，我们似乎离所谓的万能机器越来越近了。</DMS_Hypothesis.description>
+  <DMS_Hypothesis.description>在发现失能机关之后，AI算法工程师yánzhi jiang提出了一个针对停机问题的假设解决方案...\n\n而围绕这个猜想，我们似乎离所谓的万能机器越来越近了。</DMS_Hypothesis.description>
   <!-- EN:
     <li>subject->in short Hypothesis</li>
     <li>subject->the solution</li>
@@ -174,7 +174,7 @@
     <li>subject_story->收集了大量次世代战争时期的历史文献</li>
     <li>subject_gerund->逃脱了无数殖民舰队的追捕与暗杀</li>
     <li>subject_gerund->思考有机体与机械体之间模糊的界线</li>
-    <li>subject_gerund->调查殖民舰队竭力掩盖的技术背後的真相</li>
+    <li>subject_gerund->调查殖民舰队竭力掩盖的技术背后的真相</li>
   </DMS_Hypothesis.generalRules.rulesStrings>
   
   <!-- EN: Legion -->
@@ -271,7 +271,7 @@
   <!-- EN: Cluster Transceiver -->
   <DMS_Mechlink.label>集群收发器</DMS_Mechlink.label>
   <!-- EN: Cluster transceivers are a way to control robots in a battlespace. Mechanical units that have obtained self-awareness as a result of a Dead Man Switch have been noted to resist directives provided by these transceivers. -->
-  <DMS_Mechlink.description>集群收发器是人类开发的一种在战争中控制机兵的方式，当然的对於那些产生自我意识的机兵来说，这种方式并不是很舒服。</DMS_Mechlink.description>
+  <DMS_Mechlink.description>集群收发器是人类开发的一种在战争中控制机兵的方式，当然的对于那些产生自我意识的机兵来说，这种方式并不是很舒服。</DMS_Mechlink.description>
   <!-- EN:
     <li>subject->cluster control</li>
     <li>subject->harmony of cluster behavior</li>
@@ -291,7 +291,7 @@
     <li>subject->大机械兵团理论</li>
     <li>subject_story->参与了Ordo Historia对殖民舰队的调查研究计画</li>
     <li>subject_story->认为发展无人机自主性是摆脱人机工具关系、释放其潜能的关键</li>
-    <li>subject_story->基於回收的萨卡拉瓦超重型机械体重现了该技术</li>
+    <li>subject_story->基于回收的萨卡拉瓦超重型机械体重现了该技术</li>
     <li>subject_story->透过人工诱导的精神感应实现了远距离抗干扰控制</li>
     <li>subject_story->发现由精神感应控制的机器会保留操作者的部分意识</li>
     <li>subject_gerund->回收古代自主武器</li>
@@ -302,7 +302,7 @@
   <!-- EN: Organ Replacement -->
   <DMS_OrganSurgery.label>器官手术</DMS_OrganSurgery.label>
   <!-- EN: Unlocks the creation of Nutrition Ports and Sensory Filters which allow for the dulling of emotional feelings and a streamlining of the nutritional intake process. While these are certainly more efficient than their organic counterpart, what is lost forever in the pursuit of ultimate efficiency? -->
-  <DMS_OrganSurgery.description>人类在那场漫长的战争中放弃了很多...即使以後可以弥补，也有一些东西永远失去了。</DMS_OrganSurgery.description>
+  <DMS_OrganSurgery.description>人类在那场漫长的战争中放弃了很多...即使以后可以弥补，也有一些东西永远失去了。</DMS_OrganSurgery.description>
   
   <!-- EN: Artificial Fiber -->
   <DMS_Plasfiber.label>人工纤维</DMS_Plasfiber.label>
@@ -338,7 +338,7 @@
   <!-- EN: Neural Prosthesis -->
   <DMS_Prosthetic.label>神经机械仿生</DMS_Prosthetic.label>
   <!-- EN: Neural prosthetics designed for disabled soldiers. They're durable and easily adapted to, requiring minimal training for the patient to become comfortable. However, due to the natural wear and tear of its mechanical components, these prosthetic replacements are not as efficient as their original flesh counterparts. -->
-  <DMS_Prosthetic.description>神经义肢是专为伤残军人设计的一种半有机仿生义体。对适应训练的需求几乎可以忽略不计。不过出於耐用性和大规模生产的考虑，它的工作效率不如原来的肢体。</DMS_Prosthetic.description>
+  <DMS_Prosthetic.description>神经义肢是专为伤残军人设计的一种半有机仿生义体。对适应训练的需求几乎可以忽略不计。不过出于耐用性和大规模生产的考虑，它的工作效率不如原来的肢体。</DMS_Prosthetic.description>
   <!-- EN:
     <li>subject->nerves-accessed</li>
     <li>subject->artificial nerve</li>
@@ -367,14 +367,14 @@
   </DMS_Prosthetic.generalRules.rulesStrings>
   
   <!-- EN: Peacekeepers -->
-  <DMS_Ronin.label>维和机兵</DMS_Ronin.label>
+  <DMS_Ronin.label>特种机兵</DMS_Ronin.label>
   <!-- EN: A series of Arquebusier model Automatroids designed for urban warfare, these models boast heavy armor, lightning fast mobility, and a punishing array of compatible weaponry. This line of Automatroids excel in urban environments and close quarters combat, but can also work as less lethal peacekeepers and riot control units. -->
-  <DMS_Ronin.description>专为城市战设计的机兵系列，其特点是具有圆盘形感测器头和重型装甲。常用於安保战、防暴和维和行动。</DMS_Ronin.description>
+  <DMS_Ronin.description>在冷战时代结束以后，微电子技术的飞速突破使得机兵的构型与技术整合不再高度受限于无定形神经电路的制约。在这之后机兵设计能以更低的研制成本分化出不同的特化型号，适应新时代战争中所需要具备的反恐、治安战等低劣度但复杂的需求。</DMS_Ronin.description>
   
   <!-- EN: Next-Gen Weaponry -->
   <DMS_Synthroid.label>次世代兵器</DMS_Synthroid.label>
   <!-- EN: Weapons development centered around biomechanical hybrids continued until World War IV, where it had reached incomprehensible heights.\n\nThis was the beginning of the next-generation weapons that would ultimately lead to the destruction of the planet. Unlocks the Tarbosaurus, a fearsome predatory Automatroid shaped after the mighty carnotaurus capable of hosting enough firepower to destroy entire cities if left unchecked. -->
-  <DMS_Synthroid.description>围绕生物-机械混合的军备竞赛一直持续到第四次世界大战，在人类能意识到问题前早已达到了无法想像的高度。\n\n在此之後便是所谓的"次世代武器"及其带来的次世代战争的开始，那是一场几乎终结了地球的战争。</DMS_Synthroid.description>
+  <DMS_Synthroid.description>围绕生物-机械混合的军备竞赛一直持续到第四次世界大战，在人类能意识到问题前早已达到了无法想像的高度。\n\n在此之后便是所谓的"次世代武器"及其带来的次世代战争的开始，那是一场几乎终结了地球的战争。</DMS_Synthroid.description>
   
   <!-- EN: Foundational drone tech -->
   <DMS_UAVBasis.label>无人机基础</DMS_UAVBasis.label>

@@ -30,16 +30,15 @@
 			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
 		</statBases>
 		<equippedStatOffsets>
-			<MoveSpeed>-0.4</MoveSpeed>
+			<MoveSpeed>-0.3</MoveSpeed>
 		</equippedStatOffsets>
 		<recipeMaker>
 			<researchPrerequisites>
 				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>110</Tungsteel>
+			<Tungsteel>150</Tungsteel>
 			<ComponentStamped>5</ComponentStamped>
 		</costList>
 		<verbs>

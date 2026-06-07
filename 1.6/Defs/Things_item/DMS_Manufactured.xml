@@ -53,7 +53,7 @@
     </thingSetMakerTags>
   </ThingDef>
 
-  <!-- 塑化纖維 玩家能生產的進階纖維，性質接近魔鬼布。製造需要塑鋼。-->  
+  <!-- 塑化纖維 玩家能生產的進階纖維，性質接近魔鬼布。製造需要塑鋼。-->
   <ThingDef ParentName="ResourceBase">
     <defName>Plasfiber</defName>
     <label>Plastic fiber</label>
@@ -104,8 +104,8 @@
       <li>RewardStandardCore</li>
     </thingSetMakerTags>
   </ThingDef>
-  
-  <!-- 鎢鋼合金 強度介於塑鋼與鋼鐵之間的材料，是大多數DMS機兵的製造用料-->  
+
+  <!-- 鎢鋼合金 強度介於塑鋼與鋼鐵之間的材料，是大多數DMS機兵的製造用料-->
   <ThingDef ParentName="ResourceBase">
     <defName>Tungsteel</defName>
     <label>Tungsteel</label>
@@ -148,7 +148,7 @@
       <appearance>Metal</appearance>
       <commonality>0</commonality>
       <constructEffect>ConstructMetal</constructEffect>
-	    <isAirtight>true</isAirtight>
+      <isAirtight>true</isAirtight>
       <color>(80,80,80)</color>
       <soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
       <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
@@ -224,13 +224,15 @@
       <li>RewardStandardCore</li>
     </thingSetMakerTags>
   </ThingDef>
-  
-  <!-- 人工肌肉 能拿來造仿生體的人工合成肌肉束，也同時是一些特種機兵的製造用料-->  
+
+  <!-- 人工肌肉 能拿來造仿生體的人工合成肌肉束，也同時是一些特種機兵的製造用料-->
   <ThingDef ParentName="ResourceBase">
     <defName>Artifuscle</defName>
     <label>Artifuscle</label>
     <description>Artifuscle is a type of prosthetic material made from genetically enhanced lab grown muscle-fiber bundles.</description>
-    <descriptionHyperlinks><ThingDef>DMS_TableArtifuscle</ThingDef></descriptionHyperlinks>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_TableArtifuscle</ThingDef>
+    </descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Resource/Artifuscle</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -255,7 +257,7 @@
     </thingCategories>
     <tickerType>Rare</tickerType>
     <comps>
-      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Forbiddable" />
       <li Class="CompProperties_Rottable">
         <daysToRotStart>10</daysToRotStart>
       </li>
@@ -289,7 +291,9 @@
     <defName>ComponentStamped</defName>
     <label>Stamponent</label>
     <description>Hydraulic integrally formed component used in products that require mass production on the assembly line.</description>
-    <descriptionHyperlinks><ThingDef>DMS_TableMachinePrinter</ThingDef></descriptionHyperlinks>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_TableMachinePrinter</ThingDef>
+    </descriptionHyperlinks>
     <possessionCount>2</possessionCount>
     <graphicData>
       <texPath>Things/Resource/ComponentStamped</texPath>
@@ -318,7 +322,7 @@
       <li>Manufactured</li>
     </thingCategories>
   </ThingDef>
-  
+
   <!-- 生物濕件 重型機兵的關鍵零件，前期只能靠打機兵軍團獲取，後期可以自己生產-->
   <ThingDef ParentName="ResourceBase">
     <defName>Neurocomputer</defName>
@@ -390,7 +394,7 @@
     <descriptionHyperlinks>
       <ThingDef>DMS_EncryptedTransmitter</ThingDef>
     </descriptionHyperlinks>
-    <possessionCount>2</possessionCount> 
+    <possessionCount>2</possessionCount>
     <graphicData>
       <texPath>Things/Resource/ComponentTR</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -477,8 +481,8 @@
       <li>Manufactured</li>
     </thingCategories>
     <allowedArchonexusCount>10</allowedArchonexusCount>
-  </ThingDef>  
-  
+  </ThingDef>
+
   <!-- 火控芯片 可以透過擊殺長程曲射攻擊的機兵有一定機率獲取，可以用來造戰鬥輔助用仿生體-->
   <ThingDef ParentName="ResourceBase">
     <defName>ComponentFireControl</defName>
@@ -543,10 +547,10 @@
       <li>Manufactured</li>
     </thingCategories>
     <allowedArchonexusCount>10</allowedArchonexusCount>
-  </ThingDef>  
+  </ThingDef>
 
   <!-- Boss召喚器 -->
-  <ThingDef ParentName="ResourceBase"> 
+  <ThingDef ParentName="ResourceBase">
     <defName>DMS_EncryptedTransmitter</defName>
     <label>Encrypted Transmitter</label>
     <description>A high-power communication relay to be used in the colony for emergency reinforcements. The identification code of this rescue protocol has long been abandoned, so only those mechanized units that are feral will take the bait.</description>
@@ -580,7 +584,20 @@
       <li>RewardStandardCore</li>
     </thingSetMakerTags>
     <tradeability>Buyable</tradeability>
-    <comps>  
+    <costList>
+      <ComponentStamped>1</ComponentStamped>
+      <Steel>100</Steel>
+    </costList>
+    <recipeMaker>
+      <workAmount>2000</workAmount>
+      <researchPrerequisite>DMS_Legion</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <recipeUsers>
+        <li>DMS_TableMachinePrinter</li>
+      </recipeUsers>
+    </recipeMaker>
+    <comps>
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>Attract legion threat</useLabel>

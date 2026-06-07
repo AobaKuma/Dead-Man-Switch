@@ -134,12 +134,12 @@
   <!-- EN: Heavy Automatroid -->
   <DMS_HeavyAutomatroid.label>重型機兵</DMS_HeavyAutomatroid.label>
   <!-- EN: These massive machines were purpose built for full-scale warfare amongst nations. Unlocks various assault Automatroids which took inspiration from old-war vehicles and technology, but with a modernized twist. -->
-  <DMS_HeavyAutomatroid.description>這些重型機器為人類之間的全面戰爭做好了準備，但幸運的是這種規模的戰爭並不經常發生。</DMS_HeavyAutomatroid.description>
+  <DMS_HeavyAutomatroid.description>這些重型機器曾為人類之間的全面戰爭做好了準備，但幸運的是這種規模的戰爭並不經常發生。</DMS_HeavyAutomatroid.description>
   
   <!-- EN: Humanoid Engineering -->
   <DMS_HumanoidEngineering.label>人機工程學</DMS_HumanoidEngineering.label>
   <!-- EN: During the early wars, Automatroids with human shapes were shown to be effective at demoralizing human combatants and inflicting psychological trauma upon enemies lines. This lead to the development of a series of Automatroids deemed the Arquebusier Models. -->
-  <DMS_HumanoidEngineering.description>在戰爭期間的案例表明，具有人類外形的機兵被證明是一種很好的設計，它符合人體工學和心理暗示並且對於戰術動作的編程十分方便。</DMS_HumanoidEngineering.description>
+  <DMS_HumanoidEngineering.description>人型機兵之所以是人形，是因為相比其他動物，人是一種非常能高度配合實驗對神經網路訓練各種戰術動作的受試對象。以此訓練及生產出來的人型機兵同時也具備著對人類環境與工具的適用性。</DMS_HumanoidEngineering.description>
   
   <!-- EN: Hybrid Engineering -->
   <DMS_Hybrid.label>生物機械工程</DMS_Hybrid.label>
@@ -367,9 +367,9 @@
   </DMS_Prosthetic.generalRules.rulesStrings>
   
   <!-- EN: Peacekeepers -->
-  <DMS_Ronin.label>維和機兵</DMS_Ronin.label>
+  <DMS_Ronin.label>特種機兵</DMS_Ronin.label>
   <!-- EN: A series of Arquebusier model Automatroids designed for urban warfare, these models boast heavy armor, lightning fast mobility, and a punishing array of compatible weaponry. This line of Automatroids excel in urban environments and close quarters combat, but can also work as less lethal peacekeepers and riot control units. -->
-  <DMS_Ronin.description>專為城市戰設計的機兵系列，其特點是具有圓盤形感測器頭和重型裝甲。常用於安保戰、防暴和維和行動。</DMS_Ronin.description>
+  <DMS_Ronin.description>在冷戰時代結束以後，微電子技術的飛速突破使得機兵的構型與技術整合不再高度受限於無定形神經電路的制約。在這之後機兵設計能以更低的研製成本分化出不同的特化型號，適應新時代戰爭中所需要具備的反恐、治安戰等低劣度但複雜的需求。</DMS_Ronin.description>
   
   <!-- EN: Next-Gen Weaponry -->
   <DMS_Synthroid.label>次世代兵器</DMS_Synthroid.label>

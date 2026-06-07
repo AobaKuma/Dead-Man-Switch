@@ -8,7 +8,7 @@
     <products>
       <DMS_Mech_Mammoth>1</DMS_Mech_Mammoth>
     </products>
-    <researchPrerequisite>DMS_MechBasis</researchPrerequisite>
+    <researchPrerequisite>DMS_Hypothesis</researchPrerequisite>
     <gestationCycles>3</gestationCycles>
     <descriptionHyperlinks>
       <ThingDef>DMS_Mech_Mammoth</ThingDef>
@@ -42,7 +42,7 @@
   </RecipeDef>
 
   <!-- 猿人 -->
-  <RecipeDef ParentName="DMS_HumanoidMechanoidRecipe">
+  <RecipeDef ParentName="DMS_HumanoidMechanoidRecipe" Abstract="true">
     <defName>DMS_Make_Ape</defName>
     <label>Gestate Ape Automatroid</label>
     <description>Gestate an Ape Automatroid.</description>
@@ -61,7 +61,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>175</count>
+        <count>200</count>
       </li>
       <li>
         <filter>
@@ -111,7 +111,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>150</count>
+        <count>200</count>
       </li>
       <li>
         <filter>
@@ -166,7 +166,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>120</count>
+        <count>200</count>
       </li>
       <li>
         <filter>
@@ -228,7 +228,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>130</count>
+        <count>200</count>
       </li>
       <li>
         <filter>
@@ -282,7 +282,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>160</count>
+        <count>300</count>
       </li>
       <li>
         <filter>
@@ -329,6 +329,7 @@
     <products>
       <DMS_Mech_Ronin>1</DMS_Mech_Ronin>
     </products>
+    <researchPrerequisite>DMS_HumanoidEngineering</researchPrerequisite>
     <descriptionHyperlinks>
       <ThingDef>DMS_Mech_Ronin</ThingDef>
     </descriptionHyperlinks>
@@ -339,7 +340,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>150</count>
       </li>
       <li>
         <filter>
@@ -383,6 +384,7 @@
     <products>
       <DMS_Mech_Gladiator>1</DMS_Mech_Gladiator>
     </products>
+    <researchPrerequisite>DMS_DeadMansSwitch</researchPrerequisite>
     <descriptionHyperlinks>
       <ThingDef>DMS_Mech_Gladiator</ThingDef>
     </descriptionHyperlinks>
@@ -393,7 +395,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>105</count>
+        <count>125</count>
       </li>
       <li>
         <filter>
@@ -430,7 +432,7 @@
   </RecipeDef>
 
   <!--破城者-->
-  <RecipeDef ParentName="DMS_RoninMechanoidRecipe">
+  <RecipeDef ParentName="DMS_RoninMechanoidRecipe" Abstract="true">
     <defName>DMS_Make_Siegebreaker</defName>
     <label>Gestate Siegebreaker</label>
     <description>Gestate a siegebreaker Automatroid.</description>
@@ -447,7 +449,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>115</count>
+        <count>200</count>
       </li>
       <li>
         <filter>
@@ -499,6 +501,7 @@
     <products>
       <DMS_Mech_Protector>1</DMS_Mech_Protector>
     </products>
+    <researchPrerequisite>DMS_Ronin</researchPrerequisite>
     <descriptionHyperlinks>
       <ThingDef>DMS_Mech_Protector</ThingDef>
     </descriptionHyperlinks>
@@ -509,7 +512,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>140</count>
+        <count>200</count>
       </li>
       <li>
         <filter>
@@ -554,6 +557,7 @@
       <DMS_Mech_Phalanx>1</DMS_Mech_Phalanx>
     </products>
     <gestationCycles>2</gestationCycles>
+    <researchPrerequisite>DMS_DeadMansSwitch</researchPrerequisite>
     <descriptionHyperlinks>
       <ThingDef>DMS_Mech_Phalanx</ThingDef>
     </descriptionHyperlinks>
@@ -564,7 +568,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>40</count>
+        <count>100</count>
       </li>
       <li>
         <filter>
@@ -572,7 +576,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>60</count>
+        <count>50</count>
       </li>
       <li>
         <filter>
@@ -629,7 +633,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>80</count>
+        <count>110</count>
       </li>
       <li>
         <filter>
@@ -674,6 +678,7 @@
       <DMS_Mech_Pioneer>1</DMS_Mech_Pioneer>
     </products>
     <gestationCycles>2</gestationCycles>
+    <researchPrerequisite>DMS_DeadMansSwitch</researchPrerequisite>
     <descriptionHyperlinks>
       <ThingDef>DMS_Mech_Pioneer</ThingDef>
     </descriptionHyperlinks>
@@ -684,7 +689,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>100</count>
       </li>
       <li>
         <filter>
@@ -736,6 +741,7 @@
     <products>
       <DMS_Mech_Sniper>1</DMS_Mech_Sniper>
     </products>
+    <researchPrerequisite>DMS_Ronin</researchPrerequisite>
     <descriptionHyperlinks>
       <ThingDef>ComponentFireControl</ThingDef>
       <ThingDef>DMS_Mech_Sniper</ThingDef>
@@ -747,7 +753,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>80</count>
+        <count>140</count>
       </li>
       <li>
         <filter>
@@ -792,7 +798,7 @@
   </RecipeDef>
 
   <!-- 獵兵 -->
-  <RecipeDef ParentName="DMS_HumanoidMechanoidRecipe">
+  <RecipeDef ParentName="DMS_HumanoidMechanoidRecipe" Abstract="true">
     <defName>DMS_Make_Jaeger</defName>
     <label>Gestate Jaeger</label>
     <description>Gestate a Jaeger Automatroid.</description>
@@ -809,7 +815,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>70</count>
+        <count>110</count>
       </li>
       <li>
         <filter>
@@ -817,7 +823,7 @@
             <li>Plasfiber</li>
           </thingDefs>
         </filter>
-        <count>25</count>
+        <count>50</count>
       </li>
       <li>
         <filter>

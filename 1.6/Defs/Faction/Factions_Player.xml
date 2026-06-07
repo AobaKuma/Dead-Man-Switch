@@ -44,7 +44,7 @@
     <defName>DMS_Colony</defName>
     <label>fleet colony</label>
     <description>A colony of recently-arrived off-worlders. It seems they have connection with Colonial Fleet.</description>
-    <basicMemberKind>CrewMember</basicMemberKind>
+    <basicMemberKind>DMS_CrewMember</basicMemberKind>
     <pawnSingular>colonist</pawnSingular>
     <pawnsPlural>colonists</pawnsPlural>
   </FactionDef>
@@ -53,7 +53,7 @@
     <defName>DMS_Deviants</defName>
     <label>deviants</label>
     <description>A group of recently-arrived Colonial Fleet deviants.</description>
-    <basicMemberKind>CrewMember</basicMemberKind>
+    <basicMemberKind>DMS_CrewMember</basicMemberKind>
     <pawnSingular>deviant</pawnSingular>
     <pawnsPlural>deviants</pawnsPlural>
   </FactionDef>

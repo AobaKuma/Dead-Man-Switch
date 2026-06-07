@@ -21,7 +21,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>225</count>
+        <count>340</count>
       </li>
       <li>
         <filter>
@@ -29,7 +29,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>155</count>
+        <count>230</count>
       </li>
       <li>
         <filter>
@@ -37,7 +37,7 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>6</count>
+        <count>9</count>
       </li>
       <li>
         <filter>
@@ -45,7 +45,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>4</count>
+        <count>6</count>
       </li>
       <li>
         <filter>
@@ -59,7 +59,7 @@
   </RecipeDef>
   
   <!--DMS_Make_Gecko-->
-  <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe">
+  <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe" Abstract="True">
     <defName>DMS_Make_Gecko</defName>
     <label>Gestate Gecko</label>
     <description>Gestate a Gecko Automatroid.</description>
@@ -79,7 +79,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>185</count>
+        <count>275</count>
       </li>  
       <li>
         <filter>
@@ -87,7 +87,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>110</count>
+        <count>165</count>
       </li>
       <li>
         <filter>
@@ -95,7 +95,7 @@
             <li>Plasfiber</li>
           </thingDefs>
         </filter>
-        <count>20</count>
+        <count>30</count>
       </li>
       <li>
         <filter>
@@ -103,7 +103,7 @@
             <li>Chemfuel</li>
           </thingDefs>
         </filter>
-        <count>25</count>
+        <count>40</count>
       </li>
       <li>
         <filter>
@@ -111,7 +111,7 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>6</count>
+        <count>9</count>
       </li>
       <li>
         <filter>
@@ -119,7 +119,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>5</count>
+        <count>8</count>
       </li>
       <li>
         <filter>
@@ -152,7 +152,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>325</count>
+        <count>500</count>
       </li>
       <li>
         <filter>
@@ -160,7 +160,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>120</count>
+        <count>200</count>
       </li>
       <li MayRequire="ludeon.rimworld.royalty"> 
         <filter>
@@ -176,7 +176,7 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>6</count>
+        <count>15</count>
       </li>
       <li>
         <filter>
@@ -184,7 +184,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>15</count>
       </li>
       <li>
         <filter>
@@ -216,7 +216,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>325</count>
+        <count>550</count>
       </li>
       <li>
         <filter>
@@ -224,7 +224,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>145</count>
+        <count>250</count>
       </li>
       <li>
         <filter>
@@ -240,7 +240,7 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
@@ -248,7 +248,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
@@ -281,7 +281,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>375</count>
+        <count>500</count>
       </li>
       <li>
         <filter>
@@ -289,7 +289,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>200</count>
       </li>
       <li>
         <filter>
@@ -297,7 +297,7 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>15</count>
       </li>
       <li>
         <filter>
@@ -305,7 +305,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>8</count>
+        <count>12</count>
       </li>
       <li>
         <filter>
@@ -346,7 +346,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>300</count>
       </li>
       <li>
         <filter>
@@ -354,7 +354,7 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>8</count>
+        <count>32</count>
       </li>
       <li>
         <filter>
@@ -362,7 +362,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>12</count>
+        <count>18</count>
       </li>
       <li>
         <filter>
@@ -370,7 +370,7 @@
             <li>ComponentSpacer</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>3</count>
       </li>
       <li>
         <filter>
@@ -378,7 +378,7 @@
             <li>Neurocomputer</li>
           </thingDefs>
         </filter>
-        <count>1</count>
+        <count>2</count>
       </li>
       <li>
         <filter>
@@ -411,7 +411,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>575</count>
+        <count>875</count>
       </li>
       <li>
         <filter>
@@ -419,7 +419,7 @@
             <li>Artifuscle</li>
           </thingDefs>
         </filter>
-        <count>175</count>
+        <count>275</count>
       </li>
       <li>
         <filter>
@@ -427,7 +427,7 @@
             <li>Plasfiber</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>75</count>
       </li>
       <li>
         <filter>
@@ -435,7 +435,7 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>25</count>
+        <count>38</count>
       </li>
       <li>
         <filter>
@@ -443,7 +443,7 @@
             <li>ComponentSpacer</li>
           </thingDefs>
         </filter>
-        <count>3</count>
+        <count>5</count>
       </li>
       <li>
         <filter>
@@ -451,7 +451,7 @@
             <li>Neurocomputer</li>
           </thingDefs>
         </filter>
-        <count>1</count>
+        <count>2</count>
       </li>
       <li>
         <filter>

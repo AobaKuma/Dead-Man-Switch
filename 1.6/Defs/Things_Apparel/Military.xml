@@ -353,7 +353,6 @@
 		<description>A full face helmet designed for field drone operators featuring a built-in head-mounted display and neural-connected operating system. Provides a massive increase to the control bandwidth for mechanoids and gives full ballistic protection to the head and face.</description>
 		<recipeMaker>
 			<researchPrerequisites>
-				<li>FlakArmor</li>
 				<li>DMS_EquipmentElite</li>
 			</researchPrerequisites>
 			<skillRequirements>

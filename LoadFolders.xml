@@ -19,6 +19,8 @@
 		
 		<li IfModActive="issaczhuang.pla.armory,issaczhuang.pla.armory_steam">1.6/Mod/PLAA</li>
 		<li IfModActive="samael.pca,samael.pca_steam">1.6/Mod/PCA</li>
-		<li IfModActive="solaris.ratkinracemod,solaris.ratkinracemod_steam">1.6/Mod/RK</li>		
+		<li IfModActive="solaris.ratkinracemod,solaris.ratkinracemod_steam">1.6/Mod/RK</li>
+		
+		<li>1.6/NewContent</li>
 	</v1.6>
 </loadFolders>

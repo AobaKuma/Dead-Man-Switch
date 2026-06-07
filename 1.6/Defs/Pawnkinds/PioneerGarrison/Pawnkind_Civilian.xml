@@ -17,8 +17,6 @@
     <titleRequired MayRequire="Ludeon.RimWorld.Royalty">DMS_Reservist</titleRequired>
   </PawnKindDef>
 
-
-
   <!--====== Traders and Civillians ====== -->
   <PawnKindDef ParentName="DMS_OutlanderBase" Name="DMS_CivilianBase">
     <defName>DMS_Civilian</defName>
@@ -33,7 +31,7 @@
     <weaponMoney>65~250</weaponMoney>
     <apparelMoney>200~400</apparelMoney>
     <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
-    <techHediffsChance>0.06</techHediffsChance> 
+    <techHediffsChance>0.06</techHediffsChance>
     <techHediffsMoney>500~600</techHediffsMoney>
     <techHediffsTags>
       <li>DMS_BM_Bionic</li>
@@ -42,7 +40,7 @@
       <li>ImplantEmpireCommon</li>
     </techHediffsTags>
     <initialWillRange>10~15</initialWillRange>
-    <initialResistanceRange>10~17</initialResistanceRange>   
+    <initialResistanceRange>10~17</initialResistanceRange>
     <requiredWorkTags> <!-- Must be capable of labor, as this pawn kind is used in laborer quests. -->
       <li>ManualDumb</li>
       <li>ManualSkilled</li>
@@ -109,11 +107,43 @@
         <skill>Shooting</skill>
         <range>1~5</range>
       </li>
-	    <li>
+      <li>
         <skill>Melee</skill>
         <range>1~5</range>
-      </li>	    	     
-	  </skills>
+      </li>
+    </skills>
+  </PawnKindDef>
+
+
+  <PawnKindDef ParentName="DMS_CivilianBase">
+    <defName>DMS_CrewMember</defName>
+    <label>crew member</label>
+    <itemQuality>Normal</itemQuality>
+    <weaponTags Inherit="False">
+      <li>Simple_LongRange</li>
+      <li>MedievalMeleeDecent</li>
+    </weaponTags>
+    <weaponMoney>200~250</weaponMoney>
+    <apparelMoney>500~1000</apparelMoney>
+    <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+    <backstoryCategories>
+      <li>FleetChild</li>
+      <li>Mili_Standard</li>
+      <li>Mili_Expert</li>
+    </backstoryCategories>
+    <apparelTags>
+      <li>DMS_Garrison</li>
+    </apparelTags>
+    <skills Inherit="False">
+      <li>
+        <skill>Shooting</skill>
+        <range>4~8</range>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <range>4~8</range>
+      </li>
+    </skills>
   </PawnKindDef>
 
 
@@ -125,8 +155,7 @@
     <isFighter>false</isFighter>
     <acceptArrestChanceFactor>0</acceptArrestChanceFactor>
     <itemQuality>Normal</itemQuality>
-    <weaponTags>
-    </weaponTags>
+    <weaponTags />
     <weaponMoney>200~200</weaponMoney>
     <apparelMoney>400~600</apparelMoney>
     <apparelTags>
@@ -175,11 +204,11 @@
         <skill>Shooting</skill>
         <range>4~8</range>
       </li>
-	    <li>
+      <li>
         <skill>Melee</skill>
         <range>4~8</range>
-      </li>	    	     
-	  </skills>
+      </li>
+    </skills>
   </PawnKindDef>
 
   <PawnKindDef ParentName="DMS_CivilianBase">
@@ -201,11 +230,11 @@
         <skill>Shooting</skill>
         <range>4~8</range>
       </li>
-	    <li>
+      <li>
         <skill>Melee</skill>
         <range>5~10</range>
-      </li>	    	     
-	  </skills>
+      </li>
+    </skills>
   </PawnKindDef>
 
   <PawnKindDef ParentName="DMS_CivilianBase">
@@ -224,18 +253,18 @@
       <li>DMS_Apparel_GarrisonCap</li>
     </apparelRequired>
     <specificApparelRequirements Inherit="False">
-       <!-- light red uniform-->
+      <!-- light red uniform-->
     </specificApparelRequirements>
     <skills Inherit="False">
       <li>
         <skill>Shooting</skill>
         <range>4~8</range>
       </li>
-	    <li>
+      <li>
         <skill>Melee</skill>
         <range>4~8</range>
-      </li>	    	     
-	  </skills>
+      </li>
+    </skills>
   </PawnKindDef>
 
 </Defs>
