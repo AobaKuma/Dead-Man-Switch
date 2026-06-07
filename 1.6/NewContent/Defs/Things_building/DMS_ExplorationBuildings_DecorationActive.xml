@@ -22,7 +22,58 @@
   </ThingDef>
 
   <!-- TODO -->
-
+  <ThingDef ParentName="LampBase">
+    <defName>DMS_EmergencyLamp_Wall</defName>
+    <label>Emergency lighting</label>
+    <description>一種只在斷電時使用內部電池自動亮起的應急照明系統，能夠長時間發出微弱紅光來確保設施內即使斷電也能夠有照明。</description>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Building/Furniture/WallLamp/WallLamp</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+      <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+      <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <uiIconPath>Things/Building/Furniture/WallLamp/WallLamp_MenuIcon</uiIconPath>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <costList>
+      <Steel>15</Steel>
+    </costList>
+    <statBases>
+      <WorkToBuild>330</WorkToBuild>
+      <MaxHitPoints>35</MaxHitPoints>
+      <Mass>2</Mass>
+    </statBases>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True" />
+    <pathCost>0</pathCost>
+    <overrideMinifiedRot>North</overrideMinifiedRot>
+    <minifiedDrawOffset>(0, 0, 0.2)</minifiedDrawOffset>
+    <building>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>30</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>11</glowRadius>
+        <glowColor>(214,148,94,0)</glowColor>
+        <colorPickerEnabled>true</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
+      </li>
+    </comps>
+  </ThingDef>
 
   <!-- FPV 機庫 -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
@@ -71,7 +122,7 @@
       </li>
     </comps>
   </ThingDef>
-  
+
   <EffecterDef>
     <defName>DMS_AirExhaust</defName>
     <children>

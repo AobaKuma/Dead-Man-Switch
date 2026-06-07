@@ -183,6 +183,7 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.75</drawSize>
+          <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -279,6 +280,7 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>3.5</drawSize>
+          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -287,6 +289,7 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>3.5</drawSize>
+          <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
