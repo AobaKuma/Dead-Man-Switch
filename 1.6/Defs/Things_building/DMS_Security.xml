@@ -295,6 +295,7 @@
       <ComponentStamped>35</ComponentStamped>
       <ComponentIndustrial>10</ComponentIndustrial>
       <ComponentFireControl>1</ComponentFireControl>
+	  <DMS_GAU8Gatlinggun>1</DMS_GAU8Gatlinggun>
     </costList>
     <researchPrerequisites>
       <li>DMS_Synthroid</li>
@@ -451,6 +452,7 @@
       <Tungsteel>140</Tungsteel>
       <ComponentStamped>7</ComponentStamped>
       <ComponentIndustrial>6</ComponentIndustrial>
+	  <DMS_Gun_MK44_Autocannon>1</DMS_Gun_MK44_Autocannon>
     </costList>
     <researchPrerequisites>
       <li>DMS_EquipmentElite</li>
@@ -579,6 +581,7 @@
       <Tungsteel>100</Tungsteel>
       <ComponentStamped>5</ComponentStamped>
       <ComponentIndustrial>5</ComponentIndustrial>
+	  <DMS_KordMachineGun MayRequire="Aoba.DeadManSwitch.AncientCorps">1</DMS_KordMachineGun>
     </costList>
     <uiIconPath>Things/Turrets/DMS_5ETs16U</uiIconPath>
     <uiIconScale>1.2</uiIconScale>
@@ -840,6 +843,7 @@
       <ComponentStamped>15</ComponentStamped>
       <ComponentIndustrial>10</ComponentIndustrial>
       <ComponentFireControl>2</ComponentFireControl>
+	  <DMS_Gun_DawnbladeM>1</DMS_Gun_DawnbladeM>
     </costList>
     <researchPrerequisites>
       <li>DMS_Synthroid</li>
