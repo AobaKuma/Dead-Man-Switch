@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase" Name="DMS_HoleBase" Abstract="True">
+    <label>facility dormer</label>
+    <description>A structure flooring with a opened hole, commonly found in underground facilities.</description>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(7,7)</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <fillPercent>0</fillPercent>
+    <rotatable>false</rotatable>
+    <passability>Impassable</passability>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <size>(5,5)</size>
+    <useHitPoints>false</useHitPoints>
+    <selectable>true</selectable>
+    <holdsRoof>true</holdsRoof>
+    <building>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <neverBuildable>true</neverBuildable>
+      <isTargetable>false</isTargetable>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+      <deconstructible>false</deconstructible>
+      <alwaysDeconstructible>false</alwaysDeconstructible>
+      <isInert>false</isInert>
+      <quickTargetable>false</quickTargetable>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+    </building>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_HoleBase">
+    <defName>DMS_Hole_7x7Empty</defName>
+    <graphicData>
+      <texPath>Things/Building/DMS_Hole_7x7Empty</texPath>
+      <drawSize>(9,9)</drawSize>
+    </graphicData>
+    <size>(7,7)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_HoleBase">
+    <defName>DMS_Hole_5x5Empty</defName>
+    <graphicData>
+      <texPath>Things/Building/DMS_Hole_5x5Empty</texPath>
+      <drawSize>(7,7)</drawSize>
+    </graphicData>
+    <size>(5,5)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_HoleBase">
+    <defName>DMS_Hole_3x3Empty</defName>
+    <graphicData>
+      <texPath>Things/Building/DMS_Hole_3x3Empty</texPath>
+      <drawSize>(5,5)</drawSize>
+    </graphicData>
+    <size>(3,3)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_HoleBase">
+    <defName>DMS_Hole_3x5Empty</defName>
+    <graphicData>
+      <texPath>Things/Building/DMS_Hole_3x5Empty</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(7,5)</drawSize>
+    </graphicData>
+    <size>(5,3)</size>
+    <rotatable>true</rotatable>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_HoleBase">
+    <defName>DMS_Hole_3x7Empty</defName>
+    <graphicData>
+      <texPath>Things/Building/DMS_Hole_3x7Empty</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(9,5)</drawSize>
+    </graphicData>
+    <size>(7,3)</size>
+    <rotatable>true</rotatable>
+  </ThingDef>
+
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_Wreckages</defName>
+    <label>Wreckages</label>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Wreckage_Chunk</defName>
+    <label>Wreckage chunk</label>
+    <description>一個難以辨認其原本面貌的殘骸塊，嚴格來說是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</description>
+    <graphicData>
+      <texPath>Things/Wreckages/DerelictChunk</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(1.2,1.2)</drawSize>
+    </graphicData>
+    <designatorDropdown>DMS_Wreckages</designatorDropdown>
+    <uiIconScale>0.9</uiIconScale>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>50</Steel>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Wreckage_SentryGun</defName>
+    <label>diabled sentry gun</label>
+    <description>一座嚴重損毀的小型哨戒砲塔，嚴格來說是個堪用的掩體，能夠回收少量的金屬碎片。</description>
+    <graphicData>
+      <texPath>Things/Wreckages/DisabledTurret_Small</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(1.1,1.1)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>20</Mass>
+    </statBases>
+    <designatorDropdown>DMS_Wreckages</designatorDropdown>
+    <uiIconScale>0.9</uiIconScale>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>50</Steel>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Wreckage_Ronin</defName>
+    <label>diabled ronin</label>
+    <description>一架嚴重損毀的浪人型機兵，嚴格來說是個堪用的掩體，能夠回收少量的金屬碎片。</description>
+    <graphicData>
+      <texPath>Things/Wreckages/Disabled_Ronin</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(1.4,1.4)</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Mass>20</Mass>
+    </statBases>
+    <designatorDropdown>DMS_Wreckages</designatorDropdown>
+    <uiIconScale>0.9</uiIconScale>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>50</Steel>
+    </costList>
+  </ThingDef>
+</Defs>

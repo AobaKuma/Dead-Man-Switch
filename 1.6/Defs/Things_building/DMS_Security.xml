@@ -51,48 +51,56 @@
   <!--哨戒砲塔-->
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Sentry</defName>
-    <label>Sentry turret</label>
-    <description>A quick-deployed, disposable remote-controlled turret that can be used continuously for about 12 hours after being deployed. It will automatically shut down after the energy is used up. These type of equipments are usually deployed in urban combat environments to ambush enemies.</description>
+    <label>Sentry gun</label>
+    <description>A light-weighted turret with a built-in battery. While on the power grid it charges its internal battery; during an outage it draws from that reserve and keeps firing until the battery is drained.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Turrets/Tripod</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>1</drawSize>
+      <drawSize>1.1</drawSize>
       <drawOffset>(0,0,-0.1)</drawOffset>
     </graphicData>
     <size>(1,1)</size>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <designationCategory Inherit="false"/>
+    <designationCategory>DMS_Category</designationCategory>
     <fillPercent>0.7</fillPercent>
     <statBases>
-      <MaxHitPoints>50</MaxHitPoints>
+      <MaxHitPoints>150</MaxHitPoints>
       <Flammability>0.5</Flammability>
-      <WorkToBuild>4500</WorkToBuild>
+      <WorkToBuild>3000</WorkToBuild>
       <Beauty>-2</Beauty>
       <ShootingAccuracyTurret>1</ShootingAccuracyTurret>
     </statBases>
-    <comps Inherit="false">
-      <li MayRequire="VanillaExpanded.VFEA" Class="VFEAncients.CompProperties_SolarPowerUp" />
-      <li Class="CompProperties_Forbiddable" />
-			<li Class="CompProperties_MechPowerCell">
-				<totalPowerTicks>30000</totalPowerTicks>
-				<killWhenDepleted>false</killWhenDepleted>
-				<labelOverride>Battery power</labelOverride>
-				<tooltipOverride>This turret has a limited battery life. Once it runs out, it will stop working entirely.</tooltipOverride>
-			</li>
+    <comps>
+      <li Class="Fortified.CompProperties_PowerWithInternalBattery">
+        <basePowerConsumption>40</basePowerConsumption>
+        <chargeRateWatts>40</chargeRateWatts>
+        <internalBatteryMax>200</internalBatteryMax>
+      </li>
+      <li Class="Fortified.CompProperties_PowerColorSwitch">
+        <gridColor>(100,100,100,0)</gridColor>
+        <batteryColor>(200,0,0,0)</batteryColor>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(10,10,10,0)</glowColor>
+        <colorPickerEnabled>false</colorPickerEnabled>
+        <darklightToggle>false</darklightToggle>
+      </li>
     </comps>
     <building>
       <turretGunDef>DMS_SubMachineGunMounted</turretGunDef>
-      <turretTopDrawSize>1</turretTopDrawSize>
+      <turretTopDrawSize>1.1</turretTopDrawSize>
       <turretBurstWarmupTime>0.5</turretBurstWarmupTime>   <!--================冷卻與瞄準時間================-->
       <turretBurstCooldownTime>1</turretBurstCooldownTime>
     </building>
     <costList>
-      <Steel>50</Steel>
+      <Steel>100</Steel>
       <ComponentStamped>1</ComponentStamped>
     </costList>
     <uiIconPath>Things/Turrets/DMS_SentryTurret</uiIconPath>
     <uiIconScale>1.25</uiIconScale>
+        <minifiedDef>MinifiedThing</minifiedDef>
   </ThingDef>
 
   <!-- <ThingDef ParentName="DMS_BaseCannonBuilding">
@@ -295,7 +303,7 @@
       <ComponentStamped>35</ComponentStamped>
       <ComponentIndustrial>10</ComponentIndustrial>
       <ComponentFireControl>1</ComponentFireControl>
-	  <DMS_GAU8Gatlinggun>1</DMS_GAU8Gatlinggun>
+      <DMS_GAU8Gatlinggun>1</DMS_GAU8Gatlinggun>
     </costList>
     <researchPrerequisites>
       <li>DMS_Synthroid</li>
@@ -452,7 +460,7 @@
       <Tungsteel>140</Tungsteel>
       <ComponentStamped>7</ComponentStamped>
       <ComponentIndustrial>6</ComponentIndustrial>
-	  <DMS_Gun_MK44_Autocannon>1</DMS_Gun_MK44_Autocannon>
+      <DMS_Gun_MK44_Autocannon>1</DMS_Gun_MK44_Autocannon>
     </costList>
     <researchPrerequisites>
       <li>DMS_EquipmentElite</li>
@@ -514,7 +522,7 @@
       </li>
     </modExtensions>
 
-  </ThingDef>	
+  </ThingDef>
 
   <!--遙控砲塔-->
   <ThingDef ParentName="DMS_BaseCannonBuilding">
@@ -539,8 +547,8 @@
       <Beauty>-2</Beauty>
       <ShootingAccuracyTurret>0.9</ShootingAccuracyTurret>
     </statBases>
-    <designationCategory Inherit="false"/>
-	<researchPrerequisites Inherit="false"/>
+    <designationCategory Inherit="false" />
+    <researchPrerequisites Inherit="false" />
     <comps>
       <li Class="CompProperties_Refuelable">
         <fuelLabel>Shots until barrel change</fuelLabel>
@@ -581,7 +589,7 @@
       <Tungsteel>100</Tungsteel>
       <ComponentStamped>5</ComponentStamped>
       <ComponentIndustrial>5</ComponentIndustrial>
-	  <DMS_KordMachineGun MayRequire="Aoba.DeadManSwitch.AncientCorps">1</DMS_KordMachineGun>
+      <DMS_KordMachineGun MayRequire="Aoba.DeadManSwitch.AncientCorps">1</DMS_KordMachineGun>
     </costList>
     <uiIconPath>Things/Turrets/DMS_5ETs16U</uiIconPath>
     <uiIconScale>1.2</uiIconScale>
@@ -843,7 +851,7 @@
       <ComponentStamped>15</ComponentStamped>
       <ComponentIndustrial>10</ComponentIndustrial>
       <ComponentFireControl>2</ComponentFireControl>
-	  <DMS_Gun_DawnbladeM>1</DMS_Gun_DawnbladeM>
+      <DMS_Gun_DawnbladeM>1</DMS_Gun_DawnbladeM>
     </costList>
     <researchPrerequisites>
       <li>DMS_Synthroid</li>

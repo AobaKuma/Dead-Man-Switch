@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  
+
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Tarbosaurus</defName>
     <label>Tarbosaurus</label>
@@ -35,7 +35,18 @@
       </detritusLeavings>
     </race>
     <comps>
-		  <li Class="Fortified.CompProperties_VehicleWeapon">
+      <li Class="DMS.CompProperties_PanicAura">
+        <!-- Radius in cells -->
+        <radius>5</radius>
+        <!-- Pulse every 300 ticks (≈5 seconds) -->
+        <intervalTicks>300</intervalTicks>
+        <!-- 15 % chance per enemy pawn per pulse -->
+        <panicChance>0.15</panicChance>
+        <maxAffectedBodySize>1.5</maxAffectedBodySize>
+        <!-- Set to true to show countdown in inspect panel -->
+        <showInspectString>false</showInspectString>
+      </li>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
         <drawData>
           <dataEast>
             <offset>(0.2,0,-0.3)</offset>
@@ -45,85 +56,85 @@
             <layer>-20</layer>
           </dataWest>
           <dataSouth>
-              <offset>(-0.9,0,0)</offset>
+            <offset>(-0.9,0,0)</offset>
           </dataSouth>
           <dataNorth>
-              <offset>(0.9,0,0)</offset>
+            <offset>(0.9,0,0)</offset>
           </dataNorth>
         </drawData>
-			  <turretRotationFollowPawn>true</turretRotationFollowPawn>			  
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
         <rotationSmoothTime>0.12</rotationSmoothTime>
       </li>
-		  <li Class="Fortified.CompPropertiesMultipleTurretGun">
-          <subTurrets>
-            <li>
-              <ID>General-purpose machine gun</ID>
-              <turret>DMS_HeavyMachineGunMounted</turret>
-              <autoAttack>true</autoAttack>
-              <warmingTime>5</warmingTime>
-              <angleOffset>-90</angleOffset>
-              <renderNodeProperties>
-                <li>
-                  <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
-                  <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
-                  <parentTagDef>Body</parentTagDef>
-                  <drawSize>1.75</drawSize>
-                  <baseLayer>-21</baseLayer>
-                  <pawnType>Any</pawnType>
-                  <drawData>
-                    <dataEast>
-                        <offset>(1,0,-0.35)</offset>
-                    </dataEast>
-                    <dataWest>
-                        <offset>(-1.0,0,-0.35)</offset>
-                        <rotationOffset>180</rotationOffset>
-                    </dataWest>
-                    <dataSouth>
-                        <offset>(0,0,-1.2)</offset>
-                    </dataSouth>
-                    <dataNorth>
-                        <offset>(0,0,0.5)</offset>
-                    </dataNorth>
-                  </drawData>
-                </li>
-              </renderNodeProperties>
-            </li>
-            <li>
-              <ID>close inbound system</ID>
-              <turret>DMS_ShotgunGunMounted</turret>
-              <autoAttack>true</autoAttack>
-              <warmingTime>2</warmingTime>
-              <angleOffset>-90</angleOffset>
-              <renderNodeProperties>
-                <li>
-                  <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
-                  <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
-                  <parentTagDef>Body</parentTagDef>
-                  <drawSize>0.5</drawSize>
-                  <baseLayer>20</baseLayer>
-                  <pawnType>Any</pawnType>
-                  <drawData>
-                    <dataEast>
-                      <offset>(0.15,0,0.5)</offset>
-                      <layer>-22</layer>
-                    </dataEast>
-                    <dataWest>
-                      <offset>(-0.15,0,-0.75)</offset>
-                      <rotationOffset>180</rotationOffset>
-                    </dataWest>
-                    <dataSouth>
-                      <offset>(1,0,-0.25)</offset>
-                      <rotationOffset>-10</rotationOffset>
-                    </dataSouth>
-                    <dataNorth>
-                      <offset>(-1,0,-0.25)</offset> 
-                      <rotationOffset>-10</rotationOffset>
-                    </dataNorth>
-                  </drawData>
-                </li>
-              </renderNodeProperties>
-            </li>
-          </subTurrets>
+      <li Class="Fortified.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>General-purpose machine gun</ID>
+            <turret>DMS_HeavyMachineGunMounted</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>5</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <drawSize>1.75</drawSize>
+                <baseLayer>-21</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <dataEast>
+                    <offset>(1,0,-0.35)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(-1.0,0,-0.35)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                  <dataSouth>
+                    <offset>(0,0,-1.2)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(0,0,0.5)</offset>
+                  </dataNorth>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+          <li>
+            <ID>close inbound system</ID>
+            <turret>DMS_ShotgunGunMounted</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>2</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <drawSize>0.5</drawSize>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <dataEast>
+                    <offset>(0.15,0,0.5)</offset>
+                    <layer>-22</layer>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(-0.15,0,-0.75)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                  <dataSouth>
+                    <offset>(1,0,-0.25)</offset>
+                    <rotationOffset>-10</rotationOffset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(-1,0,-0.25)</offset>
+                    <rotationOffset>-10</rotationOffset>
+                  </dataNorth>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
       </li>
       <li Class="Fortified.CompProperties_MeleeSweep">
         <damageDef>Blunt</damageDef>
@@ -161,7 +172,7 @@
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
         <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
         <chanceFactor>0.08</chanceFactor>
-		    <surpriseAttack>
+        <surpriseAttack>
           <extraMeleeDamages>
             <li>
               <def>Stun</def>
@@ -180,7 +191,7 @@
         <linkedBodyPartsGroup>LeftMechanicalLeg</linkedBodyPartsGroup>
         <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
         <chanceFactor>0.2</chanceFactor>
-		    <surpriseAttack>
+        <surpriseAttack>
           <extraMeleeDamages>
             <li>
               <def>Stun</def>

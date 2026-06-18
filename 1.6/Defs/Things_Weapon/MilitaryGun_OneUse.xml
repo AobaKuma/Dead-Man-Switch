@@ -152,6 +152,9 @@
 			<chargeNoun>charge</chargeNoun>
 			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
 		  </li>
+		  <li Class="DMS.CompProperties_AimingWeapon">
+			<texturePath>Things/Apparel/RocketLauncher/DMS_Launcher</texturePath>
+		  </li>
 		  <li Class="CompProperties_Styleable"/>
 		</comps>
 		<allowedArchonexusCount>1</allowedArchonexusCount>

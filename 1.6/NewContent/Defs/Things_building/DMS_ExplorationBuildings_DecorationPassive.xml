@@ -1,67 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <DesignatorDropdownGroupDef>
-    <defName>DMS_Wreckages</defName>
-    <label>Wreckages</label>
-  </DesignatorDropdownGroupDef>
 
-  <ThingDef ParentName="DMS_DecorationBuildingBase">
-    <defName>DMS_Wreckage_Chunk</defName>
-    <label>Wreckage chunk</label>
-    <description>一個難以辨認其原本面貌的殘骸塊，嚴格來說是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</description>
-    <graphicData>
-      <texPath>Things/Wreckages/DerelictChunk</texPath>
-      <graphicClass>Graphic_Random</graphicClass>
-      <drawSize>(1.2,1.2)</drawSize>
-    </graphicData>
-    <designatorDropdown>DMS_Wreckages</designatorDropdown>
-    <uiIconScale>0.9</uiIconScale>
-    <size>(1,1)</size>
+  <!-- Wall lamp -->
+  <ThingDef ParentName="LampBase">
+    <defName>DMS_EmergencyLamp</defName>
+    <label>Emergency lighting</label>
+    <description>一種只在斷電時使用內部電池自動亮起的應急照明系統，能夠長時間發出紅光確保即使斷電也能夠維持最低限度的照明。</description>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <tickerType>Normal</tickerType>
+    <building>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <category>Building</category>
+    <comps>
+      <li Class="CompProperties_Flickable" />
+      <li Class="Fortified.CompProperties_PowerWithInternalBattery">
+        <basePowerConsumption>30</basePowerConsumption>   <!-- W consumed while on     -->
+        <chargeRateWatts>15</chargeRateWatts>              <!-- extra W used to charge  -->
+        <internalBatteryMax>30</internalBatteryMax>        <!-- Wd cap  (≈ 0.5 days)   -->
+      </li>
+      <li Class="Fortified.CompProperties_PowerColorSwitch">
+        <gridColor>100,100,100,0</gridColor>
+        <batteryColor>(200,0,0,0)</batteryColor>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(100,100,100,0)</glowColor>
+        <colorPickerEnabled>false</colorPickerEnabled>
+        <darklightToggle>false</darklightToggle>
+      </li>
+      <li Class="CompProperties_Styleable" />
+    </comps>
     <costList>
-      <Steel>50</Steel>
+      <Steel>15</Steel>
     </costList>
-  </ThingDef>
-
-  <ThingDef ParentName="DMS_DecorationBuildingBase">
-    <defName>DMS_Wreckage_SentryGun</defName>
-    <label>diabled sentry gun</label>
-    <description>一座嚴重損毀的小型哨戒砲塔，嚴格來說是個堪用的掩體，能夠回收少量的金屬碎片。</description>
+    <drawerType>MapMeshOnly</drawerType>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <fillPercent>0.2</fillPercent>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
     <graphicData>
-      <texPath>Things/Wreckages/DisabledTurret_Small</texPath>
-      <graphicClass>Graphic_Random</graphicClass>
-      <drawSize>(1.1,1.1)</drawSize>
+      <!-- Reuse vanilla WallLamp art; swap for custom textures when available. -->
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Furniture/WallLamp/WallLamp</texPath>
+      <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+      <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+      <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+        <enabled>false</enabled>
+      </damageData>
     </graphicData>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <passability>Standable</passability>
+    <pathCost>0</pathCost>
+    <placeWorkers>
+      <li>PlaceWorker_GlowRadius</li>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <repairEffect>Repair</repairEffect>
+    <rotatable>true</rotatable>
+    <selectable>true</selectable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <statBases>
-      <MaxHitPoints>150</MaxHitPoints>
-      <Mass>20</Mass>
+      <SellPriceFactor>0.7</SellPriceFactor>
+      <MaxHitPoints>35</MaxHitPoints>
+      <Flammability>1</Flammability>
+      <WorkToBuild>450</WorkToBuild>
+      <Mass>2</Mass>
     </statBases>
-    <designatorDropdown>DMS_Wreckages</designatorDropdown>
-    <uiIconScale>0.9</uiIconScale>
-    <size>(1,1)</size>
-    <costList>
-      <Steel>50</Steel>
-    </costList>
-  </ThingDef>
-
-  <ThingDef ParentName="DMS_DecorationBuildingBase">
-    <defName>DMS_Wreckage_Ronin</defName>
-    <label>diabled ronin</label>
-    <description>一架嚴重損毀的浪人型機兵，嚴格來說是個堪用的掩體，能夠回收少量的金屬碎片。</description>
-    <graphicData>
-      <texPath>Things/Wreckages/Disabled_Ronin</texPath>
-      <graphicClass>Graphic_Random</graphicClass>
-      <drawSize>(1.4,1.4)</drawSize>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <statBases>
-      <MaxHitPoints>250</MaxHitPoints>
-      <Mass>20</Mass>
-    </statBases>
-    <designatorDropdown>DMS_Wreckages</designatorDropdown>
-    <uiIconScale>0.9</uiIconScale>
-    <size>(1,1)</size>
-    <costList>
-      <Steel>50</Steel>
-    </costList>
+    <terrainAffordanceNeeded IsNull="True" />
+    <thingClass>Building</thingClass>
+    <uiIconOffset>(0,0.03)</uiIconOffset>
+    <uiIconPath>Things/Building/Furniture/WallLamp/WallLamp_MenuIcon</uiIconPath>
   </ThingDef>
 </Defs>

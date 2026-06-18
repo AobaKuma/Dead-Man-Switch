@@ -114,304 +114,183 @@
       </li>
     </comps>
   </ThingDef>
-
-  <DesignatorDropdownGroupDef>
-    <defName>DMS_RollingDoors</defName>
-    <label>rolling doors</label>
-  </DesignatorDropdownGroupDef>
-
-  <ThingDef Name="DMS_BaseRollingDoor" ParentName="BuildingBase">
-    <defName>DMS_RollingDoor_Single</defName>
-    <label>rolling door</label>
-    <description>a locked rolling door.</description>
-    <thingClass>Fortified.Building_RollingDoor</thingClass>
-    <graphicData>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <texPath>Things/Building/Door/RollingDoor</texPath>
-      <drawOffset>(0,0,0)</drawOffset>
-      <drawSize>(1,1)</drawSize>
-    </graphicData>
-    <size>(1,1)</size>
-    <uiIconPath>Things/Building/Door/RollingDoor_south</uiIconPath>
-    <category>Building</category>
-    <altitudeLayer>DoorMoveable</altitudeLayer>
-    <designationCategory>FFF_DevCategory</designationCategory>
-    <designatorDropdown>DMS_RollingDoors</designatorDropdown>
-    <fillPercent>1</fillPercent>
-    <useHitPoints>true</useHitPoints>
-    <statBases>
-      <MaxHitPoints>500</MaxHitPoints>
-      <Flammability>0.7</Flammability>
-      <DoorOpenSpeed>0.3</DoorOpenSpeed>
-    </statBases>
-    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-    <selectable>true</selectable>
-    <tickerType>Normal</tickerType>
-    <rotatable>true</rotatable>
-    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <holdsRoof>true</holdsRoof>
-    <staticSunShadowHeight>1.0</staticSunShadowHeight>
-    <blockLight>true</blockLight>
-    <drawerType>RealtimeOnly</drawerType>
-    <building>
-      <isInert>true</isInert>
-      <canPlaceOverWall>true</canPlaceOverWall>
-      <soundDoorOpenPowered>Door_OpenPowered</soundDoorOpenPowered>
-      <soundDoorClosePowered>Door_ClosePowered</soundDoorClosePowered>
-      <soundDoorOpenManual>Door_OpenManual</soundDoorOpenManual>
-      <soundDoorCloseManual>Door_CloseManual</soundDoorCloseManual>
-      <ai_chillDestination>false</ai_chillDestination>
-      <unpoweredDoorCloseSpeedFactor>0.2</unpoweredDoorCloseSpeedFactor>
-      <poweredDoorCloseSpeedFactor>0.2</poweredDoorCloseSpeedFactor>
-      <paintable>true</paintable>
-      <neverBuildable>true</neverBuildable>
-    </building>
-    <comps>
-      <li Class="CompProperties_Forbiddable">
-        <allowNonPlayer>true</allowNonPlayer>
-      </li>
-    </comps>
-    <placeWorkers>
-      <li>PlaceWorker_DoorLearnOpeningSpeed</li>
-    </placeWorkers>
-    <uiOrder>1</uiOrder>
-  </ThingDef>
-
-  <ThingDef ParentName="DMS_BaseRollingDoor">
-    <defName>DMS_RollingDoor_Double</defName>
-    <graphicData>
-      <drawSize>(2,1)</drawSize>
-    </graphicData>
-    <size>(2,1)</size>
-    <uiOrder>2</uiOrder>
-  </ThingDef>
-
-  <ThingDef ParentName="DMS_BaseRollingDoor">
-    <defName>DMS_RollingDoor_Triple</defName>
-    <graphicData>
-      <drawSize>(3,1)</drawSize>
-    </graphicData>
-    <size>(3,1)</size>
-    <uiOrder>3</uiOrder>
-  </ThingDef>
-
-  <ThingDef ParentName="DMS_BaseRollingDoor">
-    <defName>DMS_RollingDoor_Quadruple</defName>
-    <graphicData>
-      <drawSize>(4,1)</drawSize>
-    </graphicData>
-    <size>(4,1)</size>
-    <uiOrder>4</uiOrder>
-  </ThingDef>
-
+  
+  <!-- ThermalBreacher -->
   <ThingDef ParentName="BuildingBase">
-    <defName>DMS_LogisticContainer</defName>
-    <label>logistic container</label>
-    <thingClass>Fortified.Building_ListedContainer</thingClass>
-    <description>A Standard issue cargo container containing supplies for military logistics.</description>
-    <rotatable>false</rotatable>
-    <tickerType>Normal</tickerType>
-    <graphicData>
-      <graphicClass>Graphic_Single</graphicClass>
-      <texPath>Things/Building/DMS_LogisticContainer</texPath>
-      <drawSize>(2.5,2.5)</drawSize>
-    </graphicData>
-    <fillPercent>0.5</fillPercent>
-    <costList>
-      <Tungsteel>40</Tungsteel>
-    </costList>
-    <rotatable>false</rotatable>
-    <statBases>
-      <MaxHitPoints>1000</MaxHitPoints>
-    </statBases>
-    <building>
-      <expandHomeArea>false</expandHomeArea>
-      <claimable>true</claimable>
-      <deconstructible>false</deconstructible>
-      <paintable>false</paintable>
-      <neverBuildable>true</neverBuildable>
-    </building>
-    <pathCost>90</pathCost>
-    <size>(2,2)</size>
-    <defaultPlacingRot>0</defaultPlacingRot>
-    <designationCategory>FFF_DevCategory</designationCategory>
-    <noRightClickDraftAttack>true</noRightClickDraftAttack>
-    <inspectorTabs>
-      <li>Fortified.ITab_Contents</li>
-    </inspectorTabs>
-    <comps>
-      <li Class="Fortified.CompProperties_ListedContainer">
-        <lootMaker>DMS_LogisticTerminal</lootMaker>
-        <!-- Interactable -->
-        <activeTicks>1</activeTicks>
-        <ticksToActivate>180</ticksToActivate>
-        <jobString>unlock container</jobString>
-        <activateLabelString>Unlock container...</activateLabelString>
-        <activateDescString>Unlock container.</activateDescString>
-        <activateTexPath>UI/Commands/DMS_UnlockContainer</activateTexPath>
-        <activatingString>unlocking {0}: {1}s</activatingString>
-        <targetingParameters>
-          <canTargetBuildings>false</canTargetBuildings>
-          <canTargetAnimals>false</canTargetAnimals>
-          <canTargetMechs>false</canTargetMechs>
-          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
-        </targetingParameters>
-      </li>
-    </comps>
-  </ThingDef>
-
-  <ThingDef ParentName="BuildingBase" Name="DMS_LogisticTerminalBuildingBase">
-    <defName>DMS_LogisticTerminal</defName>
-    <label>logistic terminal</label>
-    <description>Logistic terminal linked to cargo line below.</description>
-    <thingClass>Fortified.Building_LogisticTerminal</thingClass>
-    <uiIconPath>Things/Building/DMS_LogisticTerminal/DMS_LogisticTerminal_Icon</uiIconPath>
-    <graphicData>
-      <graphicClass>Graphic_Single</graphicClass>
-      <texPath>Things/Building/DMS_LogisticTerminal/DMS_LogisticTerminal</texPath>
-      <drawOffset>(0,0,0)</drawOffset>
-      <drawSize>(5,5)</drawSize>
-    </graphicData>
-    <size>(4,4)</size>
-    <category>Building</category>
-    <altitudeLayer>FloorEmplacement</altitudeLayer>
-    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
-    <fillPercent>0.1</fillPercent>
-    <useHitPoints>false</useHitPoints>
-    <statBases>
-      <Flammability>0</Flammability>
-    </statBases>
-    <selectable>true</selectable>
-    <tickerType>Normal</tickerType>
-    <rotatable>false</rotatable>
-    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <holdsRoof>true</holdsRoof>
-    <blockLight>false</blockLight>
-    <drawerType>RealtimeOnly</drawerType>
-    <passability>Impassable</passability>
-    <designationCategory>FFF_DevCategory</designationCategory>
-    <building>
-      <isInert>true</isInert>
-      <canPlaceOverWall>true</canPlaceOverWall>
-      <ai_chillDestination>true</ai_chillDestination>
-      <paintable>false</paintable>
-      <!-- <targetable>false</targetable> -->
-      <neverBuildable>true</neverBuildable>
-    </building>
-    <noRightClickDraftAttack>true</noRightClickDraftAttack>
-    <inspectorTabs>
-      <li>Fortified.ITab_Contents</li>
-    </inspectorTabs>
-    <comps>
-      <li Class="Fortified.CompProperties_LogisticTerminal">
-        <lootMaker>DMS_LogisticTerminal</lootMaker>
-        <ticksTillArrivalRange>5000~10000</ticksTillArrivalRange>
-        <lootPortionsRange>2~4</lootPortionsRange>
-        <noLootLeftReport>No supply left</noLootLeftReport>
-        <noLootLeftMessage>Logistic terminal has no supply left!</noLootLeftMessage>
-        <cartArrivedMessage>Logistic terminal cart arrived!</cartArrivedMessage>
-        <!-- Interactable -->
-        <activeTicks>1</activeTicks>
-        <ticksToActivate>180</ticksToActivate>
-        <jobString>activate terminal</jobString>
-        <activateLabelString>Activate terminal...</activateLabelString>
-        <activateDescString>Activate terminal.</activateDescString>
-        <activateTexPath>UI/Commands/DMS_ActivateLogisticTerminal</activateTexPath>
-        <activatingString>activating {0}: {1}s</activatingString>
-        <targetingParameters>
-          <canTargetBuildings>false</canTargetBuildings>
-          <canTargetAnimals>false</canTargetAnimals>
-          <canTargetMechs>false</canTargetMechs>
-          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
-        </targetingParameters>
-      </li>
-    </comps>
-  </ThingDef>
-
-  <ThingDef ParentName="BuildingBase" Name="DMS_HoleBase" Abstract="True">
-    <label>facility dormer</label>
-    <description>A structure flooring with a opened hole, commonly found in underground facilities.</description>
-    <graphicData>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(7,7)</drawSize>
-      <drawOffset>(0,0,0)</drawOffset>
-    </graphicData>
+    <defName>DMS_ThermalBreacher</defName>
+    <label>Thermal breach</label>
+    <description>一次性定向熱蝕裝置，專為突破重型安全門、防爆閘門以及反器材使用設計。
+      啟動後會產生劇烈的高溫金屬熱流，並透過聚焦噴口將能量集中於接觸點。數秒內即可在大多數工業級合金表面形成熔蝕通道。\n\n由於反應過程極不穩定，裝置僅能使用一次。操作員必須在部署後立即撤離安全距離，以避免高溫飛濺物與蒸發金屬造成傷害。</description>
     <thingClass>Building</thingClass>
     <category>Building</category>
-    <fillPercent>0</fillPercent>
-    <rotatable>false</rotatable>
-    <passability>Impassable</passability>
-    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
-    <size>(5,5)</size>
-    <useHitPoints>false</useHitPoints>
-    <selectable>true</selectable>
-    <holdsRoof>true</holdsRoof>
-    <building>
-      <claimable>false</claimable>
-      <repairable>false</repairable>
-      <neverBuildable>true</neverBuildable>
-      <isTargetable>false</isTargetable>
-      <ai_neverTrashThis>true</ai_neverTrashThis>
-      <deconstructible>false</deconstructible>
-      <alwaysDeconstructible>false</alwaysDeconstructible>
-      <isInert>false</isInert>
-      <quickTargetable>false</quickTargetable>
-      <ai_neverTrashThis>true</ai_neverTrashThis>
-    </building>
+    <graphicData>
+      <texPath>Things/Building/ThermalBreacher</texPath>
+      <drawSize>(1.7,1.7)</drawSize>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <blockWind>false</blockWind>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>true</rotatable>
+    <placeWorkers>
+      <li>Fortified.PlaceWorker_ContinuousDamagerRange</li>
+    </placeWorkers>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <minifiedDrawOffset>(0,0,0.2)</minifiedDrawOffset>
+    <overrideMinifiedRot>North</overrideMinifiedRot>
+    <tickerType>Normal</tickerType>
+    <size>(1,1)</size>
     <statBases>
-      <Flammability>0</Flammability>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>500</WorkToBuild>
+      <Mass>20</Mass>
     </statBases>
+    <costList>
+      <Steel>50</Steel>
+    </costList>
+    <building>
+      <isInert>true</isInert>
+    </building>
+    <comps>
+      <!-- Colonist must walk up and interact to arm the device -->
+      <li Class="RimWorld.CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>FFF_ArmThermiteDevice</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="RimWorld.CompProperties_UseEffect">
+        <compClass>Fortified.CompUseEffect_ActivateContinuousDamager</compClass>
+      </li>
+      <li Class="Fortified.CompProperties_ContinuousDamager">
+        <damageDef>Beam</damageDef>
+        <damageAmount>100</damageAmount>
+        <armorPenetration>0.5</armorPenetration>
+        <range>3</range>
+        <durationTicks>3600</durationTicks>
+        <tickInterval>30</tickInterval>
+        <activateSound>Recipe_Cooking</activateSound>
+        <activeEffecter>FFF_Thermite_ActiveSpray</activeEffecter>
+        <hitEffecter>FFF_Thermite_HitBurst</hitEffecter>
+      </li>
+    </comps>
   </ThingDef>
 
-  <ThingDef ParentName="DMS_HoleBase">
-    <defName>DMS_Hole_7x7Empty</defName>
-    <graphicData>
-      <texPath>Things/Building/DMS_Hole_7x7Empty</texPath>
-      <drawSize>(9,9)</drawSize>
-    </graphicData>
-    <size>(7,7)</size>
-  </ThingDef>
+  <!-- 鋁熱劑持續噴發：附著在 parent，方向指向前方格，模擬高溫金屬流 -->
+  <EffecterDef>
+    <defName>FFF_Thermite_ActiveSpray</defName>
+    <children>
+      <!-- 主體火花：高速窄角，模擬鋁熱劑熔融金屬顆粒 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <moteDef>Mote_SparkThrownFastBright</moteDef>
+        <chancePerTick>0.98</chancePerTick>
+        <scale>0.5~1</scale>
+        <speed>6~18</speed>
+        <angle>-0.1~0.1</angle>
+        <airTime>1~5</airTime>
+        <positionRadius>0.08</positionRadius>
+        <positionLerpFactor>0.99</positionLerpFactor>
+        <burstCount>3~8</burstCount>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <!-- 飛散火花：稍寬角，模擬熔渣四濺 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <moteDef>Mote_SparkThrownFast</moteDef>
+        <chancePerTick>0.9</chancePerTick>
+        <scale>0.5~1</scale>
+        <speed>7~10</speed>
+        <angle>-1~4</angle>
+        <airTime>0.08~1</airTime>
+        <positionRadius>0.2</positionRadius>
+        <positionLerpFactor>0.85</positionLerpFactor>
+        <burstCount>5~10</burstCount>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <!-- 白熱核心光暈：模擬反應點超高溫輻射 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>HeatGlow_Intense</fleckDef>
+        <scale>0.1~0.25</scale>
+        <positionRadius>0.1</positionRadius>
+        <burstCount>1~3</burstCount>
+        <positionLerpFactor>0.7</positionLerpFactor>
+      </li>
+      <!-- 白煙：鋁熱劑反應產生 Al₂O₃ 白色煙霧 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>Smoke</fleckDef>
+        <chancePerTick>0.25</chancePerTick>
+        <scale>0.5~0.9</scale>
+        <speed>0.2~1</speed>
+        <angle>75~105</angle>
+        <absoluteAngle>true</absoluteAngle>
+        <positionRadius>0.15</positionRadius>
+        <positionLerpFactor>0.6</positionLerpFactor>
+      </li>
+    </children>
+  </EffecterDef>
 
-  <ThingDef ParentName="DMS_HoleBase">
-    <defName>DMS_Hole_5x5Empty</defName>
-    <graphicData>
-      <texPath>Things/Building/DMS_Hole_5x5Empty</texPath>
-      <drawSize>(7,7)</drawSize>
-    </graphicData>
-    <size>(5,5)</size>
-  </ThingDef>
-
-  <ThingDef ParentName="DMS_HoleBase">
-    <defName>DMS_Hole_3x3Empty</defName>
-    <graphicData>
-      <texPath>Things/Building/DMS_Hole_3x3Empty</texPath>
-      <drawSize>(5,5)</drawSize>
-    </graphicData>
-    <size>(3,3)</size>
-  </ThingDef>
-
-  <ThingDef ParentName="DMS_HoleBase">
-    <defName>DMS_Hole_3x5Empty</defName>
-    <graphicData>
-      <texPath>Things/Building/DMS_Hole_3x5Empty</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(7,5)</drawSize>
-    </graphicData>
-    <size>(5,3)</size>
-    <rotatable>true</rotatable>
-  </ThingDef>
-
-  <ThingDef ParentName="DMS_HoleBase">
-    <defName>DMS_Hole_3x7Empty</defName>
-    <graphicData>
-      <texPath>Things/Building/DMS_Hole_3x7Empty</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(9,5)</drawSize>
-    </graphicData>
-    <size>(7,3)</size>
-    <rotatable>true</rotatable>
-  </ThingDef>
+  <!-- 鋁熱劑命中持續燃燒：附著在目標格，持續播放熔融金屬濺射 -->
+  <EffecterDef>
+    <defName>FFF_Thermite_HitBurst</defName>
+    <children>
+      <!-- 持續全向高速火花：模擬熔融金屬持續四濺 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <moteDef>Mote_SparkThrownFastBright</moteDef>
+        <chancePerTick>0.85</chancePerTick>
+        <scale>0.14~1</scale>
+        <speed>7~13</speed>
+        <angle>0~360</angle>
+        <airTime>0.08~0.2</airTime>
+        <positionRadius>0.15</positionRadius>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <!-- 持續中速熔渣粒子：填充反應區域密度 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <moteDef>Mote_SparkThrown</moteDef>
+        <!-- <chancePerTick>0.55</chancePerTick> -->
+        <scale>0.18~1</scale>
+        <speed>2.5~5.5</speed>
+        <angle>0~360</angle>
+        <airTime>0.12~0.35</airTime>
+        <positionRadius>0.18</positionRadius>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <!-- 持續閃爍光暈：低機率，間歇性白熱反應 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>YellowSparkFlash</fleckDef>
+        <chancePerTick>0.08</chancePerTick>
+        <scale>0.9~1.4</scale>
+        <positionRadius>0.08</positionRadius>
+      </li>
+      <!-- 持續火焰：低機率，模擬持續燃燒 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>BlastFlame</fleckDef>
+        <chancePerTick>0.9</chancePerTick>
+        <scale>0.4~0.5</scale>
+        <angle>0~360</angle>
+        <positionRadius>0.22</positionRadius>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <!-- 持續白煙：模擬 Al₂O₃ 持續生成 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>SmokeGrowing</fleckDef>
+        <chancePerTick>0.18</chancePerTick>
+        <scale>0.5~0.85</scale>
+        <speed>0.1~0.3</speed>
+        <angle>70~110</angle>
+        <absoluteAngle>true</absoluteAngle>
+        <positionRadius>0.2</positionRadius>
+      </li>
+    </children>
+  </EffecterDef>
 
 </Defs>
