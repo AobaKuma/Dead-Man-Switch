@@ -1,6 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <ThingDef ParentName="BuildingBase" Name="FFF_SubstationCabinet">
+    <defName>DMS_SubstationCabinet</defName>
+    <label>substation cabinet</label>
+    <description>A ruggedised metal cabinet that taps an underground power conduit and distributes electricity to surface equipment. The high-voltage internals make shut-down hazardous – only an operator with solid technical knowledge (Intellectual 8+) can safely cut power; anyone less experienced risks a serious electrical burn. An EMP strike will temporarily disable the cabinet without ongoing danger.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/DistributionBox/building</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <drawOffsetNorth>(0,0,0.275)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,0.275)</drawOffsetSouth>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <rotatable>true</rotatable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <size>(2,1)</size>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+      <WorkToBuild>2500</WorkToBuild>
+      <Mass>35</Mass>
+      <Beauty>-2</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <costList>
+      <Steel>80</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <building>
+      <isInert>false</isInert>
+      <canPlaceOverWall>false</canPlaceOverWall>
+    </building>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <comps>
+      <!-- Power source: negative consumption = generation (3 000 W) -->
+      <li Class="Fortified.CompProperties_SubstationPower">
+        <basePowerConsumption>-3000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+        <safeShutdownSkillLevel>10</safeShutdownSkillLevel>
+        <shockChance>0.45</shockChance>
+        <shockDamageAmount>18</shockDamageAmount>
+      </li>
+      <li Class="CompProperties_Hackable">
+        <defence>2000</defence>
+        <intellectualSkillPrerequisite>8</intellectualSkillPrerequisite>
+        <notHackedInspectString>FFF_Substation_HackPrompt</notHackedInspectString>
+        <hackedInspectString>FFF_Substation_HackedLabel</hackedInspectString>
+        <hackedMessage>FFF_Substation_HackedMsg</hackedMessage>
+      </li>
+      <!-- EMP stunnable – EMP hits temporarily cut power output -->
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+        <useLargeEMPEffecter>true</useLargeEMPEffecter>
+      </li>
+      <!-- Glower while powered -->
+      <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(80,120,255,0)</glowColor>
+      </li>
+    </comps>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <ThingDef ParentName="FFF_SubstationCabinet">
+    <defName>DMS_SubstationCabinet_Wall</defName>
+    <label>wall substation panel</label>
+    <description>A compact substation panel mounted flush against a wall, routing underground power to surface equipment. Like its cabinet counterpart, shutting it down safely requires real technical skill — anyone less experienced risks a severe electrical burn from the exposed high-voltage contacts. Vulnerable to EMP.</description>
+    <graphicData>
+      <texPath>Things/Building/DistributionBox_Wall/building</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <!-- Wall-mounted placement -->
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Standable</passability>
+    <fillPercent>0</fillPercent>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <rotatable>true</rotatable>
+    <size>(1,1)</size>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+      <WorkToBuild>1800</WorkToBuild>
+      <Mass>15</Mass>
+      <Beauty>-1</Beauty>
+    </statBases>
+    <costList>
+      <Steel>45</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <building>
+      <isInert>false</isInert>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <terrainAffordanceNeeded IsNull="True" />
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+
   <!-- Wall lamp -->
   <ThingDef ParentName="LampBase">
     <defName>DMS_EmergencyLamp</defName>
@@ -77,4 +192,5 @@
     <uiIconOffset>(0,0.03)</uiIconOffset>
     <uiIconPath>Things/Building/Furniture/WallLamp/WallLamp_MenuIcon</uiIconPath>
   </ThingDef>
+  
 </Defs>

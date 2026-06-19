@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  
   <ThingDef ParentName="BuildingBase" Name="DMS_BuildingBase" Abstract="True">
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>

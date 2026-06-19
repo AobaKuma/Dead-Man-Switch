@@ -148,4 +148,64 @@
       <Steel>50</Steel>
     </costList>
   </ThingDef>
+
+
+  <!-- FPV 機庫 -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_FPVHangerDestoryed</defName>
+    <label>Destoryed FPV Hanger</label>
+    <description>一個被徹底摧毀的無人機發射艙，已經失去了發射無人機的能力，剩餘的殘骸是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</description>
+    <graphicData>
+      <texPath>Things/Building/Facility_Decoy</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <!-- 1x3裝飾機器 -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_Machine_Medium</defName>
+    <label>facility machine</label>
+    <description>一個不知其作用的機器，其內部零件完整並且依然在運作，將其破壞可以回收一些資源。</description>
+    <graphicData>
+      <texPath>Things/Building/MachineDeco/building_A</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.75</uiIconScale>
+    <staticSunShadowHeight>0.15</staticSunShadowHeight>
+    <fillPercent>0.25</fillPercent>
+    <tickerType>Never</tickerType>
+    <size>(3,1)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+  
+  <!-- 1x3裝飾機器 -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_Eletric_Medium</defName>
+    <label>facility machine</label>
+    <description>一個不知其作用的機器，其內部零件完整並且依然在運作，將其破壞可以回收一些資源。</description>
+    <graphicData>
+      <texPath>Things/Building/MachineDeco/building_B</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.75</uiIconScale>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
+    <tickerType>Never</tickerType>
+    <size>(3,1)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+  </ThingDef>
 </Defs>

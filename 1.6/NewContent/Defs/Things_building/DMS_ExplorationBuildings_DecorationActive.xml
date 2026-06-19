@@ -21,35 +21,50 @@
     <filthLeaving>Filth_MachineBits</filthLeaving>
   </ThingDef>
 
-  <!-- FPV 機庫 -->
+  
+  <!-- 小型通風裝置 -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
-    <defName>DMS_Building_FPVHangerDestoryed</defName>
-    <label>Destoryed FPV Hanger</label>
-    <description>一個被徹底摧毀的無人機發射艙，已經失去了發射無人機的能力，剩餘的殘骸是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</description>
+    <defName>DMS_Building_VentSmall</defName>
+    <label>Active vent</label>
+    <description>一種用於設施內通風與核生化氣體過濾的主動式通風口，透過將設施保持為正壓狀態來避免有害氣體透過氣流在設施內擴散。</description>
     <graphicData>
-      <texPath>Things/Building/Facility_Decoy</texPath>
+      <texPath>Things/Building/ActiveVent_S/building</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(3,3)</drawSize>
+      <drawSize>(3.75,2.25)</drawSize>
     </graphicData>
     <uiIconScale>0.5</uiIconScale>
-    <size>(3,3)</size>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
+    <tickerType>Normal</tickerType>
+    <size>(3,1)</size>
     <costList>
       <Steel>50</Steel>
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
+    <comps>
+      <li Class="Fortified.CompProperties_EffectorRotational">
+        <effecterDef>DMS_AirExhaust_Rotational</effecterDef>
+        <offsetPerRotation>
+          <li>(1, 0, 1.3)</li>   <!-- North -->
+          <li>(1.3, 0, -1)</li>   <!-- East -->
+          <li>(-1, 0, -1.3)</li>  <!-- South -->
+          <li>(-1.3, 0, 0.7)</li>  <!-- West -->
+        </offsetPerRotation>
+      </li>
+    </comps>
   </ThingDef>
 
-  <!-- 小型通風裝置 -->
+  <!-- 中型通風裝置 -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
-    <defName>DMS_Building_VentSmall</defName>
-    <label>Small Vent</label>
-    <description>一種用於設施內溫度與核生化氣體過濾的主動式通風口，透過將設施保持為正壓狀態來避免有害氣體透過氣流在設施內擴散。並排出廢氣。</description>
+    <defName>DMS_Building_VentMedium</defName>
+    <label>Active vent</label>
+    <description>一種用於設施內通風與核生化氣體過濾的主動式通風口，透過將設施保持為正壓狀態來避免有害氣體透過氣流在設施內擴散。</description>
     <graphicData>
-      <texPath>Things/Building/VentSmall/building</texPath>
+      <texPath>Things/Building/ActiveVent_M/building</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(4,2)</drawSize>
+      <drawSize>(3.75,2.25)</drawSize>
     </graphicData>
     <uiIconScale>0.5</uiIconScale>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
     <tickerType>Normal</tickerType>
     <size>(3,1)</size>
     <costList>
@@ -96,6 +111,65 @@
     </children>
   </EffecterDef>
 
+  <!-- 大型通風裝置 -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_VentLarge</defName>
+    <label>Active vent</label>
+    <description>一種用於設施內通風與核生化氣體過濾的主動式通風口，透過將設施保持為正壓狀態來避免有害氣體透過氣流在設施內擴散。</description>
+    <graphicData>
+      <texPath>Things/Building/ActiveVent_L/building</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3.75,2.25)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
+    <tickerType>Normal</tickerType>
+    <size>(3,2)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="Fortified.CompProperties_EffectorRotational">
+        <effecterDef>DMS_AirExhaust_Rotational</effecterDef>
+        <offsetPerRotation>
+          <li>(1, 0, 1.3)</li>   <!-- North -->
+          <li>(1.3, 0, -1)</li>   <!-- East -->
+          <li>(-1, 0, -1.3)</li>  <!-- South -->
+          <li>(-1.3, 0, 0.7)</li>  <!-- West -->
+        </offsetPerRotation>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>DMS_AirExhaust_Rotational</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>AirPuff</fleckDef>
+        <ticksBetweenMotes>30</ticksBetweenMotes>
+        <spawnLocType>OnSource</spawnLocType>
+        <scale>0.5~2</scale>
+        <angle>0~0</angle>
+        <speed>0.09~1</speed>
+        <airTime>0.5</airTime>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>AirPuff</fleckDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <rotationRate>-10~10</rotationRate>
+        <speed>0.09~1</speed>
+        <scale>0.8~2</scale>
+        <chancePerTick>0.08</chancePerTick>
+        <positionOffset>(0,0,0.5)</positionOffset>
+        <airTime>0.1</airTime>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+    </children>
+  </EffecterDef>
 
   <DesignatorDropdownGroupDef>
     <defName>DMS_RollingDoors</defName>
