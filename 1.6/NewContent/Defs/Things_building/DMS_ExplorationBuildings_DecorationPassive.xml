@@ -82,8 +82,6 @@
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>2</drawSize>
     </graphicData>
-    <!-- Wall-mounted placement -->
-    <altitudeLayer>Building</altitudeLayer>
     <passability>Standable</passability>
     <fillPercent>0</fillPercent>
     <blockWind>false</blockWind>

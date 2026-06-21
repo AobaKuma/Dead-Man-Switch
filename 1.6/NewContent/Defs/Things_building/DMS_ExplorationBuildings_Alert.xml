@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  
+
   <ThingDef ParentName="BuildingBase" Name="DMS_BuildingBase" Abstract="True">
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
@@ -22,21 +22,45 @@
     <filthLeaving>Filth_MachineBits</filthLeaving>
   </ThingDef>
 
-  <!-- TODO -->
-
+  <ThingDef Name="DMS_AlertBuildingBase" Abstract="True" ParentName="DMS_BuildingBase">
+    <category>Building</category>
+    <pathCost>50</pathCost>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <receivesSignals>true</receivesSignals>
+    <building>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+    </building>
+    <!-- EMP / Stun 癱瘓（搭配 CompCanBeDormant 停止掃描） -->
+    <comps>
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>EMP</li>
+          <li>Stun</li>
+        </affectedDamageDefs>
+      </li>
+      <li Class="CompProperties_CanBeDormant">
+        <startsDormant>false</startsDormant>
+      </li>
+    </comps>
+  </ThingDef>
 
   <!-- FPV 機庫 -->
-  <ThingDef ParentName="DMS_BuildingBase">
-    <defName>DMS_Building_FPVHanger</defName>
-    <label>FPV Hanger</label>
-    <description>一種用於自動化設施防禦的無人機機庫，能夠在接受到設施中其他傳感器的警報後自動發射FPV無人機驅趕或殺傷入侵者。在受到攻擊時也會釋放無人機迎敵。其下方與設施的地下化物流系統相連，因此每隔一段時間就會自動補充損耗的無人機庫存。</description>
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_FPVNest</defName>
+    <label>FPV Nest</label>
+    <description>一種用於自動化設施防禦的無人機巢，能夠在接受到設施中其他傳感器的警報後自動發射FPV無人機驅趕或殺傷入侵者。在受到攻擊時也會釋放無人機迎敵。其下方與設施的地下化物流系統相連，因此每隔一段時間就會自動補充損耗的無人機庫存。</description>
     <graphicData>
-      <texPath>Things/Building/Facility_Decoy</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/DMS_Building_HangerSmall</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(3,3)</drawSize>
     </graphicData>
     <uiIconScale>0.5</uiIconScale>
-    <size>(3,3)</size>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
     <costList>
       <Steel>50</Steel>
       <ComponentIndustrial>5</ComponentIndustrial>
@@ -44,61 +68,217 @@
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
         <basePowerConsumption>100</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Usable">
-        <useJob>TriggerObject</useJob>
-        <useLabel>Attract geochelone threat</useLabel>
-        <useDuration>900</useDuration>
-        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
+      <li Class="Fortified.CompProperties_AlertEffector_ReleaseEntity">
+        <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
+        <triggerChance>0.6</triggerChance>
+        <oneShot>true</oneShot>
+        <pawnKindDef>Drone_Wasp</pawnKindDef>
+        <countToSpawn>4</countToSpawn>
+        <targetSearchRadius>40</targetSearchRadius>
+        <scatterAroundParent>true</scatterAroundParent>
+        <scatterRadius>3</scatterRadius>
+        <spawnSound>DroneTrapSpring</spawnSound>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- FPV 機庫 -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_FPVHanger</defName>
+    <label>FPV Hanger</label>
+    <description>一種用於自動化設施防禦的無人機機庫，能夠在接受到設施中其他傳感器的警報後自動發射FPV無人機驅趕或殺傷入侵者。在受到攻擊時也會釋放無人機迎敵。其下方與設施的地下化物流系統相連，因此每隔一段時間就會自動補充損耗的無人機庫存。</description>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_HangerLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,5)</drawSize>
+      <drawOffset>(0,0.05,0)</drawOffset>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <staticSunShadowHeight>0.7</staticSunShadowHeight>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <li Class="Fortified.CompProperties_AlertEffector_ReleaseEntity">
+        <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
+        <triggerChance>0.6</triggerChance>
+        <!-- 可重複觸發 -->
+        <oneShot>false</oneShot>
+        <pawnKindDef>Drone_Wasp</pawnKindDef>
+        <countToSpawn>5</countToSpawn>
+        <targetSearchRadius>40</targetSearchRadius>
+        <scatterAroundParent>true</scatterAroundParent>
+        <scatterRadius>3</scatterRadius>
+        <spawnSound>DroneTrapSpring</spawnSound>
       </li>
     </comps>
   </ThingDef>
 
   <!-- 監視器 （每120tick監視5x25的正面空間，受LOS影響，如果有敵對陣營的Pawn出現在範圍內就會觸發警報並進入冷卻時間） -->
-  <ThingDef ParentName="DMS_BuildingBase">
+  <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_Camera</defName>
-    <label>通道監視器</label>
-    <description>安裝在牆壁上的閉路監控攝像頭，其連接著一套自動化的安全系統使其在響起警報後激活設施內的安全措施應急入侵者。</description>
+    <label>camera</label>
+    <description>A surveillance camera that monitors a long, narrow corridor for intruders. Connected to the local alert counter. Cut power or hit it with an EMP to disable it safely before dismantling.</description>
+    <!-- <description>安裝在牆壁上的閉路監控攝像頭，其連接著一套自動化的安全系統使其在偵測到非法闖入者十能夠激活設施內的安全措施迎擊入侵者。</description> -->
     <graphicData>
-      <texPath>Things/Building/Facility_Decoy</texPath>
+      <texPath>Things/Building/camera</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(3,3)</drawSize>
+      <drawSize>(1.5,1.5)</drawSize>
+      <drawOffsetNorth>(0,0,0.5)</drawOffsetNorth>
     </graphicData>
-    <uiIconScale>0.5</uiIconScale>
+    <passability>Standable</passability>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
     <size>(1,1)</size>
     <costList>
       <Steel>50</Steel>
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <building>
+      <isInert>false</isInert>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+      <li>Fortified.PlaceWorker_AlertScanner</li>
+    </placeWorkers>
+    <terrainAffordanceNeeded IsNull="True" />
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
         <basePowerConsumption>100</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Usable">
-        <useJob>TriggerObject</useJob>
-        <useLabel>Attract geochelone threat</useLabel>
-        <useDuration>900</useDuration>
-        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
+      <!-- 掃描器：5 寬 × 21 長矩形，受 LOS 影響 -->
+      <li Class="Fortified.CompProperties_AlertScanner">
+        <scanWidth>5</scanWidth>
+        <scanHeight>21</scanHeight>
+        <requireLOS>true</requireLOS>
+        <scanRotationOffset>2</scanRotationOffset>
+        <checkInterval>250</checkInterval>
+        <rearmInterval>2500</rearmInterval>
+        <attackTriggerChance>0.6</attackTriggerChance>
+        <triggerCountdown>60</triggerCountdown>
+        <alertIncrement>20</alertIncrement>
+        <watchingEffecter>FFF_Scanner_Idle</watchingEffecter>      <!-- 正常掃描中（藍光閃爍） -->
+        <detectionEffecter>FFF_Scanner_Alert</detectionEffecter>   <!-- 偵測到威脅（紅光警報） -->
+        <triggerEffector>FFF_Scanner_Trigger</triggerEffector>
+        <signalString>FFF_AlertScanner_Triggered</signalString>
       </li>
     </comps>
   </ThingDef>
 
   <!-- 震動傳感器 （每300Tick監視5x5範圍內的全方向，不受LOS影響，相機靠近的時候有音效，敵對陣營的PAWN在範圍內會有體型x10%的機率觸發警報，並進入冷卻時間，期間間歇閃紅燈） -->
-  <ThingDef ParentName="DMS_BuildingBase">
+  <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_Sensor</defName>
-    <label>震動傳感器</label>
+    <label>seismic sensor</label>
     <description>一種安裝在各類管道及次要通道的被動傳感器，越大的東西進入其範圍內就越容易引起警報。</description>
     <graphicData>
       <texPath>Things/Building/Facility_Decoy</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
     </graphicData>
     <uiIconScale>0.5</uiIconScale>
     <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <placeWorkers>
+      <li>Fortified.PlaceWorker_AlertScanner</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <li Class="Fortified.CompProperties_AlertScanner">
+        <radius>2.9</radius>
+        <requireLOS>false</requireLOS>
+        <checkInterval>250</checkInterval>
+        <rearmInterval>3000</rearmInterval>
+        <attackTriggerChance>0.4</attackTriggerChance>
+        <triggerCountdown>30</triggerCountdown>
+        <alertIncrement>15</alertIncrement>
+        <signalString>FFF_AlertScanner_Triggered</signalString>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+  <!-- 大型無人哨塔 （每300Tick監視半徑30格LOS範圍內的Pawn） -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_Scanner_Large</defName>
+    <label>大型無人哨塔</label>
+    <!-- 一種長期自持運行的無人警戒平台，具有多種類型的傳感器來監控大片範圍內的可疑活動。一旦被驚動到就會廣播警報訊號來讓周圍的自動化防禦設施啟動迎敵。 -->
+    <description>A tall observation tower with automated sensors. Detects hostiles within a wide radius. Disable with EMP or power cut before attempting to dismantle.</description>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_ScannerLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,7)</drawSize>
+      <drawOffset>(0,0,2)</drawOffset>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <placeWorkers>
+      <li>Fortified.PlaceWorker_AlertScanner</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <!-- 掃描器：半徑 14 圓形，受 LOS 影響 -->
+      <li Class="Fortified.CompProperties_AlertScanner">
+        <radius>14</radius>
+        <requireLOS>true</requireLOS>
+        <checkInterval>250</checkInterval>
+        <rearmInterval>1800</rearmInterval>
+        <attackTriggerChance>0.7</attackTriggerChance>
+        <triggerCountdown>0</triggerCountdown>
+        <alertIncrement>25</alertIncrement>
+        <signalString>FFF_AlertScanner_Triggered</signalString>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 大型無人哨塔 （每300Tick監視半徑30格LOS範圍內的Pawn） -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_Scanner_Small</defName>
+    <label>小型無人哨塔</label>
+    <description>一種無須電力長期運行的無人警戒平台，具有多種類型的傳感器來監控大片範圍內的可疑活動。一旦有入侵者闖入範圍就會廣播警報使自動化防禦設施啟動迎敵。</description>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_ScannerSmall</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+    </statBases>
     <costList>
       <Steel>50</Steel>
       <ComponentIndustrial>5</ComponentIndustrial>
@@ -106,41 +286,22 @@
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>100</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Usable">
-        <useJob>TriggerObject</useJob>
-        <useLabel>Attract geochelone threat</useLabel>
-        <useDuration>900</useDuration>
-        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
-      </li>
-    </comps>
-  </ThingDef>
-
-  
-  <!-- 大型無人哨塔 （每300Tick監視半徑30格LOS範圍內的Pawn） -->
-  <ThingDef ParentName="DMS_BuildingBase">
-    <defName>DMS_Building_Scanner_Large</defName>
-    <label>大型無人哨塔</label>
-    <description>一種長期自持運行的無人警戒平台，具有多種類型的傳感器來監控大片範圍內的可疑活動。一旦被驚動到就會廣播警報訊號來讓周圍的自動化防禦設施啟動迎敵。</description>
-    <graphicData>
-      <texPath>Things/Building/Facility_Decoy</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(8,8)</drawSize>
-    </graphicData>
-    <uiIconScale>0.5</uiIconScale>
-    <size>(3,3)</size>
-    <costList>
-      <Steel>50</Steel>
-      <ComponentIndustrial>5</ComponentIndustrial>
-    </costList>
-    <comps>
-      <li Class="CompProperties_Usable">
-        <useJob>TriggerObject</useJob>
-        <useLabel>Attract geochelone threat</useLabel>
-        <useDuration>900</useDuration>
-        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
+      <!-- 掃描器：半徑 4 圓形，受 LOS 影響 -->
+      <li Class="Fortified.CompProperties_AlertScanner">
+        <radius>4.9</radius>
+        <requireLOS>true</requireLOS>
+        <checkInterval>250</checkInterval>
+        <rearmInterval>1800</rearmInterval>
+        <attackTriggerChance>0.7</attackTriggerChance>
+        <triggerCountdown>0</triggerCountdown>
+        <alertIncrement>10</alertIncrement>
+        <watchingEffecter>FFF_Scanner_Idle</watchingEffecter>      <!-- 正常掃描中（藍光閃爍） -->
+        <detectionEffecter>FFF_Scanner_Alert</detectionEffecter>   <!-- 偵測到威脅（紅光警報） -->
+        <triggerEffector>FFF_Scanner_Trigger</triggerEffector>
+        <signalString>FFF_AlertScanner_Triggered</signalString>
       </li>
     </comps>
   </ThingDef>
