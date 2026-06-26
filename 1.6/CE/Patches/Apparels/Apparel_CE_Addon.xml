@@ -25,7 +25,7 @@
 							<consumeFuelPerShot>1</consumeFuelPerShot>
 							<targetable>true</targetable>
 							<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
-							<ai_IsWeapon>true</ai_IsWeapon>
+							<ai_IsWeapon>false</ai_IsWeapon>
 							<targetParams>
 								<canTargetLocations>true</canTargetLocations>
 								<canTargetBuildings>true</canTargetBuildings>
