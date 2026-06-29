@@ -20,7 +20,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>400</count>
+        <count>600</count>
       </li>
       <li>
         <filter>
@@ -28,7 +28,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>15</count>
       </li>
       <li>
         <filter>
@@ -36,7 +36,7 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>3</count>
       </li>
     </ingredients>
   </RecipeDef>
@@ -228,7 +228,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>300</count>
       </li>
       <li>
         <filter>
@@ -237,7 +237,7 @@
             <li>Polyester</li>
           </thingDefs>
         </filter>
-        <count>15</count>
+        <count>25</count>
       </li>
       <li>
         <filter>
@@ -245,7 +245,7 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>1</count>
+        <count>2</count>
       </li>
       <li>
         <filter>
@@ -253,7 +253,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>4</count>
+        <count>6</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>

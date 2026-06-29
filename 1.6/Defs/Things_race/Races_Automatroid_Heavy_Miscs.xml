@@ -135,6 +135,20 @@
         <disarmedByEmpForTicks>3000</disarmedByEmpForTicks>
         <gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
       </li>
+      <!-- 移動時碾壓建築：寄居蟹是工業重機，龐大外殼可輾過輕型障礙，但非戰鬥特化故傷害最低 -->
+      <li Class="Fortified.CompProperties_TrampleBuildings">
+        <radiusMode>BodySize</radiusMode>
+        <bodySizeFactor>0.45</bodySizeFactor>  <!-- 半徑 ≈ 1.35格 -->
+        <damageAmount>35</damageAmount>
+        <armorPenetration>0.5</armorPenetration>
+        <crushItems>false</crushItems>
+      </li>
+      <!-- 近距離恐慌光環：巨型工業機的壓迫感，但非戰鬥機械故效果最弱 -->
+      <li Class="Fortified.CompProperties_CausePanicInRange">
+        <range>4</range>
+        <tickInterval>400</tickInterval>       <!-- 每~6.7秒掃描一次 -->
+        <chancePerScan>0.07</chancePerScan>
+      </li>
     </comps>
     <butcherProducts>
       <DMS_ChunkSlag>3</DMS_ChunkSlag>

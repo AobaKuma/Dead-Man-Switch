@@ -35,16 +35,19 @@
       </detritusLeavings>
     </race>
     <comps>
-      <li Class="DMS.CompProperties_PanicAura">
-        <!-- Radius in cells -->
-        <radius>5</radius>
-        <!-- Pulse every 300 ticks (≈5 seconds) -->
-        <intervalTicks>300</intervalTicks>
-        <!-- 15 % chance per enemy pawn per pulse -->
-        <panicChance>0.15</panicChance>
-        <maxAffectedBodySize>1.5</maxAffectedBodySize>
-        <!-- Set to true to show countdown in inspect panel -->
-        <showInspectString>false</showInspectString>
+      <!-- 移動時碾壓建築：霸王龍巨型雙足踩踏，頂級戰鬥機兵的最強碾壓 -->
+      <li Class="Fortified.CompProperties_TrampleBuildings">
+        <radiusMode>BodySize</radiusMode>
+        <bodySizeFactor>0.5</bodySizeFactor>   <!-- 半徑 ≈ 1.75格 -->
+        <damageAmount>90</damageAmount>
+        <armorPenetration>0.8</armorPenetration>
+        <crushItems>false</crushItems>
+      </li>
+      <!-- 近距離恐慌光環：替換原 DMS.CompProperties_PanicAura，使用 Fortified 統一版本並強化數值 -->
+      <li Class="Fortified.CompProperties_CausePanicInRange">
+        <range>9</range>
+        <tickInterval>200</tickInterval>       <!-- 每~3.3秒掃描一次，最頻繁 -->
+        <chancePerScan>0.25</chancePerScan>
       </li>
       <li Class="Fortified.CompProperties_VehicleWeapon">
         <drawData>

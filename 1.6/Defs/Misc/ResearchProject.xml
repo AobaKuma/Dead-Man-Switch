@@ -313,6 +313,10 @@
         <li>subject_gerund->investigating hidden truth the Colonial Fleet tried hard to conceal behind this technology</li>
       </rulesStrings>
     </generalRules>
+    <techprintCount>2</techprintCount>
+    <heldByFactionCategoryTags>
+      <li>DMS</li>
+    </heldByFactionCategoryTags>
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech">
