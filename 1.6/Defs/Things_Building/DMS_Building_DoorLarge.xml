@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 重型大門 使用Fortified.CompBuildingMover驅動的滑軌感應門 授權陣營可通行 非授權則被物理阻擋 -->
+  <ThingDef ParentName="BuildingBase" Name="DMS_LargeDoor">
+    <defName>DMS_Building_DoorLarge</defName>
+    <label>heavy blast door</label>
+    <description>A reinforced heavy door built for military installations. It slides open along its track to let authorized personnel pass, and seals shut to block unauthorized intruders.</description>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/DMS_Building_DoorLarge/building</texPath>
+      <drawSize>(6,3)</drawSize>
+      <drawOffset>(0,0.2,0)</drawOffset>
+    </graphicData>
+    <uiIconPath>Things/Building/DMS_Building_DoorLarge/icon</uiIconPath>
+    <size>(4,2)</size>
+    <category>Building</category>
+    <altitudeLayer>DoorMoveable</altitudeLayer>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MaxHitPoints>20000</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Mass>200</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Steel>150</Steel>
+      <Tungsteel>60</Tungsteel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <killedLeavings>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+    </killedLeavings>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <rotatable>true</rotatable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <holdsRoof>true</holdsRoof>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <blockWind>true</blockWind>
+    <drawerType>RealtimeOnly</drawerType>
+    <receivesSignals>false</receivesSignals>
+    <building>
+      <isInert>true</isInert>
+      <canPlaceOverWall>true</canPlaceOverWall>
+      <ai_chillDestination>false</ai_chillDestination>
+      <paintable>true</paintable>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <comps>
+      <li Class="CompProperties_Forbiddable">
+        <allowNonPlayer>true</allowNonPlayer>
+      </li>
+      <li Class="Fortified.CompProperties_BuildingMover">
+        <!-- 觸發方式 僅授權pawn靠近自動讓路 不提供玩家手動按鈕 -->
+        <allowGizmo>false</allowGizmo>
+        <allowSignal>false</allowSignal>
+        <allowProximity>false</allowProximity>
+        <!-- 移動方式 沿軌道平滑滑動 -->
+        <moveMode>Slide</moveMode>
+        <!-- 沿建築朝向左右兩側滑入牆體 -->
+        <axis>FacingSides</axis>
+        <!-- 大門依size(2,4)長邊滑動 一次滑開整個門扇寬度 -->
+        <moveDistance>4</moveDistance>
+        <slideCellsPerTick>0.06</slideCellsPerTick>
+        <!-- 感應門設定 -->
+        <sensorDoor>true</sensorDoor>
+        <sensorDoorAxis>FacingSides</sensorDoorAxis>
+        <sensorDoorDistance>4</sensorDoorDistance>
+        <sensorDoorOpenTicks>90</sensorDoorOpenTicks>
+        <sensorDoorAutoClose>true</sensorDoorAutoClose>
+        <sensorDoorCloseDelay>120</sensorDoorCloseDelay>
+        <sensorDoorCheckFaction>true</sensorDoorCheckFaction>
+        <sensorDoorPathCost>50</sensorDoorPathCost>
+        <sensorDoorWaitCostPerCell>12</sensorDoorWaitCostPerCell>
+        <sensorDoorAllowManual>false</sensorDoorAllowManual>
+        <moveSound>Door_OpenPowered</moveSound>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_DoorLearnOpeningSpeed</li>
+    </placeWorkers>
+  </ThingDef>
+  
+  <ThingDef ParentName="DMS_LargeDoor">
+    <defName>DMS_Building_DoorLarge_Mirrored</defName>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_DoorLarge_Mirrored/building</texPath>
+    </graphicData>
+    <uiIconPath>Things/Building/DMS_Building_DoorLarge_Mirrored/icon</uiIconPath>
+  </ThingDef>
+
+</Defs>

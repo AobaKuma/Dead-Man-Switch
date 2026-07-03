@@ -140,6 +140,9 @@
     <overrideMinifiedRot>North</overrideMinifiedRot>
     <tickerType>Normal</tickerType>
     <size>(1,1)</size>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <Flammability>0.5</Flammability>
