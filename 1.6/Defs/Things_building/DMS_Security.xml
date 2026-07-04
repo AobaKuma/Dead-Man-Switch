@@ -101,6 +101,9 @@
     <uiIconPath>Things/Turrets/DMS_SentryTurret</uiIconPath>
     <uiIconScale>1.25</uiIconScale>
         <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
   </ThingDef>
 
   <!-- <ThingDef ParentName="DMS_BaseCannonBuilding">
