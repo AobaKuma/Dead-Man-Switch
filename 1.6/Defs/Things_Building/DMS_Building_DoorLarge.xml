@@ -81,6 +81,9 @@
         <sensorDoorWaitCostPerCell>12</sensorDoorWaitCostPerCell>
         <sensorDoorAllowManual>false</sensorDoorAllowManual>
         <moveSound>Door_OpenPowered</moveSound>
+        <slideFleckDef>DustPuff</slideFleckDef>
+        <slideFleckIntervalTicks>4</slideFleckIntervalTicks>
+        <slideFleckScale>1.8</slideFleckScale>
       </li>
     </comps>
     <placeWorkers>
