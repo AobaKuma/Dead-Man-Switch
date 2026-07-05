@@ -262,7 +262,7 @@
       <li>MicroelectronicsBasics</li>
       <li>DMS_MechBasis</li>
     </prerequisites>
-    <researchViewX>4.00</researchViewX>
+    <researchViewX>5.00</researchViewX>
     <researchViewY>3.20</researchViewY>
     <generalRules>
       <rulesStrings>
@@ -417,7 +417,7 @@
     <prerequisites>
       <li>DMS_DeadMansSwitch</li>
     </prerequisites>
-    <researchViewX>5.00</researchViewX>
+    <researchViewX>6.00</researchViewX>
     <researchViewY>2.80</researchViewY>
   </ResearchProjectDef>
 
@@ -431,7 +431,7 @@
       <li>DMS_DeadMansSwitch</li>
       <li>DMS_Artifuscle</li>
     </prerequisites>
-    <researchViewX>5.00</researchViewX>
+    <researchViewX>6.00</researchViewX>
     <researchViewY>1.20</researchViewY>
     <requiredAnalyzed>
       <li>Artifuscle</li>
@@ -447,7 +447,7 @@
     <prerequisites>
       <li>DMS_Hybrid</li>
     </prerequisites>
-    <researchViewX>6.00</researchViewX>
+    <researchViewX>7.00</researchViewX>
     <researchViewY>0.50</researchViewY>
   </ResearchProjectDef>
 
@@ -461,7 +461,7 @@
       <li>DMS_Bionics</li>
       <li>SterileMaterials</li>
     </prerequisites>
-    <researchViewX>7.00</researchViewX>
+    <researchViewX>8.00</researchViewX>
     <researchViewY>0.50</researchViewY>
   </ResearchProjectDef>
 
@@ -527,8 +527,8 @@
     <prerequisites>
       <li>DMS_DeadMansSwitch</li>
     </prerequisites>
-    <researchViewX>5.00</researchViewX>
-    <researchViewY>1.90</researchViewY>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
     <techprintCount>2</techprintCount>
     <heldByFactionCategoryTags>
       <li>DMS</li>
@@ -546,8 +546,8 @@
     <prerequisites>
       <li>DMS_HumanoidEngineering</li>
     </prerequisites>
-    <researchViewX>6.00</researchViewX>
-    <researchViewY>1.90</researchViewY>
+    <researchViewX>7.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
     <techprintCount>3</techprintCount>
     <heldByFactionCategoryTags>
       <li>DMS</li>

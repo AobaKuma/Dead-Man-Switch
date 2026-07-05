@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <Fortified.RaidWaveDef>
+    <defName>DMS_RaidWave_PeacekeepingOperators</defName>
+    <factionDef>DMS_Legacy</factionDef>
+    <repeatWaveStartIndex>2</repeatWaveStartIndex>
+    <waves>
+      <li>
+        <pawns>
+          <DMS_Mech_Ronin>1</DMS_Mech_Ronin>
+          <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
+          <DMS_Mech_Falcon>4</DMS_Mech_Falcon>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_Protector>1</DMS_Mech_Protector>
+          <DMS_Mech_Ronin>4</DMS_Mech_Ronin>
+          <DMS_Mech_Falcon>6</DMS_Mech_Falcon>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_Protector>2</DMS_Mech_Protector>
+          <DMS_Mech_Ronin>6</DMS_Mech_Ronin>
+          <DMS_Mech_Falcon>9</DMS_Mech_Falcon>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_Protector>3</DMS_Mech_Protector>
+          <DMS_Mech_Ronin>8</DMS_Mech_Ronin>
+          <DMS_Mech_Falcon>12</DMS_Mech_Falcon>
+        </pawns>
+      </li>
+    </waves>
+  </Fortified.RaidWaveDef>
+</Defs>
