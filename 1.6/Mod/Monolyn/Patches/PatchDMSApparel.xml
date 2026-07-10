@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="MNRace"]/alienRace/graphicPaths/apparel/individualPaths</xpath>
+                <value>
+                    <li>
+                        <key>DMS_Apparel_UnitSuit</key>
+                        <value>Monolyn/UnitSuit/Apparel</value>
+                    </li>
+                    <li>
+                        <key>DMS_Apparel_TacticalVest</key>
+                        <value>Monolyn/TacticalVest/Apparel</value>
+                    </li>
+                    <li>
+                        <key>DMS_Apparel_BionicSuit</key>
+                        <value>Monolyn/BionicSuit/Apparel</value>
+                    </li>
+                    <li>
+                        <key>DMS_Apparel_GarrisonCoat</key>
+                        <value>Monolyn/GarrisonCoat/Apparel</value>
+                    </li>
+                    <li>
+                        <key>DMS_Apparel_HazardSuit</key>
+                        <value>Monolyn/HazardSuit/Apparel</value>
+                    </li>
+                    <li>
+                        <key>DMS_Apparel_PowerSkeleton</key>
+                        <value>Monolyn/ExoSkeleton/Apparel</value>
+                    </li>
+                    
+                    <li>
+                        <key>DMS_Apparel_TacticalHelmet</key>
+                        <value>Monolyn/PASGT/Helmet</value>
+                    </li>
+                    <li>
+                        <key>DMS_Apparel_ArmyCap</key>
+                        <value>Monolyn/ArmyCap/headgear</value>
+                    </li>
+                    <li>
+                        <key>DMS_Apparel_Beret</key>
+                        <value>Monolyn/Beret/headgear</value>
+                    </li>
+                    <li>
+                        <key>DMS_Apparel_StealthMask</key>
+                        <value>Monolyn/StealthMask/headgear</value>
+                    </li>
+                    <li>
+                        <key>DMS_Apparel_GarrisonCap</key>
+                        <value>Monolyn/GarrisonCap/headgear</value>
+                    </li>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>
