@@ -132,10 +132,10 @@
       <li Class="Fortified.CompProperties_PowerWithInternalBattery">
         <basePowerConsumption>30</basePowerConsumption>   <!-- W consumed while on     -->
         <chargeRateWatts>15</chargeRateWatts>              <!-- extra W used to charge  -->
-        <internalBatteryMax>30</internalBatteryMax>        <!-- Wd cap  (≈ 0.5 days)   -->
+        <internalBatteryMax>60</internalBatteryMax>        <!-- Wd cap  (≈ 0.5 days)   -->
       </li>
       <li Class="Fortified.CompProperties_PowerColorSwitch">
-        <gridColor>100,100,100,0</gridColor>
+        <gridColor>(100,100,100,0)</gridColor>
         <batteryColor>(200,0,0,0)</batteryColor>
       </li>
       <li Class="CompProperties_Glower">
@@ -190,5 +190,5 @@
     <uiIconOffset>(0,0.03)</uiIconOffset>
     <uiIconPath>Things/Building/Furniture/WallLamp/WallLamp_MenuIcon</uiIconPath>
   </ThingDef>
-  
+
 </Defs>

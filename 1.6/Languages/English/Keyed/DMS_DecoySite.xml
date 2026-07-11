@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_DecoySite_AlreadyActive>a relay-station operation is already underway</DMS_DecoySite_AlreadyActive>
+  <DMS_DecoySite_CannotFindSite>Unable to locate a relay station: no valid site could be found on the world map.</DMS_DecoySite_CannotFindSite>
+
+  <DMS_DecoySite_ExpiredLabel>Relay station lost</DMS_DecoySite_ExpiredLabel>
+  <DMS_DecoySite_ExpiredText>The remnant relay station's transmission window has closed. The station has relocated and its position is lost.</DMS_DecoySite_ExpiredText>
+
+  <DMS_DecoySite_ClearedLabel>Relay station secured</DMS_DecoySite_ClearedLabel>
+  <DMS_DecoySite_ClearedText>All hostiles at the remnant relay station have been neutralized. The site's equipment — including the decoy antenna — is yours to use, but expect the remnants to keep probing the area.</DMS_DecoySite_ClearedText>
+
+  <DMS_DecoySite_EntryCountdownLabel>Hostile site: reinforcements inbound</DMS_DecoySite_EntryCountdownLabel>
+  <DMS_DecoySite_EntryCountdownText>You have entered a hostile remnant installation. Its monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Finish your business and get out — or dig in.</DMS_DecoySite_EntryCountdownText>
+</LanguageData>

@@ -156,15 +156,32 @@
     <label>Destoryed FPV Hanger</label>
     <description>一個被徹底摧毀的無人機發射艙，已經失去了發射無人機的能力，剩餘的殘骸是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</description>
     <graphicData>
-      <texPath>Things/Building/Facility_Decoy</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(3,3)</drawSize>
+      <texPath>Things/Building/Ruin_Misc/DMS_Building_HangerLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,5)</drawSize>
+      <drawOffset>(0,0.05,0)</drawOffset>
     </graphicData>
     <uiIconScale>0.5</uiIconScale>
     <size>(3,3)</size>
     <costList>
       <Steel>50</Steel>
       <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+  <!-- FPV 機庫 -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_FPVNestDestoryed</defName>
+    <label>Destoryed FPV Nest</label>
+    <description>一個被徹底摧毀的無人機發射巢，已經失去了發射無人機的能力，剩餘的殘骸是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Misc/DMS_Building_HangerSmall</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>50</Steel>
     </costList>
   </ThingDef>
 
@@ -185,10 +202,9 @@
     <size>(3,1)</size>
     <costList>
       <Steel>50</Steel>
-      <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
   </ThingDef>
-  
+
   <!-- 1x3裝飾機器 -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_Eletric_Medium</defName>
@@ -203,6 +219,50 @@
     <staticSunShadowHeight>0.35</staticSunShadowHeight>
     <tickerType>Never</tickerType>
     <size>(3,1)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <!-- 大型無人哨塔（無功能裝飾變體） -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_Scanner_LargeDestoryed</defName>
+    <label>disabled large sentry tower</label>
+    <description>一座早已停止運作的大型無人警戒平台，其傳感器陣列已徹底損毀，無法再偵測或廣播警報。剩餘的塔體結構是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Misc/DMS_Building_ScannerLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,7)</drawSize>
+      <drawOffset>(0,0,2)</drawOffset>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <!-- 小型無人哨塔（無功能裝飾變體） -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_Scanner_SmallDestoryed</defName>
+    <label>disabled small sentry tower</label>
+    <description>一座早已停止運作的小型無人警戒平台，其傳感器已徹底損毀，無法再偵測或廣播警報。剩餘的殘骸是個堪用的掩體，能夠回收少量的金屬碎片。</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Misc/DMS_Building_ScannerSmall</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+    </statBases>
     <costList>
       <Steel>50</Steel>
       <ComponentIndustrial>5</ComponentIndustrial>

@@ -264,7 +264,7 @@
     </comps>
   </ThingDef>
 
-  <!-- 大型無人哨塔 （每300Tick監視半徑30格LOS範圍內的Pawn） -->
+  <!-- 小型無人哨塔 （每250Tick監視半徑5格LOS範圍內的Pawn） -->
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_Scanner_Small</defName>
     <label>小型無人哨塔</label>

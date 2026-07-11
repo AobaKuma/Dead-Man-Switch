@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    誘餌站點任務鏈：
+    使用維和信標（DMS_RaidWaveBeacon_PeacekeepingOperators）後，除了呼叫 RaidWave，
+    還會定位出一座殘黨中繼站點（限時任務，難度越高期限越短）。
+    前往站點後由 IFFF 生成結構、散落物與 Boss 召喚器（DMS_DecoyRadio）；
+    由於是敵對站點，進入地圖後會開始增援倒數，逾時將引來敵方增援。
+
+    Decoy-site quest chain: using the peacekeeping beacon also locates a remnant
+    relay site (time-limited quest; harder difficulty = shorter window). The site
+    map is generated through IFFF with structures, scattered debris and the boss
+    caller (DMS_DecoyRadio). It is a hostile site: entering starts a countdown,
+    after which enemy reinforcements arrive.
+  -->
+
+  <!-- ==================== 站點部件 Site part ==================== -->
+
+  <SitePartDef>
+    <defName>DMS_DecoySite</defName>
+    <label>remnant relay station</label>
+    <description>A Legacy remnant signal-relay station. Its transmitter array can be repurposed to lure high-value automatroid units — if its garrison is dealt with first.</description>
+    <workerClass>Fortified.SitePartWorker_FFF_TimedHostileSite</workerClass>
+    <modExtensions>
+      <!-- 進入站點後的增援倒數設定（難度縮放：小時 ÷ threatScale）。
+           Post-entry reinforcement countdown (hours ÷ threatScale). -->
+      <li Class="Fortified.FFF_TimedSiteExtension">
+        <baseEntryHours>36</baseEntryHours>
+        <minEntryHours>8</minEntryHours>
+        <maxEntryHours>72</maxEntryHours>
+        <entryLetterLabelKey>DMS_DecoySite_EntryCountdownLabel</entryLetterLabelKey>
+        <entryLetterTextKey>DMS_DecoySite_EntryCountdownText</entryLetterTextKey>
+      </li>
+    </modExtensions>
+    <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>300</minThreatPoints>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <!-- 由 SitePartWorker_FFF_TimedHostileSite 自行以難度縮放啟動倒數。
+         The worker starts its own difficulty-scaled countdown. -->
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <approachOrderString>Assault {0}</approachOrderString>
+    <approachingReportString>Assaulting {0}.</approachingReportString>
+    <arrivedLetter>You have arrived at the remnant relay station. Hostile automatroids garrison the compound.\n\nYour presence will not go unnoticed for long — once the station's monitoring protocol identifies you, enemy reinforcements will begin to arrive.</arrivedLetter>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <tags>
+      <li>DMS_DecoySite</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMS_DecoySiteStructure</defName>
+    <linkWithSite>DMS_DecoySite</linkWithSite>
+    <order>400</order>
+    <genStep Class="Fortified.Structures.GenStep_FFFGarrisonedStructure">
+      <!-- 透過 IFFF 從帶此標籤的結構中隨機挑選生成。
+           Picks a random IFFF structure carrying this tag. -->
+      <useTag>DMS_DecoySite</useTag>
+      <randomOffset>0~3</randomOffset>
+      <filthTypes>
+        <li>Filth_RubbleBuilding</li>
+        <li>Filth_MachineBits</li>
+        <li>Filth_Ash</li>
+      </filthTypes>
+      <centerpieceDef>DMS_DecoyRadio</centerpieceDef>
+      <debrisDef>ChunkSlagSteel</debrisDef>
+      <debrisCount>8~14</debrisCount>
+      <scatterRadius>24</scatterRadius>
+      <lootMaker>MapGen_DefaultStockpile</lootMaker>
+      <spawnDefenders>true</spawnDefenders>
+      <defendRadius>16</defendRadius>
+    </genStep>
+  </GenStepDef>
+
+  <!-- ==================== 任務腳本 Quest script ==================== -->
+
+  <QuestScriptDef>
+    <defName>DMS_DecoySiteAssault</defName>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>true</sendAvailableLetter>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Remnant relay station</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->While broadcasting the falsified peacekeeping distress call, the beacon triangulated the source relaying it: a [siteFactionName] signal-relay station.\n\nThe station is guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat). Its transmitter array is still intact — a decoy antenna on site can be rigged to lure a high-value automatroid unit.\n\nThe relay's transmission window closes in [siteTimeout]. After that, the station will relocate and its position will be lost.\n\nCaution: it is a hostile installation. Once you enter, its monitoring protocol will summon enemy reinforcements after a countdown — strike fast and leave faster.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="Fortified.QuestNode_Root_FFF_TimedHostileSite">
+      <factionDef>DMS_Legacy</factionDef>
+      <sitePartDef>DMS_DecoySite</sitePartDef>
+      <baseTimeoutDays>16</baseTimeoutDays>
+      <minTimeoutDays>4</minTimeoutDays>
+      <maxTimeoutDays>30</maxTimeoutDays>
+      <expiredLetterLabelKey>DMS_DecoySite_ExpiredLabel</expiredLetterLabelKey>
+      <expiredLetterTextKey>DMS_DecoySite_ExpiredText</expiredLetterTextKey>
+      <clearedLetterLabelKey>DMS_DecoySite_ClearedLabel</clearedLetterLabelKey>
+      <clearedLetterTextKey>DMS_DecoySite_ClearedText</clearedLetterTextKey>
+    </root>
+  </QuestScriptDef>
+
+  <!-- ==================== IFFF 結構佈局 Structure layout ==================== -->
+
+  <Fortified.Structures.StructureLayoutDef>
+    <defName>DMS_DecoySiteOutpost_A</defName>
+    <spawnConduits>false</spawnConduits>
+    <layouts>
+      <li>
+        <li>Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,.,Sandbags_Cloth,Sandbags_Cloth,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Sandbags_Cloth,Sandbags_Cloth,.,Wall_Steel</li>
+        <li>Wall_Steel,.,Sandbags_Cloth,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Sandbags_Cloth,.,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,ChunkSlagSteel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,AncientLargeCrate,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,AncientMechDetritus_North,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,ChunkSlagSteel,.,.,.,.,.,.</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,Wall_Steel,Wall_Steel,.,.,.,.,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,Wall_Steel,AncientGenerator,.,.,.,.,.,AncientBarrel,Wall_Steel,.,.,.,.,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,Wall_Steel,.,.,.,AncientMechDetritus_South,.,.,.,Wall_Steel,.,.,.,.,.,.,.,Wall_Steel</li>
+        <li>.,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,Wall_Steel</li>
+        <li>.,.,.,.,AncientLargeCrate,.,.,.,Wall_Steel,.,.,.,DMS_DecoyRadio,.,.,.,Wall_Steel,.,.,.,AncientBarrel,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,.,.,.,.</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,Wall_Steel,AncientLargeCrate,.,.,.,.,.,AncientBarrel,Wall_Steel,.,.,.,.,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Door_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,.,.,ChunkSlagSteel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,ChunkSlagSteel,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,AncientBarrel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,ChunkSlagSteel,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,.,Sandbags_Cloth,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Sandbags_Cloth,.,Wall_Steel</li>
+        <li>Wall_Steel,.,Sandbags_Cloth,Sandbags_Cloth,.,.,.,.,.,.,Barricade_Steel,Barricade_Steel,.,Barricade_Steel,Barricade_Steel,.,.,.,.,.,.,Sandbags_Cloth,Sandbags_Cloth,.,Wall_Steel</li>
+        <li>Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel</li>
+        <li>Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel</li>
+      </li>
+    </layouts>
+    <tags>
+      <li>DMS_DecoySite</li>
+    </tags>
+  </Fortified.Structures.StructureLayoutDef>
+
+</Defs>

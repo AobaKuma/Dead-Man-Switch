@@ -1,0 +1,293 @@
+======================================================================
+RimWorld Translation Key Check Report
+======================================================================
+Mod:            The Dead Man's Switch
+Base language:  English
+Generated:      2026-07-11 19:16:09
+Modules found:  8
+
+######################################################################
+MODULE: 1.6/CE/Languages
+######################################################################
+
+Base keys: 0 Keyed, 18 DefInjected
+
+--- LANGUAGE: ChineseSimplified (简体中文) ---
+
+  Keyed:  Missing: 0   Obsolete: 0
+
+  DefInjected:  Missing: 0   Obsolete: 16
+    [OBSOLETE] in translation but no longer in English:
+      DMS_Gecko_FlameTurret.description   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Gecko_FlameTurret.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Gecko_FlameTurret.verbs.Verb_ShootCE.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Iguana_SubMachineGun.description   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Iguana_SubMachineGun.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Iguana_SubMachineGun.verbs.Verb_ShootCE.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Machine_VerlingBird_LAWS.label   (in DefInjected/PawnKindDef/AT_Drone.xml)
+      DMS_Tarbosaurus_ShotgunGun.description   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Tarbosaurus_ShotgunGun.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Tarbosaurus_ShotgunGun.verbs.Verb_ShootCE.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Tarbosaurus_SubMachineGun.description   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Tarbosaurus_SubMachineGun.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Tarbosaurus_SubMachineGun.verbs.Verb_ShootCE.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      MakeAmmo_9M311_SAM.description   (in DefInjected/RecipeDef/76mm_9M311.xml)
+      MakeAmmo_9M311_SAM.jobString   (in DefInjected/RecipeDef/76mm_9M311.xml)
+      MakeAmmo_9M311_SAM.label   (in DefInjected/RecipeDef/76mm_9M311.xml)
+
+  SUBTOTAL ChineseSimplified (简体中文): 0 missing, 16 obsolete
+
+--- LANGUAGE: ChineseTraditional (繁體中文) ---
+
+  Keyed:  Missing: 0   Obsolete: 0
+
+  DefInjected:  Missing: 0   Obsolete: 16
+    [OBSOLETE] in translation but no longer in English:
+      DMS_Gecko_FlameTurret.description   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Gecko_FlameTurret.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Gecko_FlameTurret.verbs.Verb_ShootCE.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Iguana_SubMachineGun.description   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Iguana_SubMachineGun.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Iguana_SubMachineGun.verbs.Verb_ShootCE.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Machine_VerlingBird_LAWS.label   (in DefInjected/PawnKindDef/AT_Drone.xml)
+      DMS_Tarbosaurus_ShotgunGun.description   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Tarbosaurus_ShotgunGun.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Tarbosaurus_ShotgunGun.verbs.Verb_ShootCE.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Tarbosaurus_SubMachineGun.description   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Tarbosaurus_SubMachineGun.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      DMS_Tarbosaurus_SubMachineGun.verbs.Verb_ShootCE.label   (in DefInjected/ThingDef/DMS_MilitaryGun_Mount_SP.xml)
+      MakeAmmo_9M311_SAM.description   (in DefInjected/RecipeDef/76mm_9M311.xml)
+      MakeAmmo_9M311_SAM.jobString   (in DefInjected/RecipeDef/76mm_9M311.xml)
+      MakeAmmo_9M311_SAM.label   (in DefInjected/RecipeDef/76mm_9M311.xml)
+
+  SUBTOTAL ChineseTraditional (繁體中文): 0 missing, 16 obsolete
+
+######################################################################
+MODULE: 1.6/Ideology/Languages
+######################################################################
+
+Base keys: 0 Keyed, 4 DefInjected
+
+--- LANGUAGE: ChineseSimplified (简体中文) ---
+
+  Keyed:  Missing: 0   Obsolete: 0
+
+  DefInjected:  Missing: 0   Obsolete: 0
+
+  SUBTOTAL ChineseSimplified (简体中文): 0 missing, 0 obsolete
+
+--- LANGUAGE: ChineseTraditional (繁體中文) ---
+
+  Keyed:  Missing: 0   Obsolete: 0
+
+  DefInjected:  Missing: 0   Obsolete: 0
+
+  SUBTOTAL ChineseTraditional (繁體中文): 0 missing, 0 obsolete
+
+######################################################################
+MODULE: 1.6/Languages
+######################################################################
+
+Base keys: 0 Keyed, 1518 DefInjected
+
+  [BASE ISSUES] problems inside English itself (fix these first - they cause phantom 'missing'):
+    [DefInjected] case-variant keys: DMS_MechLink.description, DMS_Mechlink.description
+    [DefInjected] case-variant keys: DMS_MechLink.label, DMS_Mechlink.label
+
+--- LANGUAGE: ChineseSimplified (简体中文) ---
+
+  Keyed:  Missing: 0   Obsolete: 0
+    NOTE: no 'English' base keys for this category - cannot verify; 43 translated key(s) left untouched.
+
+  DefInjected:  Missing: 2   Obsolete: 26
+    [MISSING] present in English but not translated:
+      DMS_CeramicsPlating.descriptionCached
+          EN: ""
+          src: DefInjected/HediffDef/DMS_Modification.xml
+      DMS_DeposableRocketLauncher.verbs.Verb_Shoot.label
+          EN: "Disposable Launcher"
+          src: DefInjected/ThingDef/MilitaryGun_OneUse.xml
+    [OBSOLETE] in translation but no longer in English:
+      DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectile.label   (in DefInjected/ThingDef/MilitaryGun_OneUse.xml)
+      DMS_HumanlikeMech.thinkRoot.subNodes.1.subNodes.0.subNodes.0.subNodes.0.subNodes.0.crawlingReportStringOverride   (in DefInjected/ThinkTreeDef/ThinkTree_Lady.xml)
+      DMS_HumanlikeMech.thinkRoot.subNodes.1.subNodes.0.subNodes.0.subNodes.0.subNodes.1.subNodes.0.crawlingReportStringOverride   (in DefInjected/ThinkTreeDef/ThinkTree_Lady.xml)
+      DMS_Legacy.description   (in DefInjected/FactionDef/Faction_Hostile.xml)
+      DMS_Legacy.label   (in DefInjected/FactionDef/Faction_Hostile.xml)
+      DMS_Legacy.messageDefendersAttacking   (in DefInjected/FactionDef/Faction_Hostile.xml)
+      DMS_Legacy.pawnSingular   (in DefInjected/FactionDef/Faction_Hostile.xml)
+      DMS_Legacy.pawnsPlural   (in DefInjected/FactionDef/Faction_Hostile.xml)
+      DMS_LegacyFaction.rulePack.rulesStrings   (in DefInjected/RulePackDef/DMS_NamePack.xml)
+      DMS_MachineCabinet.description   (in DefInjected/ThingDef/DMS_Linkable.xml)
+      DMS_MachineCabinet.label   (in DefInjected/ThingDef/DMS_Linkable.xml)
+      DMS_Make_Hyrax.description   (in DefInjected/RecipeDef/DMS_Recipes_MechGestator_Light.xml)
+      DMS_Make_Hyrax.jobString   (in DefInjected/RecipeDef/DMS_Recipes_MechGestator_Light.xml)
+      DMS_Make_Hyrax.label   (in DefInjected/RecipeDef/DMS_Recipes_MechGestator_Light.xml)
+      DMS_Make_Mammoth.description   (in DefInjected/RecipeDef/DMS_Recipes_MechGestator.xml)
+      DMS_Make_Mammoth.jobString   (in DefInjected/RecipeDef/DMS_Recipes_MechGestator.xml)
+      DMS_Make_Mammoth.label   (in DefInjected/RecipeDef/DMS_Recipes_MechGestator.xml)
+      DMS_Mech_Mammoth.description   (in DefInjected/ThingDef/Races_Automatroid_Heavy_Caterpillar.xml)
+      DMS_Mech_Mammoth.label   (in DefInjected/PawnKindDef/Races_Automatroid_Heavy_Caterpillar.xml)
+      DMS_Mech_Mammoth.tools.head.label   (in DefInjected/ThingDef/Races_Automatroid_Heavy_Caterpillar.xml)
+      DMS_PlayerShip_TransportShuttleIncoming.label   (in DefInjected/ThingDef/Shuttle.xml)
+      DMS_PlayerShip_TransportShuttleLeaving.label   (in DefInjected/ThingDef/Shuttle.xml)
+      DMS_QuestDocument.description   (in DefInjected/ThingDef/DMS_QuestDocument.xml)
+      DMS_QuestDocument.label   (in DefInjected/ThingDef/DMS_QuestDocument.xml)
+      DMS_QuestDocumentRules.rulePack.rulesStrings   (in DefInjected/RulePackDef/DMS_QuestDocumentRules.xml)
+      DMS_Ship_TransportShuttle_Player.label   (in DefInjected/TransportShipDef/Shuttle.xml)
+
+  SUBTOTAL ChineseSimplified (简体中文): 2 missing, 26 obsolete
+
+--- LANGUAGE: ChineseTraditional (繁體中文) ---
+
+  Keyed:  Missing: 0   Obsolete: 0
+    NOTE: no 'English' base keys for this category - cannot verify; 43 translated key(s) left untouched.
+
+  DefInjected:  Missing: 5   Obsolete: 29
+    [MISSING] present in English but not translated:
+      DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.left_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.trigger_safty.customLabel
+          EN: "trigger safety"
+          src: DefInjected/BodyDef/BodyPartsDef.xml
+      DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.right_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.weapon_safty.customLabel
+          EN: "weapon safety"
+          src: DefInjected/BodyDef/BodyPartsDef.xml
+      DMS_CeramicsPlating.descriptionCached
+          EN: ""
+          src: DefInjected/HediffDef/DMS_Modification.xml
+      DMS_DeposableRocketLauncher.verbs.Verb_Shoot.label
+          EN: "Disposable Launcher"
+          src: DefInjected/ThingDef/MilitaryGun_OneUse.xml
+      DMS_Mechanoid.thinkRoot.subNodes.7.subNodes.0.subNodes.2.subNodes.4.subNodes.1.subNodes.0.reportStringOverride
+          EN: "Patrolling."
+          src: DefInjected/ThinkTreeDef/ThinkTree_Mech.xml
+    [OBSOLETE] in translation but no longer in English:
+      DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.left_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.trigger_safety.customLabel   (in DefInjected/BodyDef/BodyPartsDef.xml)
+      DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.right_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.weapon_safety.customLabel   (in DefInjected/BodyDef/BodyPartsDef.xml)
+      DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectile.label   (in DefInjected/ThingDef/MilitaryGun_OneUse.xml)
+      DMS_HumanlikeMech.thinkRoot.subNodes.1.subNodes.0.subNodes.0.subNodes.0.subNodes.0.crawlingReportStringOverride   (in DefInjected/ThinkTreeDef/ThinkTree_Lady.xml)
+      DMS_HumanlikeMech.thinkRoot.subNodes.1.subNodes.0.subNodes.0.subNodes.0.subNodes.1.subNodes.0.crawlingReportStringOverride   (in DefInjected/ThinkTreeDef/ThinkTree_Lady.xml)
+      DMS_Legacy.description   (in DefInjected/FactionDef/Faction_Hostile.xml)
+      DMS_Legacy.label   (in DefInjected/FactionDef/Faction_Hostile.xml)
+      DMS_Legacy.messageDefendersAttacking   (in DefInjected/FactionDef/Faction_Hostile.xml)
+      DMS_Legacy.pawnSingular   (in DefInjected/FactionDef/Faction_Hostile.xml)
+      DMS_Legacy.pawnsPlural   (in DefInjected/FactionDef/Faction_Hostile.xml)
+      DMS_LegacyFaction.rulePack.rulesStrings   (in DefInjected/RulePackDef/DMS_NamePack.xml)
+      DMS_MachineCabinet.description   (in DefInjected/ThingDef/DMS_Linkable.xml)
+      DMS_MachineCabinet.label   (in DefInjected/ThingDef/DMS_Linkable.xml)
+      DMS_Make_Hyrax.description   (in DefInjected/RecipeDef/DMS_Recipes_MechGestator_Light.xml)
+      DMS_Make_Hyrax.jobString   (in DefInjected/RecipeDef/DMS_Recipes_MechGestator_Light.xml)
+      DMS_Make_Hyrax.label   (in DefInjected/RecipeDef/DMS_Recipes_MechGestator_Light.xml)
+      DMS_Make_Mammoth.description   (in DefInjected/RecipeDef/DMS_Recipes_MechGestator.xml)
+      DMS_Make_Mammoth.jobString   (in DefInjected/RecipeDef/DMS_Recipes_MechGestator.xml)
+      DMS_Make_Mammoth.label   (in DefInjected/RecipeDef/DMS_Recipes_MechGestator.xml)
+      DMS_Mech_Mammoth.description   (in DefInjected/ThingDef/Races_Automatroid_Heavy_Caterpillar.xml)
+      DMS_Mech_Mammoth.label   (in DefInjected/PawnKindDef/Races_Automatroid_Heavy_Caterpillar.xml)
+      DMS_Mech_Mammoth.tools.head.label   (in DefInjected/ThingDef/Races_Automatroid_Heavy_Caterpillar.xml)
+      DMS_Mechanoid.thinkRoot.subNodes.8.subNodes.0.subNodes.2.subNodes.4.subNodes.1.subNodes.0.reportStringOverride   (in DefInjected/ThinkTreeDef/ThinkTree_Mech.xml)
+      DMS_PlayerShip_TransportShuttleIncoming.label   (in DefInjected/ThingDef/Shuttle.xml)
+      DMS_PlayerShip_TransportShuttleLeaving.label   (in DefInjected/ThingDef/Shuttle.xml)
+      DMS_QuestDocument.description   (in DefInjected/ThingDef/DMS_QuestDocument.xml)
+      DMS_QuestDocument.label   (in DefInjected/ThingDef/DMS_QuestDocument.xml)
+      DMS_QuestDocumentRules.rulePack.rulesStrings   (in DefInjected/RulePackDef/DMS_QuestDocumentRules.xml)
+      DMS_Ship_TransportShuttle_Player.label   (in DefInjected/TransportShipDef/Shuttle.xml)
+
+  SUBTOTAL ChineseTraditional (繁體中文): 5 missing, 29 obsolete
+
+######################################################################
+MODULE: 1.6/Mod/FTND/Languages
+######################################################################
+
+  (no 'English' base language in this module - skipped)
+
+######################################################################
+MODULE: 1.6/Mod/GestaltEngine/Languages
+######################################################################
+
+Base keys: 0 Keyed, 2 DefInjected
+
+--- LANGUAGE: ChineseSimplified (简体中文) ---
+
+  Keyed:  Missing: 0   Obsolete: 0
+
+  DefInjected:  Missing: 0   Obsolete: 0
+
+  SUBTOTAL ChineseSimplified (简体中文): 0 missing, 0 obsolete
+
+--- LANGUAGE: ChineseTraditional (繁體中文) ---
+
+  Keyed:  Missing: 0   Obsolete: 0
+
+  DefInjected:  Missing: 0   Obsolete: 0
+
+  SUBTOTAL ChineseTraditional (繁體中文): 0 missing, 0 obsolete
+
+######################################################################
+MODULE: 1.6/Mod/RimLanguage/Languages
+######################################################################
+
+Base keys: 0 Keyed, 3 DefInjected
+
+--- LANGUAGE: ChineseSimplified (简体中文) ---
+
+  Keyed:  Missing: 0   Obsolete: 0
+
+  DefInjected:  Missing: 0   Obsolete: 0
+
+  SUBTOTAL ChineseSimplified (简体中文): 0 missing, 0 obsolete
+
+--- LANGUAGE: ChineseTraditional (繁體中文) ---
+
+  Keyed:  Missing: 0   Obsolete: 0
+
+  DefInjected:  Missing: 0   Obsolete: 0
+
+  SUBTOTAL ChineseTraditional (繁體中文): 0 missing, 0 obsolete
+
+######################################################################
+MODULE: 1.6/Mod/VREA/Languages
+######################################################################
+
+  (no 'English' base language in this module - skipped)
+
+######################################################################
+MODULE: 1.6/Royalty/Languages
+######################################################################
+
+Base keys: 0 Keyed, 84 DefInjected
+
+--- LANGUAGE: ChineseSimplified (简体中文) ---
+
+  Keyed:  Missing: 0   Obsolete: 0
+
+  DefInjected:  Missing: 0   Obsolete: 8
+    [OBSOLETE] in translation but no longer in English:
+      DMS_Join_Android.description   (in DefInjected/RoyalTitlePermitDef/DMS_SynthExtension.xml)
+      DMS_Join_Android.label   (in DefInjected/RoyalTitlePermitDef/DMS_SynthExtension.xml)
+      DMS_Join_Shuttle.description   (in DefInjected/RoyalTitlePermitDef/DMS_Permits.xml)
+      DMS_Join_Shuttle.label   (in DefInjected/RoyalTitlePermitDef/DMS_Permits.xml)
+      DMS_Platoon_MD.description   (in DefInjected/RoyalTitlePermitDef/DMS_Permits.xml)
+      DMS_Platoon_MD.label   (in DefInjected/RoyalTitlePermitDef/DMS_Permits.xml)
+      DMS_PromotionCeremony.questDescriptionRules.rulesStrings   (in DefInjected/QuestScriptDef/Ceremony.xml)
+      DMS_PromotionCeremony.questNameRules.rulesStrings   (in DefInjected/QuestScriptDef/Ceremony.xml)
+
+  SUBTOTAL ChineseSimplified (简体中文): 0 missing, 8 obsolete
+
+--- LANGUAGE: ChineseTraditional (繁體中文) ---
+
+  Keyed:  Missing: 0   Obsolete: 0
+
+  DefInjected:  Missing: 0   Obsolete: 8
+    [OBSOLETE] in translation but no longer in English:
+      DMS_Join_Android.description   (in DefInjected/RoyalTitlePermitDef/DMS_SynthExtension.xml)
+      DMS_Join_Android.label   (in DefInjected/RoyalTitlePermitDef/DMS_SynthExtension.xml)
+      DMS_Join_Shuttle.description   (in DefInjected/RoyalTitlePermitDef/DMS_Permits.xml)
+      DMS_Join_Shuttle.label   (in DefInjected/RoyalTitlePermitDef/DMS_Permits.xml)
+      DMS_Platoon_MD.description   (in DefInjected/RoyalTitlePermitDef/DMS_Permits.xml)
+      DMS_Platoon_MD.label   (in DefInjected/RoyalTitlePermitDef/DMS_Permits.xml)
+      DMS_PromotionCeremony.questDescriptionRules.rulesStrings   (in DefInjected/QuestScriptDef/Ceremony.xml)
+      DMS_PromotionCeremony.questNameRules.rulesStrings   (in DefInjected/QuestScriptDef/Ceremony.xml)
+
+  SUBTOTAL ChineseTraditional (繁體中文): 0 missing, 8 obsolete
+
+======================================================================
+TOTAL across all modules & languages: 7 missing, 103 obsolete
+======================================================================

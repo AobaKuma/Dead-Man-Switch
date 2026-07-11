@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_DecoySite_AlreadyActive>已有一項中繼站行動正在進行中</DMS_DecoySite_AlreadyActive>
+  <DMS_DecoySite_CannotFindSite>無法定位中繼站：在世界地圖上找不到合適的地點。</DMS_DecoySite_CannotFindSite>
+
+  <DMS_DecoySite_ExpiredLabel>中繼站已失去蹤跡</DMS_DecoySite_ExpiredLabel>
+  <DMS_DecoySite_ExpiredText>殘黨中繼站的傳訊窗口已經關閉。該站點已轉移陣地，位置就此失去蹤跡。</DMS_DecoySite_ExpiredText>
+
+  <DMS_DecoySite_ClearedLabel>中繼站已肅清</DMS_DecoySite_ClearedLabel>
+  <DMS_DecoySite_ClearedText>殘黨中繼站內的敵人已全數殲滅。站內的設備——包括那座誘餌天線——現在任你使用，但殘黨仍會持續在這一帶活動。</DMS_DecoySite_ClearedText>
+
+  <DMS_DecoySite_EntryCountdownLabel>敵對站點：增援即將抵達</DMS_DecoySite_EntryCountdownLabel>
+  <DMS_DecoySite_EntryCountdownText>你已進入敵對的殘黨設施。該站點的監控協議已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。速戰速決，儘快離開——或者就地固守。</DMS_DecoySite_EntryCountdownText>
+</LanguageData>

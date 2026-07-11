@@ -90,13 +90,70 @@
       <li>PlaceWorker_DoorLearnOpeningSpeed</li>
     </placeWorkers>
   </ThingDef>
-  
+
   <ThingDef ParentName="DMS_LargeDoor">
     <defName>DMS_Building_DoorLarge_Mirrored</defName>
     <graphicData>
       <texPath>Things/Building/DMS_Building_DoorLarge_Mirrored/building</texPath>
     </graphicData>
     <uiIconPath>Things/Building/DMS_Building_DoorLarge_Mirrored/icon</uiIconPath>
+  </ThingDef>
+
+
+  <!-- 損壞變體 純場景裝飾用 無CompBuildingMover 不具開關/感應/寻路通行等任何功能 僅供廢墟/事件地圖生成擺放 -->
+  <ThingDef ParentName="BuildingBase" Name="DMS_LargeDoorDamaged">
+    <defName>DMS_Building_DoorLarge_Damaged</defName>
+    <label>ruined blast door</label>
+    <description>The wreckage of a heavy military blast door, jammed and burnt out. It no longer opens or seals which purely structural debris left standing amid the ruins.</description>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Ruin_Misc/buildingL</texPath>
+      <drawSize>(6,3)</drawSize>
+      <drawOffset>(0,0.2,0)</drawOffset>
+    </graphicData>
+    <uiIconPath>Things/Building/Ruin_Misc/buildingL_south</uiIconPath>
+    <size>(4,2)</size>
+    <category>Building</category>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MaxHitPoints>2400</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+    </statBases>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <killedLeavings>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+    </killedLeavings>
+    <selectable>true</selectable>
+    <!-- 純靜態場景物 不需要逐tick邏輯 -->
+    <tickerType>Never</tickerType>
+    <rotatable>true</rotatable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <holdsRoof>true</holdsRoof>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <blockWind>true</blockWind>
+    <drawerType>MapMeshOnly</drawerType>
+    <building>
+      <isInert>true</isInert>
+      <canPlaceOverWall>true</canPlaceOverWall>
+      <ai_chillDestination>false</ai_chillDestination>
+      <paintable>false</paintable>
+      <neverBuildable>true</neverBuildable>
+      <claimable>false</claimable>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_LargeDoorDamaged">
+    <defName>DMS_Building_DoorLarge_Damaged_Mirrored</defName>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Misc/buildingR</texPath>
+    </graphicData>
+    <uiIconPath>Things/Building/Ruin_Misc/buildingR_south</uiIconPath>
   </ThingDef>
 
 </Defs>
