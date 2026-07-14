@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- Mech gestator - Small -->
@@ -14,7 +14,7 @@
       </shaderParameters>
       <drawSize>(4, 4)</drawSize>
     </graphicData>
-  </ThingDef> 
+  </ThingDef>
 
   <ThingDef ParentName="DMS_MechConstructorFormingBase">
     <defName>DMS_MechConstructorCycleComplete</defName>
@@ -51,7 +51,7 @@
     <defName>DMS_MechGestatorSmall</defName>
     <label>Automatroid Constructor</label>
     <description>A massive piece of industrial equipment used to assemble light and medium Automatroids.</description>
-		<designationCategory>DMS_Category</designationCategory>
+    <designationCategory>DMS_Category</designationCategory>
     <graphicData>
       <texPath>Things/Building/MechBuilder_Base</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -146,7 +146,7 @@
       <li>DMS_ResurrectMediumMech</li>
     </recipes>
     <comps>
-      <li MayRequire="VanillaExpanded.VFEA" Class="VFEAncients.CompProperties_SolarPowerUp"/>
+      <li MayRequire="VanillaExpanded.VFEA" Class="VFEAncients.CompProperties_SolarPowerUp" />
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>500</basePowerConsumption>
@@ -281,7 +281,7 @@
       <li>DMS_ResurrectUltraheavyMech</li>
     </recipes>
     <comps>
-      <li MayRequire="VanillaExpanded.VFEA" Class="VFEAncients.CompProperties_SolarPowerUp"/>
+      <li MayRequire="VanillaExpanded.VFEA" Class="VFEAncients.CompProperties_SolarPowerUp" />
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>1500</basePowerConsumption>

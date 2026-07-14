@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- ==================== Alert buildings ==================== -->
+
+  <!-- EN: FPV nest -->
+  <DMS_Building_FPVNest.label>FPV無人機巢</DMS_Building_FPVNest.label>
+  <!-- EN: An automated drone nest used for facility defense. When alerted by the facility's other sensors, it automatically launches FPV drones to drive off or kill intruders, and it will also release drones to fight back when attacked. It is connected to the facility's underground logistics system below, so its expended drone stock is automatically replenished over time. -->
+  <DMS_Building_FPVNest.description>一種用於自動化設施防禦的無人機巢，能夠在接收到設施中其他傳感器的警報後自動發射FPV無人機驅趕或殺傷入侵者。在受到攻擊時也會釋放無人機迎敵。其下方與設施的地下化物流系統相連，因此每隔一段時間就會自動補充損耗的無人機庫存。</DMS_Building_FPVNest.description>
+
+  <!-- EN: FPV hangar -->
+  <DMS_Building_FPVHanger.label>FPV無人機庫</DMS_Building_FPVHanger.label>
+  <!-- EN: An automated drone hangar used for facility defense. When alerted by the facility's other sensors, it automatically launches FPV drones to drive off or kill intruders, and it will also release drones to fight back when attacked. It is connected to the facility's underground logistics system below, so its expended drone stock is automatically replenished over time. -->
+  <DMS_Building_FPVHanger.description>一種用於自動化設施防禦的無人機機庫，能夠在接收到設施中其他傳感器的警報後自動發射FPV無人機驅趕或殺傷入侵者。在受到攻擊時也會釋放無人機迎敵。其下方與設施的地下化物流系統相連，因此每隔一段時間就會自動補充損耗的無人機庫存。</DMS_Building_FPVHanger.description>
+
+  <!-- EN: camera -->
+  <DMS_Building_Camera.label>監視器</DMS_Building_Camera.label>
+  <!-- EN: A surveillance camera that monitors a long, narrow corridor for intruders. Connected to the local alert counter. Cut power or hit it with an EMP to disable it safely before dismantling. -->
+  <DMS_Building_Camera.description>一種用於監視狹長通道、偵測入侵者的監控攝影機，連接著當地的警戒系統。先切斷電源或以EMP將其癱瘓，即可在拆除前安全地使其失效。</DMS_Building_Camera.description>
+
+  <!-- EN: seismic sensor -->
+  <DMS_Building_Sensor.label>震動傳感器</DMS_Building_Sensor.label>
+  <!-- EN: A passive sensor installed along pipes and secondary passageways. The larger the thing entering its range, the more likely it is to trip the alarm. -->
+  <DMS_Building_Sensor.description>一種安裝在各類管道及次要通道的被動傳感器，越大的東西進入其範圍內就越容易引起警報。</DMS_Building_Sensor.description>
+
+  <!-- EN: large sentry tower -->
+  <DMS_Building_Scanner_Large.label>大型無人哨塔</DMS_Building_Scanner_Large.label>
+  <!-- EN: A tall observation tower with automated sensors. Detects hostiles within a wide radius. Disable with EMP or power cut before attempting to dismantle. -->
+  <DMS_Building_Scanner_Large.description>一種長期自持運行的無人警戒平台，具有多種類型的傳感器來監控大片範圍內的可疑活動。一旦被驚動到就會廣播警報訊號來讓周圍的自動化防禦設施啟動迎敵。</DMS_Building_Scanner_Large.description>
+
+  <!-- EN: small sentry tower -->
+  <DMS_Building_Scanner_Small.label>小型無人哨塔</DMS_Building_Scanner_Small.label>
+  <!-- EN: An unmanned sentry platform built for long-term unattended operation, fitted with multiple types of sensors to monitor a wide area for suspicious activity. Once an intruder enters its range, it broadcasts an alert that activates the automated defenses to engage. -->
+  <DMS_Building_Scanner_Small.description>一種無須電力長期運行的無人警戒平台，具有多種類型的傳感器來監控大片範圍內的可疑活動。一旦有入侵者闖入範圍就會廣播警報使自動化防禦設施啟動迎敵。</DMS_Building_Scanner_Small.description>
+
+  <!-- ==================== Decoration buildings ==================== -->
+
+  <!-- EN: facility dormer -->
+  <DMS_Hole_7x7Empty.label>設施開口</DMS_Hole_7x7Empty.label>
+  <!-- EN: A structure flooring with a opened hole, commonly found in underground facilities. -->
+  <DMS_Hole_7x7Empty.description>一片開有孔洞的結構地板，常見於地下設施之中。</DMS_Hole_7x7Empty.description>
+  <DMS_Hole_5x5Empty.label>設施開口</DMS_Hole_5x5Empty.label>
+  <DMS_Hole_5x5Empty.description>一片開有孔洞的結構地板，常見於地下設施之中。</DMS_Hole_5x5Empty.description>
+  <DMS_Hole_3x3Empty.label>設施開口</DMS_Hole_3x3Empty.label>
+  <DMS_Hole_3x3Empty.description>一片開有孔洞的結構地板，常見於地下設施之中。</DMS_Hole_3x3Empty.description>
+  <DMS_Hole_3x5Empty.label>設施開口</DMS_Hole_3x5Empty.label>
+  <DMS_Hole_3x5Empty.description>一片開有孔洞的結構地板，常見於地下設施之中。</DMS_Hole_3x5Empty.description>
+  <DMS_Hole_3x7Empty.label>設施開口</DMS_Hole_3x7Empty.label>
+  <DMS_Hole_3x7Empty.description>一片開有孔洞的結構地板，常見於地下設施之中。</DMS_Hole_3x7Empty.description>
+
+  <!-- EN: wreckage chunk -->
+  <DMS_Wreckage_Chunk.label>殘骸塊</DMS_Wreckage_Chunk.label>
+  <!-- EN: A chunk of wreckage mangled beyond recognition. Strictly speaking, it makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap. -->
+  <DMS_Wreckage_Chunk.description>一個難以辨認其原本面貌的殘骸塊，嚴格來說是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</DMS_Wreckage_Chunk.description>
+
+  <!-- EN: disabled sentry gun -->
+  <DMS_Wreckage_SentryGun.label>損毀的哨戒砲塔</DMS_Wreckage_SentryGun.label>
+  <!-- EN: A badly damaged small sentry turret. Strictly speaking, it makes passable cover, and a small amount of metal scrap can be salvaged from it. -->
+  <DMS_Wreckage_SentryGun.description>一座嚴重損毀的小型哨戒砲塔，嚴格來說是個堪用的掩體，能夠回收少量的金屬碎片。</DMS_Wreckage_SentryGun.description>
+
+  <!-- EN: disabled ronin -->
+  <DMS_Wreckage_Ronin.label>損毀的浪人</DMS_Wreckage_Ronin.label>
+  <!-- EN: A badly damaged Ronin automatroid. Strictly speaking, it makes passable cover, and a small amount of metal scrap can be salvaged from it. -->
+  <DMS_Wreckage_Ronin.description>一架嚴重損毀的浪人型機兵，嚴格來說是個堪用的掩體，能夠回收少量的金屬碎片。</DMS_Wreckage_Ronin.description>
+
+  <!-- EN: destroyed gatekeeper -->
+  <DMS_Building_GatekeeperDestoryed.label>被摧毀的守門人</DMS_Building_GatekeeperDestoryed.label>
+  <!-- EN: The burnt-out remains of a Gatekeeper close-in defense turret. Its rotary cannon has been torn apart and its fire-control systems gutted, leaving a hulk that still makes excellent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap. -->
+  <DMS_Building_GatekeeperDestoryed.description>一座徹底燒毀的守門人迫近防禦炮塔殘骸，其多管機炮已被撕裂，火控系統也被徹底掏空，剩餘的殘軀仍是個絕佳的掩體。將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</DMS_Building_GatekeeperDestoryed.description>
+
+  <!-- EN: destroyed radar -->
+  <DMS_Building_RadarDestoryed.label>被摧毀的防空雷達</DMS_Building_RadarDestoryed.label>
+  <!-- EN: The wreck of an air-defense radar station. Its antenna array has been shredded and the emitter is long dead, leaving the surrounding airspace unwatched. The remaining mount makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap. -->
+  <DMS_Building_RadarDestoryed.description>一座防空雷達站的殘骸，其天線陣列已被打成碎片，發射器也早已失效，再也無法監視周圍的空域。剩餘的基座是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</DMS_Building_RadarDestoryed.description>
+
+  <!-- EN: destroyed launcher -->
+  <DMS_Building_MissileLauncherDestoryed.label>被摧毀的發射器</DMS_Building_MissileLauncherDestoryed.label>
+  <!-- EN: The wreck of a missile launch platform. Its launch cells are scorched hollow, and any remaining ordnance was removed or destroyed long ago. The remaining frame makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap. -->
+  <DMS_Building_MissileLauncherDestoryed.description>一座飛彈發射平台的殘骸，其發射單元已被燒成空殼，殘餘的彈藥也早已被移走或摧毀。剩餘的框架是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</DMS_Building_MissileLauncherDestoryed.description>
+
+  <!-- EN: destroyed FPV hangar -->
+  <DMS_Building_FPVHangerDestoryed.label>被摧毀的FPV無人機庫</DMS_Building_FPVHangerDestoryed.label>
+  <!-- EN: A drone launch bay that has been utterly destroyed and can no longer launch drones. The remaining wreck makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap. -->
+  <DMS_Building_FPVHangerDestoryed.description>一個被徹底摧毀的無人機發射艙，已經失去了發射無人機的能力，剩餘的殘骸是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</DMS_Building_FPVHangerDestoryed.description>
+
+  <!-- EN: destroyed FPV nest -->
+  <DMS_Building_FPVNestDestoryed.label>被摧毀的FPV無人機巢</DMS_Building_FPVNestDestoryed.label>
+  <!-- EN: A drone launch nest that has been utterly destroyed and can no longer launch drones. The remaining wreck makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap. -->
+  <DMS_Building_FPVNestDestoryed.description>一個被徹底摧毀的無人機發射巢，已經失去了發射無人機的能力，剩餘的殘骸是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</DMS_Building_FPVNestDestoryed.description>
+
+  <!-- EN: facility machine -->
+  <DMS_Building_Machine_Medium.label>設施機器</DMS_Building_Machine_Medium.label>
+  <!-- EN: A machine of unknown purpose. Its internal components are intact and still running; breaking it down yields some resources. -->
+  <DMS_Building_Machine_Medium.description>一個不知其作用的機器，其內部零件完整並且依然在運作，將其破壞可以回收一些資源。</DMS_Building_Machine_Medium.description>
+  <DMS_Building_Eletric_Medium.label>設施機器</DMS_Building_Eletric_Medium.label>
+  <DMS_Building_Eletric_Medium.description>一個不知其作用的機器，其內部零件完整並且依然在運作，將其破壞可以回收一些資源。</DMS_Building_Eletric_Medium.description>
+
+  <!-- EN: A machine of unknown purpose. Its internal components rusted and failed long ago; breaking it down yields some metal scrap. -->
+  <DMS_Building_Machine_MediumDestoryed.label>設施機器</DMS_Building_Machine_MediumDestoryed.label>
+  <DMS_Building_Machine_MediumDestoryed.description>一個不知其作用的機器，其內部零件早已經鏽蝕損毀了，將其破壞可以回收一些金屬碎片。</DMS_Building_Machine_MediumDestoryed.description>
+  <DMS_Building_Eletric_MediumDestoryed.label>設施機器</DMS_Building_Eletric_MediumDestoryed.label>
+  <DMS_Building_Eletric_MediumDestoryed.description>一個不知其作用的機器，其內部零件早已經鏽蝕損毀了，將其破壞可以回收一些金屬碎片。</DMS_Building_Eletric_MediumDestoryed.description>
+
+  <!-- EN: disabled large sentry tower -->
+  <DMS_Building_Scanner_LargeDestoryed.label>損毀的大型無人哨塔</DMS_Building_Scanner_LargeDestoryed.label>
+  <!-- EN: A large unmanned sentry platform that ceased functioning long ago. Its sensor array is completely destroyed, no longer able to detect intruders or broadcast alerts. The remaining tower structure makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap. -->
+  <DMS_Building_Scanner_LargeDestoryed.description>一座早已停止運作的大型無人警戒平台，其傳感器陣列已徹底損毀，無法再偵測或廣播警報。剩餘的塔體結構是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</DMS_Building_Scanner_LargeDestoryed.description>
+
+  <!-- EN: disabled small sentry tower -->
+  <DMS_Building_Scanner_SmallDestoryed.label>損毀的小型無人哨塔</DMS_Building_Scanner_SmallDestoryed.label>
+  <!-- EN: A small unmanned sentry platform that ceased functioning long ago. Its sensors are completely destroyed, no longer able to detect intruders or broadcast alerts. The remaining wreck makes passable cover, and a small amount of metal scrap can be salvaged from it. -->
+  <DMS_Building_Scanner_SmallDestoryed.description>一座早已停止運作的小型無人警戒平台，其傳感器已徹底損毀，無法再偵測或廣播警報。剩餘的殘骸是個堪用的掩體，能夠回收少量的金屬碎片。</DMS_Building_Scanner_SmallDestoryed.description>
+
+  <!-- ==================== Active decoration ==================== -->
+
+  <!-- EN: active vent -->
+  <DMS_Building_VentSmall.label>主動式通風口</DMS_Building_VentSmall.label>
+  <!-- EN: An active vent used for facility ventilation and NBC gas filtration. By keeping the facility under positive pressure, it prevents harmful gases from spreading through the facility's air circulation. -->
+  <DMS_Building_VentSmall.description>一種用於設施內通風與核生化氣體過濾的主動式通風口，透過將設施保持為正壓狀態來避免有害氣體透過氣流在設施內擴散。</DMS_Building_VentSmall.description>
+  <DMS_Building_VentMedium.label>主動式通風口</DMS_Building_VentMedium.label>
+  <DMS_Building_VentMedium.description>一種用於設施內通風與核生化氣體過濾的主動式通風口，透過將設施保持為正壓狀態來避免有害氣體透過氣流在設施內擴散。</DMS_Building_VentMedium.description>
+  <DMS_Building_VentLarge.label>主動式通風口</DMS_Building_VentLarge.label>
+  <DMS_Building_VentLarge.description>一種用於設施內通風與核生化氣體過濾的主動式通風口，透過將設施保持為正壓狀態來避免有害氣體透過氣流在設施內擴散。</DMS_Building_VentLarge.description>
+
+  <!-- EN: rolling door / a locked rolling door. -->
+  <DMS_RollingDoor_Single.label>捲簾門</DMS_RollingDoor_Single.label>
+  <DMS_RollingDoor_Single.description>一扇上鎖的捲簾門。</DMS_RollingDoor_Single.description>
+  <DMS_RollingDoor_Double.label>捲簾門</DMS_RollingDoor_Double.label>
+  <DMS_RollingDoor_Double.description>一扇上鎖的捲簾門。</DMS_RollingDoor_Double.description>
+  <DMS_RollingDoor_Triple.label>捲簾門</DMS_RollingDoor_Triple.label>
+  <DMS_RollingDoor_Triple.description>一扇上鎖的捲簾門。</DMS_RollingDoor_Triple.description>
+  <DMS_RollingDoor_Quadruple.label>捲簾門</DMS_RollingDoor_Quadruple.label>
+  <DMS_RollingDoor_Quadruple.description>一扇上鎖的捲簾門。</DMS_RollingDoor_Quadruple.description>
+
+  <!-- EN: logistic container -->
+  <DMS_LogisticContainer.label>後勤貨櫃</DMS_LogisticContainer.label>
+  <!-- EN: A Standard issue cargo container containing supplies for military logistics. -->
+  <DMS_LogisticContainer.description>一個標準制式的貨櫃，內裝軍事後勤補給物資。</DMS_LogisticContainer.description>
+
+  <!-- EN: logistic terminal -->
+  <DMS_LogisticTerminal.label>後勤終端</DMS_LogisticTerminal.label>
+  <!-- EN: Logistic terminal linked to cargo line below. -->
+  <DMS_LogisticTerminal.description>與下方貨運線相連的後勤終端。</DMS_LogisticTerminal.description>
+
+  <!-- ==================== Passive decoration ==================== -->
+
+  <!-- EN: substation cabinet -->
+  <DMS_SubstationCabinet.label>變電櫃</DMS_SubstationCabinet.label>
+  <!-- EN: A ruggedised metal cabinet that taps an underground power conduit and distributes electricity to surface equipment. The high-voltage internals make shut-down hazardous - only an operator with solid technical knowledge (Intellectual 8+) can safely cut power; anyone less experienced risks a serious electrical burn. An EMP strike will temporarily disable the cabinet without ongoing danger. -->
+  <DMS_SubstationCabinet.description>一座從地下輸電管線取電並向地表設備配電的加固金屬櫃。其內部的高壓元件使關停作業十分危險——只有具備紮實技術知識（智識8+）的操作者才能安全切斷電源，經驗不足者可能遭受嚴重的電灼傷。EMP打擊可暫時癱瘓變電櫃，且不會造成後續危險。</DMS_SubstationCabinet.description>
+
+  <!-- EN: wall substation panel -->
+  <DMS_SubstationCabinet_Wall.label>壁掛式變電盤</DMS_SubstationCabinet_Wall.label>
+  <!-- EN: A compact substation panel mounted flush against a wall, routing underground power to surface equipment. Like its cabinet counterpart, shutting it down safely requires real technical skill - anyone less experienced risks a severe electrical burn from the exposed high-voltage contacts. Vulnerable to EMP. -->
+  <DMS_SubstationCabinet_Wall.description>一塊緊貼牆面安裝的小型變電盤，將地下電力輸送至地表設備。與變電櫃一樣，安全關停需要真正的技術能力——經驗不足者可能被外露的高壓觸點嚴重灼傷。易受EMP影響。</DMS_SubstationCabinet_Wall.description>
+
+  <!-- EN: emergency lighting -->
+  <DMS_EmergencyLamp.label>應急照明</DMS_EmergencyLamp.label>
+  <!-- EN: An emergency lighting system that automatically switches to its internal battery only when grid power is lost, glowing red for extended periods to maintain a minimum level of illumination even during an outage. -->
+  <DMS_EmergencyLamp.description>一種只在斷電時使用內部電池自動亮起的應急照明系統，能夠長時間發出紅光確保即使斷電也能夠維持最低限度的照明。</DMS_EmergencyLamp.description>
+
+  <!-- ==================== Heavy blast door ==================== -->
+
+  <!-- EN: heavy blast door -->
+  <DMS_Building_DoorLarge.label>重型防爆門</DMS_Building_DoorLarge.label>
+  <!-- EN: A reinforced heavy door built for military installations. It slides open along its track to let authorized personnel pass, and seals shut to block unauthorized intruders. -->
+  <DMS_Building_DoorLarge.description>一種為軍事設施打造的重型加固大門，會沿著滑軌滑開讓獲授權的人員通行，並緊閉封鎖未經授權的闖入者。</DMS_Building_DoorLarge.description>
+  <DMS_Building_DoorLarge_Mirrored.label>重型防爆門</DMS_Building_DoorLarge_Mirrored.label>
+  <DMS_Building_DoorLarge_Mirrored.description>一種為軍事設施打造的重型加固大門，會沿著滑軌滑開讓獲授權的人員通行，並緊閉封鎖未經授權的闖入者。</DMS_Building_DoorLarge_Mirrored.description>
+
+  <!-- EN: ruined blast door -->
+  <DMS_Building_DoorLarge_Damaged.label>損毀的防爆門</DMS_Building_DoorLarge_Damaged.label>
+  <!-- EN: The wreckage of a heavy military blast door, jammed and burnt out. It no longer opens or seals which purely structural debris left standing amid the ruins. -->
+  <DMS_Building_DoorLarge_Damaged.description>一扇軍用重型防爆門的殘骸，已卡死並燒毀，無法再開啟或封閉，僅是矗立於廢墟之中的結構性殘骸。</DMS_Building_DoorLarge_Damaged.description>
+  <DMS_Building_DoorLarge_Damaged_Mirrored.label>損毀的防爆門</DMS_Building_DoorLarge_Damaged_Mirrored.label>
+  <DMS_Building_DoorLarge_Damaged_Mirrored.description>一扇軍用重型防爆門的殘骸，已卡死並燒毀，無法再開啟或封閉，僅是矗立於廢墟之中的結構性殘骸。</DMS_Building_DoorLarge_Damaged_Mirrored.description>
+
+  <!-- ==================== RaidWave beacon ==================== -->
+
+  <!-- EN: peacekeeping distress beacon -->
+  <DMS_RaidWaveBeacon_PeacekeepingOperators.label>維和求救信標</DMS_RaidWaveBeacon_PeacekeepingOperators.label>
+  <!-- EN: A tampered emergency transponder repurposed to broadcast a false peacekeeping distress call. Once activated, it summons a Legacy remnant peacekeeping detachment - Protector shieldbearers screening a Ronin spearhead, with Falcon marksmen providing overwatch - to storm the signal's origin. The burst burns out the transmitter, so this building can only be used once. -->
+  <DMS_RaidWaveBeacon_PeacekeepingOperators.description>一台遭到改裝的緊急應答機，被用來廣播偽造的維和求救訊號。啟動後將召來一支先鋒殘餘的維和特遣隊——塔盾手在前掩護、浪人擔任突擊矛頭、游隼提供火力支援——直撲訊號來源。訊號脈衝會燒毀發射器，因此該建築只能使用一次。</DMS_RaidWaveBeacon_PeacekeepingOperators.description>
+
+  <!-- ==================== Ruined facility buildings ==================== -->
+
+  <!-- EN: ruined artifuscle chamber -->
+  <DMS_TableArtifuscleDestroyed.label>損毀的生物培養裝置</DMS_TableArtifuscleDestroyed.label>
+  <!-- EN: The wreck of a high-end artifuscle cultivation chamber. Its growth vats have shattered and their contents rotted away long ago. Breaking it down yields some metal scrap. -->
+  <DMS_TableArtifuscleDestroyed.description>一台高端人工肌肉培養裝置的殘骸，其培養槽早已破裂，內容物也早已腐壞殆盡。將其破壞可以回收一些金屬碎片。</DMS_TableArtifuscleDestroyed.description>
+
+  <!-- EN: ruined machinery printer -->
+  <DMS_TableMachinePrinterDestroyed.label>損毀的機械沖壓機</DMS_TableMachinePrinterDestroyed.label>
+  <!-- EN: The wreck of a composite metal printer. Its forging rams are seized solid and the print bed is buried under collapsed tooling. Breaking it down yields some metal scrap. -->
+  <DMS_TableMachinePrinterDestroyed.description>一台複合金屬打印機的殘骸，其鍛壓衝頭已徹底卡死，工作臺也被坍塌的模具掩埋。將其破壞可以回收一些金屬碎片。</DMS_TableMachinePrinterDestroyed.description>
+
+  <!-- EN: ruined lab reactor -->
+  <DMS_LabReactorDestroyed.label>損毀的實驗用反應釜</DMS_LabReactorDestroyed.label>
+  <!-- EN: The wreck of an experimental reaction chamber. Its vessel has ruptured and whatever it once processed has crusted over the burst plumbing. Breaking it down yields some metal scrap. -->
+  <DMS_LabReactorDestroyed.description>一台實驗用反應釜的殘骸，其釜體已經破裂，曾經處理的物料早已結塊凝固在爆開的管路上。將其破壞可以回收一些金屬碎片。</DMS_LabReactorDestroyed.description>
+
+  <!-- EN: ruined lab furnace -->
+  <DMS_LabFurnaceDestroyed.label>損毀的實驗用箱型爐</DMS_LabFurnaceDestroyed.label>
+  <!-- EN: The wreck of an experimental sintering furnace, burnt out from the inside. Its heating elements are slagged and the chamber lining has collapsed. Breaking it down yields some metal scrap. -->
+  <DMS_LabFurnaceDestroyed.description>一台從內部燒毀的實驗用燒結爐殘骸，其加熱元件已熔成爐渣，爐膛內襯也已坍塌。將其破壞可以回收一些金屬碎片。</DMS_LabFurnaceDestroyed.description>
+
+  <!-- EN: ruined machine cabinet -->
+  <DMS_MachineCabinetDestroyed.label>損毀的機械櫃</DMS_MachineCabinetDestroyed.label>
+  <!-- EN: The wreck of a calibration cabinet. Its precision instruments have been smashed or stripped, leaving only a gutted shell. Breaking it down yields some metal scrap. -->
+  <DMS_MachineCabinetDestroyed.description>一座校準機械櫃的殘骸，其中的精密儀器早已被砸毀或拆走，只剩下被掏空的外殼。將其破壞可以回收一些金屬碎片。</DMS_MachineCabinetDestroyed.description>
+
+  <!-- EN: ruined hound station -->
+  <DMS_HoundBaseDestroyed.label>損毀的獵犬控制平台</DMS_HoundBaseDestroyed.label>
+  <!-- EN: The wreck of a hound unit charging station. Its docking cradle is empty and the charging contacts have corroded beyond repair. Breaking it down yields some metal scrap. -->
+  <DMS_HoundBaseDestroyed.description>一座獵犬單位充電平台的殘骸，其停駐架早已空置，充電觸點也已鏽蝕到無法修復。將其破壞可以回收一些金屬碎片。</DMS_HoundBaseDestroyed.description>
+
+  <!-- EN: ruined trashpan station -->
+  <DMS_TrashBinBaseDestroyed.label>損毀的垃圾盤控制平台</DMS_TrashBinBaseDestroyed.label>
+  <!-- EN: The wreck of a trashpan unit charging station. Its docking cradle is empty and the charging contacts have corroded beyond repair. Breaking it down yields some metal scrap. -->
+  <DMS_TrashBinBaseDestroyed.description>一座垃圾盤單位充電平台的殘骸，其停駐架早已空置，充電觸點也已鏽蝕到無法修復。將其破壞可以回收一些金屬碎片。</DMS_TrashBinBaseDestroyed.description>
+
+  <!-- EN: ruined logistic container -->
+  <DMS_LogisticContainerDestroyed.label>損毀的後勤貨櫃</DMS_LogisticContainerDestroyed.label>
+  <!-- EN: A breached military cargo container. Whatever supplies it once held were looted or destroyed long ago, leaving only the torn shell. Breaking it down yields some metal scrap. -->
+  <DMS_LogisticContainerDestroyed.description>一個被撬開的軍用貨櫃，其中的補給物資早已被洗劫或摧毀，只剩下破損的外殼。將其破壞可以回收一些金屬碎片。</DMS_LogisticContainerDestroyed.description>
+
+</LanguageData>

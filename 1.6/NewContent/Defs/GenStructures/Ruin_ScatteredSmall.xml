@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_Ruin_A</defName>
+    <size>(29, 29)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Sandbags</def>
+        <pos>(3, 0, 1)</pos>
+        <size>(2, 1)</size>
+        <stuff>Cloth</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Sandbags</def>
+        <pos>(19, 0, 1)</pos>
+        <size>(3, 1)</size>
+        <stuff>Cloth</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(5, 0, 3)</pos>
+        <size>(8, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(5, 0, 4)</pos>
+        <size>(1, 6)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Fence</def>
+        <pos>(2, 0, 6)</pos>
+        <size>(2, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Fence</def>
+        <pos>(2, 0, 7)</pos>
+        <size>(1, 2)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Fence</def>
+        <pos>(2, 0, 10)</pos>
+        <size>(1, 4)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Fence</def>
+        <pos>(2, 0, 19)</pos>
+        <size>(1, 2)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Fence</def>
+        <pos>(2, 0, 23)</pos>
+        <size>(1, 4)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(9, 0, 7)</pos>
+        <size>(4, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(9, 0, 8)</pos>
+        <size>(1, 2)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(5, 0, 10)</pos>
+        <size>(5, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Sandbags</def>
+        <pos>(17, 0, 24)</pos>
+        <size>(1, 2)</size>
+        <stuff>Cloth</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Sandbags</def>
+        <pos>(18, 0, 26)</pos>
+        <size>(2, 1)</size>
+        <stuff>Cloth</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Sandbags</def>
+        <pos>(24, 0, 26)</pos>
+        <size>(3, 1)</size>
+        <stuff>Cloth</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Fence</def>
+        <pos>(2, 0, 27)</pos>
+        <size>(4, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Fence</def>
+        <pos>(7, 0, 27)</pos>
+        <size>(3, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>CraterMedium</def>
+        <posList>
+          <li>(26, 0, 1)</li>
+          <li>(2, 0, 15)</li>
+          <li>(13, 0, 16)</li>
+          <li>(16, 0, 19)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Sandbags</def>
+        <stuff>Cloth</stuff>
+        <posList>
+          <li>(3, 0, 2)</li>
+          <li>(21, 0, 2)</li>
+          <li>(26, 0, 25)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Wreckage_SentryGun</def>
+        <rot>1</rot>
+        <posList>
+          <li>(4, 0, 2)</li>
+          <li>(19, 0, 3)</li>
+          <li>(19, 0, 24)</li>
+          <li>(25, 0, 25)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientMilitaryCrate</def>
+        <posList>
+          <li>(13, 0, 3)</li>
+          <li>(10, 0, 4)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Wall</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(12, 0, 4)</li>
+          <li>(12, 0, 6)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_ChunkSlag_Old</def>
+        <posList>
+          <li>(6, 0, 4)</li>
+          <li>(16, 0, 16)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_ChunkSlag_Old</def>
+        <rot>3</rot>
+        <posList>
+          <li>(9, 0, 4)</li>
+          <li>(18, 0, 17)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_LogisticContainerDestroyed</def>
+        <posList>
+          <li>(25, 0, 4)</li>
+          <li>(25, 0, 8)</li>
+          <li>(25, 0, 10)</li>
+          <li>(14, 0, 5)</li>
+          <li>(18, 0, 5)</li>
+          <li>(18, 0, 7)</li>
+          <li>(23, 0, 5)</li>
+          <li>(23, 0, 8)</li>
+          <li>(23, 0, 10)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_ChunkSlag_Old</def>
+        <rot>2</rot>
+        <posList>
+          <li>(7, 0, 5)</li>
+          <li>(13, 0, 14)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Door</def>
+        <pos>(12, 0, 5)</pos>
+        <rot>1</rot>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_HoundBaseDestroyed</def>
+        <pos>(7, 0, 6)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_Eletric_MediumDestoryed</def>
+        <posList>
+          <li>(10, 0, 6)</li>
+          <li>(7, 0, 9)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_LogisticContainer</def>
+        <pos>(25, 0, 6)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Scanner_LargeDestoryed</def>
+        <pos>(12, 0, 10)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>TrapIED_HighExplosive</def>
+        <posList>
+          <li>(20, 0, 11)</li>
+          <li>(7, 0, 21)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>CraterSmall</def>
+        <posList>
+          <li>(20, 0, 12)</li>
+          <li>(19, 0, 19)</li>
+          <li>(27, 0, 22)</li>
+          <li>(11, 0, 23)</li>
+          <li>(21, 0, 25)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_FPVHangerDestoryed</def>
+        <posList>
+          <li>(7, 0, 14)</li>
+          <li>(7, 0, 19)</li>
+          <li>(7, 0, 24)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Wreckage_Ronin</def>
+        <posList>
+          <li>(17, 0, 13)</li>
+          <li>(14, 0, 18)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_ChunkSlag</def>
+        <pos>(18, 0, 14)</pos>
+        <rot>2</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_MissileLauncherDestoryed</def>
+        <posList>
+          <li>(24, 0, 15)</li>
+          <li>(24, 0, 19)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Wreckage_Chunk</def>
+        <pos>(17, 0, 15)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_ChunkSlag</def>
+        <pos>(19, 0, 15)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_ChunkSlag_Old</def>
+        <pos>(12, 0, 20)</pos>
+        <rot>1</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_MissileLauncherDestoryed</def>
+        <pos>(24, 0, 23)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(6, 0, 3)</pos>
+        <size>(7, 5)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(6, 0, 8)</pos>
+        <size>(3, 3)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_RoofRect">
+        <def>RoofConstructed</def>
+        <pos>(5, 0, 3)</pos>
+        <size>(8, 5)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_RoofRect">
+        <def>RoofConstructed</def>
+        <pos>(5, 0, 8)</pos>
+        <size>(5, 3)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_PawnGroup">
+        <factionDef>DMS_Legacy</factionDef>
+        <sendSignalRadius>20</sendSignalRadius>
+        <pos>(15, 0, 13)</pos>
+        <pointsRange>0~1500</pointsRange>
+        <lordTag>RoninGroup</lordTag>
+        <options>
+          <DMS_Mech_Phalanx>1</DMS_Mech_Phalanx>
+          <DMS_Mech_Hyrax>5</DMS_Mech_Hyrax>
+        </options>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+</Defs>

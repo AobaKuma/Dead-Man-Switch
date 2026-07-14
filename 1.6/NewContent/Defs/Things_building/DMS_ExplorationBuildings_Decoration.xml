@@ -91,16 +91,19 @@
 
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Wreckage_Chunk</defName>
-    <label>Wreckage chunk</label>
-    <description>一個難以辨認其原本面貌的殘骸塊，嚴格來說是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</description>
+    <label>wreckage chunk</label>
+    <description>A chunk of wreckage mangled beyond recognition. Strictly speaking, it makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
     <graphicData>
       <texPath>Things/Wreckages/DerelictChunk</texPath>
       <graphicClass>Graphic_Random</graphicClass>
-      <drawSize>(1.2,1.2)</drawSize>
+      <drawSize>(2.2,2.2)</drawSize>
+      <shadowData>
+        <volume>(1.7, 0.6, 1.7)</volume>
+      </shadowData>
     </graphicData>
     <designatorDropdown>DMS_Wreckages</designatorDropdown>
     <uiIconScale>0.9</uiIconScale>
-    <size>(1,1)</size>
+    <size>(2,2)</size>
     <costList>
       <Steel>50</Steel>
     </costList>
@@ -108,8 +111,8 @@
 
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Wreckage_SentryGun</defName>
-    <label>diabled sentry gun</label>
-    <description>一座嚴重損毀的小型哨戒砲塔，嚴格來說是個堪用的掩體，能夠回收少量的金屬碎片。</description>
+    <label>disabled sentry gun</label>
+    <description>A badly damaged small sentry turret. Strictly speaking, it makes passable cover, and a small amount of metal scrap can be salvaged from it.</description>
     <graphicData>
       <texPath>Things/Wreckages/DisabledTurret_Small</texPath>
       <graphicClass>Graphic_Random</graphicClass>
@@ -129,8 +132,8 @@
 
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Wreckage_Ronin</defName>
-    <label>diabled ronin</label>
-    <description>一架嚴重損毀的浪人型機兵，嚴格來說是個堪用的掩體，能夠回收少量的金屬碎片。</description>
+    <label>disabled ronin</label>
+    <description>A badly damaged Ronin automatroid. Strictly speaking, it makes passable cover, and a small amount of metal scrap can be salvaged from it.</description>
     <graphicData>
       <texPath>Things/Wreckages/Disabled_Ronin</texPath>
       <graphicClass>Graphic_Random</graphicClass>
@@ -150,38 +153,107 @@
   </ThingDef>
 
 
+  <!-- 守門人 -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_GatekeeperDestoryed</defName>
+    <label>destroyed gatekeeper</label>
+    <description>The burnt-out remains of a Gatekeeper close-in defense turret. Its rotary cannon has been torn apart and its fire-control systems gutted, leaving a hulk that still makes excellent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Turrets</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+      <shadowData>
+        <volume>(2.9, 0.6, 2.9)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <costList>
+      <ChunkSlagSteel>5</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
+  <!-- 防空雷達 -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_RadarDestoryed</defName>
+    <label>destroyed radar</label>
+    <description>The wreck of an air-defense radar station. Its antenna array has been shredded and the emitter is long dead, leaving the surrounding airspace unwatched. The remaining mount makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Radar</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+      <shadowData>
+        <volume>(2.9, 0.6, 2.9)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <costList>
+      <ChunkSlagSteel>5</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_MissileLauncherDestoryed</defName>
+    <label>destroyed launcher</label>
+    <description>The wreck of a missile launch platform. Its launch cells are scorched hollow, and any remaining ordnance was removed or destroyed long ago. The remaining frame makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Launchers</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(0.8, 0.5, 0.8)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(3,3)</size>
+    <costList>
+      <ChunkSlagSteel>3</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
   <!-- FPV 機庫 -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_FPVHangerDestoryed</defName>
-    <label>Destoryed FPV Hanger</label>
-    <description>一個被徹底摧毀的無人機發射艙，已經失去了發射無人機的能力，剩餘的殘骸是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</description>
+    <label>destroyed FPV hangar</label>
+    <description>A drone launch bay that has been utterly destroyed and can no longer launch drones. The remaining wreck makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Misc/DMS_Building_HangerLarge</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(5,5)</drawSize>
       <drawOffset>(0,0.05,0)</drawOffset>
+      <shadowData>
+        <volume>(2.8, 1.2, 2.8)</volume>
+      </shadowData>
     </graphicData>
     <uiIconScale>0.5</uiIconScale>
     <size>(3,3)</size>
     <costList>
-      <Steel>50</Steel>
-      <ComponentIndustrial>5</ComponentIndustrial>
+      <ChunkSlagSteel>5</ChunkSlagSteel>
     </costList>
   </ThingDef>
+
   <!-- FPV 機庫 -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_FPVNestDestoryed</defName>
-    <label>Destoryed FPV Nest</label>
-    <description>一個被徹底摧毀的無人機發射巢，已經失去了發射無人機的能力，剩餘的殘骸是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</description>
+    <label>destroyed FPV nest</label>
+    <description>A drone launch nest that has been utterly destroyed and can no longer launch drones. The remaining wreck makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Misc/DMS_Building_HangerSmall</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(1, 0.85, 1)</volume>
+      </shadowData>
     </graphicData>
     <uiIconScale>0.5</uiIconScale>
     <size>(1,1)</size>
     <costList>
-      <Steel>50</Steel>
+      <ChunkSlagSteel>3</ChunkSlagSteel>
     </costList>
   </ThingDef>
 
@@ -189,7 +261,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_Machine_Medium</defName>
     <label>facility machine</label>
-    <description>一個不知其作用的機器，其內部零件完整並且依然在運作，將其破壞可以回收一些資源。</description>
+    <description>A machine of unknown purpose. Its internal components are intact and still running; breaking it down yields some resources.</description>
     <graphicData>
       <texPath>Things/Building/MachineDeco/building_A</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -209,7 +281,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_Eletric_Medium</defName>
     <label>facility machine</label>
-    <description>一個不知其作用的機器，其內部零件完整並且依然在運作，將其破壞可以回收一些資源。</description>
+    <description>A machine of unknown purpose. Its internal components are intact and still running; breaking it down yields some resources.</description>
     <graphicData>
       <texPath>Things/Building/MachineDeco/building_B</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -225,16 +297,59 @@
     </costList>
   </ThingDef>
 
+
+  <!-- 1x3裝飾機器 -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_Machine_MediumDestoryed</defName>
+    <label>facility machine</label>
+    <description>A machine of unknown purpose. Its internal components rusted and failed long ago; breaking it down yields some metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_MachineDeco/building_A</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.75</uiIconScale>
+    <staticSunShadowHeight>0.15</staticSunShadowHeight>
+    <fillPercent>0.25</fillPercent>
+    <tickerType>Never</tickerType>
+    <size>(3,1)</size>
+    <costList>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
+  <!-- 1x3裝飾機器 -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_Eletric_MediumDestoryed</defName>
+    <label>facility machine</label>
+    <description>A machine of unknown purpose. Its internal components rusted and failed long ago; breaking it down yields some metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_MachineDeco/building_B</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.75</uiIconScale>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
+    <tickerType>Never</tickerType>
+    <size>(3,1)</size>
+    <costList>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
   <!-- 大型無人哨塔（無功能裝飾變體） -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_Scanner_LargeDestoryed</defName>
     <label>disabled large sentry tower</label>
-    <description>一座早已停止運作的大型無人警戒平台，其傳感器陣列已徹底損毀，無法再偵測或廣播警報。剩餘的塔體結構是個不錯的掩體，將其徹底拆毀需要一點時間，但能夠回收少量的金屬碎片。</description>
+    <description>A large unmanned sentry platform that ceased functioning long ago. Its sensor array is completely destroyed, no longer able to detect intruders or broadcast alerts. The remaining tower structure makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Misc/DMS_Building_ScannerLarge</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(3,7)</drawSize>
       <drawOffset>(0,0,2)</drawOffset>
+      <shadowData>
+        <volume>(2, 0.85, 2)</volume>
+      </shadowData>
     </graphicData>
     <uiIconScale>0.8</uiIconScale>
     <size>(3,3)</size>
@@ -252,13 +367,17 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_Scanner_SmallDestoryed</defName>
     <label>disabled small sentry tower</label>
-    <description>一座早已停止運作的小型無人警戒平台，其傳感器已徹底損毀，無法再偵測或廣播警報。剩餘的殘骸是個堪用的掩體，能夠回收少量的金屬碎片。</description>
+    <description>A small unmanned sentry platform that ceased functioning long ago. Its sensors are completely destroyed, no longer able to detect intruders or broadcast alerts. The remaining wreck makes passable cover, and a small amount of metal scrap can be salvaged from it.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Misc/DMS_Building_ScannerSmall</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(0.75, 0.5, 0.75)</volume>
+      </shadowData>
     </graphicData>
     <size>(1,1)</size>
+    <uiIconScale>0.5</uiIconScale>
     <rotatable>false</rotatable>
     <statBases>
       <MaxHitPoints>150</MaxHitPoints>

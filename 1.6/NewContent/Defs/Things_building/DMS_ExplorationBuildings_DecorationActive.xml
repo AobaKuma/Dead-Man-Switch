@@ -25,8 +25,8 @@
   <!-- 小型通風裝置 -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_VentSmall</defName>
-    <label>Active vent</label>
-    <description>一種用於設施內通風與核生化氣體過濾的主動式通風口，透過將設施保持為正壓狀態來避免有害氣體透過氣流在設施內擴散。</description>
+    <label>active vent</label>
+    <description>An active vent used for facility ventilation and NBC gas filtration. By keeping the facility under positive pressure, it prevents harmful gases from spreading through the facility's air circulation.</description>
     <graphicData>
       <texPath>Things/Building/ActiveVent_S/building</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -56,8 +56,8 @@
   <!-- 中型通風裝置 -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_VentMedium</defName>
-    <label>Active vent</label>
-    <description>一種用於設施內通風與核生化氣體過濾的主動式通風口，透過將設施保持為正壓狀態來避免有害氣體透過氣流在設施內擴散。</description>
+    <label>active vent</label>
+    <description>An active vent used for facility ventilation and NBC gas filtration. By keeping the facility under positive pressure, it prevents harmful gases from spreading through the facility's air circulation.</description>
     <graphicData>
       <texPath>Things/Building/ActiveVent_M/building</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -114,8 +114,8 @@
   <!-- 大型通風裝置 -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_VentLarge</defName>
-    <label>Active vent</label>
-    <description>一種用於設施內通風與核生化氣體過濾的主動式通風口，透過將設施保持為正壓狀態來避免有害氣體透過氣流在設施內擴散。</description>
+    <label>active vent</label>
+    <description>An active vent used for facility ventilation and NBC gas filtration. By keeping the facility under positive pressure, it prevents harmful gases from spreading through the facility's air circulation.</description>
     <graphicData>
       <texPath>Things/Building/ActiveVent_L/building</texPath>
       <graphicClass>Graphic_Multi</graphicClass>

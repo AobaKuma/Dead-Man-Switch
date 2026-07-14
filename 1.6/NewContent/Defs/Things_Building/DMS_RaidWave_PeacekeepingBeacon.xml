@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <!--
-    維和特遣隊信標：一次性可使用建築，觸發 FF 框架的 RaidWave 系統，
-    呼叫 DMS_RaidWave_PeacekeepingOperators（塔盾手掩護、浪人突入、遊隼火力支援的三位一體隊形）。
-    沿用 DMS_BossCallerBase（見 Things_Building/DMS_Boss.xml）：使用後自毀，訊號脈衝燒毀發射器。
-
-    Peacekeeping Operators beacon: a one-shot useable building that fires the
-    Fortified Framework RaidWave system, calling DMS_RaidWave_PeacekeepingOperators
-    (Protector-screened, Ronin-spearheaded, Falcon-supported triad). Built on
-    DMS_BossCallerBase (see Things_Building/DMS_Boss.xml): self-destructs after
-    use, as the signal burst burns out the transmitter.
-  -->
   <ThingDef ParentName="DMS_BossCallerBase">
     <defName>DMS_RaidWaveBeacon_PeacekeepingOperators</defName>
     <label>peacekeeping distress beacon</label>
@@ -50,12 +39,6 @@
         <raidWaveDef>DMS_RaidWave_PeacekeepingOperators</raidWaveDef>
         <effecterDef>BurnoutMechlinkBoosterUsed</effecterDef>
       </li>
-      <!--
-        額外效果：偽造的求救訊號同時定位出殘黨中繼站點，
-        給予一個限時 Site 任務（難度越高期限越短）。
-        Extra effect: the falsified distress call also triangulates a remnant
-        relay site, granting a time-limited site quest (harder = shorter).
-      -->
       <li Class="Fortified.CompProperties_UseEffect_GiveTimedSiteQuest">
         <quest>DMS_DecoySiteAssault</quest>
         <baseTimeoutDays>16</baseTimeoutDays>

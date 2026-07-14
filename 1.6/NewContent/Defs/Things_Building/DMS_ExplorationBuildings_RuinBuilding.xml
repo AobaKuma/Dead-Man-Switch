@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 生物培養裝置殘骸（DMS_TableArtifuscle） -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_TableArtifuscleDestroyed</defName>
+    <label>ruined artifuscle chamber</label>
+    <description>The wreck of a high-end artifuscle cultivation chamber. Its growth vats have shattered and their contents rotted away long ago. Breaking it down yields some metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/ArtifuscleTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5,3)</drawSize>
+    </graphicData>
+    <size>(3,1)</size>
+    <rotatable>true</rotatable>
+    <uiIconScale>0.75</uiIconScale>
+    <staticSunShadowHeight>0.25</staticSunShadowHeight>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+    </statBases>
+    <costList>
+      <ChunkSlagSteel>3</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
+  <!-- 機械沖壓機殘骸（DMS_TableMachinePrinter / StampTable） -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_TableMachinePrinterDestroyed</defName>
+    <label>ruined machinery printer</label>
+    <description>The wreck of a composite metal printer. Its forging rams are seized solid and the print bed is buried under collapsed tooling. Breaking it down yields some metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/StampTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5,3)</drawSize>
+    </graphicData>
+    <size>(3,2)</size>
+    <rotatable>true</rotatable>
+    <uiIconScale>0.75</uiIconScale>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+    </statBases>
+    <costList>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
+  <!-- 實驗用反應釜殘骸（DMS_LabReactor） -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_LabReactorDestroyed</defName>
+    <label>ruined lab reactor</label>
+    <description>The wreck of an experimental reaction chamber. Its vessel has ruptured and whatever it once processed has crusted over the burst plumbing. Breaking it down yields some metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/LabReactor</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <rotatable>true</rotatable>
+    <uiIconScale>0.75</uiIconScale>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+    </statBases>
+    <costList>
+      <ChunkSlagSteel>3</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
+  <!-- 實驗用箱型爐殘骸（DMS_LabFurnace） -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_LabFurnaceDestroyed</defName>
+    <label>ruined lab furnace</label>
+    <description>The wreck of an experimental sintering furnace, burnt out from the inside. Its heating elements are slagged and the chamber lining has collapsed. Breaking it down yields some metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/Lab_Furnace</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,3)</drawSize>
+    </graphicData>
+    <size>(2,1)</size>
+    <rotatable>true</rotatable>
+    <uiIconScale>0.75</uiIconScale>
+    <staticSunShadowHeight>0.3</staticSunShadowHeight>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+    </statBases>
+    <costList>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
+  <!-- 機械櫃殘骸（DMS_MachineCabinet），與功能版相同使用 Graphic_Random 隨機外觀 -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_MachineCabinetDestroyed</defName>
+    <label>ruined machine cabinet</label>
+    <description>The wreck of a calibration cabinet. Its precision instruments have been smashed or stripped, leaving only a gutted shell. Breaking it down yields some metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/MachineCabinet</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <size>(2,1)</size>
+    <uiIconScale>0.75</uiIconScale>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+    </statBases>
+    <costList>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
+  <!-- 獵犬控制平台殘骸（DMS_Hound_Base） -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_HoundBaseDestroyed</defName>
+    <label>ruined hound station</label>
+    <description>The wreck of a hound unit charging station. Its docking cradle is empty and the charging contacts have corroded beyond repair. Breaking it down yields some metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/Drone_Platform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2.5)</drawSize>
+      <drawOffset>(0,0,0.25)</drawOffset>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <uiIconScale>0.75</uiIconScale>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+    </statBases>
+    <costList>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
+  <!-- 垃圾盤控制平台殘骸（DMS_TrashBin_Base） -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_TrashBinBaseDestroyed</defName>
+    <label>ruined trashpan station</label>
+    <description>The wreck of a trashpan unit charging station. Its docking cradle is empty and the charging contacts have corroded beyond repair. Breaking it down yields some metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/Drone_Platform_Pan</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2.5)</drawSize>
+      <drawOffset>(0,0,0.25)</drawOffset>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <uiIconScale>0.75</uiIconScale>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+    </statBases>
+    <costList>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
+  <!-- 後勤貨櫃殘骸（DMS_LogisticContainer） -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_LogisticContainerDestroyed</defName>
+    <label>ruined logistic container</label>
+    <description>A breached military cargo container. Whatever supplies it once held were looted or destroyed long ago, leaving only the torn shell. Breaking it down yields some metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/DMS_LogisticContainer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.5,2.5)</drawSize>
+      <shadowData>
+        <volume>(1.8, 0.6, 1.8)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <uiIconScale>0.75</uiIconScale>
+    <pathCost>90</pathCost>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+    </statBases>
+    <costList>
+      <ChunkSlagSteel>3</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
+</Defs>

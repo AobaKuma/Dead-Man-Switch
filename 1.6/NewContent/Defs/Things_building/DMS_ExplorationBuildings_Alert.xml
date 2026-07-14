@@ -31,7 +31,6 @@
     <receivesSignals>true</receivesSignals>
     <building>
       <claimable>false</claimable>
-      <deconstructible>false</deconstructible>
     </building>
     <!-- EMP / Stun 癱瘓（搭配 CompCanBeDormant 停止掃描） -->
     <comps>
@@ -50,8 +49,8 @@
   <!-- FPV 機庫 -->
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_FPVNest</defName>
-    <label>FPV Nest</label>
-    <description>一種用於自動化設施防禦的無人機巢，能夠在接受到設施中其他傳感器的警報後自動發射FPV無人機驅趕或殺傷入侵者。在受到攻擊時也會釋放無人機迎敵。其下方與設施的地下化物流系統相連，因此每隔一段時間就會自動補充損耗的無人機庫存。</description>
+    <label>FPV nest</label>
+    <description>An automated drone nest used for facility defense. When alerted by the facility's other sensors, it automatically launches FPV drones to drive off or kill intruders, and it will also release drones to fight back when attacked. It is connected to the facility's underground logistics system below, so its expended drone stock is automatically replenished over time.</description>
     <graphicData>
       <texPath>Things/Building/DMS_Building_HangerSmall</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -74,7 +73,7 @@
         <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
         <triggerChance>0.6</triggerChance>
         <oneShot>true</oneShot>
-        <pawnKindDef>Drone_Wasp</pawnKindDef>
+        <pawnKindDef>DMS_Drone_VerlingBrid</pawnKindDef>
         <countToSpawn>4</countToSpawn>
         <targetSearchRadius>40</targetSearchRadius>
         <scatterAroundParent>true</scatterAroundParent>
@@ -87,8 +86,8 @@
   <!-- FPV 機庫 -->
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_FPVHanger</defName>
-    <label>FPV Hanger</label>
-    <description>一種用於自動化設施防禦的無人機機庫，能夠在接受到設施中其他傳感器的警報後自動發射FPV無人機驅趕或殺傷入侵者。在受到攻擊時也會釋放無人機迎敵。其下方與設施的地下化物流系統相連，因此每隔一段時間就會自動補充損耗的無人機庫存。</description>
+    <label>FPV hangar</label>
+    <description>An automated drone hangar used for facility defense. When alerted by the facility's other sensors, it automatically launches FPV drones to drive off or kill intruders, and it will also release drones to fight back when attacked. It is connected to the facility's underground logistics system below, so its expended drone stock is automatically replenished over time.</description>
     <graphicData>
       <texPath>Things/Building/DMS_Building_HangerLarge</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -113,7 +112,7 @@
         <triggerChance>0.6</triggerChance>
         <!-- 可重複觸發 -->
         <oneShot>false</oneShot>
-        <pawnKindDef>Drone_Wasp</pawnKindDef>
+        <pawnKindDef>DMS_Drone_VerlingBrid</pawnKindDef>
         <countToSpawn>5</countToSpawn>
         <targetSearchRadius>40</targetSearchRadius>
         <scatterAroundParent>true</scatterAroundParent>
@@ -183,7 +182,7 @@
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_Sensor</defName>
     <label>seismic sensor</label>
-    <description>一種安裝在各類管道及次要通道的被動傳感器，越大的東西進入其範圍內就越容易引起警報。</description>
+    <description>A passive sensor installed along pipes and secondary passageways. The larger the thing entering its range, the more likely it is to trip the alarm.</description>
     <graphicData>
       <texPath>Things/Building/Facility_Decoy</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -222,7 +221,7 @@
   <!-- 大型無人哨塔 （每300Tick監視半徑30格LOS範圍內的Pawn） -->
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_Scanner_Large</defName>
-    <label>大型無人哨塔</label>
+    <label>large sentry tower</label>
     <!-- 一種長期自持運行的無人警戒平台，具有多種類型的傳感器來監控大片範圍內的可疑活動。一旦被驚動到就會廣播警報訊號來讓周圍的自動化防禦設施啟動迎敵。 -->
     <description>A tall observation tower with automated sensors. Detects hostiles within a wide radius. Disable with EMP or power cut before attempting to dismantle.</description>
     <graphicData>
@@ -267,8 +266,8 @@
   <!-- 小型無人哨塔 （每250Tick監視半徑5格LOS範圍內的Pawn） -->
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_Scanner_Small</defName>
-    <label>小型無人哨塔</label>
-    <description>一種無須電力長期運行的無人警戒平台，具有多種類型的傳感器來監控大片範圍內的可疑活動。一旦有入侵者闖入範圍就會廣播警報使自動化防禦設施啟動迎敵。</description>
+    <label>small sentry tower</label>
+    <description>An unmanned sentry platform built for long-term unattended operation, fitted with multiple types of sensors to monitor a wide area for suspicious activity. Once an intruder enters its range, it broadcasts an alert that activates the automated defenses to engage.</description>
     <graphicData>
       <texPath>Things/Building/DMS_Building_ScannerSmall</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -276,6 +275,7 @@
     </graphicData>
     <size>(1,1)</size>
     <rotatable>false</rotatable>
+    <uiIconScale>0.5</uiIconScale>
     <statBases>
       <MaxHitPoints>150</MaxHitPoints>
     </statBases>

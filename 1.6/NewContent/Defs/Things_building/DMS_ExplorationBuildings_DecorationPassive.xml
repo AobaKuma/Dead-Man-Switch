@@ -117,8 +117,8 @@
   <!-- Wall lamp -->
   <ThingDef ParentName="LampBase">
     <defName>DMS_EmergencyLamp</defName>
-    <label>Emergency lighting</label>
-    <description>一種只在斷電時使用內部電池自動亮起的應急照明系統，能夠長時間發出紅光確保即使斷電也能夠維持最低限度的照明。</description>
+    <label>emergency lighting</label>
+    <description>An emergency lighting system that automatically switches to its internal battery only when grid power is lost, glowing red for extended periods to maintain a minimum level of illumination even during an outage.</description>
     <designationCategory>FFF_DevCategory</designationCategory>
     <altitudeLayer>BuildingOnTop</altitudeLayer>
     <tickerType>Normal</tickerType>
