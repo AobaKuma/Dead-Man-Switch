@@ -28,6 +28,8 @@
 
     <Publicize Include="Assembly-CSharp:RimWorld.CompTargetable.selectedTarget" />
     <Publicize Include="Assembly-CSharp:RimWorld.LordToil_Siege.SetAsDefender" />
+    <Publicize Include="Assembly-CSharp:RimWorld.QuestPartActivable.Complete" />
+    <Publicize Include="Assembly-CSharp:RimWorld.QuestPart_LendColonistsToFaction.Complete" />
 
   </ItemGroup>
   <ItemGroup>

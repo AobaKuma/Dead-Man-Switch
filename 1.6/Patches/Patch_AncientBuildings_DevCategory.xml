@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- ============================================================
+	     將原版 Ancient 建築全數加入 FFF_DevCategory(Building(Dev))。
+	     策略:優先 Patch 抽象母體(子代自動繼承),散件再逐一以 defName 加入。
+	     ============================================================ -->
+
+	<!-- [Core] 三大母體:
+	     AncientBuildingBase(含 NonDeconstructible / SmallWalkable / Walkable / TurretBase 等子母體)
+	     AncientTerminalBase(終端機系,含 Ideology 的 Worshipful / Enemy 與 Odyssey 的 SecurityTerminal)
+	     AncientMechBuildingBase(機械體充電座/孵化器系,含 Biotech 的 ToxifierGenerator / BandNode) -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="AncientBuildingBase" or @Name="AncientTerminalBase" or @Name="AncientMechBuildingBase"]</xpath>
+		<value>
+			<designationCategory>FFF_DevCategory</designationCategory>
+		</value>
+	</Operation>
+
+	<!-- [Core] 散件:直接繼承 BuildingBase / CrateBase 的獨立 Ancient 建築。
+	     AncientCryptosleepCasket 為 Named Def,AncientCryptosleepPod 因原版標記
+	     designationCategory Inherit="False" 不會顯示(其為含沉睡者的觸發版,不宜直接擺放)。 -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[
+			defName="AncientLamp" or defName="AncientSystemRack" or defName="AncientBarrel" or
+			defName="AncientBed" or defName="AncientOperatingTable" or defName="AncientGenerator" or
+			defName="AncientMechDropBeacon" or defName="AncientLockerBank" or defName="AncientDisplayBank" or
+			defName="AncientCrate" or defName="AncientStorageCylinder" or defName="AncientSpacerCrate" or
+			defName="AncientMilitaryCrate" or defName="AncientShipBeacon" or defName="AncientFence" or
+			defName="AncientPipes" or defName="AncientConcreteBarrier" or defName="AncientLamppost" or
+			defName="AncientHermeticCrate" or defName="AncientFuelNode" or defName="AncientCryptosleepCasket"]</xpath>
+		<value>
+			<designationCategory>FFF_DevCategory</designationCategory>
+		</value>
+	</Operation>
+
+	<!-- [Ideology] 散件 -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Ideology</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="AncientCommsConsole" or defName="AncientSecurityCrate"]</xpath>
+			<value>
+				<designationCategory>FFF_DevCategory</designationCategory>
+			</value>
+		</match>
+	</Operation>
+
+	<!-- [Odyssey] 散件 -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Odyssey</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- 母體:密封貨櫃/密封板條箱(AncientSealedCrateBase 即 SealedCrate 本體)、
+				     通風口系(Smoke/Tox/Heat)、緊急燈系(Red/Blue/Green) -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="AncientSealedContainerBase" or @Name="AncientSealedCrateBase" or @Name="BaseAncientVentThing" or @Name="AncientEmergencyLightBase"]</xpath>
+					<value>
+						<designationCategory>FFF_DevCategory</designationCategory>
+					</value>
+				</li>
+
+				<!-- 獨立建築與 LowTechCrateBase 子代(只取 Ancient 系,避免波及一般 Crate) -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[
+						defName="AncientGravReactor" or defName="AncientGravEngine" or
+						defName="AncientTransportPod" or defName="AncientHatch" or
+						defName="AncientTerraformer" or defName="AncientUplink" or
+						defName="AncientBox_ComponentIndustrial" or defName="AncientBox_ComponentSpacer" or
+						defName="AncientBox_SteelSlag" or defName="AncientChemfuelCanister" or
+						defName="AncientSafe" or defName="AncientPallet_SteelSlag"]</xpath>
+					<value>
+						<designationCategory>FFF_DevCategory</designationCategory>
+					</value>
+				</li>
+
+				<!-- 這兩個原版已有 <designationCategory IsNull="True"/>,必須用 Replace。
+				     OrbitalAncientFortifiedWall 繼承 AncientFortifiedWall,自動生效。 -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AncientFortifiedWall" or defName="AncientBlastDoor"]/designationCategory</xpath>
+					<value>
+						<designationCategory>FFF_DevCategory</designationCategory>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+	<!-- 未納入:AncientHatchExit(PocketMapExit,需綁定口袋地圖)、
+	     DropPod / Skyfaller 類、Bullet / Gun 類非建築物。 -->
+
+</Patch>

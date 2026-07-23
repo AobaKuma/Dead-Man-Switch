@@ -18,7 +18,7 @@
     <defName>DMS_Mods</defName>
     <label>Automatroid mods</label>
     <parent>Manufactured</parent>
-	  <iconPath>Things/Resource/ComponentModule</iconPath> <!-- change? -->
+    <iconPath>Things/Resource/ComponentModule</iconPath> <!-- change? -->
   </ThingCategoryDef>
 
   <ThingDef ParentName="ResourceBase" Name="BaseModificationItem" Abstract="True">
@@ -94,7 +94,7 @@
         <compClass>Fortified.CompTargetable_AddHediffOnTarget</compClass>
         <hediffDef>DMS_CeramicsPlating</hediffDef>
         <soundDef>DMS_EquipGear</soundDef>
-        <targetBodyPartDefs/>
+        <targetBodyPartDefs />
       </li>
     </comps>
   </ThingDef>
@@ -184,7 +184,7 @@
         <compClass>Fortified.CompTargetable_AddHediffOnTarget</compClass>
         <hediffDef>DMS_ReinforcedFrame</hediffDef>
         <soundDef>DMS_EquipGear</soundDef>
-        <targetBodyPartDefs/>
+        <targetBodyPartDefs />
       </li>
     </comps>
   </ThingDef>
@@ -238,7 +238,7 @@
       <MaxHitPoints>120</MaxHitPoints>
       <Mass>8.5</Mass>
     </statBases>
-    <costList/>
+    <costList />
     <tradeTags>
       <li>Serum</li>
     </tradeTags>
@@ -442,7 +442,7 @@
       <!-- <MarketValue>2000</MarketValue> -->
       <MaxHitPoints>120</MaxHitPoints>
       <Mass>35</Mass>
-    </statBases>    
+    </statBases>
     <costList>
       <ComponentStamped>5</ComponentStamped>
       <Tungsteel>100</Tungsteel>
@@ -472,7 +472,7 @@
       </li>
     </comps>
   </ThingDef>
-  
+
   <HediffDef>
     <defName>DMS_TB_HeavyHydraulicFrame</defName>
     <hediffClass>HediffWithComps</hediffClass>
@@ -679,7 +679,7 @@
       <!-- <MarketValue>500</MarketValue> -->
       <MaxHitPoints>120</MaxHitPoints>
       <Mass>10.5</Mass>
-    </statBases>    
+    </statBases>
     <costList>
       <ComponentStamped>2</ComponentStamped>
       <Polyester>20</Polyester>

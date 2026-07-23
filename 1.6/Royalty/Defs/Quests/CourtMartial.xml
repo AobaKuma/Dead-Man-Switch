@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ======================= 軍事法庭 ======================= -->
+  <QuestScriptDef>
+    <defName>DMS_CourtMartial</defName>
+    <rootSelectionWeight>1</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <defaultChallengeRating>2</defaultChallengeRating>
+    <expireDaysRange>6~10</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Court-martial: [defendant_nameFull]</li>
+        <li>questName->Military tribunal summons</li>
+        <li>questName->Fleet judicial notice</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <!-- 三個隨機變體,佔位符相同、行文相異 -->
+        <li>questDescription->A sergeant of the military police command of [issuerFactionName], [asker_nameFull], has issued a notice over the public band, expressing [asker_possessive] strictly-official concern over the recent military-diplomatic incident caused by [playerFactionName]. As [playerFactionName] counts enlisted personnel of [issuerFactionName] among its members, [asker_pronoun] intends to settle the matter through formal court-martial proceedings.\n\nBy [asker_possessive] account, the highest-ranking officer of [playerFactionName], [defendant_nameFull], must report to the fleet's local military tribunal for investigation and questioning. Should [playerFactionName] cooperate, [asker_pronoun] will immediately requisition an orbital transport to collect [defendant_nameDef], and hostilities between [issuerFactionName] and [playerFactionName] will be suspended for the duration.\n\n[asker_nameDef] tells us the investigation will conclude within [investigationDays] days, after which the accused will answer for the charges in court, the verdict to be pronounced by the [issuerFactionName] Navigation Hall and executed at once. If [defendant_nameDef] cooperates, [defendant_possessive] punishment will be weighed leniently — though given the gravity of a military incident, it will still mean short-term detention and a demotion at the very least.\n\nRoom, board and medical care during [defendant_possessive] sentence will be borne by [issuerFactionName], and [defendant_pronoun] will be returned to [playerFactionName] once it is served.</li>
+
+        <li>questDescription->Over the public band, [asker_nameFull], a duty sergeant of the [issuerFactionName] military police command, has served us formal notice: the recent military-diplomatic incident attributed to [playerFactionName] will not be ignored. Because members of [playerFactionName] remain on the [issuerFactionName] service roll, [asker_pronoun] insists the affair be resolved before a proper court-martial rather than on a battlefield.\n\nThe terms are plain. Our highest-ranking officer, [defendant_nameFull], is to submit to investigation and questioning at the fleet's local tribunal. Upon our agreement, [asker_pronoun] will requisition an orbital transport for [defendant_nameDef] without delay, and [issuerFactionName] will hold its guns for as long as the proceedings run.\n\nPer [asker_nameDef], the inquiry closes within [investigationDays] days; the accused will then speak in [defendant_possessive] own defense before the bench, and the Navigation Hall of [issuerFactionName] will pass sentence for immediate execution. Cooperation buys leniency, but a military incident of this weight carries no less than brief detention and one grade of demotion.\n\nThe fleet will feed, house and treat [defendant_nameDef] throughout the sentence, and return [defendant_pronoun] to [playerFactionName] when it ends.</li>
+
+        <li>questDescription->[asker_nameFull], sergeant of the military police command, [issuerFactionName], has broadcast an official communiqué regarding the military-diplomatic incident recently caused by [playerFactionName]. [asker_pronoun] frames it as nothing personal — merely procedure: since [playerFactionName] harbors personnel still enrolled with [issuerFactionName], the matter falls under military jurisdiction and must go before a court-martial.\n\n[asker_pronoun] requires that [defendant_nameFull], the senior rank-holder of [playerFactionName], attend the fleet's local tribunal for investigation and questioning. The moment we consent, an orbital transport will be requisitioned to carry [defendant_nameDef] up, and [issuerFactionName] will suspend all hostilities against [playerFactionName] pending judgment.\n\nAs [asker_nameDef] lays it out: [investigationDays] days of investigation, then the accused argues [defendant_possessive] defense in open court, and the [issuerFactionName] Navigation Hall pronounces sentence on the spot. Willing cooperation will be weighed in mitigation, but the minimum remains short-term detention plus demotion by one grade.\n\nQuarters, rations and medical care during the sentence come at [issuerFactionName]'s expense; [defendant_pronoun] will be shipped back to [playerFactionName] on release.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="DMS.QuestNode_Root_CourtMartial">
+      <fleetFactionDef>DMS_Army</fleetFactionDef>
+      <transportShipDef>DMS_Ship_TransportShuttle</transportShipDef>
+      <investigationDaysRange>1~3</investigationDaysRange>
+      <!-- 官階 seniority → 服刑天數(反比:官階越高刑期越短,最少 minDetentionDays) -->
+      <seniorityToDetentionDaysCurve>
+        <points>
+          <li>(0, 60)</li>
+          <li>(100, 45)</li>
+          <li>(300, 30)</li>
+          <li>(500, 15)</li>
+          <li>(1000, 5)</li>
+        </points>
+      </seniorityToDetentionDaysCurve>
+      <minDetentionDays>5</minDetentionDays>
+      <boardingDeadlineDays>2</boardingDeadlineDays>
+      <baseAllyChance>0.15</baseAllyChance>
+      <allyChancePerSocialLevel>0.03</allyChancePerSocialLevel>
+      <allyGoodwill>75</allyGoodwill>
+      <!-- 無罪釋放:機率=(基礎+社交×係數+官階seniority/100×係數)×交談能力,上限cap -->
+      <baseAcquitChance>0.10</baseAcquitChance>
+      <acquitChancePerSocialLevel>0.02</acquitChancePerSocialLevel>
+      <acquitChancePerSeniority>0.05</acquitChancePerSeniority>
+      <maxAcquitChance>0.75</maxAcquitChance>
+    </root>
+  </QuestScriptDef>
+
+  <!-- ======================= 執行期信件文法 ======================= -->
+  <!-- C# 注入: defendantName, issuerFactionName, askerName, oldTitle, newTitle, detentionDays -->
+  <RulePackDef>
+    <defName>DMS_CourtMartialLetters</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>arrivedLetterLabel->Tribunal transport arrived</li>
+        <li>arrivedLetterLabel->Orbital transport landed</li>
+        <li>arrivedLetterText->The orbital transport requisitioned by [askerName] has landed. [defendantName] must board it to attend the [issuerFactionName] military tribunal. Hostilities are suspended while the proceedings hold.</li>
+
+        <li>acquitLetterLabel->Acquitted: [defendantName]</li>
+        <li>acquitLetterLabel->Verdict: not guilty</li>
+        <li>acquitLetterText->Against expectations, [defendantName] mounted a compelling defense before the tribunal. The Navigation Hall of [issuerFactionName] has ruled the charges unfounded and ordered an immediate release — rank and record intact.\n\nThe officer corps was visibly impressed. [issuerFactionName] has extended formal recognition to us; our standing is now that of an ally. [defendantName] is being returned by drop pod.</li>
+
+        <li>verdictLetterLabel->Verdict: [defendantName]</li>
+        <li>verdictLetterLabel->Sentence pronounced</li>
+        <li>verdictLetterText->The Navigation Hall of [issuerFactionName] has pronounced sentence. In consideration of [defendantName]'s cooperation, the punishment is set at the minimum: demotion from [oldTitle] to [newTitle], and [detentionDays] days of detention, effective immediately.\n\nThe fleet will cover room, board and medical care for the duration.</li>
+
+        <li>returnAllyLetterLabel->[defendantName] returned — fleet's respect earned</li>
+        <li>returnAllyLetterText->[defendantName] has served the sentence and been returned by drop pod.\n\nThroughout detention, [defendantName]'s bearing and testimony left a strong impression on the [issuerFactionName] officer corps. The fleet has extended formal recognition to us — our standing with [issuerFactionName] is now that of an ally.</li>
+
+        <li>returnNeutralLetterLabel->[defendantName] returned</li>
+        <li>returnNeutralLetterText->[defendantName] has served the sentence and been returned by drop pod.\n\n[issuerFactionName] considers the incident formally closed. Relations remain neutral — the ceasefire holds, but no warmth came of it.</li>
+
+        <li>betrayLetterLabel->Tribunal terms violated</li>
+        <li>betrayLetterText->The court-martial arrangement with [issuerFactionName] has collapsed. The military police command has declared the proceedings void, and [issuerFactionName] has resumed hostilities against us.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

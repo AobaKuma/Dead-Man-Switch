@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS_CourtMartial.questNameRules.rulesStrings>
+    <li>questName->军事法庭：[defendant_nameFull]</li>
+    <li>questName->军事法庭传唤</li>
+    <li>questName->舰队司法通告</li>
+  </DMS_CourtMartial.questNameRules.rulesStrings>
+
+  <DMS_CourtMartial.questDescriptionRules.rulesStrings>
+    <li>questDescription->来自[issuerFactionName]的宪兵指挥部士官[asker_nameFull]透过公共频段向我们发布通告，对于近期[playerFactionName]导致的军事外交事故表达了[asker_possessive]公事公办的关切。由于[playerFactionName]中具有[issuerFactionName]的在编人员，因此[asker_pronoun]希望透过正式的军事法庭流程来处理本次事件。\n\n根据[asker_possessive]的表示，[playerFactionName]中的最高军阶持有者[defendant_nameFull]需要配合前往舰队当地的军事法庭接受调查与质询。如果[playerFactionName]愿意配合，[asker_pronoun]就会马上征调一架轨道运输机接走[defendant_nameDef]，并暂时中止[issuerFactionName]对[playerFactionName]的敌对状态。\n\n[asker_nameDef]告诉我们，调查会在[investigationDays]天内完成，届时被告[defendant_nameDef]将在军事法庭上为其罪刑辩护，并由[issuerFactionName]领航厅宣判罪刑并立即执行。[defendant_nameDef]若主动配合，[defendant_possessive]惩处也会在庭上斟酌从轻发落，但由于军事事故的严重性，最少仍会得到短期拘禁与降职处理。\n\n[defendant_possessive]服刑期间的吃住及医疗将由[issuerFactionName]负担，并在完成服刑之后送回[playerFactionName]。</li>
+
+    <li>questDescription->[issuerFactionName]宪兵指挥部的值星士官[asker_nameFull]透过公共频段向我们送达了正式通知：近期归咎于[playerFactionName]的军事外交事故不会被就此搁置。由于[playerFactionName]的成员仍列于[issuerFactionName]的服役名册上，[asker_pronoun]坚持此事应在军事法庭上解决，而非战场。\n\n条件很明确：我方最高军阶持有者[defendant_nameFull]须前往舰队当地的法庭接受调查与质询。一旦我们同意，[asker_pronoun]会立即征调一架轨道运输机接走[defendant_nameDef]，而[issuerFactionName]将在整个审理期间停止对[playerFactionName]的敌对行动。\n\n按[asker_nameDef]的说法，调查将在[investigationDays]天内结束；随后被告将在法庭上为自己辩护，由[issuerFactionName]领航厅宣判并立即执行。配合能换取从宽，但这种等级的军事事故最少仍是短期拘禁加降职一级。\n\n服刑期间舰队将负责[defendant_nameDef]的食宿与医疗，刑满后将[defendant_pronoun]送回[playerFactionName]。</li>
+
+    <li>questDescription->[issuerFactionName]宪兵指挥部士官[asker_nameFull]就[playerFactionName]近期造成的军事外交事故发布了正式公报。[asker_pronoun]表明这无关私怨，纯属程序：既然[playerFactionName]中仍有[issuerFactionName]的在编人员，此事便属军事管辖，必须交由军事法庭处理。\n\n[asker_pronoun]要求[playerFactionName]的最高军阶持有者[defendant_nameFull]前往舰队当地法庭接受调查与质询。我们一旦同意，就会有一架轨道运输机被征调来接走[defendant_nameDef]，而[issuerFactionName]将在宣判前暂停一切敌对行动。\n\n依[asker_nameDef]的说明：[investigationDays]天的调查之后，被告将在公开庭上为[defendant_possessive]罪刑辩护，[issuerFactionName]领航厅当庭宣判并立即执行。主动配合可作为从轻情节，但最低刑度仍是短期拘禁与降职一级。\n\n服刑期间的居所、口粮与医疗由[issuerFactionName]承担；刑满后[defendant_pronoun]将被送回[playerFactionName]。</li>
+  </DMS_CourtMartial.questDescriptionRules.rulesStrings>
+
+</LanguageData>

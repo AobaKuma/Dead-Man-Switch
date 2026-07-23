@@ -6,7 +6,9 @@
     <label>Neuroglue</label>
     <description>A protein-like receptor gel which connects biological tissues and neural machinery. Neuroglue can effectively block phantom limb syndrome and synthetic rejections.\n\nSuch products have been circulating Rimworld and Midworld for many decades, but any organization claiming to have produced this product has been sanctioned by agents from the Coreworld. They Declare that such a product will increase the bionic level of pirates which isn't safe for regional balance.</description>
     <possessionCount>10</possessionCount>
-    <descriptionHyperlinks><HediffDef>NeuroglueHigh</HediffDef></descriptionHyperlinks>
+    <descriptionHyperlinks>
+      <HediffDef>NeuroglueHigh</HediffDef>
+    </descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Resource/Neuroglue</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -45,7 +47,7 @@
       </li>
     </comps>
   </ThingDef>
-  
+
   <HediffDef>
     <defName>NeuroglueHigh</defName>
     <hediffClass>Hediff_High</hediffClass>
@@ -61,18 +63,18 @@
         <showHoursToRecover>true</showHoursToRecover>
       </li>
     </comps>
-      <stages>
-        <li>
-          <painOffset>0.1</painOffset>
-          <makeImmuneTo>
-            <li>DMS_BionicShock</li>
-            <li>DMS_SyntheticRejection</li>
-            <li>DMS_BionicShockRemove</li>
-            <li>FibrousMechanites</li>
-            <li>SensoryMechanites</li>
-          </makeImmuneTo>
-        </li>
-      </stages>
+    <stages>
+      <li>
+        <painOffset>0.1</painOffset>
+        <makeImmuneTo>
+          <li>DMS_BionicShock</li>
+          <li>DMS_SyntheticRejection</li>
+          <li>DMS_BionicShockRemove</li>
+          <li>FibrousMechanites</li>
+          <li>SensoryMechanites</li>
+        </makeImmuneTo>
+      </li>
+    </stages>
   </HediffDef>
 
   <ThingDef ParentName="MakeableDrugPillBase">
@@ -80,8 +82,10 @@
     <label>C-Ration</label>
     <description>A high energy organic polymer ration, invented during World War III as a nutritional supplement for augmented human troops during combat. For soldiers equipped with nutritional interfaces, it provides enough calories for internal organs to function for a long. But for normal humans, it might cause some slight gastrointestinal discomfort.</description>
     <possessionCount>10</possessionCount>
-    <descriptionHyperlinks><HediffDef>NeuroglueHigh</HediffDef></descriptionHyperlinks>
-    <graphicData> 
+    <descriptionHyperlinks>
+      <HediffDef>NeuroglueHigh</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
       <texPath>Things/Resource/Ration</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
@@ -134,7 +138,9 @@
     <defName>DMS_OverEat</defName>
     <durationDays>1</durationDays>
     <thoughtClass>Thought_Memory</thoughtClass>
-    <nullifyingTraits><li>Gourmand</li></nullifyingTraits>
+    <nullifyingTraits>
+      <li>Gourmand</li>
+    </nullifyingTraits>
     <stages>
       <li>
         <label>overeat</label>

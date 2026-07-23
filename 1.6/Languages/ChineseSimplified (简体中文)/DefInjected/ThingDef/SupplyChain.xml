@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: supply pod -->
+  <DMS_SupplyDropPod.label>补给货舱</DMS_SupplyDropPod.label>
+  <!-- EN: A cargo pod dropped by a logistics contractor. Load the requested supplies into it and confirm delivery before the deadline. -->
+  <DMS_SupplyDropPod.description>由后勤承包方空投的机动货舱。在期限内将要求的补给装入其中并确认交付。</DMS_SupplyDropPod.description>
+
+  <!-- EN: supply pod (incoming) -->
+  <DMS_SupplyPodIncoming.label>补给货舱（降落中）</DMS_SupplyPodIncoming.label>
+  <!-- EN: supply pod (leaving) -->
+  <DMS_SupplyPodLeaving.label>补给货舱（离场）</DMS_SupplyPodLeaving.label>
+
+</LanguageData>

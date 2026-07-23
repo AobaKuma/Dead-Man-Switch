@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 補給合約鏈 Supply chain quest -->
+  <DMS_SupplyPod_Progress>Delivery progress: {0} / {1} ({2})</DMS_SupplyPod_Progress>
+  <DMS_SupplyPod_AutoDesignate>Auto-designate cargo</DMS_SupplyPod_AutoDesignate>
+  <DMS_SupplyPod_AutoDesignateDesc>Automatically designate {0} on this map to be hauled into the pod, up to the requested amount.</DMS_SupplyPod_AutoDesignateDesc>
+  <DMS_SupplyPod_Deliver>Confirm delivery</DMS_SupplyPod_Deliver>
+  <DMS_SupplyPod_DeliverDesc>Consume {0}x {1} loaded in this pod and send it away. Anything else loaded will be unloaded first.</DMS_SupplyPod_DeliverDesc>
+  <DMS_SupplyPod_NotEnough>Not enough loaded: {0} / {1}</DMS_SupplyPod_NotEnough>
+  <DMS_SupplyPod_AlreadyDesignated>Requested amount already loaded or designated.</DMS_SupplyPod_AlreadyDesignated>
+  <DMS_SupplyPod_Designated>Cargo designated for loading.</DMS_SupplyPod_Designated>
+  <DMS_SupplyPod_NoneFound>No haulable {0} found on the map.</DMS_SupplyPod_NoneFound>
+  <DMS_SupplyPod_SelectLabel>supply pod</DMS_SupplyPod_SelectLabel>
+
+  <DMS_SupplyChain_DeadlineTitle>Delivery deadline</DMS_SupplyChain_DeadlineTitle>
+  <DMS_SupplyChain_DeadlineTip>Time remaining to load the requested cargo into the supply pod.</DMS_SupplyChain_DeadlineTip>
+  <DMS_SupplyChain_AlertLabel>Supply delivery deadline</DMS_SupplyChain_AlertLabel>
+  <DMS_SupplyChain_AlertExplanation>Load {0}x {1} into the supply pod and confirm the delivery before the deadline, or the contract will end.</DMS_SupplyChain_AlertExplanation>
+  <DMS_SupplyChain_FallbackIssuer>the Colonial Fleet</DMS_SupplyChain_FallbackIssuer>
+  <DMS_SupplyChain_BonusLetterLabel>Supply contract completed</DMS_SupplyChain_BonusLetterLabel>
+  <DMS_SupplyChain_BonusLetterText>Every shipment of the supply contract has been delivered. As promised, compensation for the price difference of the goods has been sent at market rates.</DMS_SupplyChain_BonusLetterText>
+
+  <!-- 軍事法庭 Court-martial quest -->
+  <DMS_CourtMartial_BoardDeadline>Boarding deadline</DMS_CourtMartial_BoardDeadline>
+  <DMS_CourtMartial_BoardDeadlineTip>Time remaining for the defendant to board the orbital transport. If it leaves empty, the tribunal arrangement collapses and hostilities resume.</DMS_CourtMartial_BoardDeadlineTip>
+  <DMS_CourtMartial_TrialInfo>Trial concludes</DMS_CourtMartial_TrialInfo>
+  <DMS_CourtMartial_DetentionInfo>Sentence ends</DMS_CourtMartial_DetentionInfo>
+
+</LanguageData>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Delivery progress: {0} / {1} ({2}) -->
+  <DMS_SupplyPod_Progress>交付進度：{0} / {1}（{2}）</DMS_SupplyPod_Progress>
+  <!-- EN: Auto-designate cargo -->
+  <DMS_SupplyPod_AutoDesignate>自動指派貨物</DMS_SupplyPod_AutoDesignate>
+  <!-- EN: Automatically designate {0} on this map to be hauled into the pod, up to the requested amount. -->
+  <DMS_SupplyPod_AutoDesignateDesc>自動指派地圖上的{0}搬入貨櫃，直到達到需求量。</DMS_SupplyPod_AutoDesignateDesc>
+  <!-- EN: Confirm delivery -->
+  <DMS_SupplyPod_Deliver>確認交付</DMS_SupplyPod_Deliver>
+  <!-- EN: Consume {0}x {1} loaded in this pod and send it away. Anything else loaded will be unloaded first. -->
+  <DMS_SupplyPod_DeliverDesc>消耗貨櫃中已裝載的 {0} 個{1}並將其送離。其餘裝載物會先卸下。</DMS_SupplyPod_DeliverDesc>
+  <!-- EN: Not enough loaded: {0} / {1} -->
+  <DMS_SupplyPod_NotEnough>裝載量不足：{0} / {1}</DMS_SupplyPod_NotEnough>
+  <!-- EN: Requested amount already loaded or designated. -->
+  <DMS_SupplyPod_AlreadyDesignated>需求量已裝載或已指派完成。</DMS_SupplyPod_AlreadyDesignated>
+  <!-- EN: Cargo designated for loading. -->
+  <DMS_SupplyPod_Designated>已指派貨物待搬運。</DMS_SupplyPod_Designated>
+  <!-- EN: No haulable {0} found on the map. -->
+  <DMS_SupplyPod_NoneFound>地圖上找不到可搬運的{0}。</DMS_SupplyPod_NoneFound>
+  <!-- EN: supply pod -->
+  <DMS_SupplyPod_SelectLabel>補給貨櫃</DMS_SupplyPod_SelectLabel>
+
+  <!-- EN: Delivery deadline -->
+  <DMS_SupplyChain_DeadlineTitle>交付期限</DMS_SupplyChain_DeadlineTitle>
+  <!-- EN: Time remaining to load the requested cargo into the supply pod. -->
+  <DMS_SupplyChain_DeadlineTip>在期限內將要求的貨物裝入補給貨櫃的剩餘時間。</DMS_SupplyChain_DeadlineTip>
+  <!-- EN: Supply delivery deadline -->
+  <DMS_SupplyChain_AlertLabel>補給交付期限</DMS_SupplyChain_AlertLabel>
+  <!-- EN: Load {0}x {1} into the supply pod and confirm the delivery before the deadline, or the contract will end. -->
+  <DMS_SupplyChain_AlertExplanation>在期限截止前將 {0} 個{1}裝入補給貨櫃並確認交付，否則合約將終止。</DMS_SupplyChain_AlertExplanation>
+  <!-- EN: the Colonial Fleet -->
+  <DMS_SupplyChain_FallbackIssuer>殖民艦隊</DMS_SupplyChain_FallbackIssuer>
+  <!-- EN: Supply contract completed -->
+  <DMS_SupplyChain_BonusLetterLabel>供應合約已完成</DMS_SupplyChain_BonusLetterLabel>
+  <!-- EN: Every shipment of the supply contract has been delivered. As promised, compensation for the price difference of the goods has been sent at market rates. -->
+  <DMS_SupplyChain_BonusLetterText>供應合約的所有貨物均已交付。如先前約定，貨品的價格差額已按市價補償送達。</DMS_SupplyChain_BonusLetterText>
+
+  <!-- EN: Boarding deadline -->
+  <DMS_CourtMartial_BoardDeadline>登機期限</DMS_CourtMartial_BoardDeadline>
+  <!-- EN: Time remaining for the defendant to board the orbital transport... -->
+  <DMS_CourtMartial_BoardDeadlineTip>被告登上軌道運輸機的剩餘時間。若運輸機空艙離場，軍事法庭協議即告破裂，敵對狀態將恢復。</DMS_CourtMartial_BoardDeadlineTip>
+  <!-- EN: Trial concludes -->
+  <DMS_CourtMartial_TrialInfo>庭審結束</DMS_CourtMartial_TrialInfo>
+  <!-- EN: Sentence ends -->
+  <DMS_CourtMartial_DetentionInfo>服刑結束</DMS_CourtMartial_DetentionInfo>
+
+</LanguageData>

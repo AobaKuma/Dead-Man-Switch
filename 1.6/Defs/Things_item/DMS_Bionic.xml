@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
+
   <ThingDef Name="DMS_BioMechBionicBase" ParentName="BodyPartBase" Abstract="True">
     <techLevel>Industrial</techLevel>
     <thingCategories>
@@ -241,7 +242,6 @@
   </RecipeDef>
 
   <!-- Bionic leg -->
-
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>DMS_ProstheticLeg</defName>
     <label>Mechaneural leg</label>
@@ -322,7 +322,6 @@
   </RecipeDef>
 
   <!-- 人工肺 -->
-
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>DMS_ProstheticLung</defName>
     <label>Mechaneural lung</label>
@@ -405,7 +404,6 @@
   </RecipeDef>
 
   <!-- 人工腎  -->
-
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>DMS_ProstheticKidney</defName>
     <label>Mechaneural kidney</label>
@@ -489,7 +487,6 @@
   </RecipeDef>
 
   <!-- 輔助神經索 -->
-
   <HediffDef>
     <defName>DMS_ProstheticSpine</defName>
     <hediffClass>Hediff_Level</hediffClass>
@@ -644,7 +641,6 @@
   </ThingDef>
 
   <!-- 感官過濾芯片 -->
-
   <HediffDef ParentName="ImplantHediffBase">
     <defName>DMS_SensoryFilter</defName>
     <label>Emotion Neutralizer</label>
@@ -691,7 +687,6 @@
     </comps>
   </HediffDef>
 
-
   <ThingDef Name="DMS_SynthicBionicBase" ParentName="BodyPartBase" Abstract="True">
     <techLevel>Spacer</techLevel>
     <thingCategories>
@@ -731,7 +726,6 @@
     </recipeMaker>
   </ThingDef>
 
-  
   <ThingDef ParentName="DMS_SynthicBionicBase">
     <defName>DMS_SensoryFilter</defName>
     <label>Emotion Filter</label>
@@ -791,7 +785,6 @@
   </RecipeDef>
 
   <!-- 營養泵送接口 -->
-
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>DMS_NutrientPort</defName>
     <label>Nutrition port</label>
@@ -871,8 +864,8 @@
     </appliedOnFixedBodyParts>
     <addsHediff>DMS_NutrientPort</addsHediff>
   </RecipeDef>
- <!-- DMS_SyntheticArm-->
 
+ <!-- DMS_SyntheticArm-->
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>DMS_SyntheticArm</defName>
     <label>Biosynthetic arm</label>
@@ -967,7 +960,6 @@
   </RecipeDef>
 
   <!-- Bionic leg -->
-
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>DMS_SyntheticLeg</defName>
     <label>Biosynthetic leg</label>

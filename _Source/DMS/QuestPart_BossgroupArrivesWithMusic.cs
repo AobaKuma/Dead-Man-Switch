@@ -8,7 +8,7 @@ namespace DMS
     public class QuestPart_BossgroupArrivesWithMusic : QuestPart_BossgroupArrives
     {
         public SongDef song;
-        protected override void Complete(SignalArgs signalArgs)
+        public override void Complete(SignalArgs signalArgs)
         {
             base.Complete(signalArgs);
             if (song != null) Find.MusicManagerPlay.ForcePlaySong(song, false);

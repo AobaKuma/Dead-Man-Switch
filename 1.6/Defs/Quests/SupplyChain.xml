@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ======================= 補給艙建築 ======================= -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_SupplyDropPod</defName>
+    <label>supply pod</label>
+    <description>A cargo pod dropped by a logistics contractor. Load the requested supplies into it and confirm delivery before the deadline.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Special/DropPod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(0.9, 0.5, 0.9)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+    </building>
+    <destroyable>true</destroyable>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <comps>
+      <li Class="DMS.CompProperties_SupplyRequest">
+        <massCapacity>2000</massCapacity>
+        <leavingSkyfaller>DMS_SupplyPodLeaving</leavingSkyfaller>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ======================= Skyfallers ======================= -->
+  <ThingDef Name="DMS_SupplyPodSkyfallerBase" Abstract="True">
+    <thingClass>Skyfaller</thingClass>
+    <category>Ethereal</category>
+    <useHitPoints>false</useHitPoints>
+    <drawOffscreen>true</drawOffscreen>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Skyfaller</altitudeLayer>
+    <label>supply pod (incoming)</label>
+    <graphicData>
+      <texPath>Things/Special/DropPod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shaderType>CutoutFlying</shaderType>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_SupplyPodSkyfallerBase">
+    <defName>DMS_SupplyPodIncoming</defName>
+    <skyfaller>
+      <movementType>Decelerate</movementType>
+      <shadowSize>(2,2)</shadowSize>
+      <anticipationSound>DropPod_Fall</anticipationSound>
+      <anticipationSoundTicks>100</anticipationSoundTicks>
+      <ticksToImpactRange>120~200</ticksToImpactRange>
+      <hitRoof>true</hitRoof>
+    </skyfaller>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_SupplyPodSkyfallerBase">
+    <defName>DMS_SupplyPodLeaving</defName>
+    <label>supply pod (leaving)</label>
+    <skyfaller>
+      <movementType>Accelerate</movementType>
+      <shadowSize>(2,2)</shadowSize>
+      <anticipationSound>DropPod_Leaving</anticipationSound>
+      <reversed>true</reversed>
+      <ticksToDiscardInReverse>220</ticksToDiscardInReverse>
+      <hitRoof>false</hitRoof>
+    </skyfaller>
+  </ThingDef>
+
+  <!-- ======================= 發包單位名稱生成 (仿 DMS_NamePack 慣例) ======================= -->
+  <RulePackDef>
+    <defName>DMS_SupplyChainIssuer</defName>
+    <rulePack>
+      <rulesStrings>
+        <!-- e.g. "42nd Forward Logistics Platoon" / "Fleet Quartermaster Detachment 7" -->
+        <li>r_name->[numHead][numTailOrd] [UnitAdj] [UnitType] [Scale]</li>
+        <li>r_name->Fleet [UnitAdj] [UnitType] [Scale] [numHead][numTail]</li>
+
+        <li>numHead-></li>
+        <li>numHead->1</li>
+        <li>numHead->2</li>
+        <li>numHead->3</li>
+        <li>numHead->4</li>
+        <li>numHead->5</li>
+        <li>numHead->7</li>
+        <li>numHead->9</li>
+        <li>numHead->10</li>
+        <li>numHead->15</li>
+
+        <li>numTailOrd->1st</li>
+        <li>numTailOrd->2nd</li>
+        <li>numTailOrd->3rd</li>
+        <li>numTailOrd->4th</li>
+        <li>numTailOrd->6th</li>
+        <li>numTailOrd->8th</li>
+
+        <li>numTail->1</li>
+        <li>numTail->2</li>
+        <li>numTail->3</li>
+        <li>numTail->5</li>
+        <li>numTail->8</li>
+
+        <li>UnitAdj->Forward</li>
+        <li>UnitAdj->Orbital</li>
+        <li>UnitAdj->Vanguard</li>
+        <li>UnitAdj->Expeditionary</li>
+        <li>UnitAdj->Frontier</li>
+
+        <li>UnitType->Logistics</li>
+        <li>UnitType->Quartermaster</li>
+        <li>UnitType->Sustainment</li>
+        <li>UnitType->Provisioning</li>
+
+        <li>Scale->Platoon</li>
+        <li>Scale->Detachment</li>
+        <li>Scale->Company</li>
+        <li>Scale->Section</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- ======================= 執行期信件/訊息文法 ======================= -->
+  <!-- C# 於執行期注入規則: issuerUnit, categoryLabel, count, stage, totalStages, days -->
+  <RulePackDef>
+    <defName>DMS_SupplyChainLetters</defName>
+    <rulePack>
+      <rulesStrings>
+        <!-- 階段開始信件 (原版語氣:直述事實 + 行動指示) -->
+        <li>stageLetterLabel->Supply delivery [stage]/[totalStages]</li>
+        <li>stageLetterLabel->Delivery requested: [categoryLabel]</li>
+        <li>stageLetterText->[stageOpen]\n\nLoad [count]x [categoryLabel] into the pod and confirm the delivery before the deadline. Payment will arrive by drop pod once the delivery is confirmed.</li>
+
+        <li>stageOpen->[issuerUnit] has requested the next delivery of your supply contract. A cargo pod is inbound.</li>
+        <li>stageOpen->The next delivery of your supply contract with [issuerUnit] has begun. A cargo pod will land near your colony shortly.</li>
+
+        <!-- 補給艙落地信件 -->
+        <li>podLetterLabel->Supply pod</li>
+        <li>podLetterLabel->Supply pod inbound</li>
+        <li>podLetterText->[podOpen]\n\nLoad [count]x [categoryLabel] into it before the deadline passes.</li>
+
+        <li>podOpen->A supply pod from [issuerUnit] is landing near your colony.</li>
+        <li>podOpen->A supply pod sent by [issuerUnit] is coming down nearby.</li>
+
+        <!-- 交付付款信件 -->
+        <li>paymentLetterLabel->Payment arrived</li>
+        <li>paymentLetterLabel->Delivery payment</li>
+        <li>paymentLetterText->[payOpen]</li>
+
+        <li>payOpen->The delivery has been confirmed by [issuerUnit]. Payment has arrived by drop pod.</li>
+        <li>payOpen->[issuerUnit] has confirmed your delivery. Payment has arrived by drop pod, as agreed.</li>
+
+        <!-- 階段間隔訊息 -->
+        <li>intervalMessage->Delivery confirmed. [issuerUnit] will request the next delivery in about [days] days.</li>
+        <li>intervalMessage->Delivery confirmed. The next cargo pod from [issuerUnit] will arrive in about [days] days.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- ======================= 母任務:補給合約鏈 ======================= -->
+  <QuestScriptDef>
+    <defName>DMS_SupplyChain</defName>
+    <rootSelectionWeight>0.6</rootSelectionWeight>
+    <rootMinPoints>300</rootMinPoints>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <expireDaysRange>3~6</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <!-- 原版風格:短名詞片語 -->
+        <li>questName->Supply contract: [categoryLabel]</li>
+        <li>questName->Supply request: [categoryLabel]</li>
+        <li>questName->Staged deliveries: [categoryLabel]</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <!-- 敘事信件風格:
+             段1: 來自[陣營]的後勤調度員[WorldPawn名]傳遞[物品類型]長期供應需求,約[次數]期,用途=[隨機風味]
+             段2: 據[代名詞]統計第一期約[數量];同意後協調軌道平台部署機動貨櫃降落[玩家地圖],
+                  第一期需在[天數]天內裝貨發射趕上大宗貨船航班
+             段3: 保證後續合約優先提供,全部完成後按市價補償價差 -->
+        <li>questDescription->A logistics coordinator of [issuerFactionName], [asker_nameFull], has forwarded us a long-term supply request for [categoryLabel]. They need roughly [totalStages] shipments of [categoryLabel] — around [approxTotalCount] units in total — to [supplyPurpose].\n\nAccording to [asker_possessive] figures, the first shipment calls for about [firstCount]x [categoryLabel]. If we agree to supply them, [asker_pronoun] will [deployMethod] to deploy a mobile cargo pod at [map_definite]. The first shipment must be loaded and launched within [deadlineDays] days to catch [freightWindow].\n\n[asker_nameDef] assures us that if the first shipment is delivered on schedule, follow-up [categoryLabel] contracts will continue to be offered to us first — and once every shipment is complete, we will be compensated for the price difference of the goods at market rates.</li>
+
+        <li>supplyPurpose->keep their forward garrisons provisioned through the coming quadrums</li>
+        <li>supplyPurpose->cover a shortfall in their planetside stockpiles</li>
+        <li>supplyPurpose->provision the outposts scattered along their perimeter</li>
+        <li>supplyPurpose->replace stores lost when a supply convoy was ambushed</li>
+
+        <li>deployMethod->coordinate an orbital platform</li>
+        <li>deployMethod->divert a dropship from its patrol route</li>
+        <li>deployMethod->requisition a drop slot from the fleet's supply hub</li>
+
+        <li>freightWindow->the bulk freighter's departure window</li>
+        <li>freightWindow->the next orbital convoy assembly</li>
+        <li>freightWindow->the fleet's scheduled logistics uplift</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="DMS.QuestNode_Root_SupplyChain">
+      <subquestDef>DMS_SupplyChain_Delivery</subquestDef>
+      <issuerNamePack>DMS_SupplyChainIssuer</issuerNamePack>
+      <!-- 難度點數 → 挑戰等級(骷髏數) -->
+      <pointsToChallengeRatingCurve>
+        <points>
+          <li>(100, 1)</li>
+          <li>(1200, 1)</li>
+          <li>(1800, 2)</li>
+          <li>(4000, 2)</li>
+          <li>(5000, 3)</li>
+        </points>
+      </pointsToChallengeRatingCurve>
+      <!-- 階段數 = 點數曲線取整 + 隨機擾動,夾在 stagesClamp -->
+      <pointsToStagesCurve>
+        <points>
+          <li>(100, 2)</li>
+          <li>(1000, 3)</li>
+          <li>(3500, 4)</li>
+          <li>(8000, 5)</li>
+        </points>
+      </pointsToStagesCurve>
+      <stagesJitter>-1~1</stagesJitter>
+      <stagesClamp>2~5</stagesClamp>
+      <countGrowthPerStage>1.6</countGrowthPerStage>
+      <!-- 難度點數 → 第一階段要求總市值;數量 = 總市值 ÷ 類別中位單價 -->
+      <pointsToRequestValueCurve>
+        <points>
+          <li>(100, 300)</li>
+          <li>(500, 800)</li>
+          <li>(1500, 1800)</li>
+          <li>(5000, 4200)</li>
+          <li>(10000, 7000)</li>
+        </points>
+      </pointsToRequestValueCurve>
+      <rewardMarkup>1.35</rewardMarkup>
+      <rewardGrowthPerStage>1.1</rewardGrowthPerStage>
+      <!-- 完成獎勵 = 合約貨物總市值 × factor,以原版獎勵選項(物資/好感度)呈現 -->
+      <completionBonusFactor>0.4</completionBonusFactor>
+      <giverFactionDef>DMS_Army</giverFactionDef>
+      <stageDeadlineDays>10</stageDeadlineDays>
+      <deadlineDaysPerStage>5</deadlineDaysPerStage>
+      <stageIntervalDaysRange>10~15</stageIntervalDaysRange>
+      <categoryPool>
+        <!-- 數量已由市值自動平衡;countFactor 僅作個別微調 -->
+        <li>
+          <category>FoodMeals</category>
+        </li>
+        <li>
+          <category>Medicine</category>
+          <countFactor>0.5</countFactor>
+        </li>
+        <li>
+          <category>Drugs</category>
+          <countFactor>0.5</countFactor>
+        </li>
+        <li>
+          <category>Textiles</category>
+        </li>
+        <li>
+          <category>Apparel</category>
+        </li>
+        <li>
+          <category>MortarShells</category>
+        </li>
+        <li>
+          <category>StoneBlocks</category>
+        </li>
+        <li>
+          <category>MortarShells</category>
+        </li>
+        <li>
+          <category>MeatRaw</category>
+          <countFactor>0.5</countFactor>
+        </li>
+        <li>
+          <category>Manufactured</category>
+        </li>
+        <li>
+          <category>DMS_Mods</category>
+        </li>
+        <li>
+          <category>AutomatroidWeapon</category>
+          <countFactor>1.5</countFactor>
+        </li>
+        <li>
+          <category>BodyPartsBionic</category>
+        </li>
+      </categoryPool>
+    </root>
+  </QuestScriptDef>
+
+  <!-- ======================= 子任務:單階段交付 ======================= -->
+  <QuestScriptDef>
+    <defName>DMS_SupplyChain_Delivery</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <autoAccept>true</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Delivery [stage]/[totalStages]: [categoryLabel]</li>
+        <li>questName->Delivery [stage]/[totalStages]: [targetCount]x [categoryLabel]</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[subOpening]\n\nLoad [targetCount]x [categoryLabel] into the cargo pod and launch it before the deadline to catch the bulk freighter's departure window. Payment will arrive by drop pod once the shipment is confirmed.\n\nIf the deadline is missed, the contract will end. Payments already received are ours to keep.</li>
+
+        <li>subOpening->This is shipment [stage] of [totalStages] under the supply contract with [issuerFactionName].</li>
+        <li>subOpening->[issuerUnit] has scheduled shipment [stage] of [totalStages]: [targetCount]x [categoryLabel].</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="DMS.QuestNode_Root_SupplyDelivery">
+      <podDef>DMS_SupplyDropPod</podDef>
+      <incomingSkyfaller>DMS_SupplyPodIncoming</incomingSkyfaller>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

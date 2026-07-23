@@ -156,6 +156,7 @@
 			<graphicData>
 			  <texPath>Things/Apparel/RocketLauncher/DMS_Launcher</texPath>
 			  <graphicClass>Graphic_Single</graphicClass>
+			  <drawSize>1.6</drawSize>
 			</graphicData>
 		  </li>
 		  <li Class="CompProperties_Styleable"/>
