@@ -169,6 +169,13 @@
 				</value>
 			</li>
 
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_VerlingBrid"]/comps/li[compClass="Fortified.CompExplosiveOnMelee"]/compClass</xpath>
+				<value>
+					<compClass>FortifiedCE.CompExplosiveOnMelee</compClass>
+				</value>
+			</li>
+
 
 			<!-- Hound -->
 			<li Class="PatchOperationAddModExtension">
