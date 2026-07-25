@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_PirateAssemblySite.label>海盗组装厂</DMS_PirateAssemblySite.label>
+  <DMS_PirateAssemblySite.description>一座旧的自动机兵组装厂，被海盗夺下并重新激活。从生产在线下来的机兵都是他们自己要用的。</DMS_PirateAssemblySite.description>
+  <DMS_PirateAssemblySite.approachOrderString>攻击{0}</DMS_PirateAssemblySite.approachOrderString>
+  <DMS_PirateAssemblySite.approachingReportString>正在攻击{0}。</DMS_PirateAssemblySite.approachingReportString>
+  <DMS_PirateAssemblySite.arrivedLetter>你已抵达海盗组装厂。\n\n一旦厂内的人手发出警报，敌方增援就会开始抵达。</DMS_PirateAssemblySite.arrivedLetter>
+</LanguageData>

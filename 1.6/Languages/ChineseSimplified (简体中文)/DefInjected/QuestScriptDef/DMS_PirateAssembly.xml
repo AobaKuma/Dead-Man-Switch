@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 单一 Def 的两种版本共用同一份规则表，靠语法常数与 priority 分流。
+       翻译时必须保留 (askerIsNull==true) / (asker_factionLeader==True) 这些条件
+       以及 (priority=1)，否则两种版本会抓错文本。
+
+       Both variants share one rule set, separated by grammar constants and rule
+       priority. The (askerIsNull==true) / (asker_factionLeader==True) conditions
+       and (priority=1) must be preserved verbatim in translation. -->
+
+  <DMS_PirateAssemblyRaid.questNameRules.rulesStrings>
+    <li>questName(priority=1)->[asker_nameDef]与[yard]</li>
+    <li>questName(priority=1)->[yard]的委托</li>
+    <li>questName->[bandit][yard]</li>
+    <li>bandit->海盗</li>
+    <li>bandit->掠夺者</li>
+    <li>bandit->不法之徒</li>
+    <li>bandit->劫掠者</li>
+    <li>yard->组装厂</li>
+    <li>yard->机兵工坊</li>
+    <li>yard->铸造厂</li>
+  </DMS_PirateAssemblyRaid.questNameRules.rulesStrings>
+
+  <DMS_PirateAssemblyRaid.questDescriptionRules.rulesStrings>
+    <!-- 无委托人 / No asker -->
+    <li>questDescription(askerIsNull==true)->我们截获了一些消息，内容关于[map_definite]附近一座旧的自动机兵组装厂。一伙[siteFaction_name]的人马夺下了那里，并让生产线重新运转。从在线下来的机兵，是他们为自己的劫掠打造的。\n\n该厂由(*Threat)[enemiesCount]名[enemiesLabel](/Threat)防守。\n\n组装架上还留着的东西都可以任我们取用。那些还没完工的单位从来没锁上指令认证，有剩余带宽的机械师可以骇入其中一具并取得控制权。\n\n你一旦进入厂区就会惊动他们，敌方增援随后便会抵达。</li>
+
+    <!-- 派系领袖委托 / Faction leader asker -->
+    <li>questDescription(asker_factionLeader==True)->[asker_faction_name]的[asker_faction_leaderTitle][asker_nameFull]向我们捎来了消息。一伙[siteFaction_name]的人马夺下了附近一座旧的自动机兵组装厂，并让生产线重新运转。那条线每造出一具机兵，就多一具会扑向[asker_faction_name]商队的东西。\n\n[asker_nameDef]希望我们把那座厂关掉，也就是歼灭所有敌人与砲塔。该厂由(*Threat)[enemiesCount]名[enemiesLabel](/Threat)防守。\n\n组装架上还留着的东西都归我们。那些还没完工的单位从来没锁上指令认证，有剩余带宽的机械师可以骇入其中一具并取得控制权。\n\n你一旦进入厂区就会惊动他们，敌方增援随后便会抵达。</li>
+  </DMS_PirateAssemblyRaid.questDescriptionRules.rulesStrings>
+
+</LanguageData>

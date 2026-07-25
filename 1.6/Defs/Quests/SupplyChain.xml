@@ -4,19 +4,19 @@
   <!-- ======================= 補給艙建築 ======================= -->
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_SupplyDropPod</defName>
-    <label>supply pod</label>
-    <description>A cargo pod dropped by a logistics contractor. Load the requested supplies into it and confirm delivery before the deadline.</description>
+    <label>mobile cargo lifter</label>
+    <description>A reusable cargo lifter dropped by logistics contractor. Load the requested supplies into it and confirm delivery before the deadline.</description>
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
-      <texPath>Things/Special/DropPod</texPath>
+      <texPath>Things/Skyfaller/MobileCargoLifter</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(2,2)</drawSize>
+      <drawSize>(6,6)</drawSize>
       <shadowData>
         <volume>(0.9, 0.5, 0.9)</volume>
       </shadowData>
     </graphicData>
-    <size>(1,1)</size>
+    <size>(3,3)</size>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
@@ -51,20 +51,24 @@
     <drawOffscreen>true</drawOffscreen>
     <tickerType>Normal</tickerType>
     <altitudeLayer>Skyfaller</altitudeLayer>
+    <drawerType>RealtimeOnly</drawerType>
     <label>supply pod (incoming)</label>
     <graphicData>
-      <texPath>Things/Special/DropPod</texPath>
+      <texPath>Things/Skyfaller/MobileCargoLifter</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(2,2)</drawSize>
+      <drawSize>(6,6)</drawSize>
       <shaderType>CutoutFlying</shaderType>
     </graphicData>
+    <skyfaller>
+      <shadow>Things/Skyfaller/SkyfallerShadowCircle</shadow>
+      <shadowSize>(3,3)</shadowSize>
+    </skyfaller>
   </ThingDef>
 
   <ThingDef ParentName="DMS_SupplyPodSkyfallerBase">
     <defName>DMS_SupplyPodIncoming</defName>
     <skyfaller>
       <movementType>Decelerate</movementType>
-      <shadowSize>(2,2)</shadowSize>
       <anticipationSound>DropPod_Fall</anticipationSound>
       <anticipationSoundTicks>100</anticipationSoundTicks>
       <ticksToImpactRange>120~200</ticksToImpactRange>
@@ -74,14 +78,41 @@
 
   <ThingDef ParentName="DMS_SupplyPodSkyfallerBase">
     <defName>DMS_SupplyPodLeaving</defName>
-    <label>supply pod (leaving)</label>
+    <label>mobile cargo lifter (leaving)</label>
     <skyfaller>
-      <movementType>Accelerate</movementType>
-      <shadowSize>(2,2)</shadowSize>
-      <anticipationSound>DropPod_Leaving</anticipationSound>
       <reversed>true</reversed>
-      <ticksToDiscardInReverse>220</ticksToDiscardInReverse>
-      <hitRoof>false</hitRoof>
+      <anticipationSound>Shuttle_Leaving</anticipationSound>
+      <anticipationSoundTicks>-10</anticipationSoundTicks>
+      <ticksToImpactRange>-40~-15</ticksToImpactRange>
+      <moteSpawnTime>0.05</moteSpawnTime>
+      <motesPerCell>1</motesPerCell>
+      <angleCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(1,50)</li>
+        </points>
+      </angleCurve>
+      <rotationCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(0.15,5)</li>
+          <li>(0.5,-5)</li>
+        </points>
+      </rotationCurve>
+      <zPositionCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(0.04,0.1)</li>
+          <li>(0.08,1)</li>
+        </points>
+      </zPositionCurve>
+      <speedCurve>
+        <points>
+          <li>(0.1,0)</li>
+          <li>(0.2,0.1)</li>
+          <li>(0.9,1.0)</li>
+        </points>
+      </speedCurve>
     </skyfaller>
   </ThingDef>
 

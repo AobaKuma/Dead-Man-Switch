@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SitePartDef>
+    <defName>DMS_PirateAssemblySite</defName>
+    <label>pirate assembly yard</label>
+    <description>An old automatroid assembly yard, seized by pirates and put back into service. The machines coming off the line are their own.</description>
+    <workerClass>Fortified.SitePartWorker_FFF_TimedHostileSite</workerClass>
+    <modExtensions>
+      <li Class="Fortified.FFF_TimedSiteExtension">
+        <baseEntryHours>28</baseEntryHours>
+        <minEntryHours>6</minEntryHours>
+        <maxEntryHours>60</maxEntryHours>
+        <entryLetterLabelKey>DMS_PirateAssembly_EntryCountdownLabel</entryLetterLabelKey>
+        <entryLetterTextKey>DMS_PirateAssembly_EntryCountdownText</entryLetterTextKey>
+      </li>
+    </modExtensions>
+    <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <!-- 與原版 Outpost 一致，否則重力船無法降落在這個突襲目標上。
+         Matches vanilla Outpost; without it a gravship cannot land here. -->
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <minThreatPoints>400</minThreatPoints>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <!-- 倒數由 SitePartWorker_FFF_TimedHostileSite 自行以難度縮放啟動。
+         The worker starts its own difficulty-scaled countdown. -->
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <approachOrderString>Attack {0}</approachOrderString>
+    <approachingReportString>Attacking {0}.</approachingReportString>
+    <arrivedLetter>You have arrived at the pirate assembly yard.\n\nOnce the crew raise the alarm, enemy reinforcements will begin to arrive.</arrivedLetter>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <tags>
+      <li>DMS_PirateAssembly</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMS_PirateAssemblyStructure</defName>
+    <linkWithSite>DMS_PirateAssemblySite</linkWithSite>
+    <order>400</order>
+    <genStep Class="Fortified.Structures.GenStep_FFFGarrisonedStructure">
+      <!-- 透過 IFFF 從帶此標籤的結構中隨機挑選；目前只有 Site_PirateAssembly。
+           Picks a random IFFF structure carrying this tag. -->
+      <useTag>DMS_PirateAssembly</useTag>
+      <randomOffset>0~3</randomOffset>
+      <filthTypes>
+        <li>Filth_RubbleBuilding</li>
+        <li>Filth_MachineBits</li>
+        <li>Filth_Ash</li>
+      </filthTypes>
+      <!-- 佈局本身已含所有機兵支架，不需要額外的中央件。
+           The layout already carries every cradle; no centerpiece needed. -->
+      <debrisDef>ChunkSlagSteel</debrisDef>
+      <debrisCount>10~18</debrisCount>
+      <scatterRadius>26</scatterRadius>
+      <lootMaker>MapGen_DefaultStockpile</lootMaker>
+      <spawnDefenders>true</spawnDefenders>
+      <defendRadius>20</defendRadius>
+      <satelliteScatter>
+        <li>
+          <tag>DMS_RuinSatellite</tag>
+          <count>3</count>
+          <radiusPct>0.18</radiusPct>
+          <minRadius>24</minRadius>
+          <minSpacing>5</minSpacing>
+        </li>
+        <li>
+          <tag>DMS_RuinScattered</tag>
+          <count>1</count>
+          <radiusPct>0.32</radiusPct>
+          <minRadius>40</minRadius>
+          <minSpacing>6</minSpacing>
+        </li>
+      </satelliteScatter>
+    </genStep>
+  </GenStepDef>
+
+  <!-- ==================== 任務腳本 Quest script ====================
+
+       單一 Def 處理兩種版本，做法照 Core 的 OpportunitySite_ItemStash：
+       用 QuestNode_RandomNode 擲骰決定要不要有委託人（asker）。
+
+       ・沒有委託人：自行截獲情報，戰利品自取，沒有酬勞。
+         擲中時設 askerIsNull=true 這個 slate 變數。
+       ・有委託人：中立人類派系的領袖出面委託，完成後可挑選獎勵。
+
+       描述文本靠語法常數分流（askerIsNull==true / asker_factionLeader==True），
+       任務名稱則靠 priority ——[asker_nameDef] 在沒有委託人時無法解析，
+       規則會自動退回沒有 priority 的那幾條。兩種機制都是原版的用法。
+
+       其餘結構照 OpportunitySite_BanditCamp：取地點 → 依威脅點數算酬勞
+       → 生成站點 → 逾期／清空的訊號分支。
+
+       One def, two variants, following Core's OpportunitySite_ItemStash:
+       QuestNode_RandomNode rolls for whether there is an asker.
+
+       - No asker: intercepted intel, loot only, no payment. Sets the
+         askerIsNull slate var when this branch wins.
+       - Asker: a neutral humanlike faction leader hires the player, with a
+         choice of reward on completion.
+
+       Description text branches on grammar constants; the quest name branches
+       on rule priority, since [asker_nameDef] cannot resolve without an asker
+       and the resolver falls back to the unprioritised rules. Both are vanilla
+       mechanisms. The rest mirrors OpportunitySite_BanditCamp.
+       ==================================================================== -->
+
+  <QuestScriptDef>
+    <defName>DMS_PirateAssemblyRaid</defName>
+    <!-- 隨機事件：由敘事者依權重挑選發布。權重 1.0 與原版 bandit camp 同級，
+         也等於合併前兩份定義（0.6 + 0.4）的總和。
+         Random incident offered by the storyteller. 1.0 matches vanilla bandit
+         camp and preserves the combined weight of the two defs this replaces. -->
+    <rootSelectionWeight>1.0</rootSelectionWeight>
+    <rootMinPoints>500</rootMinPoints>
+    <canGiveRoyalFavor>true</canGiveRoyalFavor>
+    <expireDaysRange>4~8</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <!-- priority=1 的兩條需要委託人；沒有委託人時 [asker_nameDef] 解析失敗，
+             自動落到下面那條。
+             The priority=1 rules need an asker; without one [asker_nameDef]
+             fails to resolve and the plain rule is used instead. -->
+        <li>questName(priority=1)->[asker_nameDef] and the [yard]</li>
+        <li>questName(priority=1)->The [yard] Contract</li>
+        <li>questName->[bandit] [yard]</li>
+        <li>bandit->Pirate</li>
+        <li>bandit->Raider</li>
+        <li>bandit->Outlaw</li>
+        <li>bandit->Marauder</li>
+        <li>yard->Assembly Yard</li>
+        <li>yard->Mech Works</li>
+        <li>yard->Foundry</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <!-- 無委託人 / No asker -->
+        <li>questDescription(askerIsNull==true)->We've intercepted messages about an old automatroid assembly yard not far from [map_definite]. A [siteFaction_name] crew has seized it and put the line back into service. The machines coming off it are being built for their own raids.\n\nThe yard is defended by (*Threat)[enemiesCount] [enemiesLabel](/Threat).\n\nWhatever is still on the assembly racks is ours for the taking. Units that have not been finished never had their command authentication locked, so a mechanitor with spare bandwidth can hack one and take control of it.\n\nEntering the yard will alert the crew, and enemy reinforcements will arrive some time later.</li>
+
+        <!-- 派系領袖委託 / Faction leader asker -->
+        <li>questDescription(asker_factionLeader==True)->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has sent us a message. A [siteFaction_name] crew has seized an old automatroid assembly yard nearby and put the line back into service. Every machine it turns out is one more that will be hitting [asker_faction_name] caravans.\n\n[asker_nameDef] is asking us to shut the yard down, which means eliminating all enemies and turrets. It is defended by (*Threat)[enemiesCount] [enemiesLabel](/Threat).\n\nWhatever is still on the assembly racks is ours to keep. Units that have not been finished never had their command authentication locked, so a mechanitor with spare bandwidth can hack one and take control of it.\n\nEntering the yard will alert the crew, and enemy reinforcements will arrive some time later.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+          <parms>
+            <pointsFactorTwoStar>1.5</pointsFactorTwoStar>
+            <pointsFactorThreeStar>2</pointsFactorThreeStar>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+
+        <li Class="QuestNode_GetMap">
+          <canBeSpace>true</canBeSpace>
+        </li>
+
+        <!-- 兩種版本的分岔點。外層 IsSet 讓外部（例如除錯或其他腳本）
+             預先塞入 asker 時不被覆蓋。
+             The branch point. The outer IsSet lets an externally supplied
+             asker survive, matching vanilla. -->
+        <li Class="QuestNode_IsSet">
+          <name>asker</name>
+          <elseNode Class="QuestNode_RandomNode">
+            <nodes>
+              <li Class="QuestNode_Set">
+                <name>askerIsNull</name>
+                <value>true</value>
+                <selectionWeight>0.4</selectionWeight>
+              </li>
+              <li Class="QuestNode_GetPawn">
+                <storeAs>asker</storeAs>
+                <mustBeFactionLeader>true</mustBeFactionLeader>
+                <mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
+                <allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
+                <selectionWeight>0.6</selectionWeight>
+              </li>
+            </nodes>
+          </elseNode>
+        </li>
+
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+
+        <!-- 站點派系由此節點挑選。刻意不加 mustBeHostileToFactionOf ——
+             無委託人的版本沒有 asker 可以當基準，照 ItemStash 的做法留空。
+             The site faction comes from this node. mustBeHostileToFactionOf is
+             deliberately omitted: the no-asker variant has no pawn to key off,
+             so this follows ItemStash and leaves it unset. -->
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li><tag>DMS_PirateAssembly</tag></li>
+          </sitePartsTags>
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+
+        <!-- 酬勞依實際生成的威脅點數計算 —— SitePartDef 的 minThreatPoints
+             可能把實際點數推高於任務輸入的 points。
+             Reward is based on the threat points actually generated; the
+             SitePartDef's minThreatPoints floor can raise them. -->
+        <li Class="QuestNode_GetSiteThreatPoints">
+          <storeAs>sitePoints</storeAs>
+          <sitePartsParams>$sitePartsParams</sitePartsParams>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+          <parms>
+            <points>$sitePoints</points>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_Multiply">
+          <value1>$rewardValue</value1>
+          <value2>1.75</value2>
+          <storeAs>rewardValue</storeAs>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+        </li>
+
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(10,22)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <destroyOnCleanup>true</destroyOnCleanup>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestExpired">The crew have stripped the assembly line out of the yard and moved it elsewhere. The quest [resolvedQuestName] has expired.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- 進去又撤走導致地圖被移除：任務失敗。
+             Entering and then abandoning the map fails the quest. -->
+        <li Class="QuestNode_Signal">
+          <inSignal>site.Destroyed</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelQuestFailed">Quest failed: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestFailed">The yard crew scattered after being discovered, taking the line with them. The quest [resolvedQuestName] has ended.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_Signal">
+          <inSignal>site.AllEnemiesDefeated</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Notify_PlayerRaidedSomeone">
+                <getRaidersFromMapParent>$site</getRaidersFromMapParent>
+              </li>
+              <!-- 只有委託版本付酬。這裡用 askerIsNull 的 elseNode 反向判斷，
+                   等同「有委託人才給獎勵」。
+                   QuestNode_GiveRewards 產生的 QuestPart_Choice 就是任務卡上
+                   讓玩家挑選的獎勵組。
+
+                   Only the commissioned variant pays. Keying off askerIsNull's
+                   elseNode is the inverse test — "reward only if there is an
+                   asker". QuestNode_GiveRewards emits the QuestPart_Choice that
+                   renders as the selectable reward group on the quest card. -->
+              <li Class="QuestNode_IsSet">
+                <name>askerIsNull</name>
+                <elseNode Class="QuestNode_GiveRewards">
+                  <parms>
+                    <allowGoodwill>true</allowGoodwill>
+                    <allowRoyalFavor>true</allowRoyalFavor>
+                    <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                  </parms>
+                  <addCampLootReward>true</addCampLootReward>
+                  <customLetterLabel TKey="LetterLabelPaymentArrived">Payment arrived</customLetterLabel>
+                  <customLetterText TKey="LetterTextPaymentArrived">The assembly yard has been shut down.\n\nThe payment from [asker_faction_name] has arrived.</customLetterText>
+                  <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+                    <letterDef>ChoosePawn</letterDef>
+                    <label TKey="LetterLabelFavorReceiver">[asker_faction_royalFavorLabel]</label>
+                    <text TKey="LetterTextFavorReceiver">These colonists took part in clearing the yard for the quest [resolvedQuestName]. [asker_definite] wants to know who should receive the [royalFavorReward_amount] [asker_faction_royalFavorLabel] for this service.</text>
+                    <useColonistsOnMap>$site</useColonistsOnMap>
+                    <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                  </nodeIfChosenPawnSignalUsed>
+                </elseNode>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- QuestNode_End 必須排在 GiveRewards 之後：QuestPart 依加入順序
+             處理訊號，任務先結束的話獎勵部件就收不到訊號了。
+             QuestNode_End must come after GiveRewards: QuestParts handle signals
+             in the order they were added, and ending first cuts the reward off. -->
+        <li Class="QuestNode_End">
+          <inSignal>site.AllEnemiesDefeated</inSignal>
+          <outcome>Success</outcome>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

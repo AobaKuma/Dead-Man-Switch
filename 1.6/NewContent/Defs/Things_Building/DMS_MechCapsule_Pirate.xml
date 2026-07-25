@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="FFF_MechCapsule_Small">
+    <defName>DMS_MechCapsule_PirateRaider</defName>
+    <label>disabled mech</label>
+    <!-- 說明文比照 FFF 自己的休眠容器：一句交代是什麼，一句交代能做什麼。
+         Matches FFF's own capsule wording: what it is, then what you can do. -->
+    <description>A raider-pattern automatroid in hibernation mode, still clamped to the assembly cradle it was built on. The line that made it never got as far as locking its command authentication. A mechanitor can attempt to hack and control it.</description>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_MechCapsule">
+        <spawnChance>0.65</spawnChance>
+        <weaponChance>0.7</weaponChance>
+        <!-- PawnGenOption 使用自訂載入器：節點名＝PawnKindDef，內容＝權重。
+             PawnGenOption loads as <PawnKindDefName>weight</PawnKindDefName>. -->
+        <possibleGeneratePawn>
+          <DMS_Mech_Raider>1</DMS_Mech_Raider>
+        </possibleGeneratePawn>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- 3x3：海盜塔琴卡重架 / Tachanka gantry -->
+  <ThingDef ParentName="FFF_MechCapsule_Large">
+    <defName>DMS_MechCapsule_PirateTachanka</defName>
+    <label>disabled mech</label>
+    <description>A tachanka-pattern battle frame in hibernation mode, clamped into an assembly gantry with its fitting-out unfinished. Its command authentication has not been locked yet. A mechanitor can attempt to hack and control it.</description>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_MechCapsule">
+        <spawnChance>1.0</spawnChance>
+        <weaponChance>0.85</weaponChance>
+        <possibleGeneratePawn>
+          <DMS_Mech_Tachanka>1</DMS_Mech_Tachanka>
+        </possibleGeneratePawn>
+        <innerPawnDrawOffset>(0, 0, 0.35)</innerPawnDrawOffset>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

@@ -33,6 +33,14 @@
 
   </ItemGroup>
   <ItemGroup>
+    <!-- QuestNode_Root_DMS_RandomFactionTimedSite 繼承 FFF 的站點節點。
+         About.xml 已將 AOBA.Framework 列為硬相依，所以這個組件參考不會新增額外的相依關係。
+         Required by QuestNode_Root_DMS_RandomFactionTimedSite. AOBA.Framework is
+         already a hard modDependency, so this adds no new requirement. -->
+    <Reference Include="Fortified">
+      <HintPath>..\..\..\_Fortified-Framework\1.6\Assemblies\Fortified.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="0Harmony">
       <HintPath>..\..\..\_Fortified-Framework\_Sources\Reference\0Harmony.dll</HintPath>
       <Private>False</Private>
