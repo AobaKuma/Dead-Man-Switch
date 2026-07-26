@@ -11,7 +11,7 @@
       <MoveSpeed>3.5</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>0.8</ArmorRating_Blunt>                                     <!--護甲-->
       <ArmorRating_Sharp>1.4</ArmorRating_Sharp>
-      <ArmorRating_Heat>1.8</ArmorRating_Heat>
+      <ArmorRating_Heat>0.75</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
@@ -237,7 +237,7 @@
       <MoveSpeed>4.3</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>1.1</ArmorRating_Blunt>                                     <!--護甲-->
       <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
-      <ArmorRating_Heat>2.0</ArmorRating_Heat>
+      <ArmorRating_Heat>0.75</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->

@@ -15,6 +15,7 @@
       <EMPResistance MayRequire="Ludeon.Rimworld.Biotech">3</EMPResistance>                                             <!--EMP抵抗力-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
       <ControlTakingTime MayRequire="Ludeon.Rimworld.Biotech">30</ControlTakingTime>
+      <ArmorRating_Heat>1.0</ArmorRating_Heat>
     </statBases>
     <inspectorTabs Inherit="False">
       <li>ITab_Pawn_Health</li>
@@ -187,7 +188,7 @@
       <MoveSpeed>6</MoveSpeed>
       <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
-      <ArmorRating_Heat>1</ArmorRating_Heat>
+      <ArmorRating_Heat>0.42</ArmorRating_Heat>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>

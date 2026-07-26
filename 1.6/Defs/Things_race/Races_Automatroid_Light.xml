@@ -9,7 +9,7 @@
       <!--銳抗-->
       <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
       <!--鈍抗-->
-      <ArmorRating_Heat>1.5</ArmorRating_Heat>
+      <ArmorRating_Heat>0.25</ArmorRating_Heat>
       <!--能抗-->
       <MaxFlightTime>30</MaxFlightTime>
       <FlightCooldown>10</FlightCooldown>
@@ -209,7 +209,7 @@
       <!--銳抗-->
       <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
       <!--鈍抗-->
-      <ArmorRating_Heat>0.8</ArmorRating_Heat>
+      <ArmorRating_Heat>0.25</ArmorRating_Heat>
       <!--能抗-->
 
       <!-- 履帶平台的特色就是用電低。並且被攻擊不減速 -->
@@ -263,7 +263,7 @@
     <label>hyrax</label>
     <race>DMS_Mech_Hyrax</race>
     <isFighter>true</isFighter>
-    <combatPower>70</combatPower>
+    <combatPower>20</combatPower>
     <maxPerGroup>10</maxPerGroup>
     <lifeStages>
       <li>

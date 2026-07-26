@@ -7,7 +7,7 @@
       <MoveSpeed>3</MoveSpeed>
       <ArmorRating_Sharp>0.6</ArmorRating_Sharp><!--銳抗-->
       <ArmorRating_Blunt>0.8</ArmorRating_Blunt><!--鈍抗-->
-      <ArmorRating_Heat>1.1</ArmorRating_Heat>  <!--能抗-->
+      <ArmorRating_Heat>0.75</ArmorRating_Heat>  <!--能抗-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
       <CaravanBonusSpeedFactor>6</CaravanBonusSpeedFactor>
       <CarryingCapacity>200</CarryingCapacity>

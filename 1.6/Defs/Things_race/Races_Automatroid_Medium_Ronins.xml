@@ -8,9 +8,9 @@
     <statBases>
       <MoveSpeed>5</MoveSpeed>
       <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
-      <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
-      <ArmorRating_Heat>1.5</ArmorRating_Heat>
-      <MeleeDodgeChance>15</MeleeDodgeChance>
+      <ArmorRating_Sharp>1</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.67</ArmorRating_Heat>
+      <MeleeDodgeChance>1.5</MeleeDodgeChance>
       <MeleeHitChance>1.2</MeleeHitChance>
       <AimingDelayFactor>0.9</AimingDelayFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
@@ -162,9 +162,9 @@
     <description>A melee specialized variant of the Ronin. The Gladiator maintains the Ronin's mobility and armor and comes with an upgraded melee combat module and is equipped with an assault shield.</description>
     <statBases>
       <MoveSpeed>5</MoveSpeed>
-      <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
-      <ArmorRating_Sharp>1.15</ArmorRating_Sharp>
-      <ArmorRating_Heat>1.3</ArmorRating_Heat>
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
       <MeleeDodgeChance>9</MeleeDodgeChance>
       <MeleeHitChance>4</MeleeHitChance>
       <MeleeCooldownFactor>0.85</MeleeCooldownFactor>
@@ -285,9 +285,9 @@
     <statBases>
       <StaggerDurationFactor>0.25</StaggerDurationFactor>
       <MoveSpeed>4.2</MoveSpeed>                                                    <!--移動速度-->
-      <ArmorRating_Blunt>0.92</ArmorRating_Blunt>                                     <!--護甲-->
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>                                     <!--護甲-->
       <ArmorRating_Sharp>1.25</ArmorRating_Sharp>
-      <ArmorRating_Heat>1.5</ArmorRating_Heat>
+      <ArmorRating_Heat>0.83</ArmorRating_Heat>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
@@ -381,9 +381,9 @@
     <statBases>
       <StaggerDurationFactor>0.25</StaggerDurationFactor>
       <MoveSpeed>4</MoveSpeed>                                                    <!--移動速度-->
-      <ArmorRating_Blunt>0.80</ArmorRating_Blunt>                                     <!--護甲-->
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>                                     <!--護甲-->
       <ArmorRating_Sharp>1.40</ArmorRating_Sharp>
-      <ArmorRating_Heat>1.0</ArmorRating_Heat>
+      <ArmorRating_Heat>0.83</ArmorRating_Heat>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
@@ -467,7 +467,8 @@
     <label>protector</label>
     <race>DMS_Mech_Protector</race>
     <isFighter>true</isFighter>
-    <combatPower>180</combatPower>
+    <maxPerGroup>4</maxPerGroup>
+    <combatPower>300</combatPower>
     <lifeStages>
       <li>
         <bodyGraphicData>
@@ -512,9 +513,9 @@
     <description>The Phalanx is a cheap mass-producible variant specialized for urban combat. It comes packed with assault armor and high mobility package making it a fierce unit in close quarters combat.</description>
     <statBases>
       <MoveSpeed>4.5</MoveSpeed>                                                    <!--移動速度-->
-      <ArmorRating_Blunt>0.65</ArmorRating_Blunt>                                     <!--護甲-->
-      <ArmorRating_Sharp>1.1</ArmorRating_Sharp>
-      <ArmorRating_Heat>1.2</ArmorRating_Heat>
+      <ArmorRating_Blunt>0.6</ArmorRating_Blunt>                                     <!--護甲-->
+      <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>

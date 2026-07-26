@@ -9,7 +9,7 @@
       <MoveSpeed>2.5</MoveSpeed>
       <ArmorRating_Sharp>1.5</ArmorRating_Sharp><!--銳抗-->
       <ArmorRating_Blunt>1.3</ArmorRating_Blunt><!--鈍抗-->
-      <ArmorRating_Heat>1.2</ArmorRating_Heat>  <!--能抗-->
+      <ArmorRating_Heat>0.92</ArmorRating_Heat>  <!--能抗-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge>
       <!-- 履帶平台的特色就是用電低。並且被攻擊不減速 -->
@@ -224,7 +224,7 @@
       <MoveSpeed>2.5</MoveSpeed><!--移動速度-->
       <ArmorRating_Sharp>1.5</ArmorRating_Sharp><!--銳抗-->
       <ArmorRating_Blunt>1.3</ArmorRating_Blunt><!--鈍抗-->
-      <ArmorRating_Heat>1.2</ArmorRating_Heat>  <!--能抗-->
+      <ArmorRating_Heat>0.92</ArmorRating_Heat>  <!--能抗-->
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
@@ -333,7 +333,7 @@
       <MoveSpeed>2.2</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>1.5</ArmorRating_Blunt>                                     <!--護甲-->
       <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
-      <ArmorRating_Heat>1.5</ArmorRating_Heat>
+      <ArmorRating_Heat>0.92</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">7</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
