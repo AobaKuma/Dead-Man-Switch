@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 	<!-- 軍用武器為機兵範疇，在原版情況下相同定位的武器傷害都x1.5,重量x1.75，穿甲與鈍傷能力都有額外的0.5 -->
@@ -51,9 +51,9 @@
 			<RangedWeapon_Cooldown>1.35</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>GasOperation</li>
-				<li>DMS_EquipmentElite</li>
+			<!-- 解鎖: 失能機關 -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_DeadMansSwitch</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
@@ -119,9 +119,9 @@
 			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
+			<!-- 解鎖: 失能機關 -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_DeadMansSwitch</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
@@ -192,9 +192,9 @@
 			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>GasOperation</li>
-				<li>DMS_EquipmentAdvanced</li>
+			<!-- 解鎖: 機甲齒輪 -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_MechBasis</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
@@ -258,9 +258,9 @@
 			<RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
+			<!-- 解鎖: 人機工程學 (藍圖自產) -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_HumanoidEngineering</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
@@ -325,9 +325,9 @@
 			<RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
+			<!-- 解鎖: 特種機兵 (藍圖自產) -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_Ronin</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
@@ -393,12 +393,8 @@
 		<equippedStatOffsets>
 			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
-		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
-			</researchPrerequisites>
-		</recipeMaker>
+		<!-- 取得方式: 交易 / 探索獎勵(中烈度) - 不可製造 -->
+		<recipeMaker IsNull="True" />
 		<costList>
 			<Tungsteel>70</Tungsteel>
 			<ComponentStamped>4</ComponentStamped>
@@ -458,9 +454,9 @@
 			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
+			<!-- 解鎖: 特種機兵 (藍圖自產) -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_Ronin</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
@@ -623,9 +619,9 @@
 			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>GasOperation</li>
-				<li>DMS_EquipmentElite</li>
+			<!-- 解鎖: 失能機關 -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_DeadMansSwitch</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>

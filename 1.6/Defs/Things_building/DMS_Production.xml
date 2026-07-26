@@ -196,6 +196,7 @@
     </comps>
     <researchPrerequisites>
       <li>DMS_MechBasis</li>
+      <li>DMS_Autofacturer</li>
     </researchPrerequisites>
     <modExtensions>
       <li Class="Fortified.ModExtension_AutoWorkTable">
@@ -214,6 +215,75 @@
       <li Class="Fortified.ModExtension_RecipeInheritance">
         <inheritRecipesFrom>
           <li>ElectricSmithy</li>
+        </inheritRecipesFrom>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- DMS_AutoMill 自動磨床 : 半自動版本的石材加工桌 -->
+  <ThingDef ParentName="DMS_AutofacturerBenchBase">
+    <defName>DMS_AutoMill</defName>
+    <label>Auto mill</label>
+    <!-- 一台以連續進料的方式運轉的自動化石材加工機，只要備妥原料便能無人值守地持續產出石磚。 -->
+    <description>An automated milling bench fed by a continuous feed line. Once loaded with raw chunks it grinds and cuts stone blocks unattended, trading precision for the ability to run without an operator.</description>
+    <graphicData>
+      <texPath>Things/Building/AutoMill</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5,3)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <designationCategory>DMS_Category</designationCategory>
+    <costList>
+      <Steel>180</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkToBuild>2500</WorkToBuild>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0.25</Flammability>
+      <Cleanliness>-5</Cleanliness>
+      <WorkTableWorkSpeedFactor>0.75</WorkTableWorkSpeedFactor>
+    </statBases>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <size>(3,2)</size>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <recipes />
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>500</basePowerConsumption>
+        <idlePowerDraw>30</idlePowerDraw>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>Stonecutting</li>
+      <li>DMS_Autofacturer</li>
+    </researchPrerequisites>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_AutoWorkTable">
+        <workAmountPerStage>2000</workAmountPerStage>
+        <phaseEffecter_east>DMS_Effect_Printer_East</phaseEffecter_east>
+        <phaseEffecter_west>DMS_Effect_Printer_West</phaseEffecter_west>
+        <phaseEffecter_north>DMS_Effect_Printer_North</phaseEffecter_north>
+        <phaseEffecter_south>DMS_Effect_Printer_South</phaseEffecter_south>
+        <skills>
+          <li>
+            <key>Crafting</key>
+            <value>4</value>
+          </li>
+        </skills>
+      </li>
+      <li Class="Fortified.ModExtension_RecipeInheritance">
+        <inheritRecipesFrom>
+          <li>TableButcher</li>
+          <li>TableStonecutter</li>
         </inheritRecipesFrom>
       </li>
     </modExtensions>

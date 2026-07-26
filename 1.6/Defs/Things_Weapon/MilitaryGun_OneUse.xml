@@ -32,14 +32,20 @@
 				<li>DMS_TableMachinePrinter</li>
 			</recipeUsers>
 			<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
-			<researchPrerequisites>
-				<li>DMS_EquipmentAdvanced</li>
+			<!-- 解鎖: 機甲齒輪 -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_MechBasis</li>
 			</researchPrerequisites>
+			<skillRequirements>
+				<Crafting>6</Crafting>
+			</skillRequirements>
 		</recipeMaker>
+		<!-- 造價上調: 一次性武器不應比可重複使用的槍械便宜 -->
 		<costList>
-			<ComponentStamped>1</ComponentStamped>
-			<Steel>40</Steel>
-			<Chemfuel>60</Chemfuel>
+			<ComponentStamped>2</ComponentStamped>
+			<Tungsteel>35</Tungsteel>
+			<Steel>60</Steel>
+			<Chemfuel>90</Chemfuel>
 		</costList>
 		<tickerType>Never</tickerType>
 		<thingCategories>

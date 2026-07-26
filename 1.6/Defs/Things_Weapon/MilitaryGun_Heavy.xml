@@ -32,11 +32,8 @@
 		<equippedStatOffsets>
 			<MoveSpeed>-0.3</MoveSpeed>
 		</equippedStatOffsets>
-		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-			</researchPrerequisites>
-		</recipeMaker>
+		<!-- 取得方式: 探索獎勵(高烈度) - 不可製造 -->
+		<recipeMaker IsNull="True" />
 		<costList>
 			<Tungsteel>150</Tungsteel>
 			<ComponentStamped>5</ComponentStamped>
@@ -101,9 +98,10 @@
 		<equippedStatOffsets>
 			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
+		<!-- 解鎖: 失能機關 -->
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
+			<researchPrerequisites Inherit="False">
+				<li>DMS_DeadMansSwitch</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
@@ -185,9 +183,10 @@
 		<equippedStatOffsets>
 			<MoveSpeed>-0.2</MoveSpeed>
 		</equippedStatOffsets>
+		<!-- 解鎖: 失能機關 -->
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>DMS_EquipmentHeavy</li>
+			<researchPrerequisites Inherit="False">
+				<li>DMS_DeadMansSwitch</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
@@ -247,10 +246,14 @@
 			<li>DMS_Gun_Recoilless</li>
 			<li>NoSwitch</li>
 		</weaponTags>
+		<!-- 解鎖: 簡言之假說 -->
 		<recipeMaker>
 			<skillRequirements>
 				<Crafting>8</Crafting>
 			</skillRequirements>
+			<researchPrerequisites Inherit="False">
+				<li>DMS_Hypothesis</li>
+			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
 			<Tungsteel>120</Tungsteel>
@@ -364,12 +367,8 @@
 		<equippedStatOffsets>
 			<MoveSpeed>-0.2</MoveSpeed>
 		</equippedStatOffsets>
-		<recipeMaker>
-			<researchPrerequisites>
-				<li>DMS_EquipmentHeavy</li>
-				<li>HeavyTurrets</li>
-			</researchPrerequisites>
-		</recipeMaker>
+		<!-- 取得方式: 探索獎勵(高烈度) - 不可製造 -->
+		<recipeMaker IsNull="True" />
 		<costList>
 			<Tungsteel>230</Tungsteel>
 			<ComponentStamped>14</ComponentStamped>
@@ -437,9 +436,9 @@
 			<skillRequirements>
 				<Crafting>8</Crafting>
 			</skillRequirements>
-			<researchPrerequisites>
-				<li>DMS_EquipmentHeavy</li>
-				<li>HeavyTurrets</li>
+			<!-- 解鎖: 簡言之假說 -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_Hypothesis</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
@@ -523,9 +522,11 @@
 		<equippedStatOffsets>
 			<MoveSpeed>-0.2</MoveSpeed>
 		</equippedStatOffsets>
+		<!-- 解鎖: 重型機兵 -->
+		<!-- TODO: 若安裝 aoba.deadmanswitch.mobiledragoon, 追加該模組的龍騎兵科技作為額外前置 (需確認其 ResearchProjectDef defName) -->
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>DMS_EquipmentHeavy</li>
+			<researchPrerequisites Inherit="False">
+				<li>DMS_HeavyAutomatroid</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
@@ -613,10 +614,15 @@
 		<weaponTags>
 			<li>DMS_DragoonGun</li>
 		</weaponTags>
+		<!-- 解鎖: 重型機兵 -->
+		<!-- TODO: 若安裝 aoba.deadmanswitch.mobiledragoon, 追加該模組的龍騎兵科技作為額外前置 (需確認其 ResearchProjectDef defName) -->
 		<recipeMaker>
 			<skillRequirements>
 				<Crafting>8</Crafting>
 			</skillRequirements>
+			<researchPrerequisites Inherit="False">
+				<li>DMS_HeavyAutomatroid</li>
+			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
 			<Tungsteel>120</Tungsteel>
@@ -721,10 +727,10 @@
 			<AccuracyLong>0.99</AccuracyLong>
 			<RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
 		</statBases>
+		<!-- 解鎖: 次世代兵器 -->
 		<recipeMaker>
-			<researchPrerequisites>
+			<researchPrerequisites Inherit="False">
 				<li>DMS_Synthroid</li>
-				<li>DMS_EquipmentHeavy</li>
 			</researchPrerequisites>
 			<skillRequirements>
 				<Crafting>8</Crafting>

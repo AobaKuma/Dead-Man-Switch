@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 	<!-- DMS_TacticalPistol -->
@@ -29,12 +29,8 @@
 			<WorkToMake>18000</WorkToMake>
 			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
 		</statBases>
-		<recipeMaker>
-			<researchPrerequisites>
-				<li>BlowbackOperation</li>
-				<li>DMS_EquipmentAdvanced</li>
-			</researchPrerequisites>
-		</recipeMaker>
+		<!-- 取得方式: 交易 - 不可製造 -->
+		<recipeMaker IsNull="True" />
 		<costList>
 			<Tungsteel>30</Tungsteel>
 			<ComponentStamped>1</ComponentStamped>
@@ -133,12 +129,8 @@
 			<AccuracyLong>0.15</AccuracyLong>
 			<RangedWeapon_Cooldown>1.15</RangedWeapon_Cooldown>
 		</statBases>
-		<recipeMaker>
-			<researchPrerequisites>
-				<li>BlowbackOperation</li>
-				<li>DMS_EquipmentAdvanced</li>
-			</researchPrerequisites>
-		</recipeMaker>
+		<!-- 取得方式: 探索獎勵(低烈度) - 不可製造 -->
+		<recipeMaker IsNull="True" />
 		<costList>
 			<Tungsteel>55</Tungsteel>
 			<ComponentStamped>2</ComponentStamped>
@@ -201,9 +193,9 @@
 			<WorkToMake>45000</WorkToMake>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
+			<!-- 解鎖: 人機工程學 (藍圖自產) -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_HumanoidEngineering</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>

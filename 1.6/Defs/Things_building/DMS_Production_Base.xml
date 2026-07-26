@@ -16,6 +16,7 @@
       <li>DMS_TableArtifuscle</li>
       <li>DMS_LabReactor</li>
       <li>DMS_LabFurnace</li>
+      <li>DMS_TableStampManual</li>
     </fixedBillGiverDefs>
   </WorkGiverDef>
 
@@ -29,6 +30,7 @@
       <li>DMS_TableMachinePrinter</li>
       <li>DMS_ReactionChamber</li>
       <li>DMS_Furnace</li>
+      <li>DMS_AutoMill</li>
       <li MayRequire="CETeam.CombatExtended">DMS_TableAmmoPrinter</li>
     </fixedBillGiverDefs>
     <verb>Operate</verb>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!-- 口袋手槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
@@ -34,15 +34,8 @@
 			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
 			<WorkToMake>2000</WorkToMake>
 		</statBases>
-		<recipeMaker>
-			<recipeUsers>
-				<li>TableMachining</li>
-			</recipeUsers>
-		    <researchPrerequisites>
-      			<li>Gunsmithing</li>
-				<li>DMS_EquipmentBasis</li>
-    		</researchPrerequisites>
-		</recipeMaker>	
+		<!-- 取得方式: 探索獎勵(低烈度) - 不可製造 -->
+		<recipeMaker IsNull="True" />
 		<costList>
 			<Steel>20</Steel>
 		</costList>
@@ -135,15 +128,8 @@
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
 		</verbs>
-		<recipeMaker>
-			<skillRequirements>
-				<Crafting>6</Crafting>
-			</skillRequirements>
-		    <researchPrerequisites>
-      			<li>BlowbackOperation</li>
-      			<li>DMS_EquipmentBasis</li>
-    		</researchPrerequisites>
-		</recipeMaker>
+		<!-- 取得方式: 交易 - 不可製造 -->
+		<recipeMaker IsNull="True" />
 		<costList>
 			<Steel>70</Steel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -209,15 +195,8 @@
 		<equippedStatOffsets>
 		  <HuntingStealth>0.5</HuntingStealth>
 		</equippedStatOffsets>	
-		<recipeMaker>
-			<recipeUsers>
-				<li>TableMachining</li>
-			</recipeUsers>
-		    <researchPrerequisites>
-      			<li>Gunsmithing</li>
-      			<li>DMS_EquipmentBasis</li>
-    		</researchPrerequisites>
-		</recipeMaker>
+		<!-- 取得方式: 探索獎勵(低烈度) - 不可製造 -->
+		<recipeMaker IsNull="True" />
 		<costList>
 			<Steel>35</Steel>
 			<ComponentIndustrial>1</ComponentIndustrial>
@@ -288,15 +267,8 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<soundInteract>Interact_Autopistol</soundInteract>
-		<recipeMaker>
-			<recipeUsers>
-				<li>TableMachining</li>
-			</recipeUsers>
-		    <researchPrerequisites>
-      			<li>Gunsmithing</li>
-				<li>DMS_EquipmentBasis</li>
-    		</researchPrerequisites>
-		</recipeMaker>	
+		<!-- 取得方式: 交易 - 不可製造 -->
+		<recipeMaker IsNull="True" />
 		<statBases>
 			<WorkToMake>5000</WorkToMake>
 			<Mass>2.1</Mass>
@@ -404,10 +376,10 @@
 			<skillRequirements>
 				<Crafting>7</Crafting>
 			</skillRequirements>
-		    <researchPrerequisites>
-      			<li>Gunsmithing</li>
-      			<li>DMS_EquipmentAdvanced</li>
-    		</researchPrerequisites>
+			<!-- 解鎖: 機甲齒輪 -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_MechBasis</li>
+			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
 			<Steel>75</Steel>
@@ -509,18 +481,8 @@
 		<equippedStatOffsets>
 		  <MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
-		<recipeMaker>
-			<recipeUsers>
-				<li>TableMachining</li>
-			</recipeUsers>
-			<skillRequirements>
-				<Crafting>5</Crafting>
-			  </skillRequirements>
-		    <researchPrerequisites>
-      			<li>Gunsmithing</li>
-      			<li>DMS_EquipmentBasis</li>
-    		</researchPrerequisites>
-		</recipeMaker>
+		<!-- 取得方式: 交易 - 不可製造 -->
+		<recipeMaker IsNull="True" />
 		<costList>
 			<Steel>80</Steel>
 			<WoodLog>50</WoodLog>
