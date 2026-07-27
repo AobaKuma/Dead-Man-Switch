@@ -137,6 +137,12 @@
         <weaponTag>UltratechMelee</weaponTag>
         <countRange>1~2</countRange>
       </li>
+      <!-- 無法自行製造的機兵武器: 保證派系基地買得到 -->
+      <li Class="StockGenerator_Tag">
+        <tradeTag>DMS_WeaponUncraftable</tradeTag>
+        <thingDefCountRange>3~5</thingDefCountRange>
+        <countRange>1~2</countRange>
+      </li>
 
       <!-- Apparel -->
       <li Class="StockGenerator_MarketValue">
@@ -350,6 +356,12 @@
         <thingDefCountRange>1~2</thingDefCountRange>
         <countRange>1~2</countRange>
       </li>
+      <!-- 無法自行製造的機兵武器: 補充管道, 數量較少 -->
+      <li Class="StockGenerator_Tag">
+        <tradeTag>DMS_WeaponUncraftable</tradeTag>
+        <thingDefCountRange>2~3</thingDefCountRange>
+        <countRange>1~1</countRange>
+      </li>
 
       <!-- Apparel -->
       <li Class="StockGenerator_MarketValue">
@@ -536,6 +548,12 @@
         <tradeTag>DMS_WeaponRanged</tradeTag>
         <countRange>5~10</countRange>
       </li>
+      <!-- 無法自行製造的機兵武器: 武器商是主要取得管道, 保證上架 -->
+      <li Class="StockGenerator_Tag">
+        <tradeTag>DMS_WeaponUncraftable</tradeTag>
+        <thingDefCountRange>5~8</thingDefCountRange>
+        <countRange>1~3</countRange>
+      </li>
       <li Class="StockGenerator_Category">
         <categoryDef>WeaponsMelee</categoryDef>
         <thingDefCountRange>6~6</thingDefCountRange>
@@ -573,6 +591,7 @@
       <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
       <li Class="StockGenerator_BuyTradeTag"><tag>Drugs</tag></li>
       <li Class="StockGenerator_BuyTradeTag"><tag>DMS_WeaponRanged</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>DMS_WeaponUncraftable</tag></li>
       <li Class="StockGenerator_BuyTradeTag"><tag>HoraxWeapon</tag></li>
       <li Class="StockGenerator_BuyTradeTag"><tag>ExoticBuilding</tag></li>
       <li Class="StockGenerator_BuyTradeTag"><tag>ExoticMisc</tag></li>

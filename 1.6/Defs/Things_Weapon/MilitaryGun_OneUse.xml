@@ -3,7 +3,7 @@
 	<!-- 拋棄式火箭空爆榴彈(DRAG) -->
 	<ThingDef ParentName="ApparelNoQualityBase">
 		<defName>DMS_DeposableRocketLauncher</defName>
-		<label>Disposable Launcher</label>
+		<label>disposable launcher</label>
 		<description>A single use recoilless rifle designed to be fired and discarded. It's light-weight and effective against bunkers and heavy mechs. It has a long fire range and requires line of sight.</description>
 		<graphicData>
 		  <texPath>Things/Apparel/RocketLauncher/DMS_Launcher_Icon</texPath>

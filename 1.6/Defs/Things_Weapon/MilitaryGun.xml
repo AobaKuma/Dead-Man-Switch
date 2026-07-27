@@ -365,6 +365,14 @@
 	<!--AMR-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_AntiMaterialRifle</defName>
+		<!-- 取得方式: 交易 / 探索(中烈度) / 任務獎勵 -->
+		<tradeTags>
+			<li>DMS_WeaponUncraftable</li>
+			<li>WeaponRanged</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardCore</li>
+		</thingSetMakerTags>
 		<label>anti-material rifle</label>
 		<description>A high caliber sniper rifle made to be used by MS-4E Jadger automatroids to destroy armored target at long ranges.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>

@@ -4,6 +4,14 @@
 	<!-- DMS_TacticalPistol -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_TacticalPistol</defName>
+		<!-- 取得方式: 交易 / 任務獎勵 -->
+		<tradeTags>
+			<li>DMS_WeaponUncraftable</li>
+			<li>WeaponRanged</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardCore</li>
+		</thingSetMakerTags>
 		<label>Mech pistol</label>
 		<description>A sidearm designed for Automatroid or exoskeleton use. \n\nThis weapon is designed specially for Automatroid use, a normal human will be unable to use it without external equipment or augmentation.</description>
 		<weaponClasses>
@@ -100,6 +108,14 @@
 	<!--DMS_PDW .50AE衝鋒槍.-->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_PDW</defName>
+		<!-- 取得方式: 探索(低烈度) / 交易 / 任務獎勵 -->
+		<tradeTags>
+			<li>DMS_WeaponUncraftable</li>
+			<li>WeaponRanged</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardHighFreq</li>
+		</thingSetMakerTags>
 		<label>PDW</label>
 		<description>A mass-producible submachine gun which was designed to be used as a "Point Shooting" weapon. It's inaccurate at range but its caliber and draw speed it the ideal weapon for urban combat against milltors.</description>
 		<weaponClasses>

@@ -3,6 +3,14 @@
 	<!--鎮暴棍-->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>DMS_StunBaton</defName>
+		<!-- 取得方式: 交易 / 任務獎勵 -->
+		<tradeTags>
+			<li>DMS_WeaponUncraftable</li>
+			<li>WeaponMelee</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardHighFreq</li>
+		</thingSetMakerTags>
 		<label>Stun Baton</label>
 		<description>An electric stun baton designed for non-lethal riot control and to Subdue out-of-control machines. It's commonly used by automatroid protectors to secure occupied areas safely without casualties.</description>
 		<graphicData>
@@ -88,6 +96,14 @@
 	<!--高周波開山刀-->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>DMS_Machete</defName>
+		<!-- 取得方式: 交易 / 任務獎勵 -->
+		<tradeTags>
+			<li>DMS_WeaponUncraftable</li>
+			<li>WeaponMelee</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardHighFreq</li>
+		</thingSetMakerTags>
 		<label>Machete</label>
 		<description>It May look like a normal machete, but this weapon is purpose built for a mech melee combat capability.\n\nWith its high frequency vibrating edge, it can cut through most things with ease.</description>
 		<graphicData>

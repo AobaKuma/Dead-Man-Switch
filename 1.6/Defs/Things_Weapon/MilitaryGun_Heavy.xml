@@ -1,8 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!--MSC-->
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_SniperCannon</defName>
+		<!-- 取得方式: 探索(高烈度) / DMS武器商 / 稀有任務獎勵 -->
+		<tradeTags>
+			<li>DMS_WeaponUncraftable</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
 		<label>Bolt Cannon</label>
 		<description>An ultra heavy rifle chambered in autocannon rounds. This rifle has proven the capability to reach out and touch an exostrider at immense distances. It is specifically designed for long-range anti-mech operations.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it.</description>
 		<weaponClasses>
@@ -338,6 +345,13 @@
 	<!--====MK44大毒蛇2機炮====-->
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Gun_MK44_Autocannon</defName>
+		<!-- 取得方式: 探索(高烈度) / DMS武器商 / 稀有任務獎勵 -->
+		<tradeTags>
+			<li>DMS_WeaponUncraftable</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
 		<label>MK44 BushMasterII AutoCannon</label>
 		<description>The MK44 Bushmaster II autocannon is a low-rate-of-fire (200 RPM), high-power, and high-precision weapon. It can be equipped on medium-sized mechanoids and fires 30×173mm NATO ammunition, effectively filling the role of a precision burst-fire autocannon.</description>
 		<graphicData>

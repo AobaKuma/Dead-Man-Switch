@@ -3,6 +3,10 @@
 	<!-- 口袋手槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_KnuckledusterRevolver</defName>
+		<!-- 取得方式: 探索(低烈度) / 交易 / 任務獎勵 -->
+		<thingSetMakerTags>
+			<li>RewardStandardHighFreq</li>
+		</thingSetMakerTags>
 		<label>Knuckleduster Revolver</label>
 		<description>A miniature self-defense weapon commonly found on midworld, it barely takes up any space when folded. Knuckleduster accept multiple calibers and may also be used as brass-knuckles in a pinch.</description>
 		<weaponClasses>
@@ -18,6 +22,7 @@
 		</weaponTags>
 		<tradeTags>
 			<li>WeaponRanged</li>
+			<li>DMS_WeaponUncraftable</li>
 		</tradeTags>
 		<uiIconScale>1.8</uiIconScale>
 		<graphicData>
@@ -91,6 +96,14 @@
 	<!-- 鎮暴機槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_MiniMachineGun</defName>
+		<!-- 取得方式: 交易 / 任務獎勵 -->
+		<tradeTags>
+			<li>DMS_WeaponUncraftable</li>
+			<li>WeaponRanged</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardHighFreq</li>
+		</thingSetMakerTags>
 		<label>Riot LMG</label>
 		<description>Pistol caliber machinegun designed for colony defense. The Riot LMG can cut down unarmored enemy hordes and prisoner riots with ease.</description>
 	    <uiIconScale>1.4</uiIconScale>
@@ -164,6 +177,10 @@
 	<!-- 生存步槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_SurvivalRifle</defName>
+		<!-- 取得方式: 探索(低烈度) / 交易 / 任務獎勵 -->
+		<thingSetMakerTags>
+			<li>RewardStandardHighFreq</li>
+		</thingSetMakerTags>
 		<label>Survival rifle</label>
 		<description>Foldable rifle issued to war machine crew members in case of emergency. Accepts multiple common calibers.</description>
 		<weaponClasses>
@@ -177,6 +194,7 @@
 		</weaponTags>
 		<tradeTags>
 			<li>WeaponRanged</li>
+			<li>DMS_WeaponUncraftable</li>
 		</tradeTags>
 		<graphicData>
 			<texPath>Things/Weapons/HumanWeapon/SurvivalRifle</texPath>
@@ -247,6 +265,14 @@
 	<!-- 鎮暴手槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_Revolver</defName>
+		<!-- 取得方式: 交易 / 任務獎勵 -->
+		<tradeTags>
+			<li>DMS_WeaponUncraftable</li>
+			<li>WeaponRanged</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardHighFreq</li>
+		</thingSetMakerTags>
 		<label>Riot Revolver</label>
 		<description>A double-action revolver designed to load shotgun ammo. It was designed for personal defense purposes but soon became a favored sidearm for mech solders because it can be used against most enemy types at the same time.</description>
 		<graphicData>
@@ -451,6 +477,10 @@
 	<!-- 獵象槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_ElephantGun</defName>
+		<!-- 取得方式: 交易 / 任務獎勵 -->
+		<thingSetMakerTags>
+			<li>RewardStandardCore</li>
+		</thingSetMakerTags>
 		<label>Elephant Rifle</label>
 		<description>Single-shot high caliber hunting rifle. While made to hunt big game or stop large hostile lifeforms with sheer kinetic energy, it is also used by early industrial colonies against mechanoids thanks to its simple manufacture requirements.</description>
 		<weaponClasses>
@@ -463,6 +493,7 @@
 		</weaponTags>
 		<tradeTags>
 			<li>WeaponRanged</li>
+			<li>DMS_WeaponUncraftable</li>
 		</tradeTags>
 		<graphicData>
 			<texPath>Things/Weapons/HumanWeapon/ElephantGun</texPath>
