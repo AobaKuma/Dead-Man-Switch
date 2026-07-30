@@ -60,9 +60,29 @@
 			<Tungsteel>70</Tungsteel>
 			<ComponentStamped>4</ComponentStamped>
 		</costList>
+		<!-- 彈種切換: 鹿彈(預設) / 獨頭彈 -->
+		<comps>
+			<li Class="Fortified.CompProperties_AmmoSwitch">
+				<defaultIndex>0</defaultIndex>
+				<switchCooldown>120</switchCooldown>
+				<soundSwitch>Interact_Rifle</soundSwitch>
+				<ammos>
+					<li>
+						<projectileDef>Bullet_Shotgun</projectileDef>
+					</li>
+					<li>
+						<projectileDef>DMS_Bullet_AssaultShotgun_Slug</projectileDef>
+						<rangeFactor>1.6</rangeFactor>
+						<accuracyFactor>1.1</accuracyFactor>
+						<warmUpFactor>1.15</warmUpFactor>
+						<burstShotCountOverride>1</burstShotCountOverride>
+					</li>
+				</ammos>
+			</li>
+		</comps>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>Fortified.Verb_LaunchProjectile_AmmoSwitch</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_Shotgun</defaultProjectile>
 				<warmupTime>1.2</warmupTime>
@@ -87,6 +107,24 @@
 				<EquippableDef>LightAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
+	</ThingDef>
+
+	<!-- 獨頭彈: 突擊霰彈槍的遠距/穿甲替代彈種 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_AssaultShotgun_Slug</defName>
+		<label>12 gauge slug</label>
+		<description>A single rifled lead slug instead of a spread of pellets. It reaches much further and punches through light plating, but only one projectile leaves the barrel per trigger pull.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>30</damageAmountBase>
+			<stoppingPower>4</stoppingPower>
+			<speed>65</speed>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
+		</projectile>
 	</ThingDef>
 
 	<!-- 中距離槍族 -->
@@ -205,7 +243,8 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>Bullet_DMS_AMR</defaultProjectile>
+				<!-- 改為 .338 口徑: 不再與反器材步槍共用 12.7mm 彈 -->
+				<defaultProjectile>DMS_Bullet_338</defaultProjectile>
 				<warmupTime>1.3</warmupTime>
 				<burstShotCount>1</burstShotCount>
 				<range>37.9</range>
@@ -227,6 +266,24 @@
 				<EquippableDef>StandardAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
+	</ThingDef>
+
+	<!-- .338 彈: 介於全威力步槍彈與 12.7mm 之間的遠距離彈藥 -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>DMS_Bullet_338</defName>
+		<label>.338 magnum bullet</label>
+		<description>A .338 magnum rifle cartridge. It carries far more energy downrange than a full-power battle rifle round while remaining light enough to be fired from a semi-automatic action without a mech-grade recoil buffer.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>21</damageAmountBase>
+			<stoppingPower>2.5</stoppingPower>
+			<speed>95</speed>
+			<armorPenetrationBase>0.33</armorPenetrationBase>
+		</projectile>
 	</ThingDef>
 
 	<!-- DMS_BattleRifle -->

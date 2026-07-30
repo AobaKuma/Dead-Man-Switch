@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
   <!-- EN: heavy rifle bullet -->
@@ -12,11 +12,20 @@
   
   <!-- EN: 4 gauge bean bag -->
   <DMS_Bullet_RiotShotgun.label>镇暴霰弹</DMS_Bullet_RiotShotgun.label>
+  <!-- EN: A 4 gauge sack of compressed lead shot. It delivers a crushing, non-penetrating impact intended to knock down a target without killing them. Ineffective against armor plating. -->
+  <DMS_Bullet_RiotShotgun.description>以4号口径弹壳装填的压缩铅砂袋。命中时传递的是纯粹的钝性冲击力，目的是把目标击倒而不是杀死。对装甲板几乎无效。</DMS_Bullet_RiotShotgun.description>
+  
+  <!-- EN: 4 gauge buckshot -->
+  <DMS_Bullet_RiotShotgun_Buck.label>大口径鹿弹</DMS_Bullet_RiotShotgun_Buck.label>
+  
+  <!-- EN: A lethal 4 gauge buckshot load. When crowd control is no longer the objective, the same launcher will happily shred flesh instead of bruising it. -->
+  <DMS_Bullet_RiotShotgun_Buck.description>具杀伤力的大口径鹿弹。当任务目标不再是控制场面时，同一把发射器可以撕裂血肉而不只是留下瘀伤。</DMS_Bullet_RiotShotgun_Buck.description>
+  
   
   <!-- EN: Elephant Rifle -->
   <DMS_ElephantGun.label>猎象枪</DMS_ElephantGun.label>
   <!-- EN: Single-shot high caliber hunting rifle. While made to hunt big game or stop large hostile lifeforms with sheer kinetic energy, it is also used by early industrial colonies against mechanoids thanks to its simple manufacture requirements. -->
-  <DMS_ElephantGun.description>一种重型大口径栓动猎枪。虽然它是为了狩猎巨型猎物或用纯粹的动能阻止大型敌对生物而制造的。但由於其简单的制造要求也被早期的工业殖民地用来对付机械体。</DMS_ElephantGun.description>
+  <DMS_ElephantGun.description>一种大口径栓动猎枪。虽然它是为了狩猎巨型猎物或用纯粹的动能阻止大型敌对生物而制造的。但由於其简单的制造要求也被早期的工业殖民地用来对付机械体。</DMS_ElephantGun.description>
   <!-- EN: grip -->
   <DMS_ElephantGun.tools.grip.label>握把</DMS_ElephantGun.tools.grip.label>
   <!-- EN: barrel -->

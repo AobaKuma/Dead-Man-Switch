@@ -3,6 +3,21 @@
   
   <!-- EN: heavy machine gun bullet -->
   <Bullet_DMS_HeavyMachineGun.label>重機槍子彈</Bullet_DMS_HeavyMachineGun.label>
+  <!-- EN: A standard 12.7mm full metal jacket belt round. Balanced for sustained fire at range against both infantry and light plating. -->
+  <Bullet_DMS_HeavyMachineGun.description>標準12.7mm全金屬被覆彈鏈彈。在射程、對步兵與對輕裝甲的持續火力之間取得平衡。</Bullet_DMS_HeavyMachineGun.description>
+  
+  <!-- EN: 20mm tungsten core shell -->
+  <DMS_Bullet_Autocannon_TungstenCore.label>鎢芯彈</DMS_Bullet_Autocannon_TungstenCore.label>
+  
+  <!-- EN: A sub-caliber sabot round carrying a tungsten penetrator. The dense core defeats plating that standard high explosive shells merely scratch, but the heavier propellant charge slows the cycle rate and the flatter, faster projectile is zeroed for a shorter engagement envelope. -->
+  <DMS_Bullet_Autocannon_TungstenCore.description>裝有鎢合金穿甲彈芯的次口徑脫殼穿甲彈。高密度彈芯能貫穿標準高爆彈只能刮傷的裝甲，但更重的發射藥拖慢了循環速度，而彈道更平直快速的彈頭也只針對較短的交戰距離校正。</DMS_Bullet_Autocannon_TungstenCore.description>
+  
+  <!-- EN: 12.7mm hollow point -->
+  <DMS_Bullet_HMG_HollowPoint.label>空尖彈</DMS_Bullet_HMG_HollowPoint.label>
+  
+  <!-- EN: An expanding 12.7mm round loaded to a lighter charge. The soft nose dumps its energy into soft tissue instead of punching through, and the reduced pressure lets the action cycle far faster at the cost of range and penetration. Near useless against armored plating. -->
+  <DMS_Bullet_HMG_HollowPoint.description>裝填較輕發射藥的重機槍空尖彈。軟質彈頭把能量全部傾注在軟組織裡而不是穿透過去，較低的膛壓也讓槍機循環快得多，代價是射程與穿甲能力。對裝甲板幾乎無用。</DMS_Bullet_HMG_HollowPoint.description>
+  
   
   <!-- EN: Mech Autocannon -->
   <DMS_Autocannon.label>機兵輕機炮</DMS_Autocannon.label>

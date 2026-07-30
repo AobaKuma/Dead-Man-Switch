@@ -411,9 +411,28 @@
 			<Steel>75</Steel>
 			<ComponentStamped>1</ComponentStamped>
 		</costList>
+		<!-- 彈種切換: 豆袋彈(預設) / 致命鹿彈 -->
+		<comps>
+			<li Class="Fortified.CompProperties_AmmoSwitch">
+				<defaultIndex>0</defaultIndex>
+				<switchCooldown>120</switchCooldown>
+				<soundSwitch>Interact_Rifle</soundSwitch>
+				<ammos>
+					<li>
+						<projectileDef>DMS_Bullet_RiotShotgun</projectileDef>
+					</li>
+					<li>
+						<projectileDef>DMS_Bullet_RiotShotgun_Buck</projectileDef>
+						<accuracyFactor>0.95</accuracyFactor>
+					</li>
+				</ammos>
+			</li>
+		</comps>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<!-- 人類可用武器: Fortified.dll 重新編譯後改成 Fortified.Verb_Shoot_AmmoSwitch,
+				     否則使用此槍不會累積射擊技能經驗 (Verb_Shoot 才會給經驗) -->
+				<verbClass>Fortified.Verb_LaunchProjectile_AmmoSwitch</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>DMS_Bullet_RiotShotgun</defaultProjectile>
 				<warmupTime>1</warmupTime>
@@ -458,9 +477,10 @@
 		</modExtensions>
 	</ThingDef>
 	
-	<ThingDef ParentName="BaseBullet">
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
 		<defName>DMS_Bullet_RiotShotgun</defName>
 		<label>4 gauge bean bag</label>
+		<description>A 4 gauge sack of compressed lead shot. It delivers a crushing, non-penetrating impact intended to knock down a target without killing them. Ineffective against armor plating.</description>
 		<graphicData>
 		<texPath>Things/Projectile/Bullet_Shotgun</texPath>
 		<graphicClass>Graphic_Single</graphicClass>
@@ -471,6 +491,24 @@
 			<stoppingPower>4</stoppingPower>
 			<speed>55</speed>
 			<armorPenetrationBase>0.24</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+
+	<!-- 致命鹿彈: 豆袋彈的殺傷型替代彈種 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_RiotShotgun_Buck</defName>
+		<label>4 gauge buckshot</label>
+		<description>A lethal 4 gauge buckshot load. When crowd control is no longer the objective, the same launcher will happily shred flesh instead of bruising it.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Shotgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>24</damageAmountBase>
+			<stoppingPower>3</stoppingPower>
+			<speed>55</speed>
+			<armorPenetrationBase>0.20</armorPenetrationBase>
 		</projectile>
 	</ThingDef>
 

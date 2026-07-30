@@ -115,9 +115,28 @@
 			<Tungsteel>95</Tungsteel>
 			<ComponentStamped>5</ComponentStamped>
 		</costList>
+		<!-- 彈種切換: 標準機槍彈(預設) / 空尖彈(短射程高射速壓制) -->
+		<comps>
+			<li Class="Fortified.CompProperties_AmmoSwitch">
+				<defaultIndex>0</defaultIndex>
+				<switchCooldown>240</switchCooldown>
+				<soundSwitch>Artillery_ShellLoaded</soundSwitch>
+				<ammos>
+					<li>
+						<projectileDef>Bullet_DMS_HeavyMachineGun</projectileDef>
+					</li>
+					<li>
+						<projectileDef>DMS_Bullet_HMG_HollowPoint</projectileDef>
+						<rangeFactor>0.7</rangeFactor>
+						<accuracyFactor>0.9</accuracyFactor>
+						<burstShotCountOverride>7</burstShotCountOverride>
+					</li>
+				</ammos>
+			</li>
+		</comps>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>Fortified.Verb_LaunchProjectile_AmmoSwitch</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_DMS_HeavyMachineGun</defaultProjectile>
 				<warmupTime>3</warmupTime>
@@ -143,9 +162,10 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
-	<ThingDef ParentName="BaseBullet">
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
 		<defName>Bullet_DMS_HeavyMachineGun</defName>
 		<label>heavy machine gun bullet</label>
+		<description>A standard 12.7mm full metal jacket belt round. Balanced for sustained fire at range against both infantry and light plating.</description>
 		<graphicData>
 			<texPath>Things/Projectile/Bullet_Big</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -155,6 +175,24 @@
 			<damageAmountBase>20</damageAmountBase>
 			<stoppingPower>3</stoppingPower>
 			<speed>80</speed>
+		</projectile>
+	</ThingDef>
+
+	<!-- 空尖彈: 短射程、高射速的壓制彈 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_HMG_HollowPoint</defName>
+		<label>12.7mm hollow point</label>
+		<description>An expanding 12.7mm round loaded to a lighter charge. The soft nose dumps its energy into soft tissue instead of punching through, and the reduced pressure lets the action cycle far faster at the cost of range and penetration. Near useless against armored plating.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>14</damageAmountBase>
+			<stoppingPower>4</stoppingPower>
+			<speed>70</speed>
+			<armorPenetrationBase>0.10</armorPenetrationBase>
 		</projectile>
 	</ThingDef>
 
@@ -200,9 +238,29 @@
 			<Tungsteel>110</Tungsteel>
 			<ComponentStamped>5</ComponentStamped>
 		</costList>
+		<!-- 彈種切換: 標準機砲彈(預設) / 鎢芯穿甲彈 -->
+		<comps>
+			<li Class="Fortified.CompProperties_AmmoSwitch">
+				<defaultIndex>0</defaultIndex>
+				<switchCooldown>240</switchCooldown>
+				<soundSwitch>Artillery_ShellLoaded</soundSwitch>
+				<ammos>
+					<li>
+						<projectileDef>Bullet_AutocannonTurret</projectileDef>
+					</li>
+					<li>
+						<projectileDef>DMS_Bullet_Autocannon_TungstenCore</projectileDef>
+						<rangeFactor>0.8</rangeFactor>
+						<accuracyFactor>1.05</accuracyFactor>
+						<warmUpFactor>1.2</warmUpFactor>
+						<burstShotCountOverride>2</burstShotCountOverride>
+					</li>
+				</ammos>
+			</li>
+		</comps>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>Fortified.Verb_LaunchProjectile_AmmoSwitch</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_AutocannonTurret</defaultProjectile>
 				<warmupTime>3</warmupTime>
@@ -227,6 +285,25 @@
 				<EquippableDef>TransHeavyAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
+	</ThingDef>
+
+	<!-- 鎢芯彈: 犧牲射程與射速換取穿甲與威力 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_Autocannon_TungstenCore</defName>
+		<label>20mm tungsten core shell</label>
+		<description>A sub-caliber sabot round carrying a tungsten penetrator. The dense core defeats plating that standard high explosive shells merely scratch, but the heavier propellant charge slows the cycle rate and the flatter, faster projectile is zeroed for a shorter engagement envelope.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.1</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>34</damageAmountBase>
+			<stoppingPower>3</stoppingPower>
+			<speed>110</speed>
+			<armorPenetrationBase>0.75</armorPenetrationBase>
+		</projectile>
 	</ThingDef>
 
 	<!-- 無後座力砲 基本上是給龍騎兵用的-->

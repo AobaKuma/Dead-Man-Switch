@@ -1,11 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
   <!-- EN: grenade round -->
   <Bullet_DMS_GrenadeLauncher.label>榴弹</Bullet_DMS_GrenadeLauncher.label>
   
   <!-- EN: full-power rifle bullet -->
-  <Bullet_DMS_LightMachineGun.label>全威力步枪子弹</Bullet_DMS_LightMachineGun.label>
+  <Bullet_DMS_LightMachineGun.label>全威力步枪弹</Bullet_DMS_LightMachineGun.label>
+  <!-- EN: .338 magnum bullet -->
+  <DMS_Bullet_338.label>马格南步枪弹</DMS_Bullet_338.label>
+  
+  <!-- EN: A .338 magnum rifle cartridge. It carries far more energy downrange than a full-power battle rifle round while remaining light enough to be fired from a semi-automatic action without a mech-grade recoil buffer. -->
+  <DMS_Bullet_338.description>马格南步枪弹在远距离上保有的能量远高于全威力步枪弹，同时又轻到能在没有机兵级后座缓冲的半自动枪机上使用。</DMS_Bullet_338.description>
+  
+  <!-- EN: 12 gauge slug -->
+  <DMS_Bullet_AssaultShotgun_Slug.label>独头弹</DMS_Bullet_AssaultShotgun_Slug.label>
+  
+  <!-- EN: A single rifled lead slug instead of a spread of pellets. It reaches much further and punches through light plating, but only one projectile leaves the barrel per trigger pull. -->
+  <DMS_Bullet_AssaultShotgun_Slug.description>以单颗带膛线的铅弹头取代散开的弹丸。射程远得多，也能打穿轻装甲板，但每次扣下扳机只有一发弹头离膛。</DMS_Bullet_AssaultShotgun_Slug.description>
+  
   
   <!-- EN: Mech AMR -->
   <DMS_AntiMaterialRifle.label>反器材步枪</DMS_AntiMaterialRifle.label>

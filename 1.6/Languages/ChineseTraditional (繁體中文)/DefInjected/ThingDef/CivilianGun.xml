@@ -12,6 +12,15 @@
   
   <!-- EN: 4 gauge bean bag -->
   <DMS_Bullet_RiotShotgun.label>鎮暴霰彈</DMS_Bullet_RiotShotgun.label>
+  <!-- EN: A 4 gauge sack of compressed lead shot. It delivers a crushing, non-penetrating impact intended to knock down a target without killing them. Ineffective against armor plating. -->
+  <DMS_Bullet_RiotShotgun.description>以4號口徑彈殼裝填的壓縮鉛砂袋。命中時傳遞的是純粹的鈍性衝擊力，目的是把目標擊倒而不是殺死。對裝甲板幾乎無效。</DMS_Bullet_RiotShotgun.description>
+  
+  <!-- EN: 4 gauge buckshot -->
+  <DMS_Bullet_RiotShotgun_Buck.label>大口徑鹿彈</DMS_Bullet_RiotShotgun_Buck.label>
+  
+  <!-- EN: A lethal 4 gauge buckshot load. When crowd control is no longer the objective, the same launcher will happily shred flesh instead of bruising it. -->
+  <DMS_Bullet_RiotShotgun_Buck.description>具殺傷力的大口徑鹿彈。當任務目標不再是控制場面時，同一把發射器可以撕裂血肉而不只是留下瘀傷。</DMS_Bullet_RiotShotgun_Buck.description>
+  
   
   <!-- EN: Elephant Rifle -->
   <DMS_ElephantGun.label>獵象槍</DMS_ElephantGun.label>

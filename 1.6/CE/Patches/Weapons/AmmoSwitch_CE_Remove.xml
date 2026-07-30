@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  CE 有自己的彈藥系統 (CompAmmoUser), 且 PatchOperationMakeGunCECompatible 會整組換掉 verbs,
+  FFF 的 Verb_..._AmmoSwitch 在 CE 環境下不會被呼叫。若留著 CompProperties_AmmoSwitch,
+  玩家會看到一個按了沒反應的切換彈種按鈕, 因此在 CE 環境下直接移除該 comp。
+  對應的彈丸 def 保留 - CE 會把它們轉成自己的 AmmoDef 來源。
+-->
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/ThingDef[defName="DMS_RiotShotgun" or
+                                     defName="DMS_AssaultShotgun" or
+                                     defName="DMS_HeavyMachineGun" or
+                                     defName="DMS_Autocannon"
+                                    ]/comps/li[@Class="Fortified.CompProperties_AmmoSwitch"]</xpath>
+            </li>
+
+        </operations>
+    </Operation>
+</Patch>
