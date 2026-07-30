@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       DMS 軍事封存庫 — 出入口
+       DMS military archive vault — surface entrance / underground exit
+
+       整套流程照抄原版 Odyssey 的 AncientHatch：
+         地表電梯（MapPortal）→ 產生口袋地圖 → 由 GenStep_AncientStockpile
+         依 StructureLayoutDef 佈局 → 入口房間放下對應的出口。
+       差別只在版面（DMS_MilitaryVault）與貼圖（Things/Building/Elevator）。
+
+       Mirrors Odyssey's AncientHatch pipeline; only the layout and art differ.
+       ============================================================ -->
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_VaultElevator</defName>
+    <label>freight elevator</label>
+    <description>A heavy cargo lift sunk into a reinforced pad, the last visible piece of a military archive vault buried below. The car is still on its cables and the drive still has power, but the control head is locked behind a military authentication layer. Hack it to bring the car up.</description>
+    <thingClass>DMS.Building_VaultElevator</thingClass>
+    <size>(3,3)</size>
+    <rotatable>true</rotatable>
+    <useHitPoints>false</useHitPoints>
+    <destroyable>false</destroyable>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <fillPercent>0</fillPercent>
+    <passability>Impassable</passability>
+    <holdsRoof>true</holdsRoof>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Elevator/building</texPath>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <!-- 目前沒有任何世界生成流程會放置它，掛在開發用類別下方便測試與後續接線。
+         Nothing places this in worldgen yet; the dev category makes it testable and easy to wire up later. -->
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <isTargetable>false</isTargetable>
+      <isInert>true</isInert>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <portal>
+      <pocketMapGenerator>DMS_MilitaryVault</pocketMapGenerator>
+      <exitDef>DMS_VaultElevatorExit</exitDef>
+      <pocketMapSize>75</pocketMapSize>
+    </portal>
+    <comps>
+      <!-- 數值比照原版 AncientHatch，讓破解時間與玩家既有經驗一致。
+           Same hack budget as vanilla AncientHatch so pacing matches player expectations. -->
+      <li Class="CompProperties_Hackable">
+        <defence>39000</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <lockoutDurationHoursRange>6~18</lockoutDurationHoursRange>
+        <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
+        <notHackedInspectString>Hack to call the car up.</notHackedInspectString>
+        <intellectualSkillPrerequisite>4</intellectualSkillPrerequisite>
+        <hackingCompletedSound>AncientHatchOpened</hackingCompletedSound>
+        <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
+      </li>
+      <li Class="CompProperties_Sealable">
+        <sealTexPath>UI/Commands/SealHatch</sealTexPath>
+        <sealCommandLabel>Seal shaft</sealCommandLabel>
+        <sealCommandDesc>Choose a colonist to permanently collapse the lift shaft. Anything or anyone left below will be lost forever.</sealCommandDesc>
+        <cannotSealLabel>Cannot seal</cannotSealLabel>
+        <confirmSealText>Collapsing the lift shaft is permanent. Anything or anyone left below will be lost forever.{0}\n\nAre you sure you want to continue?</confirmSealText>
+        <sealedInspectString>Shaft collapsed.</sealedInspectString>
+        <cannotEnterLabel>Sealed</cannotEnterLabel>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(217,178,73,0)</glowColor>
+      </li>
+    </comps>
+    <inspectorTabs>
+      <li>ITab_ContentsMapPortal</li>
+    </inspectorTabs>
+    <modExtensions>
+      <!-- 沿用原版的 AncientStockpile GenStep，只換掉它要鋪的版面。
+           Reuse vanilla's AncientStockpile GenStep, swap the layout it builds. -->
+      <li Class="DMS.ModExtension_PortalLayout">
+        <genStep>AncientStockpile</genStep>
+        <layout>DMS_MilitaryVault</layout>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- 地下側的電梯車廂。由 DMS.RoomContents_VaultEntrance 依上面的 portal.exitDef 放置。
+       Underground car. Placed by DMS.RoomContents_VaultEntrance from portal.exitDef above. -->
+  <ThingDef ParentName="PocketMapExit">
+    <defName>DMS_VaultElevatorExit</defName>
+    <label>freight elevator car</label>
+    <description>The car of the freight lift, sitting at the bottom of its shaft. It links back to the pad on the surface.</description>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Elevator/building_south</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>8</glowRadius>
+        <glowColor>(217,178,73,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

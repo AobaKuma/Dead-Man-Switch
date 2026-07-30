@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       DMS 軍事封存庫 — 房間
+       DMS military archive vault — rooms
+       ============================================================ -->
+
+  <!-- 電梯廳。放出口電梯、設定玩家出生點，並留幾座還在通電的哨戒砲當見面禮。
+       Elevator lobby: exit car, player spawn spot, and a welcome party of live turrets. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultEntranceHall</defName>
+    <roomContentsWorkerType>DMS.RoomContents_VaultEntrance</roomContentsWorkerType>
+    <minSingleRectWidth>9</minSingleRectWidth>
+    <minSingleRectHeight>9</minSingleRectHeight>
+    <prefabs>
+      <AncientFortifiedWall_Pillar3x3>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>0~1</minMaxRange>
+      </AncientFortifiedWall_Pillar3x3>
+    </prefabs>
+  </LayoutRoomDef>
+
+  <!-- 軍械庫。貨架由 worker 排，內容全部來自 DMS_LogisticTerminal 這組 ThingSetMaker。
+       Armory. Worker lays the shelf rows; everything on them comes from the DMS loot table. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultArmory</defName>
+    <roomContentsWorkerType>DMS.RoomContents_VaultArmory</roomContentsWorkerType>
+    <thingSetMakerDef>DMS_LogisticTerminal</thingSetMakerDef>
+    <minSingleRectWidth>8</minSingleRectWidth>
+    <minSingleRectHeight>8</minSingleRectHeight>
+    <prefabs>
+      <IndustrialShelf_Edge>
+        <countPerTenEdgeCells>2</countPerTenEdgeCells>
+        <minMaxRange>1~12</minMaxRange>
+      </IndustrialShelf_Edge>
+      <AncientSealedCrate>
+        <countRange>1~2</countRange>
+      </AncientSealedCrate>
+      <AncientFortifiedWall_Pillar3x3>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>0~1</minMaxRange>
+      </AncientFortifiedWall_Pillar3x3>
+    </prefabs>
+    <parts>
+      <HunterDrone>0.5</HunterDrone>
+      <WaspDrone>0.5</WaspDrone>
+      <Corpse>0.25</Corpse>
+    </parts>
+  </LayoutRoomDef>
+
+  <!-- 機兵封存艙間。整間的重點就是那些搖籃；掉落物少，威脅集中在艙裡。
+       Mech bay. The cradles are the point — little loose loot, all the threat is inside them. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultMechBay</defName>
+    <roomContentsWorkerType>DMS.RoomContents_VaultMechBay</roomContentsWorkerType>
+    <!-- 這是必出房間（countRange 1），門檻放太高會找不到夠大的矩形而生成失敗。
+         Required room — keep the size gate low enough that the layout can always satisfy it. -->
+    <minSingleRectWidth>9</minSingleRectWidth>
+    <minSingleRectHeight>9</minSingleRectHeight>
+    <prefabs>
+      <AncientCratesWithComponents>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>1~2</minMaxRange>
+      </AncientCratesWithComponents>
+      <AncientFortifiedWall_PillarGroup>
+        <countPerHundredCells>2</countPerHundredCells>
+        <minMaxRange>0~2</minMaxRange>
+      </AncientFortifiedWall_PillarGroup>
+    </prefabs>
+    <parts>
+      <Corpse>0.4</Corpse>
+    </parts>
+  </LayoutRoomDef>
+
+  <!-- 指揮室。後勤終端是這張地圖的長期回報來源，主控台殘骸只是氣氛。
+       Command room. The logistics terminal is the long-tail reward; the consoles are set dressing. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultCommandRoom</defName>
+    <roomContentsWorkerType>DMS.RoomContents_VaultCommand</roomContentsWorkerType>
+    <!-- 後勤終端本體 4x4，收縮 3 格後至少要 9x9 才塞得下。
+         The terminal is 4x4; with contractedBy 3 the room needs 9x9 minimum. -->
+    <minSingleRectWidth>9</minSingleRectWidth>
+    <minSingleRectHeight>9</minSingleRectHeight>
+    <prefabs>
+      <AncientDestroyedConsole_Large>
+        <countPerTenEdgeCells>5</countPerTenEdgeCells>
+        <minMaxRange>1~2</minMaxRange>
+      </AncientDestroyedConsole_Large>
+      <AncientDestroyedConsole_Small>
+        <countPerTenEdgeCells>2</countPerTenEdgeCells>
+        <minMaxRange>1~4</minMaxRange>
+      </AncientDestroyedConsole_Small>
+      <AncientSystemRacks_Rows>
+        <countPerHundredCells>3</countPerHundredCells>
+        <minMaxRange>1~4</minMaxRange>
+      </AncientSystemRacks_Rows>
+    </prefabs>
+    <parts>
+      <HunterDrone>0.6</HunterDrone>
+      <Corpse>0.5</Corpse>
+    </parts>
+  </LayoutRoomDef>
+
+  <!-- 駐防兵舍。純氣氛房，說明這座設施曾經有人守。
+       Garrison quarters. Pure atmosphere — someone used to hold this place. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultGarrisonQuarters</defName>
+    <dontDestroyWallsDoors>true</dontDestroyWallsDoors>
+    <prefabs>
+      <AncientBed_Rows>
+        <countPerHundredCells>3</countPerHundredCells>
+        <minMaxRange>1~2</minMaxRange>
+      </AncientBed_Rows>
+      <ShowerAndToilet_Edge>
+        <countPerTenEdgeCells>2</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </ShowerAndToilet_Edge>
+      <TableWithStools_2x2>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>1~2</minMaxRange>
+      </TableWithStools_2x2>
+      <AncientCratesWithComponents>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>1~2</minMaxRange>
+      </AncientCratesWithComponents>
+      <CollapsedRocks_Cluster>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>0~1</minMaxRange>
+      </CollapsedRocks_Cluster>
+    </prefabs>
+    <parts>
+      <Corpse>0.8</Corpse>
+    </parts>
+  </LayoutRoomDef>
+
+</Defs>

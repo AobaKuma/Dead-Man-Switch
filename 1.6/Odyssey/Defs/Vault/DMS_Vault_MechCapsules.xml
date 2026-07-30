@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       封存庫的機兵搖籃。與海盜組裝廠的容器不同，這裡的是「正規軍封存」：
+       指令認證還在、但電源早就斷了，所以一樣可以被機械師駭入接管。
+       Vault mech cradles. Unlike the pirate assembly capsules these are
+       properly mothballed line units — still hackable, just long dead.
+       ============================================================ -->
+
+  <!-- 1x1：步兵級封存艙 / infantry-class cradle -->
+  <ThingDef ParentName="FFF_MechCapsule_Small">
+    <defName>DMS_MechCapsule_VaultInfantry</defName>
+    <label>mothballed mech</label>
+    <description>A line infantry automatroid sealed in a storage cradle, drained down to its command core decades ago. Vault power died long before anyone came to collect it. A mechanitor can attempt to hack and control it.</description>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_MechCapsule">
+        <spawnChance>0.8</spawnChance>
+        <weaponChance>0.85</weaponChance>
+        <possibleGeneratePawn>
+          <DMS_Mech_Soldat>3</DMS_Mech_Soldat>
+          <DMS_Mech_Kanonier>2</DMS_Mech_Kanonier>
+          <DMS_Mech_Grenadier>1</DMS_Mech_Grenadier>
+          <DMS_Mech_Arquebusier>2</DMS_Mech_Arquebusier>
+          <DMS_Mech_Jaeger>1</DMS_Mech_Jaeger>
+          <DMS_Mech_Sergeant>1</DMS_Mech_Sergeant>
+        </possibleGeneratePawn>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- 2x2：突擊級封存艙 / assault-class cradle -->
+  <ThingDef ParentName="FFF_MechCapsule_Medium">
+    <defName>DMS_MechCapsule_VaultAssault</defName>
+    <label>mothballed mech</label>
+    <description>An assault-pattern automatroid clamped into a maintenance cradle with its actuator bays still open. The vault was sealed mid-service and nobody ever closed it up. A mechanitor can attempt to hack and control it.</description>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_MechCapsule">
+        <spawnChance>0.7</spawnChance>
+        <weaponChance>0.8</weaponChance>
+        <possibleGeneratePawn>
+          <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
+          <DMS_Mech_Gladiator>2</DMS_Mech_Gladiator>
+          <DMS_Mech_Phalanx>2</DMS_Mech_Phalanx>
+          <DMS_Mech_Protector>1</DMS_Mech_Protector>
+          <DMS_Mech_Siegebreaker>1</DMS_Mech_Siegebreaker>
+        </possibleGeneratePawn>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- 3x3：戰鬥框架龍門架 / battle frame gantry -->
+  <ThingDef ParentName="FFF_MechCapsule_Large">
+    <defName>DMS_MechCapsule_VaultFrame</defName>
+    <label>mothballed battle frame</label>
+    <description>A battle frame parked in its service gantry, hydraulics bled and joints pinned for long-term storage. The authentication chain expired with the unit that owned it. A mechanitor can attempt to hack and control it.</description>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_MechCapsule">
+        <spawnChance>0.55</spawnChance>
+        <weaponChance>0.9</weaponChance>
+        <possibleGeneratePawn>
+          <DMS_Mech_BattleFrame>3</DMS_Mech_BattleFrame>
+          <DMS_Mech_FieldCommand>1</DMS_Mech_FieldCommand>
+          <DMS_Mech_Tachanka>1</DMS_Mech_Tachanka>
+        </possibleGeneratePawn>
+        <innerPawnDrawOffset>(0, 0, 0.35)</innerPawnDrawOffset>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

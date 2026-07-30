@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DMS_VaultElevator.label>貨運電梯</DMS_VaultElevator.label>
+  <DMS_VaultElevator.description>一座沉在加固基座裡的重型貨梯，是地下軍事封存庫唯一露出地表的部分。車廂還掛在纜索上，驅動機也還有電，但控制頭被軍用認證層鎖死。駭入它才能把車廂叫上來。</DMS_VaultElevator.description>
+
+  <DMS_VaultElevatorExit.label>貨運電梯車廂</DMS_VaultElevatorExit.label>
+  <DMS_VaultElevatorExit.description>貨梯的車廂，停在豎井底部。可以搭它回到地表的基座。</DMS_VaultElevatorExit.description>
+
+  <DMS_MechCapsule_VaultInfantry.label>封存中的機兵</DMS_MechCapsule_VaultInfantry.label>
+  <DMS_MechCapsule_VaultInfantry.description>一具封在儲存搖籃裡的線列步兵自動機兵，數十年前就被抽乾到只剩指令核心。庫房的電早在有人來領它之前就斷了。機械師可以嘗試駭入並控制它。</DMS_MechCapsule_VaultInfantry.description>
+
+  <DMS_MechCapsule_VaultAssault.label>封存中的機兵</DMS_MechCapsule_VaultAssault.label>
+  <DMS_MechCapsule_VaultAssault.description>一具突擊型自動機兵被扣在維護搖籃上，作動器艙門還開著。封存庫是在保養途中被封閉的，從此沒人回來把它闔上。機械師可以嘗試駭入並控制它。</DMS_MechCapsule_VaultAssault.description>
+
+  <DMS_MechCapsule_VaultFrame.label>封存中的戰鬥框架</DMS_MechCapsule_VaultFrame.label>
+  <DMS_MechCapsule_VaultFrame.description>一具停在維修龍門架上的戰鬥框架，液壓已放空、關節上了長期存放用的固定銷。它的認證鏈隨著擁有它的單位一起失效了。機械師可以嘗試駭入並控制它。</DMS_MechCapsule_VaultFrame.description>
+
+</LanguageData>
