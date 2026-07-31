@@ -486,7 +486,7 @@
         <defaultProjectile>DMS_Bullet_CIWS</defaultProjectile>
         <requireLineOfSight>true</requireLineOfSight>
         <warmupTime>1.75</warmupTime>
-        <minRange>4</minRange>
+        <minRange>2</minRange>
         <range>48.5</range>
         <ai_AvoidFriendlyFireRadius>1</ai_AvoidFriendlyFireRadius>
         <ticksBetweenBurstShots>18</ticksBetweenBurstShots>
