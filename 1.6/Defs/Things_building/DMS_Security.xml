@@ -240,7 +240,7 @@
       <drawOffset>(0,0,0)</drawOffset>
     </graphicData>
     <size>(3,3)</size>
-    <rotatable>true</rotatable>
+    <rotatable>false</rotatable>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <statBases>   <!--================血量與重量工作量================-->
       <MaxHitPoints>2000</MaxHitPoints>
@@ -486,7 +486,7 @@
         <defaultProjectile>DMS_Bullet_CIWS</defaultProjectile>
         <requireLineOfSight>true</requireLineOfSight>
         <warmupTime>1.75</warmupTime>
-        <minRange>2</minRange>
+        <minRange>4</minRange>
         <range>48.5</range>
         <ai_AvoidFriendlyFireRadius>1</ai_AvoidFriendlyFireRadius>
         <ticksBetweenBurstShots>18</ticksBetweenBurstShots>
@@ -528,7 +528,7 @@
       <drawOffset>(0,0,0)</drawOffset>
     </graphicData>
     <size>(1,1)</size>
-    <rotatable>false</rotatable>
+    <rotatable>true</rotatable>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <fillPercent>0.7</fillPercent>
     <statBases>   <!--================血量與重量工作量================-->
@@ -701,10 +701,9 @@
     </comps>
     <building>
       <turretGunDef>DMS_Gun_Vasilek</turretGunDef>
-      <turretTopDrawSize>3</turretTopDrawSize>
+      <turretTopDrawSize>5</turretTopDrawSize>
       <turretBurstWarmupTime>5</turretBurstWarmupTime>
       <turretBurstCooldownTime>20</turretBurstCooldownTime>
-      <turretTopOffset>(0,0.25)</turretTopOffset>
     </building>
     <interactionCellOffset>(1,0,-1)</interactionCellOffset>
     <recoilPower>10</recoilPower>
@@ -740,7 +739,7 @@
     <graphicData>
       <texPath>Things/Turrets/DMS_Vasilek</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>3</drawSize>
+      <drawSize>5</drawSize>
     </graphicData>
     <statBases>
       <AccuracyTouch>0.95</AccuracyTouch>
@@ -785,7 +784,7 @@
       <drawOffset>(0,0,0)</drawOffset>
     </graphicData>
     <size>(3,3)</size>
-    <rotatable>true</rotatable>
+    <rotatable>false</rotatable>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <statBases>   <!--================血量與重量工作量================-->
       <MaxHitPoints>2000</MaxHitPoints>
