@@ -2,23 +2,23 @@
 <Defs>
 
   <!-- ============================================================
-       DMS 軍事封存庫 — 出入口
-       DMS military archive vault — surface entrance / underground exit
+       DMS 軍事儲存庫 — 出入口
+       DMS military storage vault — surface entrance / underground exit
 
-       整套流程照抄原版 Odyssey 的 AncientHatch：
-         地表電梯（MapPortal）→ 產生口袋地圖 → 由 GenStep_AncientStockpile
-         依 StructureLayoutDef 佈局 → 入口房間放下對應的出口。
-       差別只在版面（DMS_MilitaryVault）與貼圖（Things/Building/Elevator）。
+       地表電梯（Core 的 MapPortal）→ 產生口袋地圖 → DMS_VaultStructure 依
+       StructureLayoutDef 佈局 → 入口房間放下對應的出口。
+       全程只用 Core 與 DMS/FFF 的內容，不需要任何 DLC。
 
-       Mirrors Odyssey's AncientHatch pipeline; only the layout and art differ.
+       Surface lift (Core MapPortal) → pocket map → DMS_VaultStructure lays the layout →
+       the entrance room drops the matching exit. Core + DMS/FFF only; no DLC required.
        ============================================================ -->
 
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_VaultElevator</defName>
     <label>freight elevator</label>
-    <description>A heavy cargo lift sunk into a reinforced pad, the last visible piece of a military archive vault buried below. The car is still on its cables and the drive still has power, but the control head is locked behind a military authentication layer. Hack it to bring the car up.</description>
+    <description>The entrance to a buried military storage vault. The lift still has power, but its controls are locked. Hack it to bring the car up.</description>
     <thingClass>DMS.Building_VaultElevator</thingClass>
-    <size>(3,3)</size>
+    <size>(5,5)</size>
     <rotatable>true</rotatable>
     <useHitPoints>false</useHitPoints>
     <destroyable>false</destroyable>
@@ -32,7 +32,7 @@
     <graphicData>
       <graphicClass>Graphic_Multi</graphicClass>
       <texPath>Things/Building/Elevator/building</texPath>
-      <drawSize>(3, 3)</drawSize>
+      <drawSize>(5,5)</drawSize>
     </graphicData>
     <statBases>
       <Flammability>0</Flammability>
@@ -62,18 +62,18 @@
         <effectHacking>HackingTerminal</effectHacking>
         <lockoutDurationHoursRange>6~18</lockoutDurationHoursRange>
         <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
-        <notHackedInspectString>Hack to call the car up.</notHackedInspectString>
+        <notHackedInspectString>Hack to open.</notHackedInspectString>
         <intellectualSkillPrerequisite>4</intellectualSkillPrerequisite>
-        <hackingCompletedSound>AncientHatchOpened</hackingCompletedSound>
+        <hackingCompletedSound>Hacking_Completed</hackingCompletedSound>
         <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
       </li>
       <li Class="CompProperties_Sealable">
-        <sealTexPath>UI/Commands/SealHatch</sealTexPath>
+        <sealTexPath>UI/Commands/DMS_UnlockContainer</sealTexPath>
         <sealCommandLabel>Seal shaft</sealCommandLabel>
-        <sealCommandDesc>Choose a colonist to permanently collapse the lift shaft. Anything or anyone left below will be lost forever.</sealCommandDesc>
+        <sealCommandDesc>Choose a colonist to permanently seal the lift shaft. Anything or anyone left below will be lost forever.</sealCommandDesc>
         <cannotSealLabel>Cannot seal</cannotSealLabel>
-        <confirmSealText>Collapsing the lift shaft is permanent. Anything or anyone left below will be lost forever.{0}\n\nAre you sure you want to continue?</confirmSealText>
-        <sealedInspectString>Shaft collapsed.</sealedInspectString>
+        <confirmSealText>Sealing the lift shaft is permanent. Anything or anyone left below will be lost forever.{0}\n\nAre you sure you want to continue?</confirmSealText>
+        <sealedInspectString>Permanently sealed.</sealedInspectString>
         <cannotEnterLabel>Sealed</cannotEnterLabel>
       </li>
       <li Class="CompProperties_Glower">
@@ -85,11 +85,20 @@
       <li>ITab_ContentsMapPortal</li>
     </inspectorTabs>
     <modExtensions>
-      <!-- 沿用原版的 AncientStockpile GenStep，只換掉它要鋪的版面。
-           Reuse vanilla's AncientStockpile GenStep, swap the layout it builds. -->
+      <!-- 進入時追加的產生步驟與要鋪的版面。
+           The gen step run on the pocket map, and the layout it should build. -->
       <li Class="DMS.ModExtension_PortalLayout">
-        <genStep>AncientStockpile</genStep>
+        <genStep>DMS_VaultStructure</genStep>
         <layout>DMS_MilitaryVault</layout>
+      </li>
+      <!-- 豎井封閉後換成沒有車廂、只剩封板的樣子。
+           Once the shaft is sealed the car is gone and only the cover plate remains. -->
+      <li Class="DMS.ModExtension_SealedGraphic">
+        <sealedGraphicData>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <texPath>Things/Building/Elevator_sealed/building</texPath>
+          <drawSize>(4,4)</drawSize>
+        </sealedGraphicData>
       </li>
     </modExtensions>
   </ThingDef>
@@ -99,14 +108,14 @@
   <ThingDef ParentName="PocketMapExit">
     <defName>DMS_VaultElevatorExit</defName>
     <label>freight elevator car</label>
-    <description>The car of the freight lift, sitting at the bottom of its shaft. It links back to the pad on the surface.</description>
-    <size>(3,3)</size>
+    <description>A lift car which links to the surface pad above.</description>
+    <size>(5,5)</size>
     <rotatable>false</rotatable>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
       <texPath>Things/Building/Elevator/building_south</texPath>
-      <drawSize>(3,3)</drawSize>
+      <drawSize>(5,5)</drawSize>
     </graphicData>
     <statBases>
       <Flammability>0</Flammability>

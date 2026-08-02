@@ -12,7 +12,7 @@
   <ThingDef ParentName="FFF_MechCapsule_Small">
     <defName>DMS_MechCapsule_VaultInfantry</defName>
     <label>mothballed mech</label>
-    <description>A line infantry automatroid sealed in a storage cradle, drained down to its command core decades ago. Vault power died long before anyone came to collect it. A mechanitor can attempt to hack and control it.</description>
+    <description>A line infantry automatroid in hibernation mode, sealed in a storage cradle. The vault lost power before anyone came to collect it. A mechanitor can attempt to hack and control it.</description>
     <modExtensions>
       <li Class="Fortified.ModExtension_MechCapsule">
         <spawnChance>0.8</spawnChance>
@@ -33,7 +33,7 @@
   <ThingDef ParentName="FFF_MechCapsule_Medium">
     <defName>DMS_MechCapsule_VaultAssault</defName>
     <label>mothballed mech</label>
-    <description>An assault-pattern automatroid clamped into a maintenance cradle with its actuator bays still open. The vault was sealed mid-service and nobody ever closed it up. A mechanitor can attempt to hack and control it.</description>
+    <description>An assault-pattern automatroid in hibernation mode, clamped into a maintenance cradle with its actuator bays still open. The vault was sealed before the servicing was finished. A mechanitor can attempt to hack and control it.</description>
     <modExtensions>
       <li Class="Fortified.ModExtension_MechCapsule">
         <spawnChance>0.7</spawnChance>
@@ -53,7 +53,7 @@
   <ThingDef ParentName="FFF_MechCapsule_Large">
     <defName>DMS_MechCapsule_VaultFrame</defName>
     <label>mothballed battle frame</label>
-    <description>A battle frame parked in its service gantry, hydraulics bled and joints pinned for long-term storage. The authentication chain expired with the unit that owned it. A mechanitor can attempt to hack and control it.</description>
+    <description>A battle frame in hibernation mode, pinned into a service gantry for long-term storage. Its command authentication expired with the unit that owned it. A mechanitor can attempt to hack and control it.</description>
     <modExtensions>
       <li Class="Fortified.ModExtension_MechCapsule">
         <spawnChance>0.55</spawnChance>

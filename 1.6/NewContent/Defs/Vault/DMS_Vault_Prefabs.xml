@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       儲存庫房間的填充用預製塊，全部由 DMS 既有的廢棄建築組成。
+       Room filler prefabs, built entirely from DMS's existing ruined buildings.
+
+       座標約定：<position> 給的是 Thing.Position。奇數尺寸的物件以該格為中心，
+       偶數尺寸的物件從該格往 +x / +z 延伸。
+       Coordinates are Thing.Position: odd-sized things centre on the cell,
+       even-sized things extend towards +x / +z.
+       ============================================================ -->
+
+  <!-- 殘骸堆：整間屋子被翻過一遍之後剩下的東西。
+       Wreck scatter — what's left after the place was picked over. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_WreckScatter</defName>
+    <size>(5,5)</size>
+    <things>
+      <DMS_Wreckages>
+        <chance>0.8</chance>
+        <positions>
+          <li>(0, 0, 1)</li>
+          <li>(2, 0, 0)</li>
+          <li>(4, 0, 2)</li>
+          <li>(1, 0, 4)</li>
+        </positions>
+      </DMS_Wreckages>
+      <DMS_Wreckage_SentryGun>
+        <chance>0.5</chance>
+        <position>(3, 0, 3)</position>
+      </DMS_Wreckage_SentryGun>
+      <DMS_TrashBinBaseDestroyed>
+        <chance>0.6</chance>
+        <position>(0, 0, 3)</position>
+      </DMS_TrashBinBaseDestroyed>
+    </things>
+  </PrefabDef>
+
+  <!-- 報廢機台列：3x1 的機械與配電機組並排。
+       Dead machine row: 3x1 machine and power units side by side. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_MachineRow</defName>
+    <size>(5,5)</size>
+    <things>
+      <DMS_Building_Machine_MediumDestoryed>
+        <positions>
+          <li>(2, 0, 0)</li>
+          <li>(2, 0, 2)</li>
+        </positions>
+      </DMS_Building_Machine_MediumDestoryed>
+      <DMS_Building_Eletric_MediumDestoryed>
+        <chance>0.75</chance>
+        <position>(2, 0, 4)</position>
+      </DMS_Building_Eletric_MediumDestoryed>
+    </things>
+  </PrefabDef>
+
+  <!-- 還在運轉的機房一角。少數幾台沒壞的機器，用來對比整體的荒廢。
+       A corner that still runs — a few intact units to contrast with the decay. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_MachineRow_Live</defName>
+    <size>(5,3)</size>
+    <things>
+      <DMS_Building_Machine_Medium>
+        <position>(2, 0, 0)</position>
+      </DMS_Building_Machine_Medium>
+      <DMS_Building_Eletric_Medium>
+        <chance>0.8</chance>
+        <position>(2, 0, 2)</position>
+      </DMS_Building_Eletric_Medium>
+    </things>
+  </PrefabDef>
+
+  <!-- 通風機組，靠牆放。Vent bank, hugs a wall. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_VentBank</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <DMS_Building_VentMedium>
+        <position>(2, 0, 0)</position>
+      </DMS_Building_VentMedium>
+    </things>
+  </PrefabDef>
+
+  <!-- 壁掛配電箱，靠牆放。Wall-mounted substation cabinets. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_SubstationBank</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <DMS_SubstationCabinet_Wall>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+          <li>(4, 0, 0)</li>
+        </positions>
+      </DMS_SubstationCabinet_Wall>
+    </things>
+  </PrefabDef>
+
+  <!-- 實驗機具殘骸。Ruined lab equipment. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_LabWreck</defName>
+    <size>(6,5)</size>
+    <things>
+      <DMS_LabReactorDestroyed>
+        <position>(1, 0, 1)</position>
+      </DMS_LabReactorDestroyed>
+      <DMS_LabFurnaceDestroyed>
+        <chance>0.8</chance>
+        <position>(4, 0, 1)</position>
+      </DMS_LabFurnaceDestroyed>
+      <DMS_TableArtifuscleDestroyed>
+        <chance>0.7</chance>
+        <position>(2, 0, 4)</position>
+      </DMS_TableArtifuscleDestroyed>
+    </things>
+  </PrefabDef>
+
+  <!-- 破損貨櫃堆。Breached container stack. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_CrateCluster</defName>
+    <size>(5,5)</size>
+    <things>
+      <DMS_LogisticContainerDestroyed>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(3, 0, 3)</li>
+        </positions>
+      </DMS_LogisticContainerDestroyed>
+      <DMS_Wreckage_Chunk>
+        <chance>0.6</chance>
+        <position>(0, 0, 3)</position>
+      </DMS_Wreckage_Chunk>
+    </things>
+  </PrefabDef>
+
+  <!-- 未完成的機兵殘骸。An automatroid that never left the line. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_RoninWreck</defName>
+    <size>(3,3)</size>
+    <things>
+      <DMS_Wreckage_Ronin>
+        <position>(1, 0, 1)</position>
+      </DMS_Wreckage_Ronin>
+      <DMS_Wreckages>
+        <chance>0.6</chance>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 2)</li>
+        </positions>
+      </DMS_Wreckages>
+    </things>
+  </PrefabDef>
+
+  <!-- 地板開口：往更深的層數看下去。A floor opening onto the levels below. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_FloorHole</defName>
+    <size>(5,5)</size>
+    <things>
+      <DMS_Hole_5x5Empty>
+        <position>(2, 0, 2)</position>
+      </DMS_Hole_5x5Empty>
+    </things>
+  </PrefabDef>
+
+</Defs>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       兩個關鍵房間的 FFF 手工預製塊。由 DMS.VaultRoomUtility.TryStampStructure
+       依 tag 挑選，蓋在房間中央；房間放不下時房間 worker 會退回程序化填充。
+
+       Hand-authored FFF blocks for the two key rooms. Stamped at the room centre by tag;
+       if the room is too small the worker falls back to procedural filling.
+
+       這兩塊都只放內裝，不含牆體 —— 牆由 StructureLayoutDef 負責。
+       Interior only; the walls belong to the StructureLayoutDef.
+       ============================================================ -->
+
+  <!-- ============ 軍械庫貨架區 7x7 / Armory shelving 7x7 ============ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_VaultBlock_Armory</defName>
+    <size>(7, 7)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <tags>
+      <li>DMS_VaultArmory</li>
+    </tags>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(7, 7)</size>
+      </li>
+
+      <!-- 三排貨架，中間留兩條走道。Shelf is 2x1 and grows towards +x.
+           Three shelf rows with two aisles between them. -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Shelf</def>
+        <pos>(1, 0, 1)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Shelf</def>
+        <pos>(4, 0, 1)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Shelf</def>
+        <pos>(1, 0, 3)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Shelf</def>
+        <pos>(4, 0, 3)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Shelf</def>
+        <pos>(1, 0, 5)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Shelf</def>
+        <pos>(4, 0, 5)</pos>
+        <stuff>Steel</stuff>
+      </li>
+
+      <!-- 沒搬走的貨櫃。A container nobody came back for. -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_LogisticContainer</def>
+        <pos>(0, 0, 0)</pos>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <!-- ============ 機兵封存艙間 9x9 / Mech cradle bay 9x9 ============ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_VaultBlock_MechBay</defName>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <tags>
+      <li>DMS_VaultMechBay</li>
+    </tags>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(9, 9)</size>
+      </li>
+
+      <!-- 中央龍門架 3x3。Central gantry. -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_MechCapsule_VaultFrame</def>
+        <pos>(4, 0, 4)</pos>
+      </li>
+
+      <!-- 四角的突擊型搖籃 2x2。Assault cradles in the corners. -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_MechCapsule_VaultAssault</def>
+        <pos>(1, 0, 1)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_MechCapsule_VaultAssault</def>
+        <pos>(6, 0, 1)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_MechCapsule_VaultAssault</def>
+        <pos>(1, 0, 6)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_MechCapsule_VaultAssault</def>
+        <pos>(6, 0, 6)</pos>
+      </li>
+
+      <!-- 四邊的步兵艙 1x1。Infantry cradles along the walls. -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_MechCapsule_VaultInfantry</def>
+        <pos>(4, 0, 0)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_MechCapsule_VaultInfantry</def>
+        <pos>(4, 0, 8)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_MechCapsule_VaultInfantry</def>
+        <pos>(0, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_MechCapsule_VaultInfantry</def>
+        <pos>(8, 0, 4)</pos>
+      </li>
+
+      <!-- 維修台與配電。Maintenance bench and power. -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Eletric_Medium</def>
+        <pos>(4, 0, 2)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Machine_Medium</def>
+        <pos>(4, 0, 6)</pos>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+</Defs>

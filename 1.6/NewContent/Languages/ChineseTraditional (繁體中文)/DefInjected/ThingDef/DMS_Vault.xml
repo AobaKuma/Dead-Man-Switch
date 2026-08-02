@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DMS_VaultElevator.label>貨運電梯</DMS_VaultElevator.label>
+  <DMS_VaultElevator.description>通往地下軍事儲存庫的入口。電梯仍然有電，但控制系統被鎖住了。駭入它以叫回車廂。</DMS_VaultElevator.description>
+
+  <DMS_VaultElevatorExit.label>貨運電梯車廂</DMS_VaultElevatorExit.label>
+  <DMS_VaultElevatorExit.description>一台通往上方地表平台的電梯車廂。</DMS_VaultElevatorExit.description>
+
+  <DMS_MechCapsule_VaultInfantry.label>封存中的機兵</DMS_MechCapsule_VaultInfantry.label>
+  <DMS_MechCapsule_VaultInfantry.description>一具處於休眠狀態的線列步兵自動機兵，封在儲存搖籃裡。在有人來領走它之前，庫房就先斷電了。機械師可以嘗試駭入並控制它。</DMS_MechCapsule_VaultInfantry.description>
+
+  <DMS_MechCapsule_VaultAssault.label>封存中的機兵</DMS_MechCapsule_VaultAssault.label>
+  <DMS_MechCapsule_VaultAssault.description>一具處於休眠狀態的突擊型自動機兵，扣在維護搖籃上，作動器艙門還開著。保養還沒做完，庫房就被封閉了。機械師可以嘗試駭入並控制它。</DMS_MechCapsule_VaultAssault.description>
+
+  <DMS_MechCapsule_VaultFrame.label>封存中的戰鬥框架</DMS_MechCapsule_VaultFrame.label>
+  <DMS_MechCapsule_VaultFrame.description>一具處於休眠狀態的戰鬥框架，以長期存放用的固定銷鎖在維修龍門架上。它的指令認證隨著擁有它的單位一起失效了。機械師可以嘗試駭入並控制它。</DMS_MechCapsule_VaultFrame.description>
+
+</LanguageData>

@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <!-- DMS 軍事封存庫的建築版面。
-       沿用原版 LayoutWorker_AncientStockpile：走廊式隨機房間、半數門換成防爆門。
-       Uses vanilla LayoutWorker_AncientStockpile (corridor layout, half the doors become blast doors). -->
+  <!-- DMS 軍事儲存庫的建築版面。
+       走廊串起隨機房間，一半的門換成自動門。結構材質全部走 Core + DMS，不需要 DLC。
+       Corridor-and-rooms layout; half the doors become autodoors. Core + DMS only. -->
   <StructureLayoutDef>
     <defName>DMS_MilitaryVault</defName>
-    <workerClass>LayoutWorker_AncientStockpile</workerClass>
+    <workerClass>DMS.DMS_LayoutWorker_Vault</workerClass>
     <canHaveMultipleLayoutsInRoom>true</canHaveMultipleLayoutsInRoom>
     <clearRoomsEntirely>true</clearRoomsEntirely>
     <minRoomWidth>8</minRoomWidth>
     <minRoomHeight>8</minRoomHeight>
 
     <!-- 結構 / Structure -->
+    <wallDef>Wall</wallDef>
+    <wallStuffDef>Steel</wallStuffDef>
+    <doorDef>Door</doorDef>
     <doorStuffDef>Steel</doorStuffDef>
-    <wallDef>AncientFortifiedWall</wallDef>
-    <wallLampDef>AncientEmergencyLight_Red</wallLampDef>
+    <wallLampDef>DMS_EmergencyLamp</wallLampDef>
+    <terrainDef>MetalTile</terrainDef>
+    <!-- 廢棄多年，牆體本來就該有破損。Years abandoned; the walls should not be pristine. -->
+    <wallDamageRange>0~250</wallDamageRange>
 
     <roomDefs>
       <!-- 必定出現 / Guaranteed -->
@@ -32,13 +37,8 @@
       <!-- 加權出現 / Weighted -->
       <DMS_VaultCommandRoom>0.8</DMS_VaultCommandRoom>
       <DMS_VaultGarrisonQuarters>1</DMS_VaultGarrisonQuarters>
-
-      <!-- 沿用原版裝飾房間補足空間 / Vanilla filler rooms -->
-      <AncientLivingArea>0.5</AncientLivingArea>
-      <AncientComputerRoom>0.5</AncientComputerRoom>
-
-      <!-- 大型威脅 / Large threat -->
-      <AncientRuinsInsectHive_Underground>0.35</AncientRuinsInsectHive_Underground>
+      <DMS_VaultPowerPlant>0.8</DMS_VaultPowerPlant>
+      <DMS_VaultWreckHall>1</DMS_VaultWreckHall>
     </roomDefs>
 
     <!-- 欄位名的拼字沿用原版（junkScaterrers），不是筆誤。
@@ -58,12 +58,6 @@
         <itemsPerGroup>2~4</itemsPerGroup>
         <groupDistRange>2~4</groupDistRange>
       </Filth_MachineBits>
-      <RubblePile>
-        <groupsPerHundredCells>2~4</groupsPerHundredCells>
-        <itemsPerGroup>2~4</itemsPerGroup>
-        <groupDistRange>3~5</groupDistRange>
-        <minGroups>1</minGroups>
-      </RubblePile>
       <Filth_RubbleRock>
         <groupsPerHundredCells>2~4</groupsPerHundredCells>
         <itemsPerGroup>3~8</itemsPerGroup>
@@ -77,6 +71,16 @@
         <minGroups>1</minGroups>
       </Granite>
     </junkScaterrers>
+
+    <modExtensions>
+      <!-- 一半的門換成自動門，讀起來像還有備援電力的設施。
+           Half the doors become autodoors, so the place reads as still partly powered. -->
+      <li Class="DMS.ModExtension_VaultDoors">
+        <reinforcedDoorDef>Autodoor</reinforcedDoorDef>
+        <reinforcedDoorStuff>Steel</reinforcedDoorStuff>
+        <reinforcedDoorRatio>0.5</reinforcedDoorRatio>
+      </li>
+    </modExtensions>
   </StructureLayoutDef>
 
 </Defs>
