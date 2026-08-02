@@ -149,8 +149,6 @@
 				<value>
 					<li Class="CombatExtended.RacePropertiesExtensionCE">
 						<bodyShape>Vehicle</bodyShape>
-						<horiScale>0.1</horiScale>
-  						<vertScale>0.25</vertScale>
 					</li>
 				</value>
 			</li>
@@ -171,6 +169,13 @@
 				</value>
 			</li>
 
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_VerlingBrid"]/comps/li[compClass="Fortified.CompExplosiveOnMelee"]/compClass</xpath>
+				<value>
+					<compClass>FortifiedCE.CompExplosiveOnMelee</compClass>
+				</value>
+			</li>
+
 
 			<!-- Hound -->
 			<li Class="PatchOperationAddModExtension">
@@ -178,8 +183,6 @@
 				<value>
 					<li Class="CombatExtended.RacePropertiesExtensionCE">
 						<bodyShape>QuadrupedLow</bodyShape>
-						<horiScale>0.75</horiScale>
-  						<vertScale>0.6</vertScale>
 					</li>
 				</value>
 			</li>
