@@ -14,7 +14,7 @@
 				<value>
 					<verbs>
 						<li Class="CombatExtended.VerbPropertiesCE">
-							<verbClass>CombatExtended.Verb_LaunchProjectileCE</verbClass>
+							<verbClass>CombatExtended.Verb_LaunchProjectileStaticCE</verbClass>
 							<warmupTime>2.2</warmupTime>
 							<minRange>4</minRange>
 							<range>39.9</range>
@@ -24,6 +24,7 @@
 							<muzzleFlashScale>25</muzzleFlashScale>
 							<consumeFuelPerShot>1</consumeFuelPerShot>
 							<targetable>true</targetable>
+							<ai_AvoidFriendlyFireRadius>4</ai_AvoidFriendlyFireRadius>
 							<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
 							<ai_IsWeapon>false</ai_IsWeapon>
 							<targetParams>

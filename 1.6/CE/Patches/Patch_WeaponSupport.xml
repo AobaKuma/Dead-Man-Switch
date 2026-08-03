@@ -2,6 +2,16 @@
 <Patch>
   <Operation Class="PatchOperationSequence">
     <operations>
+      <!--Verling Bird (need to readd in CE because CE change it's ParentName)-->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Drone_VerlingBrid"
+          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>GrenadeTox</li>
+        </value>
+      </li>
+
       <!-- Falcon-->
       <li Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[
