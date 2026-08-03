@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Mech LMG -->
+  <DMS_Turret_LightMachineGun.label>mech LMG</DMS_Turret_LightMachineGun.label>
+  <DMS_Turret_LightMachineGun.description>A weapon specializing in suppression chambered in a large caliber rifle round.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.
+
+Its folding bipod lets a drafted operator drop it into a firing position on the spot, and pick it back up just as quickly.</DMS_Turret_LightMachineGun.description>
+
+  <!-- EN: mech LMG -->
+  <DMS_Gun_LightMachineGun.label>mech LMG</DMS_Gun_LightMachineGun.label>
+  <DMS_Gun_LightMachineGun.description>A light machine gun mounted on a folding bipod.</DMS_Gun_LightMachineGun.description>
+  <DMS_Gun_LightMachineGun.verbs.Verb_Shoot.label>mech LMG</DMS_Gun_LightMachineGun.verbs.Verb_Shoot.label>
+
+</LanguageData>

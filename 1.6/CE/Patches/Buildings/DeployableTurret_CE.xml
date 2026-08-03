@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!--
+		可部署武器的 CE 相容補丁（DMS_Turret_LightMachineGun / DMS_Gun_LightMachineGun /
+		DMS_LightMachineGun，定義於 Defs/Things_Building/DMS_DeployableTurret.xml）。
+
+		兩個必須注意的耦合：
+
+		1. 彈藥必須對齊。FortifiedCE 的 Harmony_DeployableTurretCompat 會在
+		   「手持 ⇄ 陣地」切換時搬運彈匣（SwapAmmo），條件是兩邊 ammoSet 相同，
+		   magazineSize 不同還會噴警告。手持版的 CE 數值由
+		   Patches/Weapons/MiliGuns_CE.xml 的 PatchOperationMakeGunCECompatible 提供：
+		       ammoSet = AmmoSet_338Lapua，magazineSize = 48
+		   此處 DMS_Gun_LightMachineGun 必須完全一致。
+
+		2. DMS_LightMachineGun 重構後改繼承 FFF_MinifiedTurretEquippable，
+		   不再是 @Name="DMS_AutomatroidGun" 的子代，因此 MiliGuns_CE.xml 針對
+		   該抽象父代做的 ToughnessRating 與 ToolCE 補丁不會套用到它，
+		   必須在這裡補回來。
+	-->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<!--===== 手持型態：補回 DMS_AutomatroidGun 抽象父代原本提供的 CE 內容 =====-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_LightMachineGun"]/statBases</xpath>
+				<value>
+					<ToughnessRating>6</ToughnessRating>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_LightMachineGun"]/tools</xpath>
+				<value>
+					<tools>
+						<li Class="CombatExtended.ToolCE">
+							<label>stock</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>12</power>
+							<cooldownTime>1.55</cooldownTime>
+							<chanceFactor>1.5</chanceFactor>
+							<armorPenetrationBlunt>3.955</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>barrel</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>8</power>
+							<cooldownTime>2.02</cooldownTime>
+							<armorPenetrationBlunt>2.730</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>muzzle</label>
+							<capacities>
+								<li>Poke</li>
+							</capacities>
+							<power>12</power>
+							<cooldownTime>1.55</cooldownTime>
+							<armorPenetrationBlunt>3.955</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+			<!--===== 陣地型態的槍身 =====-->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_LightMachineGun</defName>
+				<statBases>
+					<Mass>12.75</Mass>
+					<Bulk>14.3</Bulk>
+					<SwayFactor>0.85</SwayFactor>      <!-- 架在兩腳架上，晃動遠低於手持的 1.41 -->
+					<ShotSpread>0.03</ShotSpread>
+					<SightsEfficiency>1.2</SightsEfficiency>
+					<RangedWeapon_Cooldown>0.46</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<recoilAmount>0.9</recoilAmount>
+					<recoilPattern>Mounted</recoilPattern>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_338Lapua_FMJ</defaultProjectile>
+					<warmupTime>1.1</warmupTime>
+					<range>75</range>
+					<minRange>0</minRange>
+					<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+					<burstShotCount>15</burstShotCount>
+					<soundCast>DMS_MachineGunLight_Shot</soundCast>
+					<soundCastTail>GunTail_Medium</soundCastTail>
+					<muzzleFlashScale>9</muzzleFlashScale>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+				</Properties>
+				<AmmoUser>
+					<!-- 必須與 DMS_LightMachineGun 手持型態相同，否則換手時彈藥無法轉移 -->
+					<magazineSize>48</magazineSize>
+					<reloadTime>7.4</reloadTime>
+					<ammoSet>AmmoSet_338Lapua</ammoSet>
+				</AmmoUser>
+				<FireModes>
+					<noSingleShot>true</noSingleShot>
+					<aiUseBurstMode>TRUE</aiUseBurstMode>
+					<aiAimMode>SuppressFire</aiAimMode>
+					<aimedBurstShotCount>8</aimedBurstShotCount>
+				</FireModes>
+				<weaponTags />
+			</li>
+
+			<!--===== 陣地建築 =====-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_LightMachineGun"]/statBases/ShootingAccuracyTurret</xpath>
+				<value>
+					<ShootingAccuracyTurret>1.5</ShootingAccuracyTurret>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_LightMachineGun"]/statBases</xpath>
+				<value>
+					<Bulk>14.3</Bulk>
+					<AimingAccuracy>1.0</AimingAccuracy>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_LightMachineGun"]/building/turretBurstCooldownTime</xpath>
+				<value>
+					<turretBurstCooldownTime>0.5</turretBurstCooldownTime>
+				</value>
+			</li>
+
+			<!-- 射界與轉向：比照 FT_GPMG 的 CE 版本 -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_LightMachineGun"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_FireArc">
+						<spanRange>10~360</spanRange>
+						<maxSpanDeviation>180</maxSpanDeviation>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_LightMachineGun"]/modExtensions</xpath>
+				<value>
+					<li Class="CombatExtended.NonSnapTurretExtension">
+						<speed>1.75</speed>
+						<angleWeightMultiplier>2</angleWeightMultiplier>
+					</li>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

@@ -7,10 +7,10 @@
   <!-- EN: full-power rifle bullet -->
   <Bullet_DMS_LightMachineGun.label>全威力步槍彈</Bullet_DMS_LightMachineGun.label>
   <!-- EN: .338 magnum bullet -->
-  <DMS_Bullet_338.label>麥格農步槍彈</DMS_Bullet_338.label>
+  <DMS_Bullet_338Magnum.label>麥格農步槍彈</DMS_Bullet_338Magnum.label>
   
   <!-- EN: A .338 magnum rifle cartridge. It carries far more energy downrange than a full-power battle rifle round while remaining light enough to be fired from a semi-automatic action without a mech-grade recoil buffer. -->
-  <DMS_Bullet_338.description>麥格農步槍彈在遠距離上保有的能量遠高於全威力步槍彈，同時又輕到能在沒有機兵級後座緩衝的半自動槍機上使用。</DMS_Bullet_338.description>
+  <DMS_Bullet_338Magnum.description>麥格農步槍彈在遠距離上保有的能量遠高於全威力步槍彈，同時又輕到能在沒有機兵級後座緩衝的半自動槍機上使用。</DMS_Bullet_338Magnum.description>
   
   <!-- EN: 12 gauge slug -->
   <DMS_Bullet_AssaultShotgun_Slug.label>12號口徑獨頭彈</DMS_Bullet_AssaultShotgun_Slug.label>
@@ -96,8 +96,8 @@
   
   <!-- EN: Mech LMG -->
   <DMS_LightMachineGun.label>機兵輕機槍</DMS_LightMachineGun.label>
-  <!-- EN: A weapon specializing in supression chambered in a large caliber rifle round.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
-  <DMS_LightMachineGun.description>使用全威力步槍彈的壓制性武器。\n\n這種武器是專門為機兵設計的，因此如果沒有外部輔助設備或超強的力量，普通人可能無法正常使用。</DMS_LightMachineGun.description>
+  <!-- EN: A weapon specializing in supression chambered in a large caliber rifle round.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.\n\nIts folding bipod lets a drafted operator drop it into a firing position on the spot, and pick it back up just as quickly. -->
+  <DMS_LightMachineGun.description>使用全威力步槍彈的壓制性武器。\n\n這種武器是專門為機兵設計的，因此如果沒有外部輔助設備或超強的力量，普通人可能無法正常使用。\n\n附有可摺疊的兩腳架，徵召中的操作者可以就地把它架設成射擊陣地，也能同樣迅速地收起帶走。</DMS_LightMachineGun.description>
   <!-- EN: stock -->
   <DMS_LightMachineGun.tools.stock.label>槍托</DMS_LightMachineGun.tools.stock.label>
   <!-- EN: barrel -->

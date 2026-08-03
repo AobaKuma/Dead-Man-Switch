@@ -244,7 +244,7 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<!-- 改為 .338 口徑: 不再與反器材步槍共用 12.7mm 彈 -->
-				<defaultProjectile>DMS_Bullet_338</defaultProjectile>
+				<defaultProjectile>DMS_Bullet_338Magnum</defaultProjectile>
 				<warmupTime>1.3</warmupTime>
 				<burstShotCount>1</burstShotCount>
 				<range>37.9</range>
@@ -270,7 +270,7 @@
 
 	<!-- .338 彈: 介於全威力步槍彈與 12.7mm 之間的遠距離彈藥 -->
 	<ThingDef ParentName="BaseBullet">
-		<defName>DMS_Bullet_338</defName>
+		<defName>DMS_Bullet_338Magnum</defName>
 		<label>.338 magnum bullet</label>
 		<description>A .338 magnum rifle cartridge. It carries far more energy downrange than a full-power battle rifle round while remaining light enough to be fired from a semi-automatic action without a mech-grade recoil buffer.</description>
 		<graphicData>
@@ -651,76 +651,7 @@
 		</projectile>
 	</ThingDef>
 
-	<!--LMG-->
-	<ThingDef ParentName="DMS_AutomatroidGun">
-		<defName>DMS_LightMachineGun</defName>
-		<label>Mech LMG</label>
-		<description>A weapon specializing in supression chambered in a large caliber rifle round.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
-		<weaponClasses>
-			<li>RangedHeavy</li>
-			<li>LongShots</li>
-			<li>Ranged</li>
-		</weaponClasses>
-		<weaponTags>
-			<li>DMS_MechWeaponLongRifle</li>
-			<li>A_SuppressWeapon</li>
-			<li>A_MG_Light</li>
-		</weaponTags>
-		<graphicData>
-			<texPath>Things/Weapons/DMS_LightMachineGun</texPath>
-			<drawSize>(1.5,1.5)</drawSize>
-		</graphicData>
-		<soundInteract>Interact_Rifle</soundInteract>
-		<statBases>
-			<WorkToMake>50000</WorkToMake>
-			<Mass>12.75</Mass>
-			<AccuracyTouch>0.45</AccuracyTouch>
-			<AccuracyShort>0.57</AccuracyShort>
-			<AccuracyMedium>0.5</AccuracyMedium>
-			<AccuracyLong>0.4</AccuracyLong>
-			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
-		</statBases>
-		<equippedStatOffsets>
-			<MoveSpeed>-0.15</MoveSpeed>
-		</equippedStatOffsets>
-		<recipeMaker>
-			<!-- 解鎖: 失能機關 -->
-			<researchPrerequisites Inherit="False">
-				<li>DMS_DeadMansSwitch</li>
-			</researchPrerequisites>
-		</recipeMaker>
-		<costList>
-			<Tungsteel>75</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>
-		</costList>
-		<verbs>
-			<li>
-				<verbClass>Verb_Shoot</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>Bullet_DMS_LightMachineGun</defaultProjectile>
-				<warmupTime>1.7</warmupTime>
-				<range>29.9</range>
-				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
-				<burstShotCount>7</burstShotCount>
-				<soundCast>DMS_MachineGunLight_Shot</soundCast>
-				<soundCastTail>GunTail_Medium</soundCastTail>
-				<muzzleFlashScale>9</muzzleFlashScale>
-			</li>
-		</verbs>
-		<modExtensions>
-			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
-				<def>MF_StandardMuzzleFalsh</def>
-				<drawSize>(0.5,0.5)</drawSize>
-				<offsets>
-					<li>(0.75,0)</li>
-				</offsets>
-				<isAlternately>true</isAlternately>
-			</li>
-			<li Class="Fortified.HeavyEquippableExtension">
-				<EquippableDef>LightAutomatroid</EquippableDef>
-			</li>
-		</modExtensions>
-	</ThingDef>
+	<!--LMG 的手持/陣地型態已移至 Defs/Things_Building/DMS_DeployableTurret.xml，此處僅保留彈丸-->
 	<ThingDef ParentName="BaseBullet">
 		<defName>Bullet_DMS_LightMachineGun</defName>
 		<label>full-power rifle bullet</label>

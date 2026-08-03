@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+	<!--
+		可部署武器 — 結構參考 Fortification: Industrial 的 FT_GPMG 三件式寫法：
+
+			1. 陣地建築  DMS_Turret_LightMachineGun  (Building_TurretGun, minifiedDef 指向 3)
+			2. 砲塔槍身  DMS_Gun_LightMachineGun     (BaseWeaponTurret, 架設後的數值)
+			3. 手持型態  DMS_LightMachineGun         (FFF_MinifiedTurretEquippable, 收起後的數值)
+
+		1 與 3 透過 <minifiedDef> 互相對應：
+			手持 ──「部署」Gizmo──▶ 陣地
+			陣地 ──「拾起」互動 ──▶ 手持
+		3 是 MinifiedThingDeployable，InnerThing 即 1；因此 1 上的
+		MinifiedThingDeployableGraphicExt 決定未部署時在裝備欄顯示的外觀。
+
+		數值分級沿用 GPMG 的做法：架設版射程/預熱/冷卻全面優於手持版，
+		差距約兩成，讓「花時間架槍」有實質回報。
+	-->
+
+	<!--LMG 陣地-->
+	<ThingDef ParentName="DMS_BaseCannonBuilding">
+		<defName>DMS_Turret_LightMachineGun</defName>
+		<label>Mech LMG</label>
+		<description>A weapon specializing in supression chambered in a large caliber rifle round.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.\n\nIts folding bipod lets a drafted operator drop it into a firing position on the spot, and pick it back up just as quickly. Emplaced, it reaches further and settles onto targets faster than it ever could from the shoulder.</description>
+		<techLevel>Industrial</techLevel>
+		<uiIconPath>Things/Weapons/DMS_LightMachineGun</uiIconPath>
+		<uiIconScale>1.2</uiIconScale>
+		<graphicData>
+			<texPath>Things/None</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<size>(1,1)</size>
+		<rotatable>true</rotatable>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>30</pathCost>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>DMS_Category</designationCategory>
+		<statBases>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+			<WorkToBuild>3000</WorkToBuild>
+			<Mass>12.75</Mass>
+			<Beauty>-2</Beauty>
+			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+		</statBases>
+		<comps Inherit="false">
+			<li Class="CompProperties_Forbiddable" />
+			<li Class="CompProperties_Mannable">
+				<manWorkType>Violent</manWorkType>
+			</li>
+			<!-- 拾起：把建築迷你化後收進操作者的裝備欄／背包 -->
+			<li Class="CompProperties_Usable">
+				<useJob>TriggerObject</useJob>
+				<useLabel>Pick up {0_label}</useLabel>
+			</li>
+			<li Class="CompProperties_UseEffect">
+				<compClass>Fortified.CompMinifyToInventory</compClass>
+			</li>
+		</comps>
+		<!-- 架在掩體上的火力點：本身不是 edifice，可疊在沙包等地形物件之上 -->
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<blocksAltitudes>
+			<li>BuildingOnTop</li>
+		</blocksAltitudes>
+		<building>
+			<canPlaceOverWall>false</canPlaceOverWall>
+			<isEdifice>false</isEdifice>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>DMS_Gun_LightMachineGun</turretGunDef>
+			<turretTopDrawSize>1.5</turretTopDrawSize>
+			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
+			<turretBurstCooldownTime>1.5</turretBurstCooldownTime>
+		</building>
+		<placeWorkers Inherit="false">
+			<li>PlaceWorker_TurretTop</li>
+			<li>PlaceWorker_ShowTurretRadius</li>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+			<li>Fortified.PlaceWorker_Emplacement</li>
+		</placeWorkers>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<minifiedDef>DMS_LightMachineGun</minifiedDef>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+		<costList>
+			<Tungsteel>75</Tungsteel>
+			<ComponentStamped>5</ComponentStamped>
+		</costList>
+		<researchPrerequisites Inherit="false">
+			<li>DMS_DeadMansSwitch</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="Fortified.ForceTargetableExtension" />
+			<!-- 未部署（拿在手上／背包裡）時顯示手持槍的外觀 -->
+			<li Class="Fortified.MinifiedThingDeployableGraphicExt">
+				<graphicData>
+					<texPath>Things/Weapons/DMS_LightMachineGun</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<drawSize>1.5</drawSize>
+				</graphicData>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!--LMG 架設後的槍身-->
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>DMS_Gun_LightMachineGun</defName>
+		<label>mech LMG</label>
+		<description>A light machine gun mounted on a folding bipod.</description>
+		<graphicData>
+			<texPath>Things/Turrets/DMS_LightMachineGun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.5</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>12.75</Mass>
+			<Flammability>0</Flammability>
+			<AccuracyTouch>0.45</AccuracyTouch>
+			<AccuracyShort>0.57</AccuracyShort>
+			<AccuracyMedium>0.50</AccuracyMedium>
+			<AccuracyLong>0.40</AccuracyLong>
+			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>Bullet_DMS_LightMachineGun</defaultProjectile>
+				<requireLineOfSight>true</requireLineOfSight>
+				<warmupTime>1.2</warmupTime>          <!--架設 1.2 / 手持 1.7-->
+				<range>29.9</range>                   <!--架設 29.9 / 手持 24.9-->
+				<minRange>0</minRange>
+				<ai_AvoidFriendlyFireRadius>5.9</ai_AvoidFriendlyFireRadius>
+				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+				<burstShotCount>10</burstShotCount>   <!--架設 10 / 手持 7-->
+				<soundCast>DMS_MachineGunLight_Shot</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.5,0.5)</drawSize>
+				<offsets>
+					<li>(0.75,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!--
+		LMG 手持型態。
+		與 GPMG 的差異：DMS 的機兵有 MechWeaponExtension 武器白名單，靠 weaponTags 比對，
+		因此這裡必須保留 weaponTags；改用 generateAllowChance 0 + tradeability None
+		阻止 PawnGenerator／商隊生出沒有 InnerThing 的空殼（那會被遊戲直接銷毀）。
+		取得方式：建造 DMS_Turret_LightMachineGun 後由人員「拾起」，故無 recipeMaker。
+	-->
+	<ThingDef ParentName="FFF_MinifiedTurretEquippable">
+		<defName>DMS_LightMachineGun</defName>
+		<label>Mech LMG</label>
+		<description>A weapon specializing in supression chambered in a large caliber rifle round.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.\n\nIts folding bipod lets a drafted operator drop it into a firing position on the spot, and pick it back up just as quickly.</description>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_LightMachineGun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5,1.5)</drawSize>
+		</graphicData>
+		<soundInteract>DMS_EquipGear</soundInteract>
+		<tradeability>None</tradeability>
+		<generateAllowChance>0</generateAllowChance>
+		<thingCategories>
+			<li>AutomatroidWeapon</li>
+		</thingCategories>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+			<li>LongShots</li>
+		</weaponClasses>
+		<weaponTags>
+			<li>DMS_MechWeaponLongRifle</li>
+			<li>A_SuppressWeapon</li>
+			<li>A_MG_Light</li>
+		</weaponTags>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Mass>12.75</Mass>
+			<Flammability>0</Flammability>
+			<AccuracyTouch>0.40</AccuracyTouch>
+			<AccuracyShort>0.52</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.35</AccuracyLong>
+			<RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.15</MoveSpeed>
+		</equippedStatOffsets>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_DMS_LightMachineGun</defaultProjectile>
+				<warmupTime>1.7</warmupTime>
+				<range>24.9</range>
+				<minRange>0</minRange>
+				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+				<burstShotCount>7</burstShotCount>
+				<soundCast>DMS_MachineGunLight_Shot</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.5,0.5)</drawSize>
+				<offsets>
+					<li>(0.75,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>LightAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+</Defs>

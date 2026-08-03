@@ -17,19 +17,25 @@
     <defName>DMS_Prefab_WreckScatter</defName>
     <size>(5,5)</size>
     <things>
-      <DMS_Wreckages>
-        <chance>0.8</chance>
-        <positions>
-          <li>(0, 0, 1)</li>
-          <li>(2, 0, 0)</li>
-          <li>(4, 0, 2)</li>
-          <li>(1, 0, 4)</li>
-        </positions>
-      </DMS_Wreckages>
       <DMS_Wreckage_SentryGun>
-        <chance>0.5</chance>
-        <position>(3, 0, 3)</position>
+        <chance>0.6</chance>
+        <positions>
+          <li>(2, 0, 0)</li>
+          <li>(3, 0, 3)</li>
+        </positions>
       </DMS_Wreckage_SentryGun>
+      <DMS_Wreckage_Ronin>
+        <chance>0.5</chance>
+        <position>(0, 0, 1)</position>
+      </DMS_Wreckage_Ronin>
+      <DMS_HoundBaseDestroyed>
+        <chance>0.6</chance>
+        <position>(4, 0, 2)</position>
+      </DMS_HoundBaseDestroyed>
+      <DMS_Building_Scanner_SmallDestoryed>
+        <chance>0.5</chance>
+        <position>(1, 0, 4)</position>
+      </DMS_Building_Scanner_SmallDestoryed>
       <DMS_TrashBinBaseDestroyed>
         <chance>0.6</chance>
         <position>(0, 0, 3)</position>
@@ -145,13 +151,14 @@
       <DMS_Wreckage_Ronin>
         <position>(1, 0, 1)</position>
       </DMS_Wreckage_Ronin>
-      <DMS_Wreckages>
+      <DMS_HoundBaseDestroyed>
         <chance>0.6</chance>
-        <positions>
-          <li>(0, 0, 0)</li>
-          <li>(2, 0, 2)</li>
-        </positions>
-      </DMS_Wreckages>
+        <position>(0, 0, 0)</position>
+      </DMS_HoundBaseDestroyed>
+      <DMS_TrashBinBaseDestroyed>
+        <chance>0.6</chance>
+        <position>(2, 0, 2)</position>
+      </DMS_TrashBinBaseDestroyed>
     </things>
   </PrefabDef>
 

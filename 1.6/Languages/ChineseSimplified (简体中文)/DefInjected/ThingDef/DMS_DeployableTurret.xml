@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Mech LMG -->
+  <DMS_Turret_LightMachineGun.label>机兵轻机枪</DMS_Turret_LightMachineGun.label>
+  <!-- EN: A weapon specializing in supression chambered in a large caliber rifle round.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.\n\nIts folding bipod lets a drafted operator drop it into a firing position on the spot, and pick it back up just as quickly. -->
+  <DMS_Turret_LightMachineGun.description>使用全威力步枪弹的压制性武器。\n\n这种武器是专门为机兵设计的，因此如果没有外部辅助设备或超强的力量，普通人可能无法正常使用。\n\n附有可折叠的两脚架，征召中的操作者可以就地把它架设成射击阵地，也能同样迅速地收起带走。</DMS_Turret_LightMachineGun.description>
+
+  <!-- EN: mech LMG -->
+  <DMS_Gun_LightMachineGun.label>机兵轻机枪</DMS_Gun_LightMachineGun.label>
+  <!-- EN: A light machine gun mounted on a folding bipod. -->
+  <DMS_Gun_LightMachineGun.description>架设在折叠两脚架上的轻机枪。</DMS_Gun_LightMachineGun.description>
+  <!-- EN: mech LMG -->
+  <DMS_Gun_LightMachineGun.verbs.Verb_Shoot.label>机兵轻机枪</DMS_Gun_LightMachineGun.verbs.Verb_Shoot.label>
+
+  <!-- UNUSED -->
+  <DMS_Gun_LightMachineGun.verbs.Verb_ShootCE.label>机兵轻机枪</DMS_Gun_LightMachineGun.verbs.Verb_ShootCE.label>
+
+</LanguageData>
