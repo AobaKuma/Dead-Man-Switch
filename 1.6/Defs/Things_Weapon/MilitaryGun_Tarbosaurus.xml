@@ -36,10 +36,13 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>242</Tungsteel>
-			<ComponentStamped>18</ComponentStamped>
+			<Tungsteel>42</Tungsteel>
+			<ComponentStamped>26</ComponentStamped>
 			<ComponentSpacer>2</ComponentSpacer>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>50</Tungsteel>
+		</smeltProducts>
 		<comps Inherit="False">
 			<li Class="CompProperties_Forbiddable"/>
 			<li Class="CompProperties_Styleable"/>

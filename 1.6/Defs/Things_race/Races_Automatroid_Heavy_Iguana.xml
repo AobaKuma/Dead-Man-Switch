@@ -6,9 +6,9 @@
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Iguana</defName>
     <label>Iguana</label>
-    <description>The modernized and redesigned bipedal walking tank based on the Tarbosaurus. This model is produced without the experimental electromagnetic armor allowing it to maintain greater mobility.</description>
+    <description>The modernized and redesigned bipedal walking tank based on the Tarbosaurus. This model ships without the add-on electromagnetic reactive plating, trading standoff protection for the thickest base armor and the best sustained mobility in its class.</description>
     <statBases>
-      <MoveSpeed>3.5</MoveSpeed>                                                    <!--移動速度-->
+      <MoveSpeed>4.6</MoveSpeed>                                                    <!--移動速度：未加掛反應裝甲，全系列最快-->
       <ArmorRating_Blunt>0.8</ArmorRating_Blunt>                                     <!--護甲-->
       <ArmorRating_Sharp>1.4</ArmorRating_Sharp>
       <ArmorRating_Heat>0.75</ArmorRating_Heat>
@@ -93,6 +93,26 @@
             </renderNodeProperties>
           </li>
         </subTurrets>
+      </li>
+      <!-- 量級壓迫光環（重型雙足IFV 2.5） -->
+      <li Class="Fortified.CompProperties_CausePanicInRange">
+        <range>5</range>
+        <tickInterval>350</tickInterval>
+        <chancePerScan>0.10</chancePerScan>
+        <!-- 量級壓迫：以「本機體型 / 目標體型」的比值再乘一層。
+             面對人類等小型目標壓迫感強，面對己方重型單位自然衰減。 -->
+        <useBodySizeModifier>true</useBodySizeModifier>
+        <bodySizeWeight>1</bodySizeWeight>
+        <bodySizeCurve>
+          <points>
+            <li>(0.5, 0.50)</li>
+            <li>(1.0, 1.00)</li>
+            <li>(1.75, 1.25)</li>
+            <li>(2.5, 1.50)</li>
+            <li>(3.5, 1.85)</li>
+            <li>(5.0, 2.00)</li>
+          </points>
+        </bodySizeCurve>
       </li>
     </comps>
     <modExtensions>
@@ -232,11 +252,11 @@
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Gecko</defName>
     <label>Gecko</label>
-    <description>An urban combat variant of the Iguana, this model is up-armored with additional electromagnetic plating to protect against shaped charge rounds and explosives.</description>
+    <description>An urban combat variant of the Iguana. The base plating is thinned down to save weight, and the freed tonnage goes into an add-on array of electromagnetic reactive armor bricks that defeat shaped charge rounds and explosives outright. Against small arms it is the thinner-skinned of the two.</description>
     <statBases>
       <MoveSpeed>4.3</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>1.1</ArmorRating_Blunt>                                     <!--護甲-->
-      <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+      <ArmorRating_Sharp>0.9</ArmorRating_Sharp>                                     <!--基礎裝甲刻意薄於鬣蜥：重量讓給外掛反應裝甲-->
       <ArmorRating_Heat>0.75</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
@@ -248,6 +268,10 @@
       <baseBodySize>2.5</baseBodySize>
       <baseHealthScale>3</baseHealthScale>
       <mechWeightClass>Heavy</mechWeightClass>
+      <!-- 出廠加掛電磁反應裝甲：見 Defs/Hediffs/Hediff_ERAPlating.xml -->
+      <hediffGiverSets>
+        <li>DMS_HediffGiverSet_ERAPlating</li>
+      </hediffGiverSets>
     </race>
     <comps>
       <li Class="Fortified.CompProperties_VehicleWeapon">
@@ -341,6 +365,26 @@
             </renderNodeProperties>
           </li>
         </subTurrets>
+      </li>
+      <!-- 量級壓迫光環（重型雙足IFV 2.5） -->
+      <li Class="Fortified.CompProperties_CausePanicInRange">
+        <range>5</range>
+        <tickInterval>350</tickInterval>
+        <chancePerScan>0.10</chancePerScan>
+        <!-- 量級壓迫：以「本機體型 / 目標體型」的比值再乘一層。
+             面對人類等小型目標壓迫感強，面對己方重型單位自然衰減。 -->
+        <useBodySizeModifier>true</useBodySizeModifier>
+        <bodySizeWeight>1</bodySizeWeight>
+        <bodySizeCurve>
+          <points>
+            <li>(0.5, 0.50)</li>
+            <li>(1.0, 1.00)</li>
+            <li>(1.75, 1.25)</li>
+            <li>(2.5, 1.50)</li>
+            <li>(3.5, 1.85)</li>
+            <li>(5.0, 2.00)</li>
+          </points>
+        </bodySizeCurve>
       </li>
     </comps>
     <modExtensions>

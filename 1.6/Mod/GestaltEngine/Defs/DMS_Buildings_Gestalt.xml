@@ -42,7 +42,8 @@
 		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
 		<costList>
 			<Steel>800</Steel> 
-			<Tungsteel>450</Tungsteel>
+			<Tungsteel>100</Tungsteel>
+			<ComponentStamped>14</ComponentStamped>
 			<Neurocomputer>8</Neurocomputer>
 			<ComponentControlChip>1</ComponentControlChip>
 		</costList>

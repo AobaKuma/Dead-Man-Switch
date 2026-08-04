@@ -32,9 +32,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>75</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>
+			<Tungsteel>25</Tungsteel>
+			<ComponentStamped>7</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Fortified.Verb_ArcSprayProjectile</verbClass>
@@ -102,9 +105,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>120</Tungsteel>
-			<ComponentStamped>8</ComponentStamped>
+			<Tungsteel>20</Tungsteel>
+			<ComponentStamped>12</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>25</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Fortified.Verb_ArcSprayProjectile</verbClass>
@@ -175,9 +181,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>225</Tungsteel>
-			<ComponentStamped>10</ComponentStamped>
+			<Tungsteel>50</Tungsteel>
+			<ComponentStamped>17</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>44</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Fortified.Verb_ArcSprayProjectile</verbClass>
@@ -319,9 +328,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>1275</Tungsteel>
-			<ComponentStamped>40</ComponentStamped>
+			<Tungsteel>250</Tungsteel>
+			<ComponentStamped>81</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>256</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Fortified.Verb_ArcSprayProjectile</verbClass>

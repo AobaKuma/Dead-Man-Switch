@@ -183,7 +183,7 @@
   <ThingDef Name="DMS_MechDoggeBase" ParentName="BaseAutomatroidRace">  <!-- DMS_Machine_Hound 獵犬常規型 -->
     <defName>DMS_Mech_Dogge</defName>
     <label>Dogge</label>
-    <description>A four-legged robot dog which excels at providing forward reconnaissance and urban combat support during operations. It can equip with small-caliber firearms or flamethrowers to provide offensive capabilities.</description>
+    <description>A medium four-legged machine gun platform. Synthetic artificial muscle bundles in its limbs give it exceptional mobility, and its low silhouette suits it to providing mobile fire support across open ground. It can equip small-caliber firearms or flamethrowers.</description>
     <statBases>
       <MoveSpeed>6</MoveSpeed>
       <ArmorRating_Blunt>0.4</ArmorRating_Blunt>

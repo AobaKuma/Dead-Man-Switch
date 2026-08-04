@@ -57,9 +57,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>70</Tungsteel>
-			<ComponentStamped>4</ComponentStamped>
+			<Tungsteel>20</Tungsteel>
+			<ComponentStamped>6</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<!-- 彈種切換: 鹿彈(預設) / 獨頭彈 -->
 		<comps>
 			<li Class="Fortified.CompProperties_AmmoSwitch">
@@ -163,9 +166,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>60</Tungsteel>
-			<ComponentStamped>4</ComponentStamped>
+			<Tungsteel>10</Tungsteel>
+			<ComponentStamped>6</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -321,9 +327,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>60</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>
+			<Tungsteel>10</Tungsteel>
+			<ComponentStamped>7</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -388,9 +397,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>70</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>
+			<Tungsteel>20</Tungsteel>
+			<ComponentStamped>7</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -461,9 +473,12 @@
 		<!-- 取得方式: 交易 / 探索獎勵(中烈度) - 不可製造 -->
 		<recipeMaker IsNull="True" />
 		<costList>
-			<Tungsteel>70</Tungsteel>
-			<ComponentStamped>4</ComponentStamped>
+			<Tungsteel>20</Tungsteel>
+			<ComponentStamped>6</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -525,9 +540,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>75</Tungsteel>
-			<ComponentStamped>4</ComponentStamped>
+			<Tungsteel>25</Tungsteel>
+			<ComponentStamped>6</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -593,9 +611,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>115</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>
+			<Tungsteel>15</Tungsteel>
+			<ComponentStamped>9</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>25</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>

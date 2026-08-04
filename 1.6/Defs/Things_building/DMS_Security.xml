@@ -302,8 +302,8 @@
     </building>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <costList>
-      <Tungsteel>1000</Tungsteel>
-      <ComponentStamped>35</ComponentStamped>
+      <Tungsteel>200</Tungsteel>
+      <ComponentStamped>67</ComponentStamped>
       <ComponentIndustrial>10</ComponentIndustrial>
       <ComponentFireControl>1</ComponentFireControl>
       <DMS_GAU8Gatlinggun>1</DMS_GAU8Gatlinggun>
@@ -460,8 +460,8 @@
     <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
     <costList>
       <Steel>280</Steel>
-      <Tungsteel>140</Tungsteel>
-      <ComponentStamped>7</ComponentStamped>
+      <Tungsteel>40</Tungsteel>
+      <ComponentStamped>11</ComponentStamped>
       <ComponentIndustrial>6</ComponentIndustrial>
       <DMS_Gun_MK44_Autocannon>1</DMS_Gun_MK44_Autocannon>
     </costList>
@@ -589,8 +589,8 @@
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <costList>
       <Steel>250</Steel>
-      <Tungsteel>100</Tungsteel>
-      <ComponentStamped>5</ComponentStamped>
+      <Tungsteel>25</Tungsteel>
+      <ComponentStamped>8</ComponentStamped>
       <ComponentIndustrial>5</ComponentIndustrial>
       <DMS_KordMachineGun MayRequire="Aoba.DeadManSwitch.AncientCorps">1</DMS_KordMachineGun>
     </costList>
@@ -725,8 +725,8 @@
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <costList>
       <Steel>150</Steel>
-      <Tungsteel>120</Tungsteel>
-      <ComponentStamped>5</ComponentStamped>
+      <Tungsteel>20</Tungsteel>
+      <ComponentStamped>9</ComponentStamped>
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
     <researchPrerequisites>
@@ -849,8 +849,8 @@
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <costList>
       <Steel>450</Steel>
-      <Tungsteel>300</Tungsteel>
-      <ComponentStamped>15</ComponentStamped>
+      <Tungsteel>50</Tungsteel>
+      <ComponentStamped>25</ComponentStamped>
       <ComponentIndustrial>10</ComponentIndustrial>
       <ComponentFireControl>2</ComponentFireControl>
       <DMS_Gun_DawnbladeM>1</DMS_Gun_DawnbladeM>

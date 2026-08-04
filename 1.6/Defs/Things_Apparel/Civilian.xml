@@ -301,10 +301,10 @@
 			<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>75</Tungsteel>
+			<Tungsteel>25</Tungsteel>
 			<Plasfiber>50</Plasfiber>
 			<Uranium>10</Uranium>
-			<ComponentStamped>7</ComponentStamped>
+			<ComponentStamped>9</ComponentStamped>
 		</costList>
 		<tradeTags>
 			<li>DMS_Armor</li>

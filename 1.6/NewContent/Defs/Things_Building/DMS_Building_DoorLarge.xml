@@ -28,7 +28,8 @@
     </statBases>
     <costList>
       <Steel>150</Steel>
-      <Tungsteel>60</Tungsteel>
+      <Tungsteel>10</Tungsteel>
+      <ComponentStamped>2</ComponentStamped>
       <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
     <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>

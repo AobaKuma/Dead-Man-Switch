@@ -15,7 +15,7 @@
   <!-- EN: Escort Lifter -->
   <DMS_Mech_EscortLifter.label>运输框架</DMS_Mech_EscortLifter.label>
   <!-- EN: An early stage mass-production automatroid. It's no longer in regular service but there are still plenty of them modified for transport purposes. -->
-  <DMS_Mech_EscortLifter.description>一种用于后勤装载与武装押运的二线支援型运输机兵，是战斗框架系列的泛生型号之一。安装了额外的货箱与搬运工具来使其具有独立装载货物的能力，在殖民舰队陆军的序列中许多早期批次生产的战斗框架会在经过改装后在各个殖民地间的商队运输发挥余热。\n\n由于移除了顶部探头及许多军规硬体因此在操作系统上能够支持的武器并不充裕，只能装备轻型武器用于自卫。</DMS_Mech_EscortLifter.description>
+  <DMS_Mech_EscortLifter.description>一种用于后勤装载与武装押运的二线支援型运输机兵，是战斗框架系列的泛生型号之一。安装了额外的货箱与搬运工具来使其具有独立装载货物的能力，载重量为战斗框架系列之最，在殖民舰队陆军的序列中许多早期批次生产的战斗框架会在经过改装后在各个殖民地间的商队运输发挥余热。\n由于移除了顶部探头及许多军规硬体因此在操作系统上能够支持的武器并不充裕，只能装备轻型武器用于自卫。</DMS_Mech_EscortLifter.description>
   <!-- EN: head -->
   <DMS_Mech_EscortLifter.tools.head.label>头部</DMS_Mech_EscortLifter.tools.head.label>
   <!-- EN: left fist -->
@@ -37,7 +37,7 @@
   <!-- EN: Shaft Worker -->
   <DMS_Mech_ShaftWorker.label>工程驳机</DMS_Mech_ShaftWorker.label>
   <!-- EN: An early stage mass-produced automatroid. It's no longer in regular service but there are still lots of them modified to used for mining and construct purpose. -->
-  <DMS_Mech_ShaftWorker.description>一种用于殖民据点建设与资源开采的殖民作业型战斗框架泛生...其实并不完全正确。工程驳机所使用的双足步行设计与战斗框架具有差异，然而零件的高互换性使得大部分人都经常不会注意到两者的差异。其设计被用来尽可能的简化殖民建设计划中的工程装备种类与数量，具有相比战斗框架而言更加高大的体型与外置的动力包模块。\n\n然而基于成本考量的简化武器系统使其只能够装备轻型武器用于自卫。</DMS_Mech_ShaftWorker.description>
+  <DMS_Mech_ShaftWorker.description>一种用于殖民据点建设与资源开采的殖民作业型战斗框架泛生...其实并不完全正确。工程驳机所使用的双足步行设计与战斗框架具有差异，然而零件的高互换性使得大部分人都经常不会注意到两者的差异。相比战斗框架而言它具有更加高大的体型、更厚的作业防护板与外置的动力包模块，而其地形测绘与开挖作业系统的运算需求，也让它比一线战斗机体占用更多的控制带宽。基于成本考量而简化的武器系统则使其只能够装备轻型武器用于自卫。</DMS_Mech_ShaftWorker.description>
   <!-- EN: head -->
   <DMS_Mech_ShaftWorker.tools.head.label>头部</DMS_Mech_ShaftWorker.tools.head.label>
   <!-- EN: left fist -->

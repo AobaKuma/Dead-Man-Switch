@@ -122,9 +122,9 @@
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 		<costList>
 		  <Steel>250</Steel>
-		  <Tungsteel>300</Tungsteel>
+		  <Tungsteel>50</Tungsteel>
 		  <Plasfiber>150</Plasfiber>
-		  <ComponentStamped>6</ComponentStamped>
+		  <ComponentStamped>16</ComponentStamped>
 		  <ShuttleEngine>2</ShuttleEngine>
 		</costList>
         <canOverlapZones>true</canOverlapZones>

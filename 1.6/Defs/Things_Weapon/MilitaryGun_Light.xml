@@ -148,9 +148,12 @@
 		<!-- 取得方式: 探索獎勵(低烈度) - 不可製造 -->
 		<recipeMaker IsNull="True" />
 		<costList>
-			<Tungsteel>55</Tungsteel>
-			<ComponentStamped>2</ComponentStamped>
+			<Tungsteel>5</Tungsteel>
+			<ComponentStamped>4</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -215,9 +218,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>75</Tungsteel>
-			<ComponentStamped>3</ComponentStamped>
+			<Tungsteel>25</Tungsteel>
+			<ComponentStamped>5</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>

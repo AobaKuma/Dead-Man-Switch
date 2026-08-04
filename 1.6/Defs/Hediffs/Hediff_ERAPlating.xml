@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       外掛式電磁反應裝甲 (ERA)
+       用於「壁虎」等在原有底盤上加掛反應裝甲塊的都市戰改造型號。
+       設計意圖：
+         - 本體基礎裝甲(ArmorRating_Sharp)刻意低於未加掛的鬣蜥，
+           換取更輕的結構重量與更高的機動性；
+         - 加掛的反應裝甲塊專門對付聚能裝藥彈與爆裂物：
+           單次高傷爆炸命中直接歸零，並消耗一塊裝甲。
+         - 反應塊引爆會回震本體造成少量鈍傷，用完需以鋼材整備。
+       ============================================================ -->
+  <HediffDef>
+    <defName>DMS_Hediff_ERAPlating</defName>
+    <label>electromagnetic reactive plating</label>
+    <description>An add-on array of electromagnetic reactive armor bricks bolted over the chassis. When a shaped charge jet or a heavy explosive hit lands, the brick above it detonates outward and defeats the penetrator entirely, at the cost of being consumed and shocking the frame underneath.\n\nIt does nothing against small arms or melee — those are the job of the base plating. Spent bricks must be replenished with steel.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <everCurableByItem>false</everCurableByItem>
+    <maxSeverity>1</maxSeverity>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="Fortified.HediffCompProperties_DamageBlocker">
+        <!-- 只有夠大的單發傷害才值得引爆一塊反應裝甲 -->
+        <damageThreshold>18</damageThreshold>
+        <thresholdInclusive>true</thresholdInclusive>
+        <!-- 比一般護盾/裝甲先判定：反應裝甲掛在最外層 -->
+        <preApplyDamagePriority>20</preApplyDamagePriority>
+        <blockCharges>4</blockCharges>
+
+        <!-- 只對聚能裝藥/爆裂物生效 -->
+        <allowedDamageDefs>
+          <li>Bomb</li>
+          <li MayRequire="ceteam.combatextended">Bomb_Secondary</li>
+        </allowedDamageDefs>
+        <allowRanged>true</allowRanged>
+        <allowMelee>false</allowMelee>
+        <allowDirect>true</allowDirect>
+
+        <!-- 高閾值：消耗一塊、完全擋下 -->
+        <consumeChargeAbove>true</consumeChargeAbove>
+        <blockAboveThreshold>true</blockAboveThreshold>
+        <clampAboveToThreshold>false</clampAboveToThreshold>
+
+        <!-- 低閾值：不耗塊也不擋，交給本體裝甲處理 -->
+        <consumeChargeBelow>false</consumeChargeBelow>
+        <blockBelowThreshold>false</blockBelowThreshold>
+
+        <aboveThresholdEffecter>Deflect_Metal_Bullet</aboveThresholdEffecter>
+        <eraEffecter>Deflect_Metal_Bullet</eraEffecter>
+        <showGizmo>true</showGizmo>
+
+        <!-- 反應塊引爆的回震 -->
+        <eraOnConsumeCharge>true</eraOnConsumeCharge>
+        <eraEntries>
+          <li>
+            <damageDef>Blunt</damageDef>
+            <damageAmount>6</damageAmount>
+          </li>
+        </eraEntries>
+
+        <!-- 整備：用鋼材補回反應裝甲塊 -->
+        <repairMaterial>Steel</repairMaterial>
+        <chargesPerMaterial>1</chargesPerMaterial>
+        <requiredReplenishWorkType>Crafting</requiredReplenishWorkType>
+        <autoRecharge>false</autoRecharge>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- 出廠即裝配：mtbDays 極小，機體生成後的下一個 60tick 檢查即掛上。
+       HediffGiverUtility.TryApply 對無 partsToAffect 的全身 hediff 有
+       HasHediff 去重，因此不會重複施加。 -->
+  <HediffGiverSetDef>
+    <defName>DMS_HediffGiverSet_ERAPlating</defName>
+    <hediffGivers>
+      <li Class="Fortified.HediffGiver_RandomSilent">
+        <hediff>DMS_Hediff_ERAPlating</hediff>
+        <mtbDays>0.0001</mtbDays>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+</Defs>

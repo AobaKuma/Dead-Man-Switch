@@ -9,6 +9,8 @@
       <ArmorRating_Heat>0.33</ArmorRating_Heat>  <!--能抗-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
+      <!-- 外掛電池背包：士兵系列敘述宣稱的「較長的電池壽命」對應的實際數值 -->
+      <MechEnergyUsageFactor MayRequire="Ludeon.Rimworld.Biotech">0.7</MechEnergyUsageFactor>
     </statBases>
     <race>
       <body>DMS_Humanoid_Soldat</body>
@@ -102,6 +104,9 @@
       <li>SimpleGun</li>
       <li>IndustrialGun</li>
     </weaponTags>
+    <abilities>
+      <li>DMS_Mothball</li>
+    </abilities>
   </PawnKindDef>
 
   <PawnKindDef ParentName="BaseAutomatroidKind">
@@ -135,6 +140,9 @@
       <li>A_SAR_LongRifle</li>
       <li>A_PDW</li>
     </weaponTags>
+    <abilities>
+      <li>DMS_Mothball</li>
+    </abilities>
   </PawnKindDef>
 
   <PawnKindDef ParentName="BaseAutomatroidKind"><!--海盜特供型-->
@@ -244,6 +252,7 @@
     </weaponTags>
     <weaponMoney>570~3000</weaponMoney>
     <abilities>
+      <li>DMS_Mothball</li>
       <li>DMS_FlashLauncher</li>
     </abilities>
   </PawnKindDef>
@@ -313,6 +322,9 @@
       <li>GunSingleUse</li>
       <li>DMS_Gun_Recoilless</li>
     </weaponTags>
+    <abilities>
+      <li>DMS_Mothball</li>
+    </abilities>
   </PawnKindDef>
 
   <!-- DMS_Mech_Sergeant 士兵指揮型 : 只能裝備單手武器 -->
@@ -388,6 +400,7 @@
       <li>DMS_MechWeaponLight</li>                                                                     <!--武器-->
     </weaponTags>
     <abilities>
+      <li>DMS_Mothball</li>
       <li>DMS_CallDrop</li>
       <li>DMS_CallDrop_Falcon</li>
     </abilities>

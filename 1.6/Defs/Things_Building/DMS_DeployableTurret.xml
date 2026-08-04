@@ -92,8 +92,8 @@
 		</thingCategories>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<costList>
-			<Tungsteel>75</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>
+			<Tungsteel>25</Tungsteel>
+			<ComponentStamped>7</ComponentStamped>
 		</costList>
 		<researchPrerequisites Inherit="false">
 			<li>DMS_DeadMansSwitch</li>

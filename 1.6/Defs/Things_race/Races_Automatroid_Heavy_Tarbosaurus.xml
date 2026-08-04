@@ -48,6 +48,20 @@
         <range>9</range>
         <tickInterval>200</tickInterval>       <!-- 每~3.3秒掃描一次，最頻繁 -->
         <chancePerScan>0.25</chancePerScan>
+        <!-- 量級壓迫：以「本機體型 / 目標體型」的比值再乘一層。
+             面對人類等小型目標壓迫感強，面對己方重型單位自然衰減。 -->
+        <useBodySizeModifier>true</useBodySizeModifier>
+        <bodySizeWeight>1</bodySizeWeight>
+        <bodySizeCurve>
+          <points>
+            <li>(0.5, 0.50)</li>
+            <li>(1.0, 1.00)</li>
+            <li>(1.75, 1.25)</li>
+            <li>(2.5, 1.50)</li>
+            <li>(3.5, 1.85)</li>
+            <li>(5.0, 2.00)</li>
+          </points>
+        </bodySizeCurve>
       </li>
       <li Class="Fortified.CompProperties_VehicleWeapon">
         <drawData>

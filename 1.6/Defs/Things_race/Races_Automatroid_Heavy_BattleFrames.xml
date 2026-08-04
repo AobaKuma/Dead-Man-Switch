@@ -27,6 +27,8 @@
       <CaravanRidingSpeedFactor>1.3</CaravanRidingSpeedFactor>
       <MoveSpeed>3.7</MoveSpeed><!--移動速度-->
       <AimingDelayFactor>1.1</AimingDelayFactor>
+      <!-- 敘述的「相當程度的負載能力」：背負彈藥與備用武器 -->
+      <CarryingCapacity>110</CarryingCapacity>
     </statBases>
     <modExtensions>
       <li Class="Fortified.MechWeaponExtension">
@@ -180,7 +182,7 @@
   <ThingDef ParentName="BaseBattleFrame">
     <defName>DMS_Mech_EscortLifter</defName>
     <label>Escort Lifter</label>
-    <description>An early stage mass-production automatroid. It's no longer in regular service but there are still plenty of them modified for transport purposes.</description>
+    <description>An early stage mass-production automatroid. It's no longer in regular service, but plenty were refitted with external cargo boxes and handling arms for logistics duty - it carries more than anything else in the battle frame line. The military hardware that came off in the conversion means it can only carry a light arm for self-defence.</description>
     <statBases>
       <MoveSpeed>4.2</MoveSpeed>
       <ArmorRating_Sharp>0.3</ArmorRating_Sharp><!--銳抗-->
@@ -188,7 +190,14 @@
       <ArmorRating_Heat>0.58</ArmorRating_Heat>  <!--能抗-->
       <AimingDelayFactor>1.3</AimingDelayFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
-      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge>
+      <!-- 二線後勤機：耗損不該高於戰鬥型母體(2) -->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
+      <!-- 外掛貨箱與搬運工具：系列中最高的載重 -->
+      <CarryingCapacity>190</CarryingCapacity>
+      <!-- 商隊速度加成。原版 HasCaravanBonus() 只認 Humanlike，由 Fortified 框架的
+           Patch_CaravanBonusUtility_HasCaravanBonus 放寬給機體。
+           小猛瑪(1.5)是專職運輸車，運輸框架定位在其之下。 -->
+      <CaravanBonusSpeedFactor>1.25</CaravanBonusSpeedFactor>
     </statBases>
     <race>
       <mechEnabledWorkTypes>
@@ -258,7 +267,7 @@
   <ThingDef ParentName="BaseBattleFrame">
     <defName>DMS_Mech_ShaftWorker</defName>
     <label>Shaft Worker</label>
-    <description>An early stage mass-produced automatroid. It's no longer in regular service but there are still lots of them modified to used for mining and construct purpose.</description>
+    <description>A colonial engineering derivative of the battle frame lineage. It stands taller and carries heavier working plate than a battle friend, and its site-survey and excavation software is demanding enough to take up more of a mechanitor's bandwidth than a line unit does. The weapon system was stripped back to hold the unit price down, so it can only carry a light arm for self-defence.</description>
     <statBases>
       <MoveSpeed>3.0</MoveSpeed>
       <ArmorRating_Sharp>0.3</ArmorRating_Sharp><!--銳抗-->

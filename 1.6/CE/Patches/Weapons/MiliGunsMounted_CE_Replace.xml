@@ -24,19 +24,19 @@
     </Operation>
 
 	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DMS_Mech_Gecko"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="close inbound system"]/turret</xpath>
+		<value>
+			<turret>DMS_Tarbosaurus_ShotgunGun</turret>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="DMS_Mech_Geochelone"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="defense machinegun"]/turret</xpath>
 		<value>
 			<turret>DMS_Iguana_SubMachineGun</turret>
 		</value>
 	</Operation>
 
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="DMS_Mech_Geochelone_b"]/comps/li[@Class="Fortified.CompProperties_VehicleWeapon"]/defaultWeapon</xpath>
-		<value>
-			<defaultWeapon>DMS_Iguana_SubMachineGun</defaultWeapon>
-		</value>
-	</Operation>
-	
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="DMS_Mech_Dogge"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="machine gun"]/turret</xpath>
 		<value>
@@ -66,9 +66,9 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="DMS_Mech_Killdozer_b"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="defense machinegun"]/turret</xpath>
+		<xpath>Defs/ThingDef[defName="DMS_Mech_Killdozer"]/comps/li[@Class="Fortified.CompProperties_VehicleWeapon"]/defaultWeapon</xpath>
 		<value>
-			<turret>DMS_Dozer_KordMG</turret>
+			<defaultWeapon>DMS_Dozer_KordMG</defaultWeapon>
 		</value>
 	</Operation>
 	

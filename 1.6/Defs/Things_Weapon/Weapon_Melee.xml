@@ -149,9 +149,12 @@
 			</li>
 		</tools>
 		<costList>
-			<Tungsteel>90</Tungsteel>
-			<ComponentStamped>3</ComponentStamped>
+			<Tungsteel>15</Tungsteel>
+			<ComponentStamped>6</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>19</Tungsteel>
+		</smeltProducts>
 		<!-- 取得方式: 交易 - 不可製造 -->
 		<recipeMaker IsNull="True" />
 		<modExtensions>
@@ -195,10 +198,13 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>95</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>
+			<Tungsteel>20</Tungsteel>
+			<ComponentStamped>8</ComponentStamped>
 			<Chemfuel>20</Chemfuel>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>19</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>

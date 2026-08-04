@@ -32,7 +32,6 @@
 		</comps>
 	</AbilityDef>
 
-
 	<ThingDef ParentName="BaseBullet">
 		<defName>DMS_Bullet_FlashBang</defName>
 		<label>Flashbang grenade</label>
@@ -305,6 +304,41 @@
 			</targetParams>
 			<forcedMissRadius>0.1</forcedMissRadius>
 		</verbProperties>
+	</AbilityDef>
+
+	<!-- 原地封存：士兵系列把自己折疊進運輸框架，變成休眠建築。
+	     不佔頻寬、可由機械師重新啟動。實作見框架的
+	     Fortified.CompAbilityEffect_DeactivateToCapsule。 -->
+	<AbilityDef>
+		<defName>DMS_Mothball</defName>
+		<label>field mothball</label>
+		<description>Disable system activity on the spot. The unit becomes a dormant storage structure that costs no bandwidth and takes no upkeep, and can be brought back online later by a mechanitor.\n\nStandard practice for garrison units between deployments.</description>
+		<iconPath>UI/Ability/Mothball</iconPath>
+		<cooldownTicksRange>2500</cooldownTicksRange>
+		<showPsycastEffects>false</showPsycastEffects>
+		<showGizmoOnWorldView>false</showGizmoOnWorldView>
+		<aiCanUse>false</aiCanUse>
+		<targetRequired>false</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<label>fold into transport frame</label>
+			<drawAimPie>false</drawAimPie>
+			<warmupTime>3</warmupTime>
+			<violent>false</violent>
+			<targetable>false</targetable>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="Fortified.CompProperties_AbilityDeactivateToCapsule">
+				<playerOnly>true</playerOnly>
+				<allowWhileDrafted>true</allowWhileDrafted>
+				<allowWhileDowned>false</allowWhileDowned>
+				<sendMessage>true</sendMessage>
+			</li>
+		</comps>
 	</AbilityDef>
 
 </Defs>

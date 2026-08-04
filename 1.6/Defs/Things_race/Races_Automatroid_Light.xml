@@ -68,7 +68,7 @@
   <ThingDef ParentName="BaseMechRace_Falcon">
     <defName>DMS_Mech_Falcon</defName>
     <label>Falcon</label>
-    <description>A heavy-duty tri-rotor drone built for working in conjunction with recon units and anti-tank units.</description>
+    <description>A light tri-rotor drone built for armed aerial reconnaissance and anti-tank strikes. Despite its size it is rated to carry a disposable launcher, letting it kill armor a unit of its weight class has no business engaging.</description>
     <statBases>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">1</BandwidthCost>
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>

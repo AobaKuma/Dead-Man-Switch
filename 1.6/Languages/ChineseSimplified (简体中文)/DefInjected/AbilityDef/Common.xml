@@ -44,4 +44,12 @@
   <!-- EN: Concentrate firepower to conduct a strafing attack in a specific direction. -->
   <DMS_Strafing.description>集中火力对特定方向进行扫射攻击。</DMS_Strafing.description>
   
+
+  <!-- EN: field mothball -->
+  <DMS_Mothball.label>原地封存</DMS_Mothball.label>
+  <!-- EN: Fold the chassis down into its transport frame on the spot... -->
+  <DMS_Mothball.description>将机体就地折叠收入自身的运输框架。单位会转为休眠建筑，不再占用带宽也无需维护，日后可由机械师重新启动。\n\n这是驻防单位在两次部署之间的标准做法。征召状态下无法执行。</DMS_Mothball.description>
+  <!-- EN: fold into transport frame -->
+  <DMS_Mothball.verbProperties.label>折叠收纳</DMS_Mothball.verbProperties.label>
+
 </LanguageData>

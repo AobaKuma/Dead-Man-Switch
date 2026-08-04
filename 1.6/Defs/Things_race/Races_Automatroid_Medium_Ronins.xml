@@ -159,7 +159,7 @@
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Gladiator</defName>
     <label>Gladiator</label>
-    <description>A melee specialized variant of the Ronin. The Gladiator maintains the Ronin's mobility and armor and comes with an upgraded melee combat module and is equipped with an assault shield.</description>
+    <description>A melee specialized variant of the Ronin. The Gladiator keeps the Ronin's mobility and trades frontal plating for a highly articulated frame, reinforced specifically against the blunt impacts of close combat, plus an upgraded melee module and an assault shield.</description>
     <statBases>
       <MoveSpeed>5</MoveSpeed>
       <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
@@ -510,7 +510,7 @@
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Phalanx</defName>
     <label>Phalanx</label>
-    <description>The Phalanx is a cheap mass-producible variant specialized for urban combat. It comes packed with assault armor and high mobility package making it a fierce unit in close quarters combat.</description>
+    <description>The Phalanx is a cost-reduced mass-production auxiliary built for urban combat. Its sonar suite and part of its plating were deleted to bring the unit price down, so it is slower and thinner-skinned than a Ronin - it is meant to lay down direct fire alongside Ronin squads and to be fielded in numbers, not to lead the assault.</description>
     <statBases>
       <MoveSpeed>4.5</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>0.6</ArmorRating_Blunt>                                     <!--護甲-->

@@ -9,7 +9,11 @@
       <ArmorRating_Blunt>0.8</ArmorRating_Blunt><!--鈍抗-->
       <ArmorRating_Heat>0.75</ArmorRating_Heat>  <!--能抗-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
-      <CaravanBonusSpeedFactor>6</CaravanBonusSpeedFactor>
+      <!-- 商隊速度加成。原版 CaravanBonusUtility.HasCaravanBonus() 只認 Humanlike，
+           由 Fortified 框架的 Patch_CaravanBonusUtility_HasCaravanBonus 放寬給機體。
+           注意原版取的是「有加成成員的平均值」而非全隊平均，單一高值會直接放大
+           整支商隊速度，因此保持在 1.5 量級。 -->
+      <CaravanBonusSpeedFactor>1.5</CaravanBonusSpeedFactor>
       <CarryingCapacity>200</CarryingCapacity>
       <!-- 履帶平台的特色就是用電低。並且被攻擊不減速 -->
       <StaggerDurationFactor>0</StaggerDurationFactor>

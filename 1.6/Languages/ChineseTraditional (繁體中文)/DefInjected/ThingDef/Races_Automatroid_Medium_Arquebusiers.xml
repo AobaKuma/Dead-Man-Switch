@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
   <!-- EN: Arquebusier -->
@@ -26,7 +26,7 @@
   <!-- EN: Pioneer -->
   <DMS_Mech_Pioneer.label>先鋒</DMS_Mech_Pioneer.label>
   <!-- EN: A forward reconnaissance variant of the Arquebusier, Pioneers are equipped with an improved sight sensor package giving it better capability in field operations. In a pinch, it can be used to hunt wildlife. -->
-  <DMS_Mech_Pioneer.description>前沿偵察型火槍手。由於配備了改進的瞄準感測器，它在野外作戰中具有更好的能力。</DMS_Mech_Pioneer.description>
+  <DMS_Mech_Pioneer.description>前沿偵察型火槍手。火控系統與標準型火槍手完全相同，但武器掛架與觀測器材被開放給範圍廣得多的長管槍械與民用武器，使其能夠脫離補給線獨立行動。必要時也可以用來獵殺野生動物。</DMS_Mech_Pioneer.description>
   <!-- EN: head -->
   <DMS_Mech_Pioneer.tools.head.label>頭部</DMS_Mech_Pioneer.tools.head.label>
   <!-- EN: left fist -->
