@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Basic Knowledge Category Project Example -->
+
+  <ResearchProjectDef Name="DMS_BaseOccultTech" Abstract="True">
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Restricted</knowledgeCategory>
+    <knowledgeCost>750</knowledgeCost>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseOccultTech">
+    <defName>DMS_ExpKnowledge_BasicFoundation</defName>
+    <label>expeditional basic foundation</label>
+    <description>Establish fundamental understanding of expeditional technology and principles.</description>
+    <researchViewX>1</researchViewX>
+    <researchViewY>1</researchViewY>
+    <knowledgeCost>500</knowledgeCost>
+  </ResearchProjectDef>
+
+  <!-- Advanced Knowledge Category Project Example -->
+  <ResearchProjectDef>
+    <defName>DMS_ExpKnowledge_AdvancedMastery</defName>
+    <label>expeditional advanced mastery</label>
+    <description>Master advanced expeditional technology and unlock powerful applications.</description>
+    <prerequisites>
+      <li>DMS_ExpKnowledge_BasicFoundation</li>
+    </prerequisites>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <researchViewX>3</researchViewX>
+    <researchViewY>1</researchViewY>
+    <knowledgeCategory>DMS_Sealed</knowledgeCategory>
+    <knowledgeCost>1000</knowledgeCost>
+  </ResearchProjectDef>
+
+  <!-- Additional Basic Tier Project -->
+  <ResearchProjectDef>
+    <defName>DMS_ExpKnowledge_BasicSecondary</defName>
+    <label>expeditional basic secondary</label>
+    <description>Secondary basic knowledge to support advanced research.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <researchViewX>4</researchViewX>
+    <researchViewY>2</researchViewY>
+    <prerequisites>
+      <li>DMS_ExpKnowledge_AdvancedMastery</li>
+    </prerequisites>
+    <knowledgeCategory>DMS_Occulted</knowledgeCategory>
+    <knowledgeCost>400</knowledgeCost>
+  </ResearchProjectDef>
+
+  <!-- ============================================================= -->
+  <!-- 蛙人：導向胚胎發育                                             -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_Frogman</defName>
+    <label>directed chassis gestation</label>
+    <description>A sealed-file technique for growing an artificial military organism rather than printing a mech. A directed development sequence is written into an embryo, whose mesonuclear substrate then builds synthetic-mechanical structure in place of tissue and matures on its own. The embryo is brought to term in a growth vat, or in a human surrogate where no vat is available.\n\nAMO development was halted permanently after a catastrophic incident in the Earth era, and the technology has been proscribed ever since. The stated grounds are the damage a self-developing organism does to local society and industry. The colonial fleets enforce the ban themselves rather than through local authorities. A world found running a production chain is not fined or licensed. It is burned back to the ore.\n\nUnlocks the XM132 Frogman and its development sequence.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Sealed</knowledgeCategory>
+    <knowledgeCost>1000</knowledgeCost>
+    <researchViewX>3</researchViewX>
+    <researchViewY>3</researchViewY>
+    <prerequisites>
+      <li>DMS_ExpKnowledge_BasicFoundation</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file: directed chassis gestation</discoveredLetterTitle>
+    <discoveredLetterText>Researchers have decoded a sealed expeditional file containing the XM132 development sequence, the earliest artificial military organism on human record.\n\nThe Frogman can now be produced. Gestate an embryo at an artifuscle chamber, then bring it to term in a growth vat or a surrogate. The result is a biomatroid larva. Protect its gestation pod for five days and it will mature into a dormant frogman.\n\nThe file carries a fleet prohibition notice. AMO production is proscribed on any settled world, and the fleets enforce it in person. Outside the fleets, only decoded files and fleet deviants have ever produced one.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_FrogmanEmbryo</ThingDef>
+      <ThingDef>DMS_Mech_Frogman</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
+</Defs>

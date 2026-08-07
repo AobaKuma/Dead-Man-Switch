@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 	<!-- DMS_TacticalPistol -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_TacticalPistol</defName>
-		<!-- 取得方式: 交易 / 任務獎勵 -->
+		<!-- 取得方式: 自產 / 交易 / 任務獎勵 -->
 		<tradeTags>
-			<li>DMS_WeaponUncraftable</li>
 			<li>WeaponRanged</li>
 		</tradeTags>
 		<thingSetMakerTags>
@@ -37,8 +36,13 @@
 			<WorkToMake>18000</WorkToMake>
 			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
 		</statBases>
-		<!-- 取得方式: 交易 - 不可製造 -->
-		<recipeMaker IsNull="True" />
+		<!-- 解鎖: 反衝式槍機 + 開拓裝備 -->
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>BlowbackOperation</li>
+				<li>DMS_EquipmentAdvanced</li>
+			</researchPrerequisites>
+		</recipeMaker>
 		<costList>
 			<Tungsteel>30</Tungsteel>
 			<ComponentStamped>1</ComponentStamped>

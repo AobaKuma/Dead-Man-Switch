@@ -110,6 +110,10 @@
           <def>StartingResearch</def>
           <project>DMS_Automatroid</project>
         </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMS_Material</project>
+        </li>
         <li Class="ScenPart_ForcedHediff">
           <def>ForcedHediff</def>
           <chance>0.5</chance>

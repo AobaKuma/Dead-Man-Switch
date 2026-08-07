@@ -264,26 +264,20 @@
     </comps>
     <researchPrerequisites>
       <li>Stonecutting</li>
-      <li>DMS_Autofacturer</li>
+      <li>DMS_Material</li>
     </researchPrerequisites>
     <modExtensions>
       <li Class="Fortified.ModExtension_AutoWorkTable">
-        <workAmountPerStage>2000</workAmountPerStage>
+        <workAmountPerStage>5000</workAmountPerStage>
+        <autoEjectProducts>true</autoEjectProducts>
         <phaseEffecter_east>DMS_Effect_Printer_East</phaseEffecter_east>
         <phaseEffecter_west>DMS_Effect_Printer_West</phaseEffecter_west>
         <phaseEffecter_north>DMS_Effect_Printer_North</phaseEffecter_north>
         <phaseEffecter_south>DMS_Effect_Printer_South</phaseEffecter_south>
-        <skills>
-          <li>
-            <key>Crafting</key>
-            <value>4</value>
-          </li>
-        </skills>
       </li>
       <li Class="Fortified.ModExtension_RecipeInheritance">
         <inheritRecipesFrom>
           <li>TableButcher</li>
-          <li>TableStonecutter</li>
         </inheritRecipesFrom>
       </li>
     </modExtensions>

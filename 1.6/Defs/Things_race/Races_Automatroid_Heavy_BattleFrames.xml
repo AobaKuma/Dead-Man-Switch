@@ -29,6 +29,12 @@
       <AimingDelayFactor>1.1</AimingDelayFactor>
       <!-- 敘述的「相當程度的負載能力」：背負彈藥與備用武器 -->
       <CarryingCapacity>110</CarryingCapacity>
+      <!-- 商隊速度加成。需搭配 Fortified 框架的
+           Patch_CaravanBonusUtility_HasCaravanBonus（原版此判定限定 Humanlike）。
+           梯度：小猛瑪 1.5（專職運輸車）> 運輸框架 1.25（後勤改裝）> 戰鬥夥伴 1.15。
+           注意本機另有 CaravanRidingSpeedFactor 1.3，兩者在
+           CaravanTicksPerMoveUtility 中是各自獨立相乘的。 -->
+      <CaravanBonusSpeedFactor>1.15</CaravanBonusSpeedFactor>
     </statBases>
     <modExtensions>
       <li Class="Fortified.MechWeaponExtension">

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: make any stone blocks x4 -->
+  <DMS_AutoMill_CutBlocksAny_x4.label>石材加工x4</DMS_AutoMill_CutBlocksAny_x4.label>
+  <!-- EN: Cut 4 rock chunks into usable stone blocks. -->
+  <DMS_AutoMill_CutBlocksAny_x4.description>將4塊石塊加工成有用的石磚。</DMS_AutoMill_CutBlocksAny_x4.description>
+  <!-- EN: Cutting stone blocks from 4 chunks. -->
+  <DMS_AutoMill_CutBlocksAny_x4.jobString>正將4塊石塊加工成石磚。</DMS_AutoMill_CutBlocksAny_x4.jobString>
+
+  <!-- EN: make sandstone blocks x4 -->
+  <DMS_AutoMill_CutBlocksSandstone_x4.label>製作砂岩磚x4</DMS_AutoMill_CutBlocksSandstone_x4.label>
+  <!-- EN: Cuts 4 sandstone chunks into usable blocks. -->
+  <DMS_AutoMill_CutBlocksSandstone_x4.description>將4塊砂岩塊製作成有用的石磚。</DMS_AutoMill_CutBlocksSandstone_x4.description>
+  <!-- EN: Cutting stone blocks from 4 chunks. -->
+  <DMS_AutoMill_CutBlocksSandstone_x4.jobString>正將4塊石塊加工成石磚。</DMS_AutoMill_CutBlocksSandstone_x4.jobString>
+
+  <!-- EN: make granite blocks x4 -->
+  <DMS_AutoMill_CutBlocksGranite_x4.label>製作花崗岩磚x4</DMS_AutoMill_CutBlocksGranite_x4.label>
+  <!-- EN: Cuts 4 granite chunks into usable blocks. -->
+  <DMS_AutoMill_CutBlocksGranite_x4.description>將4塊花崗岩塊製作成有用的石磚。</DMS_AutoMill_CutBlocksGranite_x4.description>
+  <!-- EN: Cutting stone blocks from 4 chunks. -->
+  <DMS_AutoMill_CutBlocksGranite_x4.jobString>正將4塊石塊加工成石磚。</DMS_AutoMill_CutBlocksGranite_x4.jobString>
+
+  <!-- EN: make limestone blocks x4 -->
+  <DMS_AutoMill_CutBlocksLimestone_x4.label>製作石灰岩磚x4</DMS_AutoMill_CutBlocksLimestone_x4.label>
+  <!-- EN: Cuts 4 limestone chunks into usable blocks. -->
+  <DMS_AutoMill_CutBlocksLimestone_x4.description>將4塊石灰岩塊製作成有用的石磚。</DMS_AutoMill_CutBlocksLimestone_x4.description>
+  <!-- EN: Cutting stone blocks from 4 chunks. -->
+  <DMS_AutoMill_CutBlocksLimestone_x4.jobString>正將4塊石塊加工成石磚。</DMS_AutoMill_CutBlocksLimestone_x4.jobString>
+
+  <!-- EN: make slate blocks x4 -->
+  <DMS_AutoMill_CutBlocksSlate_x4.label>製作板岩磚x4</DMS_AutoMill_CutBlocksSlate_x4.label>
+  <!-- EN: Cuts 4 slate chunks into usable blocks. -->
+  <DMS_AutoMill_CutBlocksSlate_x4.description>將4塊板岩塊製作成有用的石磚。</DMS_AutoMill_CutBlocksSlate_x4.description>
+  <!-- EN: Cutting stone blocks from 4 chunks. -->
+  <DMS_AutoMill_CutBlocksSlate_x4.jobString>正將4塊石塊加工成石磚。</DMS_AutoMill_CutBlocksSlate_x4.jobString>
+
+  <!-- EN: make marble blocks x4 -->
+  <DMS_AutoMill_CutBlocksMarble_x4.label>製作大理石磚x4</DMS_AutoMill_CutBlocksMarble_x4.label>
+  <!-- EN: Cuts 4 marble chunks into usable blocks. -->
+  <DMS_AutoMill_CutBlocksMarble_x4.description>將4塊大理石塊製作成有用的石磚。</DMS_AutoMill_CutBlocksMarble_x4.description>
+  <!-- EN: Cutting stone blocks from 4 chunks. -->
+  <DMS_AutoMill_CutBlocksMarble_x4.jobString>正將4塊石塊加工成石磚。</DMS_AutoMill_CutBlocksMarble_x4.jobString>
+
+</LanguageData>

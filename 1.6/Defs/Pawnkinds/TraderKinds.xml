@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <TraderKindDef>
@@ -140,7 +140,7 @@
       <!-- 無法自行製造的機兵武器: 保證派系基地買得到 -->
       <li Class="StockGenerator_Tag">
         <tradeTag>DMS_WeaponUncraftable</tradeTag>
-        <thingDefCountRange>3~5</thingDefCountRange>
+        <thingDefCountRange>2~4</thingDefCountRange>
         <countRange>1~2</countRange>
       </li>
 
@@ -551,7 +551,7 @@
       <!-- 無法自行製造的機兵武器: 武器商是主要取得管道, 保證上架 -->
       <li Class="StockGenerator_Tag">
         <tradeTag>DMS_WeaponUncraftable</tradeTag>
-        <thingDefCountRange>5~8</thingDefCountRange>
+        <thingDefCountRange>3~5</thingDefCountRange>
         <countRange>1~3</countRange>
       </li>
       <li Class="StockGenerator_Category">

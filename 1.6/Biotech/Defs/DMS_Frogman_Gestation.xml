@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================= -->
+  <!-- 蛙人的生產鏈：                                                 -->
+  <!--   人造肌肉艙 製作胚胎 → ①人工移植給代孕者 ②放入培育艙          -->
+  <!--   → 孕育完成落成二次發育體 → 5 天後轉為休眠艙 → 機械師接管      -->
+  <!-- ============================================================= -->
+
+  <!-- 導向發育基因：帶著它的胚胎不會生出嬰兒，而是長成蛙人機體。 -->
+  <GeneDef>
+    <defName>DMS_Gene_FrogmanGestation</defName>
+    <label>frogman gestation</label>
+    <labelShortAdj>frogman</labelShortAdj>
+    <description>The directed development sequence of an XM132 artificial military organism. Written into an embryo, it overrides normal gestation entirely: the mesonuclear substrate lays down a sealed synthetic-mechanical frame in place of human tissue, and drives itself toward one fixed adult form without any external guidance.\n\nA carrier brought to term produces a biomatroid larva rather than a child. The larva forms a gestation pod around itself and finishes developing outside the womb.\n\nThe sequence is inert in any other context. It cannot be inherited or expressed in a living body.\n\nColonial fleet law lists AMO development sequences as prohibited articles. Manufacture, transfer and use carry the same sentence, and fleets destroy production chains found on settled worlds rather than seize them.</description>
+    <iconPath>UI/Gene/Gene_Wetware</iconPath>
+    <displayOrderInCategory>81</displayOrderInCategory>
+    <biostatMet>-18</biostatMet>
+    <!-- 不參與任何隨機基因組生成；編輯器裡的隱藏由框架的 IHiddenGeneSource 負責。 -->
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    <biostatCpx>3</biostatCpx>
+    <modExtensions>
+      <li Class="DMS.MechBirthExtension">
+        <productDef>DMS_SynthFormingPod</productDef>
+        <failureThingDef>Artifuscle</failureThingDef>
+        <failureThingCount>10~15</failureThingCount>
+        <filthDef>Filth_AmnioticFluid</filthDef>
+        <filthCount>5~10</filthCount>
+        <exhaustBirther>true</exhaustBirther>
+        <letterLabel>Larva delivered</letterLabel>
+        <letterText>Gestation of {PAWN_labelShort} is complete. The embryo produced a biomatroid larva, which has formed a gestation pod around itself.\n\nThe pod needs no power or maintenance and will finish developing on its own in a few days. It cannot defend itself, and can be uninstalled and moved to a safer place.</letterText>
+        <failLetterLabel>Gestation failed</failLetterLabel>
+        <failLetterText>The biomatroid carried by {PAWN_labelShort} failed to seal during final development. Only unusable tissue remains.</failLetterText>
+      </li>
+      <!-- 培育艙裡不要顯示人類胎兒。原版會強制覆寫 drawSize，尺寸請畫進 PNG 留白。 -->
+      <li Class="Fortified.ModExtension_VatEmbryoGraphic">
+        <earlyStage>
+          <texPath>Things/Resource/Wetware/Embryo</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </earlyStage>
+        <lateStage>
+          <texPath>Things/Synthroid/SynthForming</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </lateStage>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <!-- 二次發育體：孕育完成後的中間形態，純計時 5 天後轉為休眠艙。 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_SynthFormingPod</defName>
+    <label>gestation pod</label>
+    <description>A biomatroid larva sealed inside the mineral pod it formed around itself after birth. Development continues inside: muscle bundles lay down over the frame, the outer seal cures, and the control lattice organizes itself. The mesonuclear substrate runs the whole process on its own, and needs no power, feedstock or supervision.\n\nThe pod swells as the larva matures, and flexes in wind. It cannot defend itself, and breaking it destroys the biomatroid inside. It is light enough to be uninstalled and carried elsewhere.</description>
+    <thingClass>DMS.Building_SecondaryGestation</thingClass>
+    <graphicData>
+      <texPath>Things/Synthroid/SynthForming</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutPlant</shaderType>
+      <drawSize>(1.6,1.6)</drawSize>
+      <shadowData>
+        <volume>(0.3,0.25,0.3)</volume>
+        <offset>(0,0,-0.15)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.1,0.1,0.8,0.8)</rect>
+      </damageData>
+    </graphicData>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <!-- MapMeshOnly：本體印進地圖網格才吃得到 CutoutPlant 的搖曳；
+         進度條改在 DrawExtraSelectionOverlays 畫，選取時才出現。 -->
+    <drawerType>MapMeshOnly</drawerType>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>30</pathCost>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <neverMultiSelect>true</neverMultiSelect>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+      <Mass>25</Mass>
+    </statBases>
+    <building>
+      <isInert>true</isInert>
+      <claimable>true</claimable>
+      <deconstructible>true</deconstructible>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <!-- 可卸除搬運：發育體在背包／地上時不計時，重新安裝後才繼續。 -->
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <!-- 被打壞＝整具報廢，只留下廢料；拆除同樣拿不回機體。 -->
+    <killedLeavings>
+      <Artifuscle>25</Artifuscle>
+    </killedLeavings>
+    <modExtensions>
+      <li Class="DMS.ModExtension_SecondaryGestation">
+        <resultDef>DMS_MechCapsule_Frogman</resultDef>
+        <gestationTicks>300000</gestationTicks>   <!-- 5 天 -->
+        <visualSizeRange>0.3~1.0</visualSizeRange>
+        <anchorBottom>true</anchorBottom>
+        <windSway>true</windSway>
+        <randomPositionJitter>0.06</randomPositionJitter>
+        <visualGrowthSteps>24</visualGrowthSteps>
+        <claimByPlayerOnSpawn>true</claimByPlayerOnSpawn>
+        <completedLetterLabel>Frogman formed</completedLetterLabel>
+        <completedLetterText>The gestation pod has opened. The XM132 Frogman inside has reached its adult form, sealed and intact, and is holding in dormancy inside its capsule.\n\nA mechanitor must take control of it before it will respond.</completedLetterText>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- 胚胎本體：繼承原版 HumanEmbryo，所以人工移植與培育艙兩條路都能直接用。 -->
+  <ThingDef>
+    <defName>DMS_FrogmanEmbryo</defName>
+    <label>frogman embryo</label>
+    <description>A directed embryo carrying the XM132 development sequence. It is inert on its own. Brought to term by a human surrogate or cultured in a growth vat, it produces a biomatroid larva rather than a child.\n\nThe sequence overrides development completely, so the surrogate passes on none of her own genes. The mesonuclear substrate needs a host only for warmth and a blood supply, and colonial fleet doctrine used growth vats wherever they were available. Possession of a single embryo is enough to justify an interdiction.</description>
+    <thingClass>DMS.MechEmbryo</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <rotatable>false</rotatable>
+    <pathCost>15</pathCost>
+    <tickerType>Never</tickerType>
+    <graphicData>
+      <texPath>Things/Resource/Wetware/Embryo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.85,0.85)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Mass>0.5</Mass>
+      <Flammability>0.2</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+      <MarketValue>900</MarketValue>
+      <WorkToMake>0</WorkToMake>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_HasPawnSources" />
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+    <modExtensions>
+      <li Class="DMS.MechEmbryoExtension">
+        <fixedGenes>
+          <li>DMS_Gene_FrogmanGestation</li>
+        </fixedGenes>
+        <geneSetName>XM132 development sequence</geneSetName>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- 發育完成後的休眠艙。機械師可用 FFF 既有的接管流程啟動內部機兵。 -->
+  <ThingDef ParentName="FFF_MechCapsule_Small">
+    <defName>DMS_MechCapsule_Frogman</defName>
+    <label>dormant frogman</label>
+    <description>A newly matured XM132 Frogman, still folded inside the capsule it developed in. The organism is complete and sealed, but has never received a control signal. A mechanitor can take control of it. Anyone else can only break the capsule open and scrap what is inside.</description>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>60</Mass>
+    </statBases>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_MechCapsule">
+        <spawnChance>1</spawnChance>
+        <weaponChance>0</weaponChance>
+        <!-- PawnGenOption 使用自訂載入器：節點名＝PawnKindDef，內容＝權重。
+             PawnGenOption loads as <PawnKindDefName>weight</PawnKindDefName>. -->
+        <possibleGeneratePawn>
+          <DMS_Mech_Frogman>1</DMS_Mech_Frogman>
+        </possibleGeneratePawn>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- 製造胚胎：人造肌肉艙。 -->
+  <RecipeDef>
+    <defName>DMS_Make_FrogmanEmbryo</defName>
+    <label>gestate frogman embryo</label>
+    <description>Assemble a directed embryo carrying the XM132 development sequence. The embryo must then be brought to term in a growth vat or implanted into a surrogate. It produces a biomatroid larva, which needs several more days in a gestation pod before it reaches its adult form.</description>
+    <jobString>Gestating frogman embryo.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <recipeUsers>
+      <li>DMS_TableArtifuscle</li>
+    </recipeUsers>
+    <researchPrerequisite>DMS_Occultech_Frogman</researchPrerequisite>
+    <workSkill>Intellectual</workSkill>
+    <skillRequirements>
+      <Intellectual>8</Intellectual>
+    </skillRequirements>
+    <workAmount>180</workAmount>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Frogman</ThingDef>
+      <GeneDef>DMS_Gene_FrogmanGestation</GeneDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasfiber</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMS_CombatRation</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasfiber</li>
+        <li>DMS_CombatRation</li>
+        <li>Tungsteel</li>
+        <li>Neurocomputer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <DMS_FrogmanEmbryo>1</DMS_FrogmanEmbryo>
+    </products>
+  </RecipeDef>
+
+</Defs>

@@ -41,6 +41,25 @@
     <prioritizeSustains>true</prioritizeSustains>
   </WorkGiverDef>
 
+  <!-- 自動磨床的上下料屬於搬運工作。
+       只有 requiredGiverWorkType 為 Hauling 的配方會走這條 WorkGiver。 -->
+  <WorkGiverDef>
+    <defName>DMS_Operate_Haul</defName>
+    <label>Load Machine</label>
+    <giverClass>Fortified.WorkGiver_DoAutonomousBill</giverClass>
+    <workType>Hauling</workType>
+    <priorityInType>100</priorityInType>
+    <fixedBillGiverDefs>
+      <li>DMS_AutoMill</li>
+    </fixedBillGiverDefs>
+    <verb>Load</verb>
+    <gerund>Loading</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
   <ThingDef ParentName="BenchBase" Name="DMS_BenchBase" Abstract="True">
     <thingClass>Building_WorkTable</thingClass>
     <castEdgeShadows>true</castEdgeShadows>

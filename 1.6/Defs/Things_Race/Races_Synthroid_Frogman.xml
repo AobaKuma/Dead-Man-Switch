@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================= -->
+  <!-- XM132 Frogman 蛙人                                            -->
+  <!-- 軍用人工生物（AMOs）：介核生物設計，自體定向發育為特定成體型態。 -->
+  <!-- 專屬軀體 DMS_Frogman（人類內臟＋合成骨架，無胃），男性體型外殼， -->
+  <!-- 靠胚胎培養而非機兵培育器生產。                                  -->
+  <!-- ============================================================= -->
+  <ThingDef ParentName="BaseAutomatroidHumanRace">
+    <defName>DMS_Mech_Frogman</defName>
+    <label>Frogman</label>
+    <description>The XM132 Frogman is the earliest artificial military organism on known record. Its mesonuclear biological design lets it be cultured in any environment and develop itself into designated adult.\n\nIn the Earth era, such biomatroid AMOs represented was briefly held to be the technology that would replace synthetic mechs and conventional mechanoids alike. A single severe incident ended that line of development for good.\n\nThe adult form is humanlike. It grows its own highly sealed composite plasfibre integument and a closed-loop internal cooling system. Every joint cavity is pressure-compensated and packed with dielectric gel, so it can swim in, wade ashore and go straight into combat. Earth-era marine corps used them for beach reconnaissance, harbour demolition and boarding actions.\n\nAMO technology is tightly controlled under the colonial fleet programme. That is why a bioweapon this well suited to local conditions remains a rare sight across the rim.</description>
+    <thingClass>Fortified.HumanlikeMech</thingClass>
+    <!-- 暫用現成的合成機械體男性素體；補上專屬蛙人素材後改成 Things/Synthroid/Body/Frogman 即可。 -->
+    <uiIconPath>Things/Synthroid/Body/Synthroid_Male_south</uiIconPath>
+    <statBases>
+      <MarketValue>2400</MarketValue>
+      <MoveSpeed>5.4</MoveSpeed>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.45</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.6</ArmorRating_Heat>
+      <StaggerDurationFactor>0.35</StaggerDurationFactor>
+      <EMPResistance MayRequire="Ludeon.Rimworld.Biotech">4</EMPResistance>                       <!--密封艙體，EMP抵抗力更高-->
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
+      <ControlTakingTime MayRequire="Ludeon.Rimworld.Biotech">25</ControlTakingTime>
+      <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
+    </statBases>
+    <inspectorTabs Inherit="False">
+      <li>ITab_Pawn_Health</li>
+      <li>ITab_Pawn_Needs</li>
+      <li>ITab_Pawn_FormingCaravan</li>
+      <li>ITab_Pawn_Gear</li>
+      <li>ITab_Pawn_Log</li>
+    </inspectorTabs>
+    <tools>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9.5</power>
+        <cooldownTime>1.8</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9.5</power>
+        <cooldownTime>1.8</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <race>
+      <mechWeightClass>Light</mechWeightClass>
+      <renderTree>HumanlikeMech</renderTree>
+      <thinkTreeMain>DMS_HumanlikeMech</thinkTreeMain>
+      <makesFootprints>true</makesFootprints>
+      <body>DMS_Frogman</body>
+      <baseBodySize>1.2</baseBodySize>
+      <baseHealthScale>1.2</baseHealthScale>
+      <mechFixedSkillLevel>10</mechFixedSkillLevel>
+      <mechEnabledWorkTypes>
+        <li>Hauling</li>
+        <li>Firefighter</li>
+        <li>Mining</li>
+        <li>Construction</li>
+      </mechEnabledWorkTypes>
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Legionary_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Legionary_Death</soundDeath>
+          <soundCall>Pawn_Mech_Legionary_Call</soundCall>
+        </li>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>100</minAge>
+          <soundWounded>Pawn_Mech_Legionary_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Legionary_Death</soundDeath>
+          <soundCall>Pawn_Mech_Legionary_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_MechApparel" />
+      <!-- 體內口糧艙：供 DMS_FrogmanRationRecovery 消耗。 -->
+      <li Class="DMS.CompProperties_RationMagazine">
+        <rationDef>DMS_CombatRation</rationDef>
+        <maxRations>4</maxRations>
+        <startingRations>1</startingRations>
+        <loadTicks>240</loadTicks>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.TurretMannableExtension" />
+      <li Class="Fortified.HumanlikeMechExtension">
+        <canChangeHairStyle>false</canChangeHairStyle>
+        <bodyTypeOverride>Male</bodyTypeOverride>
+        <headTypeOverride>Male_AverageNormal</headTypeOverride>
+        <headGraphic>
+          <texPath>Things/Synthroid/frogmanHead</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.6</drawSize>
+        </headGraphic>
+        <headGraphicHaired>
+          <texPath>Things/Synthroid/frogmanHead</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.6</drawSize>
+        </headGraphicHaired>
+        <headOffset>(0,0,0)</headOffset>
+        <skills>
+          <li>
+            <skill>Shooting</skill>
+            <range>10~15</range>
+          </li>
+          <li>
+            <skill>Melee</skill>
+            <range>12~17</range>
+          </li>
+          <li>
+            <skill>Construction</skill>
+            <range>8~12</range>
+          </li>
+        </skills>
+      </li>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>false</EnableWeaponFilter>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Spacer</li>
+          <li>Industrial</li>
+          <li>Medieval</li>
+        </UsableTechLevels>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind" Name="DMS_BaseFrogmanKind">
+    <defName>DMS_Mech_Frogman</defName>
+    <label>frogman</label>
+    <race>DMS_Mech_Frogman</race>
+    <isFighter>true</isFighter>
+    <combatPower>180</combatPower>
+    <canStrip>true</canStrip>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Synthroid/frogman</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.6</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Synthroid/frogman</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.6</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>2000~6000</weaponMoney>
+    <weaponTags>
+      <li>A_SG_LongRifle</li>
+      <li>A_PDW</li>
+    </weaponTags>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+    <controlGroupPortraitZoom>1.2</controlGroupPortraitZoom>
+    <abilities>
+      <li>DMS_FrogmanRationRecovery</li>
+    </abilities>
+  </PawnKindDef>
+
+</Defs>

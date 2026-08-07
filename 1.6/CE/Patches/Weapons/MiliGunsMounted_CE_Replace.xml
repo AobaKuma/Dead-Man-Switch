@@ -2,12 +2,8 @@
 
 <Patch>
 
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="DMS_Mech_Hyrax"]/comps/li[@Class="Fortified.CompProperties_VehicleWeapon"]/defaultWeapon</xpath>
-		<value>
-			<defaultWeapon>DMS_SubMachineGunMounted</defaultWeapon>
-		</value>
-	</Operation>
+	<!-- 蹄兔在 CE 下沿用 DMS_SubMachineGunMounted（於 MiliGunsMounted_CE.xml 取得 CE 屬性與 .22LR AmmoUser），
+	     所以這裡不需要替換武器。原本有一條把它換成自己的空操作，已移除。 -->
 
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="DMS_Mech_Mammoth"]/comps/li[@Class="Fortified.CompProperties_VehicleWeapon"]/defaultWeapon</xpath>

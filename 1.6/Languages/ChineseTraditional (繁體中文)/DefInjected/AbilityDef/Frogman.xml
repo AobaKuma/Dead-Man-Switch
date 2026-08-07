@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Metabolic Surge -->
+  <DMS_FrogmanRationRecovery.label>代謝突增</DMS_FrogmanRationRecovery.label>
+  <!-- EN: Feed one loaded C-Ration into the frogman's internal bioreactor... -->
+  <DMS_FrogmanRationRecovery.description>將一份已裝填的 C 口糧送入蛙人體內的生化反應爐。機體會一次燒完整包，把電池充滿，並閉合所有現存部位上的傷口。\n\n已摧毀的部位無法以此方式再生。</DMS_FrogmanRationRecovery.description>
+  <!-- EN: trigger metabolic surge -->
+  <DMS_FrogmanRationRecovery.verbProperties.label>啟動代謝突增</DMS_FrogmanRationRecovery.verbProperties.label>
+
+</LanguageData>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS.SecondaryGestationProgress>发育进度：{0}</DMS.SecondaryGestationProgress>
+  <DMS.SecondaryGestationRemaining>距离完成：{0}</DMS.SecondaryGestationRemaining>
+
+  <DMS.RationMagazineContents>{RATION}：{COUNT} / {MAX}</DMS.RationMagazineContents>
+  <DMS.LoadRationLabel>装填{0}</DMS.LoadRationLabel>
+  <DMS.LoadRationDesc>命令这具机兵取回一份{RATION}，装入体内的生化反应炉。容量：{MAX}。</DMS.LoadRationDesc>
+  <DMS.LoadRationFull>生化反应炉已满。</DMS.LoadRationFull>
+  <DMS.LoadRationNoneAvailable>附近没有可取得的{0}。</DMS.LoadRationNoneAvailable>
+
+  <DMS.RationRecoveryNoMagazine>这具机兵没有生化反应炉。</DMS.RationRecoveryNoMagazine>
+  <DMS.RationRecoveryNoRations>未装填{0}。</DMS.RationRecoveryNoRations>
+  <DMS.RationRecoveryDone>{PAWN}消耗了一份口粮。电力已充满，{COUNT} 处伤口闭合。</DMS.RationRecoveryDone>
+
+</LanguageData>

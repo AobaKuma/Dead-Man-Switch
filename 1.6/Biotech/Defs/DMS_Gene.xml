@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-<GeneDef>
+  <GeneDef>
     <defName>DMS_Wetware</defName>
     <label>wetware gestation</label>
     <labelShortAdj>wetware</labelShortAdj>
-    <description>This is a special directional developmental gene that is designed to cause the embryo to mutate and develop in a predetermined manner during the developmental stage. And grow into a biological wetware computer that is compatible with mechanical interfaces.</description>
+    <description>This is a special directional developmental gene that is designed to cause the embryo to mutate and develop in a predetermined manner during the developmental stage. And grow into a biological wetware computer that is compatible with mechanical interfaces.\n\nThe colonial fleets sealed the technique rather than destroy it, and prohibit its circulation and use outright. Fleets act against biomatroid production on settled worlds directly, and do not distinguish between the faction running the line and the faction that sold them the file.</description>
     <iconPath>UI/Gene/Gene_Wetware</iconPath>
     <displayOrderInCategory>80</displayOrderInCategory>
     <biostatMet>-15</biostatMet>
+    <!-- 不參與任何隨機基因組生成；編輯器裡的隱藏由框架的 IHiddenGeneSource 負責。 -->
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
     <modExtensions>
       <li Class="Fortified.PregnancyOutcomeExtension">
-          <applyIfNotGeneticMother>true</applyIfNotGeneticMother>
-          <thingDef>Neurocomputer</thingDef>
-          <letterText>{PAWN_labelShort} gave birth to {ITEM_label}.</letterText>
+        <applyIfNotGeneticMother>true</applyIfNotGeneticMother>
+        <thingDef>Neurocomputer</thingDef>
+        <letterText>{PAWN_labelShort} gave birth to {ITEM_label}.</letterText>
+      </li>
+      <!-- 培育艙裡不要顯示人類胎兒。原版會強制覆寫 drawSize，尺寸請畫進 PNG 留白。 -->
+      <li Class="Fortified.ModExtension_VatEmbryoGraphic">
+        <earlyStage>
+          <texPath>Things/Resource/Wetware/Ovum</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </earlyStage>
+        <lateStage>
+          <texPath>Things/Resource/Wetware/Embryo</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </lateStage>
       </li>
     </modExtensions>
   </GeneDef>

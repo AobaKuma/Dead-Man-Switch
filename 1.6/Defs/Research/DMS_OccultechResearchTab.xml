@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Occultech 多類別研究分頁（框架:Fortified.ModExtension_UniqueResearchTab） -->
+  <ResearchTabDef>
+    <defName>DMS_ExpeditionalKnowledge</defName>
+    <label>Occultech</label>
+    <generalTitle>Expeditional Knowledge</generalTitle>
+    <generalDescription>Advanced technologies held by colonial fleets but not openly used or circulated. mostly prohibited from circulation due to their danger or the potential for irreversible and far-reaching impact on the local world.</generalDescription>
+    <visibleByDefault>true</visibleByDefault>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_UniqueResearchTab">
+        <categories>
+          <li>DMS_Restricted</li>
+          <li>DMS_Sealed</li>
+          <li>DMS_Occulted</li>
+        </categories>
+      </li>
+    </modExtensions>
+  </ResearchTabDef>
+
+  <KnowledgeCategoryDef>
+    <defName>DMS_Restricted</defName>
+    <label>restricted</label>
+    <color>(0.6, 0.6, 0.4, 1)</color>
+    <texPath>UI/DMS/ResearchCategory_Restricted</texPath>
+  </KnowledgeCategoryDef>
+
+  <KnowledgeCategoryDef>
+    <defName>DMS_Sealed</defName>
+    <label>sealed</label>
+    <color>(1, 0.5, 0.1, 1)</color>
+    <texPath>UI/DMS/ResearchCategory_Sealed</texPath>
+    <overflowCategory>DMS_Restricted</overflowCategory>
+  </KnowledgeCategoryDef>
+
+  <KnowledgeCategoryDef>
+    <defName>DMS_Occulted</defName>
+    <label>occulted</label>
+    <color>(1, 0, 0, 1)</color>
+    <texPath>UI/DMS/ResearchCategory_Occulted</texPath>
+    <overflowCategory>DMS_Sealed</overflowCategory>
+  </KnowledgeCategoryDef>
+</Defs>

@@ -544,7 +544,7 @@
   <ThingDef ParentName="BaseModificationItem">
     <defName>DMS_BF_ExtendCargo</defName>
     <label>Extended Cargo Rack</label>
-    <description>Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants.</description>
+    <description>Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frames and their variants, and a fitted unit hauls enough to speed up a caravan it travels with. The added weight slows the unit down on foot.</description>
     <descriptionHyperlinks>
       <HediffDef>DMS_BF_ExtendCargo</HediffDef>
       <ThingDef>DMS_Mech_BattleFrame</ThingDef>
@@ -597,7 +597,7 @@
     <defName>DMS_BF_ExtendCargo</defName>
     <hediffClass>HediffWithComps</hediffClass>
     <label>Extended Cargo Rack</label>
-    <description>Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants.</description>
+    <description>Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frames and their variants, and a fitted unit hauls enough to speed up a caravan it travels with. The added weight slows the unit down on foot.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_BF_ExtendCargo</ThingDef>
       <ThingDef>DMS_Mech_BattleFrame</ThingDef>
@@ -620,6 +620,12 @@
           <CarryWeight MayRequire="ceteam.combatextended">120</CarryWeight>
           <CarryingCapacity>120</CarryingCapacity>
           <MechEnergyUsageFactor>0.1</MechEnergyUsageFactor>
+          <!-- 商隊速度加成（加算）。地圖上的 MoveSpeed 因負重降到 0.8，
+               但在世界地圖上決定行進速度的是載運能力而非步態，故為正加成。
+               需搭配 Fortified 框架的 Patch_CaravanBonusUtility_HasCaravanBonus。
+               裝上後：戰鬥夥伴 1.15→1.30、運輸框架 1.25→1.40、
+               中繼指揮/鬣蜥 1.00→1.15，皆仍低於專職運輸車小猛瑪的 1.5。 -->
+          <CaravanBonusSpeedFactor>0.15</CaravanBonusSpeedFactor>
         </statOffsets>
       </li>
     </stages>

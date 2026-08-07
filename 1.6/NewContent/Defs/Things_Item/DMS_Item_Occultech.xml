@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 固態零點能，一種只有能由玩家透過零點能發生器製造而無法從其他方式獲取的特殊物品，默認在遊戲中隱藏-->
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMS_SolitaryZPM</defName>
+    <label>solidified enegry</label>
+    <description>一種透過約束場固化為穩定物質態的實體能量，是人類得以解明其運作原理的超凡技術之一，也是大部分超凡造物的能量來源。不過對於大多數現有的人類技術而言無法直接利用其內部的能量。</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_TableMachinePrinter</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Resource/SolitaryZPM</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>25</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <RoyalFavorValue>1</RoyalFavorValue>
+      <MaxHitPoints>10</MaxHitPoints>
+      <MarketValue>200</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>10.0</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+</Defs>

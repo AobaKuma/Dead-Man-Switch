@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS.SecondaryGestationProgress>Development: {0}</DMS.SecondaryGestationProgress>
+  <DMS.SecondaryGestationRemaining>Time until complete: {0}</DMS.SecondaryGestationRemaining>
+
+  <DMS.RationMagazineContents>{RATION}: {COUNT} / {MAX}</DMS.RationMagazineContents>
+  <DMS.LoadRationLabel>Load {0}</DMS.LoadRationLabel>
+  <DMS.LoadRationDesc>Order this mech to fetch a {RATION} and load it into its bioreactor. Capacity: {MAX}.</DMS.LoadRationDesc>
+  <DMS.LoadRationFull>Bioreactor is full.</DMS.LoadRationFull>
+  <DMS.LoadRationNoneAvailable>No reachable {0}.</DMS.LoadRationNoneAvailable>
+
+  <DMS.RationRecoveryNoMagazine>This mech has no bioreactor.</DMS.RationRecoveryNoMagazine>
+  <DMS.RationRecoveryNoRations>No {0} loaded.</DMS.RationRecoveryNoRations>
+  <DMS.RationRecoveryDone>{PAWN} consumed a ration. Cells recharged, {COUNT} wounds sealed.</DMS.RationRecoveryDone>
+
+</LanguageData>

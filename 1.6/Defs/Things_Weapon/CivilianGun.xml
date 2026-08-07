@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!-- 口袋手槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_KnuckledusterRevolver</defName>
-		<!-- 取得方式: 探索(低烈度) / 交易 / 任務獎勵 -->
+		<!-- 取得方式: 自產 / 交易 / 探索(低烈度) / 任務獎勵 -->
 		<thingSetMakerTags>
 			<li>RewardStandardHighFreq</li>
 		</thingSetMakerTags>
@@ -22,7 +22,6 @@
 		</weaponTags>
 		<tradeTags>
 			<li>WeaponRanged</li>
-			<li>DMS_WeaponUncraftable</li>
 		</tradeTags>
 		<uiIconScale>1.8</uiIconScale>
 		<graphicData>
@@ -39,8 +38,13 @@
 			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
 			<WorkToMake>2000</WorkToMake>
 		</statBases>
-		<!-- 取得方式: 探索獎勵(低烈度) - 不可製造 -->
-		<recipeMaker IsNull="True" />
+		<!-- 解鎖: 槍械工藝 + 警用裝備 -->
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>Gunsmithing</li>
+				<li>DMS_EquipmentBasis</li>
+			</researchPrerequisites>
+		</recipeMaker>
 		<costList>
 			<Steel>20</Steel>
 		</costList>
@@ -96,9 +100,8 @@
 	<!-- 鎮暴機槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_MiniMachineGun</defName>
-		<!-- 取得方式: 交易 / 任務獎勵 -->
+		<!-- 取得方式: 自產 / 交易 / 任務獎勵 -->
 		<tradeTags>
-			<li>DMS_WeaponUncraftable</li>
 			<li>WeaponRanged</li>
 		</tradeTags>
 		<thingSetMakerTags>
@@ -141,8 +144,16 @@
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
 		</verbs>
-		<!-- 取得方式: 交易 - 不可製造 -->
-		<recipeMaker IsNull="True" />
+		<!-- 解鎖: 反衝式槍機 + 警用裝備 -->
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>6</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>BlowbackOperation</li>
+				<li>DMS_EquipmentBasis</li>
+			</researchPrerequisites>
+		</recipeMaker>
 		<costList>
 			<Steel>70</Steel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -177,7 +188,7 @@
 	<!-- 生存步槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_SurvivalRifle</defName>
-		<!-- 取得方式: 探索(低烈度) / 交易 / 任務獎勵 -->
+		<!-- 取得方式: 自產 / 交易 / 探索(低烈度) / 任務獎勵 -->
 		<thingSetMakerTags>
 			<li>RewardStandardHighFreq</li>
 		</thingSetMakerTags>
@@ -194,7 +205,6 @@
 		</weaponTags>
 		<tradeTags>
 			<li>WeaponRanged</li>
-			<li>DMS_WeaponUncraftable</li>
 		</tradeTags>
 		<graphicData>
 			<texPath>Things/Weapons/HumanWeapon/SurvivalRifle</texPath>
@@ -213,8 +223,13 @@
 		<equippedStatOffsets>
 		  <HuntingStealth>0.5</HuntingStealth>
 		</equippedStatOffsets>	
-		<!-- 取得方式: 探索獎勵(低烈度) - 不可製造 -->
-		<recipeMaker IsNull="True" />
+		<!-- 解鎖: 槍械工藝 + 警用裝備 -->
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>Gunsmithing</li>
+				<li>DMS_EquipmentBasis</li>
+			</researchPrerequisites>
+		</recipeMaker>
 		<costList>
 			<Steel>35</Steel>
 			<ComponentIndustrial>1</ComponentIndustrial>
@@ -265,9 +280,8 @@
 	<!-- 鎮暴手槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_Revolver</defName>
-		<!-- 取得方式: 交易 / 任務獎勵 -->
+		<!-- 取得方式: 自產 / 交易 / 任務獎勵 -->
 		<tradeTags>
-			<li>DMS_WeaponUncraftable</li>
 			<li>WeaponRanged</li>
 		</tradeTags>
 		<thingSetMakerTags>
@@ -293,8 +307,13 @@
 			<li>Ranged</li>
 		</weaponClasses>
 		<soundInteract>Interact_Autopistol</soundInteract>
-		<!-- 取得方式: 交易 - 不可製造 -->
-		<recipeMaker IsNull="True" />
+		<!-- 解鎖: 槍械工藝 + 警用裝備 -->
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>Gunsmithing</li>
+				<li>DMS_EquipmentBasis</li>
+			</researchPrerequisites>
+		</recipeMaker>
 		<statBases>
 			<WorkToMake>5000</WorkToMake>
 			<Mass>2.1</Mass>
@@ -515,7 +534,7 @@
 	<!-- 獵象槍 -->
 	<ThingDef ParentName="DMS_BaseMakeableGun">
 		<defName>DMS_ElephantGun</defName>
-		<!-- 取得方式: 交易 / 任務獎勵 -->
+		<!-- 取得方式: 自產 / 交易 / 任務獎勵 -->
 		<thingSetMakerTags>
 			<li>RewardStandardCore</li>
 		</thingSetMakerTags>
@@ -531,7 +550,6 @@
 		</weaponTags>
 		<tradeTags>
 			<li>WeaponRanged</li>
-			<li>DMS_WeaponUncraftable</li>
 		</tradeTags>
 		<graphicData>
 			<texPath>Things/Weapons/HumanWeapon/ElephantGun</texPath>
@@ -550,8 +568,16 @@
 		<equippedStatOffsets>
 		  <MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
-		<!-- 取得方式: 交易 - 不可製造 -->
-		<recipeMaker IsNull="True" />
+		<!-- 解鎖: 槍械工藝 + 警用裝備 -->
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>Gunsmithing</li>
+				<li>DMS_EquipmentBasis</li>
+			</researchPrerequisites>
+		</recipeMaker>
 		<costList>
 			<Steel>80</Steel>
 			<WoodLog>50</WoodLog>

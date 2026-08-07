@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 蛙人：代謝突增。消耗一份裝填的 C 口糧，補滿電力並再生受損部位。 -->
+  <AbilityDef>
+    <defName>DMS_FrogmanRationRecovery</defName>
+    <label>Metabolic Surge</label>
+    <description>Feed one loaded C-Ration into the frogman's internal bioreactor. The chassis burns the entire packet at once, recharging its cells to full and sealing every wound on the parts it still has.\n\nDestroyed parts cannot be regrown this way.</description>
+    <iconPath>UI/Ability/FieldRepair</iconPath>
+    <cooldownTicksRange>15000</cooldownTicksRange>   <!-- 約 1/4 天 -->
+    <showPsycastEffects>false</showPsycastEffects>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    <aiCanUse>true</aiCanUse>
+    <targetRequired>false</targetRequired>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <label>trigger metabolic surge</label>
+      <drawAimPie>false</drawAimPie>
+      <warmupTime>2</warmupTime>
+      <violent>false</violent>
+      <targetable>false</targetable>
+      <requireLineOfSight>false</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="DMS.CompProperties_AbilityRationRecovery">
+        <rationCost>1</rationCost>
+        <refillEnergy>true</refillEnergy>
+        <healInjuries>true</healInjuries>
+        <healPermanentInjuries>true</healPermanentInjuries>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <!-- 機兵自己去把口糧搬回來裝進體內。 -->
+  <JobDef>
+    <defName>DMS_LoadRation</defName>
+    <driverClass>DMS.JobDriver_LoadRation</driverClass>
+    <reportString>loading rations.</reportString>
+  </JobDef>
+
+</Defs>

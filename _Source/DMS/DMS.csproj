@@ -30,6 +30,8 @@
     <Publicize Include="Assembly-CSharp:RimWorld.LordToil_Siege.SetAsDefender" />
     <Publicize Include="Assembly-CSharp:RimWorld.QuestPartActivable.Complete" />
     <Publicize Include="Assembly-CSharp:RimWorld.QuestPart_LendColonistsToFaction.Complete" />
+    <!-- Patch_Recipe_ImplantEmbryo_ApplyOnPawn 需要沿用原版的手術失敗判定。 -->
+    <Publicize Include="Assembly-CSharp:RimWorld.Recipe_Surgery.CheckSurgeryFail" />
 
   </ItemGroup>
   <ItemGroup>
