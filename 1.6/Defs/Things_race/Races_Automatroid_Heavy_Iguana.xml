@@ -99,6 +99,7 @@
       <li Class="Fortified.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
+          <li>DMS_MechWeaponTransHeavy</li>
           <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
           <li>A_MG_GrenadeLauncher</li>
           <li>A_SR_GrenadeLauncher</li>
@@ -346,6 +347,7 @@
       <li Class="Fortified.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
+          <li>DMS_MechWeaponTransHeavy</li>
           <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
           <li>A_MG_GrenadeLauncher</li>
           <li>A_SR_GrenadeLauncher</li>
