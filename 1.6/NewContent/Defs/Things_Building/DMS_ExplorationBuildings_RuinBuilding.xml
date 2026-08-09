@@ -180,4 +180,32 @@
     </costList>
   </ThingDef>
 
+  <!--（Shield generator） -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_LargeShieldGeneratorDestroyed</defName>
+    <label>ruined heavy shield generator</label>
+    <description>A ruined ultra-class energy shield generator. It's energy coils and projection circuits have corroded beyond repair. Breaking it down yields some metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/DMS_LargeShieldGenerator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(10,10)</drawSize>
+      <shadowData>
+        <volume>(5, 1, 5)</volume>
+      </shadowData>
+    </graphicData>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <size>(5,5)</size>
+    <rotatable>false</rotatable>
+    <uiIconScale>0.75</uiIconScale>
+    <pathCost>90</pathCost>
+    <statBases>
+      <MaxHitPoints>3000</MaxHitPoints>
+    </statBases>
+    <costList>
+      <ChunkSlagSteel>11</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
 </Defs>
