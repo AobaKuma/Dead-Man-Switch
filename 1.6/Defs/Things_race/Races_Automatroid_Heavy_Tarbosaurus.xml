@@ -165,6 +165,7 @@
       <li Class="Fortified.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
+		  <li>DMS_MechWeaponTransHeavy</li>
           <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
           <li>DMS_Tarbosaurus_Gun</li>
           <li>DMS_MechWeaponUltraHeavy</li>
