@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================= -->
+  <!-- 需要手術才能脫下的裝備 · 拆卸手術                                -->
+  <!-- 設計取向：安全但耗時。不做失敗判定、不造成傷害，裝備完好回收。      -->
+  <!-- 刻意不掛 researchPrerequisite：即使沒有封存檔案，也必須能夠把     -->
+  <!-- 俘虜或投誠者從別人替他關上的殼裡切出來。                          -->
+  <!-- ============================================================= -->
+  <RecipeDef>
+    <defName>DMS_RemoveBionicSuitHeavy</defName>
+    <label>Remove Heavy Bionic Suit</label>
+    <description>Cut a heavy bionic suit open and extract the pilot. Slow work, but it risks neither the patient nor the suit.</description>
+    <jobString>Removing heavy bionic suit.</jobString>
+    <workerClass>DMS.Recipe_RemoveSurgicalApparel</workerClass>
+    <workAmount>10000</workAmount>
+    <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+    <workSkill>Medicine</workSkill>
+    <workSkillLearnFactor>4</workSkillLearnFactor>
+    <effectWorking>Surgery</effectWorking>
+    <soundWorking>Recipe_Surgery</soundWorking>
+    <anesthetize>true</anesthetize>
+    <targetsBodyPart>false</targetsBodyPart>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <humanlikeOnly>true</humanlikeOnly>
+    <isViolation>false</isViolation>
+    <!-- 必定成功：資訊卡會顯示「不會失敗」 -->
+    <surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+    <surgeryOutcomeEffect IsNull="True" />
+    <skillRequirements>
+      <Medicine>8</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Apparel_BionicSuitHeavy</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+
+</Defs>

@@ -72,6 +72,138 @@
 		</apparel>
 	</ThingDef>
 
+	<!-- 重型仿生作戰服（I級封存科技解鎖，穿上後需手術脫下） -->
+	<ThingDef ParentName="ApparelBase">
+		<defName>DMS_Apparel_BionicSuitHeavy</defName>
+		<label>Heavy Bionic Suit</label>
+		<description>An unrefined prototype of the bionic suit. Anchoring its frame directly to the pilot's skeleton lets them bear and operate weapons far beyond an unaided soldier's strength.\nEvery artificial muscle bundle only draws properly with the suit fully closed, so once worn it can be taken off again only by surgery.\n\nThe colonial fleets list this as a class I sealed technology. Fielding it without someone of standing to answer for it will sour relations with them sooner or later.</description>
+		<techLevel>Spacer</techLevel>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Machining</soundWorking>
+			<recipeUsers>
+				<li>DMS_TableArtifuscle</li>
+			</recipeUsers>
+			<researchPrerequisite>DMS_Occultech_BionicSuitHeavy</researchPrerequisite>
+			<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>10</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Artifuscle>180</Artifuscle>
+			<Plasfiber>120</Plasfiber>
+			<Plasteel>80</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
+			<Chemfuel>60</Chemfuel>
+		</costList>
+		<tradeTags>
+			<li>DMS_Armor</li>
+		</tradeTags>
+		<graphicData>
+			<texPath>Things/Apparel/BionicSuitHeavy/Icon</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.4</drawSize>
+		</graphicData>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<statBases>
+			<WorkToMake>60000</WorkToMake>
+			<Mass>26</Mass>
+			<ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.78</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.95</ArmorRating_Heat>
+			<Insulation_Cold>96</Insulation_Cold>
+			<Insulation_Heat>30</Insulation_Heat>
+			<EquipDelay>90</EquipDelay>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Flammability>0</Flammability>
+		</statBases>
+		<useHitPoints>false</useHitPoints>
+		<equippedStatOffsets>
+			<MoveSpeed>0.9</MoveSpeed>
+			<CarryingCapacity>125</CarryingCapacity>
+			<PainShockThreshold>0.25</PainShockThreshold>
+			<VacuumResistance MayRequire="ludeon.rimworld.odyssey">0.4</VacuumResistance>
+			<ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>
+			<ToxicResistance>0.5</ToxicResistance>
+			<!-- 重裝代價：睡眠負債、精細作業與社交表現下降 -->
+			<RestFallRateFactor>0.45</RestFallRateFactor>
+			<WorkSpeedGlobal>-0.15</WorkSpeedGlobal>
+			<SocialImpact>-0.25</SocialImpact>
+		</equippedStatOffsets>
+		<apparel>
+			<bodyPartGroups>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Torso</li>
+				<li>Arms</li>
+				<li>Hands</li>
+				<li>Legs</li>
+				<li>Feet</li>
+			</bodyPartGroups>
+			<renderNodeProperties>
+				<li>
+					<nodeClass>DMS.PawnRenderNode_ApparelUniform</nodeClass>
+					<workerClass>DMS.PawnRenderNodeWorker_ApparelUniform_Body</workerClass>
+					<parentTagDef>ApparelBody</parentTagDef>
+					<texPath>Things/Apparel/BionicSuitHeavy/Apparel</texPath>
+					<baseLayer>0</baseLayer>
+					<drawData>
+						<dataNorth>
+							<layer>88</layer>
+						</dataNorth>
+					</drawData>
+				</li>
+			</renderNodeProperties>
+			<blocksAddedPartWoundGraphics>true</blocksAddedPartWoundGraphics>
+			<layers>
+				<li>OnSkin</li>
+				<li>Middle</li>
+				<li>Shell</li>
+			</layers>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+			<tags>
+				<li>DMS_HeavyArmor</li>
+			</tags>
+			<careIfWornByCorpse>false</careIfWornByCorpse>
+			<careIfDamaged>false</careIfDamaged>
+			<canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+			<canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+			<canBeGeneratedToSatisfyVacuumResistance>false</canBeGeneratedToSatisfyVacuumResistance>
+		</apparel>
+		<descriptionHyperlinks>
+			<RecipeDef>DMS_RemoveBionicSuitHeavy</RecipeDef>
+			<ResearchProjectDef>DMS_Occultech_BionicSuitHeavy</ResearchProjectDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="DMS.CompProperties_SurgicalApparel">
+				<removalRecipe>DMS_RemoveBionicSuitHeavy</removalRecipe>
+				<confirmBeforeWearing>true</confirmBeforeWearing>
+			</li>
+		</comps>
+		<modExtensions>
+			<!-- 伺服骨架：即使受傷也能維持最低限度的行動與操作能力 -->
+			<li Class="Fortified.ApparelExtension">
+				<pawnCapacityMinLevels>
+					<li>
+						<capacity>Moving</capacity>
+						<minLevel>0.7</minLevel>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<minLevel>0.7</minLevel>
+					</li>
+				</pawnCapacityMinLevels>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
 	<!-- DMS帽子 -->
 	<ThingDef ParentName="ApparelMakeableBase" Name="DMS_CapBase" Abstract="True">
 		<description>A soft cap for enlisted men for the times when helmet is not required.</description>

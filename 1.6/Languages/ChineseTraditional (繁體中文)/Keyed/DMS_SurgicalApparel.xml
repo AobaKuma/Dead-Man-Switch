@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- {0} 裝備, {1} 角色, {2} 拆卸手術 -->
+  <DMS_SurgicalApparel_WearConfirm>穿上後{0}會圍著{1}徹底閉合並錨定。無法透過常規方式脫下。在{1}活著時也無法被剝除，只能靠「{2}」手術取下。\n\n確定要繼續嗎？</DMS_SurgicalApparel_WearConfirm>
+
+  <!-- {0} 拆卸手術 -->
+  <DMS_SurgicalApparel_Inspect>無法脫下，需要「{0}」手術。</DMS_SurgicalApparel_Inspect>
+
+  <!-- {0} 角色, {1} 裝備 -->
+  <DMS_SurgicalApparel_Removed>已將{0}從{1}中拔除。</DMS_SurgicalApparel_Removed>
+
+</LanguageData>
