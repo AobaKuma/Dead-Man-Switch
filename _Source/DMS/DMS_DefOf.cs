@@ -13,10 +13,12 @@ namespace DMS
         }
         public static FactionDef DMS_Army;
         public static QuestScriptDef DMS_PromotionCeremony;
-        public static PawnKindDef DMS_Officer_Ceremonist;
+        public static QuestScriptDef DMS_Stele;
+		public static PawnKindDef DMS_Officer_Ceremonist;
         public static PawnKindDef DMS_Escort;
         public static ThingDef DMS_Shuttle;
-        public static TransportShipDef DMS_Ship_TransportShuttle;
+        public static ThingDef DMS_OccultechKey;
+		public static TransportShipDef DMS_Ship_TransportShuttle;
         public static JobDef DMS_ProcessQuestWorkable;
         public static RulePackDef DMS_QuestDocumentRules;
     }

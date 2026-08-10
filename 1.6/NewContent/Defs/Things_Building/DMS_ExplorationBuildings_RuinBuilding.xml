@@ -1,6 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <ThingDef ParentName="Wall">
+    <defName>DMS_ShipWallDestroyed</defName>
+    <label>ruined ship hull</label>
+    <description>A ruined heavily-reinforced wall of large spaceship.</description>
+    <uiIconPath>Things/Building/Linked/DMS_RuinedShipWall_MenuIcon</uiIconPath>
+    <designationCategory IsNull="True"/>
+    <graphicData>
+      <texPath>Things/Building/Linked/DMS_RuinedShipWall_Atlas</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <building>
+      <paintable>false</paintable>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <neverBuildable>true</neverBuildable>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <isAirtight>false</isAirtight>
+      <isStuffableAirtight>false</isStuffableAirtight>
+    </building>
+    <stuffCategories Inherit="False"/>
+    <costStuffCount>0</costStuffCount>
+    <useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <statBases>
+      <MaxHitPoints>5000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <MeditationFocusStrength>0</MeditationFocusStrength>
+    </statBases>
+    <comps Inherit="False"/>
+    <designationCategory>FFF_DevCategory</designationCategory>
+  </ThingDef>
+
+  <ThingDef ParentName="DoorBase">
+    <defName>DMS_ShipDoorDestroyed</defName>
+    <label>ruined ship door</label>
+    <description>A ruined heavily-reinforced door made of large spaceship.</description>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <thingClass>Building_SupportedDoor</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/Door/DMS_RuinedShipDoor_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+      <damageData>
+        <!--  no damage marks because they don't move with the door -->
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Ruin_Building/Door/DMS_RuinedShipDoor_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <DoorOpenSpeed>0.7</DoorOpenSpeed>
+    </statBases>
+    <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+    <rotatable>true</rotatable>
+    <building>
+      <paintable>false</paintable>
+      <deconstructible>false</deconstructible>
+      <neverBuildable>true</neverBuildable>
+      <claimable>false</claimable>
+      <unpoweredDoorOpenSpeedFactor>1.2</unpoweredDoorOpenSpeedFactor>
+      <isAirtight>false</isAirtight>
+      <isStuffableAirtight>false</isStuffableAirtight>
+      <draftAttackNonDeconstructable>false</draftAttackNonDeconstructable>
+      <isSupportDoor>true</isSupportDoor>
+      <doorTopGraphic>
+        <texPath>Things/Building/Ruin_Building/Door/DMS_RuinedShipDoor_Top</texPath>
+        <graphicClass>Graphic_Random</graphicClass>
+        <drawSize>(2,2)</drawSize>
+      </doorTopGraphic>
+      <doorTopHorizontalOffset>(0,0,0)</doorTopHorizontalOffset>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <stuffCategories Inherit="False"/>
+    <costStuffCount>0</costStuffCount>
+    <useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+  </ThingDef>
+
   <!-- 生物培養裝置殘骸（DMS_TableArtifuscle） -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_TableArtifuscleDestroyed</defName>
@@ -180,7 +260,7 @@
     </costList>
   </ThingDef>
 
-  <!--（Shield generator） -->
+  <!-- (Shield generator) -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_LargeShieldGeneratorDestroyed</defName>
     <label>ruined heavy shield generator</label>
@@ -194,6 +274,7 @@
       </shadowData>
     </graphicData>
     <passability>Impassable</passability>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
     <blockWind>true</blockWind>
     <fillPercent>1</fillPercent>
     <size>(5,5)</size>
@@ -202,10 +283,119 @@
     <pathCost>90</pathCost>
     <statBases>
       <MaxHitPoints>3000</MaxHitPoints>
+      <Flammability>0</Flammability>
     </statBases>
     <costList>
       <ChunkSlagSteel>11</ChunkSlagSteel>
     </costList>
+  </ThingDef>
+
+  <!-- (Security Container) -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_ContainerNaraDestroyed</defName>
+    <label>ruined security container</label>
+    <description>A breached armored cargo container. Whatever supplies it once held were looted or destroyed long ago, leaving only the torn shell. Breaking it down yields some metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/DMS_ContainerNara_Ruined</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5,5)</drawSize>
+    </graphicData>
+    <size>(3,3)</size>
+    <rotatable>true</rotatable>
+    <fillPercent>0.6</fillPercent>
+    <pathCost>65</pathCost>
+    <statBases>
+      <MaxHitPoints>1500</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <staticSunShadowHeight>0.4</staticSunShadowHeight>
+    <costList>
+      <ChunkSlagSteel>5</ChunkSlagSteel>
+    </costList>
+  </ThingDef>
+
+  <!-- Consoles -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_ConsoleSingle_Destroyed</defName>
+    <label>ruined console</label>
+    <description>A ruined multi-purpose computer interface. It's circuits and displays have corroded beyond repair.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/Consoles/DMS_ConsoleSingle_Ruined</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>true</rotatable>
+    <fillPercent>0.35</fillPercent>
+    <pathCost>45</pathCost>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <designatorDropdown>DMS_Consoles</designatorDropdown>
+    <defaultPlacingRot>South</defaultPlacingRot>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_ConsoleDouble_Destroyed</defName>
+    <label>ruined console</label>
+    <description>A ruined multi-purpose computer interface. It's circuits and displays have corroded beyond repair.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/Consoles/DMS_ConsoleDouble_Ruined</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <size>(2,1)</size>
+    <rotatable>true</rotatable>
+    <fillPercent>0.35</fillPercent>
+    <pathCost>45</pathCost>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <designatorDropdown>DMS_Consoles</designatorDropdown>
+    <defaultPlacingRot>South</defaultPlacingRot>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_AccessConsole_Destroyed</defName>
+    <label>ruined access console</label>
+    <description>A ruined multi-purpose computer interface. It's circuits and displays have corroded beyond repair.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/Consoles/DMS_AccessConsole_Ruined</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>true</rotatable>
+    <fillPercent>0.35</fillPercent>
+    <pathCost>45</pathCost>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <designatorDropdown>DMS_Consoles</designatorDropdown>
+    <defaultPlacingRot>South</defaultPlacingRot>
+  </ThingDef>
+
+  <!--(Perimeter scanner)-->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_PerimeterScannerDestroyed</defName>
+    <label>ruined perimeter scanner</label>
+    <description>The wreck of a perimeter scanner. Its sensor is broken and platform have corroded beyond repair.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Building/DMS_PerimeterScanner</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+    </statBases>
   </ThingDef>
 
 </Defs>

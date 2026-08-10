@@ -151,7 +151,82 @@
       <Steel>50</Steel>
     </costList>
   </ThingDef>
+  
+  <!-- BushMaster -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_MK44NavyDestoryed</defName>
+    <label>destroyed MK44 BushMaster-II</label>
+    <description>The burnt-out remains of a MK44 BushMaster II autocannon. Its barrel and rotary platform have been torn apart, leaving a hulk that still makes excellent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Misc/DMS_M161</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>2.8</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+      <shadowData>
+        <offset>(0,-0.25,-0.25)</offset>
+        <volume>(0.5,0.5,0.5)</volume>
+      </shadowData>
+    </graphicData>
+    <fillPercent>0.7</fillPercent>
+    <uiIconPath>Things/Building/Ruin_Misc/DMS_MK44_Navy_Icon</uiIconPath>
+    <uiIconScale>1.25</uiIconScale>
+    <drawerType>RealtimeOnly</drawerType>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+    </statBases>
+    <costList>
+      <ChunkSlagSteel>3</ChunkSlagSteel>
+    </costList>
+    <comps>
+      <li Class="DMS.CompProperties_TurretTopDraw">
+        <graphic>
+          <texPath>Things/Building/Ruin_Misc/DMS_Gun_MK44_Navy</texPath>
+          <graphicClass>Graphic_Random</graphicClass>
+          <drawSize>3</drawSize>
+        </graphic>
+      </li>
+    </comps>
+  </ThingDef>
 
+  <!-- Okhotnik -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_OkhotnikDestoryed</defName>
+    <label>destroyed Okhotnik</label>
+    <description>The burnt-out remains of a Okhotnik turret. Its barrel and rotary platform have been torn apart, leaving a hulk that still makes excellent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruin_Misc/DMS_Weapon_Base</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>2.25</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+      <shadowData>
+        <offset>(0,-0.25,-0.25)</offset>
+        <volume>(0.5,0.5,0.5)</volume>
+      </shadowData>
+    </graphicData>
+    <drawerType>RealtimeOnly</drawerType>
+    <fillPercent>0.7</fillPercent>
+    <uiIconPath>Things/Building/Ruin_Misc/DMS_Okhotnik_Icon</uiIconPath>
+    <uiIconScale>1.2</uiIconScale>
+    <size>(1,1)</size>
+    <rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+    </statBases>
+    <costList>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+    </costList>
+    <comps>
+      <li Class="DMS.CompProperties_TurretTopDraw">
+        <graphic>
+          <texPath>Things/Building/Ruin_Misc/DMS_Gun_Kord</texPath>
+          <graphicClass>Graphic_Random</graphicClass>
+          <drawSize>3</drawSize>
+        </graphic>
+      </li>
+    </comps>
+  </ThingDef>
 
   <!-- 守門人 -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">

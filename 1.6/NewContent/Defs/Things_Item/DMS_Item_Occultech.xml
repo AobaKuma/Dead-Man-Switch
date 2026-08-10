@@ -29,4 +29,43 @@
       <li>Manufactured</li>
     </thingCategories>
   </ThingDef>
+
+  <ThingDef>
+    <defName>DMS_OccultechKey</defName>
+    <label>occultech glyph</label>
+    <thingClass>DMS.OccultechKey</thingClass>
+    <description>TODO</description>
+    <graphicData>
+      <texPath>Things/Resource/DMS_OccultechGlyph</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tradeability>None</tradeability>
+    <category>Item</category>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <tickerType>Rare</tickerType>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Item</altitudeLayer>
+    <selectable>true</selectable>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <genericMarketSellable>false</genericMarketSellable>
+    <soundInteract>Standard_Pickup</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <intricate>true</intricate>
+    <statBases>
+      <Mass>1</Mass>
+      <Beauty>-4</Beauty>
+      <Flammability>0</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+  </ThingDef>
 </Defs>
