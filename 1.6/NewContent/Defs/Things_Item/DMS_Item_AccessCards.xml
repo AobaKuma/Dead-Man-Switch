@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef Name="DMS_AccessKeyBase" ParentName="ResourceBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <possessionCount>3</possessionCount>
+    <graphicData>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <category>Item</category>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <thingSetMakerTags>
+      <li>DMS_RandomAccessCard</li>
+    </thingSetMakerTags>
+    <stackLimit>5</stackLimit>
+    <tradeability>None</tradeability>
+    <selectable>true</selectable>
+    <intricate>true</intricate>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>0.05</Mass>
+      <Flammability>0</Flammability>
+      <MarketValue>300</MarketValue>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_AccessKeyBase">
+    <defName>DMS_AccessKey_Nara</defName>
+    <label>Nara Ind. access key</label>
+    <description>A one-use unified access key used by Nara Industries. It can be used to activate terminals, open crates and doors.</description>
+    <graphicData>
+      <texPath>Things/Resource/DMS_AccessKey/Nara</texPath>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_AccessKeyBase">
+    <defName>DMS_AccessKey_Neutrals</defName>
+    <label>derelict access key</label>
+    <description>A one-use unified access key used by derelict automatroids. It can be used to activate terminals, open crates and doors.</description>
+    <graphicData>
+      <texPath>Things/Resource/DMS_AccessKey/Neutral</texPath>
+    </graphicData>
+  </ThingDef>
+
+</Defs>

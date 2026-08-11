@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase" Name="DMS_LiftShaftBase" Abstract="True">
+    <label>lift shaft</label>
+    <description>A large elevator shaft leads to the underground area, large enough to transport vehicles, but apparently there is no way to activate it.</description>
+    <rotatable>false</rotatable>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <thingClass>Fortified.FacilityEntrance</thingClass>
+    <tickerType>Normal</tickerType>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/DMS_LiftShaft</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shadowData>
+        <offset>(1.5,0,0)</offset>
+        <volume>(0.65,0.5,0.65)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(5,5)</size>
+    <building>
+      <isTargetable>false</isTargetable>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <deconstructible>false</deconstructible>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <portal>
+      <!--<pocketMapGenerator> Insert map generator here </pocketMapGenerator>-->
+      <exitDef>DMS_LiftShaft_Bottom</exitDef>
+      <pocketMapSize>100</pocketMapSize>
+    </portal>
+    <inspectorTabs>
+      <li>ITab_ContentsMapPortal</li>
+    </inspectorTabs>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <fillPercent>0</fillPercent>
+    <useHitPoints>false</useHitPoints>
+    <passability>Impassable</passability>
+    <holdsRoof>true</holdsRoof>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_LiftShaftBase" Name="DMS_LiftShaftLargeBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Building/DMS_LiftShaft_Large</texPath>
+      <drawSize>(12,12)</drawSize>
+      <shadowData>
+        <offset>(1.5,0,0)</offset>
+        <volume>(0.65,0.5,0.65)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(9,9)</size>
+    <portal>
+      <pocketMapSize>200</pocketMapSize>
+    </portal>
+  </ThingDef>
+
+  <ThingDef ParentName="PocketMapExit">
+    <defName>DMS_LiftShaft_Bottom</defName>
+    <label>lift shaft</label>
+    <description>A large elevator shaft leads to the underground area, large enough to transport vehicles, but apparently there is no way to activate it.</description>
+    <rotatable>false</rotatable>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <thingClass>Fortified.FacilityExit</thingClass>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/DMS_LiftShaft_Bottom</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shadowData>
+        <offset>(1.5,0,0)</offset>
+        <volume>(0.65,0.5,0.65)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(5,5)</size>
+    <building>
+      <isTargetable>false</isTargetable>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <deconstructible>false</deconstructible>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <pathCost>120</pathCost>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <fillPercent>0</fillPercent>
+    <useHitPoints>false</useHitPoints>
+    <passability>Impassable</passability>
+    <holdsRoof>true</holdsRoof>
+  </ThingDef>
+
+  <ThingDef ParentName="PocketMapExit">
+    <defName>DMSRC_LiftShaft_Large_Bottom</defName>
+    <label>lift shaft</label>
+    <description>A large elevator shaft leads to the underground area, large enough to transport vehicles, but apparently there is no way to activate it.</description>
+    <rotatable>false</rotatable>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <thingClass>Fortified.FacilityExit</thingClass>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/DMS_LiftShaft_Large_Bottom</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(12,12)</drawSize>
+      <shadowData>
+        <offset>(1.5,0,0)</offset>
+        <volume>(0.65,0.5,0.65)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(9,9)</size>
+    <building>
+      <isTargetable>false</isTargetable>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <deconstructible>false</deconstructible>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <pathCost>120</pathCost>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <fillPercent>0</fillPercent>
+    <useHitPoints>false</useHitPoints>
+    <passability>Impassable</passability>
+    <holdsRoof>true</holdsRoof>
+  </ThingDef>
+
+</Defs>

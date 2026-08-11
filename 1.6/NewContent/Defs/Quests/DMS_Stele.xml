@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>DMS_Stele</defName>
+    <isRootSpecial>true</isRootSpecial>
+    <autoAccept>true</autoAccept>
+    <defaultChallengeRating>4</defaultChallengeRating>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->the stele</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->You've discovered a mechanoid grav engine! You can use this to build a gravship to quickly move around the planet.\n\nThe engine includes tech that passively scans for nearby gravship technology. If you obtain this gravship tech, you can upgrade your gravship over time.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="DMS.QuestNode_Root_Stele">
+      <steleDef>DMS_OccultTechFont</steleDef>
+      <subquestDefs>
+        <li>DMS_SteleKey_ImpactSite</li>
+      </subquestDefs>
+    </root>
+  </QuestScriptDef>
+  
+  <QuestScriptDef>
+    <defName>DMS_SteleKey_ImpactSite</defName>
+    <autoAccept>true</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Impact site</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->TODO</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <questContentRules>
+      <rulesStrings>
+        <li>letterLabelMapGenerated->Ship wreckage</li> 
+        <li>letterTextMapGenerated->TODO</li>
+      </rulesStrings>
+    </questContentRules>
+    <questAvailableLetterLabel>Occultech glyph found: Impact site</questAvailableLetterLabel>
+    <questAvailableLetterTextIsDescription>true</questAvailableLetterTextIsDescription>
+    <canOccurOnAllPlanetLayers>true</canOccurOnAllPlanetLayers>
+    <root Class="DMS.QuestNode_Root_OccultechKey_Site">
+      <layer>Surface</layer>
+      <sitePartDefs>
+        <li>DMS_SteleKey_ImpactSite</li>
+      </sitePartDefs>
+      <siteFaction>DMS_Legacy</siteFaction>
+    </root>
+  </QuestScriptDef>
+
+</Defs>
