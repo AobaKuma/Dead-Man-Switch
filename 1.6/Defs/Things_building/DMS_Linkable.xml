@@ -41,7 +41,7 @@
       <destroySound>BuildingDestroyed_Metal_Small</destroySound>
     </building>
     <researchPrerequisites>
-      <li>DMS_MechBasis</li>
+      <li>DMS_Aerospace</li>
     </researchPrerequisites>
     <designationCategory>DMS_Category</designationCategory>
     <minifiedDef>MinifiedThing</minifiedDef>

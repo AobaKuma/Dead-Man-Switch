@@ -471,6 +471,29 @@
     </statBases>
     <intricate>true</intricate>
     <isTechHediff>true</isTechHediff>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>127701</analysisID>
+        <requiresMechanitor>false</requiresMechanitor>
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>Cluster Control Chipsets studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze Cluster Control Chipsets</activateDescString>
+        <jobString>Analyze the Cluster Control Chipsets</jobString>
+        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
     <thingSetMakerTags>
       <li>RewardStandardCore</li>
     </thingSetMakerTags>
@@ -537,6 +560,42 @@
         </targetingParameters>
       </li>
     </comps>
+    <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+  </ThingDef>
+
+  <!-- 脈衝發射單元 中環世界護盾技術的基礎零件，單體力場強度有限，需成陣列疊加使用 -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>PulsarEmitterUnit</defName>
+    <label>Pulsar Emitter Unit</label>
+    <description>A precision component used to generate pulsed force fields, and the basis of most midworld shield technology. A single emitter unit can only sustain a field of limited strength, but arraying many of them together produces an energy shield strong enough to deflect artillery shells.</description>
+    <possessionCount>2</possessionCount>
+    <graphicData>
+      <texPath>Things/Resource/ComponentShieldpart</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>25</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <RoyalFavorValue>0.5</RoyalFavorValue>
+      <MaxHitPoints>30</MaxHitPoints>
+      <MarketValue>600</MarketValue>
+      <Mass>1.0</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>10</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <isTechHediff>true</isTechHediff>
     <thingSetMakerTags>
       <li>RewardStandardCore</li>
     </thingSetMakerTags>

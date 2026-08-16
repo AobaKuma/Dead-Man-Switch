@@ -15,8 +15,8 @@
     <caravanRideable>true</caravanRideable>
     <statOffsets>
       <MoveSpeed>-0.2</MoveSpeed>
-      <ComfyTemperatureMin>-46</ComfyTemperatureMin>      <!--should map to -30C-->
-      <ComfyTemperatureMax>4</ComfyTemperatureMax>      <!--should map to 30C-->
+      <ComfyTemperatureMin>-46</ComfyTemperatureMin>
+      <ComfyTemperatureMax>4</ComfyTemperatureMax>
     </statOffsets>
   </LifeStageDef>
 

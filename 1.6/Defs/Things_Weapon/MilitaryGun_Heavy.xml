@@ -315,7 +315,7 @@
 		</projectile>
 	</ThingDef>
 
-	<!-- 無後座力砲 基本上是給龍騎兵用的-->
+	<!-- 無後座力砲 給砲兵、獒犬用-->
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Gun_Recoilless</defName>
 		<label>Recoilless Rifle</label>
@@ -355,9 +355,35 @@
 		<smeltProducts>
 			<Tungsteel>25</Tungsteel>
 		</smeltProducts>
+		<!-- 彈種切換: 高爆破片 / 聚能穿甲(預設) / 爆破 / 空爆煙霧 -->
+		<comps>
+			<li Class="Fortified.CompProperties_AmmoSwitch">
+				<defaultIndex>1</defaultIndex>
+				<switchCooldown>240</switchCooldown>
+				<soundSwitch>Artillery_ShellLoaded</soundSwitch>
+				<ammos>
+					<li>
+						<projectileDef>DMS_Bullet_RR_HE</projectileDef>
+					</li>
+					<li>
+						<projectileDef>DMS_Bullet_RR</projectileDef>
+					</li>
+					<li>
+						<projectileDef>DMS_Bullet_RR_Demolition</projectileDef>
+						<rangeFactor>0.85</rangeFactor>
+						<warmUpFactor>1.15</warmUpFactor>
+					</li>
+					<li>
+						<projectileDef>DMS_Bullet_RR_Smoke</projectileDef>
+						<rangeFactor>1.15</rangeFactor>
+						<warmUpFactor>0.8</warmUpFactor>
+					</li>
+				</ammos>
+			</li>
+		</comps>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>Fortified.Verb_Shoot_AmmoSwitch</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>DMS_Bullet_RR</defaultProjectile>
 				<warmupTime>2.2</warmupTime>
@@ -391,9 +417,10 @@
 		</modExtensions>
 	</ThingDef>
 
-	<ThingDef ParentName="BaseBullet">
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
 		<defName>DMS_Bullet_RR</defName>
 		<label>Shape-charged Grenade</label>
+		<description>The standard round for the recoilless rifle: a shaped charge backed by a fragmentation sleeve. The jet opens armor at the point of impact while the sleeve throws a forward cone of fragments down the firing line, so it also hurts whatever was standing behind the vehicle it just killed.</description>
 		<thingClass>Fortified.Projectile_ConeExplosive</thingClass>
 		<tickerType>Normal</tickerType>
 		<graphicData>
@@ -405,7 +432,7 @@
 		<projectile>
 			<speed>80</speed>
 			<damageDef>Bomb</damageDef>
-			<damageAmountBase>100</damageAmountBase>
+			<damageAmountBase>123</damageAmountBase>
 			<armorPenetrationBase>0.7</armorPenetrationBase>
 			<stoppingPower>1.5</stoppingPower>
 			<ai_IsIncendiary>false</ai_IsIncendiary>
@@ -415,7 +442,7 @@
 		<modExtensions>
 			<li Class="Fortified.ExplosiveExtension">
 				<damage>Bullet</damage>
-				<damageAmount>40</damageAmount>
+				<damageAmount>49</damageAmount>
 				<armorPen>0.31</armorPen>
 				<preExplosionOffset>4</preExplosionOffset>
 				<range>10</range>
@@ -430,6 +457,100 @@
 			</li>
 		</comps>
 	</ThingDef>
+
+	<!-- 大範圍低穿甲: 高爆破片彈 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_RR_HE</defName>
+		<label>120mm HE-frag shell</label>
+		<description>A thin-cased high explosive shell tuned for area effect rather than penetration. It sweeps a wide circle clear of infantry and light emplacements, but the blast wave spends itself against anything properly armored.</description>
+		<thingClass>Projectile_Explosive</thingClass>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>1.8</drawSize>
+		</graphicData>
+		<projectile>
+			<speed>70</speed>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>105</damageAmountBase>
+			<armorPenetrationBase>0.3</armorPenetrationBase>
+			<explosionRadius>3.6</explosionRadius>
+			<stoppingPower>2</stoppingPower>
+			<ai_IsIncendiary>false</ai_IsIncendiary>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<shadowSize>0.6</shadowSize>
+		</projectile>
+		<comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>DMS_LaunchDust_Recoilless</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- 反建築: 爆破彈 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_RR_Demolition</defName>
+		<label>120mm demolition shell</label>
+		<description>A heavy demolition shell with a slow, heaving filler and a delayed fuze that lets it seat against the target before it lets go. It is meant for walls, bunkers and load-bearing structures; against personnel it is merely adequate, and its weight costs range.</description>
+		<thingClass>Projectile_Explosive</thingClass>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>1.85</drawSize>
+		</graphicData>
+		<projectile>
+			<speed>60</speed>
+			<damageDef>DMS_Damage_Demolition</damageDef>
+			<damageAmountBase>85</damageAmountBase>
+			<armorPenetrationBase>0.5</armorPenetrationBase>
+			<explosionRadius>3</explosionRadius>
+			<stoppingPower>2</stoppingPower>
+			<ai_IsIncendiary>false</ai_IsIncendiary>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<shadowSize>0.65</shadowSize>
+		</projectile>
+		<comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>DMS_LaunchDust_Recoilless</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- 空爆煙霧彈 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_RR_Smoke</defName>
+		<label>120mm airburst smoke shell</label>
+		<description>A large screening shell with a proximity fuze that opens above head height, laying an obscurant bank far wider than any hand-thrown canister. It does no damage at all; it exists to blind a firing line long enough for an assault or a withdrawal to happen.</description>
+		<thingClass>Projectile_Explosive</thingClass>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>1.75</drawSize>
+			<color>(140,135,156)</color>
+		</graphicData>
+		<projectile>
+			<speed>65</speed>
+			<damageDef>Smoke</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<explosionRadius>7</explosionRadius>
+			<postExplosionGasType>BlindSmoke</postExplosionGasType>
+			<arcHeightFactor>0.35</arcHeightFactor>
+			<soundExplode>Explosion_Smoke</soundExplode>
+			<shadowSize>0.5</shadowSize>
+		</projectile>
+		<comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>DMS_LaunchDust_Recoilless</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+
 
 	<!--====MK44大毒蛇2機炮====-->
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">

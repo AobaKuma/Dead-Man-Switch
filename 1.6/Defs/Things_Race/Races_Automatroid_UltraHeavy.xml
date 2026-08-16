@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnRenderNodeTagDef>
+    <defName>DMS_ClusterWeaver_WeaponMount</defName>
+  </PawnRenderNodeTagDef>
+
+  <PawnRenderTreeDef>
+    <defName>DMS_ClusterWeaver</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <drawData>
+        <defaultData>
+          <offset>(0,0,1.5)</offset>
+        </defaultData>
+        <dataEast>
+          <offset>(-0.25,0,1)</offset>
+        </dataEast>
+        <dataWest>
+          <offset>(0.25,0,1)</offset>
+        </dataWest>
+      </drawData>
+      <children>
+        <li>
+          <debugLabel>Body</debugLabel>
+          <tagDef>Body</tagDef>
+          <nodeClass>PawnRenderNode_AnimalPart_Body</nodeClass>
+          <workerClass>PawnRenderNodeWorker_AnimalBody</workerClass>
+          <useRottenColor>true</useRottenColor>
+          <children>
+            <li>
+              <debugLabel>Wounds</debugLabel>
+              <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+              <workerClass>PawnRenderNodeWorker_OverlayWounds</workerClass>
+              <overlayLayer>Body</overlayLayer>
+              <useGraphic>false</useGraphic>
+              <baseLayer>3</baseLayer>
+            </li>
+            <li>
+              <debugLabel>Pack</debugLabel>
+              <nodeClass>PawnRenderNode_AnimalPack</nodeClass>
+              <workerClass>PawnRenderNodeWorker_AnimalPack</workerClass>
+              <rotDrawMode>Fresh, Rotting</rotDrawMode>
+              <baseLayer>5</baseLayer>
+            </li>
+            <li>
+              <debugLabel>Firefoam</debugLabel>
+              <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+              <workerClass>PawnRenderNodeWorker_OverlayFirefoam</workerClass>
+              <overlayLayer>Body</overlayLayer>
+              <useGraphic>false</useGraphic>
+              <baseLayer>10</baseLayer>
+            </li>
+          </children>
+        </li>
+        <li Class="PawnRenderNodeProperties_Carried">
+          <debugLabel>Carried thing</debugLabel>
+          <workerClass>PawnRenderNodeWorker_Carried</workerClass>
+          <tagDef>DMS_ClusterWeaver_WeaponMount</tagDef>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <AnimationDef>
+    <defName>DMS_HoverHeavy</defName>
+    <durationTicks>300</durationTicks>
+    <startOnRandomTick>true</startOnRandomTick>
+    <playWhenDowned>false</playWhenDowned>
+    <keyframeParts>
+      <li>
+        <key>Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <keyframes>
+            <li>
+              <tick>0</tick>
+              <offset>(0,0,0)</offset>
+              <angle>0</angle>
+            </li>
+            <li>
+              <tick>75</tick>
+              <offset>(0.05,0,0.1)</offset>
+              <angle>-1</angle>
+            </li>
+            <li>
+              <tick>150</tick>
+              <offset>(0,0,0)</offset>
+              <angle>0</angle>
+            </li>
+            <li>
+              <tick>225</tick>
+              <offset>(-0.05,0,0.1)</offset>
+              <angle>1</angle>
+            </li>
+            <li>
+              <tick>300</tick>
+              <offset>(0,0,0)</offset>
+              <angle>0</angle>
+            </li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>DMS_ClusterWeaver_WeaponMount</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <keyframes>
+            <li>
+              <tick>0</tick>
+              <offset>(0,0,0)</offset>
+              <angle>0</angle>
+            </li>
+            <li>
+              <tick>75</tick>
+              <offset>(0.05,0,0.1)</offset>
+              <angle>-1</angle>
+            </li>
+            <li>
+              <tick>150</tick>
+              <offset>(0,0,0)</offset>
+              <angle>0</angle>
+            </li>
+            <li>
+              <tick>225</tick>
+              <offset>(-0.05,0,0.1)</offset>
+              <angle>1</angle>
+            </li>
+            <li>
+              <tick>300</tick>
+              <offset>(0,0,0)</offset>
+              <angle>0</angle>
+            </li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <ThinkTreeDef>
+    <defName>DMS_ClusterWeaverConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+        <li Class="ThinkNode_ConditionalOfPlayerFaction">
+          <invert>true</invert>
+          <subNodes>
+            <li Class="JobGiver_FleeForDistance">
+              <enemyDistToFleeRange>10~25</enemyDistToFleeRange>
+              <fleeDistRange>13.5~20</fleeDistRange>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <!-- Cluster Weaver -->
+  <ThingDef ParentName="BaseAutomatroidRace">
+    <defName>DMS_Mech_ClusterWeaver</defName>
+    <label>cluster weaver</label>
+    <description>United Army Systems "Sakalava" known as The "Cluster weaver", It's a super-heavy UAV carrier propelled by multiple rotary wings.with 5-meter-wingspan frame dangling UAV pod which can carry up to 30 suicide drones and precisely guiding them kilometers away. While not yet a contender during the total warfare,it still remains one of the most feared threats among local African armed groups after World War III, second only to the Wyvern flocks.\n\nCluster weaver uses a metal-reinforced carbon fiber frame as its main structural material and has virtually no additional armor. Even so, its high-precision radar and three precision turrets can annihilate hostiles before they even get close enough to ambush. which makes it extremely hard for a local militia groups survive an assault from this monster.</description>
+    <statBases>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">9</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
+      <MoveSpeed>7</MoveSpeed>
+      <ArmorRating_Sharp>0.6</ArmorRating_Sharp><!-- Sharp armor -->
+      <ArmorRating_Blunt>0.6</ArmorRating_Blunt><!-- Blunt armor -->
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>  <!-- Heat armor -->
+      <MeleeDodgeChance>2</MeleeDodgeChance>
+      <MaxFlightTime>30</MaxFlightTime>
+      <FlightCooldown>10</FlightCooldown>
+    </statBases>
+    <race>
+      <body>DMS_Chop</body>
+      <baseBodySize>3</baseBodySize>
+      <baseHealthScale>5</baseHealthScale>
+      <renderTree>DMS_ClusterWeaver</renderTree>
+      <thinkTreeConstant>DMS_ClusterWeaverConstant</thinkTreeConstant>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+      <flightStartChanceOnJobStart>0.05</flightStartChanceOnJobStart>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <mechFixedSkillLevel>10</mechFixedSkillLevel>
+    </race>
+    <killedLeavingsPlayerHostile>
+      <ComponentControlChip>1</ComponentControlChip>
+    </killedLeavingsPlayerHostile>
+    <comps>
+      <li Class="Fortified.CompProperties_FlyingFleckThrower">
+        <burstOffsetRange>(2,4)</burstOffsetRange>
+        <fleckOnSoil>DustPuff</fleckOnSoil>
+        <fleckOnSnow>AirPuff</fleckOnSnow>
+        <activeAnimation>DMS_HoverHeavy</activeAnimation>
+        <sizeRange>(2,3)</sizeRange>
+        <speedRange>(0.75,1)</speedRange>
+        <throwRate>6</throwRate>
+        <throwTick>5</throwTick>
+      </li>
+      <li MayRequire="oskarpotocki.vanillafactionsexpanded.core" Class="VEF.AnimalBehaviours.CompProperties_Floating">
+        <isFloater>true</isFloater>
+        <canCrossWater>true</canCrossWater>
+      </li>
+      <li Class="Fortified.CompProperties_CommandRelay">
+        <maxWorldMapRadius>12</maxWorldMapRadius>
+        <maxRelayRadius>60</maxRelayRadius>
+        <minRelayRadius>20</minRelayRadius>
+      </li>
+      <li Class="Fortified.CompProperties_MechPlatform">
+        <gizmoIconPath>UI/Ability/Drone_Send_bird</gizmoIconPath>
+        <fixedIngredient>Steel</fixedIngredient>
+        <costPerPawn>15</costPerPawn>
+        <cooldownTicks>1500</cooldownTicks>
+        <maxPawnsToSpawn>5</maxPawnsToSpawn>
+        <startingIngredientCount>450</startingIngredientCount>
+        <maxIngredientCount>450</maxIngredientCount>
+        <spawnPawnKind>DMS_Drone_Wildfowl</spawnPawnKind>
+      </li>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <defaultWeapon />
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.1</rotationSmoothTime>
+        <drawData>
+          <dataEast>
+            <offset>(-1.5,0,1.4)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(1.5,0,1.4)</offset>
+          </dataWest>
+          <dataSouth>
+            <offset>(0,0,2.7)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(0,0,0.7)</offset>
+          </dataNorth>
+        </drawData>
+      </li>
+      <li Class="Fortified.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>left turret</ID>
+            <turret>DMS_HeavyMachineGunMounted</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>5</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <debugLabel>left turret</debugLabel>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <drawSize>1.75</drawSize>
+                <baseLayer>-21</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <dataEast>
+                    <offset>(-0.2,0,1)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(0.2,0,-1.7)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                  <dataSouth>
+                    <offset>(1.7,0,-0.5)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(-1.7,0,-0.5)</offset>
+                  </dataNorth>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+          <li>
+            <ID>right turret</ID>
+            <turret>DMS_HeavyMachineGunMounted</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>5</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <debugLabel>right turret</debugLabel>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <drawSize>1.75</drawSize>
+                <baseLayer>-21</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <dataEast>
+                    <offset>(0.2,0,-1.7)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(-0.2,0,1)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                  <dataSouth>
+                    <offset>(-1.7,0,-0.5)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(1.7,0,-0.5)</offset>
+                  </dataNorth>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>DMS_MechWeaponLight</li>
+          <li>RiotLMG</li>
+          <li>GrenadeDestructive</li>
+          <li>GrenadeEMP</li>
+          <li>GrenadeSmoke</li>
+          <li>GrenadeFlame</li>
+          <li MayRequire="ceteam.combatextended">BinocularsRadio</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons>
+          <li MayRequire="ceteam.combatextended">Gun_BinocularsRadio</li>
+          <li MayRequire="ceteam.combatextendedarmory">CE_ATFour</li>
+        </BypassUsableWeapons>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_Mech_ClusterWeaver</defName>
+    <label>cluster weaver</label>
+    <race>DMS_Mech_ClusterWeaver</race>
+    <isFighter>true</isFighter>
+    <combatPower>200</combatPower>
+    <maxPerGroup>5</maxPerGroup>
+    <isBoss>true</isBoss>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/ClusterWeaver/body</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.75</drawSize>
+          <shadowData>
+            <volume>(1.5,1,1.5)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/ClusterWeaver/body</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.75</drawSize>
+          <shadowData>
+            <volume>(1.5,1,1.5)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>RiotLMG</li>
+    </weaponTags>
+    <abilities>
+      <li>DMS_RepairMode</li>
+    </abilities>
+  </PawnKindDef>
+</Defs>

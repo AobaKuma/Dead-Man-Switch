@@ -8,8 +8,8 @@
     <products>
       <DMS_Mech_Mammoth>1</DMS_Mech_Mammoth>
     </products>
-    <researchPrerequisite>DMS_Hypothesis</researchPrerequisite>
-    <gestationCycles>3</gestationCycles>
+    <researchPrerequisite>DMS_MechBasis</researchPrerequisite>
+    <gestationCycles>5</gestationCycles>
     <descriptionHyperlinks>
       <ThingDef>DMS_Mech_Mammoth</ThingDef>
     </descriptionHyperlinks>

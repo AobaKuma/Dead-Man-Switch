@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  
+  <!-- EN: wildfowl -->
+  <DMS_Drone_Wildfowl.label>野禽无人机</DMS_Drone_Wildfowl.label>
+  <!-- EN: The UAS 1/B "Hunter Bee" nicknamed "wildfowl" is a foldable, small coaxial rotor drone equipped with a plastic explosive charge equivalent to an M67 hand grenade, posing a significant threat when approaching a target in swarms. -->
+  <DMS_Drone_Wildfowl.description>UAS 1/B「Hunter Bee」绰号「野禽」，是一种可摺叠的小型共轴旋翼无人机，搭载相当於M67手榴弹的塑胶炸药装药，当其成群逼近目标时威胁极高。</DMS_Drone_Wildfowl.description>
+  <!-- EN: Battery power -->
+  <DMS_Drone_Wildfowl.comps.CompMechPowerCell.labelOverride>电池电量</DMS_Drone_Wildfowl.comps.CompMechPowerCell.labelOverride>
+  <!-- EN: Drones have limited battery life. When the battery runs dry, the drone dies. -->
+  <DMS_Drone_Wildfowl.comps.CompMechPowerCell.tooltipOverride>无人机的电池寿命有限。电力耗尽时，无人机将会失效。</DMS_Drone_Wildfowl.comps.CompMechPowerCell.tooltipOverride>
+  <!-- EN: flabellum -->
+  <DMS_Drone_Wildfowl.tools.flabellum.label>扇叶</DMS_Drone_Wildfowl.tools.flabellum.label>
+
+</LanguageData>

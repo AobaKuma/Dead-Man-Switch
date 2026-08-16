@@ -31,6 +31,12 @@
     <recipeUsers><li>DMS_MechGestatorLarge</li></recipeUsers>
   </RecipeDef>
   
+  <RecipeDef Name="DMS_AerospaceMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
+    <gestationCycles>12</gestationCycles>
+    <researchPrerequisite>DMS_Aerospace</researchPrerequisite>
+    <recipeUsers><li>DMS_MechGestatorLarge</li></recipeUsers>
+  </RecipeDef>
+
   <RecipeDef Name="DMS_NextGenMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
     <gestationCycles>11</gestationCycles>
     <researchPrerequisite>DMS_Synthroid</researchPrerequisite>
@@ -200,6 +206,7 @@
         <li>Corpse_DMS_Mech_Killdozer</li>
         <li>Corpse_DMS_Mech_HermitCrab</li>
         <li>Corpse_DMS_Mech_Tarbosaurus</li>
+        <li>Corpse_DMS_Mech_ClusterWeaver</li>
       </thingDefs>
     </fixedIngredientFilter>
   </RecipeDef>

@@ -45,7 +45,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>9</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
@@ -53,7 +53,7 @@
             <li>Neurocomputer</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>1</count>
       </li>
     </ingredients>
   </RecipeDef>
@@ -108,18 +108,18 @@
       <li>
         <filter>
           <thingDefs>
-            <li>ComponentStamped</li>
+            <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>18</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
           <thingDefs>
-            <li>ComponentIndustrial</li>
+            <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>8</count>
+        <count>18</count>
       </li>
       <li>
         <filter>
@@ -184,7 +184,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>15</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
@@ -305,7 +305,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>12</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
@@ -463,4 +463,87 @@
       </li>
     </ingredients>
   </RecipeDef>
+
+  <!--DMS_Mech_ClusterWeaver-->
+  <RecipeDef ParentName="DMS_AerospaceMechanoidRecipe">
+    <defName>DMS_Make_ClusterWeaver</defName>
+    <label>Gestate ClusterWeaver</label>
+    <description>Gestate a ClusterWeaver Automatroid.</description>
+    <products>
+      <DMS_Mech_ClusterWeaver>1</DMS_Mech_ClusterWeaver>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>ComponentTransmitter</ThingDef>
+      <ThingDef>ComponentControlChip</ThingDef>
+      <ThingDef>DMS_Mech_ClusterWeaver</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>450</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMS_Ceramics</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentTransmitter</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentControlChip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
 </Defs>

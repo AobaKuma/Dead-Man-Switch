@@ -86,6 +86,7 @@
           <li>GrenadeFlame</li>
           <li>SurvivalRifle</li>
           <li MayRequire="ceteam.combatextended">BinocularsRadio</li>
+          <li>DMS_Gun_RecoillessLight</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -112,7 +113,7 @@
           <texPath>Things/Automatroid/falcon</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.2</drawSize>
+          <drawSize>1.4</drawSize>
           <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
@@ -121,7 +122,7 @@
           <texPath>Things/Automatroid/OldTexture/falcon</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.2</drawSize>
+          <drawSize>1.4</drawSize>
           <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>

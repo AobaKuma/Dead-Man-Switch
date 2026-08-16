@@ -19,4 +19,38 @@
   <DMS_DeposableRocketLauncher.verbs.Verb_Shoot.label>抛弃式火箭筒</DMS_DeposableRocketLauncher.verbs.Verb_Shoot.label>
   <DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectileStaticCE.label>抛弃式火箭筒</DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectileStaticCE.label>
   
+
+  <!--==================== 4KG 一次性輕型無後座力砲 ====================-->
+  
+  <!-- EN: light recoilless rifle -->
+  <DMS_Gun_RecoillessLight.label>轻型无后座力炮</DMS_Gun_RecoillessLight.label>
+  <!-- EN: A four-kilogram disposable recoilless launcher, issued down to squad level as a throwaway answer to armor, bunkers and doorways. The fibre-wound tube is discarded once fired, and its fire control unit accepts four interchangeable warheads, so the operator picks the effect before the tube ever reaches the shoulder.\n\nIt is light enough for a scout drone to carry, and its shaped-charge warhead defeats plating far above its own weight class, while the demolition and screening rounds let a single trooper open a wall or cover a withdrawal. The cost is that everything is spent in one shot: no reload, a short effective range, and a backblast signature that tells every gun on the field where the operator is standing. -->
+  <DMS_Gun_RecoillessLight.description>一具四公斤级的抛弃式无后座力发射器，配发至班级单位，用来处理装甲、掩体与需要被打开的门。纤维缠绕发射管在击发后即行丢弃，其火控单元可容纳四种可互换弹头，操作手在扛上肩之前就得决定要造成什么效果。\n\n它轻到连侦察无人机都挂得动，聚能装药弹头能击穿远超其吨位的装甲，而爆破弹与烟雾弹让单兵得以自行开墙或掩护撤离。代价是一切都在一发之内用尽：不能再装填、有效射程偏短，而且尾焰特征会告诉战场上每一支枪管操作手站在哪里。</DMS_Gun_RecoillessLight.description>
+  <!-- EN: tube -->
+  <DMS_Gun_RecoillessLight.tools.tube.label>发射管</DMS_Gun_RecoillessLight.tools.tube.label>
+  <!-- EN: charge -->
+  <DMS_Gun_RecoillessLight.comps.CompApparelReloadable.chargeNoun>弹药</DMS_Gun_RecoillessLight.comps.CompApparelReloadable.chargeNoun>
+  <!-- EN: on cooldown -->
+  <DMS_Gun_RecoillessLight.comps.CompApparelReloadable.cooldownGerund>冷却中</DMS_Gun_RecoillessLight.comps.CompApparelReloadable.cooldownGerund>
+  
+  <!-- EN: 65mm HE-frag rocket -->
+  <DMS_Bullet_LRR_HE.label>高爆破片弹</DMS_Bullet_LRR_HE.label>
+  <!-- EN: A thin-cased fragmentation warhead loaded with a light bursting charge. The wide fragment pattern strips infantry out of the open and clears trench lines, but the soft case flattens against plating instead of punching through it. -->
+  <DMS_Bullet_LRR_HE.description>薄壳高爆破片弹头，装填轻量炸药。宽广的破片散布能把开阔地上的步兵清干净，也适合清理战壕线，但软质弹壳撞上装甲板只会被压扁，穿不进去。</DMS_Bullet_LRR_HE.description>
+  
+  <!-- EN: 65mm shaped-charge rocket -->
+  <DMS_Bullet_LRR_HEAT.label>聚能穿甲弹</DMS_Bullet_LRR_HEAT.label>
+  <!-- EN: A copper-lined shaped charge that collapses into a hypervelocity jet on impact. The jet defeats armor no other warhead in this weight class can touch, but everything it carries goes into a single narrow channel, so anything standing beside the point of impact walks away. -->
+  <DMS_Bullet_LRR_HEAT.description>铜衬聚能装药，撞击时塌陷成超高速金属射流。这道射流能贯穿同吨位弹头碰都碰不到的装甲，但威力全部集中在一条窄小的通道里，站在命中点旁边的人可以毫发无伤地走开。</DMS_Bullet_LRR_HEAT.description>
+  
+  <!-- EN: 65mm demolition warhead -->
+  <DMS_Bullet_LRR_Demolition.label>爆破弹</DMS_Bullet_LRR_Demolition.label>
+  <!-- EN: A blunt-nosed warhead packed with a slow, heaving explosive filler. It is tuned to shear walls, doors and support structures rather than to injure, and does far more to a building than the same charge fired as a fragmentation round. -->
+  <DMS_Bullet_LRR_Demolition.description>钝头弹头，填装低爆速的推挤型炸药。它被调校用来剪断墙体、门与承重结构而非杀伤人员，同样的装药量对建筑造成的破坏远大于破片弹。</DMS_Bullet_LRR_Demolition.description>
+  
+  <!-- EN: 65mm airburst smoke round -->
+  <DMS_Bullet_LRR_Smoke.label>空爆烟雾弹</DMS_Bullet_LRR_Smoke.label>
+  <!-- EN: A screening round with a proximity fuze that bursts short of the ground, spreading its obscurant over a wider area than a ground-burst canister. It does no damage at all; it exists to break line of sight so a squad can cross open ground or drag its casualties back. -->
+  <DMS_Bullet_LRR_Smoke.description>带近炸引信的遮蔽弹，在触地前于空中炸开，烟幕散布范围比触发式烟罐更广。它完全不造成伤害，存在的意义是切断视线，让班组得以通过开阔地或把伤员拖回来。</DMS_Bullet_LRR_Smoke.description>
+  
 </LanguageData>

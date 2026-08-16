@@ -379,20 +379,7 @@
   <!-- EN: Foundational drone tech -->
   <DMS_UAVBasis.label>無人機基礎</DMS_UAVBasis.label>
   <!-- EN: Using simple sensors and transceivers to achieve simple but practical drone systems. -->
-  <DMS_UAVBasis.description>使用簡單的控制邏輯和信號收發器來解鎖簡易機械體。</DMS_UAVBasis.description>
-  <!-- EN:
-    <li>subject->Hive network and drone warfare</li>
-    <li>subject->automata of the war</li>
-    <li>subject->lidar lock-on</li>
-    <li>subject_story->survived in a highly unmanned military conflict zone</li>
-    <li>subject_story->works as a supervisor for unmanned transportation systems in a warehouse</li>
-    <li>subject_story->performed drone attack during the war against mechanoids</li>
-    <li>subject_story->established  a special service team composed of mech dogs and quickly achieved outstanding results</li>
-    <li>subject_story->participated in a semiconductor industrial revolution at a midworld planet</li>
-    <li>subject_gerund->optimizing machine learning algorithms</li>
-    <li>subject_gerund->advocating for limits on autonomous weapons</li>
-    <li>subject_gerund->exploring the possibility of autonomous weapons</li>
-  -->
+  <DMS_UAVBasis.description>使用簡單的控制邏輯和信號收發器來解鎖簡易無人機的生產與使用。</DMS_UAVBasis.description>
   <DMS_UAVBasis.generalRules.rulesStrings>
     <li>subject->蜂巢網路與無人機戰爭</li>
     <li>subject->戰爭中的自動機</li>
@@ -407,4 +394,9 @@
     <li>subject_gerund->探索自主武器的可能性</li>
   </DMS_UAVBasis.generalRules.rulesStrings>
   
+
+  <!-- EN: Aerospace Applications -->
+  <DMS_Aerospace.label>先進控制系統</DMS_Aerospace.label>
+  <DMS_Aerospace.description>在印刷电路普及化的千禧年，微电子在计算效能与密度的提升为更加先进的集群控制链路整合提供了基础，为更加智能化的生产线与机兵设计带来了可能性。</DMS_Aerospace.description>
+
 </LanguageData>

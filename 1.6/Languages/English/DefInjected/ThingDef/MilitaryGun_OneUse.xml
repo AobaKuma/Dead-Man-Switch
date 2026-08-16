@@ -18,4 +18,38 @@
   <!-- UNUSED -->
   <DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectileStaticCE.label>deposable launcher</DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectileStaticCE.label>
   
+
+  <!--==================== 4KG 一次性輕型無後座力砲 ====================-->
+  
+  <!-- EN: light recoilless rifle -->
+  <DMS_Gun_RecoillessLight.label>light recoilless rifle</DMS_Gun_RecoillessLight.label>
+  <!-- EN: A four-kilogram disposable recoilless launcher, issued down to squad level as a throwaway answer to armor, bunkers and doorways. The fibre-wound tube is discarded once fired, and its fire control unit accepts four interchangeable warheads, so the operator picks the effect before the tube ever reaches the shoulder.\n\nIt is light enough for a scout drone to carry, and its shaped-charge warhead defeats plating far above its own weight class, while the demolition and screening rounds let a single trooper open a wall or cover a withdrawal. The cost is that everything is spent in one shot: no reload, a short effective range, and a backblast signature that tells every gun on the field where the operator is standing. -->
+  <DMS_Gun_RecoillessLight.description>A four-kilogram disposable recoilless launcher, issued down to squad level as a throwaway answer to armor, bunkers and doorways. The fibre-wound tube is discarded once fired, and its fire control unit accepts four interchangeable warheads, so the operator picks the effect before the tube ever reaches the shoulder.\n\nIt is light enough for a scout drone to carry, and its shaped-charge warhead defeats plating far above its own weight class, while the demolition and screening rounds let a single trooper open a wall or cover a withdrawal. The cost is that everything is spent in one shot: no reload, a short effective range, and a backblast signature that tells every gun on the field where the operator is standing.</DMS_Gun_RecoillessLight.description>
+  <!-- EN: tube -->
+  <DMS_Gun_RecoillessLight.tools.tube.label>tube</DMS_Gun_RecoillessLight.tools.tube.label>
+  <!-- EN: charge -->
+  <DMS_Gun_RecoillessLight.comps.CompApparelReloadable.chargeNoun>charge</DMS_Gun_RecoillessLight.comps.CompApparelReloadable.chargeNoun>
+  <!-- EN: on cooldown -->
+  <DMS_Gun_RecoillessLight.comps.CompApparelReloadable.cooldownGerund>on cooldown</DMS_Gun_RecoillessLight.comps.CompApparelReloadable.cooldownGerund>
+  
+  <!-- EN: 65mm HE-frag rocket -->
+  <DMS_Bullet_LRR_HE.label>65mm HE-frag rocket</DMS_Bullet_LRR_HE.label>
+  <!-- EN: A thin-cased fragmentation warhead loaded with a light bursting charge. The wide fragment pattern strips infantry out of the open and clears trench lines, but the soft case flattens against plating instead of punching through it. -->
+  <DMS_Bullet_LRR_HE.description>A thin-cased fragmentation warhead loaded with a light bursting charge. The wide fragment pattern strips infantry out of the open and clears trench lines, but the soft case flattens against plating instead of punching through it.</DMS_Bullet_LRR_HE.description>
+  
+  <!-- EN: 65mm shaped-charge rocket -->
+  <DMS_Bullet_LRR_HEAT.label>65mm shaped-charge rocket</DMS_Bullet_LRR_HEAT.label>
+  <!-- EN: A copper-lined shaped charge that collapses into a hypervelocity jet on impact. The jet defeats armor no other warhead in this weight class can touch, but everything it carries goes into a single narrow channel, so anything standing beside the point of impact walks away. -->
+  <DMS_Bullet_LRR_HEAT.description>A copper-lined shaped charge that collapses into a hypervelocity jet on impact. The jet defeats armor no other warhead in this weight class can touch, but everything it carries goes into a single narrow channel, so anything standing beside the point of impact walks away.</DMS_Bullet_LRR_HEAT.description>
+  
+  <!-- EN: 65mm demolition warhead -->
+  <DMS_Bullet_LRR_Demolition.label>65mm demolition warhead</DMS_Bullet_LRR_Demolition.label>
+  <!-- EN: A blunt-nosed warhead packed with a slow, heaving explosive filler. It is tuned to shear walls, doors and support structures rather than to injure, and does far more to a building than the same charge fired as a fragmentation round. -->
+  <DMS_Bullet_LRR_Demolition.description>A blunt-nosed warhead packed with a slow, heaving explosive filler. It is tuned to shear walls, doors and support structures rather than to injure, and does far more to a building than the same charge fired as a fragmentation round.</DMS_Bullet_LRR_Demolition.description>
+  
+  <!-- EN: 65mm airburst smoke round -->
+  <DMS_Bullet_LRR_Smoke.label>65mm airburst smoke round</DMS_Bullet_LRR_Smoke.label>
+  <!-- EN: A screening round with a proximity fuze that bursts short of the ground, spreading its obscurant over a wider area than a ground-burst canister. It does no damage at all; it exists to break line of sight so a squad can cross open ground or drag its casualties back. -->
+  <DMS_Bullet_LRR_Smoke.description>A screening round with a proximity fuze that bursts short of the ground, spreading its obscurant over a wider area than a ground-burst canister. It does no damage at all; it exists to break line of sight so a squad can cross open ground or drag its casualties back.</DMS_Bullet_LRR_Smoke.description>
+  
 </LanguageData>

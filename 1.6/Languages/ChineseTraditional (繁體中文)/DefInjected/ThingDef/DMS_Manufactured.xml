@@ -118,6 +118,11 @@
   <!-- EN: A type of synthetic fiber that is ugly but still widely used in textile materials such as clothing, bedding, and special fabrics for the military. -->
   <Polyester.description>一種合成纖維，雖然不美觀，但仍廣泛用於服裝、床上用品、軍工特種面料等紡織材料。</Polyester.description>
   
+  <!-- EN: Pulsar Emitter Unit -->
+  <PulsarEmitterUnit.label>脈衝發射單元</PulsarEmitterUnit.label>
+  <!-- EN: A precision component used to generate pulsed force fields, and the basis of most midworld shield technology. A single emitter unit can only sustain a field of limited strength, but arraying many of them together produces an energy shield strong enough to deflect artillery shells. -->
+  <PulsarEmitterUnit.description>一種用於製造脈衝力場的精密零件，是大多數中環世界護盾技術的基礎，單一一個發射單元能夠產生的力場強度有限，但能夠透過形成陣列的方式來產生足以偏轉砲彈的能量護盾。</PulsarEmitterUnit.description>
+  
   <!-- EN: Tungsteel -->
   <Tungsteel.label>鎢鋼</Tungsteel.label>
   <!-- EN: A military grade standard alloy, usually used to manufacture high-performance weapons, armor, and special mechanical parts. -->

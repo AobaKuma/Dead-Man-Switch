@@ -269,6 +269,8 @@
           <li>Revolver</li>
           <li>Autopistol</li>
           <li>Flamethrower</li>
+          <li>DMS_Gun_Recoilless</li>
+          <li>DMS_Gun_RecoillessLight</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <BypassUsableWeapons>
@@ -310,6 +312,9 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <weaponTags />
+    <weaponTags>
+      <li>DMS_Gun_Recoilless</li>
+      <li>Flamethrower</li>
+    </weaponTags>
   </PawnKindDef>
 </Defs>

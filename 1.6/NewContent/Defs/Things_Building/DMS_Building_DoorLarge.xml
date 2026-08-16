@@ -86,6 +86,17 @@
         <slideFleckIntervalTicks>4</slideFleckIntervalTicks>
         <slideFleckScale>1.8</slideFleckScale>
       </li>
+      <li Class="Fortified.CompProperties_AccessKeyDoorLink">
+        <!-- 門禁接口 被AccessKeyLinkUtility連上才上鎖 沒連結時維持一般感應門行為 -->
+        <lockOnLink>true</lockOnLink>
+        <lockedByDefault>false</lockedByDefault>
+        <!-- 連結的鑰匙全部用掉後解鎖並直接滑開到底 -->
+        <openOnUnlock>true</openOnUnlock>
+        <!-- 解鎖後轉給用鑰匙者的陣營 否則授權判定會把解鎖的人自己擋在外面 -->
+        <takeFactionFromUser>true</takeFactionFromUser>
+        <unlockSound>Door_OpenPowered</unlockSound>
+        <!-- 上鎖時疊加的貼圖 留空不畫 <lockedTexPath>Things/Building/DMS_Building_DoorLarge/locked</lockedTexPath> -->
+      </li>
     </comps>
     <placeWorkers>
       <li>PlaceWorker_DoorLearnOpeningSpeed</li>

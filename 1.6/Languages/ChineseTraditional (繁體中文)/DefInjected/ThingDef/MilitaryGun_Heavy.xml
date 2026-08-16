@@ -175,4 +175,25 @@
   <DMS_SniperCannon.tools.muzzle-1.label>槍口</DMS_SniperCannon.tools.muzzle-1.label>
   <DMS_SniperCannon.verbs.Verb_ShootCE.label>機兵狙擊炮</DMS_SniperCannon.verbs.Verb_ShootCE.label>
   
+
+  <!--==================== 重型無後座力砲: 可切換彈種 ====================-->
+  
+  <!-- EN: The standard round for the recoilless rifle: a shaped charge backed by a fragmentation sleeve. The jet opens armor at the point of impact while the sleeve throws a forward cone of fragments down the firing line, so it also hurts whatever was standing behind the vehicle it just killed. -->
+  <DMS_Bullet_RR.description>無後座力砲的標準彈藥：聚能裝藥外加破片套筒。金屬射流在命中點撕開裝甲，套筒則沿著射向拋出一道向前的破片錐，因此站在剛被擊毀的載具後方那些人同樣會受害。</DMS_Bullet_RR.description>
+  
+  <!-- EN: 120mm HE-frag shell -->
+  <DMS_Bullet_RR_HE.label>高爆破片彈</DMS_Bullet_RR_HE.label>
+  <!-- EN: A thin-cased high explosive shell tuned for area effect rather than penetration. It sweeps a wide circle clear of infantry and light emplacements, but the blast wave spends itself against anything properly armored. -->
+  <DMS_Bullet_RR_HE.description>薄殼高爆彈，調校方向是面殺傷而非穿透。它能把一大圈範圍內的步兵與輕型工事清空，但爆震波打在正經裝甲上就只是浪費。</DMS_Bullet_RR_HE.description>
+  
+  <!-- EN: 120mm demolition shell -->
+  <DMS_Bullet_RR_Demolition.label>爆破彈</DMS_Bullet_RR_Demolition.label>
+  <!-- EN: A heavy demolition shell with a slow, heaving filler and a delayed fuze that lets it seat against the target before it lets go. It is meant for walls, bunkers and load-bearing structures; against personnel it is merely adequate, and its weight costs range. -->
+  <DMS_Bullet_RR_Demolition.description>重型爆破彈，填裝低爆速的推擠型炸藥，並採用延遲引信，讓彈頭先坐進目標再引爆。它是為牆體、碉堡與承重結構準備的；對人員只能算堪用，而且彈重也吃掉了一部分射程。</DMS_Bullet_RR_Demolition.description>
+  
+  <!-- EN: 120mm airburst smoke shell -->
+  <DMS_Bullet_RR_Smoke.label>空爆煙霧彈</DMS_Bullet_RR_Smoke.label>
+  <!-- EN: A large screening shell with a proximity fuze that opens above head height, laying an obscurant bank far wider than any hand-thrown canister. It does no damage at all; it exists to blind a firing line long enough for an assault or a withdrawal to happen. -->
+  <DMS_Bullet_RR_Smoke.description>大型遮蔽彈，近炸引信在頭頂高度炸開，鋪出遠比任何手投煙罐更寬的煙幕帶。它完全不造成傷害，存在的意義是讓一整條火線瞎掉足夠久，好讓突擊或撤退得以完成。</DMS_Bullet_RR_Smoke.description>
+  
 </LanguageData>

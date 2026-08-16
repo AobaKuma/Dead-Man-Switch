@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
   <!-- EN: Decoy Radar -->
@@ -15,4 +15,14 @@
   <!-- EN: Attract geochelone threat -->
   <DMS_DecoyRadio.comps.CompUsable.useLabel>吸引象龟袭击</DMS_DecoyRadio.comps.CompUsable.useLabel>
   
+
+
+  
+  <!-- EN: Decoy radio -->
+  <DMS_DecoyTransmitter.label>诱导基站</DMS_DecoyTransmitter.label>
+  <!-- EN: A high-powered radio, used fake radio signals to lure away the automated defense systems that still exist on the planet. Once activated, it puts out a powerful wave radiation signal which will attract ultra heavy automatroid to attack along with its escorts. If you can defeat it, you can collect the advanced technology from its corpse. The signal pulse burns out the transmitter, so this building can only be used once. -->
+  <DMS_DecoyTransmitter.description>一台高功率无线电装置，利用伪造的无线电讯号引诱星球上残存的自动防御系统。一旦启动，它会发出强大的辐射波讯号，吸引超重型机兵及其护卫前来攻击。如果你能击败它，就能从它的残骸中获得先进技术。讯号脉冲会烧毁发射器，因此只能使用一次。</DMS_DecoyTransmitter.description>
+  <!-- EN: Attract cluster weaver threat -->
+  <DMS_DecoyTransmitter.comps.CompUsable.useLabel>吸引集群织鸟袭击</DMS_DecoyTransmitter.comps.CompUsable.useLabel>
+
 </LanguageData>

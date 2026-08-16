@@ -18,7 +18,7 @@
 		  <li>RewardStandardHighFreq</li>
 		</thingSetMakerTags>
 		<statBases>
-		  <Mass>8</Mass>
+		  <Mass>6</Mass>
 		  <EquipDelay>1</EquipDelay>
 		  <MarketValue>250</MarketValue>
 		  <MaxHitPoints>80</MaxHitPoints>
@@ -184,7 +184,7 @@
 			<speed>100</speed>
 			<damageDef>FFF_ShapeChargeBullet</damageDef>
 			<soundExplode>MortarBomb_Explode</soundExplode>
-			<damageAmountBase>76</damageAmountBase>
+			<damageAmountBase>93</damageAmountBase>
 			<stoppingPower>2</stoppingPower>
 			<explosionRadius>1.6</explosionRadius>
 			<ai_IsIncendiary>false</ai_IsIncendiary>
@@ -223,5 +223,267 @@
 				<effecterDef>FFF_Effecter_Penetrate_Sabot</effecterDef>
 			</li>
 		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="DMS_BaseMakeableGun">
+		<defName>DMS_Gun_RecoillessLight</defName>
+		<label>light recoilless rifle</label>
+		<description>A four-kilogram disposable recoilless launcher, issued down to squad level as a throwaway answer to armor, bunkers and doorways. The fibre-wound tube is discarded once fired, and its fire control unit accepts four interchangeable warheads, so the operator picks the effect before the tube ever reaches the shoulder.\n\nIt is light enough for a scout drone to carry, and its shaped-charge warhead defeats plating far above its own weight class, while the demolition and screening rounds let a single trooper open a wall or cover a withdrawal. The cost is that everything is spent in one shot: no reload, a short effective range, and a backblast signature that tells every gun on the field where the operator is standing.</description>
+		<!-- 取得方式: 自產 / 交易 / 任務獎勵 -->
+		<tradeTags>
+			<li>DMS_WeaponRanged</li>
+			<li>WeaponRanged</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardHighFreq</li>
+		</thingSetMakerTags>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+			<li>Ranged</li>
+		</weaponClasses>
+		<weaponTags>
+			<li>DMS_Gun_RecoillessLight</li>
+			<li>NoSwitch</li>
+		</weaponTags>
+		<uiIconScale>1.1</uiIconScale>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_RecoillessRifle_Light</texPath>
+			<drawSize>1.8</drawSize>
+		</graphicData>
+		<soundInteract>Artillery_ShellLoaded</soundInteract>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<Mass>4</Mass>
+			<WorkToMake>16000</WorkToMake>
+			<MarketValue>210</MarketValue>
+			<MaxHitPoints>90</MaxHitPoints>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.90</AccuracyShort>
+			<AccuracyMedium>0.75</AccuracyMedium>
+			<AccuracyLong>0.55</AccuracyLong>
+			<RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+		</statBases>
+		<!-- 解鎖: 機甲齒輪 -->
+		<recipeMaker>
+			<researchPrerequisites Inherit="False">
+				<li>DMS_MechBasis</li>
+			</researchPrerequisites>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<!-- 造價: 約為 6KG 拋棄式火箭筒的一半; 一次性武器不應比可重複使用的槍械便宜 -->
+		<costList>
+			<Tungsteel>15</Tungsteel>
+			<Steel>35</Steel>
+			<Chemfuel>45</Chemfuel>
+			<ComponentStamped>2</ComponentStamped>
+		</costList>
+		<smeltable>false</smeltable>
+		<burnableByRecipe>false</burnableByRecipe>
+		<tools Inherit="False">
+			<li>
+				<label>tube</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2.2</cooldownTime>
+			</li>
+		</tools>
+		<verbs>
+			<li>
+				<verbClass>Fortified.Verb_Shoot_AmmoSwitch</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DMS_Bullet_LRR_HE</defaultProjectile>
+				<warmupTime>2.0</warmupTime>
+				<minRange>3.9</minRange>
+				<range>29.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>RocketswarmLauncher_Fire</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>16</muzzleFlashScale>
+				<onlyManualCast>false</onlyManualCast>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+					<canTargetBuildings>true</canTargetBuildings>
+					<canTargetPawns>true</canTargetPawns>
+				</targetParams>
+				<forcedMissRadius>1.2</forcedMissRadius>
+			</li>
+		</verbs>
+		<comps>
+			<!-- 彈種切換: 高爆破片(預設) / 聚能穿甲 / 爆破 / 空爆煙霧 -->
+			<li Class="Fortified.CompProperties_AmmoSwitch">
+				<defaultIndex>-1</defaultIndex>
+				<switchCooldown>120</switchCooldown>
+				<soundSwitch>Artillery_ShellLoaded</soundSwitch>
+				<ammos>
+					<li>
+						<projectileDef>DMS_Bullet_LRR_HEAT</projectileDef>
+						<accuracyFactor>1.1</accuracyFactor>
+					</li>
+					<li>
+						<projectileDef>DMS_Bullet_LRR_Demolition</projectileDef>
+						<rangeFactor>0.85</rangeFactor>
+						<warmUpFactor>1.15</warmUpFactor>
+					</li>
+					<li>
+						<projectileDef>DMS_Bullet_LRR_Smoke</projectileDef>
+						<rangeFactor>1.15</rangeFactor>
+						<warmUpFactor>0.8</warmUpFactor>
+					</li>
+				</ammos>
+			</li>
+			<!-- 一次性: 打完即毀 -->
+			<li Class="CompProperties_ApparelReloadable">
+				<maxCharges>1</maxCharges>
+				<destroyOnEmpty>true</destroyOnEmpty>
+				<hotKey>Misc4</hotKey>
+				<chargeNoun>charge</chargeNoun>
+				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(1.1,1.1)</drawSize>
+				<offsets>
+					<li>(0.7,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>AverageHumanCanUse</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="DMS_BaseSwitchableBullet" Name="DMS_BaseRecoillessLightAmmo" Abstract="True">
+		<graphicData>
+			<texPath>Things/Projectile/DMS_ShellRecoillessLight</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>1.15</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="Fortified.CompProperties_AfterBurner">
+				<lifeTime>30</lifeTime>
+				<ExhaustFleck>DMS_Fleck_RocketFlame</ExhaustFleck>
+				<ExhaustCurve>
+					<points>
+						<li>(0,4)</li>
+						<li>(0.2,2.5)</li>
+						<li>(0.75,0)</li>
+					</points>
+				</ExhaustCurve>
+				<SmokeFleck>DMS_Fleck_RocketSmokeTrail</SmokeFleck>
+				<SmokeCurve>
+					<points>
+						<li>(0,1.5)</li>
+						<li>(0.5,1)</li>
+						<li>(1,0.5)</li>
+					</points>
+				</SmokeCurve>
+			</li>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>DMS_LaunchDust_Recoilless</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- 大範圍低穿甲: 高爆破片彈 -->
+	<ThingDef ParentName="DMS_BaseRecoillessLightAmmo">
+		<defName>DMS_Bullet_LRR_HE</defName>
+		<label>65mm HE-frag rocket</label>
+		<description>A thin-cased fragmentation warhead loaded with a light bursting charge. The wide fragment pattern strips infantry out of the open and clears trench lines, but the soft case flattens against plating instead of punching through it.</description>
+		<thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/DMS_ShellRecoillessLight</texPath>
+		</graphicData>
+		<projectile>
+			<speed>65</speed>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>68</damageAmountBase>
+			<armorPenetrationBase>0.25</armorPenetrationBase>
+			<explosionRadius>2.6</explosionRadius>
+			<stoppingPower>2</stoppingPower>
+			<ai_IsIncendiary>false</ai_IsIncendiary>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<shadowSize>0.4</shadowSize>
+		</projectile>
+	</ThingDef>
+
+	<!-- 小範圍高穿甲: 聚能穿甲彈 -->
+	<ThingDef ParentName="DMS_BaseRecoillessLightAmmo">
+		<defName>DMS_Bullet_LRR_HEAT</defName>
+		<label>65mm shaped-charge rocket</label>
+		<description>A copper-lined shaped charge that collapses into a hypervelocity jet on impact. The jet defeats armor no other warhead in this weight class can touch, but everything it carries goes into a single narrow channel, so anything standing beside the point of impact walks away.</description>
+		<thingClass>Fortified.Projectile_ConeExplosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/DMS_ShellRecoillessLight</texPath>
+		</graphicData>
+		<projectile>
+			<speed>75</speed>
+			<damageDef>FFF_ShapeChargeBullet</damageDef>
+			<damageAmountBase>76</damageAmountBase>
+			<armorPenetrationBase>2.2</armorPenetrationBase>
+			<explosionRadius>0.9</explosionRadius>
+			<stoppingPower>1.5</stoppingPower>
+			<ai_IsIncendiary>false</ai_IsIncendiary>
+			<soundExplode>Explosion_Rocket</soundExplode>
+			<shadowSize>0.4</shadowSize>
+		</projectile>
+		<modExtensions>
+			<li Class="Fortified.ExplosiveExtension">
+				<preExplosionOffset>1.2</preExplosionOffset>
+				<effecterDef>FFF_Effecter_Penetrate_Sabot</effecterDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!-- 反建築: 爆破彈 -->
+	<ThingDef ParentName="DMS_BaseRecoillessLightAmmo">
+		<defName>DMS_Bullet_LRR_Demolition</defName>
+		<label>65mm demolition warhead</label>
+		<description>A blunt-nosed warhead packed with a slow, heaving explosive filler. It is tuned to shear walls, doors and support structures rather than to injure, and does far more to a building than the same charge fired as a fragmentation round.</description>
+		<thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/DMS_ShellRecoillessLight</texPath>
+		</graphicData>
+		<projectile>
+			<speed>55</speed>
+			<damageDef>DMS_Damage_Demolition</damageDef>
+			<damageAmountBase>49</damageAmountBase>
+			<armorPenetrationBase>0.4</armorPenetrationBase>
+			<explosionRadius>2</explosionRadius>
+			<stoppingPower>2</stoppingPower>
+			<ai_IsIncendiary>false</ai_IsIncendiary>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<shadowSize>0.45</shadowSize>
+		</projectile>
+	</ThingDef>
+
+	<!-- 空爆煙霧彈 -->
+	<ThingDef ParentName="DMS_BaseRecoillessLightAmmo">
+		<defName>DMS_Bullet_LRR_Smoke</defName>
+		<label>65mm airburst smoke round</label>
+		<description>A screening round with a proximity fuze that bursts short of the ground, spreading its obscurant over a wider area than a ground-burst canister. It does no damage at all; it exists to break line of sight so a squad can cross open ground or drag its casualties back.</description>
+		<thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/DMS_ShellRecoillessLight</texPath>
+		</graphicData>
+		<projectile>
+			<speed>60</speed>
+			<damageDef>Smoke</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<explosionRadius>4.5</explosionRadius>
+			<postExplosionGasType>BlindSmoke</postExplosionGasType>
+			<arcHeightFactor>0.35</arcHeightFactor>
+			<soundExplode>Explosion_Smoke</soundExplode>
+			<shadowSize>0.35</shadowSize>
+		</projectile>
 	</ThingDef>
 </Defs>

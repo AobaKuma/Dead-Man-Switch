@@ -1,46 +1,53 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: Gestate Dogge -->
-  <DMS_Make_Dogge.label>Gestate Dogge</DMS_Make_Dogge.label>
-  <!-- EN: Gestate a Dogge Automatroid. -->
-  <DMS_Make_Dogge.description>Gestate a Dogge Automatroid.</DMS_Make_Dogge.description>
+
+  <!-- EN: gestate hyrax -->
+  <DMS_Make_Hyrax.label>gestate hyrax</DMS_Make_Hyrax.label>
+  <!-- EN: Gestate a hyrax Automatroid, an unmanned vehicle mounting a remote weapon station on a light tracked chassis. Simple automatic weapons like this one are usually the first practical drone system any arms manufacturer ships.\n\nThe tracked chassis keeps it from being slowed when it is attacked in melee, it draws half the power of a comparable mech, and on days with no firefight it will work as a hauler. In exchange it is structurally fragile and slow on the move. Use it for reconnaissance by fire in built-up terrain, or as a garrison unit at a base. -->
+  <DMS_Make_Hyrax.description>Gestate a hyrax Automatroid, an unmanned vehicle mounting a remote weapon station on a light tracked chassis. Simple automatic weapons like this one are usually the first practical drone system any arms manufacturer ships.\n\nThe tracked chassis keeps it from being slowed when it is attacked in melee, it draws half the power of a comparable mech, and on days with no firefight it will work as a hauler. In exchange it is structurally fragile and slow on the move. Use it for reconnaissance by fire in built-up terrain, or as a garrison unit at a base.</DMS_Make_Hyrax.description>
   <!-- EN: Gestating mech. -->
-  <DMS_Make_Dogge.jobString>Gestating mech.</DMS_Make_Dogge.jobString>
-  
+  <DMS_Make_Hyrax.jobString>Gestating mech.</DMS_Make_Hyrax.jobString>
+
   <!-- EN: gestate falcon -->
   <DMS_Make_Falcon.label>gestate falcon</DMS_Make_Falcon.label>
-  <!-- EN: Gestate a Falcon Automatroid. -->
-  <DMS_Make_Falcon.description>Gestate a Falcon Automatroid.</DMS_Make_Falcon.description>
+  <!-- EN: Gestate a Falcon Automatroid, a light tri-rotor aircraft built for armed aerial reconnaissance and anti-armor strikes. Its low production cost and modest bandwidth demand make it the cheapest forward scouting firepower a mechanitor can field.\n\nIt flies over terrain no ground unit can cross, moves at roughly twice the pace of a ground mech, and can carry a disposable anti-tank launcher, letting it destroy targets far above its own weight class. It has almost no plating and very little structure behind it, and its armament is limited to light firearms and thrown ordnance. -->
+  <DMS_Make_Falcon.description>Gestate a Falcon Automatroid, a light tri-rotor aircraft built for armed aerial reconnaissance and anti-armor strikes. Its low production cost and modest bandwidth demand make it the cheapest forward scouting firepower a mechanitor can field.\n\nIt flies over terrain no ground unit can cross, moves at roughly twice the pace of a ground mech, and can carry a disposable anti-tank launcher, letting it destroy targets far above its own weight class. It has almost no plating and very little structure behind it, and its armament is limited to light firearms and thrown ordnance.</DMS_Make_Falcon.description>
   <!-- EN: Gestating mech. -->
   <DMS_Make_Falcon.jobString>Gestating mech.</DMS_Make_Falcon.jobString>
-  
-  <!-- EN: Gestate Grenadier -->
-  <DMS_Make_Grenadier.label>Gestate Grenadier</DMS_Make_Grenadier.label>
-  <!-- EN: Gestate a Grenadier Automatroid. -->
-  <DMS_Make_Grenadier.description>Gestate a Grenadier Automatroid.</DMS_Make_Grenadier.description>
-  <!-- EN: Gestating mech. -->
-  <DMS_Make_Grenadier.jobString>Gestating mech.</DMS_Make_Grenadier.jobString>
-  
+
   <!-- EN: Gestate Noctula -->
   <DMS_Make_Noctula.label>Gestate Noctula</DMS_Make_Noctula.label>
-  <!-- EN: Gestate a Noctula Automatroid. -->
-  <DMS_Make_Noctula.description>Gestate a Noctula Automatroid.</DMS_Make_Noctula.description>
+  <!-- EN: Gestate a Noctula Automatroid, the command-relay conversion of the Falcon. The weight freed by stripping its weapon hardpoints goes into an optical camouflage module and a relay antenna, letting it hover behind the enemy line and hold the command chain open for hunters and forward detachments.\n\nAt rest it is all but transparent to observation, and it extends a mechanitor's control envelope out beyond the local map. The cost is a higher bandwidth demand and a limited ability to carry weapons. -->
+  <DMS_Make_Noctula.description>Gestate a Noctula Automatroid, the command-relay conversion of the Falcon. The weight freed by stripping its weapon hardpoints goes into an optical camouflage module and a relay antenna, letting it hover behind the enemy line and hold the command chain open for hunters and forward detachments.\n\nAt rest it is all but transparent to observation, and it extends a mechanitor's control envelope out beyond the local map. The cost is a higher bandwidth demand and a limited ability to carry weapons.</DMS_Make_Noctula.description>
   <!-- EN: Gestating mech. -->
   <DMS_Make_Noctula.jobString>Gestating mech.</DMS_Make_Noctula.jobString>
-  
-  <!-- EN: Gestate Sergeant -->
-  <DMS_Make_Sergeant.label>Gestate Sergeant</DMS_Make_Sergeant.label>
-  <!-- EN: Gestate a sergeant Automatroid. -->
-  <DMS_Make_Sergeant.description>Gestate a sergeant Automatroid.</DMS_Make_Sergeant.description>
+
+  <!-- EN: Gestate Dogge -->
+  <DMS_Make_Dogge.label>Gestate Dogge</DMS_Make_Dogge.label>
+  <!-- EN: Gestate a Dogge Automatroid, a four-legged machine gun platform. The synthetic muscle bundles in its limbs give it uncommon cross-country mobility, and its low profile suits it to providing accompanying fire across open ground - it is usually used to mop up routed enemies and for counter-guerrilla work.\n\nIt keeps both an auto-engaging fixed machine gun turret and a separate weapon hardpoint that will take a flamethrower for close work, and it moves fast enough to keep pace with any advance. Culturing the synthetic muscle is expensive, its plating only handles fragments and small calibers, and the hardpoint will not accept a long-barrelled weapon. The Dogge is well suited to running down fast-moving light guerrillas and escaping prisoners, and it can also carry anti-tank rockets to punch above its weight in street fighting. -->
+  <DMS_Make_Dogge.description>Gestate a Dogge Automatroid, a four-legged machine gun platform. The synthetic muscle bundles in its limbs give it uncommon cross-country mobility, and its low profile suits it to providing accompanying fire across open ground - it is usually used to mop up routed enemies and for counter-guerrilla work.\n\nIt keeps both an auto-engaging fixed machine gun turret and a separate weapon hardpoint that will take a flamethrower for close work, and it moves fast enough to keep pace with any advance. Culturing the synthetic muscle is expensive, its plating only handles fragments and small calibers, and the hardpoint will not accept a long-barrelled weapon. The Dogge is well suited to running down fast-moving light guerrillas and escaping prisoners, and it can also carry anti-tank rockets to punch above its weight in street fighting.</DMS_Make_Dogge.description>
   <!-- EN: Gestating mech. -->
-  <DMS_Make_Sergeant.jobString>Gestating mech.</DMS_Make_Sergeant.jobString>
-  
+  <DMS_Make_Dogge.jobString>Gestating mech.</DMS_Make_Dogge.jobString>
+
   <!-- EN: Gestate Soldat -->
   <DMS_Make_Soldat.label>Gestate Soldat</DMS_Make_Soldat.label>
-  <!-- EN: Gestate a Soldat Automatroid. -->
-  <DMS_Make_Soldat.description>Gestate a Soldat Automatroid.</DMS_Make_Soldat.description>
+  <!-- EN: Gestate a Soldat Automatroid, a mass-produced bipedal humanoid built to fight alongside armored units on the main line. Its value is not individual performance but compatibility with the supply system that already exists.\n\nIt occupies only a single point of bandwidth, its external battery pack keeps its power draw below comparable mechs, and it can take over the operation of some fixed machine gun positions. The Soldat is poorly protected against blunt trauma and walks slowly, which leaves it very vulnerable when caught in the open. -->
+  <DMS_Make_Soldat.description>Gestate a Soldat Automatroid, a mass-produced bipedal humanoid built to fight alongside armored units on the main line. Its value is not individual performance but compatibility with the supply system that already exists.\n\nIt occupies only a single point of bandwidth, its external battery pack keeps its power draw below comparable mechs, and it can take over the operation of some fixed machine gun positions. The Soldat is poorly protected against blunt trauma and walks slowly, which leaves it very vulnerable when caught in the open.</DMS_Make_Soldat.description>
   <!-- EN: Gestating mech. -->
   <DMS_Make_Soldat.jobString>Gestating mech.</DMS_Make_Soldat.jobString>
-  
+
+  <!-- EN: Gestate Grenadier -->
+  <DMS_Make_Grenadier.label>Gestate Grenadier</DMS_Make_Grenadier.label>
+  <!-- EN: Gestate a Grenadier Automatroid, the indirect-fire control variant of the Soldat. Its fire control unit has been recalibrated to compute ballistic arcs, letting it operate grenade launchers, thrown ordnance and mortar mounts, and handle targets behind cover that direct fire cannot reach.\n\nIt is the most efficient mass-produced platform for clearing fortified positions and demolishing structures, and it carries a built-in flash launcher for suppression. In exchange it demands tungsteel and synthetic fabric to build, costs two points of bandwidth, and defends itself badly at direct range; it also inherits the Soldat's thin plating and exposed battery pack. Indirect fire does not distinguish friend from foe - deploy it behind your own units. -->
+  <DMS_Make_Grenadier.description>Gestate a Grenadier Automatroid, the indirect-fire control variant of the Soldat. Its fire control unit has been recalibrated to compute ballistic arcs, letting it operate grenade launchers, thrown ordnance and mortar mounts, and handle targets behind cover that direct fire cannot reach.\n\nIt is the most efficient mass-produced platform for clearing fortified positions and demolishing structures, and it carries a built-in flash launcher for suppression. In exchange it demands tungsteel and synthetic fabric to build, costs two points of bandwidth, and defends itself badly at direct range; it also inherits the Soldat's thin plating and exposed battery pack. Indirect fire does not distinguish friend from foe - deploy it behind your own units.</DMS_Make_Grenadier.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Grenadier.jobString>Gestating mech.</DMS_Make_Grenadier.jobString>
+
+  <!-- EN: Gestate Sergeant -->
+  <DMS_Make_Sergeant.label>Gestate Sergeant</DMS_Make_Sergeant.label>
+  <!-- EN: Gestate a Sergeant Automatroid, the relay-command conversion of the Soldat, recognizable by the dish-shaped omnidirectional radar and transceiver mast on its back. Its job is to organize scattered units into a combined automatroid battlegroup (CAB), and to hold the command chain open on behalf of the mechanitor when they cannot move up in person.\n\nIts relay radius far exceeds the Noctula's and extends control into neighboring maps, and the identification code on its T/R transceiver can be used to request Soldat and Falcon reinforcement drops from synchronous orbit. The mass and processing load of the radar assembly cost four times the Soldat's bandwidth, however, and leave it slower, thinner-skinned, and able to carry nothing heavier than a sidearm for self-defense. When a Sergeant is destroyed, every link in the command chain it was holding open goes down with it. -->
+  <DMS_Make_Sergeant.description>Gestate a Sergeant Automatroid, the relay-command conversion of the Soldat, recognizable by the dish-shaped omnidirectional radar and transceiver mast on its back. Its job is to organize scattered units into a combined automatroid battlegroup (CAB), and to hold the command chain open on behalf of the mechanitor when they cannot move up in person.\n\nIts relay radius far exceeds the Noctula's and extends control into neighboring maps, and the identification code on its T/R transceiver can be used to request Soldat and Falcon reinforcement drops from synchronous orbit. The mass and processing load of the radar assembly cost four times the Soldat's bandwidth, however, and leave it slower, thinner-skinned, and able to carry nothing heavier than a sidearm for self-defense. When a Sergeant is destroyed, every link in the command chain it was holding open goes down with it.</DMS_Make_Sergeant.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Sergeant.jobString>Gestating mech.</DMS_Make_Sergeant.jobString>
+
 </LanguageData>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThinkTreeDef>
+    <defName>DMS_FPVDroneConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+
+        <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+          <subNodes>
+            <li Class="ThinkNode_ConditionalDoingJob">
+              <invert>true</invert>
+              <jobDef>FFF_ReturnToDronePlatform</jobDef>
+              <subNodes>
+                <li Class="ThinkNode_QueuedJob" />
+              </subNodes>
+            </li>
+            <li Class="ThinkNode_ConditionalOfPlayerFaction">
+              <subNodes>
+                <li Class="JobGiver_AIFightEnemies">
+                  <targetAcquireRadius>65</targetAcquireRadius>
+                  <targetKeepRadius>72</targetKeepRadius>
+                  <chaseTarget>true</chaseTarget>
+                  <humanlikesOnly>false</humanlikesOnly>
+                </li>
+              </subNodes>
+            </li>
+            <li Class="ThinkNode_ConditionalOfPlayerFaction">
+              <invert>true</invert>
+              <subNodes>
+                <li Class="JobGiver_AIGotoNearestHostile" />
+              </subNodes>
+            </li>
+            <li Class="Fortified.JobGiver_WanderNearPlatform" />
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <!-- FPV suicide drone base: root node is a plain mechanoid rather than the
+       weapon-usable droid chassis (DMS_BaseDroidRace), so these one-shot drones
+       do not gain weapon/loadout handling they never use. -->
+  <ThingDef Name="DMS_BaseFPVDroneRace" ParentName="BaseMechanoid" Abstract="True">
+    <race>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>DMS_Mechanoid</thinkTreeMain>
+      <nameGenerator>DMS_VanguardMechStandard</nameGenerator>
+      <soundCallIntervalRange>2000~4000</soundCallIntervalRange>
+      <soundCallIntervalFriendlyFactor>2</soundCallIntervalFriendlyFactor>
+      <soundCallIntervalAggressiveFactor>0.5</soundCallIntervalAggressiveFactor>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+      <mechFixedSkillLevel>8</mechFixedSkillLevel>
+    </race>
+    <comps Inherit="False">
+      <li Class="CompProperties_MechRepairable" />
+      <li Class="CompProperties_CanBeDormant" />
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpOnDamage>true</wakeUpOnDamage>
+        <wakeUpCheckRadius>30</wakeUpCheckRadius>
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>5</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_BaseFPVDroneRace">
+    <defName>DMS_Drone_Wildfowl</defName>
+    <label>wildfowl</label>
+    <description>The UAS 1/B "Hunter Bee" nicknamed "wildfowl" is a foldable, small coaxial rotor drone equipped with a plastic explosive charge equivalent to an M67 hand grenade, posing a significant threat when approaching a target in swarms.</description>
+    <statBases>
+      <MoveSpeed>8</MoveSpeed>
+      <MaxFlightTime>30</MaxFlightTime>
+    </statBases>
+    <race>
+      <thinkTreeConstant>DMS_FPVDroneConstant</thinkTreeConstant>
+      <baseHealthScale>0.25</baseHealthScale>
+      <baseBodySize>0.3</baseBodySize>
+      <hasCorpse>true</hasCorpse>
+      <body>DMS_Chop</body>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Hunter_Wounded</soundWounded>
+          <soundDeath>Pawn_Hunter_Death</soundDeath>
+          <soundCall>Pawn_Hunter_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <tools Inherit="false">
+      <li>
+        <label>flabellum</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="Fortified.CompProperties_Drone">
+        <returnToDraftPlatformJob>FFF_ReturnToDronePlatform</returnToDraftPlatformJob>
+      </li>
+      <li Class="Fortified.CompProperties_FlyingFleckThrower">
+        <burstOffsetRange>(0.5,1.2)</burstOffsetRange>
+        <fleckOnSoil>DustPuff</fleckOnSoil>
+        <fleckOnSnow>AirPuff</fleckOnSnow>
+        <activeAnimation>DMS_Hover</activeAnimation>
+        <sizeRange>(1,1.2)</sizeRange>
+        <speedRange>(0.5,1)</speedRange>
+        <throwRate>1</throwRate>
+        <throwTick>5</throwTick>
+      </li>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>12500</totalPowerTicks> <!-- 5 hours -->
+        <labelOverride>Battery power</labelOverride>
+        <tooltipOverride>Drones have limited battery life. When the battery runs dry, the drone dies.</tooltipOverride>
+        <showGizmoOnNonPlayerControlled>true</showGizmoOnNonPlayerControlled>
+      </li>
+      <li Class="CompProperties_HunterDrone">
+        <explosionRadius>1.5</explosionRadius>
+        <explosionDamageType>Bomb</explosionDamageType>
+        <explosionDamageAmount>40</explosionDamageAmount>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>10</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="DMS_DroidKind">
+    <defName>DMS_Drone_Wildfowl</defName>
+    <label>wildfowl</label>
+    <labelPlural>wildfowls</labelPlural>
+    <race>DMS_Drone_Wildfowl</race>
+    <combatPower>25</combatPower>
+    <defaultFactionDef>DMS_Legacy</defaultFactionDef>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Wildfowl/body</texPath>
+          <shaderType>Transparent</shaderType>
+          <drawSize>1</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>

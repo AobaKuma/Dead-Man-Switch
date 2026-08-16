@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+	CE: 4KG 輕型無後座力砲 (DMS_Gun_RecoillessLight)
+
+	原版是一次性武器 + FFF 彈種切換; 在 CE 底下:
+	1. 移除 CompProperties_ApparelReloadable  -> 不再打完即毀, 改為可複用
+	2. 彈種切換 comp 的移除統一寫在 AmmoSwitch_CE_Remove.xml (該檔跑在本檔之前)
+	3. 改用 CE 的 CompAmmoUser, 彈藥集沿用 60mm 迫擊砲直射彈 (AmmoSet_60mmMortarShell_DF),
+	   彈種切換交由 CE 自己的彈藥系統處理 (HE / 燃燒 / EMP / 泡沫 / 煙霧)
+-->
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_RecoillessLight"]/comps/li[@Class="CompProperties_ApparelReloadable"]</xpath>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_RecoillessLight"]/tools</xpath>
+				<value>
+					<tools Inherit="False">
+						<li Class="CombatExtended.ToolCE">
+							<label>tube</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>5</power>
+							<cooldownTime>2.02</cooldownTime>
+							<armorPenetrationBlunt>0.755</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_RecoillessLight</defName>
+				<statBases>
+					<WorkToMake>16000</WorkToMake>
+					<Mass>4</Mass>
+					<Bulk>10.5</Bulk>
+					<SwayFactor>1.25</SwayFactor>
+					<ShotSpread>0.06</ShotSpread>
+					<SightsEfficiency>0.9</SightsEfficiency>
+					<RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<recoilAmount>0.4</recoilAmount>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_60mmMortarShell_DF_HE</defaultProjectile>
+					<burstShotCount>1</burstShotCount>
+					<warmupTime>1.9</warmupTime>
+					<minRange>3.9</minRange>
+					<range>44</range>
+					<soundCast>RocketswarmLauncher_Fire</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>16</muzzleFlashScale>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+				</Properties>
+				<AmmoUser>
+					<magazineSize>1</magazineSize>
+					<reloadTime>4</reloadTime>
+					<ammoSet>AmmoSet_60mmMortarShell_DF</ammoSet>
+				</AmmoUser>
+				<FireModes>
+					<aiUseBurstMode>FALSE</aiUseBurstMode>
+					<aiAimMode>AimedShot</aiAimMode>
+				</FireModes>
+				<weaponTags>
+					<li>CE_AI_AOE</li>
+				</weaponTags>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

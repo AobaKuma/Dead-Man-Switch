@@ -176,4 +176,25 @@ This weapon is designed specifically for automatroid use,it's so heavy only spec
   <DMS_SniperCannon.tools.muzzle-1.label>muzzle</DMS_SniperCannon.tools.muzzle-1.label>
   <DMS_SniperCannon.verbs.Verb_ShootCE.label>sniper cannon</DMS_SniperCannon.verbs.Verb_ShootCE.label>
   
+
+  <!--==================== 重型無後座力砲: 可切換彈種 ====================-->
+  
+  <!-- EN: The standard round for the recoilless rifle: a shaped charge backed by a fragmentation sleeve. The jet opens armor at the point of impact while the sleeve throws a forward cone of fragments down the firing line, so it also hurts whatever was standing behind the vehicle it just killed. -->
+  <DMS_Bullet_RR.description>The standard round for the recoilless rifle: a shaped charge backed by a fragmentation sleeve. The jet opens armor at the point of impact while the sleeve throws a forward cone of fragments down the firing line, so it also hurts whatever was standing behind the vehicle it just killed.</DMS_Bullet_RR.description>
+  
+  <!-- EN: 120mm HE-frag shell -->
+  <DMS_Bullet_RR_HE.label>120mm HE-frag shell</DMS_Bullet_RR_HE.label>
+  <!-- EN: A thin-cased high explosive shell tuned for area effect rather than penetration. It sweeps a wide circle clear of infantry and light emplacements, but the blast wave spends itself against anything properly armored. -->
+  <DMS_Bullet_RR_HE.description>A thin-cased high explosive shell tuned for area effect rather than penetration. It sweeps a wide circle clear of infantry and light emplacements, but the blast wave spends itself against anything properly armored.</DMS_Bullet_RR_HE.description>
+  
+  <!-- EN: 120mm demolition shell -->
+  <DMS_Bullet_RR_Demolition.label>120mm demolition shell</DMS_Bullet_RR_Demolition.label>
+  <!-- EN: A heavy demolition shell with a slow, heaving filler and a delayed fuze that lets it seat against the target before it lets go. It is meant for walls, bunkers and load-bearing structures; against personnel it is merely adequate, and its weight costs range. -->
+  <DMS_Bullet_RR_Demolition.description>A heavy demolition shell with a slow, heaving filler and a delayed fuze that lets it seat against the target before it lets go. It is meant for walls, bunkers and load-bearing structures; against personnel it is merely adequate, and its weight costs range.</DMS_Bullet_RR_Demolition.description>
+  
+  <!-- EN: 120mm airburst smoke shell -->
+  <DMS_Bullet_RR_Smoke.label>120mm airburst smoke shell</DMS_Bullet_RR_Smoke.label>
+  <!-- EN: A large screening shell with a proximity fuze that opens above head height, laying an obscurant bank far wider than any hand-thrown canister. It does no damage at all; it exists to blind a firing line long enough for an assault or a withdrawal to happen. -->
+  <DMS_Bullet_RR_Smoke.description>A large screening shell with a proximity fuze that opens above head height, laying an obscurant bank far wider than any hand-thrown canister. It does no damage at all; it exists to blind a firing line long enough for an assault or a withdrawal to happen.</DMS_Bullet_RR_Smoke.description>
+  
 </LanguageData>
