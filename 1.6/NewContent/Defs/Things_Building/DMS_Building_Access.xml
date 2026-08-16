@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <ThingDef ParentName="Wall">
+    <defName>DMS_SuperWall</defName>
+    <label>reinforced wall</label>
+    <description>An armored heavily-reinforced wall.</description>
+    <uiIconPath>Things/Building/Linked/DMS_SuperWall_MenuIcon</uiIconPath>
+    <graphicData>
+      <texPath>Things/Building/Linked/DMS_SuperWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(100,100,100)</color>
+    </graphicData>
+    <building>
+      <paintable>false</paintable>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <neverBuildable>true</neverBuildable>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <isAirtight>true</isAirtight>
+      <isStuffableAirtight>false</isStuffableAirtight>
+    </building>
+    <stuffCategories Inherit="False"/>
+    <costStuffCount>0</costStuffCount>
+    <useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <MaxHitPoints>999999</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <MeditationFocusStrength>0</MeditationFocusStrength>
+    </statBases>
+    <comps Inherit="False"/>
+    <designationCategory>FFF_DevCategory</designationCategory>
+  </ThingDef>
+
   <DesignatorDropdownGroupDef>
     <defName>DMS_Consoles</defName>
     <label>consoles</label>
