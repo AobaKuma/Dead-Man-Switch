@@ -82,6 +82,9 @@
     <building>
       <spawnedConceptLearnOpportunity>DMS_Autofacturer</spawnedConceptLearnOpportunity>
     </building>
+    <placeWorkers Inherit="false">
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
   </ThingDef>
   
 </Defs>

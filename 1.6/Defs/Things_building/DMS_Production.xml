@@ -71,9 +71,6 @@
         </inheritRecipesFrom>
       </li>
     </modExtensions>
-    <placeWorkers Inherit="false">
-      <li>PlaceWorker_ShowFacilitiesConnections</li>
-    </placeWorkers>
   </ThingDef>
 
   <ThingDef ParentName="DMS_AutofacturerBenchBase">
@@ -154,9 +151,6 @@
         </inheritRecipesFrom>
       </li>
     </modExtensions>
-    <placeWorkers Inherit="false">
-      <li>PlaceWorker_ShowFacilitiesConnections</li>
-    </placeWorkers>
   </ThingDef>
 
   <!-- DMS_TableMachinePrinter -->
