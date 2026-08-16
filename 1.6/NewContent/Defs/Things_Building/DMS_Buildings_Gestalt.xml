@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>DMS_GestaltEngine</defName>
+		<label>central command core</label>
+		<description>Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World.</description>
+		<thingClass>Fortified.Building_Overseer</thingClass>
+		<graphicData>
+			<texPath>Things/Building/CentralCommandCore</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<shadowData>
+				<volume>(5.03,1.0,4.25)</volume>
+				<offset>(0,0,-0.25)</offset>
+			</shadowData>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/CentralCommandCore</uiIconPath>
+		<size>(5,5)</size>
+		<tickerType>Normal</tickerType>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<fillPercent>1</fillPercent>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>2500</MaxHitPoints>
+			<WorkToBuild>80000</WorkToBuild>
+			<Flammability>0.5</Flammability>
+			<Beauty>10</Beauty>
+		</statBases>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<costList>
+			<Steel>800</Steel> 
+			<Tungsteel>100</Tungsteel>
+			<ComponentStamped>14</ComponentStamped>
+			<Neurocomputer>8</Neurocomputer>
+			<ComponentControlChip>1</ComponentControlChip>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>DMS_Category</designationCategory>
+		<building>
+			<artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+			<ai_chillDestination>false</ai_chillDestination>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+			<buildingTags>
+				<li>Mechanitor</li>
+			</buildingTags>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>DMS_Mechlink</li>
+		</researchPrerequisites>
+		<comps>
+      <li Class="Fortified.CompProperties_Overseer">
+        <controlWholeMap>true</controlWholeMap>
+        <controlGroups>4</controlGroups>
+        <bandwidth>50</bandwidth>
+        <selectOverseerIconPath>UI/Icons/DMS_SelectGestalt</selectOverseerIconPath>
+      </li>
+			<li Class="CompProperties_AmbientSound">
+				<sound>GeothermalPlant_Ambience</sound>
+				<disabledOnUnpowered>true</disabledOnUnpowered>
+			</li>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities/>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>500</basePowerConsumption>
+				<shortCircuitInRain>true</shortCircuitInRain>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+	</ThingDef>
+</Defs>

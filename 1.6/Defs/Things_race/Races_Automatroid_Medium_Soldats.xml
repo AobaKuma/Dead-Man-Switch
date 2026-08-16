@@ -332,6 +332,7 @@
   <ThingDef ParentName="BaseMechRace_Soldat">
     <defName>DMS_Mech_Sergeant</defName>
     <label>Sergeant</label>
+    <thingClass>Fortified.OverseerMech</thingClass>
     <description>As a relay command variant of the Soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. Sergeants extend a mechanitor's effective range, but due to the weight of its radar equipment it can only equip a light weapon for self-defense.</description>
     <statBases>
       <MoveSpeed>4</MoveSpeed>                                                    <!--移動速度-->
@@ -341,11 +342,36 @@
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
-    <comps>
-      <li Class="Fortified.CompProperties_CommandRelay">
+    <comps Inherit="False"><!--CompDeadManSwitch shouldn't be present in Overseer mechs-->
+      <li Class="CompProperties_CanBeDormant">
+        <compClass>CompMechanoid</compClass>
+      </li>
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpOnDamage>true</wakeUpOnDamage>
+        <wakeUpCheckRadius>30</wakeUpCheckRadius>
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Biotech" Class="CompProperties_OverseerSubject">
+        <needsOverseerEffect>MechUncontrolled</needsOverseerEffect>
+        <delayUntilFeralCheck>60000</delayUntilFeralCheck>
+        <feralMtbDays>10</feralMtbDays>
+        <feralCascadeRadialDistance>25</feralCascadeRadialDistance>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Biotech" Class="CompProperties_MechRepairable" />
+      <!--<li Class="Fortified.CompProperties_CommandRelay">
         <maxWorldMapRadius>10</maxWorldMapRadius>
         <maxRelayRadius>20</maxRelayRadius>
         <minRelayRadius>5</minRelayRadius>
+      </li>-->
+      <li Class="Fortified.CompProperties_Overseer">
+        <commandRange>19.9</commandRange>
+        <controlGroups>1</controlGroups>
+        <bandwidth>6</bandwidth>
+        <selectOverseerIconPath>UI/Icons/DMS_SelectSergeant</selectOverseerIconPath>
+      </li>
+      <li Class="Fortified.CompProperties_Paintable">
+        <defaultColor>(100, 102, 100)</defaultColor>
+        <enableCamoSwitch>true</enableCamoSwitch>
       </li>
     </comps>
     <modExtensions>
