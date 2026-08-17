@@ -94,4 +94,27 @@
     </descriptionHyperlinks>
   </ResearchProjectDef>
 
+  <!-- ============================================================= -->
+  <!-- 集群司令：封存檔案 I 級 · 設施級機兵指揮主機              -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_GestaltEngine</defName>
+    <label>cluster command</label>
+    <description>A facility-scale computer assembled from arrays of microelectronic chips and the power system that drives them. Even a bare mainframe with no attached subsystems commands and coordinates mechs as capably as a human mechanitor. Technology of this kind was already in wide use in humanity's wars against itself long before it reached the stars, and after the expansion it was deployed in bulk on interstellar terraforming programs, bringing countless barren worlds to life.\n\nApproved by ████ and ██, cluster command and its related technologies are designated class I sealed technology. Provision of such technology to developing worlds is prohibited, and outside emergency war mobilization, standing ground-force deployments are to avoid employing it in any military operation.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Sealed</knowledgeCategory>
+    <knowledgeCost>750</knowledgeCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>7.00</researchViewY>
+    <prerequisites>
+      <li>DMS_Mechlink</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file I: cluster command</discoveredLetterTitle>
+    <discoveredLetterText>Researchers have opened a class I sealed file containing the architecture of a cluster command mainframe.\n\nThe central command core can now be built. A single core directs mechs across the entire map without a mechanitor, supplying its own control bandwidth and command groups.\n\nThe fleets keep this file sealed for standing armies and open it only for emergency mobilization. Fielding it in a routine ground deployment will be noted.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_GestaltEngine</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
 </Defs>

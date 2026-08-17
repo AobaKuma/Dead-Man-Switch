@@ -11,6 +11,13 @@
   <!-- EN: Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants. -->
   <DMS_BF_ExtendCargo.description>Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants.</DMS_BF_ExtendCargo.description>
   
+  <!-- EN: Recoilless Rifle Rack -->
+  <DMS_BF_RecoillessRifle.label>Recoilless Rifle Rack</DMS_BF_RecoillessRifle.label>
+  <!-- EN: A pair of 65mm recoilless tubes mounted on the side pylons and tied into the frame's fire control chain, reloaded from the frame's carried stores between engagements.\n\nThe shaped-charge warhead punches through armor and fortification that the frame's own weapon cannot touch, though the jet goes into a single narrow channel and anything standing beside the point of impact walks away. The mass hanging on the pylons costs the frame walking pace, dodging room and cargo allowance. -->
+  <DMS_BF_RecoillessRifle.description>A pair of 65mm recoilless tubes mounted on the side pylons and tied into the frame's fire control chain, reloaded from the frame's carried stores between engagements.
+
+The shaped-charge warhead punches through armor and fortification that the frame's own weapon cannot touch, though the jet goes into a single narrow channel and anything standing beside the point of impact walks away. The mass hanging on the pylons costs the frame walking pace, dodging room and cargo allowance.</DMS_BF_RecoillessRifle.description>
+  
   <!-- EN: Ceramic Plates -->
   <DMS_CeramicsPlating.label>Ceramic Plates</DMS_CeramicsPlating.label>
   <!-- EN: Disposable ceramic armor that effectively protects the wearer from small arms fire and shrapnel.\n\nAlthough it is an excellent protective armor, it must be completely replaced once damaged. -->

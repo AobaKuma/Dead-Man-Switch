@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
+  <!-- EN: Recoilless Rifle Shot -->
+  <DMS_BF_RecoillessShot.label>無後座力砲射擊</DMS_BF_RecoillessShot.label>
+  <!-- EN: Fire one of the rack's 65mm shaped-charge rockets. The jet defeats armor and fortification that the frame's own weapon cannot touch, but it goes into a single narrow channel and does little to anything standing beside the point of impact.\n\nSpent tubes are reloaded from the frame's carried stores between engagements. -->
+  <DMS_BF_RecoillessShot.description>發射掛架上的一發65mm聚能穿甲火箭。金屬射流能貫穿框架自身武裝完全處理不了的裝甲與工事，但爆轟集中在一條窄通道，對彈著點旁邊的目標幾乎沒有效果。\n\n空管由框架自攜的彈藥在交戰間隙重新裝填。</DMS_BF_RecoillessShot.description>
+  <!-- EN: fire recoilless rifle -->
+  <DMS_BF_RecoillessShot.verbProperties.label>發射無後座力砲</DMS_BF_RecoillessShot.verbProperties.label>
+  
   <!-- EN: Flashbang barrage -->
   <DMS_FlashLauncher.label>曲射閃光彈</DMS_FlashLauncher.label>
   <!-- EN: Launch an indirect-fired flashbang to stun the enemy. -->
@@ -47,7 +54,7 @@
 
   <!-- EN: field mothball -->
   <DMS_Mothball.label>原地封存</DMS_Mothball.label>
-  <!-- EN: Fold the chassis down into its transport frame on the spot... -->
+  <!-- EN: Disable system activity on the spot. The unit becomes a dormant storage structure that costs no bandwidth and takes no upkeep, and can be brought back online later by a mechanitor.\n\nStandard practice for garrison units between deployments. -->
   <DMS_Mothball.description>將機體就地折疊收入自身的運輸框架。單位會轉為休眠建築，不再佔用頻寬也無需維護，日後可由機械師重新啟動。\n\n這是駐防單位在兩次部署之間的標準做法。徵召狀態下無法執行。</DMS_Mothball.description>
   <!-- EN: fold into transport frame -->
   <DMS_Mothball.verbProperties.label>折疊收納</DMS_Mothball.verbProperties.label>

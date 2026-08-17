@@ -40,9 +40,6 @@
     <defName>DMS_Mech_Soldat</defName>
     <label>Soldat</label>
     <description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Soldat's can be equipped with weapons rated for human use.\n\nThe Soldat has to carry a battery backpack which makes it unable to fight like other mechs without cover.</description>
-    <statBases>
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">1</BandwidthCost>
-    </statBases>
     <modExtensions>
       <li Class="Fortified.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
@@ -223,9 +220,9 @@
     <label>grenadier</label>
     <race>DMS_Mech_Grenadier</race>
     <isFighter>true</isFighter>
-    <combatPower>120</combatPower>                                               <!--威脅點數-->
-    <maxPerGroup>20</maxPerGroup>                                                 <!--單個集群內的數量-->
-    <lifeStages>                                                                 <!--身體圖片-->
+    <combatPower>120</combatPower>
+    <maxPerGroup>20</maxPerGroup>
+    <lifeStages>
       <li>
         <bodyGraphicData>
           <texPath>Things/Automatroid/grenadier</texPath>
@@ -291,6 +288,7 @@
       </li>
     </modExtensions>
   </ThingDef>
+
   <PawnKindDef ParentName="BaseAutomatroidKind">
     <defName>DMS_Mech_Kanonier</defName>
     <label>Kanonier</label>
@@ -321,7 +319,7 @@
     <weaponMoney>1700~3000</weaponMoney>
     <weaponTags><!--武器-->
       <li>GunSingleUse</li>
-      <li>DMS_Gun_Recoilless</li>
+      <li>DMS_Gun_RecoillessLight</li>
     </weaponTags>
     <abilities>
       <li>DMS_Mothball</li>

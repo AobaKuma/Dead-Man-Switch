@@ -38,7 +38,6 @@
         <li>Torso</li>
       </groups>
       <parts>
-
         <!-- ===== 軀幹骨架 ===== -->
         <li>
           <def>Spine</def>
@@ -48,7 +47,6 @@
             <li>Torso</li>
           </groups>
         </li>
-
         <!-- ===== 內臟（人類，無胃） ===== -->
         <li>
           <def>Heart</def>
@@ -110,7 +108,6 @@
             <li>Torso</li>
           </groups>
         </li>
-
         <!-- ===== 頸與頭 ===== -->
         <li>
           <def>Neck</def>
@@ -341,7 +338,6 @@
           </parts>
         </li>
 
-        <!-- ===== 右上肢（合成機械骨架） ===== -->
         <li>
           <def>MechanicalShoulder</def>
           <customLabel>right shoulder</customLabel>
@@ -536,7 +532,6 @@
             </li>
           </parts>
         </li>
-
       </parts>
     </corePart>
   </BodyDef>

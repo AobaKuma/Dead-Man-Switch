@@ -42,9 +42,8 @@
         <UsableWeaponTags>
           <li>SimpleGun</li>
           <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
-          <!--<li>DMS_MechWeaponLongRifle</li>-->
+          <li>DMS_Gun_RecoillessLight</li>
           <li>DMS_MechWeaponLight</li>
-          <!--<li>A_BR_LongRifle</li>-->
           <li>GrenadeSmoke</li>
           <li>A_MG_Heavy</li>
           <li>A_SuppressWeapon</li>

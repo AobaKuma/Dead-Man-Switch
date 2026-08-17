@@ -341,4 +341,44 @@
 		</comps>
 	</AbilityDef>
 
+	<!-- 戰鬥框架無後座力砲掛架的開火能力。
+	     兩管共 2 發裝填，每發各自以 30000 tick（約半天）循環補彈。
+	     彈道沿用輕型無後座力砲的聚能穿甲彈 DMS_Bullet_LRR_HEAT。
+	     CE 環境下由 CE/Patches/RecoillessRack_CE.xml 改成 1 發裝填、
+	     60000 tick 補彈，並換成 CE 彈道 DMS_Bullet_LRR_HEAT_CE。 -->
+	<AbilityDef>
+		<defName>DMS_BF_RecoillessShot</defName>
+		<label>Recoilless Rifle Shot</label>
+		<description>Fire one of the rack's 65mm shaped-charge rockets. The jet defeats armor and fortification that the frame's own weapon cannot touch, but it goes into a single narrow channel and does little to anything standing beside the point of impact.\n\nSpent tubes are reloaded from the frame's carried stores between engagements.</description>
+		<iconPath>UI/Ability/Missile</iconPath>
+		<aiCanUse>true</aiCanUse>
+		<hostile>true</hostile>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<charges>2</charges>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<label>fire recoilless rifle</label>
+			<defaultCooldownTime>3</defaultCooldownTime>
+			<onlyManualCast>false</onlyManualCast>
+			<range>29.9</range>
+			<warmupTime>2</warmupTime>
+			<requireLineOfSight>true</requireLineOfSight>
+			<soundCast>RocketswarmLauncher_Fire</soundCast>
+			<soundCastTail>GunTail_Heavy</soundCastTail>
+			<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+			<ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
+			<targetParams>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetBuildings>true</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+				<projectileDef>DMS_Bullet_LRR_HEAT</projectileDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
 </Defs>

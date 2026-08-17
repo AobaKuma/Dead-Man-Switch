@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
+  <!-- EN: Recoilless Rifle Shot -->
+  <DMS_BF_RecoillessShot.label>Recoilless Rifle Shot</DMS_BF_RecoillessShot.label>
+  <!-- EN: Fire one of the rack's 65mm shaped-charge rockets. The jet defeats armor and fortification that the frame's own weapon cannot touch, but it goes into a single narrow channel and does little to anything standing beside the point of impact.\n\nSpent tubes are reloaded from the frame's carried stores between engagements. -->
+  <DMS_BF_RecoillessShot.description>Fire one of the rack's 65mm shaped-charge rockets. The jet defeats armor and fortification that the frame's own weapon cannot touch, but it goes into a single narrow channel and does little to anything standing beside the point of impact.
+
+Spent tubes are reloaded from the frame's carried stores between engagements.</DMS_BF_RecoillessShot.description>
+  <!-- EN: fire recoilless rifle -->
+  <DMS_BF_RecoillessShot.verbProperties.label>fire recoilless rifle</DMS_BF_RecoillessShot.verbProperties.label>
+  
   <!-- EN: Flashbang barrage -->
   <DMS_FlashLauncher.label>Flashbang barrage</DMS_FlashLauncher.label>
   <!-- EN: Launch an indirect-fired flashbang to stun the enemy. -->
@@ -48,4 +57,14 @@ Are you sure to do this?</DMS_NuclearOverload.confirmationDialogText>
   <!-- EN: Concentrate firepower to conduct a strafing attack in a specific direction. -->
   <DMS_Strafing.description>Concentrate firepower to conduct a strafing attack in a specific direction.</DMS_Strafing.description>
   
+
+  <!-- EN: field mothball -->
+  <DMS_Mothball.label>field mothball</DMS_Mothball.label>
+  <!-- EN: Disable system activity on the spot. The unit becomes a dormant storage structure that costs no bandwidth and takes no upkeep, and can be brought back online later by a mechanitor.\n\nStandard practice for garrison units between deployments. -->
+  <DMS_Mothball.description>Disable system activity on the spot. The unit becomes a dormant storage structure that costs no bandwidth and takes no upkeep, and can be brought back online later by a mechanitor.
+
+Standard practice for garrison units between deployments.</DMS_Mothball.description>
+  <!-- EN: fold into transport frame -->
+  <DMS_Mothball.verbProperties.label>fold into transport frame</DMS_Mothball.verbProperties.label>
+
 </LanguageData>

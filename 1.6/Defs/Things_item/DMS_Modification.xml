@@ -536,9 +536,137 @@
       </li>
     </renderNodeProperties>
   </HediffDef>
-  <!-- TODO夜戰傳感器(CE)，夜戰瞄準能力200% -->
-  <!-- TODO SS反步兵系統，一種安裝於機兵外殼上的反步兵地雷系統，能夠激活並對周圍的步兵造成可觀的殺傷效果。殖民艦隊軍方曾關於使用這類裝備是否有違倫理而曾有過一段時間的討論，最終基於對生物兵器威脅的有效性依然 -->
-  <!-- TODO重啟協議，死後1小時復活並有25%機率狂暴 -->
+
+
+  <!-- 戰鬥框架-無後座力砲掛載-->
+  <ThingDef ParentName="BaseModificationItem">
+    <defName>DMS_BF_RecoillessRifle</defName>
+    <label>Recoilless rifle rack</label>
+    <description>A pair of 65mm recoilless tubes on a shared cradle, built to bolt onto the side pylons of a battle frame. Line units fit it for one reason: a frame's own light armament has no answer to plating or a prepared firing position, and a walking mount can carry the tube into ground a two-man crew would never reach.\n\nLoaded with shaped-charge rockets, the rack defeats armor and fortifications far above the frame's weight class, and its fire control unit reloads a spent tube from carried stores between engagements. The frame pays for it in walking pace, dodging room and cargo allowance, and every backblast marks its position for every observer on the field.</description>
+    <descriptionHyperlinks>
+      <HediffDef>DMS_BF_RecoillessRifle</HediffDef>
+      <ThingDef>DMS_Mech_BattleFrame</ThingDef>
+      <ThingDef>DMS_Mech_EscortLifter</ThingDef>
+      <ThingDef>DMS_Mech_FieldCommand</ThingDef>
+      <ThingDef>DMS_Mech_Iguana</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Modifications/RecoillessRifle/icon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Mass>10</Mass>
+    </statBases>
+    <costList>
+      <DMS_Gun_RecoillessLight>2</DMS_Gun_RecoillessLight>
+      <Steel>50</Steel>
+    </costList>
+    <recipeMaker>
+      <workAmount>4000</workAmount>
+      <researchPrerequisite>DMS_BattleFrame</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <recipeUsers>
+        <li>DMS_TableMachinePrinter</li>
+      </recipeUsers>
+    </recipeMaker>
+    <comps>
+      <li Class="Fortified.CompProperties_AddHediffOnTarget">
+        <compClass>Fortified.CompTargetable_AddHediffOnTarget</compClass>
+        <hediffDef>DMS_BF_RecoillessRifle</hediffDef>
+        <soundDef>DMS_EquipGear</soundDef>
+        <supportRaceDefs>
+          <li>DMS_Mech_BattleFrame</li>
+          <li>DMS_Mech_EscortLifter</li>
+          <li>DMS_Mech_FieldCommand</li>
+          <li>DMS_Mech_Iguana</li>
+        </supportRaceDefs>
+        <targetBodyPartDefs>
+          <li>MechanicalThorax</li>
+          <li>DMS_HeavyChassis</li>
+        </targetBodyPartDefs>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>DMS_BF_RecoillessRifle</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Recoilless Rifle Rack</label>
+    <description>A pair of 65mm recoilless tubes mounted on the side pylons and tied into the frame's fire control chain, reloaded from the frame's carried stores between engagements.\n\nThe shaped-charge warhead punches through armor and fortification that the frame's own weapon cannot touch, though the jet goes into a single narrow channel and anything standing beside the point of impact walks away. The mass hanging on the pylons costs the frame walking pace, dodging room and cargo allowance.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_BF_RecoillessRifle</ThingDef>
+      <AbilityDef>DMS_BF_RecoillessShot</AbilityDef>
+      <ThingDef>DMS_Mech_BattleFrame</ThingDef>
+      <ThingDef>DMS_Mech_EscortLifter</ThingDef>
+      <ThingDef>DMS_Mech_FieldCommand</ThingDef>
+      <ThingDef>DMS_Mech_Iguana</ThingDef>
+    </descriptionHyperlinks>
+    <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
+    <isBad>false</isBad>
+    <!-- 修正: 原本寫成 DMS_BF_ExtendCargo，拆下無後座力砲掛架會退回一個加掛貨箱 -->
+    <spawnThingOnRemoved>DMS_BF_RecoillessRifle</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <!-- 修正: statFactors 是乘算係數，原本的 -0.3 / -0.2 會把移速與閃避乘成負值。
+             改為與其他掛架模組同級的乘算值（加掛貨箱 0.8 / 0.9、附加裝甲 0.9 / 0.9），
+             本模組 10kg 且重心偏側，故兩項都取 0.8。 -->
+        <statFactors>
+          <MoveSpeed>0.8</MoveSpeed>
+          <MeleeDodgeChance>0.8</MeleeDodgeChance>
+        </statFactors>
+        <statOffsets>
+          <Mass>10</Mass>
+          <FFF_MassCarryCapacity>-10</FFF_MassCarryCapacity>
+          <CarryBulk MayRequire="ceteam.combatextended">-5</CarryBulk>
+          <CarryWeight MayRequire="ceteam.combatextended">-10</CarryWeight>
+          <CarryingCapacity>-10</CarryingCapacity>
+          <!-- 射控單元的待機耗能 -->
+          <MechEnergyUsageFactor>0.05</MechEnergyUsageFactor>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="Fortified.HediffCompProperties_Modification">
+        <applyJob>FFF_ModificationRemove</applyJob>
+      </li>
+    </comps>
+    <!-- 掛載後取得的開火能力，定義見 Abilities/Common.xml -->
+    <abilities>
+      <li>DMS_BF_RecoillessShot</li>
+    </abilities>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode</nodeClass>
+        <workerClass>PawnRenderNodeWorker</workerClass>
+        <parentTagDef>Body</parentTagDef>
+        <baseLayer>20</baseLayer>
+        <drawSize>1.75</drawSize>
+        <pawnType>Any</pawnType>
+        <useGraphic>true</useGraphic>
+        <texPath>Things/Modifications/RecoillessRifle/render</texPath>
+        <drawData>
+          <defaultData>
+            <layer>20</layer>
+          </defaultData>
+          <dataEast>
+            <offset>(0,0,0)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(0,-0.5,0)</offset>
+          </dataWest>
+          <dataNorth>
+            <offset>(0,0,0)</offset>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0,0,0)</offset>
+          </dataSouth>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </HediffDef>
 
   <!-- 戰鬥框架-擴容貨箱掛載-->
   <ThingDef ParentName="BaseModificationItem">

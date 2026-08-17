@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+	CE: 戰鬥框架無後座力砲掛架的開火能力 (DMS_BF_RecoillessShot)。
+
+	1. 彈道換成 CE 版 DMS_Bullet_LRR_HEAT_CE（見 CE/Defs/DMS_BF_RecoillessRack.xml）
+	2. 備彈 2 -> 1、補彈 30000 -> 60000 tick：CE 的聚能裝藥破甲量遠高於原版，
+	   同樣的密度會讓掛架單獨處理掉整波裝甲目標
+	3. 射程 29.9 -> 39.9：CE 底下同級的 4KG 輕型無後座力砲射程為 44，
+	   掛架取略低於手持型的值
+
+	注意：這裡沒有做「消耗 CE 彈藥」。CE 的彈藥消耗走 Verb.EquipmentSource ->
+	CompAmmoUser，而 hediff 授予的能力沒有 EquipmentSource，純 XML 無法接上；
+	要真的吃彈藥必須在 FortifiedCE 加一個 AbilityComp。
+-->
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/AbilityDef[defName="DMS_BF_RecoillessShot"]/comps/li[@Class="CompProperties_AbilityLaunchProjectile"]/projectileDef</xpath>
+				<value>
+					<projectileDef>DMS_Bullet_LRR_HEAT_CE</projectileDef>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/AbilityDef[defName="DMS_BF_RecoillessShot"]/charges</xpath>
+				<value>
+					<charges>1</charges>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/AbilityDef[defName="DMS_BF_RecoillessShot"]/cooldownTicksRange</xpath>
+				<value>
+					<cooldownTicksRange>60000</cooldownTicksRange>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/AbilityDef[defName="DMS_BF_RecoillessShot"]/verbProperties/range</xpath>
+				<value>
+					<range>39.9</range>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

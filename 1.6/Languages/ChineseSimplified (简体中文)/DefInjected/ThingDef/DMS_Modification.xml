@@ -15,6 +15,13 @@
   <!-- EN: Use {0_label} -->
   <DMS_BF_ExtendCargo.comps.CompUsable.useLabel>安装{0}</DMS_BF_ExtendCargo.comps.CompUsable.useLabel>
   
+  <!-- EN: Recoilless Rifle Rack -->
+  <DMS_BF_RecoillessRifle.label>无后座力炮挂架</DMS_BF_RecoillessRifle.label>
+  <!-- EN: A pair of 65mm recoilless tubes on a shared cradle, built to bolt onto the side pylons of a battle frame. Line units fit it for one reason: a frame's own light armament has no answer to plating or a prepared firing position, and a walking mount can carry the tube into ground a two-man crew would never reach.\n\nLoaded with shaped-charge rockets, the rack defeats armor and fortifications far above the frame's weight class, and its fire control unit reloads a spent tube from carried stores between engagements. The frame pays for it in walking pace, dodging room and cargo allowance, and every backblast marks its position for every observer on the field. -->
+  <DMS_BF_RecoillessRifle.description>一组安装在战斗框架侧面挂点的双联装65mm无后座力炮摇架。前线单位加挂它的理由很单纯：框架自身的轻型武装对装甲载具与构工阵地毫无办法，而会走路的载台能把炮管带进双人炮组永远到不了的地形。\n\n装填聚能穿甲火箭后，挂架能击穿远超框架自身量级的装甲与工事，射控单元会在交战间隙从自携弹药中重新装填空管。代价是框架的步速、闪避余裕与载运能力同时下降，而且每一次后喷焰都会把它的位置标示给战场上所有观测器材。</DMS_BF_RecoillessRifle.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_BF_RecoillessRifle.comps.CompUsable.useLabel>安装{0}</DMS_BF_RecoillessRifle.comps.CompUsable.useLabel>
+  
   <!-- EN: broken ceramics -->
   <DMS_BrokenCeramics.label>破碎陶瓷</DMS_BrokenCeramics.label>
   

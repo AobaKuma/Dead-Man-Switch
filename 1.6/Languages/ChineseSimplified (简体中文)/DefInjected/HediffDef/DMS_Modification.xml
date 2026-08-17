@@ -11,6 +11,11 @@
   <!-- EN: Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants. -->
   <DMS_BF_ExtendCargo.description>一种安装在战斗框架侧面挂架的金属箱，通常被用於山地区域的长途运输与前线补给小队用来提高运输效率。</DMS_BF_ExtendCargo.description>
   
+  <!-- EN: Recoilless Rifle Rack -->
+  <DMS_BF_RecoillessRifle.label>无后座力炮挂架</DMS_BF_RecoillessRifle.label>
+  <!-- EN: A pair of 65mm recoilless tubes mounted on the side pylons and tied into the frame's fire control chain, reloaded from the frame's carried stores between engagements.\n\nThe shaped-charge warhead punches through armor and fortification that the frame's own weapon cannot touch, though the jet goes into a single narrow channel and anything standing beside the point of impact walks away. The mass hanging on the pylons costs the frame walking pace, dodging room and cargo allowance. -->
+  <DMS_BF_RecoillessRifle.description>已挂载于侧面挂点的双联装65mm无后座力炮，射控单元并入框架的火控链，空管由框架自携的弹药在交战间隙重新装填。\n\n聚能穿甲弹头能贯穿框架本身武装完全处理不了的装甲与工事，但金属射流只集中在一条窄通道，站在弹着点旁边的目标往往毫发无伤。挂架的重量则会让框架的步速、闪避余裕与载运能力一并下降。</DMS_BF_RecoillessRifle.description>
+  
   <!-- EN: Ceramic Plates -->
   <DMS_CeramicsPlating.label>陶瓷插板</DMS_CeramicsPlating.label>
   <!-- EN: Disposable ceramic armor that effectively protects the wearer from small arms fire and shrapnel.\n\nAlthough it is an excellent protective armor, it must be completely replaced once damaged. -->
