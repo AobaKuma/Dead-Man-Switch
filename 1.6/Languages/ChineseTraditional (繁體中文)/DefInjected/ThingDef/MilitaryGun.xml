@@ -17,7 +17,17 @@
   
   <!-- EN: A single rifled lead slug instead of a spread of pellets. It reaches much further and punches through light plating, but only one projectile leaves the barrel per trigger pull. -->
   <DMS_Bullet_AssaultShotgun_Slug.description>以單顆帶膛線的鉛彈頭取代散開的彈丸。射程遠得多，也能打穿輕裝甲板，但每次扣下扳機只有一發彈頭離膛。</DMS_Bullet_AssaultShotgun_Slug.description>
-  
+
+  <!-- EN: 12 gauge dragon's breath -->
+  <DMS_Bullet_AssaultShotgun_Dragon.label>12號口徑龍息彈</DMS_Bullet_AssaultShotgun_Dragon.label>
+  <!-- EN: A shell packed with zirconium pellets that ignite the moment they clear the muzzle. The burning cloud spends itself within a few paces, which is exactly the distance the loader cares about. -->
+  <DMS_Bullet_AssaultShotgun_Dragon.description>裝填鋯合金顆粒的彈殼，顆粒一離開槍口就會自燃。這團火焰只能推進幾步就耗盡，而那正好是裝填手唯一在意的距離。</DMS_Bullet_AssaultShotgun_Dragon.description>
+
+  <!-- EN: 12 gauge tungsten flechette -->
+  <DMS_Bullet_AssaultShotgun_Flechette.label>12號口徑鎢芯飛鏢彈</DMS_Bullet_AssaultShotgun_Flechette.label>
+  <!-- EN: A sabot shell holding a bundle of tungsten-cored darts. Each dart carries almost no mass and does little to soft tissue, but the cores hold together against plating that stops a lead pellet cold. -->
+  <DMS_Bullet_AssaultShotgun_Flechette.description>內裝一束鎢芯飛鏢的脫殼彈托彈。每支飛鏢質量極小，對軟組織作用有限，但鎢芯能在鉛彈丸完全打不動的裝甲板上撐住不碎。</DMS_Bullet_AssaultShotgun_Flechette.description>
+
   
   <!-- EN: Mech AMR -->
   <DMS_AntiMaterialRifle.label>反器材步槍</DMS_AntiMaterialRifle.label>
@@ -58,8 +68,26 @@
   <!-- EN: barrel -->
   <DMS_AssaultShotgun.tools.barrel.label>槍管</DMS_AssaultShotgun.tools.barrel.label>
   <!-- EN: Mech Assault Shotgun -->
-  <DMS_AssaultShotgun.verbs.Verb_Shoot.label>機兵突擊霰彈槍</DMS_AssaultShotgun.verbs.Verb_Shoot.label>
-  
+  <DMS_AssaultShotgun.verbs.Verb_LaunchProjectile_AmmoSwitch.label>機兵突擊霰彈槍</DMS_AssaultShotgun.verbs.Verb_LaunchProjectile_AmmoSwitch.label>
+
+  <!-- 彈種切換 / ammo switch -->
+  <!-- EN: buckshot -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.0.label>鹿彈</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.0.label>
+  <!-- EN: The standard three round burst of pellets. Nothing clever about it, and nothing unarmored enjoys standing in front of it. -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.0.description>標準的三連發散開彈丸。沒有任何巧思，但沒有裝甲的東西都不會想站在它前面。</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.0.description>
+  <!-- EN: slug -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.1.label>獨頭彈</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.1.label>
+  <!-- EN: A single rifled slug in place of the pellet spread. It reaches far further and punches through light plating, at the cost of one projectile per trigger pull. -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.1.description>以單顆帶膛線的彈頭取代散開的彈丸。射程遠得多，也能打穿輕裝甲板，代價是每次扣下扳機只有一發彈頭離膛。</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.1.description>
+  <!-- EN: tungsten flechette -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.2.label>鎢芯飛鏢彈</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.2.label>
+  <!-- EN: A sabot load of tungsten-cored darts. Each one carries almost no mass, so flesh barely notices them, but five of them per pull will find their way through plating that shrugs off buckshot outright. -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.2.description>以脫殼彈托發射的一束鎢芯飛鏢。每一支的質量都極小，血肉之軀幾乎不當一回事，但一次五發能穿過完全擋得住鹿彈的裝甲板。</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.2.description>
+  <!-- EN: dragon's breath -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.3.label>龍息彈</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.3.label>
+  <!-- EN: Zirconium pellets that ignite as they leave the barrel. The burning cloud carries only a few paces and does little damage by itself, but four shells of it will set a corridor alight and keep anything from walking down it. -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.3.description>一離開槍口就自燃的鋯合金顆粒。火焰只能推進幾步，本身傷害也有限，但四發打下去足以點燃整條走廊，讓任何東西都走不過來。</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.3.description>
+
   <!-- UNUSED -->
   <DMS_AssaultShotgun.tools.muzzle.label>槍口</DMS_AssaultShotgun.tools.muzzle.label>
   <DMS_AssaultShotgun.verbs.Verb_ShootCE.label>機兵突擊霰彈槍</DMS_AssaultShotgun.verbs.Verb_ShootCE.label>

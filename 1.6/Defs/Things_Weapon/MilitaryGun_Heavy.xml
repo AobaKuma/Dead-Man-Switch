@@ -363,17 +363,29 @@
 				<soundSwitch>Artillery_ShellLoaded</soundSwitch>
 				<ammos>
 					<li>
+						<label>airburst canister</label>
+						<description>An explosive canister with a wide blast of spike darts but ordinary penetration. Best used against groups of unarmored targets.</description>
+						<iconPath>UI/Ammoswitch/Shell_AirBurst</iconPath>
 						<projectileDef>DMS_Bullet_RR_HE</projectileDef>
 					</li>
 					<li>
+						<label>shaped-charge shell</label>
+						<description>A chemical-energy penetrator with very high armor penetration, backed by a fragmentation sleeve that throws a forward cone of splinters. Best used against heavily armored targets.</description>
+						<iconPath>UI/Ammoswitch/Shell_HEAT</iconPath>
 						<projectileDef>DMS_Bullet_RR</projectileDef>
 					</li>
 					<li>
+						<label>demolition shell</label>
+						<description>A high-explosive shell specialized against structures, able to tear down turrets, walls and other high-durability targets.</description>
+						<iconPath>UI/Ammoswitch/Shell_HESH</iconPath>
 						<projectileDef>DMS_Bullet_RR_Demolition</projectileDef>
 						<rangeFactor>0.85</rangeFactor>
 						<warmUpFactor>1.15</warmUpFactor>
 					</li>
 					<li>
+						<label>airburst smoke shell</label>
+						<description>A support warhead that bursts into a smoke screen over the point of impact.</description>
+						<iconPath>UI/Ammoswitch/Shell_Smoke</iconPath>
 						<projectileDef>DMS_Bullet_RR_Smoke</projectileDef>
 						<rangeFactor>1.15</rangeFactor>
 						<warmUpFactor>0.8</warmUpFactor>
@@ -419,8 +431,8 @@
 
 	<ThingDef ParentName="DMS_BaseSwitchableBullet">
 		<defName>DMS_Bullet_RR</defName>
-		<label>Shape-charged Grenade</label>
-		<description>The standard round for the recoilless rifle: a shaped charge backed by a fragmentation sleeve. The jet opens armor at the point of impact while the sleeve throws a forward cone of fragments down the firing line, so it also hurts whatever was standing behind the vehicle it just killed.</description>
+		<label>Airburst canister</label>
+		<description>a shaped charge canister that bursts sharp metal darts mid-air. throws a forward cone of darts down the firing line, so it also hurts whatever was standing behind the cover.</description>
 		<thingClass>Fortified.Projectile_ConeExplosive</thingClass>
 		<tickerType>Normal</tickerType>
 		<graphicData>
@@ -461,7 +473,7 @@
 	<!-- 大範圍低穿甲: 高爆破片彈 -->
 	<ThingDef ParentName="DMS_BaseSwitchableBullet">
 		<defName>DMS_Bullet_RR_HE</defName>
-		<label>120mm HE-frag shell</label>
+		<label>73mm HE-frag shell</label>
 		<description>A thin-cased high explosive shell tuned for area effect rather than penetration. It sweeps a wide circle clear of infantry and light emplacements, but the blast wave spends itself against anything properly armored.</description>
 		<thingClass>Projectile_Explosive</thingClass>
 		<tickerType>Normal</tickerType>
@@ -492,7 +504,7 @@
 	<!-- 反建築: 爆破彈 -->
 	<ThingDef ParentName="DMS_BaseSwitchableBullet">
 		<defName>DMS_Bullet_RR_Demolition</defName>
-		<label>120mm demolition shell</label>
+		<label>73mm demolition shell</label>
 		<description>A heavy demolition shell with a slow, heaving filler and a delayed fuze that lets it seat against the target before it lets go. It is meant for walls, bunkers and load-bearing structures; against personnel it is merely adequate, and its weight costs range.</description>
 		<thingClass>Projectile_Explosive</thingClass>
 		<tickerType>Normal</tickerType>
@@ -523,7 +535,7 @@
 	<!-- 空爆煙霧彈 -->
 	<ThingDef ParentName="DMS_BaseSwitchableBullet">
 		<defName>DMS_Bullet_RR_Smoke</defName>
-		<label>120mm airburst smoke shell</label>
+		<label>73mm airburst smoke shell</label>
 		<description>A large screening shell with a proximity fuze that opens above head height, laying an obscurant bank far wider than any hand-thrown canister. It does no damage at all; it exists to blind a firing line long enough for an assault or a withdrawal to happen.</description>
 		<thingClass>Projectile_Explosive</thingClass>
 		<tickerType>Normal</tickerType>

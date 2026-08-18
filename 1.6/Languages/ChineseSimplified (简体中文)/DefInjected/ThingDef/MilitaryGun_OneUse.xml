@@ -33,6 +33,24 @@
   <!-- EN: on cooldown -->
   <DMS_Gun_RecoillessLight.comps.CompApparelReloadable.cooldownGerund>冷却中</DMS_Gun_RecoillessLight.comps.CompApparelReloadable.cooldownGerund>
   
+  <!-- 彈種切換 / ammo switch -->
+  <!-- EN: HE-frag round -->
+  <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.0.label>高爆弹</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.0.label>
+  <!-- EN: A high-explosive round with a wide blast but ordinary penetration. Best used against groups of unarmored targets. -->
+  <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.0.description>一种爆炸范围大但穿甲能力普通的榴弹，适合打击无装甲目标群。</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.0.description>
+  <!-- EN: shaped-charge round -->
+  <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.1.label>聚能穿甲弹</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.1.label>
+  <!-- EN: A chemical-energy penetrator with a small blast but very high armor penetration. Best used against heavily armored targets. -->
+  <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.1.description>一种爆炸范围小但穿甲能力非常高的化学能穿甲弹，适合打击重装甲目标。</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.1.description>
+  <!-- EN: demolition round -->
+  <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.2.label>反工事高爆弹</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.2.label>
+  <!-- EN: A high-explosive round specialized against structures, able to tear down turrets, walls and other high-durability targets. -->
+  <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.2.description>一种对建筑特化的高爆弹，能有效拆毁炮塔与墙体等高耐久目标。</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.2.description>
+  <!-- EN: airburst smoke round -->
+  <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.3.label>空爆烟雾弹</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.3.label>
+  <!-- EN: A support warhead that bursts into a smoke screen over the point of impact. -->
+  <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.3.description>一种能在落地点产生烟雾的辅助弹头。</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.3.description>
+  
   <!-- EN: 65mm HE-frag rocket -->
   <DMS_Bullet_LRR_HE.label>高爆破片弹</DMS_Bullet_LRR_HE.label>
   <!-- EN: A thin-cased fragmentation warhead loaded with a light bursting charge. The wide fragment pattern strips infantry out of the open and clears trench lines, but the soft case flattens against plating instead of punching through it. -->

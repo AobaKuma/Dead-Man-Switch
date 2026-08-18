@@ -327,9 +327,43 @@
 			<Steel>45</Steel>
 			<ComponentIndustrial>2</ComponentIndustrial>
 		</costList>
+		<!-- 彈種切換: 橡膠獨頭彈(預設) / 鹿彈 / 獨頭彈 -->
+		<comps>
+			<li Class="Fortified.CompProperties_AmmoSwitch">
+				<defaultIndex>0</defaultIndex>
+				<includeDefaultAmmo>false</includeDefaultAmmo>
+				<switchCooldown>90</switchCooldown>
+				<soundSwitch>Interact_Autopistol</soundSwitch>
+				<ammos>
+					<li>
+						<label>rubber slug</label>
+						<description>A less-lethal slug that bruises and knocks down instead of killing. What the revolver was sold with, and what most of its owners never bother to change.</description>
+						<iconPath>UI/Ammoswitch/Shotgun_Rubber</iconPath>
+						<projectileDef>DMS_Bullet_RiotRevolver</projectileDef>
+					</li>
+					<li>
+						<label>buckshot</label>
+						<description>A lethal spread of pellets for when the situation stops being a disturbance and starts being a fight. Slightly harder to place than a rubber slug.</description>
+						<iconPath>UI/Ammoswitch/Shotgun_Pellet</iconPath>
+						<projectileDef>DMS_Bullet_RiotRevolver_Buck</projectileDef>
+						<accuracyFactor>0.9</accuracyFactor>
+					</li>
+					<li>
+						<label>slug</label>
+						<description>A single lead slug that carries much further than shot and punches through light plating. The heavier charge makes the revolver slower to bring on target.</description>
+						<iconPath>UI/Ammoswitch/Shotgun_Slug</iconPath>
+						<projectileDef>DMS_Bullet_RiotRevolver_Slug</projectileDef>
+						<rangeFactor>1.25</rangeFactor>
+						<accuracyFactor>1.1</accuracyFactor>
+						<warmUpFactor>1.15</warmUpFactor>
+					</li>
+				</ammos>
+			</li>
+		</comps>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<!-- 人類可用武器一律用 Verb_Shoot_AmmoSwitch, Verb_LaunchProjectile_AmmoSwitch 不會給射擊經驗 -->
+				<verbClass>Fortified.Verb_Shoot_AmmoSwitch</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>DMS_Bullet_RiotRevolver</defaultProjectile>
 				<warmupTime>0.5</warmupTime>
@@ -372,9 +406,10 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
-	<ThingDef ParentName="BaseBullet">
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
 		<defName>DMS_Bullet_RiotRevolver</defName>
-		<label>20 gauge beanbag</label>
+		<label>20 gauge rubber slug</label>
+		<description>A 20 gauge rubber slug. It arrives as one heavy impact rather than a spread, which puts someone on the ground and rarely does worse than that. Armor plating shrugs it off entirely.</description>
 		<graphicData>
 			<texPath>Things/Projectile/Bullet_Shotgun</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -385,6 +420,42 @@
 			<stoppingPower>3</stoppingPower>
 			<armorPenetrationBase>0.2</armorPenetrationBase>
 			<speed>55</speed>
+		</projectile>
+	</ThingDef>
+
+	<!-- 鹿彈: 鎮暴左輪的殺傷型彈種 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_RiotRevolver_Buck</defName>
+		<label>20 gauge buckshot</label>
+		<description>A lethal 20 gauge pellet load. The revolver was never meant to be a fighting weapon, but nobody told the cylinder that.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Shotgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>18</damageAmountBase>
+			<stoppingPower>2</stoppingPower>
+			<armorPenetrationBase>0.15</armorPenetrationBase>
+			<speed>55</speed>
+		</projectile>
+	</ThingDef>
+
+	<!-- 獨頭彈: 鎮暴左輪的遠距/穿甲彈種 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_RiotRevolver_Slug</defName>
+		<label>20 gauge slug</label>
+		<description>A single lead slug loaded to a heavier charge than the cylinder was designed around. It carries much further than shot and will crack a light mech shell, at the price of a wrist that regrets every round.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>22</damageAmountBase>
+			<stoppingPower>3</stoppingPower>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
+			<speed>65</speed>
 		</projectile>
 	</ThingDef>
 
@@ -430,28 +501,50 @@
 			<Steel>75</Steel>
 			<ComponentStamped>1</ComponentStamped>
 		</costList>
-		<!-- 彈種切換: 豆袋彈(預設) / 致命鹿彈 -->
+		<!-- 彈種切換: 橡膠獨頭彈(預設) / 鹿彈 / EMP散彈 / 破門彈 -->
 		<comps>
 			<li Class="Fortified.CompProperties_AmmoSwitch">
 				<defaultIndex>0</defaultIndex>
+				<includeDefaultAmmo>false</includeDefaultAmmo>
 				<switchCooldown>120</switchCooldown>
 				<soundSwitch>Interact_Rifle</soundSwitch>
 				<ammos>
 					<li>
+						<label>rubber slug</label>
+						<description>A single rubber slug that knocks a target down instead of killing it. The standard round for riot work and for taking prisoners alive.</description>
+						<iconPath>UI/Ammoswitch/Shotgun_Rubber</iconPath>
 						<projectileDef>DMS_Bullet_RiotShotgun</projectileDef>
 					</li>
 					<li>
+						<label>buckshot</label>
+						<description>A lethal spread of pellets for close work against unarmored flesh. Marginally harder to place than a rubber slug.</description>
+						<iconPath>UI/Ammoswitch/Shotgun_Pellet</iconPath>
 						<projectileDef>DMS_Bullet_RiotShotgun_Buck</projectileDef>
 						<accuracyFactor>0.95</accuracyFactor>
+					</li>
+					<li>
+						<label>EMP shot</label>
+						<description>A capacitor slug that discharges on impact, shorting out mechanoid systems instead of destroying them. It does nothing at all to flesh, and the heavy payload cuts the effective range short.</description>
+						<iconPath>UI/Ammoswitch/Shotgun_EMP</iconPath>
+						<projectileDef>DMS_Bullet_RiotShotgun_EMP</projectileDef>
+						<rangeFactor>0.75</rangeFactor>
+						<accuracyFactor>0.9</accuracyFactor>
+					</li>
+					<li>
+						<label>breaching round</label>
+						<description>A solid slug meant to be fired into a door or a thin wall from arm's length. It will open a way in where nothing else will, and it is close to useless at any other distance.</description>
+						<iconPath>UI/Ammoswitch/Shotgun_Breach</iconPath>
+						<projectileDef>DMS_Bullet_RiotShotgun_Breach</projectileDef>
+						<rangeFactor>0.4</rangeFactor>
+						<warmUpFactor>1.2</warmUpFactor>
 					</li>
 				</ammos>
 			</li>
 		</comps>
 		<verbs>
 			<li>
-				<!-- 人類可用武器: Fortified.dll 重新編譯後改成 Fortified.Verb_Shoot_AmmoSwitch,
-				     否則使用此槍不會累積射擊技能經驗 (Verb_Shoot 才會給經驗) -->
-				<verbClass>Fortified.Verb_LaunchProjectile_AmmoSwitch</verbClass>
+				<!-- 人類可用武器一律用 Verb_Shoot_AmmoSwitch, Verb_LaunchProjectile_AmmoSwitch 不會給射擊經驗 -->
+				<verbClass>Fortified.Verb_Shoot_AmmoSwitch</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>DMS_Bullet_RiotShotgun</defaultProjectile>
 				<warmupTime>1</warmupTime>
@@ -498,8 +591,8 @@
 	
 	<ThingDef ParentName="DMS_BaseSwitchableBullet">
 		<defName>DMS_Bullet_RiotShotgun</defName>
-		<label>4 gauge bean bag</label>
-		<description>A 4 gauge sack of compressed lead shot. It delivers a crushing, non-penetrating impact intended to knock down a target without killing them. Ineffective against armor plating.</description>
+		<label>4 gauge rubber slug</label>
+		<description>A 4 gauge rubber slug. It delivers a crushing, non-penetrating impact intended to knock down a target without killing them. Ineffective against armor plating.</description>
 		<graphicData>
 		<texPath>Things/Projectile/Bullet_Shotgun</texPath>
 		<graphicClass>Graphic_Single</graphicClass>
@@ -508,12 +601,12 @@
 			<damageDef>Blunt</damageDef>
 			<damageAmountBase>20</damageAmountBase>
 			<stoppingPower>4</stoppingPower>
-			<speed>55</speed>
+			<speed>65</speed>
 			<armorPenetrationBase>0.24</armorPenetrationBase>
 		</projectile>
 	</ThingDef>
 
-	<!-- 致命鹿彈: 豆袋彈的殺傷型替代彈種 -->
+	<!-- 致命鹿彈: 橡膠獨頭彈的殺傷型替代彈種 -->
 	<ThingDef ParentName="DMS_BaseSwitchableBullet">
 		<defName>DMS_Bullet_RiotShotgun_Buck</defName>
 		<label>4 gauge buckshot</label>
@@ -526,8 +619,51 @@
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>24</damageAmountBase>
 			<stoppingPower>3</stoppingPower>
-			<speed>55</speed>
+			<speed>65</speed>
 			<armorPenetrationBase>0.20</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+
+	<!-- EMP散彈: 癱瘓機械單位而非擊毀 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_RiotShotgun_EMP</defName>
+		<label>4 gauge EMP shot</label>
+		<description>A 4 gauge casing carrying a discharge capacitor in place of shot. It dumps its charge into whatever it strikes, seizing up mechanoid systems without leaving a mark on flesh.</description>
+		<thingClass>Projectile_Explosive</thingClass>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Shotgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(120,190,255)</color>
+		</graphicData>
+		<projectile>
+			<damageDef>EMP</damageDef>
+			<damageAmountBase>12</damageAmountBase>
+			<explosionRadius>1.2</explosionRadius>
+			<speed>65</speed>
+			<ai_IsIncendiary>false</ai_IsIncendiary>
+		</projectile>
+	</ThingDef>
+
+	<!-- 破門彈: 貼臉破壞門與薄牆。非爆炸, 直接命中單一目標, 靠 DMS_Damage_Demolition 的建築倍率破門 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_RiotShotgun_Breach</defName>
+		<label>4 gauge breaching round</label>
+		<description>A solid steel breaching slug loaded heavy and meant to be put into a hinge or a lock from arm's length. It transfers everything it has into the structure it strikes, and it does so to exactly one thing at a time.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Shotgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(200,180,140)</color>
+		</graphicData>
+		<projectile>
+			<damageDef>DMS_Damage_Demolition</damageDef>
+			<damageAmountBase>35</damageAmountBase>
+			<stoppingPower>3</stoppingPower>
+			<armorPenetrationBase>0.4</armorPenetrationBase>
+			<speed>65</speed>
+			<ai_IsIncendiary>false</ai_IsIncendiary>
 		</projectile>
 	</ThingDef>
 

@@ -7,19 +7,40 @@
   <!-- EN: Riot machinegun bullet -->
   <DMS_Bullet_MiniMachineGun.label>小口径手枪弹</DMS_Bullet_MiniMachineGun.label>
   
-  <!-- EN: 20 gauge beanbag -->
-  <DMS_Bullet_RiotRevolver.label>轻型镇暴霰弹</DMS_Bullet_RiotRevolver.label>
+  <!-- EN: 20 gauge rubber slug -->
+  <DMS_Bullet_RiotRevolver.label>轻型橡胶独头弹</DMS_Bullet_RiotRevolver.label>
+  <!-- EN: A 20 gauge rubber slug. It arrives as one heavy impact rather than a spread, which puts someone on the ground and rarely does worse than that. Armor plating shrugs it off entirely. -->
+  <DMS_Bullet_RiotRevolver.description>20号口径的橡胶独头弹。抵达目标的是一记集中的重击而不是散开的弹丸，足以把人放倒，也很少造成更严重的后果。对装甲板则完全无效。</DMS_Bullet_RiotRevolver.description>
+
+  <!-- EN: 20 gauge buckshot -->
+  <DMS_Bullet_RiotRevolver_Buck.label>轻型鹿弹</DMS_Bullet_RiotRevolver_Buck.label>
+  <!-- EN: A lethal 20 gauge pellet load. The revolver was never meant to be a fighting weapon, but nobody told the cylinder that. -->
+  <DMS_Bullet_RiotRevolver_Buck.description>具杀伤力的20号口径散弹装填。这把左轮原本就不是拿来打仗的，只是弹巢对此毫不知情。</DMS_Bullet_RiotRevolver_Buck.description>
+
+  <!-- EN: 20 gauge slug -->
+  <DMS_Bullet_RiotRevolver_Slug.label>轻型独头弹</DMS_Bullet_RiotRevolver_Slug.label>
+  <!-- EN: A single lead slug loaded to a heavier charge than the cylinder was designed around. It carries much further than shot and will crack a light mech shell, at the price of a wrist that regrets every round. -->
+  <DMS_Bullet_RiotRevolver_Slug.description>装药比弹巢设计余裕更重的单颗铅弹头。射程远得多，也敲得开轻型机兵的外壳，代价是每开一枪手腕都会抗议一次。</DMS_Bullet_RiotRevolver_Slug.description>
   
-  <!-- EN: 4 gauge bean bag -->
-  <DMS_Bullet_RiotShotgun.label>镇暴霰弹</DMS_Bullet_RiotShotgun.label>
-  <!-- EN: A 4 gauge sack of compressed lead shot. It delivers a crushing, non-penetrating impact intended to knock down a target without killing them. Ineffective against armor plating. -->
-  <DMS_Bullet_RiotShotgun.description>以4号口径弹壳装填的压缩铅砂袋。命中时传递的是纯粹的钝性冲击力，目的是把目标击倒而不是杀死。对装甲板几乎无效。</DMS_Bullet_RiotShotgun.description>
+  <!-- EN: 4 gauge rubber slug -->
+  <DMS_Bullet_RiotShotgun.label>橡胶独头弹</DMS_Bullet_RiotShotgun.label>
+  <!-- EN: A 4 gauge rubber slug. It delivers a crushing, non-penetrating impact intended to knock down a target without killing them. Ineffective against armor plating. -->
+  <DMS_Bullet_RiotShotgun.description>4号口径的橡胶独头弹。命中时传递的是纯粹的钝性冲击力，目的是把目标击倒而不是杀死。对装甲板几乎无效。</DMS_Bullet_RiotShotgun.description>
   
   <!-- EN: 4 gauge buckshot -->
   <DMS_Bullet_RiotShotgun_Buck.label>大口径鹿弹</DMS_Bullet_RiotShotgun_Buck.label>
   
   <!-- EN: A lethal 4 gauge buckshot load. When crowd control is no longer the objective, the same launcher will happily shred flesh instead of bruising it. -->
   <DMS_Bullet_RiotShotgun_Buck.description>具杀伤力的大口径鹿弹。当任务目标不再是控制场面时，同一把发射器可以撕裂血肉而不只是留下瘀伤。</DMS_Bullet_RiotShotgun_Buck.description>
+  <!-- EN: 4 gauge EMP shot -->
+  <DMS_Bullet_RiotShotgun_EMP.label>大口径EMP弹</DMS_Bullet_RiotShotgun_EMP.label>
+  <!-- EN: A 4 gauge casing carrying a discharge capacitor in place of shot. It dumps its charge into whatever it strikes, seizing up mechanoid systems without leaving a mark on flesh. -->
+  <DMS_Bullet_RiotShotgun_EMP.description>以放电电容取代弹丸的4号口径弹壳。命中时把电荷全数灌进目标，能让机械体的系统当场瘫痪，对血肉之躯却连痕迹都留不下。</DMS_Bullet_RiotShotgun_EMP.description>
+
+  <!-- EN: 4 gauge breaching round -->
+  <DMS_Bullet_RiotShotgun_Breach.label>大口径破门弹</DMS_Bullet_RiotShotgun_Breach.label>
+  <!-- EN: A solid steel breaching slug loaded heavy and meant to be put into a hinge or a lock from arm's length. It transfers everything it has into the structure it strikes, and it does so to exactly one thing at a time. -->
+  <DMS_Bullet_RiotShotgun_Breach.description>装药沉重的实心钢制破门弹头，设计上就是要贴着铰链或锁头开火。它会把全部动能灌进所命中的结构，而且一次只招呼一个目标。</DMS_Bullet_RiotShotgun_Breach.description>
   
   
   <!-- EN: Elephant Rifle -->
@@ -84,7 +105,20 @@
   <!-- EN: barrel -->
   <DMS_Revolver.tools.barrel.label>枪管</DMS_Revolver.tools.barrel.label>
   <!-- EN: Riot Revolver -->
-  <DMS_Revolver.verbs.Verb_Shoot.label>镇暴左轮</DMS_Revolver.verbs.Verb_Shoot.label>
+  <DMS_Revolver.verbs.Verb_Shoot_AmmoSwitch.label>镇暴左轮</DMS_Revolver.verbs.Verb_Shoot_AmmoSwitch.label>
+  <!-- 弹种切换 / ammo switch -->
+  <!-- EN: rubber slug -->
+  <DMS_Revolver.comps.CompAmmoSwitch.ammos.0.label>橡胶独头弹</DMS_Revolver.comps.CompAmmoSwitch.ammos.0.label>
+  <!-- EN: A less-lethal slug that bruises and knocks down instead of killing. What the revolver was sold with, and what most of its owners never bother to change. -->
+  <DMS_Revolver.comps.CompAmmoSwitch.ammos.0.description>低致命性的独头弹，把人打倒而不是打死。左轮出厂时配的就是这种弹，而多数持有者从来没想过要换掉它。</DMS_Revolver.comps.CompAmmoSwitch.ammos.0.description>
+  <!-- EN: buckshot -->
+  <DMS_Revolver.comps.CompAmmoSwitch.ammos.1.label>鹿弹</DMS_Revolver.comps.CompAmmoSwitch.ammos.1.label>
+  <!-- EN: A lethal spread of pellets for when the situation stops being a disturbance and starts being a fight. Slightly harder to place than a rubber slug. -->
+  <DMS_Revolver.comps.CompAmmoSwitch.ammos.1.description>具杀伤力的散开弹丸，用在场面不再只是骚动、而是交火的时候。比橡胶独头弹稍微难瞄准一些。</DMS_Revolver.comps.CompAmmoSwitch.ammos.1.description>
+  <!-- EN: slug -->
+  <DMS_Revolver.comps.CompAmmoSwitch.ammos.2.label>独头弹</DMS_Revolver.comps.CompAmmoSwitch.ammos.2.label>
+  <!-- EN: A single lead slug that carries much further than shot and punches through light plating. The heavier charge makes the revolver slower to bring on target. -->
+  <DMS_Revolver.comps.CompAmmoSwitch.ammos.2.description>单颗铅弹头，射程远得多，也能打穿轻装甲板。较重的装药让这把左轮需要更久才能稳住指向。</DMS_Revolver.comps.CompAmmoSwitch.ammos.2.description>
   
   <!-- UNUSED -->
   <DMS_Revolver.tools.stock.label>枪托</DMS_Revolver.tools.stock.label>
@@ -102,7 +136,24 @@
   <!-- EN: barrel -->
   <DMS_RiotShotgun.tools.barrel.label>枪管</DMS_RiotShotgun.tools.barrel.label>
   <!-- EN: Rifled slug gun -->
-  <DMS_RiotShotgun.verbs.Verb_Shoot.label>镇暴霰弹枪</DMS_RiotShotgun.verbs.Verb_Shoot.label>
+  <DMS_RiotShotgun.verbs.Verb_Shoot_AmmoSwitch.label>镇暴霰弹枪</DMS_RiotShotgun.verbs.Verb_Shoot_AmmoSwitch.label>
+  <!-- 弹种切换 / ammo switch -->
+  <!-- EN: rubber slug -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.0.label>橡胶独头弹</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.0.label>
+  <!-- EN: A single rubber slug that knocks a target down instead of killing it. The standard round for riot work and for taking prisoners alive. -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.0.description>单颗橡胶弹头，目的是把目标击倒而不是杀死。镇暴行动与活捉俘虏时的标准弹种。</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.0.description>
+  <!-- EN: buckshot -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.1.label>鹿弹</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.1.label>
+  <!-- EN: A lethal spread of pellets for close work against unarmored flesh. Marginally harder to place than a rubber slug. -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.1.description>具杀伤力的散开弹丸，用於近距离对付无装甲的血肉目标。比橡胶独头弹稍微难瞄准一些。</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.1.description>
+  <!-- EN: EMP shot -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.2.label>EMP弹</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.2.label>
+  <!-- EN: A capacitor slug that discharges on impact, shorting out mechanoid systems instead of destroying them. It does nothing at all to flesh, and the heavy payload cuts the effective range short. -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.2.description>命中即放电的电容弹头，用来瘫痪机械体的系统而不是摧毁它们。对血肉毫无作用，沉重的装药也让有效射程缩短不少。</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.2.description>
+  <!-- EN: breaching round -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.3.label>破门弹</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.3.label>
+  <!-- EN: A solid slug meant to be fired into a door or a thin wall from arm's length. It will open a way in where nothing else will, and it is close to useless at any other distance. -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.3.description>实心弹头，设计上就是要贴着门板或薄墙开火。它能在别的手段都打不开的地方开出一条路，除此之外的距离几乎毫无用处。</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.3.description>
   
   <!-- UNUSED -->
   <DMS_RiotShotgun.tools.muzzle-0.label>枪口</DMS_RiotShotgun.tools.muzzle-0.label>

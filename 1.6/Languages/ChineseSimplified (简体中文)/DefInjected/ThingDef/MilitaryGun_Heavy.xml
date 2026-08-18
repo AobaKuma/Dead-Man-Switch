@@ -42,9 +42,6 @@
   <!-- EN: Armor Piercing Shell -->
   <DMS_Bullet_Dragoon_Rifle.label>穿甲钢芯弹</DMS_Bullet_Dragoon_Rifle.label>
   
-  <!-- EN: Shape-charged Grenade -->
-  <DMS_Bullet_RR.label>无後坐力榴弹</DMS_Bullet_RR.label>
-  
   <!-- EN: 2A38M -->
   <DMS_Gun_2A38M.label>2A38M</DMS_Gun_2A38M.label>
   <!-- EN: A dual-barrel heavy autocannon for infantry suppression and anti air needs.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
@@ -135,6 +132,24 @@
   <!-- EN: Recoilless Rifle -->
   <DMS_Gun_Recoilless.verbs.Verb_Shoot.label>无後坐力炮</DMS_Gun_Recoilless.verbs.Verb_Shoot.label>
   
+  <!-- 彈種切換 / ammo switch -->
+  <!-- EN: airburst dart canister -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.label>空爆箭形弹</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.label>
+  <!-- EN: An explosive canister with a wide blast of spike darts but ordinary penetration. Best used against groups of unarmored targets. -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.description>一种爆炸时抛洒大量尖锐箭形弹丸、但穿甲能力普通的弹药，适合打击无装甲目标群。</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.description>
+  <!-- EN: shaped-charge shell -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.label>聚能穿甲弹</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.label>
+  <!-- EN: A chemical-energy penetrator with very high armor penetration, backed by a fragmentation sleeve that throws a forward cone of splinters. Best used against heavily armored targets. -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.description>一种穿甲能力极高的化学能穿甲弹，外层破片套筒会向前抛出锥形弹片，适合打击重装甲目标。</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.description>
+  <!-- EN: demolition shell -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.label>反工事高爆弹</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.label>
+  <!-- EN: A high-explosive shell specialized against structures, able to tear down turrets, walls and other high-durability targets. -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.description>一种对建筑特化的高爆弹，能有效拆毁炮塔与墙体等高耐久目标。</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.description>
+  <!-- EN: airburst smoke shell -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.label>空爆烟雾弹</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.label>
+  <!-- EN: A support warhead that bursts into a smoke screen over the point of impact. -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.description>一种能在落地点产生烟雾的辅助弹头。</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.description>
+  
   <!-- UNUSED -->
   <DMS_Gun_Recoilless.tools.muzzle-0.label>枪口</DMS_Gun_Recoilless.tools.muzzle-0.label>
   <DMS_Gun_Recoilless.tools.barrel-1.label>枪管</DMS_Gun_Recoilless.tools.barrel-1.label>
@@ -178,20 +193,22 @@
 
   <!--==================== 重型無後座力砲: 可切換彈種 ====================-->
   
-  <!-- EN: The standard round for the recoilless rifle: a shaped charge backed by a fragmentation sleeve. The jet opens armor at the point of impact while the sleeve throws a forward cone of fragments down the firing line, so it also hurts whatever was standing behind the vehicle it just killed. -->
-  <DMS_Bullet_RR.description>无后座力炮的标准弹药：聚能装药外加破片套筒。金属射流在命中点撕开装甲，套筒则沿着射向抛出一道向前的破片锥，因此站在刚被击毁的载具后方那些人同样会受害。</DMS_Bullet_RR.description>
+  <!-- EN: Airburst canister -->
+  <DMS_Bullet_RR.label>空爆霰弹</DMS_Bullet_RR.label>
+  <!-- EN: a shaped charge canister that bursts sharp metal darts mid-air. throws a forward cone of darts down the firing line, so it also hurts whatever was standing behind the cover. -->
+  <DMS_Bullet_RR.description>一种聚能装药霰弹，在空中炸开并抛洒尖锐的金属箭形弹丸。弹丸沿着射向喷成一道向前的锥形弹幕，因此躲在掩体后方的目标同样会被扫到。</DMS_Bullet_RR.description>
   
-  <!-- EN: 120mm HE-frag shell -->
+  <!-- EN: 73mm HE-frag shell -->
   <DMS_Bullet_RR_HE.label>高爆破片弹</DMS_Bullet_RR_HE.label>
   <!-- EN: A thin-cased high explosive shell tuned for area effect rather than penetration. It sweeps a wide circle clear of infantry and light emplacements, but the blast wave spends itself against anything properly armored. -->
   <DMS_Bullet_RR_HE.description>薄壳高爆弹，调校方向是面杀伤而非穿透。它能把一大圈范围内的步兵与轻型工事清空，但爆震波打在正经装甲上就只是浪费。</DMS_Bullet_RR_HE.description>
   
-  <!-- EN: 120mm demolition shell -->
+  <!-- EN: 73mm demolition shell -->
   <DMS_Bullet_RR_Demolition.label>爆破弹</DMS_Bullet_RR_Demolition.label>
   <!-- EN: A heavy demolition shell with a slow, heaving filler and a delayed fuze that lets it seat against the target before it lets go. It is meant for walls, bunkers and load-bearing structures; against personnel it is merely adequate, and its weight costs range. -->
   <DMS_Bullet_RR_Demolition.description>重型爆破弹，填装低爆速的推挤型炸药，并采用延迟引信，让弹头先坐进目标再引爆。它是为墙体、碉堡与承重结构准备的；对人员只能算堪用，而且弹重也吃掉了一部分射程。</DMS_Bullet_RR_Demolition.description>
   
-  <!-- EN: 120mm airburst smoke shell -->
+  <!-- EN: 73mm airburst smoke shell -->
   <DMS_Bullet_RR_Smoke.label>空爆烟雾弹</DMS_Bullet_RR_Smoke.label>
   <!-- EN: A large screening shell with a proximity fuze that opens above head height, laying an obscurant bank far wider than any hand-thrown canister. It does no damage at all; it exists to blind a firing line long enough for an assault or a withdrawal to happen. -->
   <DMS_Bullet_RR_Smoke.description>大型遮蔽弹，近炸引信在头顶高度炸开，铺出远比任何手投烟罐更宽的烟幕带。它完全不造成伤害，存在的意义是让一整条火线瞎掉足够久，好让突击或撤退得以完成。</DMS_Bullet_RR_Smoke.description>

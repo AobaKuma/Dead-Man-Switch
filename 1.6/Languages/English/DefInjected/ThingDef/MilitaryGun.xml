@@ -44,8 +44,36 @@ This weapon is specially designed for automatroid use, normal humans will strugg
   <!-- EN: barrel -->
   <DMS_AssaultShotgun.tools.barrel.label>barrel</DMS_AssaultShotgun.tools.barrel.label>
   <!-- EN: Mech Assault Shotgun -->
-  <DMS_AssaultShotgun.verbs.Verb_Shoot.label>Mech Assault Shotgun</DMS_AssaultShotgun.verbs.Verb_Shoot.label>
-  
+  <DMS_AssaultShotgun.verbs.Verb_LaunchProjectile_AmmoSwitch.label>Mech Assault Shotgun</DMS_AssaultShotgun.verbs.Verb_LaunchProjectile_AmmoSwitch.label>
+
+  <!-- 彈種切換 / ammo switch -->
+  <!-- EN: buckshot -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.0.label>buckshot</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.0.label>
+  <!-- EN: The standard three round burst of pellets. Nothing clever about it, and nothing unarmored enjoys standing in front of it. -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.0.description>The standard three round burst of pellets. Nothing clever about it, and nothing unarmored enjoys standing in front of it.</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.0.description>
+  <!-- EN: slug -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.1.label>slug</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.1.label>
+  <!-- EN: A single rifled slug in place of the pellet spread. It reaches far further and punches through light plating, at the cost of one projectile per trigger pull. -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.1.description>A single rifled slug in place of the pellet spread. It reaches far further and punches through light plating, at the cost of one projectile per trigger pull.</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.1.description>
+  <!-- EN: tungsten flechette -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.2.label>tungsten flechette</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.2.label>
+  <!-- EN: A sabot load of tungsten-cored darts. Each one carries almost no mass, so flesh barely notices them, but five of them per pull will find their way through plating that shrugs off buckshot outright. -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.2.description>A sabot load of tungsten-cored darts. Each one carries almost no mass, so flesh barely notices them, but five of them per pull will find their way through plating that shrugs off buckshot outright.</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.2.description>
+  <!-- EN: dragon's breath -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.3.label>dragon's breath</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.3.label>
+  <!-- EN: Zirconium pellets that ignite as they leave the barrel. The burning cloud carries only a few paces and does little damage by itself, but four shells of it will set a corridor alight and keep anything from walking down it. -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.3.description>Zirconium pellets that ignite as they leave the barrel. The burning cloud carries only a few paces and does little damage by itself, but four shells of it will set a corridor alight and keep anything from walking down it.</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.3.description>
+
+  <!-- EN: 12 gauge dragon's breath -->
+  <DMS_Bullet_AssaultShotgun_Dragon.label>12 gauge dragon's breath</DMS_Bullet_AssaultShotgun_Dragon.label>
+  <!-- EN: A shell packed with zirconium pellets that ignite the moment they clear the muzzle. The burning cloud spends itself within a few paces, which is exactly the distance the loader cares about. -->
+  <DMS_Bullet_AssaultShotgun_Dragon.description>A shell packed with zirconium pellets that ignite the moment they clear the muzzle. The burning cloud spends itself within a few paces, which is exactly the distance the loader cares about.</DMS_Bullet_AssaultShotgun_Dragon.description>
+
+  <!-- EN: 12 gauge tungsten flechette -->
+  <DMS_Bullet_AssaultShotgun_Flechette.label>12 gauge tungsten flechette</DMS_Bullet_AssaultShotgun_Flechette.label>
+  <!-- EN: A sabot shell holding a bundle of tungsten-cored darts. Each dart carries almost no mass and does little to soft tissue, but the cores hold together against plating that stops a lead pellet cold. -->
+  <DMS_Bullet_AssaultShotgun_Flechette.description>A sabot shell holding a bundle of tungsten-cored darts. Each dart carries almost no mass and does little to soft tissue, but the cores hold together against plating that stops a lead pellet cold.</DMS_Bullet_AssaultShotgun_Flechette.description>
+
   <!-- EN: Mech Grenade Launcher -->
   <DMS_AutomaticGrenadeLauncher.label>Mech Grenade Launcher</DMS_AutomaticGrenadeLauncher.label>
   <!-- EN: A handheld automatic grenade launcher for clearing out clustered targets.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->

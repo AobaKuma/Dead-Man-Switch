@@ -184,11 +184,11 @@
 			<speed>100</speed>
 			<damageDef>FFF_ShapeChargeBullet</damageDef>
 			<soundExplode>MortarBomb_Explode</soundExplode>
-			<damageAmountBase>93</damageAmountBase>
+			<damageAmountBase>110</damageAmountBase>
 			<stoppingPower>2</stoppingPower>
 			<explosionRadius>1.6</explosionRadius>
 			<ai_IsIncendiary>false</ai_IsIncendiary>
-			<armorPenetrationBase>1.8</armorPenetrationBase>
+			<armorPenetrationBase>2.2</armorPenetrationBase>
 			<shadowSize>0.6</shadowSize>
 		</projectile>
 		<comps>
@@ -317,22 +317,39 @@
 		<comps>
 			<!-- 彈種切換: 高爆破片(預設) / 聚能穿甲 / 爆破 / 空爆煙霧 -->
 			<li Class="Fortified.CompProperties_AmmoSwitch">
-				<defaultIndex>-1</defaultIndex>
+				<defaultIndex>0</defaultIndex>
+				<includeDefaultAmmo>false</includeDefaultAmmo>
 				<switchCooldown>120</switchCooldown>
 				<soundSwitch>Artillery_ShellLoaded</soundSwitch>
 				<ammos>
 					<li>
-						<projectileDef>DMS_Bullet_LRR_HEAT</projectileDef>
-						<accuracyFactor>1.1</accuracyFactor>
+						<label>HE-frag</label>
+						<description>A high-explosive round with a wide blast but ordinary penetration. Best used against groups of unarmored targets.</description>
+						<iconPath>UI/Ammoswitch/Shell_HE</iconPath>
+						<projectileDef>DMS_Bullet_LRR_HE</projectileDef>
 					</li>
 					<li>
+						<label>shaped-charge</label>
+						<description>A chemical-energy penetrator with a small blast but very high armor penetration. Best used against heavily armored targets.</description>
+						<iconPath>UI/Ammoswitch/Shell_HEAT</iconPath>
+						<projectileDef>DMS_Bullet_LRR_HEAT</projectileDef>
+						<accuracyFactor>1.2</accuracyFactor>
+					</li>
+					<li>
+						<label>demolition</label>
+						<description>A high-explosive round specialized against structures, able to tear down turrets, walls and other high-durability targets.</description>
+						<iconPath>UI/Ammoswitch/Shell_HESH</iconPath>
 						<projectileDef>DMS_Bullet_LRR_Demolition</projectileDef>
-						<rangeFactor>0.85</rangeFactor>
+						<rangeFactor>0.75</rangeFactor>
 						<warmUpFactor>1.15</warmUpFactor>
 					</li>
 					<li>
+						<label>airburst smoke</label>
+						<description>A support warhead that bursts into a smoke screen over the point of impact.</description>
+						<iconPath>UI/Ammoswitch/Shell_Smoke</iconPath>
 						<projectileDef>DMS_Bullet_LRR_Smoke</projectileDef>
-						<rangeFactor>1.15</rangeFactor>
+						<rangeFactor>1.5</rangeFactor>
+						<accuracyFactor>0.9</accuracyFactor>
 						<warmUpFactor>0.8</warmUpFactor>
 					</li>
 				</ammos>

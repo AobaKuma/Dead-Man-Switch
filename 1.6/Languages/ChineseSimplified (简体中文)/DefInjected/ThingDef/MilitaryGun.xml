@@ -17,6 +17,15 @@
   
   <!-- EN: A single rifled lead slug instead of a spread of pellets. It reaches much further and punches through light plating, but only one projectile leaves the barrel per trigger pull. -->
   <DMS_Bullet_AssaultShotgun_Slug.description>以单颗带膛线的铅弹头取代散开的弹丸。射程远得多，也能打穿轻装甲板，但每次扣下扳机只有一发弹头离膛。</DMS_Bullet_AssaultShotgun_Slug.description>
+  <!-- EN: 12 gauge dragon's breath -->
+  <DMS_Bullet_AssaultShotgun_Dragon.label>12号口径龙息弹</DMS_Bullet_AssaultShotgun_Dragon.label>
+  <!-- EN: A shell packed with zirconium pellets that ignite the moment they clear the muzzle. The burning cloud spends itself within a few paces, which is exactly the distance the loader cares about. -->
+  <DMS_Bullet_AssaultShotgun_Dragon.description>装填锆合金颗粒的弹壳，颗粒一离开枪口就会自燃。这团火焰只能推进几步就耗尽，而那正好是装填手唯一在意的距离。</DMS_Bullet_AssaultShotgun_Dragon.description>
+
+  <!-- EN: 12 gauge tungsten flechette -->
+  <DMS_Bullet_AssaultShotgun_Flechette.label>12号口径钨芯飞镖弹</DMS_Bullet_AssaultShotgun_Flechette.label>
+  <!-- EN: A sabot shell holding a bundle of tungsten-cored darts. Each dart carries almost no mass and does little to soft tissue, but the cores hold together against plating that stops a lead pellet cold. -->
+  <DMS_Bullet_AssaultShotgun_Flechette.description>内装一束钨芯飞镖的脱壳弹托弹。每支飞镖质量极小，对软组织作用有限，但钨芯能在铅弹丸完全打不动的装甲板上撑住不碎。</DMS_Bullet_AssaultShotgun_Flechette.description>
   
   
   <!-- EN: Mech AMR -->
@@ -58,7 +67,24 @@
   <!-- EN: barrel -->
   <DMS_AssaultShotgun.tools.barrel.label>枪管</DMS_AssaultShotgun.tools.barrel.label>
   <!-- EN: Mech Assault Shotgun -->
-  <DMS_AssaultShotgun.verbs.Verb_Shoot.label>机兵突击霰弹枪</DMS_AssaultShotgun.verbs.Verb_Shoot.label>
+  <DMS_AssaultShotgun.verbs.Verb_LaunchProjectile_AmmoSwitch.label>机兵突击霰弹枪</DMS_AssaultShotgun.verbs.Verb_LaunchProjectile_AmmoSwitch.label>
+  <!-- 弹种切换 / ammo switch -->
+  <!-- EN: buckshot -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.0.label>鹿弹</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.0.label>
+  <!-- EN: The standard three round burst of pellets. Nothing clever about it, and nothing unarmored enjoys standing in front of it. -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.0.description>标准的三连发散开弹丸。没有任何巧思，但没有装甲的东西都不会想站在它前面。</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.0.description>
+  <!-- EN: slug -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.1.label>独头弹</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.1.label>
+  <!-- EN: A single rifled slug in place of the pellet spread. It reaches far further and punches through light plating, at the cost of one projectile per trigger pull. -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.1.description>以单颗带膛线的弹头取代散开的弹丸。射程远得多，也能打穿轻装甲板，代价是每次扣下扳机只有一发弹头离膛。</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.1.description>
+  <!-- EN: tungsten flechette -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.2.label>钨芯飞镖弹</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.2.label>
+  <!-- EN: A sabot load of tungsten-cored darts. Each one carries almost no mass, so flesh barely notices them, but five of them per pull will find their way through plating that shrugs off buckshot outright. -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.2.description>以脱壳弹托发射的一束钨芯飞镖。每一支的质量都极小，血肉之躯几乎不当一回事，但一次五发能穿过完全挡得住鹿弹的装甲板。</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.2.description>
+  <!-- EN: dragon's breath -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.3.label>龙息弹</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.3.label>
+  <!-- EN: Zirconium pellets that ignite as they leave the barrel. The burning cloud carries only a few paces and does little damage by itself, but four shells of it will set a corridor alight and keep anything from walking down it. -->
+  <DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.3.description>一离开枪口就自燃的锆合金颗粒。火焰只能推进几步，本身伤害也有限，但四发打下去足以点燃整条走廊，让任何东西都走不过来。</DMS_AssaultShotgun.comps.CompAmmoSwitch.ammos.3.description>
   
   <!-- UNUSED -->
   <DMS_AssaultShotgun.tools.muzzle.label>枪口</DMS_AssaultShotgun.tools.muzzle.label>

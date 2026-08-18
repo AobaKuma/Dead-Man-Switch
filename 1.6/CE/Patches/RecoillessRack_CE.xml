@@ -3,7 +3,12 @@
 <!--
 	CE: 戰鬥框架無後座力砲掛架的開火能力 (DMS_BF_RecoillessShot)。
 
-	1. 彈道換成 CE 版 DMS_Bullet_LRR_HEAT_CE（見 CE/Defs/DMS_BF_RecoillessRack.xml）
+	1. 彈道換成 CE 本體的 M72 LAW 彈頭 Bullet_M72LAW（CE_DisposableRocketLauncher 用的那顆）。
+	   原版打的 DMS_Bullet_LRR_HEAT 是 vanilla Projectile，armorPenetrationBase 走 0~2 的
+	   倍率制，在 CE 的 mm 制裝甲下等同無效。CE 的
+	   CombatExtended.HarmonyCE.Harmony_CompAbilityEffect_LaunchProjectile 會在 projectileDef
+	   的 thingClass 繼承自 ProjectileCE 時攔截 CompAbilityEffect_LaunchProjectile，改走
+	   CE_Utility.LaunchProjectileCE，所以只換 projectileDef 即可，不必動 verbClass。
 	2. 備彈 2 -> 1、補彈 30000 -> 60000 tick：CE 的聚能裝藥破甲量遠高於原版，
 	   同樣的密度會讓掛架單獨處理掉整波裝甲目標
 	3. 射程 29.9 -> 39.9：CE 底下同級的 4KG 輕型無後座力砲射程為 44，
@@ -20,7 +25,7 @@
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/AbilityDef[defName="DMS_BF_RecoillessShot"]/comps/li[@Class="CompProperties_AbilityLaunchProjectile"]/projectileDef</xpath>
 				<value>
-					<projectileDef>DMS_Bullet_LRR_HEAT_CE</projectileDef>
+					<projectileDef>Bullet_M72LAW</projectileDef>
 				</value>
 			</li>
 

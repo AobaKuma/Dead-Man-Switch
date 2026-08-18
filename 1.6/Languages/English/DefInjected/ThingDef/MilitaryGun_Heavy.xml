@@ -29,9 +29,6 @@ This weapon is designed specifically for automatroid use,it's so heavy only spec
   <!-- EN: Armor Piercing Shell -->
   <DMS_Bullet_Dragoon_Rifle.label>Armor Piercing Shell</DMS_Bullet_Dragoon_Rifle.label>
   
-  <!-- EN: Shape-charged Grenade -->
-  <DMS_Bullet_RR.label>Shape-charged Grenade</DMS_Bullet_RR.label>
-  
   <!-- EN: 2A38M -->
   <DMS_Gun_2A38M.label>2A38M</DMS_Gun_2A38M.label>
   <!-- EN: A dual-barrel heavy autocannon for infantry suppression and anti air needs.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
@@ -132,6 +129,24 @@ This weapon is designed specifically for automatroid use,it's so heavy only spec
   <!-- EN: Recoilless Rifle -->
   <DMS_Gun_Recoilless.verbs.Verb_Shoot.label>Recoilless Rifle</DMS_Gun_Recoilless.verbs.Verb_Shoot.label>
   
+  <!-- 彈種切換 / ammo switch -->
+  <!-- EN: airburst dart canister -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.label>airburst dart canister</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.label>
+  <!-- EN: An explosive canister with a wide blast of spike darts but ordinary penetration. Best used against groups of unarmored targets. -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.description>An explosive canister with a wide blast of spike darts but ordinary penetration. Best used against groups of unarmored targets.</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.description>
+  <!-- EN: shaped-charge shell -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.label>shaped-charge shell</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.label>
+  <!-- EN: A chemical-energy penetrator with very high armor penetration, backed by a fragmentation sleeve that throws a forward cone of splinters. Best used against heavily armored targets. -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.description>A chemical-energy penetrator with very high armor penetration, backed by a fragmentation sleeve that throws a forward cone of splinters. Best used against heavily armored targets.</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.description>
+  <!-- EN: demolition shell -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.label>demolition shell</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.label>
+  <!-- EN: A high-explosive shell specialized against structures, able to tear down turrets, walls and other high-durability targets. -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.description>A high-explosive shell specialized against structures, able to tear down turrets, walls and other high-durability targets.</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.description>
+  <!-- EN: airburst smoke shell -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.label>airburst smoke shell</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.label>
+  <!-- EN: A support warhead that bursts into a smoke screen over the point of impact. -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.description>A support warhead that bursts into a smoke screen over the point of impact.</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.description>
+  
   <!-- UNUSED -->
   <DMS_Gun_Recoilless.tools.muzzle-0.label>muzzle</DMS_Gun_Recoilless.tools.muzzle-0.label>
   <DMS_Gun_Recoilless.tools.barrel-1.label>barrel</DMS_Gun_Recoilless.tools.barrel-1.label>
@@ -179,21 +194,23 @@ This weapon is designed specifically for automatroid use,it's so heavy only spec
 
   <!--==================== 重型無後座力砲: 可切換彈種 ====================-->
   
-  <!-- EN: The standard round for the recoilless rifle: a shaped charge backed by a fragmentation sleeve. The jet opens armor at the point of impact while the sleeve throws a forward cone of fragments down the firing line, so it also hurts whatever was standing behind the vehicle it just killed. -->
-  <DMS_Bullet_RR.description>The standard round for the recoilless rifle: a shaped charge backed by a fragmentation sleeve. The jet opens armor at the point of impact while the sleeve throws a forward cone of fragments down the firing line, so it also hurts whatever was standing behind the vehicle it just killed.</DMS_Bullet_RR.description>
+  <!-- EN: Airburst canister -->
+  <DMS_Bullet_RR.label>Airburst canister</DMS_Bullet_RR.label>
+  <!-- EN: a shaped charge canister that bursts sharp metal darts mid-air. throws a forward cone of darts down the firing line, so it also hurts whatever was standing behind the cover. -->
+  <DMS_Bullet_RR.description>a shaped charge canister that bursts sharp metal darts mid-air. throws a forward cone of darts down the firing line, so it also hurts whatever was standing behind the cover.</DMS_Bullet_RR.description>
   
-  <!-- EN: 120mm HE-frag shell -->
-  <DMS_Bullet_RR_HE.label>120mm HE-frag shell</DMS_Bullet_RR_HE.label>
+  <!-- EN: 73mm HE-frag shell -->
+  <DMS_Bullet_RR_HE.label>73mm HE-frag shell</DMS_Bullet_RR_HE.label>
   <!-- EN: A thin-cased high explosive shell tuned for area effect rather than penetration. It sweeps a wide circle clear of infantry and light emplacements, but the blast wave spends itself against anything properly armored. -->
   <DMS_Bullet_RR_HE.description>A thin-cased high explosive shell tuned for area effect rather than penetration. It sweeps a wide circle clear of infantry and light emplacements, but the blast wave spends itself against anything properly armored.</DMS_Bullet_RR_HE.description>
   
-  <!-- EN: 120mm demolition shell -->
-  <DMS_Bullet_RR_Demolition.label>120mm demolition shell</DMS_Bullet_RR_Demolition.label>
+  <!-- EN: 73mm demolition shell -->
+  <DMS_Bullet_RR_Demolition.label>73mm demolition shell</DMS_Bullet_RR_Demolition.label>
   <!-- EN: A heavy demolition shell with a slow, heaving filler and a delayed fuze that lets it seat against the target before it lets go. It is meant for walls, bunkers and load-bearing structures; against personnel it is merely adequate, and its weight costs range. -->
   <DMS_Bullet_RR_Demolition.description>A heavy demolition shell with a slow, heaving filler and a delayed fuze that lets it seat against the target before it lets go. It is meant for walls, bunkers and load-bearing structures; against personnel it is merely adequate, and its weight costs range.</DMS_Bullet_RR_Demolition.description>
   
-  <!-- EN: 120mm airburst smoke shell -->
-  <DMS_Bullet_RR_Smoke.label>120mm airburst smoke shell</DMS_Bullet_RR_Smoke.label>
+  <!-- EN: 73mm airburst smoke shell -->
+  <DMS_Bullet_RR_Smoke.label>73mm airburst smoke shell</DMS_Bullet_RR_Smoke.label>
   <!-- EN: A large screening shell with a proximity fuze that opens above head height, laying an obscurant bank far wider than any hand-thrown canister. It does no damage at all; it exists to blind a firing line long enough for an assault or a withdrawal to happen. -->
   <DMS_Bullet_RR_Smoke.description>A large screening shell with a proximity fuze that opens above head height, laying an obscurant bank far wider than any hand-thrown canister. It does no damage at all; it exists to blind a firing line long enough for an assault or a withdrawal to happen.</DMS_Bullet_RR_Smoke.description>
   

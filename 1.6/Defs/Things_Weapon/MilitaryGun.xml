@@ -63,22 +63,47 @@
 		<smeltProducts>
 			<Tungsteel>12</Tungsteel>
 		</smeltProducts>
-		<!-- 彈種切換: 鹿彈(預設) / 獨頭彈 -->
+		<!-- 彈種切換: 鹿彈(預設) / 獨頭彈 / 鎢芯飛鏢彈 / 龍息彈 -->
 		<comps>
 			<li Class="Fortified.CompProperties_AmmoSwitch">
 				<defaultIndex>0</defaultIndex>
+				<includeDefaultAmmo>false</includeDefaultAmmo>
 				<switchCooldown>120</switchCooldown>
 				<soundSwitch>Interact_Rifle</soundSwitch>
 				<ammos>
 					<li>
-						<projectileDef>Bullet_Shotgun</projectileDef>
+						<label>buckshot</label>
+						<description>The standard three round burst of pellets. Nothing clever about it, and nothing unarmored enjoys standing in front of it.</description>
+						<iconPath>UI/Ammoswitch/12Gauge_Normal</iconPath>
+						<useDefaultProjectile>true</useDefaultProjectile>
 					</li>
 					<li>
+						<label>slug</label>
+						<description>A single rifled slug in place of the pellet spread. It reaches far further and punches through light plating, at the cost of one projectile per trigger pull.</description>
+						<iconPath>UI/Ammoswitch/Shotgun_Slug</iconPath>
 						<projectileDef>DMS_Bullet_AssaultShotgun_Slug</projectileDef>
 						<rangeFactor>1.6</rangeFactor>
 						<accuracyFactor>1.1</accuracyFactor>
 						<warmUpFactor>1.15</warmUpFactor>
 						<burstShotCountOverride>1</burstShotCountOverride>
+					</li>
+					<li>
+						<label>tungsten flechette</label>
+						<description>A sabot load of tungsten-cored darts. Each one carries almost no mass, so flesh barely notices them, but five of them per pull will find their way through plating that shrugs off buckshot outright.</description>
+						<iconPath>UI/Ammoswitch/Shotgun_Darts</iconPath>
+						<projectileDef>DMS_Bullet_AssaultShotgun_Flechette</projectileDef>
+						<burstShotCountOverride>5</burstShotCountOverride>
+						<rangeFactor>0.9</rangeFactor>
+						<accuracyFactor>0.85</accuracyFactor>
+					</li>
+					<li>
+						<label>dragon's breath</label>
+						<description>Zirconium pellets that ignite as they leave the barrel. The burning cloud carries only a few paces and does little damage by itself, but four shells of it will set a corridor alight and keep anything from walking down it.</description>
+						<iconPath>UI/Ammoswitch/Shotgun_Dragon</iconPath>
+						<projectileDef>DMS_Bullet_AssaultShotgun_Dragon</projectileDef>
+						<rangeFactor>0.55</rangeFactor>
+						<accuracyFactor>0.9</accuracyFactor>
+						<burstShotCountOverride>4</burstShotCountOverride>
 					</li>
 				</ammos>
 			</li>
@@ -127,6 +152,48 @@
 			<stoppingPower>4</stoppingPower>
 			<speed>65</speed>
 			<armorPenetrationBase>0.35</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+
+	<!-- 鎢芯飛鏢彈: 突擊霰彈槍的近距離穿甲彈種 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_AssaultShotgun_Flechette</defName>
+		<label>12 gauge tungsten flechette</label>
+		<description>A sabot shell holding a bundle of tungsten-cored darts. Each dart carries almost no mass and does little to soft tissue, but the cores hold together against plating that stops a lead pellet cold.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(200,210,225)</color>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>10</damageAmountBase>
+			<stoppingPower>0.5</stoppingPower>
+			<speed>90</speed>
+			<armorPenetrationBase>0.55</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+
+	<!-- 龍息彈: 突擊霰彈槍的近距離縱火拒止彈種 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_AssaultShotgun_Dragon</defName>
+		<label>12 gauge dragon's breath</label>
+		<description>A shell packed with zirconium pellets that ignite the moment they clear the muzzle. The burning cloud spends itself within a few paces, which is exactly the distance the loader cares about.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(255,150,60)</color>
+		</graphicData>
+		<projectile>
+			<damageDef>Flame</damageDef>
+			<damageAmountBase>10</damageAmountBase>
+			<stoppingPower>1</stoppingPower>
+			<speed>50</speed>
+			<armorPenetrationBase>0.10</armorPenetrationBase>
+			<ai_IsIncendiary>true</ai_IsIncendiary>
 		</projectile>
 	</ThingDef>
 

@@ -11,7 +11,8 @@
         <operations>
 
             <li Class="PatchOperationRemove">
-                <xpath>Defs/ThingDef[defName="DMS_RiotShotgun" or
+                <xpath>Defs/ThingDef[defName="DMS_Revolver" or
+                                     defName="DMS_RiotShotgun" or
                                      defName="DMS_AssaultShotgun" or
                                      defName="DMS_HeavyMachineGun" or
                                      defName="DMS_Autocannon" or
