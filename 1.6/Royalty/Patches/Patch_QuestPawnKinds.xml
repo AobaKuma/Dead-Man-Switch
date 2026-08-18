@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!--
+        原版任務的「臨時助手」與「寄宿者」都用 QuestNode_GetRandomPawnKindForFaction 挑兵種，
+        而它只比對 factionDef 或 categoryTag。DMS_Army 的 categoryTag 是 DMS，比不到任何一條，
+        結果一律吃 fallback：助手 = Mercenary_Gunner_Acidifier（海盜傭兵）、寄宿者 = SpaceRefugee_Clothed。
+
+        這裡把 DMS_Army 登記進兩張表，並且只列 humanlike 兵種，
+        順便保證機兵（Automatroid / Synthroid）永遠不會被選成臨時助手或寄宿者。
+    -->
+    <Operation Class="PatchOperationSequence">
+        <operations>
+
+            <!-- 臨時助手：Util_MaybeGenerateHelpers 會在部分任務以 40% 機率附贈，加入殖民地後約 10 天離開 -->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/QuestScriptDef[defName="Util_ChooseRandomQuestHelperKind"]/root/nodes/li[@Class="QuestNode_GetRandomPawnKindForFaction"]/choices</xpath>
+                <value>
+                    <li>
+                        <factionDef>DMS_Army</factionDef>
+                        <pawnKinds>
+                            <li>DMS_Squad_ServiceMan</li>
+                            <li>DMS_Soldier</li>
+                            <li>DMS_MinuteMan</li>
+                            <li>DMS_MinuteMan_Heavy</li>
+                        </pawnKinds>
+                    </li>
+                </value>
+            </li>
+
+            <!-- 寄宿者：Hospitality 系列任務的借住／打工人員 -->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/QuestScriptDef[defName="Util_ChooseRandomQuestLodgerKind"]/root/nodes/li/node[@Class="QuestNode_GetRandomPawnKindForFaction"]/choices</xpath>
+                <value>
+                    <li>
+                        <factionDef>DMS_Army</factionDef>
+                        <pawnKinds>
+                            <li>DMS_Civilian</li>
+                            <li>DMS_CrewMember</li>
+                            <li>DMS_Security</li>
+                        </pawnKinds>
+                    </li>
+                </value>
+            </li>
+
+        </operations>
+    </Operation>
+</Patch>
