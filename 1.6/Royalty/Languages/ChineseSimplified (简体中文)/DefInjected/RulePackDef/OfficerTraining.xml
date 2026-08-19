@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS_OfficerTrainingLetters.rulePack.rulesStrings>
+    <li>arrivedLetterLabel->人员运输机已抵达</li>
+    <li>arrivedLetterLabel->人员运输机已降落</li>
+    <li>arrivedLetterText->[askerName]征调的轨道运输机已经降落。[traineeName]必须登机前往[issuerFactionName]的训练中心接受[courseName]。</li>
+
+    <li>graduateLetterLabel->结训：[traineeName]</li>
+    <li>graduateLetterLabel->[traineeName]叙任[newTitle]</li>
+    <li>graduateLetterText->[traineeName]已完成[courseName]，正由空投舱送返，并依[issuerFactionName]命令由[oldTitle]晋升为[newTitle]。\n\n结训纪录载明其[skillName]有显著长进。</li>
+
+    <li>graduateNoTraitLetterLabel->结训：[traineeName]</li>
+    <li>graduateNoTraitLetterLabel->[traineeName]叙任[newTitle]</li>
+    <li>graduateNoTraitLetterText->[traineeName]已完成[courseName]，正由空投舱送返，并依[issuerFactionName]命令由[oldTitle]晋升为[newTitle]。\n\n教官在[traineeName]的纪律上找不到需要改进的地方，于是把时间全花在课程上。纪录上的[skillName]训练量远远超出这个阶级的标准。</li>
+
+    <li>capturedLetterLabel->[traineeName]遭[issuerFactionName]扣押</li>
+    <li>capturedLetterLabel->学员遭扣押</li>
+    <li>capturedLetterText->[issuerFactionName]在[traineeName]仍在训练单位时与[playerFactionName]为敌。教育训练处已将[traineeName]移交宪兵扣押。\n\n[traineeName]不会再搭运输机回来了。要把人弄出来，是我们自己的事。</li>
+
+    <li>abortLetterLabel->受训名额撤销</li>
+    <li>abortLetterText->与[issuerFactionName]的敌对状态使[traineeName]的受训名额作废。运输机已被召回。</li>
+
+    <li>missedLetterLabel->运输机空舱离场</li>
+    <li>missedLetterText->[askerName]征调的运输机已经离场。[issuerFactionName]将[traineeName]自本期军官培训课程的名单中划除；晋升只能等下一次机会。</li>
+  </DMS_OfficerTrainingLetters.rulePack.rulesStrings>
+
+</LanguageData>

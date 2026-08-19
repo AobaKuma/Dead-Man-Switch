@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ======================= 軍官受訓晉升 ======================= -->
+  <!-- 由 Patch_GenerateBestowingCeremonyQuest 取代授銜典禮而生成,不走隨機事件池。 -->
+  <QuestScriptDef>
+    <defName>DMS_OfficerTraining</defName>
+    <!-- 由 Patch_GenerateBestowingCeremonyQuest 生成,不進隨機任務池。
+         非 root 任務不能設 defaultChallengeRating,會噴 config error。 -->
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[trainee_nameFull]'s officer training</li>
+        <li>questName->[newTitle] training requirement: [trainee_nameFull]</li>
+        <li>questName->Fleet service education notice</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+
+        <li>questAskerReason->[asker_nameFull], a training instructor of [issuerFactionName], has passed a course notice on to the colony.</li>
+        <li>questAskerReason->[asker_nameFull], the case officer handling this for [issuerFactionName], has sent formal notice over the fleet band.</li>
+        <li>questAskerReason->The service education command of [issuerFactionName] has mailed a formal notice to [playerFactionName].</li>
+
+        <li>questTrainee->[trainee_nameFull] has the service record for the rank of [newTitle], but fleet command requires officers of that grade to log enough course hours before the post can be formally conferred.</li>
+        <li>questTrainee->[trainee_nameFull] is now carried on the Colonial Forces' promotion roll for [newTitle]. Regulations, however, forbid conferring that grade on anyone who has not sat a formal military training course.</li>
+        <li>questTrainee->[asker_nameFull], the officer who signed the notice, points out that [trainee_nameFull]'s promotion to [newTitle] stays on hold until formal military training produces a certificate of qualification.</li>
+
+        <li>questExplain->[asker_pronoun] will arrange an orbital transport to carry [trainee_nameDef] to the training establishment for a [trainingDays]-day [courseName], with board and medical care charged to the Colonial Forces.</li>
+        <li>questExplain->The fleet will requisition an orbital transport to collect [trainee_nameDef] for [trainingDays] days of instruction at the training centre running the [courseName].</li>
+        <li>questExplain->[trainee_nameDef] will train at the centre for [trainingDays] days, with board for the duration charged to the Colonial Forces.</li>
+
+        <li>questEndExplain->On graduation [trainee_pronoun] will be granted the rank of [newTitle] at the centre and returned to us, having gained the relevant experience and, quite possibly, shed a bad habit along the way.</li>
+        <li>questEndExplain->Once the course is complete [trainee_nameDef] will be commissioned and returned to [playerFactionName] intact.</li>
+
+        <li>questWarning->Note that [trainee_nameDef] falls under [issuerFactionName] military discipline for the duration of the course. Should [playerFactionName] turn hostile, the trainee will be detained as the regulations provide.</li>
+
+        <li>questDescription->[questAskerReason] [questTrainee]\n\n[questExplain] [questEndExplain]\n\n[questWarning]</li>
+        <li>questDescription->[questAskerReason] [questTrainee]\n\n[questExplain] [questEndExplain]\n\n[questWarning]</li>
+        <li>questDescription->[questAskerReason] [questTrainee]\n\n[questExplain] [questEndExplain]\n\n[questWarning]</li>
+
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="DMS.QuestNode_Root_OfficerTraining">
+      <fleetFactionDef>DMS_Army</fleetFactionDef>
+      <transportShipDef>DMS_Ship_TransportShuttle</transportShipDef>
+      <askerKind>DMS_Officer_Ceremonist</askerKind>
+      <boardingDeadlineDays>2</boardingDeadlineDays>
+      <minFreeColonists>2</minFreeColonists>
+      <!-- 課程科目在任務生成時抽定並寫進敘述,玩家可以據此挑人送訓 -->
+      <courses>
+        <li>
+          <skill>Shooting</skill>
+          <labelKey>DMS_Course_Infantry</labelKey>
+          <weight>1.2</weight>
+        </li>
+        <li>
+          <skill>Melee</skill>
+          <labelKey>DMS_Course_CQB</labelKey>
+          <weight>0.8</weight>
+        </li>
+        <li>
+          <skill>Social</skill>
+          <labelKey>DMS_Course_Command</labelKey>
+          <weight>1</weight>
+        </li>
+        <li>
+          <skill>Intellectual</skill>
+          <labelKey>DMS_Course_Staff</labelKey>
+          <weight>1</weight>
+        </li>
+      </courses>
+      <!-- 完訓隨機移除一個負面特質。defName 是延遲解析的,打錯或該特質不存在只會被略過,
+           不會在載入期噴紅字。 -->
+      <alsoRemoveNegativeValueTraits>true</alsoRemoveNegativeValueTraits>
+      <removableTraits>
+        <li><trait>Wimp</trait></li>
+        <li><trait>Abrasive</trait></li>
+        <li><trait>Greedy</trait></li>
+        <li><trait>Jealous</trait></li>
+        <li><trait>Pyromaniac</trait></li>
+        <li><trait>DislikesMen</trait></li>
+        <li><trait>DislikesWomen</trait></li>
+        <li><trait>AnnoyingVoice</trait></li>
+        <li><trait>CreepyBreathing</trait></li>
+        <li><trait>Undergrounder</trait></li>
+        <li><trait>Gourmand</trait></li>
+        <li><trait>Neurotic</trait></li>
+        <li><trait>Industriousness</trait><degree>-1</degree></li>
+        <li><trait>Industriousness</trait><degree>-2</degree></li>
+        <li><trait>Nerves</trait><degree>-1</degree></li>
+        <li><trait>Nerves</trait><degree>-2</degree></li>
+        <li><trait>NaturalMood</trait><degree>-1</degree></li>
+        <li><trait>NaturalMood</trait><degree>-2</degree></li>
+        <li><trait>SpeedOffset</trait><degree>-1</degree></li>
+      </removableTraits>
+    </root>
+  </QuestScriptDef>
+
+  <!-- ======================= 執行期信件文法 ======================= -->
+  <!-- C# 注入: traineeName, issuerFactionName, askerName, courseName, skillName,
+       oldTitle, newTitle, traitName -->
+  <RulePackDef>
+    <defName>DMS_OfficerTrainingLetters</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>arrivedLetterLabel->Personnel transport arrived</li>
+        <li>arrivedLetterLabel->Personnel transport landed</li>
+        <li>arrivedLetterText->The orbital transport requisitioned by [askerName] has landed. [traineeName] must board it for the [courseName] at the [issuerFactionName] training centre.</li>
+
+        <li>graduateLetterLabel->Graduated: [traineeName]</li>
+        <li>graduateLetterLabel->[traineeName] commissioned [newTitle]</li>
+        <li>graduateLetterText->[traineeName] has completed the [courseName] and is being returned by drop pod, promoted from [oldTitle] to [newTitle] by order of [issuerFactionName].\n\nThe course record notes a marked improvement in [skillName].</li>
+
+        <li>graduateNoTraitLetterLabel->Graduated: [traineeName]</li>
+        <li>graduateNoTraitLetterLabel->[traineeName] commissioned [newTitle]</li>
+        <li>graduateNoTraitLetterText->[traineeName] has completed the [courseName] and is being returned by drop pod, promoted from [oldTitle] to [newTitle] by order of [issuerFactionName].\n\nThe instructors found nothing in [traineeName]'s discipline worth correcting, so they spent the time on the syllabus instead. The [skillName] instruction on record runs well past the standard for the grade.</li>
+
+        <li>capturedLetterLabel->[traineeName] detained by [issuerFactionName]</li>
+        <li>capturedLetterLabel->Trainee detained</li>
+        <li>capturedLetterText->[issuerFactionName] went to war with [playerFactionName] while [traineeName] was still at the training establishment. The service education command has handed [traineeName] over to the provost.\n\n[traineeName] is not coming back on a transport. Getting [traineeName] out is our problem now.</li>
+
+        <li>abortLetterLabel->Course allocation withdrawn</li>
+        <li>abortLetterText->Hostilities with [issuerFactionName] have voided the course allocation for [traineeName]. The transport has been recalled.</li>
+
+        <li>missedLetterLabel->Transport left empty</li>
+        <li>missedLetterText->The transport requisitioned by [askerName] has departed. [issuerFactionName] has struck [traineeName] from the roll for this run of the officer training course; the promotion will have to wait for another opportunity.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

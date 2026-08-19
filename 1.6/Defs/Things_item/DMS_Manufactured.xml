@@ -286,6 +286,53 @@
     <isTechHediff>true</isTechHediff>
   </ThingDef>
 
+  <!-- 人工蛋白 由工程菌株消化碳水化合物合成的高蛋白物質塊，兼作食材與有機耗材 -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMS_Artiprotein</defName>
+    <label>artiprotein</label>
+    <description>A dense block of high-protein matter synthesized by engineered biological enzymes from digested nutrient stock. It eats much like fish, supplies a full protein intake, and keeps far longer at a higher nutritional density than any butchered meat. Standard issue for long-term storage, and the organic feedstock of choice when culturing biological tissue.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Artifuscle</ThingDef>
+      <ThingDef>DMS_ReactionChamber</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Resource/Ration</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Standard_Pickup</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>75</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <statBases>
+      <Beauty>-2</Beauty>
+      <MarketValue>3.5</MarketValue>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+      <Mass>0.025</Mass>
+      <Nutrition>0.09</Nutrition>
+      <FoodPoisonChanceFixedHuman>0.01</FoodPoisonChanceFixedHuman>
+    </statBases>
+    <ingestible>
+      <foodType>Meat</foodType>
+      <preferability>RawBad</preferability>
+      <ingestEffect>EatMeat</ingestEffect>
+      <ingestSound>RawMeat_Eat</ingestSound>
+    </ingestible>
+    <thingCategories>
+      <li>MeatRaw</li>
+    </thingCategories>
+    <tickerType>Rare</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>25</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+
   <!-- 沖壓機件 DMS裡廣泛使用的零件，機兵與建築等複雜機器都會需要用到，也可以轉換成工業零件-->
   <ThingDef ParentName="ResourceBase">
     <defName>ComponentStamped</defName>

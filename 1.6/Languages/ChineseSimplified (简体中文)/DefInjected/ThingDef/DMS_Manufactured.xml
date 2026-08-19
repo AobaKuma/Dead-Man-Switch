@@ -77,6 +77,11 @@
   <!-- EN: Analyze the T/R Component -->
   <ComponentTransmitter.comps.CompAnalyzableUnlockResearch.jobString>分析T/R组件</ComponentTransmitter.comps.CompAnalyzableUnlockResearch.jobString>
   
+  <!-- EN: artiprotein -->
+  <DMS_Artiprotein.label>人工蛋白</DMS_Artiprotein.label>
+  <!-- EN: A dense block of high-protein matter synthesized by engineered biological enzymes from digested nutrient stock. It eats much like fish, supplies a full protein intake, and keeps far longer at a higher nutritional density than any butchered meat. Standard issue for long-term storage, and the organic feedstock of choice when culturing biological tissue. -->
+  <DMS_Artiprotein.description>一种由基因改造生物酶消化营养物质后合成的高蛋白物质块，其口感上类似鱼肉，能够提供蛋白质摄取，但保存期限更长并且营养密度更高，适合用于长期仓储与作为培养生物组织时所需的有机耗材。</DMS_Artiprotein.description>
+  
   <!-- EN: Ceramics -->
   <DMS_Ceramics.label>陶瓷</DMS_Ceramics.label>
   <!-- EN: A military standard composite ceramic plate widely used as a defensive additions for war machines.\n\nits durability is somewhat poor, but it provides excellent protection and is light weight. -->

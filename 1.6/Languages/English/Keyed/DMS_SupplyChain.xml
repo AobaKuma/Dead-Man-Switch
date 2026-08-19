@@ -27,4 +27,14 @@
   <DMS_CourtMartial_TrialInfo>Trial concludes</DMS_CourtMartial_TrialInfo>
   <DMS_CourtMartial_DetentionInfo>Sentence ends</DMS_CourtMartial_DetentionInfo>
 
+
+  <!-- 軍官受訓晉升 Officer training quest -->
+  <DMS_OfficerTraining_BoardDeadline>Boarding deadline</DMS_OfficerTraining_BoardDeadline>
+  <DMS_OfficerTraining_BoardDeadlineTip>Time remaining for the trainee to board the orbital transport. If it leaves empty, the course allocation is withdrawn.</DMS_OfficerTraining_BoardDeadlineTip>
+  <DMS_OfficerTraining_CourseInfo>Course ends</DMS_OfficerTraining_CourseInfo>
+  <DMS_OfficerTraining_NoTitle>no rank</DMS_OfficerTraining_NoTitle>
+  <DMS_Course_Infantry>infantry tactics course</DMS_Course_Infantry>
+  <DMS_Course_CQB>close-quarters combat course</DMS_Course_CQB>
+  <DMS_Course_Command>command and leadership course</DMS_Course_Command>
+  <DMS_Course_Staff>staff duties course</DMS_Course_Staff>
 </LanguageData>

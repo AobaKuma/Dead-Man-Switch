@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using RimWorld;
-using RimWorld.Planet;
 using Verse;
 
 namespace DMS
@@ -8,76 +6,25 @@ namespace DMS
     /// <summary>
     /// inSignal(接受任務):讓生成時預先建立的穿梭機 Thing 以 TransportShip 降落,
     /// 等待被告登機(登機即離場),並發出抵達信件。
+    ///
+    /// 共用邏輯已抽到 QuestPart_SpawnPickupShuttle;本類別名不可更動 —— QuestPart 以
+    /// 類別名存檔,改名會讓正在跑軍事法庭的存檔讀不回這個 part。
     /// </summary>
-    public class QuestPart_SpawnCourtShuttle : QuestPart
+    public class QuestPart_SpawnCourtShuttle : QuestPart_SpawnPickupShuttle
     {
-        public string inSignal;
-        public MapParent mapParent;
-        public TransportShipDef transportShipDef;   // DMS 自帶運輸機 def
-        public Thing shuttle;          // 生成時以 ThingMaker 建立、已設定 requiredPawns 與 questTags
-        public Pawn defendant;
-        public string issuerFactionName;
-        public string askerName;
+        protected override RulePackDef LetterPack => CourtMartialText.Pack;
 
-        private bool arrived;
+        /// <summary>舊存檔用的是 "defendant",維持不變。</summary>
+        protected override string PassengerScribeLabel => "defendant";
 
-        public override IEnumerable<GlobalTargetInfo> QuestLookTargets
+        protected override string[] LetterVars()
         {
-            get
+            return new[]
             {
-                foreach (GlobalTargetInfo t in base.QuestLookTargets) yield return t;
-                if (shuttle != null && shuttle.Spawned) yield return shuttle;
-            }
-        }
-
-        public override void Notify_QuestSignalReceived(Signal signal)
-        {
-            base.Notify_QuestSignalReceived(signal);
-            if (signal.tag != inSignal || arrived) return;
-            arrived = true;
-
-            Map map = mapParent?.Map;
-            if (map == null || shuttle == null) return;
-
-            TransportShip ship = TransportShipMaker.MakeTransportShip(
-                transportShipDef ?? TransportShipDefOf.Ship_Shuttle, null, shuttle);
-
-            ShipJob_Wait wait = (ShipJob_Wait)ShipJobMaker.MakeShipJob(ShipJobDefOf.WaitForever);
-            wait.leaveImmediatelyWhenSatisfied = true;
-            wait.showGizmos = false;
-            ship.AddJob(wait);
-
-            IntVec3 cell = DropCellFinder.GetBestShuttleLandingSpot(map, Faction.OfPlayer);
-            ship.ArriveAt(cell, map.Parent);
-            ship.Start();
-
-            Find.LetterStack.ReceiveLetter(
-                SupplyChainText.Resolve(CourtMartialText.Pack, "arrivedLetterLabel",
-                    "defendantName", defendant?.LabelShort ?? "?",
-                    "issuerFactionName", issuerFactionName,
-                    "askerName", askerName),
-                SupplyChainText.Resolve(CourtMartialText.Pack, "arrivedLetterText",
-                    "defendantName", defendant?.LabelShort ?? "?",
-                    "issuerFactionName", issuerFactionName,
-                    "askerName", askerName),
-                LetterDefOf.NeutralEvent, new TargetInfo(cell, map), null, quest);
-        }
-
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            Scribe_Values.Look(ref inSignal, "inSignal");
-            Scribe_References.Look(ref mapParent, "mapParent");
-            Scribe_Defs.Look(ref transportShipDef, "transportShipDef");
-            Scribe_Values.Look(ref arrived, "arrived");
-            // 仿 QuestPart_SpawnThing:未降落時由本 part 深度持有,入世界後改為參照
-            if (!arrived)
-                Scribe_Deep.Look(ref shuttle, "shuttle");
-            else
-                Scribe_References.Look(ref shuttle, "shuttle");
-            Scribe_References.Look(ref defendant, "defendant");
-            Scribe_Values.Look(ref issuerFactionName, "issuerFactionName");
-            Scribe_Values.Look(ref askerName, "askerName");
+                "defendantName", passenger?.LabelShort ?? "?",
+                "issuerFactionName", issuerFactionName ?? "?",
+                "askerName", askerName ?? "?",
+            };
         }
     }
 

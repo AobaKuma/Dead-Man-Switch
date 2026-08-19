@@ -354,8 +354,8 @@
 					</li>
 				</ammos>
 			</li>
-			<!-- 一次性: 打完即毀 -->
-			<li Class="CompProperties_ApparelReloadable">
+			<!-- 一次性: 打完即毀 (此 comp 掛在武器上, 要用 FFF 子類才不會報 config error) -->
+			<li Class="Fortified.CompProperties_WeaponReloadable">
 				<maxCharges>1</maxCharges>
 				<destroyOnEmpty>true</destroyOnEmpty>
 				<hotKey>Misc4</hotKey>

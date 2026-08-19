@@ -13,6 +13,7 @@ namespace DMS
         }
         public static FactionDef DMS_Army;
         public static QuestScriptDef DMS_PromotionCeremony;
+        public static QuestScriptDef DMS_OfficerTraining;
         public static QuestScriptDef DMS_Stele;
 		public static PawnKindDef DMS_Officer_Ceremonist;
         public static PawnKindDef DMS_Escort;

@@ -137,7 +137,7 @@ namespace DMS
                 mapParent = map.Parent,
                 transportShipDef = transportShipDef,
                 shuttle = shuttle,
-                defendant = defendant,
+                passenger = defendant,
                 issuerFactionName = fleet.Name,
                 askerName = asker.LabelShort,
             });
@@ -163,7 +163,7 @@ namespace DMS
                 inSignalEnable = sigSent,
                 shuttle = shuttle,
                 lendColonistsToFaction = fleet,
-                returnLentColonistsInTicks = 1000000000, // 永不自動歸還
+                returnLentColonistsInTicks = int.MaxValue / 2, // 永不自動歸還
                 returnMap = map.Parent,
                 outSignalColonistsDied = sigDied,
             };

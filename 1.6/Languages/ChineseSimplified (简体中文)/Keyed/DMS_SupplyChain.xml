@@ -46,4 +46,21 @@
   <!-- EN: Sentence ends -->
   <DMS_CourtMartial_DetentionInfo>服刑结束</DMS_CourtMartial_DetentionInfo>
 
+
+  <!-- EN: Boarding deadline -->
+  <DMS_OfficerTraining_BoardDeadline>登机期限</DMS_OfficerTraining_BoardDeadline>
+  <!-- EN: Time remaining for the trainee to board the orbital transport. If it leaves empty, the course allocation is withdrawn. -->
+  <DMS_OfficerTraining_BoardDeadlineTip>学员登上轨道运输机的剩余时间。若运输机空舱离场，受训名额即遭撤销。</DMS_OfficerTraining_BoardDeadlineTip>
+  <!-- EN: Course ends -->
+  <DMS_OfficerTraining_CourseInfo>结训时间</DMS_OfficerTraining_CourseInfo>
+  <!-- EN: no rank -->
+  <DMS_OfficerTraining_NoTitle>无军阶</DMS_OfficerTraining_NoTitle>
+  <!-- EN: infantry tactics course -->
+  <DMS_Course_Infantry>步兵战术课程</DMS_Course_Infantry>
+  <!-- EN: close-quarters combat course -->
+  <DMS_Course_CQB>近身战斗教范</DMS_Course_CQB>
+  <!-- EN: command and leadership course -->
+  <DMS_Course_Command>指挥与领导学程</DMS_Course_Command>
+  <!-- EN: staff and military science course -->
+  <DMS_Course_Staff>参谋作业学程</DMS_Course_Staff>
 </LanguageData>

@@ -450,9 +450,7 @@
     <stockGenerators>
       <!-- Buying -->
       <li Class="StockGenerator_BuySlaves" />
-      <li Class="StockGenerator_BuySingleDef">
-        <thingDef>Gold</thingDef>
-      </li>
+      
       <li Class="StockGenerator_BuySingleDef">
         <thingDef>ComponentStamped</thingDef>
       </li>
