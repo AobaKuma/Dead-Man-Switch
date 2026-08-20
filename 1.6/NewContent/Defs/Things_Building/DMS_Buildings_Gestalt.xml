@@ -21,6 +21,7 @@
 				<cornerBR>Damage/Corner</cornerBR>
 			</damageData>
 		</graphicData>
+		<drawOffscreen>true</drawOffscreen><!-- To ensure command radius is always drawn -->
 		<uiIconPath>Things/Building/CentralCommandCore</uiIconPath>
 		<size>(5,5)</size>
 		<tickerType>Normal</tickerType>
@@ -37,6 +38,9 @@
 			<WorkToBuild>80000</WorkToBuild>
 			<Flammability>0.5</Flammability>
 			<Beauty>10</Beauty>
+			<MechBandwidth>40</MechBandwidth>
+      		<MechControlGroups>4</MechControlGroups>
+      		<FFF_MechCommandRange>34.9</FFF_MechCommandRange>
 		</statBases>
 		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
 		<costList>
@@ -64,9 +68,6 @@
 		</researchPrerequisites>
 		<comps>
 			<li Class="Fortified.CompProperties_Overseer">
-				<controlWholeMap>false</controlWholeMap>
-				<controlGroups>4</controlGroups>
-				<bandwidth>40</bandwidth>
 				<selectOverseerIconPath>UI/Icons/DMS_SelectGestalt</selectOverseerIconPath>
 			</li>
 			<li Class="CompProperties_AmbientSound">
@@ -74,7 +75,10 @@
 				<disabledOnUnpowered>true</disabledOnUnpowered>
 			</li>
 			<li Class="CompProperties_AffectedByFacilities">
-				<linkableFacilities />
+				<linkableFacilities>
+          			<li>DMS_Gestalt_CommandArray</li>
+          			<li>DMS_Gestalt_Transmitter</li>
+        		</linkableFacilities>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -84,4 +88,122 @@
 			<li Class="CompProperties_Flickable" />
 		</comps>
 	</ThingDef>
+
+	<!-- Facilities -->
+
+  <ThingDef ParentName="BuildingBase" Name="DMS_GestaltFacilityBase" Abstract="True">
+    <fillPercent>0.5</fillPercent>
+    <pathCost>42</pathCost>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>false</canOverlapZones>
+    <passability>PassThroughOnly</passability>
+    <designationCategory>DMS_Category</designationCategory>
+    <altitudeLayer>Building</altitudeLayer>
+    <uiOrder>2000</uiOrder>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories Inherit="False">
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <researchPrerequisites>
+      <li>DMS_Occultech_GestaltEngine</li>
+    </researchPrerequisites>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_GestaltEngine</ThingDef>
+    </descriptionHyperlinks>
+    <building>
+      <relatedBuildCommands>
+        <li>DMS_GestaltEngine</li>
+      </relatedBuildCommands>
+      <buildingTags>
+        <li>Mechanitor</li>
+      </buildingTags>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_GestaltFacilityBase">
+    <defName>DMS_Gestalt_CommandArray</defName>
+    <label>command array</label>
+    <description>Increases research speed when placed near hi-tech research bench and unlocks new research projects. Each research bench can only use one multi-analyzer.</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/MultiAnalyzer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>3</drawSize>
+    </graphicData>
+    <uiIconScale>0.85</uiIconScale>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Mass>60</Mass>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+      <Plasteel>50</Plasteel>
+      <Gold>20</Gold>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="Fortified.CompProperties_OverseerFacility">
+        <statOffsets>
+          <MechBandwidth>5</MechBandwidth>
+          <MechControlGroups>1</MechControlGroups>
+        </statOffsets>
+        <maxSimultaneous>4</maxSimultaneous>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_GestaltFacilityBase">
+    <defName>DMS_Gestalt_Transmitter</defName>
+    <label>command transmitter</label>
+    <description>Increases research speed when placed near hi-tech research bench and unlocks new research projects. Each research bench can only use one multi-analyzer.</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/MultiAnalyzer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>3</drawSize>
+    </graphicData>
+    <uiIconScale>0.85</uiIconScale>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Mass>60</Mass>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+      <Plasteel>50</Plasteel>
+      <Gold>20</Gold>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="Fortified.CompProperties_OverseerFacility">
+        <statOffsets>
+          <FFF_MechCommandRange>10</FFF_MechCommandRange>
+        </statOffsets>
+        <maxSimultaneous>4</maxSimultaneous>
+      </li>
+    </comps>
+  </ThingDef>
+	
 </Defs>
