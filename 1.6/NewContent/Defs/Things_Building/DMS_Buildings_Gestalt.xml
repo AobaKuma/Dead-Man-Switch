@@ -121,6 +121,7 @@
     </building>
     <placeWorkers>
       <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_BandNode</li>
     </placeWorkers>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>
@@ -128,9 +129,9 @@
   <ThingDef ParentName="DMS_GestaltFacilityBase">
     <defName>DMS_Gestalt_CommandArray</defName>
     <label>command array</label>
-    <description>Increases research speed when placed near hi-tech research bench and unlocks new research projects. Each research bench can only use one multi-analyzer.</description>
+    <description>Increases bandwidth when placed near central command core. Each central command core can only use eight command arrays.</description>
     <graphicData>
-      <texPath>Things/Building/Misc/MultiAnalyzer</texPath>
+      <texPath>Things/Building/DMS_CommandArray</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>3</drawSize>
     </graphicData>
@@ -140,28 +141,27 @@
     <statBases>
       <MaxHitPoints>200</MaxHitPoints>
       <WorkToBuild>10000</WorkToBuild>
-      <Mass>60</Mass>
+      <Mass>100</Mass>
       <Flammability>1.0</Flammability>
     </statBases>
     <costList>
-      <Steel>40</Steel>
-      <Plasteel>50</Plasteel>
-      <Gold>20</Gold>
-      <ComponentIndustrial>8</ComponentIndustrial>
+      <Steel>200</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentStamped>4</ComponentStamped>
+      <Neurocomputer>1</Neurocomputer>
     </costList>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
-        <basePowerConsumption>200</basePowerConsumption>
+        <basePowerConsumption>500</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable"/>
       <li Class="Fortified.CompProperties_OverseerFacility">
         <statOffsets>
           <MechBandwidth>5</MechBandwidth>
-          <MechControlGroups>1</MechControlGroups>
         </statOffsets>
-        <maxSimultaneous>4</maxSimultaneous>
+        <maxSimultaneous>8</maxSimultaneous>
       </li>
     </comps>
   </ThingDef>
@@ -169,9 +169,9 @@
   <ThingDef ParentName="DMS_GestaltFacilityBase">
     <defName>DMS_Gestalt_Transmitter</defName>
     <label>command transmitter</label>
-    <description>Increases research speed when placed near hi-tech research bench and unlocks new research projects. Each research bench can only use one multi-analyzer.</description>
+    <description>Increases command range and provides additional control group when placed near central command core. Each central command core can only use four command transmitters.</description>
     <graphicData>
-      <texPath>Things/Building/Misc/MultiAnalyzer</texPath>
+      <texPath>Things/Building/DMS_CommandTransmitter</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>3</drawSize>
     </graphicData>
@@ -185,10 +185,9 @@
       <Flammability>1.0</Flammability>
     </statBases>
     <costList>
-      <Steel>40</Steel>
-      <Plasteel>50</Plasteel>
-      <Gold>20</Gold>
-      <ComponentIndustrial>8</ComponentIndustrial>
+      <Steel>150</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentTransmitter>1</ComponentTransmitter>
     </costList>
     <comps>
       <li Class="CompProperties_Power">
@@ -200,6 +199,7 @@
       <li Class="Fortified.CompProperties_OverseerFacility">
         <statOffsets>
           <FFF_MechCommandRange>10</FFF_MechCommandRange>
+          <MechControlGroups>1</MechControlGroups>
         </statOffsets>
         <maxSimultaneous>4</maxSimultaneous>
       </li>
