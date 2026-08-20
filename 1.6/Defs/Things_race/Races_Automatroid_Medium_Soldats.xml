@@ -339,8 +339,16 @@
       <ArmorRating_Heat>0.33</ArmorRating_Heat>  <!--能抗-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+      <MechBandwidth>6</MechBandwidth>
+      <MechControlGroups>1</MechControlGroups>
+      <FFF_MechCommandRange>19.9</FFF_MechCommandRange>
+      <EnergyShieldRechargeRate>0.2</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>1</EnergyShieldEnergyMax>
     </statBases>
     <comps Inherit="False"><!--CompDeadManSwitch shouldn't be present in Overseer mechs-->
+      <li Class="CompProperties_Shield">
+        <blocksRangedWeapons>false</blocksRangedWeapons>
+      </li>
       <li Class="CompProperties_CanBeDormant">
         <compClass>CompMechanoid</compClass>
       </li>
@@ -362,9 +370,6 @@
         <minRelayRadius>5</minRelayRadius>
       </li>-->
       <li Class="Fortified.CompProperties_Overseer">
-        <commandRange>19.9</commandRange>
-        <controlGroups>1</controlGroups>
-        <bandwidth>6</bandwidth>
         <selectOverseerIconPath>UI/Icons/DMS_SelectSergeant</selectOverseerIconPath>
       </li>
       <li Class="Fortified.CompProperties_Paintable">
