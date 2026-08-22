@@ -36,26 +36,26 @@
     </thingStyleCategories>
     <generalRules>
       <rulesStrings>
-        <li>memeAdjective-&gt;regimental</li>
-        <li>memeAdjective-&gt;uniformed</li>
-        <li>memeAdjective-&gt;disciplined</li>
-        <li>memeCreed-&gt;command</li>
-        <li>memeCreed-&gt;service</li>
-        <li>memeCreed-&gt;regiment</li>
-        <li>memeHyphenPrefix-&gt;rank</li>
-        <li>memeHyphenPrefix-&gt;drill</li>
-        <li>memeConcept-&gt;duty</li>
-        <li>memeConcept-&gt;discipline</li>
-        <li>memeConcept-&gt;command</li>
-        <li>memeConcept-&gt;rank</li>
-        <li>memeConcept-&gt;orders</li>
-        <li>memeLeaderNoun-&gt;commander</li>
-        <li>memeLeaderNoun-&gt;colonel</li>
-        <li>memeLeaderNoun-&gt;marshal</li>
-        <li>memeLeaderNoun-&gt;captain</li>
-        <li>memeMoralist-&gt;adjutant</li>
-        <li>memeMoralist-&gt;provost</li>
-        <li>memeMoralist-&gt;inspector</li>
+        <li>memeAdjective->regimental</li>
+        <li>memeAdjective->uniformed</li>
+        <li>memeAdjective->disciplined</li>
+        <li>memeCreed->command</li>
+        <li>memeCreed->service</li>
+        <li>memeCreed->regiment</li>
+        <li>memeHyphenPrefix->rank</li>
+        <li>memeHyphenPrefix->drill</li>
+        <li>memeConcept->duty</li>
+        <li>memeConcept->discipline</li>
+        <li>memeConcept->command</li>
+        <li>memeConcept->rank</li>
+        <li>memeConcept->orders</li>
+        <li>memeLeaderNoun->commander</li>
+        <li>memeLeaderNoun->colonel</li>
+        <li>memeLeaderNoun->marshal</li>
+        <li>memeLeaderNoun->captain</li>
+        <li>memeMoralist->adjutant</li>
+        <li>memeMoralist->provost</li>
+        <li>memeMoralist->inspector</li>
       </rulesStrings>
     </generalRules>
   </MemeDef>

@@ -15,6 +15,11 @@
           <li>DMS_Occulted</li>
         </categories>
       </li>
+      <!-- 探明機制：前置研究全部完成前，本分頁的專案顯示為（未知研究）且無法研究。 -->
+      <li Class="Fortified.ModExtension_ResearchDiscovery">
+        <hideUntilDiscovered>true</hideUntilDiscovered>
+        <discoveryLetter>true</discoveryLetter>
+      </li>
     </modExtensions>
   </ResearchTabDef>
 

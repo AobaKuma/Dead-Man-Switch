@@ -23,23 +23,23 @@
     <li>desc_sentence->[PAWN_nameDef] is drenched in sweat.</li>
   -->
   <DMS_Tale_NeuralOverload.rulePack.rulesStrings>
-    <li>tale_noun-&gt;[PAWN_nameDef]將自己的神經連結壓過安全界線</li>
-    <li>image-&gt;[PAWN_nameFull]伏在控制陣列前[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]雙手抱著頭[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]僵直地站在行進的機體之間[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]下達指令[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]單膝跪倒[circumstance_group]</li>
-    <li>circumstance_phrase-&gt;，臉上帶著[AdjectiveAngsty]的神情</li>
-    <li>circumstance_phrase-&gt;，臉上帶著[AdjectiveAngsty]的神情</li>
-    <li>circumstance_phrase-&gt;，鼻血流個不停</li>
-    <li>circumstance_phrase-&gt;，眼白翻了上來</li>
-    <li>circumstance_phrase-&gt;，汗如雨下</li>
-    <li>desc_sentence-&gt;[PAWN_nameDef]身後的一列機體站得整整齊齊。</li>
-    <li>desc_sentence-&gt;背景裡的機體以完全一致的節奏移動。</li>
-    <li>desc_sentence-&gt;[PAWN_nameDef]臉上是[AdjectiveAngsty]的神情。</li>
-    <li>desc_sentence-&gt;警示燈把整個場景染成[Color]。</li>
-    <li>desc_sentence-&gt;遠處有一名[PersonJob]在旁觀。</li>
-    <li>desc_sentence-&gt;[PAWN_nameDef]全身濕透。</li>
+    <li>tale_noun->[PAWN_nameDef]將自己的神經連結壓過安全界線</li>
+    <li>image->[PAWN_nameFull]伏在控制陣列前[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]雙手抱著頭[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]僵直地站在行進的機體之間[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]下達指令[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]單膝跪倒[circumstance_group]</li>
+    <li>circumstance_phrase->，臉上帶著[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase->，臉上帶著[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase->，鼻血流個不停</li>
+    <li>circumstance_phrase->，眼白翻了上來</li>
+    <li>circumstance_phrase->，汗如雨下</li>
+    <li>desc_sentence->[PAWN_nameDef]身後的一列機體站得整整齊齊。</li>
+    <li>desc_sentence->背景裡的機體以完全一致的節奏移動。</li>
+    <li>desc_sentence->[PAWN_nameDef]臉上是[AdjectiveAngsty]的神情。</li>
+    <li>desc_sentence->警示燈把整個場景染成[Color]。</li>
+    <li>desc_sentence->遠處有一名[PersonJob]在旁觀。</li>
+    <li>desc_sentence->[PAWN_nameDef]全身濕透。</li>
   </DMS_Tale_NeuralOverload.rulePack.rulesStrings>
   
   <!-- EN: weapon calibration maximized -->
@@ -64,23 +64,23 @@
     <li>desc_sentence->[Quantity_adjphrase] [PersonJob]s watch with amazement.</li>
   -->
   <DMS_Tale_WeaponImprinted.rulePack.rulesStrings>
-    <li>tale_noun-&gt;[PAWN_nameDef]完成自己的武器校準</li>
-    <li>image-&gt;[PAWN_nameFull]分解一把武器[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]重新組裝一把武器[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]一動不動地站在靶場上[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]舉起步槍[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]抱著一把磨損的步槍[circumstance_group]</li>
-    <li>circumstance_phrase-&gt;，動作精確得像機器</li>
-    <li>circumstance_phrase-&gt;，動作精確得像機器</li>
-    <li>circumstance_phrase-&gt;，沒有一個多餘動作</li>
-    <li>circumstance_phrase-&gt;，手裡握著自己的武器</li>
-    <li>circumstance_phrase-&gt;，毫無表情</li>
-    <li>desc_sentence-&gt;武器被[PAWN_nameDef]握住的地方已經磨穿了。</li>
-    <li>desc_sentence-&gt;從動作就看得出[PAWN_nameDef]的熟練。</li>
-    <li>desc_sentence-&gt;地上鋪滿了彈殼。</li>
-    <li>desc_sentence-&gt;背景裡站著一排一模一樣的機體。</li>
-    <li>desc_sentence-&gt;一排[Weapon]立在[side_position]。</li>
-    <li>desc_sentence-&gt;幾名[PersonJob]看得目瞪口呆。</li>
+    <li>tale_noun->[PAWN_nameDef]完成自己的武器校準</li>
+    <li>image->[PAWN_nameFull]分解一把武器[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]重新組裝一把武器[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]一動不動地站在靶場上[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]舉起步槍[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]抱著一把磨損的步槍[circumstance_group]</li>
+    <li>circumstance_phrase->，動作精確得像機器</li>
+    <li>circumstance_phrase->，動作精確得像機器</li>
+    <li>circumstance_phrase->，沒有一個多餘動作</li>
+    <li>circumstance_phrase->，手裡握著自己的武器</li>
+    <li>circumstance_phrase->，毫無表情</li>
+    <li>desc_sentence->武器被[PAWN_nameDef]握住的地方已經磨穿了。</li>
+    <li>desc_sentence->從動作就看得出[PAWN_nameDef]的熟練。</li>
+    <li>desc_sentence->地上鋪滿了彈殼。</li>
+    <li>desc_sentence->背景裡站著一排一模一樣的機體。</li>
+    <li>desc_sentence->一排[Weapon]立在[side_position]。</li>
+    <li>desc_sentence->幾名[PersonJob]看得目瞪口呆。</li>
   </DMS_Tale_WeaponImprinted.rulePack.rulesStrings>
   
   <!-- EN: fire support called -->
@@ -105,23 +105,23 @@
     <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
   -->
   <DMS_Tale_CalledFireSupport.rulePack.rulesStrings>
-    <li>tale_noun-&gt;[PAWN_nameDef]呼叫火力支援</li>
-    <li>image-&gt;[PAWN_nameFull]對著送話器說話[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]伏在掩體後面[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]指向遠處的煙柱[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]看著一架飛行器從頭頂掠過[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]擋住迎面而來的爆風[circumstance_group]</li>
-    <li>circumstance_phrase-&gt;，臉上帶著[AdjectiveBadass]的神情</li>
-    <li>circumstance_phrase-&gt;，臉上帶著[AdjectiveBadass]的神情</li>
-    <li>circumstance_phrase-&gt;，冷靜而俐落</li>
-    <li>circumstance_phrase-&gt;，扯著嗓子壓過噪音</li>
-    <li>circumstance_phrase-&gt;，滿身塵土</li>
-    <li>desc_sentence-&gt;[PAWN_nameDef]身後升起一道火牆。</li>
-    <li>desc_sentence-&gt;遠處看得見一群[Enemy]。</li>
-    <li>desc_sentence-&gt;煙塵蓋住了背景裡的[TerrainFeature]。</li>
-    <li>desc_sentence-&gt;地上滿是[Gore]。</li>
-    <li>desc_sentence-&gt;一群[Animal]驚慌地逃離交火現場。</li>
-    <li>desc_sentence-&gt;遠處有一名[PersonJob]在旁觀。</li>
+    <li>tale_noun->[PAWN_nameDef]呼叫火力支援</li>
+    <li>image->[PAWN_nameFull]對著送話器說話[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]伏在掩體後面[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]指向遠處的煙柱[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]看著一架飛行器從頭頂掠過[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]擋住迎面而來的爆風[circumstance_group]</li>
+    <li>circumstance_phrase->，臉上帶著[AdjectiveBadass]的神情</li>
+    <li>circumstance_phrase->，臉上帶著[AdjectiveBadass]的神情</li>
+    <li>circumstance_phrase->，冷靜而俐落</li>
+    <li>circumstance_phrase->，扯著嗓子壓過噪音</li>
+    <li>circumstance_phrase->，滿身塵土</li>
+    <li>desc_sentence->[PAWN_nameDef]身後升起一道火牆。</li>
+    <li>desc_sentence->遠處看得見一群[Enemy]。</li>
+    <li>desc_sentence->煙塵蓋住了背景裡的[TerrainFeature]。</li>
+    <li>desc_sentence->地上滿是[Gore]。</li>
+    <li>desc_sentence->一群[Animal]驚慌地逃離交火現場。</li>
+    <li>desc_sentence->遠處有一名[PersonJob]在旁觀。</li>
   </DMS_Tale_CalledFireSupport.rulePack.rulesStrings>
   
   <!-- EN: artificial organism gestated -->
@@ -145,22 +145,22 @@
     <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
   -->
   <DMS_Tale_MechGestated.rulePack.rulesStrings>
-    <li>tale_noun-&gt;[PAWN_nameDef]產下一具[PRODUCT_label]</li>
-    <li>image-&gt;[PAWN_nameFull]躺在一具[PRODUCT_label]旁邊[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]低頭看著一具[PRODUCT_label][circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]被人從一具[PRODUCT_label]旁抬走[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]伸手朝向一具[PRODUCT_label][circumstance_group]</li>
-    <li>circumstance_phrase-&gt;，看得出已經力竭</li>
-    <li>circumstance_phrase-&gt;，看得出已經力竭</li>
-    <li>circumstance_phrase-&gt;，臉上帶著[AdjectiveAngsty]的神情</li>
-    <li>circumstance_phrase-&gt;，身上沾滿[Gore]</li>
-    <li>circumstance_phrase-&gt;，毫無表情</li>
-    <li>desc_sentence-&gt;那具[PRODUCT_label]比[PAWN_nameDef]還高。</li>
-    <li>desc_sentence-&gt;那具[PRODUCT_label]還濕著。</li>
-    <li>desc_sentence-&gt;地上滿是[Gore]。</li>
-    <li>desc_sentence-&gt;幾名[PersonJob]默默看著。</li>
-    <li>desc_sentence-&gt;[PAWN_nameDef]臉上是[AdjectiveAngsty]的神情。</li>
-    <li>desc_sentence-&gt;遠處有一名[PersonJob]在旁觀。</li>
+    <li>tale_noun->[PAWN_nameDef]產下一具[PRODUCT_label]</li>
+    <li>image->[PAWN_nameFull]躺在一具[PRODUCT_label]旁邊[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]低頭看著一具[PRODUCT_label][circumstance_group]</li>
+    <li>image->[PAWN_nameFull]被人從一具[PRODUCT_label]旁抬走[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]伸手朝向一具[PRODUCT_label][circumstance_group]</li>
+    <li>circumstance_phrase->，看得出已經力竭</li>
+    <li>circumstance_phrase->，看得出已經力竭</li>
+    <li>circumstance_phrase->，臉上帶著[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase->，身上沾滿[Gore]</li>
+    <li>circumstance_phrase->，毫無表情</li>
+    <li>desc_sentence->那具[PRODUCT_label]比[PAWN_nameDef]還高。</li>
+    <li>desc_sentence->那具[PRODUCT_label]還濕著。</li>
+    <li>desc_sentence->地上滿是[Gore]。</li>
+    <li>desc_sentence->幾名[PersonJob]默默看著。</li>
+    <li>desc_sentence->[PAWN_nameDef]臉上是[AdjectiveAngsty]的神情。</li>
+    <li>desc_sentence->遠處有一名[PersonJob]在旁觀。</li>
   </DMS_Tale_MechGestated.rulePack.rulesStrings>
   
   <!-- EN: gestation failed -->
@@ -182,20 +182,20 @@
     <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
   -->
   <DMS_Tale_MechGestationFailed.rulePack.rulesStrings>
-    <li>tale_noun-&gt;[PAWN_nameDef]失敗的孕育</li>
-    <li>image-&gt;[PAWN_nameFull]一個人坐著[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]接受照料[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]盯著一具空的育艙[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]別過頭去[circumstance_group]</li>
-    <li>circumstance_phrase-&gt;，臉上帶著[AdjectiveAngsty]的神情</li>
-    <li>circumstance_phrase-&gt;，臉上帶著[AdjectiveAngsty]的神情</li>
-    <li>circumstance_phrase-&gt;，看得出已經力竭</li>
-    <li>circumstance_phrase-&gt;，身上沾滿[Gore]</li>
-    <li>desc_sentence-&gt;一具空的育艙敞開在[side_position]。</li>
-    <li>desc_sentence-&gt;旁邊擺著一盤廢棄的組織。</li>
-    <li>desc_sentence-&gt;地上滿是[Gore]。</li>
-    <li>desc_sentence-&gt;幾名[PersonJob]別開了視線。</li>
-    <li>desc_sentence-&gt;遠處有一名[PersonJob]在旁觀。</li>
+    <li>tale_noun->[PAWN_nameDef]失敗的孕育</li>
+    <li>image->[PAWN_nameFull]一個人坐著[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]接受照料[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]盯著一具空的育艙[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]別過頭去[circumstance_group]</li>
+    <li>circumstance_phrase->，臉上帶著[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase->，臉上帶著[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase->，看得出已經力竭</li>
+    <li>circumstance_phrase->，身上沾滿[Gore]</li>
+    <li>desc_sentence->一具空的育艙敞開在[side_position]。</li>
+    <li>desc_sentence->旁邊擺著一盤廢棄的組織。</li>
+    <li>desc_sentence->地上滿是[Gore]。</li>
+    <li>desc_sentence->幾名[PersonJob]別開了視線。</li>
+    <li>desc_sentence->遠處有一名[PersonJob]在旁觀。</li>
   </DMS_Tale_MechGestationFailed.rulePack.rulesStrings>
   
   <!-- EN: court-martialed -->
@@ -218,21 +218,21 @@
     <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
   -->
   <DMS_Tale_CourtMartialed.rulePack.rulesStrings>
-    <li>tale_noun-&gt;[PAWN_nameDef]的軍法審判</li>
-    <li>image-&gt;[PAWN_nameFull]在一排軍官面前立正[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]的階級章被剪了下來[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]被帶離庭審室[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]聽著判決[circumstance_group]</li>
-    <li>circumstance_phrase-&gt;，臉上帶著[AdjectiveAngsty]的神情</li>
-    <li>circumstance_phrase-&gt;，臉上帶著[AdjectiveAngsty]的神情</li>
-    <li>circumstance_phrase-&gt;，毫無表情</li>
-    <li>circumstance_phrase-&gt;，站得筆直</li>
-    <li>desc_sentence-&gt;幾名軍官坐在一張長桌後面。</li>
-    <li>desc_sentence-&gt;一枚扯下的階級章掉在地上。</li>
-    <li>desc_sentence-&gt;[PAWN_nameDef]臉上是[AdjectiveAngsty]的神情。</li>
-    <li>desc_sentence-&gt;房裡沒有人與[PAWN_nameDef]對視。</li>
-    <li>desc_sentence-&gt;幾名[PersonJob]默默看著。</li>
-    <li>desc_sentence-&gt;遠處有一名[PersonJob]在旁觀。</li>
+    <li>tale_noun->[PAWN_nameDef]的軍法審判</li>
+    <li>image->[PAWN_nameFull]在一排軍官面前立正[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]的階級章被剪了下來[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]被帶離庭審室[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]聽著判決[circumstance_group]</li>
+    <li>circumstance_phrase->，臉上帶著[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase->，臉上帶著[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase->，毫無表情</li>
+    <li>circumstance_phrase->，站得筆直</li>
+    <li>desc_sentence->幾名軍官坐在一張長桌後面。</li>
+    <li>desc_sentence->一枚扯下的階級章掉在地上。</li>
+    <li>desc_sentence->[PAWN_nameDef]臉上是[AdjectiveAngsty]的神情。</li>
+    <li>desc_sentence->房裡沒有人與[PAWN_nameDef]對視。</li>
+    <li>desc_sentence->幾名[PersonJob]默默看著。</li>
+    <li>desc_sentence->遠處有一名[PersonJob]在旁觀。</li>
   </DMS_Tale_CourtMartialed.rulePack.rulesStrings>
   
   <!-- EN: acquitted -->
@@ -254,20 +254,20 @@
     <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
   -->
   <DMS_Tale_Acquitted.rulePack.rulesStrings>
-    <li>tale_noun-&gt;[PAWN_nameDef]的無罪判決</li>
-    <li>image-&gt;[PAWN_nameFull]走出庭審室[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]與一名軍官握手[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]站在一排軍官面前[circumstance_group]</li>
-    <li>image-&gt;[PAWN_nameFull]整了整自己的制服[circumstance_group]</li>
-    <li>circumstance_phrase-&gt;，毫無表情</li>
-    <li>circumstance_phrase-&gt;，毫無表情</li>
-    <li>circumstance_phrase-&gt;，臉上帶著[AdjectiveFriendly]的神情</li>
-    <li>circumstance_phrase-&gt;，站得筆直</li>
-    <li>desc_sentence-&gt;[PAWN_nameDef]的階級章還在原位。</li>
-    <li>desc_sentence-&gt;幾名軍官坐在一張長桌後面。</li>
-    <li>desc_sentence-&gt;桌上擺著還沒簽名的文件。</li>
-    <li>desc_sentence-&gt;幾名[PersonJob]默默看著。</li>
-    <li>desc_sentence-&gt;遠處有一名[PersonJob]在旁觀。</li>
+    <li>tale_noun->[PAWN_nameDef]的無罪判決</li>
+    <li>image->[PAWN_nameFull]走出庭審室[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]與一名軍官握手[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]站在一排軍官面前[circumstance_group]</li>
+    <li>image->[PAWN_nameFull]整了整自己的制服[circumstance_group]</li>
+    <li>circumstance_phrase->，毫無表情</li>
+    <li>circumstance_phrase->，毫無表情</li>
+    <li>circumstance_phrase->，臉上帶著[AdjectiveFriendly]的神情</li>
+    <li>circumstance_phrase->，站得筆直</li>
+    <li>desc_sentence->[PAWN_nameDef]的階級章還在原位。</li>
+    <li>desc_sentence->幾名軍官坐在一張長桌後面。</li>
+    <li>desc_sentence->桌上擺著還沒簽名的文件。</li>
+    <li>desc_sentence->幾名[PersonJob]默默看著。</li>
+    <li>desc_sentence->遠處有一名[PersonJob]在旁觀。</li>
   </DMS_Tale_Acquitted.rulePack.rulesStrings>
   
 </LanguageData>

@@ -4,7 +4,7 @@
   <!-- EN: chain of command -->
   <DMS_Meme_ChainOfCommand.label>指揮鏈</DMS_Meme_ChainOfCommand.label>
   <!-- EN: The unit was never stood down. Rank is real and orders travel one way. -->
-  <DMS_Meme_ChainOfCommand.description>這支部隊從未解編。軍階是真的，命令只往一個方向走。</DMS_Meme_ChainOfCommand.description>
+  <DMS_Meme_ChainOfCommand.description>我們是一支軍隊。紀律至上，命令一致。</DMS_Meme_ChainOfCommand.description>
   <!-- EN:
     <li>memeAdjective->regimental</li>
     <li>memeAdjective->uniformed</li>
@@ -28,26 +28,26 @@
     <li>memeMoralist->inspector</li>
   -->
   <DMS_Meme_ChainOfCommand.generalRules.rulesStrings>
-    <li>memeAdjective-&gt;建制</li>
-    <li>memeAdjective-&gt;制式</li>
-    <li>memeAdjective-&gt;嚴整</li>
-    <li>memeCreed-&gt;指揮部</li>
-    <li>memeCreed-&gt;勤務</li>
-    <li>memeCreed-&gt;團</li>
-    <li>memeHyphenPrefix-&gt;階級</li>
-    <li>memeHyphenPrefix-&gt;操典</li>
-    <li>memeConcept-&gt;職責</li>
-    <li>memeConcept-&gt;紀律</li>
-    <li>memeConcept-&gt;指揮</li>
-    <li>memeConcept-&gt;軍階</li>
-    <li>memeConcept-&gt;命令</li>
-    <li>memeLeaderNoun-&gt;指揮官</li>
-    <li>memeLeaderNoun-&gt;上校</li>
-    <li>memeLeaderNoun-&gt;元帥</li>
-    <li>memeLeaderNoun-&gt;隊長</li>
-    <li>memeMoralist-&gt;副官</li>
-    <li>memeMoralist-&gt;憲兵官</li>
-    <li>memeMoralist-&gt;督察</li>
+    <li>memeAdjective->建制</li>
+    <li>memeAdjective->制式</li>
+    <li>memeAdjective->嚴整</li>
+    <li>memeCreed->指揮部</li>
+    <li>memeCreed->勤務</li>
+    <li>memeCreed->團</li>
+    <li>memeHyphenPrefix->階級</li>
+    <li>memeHyphenPrefix->操典</li>
+    <li>memeConcept->職責</li>
+    <li>memeConcept->紀律</li>
+    <li>memeConcept->指揮</li>
+    <li>memeConcept->軍階</li>
+    <li>memeConcept->命令</li>
+    <li>memeLeaderNoun->指揮官</li>
+    <li>memeLeaderNoun->上校</li>
+    <li>memeLeaderNoun->元帥</li>
+    <li>memeLeaderNoun->隊長</li>
+    <li>memeMoralist->副官</li>
+    <li>memeMoralist->憲兵官</li>
+    <li>memeMoralist->督察</li>
   </DMS_Meme_ChainOfCommand.generalRules.rulesStrings>
   
 </LanguageData>
