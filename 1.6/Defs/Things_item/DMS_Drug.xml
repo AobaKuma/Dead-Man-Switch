@@ -100,6 +100,8 @@
     <techLevel>Industrial</techLevel>
     <ingestible>
       <drugCategory>Medical</drugCategory>
+      <!-- 供信仰 precept 監聽「吃了合成食品」;沒有 precept 監聽時不會有任何效果 -->
+      <ateEvent>DMS_AteSyntheticFood</ateEvent>
       <outcomeDoers>
         <li Class="Fortified.IngestionOutcomeDoer_GiveThoughtWhenNoBionic">
           <BionicHediff>DMS_NutrientPort</BionicHediff>

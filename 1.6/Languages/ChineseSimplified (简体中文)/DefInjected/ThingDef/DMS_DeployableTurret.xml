@@ -16,4 +16,34 @@
   <!-- UNUSED -->
   <DMS_Gun_LightMachineGun.verbs.Verb_ShootCE.label>机兵轻机枪</DMS_Gun_LightMachineGun.verbs.Verb_ShootCE.label>
 
+  <!-- EN: Mech Grenade Launcher -->
+  <DMS_Turret_AutomaticGrenadeLauncher.label>机兵榴弹发射器</DMS_Turret_AutomaticGrenadeLauncher.label>
+  <!-- EN: A handheld automatic grenade launcher for clearing out clustered targets.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.\n\nDropped onto its tripod it gains the reach and the settled arc it can never hold from the shoulder, and a crew can break it down again in seconds. -->
+  <DMS_Turret_AutomaticGrenadeLauncher.description>手持式自动榴弹发射器，用于清除集群目标。\n\n这种武器是专门为机兵设计的，因此如果没有外部辅助设备或超强的力量，普通人可能无法正常使用。\n\n架上三脚架后，它能取得肩射永远达不到的射程与稳定射界，收拢拆解也只要几秒。</DMS_Turret_AutomaticGrenadeLauncher.description>
+
+  <!-- EN: mech grenade launcher -->
+  <DMS_Gun_AutomaticGrenadeLauncher.label>机兵榴弹发射器</DMS_Gun_AutomaticGrenadeLauncher.label>
+  <!-- EN: An automatic grenade launcher mounted on a low tripod. -->
+  <DMS_Gun_AutomaticGrenadeLauncher.description>架设在低脚三脚架上的自动榴弹发射器。</DMS_Gun_AutomaticGrenadeLauncher.description>
+  <!-- EN: mech grenade launcher -->
+  <DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_Shoot.label>机兵榴弹发射器</DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_Shoot.label>
+
+  <!-- UNUSED -->
+  <DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_ShootCE.label>机兵榴弹发射器</DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_ShootCE.label>
+
+  <!-- EN: Mech HMG -->
+  <DMS_Turret_HeavyMachineGun.label>机兵重机枪</DMS_Turret_HeavyMachineGun.label>
+  <!-- EN: A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform.\n\nOn its tripod the receiver stops fighting the gunner: the beaten zone tightens, the belt runs longer, and the gun holds ground no shoulder ever could. -->
+  <DMS_Turret_HeavyMachineGun.description>一挺发射大口径机枪弹的重型机枪，普遍用于重型机兵或步兵支援平台。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。\n\n架上三脚架后，机匣不再和射手较劲：弹着散布收拢、弹链跑得更长，火力点守得住肩射守不住的地段。</DMS_Turret_HeavyMachineGun.description>
+
+  <!-- EN: mech HMG -->
+  <DMS_Gun_HeavyMachineGun.label>机兵重机枪</DMS_Gun_HeavyMachineGun.label>
+  <!-- EN: A heavy machine gun mounted on a tripod. -->
+  <DMS_Gun_HeavyMachineGun.description>架设在三脚架上的重机枪。</DMS_Gun_HeavyMachineGun.description>
+  <!-- EN: mech HMG -->
+  <DMS_Gun_HeavyMachineGun.verbs.Verb_LaunchProjectile_AmmoSwitch.label>机兵重机枪</DMS_Gun_HeavyMachineGun.verbs.Verb_LaunchProjectile_AmmoSwitch.label>
+
+  <!-- UNUSED -->
+  <DMS_Gun_HeavyMachineGun.verbs.Verb_ShootCE.label>机兵重机枪</DMS_Gun_HeavyMachineGun.verbs.Verb_ShootCE.label>
+
 </LanguageData>

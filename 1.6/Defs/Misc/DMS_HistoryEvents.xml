@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       歷史事件 (HistoryEventDef)
+       HistoryEventDef 本身沒有效果,它只是一個被記錄下來的標籤。
+       要產生實際影響,必須有 PreceptComp 監聽它
+       (PreceptComp_SelfTookMemoryThought / _KnowsMemoryThought /
+        _UnwillingToDo / _DevelopmentPoints),
+       或被當成 Faction.TryAffectGoodwillWith 的 reason。
+
+       其中 DMS_QuestSuccess_* / DMS_QuestFailed_* 是唯一不需要
+       precept 就有效的一組:QuestScriptDef 的 successHistoryEvent
+       會自動記錄,並餵給流動信仰的成長點 (IdeoDevelopmentUtility)。
+       ============================================================ -->
+
+  <!-- ── 任務結算:軍事行動 ────────────────────────────────────── -->
+  <!-- DMS_Boss / DMS_DecoySiteAssault / DMS_PirateAssemblyRaid -->
+  <HistoryEventDef>
+    <defName>DMS_QuestSuccess_Military</defName>
+    <label>military operation completed</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>DMS_QuestFailed_Military</defName>
+    <label>military operation failed</label>
+  </HistoryEventDef>
+
+  <!-- ── 任務結算:後勤與文書 ──────────────────────────────────── -->
+  <!-- DMS_SupplyChain / DMS_SupplyChain_Delivery / DMS_ProcessDocumentQuest -->
+  <HistoryEventDef>
+    <defName>DMS_QuestSuccess_Logistics</defName>
+    <label>supply contract fulfilled</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>DMS_QuestFailed_Logistics</defName>
+    <label>supply contract defaulted</label>
+  </HistoryEventDef>
+
+  <!-- ── 任務結算:軍階與典禮 ──────────────────────────────────── -->
+  <!-- DMS_PromotionCeremony / DMS_OfficerTraining / DMS_CourtMartial -->
+  <HistoryEventDef>
+    <defName>DMS_QuestSuccess_Ceremony</defName>
+    <label>military formality observed</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>DMS_QuestFailed_Ceremony</defName>
+    <label>military formality dishonored</label>
+  </HistoryEventDef>
+
+  <!-- ── 任務結算:封存科技 ────────────────────────────────────── -->
+  <!-- DMS_Stele / DMS_SteleKey_ImpactSite -->
+  <HistoryEventDef>
+    <defName>DMS_QuestSuccess_Occultech</defName>
+    <label>sealed technology recovered</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>DMS_QuestFailed_Occultech</defName>
+    <label>sealed technology lost</label>
+  </HistoryEventDef>
+
+  <!-- ── 行為事件 ─────────────────────────────────────────────── -->
+
+  <!-- 合成／培養出來的食物的 ingestible.ateEvent,目前掛在
+       DMS_CombatRation(C 口糧)與 DMS_Artiprotein(人工蛋白)上。
+       給「拒絕合成食品 / 堅持真食物」這類 precept 用。
+
+       限制:原版只在「直接吃下去」時觸發 ateEvent
+       (FoodUtility.ThoughtsFromIngesting 的 direct 分支)。
+       用人工蛋白煮成的餐點走的是 AddIngestThoughtsFromIngredient,
+       那條路只認原版寫死的 AteHumanMeatAsIngredient / AteFungusAsIngredient /
+       AteInsectMeatAsIngredient,不會讀 ingredient 的 ateEvent。
+       想涵蓋熟食要另外 patch。 -->
+  <HistoryEventDef>
+    <defName>DMS_AteSyntheticFood</defName>
+    <label>ate synthesized food</label>
+  </HistoryEventDef>
+
+  <!-- Fortified.AirSupportDef.historyEventOnTriggered。
+       涵蓋空襲、火炮打擊、迫擊砲打擊等所有間接火力呼叫。 -->
+  <HistoryEventDef>
+    <defName>DMS_CalledFireSupport</defName>
+    <label>called in fire support</label>
+  </HistoryEventDef>
+
+  <!-- DMS.MechBirthExtension.historyEventOnSuccess。 -->
+  <HistoryEventDef>
+    <defName>DMS_GestatedMech</defName>
+    <label>gestated an artificial organism</label>
+  </HistoryEventDef>
+
+  <!-- DMS.QuestPart_CourtVerdict 有罪判決。 -->
+  <HistoryEventDef>
+    <defName>DMS_MemberCourtMartialed</defName>
+    <label>member court-martialed</label>
+  </HistoryEventDef>
+
+</Defs>

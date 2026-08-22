@@ -224,4 +224,31 @@
   <!-- EN: A breached military cargo container. Whatever supplies it once held were looted or destroyed long ago, leaving only the torn shell. Breaking it down yields some metal scrap. -->
   <DMS_LogisticContainerDestroyed.description>一個被撬開的軍用貨櫃，其中的補給物資早已被洗劫或摧毀，只剩下破損的外殼。將其破壞可以回收一些金屬碎片。</DMS_LogisticContainerDestroyed.description>
 
+  <!-- ==================== Loot crates ==================== -->
+
+  <!-- EN: small material crate -->
+  <DMS_CrateSmall_Material.label>小型物資箱</DMS_CrateSmall_Material.label>
+  <!-- EN: A small standard issue equipment crate containing supplies. The lid carries no colour band, so there is no telling what is inside until it is opened. -->
+  <DMS_CrateSmall_Material.description>一個標準制式的小型補給箱，內裝補給物資。箱蓋上沒有顏色識別帶，不打開就無從得知裡面裝了什麼。</DMS_CrateSmall_Material.description>
+
+  <!-- EN: small compoment crate -->
+  <DMS_CrateSmall_Parts.label>小型零件箱</DMS_CrateSmall_Parts.label>
+  <!-- EN: A small standard issue supply crate. The blue band marks it as machine parts. Most hold ordinary components, though advanced ones turn up now and then. -->
+  <DMS_CrateSmall_Parts.description>一個標準制式的小型補給箱。藍色識別帶代表內容物是機械零件。多數只有普通零件，偶爾會有高級零件。</DMS_CrateSmall_Parts.description>
+
+  <!-- EN: small arms crate -->
+  <DMS_CrateSmall_SmallArms.label>小型輕武器箱</DMS_CrateSmall_SmallArms.label>
+  <!-- EN: A small standard issue supply crate. The red band marks it as weapons. Inside is a single small arm, still packed in factory grease. -->
+  <DMS_CrateSmall_SmallArms.description>一個標準制式的小型補給箱。紅色識別帶代表內容物是武器。裡面裝著一把小型槍械，仍塗著出廠封存油脂。</DMS_CrateSmall_SmallArms.description>
+
+  <!-- EN: small prosthetics crate -->
+  <DMS_CrateSmall_Prosthetic.label>小型義體箱</DMS_CrateSmall_Prosthetic.label>
+  <!-- EN: A small standard issue supply crate. The green band marks it as medical supplies. Most hold stamponents, though a bionic part turns up now and then. -->
+  <DMS_CrateSmall_Prosthetic.description>一個標準制式的小型補給箱。綠色識別帶代表內容物是醫療物資。多數只有沖壓零件，偶爾會有仿生體。</DMS_CrateSmall_Prosthetic.description>
+
+  <!-- EN: small ration crate -->
+  <DMS_CrateSmall_Ration.label>小型口糧箱</DMS_CrateSmall_Ration.label>
+  <!-- EN: A small standard issue supply crate. The yellow band marks it as food. Inside are survival meals or combat rations. -->
+  <DMS_CrateSmall_Ration.description>一個標準制式的小型補給箱。黃色識別帶代表內容物是食品。裡面裝著生存食品包或C口糧。</DMS_CrateSmall_Ration.description>
+
 </LanguageData>

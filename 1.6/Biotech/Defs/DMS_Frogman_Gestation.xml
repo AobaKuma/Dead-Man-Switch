@@ -27,6 +27,9 @@
         <filthDef>Filth_AmnioticFluid</filthDef>
         <filthCount>5~10</filthCount>
         <exhaustBirther>true</exhaustBirther>
+        <taleOnSuccess>DMS_Tale_MechGestated</taleOnSuccess>
+        <taleOnFailure>DMS_Tale_MechGestationFailed</taleOnFailure>
+        <historyEventOnSuccess>DMS_GestatedMech</historyEventOnSuccess>
         <letterLabel>Larva delivered</letterLabel>
         <letterText>Gestation of {PAWN_labelShort} is complete. The embryo produced a biomatroid larva, which has formed a gestation pod around itself.\n\nThe pod needs no power or maintenance and will finish developing on its own in a few days. It cannot defend itself, and can be uninstalled and moved to a safer place.</letterText>
         <failLetterLabel>Gestation failed</failLetterLabel>

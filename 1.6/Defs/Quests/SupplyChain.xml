@@ -208,6 +208,8 @@
   <!-- ======================= 母任務:補給合約鏈 ======================= -->
   <QuestScriptDef>
     <defName>DMS_SupplyChain</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Logistics</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Logistics</failedOrExpiredHistoryEvent>
     <rootSelectionWeight>0.6</rootSelectionWeight>
     <rootMinPoints>300</rootMinPoints>
     <defaultChallengeRating>1</defaultChallengeRating>
@@ -338,6 +340,8 @@
   <!-- ======================= 子任務:單階段交付 ======================= -->
   <QuestScriptDef>
     <defName>DMS_SupplyChain_Delivery</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Logistics</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Logistics</failedOrExpiredHistoryEvent>
     <rootSelectionWeight>0</rootSelectionWeight>
     <autoAccept>true</autoAccept>
     <questNameRules>

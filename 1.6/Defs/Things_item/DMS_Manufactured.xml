@@ -319,6 +319,8 @@
       <preferability>RawBad</preferability>
       <ingestEffect>EatMeat</ingestEffect>
       <ingestSound>RawMeat_Eat</ingestSound>
+      <!-- 只在直接吃生塊時觸發;煮成餐點後走 ingredient 路徑,原版不讀這個欄位 -->
+      <ateEvent>DMS_AteSyntheticFood</ateEvent>
     </ingestible>
     <thingCategories>
       <li>MeatRaw</li>

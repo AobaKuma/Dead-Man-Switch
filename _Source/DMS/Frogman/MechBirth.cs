@@ -36,6 +36,15 @@ namespace DMS
         /// <summary>代孕者是否會因為分娩而力竭。</summary>
         public bool exhaustBirther = true;
 
+        /// <summary>孕育成功時記錄的軼事。taleClass 必須是 Tale_SinglePawnAndDef(PAWN=代孕者, DEF=productDef)。</summary>
+        public TaleDef taleOnSuccess;
+
+        /// <summary>孕育失敗時記錄的軼事。taleClass 必須是 Tale_SinglePawn。</summary>
+        public TaleDef taleOnFailure;
+
+        /// <summary>孕育成功時記錄的歷史事件,供信仰 precept 監聽。</summary>
+        public HistoryEventDef historyEventOnSuccess;
+
         [MustTranslate] public string letterLabel;
         [MustTranslate] public string letterText;
         [MustTranslate] public string failLetterLabel;
@@ -115,6 +124,8 @@ namespace DMS
                             " 不在任何地圖上，無法落成二次發育體。");
             }
 
+            RecordBirthEvents(ext, failed, birtherPawn);
+
             if (!preventLetter)
             {
                 SendLetter(ext, failed, birtherPawn ?? geneticMother, birtherThing, product);
@@ -122,6 +133,40 @@ namespace DMS
 
             __result = null; // 必須回傳 null，原版呼叫端會把非 null 結果當成 Pawn 使用
             return false;
+        }
+
+        /// <summary>
+        /// 這個 Prefix 直接接管了原版的 ApplyBirthOutcome,所以原版的 GaveBirth 軼事
+        /// 也不會被記錄 —— 機兵路線的軼事必須自己補。
+        ///
+        /// 培育艙路線沒有代孕者(birtherPawn 為 null),沒有 pawn 可以掛,所以不記錄。
+        /// </summary>
+        private static void RecordBirthEvents(MechBirthExtension ext, bool failed, Pawn birtherPawn)
+        {
+            if (birtherPawn == null)
+            {
+                return;
+            }
+
+            if (failed)
+            {
+                if (ext.taleOnFailure != null)
+                {
+                    TaleRecorder.RecordTale(ext.taleOnFailure, birtherPawn);
+                }
+                return;
+            }
+
+            if (ext.taleOnSuccess != null && ext.productDef != null)
+            {
+                TaleRecorder.RecordTale(ext.taleOnSuccess, birtherPawn, ext.productDef);
+            }
+
+            if (ext.historyEventOnSuccess != null && birtherPawn.Faction == Faction.OfPlayer)
+            {
+                Find.HistoryEventsManager.RecordEvent(
+                    new HistoryEvent(ext.historyEventOnSuccess, birtherPawn.Named(HistoryEventArgsNames.Doer)));
+            }
         }
 
         private static MechBirthExtension FindExtension(List<GeneDef> genes)

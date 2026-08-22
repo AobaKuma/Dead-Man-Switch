@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: neural link redlined -->
+  <DMS_Tale_NeuralOverload.label>神经连结超载</DMS_Tale_NeuralOverload.label>
+  <!-- EN:
+    <li>tale_noun->[PAWN_nameDef] pushing [PAWN_possessive] neural link past its limit</li>
+    <li>image->[PAWN_nameFull] hunched over a control array [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] gripping [PAWN_possessive] head [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] standing rigid among marching machines [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] issuing commands [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] collapsing to one knee [circumstance_group]</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->while bleeding from the nose</li>
+    <li>circumstance_phrase->with eyes rolled back</li>
+    <li>circumstance_phrase->while sweating with exertion</li>
+    <li>desc_sentence->[Quantity_adjphrase] [Mechanoid]s stand in perfect formation behind [PAWN_nameDef].</li>
+    <li>desc_sentence->The machines in the background move in perfect unison.</li>
+    <li>desc_sentence->[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+    <li>desc_sentence->Warning lights wash the scene in [Color].</li>
+    <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
+    <li>desc_sentence->[PAWN_nameDef] is drenched in sweat.</li>
+  -->
+  <DMS_Tale_NeuralOverload.rulePack.rulesStrings>
+    <li>tale_noun-&gt;[PAWN_nameDef]将自己的神经连结压过安全界线</li>
+    <li>image-&gt;[PAWN_nameFull]伏在控制阵列前[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]双手抱着头[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]僵直地站在行进的机体之间[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]下达指令[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]单膝跪倒[circumstance_group]</li>
+    <li>circumstance_phrase-&gt;，脸上带着[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase-&gt;，脸上带着[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase-&gt;，鼻血流个不停</li>
+    <li>circumstance_phrase-&gt;，眼白翻了上来</li>
+    <li>circumstance_phrase-&gt;，汗如雨下</li>
+    <li>desc_sentence-&gt;[PAWN_nameDef]身后的一列机体站得整整齐齐。</li>
+    <li>desc_sentence-&gt;背景里的机体以完全一致的节奏移动。</li>
+    <li>desc_sentence-&gt;[PAWN_nameDef]脸上是[AdjectiveAngsty]的神情。</li>
+    <li>desc_sentence-&gt;警示灯把整个场景染成[Color]。</li>
+    <li>desc_sentence-&gt;远处有一名[PersonJob]在旁观。</li>
+    <li>desc_sentence-&gt;[PAWN_nameDef]全身湿透。</li>
+  </DMS_Tale_NeuralOverload.rulePack.rulesStrings>
+  
+  <!-- EN: weapon calibration maximized -->
+  <DMS_Tale_WeaponImprinted.label>武器校准完成</DMS_Tale_WeaponImprinted.label>
+  <!-- EN:
+    <li>tale_noun->[PAWN_nameDef] finishing [PAWN_possessive] weapon calibration</li>
+    <li>image->[PAWN_nameFull] stripping a weapon down [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] reassembling a weapon [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] standing motionless on a firing range [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] raising a rifle [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] cradling a worn rifle [circumstance_group]</li>
+    <li>circumstance_phrase->with mechanical precision</li>
+    <li>circumstance_phrase->with mechanical precision</li>
+    <li>circumstance_phrase->without a single wasted movement</li>
+    <li>circumstance_phrase->while wielding [PAWN_possessive] weapon</li>
+    <li>circumstance_phrase->without emotion or expression</li>
+    <li>desc_sentence->The weapon is worn through where [PAWN_nameDef] grips it.</li>
+    <li>desc_sentence->[PAWN_possessive] skill is visible in the work.</li>
+    <li>desc_sentence->Spent brass covers the ground.</li>
+    <li>desc_sentence->A row of identical units stands at attention in the background.</li>
+    <li>desc_sentence->A rack of [Weapon]s stands [side_position].</li>
+    <li>desc_sentence->[Quantity_adjphrase] [PersonJob]s watch with amazement.</li>
+  -->
+  <DMS_Tale_WeaponImprinted.rulePack.rulesStrings>
+    <li>tale_noun-&gt;[PAWN_nameDef]完成自己的武器校准</li>
+    <li>image-&gt;[PAWN_nameFull]分解一把武器[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]重新组装一把武器[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]一动不动地站在靶场上[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]举起步枪[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]抱着一把磨损的步枪[circumstance_group]</li>
+    <li>circumstance_phrase-&gt;，动作精确得像机器</li>
+    <li>circumstance_phrase-&gt;，动作精确得像机器</li>
+    <li>circumstance_phrase-&gt;，没有一个多余动作</li>
+    <li>circumstance_phrase-&gt;，手里握着自己的武器</li>
+    <li>circumstance_phrase-&gt;，毫无表情</li>
+    <li>desc_sentence-&gt;武器被[PAWN_nameDef]握住的地方已经磨穿了。</li>
+    <li>desc_sentence-&gt;从动作就看得出[PAWN_nameDef]的熟练。</li>
+    <li>desc_sentence-&gt;地上铺满了弹壳。</li>
+    <li>desc_sentence-&gt;背景里站着一排一模一样的机体。</li>
+    <li>desc_sentence-&gt;一排[Weapon]立在[side_position]。</li>
+    <li>desc_sentence-&gt;几名[PersonJob]看得目瞪口呆。</li>
+  </DMS_Tale_WeaponImprinted.rulePack.rulesStrings>
+  
+  <!-- EN: fire support called -->
+  <DMS_Tale_CalledFireSupport.label>呼叫火力支援</DMS_Tale_CalledFireSupport.label>
+  <!-- EN:
+    <li>tale_noun->[PAWN_nameDef] calling in fire support</li>
+    <li>image->[PAWN_nameFull] speaking into a handset [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] crouching behind cover [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] pointing toward a column of smoke [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] watching an aircraft pass overhead [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] shielding [PAWN_objective]self from a blast [circumstance_group]</li>
+    <li>circumstance_phrase->with a [AdjectiveBadass] expression</li>
+    <li>circumstance_phrase->with a [AdjectiveBadass] expression</li>
+    <li>circumstance_phrase->with cold efficiency</li>
+    <li>circumstance_phrase->while shouting over the noise</li>
+    <li>circumstance_phrase->while covered in dust</li>
+    <li>desc_sentence->A wall of fire rises behind [PAWN_nameDef].</li>
+    <li>desc_sentence->[Quantity_adjphrase] [Enemy]s can be seen in the distance.</li>
+    <li>desc_sentence->Smoke obscures a [TerrainFeature] in the background.</li>
+    <li>desc_sentence->[Gore] covers the ground.</li>
+    <li>desc_sentence->[Quantity_adjphrase] [Animal]s flee the scene of conflict in fear.</li>
+    <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
+  -->
+  <DMS_Tale_CalledFireSupport.rulePack.rulesStrings>
+    <li>tale_noun-&gt;[PAWN_nameDef]呼叫火力支援</li>
+    <li>image-&gt;[PAWN_nameFull]对着送话器说话[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]伏在掩体后面[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]指向远处的烟柱[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]看着一架飞行器从头顶掠过[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]挡住迎面而来的爆风[circumstance_group]</li>
+    <li>circumstance_phrase-&gt;，脸上带着[AdjectiveBadass]的神情</li>
+    <li>circumstance_phrase-&gt;，脸上带着[AdjectiveBadass]的神情</li>
+    <li>circumstance_phrase-&gt;，冷静而俐落</li>
+    <li>circumstance_phrase-&gt;，扯着嗓子压过噪音</li>
+    <li>circumstance_phrase-&gt;，满身尘土</li>
+    <li>desc_sentence-&gt;[PAWN_nameDef]身后升起一道火墙。</li>
+    <li>desc_sentence-&gt;远处看得见一群[Enemy]。</li>
+    <li>desc_sentence-&gt;烟尘盖住了背景里的[TerrainFeature]。</li>
+    <li>desc_sentence-&gt;地上满是[Gore]。</li>
+    <li>desc_sentence-&gt;一群[Animal]惊慌地逃离交火现场。</li>
+    <li>desc_sentence-&gt;远处有一名[PersonJob]在旁观。</li>
+  </DMS_Tale_CalledFireSupport.rulePack.rulesStrings>
+  
+  <!-- EN: artificial organism gestated -->
+  <DMS_Tale_MechGestated.label>人造生物体孕育完成</DMS_Tale_MechGestated.label>
+  <!-- EN:
+    <li>tale_noun->[PAWN_nameDef] delivering a [PRODUCT_label]</li>
+    <li>image->[PAWN_nameFull] lying beside a [PRODUCT_label] [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] looking down at a [PRODUCT_label] [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] being carried away from a [PRODUCT_label] [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] reaching toward a [PRODUCT_label] [circumstance_group]</li>
+    <li>circumstance_phrase->with visible exhaustion</li>
+    <li>circumstance_phrase->with visible exhaustion</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->while covered with [Gore]</li>
+    <li>circumstance_phrase->without emotion or expression</li>
+    <li>desc_sentence->The [PRODUCT_label] towers over [PAWN_nameDef].</li>
+    <li>desc_sentence->The [PRODUCT_label] is still wet.</li>
+    <li>desc_sentence->[Gore] covers the ground.</li>
+    <li>desc_sentence->[Quantity_adjphrase] [PersonJob]s watch in silence.</li>
+    <li>desc_sentence->[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+    <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
+  -->
+  <DMS_Tale_MechGestated.rulePack.rulesStrings>
+    <li>tale_noun-&gt;[PAWN_nameDef]产下一具[PRODUCT_label]</li>
+    <li>image-&gt;[PAWN_nameFull]躺在一具[PRODUCT_label]旁边[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]低头看着一具[PRODUCT_label][circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]被人从一具[PRODUCT_label]旁擡走[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]伸手朝向一具[PRODUCT_label][circumstance_group]</li>
+    <li>circumstance_phrase-&gt;，看得出已经力竭</li>
+    <li>circumstance_phrase-&gt;，看得出已经力竭</li>
+    <li>circumstance_phrase-&gt;，脸上带着[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase-&gt;，身上沾满[Gore]</li>
+    <li>circumstance_phrase-&gt;，毫无表情</li>
+    <li>desc_sentence-&gt;那具[PRODUCT_label]比[PAWN_nameDef]还高。</li>
+    <li>desc_sentence-&gt;那具[PRODUCT_label]还湿着。</li>
+    <li>desc_sentence-&gt;地上满是[Gore]。</li>
+    <li>desc_sentence-&gt;几名[PersonJob]默默看着。</li>
+    <li>desc_sentence-&gt;[PAWN_nameDef]脸上是[AdjectiveAngsty]的神情。</li>
+    <li>desc_sentence-&gt;远处有一名[PersonJob]在旁观。</li>
+  </DMS_Tale_MechGestated.rulePack.rulesStrings>
+  
+  <!-- EN: gestation failed -->
+  <DMS_Tale_MechGestationFailed.label>孕育失败</DMS_Tale_MechGestationFailed.label>
+  <!-- EN:
+    <li>tale_noun->[PAWN_nameDef]'s failed gestation</li>
+    <li>image->[PAWN_nameFull] sitting alone [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] being tended to [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] staring at an empty pod [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] turning away [circumstance_group]</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->with visible exhaustion</li>
+    <li>circumstance_phrase->while covered with [Gore]</li>
+    <li>desc_sentence->An empty pod hangs open [side_position].</li>
+    <li>desc_sentence->A tray of ruined tissue sits nearby.</li>
+    <li>desc_sentence->[Gore] covers the ground.</li>
+    <li>desc_sentence->[Quantity_adjphrase] [PersonJob]s look away.</li>
+    <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
+  -->
+  <DMS_Tale_MechGestationFailed.rulePack.rulesStrings>
+    <li>tale_noun-&gt;[PAWN_nameDef]失败的孕育</li>
+    <li>image-&gt;[PAWN_nameFull]一个人坐着[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]接受照料[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]盯着一具空的育舱[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]别过头去[circumstance_group]</li>
+    <li>circumstance_phrase-&gt;，脸上带着[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase-&gt;，脸上带着[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase-&gt;，看得出已经力竭</li>
+    <li>circumstance_phrase-&gt;，身上沾满[Gore]</li>
+    <li>desc_sentence-&gt;一具空的育舱敞开在[side_position]。</li>
+    <li>desc_sentence-&gt;旁边摆着一盘废弃的组织。</li>
+    <li>desc_sentence-&gt;地上满是[Gore]。</li>
+    <li>desc_sentence-&gt;几名[PersonJob]别开了视线。</li>
+    <li>desc_sentence-&gt;远处有一名[PersonJob]在旁观。</li>
+  </DMS_Tale_MechGestationFailed.rulePack.rulesStrings>
+  
+  <!-- EN: court-martialed -->
+  <DMS_Tale_CourtMartialed.label>军法定罪</DMS_Tale_CourtMartialed.label>
+  <!-- EN:
+    <li>tale_noun->the court-martial of [PAWN_nameDef]</li>
+    <li>image->[PAWN_nameFull] standing at attention before a panel of officers [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] having [PAWN_possessive] insignia cut away [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] being led from a hearing room [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] listening to a verdict [circumstance_group]</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->without emotion or expression</li>
+    <li>circumstance_phrase->while standing perfectly straight</li>
+    <li>desc_sentence->[Quantity_adjphrase] officers sit behind a long table.</li>
+    <li>desc_sentence->A torn insignia lies on the floor.</li>
+    <li>desc_sentence->[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+    <li>desc_sentence->No one in the room meets [PAWN_possessive] eyes.</li>
+    <li>desc_sentence->[Quantity_adjphrase] [PersonJob]s watch in silence.</li>
+    <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
+  -->
+  <DMS_Tale_CourtMartialed.rulePack.rulesStrings>
+    <li>tale_noun-&gt;[PAWN_nameDef]的军法审判</li>
+    <li>image-&gt;[PAWN_nameFull]在一排军官面前立正[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]的阶级章被剪了下来[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]被带离庭审室[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]听着判决[circumstance_group]</li>
+    <li>circumstance_phrase-&gt;，脸上带着[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase-&gt;，脸上带着[AdjectiveAngsty]的神情</li>
+    <li>circumstance_phrase-&gt;，毫无表情</li>
+    <li>circumstance_phrase-&gt;，站得笔直</li>
+    <li>desc_sentence-&gt;几名军官坐在一张长桌后面。</li>
+    <li>desc_sentence-&gt;一枚扯下的阶级章掉在地上。</li>
+    <li>desc_sentence-&gt;[PAWN_nameDef]脸上是[AdjectiveAngsty]的神情。</li>
+    <li>desc_sentence-&gt;房里没有人与[PAWN_nameDef]对视。</li>
+    <li>desc_sentence-&gt;几名[PersonJob]默默看着。</li>
+    <li>desc_sentence-&gt;远处有一名[PersonJob]在旁观。</li>
+  </DMS_Tale_CourtMartialed.rulePack.rulesStrings>
+  
+  <!-- EN: acquitted -->
+  <DMS_Tale_Acquitted.label>军法无罪</DMS_Tale_Acquitted.label>
+  <!-- EN:
+    <li>tale_noun->the acquittal of [PAWN_nameDef]</li>
+    <li>image->[PAWN_nameFull] walking out of a hearing room [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] shaking hands with an officer [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] standing before a panel of officers [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] straightening [PAWN_possessive] uniform [circumstance_group]</li>
+    <li>circumstance_phrase->without emotion or expression</li>
+    <li>circumstance_phrase->without emotion or expression</li>
+    <li>circumstance_phrase->with a [AdjectiveFriendly] expression</li>
+    <li>circumstance_phrase->while standing perfectly straight</li>
+    <li>desc_sentence->[PAWN_possessive] insignia is still in place.</li>
+    <li>desc_sentence->[Quantity_adjphrase] officers sit behind a long table.</li>
+    <li>desc_sentence->Unsigned papers lie on the table.</li>
+    <li>desc_sentence->[Quantity_adjphrase] [PersonJob]s watch in silence.</li>
+    <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
+  -->
+  <DMS_Tale_Acquitted.rulePack.rulesStrings>
+    <li>tale_noun-&gt;[PAWN_nameDef]的无罪判决</li>
+    <li>image-&gt;[PAWN_nameFull]走出庭审室[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]与一名军官握手[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]站在一排军官面前[circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull]整了整自己的制服[circumstance_group]</li>
+    <li>circumstance_phrase-&gt;，毫无表情</li>
+    <li>circumstance_phrase-&gt;，毫无表情</li>
+    <li>circumstance_phrase-&gt;，脸上带着[AdjectiveFriendly]的神情</li>
+    <li>circumstance_phrase-&gt;，站得笔直</li>
+    <li>desc_sentence-&gt;[PAWN_nameDef]的阶级章还在原位。</li>
+    <li>desc_sentence-&gt;几名军官坐在一张长桌后面。</li>
+    <li>desc_sentence-&gt;桌上摆着还没签名的文件。</li>
+    <li>desc_sentence-&gt;几名[PersonJob]默默看着。</li>
+    <li>desc_sentence-&gt;远处有一名[PersonJob]在旁观。</li>
+  </DMS_Tale_Acquitted.rulePack.rulesStrings>
+  
+</LanguageData>

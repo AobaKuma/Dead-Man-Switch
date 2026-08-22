@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: neural link redlined -->
+  <DMS_Tale_NeuralOverload.label>neural link redlined</DMS_Tale_NeuralOverload.label>
+  <!-- EN:
+    <li>tale_noun->[PAWN_nameDef] pushing [PAWN_possessive] neural link past its limit</li>
+    <li>image->[PAWN_nameFull] hunched over a control array [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] gripping [PAWN_possessive] head [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] standing rigid among marching machines [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] issuing commands [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] collapsing to one knee [circumstance_group]</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->while bleeding from the nose</li>
+    <li>circumstance_phrase->with eyes rolled back</li>
+    <li>circumstance_phrase->while sweating with exertion</li>
+    <li>desc_sentence->[Quantity_adjphrase] [Mechanoid]s stand in perfect formation behind [PAWN_nameDef].</li>
+    <li>desc_sentence->The machines in the background move in perfect unison.</li>
+    <li>desc_sentence->[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+    <li>desc_sentence->Warning lights wash the scene in [Color].</li>
+    <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
+    <li>desc_sentence->[PAWN_nameDef] is drenched in sweat.</li>
+  -->
+  <DMS_Tale_NeuralOverload.rulePack.rulesStrings>
+    <li>tale_noun-&gt;[PAWN_nameDef] pushing [PAWN_possessive] neural link past its limit</li>
+    <li>image-&gt;[PAWN_nameFull] hunched over a control array [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] gripping [PAWN_possessive] head [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] standing rigid among marching machines [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] issuing commands [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] collapsing to one knee [circumstance_group]</li>
+    <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase-&gt;while bleeding from the nose</li>
+    <li>circumstance_phrase-&gt;with eyes rolled back</li>
+    <li>circumstance_phrase-&gt;while sweating with exertion</li>
+    <li>desc_sentence-&gt;[Quantity_adjphrase] [Mechanoid]s stand in perfect formation behind [PAWN_nameDef].</li>
+    <li>desc_sentence-&gt;The machines in the background move in perfect unison.</li>
+    <li>desc_sentence-&gt;[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+    <li>desc_sentence-&gt;Warning lights wash the scene in [Color].</li>
+    <li>desc_sentence-&gt;In the distance, a [PersonJob] observes.</li>
+    <li>desc_sentence-&gt;[PAWN_nameDef] is drenched in sweat.</li>
+  </DMS_Tale_NeuralOverload.rulePack.rulesStrings>
+  
+  <!-- EN: weapon calibration maximized -->
+  <DMS_Tale_WeaponImprinted.label>weapon calibration maximized</DMS_Tale_WeaponImprinted.label>
+  <!-- EN:
+    <li>tale_noun->[PAWN_nameDef] finishing [PAWN_possessive] weapon calibration</li>
+    <li>image->[PAWN_nameFull] stripping a weapon down [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] reassembling a weapon [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] standing motionless on a firing range [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] raising a rifle [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] cradling a worn rifle [circumstance_group]</li>
+    <li>circumstance_phrase->with mechanical precision</li>
+    <li>circumstance_phrase->with mechanical precision</li>
+    <li>circumstance_phrase->without a single wasted movement</li>
+    <li>circumstance_phrase->while wielding [PAWN_possessive] weapon</li>
+    <li>circumstance_phrase->without emotion or expression</li>
+    <li>desc_sentence->The weapon is worn through where [PAWN_nameDef] grips it.</li>
+    <li>desc_sentence->[PAWN_possessive] skill is visible in the work.</li>
+    <li>desc_sentence->Spent brass covers the ground.</li>
+    <li>desc_sentence->A row of identical units stands at attention in the background.</li>
+    <li>desc_sentence->A rack of [Weapon]s stands [side_position].</li>
+    <li>desc_sentence->[Quantity_adjphrase] [PersonJob]s watch with amazement.</li>
+  -->
+  <DMS_Tale_WeaponImprinted.rulePack.rulesStrings>
+    <li>tale_noun-&gt;[PAWN_nameDef] finishing [PAWN_possessive] weapon calibration</li>
+    <li>image-&gt;[PAWN_nameFull] stripping a weapon down [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] reassembling a weapon [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] standing motionless on a firing range [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] raising a rifle [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] cradling a worn rifle [circumstance_group]</li>
+    <li>circumstance_phrase-&gt;with mechanical precision</li>
+    <li>circumstance_phrase-&gt;with mechanical precision</li>
+    <li>circumstance_phrase-&gt;without a single wasted movement</li>
+    <li>circumstance_phrase-&gt;while wielding [PAWN_possessive] weapon</li>
+    <li>circumstance_phrase-&gt;without emotion or expression</li>
+    <li>desc_sentence-&gt;The weapon is worn through where [PAWN_nameDef] grips it.</li>
+    <li>desc_sentence-&gt;[PAWN_possessive] skill is visible in the work.</li>
+    <li>desc_sentence-&gt;Spent brass covers the ground.</li>
+    <li>desc_sentence-&gt;A row of identical units stands at attention in the background.</li>
+    <li>desc_sentence-&gt;A rack of [Weapon]s stands [side_position].</li>
+    <li>desc_sentence-&gt;[Quantity_adjphrase] [PersonJob]s watch with amazement.</li>
+  </DMS_Tale_WeaponImprinted.rulePack.rulesStrings>
+  
+  <!-- EN: fire support called -->
+  <DMS_Tale_CalledFireSupport.label>fire support called</DMS_Tale_CalledFireSupport.label>
+  <!-- EN:
+    <li>tale_noun->[PAWN_nameDef] calling in fire support</li>
+    <li>image->[PAWN_nameFull] speaking into a handset [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] crouching behind cover [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] pointing toward a column of smoke [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] watching an aircraft pass overhead [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] shielding [PAWN_objective]self from a blast [circumstance_group]</li>
+    <li>circumstance_phrase->with a [AdjectiveBadass] expression</li>
+    <li>circumstance_phrase->with a [AdjectiveBadass] expression</li>
+    <li>circumstance_phrase->with cold efficiency</li>
+    <li>circumstance_phrase->while shouting over the noise</li>
+    <li>circumstance_phrase->while covered in dust</li>
+    <li>desc_sentence->A wall of fire rises behind [PAWN_nameDef].</li>
+    <li>desc_sentence->[Quantity_adjphrase] [Enemy]s can be seen in the distance.</li>
+    <li>desc_sentence->Smoke obscures a [TerrainFeature] in the background.</li>
+    <li>desc_sentence->[Gore] covers the ground.</li>
+    <li>desc_sentence->[Quantity_adjphrase] [Animal]s flee the scene of conflict in fear.</li>
+    <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
+  -->
+  <DMS_Tale_CalledFireSupport.rulePack.rulesStrings>
+    <li>tale_noun-&gt;[PAWN_nameDef] calling in fire support</li>
+    <li>image-&gt;[PAWN_nameFull] speaking into a handset [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] crouching behind cover [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] pointing toward a column of smoke [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] watching an aircraft pass overhead [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] shielding [PAWN_objective]self from a blast [circumstance_group]</li>
+    <li>circumstance_phrase-&gt;with a [AdjectiveBadass] expression</li>
+    <li>circumstance_phrase-&gt;with a [AdjectiveBadass] expression</li>
+    <li>circumstance_phrase-&gt;with cold efficiency</li>
+    <li>circumstance_phrase-&gt;while shouting over the noise</li>
+    <li>circumstance_phrase-&gt;while covered in dust</li>
+    <li>desc_sentence-&gt;A wall of fire rises behind [PAWN_nameDef].</li>
+    <li>desc_sentence-&gt;[Quantity_adjphrase] [Enemy]s can be seen in the distance.</li>
+    <li>desc_sentence-&gt;Smoke obscures a [TerrainFeature] in the background.</li>
+    <li>desc_sentence-&gt;[Gore] covers the ground.</li>
+    <li>desc_sentence-&gt;[Quantity_adjphrase] [Animal]s flee the scene of conflict in fear.</li>
+    <li>desc_sentence-&gt;In the distance, a [PersonJob] observes.</li>
+  </DMS_Tale_CalledFireSupport.rulePack.rulesStrings>
+  
+  <!-- EN: artificial organism gestated -->
+  <DMS_Tale_MechGestated.label>artificial organism gestated</DMS_Tale_MechGestated.label>
+  <!-- EN:
+    <li>tale_noun->[PAWN_nameDef] delivering a [PRODUCT_label]</li>
+    <li>image->[PAWN_nameFull] lying beside a [PRODUCT_label] [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] looking down at a [PRODUCT_label] [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] being carried away from a [PRODUCT_label] [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] reaching toward a [PRODUCT_label] [circumstance_group]</li>
+    <li>circumstance_phrase->with visible exhaustion</li>
+    <li>circumstance_phrase->with visible exhaustion</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->while covered with [Gore]</li>
+    <li>circumstance_phrase->without emotion or expression</li>
+    <li>desc_sentence->The [PRODUCT_label] towers over [PAWN_nameDef].</li>
+    <li>desc_sentence->The [PRODUCT_label] is still wet.</li>
+    <li>desc_sentence->[Gore] covers the ground.</li>
+    <li>desc_sentence->[Quantity_adjphrase] [PersonJob]s watch in silence.</li>
+    <li>desc_sentence->[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+    <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
+  -->
+  <DMS_Tale_MechGestated.rulePack.rulesStrings>
+    <li>tale_noun-&gt;[PAWN_nameDef] delivering a [PRODUCT_label]</li>
+    <li>image-&gt;[PAWN_nameFull] lying beside a [PRODUCT_label] [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] looking down at a [PRODUCT_label] [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] being carried away from a [PRODUCT_label] [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] reaching toward a [PRODUCT_label] [circumstance_group]</li>
+    <li>circumstance_phrase-&gt;with visible exhaustion</li>
+    <li>circumstance_phrase-&gt;with visible exhaustion</li>
+    <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase-&gt;while covered with [Gore]</li>
+    <li>circumstance_phrase-&gt;without emotion or expression</li>
+    <li>desc_sentence-&gt;The [PRODUCT_label] towers over [PAWN_nameDef].</li>
+    <li>desc_sentence-&gt;The [PRODUCT_label] is still wet.</li>
+    <li>desc_sentence-&gt;[Gore] covers the ground.</li>
+    <li>desc_sentence-&gt;[Quantity_adjphrase] [PersonJob]s watch in silence.</li>
+    <li>desc_sentence-&gt;[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+    <li>desc_sentence-&gt;In the distance, a [PersonJob] observes.</li>
+  </DMS_Tale_MechGestated.rulePack.rulesStrings>
+  
+  <!-- EN: gestation failed -->
+  <DMS_Tale_MechGestationFailed.label>gestation failed</DMS_Tale_MechGestationFailed.label>
+  <!-- EN:
+    <li>tale_noun->[PAWN_nameDef]'s failed gestation</li>
+    <li>image->[PAWN_nameFull] sitting alone [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] being tended to [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] staring at an empty pod [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] turning away [circumstance_group]</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->with visible exhaustion</li>
+    <li>circumstance_phrase->while covered with [Gore]</li>
+    <li>desc_sentence->An empty pod hangs open [side_position].</li>
+    <li>desc_sentence->A tray of ruined tissue sits nearby.</li>
+    <li>desc_sentence->[Gore] covers the ground.</li>
+    <li>desc_sentence->[Quantity_adjphrase] [PersonJob]s look away.</li>
+    <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
+  -->
+  <DMS_Tale_MechGestationFailed.rulePack.rulesStrings>
+    <li>tale_noun-&gt;[PAWN_nameDef]&apos;s failed gestation</li>
+    <li>image-&gt;[PAWN_nameFull] sitting alone [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] being tended to [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] staring at an empty pod [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] turning away [circumstance_group]</li>
+    <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase-&gt;with visible exhaustion</li>
+    <li>circumstance_phrase-&gt;while covered with [Gore]</li>
+    <li>desc_sentence-&gt;An empty pod hangs open [side_position].</li>
+    <li>desc_sentence-&gt;A tray of ruined tissue sits nearby.</li>
+    <li>desc_sentence-&gt;[Gore] covers the ground.</li>
+    <li>desc_sentence-&gt;[Quantity_adjphrase] [PersonJob]s look away.</li>
+    <li>desc_sentence-&gt;In the distance, a [PersonJob] observes.</li>
+  </DMS_Tale_MechGestationFailed.rulePack.rulesStrings>
+  
+  <!-- EN: court-martialed -->
+  <DMS_Tale_CourtMartialed.label>court-martialed</DMS_Tale_CourtMartialed.label>
+  <!-- EN:
+    <li>tale_noun->the court-martial of [PAWN_nameDef]</li>
+    <li>image->[PAWN_nameFull] standing at attention before a panel of officers [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] having [PAWN_possessive] insignia cut away [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] being led from a hearing room [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] listening to a verdict [circumstance_group]</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase->without emotion or expression</li>
+    <li>circumstance_phrase->while standing perfectly straight</li>
+    <li>desc_sentence->[Quantity_adjphrase] officers sit behind a long table.</li>
+    <li>desc_sentence->A torn insignia lies on the floor.</li>
+    <li>desc_sentence->[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+    <li>desc_sentence->No one in the room meets [PAWN_possessive] eyes.</li>
+    <li>desc_sentence->[Quantity_adjphrase] [PersonJob]s watch in silence.</li>
+    <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
+  -->
+  <DMS_Tale_CourtMartialed.rulePack.rulesStrings>
+    <li>tale_noun-&gt;the court-martial of [PAWN_nameDef]</li>
+    <li>image-&gt;[PAWN_nameFull] standing at attention before a panel of officers [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] having [PAWN_possessive] insignia cut away [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] being led from a hearing room [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] listening to a verdict [circumstance_group]</li>
+    <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+    <li>circumstance_phrase-&gt;without emotion or expression</li>
+    <li>circumstance_phrase-&gt;while standing perfectly straight</li>
+    <li>desc_sentence-&gt;[Quantity_adjphrase] officers sit behind a long table.</li>
+    <li>desc_sentence-&gt;A torn insignia lies on the floor.</li>
+    <li>desc_sentence-&gt;[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+    <li>desc_sentence-&gt;No one in the room meets [PAWN_possessive] eyes.</li>
+    <li>desc_sentence-&gt;[Quantity_adjphrase] [PersonJob]s watch in silence.</li>
+    <li>desc_sentence-&gt;In the distance, a [PersonJob] observes.</li>
+  </DMS_Tale_CourtMartialed.rulePack.rulesStrings>
+  
+  <!-- EN: acquitted -->
+  <DMS_Tale_Acquitted.label>acquitted</DMS_Tale_Acquitted.label>
+  <!-- EN:
+    <li>tale_noun->the acquittal of [PAWN_nameDef]</li>
+    <li>image->[PAWN_nameFull] walking out of a hearing room [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] shaking hands with an officer [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] standing before a panel of officers [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] straightening [PAWN_possessive] uniform [circumstance_group]</li>
+    <li>circumstance_phrase->without emotion or expression</li>
+    <li>circumstance_phrase->without emotion or expression</li>
+    <li>circumstance_phrase->with a [AdjectiveFriendly] expression</li>
+    <li>circumstance_phrase->while standing perfectly straight</li>
+    <li>desc_sentence->[PAWN_possessive] insignia is still in place.</li>
+    <li>desc_sentence->[Quantity_adjphrase] officers sit behind a long table.</li>
+    <li>desc_sentence->Unsigned papers lie on the table.</li>
+    <li>desc_sentence->[Quantity_adjphrase] [PersonJob]s watch in silence.</li>
+    <li>desc_sentence->In the distance, a [PersonJob] observes.</li>
+  -->
+  <DMS_Tale_Acquitted.rulePack.rulesStrings>
+    <li>tale_noun-&gt;the acquittal of [PAWN_nameDef]</li>
+    <li>image-&gt;[PAWN_nameFull] walking out of a hearing room [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] shaking hands with an officer [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] standing before a panel of officers [circumstance_group]</li>
+    <li>image-&gt;[PAWN_nameFull] straightening [PAWN_possessive] uniform [circumstance_group]</li>
+    <li>circumstance_phrase-&gt;without emotion or expression</li>
+    <li>circumstance_phrase-&gt;without emotion or expression</li>
+    <li>circumstance_phrase-&gt;with a [AdjectiveFriendly] expression</li>
+    <li>circumstance_phrase-&gt;while standing perfectly straight</li>
+    <li>desc_sentence-&gt;[PAWN_possessive] insignia is still in place.</li>
+    <li>desc_sentence-&gt;[Quantity_adjphrase] officers sit behind a long table.</li>
+    <li>desc_sentence-&gt;Unsigned papers lie on the table.</li>
+    <li>desc_sentence-&gt;[Quantity_adjphrase] [PersonJob]s watch in silence.</li>
+    <li>desc_sentence-&gt;In the distance, a [PersonJob] observes.</li>
+  </DMS_Tale_Acquitted.rulePack.rulesStrings>
+  
+</LanguageData>

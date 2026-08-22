@@ -14,4 +14,32 @@ Its folding bipod lets a drafted operator drop it into a firing position on the 
   <DMS_Gun_LightMachineGun.description>A light machine gun mounted on a folding bipod.</DMS_Gun_LightMachineGun.description>
   <DMS_Gun_LightMachineGun.verbs.Verb_Shoot.label>mech LMG</DMS_Gun_LightMachineGun.verbs.Verb_Shoot.label>
 
+  <DMS_Turret_AutomaticGrenadeLauncher.label>Mech Grenade Launcher</DMS_Turret_AutomaticGrenadeLauncher.label>
+  <DMS_Turret_AutomaticGrenadeLauncher.description>A handheld automatic grenade launcher for clearing out clustered targets.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.
+
+Dropped onto its tripod it gains the reach and the settled arc it can never hold from the shoulder, and a crew can break it down again in seconds.</DMS_Turret_AutomaticGrenadeLauncher.description>
+
+  <DMS_Gun_AutomaticGrenadeLauncher.label>mech grenade launcher</DMS_Gun_AutomaticGrenadeLauncher.label>
+  <DMS_Gun_AutomaticGrenadeLauncher.description>An automatic grenade launcher mounted on a low tripod.</DMS_Gun_AutomaticGrenadeLauncher.description>
+  <DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_Shoot.label>mech grenade launcher</DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_Shoot.label>
+
+  <!-- UNUSED -->
+  <DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_ShootCE.label>mech grenade launcher</DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_ShootCE.label>
+
+  <DMS_Turret_HeavyMachineGun.label>Mech HMG</DMS_Turret_HeavyMachineGun.label>
+  <DMS_Turret_HeavyMachineGun.description>A heavy machine gun for mech soldiers or infantry support platforms.
+
+This weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform.
+
+On its tripod the receiver stops fighting the gunner: the beaten zone tightens, the belt runs longer, and the gun holds ground no shoulder ever could.</DMS_Turret_HeavyMachineGun.description>
+
+  <DMS_Gun_HeavyMachineGun.label>mech HMG</DMS_Gun_HeavyMachineGun.label>
+  <DMS_Gun_HeavyMachineGun.description>A heavy machine gun mounted on a tripod.</DMS_Gun_HeavyMachineGun.description>
+  <DMS_Gun_HeavyMachineGun.verbs.Verb_LaunchProjectile_AmmoSwitch.label>mech HMG</DMS_Gun_HeavyMachineGun.verbs.Verb_LaunchProjectile_AmmoSwitch.label>
+
+  <!-- UNUSED -->
+  <DMS_Gun_HeavyMachineGun.verbs.Verb_ShootCE.label>mech HMG</DMS_Gun_HeavyMachineGun.verbs.Verb_ShootCE.label>
+
 </LanguageData>

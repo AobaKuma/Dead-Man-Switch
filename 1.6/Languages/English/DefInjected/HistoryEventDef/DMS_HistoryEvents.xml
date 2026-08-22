@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: military operation completed -->
+  <DMS_QuestSuccess_Military.label>military operation completed</DMS_QuestSuccess_Military.label>
+  
+  <!-- EN: military operation failed -->
+  <DMS_QuestFailed_Military.label>military operation failed</DMS_QuestFailed_Military.label>
+  
+  <!-- EN: supply contract fulfilled -->
+  <DMS_QuestSuccess_Logistics.label>supply contract fulfilled</DMS_QuestSuccess_Logistics.label>
+  
+  <!-- EN: supply contract defaulted -->
+  <DMS_QuestFailed_Logistics.label>supply contract defaulted</DMS_QuestFailed_Logistics.label>
+  
+  <!-- EN: military formality observed -->
+  <DMS_QuestSuccess_Ceremony.label>military formality observed</DMS_QuestSuccess_Ceremony.label>
+  
+  <!-- EN: military formality dishonored -->
+  <DMS_QuestFailed_Ceremony.label>military formality dishonored</DMS_QuestFailed_Ceremony.label>
+  
+  <!-- EN: sealed technology recovered -->
+  <DMS_QuestSuccess_Occultech.label>sealed technology recovered</DMS_QuestSuccess_Occultech.label>
+  
+  <!-- EN: sealed technology lost -->
+  <DMS_QuestFailed_Occultech.label>sealed technology lost</DMS_QuestFailed_Occultech.label>
+  
+  <!-- EN: ate synthesized food -->
+  <DMS_AteSyntheticFood.label>ate synthesized food</DMS_AteSyntheticFood.label>
+  
+  <!-- EN: called in fire support -->
+  <DMS_CalledFireSupport.label>called in fire support</DMS_CalledFireSupport.label>
+  
+  <!-- EN: gestated an artificial organism -->
+  <DMS_GestatedMech.label>gestated an artificial organism</DMS_GestatedMech.label>
+  
+  <!-- EN: member court-martialed -->
+  <DMS_MemberCourtMartialed.label>member court-martialed</DMS_MemberCourtMartialed.label>
+  
+</LanguageData>

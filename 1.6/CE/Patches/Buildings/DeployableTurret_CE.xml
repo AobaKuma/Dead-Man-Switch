@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 	<!--
-		可部署武器的 CE 相容補丁（DMS_Turret_LightMachineGun / DMS_Gun_LightMachineGun /
-		DMS_LightMachineGun，定義於 Defs/Things_Building/DMS_DeployableTurret.xml）。
+		可部署武器的 CE 相容補丁（LMG / AGL / HMG 三組三件式 def，
+		全部定義於 Defs/Things_Building/DMS_DeployableTurret.xml）。
 
 		兩個必須注意的耦合：
 
@@ -151,6 +151,293 @@
 				<value>
 					<li Class="CombatExtended.NonSnapTurretExtension">
 						<speed>1.75</speed>
+						<angleWeightMultiplier>2</angleWeightMultiplier>
+					</li>
+				</value>
+			</li>
+
+			<!--=========================================================
+				AGL（DMS_Turret_AutomaticGrenadeLauncher / DMS_Gun_AutomaticGrenadeLauncher /
+				DMS_AutomaticGrenadeLauncher）
+				手持版 CE 數值來自 Patches/Weapons/MiliGuns_CE.xml：
+					ammoSet = AmmoSet_40x46mmGrenade，magazineSize = 12
+				DMS_Gun_AutomaticGrenadeLauncher 必須完全一致，否則換手時彈匣搬不過去。
+			==========================================================-->
+
+			<!--===== 手持型態：補回 DMS_AutomatroidGun 抽象父代原本提供的 CE 內容 =====-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_AutomaticGrenadeLauncher"]/statBases</xpath>
+				<value>
+					<ToughnessRating>6</ToughnessRating>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_AutomaticGrenadeLauncher"]/tools</xpath>
+				<value>
+					<tools>
+						<li Class="CombatExtended.ToolCE">
+							<label>stock</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>12</power>
+							<cooldownTime>1.55</cooldownTime>
+							<chanceFactor>1.5</chanceFactor>
+							<armorPenetrationBlunt>3.955</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>barrel</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>8</power>
+							<cooldownTime>2.02</cooldownTime>
+							<armorPenetrationBlunt>2.730</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>muzzle</label>
+							<capacities>
+								<li>Poke</li>
+							</capacities>
+							<power>12</power>
+							<cooldownTime>1.55</cooldownTime>
+							<armorPenetrationBlunt>3.955</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+			<!--===== 陣地型態的槍身 =====-->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_AutomaticGrenadeLauncher</defName>
+				<statBases>
+					<Mass>20.7</Mass>
+					<Bulk>15.5</Bulk>
+					<SwayFactor>0.85</SwayFactor>      <!-- 架在三腳架上，晃動遠低於手持的 1.46 -->
+					<ShotSpread>0.12</ShotSpread>
+					<SightsEfficiency>1.2</SightsEfficiency>
+					<RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<recoilAmount>1.9</recoilAmount>
+					<recoilPattern>Mounted</recoilPattern>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_40x46mmGrenade_HE</defaultProjectile>
+					<warmupTime>1.5</warmupTime>
+					<range>40</range>
+					<minRange>5</minRange>
+					<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+					<burstShotCount>5</burstShotCount>
+					<soundCast>Shot_IncendiaryLauncher</soundCast>
+					<soundCastTail>GunTail_Medium</soundCastTail>
+					<muzzleFlashScale>12</muzzleFlashScale>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+				</Properties>
+				<AmmoUser>
+					<!-- 必須與 DMS_AutomaticGrenadeLauncher 手持型態相同 -->
+					<magazineSize>12</magazineSize>
+					<reloadTime>4.5</reloadTime>
+					<ammoSet>AmmoSet_40x46mmGrenade</ammoSet>
+				</AmmoUser>
+				<FireModes>
+					<aiUseBurstMode>TRUE</aiUseBurstMode>
+					<aiAimMode>SuppressFire</aiAimMode>
+					<aimedBurstShotCount>3</aimedBurstShotCount>
+				</FireModes>
+				<weaponTags />
+			</li>
+
+			<!--===== 陣地建築 =====-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_AutomaticGrenadeLauncher"]/statBases/ShootingAccuracyTurret</xpath>
+				<value>
+					<ShootingAccuracyTurret>1.4</ShootingAccuracyTurret>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_AutomaticGrenadeLauncher"]/statBases</xpath>
+				<value>
+					<Bulk>15.5</Bulk>
+					<AimingAccuracy>1.0</AimingAccuracy>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_AutomaticGrenadeLauncher"]/building/turretBurstCooldownTime</xpath>
+				<value>
+					<turretBurstCooldownTime>1.4</turretBurstCooldownTime>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_AutomaticGrenadeLauncher"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_FireArc">
+						<spanRange>10~360</spanRange>
+						<maxSpanDeviation>180</maxSpanDeviation>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_AutomaticGrenadeLauncher"]/modExtensions</xpath>
+				<value>
+					<li Class="CombatExtended.NonSnapTurretExtension">
+						<speed>1.5</speed>
+						<angleWeightMultiplier>2</angleWeightMultiplier>
+					</li>
+				</value>
+			</li>
+
+			<!--=========================================================
+				HMG（DMS_Turret_HeavyMachineGun / DMS_Gun_HeavyMachineGun /
+				DMS_HeavyMachineGun）
+				手持版 CE 數值來自 Patches/Weapons/MiliGuns_CE.xml：
+					ammoSet = AmmoSet_50BMG，magazineSize = 80
+				DMS_Gun_HeavyMachineGun 必須完全一致。
+				另外 DMS_HeavyMachineGun 原本是 @Name="DMS_AutomatroidHeavyGun" 的子代，
+				MiliGunsHeavy_CE.xml 針對該抽象父代做的 ToughnessRating 12 與重型 ToolCE
+				不再套用，必須在此補回。
+			==========================================================-->
+
+			<!--===== 手持型態：補回 DMS_AutomatroidHeavyGun 抽象父代原本提供的 CE 內容 =====-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_HeavyMachineGun"]/statBases</xpath>
+				<value>
+					<ToughnessRating>12</ToughnessRating>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_HeavyMachineGun"]/tools</xpath>
+				<value>
+					<tools>
+						<li Class="CombatExtended.ToolCE">
+							<label>stock</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>24</power>
+							<cooldownTime>3.05</cooldownTime>
+							<chanceFactor>0.7</chanceFactor>
+							<armorPenetrationBlunt>15.850</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>barrel</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>16</power>
+							<cooldownTime>2.55</cooldownTime>
+							<armorPenetrationBlunt>10.680</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>muzzle</label>
+							<capacities>
+								<li>Poke</li>
+							</capacities>
+							<power>24</power>
+							<cooldownTime>2.85</cooldownTime>
+							<chanceFactor>1.5</chanceFactor>
+							<armorPenetrationBlunt>15.850</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+			<!--===== 陣地型態的槍身 =====-->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_HeavyMachineGun</defName>
+				<statBases>
+					<Mass>32.4</Mass>
+					<Bulk>25.6</Bulk>
+					<SwayFactor>1.2</SwayFactor>       <!-- 架在三腳架上，晃動遠低於手持的 2.59 -->
+					<ShotSpread>0.03</ShotSpread>
+					<SightsEfficiency>1.5</SightsEfficiency>
+					<RangedWeapon_Cooldown>0.46</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<recoilAmount>1.0</recoilAmount>
+					<recoilPattern>Mounted</recoilPattern>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
+					<warmupTime>1.2</warmupTime>
+					<range>75</range>
+					<minRange>0</minRange>
+					<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+					<burstShotCount>12</burstShotCount>
+					<soundCast>DMS_MachineGunHeavy_Shot</soundCast>
+					<soundCastTail>GunTail_Medium</soundCastTail>
+					<muzzleFlashScale>14</muzzleFlashScale>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+				</Properties>
+				<AmmoUser>
+					<!-- 必須與 DMS_HeavyMachineGun 手持型態相同 -->
+					<magazineSize>80</magazineSize>
+					<reloadTime>7.8</reloadTime>
+					<ammoSet>AmmoSet_50BMG</ammoSet>
+				</AmmoUser>
+				<FireModes>
+					<noSingleShot>true</noSingleShot>
+					<aiUseBurstMode>TRUE</aiUseBurstMode>
+					<aiAimMode>SuppressFire</aiAimMode>
+					<aimedBurstShotCount>6</aimedBurstShotCount>
+				</FireModes>
+				<weaponTags />
+			</li>
+
+			<!--===== 陣地建築 =====-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_HeavyMachineGun"]/statBases/ShootingAccuracyTurret</xpath>
+				<value>
+					<ShootingAccuracyTurret>1.6</ShootingAccuracyTurret>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_HeavyMachineGun"]/statBases</xpath>
+				<value>
+					<Bulk>25.6</Bulk>
+					<AimingAccuracy>1.1</AimingAccuracy>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_HeavyMachineGun"]/building/turretBurstCooldownTime</xpath>
+				<value>
+					<turretBurstCooldownTime>0.6</turretBurstCooldownTime>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_HeavyMachineGun"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_FireArc">
+						<spanRange>10~360</spanRange>
+						<maxSpanDeviation>180</maxSpanDeviation>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Turret_HeavyMachineGun"]/modExtensions</xpath>
+				<value>
+					<li Class="CombatExtended.NonSnapTurretExtension">
+						<speed>1.5</speed>
 						<angleWeightMultiplier>2</angleWeightMultiplier>
 					</li>
 				</value>

@@ -2,6 +2,8 @@
 <Defs>
   <QuestScriptDef>
     <defName>DMS_ProcessDocumentQuest</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Logistics</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Logistics</failedOrExpiredHistoryEvent>
     <rootSelectionWeight>0.6</rootSelectionWeight>
     <rootMinPoints>300</rootMinPoints>
     <expireDaysRange>4~8</expireDaysRange>

@@ -5,6 +5,8 @@
   <!-- 由 Patch_GenerateBestowingCeremonyQuest 取代授銜典禮而生成,不走隨機事件池。 -->
   <QuestScriptDef>
     <defName>DMS_OfficerTraining</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Ceremony</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Ceremony</failedOrExpiredHistoryEvent>
     <!-- 由 Patch_GenerateBestowingCeremonyQuest 生成,不進隨機任務池。
          非 root 任務不能設 defaultChallengeRating,會噴 config error。 -->
     <rootSelectionWeight>0</rootSelectionWeight>

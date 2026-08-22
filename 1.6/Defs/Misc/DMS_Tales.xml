@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       軼事 (TaleDef)
+       Tale 會進入藝術品題材與殖民地紀錄。注意:
+         - taleClass 的建構子參數數量必須跟 RecordTale 傳入的完全一致
+           (Activator.CreateInstance 不容錯)。
+         - colonistOnly 預設 true,非玩家派系的 pawn 不會被記錄。
+         - type=Expirable 必須配 expireDays>=0;其他 type 必須 expireDays<0。
+         - rulePack 缺 tale_noun / image / desc_sentence 會讓藝術品敘述開天窗。
+       ============================================================ -->
+
+  <!-- ── 1. 神經連結超載 ──────────────────────────────────────────
+       觸發:HediffDef DMS_MechlinkOverload 的 danger 階段 (severity 1.5)。
+       Hediff 的 recordedTale 是 per-instance 旗標,所以一具植入體只會記一次。
+       ──────────────────────────────────────────────────────────── -->
+  <TaleDef>
+    <defName>DMS_Tale_NeuralOverload</defName>
+    <label>neural link redlined</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>1.2</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun-&gt;[PAWN_nameDef] pushing [PAWN_possessive] neural link past its limit</li>
+        <li>image-&gt;[PAWN_nameFull] hunched over a control array [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] gripping [PAWN_possessive] head [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] standing rigid among marching machines [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] issuing commands [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] collapsing to one knee [circumstance_group]</li>
+        <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+        <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+        <li>circumstance_phrase-&gt;while bleeding from the nose</li>
+        <li>circumstance_phrase-&gt;with eyes rolled back</li>
+        <li>circumstance_phrase-&gt;while sweating with exertion</li>
+        <li>desc_sentence-&gt;[Quantity_adjphrase] [Mechanoid]s stand in perfect formation behind [PAWN_nameDef].</li>
+        <li>desc_sentence-&gt;The machines in the background move in perfect unison.</li>
+        <li>desc_sentence-&gt;[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+        <li>desc_sentence-&gt;Warning lights wash the scene in [Color].</li>
+        <li>desc_sentence-&gt;In the distance, a [PersonJob] observes.</li>
+        <li>desc_sentence-&gt;[PAWN_nameDef] is drenched in sweat.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- ── 2. 武器校準完成 ──────────────────────────────────────────
+       觸發:HediffDef DMS_WeaponInprint 的 maximized 階段 (severity 6)。
+       對象是合成人機兵,屬玩家派系時才會被記錄。
+       ──────────────────────────────────────────────────────────── -->
+  <TaleDef>
+    <defName>DMS_Tale_WeaponImprinted</defName>
+    <label>weapon calibration maximized</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>1</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun-&gt;[PAWN_nameDef] finishing [PAWN_possessive] weapon calibration</li>
+        <li>image-&gt;[PAWN_nameFull] stripping a weapon down [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] reassembling a weapon [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] standing motionless on a firing range [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] raising a rifle [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] cradling a worn rifle [circumstance_group]</li>
+        <li>circumstance_phrase-&gt;with mechanical precision</li>
+        <li>circumstance_phrase-&gt;with mechanical precision</li>
+        <li>circumstance_phrase-&gt;without a single wasted movement</li>
+        <li>circumstance_phrase-&gt;while wielding [PAWN_possessive] weapon</li>
+        <li>circumstance_phrase-&gt;without emotion or expression</li>
+        <li>desc_sentence-&gt;The weapon is worn through where [PAWN_nameDef] grips it.</li>
+        <li>desc_sentence-&gt;[PAWN_possessive] skill is visible in the work.</li>
+        <li>desc_sentence-&gt;Spent brass covers the ground.</li>
+        <li>desc_sentence-&gt;A row of identical units stands at attention in the background.</li>
+        <li>desc_sentence-&gt;A rack of [Weapon]s stands [side_position].</li>
+        <li>desc_sentence-&gt;[Quantity_adjphrase] [PersonJob]s watch with amazement.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- ── 3. 呼叫火力支援 ──────────────────────────────────────────
+       觸發:Fortified.AirSupportDef.taleOnTriggered。
+       框架只傳一個 pawn,所以 taleClass 必須是 Tale_SinglePawn。
+       刻意不引用 AirSupportDef 的 label:現有的幾個 label 還是
+       「Air Raid Test」這類佔位字串,寫進藝術品敘述會很難看。
+       ──────────────────────────────────────────────────────────── -->
+  <TaleDef>
+    <defName>DMS_Tale_CalledFireSupport</defName>
+    <label>fire support called</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>2</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun-&gt;[PAWN_nameDef] calling in fire support</li>
+        <li>image-&gt;[PAWN_nameFull] speaking into a handset [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] crouching behind cover [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] pointing toward a column of smoke [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] watching an aircraft pass overhead [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] shielding [PAWN_objective]self from a blast [circumstance_group]</li>
+        <li>circumstance_phrase-&gt;with a [AdjectiveBadass] expression</li>
+        <li>circumstance_phrase-&gt;with a [AdjectiveBadass] expression</li>
+        <li>circumstance_phrase-&gt;with cold efficiency</li>
+        <li>circumstance_phrase-&gt;while shouting over the noise</li>
+        <li>circumstance_phrase-&gt;while covered in dust</li>
+        <li>desc_sentence-&gt;A wall of fire rises behind [PAWN_nameDef].</li>
+        <li>desc_sentence-&gt;[Quantity_adjphrase] [Enemy]s can be seen in the distance.</li>
+        <li>desc_sentence-&gt;Smoke obscures a [TerrainFeature] in the background.</li>
+        <li>desc_sentence-&gt;[Gore] covers the ground.</li>
+        <li>desc_sentence-&gt;[Quantity_adjphrase] [Animal]s flee the scene of conflict in fear.</li>
+        <li>desc_sentence-&gt;In the distance, a [PersonJob] observes.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- ── 4. 孕育出人造生物體 ──────────────────────────────────────
+       觸發:DMS.MechBirthExtension.taleOnSuccess。
+       PAWN=代孕者、PRODUCT=落成的建築 (DMS_SynthFormingPod)。
+       培育艙路線沒有代孕者,不會記錄。
+       ──────────────────────────────────────────────────────────── -->
+  <TaleDef>
+    <defName>DMS_Tale_MechGestated</defName>
+    <label>artificial organism gestated</label>
+    <taleClass>Tale_SinglePawnAndDef</taleClass>
+    <type>Volatile</type>
+    <defSymbol>PRODUCT</defSymbol>
+    <baseInterest>2.5</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun-&gt;[PAWN_nameDef] delivering a [PRODUCT_label]</li>
+        <li>image-&gt;[PAWN_nameFull] lying beside a [PRODUCT_label] [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] looking down at a [PRODUCT_label] [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] being carried away from a [PRODUCT_label] [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] reaching toward a [PRODUCT_label] [circumstance_group]</li>
+        <li>circumstance_phrase-&gt;with visible exhaustion</li>
+        <li>circumstance_phrase-&gt;with visible exhaustion</li>
+        <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+        <li>circumstance_phrase-&gt;while covered with [Gore]</li>
+        <li>circumstance_phrase-&gt;without emotion or expression</li>
+        <li>desc_sentence-&gt;The [PRODUCT_label] towers over [PAWN_nameDef].</li>
+        <li>desc_sentence-&gt;The [PRODUCT_label] is still wet.</li>
+        <li>desc_sentence-&gt;[Gore] covers the ground.</li>
+        <li>desc_sentence-&gt;[Quantity_adjphrase] [PersonJob]s watch in silence.</li>
+        <li>desc_sentence-&gt;[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+        <li>desc_sentence-&gt;In the distance, a [PersonJob] observes.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- ── 5. 孕育失敗 ──────────────────────────────────────────────
+       觸發:DMS.MechBirthExtension.taleOnFailure。
+       ──────────────────────────────────────────────────────────── -->
+  <TaleDef>
+    <defName>DMS_Tale_MechGestationFailed</defName>
+    <label>gestation failed</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>1.5</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun-&gt;[PAWN_nameDef]&apos;s failed gestation</li>
+        <li>image-&gt;[PAWN_nameFull] sitting alone [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] being tended to [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] staring at an empty pod [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] turning away [circumstance_group]</li>
+        <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+        <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+        <li>circumstance_phrase-&gt;with visible exhaustion</li>
+        <li>circumstance_phrase-&gt;while covered with [Gore]</li>
+        <li>desc_sentence-&gt;An empty pod hangs open [side_position].</li>
+        <li>desc_sentence-&gt;A tray of ruined tissue sits nearby.</li>
+        <li>desc_sentence-&gt;[Gore] covers the ground.</li>
+        <li>desc_sentence-&gt;[Quantity_adjphrase] [PersonJob]s look away.</li>
+        <li>desc_sentence-&gt;In the distance, a [PersonJob] observes.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- ── 6. 軍法定罪 ──────────────────────────────────────────────
+       觸發:DMS.QuestPart_CourtVerdict 的有罪分支。
+       降階是一生一次的事,用 Permanent + maxPerPawn 1。
+       ──────────────────────────────────────────────────────────── -->
+  <TaleDef>
+    <defName>DMS_Tale_CourtMartialed</defName>
+    <label>court-martialed</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Permanent</type>
+    <maxPerPawn>1</maxPerPawn>
+    <baseInterest>3</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun-&gt;the court-martial of [PAWN_nameDef]</li>
+        <li>image-&gt;[PAWN_nameFull] standing at attention before a panel of officers [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] having [PAWN_possessive] insignia cut away [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] being led from a hearing room [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] listening to a verdict [circumstance_group]</li>
+        <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+        <li>circumstance_phrase-&gt;with a [AdjectiveAngsty] expression</li>
+        <li>circumstance_phrase-&gt;without emotion or expression</li>
+        <li>circumstance_phrase-&gt;while standing perfectly straight</li>
+        <li>desc_sentence-&gt;[Quantity_adjphrase] officers sit behind a long table.</li>
+        <li>desc_sentence-&gt;A torn insignia lies on the floor.</li>
+        <li>desc_sentence-&gt;[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+        <li>desc_sentence-&gt;No one in the room meets [PAWN_possessive] eyes.</li>
+        <li>desc_sentence-&gt;[Quantity_adjphrase] [PersonJob]s watch in silence.</li>
+        <li>desc_sentence-&gt;In the distance, a [PersonJob] observes.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- ── 7. 軍法無罪 ──────────────────────────────────────────────
+       觸發:DMS.QuestPart_CourtVerdict 的無罪分支。
+       ──────────────────────────────────────────────────────────── -->
+  <TaleDef>
+    <defName>DMS_Tale_Acquitted</defName>
+    <label>acquitted</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>2</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun-&gt;the acquittal of [PAWN_nameDef]</li>
+        <li>image-&gt;[PAWN_nameFull] walking out of a hearing room [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] shaking hands with an officer [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] standing before a panel of officers [circumstance_group]</li>
+        <li>image-&gt;[PAWN_nameFull] straightening [PAWN_possessive] uniform [circumstance_group]</li>
+        <li>circumstance_phrase-&gt;without emotion or expression</li>
+        <li>circumstance_phrase-&gt;without emotion or expression</li>
+        <li>circumstance_phrase-&gt;with a [AdjectiveFriendly] expression</li>
+        <li>circumstance_phrase-&gt;while standing perfectly straight</li>
+        <li>desc_sentence-&gt;[PAWN_possessive] insignia is still in place.</li>
+        <li>desc_sentence-&gt;[Quantity_adjphrase] officers sit behind a long table.</li>
+        <li>desc_sentence-&gt;Unsigned papers lie on the table.</li>
+        <li>desc_sentence-&gt;[Quantity_adjphrase] [PersonJob]s watch in silence.</li>
+        <li>desc_sentence-&gt;In the distance, a [PersonJob] observes.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+</Defs>

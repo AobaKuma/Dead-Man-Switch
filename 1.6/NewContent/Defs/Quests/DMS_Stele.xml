@@ -3,6 +3,8 @@
 
   <QuestScriptDef>
     <defName>DMS_Stele</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Occultech</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Occultech</failedOrExpiredHistoryEvent>
     <isRootSpecial>true</isRootSpecial>
     <autoAccept>true</autoAccept>
     <defaultChallengeRating>4</defaultChallengeRating>
@@ -26,6 +28,8 @@
   
   <QuestScriptDef>
     <defName>DMS_SteleKey_ImpactSite</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Occultech</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Occultech</failedOrExpiredHistoryEvent>
     <autoAccept>true</autoAccept>
     <questNameRules>
       <rulesStrings>

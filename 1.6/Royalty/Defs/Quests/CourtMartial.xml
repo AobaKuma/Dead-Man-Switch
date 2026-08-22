@@ -4,6 +4,8 @@
   <!-- ======================= 軍事法庭 ======================= -->
   <QuestScriptDef>
     <defName>DMS_CourtMartial</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Ceremony</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Ceremony</failedOrExpiredHistoryEvent>
     <rootSelectionWeight>1</rootSelectionWeight>
     <rootMinPoints>0</rootMinPoints>
     <defaultChallengeRating>2</defaultChallengeRating>

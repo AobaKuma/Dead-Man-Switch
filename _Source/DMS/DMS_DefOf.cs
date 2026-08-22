@@ -22,5 +22,10 @@ namespace DMS
 		public static TransportShipDef DMS_Ship_TransportShuttle;
         public static JobDef DMS_ProcessQuestWorkable;
         public static RulePackDef DMS_QuestDocumentRules;
+
+        // 軍法審判判決用(見 QuestPart_CourtVerdict)
+        public static TaleDef DMS_Tale_CourtMartialed;
+        public static TaleDef DMS_Tale_Acquitted;
+        public static HistoryEventDef DMS_MemberCourtMartialed;
     }
 }

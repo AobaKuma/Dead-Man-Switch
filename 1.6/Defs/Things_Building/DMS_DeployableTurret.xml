@@ -41,7 +41,7 @@
 		<fillPercent>0.4</fillPercent>
 		<pathCost>30</pathCost>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>DMS_Category</designationCategory>
+		<!-- <designationCategory>DMS_Category</designationCategory> -->
 		<statBases>
 			<MaxHitPoints>180</MaxHitPoints>
 			<Flammability>0.5</Flammability>
@@ -250,6 +250,515 @@
 			</li>
 			<li Class="Fortified.HeavyEquippableExtension">
 				<EquippableDef>LightAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!--============================ AGL ============================-->
+
+	<!--AGL 陣地-->
+	<ThingDef ParentName="DMS_BaseCannonBuilding">
+		<defName>DMS_Turret_AutomaticGrenadeLauncher</defName>
+		<label>Mech Grenade Launcher</label>
+		<description>A handheld automatic grenade launcher for clearing out clustered targets.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.\n\nDropped onto its tripod it gains the reach and the settled arc it can never hold from the shoulder, and a crew can break it down again in seconds.</description>
+		<techLevel>Industrial</techLevel>
+		<uiIconPath>Things/Weapons/DMS_AutomaticGrenadeLauncher</uiIconPath>
+		<uiIconScale>1.1</uiIconScale>
+		<graphicData>
+			<texPath>Things/None</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+			<shadowData>
+				<volume>(0.30,0.25,0.30)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<size>(1,1)</size>
+		<rotatable>true</rotatable>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>30</pathCost>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+			<WorkToBuild>3800</WorkToBuild>
+			<Mass>20.70</Mass>
+			<Beauty>-2</Beauty>
+			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+		</statBases>
+		<comps Inherit="false">
+			<li Class="CompProperties_Forbiddable" />
+			<li Class="CompProperties_Mannable">
+				<manWorkType>Violent</manWorkType>
+			</li>
+			<!-- 拾起：把建築迷你化後收進操作者的裝備欄／背包 -->
+			<li Class="CompProperties_Usable">
+				<useJob>TriggerObject</useJob>
+				<useLabel>Pick up {0_label}</useLabel>
+			</li>
+			<li Class="CompProperties_UseEffect">
+				<compClass>Fortified.CompMinifyToInventory</compClass>
+			</li>
+		</comps>
+		<!-- 架在掩體上的火力點：本身不是 edifice，可疊在沙包等地形物件之上 -->
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<blocksAltitudes>
+			<li>BuildingOnTop</li>
+		</blocksAltitudes>
+		<building>
+			<canPlaceOverWall>false</canPlaceOverWall>
+			<isEdifice>false</isEdifice>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>DMS_Gun_AutomaticGrenadeLauncher</turretGunDef>
+			<turretTopDrawSize>1.75</turretTopDrawSize>
+			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
+			<turretBurstCooldownTime>4.8</turretBurstCooldownTime>
+		</building>
+		<placeWorkers Inherit="false">
+			<li>PlaceWorker_TurretTop</li>
+			<li>PlaceWorker_ShowTurretRadius</li>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+			<li>Fortified.PlaceWorker_Emplacement</li>
+		</placeWorkers>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<minifiedDef>DMS_AutomaticGrenadeLauncher</minifiedDef>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<costList>
+			<Tungsteel>15</Tungsteel>
+			<ComponentStamped>9</ComponentStamped>
+		</costList>
+		<researchPrerequisites Inherit="false">
+			<li>PrecisionRifling</li>
+			<li>DMS_EquipmentElite</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="Fortified.ForceTargetableExtension" />
+			<!-- 未部署（拿在手上／背包裡）時顯示手持槍的外觀 -->
+			<li Class="Fortified.MinifiedThingDeployableGraphicExt">
+				<graphicData>
+					<texPath>Things/Weapons/DMS_AutomaticGrenadeLauncher</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<drawSize>1.75</drawSize>
+				</graphicData>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!--AGL 架設後的槍身-->
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>DMS_Gun_AutomaticGrenadeLauncher</defName>
+		<label>mech grenade launcher</label>
+		<description>An automatic grenade launcher mounted on a low tripod.</description>
+		<graphicData>
+			<texPath>Things/Turrets/DMS_AutoGrenadeLauncher</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.75</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>20.70</Mass>
+			<Flammability>0</Flammability>
+			<RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>Bullet_DMS_GrenadeLauncher</defaultProjectile>
+				<requireLineOfSight>true</requireLineOfSight>
+				<warmupTime>2.4</warmupTime>          <!--架設 2.4 / 手持 3.0-->
+				<range>41.9</range>                   <!--架設 41.9 / 手持 34.9-->
+				<minRange>0</minRange>
+				<forcedMissRadius>1.2</forcedMissRadius>  <!--架設 1.2 / 手持 1.5-->
+				<ai_AvoidFriendlyFireRadius>7.9</ai_AvoidFriendlyFireRadius>
+				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<burstShotCount>7</burstShotCount>    <!--架設 7 / 手持 5-->
+				<soundCast>Shot_IncendiaryLauncher</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>14</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.75,0.75)</drawSize>
+				<offsets>
+					<li>(0.75,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!--
+		AGL 手持型態。原本定義於 Defs/Things_Weapon/MilitaryGun.xml，
+		改為可部署後與 LMG 走同一套：無 recipeMaker、tradeability None、generateAllowChance 0，
+		取得方式為建造 DMS_Turret_AutomaticGrenadeLauncher 後由人員「拾起」。
+	-->
+	<ThingDef ParentName="FFF_MinifiedTurretEquippable">
+		<defName>DMS_AutomaticGrenadeLauncher</defName>
+		<label>Mech Grenade Launcher</label>
+		<description>A handheld automatic grenade launcher for clearing out clustered targets.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.\n\nIts tripod folds under the receiver, so a drafted operator can set it down into a firing position on the spot and break it back down just as quickly.</description>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_AutomaticGrenadeLauncher</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.75,1.75)</drawSize>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<tradeability>None</tradeability>
+		<generateAllowChance>0</generateAllowChance>
+		<thingCategories>
+			<li>AutomatroidWeapon</li>
+		</thingCategories>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+			<li>LongShots</li>
+		</weaponClasses>
+		<weaponTags>
+			<li>DMS_MechWeaponAntiTank</li>
+			<li>A_MG_GrenadeLauncher</li>
+		</weaponTags>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Mass>20.70</Mass>
+			<Flammability>0</Flammability>
+			<RangedWeapon_Cooldown>6</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.15</MoveSpeed>
+		</equippedStatOffsets>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_DMS_GrenadeLauncher</defaultProjectile>
+				<warmupTime>3.0</warmupTime>
+				<range>34.9</range>
+				<minRange>0</minRange>
+				<forcedMissRadius>1.5</forcedMissRadius>
+				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<burstShotCount>5</burstShotCount>
+				<soundCast>Shot_IncendiaryLauncher</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>14</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.75,0.75)</drawSize>
+				<offsets>
+					<li>(0.75,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>StandardAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!--============================ HMG ============================-->
+
+	<!--HMG 陣地-->
+	<ThingDef ParentName="DMS_BaseCannonBuilding">
+		<defName>DMS_Turret_HeavyMachineGun</defName>
+		<label>Mech HMG</label>
+		<description>A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform.\n\nOn its tripod the receiver stops fighting the gunner: the beaten zone tightens, the belt runs longer, and the gun holds ground no shoulder ever could.</description>
+		<techLevel>Industrial</techLevel>
+		<uiIconPath>Things/Weapons/DMS_HeavyMachineGun</uiIconPath>
+		<uiIconScale>0.6</uiIconScale>
+		<graphicData>
+			<texPath>Things/None</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+			<shadowData>
+				<volume>(0.30,0.25,0.30)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<size>(1,1)</size>
+		<rotatable>true</rotatable>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>30</pathCost>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<statBases>
+			<MaxHitPoints>240</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+			<WorkToBuild>3400</WorkToBuild>
+			<Mass>14.50</Mass>
+			<Beauty>-2</Beauty>
+			<ShootingAccuracyTurret>1.05</ShootingAccuracyTurret>
+		</statBases>
+		<comps Inherit="false">
+			<li Class="CompProperties_Forbiddable" />
+			<li Class="CompProperties_Mannable">
+				<manWorkType>Violent</manWorkType>
+			</li>
+			<li Class="CompProperties_Usable">
+				<useJob>TriggerObject</useJob>
+				<useLabel>Pick up {0_label}</useLabel>
+			</li>
+			<li Class="CompProperties_UseEffect">
+				<compClass>Fortified.CompMinifyToInventory</compClass>
+			</li>
+		</comps>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<blocksAltitudes>
+			<li>BuildingOnTop</li>
+		</blocksAltitudes>
+		<building>
+			<canPlaceOverWall>false</canPlaceOverWall>
+			<isEdifice>false</isEdifice>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>DMS_Gun_HeavyMachineGun</turretGunDef>
+			<turretTopDrawSize>1.75</turretTopDrawSize>
+			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
+			<turretBurstCooldownTime>1.6</turretBurstCooldownTime>
+		</building>
+		<placeWorkers Inherit="false">
+			<li>PlaceWorker_TurretTop</li>
+			<li>PlaceWorker_ShowTurretRadius</li>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+			<li>Fortified.PlaceWorker_Emplacement</li>
+		</placeWorkers>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<minifiedDef>DMS_HeavyMachineGun</minifiedDef>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<costList>
+			<Tungsteel>20</Tungsteel>
+			<ComponentStamped>8</ComponentStamped>
+		</costList>
+		<researchPrerequisites Inherit="false">
+			<li>DMS_DeadMansSwitch</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="Fortified.ForceTargetableExtension" />
+			<li Class="Fortified.MinifiedThingDeployableGraphicExt">
+				<graphicData>
+					<texPath>Things/Weapons/DMS_HeavyMachineGun</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<drawSize>1.75</drawSize>
+				</graphicData>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!--
+		HMG 架設後的槍身。彈種切換沿用手持版：CompAmmoSwitch 掛在槍身 Thing 上，
+		FFF 的 Patch_BuildingTurretGun_GetGizmos 會把切換按鈕補到砲塔的 gizmo 列，
+		因此架設後仍可切標準彈／空尖彈。
+	-->
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>DMS_Gun_HeavyMachineGun</defName>
+		<label>mech HMG</label>
+		<description>A heavy machine gun mounted on a tripod.</description>
+		<graphicData>
+			<texPath>Things/Turrets/DMS_HeavyMachineGun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.75</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>14.50</Mass>
+			<Flammability>0</Flammability>
+			<AccuracyTouch>0.70</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.90</AccuracyMedium>
+			<AccuracyLong>0.80</AccuracyLong>
+			<RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
+		</statBases>
+		<!-- 彈種切換: 標準機槍彈(預設) / 空尖彈(短射程高射速壓制) -->
+		<comps>
+			<li Class="Fortified.CompProperties_AmmoSwitch">
+				<defaultIndex>0</defaultIndex>
+				<switchCooldown>240</switchCooldown>
+				<soundSwitch>Artillery_ShellLoaded</soundSwitch>
+				<ammos>
+					<li>
+						<projectileDef>Bullet_DMS_HeavyMachineGun</projectileDef>
+					</li>
+					<li>
+						<projectileDef>DMS_Bullet_HMG_HollowPoint</projectileDef>
+						<rangeFactor>0.7</rangeFactor>
+						<accuracyFactor>0.9</accuracyFactor>
+						<burstShotCountOverride>10</burstShotCountOverride>
+					</li>
+				</ammos>
+			</li>
+		</comps>
+		<verbs>
+			<li>
+				<verbClass>Fortified.Verb_LaunchProjectile_AmmoSwitch</verbClass>
+				<defaultProjectile>Bullet_DMS_HeavyMachineGun</defaultProjectile>
+				<requireLineOfSight>true</requireLineOfSight>
+				<warmupTime>2.4</warmupTime>          <!--架設 2.4 / 手持 3.0-->
+				<range>47.9</range>                   <!--架設 47.9 / 手持 39.9-->
+				<minRange>0</minRange>
+				<ai_AvoidFriendlyFireRadius>5.9</ai_AvoidFriendlyFireRadius>
+				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+				<burstShotCount>6</burstShotCount>    <!--架設 6 / 手持 4-->
+				<soundCast>DMS_MachineGunHeavy_Shot</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.75,0.75)</drawSize>
+				<offsets>
+					<li>(0.75,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!--
+		HMG 手持型態。原本定義於 Defs/Things_Weapon/MilitaryGun_Heavy.xml，
+		改繼承 FFF_MinifiedTurretEquippable 後不再是 DMS_AutomatroidHeavyGun 的子代，
+		因此 MaxHitPoints / tools / storedConceptLearnOpportunity 都必須在此補回。
+		AmmoSwitch 的 comp 以「附加」方式寫入（不要 Inherit="false"），
+		否則會蓋掉父代的 CompEquippable 與拾起用的 CompProperties_Usable。
+	-->
+	<ThingDef ParentName="FFF_MinifiedTurretEquippable">
+		<defName>DMS_HeavyMachineGun</defName>
+		<label>Mech HMG</label>
+		<description>A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform.\n\nIts tripod folds under the receiver, so a drafted operator can set it down into a firing position on the spot and break it back down just as quickly.</description>
+		<storedConceptLearnOpportunity>DMS_HeavyWeapon</storedConceptLearnOpportunity>
+		<uiIconScale>0.6</uiIconScale>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_HeavyMachineGun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.75</drawSize>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<tradeability>None</tradeability>
+		<generateAllowChance>0</generateAllowChance>
+		<thingCategories>
+			<li>AutomatroidWeapon</li>
+		</thingCategories>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+			<li>LongShots</li>
+			<li>Ranged</li>
+		</weaponClasses>
+		<weaponTags>
+			<li>DMS_MechWeaponTransHeavy</li>
+			<li>A_SuppressWeaponHeavy</li>
+			<li>A_MG_Heavy</li>
+		</weaponTags>
+		<statBases>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Mass>14.50</Mass>
+			<Flammability>0</Flammability>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.70</AccuracyShort>
+			<AccuracyMedium>0.85</AccuracyMedium>
+			<AccuracyLong>0.75</AccuracyLong>
+			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.15</MoveSpeed>
+		</equippedStatOffsets>
+		<!-- 彈種切換: 標準機槍彈(預設) / 空尖彈(短射程高射速壓制) -->
+		<comps>
+			<li Class="Fortified.CompProperties_AmmoSwitch">
+				<defaultIndex>0</defaultIndex>
+				<switchCooldown>240</switchCooldown>
+				<soundSwitch>Artillery_ShellLoaded</soundSwitch>
+				<ammos>
+					<li>
+						<projectileDef>Bullet_DMS_HeavyMachineGun</projectileDef>
+					</li>
+					<li>
+						<projectileDef>DMS_Bullet_HMG_HollowPoint</projectileDef>
+						<rangeFactor>0.7</rangeFactor>
+						<accuracyFactor>0.9</accuracyFactor>
+						<burstShotCountOverride>7</burstShotCountOverride>
+					</li>
+				</ammos>
+			</li>
+		</comps>
+		<verbs>
+			<li>
+				<verbClass>Fortified.Verb_LaunchProjectile_AmmoSwitch</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_DMS_HeavyMachineGun</defaultProjectile>
+				<warmupTime>3</warmupTime>
+				<range>39.9</range>
+				<minRange>0</minRange>
+				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+				<burstShotCount>4</burstShotCount>
+				<soundCast>DMS_MachineGunHeavy_Shot</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>24</power>
+				<cooldownTime>3</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>24</power>
+				<cooldownTime>3</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.75,0.75)</drawSize>
+				<offsets>
+					<li>(0.75,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>StandardAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
 	</ThingDef>

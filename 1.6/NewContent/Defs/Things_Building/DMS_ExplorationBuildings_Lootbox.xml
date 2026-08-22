@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!-- 可以開啟的戰利品箱子。 -->
+  <ThingDef ParentName="DMS_BuildingBase" Name="DMS_BaseLootBox" Abstract="True">
+    <category>Building</category>
+    <thingClass>Fortified.Building_SurplusContainer</thingClass>
+    <rotatable>true</rotatable>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>true</useHitPoints>
+    <destroyable>true</destroyable>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+    </statBases>
+    <building>
+      <expandHomeArea>false</expandHomeArea>
+      <claimable>true</claimable>
+      <deconstructible>true</deconstructible>
+      <paintable>true</paintable>
+    </building>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>90</pathCost>
+    <defaultPlacingRot>2</defaultPlacingRot>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_BaseLootBox" Name="DMS_BaseCrateSmall" Abstract="True">
+    <graphicData>
+      <texPath>Things/Building/LootBoxes/SmallBox</texPath>
+      <drawSize>(2,2)</drawSize>
+      <drawOffset>(0,0.01,0)</drawOffset>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <costList>
+      <WoodLog>20</WoodLog>
+    </costList>
+    <size>(1,1)</size>
+    <!-- ModExtension_Lootbox 不放在抽象父級：modExtensions 是 list，子級不加 Inherit="False" 會多疊一個 li。 -->
+  </ThingDef>
+
+  <!-- ==================== 通用小型物資箱 ==================== -->
+  <ThingDef ParentName="DMS_BaseCrateSmall">
+    <defName>DMS_CrateSmall_Material</defName>
+    <label>small material crate</label>
+    <description>A small standard issue equipment crate containing supplies. The lid carries no colour band, so there is no telling what is inside until it is opened.</description>
+    <comps>
+      <li Class="Fortified.CompProperties_RandomColorOnSpawn">
+        <colorChance>1</colorChance>
+        <colorDefs>
+          <li>Structure_White</li>
+          <li>Structure_GrayLight</li>
+          <li>Structure_Cream</li>
+          <li>Structure_Limestone</li>
+        </colorDefs>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_Lootbox">
+        <sound>CrateOpeningStarted</sound>
+        <openedGraphicdata>
+          <texPath>Things/Building/LootBoxes/OpenedBox/Small</texPath>
+          <drawSize>(2,2)</drawSize>
+          <drawOffset>(0,0.01,0)</drawOffset>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <onGroundRandomRotateAngle>1</onGroundRandomRotateAngle>
+        </openedGraphicdata>
+        <chanceNotSpawn>0.2</chanceNotSpawn>
+        <countRange>1~2</countRange>
+        <loots>
+          <li>Reward_ItemsStandard</li>
+          <li>DMS_CrateLoots_Parts</li>
+          <li>DMS_CrateLoots_SmallArms</li>
+          <li>DMS_CrateLoots_Prosthetic</li>
+          <li>DMS_CrateLoots_Ration</li>
+        </loots>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- ==================== 藍色：零件箱 ==================== -->
+  <ThingDef ParentName="DMS_BaseCrateSmall">
+    <defName>DMS_CrateSmall_Parts</defName>
+    <label>small compoment crate</label>
+    <description>A small standard issue supply crate. The blue band marks it as machine parts. Most hold ordinary components, though advanced ones turn up now and then.</description>
+    <comps>
+      <li Class="Fortified.CompProperties_RandomColorOnSpawn">
+        <colorChance>1</colorChance>
+        <colorDefs>
+          <li>Structure_Blue</li>
+          <li>Structure_Marine</li>
+          <li>Structure_BlueSubtle</li>
+        </colorDefs>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_Lootbox">
+        <sound>CrateOpeningStarted</sound>
+        <openedGraphicdata>
+          <texPath>Things/Building/LootBoxes/OpenedBox/Small</texPath>
+          <drawSize>(2,2)</drawSize>
+          <drawOffset>(0,0.01,0)</drawOffset>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <onGroundRandomRotateAngle>1</onGroundRandomRotateAngle>
+        </openedGraphicdata>
+        <chanceNotSpawn>0.1</chanceNotSpawn>
+        <countRange>1~2</countRange>
+        <loots>
+          <li>DMS_CrateLoots_Parts</li>
+        </loots>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- ==================== 紅色：輕武器箱 ==================== -->
+  <ThingDef ParentName="DMS_BaseCrateSmall">
+    <defName>DMS_CrateSmall_SmallArms</defName>
+    <label>small arms crate</label>
+    <description>A small standard issue supply crate. The red band marks it as weapons. Inside is a single small arm, still packed in factory grease.</description>
+    <comps>
+      <li Class="Fortified.CompProperties_RandomColorOnSpawn">
+        <colorChance>1</colorChance>
+        <colorDefs>
+          <li>Structure_Red</li>
+          <li>Structure_Scarlet</li>
+          <li>Structure_Auburn</li>
+        </colorDefs>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_Lootbox">
+        <sound>CrateOpeningStarted</sound>
+        <openedGraphicdata>
+          <texPath>Things/Building/LootBoxes/OpenedBox/Small</texPath>
+          <drawSize>(2,2)</drawSize>
+          <drawOffset>(0,0.01,0)</drawOffset>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <onGroundRandomRotateAngle>1</onGroundRandomRotateAngle>
+        </openedGraphicdata>
+        <chanceNotSpawn>0.1</chanceNotSpawn>
+        <countRange>1</countRange>
+        <loots>
+          <li>DMS_CrateLoots_SmallArms</li>
+        </loots>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- ==================== 綠色：義體箱 ==================== -->
+  <ThingDef ParentName="DMS_BaseCrateSmall">
+    <defName>DMS_CrateSmall_Prosthetic</defName>
+    <label>small prosthetics crate</label>
+    <description>A small standard issue supply crate. The green band marks it as medical supplies. Most hold stamponents, though a bionic part turns up now and then.</description>
+    <comps>
+      <li Class="Fortified.CompProperties_RandomColorOnSpawn">
+        <colorChance>1</colorChance>
+        <colorDefs>
+          <li>Structure_Green</li>
+          <li>Structure_Viridian</li>
+          <li>Structure_GreenFaded</li>
+        </colorDefs>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_Lootbox">
+        <sound>CrateOpeningStarted</sound>
+        <openedGraphicdata>
+          <texPath>Things/Building/LootBoxes/OpenedBox/Small</texPath>
+          <drawSize>(2,2)</drawSize>
+          <drawOffset>(0,0.01,0)</drawOffset>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <onGroundRandomRotateAngle>1</onGroundRandomRotateAngle>
+        </openedGraphicdata>
+        <chanceNotSpawn>0.1</chanceNotSpawn>
+        <countRange>1~2</countRange>
+        <loots>
+          <li>DMS_CrateLoots_Prosthetic</li>
+        </loots>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- ==================== 黃色：口糧箱 ==================== -->
+  <ThingDef ParentName="DMS_BaseCrateSmall">
+    <defName>DMS_CrateSmall_Ration</defName>
+    <label>small ration crate</label>
+    <description>A small standard issue supply crate. The yellow band marks it as food. Inside are survival meals or combat rations.</description>
+    <comps>
+      <li Class="Fortified.CompProperties_RandomColorOnSpawn">
+        <colorChance>1</colorChance>
+        <colorDefs>
+          <li>Structure_YellowPastel</li>
+          <li>Structure_Mustard</li>
+          <li>Structure_Orange</li>
+        </colorDefs>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_Lootbox">
+        <sound>CrateOpeningStarted</sound>
+        <openedGraphicdata>
+          <texPath>Things/Building/LootBoxes/OpenedBox/Small</texPath>
+          <drawSize>(2,2)</drawSize>
+          <drawOffset>(0,0.01,0)</drawOffset>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <onGroundRandomRotateAngle>1</onGroundRandomRotateAngle>
+        </openedGraphicdata>
+        <chanceNotSpawn>0.1</chanceNotSpawn>
+        <countRange>1~2</countRange>
+        <loots>
+          <li>DMS_CrateLoots_Ration</li>
+        </loots>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- ==================================================================== -->
+  <!-- 戰利品池                                                              -->
+  <!-- ==================================================================== -->
+
+  <!-- 藍色：零部件，低機率出高級零部件 -->
+  <ThingSetMakerDef>
+    <defName>DMS_CrateLoots_Parts</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+        <!-- 沖壓零件 -->
+        <li>
+          <weight>50</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentStamped</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~4</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <!-- 工業零件 -->
+        <li>
+          <weight>30</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentIndustrial</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~3</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <!-- 低機率：高級零部件 -->
+        <li>
+          <weight>12</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentSpacer</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~2</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>6</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>PulsarEmitterUnit</li>
+                  <li>DMS_EncryptedTransmitter</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <!-- 極低機率：稀有管制品 -->
+        <li>
+          <weight>2</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentTransmitter</li>
+                  <li>ComponentControlChip</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <!-- 紅色：小型 DMS 遠程武器 -->
+  <ThingSetMakerDef>
+    <defName>DMS_CrateLoots_SmallArms</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+        <!-- 手槍級 -->
+        <li>
+          <weight>35</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <qualityGenerator>BaseGen</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>DMS_TacticalPistol</li>
+                  <li>DMS_Revolver</li>
+                  <li>DMS_KnuckledusterRevolver</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <!-- 個人防衛武器 / 輕步槍 -->
+        <li>
+          <weight>30</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <qualityGenerator>BaseGen</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>DMS_PDW</li>
+                  <li>DMS_SurvivalRifle</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <!-- 治安型長槍 -->
+        <li>
+          <weight>20</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <qualityGenerator>BaseGen</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>DMS_MiniMachineGun</li>
+                  <li>DMS_RiotShotgun</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <!-- 低機率：一次性反裝甲武器 -->
+        <li>
+          <weight>10</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_DeposableRocketLauncher</li>
+                  <li>DMS_Gun_RecoillessLight</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~2</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <!-- 綠色：沖壓零件，低機率出仿生體 -->
+  <ThingSetMakerDef>
+    <defName>DMS_CrateLoots_Prosthetic</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+        <!-- 沖壓零件 -->
+        <li>
+          <weight>55</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentStamped</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~5</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <!-- 機神經義體 -->
+        <li>
+          <weight>20</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_ProstheticArm</li>
+                  <li>DMS_ProstheticLeg</li>
+                  <li>DMS_ProstheticEye</li>
+                  <li>DMS_ProstheticLung</li>
+                  <li>DMS_ProstheticKidney</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <!-- 特化植入物 -->
+        <li>
+          <weight>12</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_NutrientPort</li>
+                  <li>DMS_ProstheticSpine</li>
+                  <li>DMS_SensoryFilter</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <!-- 低機率：生物合成義體 -->
+        <li>
+          <weight>8</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_SyntheticArm</li>
+                  <li>DMS_SyntheticLeg</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <!-- 極低機率：仿生體 -->
+        <li>
+          <weight>5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>BionicArm</li>
+                  <li>BionicLeg</li>
+                  <li>BionicEye</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <!-- 黃色：生存食品包或 C 口糧 -->
+  <ThingSetMakerDef>
+    <defName>DMS_CrateLoots_Ration</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+        <li>
+          <weight>50</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MealSurvivalPack</li>
+                </thingDefs>
+              </filter>
+              <countRange>4~8</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>50</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_CombatRation</li>
+                </thingDefs>
+              </filter>
+              <countRange>5~15</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+      </options>
+    </root>
+  </ThingSetMakerDef>
+</Defs>

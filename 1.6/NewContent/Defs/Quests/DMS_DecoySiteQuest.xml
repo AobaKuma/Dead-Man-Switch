@@ -88,6 +88,8 @@
 
   <QuestScriptDef>
     <defName>DMS_DecoySiteAssault</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Military</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Military</failedOrExpiredHistoryEvent>
     <autoAccept>true</autoAccept>
     <sendAvailableLetter>true</sendAvailableLetter>
     <questNameRules>

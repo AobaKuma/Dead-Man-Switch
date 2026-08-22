@@ -645,78 +645,7 @@
 		</modExtensions>
 	</ThingDef>
 
-	<!--AGL-->
-	<ThingDef ParentName="DMS_AutomatroidGun">
-		<defName>DMS_AutomaticGrenadeLauncher</defName>
-		<label>Mech Grenade Launcher</label>
-		<description>A handheld automatic grenade launcher for clearing out clustered targets.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
-		<weaponClasses>
-			<li>RangedHeavy</li>
-			<li>LongShots</li>
-		</weaponClasses>
-		<weaponTags>
-			<li>DMS_MechWeaponAntiTank</li>
-			<li>A_MG_GrenadeLauncher</li>
-		</weaponTags>
-		<graphicData>
-			<texPath>Things/Weapons/DMS_AutomaticGrenadeLauncher</texPath>
-			<drawSize>(1.75,1.75)</drawSize>
-		</graphicData>
-		<soundInteract>Interact_Rifle</soundInteract>
-		<statBases>
-			<WorkToMake>75000</WorkToMake>
-			<Mass>20.70</Mass>
-			<RangedWeapon_Cooldown>6</RangedWeapon_Cooldown>
-		</statBases>
-		<equippedStatOffsets>
-			<MoveSpeed>-0.15</MoveSpeed>
-		</equippedStatOffsets>
-		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
-			</researchPrerequisites>
-		</recipeMaker>
-		<costList>
-			<Tungsteel>15</Tungsteel>
-			<ComponentStamped>9</ComponentStamped>
-		</costList>
-		<smeltProducts>
-			<Tungsteel>25</Tungsteel>
-		</smeltProducts>
-		<verbs>
-			<li>
-				<verbClass>Verb_Shoot</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>Bullet_DMS_GrenadeLauncher</defaultProjectile>
-				<warmupTime>3.0</warmupTime>
-				<range>34.9</range>
-				<forcedMissRadius>1.5</forcedMissRadius>
-				<burstShotCount>5</burstShotCount>
-				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-				<soundCast>Shot_IncendiaryLauncher</soundCast>
-				<soundCastTail>GunTail_Medium</soundCastTail>
-				<muzzleFlashScale>14</muzzleFlashScale>
-				<targetParams>
-					<canTargetLocations>true</canTargetLocations>
-				</targetParams>
-			</li>
-		</verbs>
-		<modExtensions>
-			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
-				<def>MF_StandardMuzzleFalsh</def>
-				<drawSize>(0.75,0.75)</drawSize>
-				<offsets>
-					<li>(0.75,0)</li>
-				</offsets>
-				<isAlternately>true</isAlternately>
-			</li>
-			<li Class="Fortified.HeavyEquippableExtension">
-				<EquippableDef>StandardAutomatroid</EquippableDef>
-			</li>
-		</modExtensions>
-	</ThingDef>
-
+	<!--AGL 的手持/陣地型態已移至 Defs/Things_Building/DMS_DeployableTurret.xml，此處僅保留彈丸-->
 	<ThingDef ParentName="BaseBullet">
 		<defName>Bullet_DMS_GrenadeLauncher</defName>
 		<label>grenade round</label>

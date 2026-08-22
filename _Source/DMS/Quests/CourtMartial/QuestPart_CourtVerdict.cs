@@ -58,6 +58,7 @@ namespace DMS
                     SupplyChainText.Resolve(CourtMartialText.Pack, "acquitLetterLabel", LetterVars("", "")),
                     SupplyChainText.Resolve(CourtMartialText.Pack, "acquitLetterText", LetterVars("", "")),
                     LetterDefOf.PositiveEvent, null, faction, quest);
+                TaleRecorder.RecordTale(DMS_DefOf.DMS_Tale_Acquitted, defendant);
                 Find.SignalManager.SendSignal(new Signal(outSignalAcquitted));
                 ReturnDefendantNow();
                 return;
@@ -74,6 +75,13 @@ namespace DMS
                 SupplyChainText.Resolve(CourtMartialText.Pack, "verdictLetterLabel", LetterVars(oldTitle, newTitle)),
                 SupplyChainText.Resolve(CourtMartialText.Pack, "verdictLetterText", LetterVars(oldTitle, newTitle)),
                 LetterDefOf.NeutralEvent, null, faction, quest);
+            // 降階是一生一次的紀錄:TaleDef 用 Permanent + maxPerPawn 1,重複判決不會洗版。
+            TaleRecorder.RecordTale(DMS_DefOf.DMS_Tale_CourtMartialed, defendant);
+            // 刻意不帶 Doer:被告在服刑期間被 lend part 移出地圖,IdeoUtility.Notify_HistoryEvent
+            // 只會把「知情」通知給跟 Doer 同地圖／同商隊的 pawn,帶了 Doer 反而全殖民地都收不到。
+            // 不帶 Doer 時原版改走「通知所有自由殖民者」那條路,正好符合「消息傳回來了」的語意。
+            Find.HistoryEventsManager.RecordEvent(new HistoryEvent(DMS_DefOf.DMS_MemberCourtMartialed));
+
             Find.SignalManager.SendSignal(new Signal(outSignalGuilty));
         }
 

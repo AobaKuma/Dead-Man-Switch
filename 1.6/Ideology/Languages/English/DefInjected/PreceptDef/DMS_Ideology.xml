@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: strict -->
+  <DMS_Formality_Strict.label>strict</DMS_Formality_Strict.label>
+  <!-- EN: Discipline, ceremony and military law are all part of keeping order. To break their forms is shameful. -->
+  <DMS_Formality_Strict.description>Discipline, ceremony and military law are all part of keeping order. To break their forms is shameful.</DMS_Formality_Strict.description>
+  
+  <!-- EN: casual -->
+  <DMS_Formality_Casual.label>casual</DMS_Formality_Casual.label>
+  <!-- EN: Rank is just a title. Ceremony is just procedure. -->
+  <DMS_Formality_Casual.description>Rank is just a title. Ceremony is just procedure.</DMS_Formality_Casual.description>
+  
+  <!-- EN: contemptuous -->
+  <DMS_Formality_Contemptuous.label>contemptuous</DMS_Formality_Contemptuous.label>
+  <!-- EN: Military law is the oppressor's instrument of violence. To serve as the oppressor's executioner is shameful. -->
+  <DMS_Formality_Contemptuous.description>Military law is the oppressor's instrument of violence. To serve as the oppressor's executioner is shameful.</DMS_Formality_Contemptuous.description>
+  
+  <!-- EN: venerated -->
+  <DMS_Operations_Venerated.label>venerated</DMS_Operations_Venerated.label>
+  <!-- EN: The unit exists to be used. A completed operation is the highest thing we do, and a failed one is a wound the whole colony carries. Fire support is not something to apologize for. -->
+  <DMS_Operations_Venerated.description>The unit exists to be used. A completed operation is the highest thing we do, and a failed one is a wound the whole colony carries. Fire support is not something to apologize for.</DMS_Operations_Venerated.description>
+  
+  <!-- EN: necessary -->
+  <DMS_Operations_Necessary.label>necessary</DMS_Operations_Necessary.label>
+  <!-- EN: Nobody enjoys it. We do it because the alternative is worse, and we expect it to be done properly when it has to be done. -->
+  <DMS_Operations_Necessary.description>Nobody enjoys it. We do it because the alternative is worse, and we expect it to be done properly when it has to be done.</DMS_Operations_Necessary.description>
+  
+  <!-- EN: abhorrent -->
+  <DMS_Operations_Abhorrent.label>abhorrent</DMS_Operations_Abhorrent.label>
+  <!-- EN: To call down fire on a target you cannot see is an abhorrent act. There is no telling what else is down there. -->
+  <DMS_Operations_Abhorrent.description>To call down fire on a target you cannot see is an abhorrent act. There is no telling what else is down there.</DMS_Operations_Abhorrent.description>
+  
+  <!-- EN: venerated -->
+  <DMS_SealedTech_Venerated.label>venerated</DMS_SealedTech_Venerated.label>
+  <!-- EN: To unlock the unknown is the human instinct that drives progress. -->
+  <DMS_SealedTech_Venerated.description>To unlock the unknown is the human instinct that drives progress.</DMS_SealedTech_Venerated.description>
+  
+  <!-- EN: acceptable -->
+  <DMS_SealedTech_Acceptable.label>acceptable</DMS_SealedTech_Acceptable.label>
+  <!-- EN: Sealed technology is useful, but its risks still deserve caution. -->
+  <DMS_SealedTech_Acceptable.description>Sealed technology is useful, but its risks still deserve caution.</DMS_SealedTech_Acceptable.description>
+  
+  <!-- EN: forbidden -->
+  <DMS_SealedTech_Forbidden.label>forbidden</DMS_SealedTech_Forbidden.label>
+  <!-- EN: Sealed technology was shelved for a reason, and we should never dig it back up. -->
+  <DMS_SealedTech_Forbidden.description>Sealed technology was shelved for a reason, and we should never dig it back up.</DMS_SealedTech_Forbidden.description>
+  
+  <!-- EN: venerated -->
+  <DMS_SyntheticLife_Venerated.label>venerated</DMS_SyntheticLife_Venerated.label>
+  <!-- EN: Flesh is a first draft. What comes out of a gestation pod was designed on purpose, and what comes out of a reaction chamber is food that was designed on purpose too. -->
+  <DMS_SyntheticLife_Venerated.description>Flesh is a first draft. What comes out of a gestation pod was designed on purpose, and what comes out of a reaction chamber is food that was designed on purpose too.</DMS_SyntheticLife_Venerated.description>
+  
+  <!-- EN: acceptable -->
+  <DMS_SyntheticLife_Acceptable.label>acceptable</DMS_SyntheticLife_Acceptable.label>
+  <!-- EN: It is equipment that happens to be wet. Nobody needs to have feelings about equipment. -->
+  <DMS_SyntheticLife_Acceptable.description>It is equipment that happens to be wet. Nobody needs to have feelings about equipment.</DMS_SyntheticLife_Acceptable.description>
+  
+  <!-- EN: abhorrent -->
+  <DMS_SyntheticLife_Abhorrent.label>abhorrent</DMS_SyntheticLife_Abhorrent.label>
+  <!-- EN: A body is for carrying a person. Using one as a factory for something that was never going to be a person is the worst thing this technology has been put to, and eating what the same machines produce is not far behind. -->
+  <DMS_SyntheticLife_Abhorrent.description>A body is for carrying a person. Using one as a factory for something that was never going to be a person is the worst thing this technology has been put to, and eating what the same machines produce is not far behind.</DMS_SyntheticLife_Abhorrent.description>
+  
+</LanguageData>

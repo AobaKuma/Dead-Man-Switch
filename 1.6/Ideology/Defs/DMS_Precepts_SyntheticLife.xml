@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       人造生命 / Synthetic life
+       消費 DMS_GestatedMech(孕育出人造生物體)與
+       DMS_AteSyntheticFood(C 口糧、人工蛋白)。
+
+       兩個事件都帶 Doer,所以 SelfTookMemoryThought 可用。
+       食物事件走的是 FoodUtility.AddThoughtsFromIdeo,那條路只認
+       PreceptComp_SelfTookMemoryThought(Thing.Ingested 記錄時
+       canApplySelfTookThoughts 是 false,但食物心情另外走這條)。
+
+       已知缺口:ateEvent 只在「直接吃下去」時觸發。用人工蛋白
+       煮成的餐點走 AddIngestThoughtsFromIngredient,那條路不讀
+       ingredient 的 ateEvent,要涵蓋熟食得另外 patch。
+       ============================================================ -->
+
+  <IssueDef>
+    <defName>DMS_Issue_SyntheticLife</defName>
+    <label>synthetic life</label>
+    <iconPath>UI/Issues/BodyModifications</iconPath>
+  </IssueDef>
+
+  <!-- ── 崇尚:人造生命比血肉更可靠 ────────────────────────────── -->
+  <PreceptDef>
+    <defName>DMS_SyntheticLife_Venerated</defName>
+    <issue>DMS_Issue_SyntheticLife</issue>
+    <label>venerated</label>
+    <description>Flesh is a first draft. What comes out of a gestation pod was designed on purpose, and what comes out of a reaction chamber is food that was designed on purpose too.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>800</displayOrderInImpact>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_GestatedMech</eventDef>
+        <thought>DMS_Thought_Gestation_Venerated</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>DMS_AteSyntheticFood</eventDef>
+        <thought>DMS_Thought_SyntheticFood_Venerated</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ── 可接受:是工具(預設) ────────────────────────────────── -->
+  <PreceptDef>
+    <defName>DMS_SyntheticLife_Acceptable</defName>
+    <issue>DMS_Issue_SyntheticLife</issue>
+    <label>acceptable</label>
+    <description>It is equipment that happens to be wet. Nobody needs to have feelings about equipment.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>500</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+  </PreceptDef>
+
+  <!-- ── 憎惡:用子宮長出機器是褻瀆 ────────────────────────────── -->
+  <PreceptDef>
+    <defName>DMS_SyntheticLife_Abhorrent</defName>
+    <issue>DMS_Issue_SyntheticLife</issue>
+    <label>abhorrent</label>
+    <description>A body is for carrying a person. Using one as a factory for something that was never going to be a person is the worst thing this technology has been put to, and eating what the same machines produce is not far behind.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>900</displayOrderInImpact>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>DMS_GestatedMech</eventDef>
+        <thought>DMS_Thought_Gestation_Abhorrent_Self</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_GestatedMech</eventDef>
+        <thought>DMS_Thought_Gestation_Abhorrent_Knows</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>DMS_AteSyntheticFood</eventDef>
+        <thought>DMS_Thought_SyntheticFood_Abhorrent</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ============================ 心情 ============================ -->
+
+  <ThoughtDef>
+    <defName>DMS_Thought_Gestation_Venerated</defName>
+    <durationDays>10</durationDays>
+    <stackLimit>2</stackLimit>
+    <stages>
+      <li>
+        <label>a pod was sealed</label>
+        <description>We used our own bodies to gestate something better than ourselves.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_SyntheticFood_Venerated</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>ate synthesized food</label>
+        <description>I ate synthesized food. Clean and precisely measured.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_Gestation_Abhorrent_Self</defName>
+    <durationDays>15</durationDays>
+    <stackLimit>1</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>I carried that thing</label>
+        <description>My body gave birth to something that is not even alive.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_Gestation_Abhorrent_Knows</defName>
+    <durationDays>10</durationDays>
+    <stackLimit>2</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>we grew one of those</label>
+        <description>We are using living bodies as seedbeds. Such things are a desecration.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_SyntheticFood_Abhorrent</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <nullifyingTraits>
+      <li>Ascetic</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>ate synthesized food</label>
+        <description>Something with not a single natural ingredient in it should never be eaten.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

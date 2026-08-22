@@ -92,8 +92,8 @@
   
   <!-- EN: Mech Grenade Launcher -->
   <DMS_AutomaticGrenadeLauncher.label>机兵榴弹发射器</DMS_AutomaticGrenadeLauncher.label>
-  <!-- EN: A handheld automatic grenade launcher for clearing out clustered targets.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
-  <DMS_AutomaticGrenadeLauncher.description>手持式自动榴弹发射器，用於清除集群目标。\n\n这种武器是专门为机兵设计的，因此如果没有外部辅助设备或超强的力量，普通人可能无法正常使用。</DMS_AutomaticGrenadeLauncher.description>
+  <!-- EN: A handheld automatic grenade launcher for clearing out clustered targets.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.\n\nIts tripod folds under the receiver, so a drafted operator can set it down into a firing position on the spot and break it back down just as quickly. -->
+  <DMS_AutomaticGrenadeLauncher.description>手持式自动榴弹发射器，用於清除集群目标。\n\n这种武器是专门为机兵设计的，因此如果没有外部辅助设备或超强的力量，普通人可能无法正常使用。\n\n三脚架收折在机匣下方，征召中的操作者可以就地把它架设成射击阵地，也能同样迅速地拆收带走。</DMS_AutomaticGrenadeLauncher.description>
   <!-- EN: stock -->
   <DMS_AutomaticGrenadeLauncher.tools.stock.label>枪托</DMS_AutomaticGrenadeLauncher.tools.stock.label>
   <!-- EN: barrel -->

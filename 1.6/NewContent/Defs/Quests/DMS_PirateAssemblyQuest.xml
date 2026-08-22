@@ -111,6 +111,8 @@
 
   <QuestScriptDef>
     <defName>DMS_PirateAssemblyRaid</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Military</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Military</failedOrExpiredHistoryEvent>
     <!-- 隨機事件：由敘事者依權重挑選發布。權重 1.0 與原版 bandit camp 同級，
          也等於合併前兩份定義（0.6 + 0.4）的總和。
          Random incident offered by the storyteller. 1.0 matches vanilla bandit

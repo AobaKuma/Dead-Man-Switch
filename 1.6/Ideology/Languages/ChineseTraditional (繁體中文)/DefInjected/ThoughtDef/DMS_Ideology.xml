@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: ceremony observed -->
+  <DMS_Thought_Ceremony_Strict.stages.ceremony_observed.label>儀典完成</DMS_Thought_Ceremony_Strict.stages.ceremony_observed.label>
+  <!-- EN: We observed the forms properly, in front of an official witness. That still means something. -->
+  <DMS_Thought_Ceremony_Strict.stages.ceremony_observed.description>我們在公證人面前把形式走得一絲不苟。那還是有意義的。</DMS_Thought_Ceremony_Strict.stages.ceremony_observed.description>
+  
+  <!-- EN: ceremony failed -->
+  <DMS_Thought_CeremonyFailed_Strict.stages.ceremony_failed.label>儀典失敗</DMS_Thought_CeremonyFailed_Strict.stages.ceremony_failed.label>
+  <!-- EN: We could not even get through a ceremony. It shames all of us. -->
+  <DMS_Thought_CeremonyFailed_Strict.stages.ceremony_failed.description>我們連一場儀典都撐不完。這讓我們所有人蒙羞。</DMS_Thought_CeremonyFailed_Strict.stages.ceremony_failed.description>
+  
+  <!-- EN: member court-martialed -->
+  <DMS_Thought_CourtMartialed_Strict.stages.member_courtmartialed.label>成員遭軍法定罪</DMS_Thought_CourtMartialed_Strict.stages.member_courtmartialed.label>
+  <!-- EN: One of our officers was convicted and we could not answer it. We all carry that. -->
+  <DMS_Thought_CourtMartialed_Strict.stages.member_courtmartialed.description>我們的一名軍官被定了罪，而我們無話可說。這件事大家一起扛。</DMS_Thought_CourtMartialed_Strict.stages.member_courtmartialed.description>
+  
+  <!-- EN: ceremony observed -->
+  <DMS_Thought_Ceremony_Contemptuous.stages.ceremony_observed.label>儀典完成</DMS_Thought_Ceremony_Contemptuous.stages.ceremony_observed.label>
+  <!-- EN: Someone was handed a rank and permission to give orders. It is just another leash. -->
+  <DMS_Thought_Ceremony_Contemptuous.stages.ceremony_observed.description>有人被授了階級，順便拿到了發號施令的許可。那不過是又一條繩子。</DMS_Thought_Ceremony_Contemptuous.stages.ceremony_observed.description>
+  
+  <!-- EN: member court-martialed -->
+  <DMS_Thought_CourtMartialed_Contemptuous.stages.member_courtmartialed.label>成員遭軍法定罪</DMS_Thought_CourtMartialed_Contemptuous.stages.member_courtmartialed.label>
+  <!-- EN: A fleet court ground one of ours down. Sooner or later it comes for the rest of us. -->
+  <DMS_Thought_CourtMartialed_Contemptuous.stages.member_courtmartialed.description>軍法庭把我們的一個人碾了過去。遲早也會輪到我們其他人。</DMS_Thought_CourtMartialed_Contemptuous.stages.member_courtmartialed.description>
+  
+  <!-- EN: operation completed -->
+  <DMS_Thought_OperationSuccess_Venerated.stages.operation_completed.label>行動達成</DMS_Thought_OperationSuccess_Venerated.stages.operation_completed.label>
+  <!-- EN: We were given a job and we finished it. That is what we are for. -->
+  <DMS_Thought_OperationSuccess_Venerated.stages.operation_completed.description>我們完成了一次行動。我們就是為了這個而存在的。</DMS_Thought_OperationSuccess_Venerated.stages.operation_completed.description>
+  
+  <!-- EN: operation failed -->
+  <DMS_Thought_OperationFailed_Venerated.stages.operation_failed.label>行動失敗</DMS_Thought_OperationFailed_Venerated.stages.operation_failed.label>
+  <!-- EN: We were given a job and we did not finish it. There is no way to dress that up. -->
+  <DMS_Thought_OperationFailed_Venerated.stages.operation_failed.description>我們搞砸了一次行動。這件事沒有任何藉口。</DMS_Thought_OperationFailed_Venerated.stages.operation_failed.description>
+  
+  <!-- EN: fire on target -->
+  <DMS_Thought_FireSupport_Venerated.stages.fire_on_target.label>火力支援已呼叫</DMS_Thought_FireSupport_Venerated.stages.fire_on_target.label>
+  <!-- EN: Somebody called it in and it landed where it was supposed to. Good. -->
+  <DMS_Thought_FireSupport_Venerated.stages.fire_on_target.description>有人呼叫了火力支援，而它落在目標上。事情就該這樣辦。</DMS_Thought_FireSupport_Venerated.stages.fire_on_target.description>
+  
+  <!-- EN: operation failed -->
+  <DMS_Thought_OperationFailed_Necessary.stages.operation_failed.label>行動失敗</DMS_Thought_OperationFailed_Necessary.stages.operation_failed.label>
+  <!-- EN: We took the job and we did not deliver. Somebody is going to pay for that, and it probably will not be the people who gave the order. -->
+  <DMS_Thought_OperationFailed_Necessary.stages.operation_failed.description>我們搞砸了一次行動。總有人要為此付出代價。</DMS_Thought_OperationFailed_Necessary.stages.operation_failed.description>
+  
+  <!-- EN: I called it in -->
+  <DMS_Thought_FireSupport_Abhorrent_Self.stages.I_called_it_in.label>呼叫了火力支援</DMS_Thought_FireSupport_Abhorrent_Self.stages.I_called_it_in.label>
+  <!-- EN: I called saturation fire down on a target. Every stray round that landed is on me. -->
+  <DMS_Thought_FireSupport_Abhorrent_Self.stages.I_called_it_in.description>我對一個目標叫下了覆蓋火力。落下去的每一發流彈都算在我頭上。</DMS_Thought_FireSupport_Abhorrent_Self.stages.I_called_it_in.description>
+  
+  <!-- EN: someone called it in -->
+  <DMS_Thought_FireSupport_Abhorrent_Knows.stages.someone_called_it_in.label>火力支援已呼叫</DMS_Thought_FireSupport_Abhorrent_Knows.stages.someone_called_it_in.label>
+  <!-- EN: One of us called saturation fire down on a target nobody could see. Such things should never be done. -->
+  <DMS_Thought_FireSupport_Abhorrent_Knows.stages.someone_called_it_in.description>我們有人對一個誰也看不見的目標叫下了覆蓋火力。這種事永遠不該做。</DMS_Thought_FireSupport_Abhorrent_Knows.stages.someone_called_it_in.description>
+  
+  <!-- EN: sealed technology unlocked -->
+  <DMS_Thought_Occultech_Venerated.stages.sealed_technology_unlocked.label>封存技術解密</DMS_Thought_Occultech_Venerated.stages.sealed_technology_unlocked.label>
+  <!-- EN: We unlocked a piece of sealed technology that had been shelved and forgotten. Let them come and explain why we should not have. -->
+  <DMS_Thought_Occultech_Venerated.stages.sealed_technology_unlocked.description>我們解密了一項被束之高閣的封存技術。有本事就來說明我們為什麼不該拿。</DMS_Thought_Occultech_Venerated.stages.sealed_technology_unlocked.description>
+  
+  <!-- EN: sealed technology unlocked -->
+  <DMS_Thought_Occultech_Forbidden.stages.sealed_technology_unlocked.label>封存技術解密</DMS_Thought_Occultech_Forbidden.stages.sealed_technology_unlocked.label>
+  <!-- EN: We unlocked a piece of sealed technology that had been locked away. I hope we have not made an even worse mistake. -->
+  <DMS_Thought_Occultech_Forbidden.stages.sealed_technology_unlocked.description>我們解密了一項被封印的封存技術。但願我們不會犯下更大的錯誤。</DMS_Thought_Occultech_Forbidden.stages.sealed_technology_unlocked.description>
+  
+  <!-- EN: a pod was sealed -->
+  <DMS_Thought_Gestation_Venerated.stages.a_pod_was_sealed.label>人造生物體孕育完成</DMS_Thought_Gestation_Venerated.stages.a_pod_was_sealed.label>
+  <!-- EN: We used our own bodies to gestate something better than ourselves. -->
+  <DMS_Thought_Gestation_Venerated.stages.a_pod_was_sealed.description>我們以自己的身體孕育出了更好的東西。</DMS_Thought_Gestation_Venerated.stages.a_pod_was_sealed.description>
+  
+  <!-- EN: ate synthesized food -->
+  <DMS_Thought_SyntheticFood_Venerated.stages.ate_synthesized_food.label>食用合成食品</DMS_Thought_SyntheticFood_Venerated.stages.ate_synthesized_food.label>
+  <!-- EN: I ate synthesized food. Clean and precisely measured. -->
+  <DMS_Thought_SyntheticFood_Venerated.stages.ate_synthesized_food.description>我吃了合成食品。乾淨、劑量精確。</DMS_Thought_SyntheticFood_Venerated.stages.ate_synthesized_food.description>
+  
+  <!-- EN: I carried that thing -->
+  <DMS_Thought_Gestation_Abhorrent_Self.stages.I_carried_that_thing.label>孕育了人造生物體</DMS_Thought_Gestation_Abhorrent_Self.stages.I_carried_that_thing.label>
+  <!-- EN: My body gave birth to something that is not even alive. -->
+  <DMS_Thought_Gestation_Abhorrent_Self.stages.I_carried_that_thing.description>我的身體生下了一個連生命都不是的東西。</DMS_Thought_Gestation_Abhorrent_Self.stages.I_carried_that_thing.description>
+  
+  <!-- EN: we grew one of those -->
+  <DMS_Thought_Gestation_Abhorrent_Knows.stages.we_grew_one_of_those.label>人造生物體孕育完成</DMS_Thought_Gestation_Abhorrent_Knows.stages.we_grew_one_of_those.label>
+  <!-- EN: We are using living bodies as seedbeds. Such things are a desecration. -->
+  <DMS_Thought_Gestation_Abhorrent_Knows.stages.we_grew_one_of_those.description>我們正在用活人的身體當苗床。這種事情太過褻瀆了。</DMS_Thought_Gestation_Abhorrent_Knows.stages.we_grew_one_of_those.description>
+  
+  <!-- EN: ate synthesized food -->
+  <DMS_Thought_SyntheticFood_Abhorrent.stages.ate_synthesized_food.label>食用合成食品</DMS_Thought_SyntheticFood_Abhorrent.stages.ate_synthesized_food.label>
+  <!-- EN: Something with not a single natural ingredient in it should never be eaten. -->
+  <DMS_Thought_SyntheticFood_Abhorrent.stages.ate_synthesized_food.description>這種一點天然成分都沒有的東西就不該入口。</DMS_Thought_SyntheticFood_Abhorrent.stages.ate_synthesized_food.description>
+  
+</LanguageData>
