@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 進料斗：把輸送帶處理不了的粗料（石塊、熔渣塊、屍體）堆在生產線旁，讓自動生產建築自己取用。
+       抽料由框架的 LinkedStorageIngredientPuller 負責，來源建築必須掛 ModExtension_MaterialSource。
+       連結關係仍然走原版 facility 系統：工作台側的 CompProperties_AffectedByFacilities.linkableFacilities
+       要列出 DMS_Hopper（見 DMS_Production_Base.xml 的 DMS_BenchBase），而且工作台的
+       ModExtension_AutoWorkTable.pullFromLinkedStorage 要開，否則料斗只是個普通的儲存架。 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_Hopper</defName>
+    <label>feed hopper</label>
+    <description>A gravity-fed bulk hopper with a powered auger in its base. It accepts the coarse material that a conveyor line cannot handle, such as stone chunks, slag and whole corpses, and holds it beside the production line.\n\nAutonomous production buildings linked to this hopper draw material straight out of it, so nothing has to be carried in by hand. Cutting the power stops the feed.</description>
+    <thingClass>Building_Storage</thingClass>
+    <graphicData>
+      <texPath>Things/Building/DMSHopper/building</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <size>(2,1)</size>
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <altitudeLayer>Building</altitudeLayer>
+    <!-- 有電力與開關，需要即時繪製斷電／關閉的圖示，不能沿用 BuildingBase 的 MapMeshOnly。 -->
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <tickerType>Rare</tickerType>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <constructEffect>ConstructMetal</constructEffect>
+    <repairEffect>Repair</repairEffect>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>DMS_Category</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>DMS_Material</li>
+    </researchPrerequisites>
+    <costList>
+      <Steel>80</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Mass>45</Mass>
+      <Flammability>0</Flammability>
+      <SellPriceFactor>0.7</SellPriceFactor>
+    </statBases>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+      <blueprintClass>Blueprint_Storage</blueprintClass>
+      <storageGroupTag>DMS_Hopper</storageGroupTag>
+      <!-- 塊堆與屍體都不可堆疊，一格一件會讓料斗小到沒有意義；三件一格等於整座 6 件。 -->
+      <maxItemsInCell>3</maxItemsInCell>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <!-- 永遠只收粗料。fixedStorageSettings 是硬上限，玩家改不了，
+           所以自動產線不會被順手塞進來的鋼鐵或藥物卡住。 -->
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>Chunks</li>
+            <li>Corpses</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+      <!-- 預設只勾塊堆與動物屍體：人形屍體要不要進磨床是玩家自己的決定，別替他決定。 -->
+      <defaultStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <categories>
+            <li>Chunks</li>
+            <li>CorpsesAnimal</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Facility">
+        <!-- 一座料斗可以同時餵四台機器；maxDistance 收到 6 是為了讓它看起來像產線的一部分，
+             而不是隔著半個工廠遙控供料。requiresLOS 沿用預設 true，中間隔牆就斷料。 -->
+        <maxSimultaneous>4</maxSimultaneous>
+        <maxDistance>6</maxDistance>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_MaterialSource">
+        <!-- 斷電或被關掉就停止供料，讓玩家看得出產線為什麼停了。 -->
+        <allowWhileInactive>false</allowWhileInactive>
+        <!-- 不搶殖民者已經預約的東西，免得對方的搬運工作在半路失敗。 -->
+        <respectReservations>true</respectReservations>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

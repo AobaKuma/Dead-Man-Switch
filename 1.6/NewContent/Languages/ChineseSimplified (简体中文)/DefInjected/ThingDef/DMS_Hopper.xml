@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: feed hopper -->
+  <DMS_Hopper.label>进料斗</DMS_Hopper.label>
+  <!-- EN: A gravity-fed bulk hopper with a powered auger in its base. It accepts the coarse material that a conveyor line cannot handle, such as stone chunks, slag and whole corpses, and holds it beside the production line.\n\nAutonomous production buildings linked to this hopper draw material straight out of it, so nothing has to be carried in by hand. Cutting the power stops the feed. -->
+  <DMS_Hopper.description>一座靠重力进料的散装料斗，底部装有动力螺旋输送机。它能接收输送带处理不了的粗料，例如石块、熔渣块与整具尸体，并将其暂存在生产线旁。\n\n与料斗连结的自动生产建筑会直接从中取料，不需要有人搬运进去。切断电源就会停止供料。</DMS_Hopper.description>
+
+</LanguageData>
