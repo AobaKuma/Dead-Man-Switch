@@ -149,8 +149,8 @@
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="DMS_Apparel_BionicSuitHeavy"]/equippedStatOffsets</xpath>
 				<value>
-					<CarryWeight>70</CarryWeight>
-					<CarryBulk>30</CarryBulk>
+					<CarryWeight>440</CarryWeight>
+					<CarryBulk>100</CarryBulk>
 				</value>
 			</li>
 
