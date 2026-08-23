@@ -21,6 +21,8 @@ namespace DMS
         public static ThingDef DMS_OccultechKey;
 		public static TransportShipDef DMS_Ship_TransportShuttle;
         public static JobDef DMS_ProcessQuestWorkable;
+        // 集群織鳥的無人機投放動作(見 JobDriver_DeployDroneSwarm)
+        public static JobDef DMS_DeployDroneSwarm;
         public static RulePackDef DMS_QuestDocumentRules;
 
         // 軍法審判判決用(見 QuestPart_CourtVerdict)

@@ -138,6 +138,12 @@
     </keyframeParts>
   </AnimationDef>
 
+  <!-- 集群織鳥的常駐思考樹：母艦滯空投放準則。
+       它沒有裝甲，火力來自兩具自動副砲塔與整艙自殺無人機，所以不該壓上去互射。
+       這裡讓敵方陣營的母艦停在自身射程邊緣、盡量落在對方槍夠不到的距離，
+       接敵才開艙放野禽；等彈艙見底、空中也沒有自機無人機時整段條件失效，
+       母艦改回一般機兵交戰行為正面壓上，戰鬥才不會被無限風箏拖住。
+       玩家收編的個體不受影響，仍走原本的機兵指令流程。 -->
   <ThinkTreeDef>
     <defName>DMS_ClusterWeaverConstant</defName>
     <thinkRoot Class="ThinkNode_Priority">
@@ -149,9 +155,46 @@
         <li Class="ThinkNode_ConditionalOfPlayerFaction">
           <invert>true</invert>
           <subNodes>
-            <li Class="JobGiver_FleeForDistance">
-              <enemyDistToFleeRange>10~25</enemyDistToFleeRange>
-              <fleeDistRange>13.5~20</fleeDistRange>
+            <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+              <subNodes>
+                <!-- 地圖上真的有威脅時才接管；行軍、集結、撤離仍交給陣營勤務。 -->
+                <li Class="DMS.ThinkNode_ConditionalHostileWithin">
+                  <reachFactor>1.6</reachFactor>
+                  <subNodes>
+                    <!-- 還有貨可投（或空中還有自機無人機）才走滯空準則。 -->
+                    <li Class="DMS.ThinkNode_ConditionalDronePayload">
+                      <minPayload>1</minPayload>
+                      <countLiveDrones>true</countLiveDrones>
+                      <subNodes>
+                        <!-- 接敵時開艙放一批野禽。 -->
+                        <li Class="DMS.JobGiver_DeployDroneSwarm">
+                          <triggerRadiusFactor>1.4</triggerRadiusFactor>
+                          <minTriggerRadius>20</minTriggerRadius>
+                          <maxLiveDrones>8</maxLiveDrones>
+                        </li>
+                        <!-- 把自己維持在射程邊緣，讓副砲塔與無人機幹活。
+                             距離全部由當下的有效射程換算，原版與 CE 不必各寫一套數值。 -->
+                        <li Class="DMS.JobGiver_AICarrierStandoff">
+                          <targetAcquireRadius>55</targetAcquireRadius>
+                          <targetKeepRadius>70</targetKeepRadius>
+                          <standoffFactor>0.85</standoffFactor>
+                          <maxReachFactor>0.98</maxReachFactor>
+                          <minStandoff>12</minStandoff>
+                          <bandWidth>6</bandWidth>
+                          <respectHostileRange>true</respectHostileRange>
+                          <hostileRangeMargin>4</hostileRangeMargin>
+                          <repositionSearchRadius>26</repositionSearchRadius>
+                        </li>
+                      </subNodes>
+                    </li>
+                  </subNodes>
+                </li>
+                <!-- 彈艙打空之後保留最低限度的自保：被貼上來就彈開一段距離。 -->
+                <li Class="JobGiver_FleeForDistance">
+                  <enemyDistToFleeRange>5~9</enemyDistToFleeRange>
+                  <fleeDistRange>13.5~20</fleeDistRange>
+                </li>
+              </subNodes>
             </li>
           </subNodes>
         </li>
@@ -215,6 +258,8 @@
         <costPerPawn>15</costPerPawn>
         <cooldownTicks>1500</cooldownTicks>
         <maxPawnsToSpawn>5</maxPawnsToSpawn>
+        <!-- 投放時機交給 DMS.JobGiver_DeployDroneSwarm，不要在半張地圖外就把彈艙倒光。 -->
+        <npcAutoDeploy>false</npcAutoDeploy>
         <startingIngredientCount>450</startingIngredientCount>
         <maxIngredientCount>450</maxIngredientCount>
         <spawnPawnKind>DMS_Drone_Wildfowl</spawnPawnKind>
