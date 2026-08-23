@@ -85,7 +85,6 @@
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>ToolCabinet</li>
-          <li>DMS_Hopper</li>
           <li>DMS_MachineCabinet</li>
           <li MayRequire="Aoba.Fortress.Industrial.Citadel">FT_transformer</li>
         </linkableFacilities>
