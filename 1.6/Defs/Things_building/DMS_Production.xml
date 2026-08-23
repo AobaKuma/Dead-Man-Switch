@@ -19,7 +19,7 @@
     <costList>
       <Steel>300</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
-	    <ComponentSpacer>1</ComponentSpacer>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <statBases>
       <WorkToBuild>3000</WorkToBuild>
@@ -32,8 +32,7 @@
     <size>(3,3)</size>
     <interactionCellOffset>(0,0,-2)</interactionCellOffset>
     <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
-    <recipes>
-    </recipes>
+    <recipes />
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -49,6 +48,7 @@
     <modExtensions>
       <li Class="Fortified.ModExtension_AutoWorkTable">
         <workAmountPerStage>10000</workAmountPerStage>
+        <pullFromLinkedStorage>true</pullFromLinkedStorage>
         <activeMote>DMS_Mote_ReactionChamberActive</activeMote>
         <phaseEffecter_east>DMS_Effect_ReactionChamber</phaseEffecter_east>
         <phaseEffecter_west>DMS_Effect_ReactionChamber</phaseEffecter_west>
@@ -104,7 +104,7 @@
     <size>(3,3)</size>
     <interactionCellOffset>(0,0,-2)</interactionCellOffset>
     <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
-    <recipes/>
+    <recipes />
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -128,7 +128,9 @@
     <modExtensions>
       <li Class="Fortified.ModExtension_AutoWorkTable">
         <workAmountPerStage>30000</workAmountPerStage>
+        <pullFromLinkedStorage>true</pullFromLinkedStorage>
         <northOnly>true</northOnly>
+        <autoEjectProducts>true</autoEjectProducts>
         <activeMote>DMS_Mote_SinteringFurnaceActive</activeMote>
         <phaseEffecter_east>DMS_SinteringFurnaceActive_East</phaseEffecter_east>
         <phaseEffecter_west>DMS_SinteringFurnaceActive_West</phaseEffecter_west>
@@ -173,7 +175,7 @@
     <costList>
       <Steel>250</Steel>
       <ComponentIndustrial>8</ComponentIndustrial>
-	    <ComponentSpacer>1</ComponentSpacer>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <statBases>
       <WorkToBuild>3000</WorkToBuild>
@@ -181,8 +183,7 @@
       <Flammability>0.25</Flammability>
       <WorkTableWorkSpeedFactor>2.0</WorkTableWorkSpeedFactor>
     </statBases>
-	  <recipes>
-	  </recipes>
+    <recipes />
     <size>(3,2)</size>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
@@ -201,6 +202,7 @@
     <modExtensions>
       <li Class="Fortified.ModExtension_AutoWorkTable">
         <workAmountPerStage>10000</workAmountPerStage>
+        <pullFromLinkedStorage>true</pullFromLinkedStorage>
         <phaseEffecter_east>DMS_Effect_Printer_East</phaseEffecter_east>
         <phaseEffecter_west>DMS_Effect_Printer_West</phaseEffecter_west>
         <phaseEffecter_north>DMS_Effect_Printer_North</phaseEffecter_north>
@@ -269,6 +271,7 @@
     <modExtensions>
       <li Class="Fortified.ModExtension_AutoWorkTable">
         <workAmountPerStage>5000</workAmountPerStage>
+        <pullFromLinkedStorage>true</pullFromLinkedStorage>
         <autoEjectProducts>true</autoEjectProducts>
         <phaseEffecter_east>DMS_Effect_Printer_East</phaseEffecter_east>
         <phaseEffecter_west>DMS_Effect_Printer_West</phaseEffecter_west>

@@ -85,6 +85,7 @@
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>ToolCabinet</li>
+          <li>DMS_Hopper</li>
           <li>DMS_MachineCabinet</li>
           <li MayRequire="Aoba.Fortress.Industrial.Citadel">FT_transformer</li>
         </linkableFacilities>
@@ -102,7 +103,10 @@
     <tickerType>Normal</tickerType>
     <building>
       <spawnedConceptLearnOpportunity>DMS_Autofacturer</spawnedConceptLearnOpportunity>
+      <relatedBuildCommands>
+        <li>DMS_Hopper</li>
+      </relatedBuildCommands>
     </building>
   </ThingDef>
-  
+
 </Defs>
