@@ -3,6 +3,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using Fortified;
 
 namespace DMS
 {
@@ -61,7 +62,7 @@ namespace DMS
     /// 而且 Fortified 的機兵服裝生成器只對非玩家派系生效，玩家自己培育出來的蛙人
     /// 不會自帶任何服裝。要讓能力是「機兵內建」的，彈艙就得掛在機兵本體上。
     /// </summary>
-    public class CompRationMagazine : ThingComp
+    public class CompRationMagazine : ThingComp, Fortified.IRationSource
     {
         private int loadedRations = -1;
 
@@ -76,6 +77,9 @@ namespace DMS
         public bool IsFull => LoadedRations >= MaxRations;
 
         public int RationsNeeded => Mathf.Max(0, MaxRations - LoadedRations);
+
+        // —— Fortified.IRationSource ——
+        public ThingDef RationDef => Props.rationDef;
 
         public override void PostPostMake()
         {

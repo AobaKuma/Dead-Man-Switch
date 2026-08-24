@@ -11,7 +11,7 @@
     <defName>DMS_Mech_Frogman</defName>
     <label>Frogman</label>
     <description>The XM132 Frogman is the earliest artificial military organism on known record. Its mesonuclear biological design lets it be cultured in any environment and develop itself into designated adult.\n\nIn the Earth era, such biomatroid AMOs represented was briefly held to be the technology that would replace synthetic mechs and conventional mechanoids alike. A single severe incident ended that line of development for good.\n\nThe adult form is humanlike. It grows its own highly sealed composite plasfibre integument and a closed-loop internal cooling system. Every joint cavity is pressure-compensated and packed with dielectric gel, so it can swim in, wade ashore and go straight into combat. Earth-era marine corps used them for beach reconnaissance, harbour demolition and boarding actions.\n\nAMO technology is tightly controlled under the colonial fleet programme. That is why a bioweapon this well suited to local conditions remains a rare sight across the rim.</description>
-    <thingClass>Fortified.HumanlikeMech</thingClass>
+    <thingClass>Fortified.ArtificialOrganismHumanlike</thingClass>
     <!-- 暫用現成的合成機械體男性素體；補上專屬蛙人素材後改成 Things/Synthroid/Body/Frogman 即可。 -->
     <uiIconPath>Things/Synthroid/Body/Synthroid_Male_south</uiIconPath>
     <statBases>
@@ -104,6 +104,14 @@
     </race>
     <comps>
       <li Class="Fortified.CompProperties_MechApparel" />
+      <!-- 自體再生＋口糧→能量（AMO 專屬維生循環） -->
+      <li Class="Fortified.CompProperties_ArtificialOrganism">
+        <regenIntervalTicks>120</regenIntervalTicks>
+        <regenHealAmount>1</regenHealAmount>
+        <consumeBelowLevel>0.3</consumeBelowLevel>
+        <energyPerRation>0.5</energyPerRation>
+        <rationsPerConsume>1</rationsPerConsume>
+      </li>
       <!-- 體內口糧艙：供 DMS_FrogmanRationRecovery 消耗。 -->
       <li Class="DMS.CompProperties_RationMagazine">
         <rationDef>DMS_CombatRation</rationDef>

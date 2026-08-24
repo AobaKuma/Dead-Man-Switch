@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- AMO（蛙人）不可被修理：移除繼承自 vanilla BaseMechanoid 的 CompMechRepairable。
+         自體再生改由 Fortified.CompArtificialOrganism 處理。 -->
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName="DMS_Mech_Frogman"]/comps/li[compClass="RimWorld.CompMechRepairable"]</xpath>
+    </Operation>
+</Patch>
