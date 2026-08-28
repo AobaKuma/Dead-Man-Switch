@@ -163,7 +163,9 @@ namespace DMS
                 inSignalEnable = sigSent,
                 shuttle = shuttle,
                 lendColonistsToFaction = fleet,
-                returnLentColonistsInTicks = int.MaxValue / 2, // 永不自動歸還
+                // 同 OfficerTraining:設成真實時長(調查 + 服刑),否則任務頁會顯示
+                // 「一萬多天後歸還」。多押一小時讓訊號鏈先跑,自動歸還只當保險。
+                returnLentColonistsInTicks = (investigationDays + detentionDays) * GenDate.TicksPerDay + GenDate.TicksPerHour,
                 returnMap = map.Parent,
                 outSignalColonistsDied = sigDied,
             };

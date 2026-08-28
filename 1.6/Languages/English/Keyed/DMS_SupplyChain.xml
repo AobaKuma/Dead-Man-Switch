@@ -22,16 +22,16 @@
   <DMS_SupplyChain_BonusLetterText>Every shipment of the supply contract has been delivered. As promised, compensation for the price difference of the goods has been sent at market rates.</DMS_SupplyChain_BonusLetterText>
 
   <!-- 軍事法庭 Court-martial quest -->
-  <DMS_CourtMartial_BoardDeadline>Boarding deadline</DMS_CourtMartial_BoardDeadline>
-  <DMS_CourtMartial_BoardDeadlineTip>Time remaining for the defendant to board the orbital transport. If it leaves empty, the tribunal arrangement collapses and hostilities resume.</DMS_CourtMartial_BoardDeadlineTip>
-  <DMS_CourtMartial_TrialInfo>Trial concludes</DMS_CourtMartial_TrialInfo>
-  <DMS_CourtMartial_DetentionInfo>Sentence ends</DMS_CourtMartial_DetentionInfo>
+  <DMS_CourtMartial_BoardDeadline>Boarding deadline: {0}</DMS_CourtMartial_BoardDeadline>
+  <DMS_CourtMartial_BoardDeadlineTip>Time remaining for the defendant to board the orbital transport. Deadline: {0}. If it leaves empty, the tribunal arrangement collapses and hostilities resume.</DMS_CourtMartial_BoardDeadlineTip>
+  <DMS_CourtMartial_TrialInfo>Trial concludes in: {0}</DMS_CourtMartial_TrialInfo>
+  <DMS_CourtMartial_DetentionInfo>Sentence ends in: {0}</DMS_CourtMartial_DetentionInfo>
 
 
   <!-- 軍官受訓晉升 Officer training quest -->
-  <DMS_OfficerTraining_BoardDeadline>Boarding deadline</DMS_OfficerTraining_BoardDeadline>
-  <DMS_OfficerTraining_BoardDeadlineTip>Time remaining for the trainee to board the orbital transport. If it leaves empty, the course allocation is withdrawn.</DMS_OfficerTraining_BoardDeadlineTip>
-  <DMS_OfficerTraining_CourseInfo>Course ends</DMS_OfficerTraining_CourseInfo>
+  <DMS_OfficerTraining_BoardDeadline>Boarding deadline: {0}</DMS_OfficerTraining_BoardDeadline>
+  <DMS_OfficerTraining_BoardDeadlineTip>Time remaining for the trainee to board the orbital transport. Deadline: {0}. If it leaves empty, the course allocation is withdrawn.</DMS_OfficerTraining_BoardDeadlineTip>
+  <DMS_OfficerTraining_CourseInfo>Course ends in: {0}</DMS_OfficerTraining_CourseInfo>
   <DMS_OfficerTraining_NoTitle>no rank</DMS_OfficerTraining_NoTitle>
   <DMS_Course_Infantry>infantry tactics course</DMS_Course_Infantry>
   <DMS_Course_CQB>close-quarters combat course</DMS_Course_CQB>

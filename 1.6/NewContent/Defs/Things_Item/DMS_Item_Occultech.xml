@@ -68,4 +68,125 @@
       <li Class="CompProperties_Forbiddable" />
     </comps>
   </ThingDef>
+
+  <!-- ==================================================================== -->
+  <!-- 封存資料匣：一次性研究解封物                                          -->
+  <!-- 掛 Fortified.CompProperties_UseEffect_DiscoverResearch。              -->
+  <!-- 使用後從 researchProjects 抽一個尚未探明的專案永久解封並灌入研究進度； -->
+  <!-- 清單裡的專案都研究完了就退回給智識經驗，不會白白吃掉物品。            -->
+  <!-- 之後新增 Occultech 專案時，記得把 defName 補進對應等級的清單。        -->
+  <!-- ==================================================================== -->
+  <ThingDef ParentName="ResourceBase" Name="DMS_BaseDataCache" Abstract="True">
+    <graphicData>
+      <texPath>Things/Resource/EncryptedTransmitter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>5</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <intricate>true</intricate>
+    <techLevel>Spacer</techLevel>
+    <statBases>
+      <MaxHitPoints>40</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <comps>
+      <!-- ResourceBase 已經給了 CompProperties_Forbiddable，這裡只補使用相關的。 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Decrypt {0_label}</useLabel>
+        <useDuration>1200</useDuration>
+        <showUseGizmo>true</showUseGizmo>
+      </li>
+      <!-- orderPriority -1000，一定跑在解封效果之後。 -->
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+  </ThingDef>
+
+  <!-- 管制級：最常見的一階，對應 DMS_Restricted 類別 -->
+  <ThingDef ParentName="DMS_BaseDataCache">
+    <defName>DMS_DataCache_Restricted</defName>
+    <label>restricted technical data cache</label>
+    <description>An encrypted record module holding a technical file that was never cleared for local circulation, kept by colonial army units as a reference for technical signatures. A colonist can spend a few hours decrypting it to reveal a restricted-class occultech research project and make a little progress on it.</description>
+    <graphicData>
+      <color>(0.78, 0.76, 0.52)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>300</MarketValue>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+    </thingSetMakerTags>
+    <comps>
+      <li Class="Fortified.CompProperties_UseEffect_DiscoverResearch">
+        <researchProjects>
+          <li>DMS_ExpKnowledge_BasicFoundation</li>
+        </researchProjects>
+        <progressAmount>150</progressAmount>
+        <fallbackXpAmount>1500</fallbackXpAmount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 封存級：中階，對應 DMS_Sealed 類別，目前實裝的 Occultech 專案都在這一階 -->
+  <ThingDef ParentName="DMS_BaseDataCache">
+    <defName>DMS_DataCache_Sealed</defName>
+    <label>sealed data cache</label>
+    <description>A record module with its seal intact. Files at this classification rarely leave the archives the fleets keep watch over. A colonist can decrypt it to reveal a sealed-class occultech research project and make some progress on it.</description>
+    <graphicData>
+      <color>(1.0, 0.66, 0.34)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>700</MarketValue>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+    <comps>
+      <li Class="Fortified.CompProperties_UseEffect_DiscoverResearch">
+        <researchProjects>
+          <li>DMS_ExpKnowledge_AdvancedMastery</li>
+          <li>DMS_Occultech_Frogman</li>
+          <li>DMS_Occultech_BionicSuitHeavy</li>
+          <li>DMS_Occultech_GestaltEngine</li>
+          <li>DMS_Occultech_Biosynthesis</li>
+        </researchProjects>
+        <progressAmount>250</progressAmount>
+        <fallbackXpAmount>2000</fallbackXpAmount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 禁閉級：最高階，對應 DMS_Occulted 類別。不進物資箱，只從任務獎勵取得。 -->
+  <ThingDef ParentName="DMS_BaseDataCache">
+    <defName>DMS_DataCache_Occulted</defName>
+    <label>occulted data cache</label>
+    <description>An unmarked composite record module with no ports and no seams. A colonist can decrypt it to reveal an occulted-class occultech research project and make some progress on it.</description>
+    <graphicData>
+      <color>(1.0, 0.42, 0.38)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>1400</MarketValue>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+    <comps>
+      <li Class="Fortified.CompProperties_UseEffect_DiscoverResearch">
+        <researchProjects>
+          <li>DMS_ExpKnowledge_BasicSecondary</li>
+        </researchProjects>
+        <progressAmount>400</progressAmount>
+        <fallbackXpAmount>3000</fallbackXpAmount>
+      </li>
+    </comps>
+  </ThingDef>
+
 </Defs>

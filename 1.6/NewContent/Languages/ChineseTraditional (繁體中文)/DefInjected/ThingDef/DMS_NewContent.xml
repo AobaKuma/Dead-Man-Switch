@@ -251,4 +251,26 @@
   <!-- EN: A small standard issue supply crate. The yellow band marks it as food. Inside are survival meals or combat rations. -->
   <DMS_CrateSmall_Ration.description>一個標準制式的小型補給箱。黃色識別帶代表內容物是食品。裡面裝著生存食品包或C口糧。</DMS_CrateSmall_Ration.description>
 
+  <!-- ==================== Occultech data caches ==================== -->
+
+  <!-- EN: Decrypt {0_label} -->
+  <DMS_DataCache_Restricted.comps.CompUsable.useLabel>破譯{0_label}</DMS_DataCache_Restricted.comps.CompUsable.useLabel>
+  <DMS_DataCache_Sealed.comps.CompUsable.useLabel>破譯{0_label}</DMS_DataCache_Sealed.comps.CompUsable.useLabel>
+  <DMS_DataCache_Occulted.comps.CompUsable.useLabel>破譯{0_label}</DMS_DataCache_Occulted.comps.CompUsable.useLabel>
+
+  <!-- EN: restricted technical data cache -->
+  <DMS_DataCache_Restricted.label>管制技術資料匣</DMS_DataCache_Restricted.label>
+  <!-- EN: An encrypted record module holding a technical file that was never cleared for local circulation, kept by colonial army units as a reference for technical signatures. ... -->
+  <DMS_DataCache_Restricted.description>一個加密的記錄模組，裡面是一份從未獲准在地方流通的技術檔案碎片，被殖民陸軍各單位用於封存技術特徵的參考資料來在第一時間對可能的數據洩漏做出應對。殖民者可以花上幾個小時將其破譯，雖然無法直接獲取完整技術但能夠探明一項管制級的封存技術研究並取得少許進度。</DMS_DataCache_Restricted.description>
+
+  <!-- EN: sealed data cache -->
+  <DMS_DataCache_Sealed.label>封存資料匣</DMS_DataCache_Sealed.label>
+  <!-- EN: A record module with its seal intact. ... -->
+  <DMS_DataCache_Sealed.description>一個封條完好的記錄模組。這個等級的檔案通常不會離開艦隊看管的資料庫中。殖民者可以將其破譯，探明一項封存級的封存技術研究並取得一些進度。</DMS_DataCache_Sealed.description>
+
+  <!-- EN: occulted data cache -->
+  <DMS_DataCache_Occulted.label>禁忌資料匣</DMS_DataCache_Occulted.label>
+  <!-- EN: An unmarked composite record module with no ports and no seams. ... -->
+  <DMS_DataCache_Occulted.description>一塊沒有接口也沒有接縫的無標記複合材料記錄模組。殖民者可以將其破譯，探明一項禁忌級的封存技術研究並取得一些進度。</DMS_DataCache_Occulted.description>
+
 </LanguageData>

@@ -187,7 +187,10 @@ namespace DMS
                 inSignalEnable = sigSent,
                 shuttle = shuttle,
                 lendColonistsToFaction = fleet,
-                returnLentColonistsInTicks = int.MaxValue / 2,   // 永不自動歸還(不用 1e9,免得遊戲跑很久之後溢位)
+                // 計時器要設成真實課程時長:任務頁的「外借中」那行是用這個值算
+                // 「N 天後歸還」的,設成天文數字會顯示成一萬八千天。多押一小時,
+                // 讓 sigGraduate 一定先觸發,自動歸還只當作保險。
+                returnLentColonistsInTicks = trainingDays * GenDate.TicksPerDay + GenDate.TicksPerHour,
                 returnMap = map.Parent,
                 outSignalColonistsDied = sigDied,
             };

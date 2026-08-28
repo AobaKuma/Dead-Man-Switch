@@ -298,6 +298,33 @@
             </fixedParams>
           </thingSetMaker>
         </li>
+        <!-- 極低機率：封存資料匣。禁閉級不進物資箱，只走任務獎勵。 -->
+        <li>
+          <weight>3</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_DataCache_Restricted</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_DataCache_Sealed</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
       </options>
     </root>
   </ThingSetMakerDef>
