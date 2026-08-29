@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  CE 有自己的彈藥系統 (CompAmmoUser), 且 PatchOperationMakeGunCECompatible 會整組換掉 verbs,
-  FFF 的 Verb_..._AmmoSwitch 在 CE 環境下不會被呼叫。若留著 CompProperties_AmmoSwitch,
-  玩家會看到一個按了沒反應的切換彈種按鈕, 因此在 CE 環境下直接移除該 comp。
-  對應的彈丸 def 保留 - CE 會把它們轉成自己的 AmmoDef 來源。
+  CE 環境下把 FFF 的 AmmoSwitch 整組拆掉。
+
+  1) verb: PatchOperationMakeGunCECompatible 會 append 一個 CombatExtended.VerbPropertiesCE,
+     但它清除舊 verb 的 xpath 只認
+         li[verbClass="Verb_Shoot" or verbClass="Verb_ShootOneUse" or verbClass="Verb_LaunchProjectile"]
+     認不得 Fortified.Verb_Shoot_AmmoSwitch / Fortified.Verb_LaunchProjectile_AmmoSwitch。
+     結果舊 verb 留著, 武器變成兩個 verb, 而 VerbTracker.PrimaryVerb 取第一個,
+     也就是非 CE 的 AmmoSwitch verb, CE 的彈道 / CompAmmoUser / 開火模式全部失效。
+     所以這裡要自己把 AmmoSwitch 的 verb 拔掉, 空出位置給 CE 補上的 VerbPropertiesCE。
+
+  2) comp: 留著 CompProperties_AmmoSwitch 玩家會看到一個按了沒反應的切換彈種按鈕。
+     對應的彈丸 def 保留 - CE 會把它們轉成自己的 AmmoDef 來源。
+
+  ※ 這裡列到的每一把槍都必須在 CE/Patches 底下有對應的 PatchOperationMakeGunCECompatible,
+    否則拔掉 verb 之後會變成沒有 verb 的槍。目前 9 把 (含 AncientCorps 的 KS-23K) 都有。
+  ※ 本操作與 MakeGunCECompatible 的先後順序無關: 先拔後補 / 先補後拔結果都是剛好一個 verb,
+    所以不必在意 Patches 底下的檔案載入順序 (Buildings/ 會排在 Weapons/ 前面)。
+  ※ verb 被換掉之後, 原本的 DefName.verbs.Verb_*_AmmoSwitch.label 翻譯會失效,
+    CE 版的標籤補在 1.6/CE/Languages/*/DefInjected/ThingDef/AmmoSwitch_CE.xml (verbs.Verb_ShootCE.label)。
 -->
 <Patch>
     <Operation Class="PatchOperationSequence">
         <operations>
 
+            <!-- 拔掉 CE 認不得的 AmmoSwitch verb -->
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/ThingDef[defName="DMS_Revolver" or
+                                     defName="DMS_RiotShotgun" or
+                                     defName="DMS_AssaultShotgun" or
+                                     defName="DMS_HeavyMachineGun" or
+                                     defName="DMS_Gun_HeavyMachineGun" or
+                                     defName="DMS_Autocannon" or
+                                     defName="DMS_Gun_Recoilless" or
+                                     defName="DMS_Gun_RecoillessLight"
+                                    ]/verbs/li[verbClass="Fortified.Verb_Shoot_AmmoSwitch" or
+                                               verbClass="Fortified.Verb_LaunchProjectile_AmmoSwitch"]</xpath>
+            </li>
+
+            <!-- 拔掉切換彈種的 comp -->
             <li Class="PatchOperationRemove">
                 <xpath>Defs/ThingDef[defName="DMS_Revolver" or
                                      defName="DMS_RiotShotgun" or
