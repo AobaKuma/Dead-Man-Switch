@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BaseAutomatroidRace" Name="DMS_ArtificialOrganismBase" Abstract="True">
+    <thingClass>Fortified.ArtificialOrganism</thingClass>
+    <inspectorTabs Inherit="False">
+      <li>ITab_Pawn_Health</li>
+      <li>ITab_Pawn_Needs</li>
+      <li>ITab_Pawn_FormingCaravan</li>
+      <li>ITab_Pawn_Gear</li>
+      <li>ITab_Pawn_Log</li>
+    </inspectorTabs>
+    <statBases>
+      <MarketValue>2000</MarketValue>
+      <MoveSpeed>5</MoveSpeed>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.45</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.6</ArmorRating_Heat>
+      <StaggerDurationFactor>0.35</StaggerDurationFactor>
+      <EMPResistance MayRequire="Ludeon.Rimworld.Biotech">4</EMPResistance>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">0</BandwidthCost>
+      <ControlTakingTime MayRequire="Ludeon.Rimworld.Biotech">0</ControlTakingTime>
+      <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">0</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>DMS_AMO</thinkTreeMain>
+      <mechWeightClass IsNull="True"/>
+    </race>
+    <comps Inherit="False">
+      <li Class="CompProperties_CanBeDormant">
+        <compClass>CompMechanoid</compClass>
+      </li>
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpOnDamage>true</wakeUpOnDamage>
+        <wakeUpCheckRadius>30</wakeUpCheckRadius>
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>
+      <li Class="CompProperties_OverseerSubject">
+        <delayUntilFeralCheck>9999999</delayUntilFeralCheck>
+        <feralMtbDays>9999999</feralMtbDays>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ArtificialOrganismBase" Name="DMS_ArtificialOrganismHumanlikeBase" Abstract="True">
+    <thingClass>Fortified.ArtificialOrganismHumanlike</thingClass>
+    <race>
+      <renderTree>HumanlikeMech</renderTree>
+      <thinkTreeMain>DMS_AMO</thinkTreeMain>
+      <makesFootprints>true</makesFootprints>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_MechApparel"/>
+    </comps>
+  </ThingDef>
+
+  <PawnKindDef Name="DMS_ArtificialOrganismKindBase" ParentName="BaseAutomatroidKind" Abstract="True">
+    <maxGenerationAge MayRequire="Ludeon.Rimworld.Biotech">40</maxGenerationAge>
+    <immuneToTraps>true</immuneToTraps>
+    <immuneToGameConditionEffects>true</immuneToGameConditionEffects>
+    <canArriveManhunter>false</canArriveManhunter>
+    <allowInMechClusters>false</allowInMechClusters>
+    <overrideDebugActionCategory>AMO</overrideDebugActionCategory>
+  </PawnKindDef>
+
+</Defs>
