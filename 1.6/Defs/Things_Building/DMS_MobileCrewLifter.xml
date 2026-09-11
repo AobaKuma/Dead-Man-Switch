@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ======================= 升降艙底座 (共用) ======================= -->
+  <!-- 貨艙/返回艙升空後留在原地的無陣營底座;玩家可直接拆除回收材料 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_LifterPlatform</defName>
+    <label>lifter platform</label>
+    <description>The landing platform of a mobile lifter, left behind after the pod lifted off. It is of no further use to its owners and can be deconstructed for materials.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Skyfaller/LifterPlatform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shadowData>
+        <volume>(0.9, 0.3, 0.9)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(3,3)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.3</fillPercent>
+    <selectable>true</selectable>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>1200</WorkToBuild>
+    </statBases>
+    <!-- 拆除回收 = 升降艙非燃料建造成本 (Steel 330 / 工業元件 6) 的 40% -->
+    <costList>
+      <Steel>330</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <resourcesFractionWhenDeconstructed>0.4</resourcesFractionWhenDeconstructed>
+    <building>
+      <claimable>true</claimable>
+      <deconstructible>true</deconstructible>
+      <alwaysDeconstructible>true</alwaysDeconstructible>
+    </building>
+    <destroyable>true</destroyable>
+    <drawerType>MapMeshOnly</drawerType>
+  </ThingDef>
+
+  <!-- ======================= 機動載人升降艙 ======================= -->
+  <!-- 可二次發射:第一次整機起飛,落地後於原地重建;第二次只有返回艙升空,底座留在原地 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_MobileCrewLifter</defName>
+    <label>mobile crew lifter</label>
+    <description>A self-fuelled crew lifter built on a detachable landing platform. It needs no launch pad and its tank is filled with the chemfuel used in construction: load it and launch it anywhere within range. After landing, the pod can lift off once more for a return flight, leaving the platform behind. Carry spare chemfuel if the destination has no way to refuel.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Skyfaller/MobileCrewLifter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shadowData>
+        <volume>(0.9, 0.5, 0.9)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(3,3)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <castEdgeShadows>false</castEdgeShadows>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <canOverlapZones>true</canOverlapZones>
+    <designationCategory>DMS_Category</designationCategory>
+    <uiOrder>2600</uiOrder>
+    <uiIconScale>0.6</uiIconScale>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <WorkToBuild>13800</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <!-- 建造成本 = 原版 (登陸艙 Steel 60 + 元件 1) + (發射器 Steel 50 + 元件 1) + 燃料 150 的三倍;
+         化學燃料在建成時直接注入油箱 (initialFuelPercent = 1) -->
+    <costList>
+      <Steel>330</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <Chemfuel>450</Chemfuel>
+    </costList>
+    <building>
+      <claimable>false</claimable>
+    </building>
+    <!-- 第一次發射落地時使用 -->
+    <dropPodFaller>DMS_CrewLifterIncoming</dropPodFaller>
+    <dropPodActive>DMS_ActiveCrewLifter</dropPodActive>
+    <inspectorTabs>
+      <li>ITab_ContentsTransporter</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Transporter">
+        <massCapacity>1200</massCapacity>
+        <max1PerGroup>false</max1PerGroup>
+        <restEffectiveness>0.8</restEffectiveness>
+        <canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+        <showMassInInspectString>true</showMassInInspectString>
+      </li>
+      <li Class="DMS.CompProperties_Launchable_Lifter">
+        <fuelPerTile>4</fuelPerTile>
+        <minFuelCost>24</minFuelCost>
+        <skyfallerLeaving>DMS_CrewLifterLeaving</skyfallerLeaving>
+        <worldObjectDef>DMS_TravellingCrewLifter</worldObjectDef>
+        <podSkyfallerLeaving>DMS_CrewPodLeaving</podSkyfallerLeaving>
+        <podWorldObjectDef>DMS_TravellingCrewPod</podWorldObjectDef>
+        <podSentDef>DMS_LifterCrewPod</podSentDef>
+        <platformDef>DMS_LifterPlatform</platformDef>
+        <openDelay>60</openDelay>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>450</fuelCapacity>
+        <initialFuelPercent>1</initialFuelPercent>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>450</initialConfigurableTargetFuelLevel>
+        <fuelFilter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>Chemfuel</fuelLabel>
+        <fuelGizmoLabel>Chemfuel</fuelGizmoLabel>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <canEjectFuel>true</canEjectFuel>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>TransportPod</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <!-- 返回艙落地後留下的廢棄艙體 (不可再發射);同時作為第二次發射的 sentTransporterDef -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_LifterCrewPod</defName>
+    <label>spent crew pod</label>
+    <description>The crew pod of a mobile crew lifter, spent after its return flight. Without its platform it cannot launch again, but it can be deconstructed for materials.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Skyfaller/LifterCrewPod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shadowData>
+        <volume>(0.8, 0.5, 0.8)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(3,3)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>false</rotatable>
+    <tickerType>Never</tickerType>
+    <drawerType>MapMeshOnly</drawerType>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <!-- 拆除回收 = 升降艙非燃料建造成本 (Steel 330 / 工業元件 6) 的 40% -->
+    <costList>
+      <Steel>330</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <resourcesFractionWhenDeconstructed>0.4</resourcesFractionWhenDeconstructed>
+    <building>
+      <deconstructible>true</deconstructible>
+      <alwaysDeconstructible>true</alwaysDeconstructible>
+    </building>
+    <!-- 第二次發射落地時使用 -->
+    <dropPodFaller>DMS_CrewPodIncoming</dropPodFaller>
+    <dropPodActive>DMS_ActiveCrewPod</dropPodActive>
+  </ThingDef>
+
+  <!-- ======================= 落地開艙物件 ======================= -->
+  <ThingDef Name="DMS_ActiveLifterBase" ParentName="ActiveDropPod" Abstract="True">
+    <thingClass>DMS.ActiveTransporter_Lifter</thingClass>
+    <soundOpen>DropPod_Open</soundOpen>
+    <graphicData>
+      <texPath>Things/Skyfaller/MobileCrewLifter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shadowData>
+        <volume>(0.9, 0.5, 0.9)</volume>
+      </shadowData>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ActiveLifterBase">
+    <defName>DMS_ActiveCrewLifter</defName>
+    <label>mobile crew lifter</label>
+    <modExtensions>
+      <li Class="DMS.LifterLandingExtension">
+        <spawnBuilding>DMS_MobileCrewLifter</spawnBuilding>
+        <markPodOnly>true</markPodOnly>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ActiveLifterBase">
+    <defName>DMS_ActiveCrewPod</defName>
+    <label>crew pod</label>
+    <graphicData>
+      <texPath>Things/Skyfaller/LifterCrewPod</texPath>
+    </graphicData>
+    <modExtensions>
+      <li Class="DMS.LifterLandingExtension">
+        <spawnBuilding>DMS_LifterCrewPod</spawnBuilding>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- ======================= Skyfallers ======================= -->
+  <ThingDef Name="DMS_CrewLifterSkyfallerBase" ParentName="SkyfallerBase" Abstract="True">
+    <!-- 落點由原版 1 格空投邏輯挑選;skyfaller 本身維持 1x1,避免 3x3 在地圖邊緣越界導致 spawn 失敗。
+         實際佔地由 LifterIncoming 依 sentTransporterDef.Size 於生成時重新定位 -->
+    <graphicData>
+      <texPath>Things/Skyfaller/MobileCrewLifter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>(6,6)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <movementType>Decelerate</movementType>
+      <shadow>Things/Skyfaller/SkyfallerShadowCircle</shadow>
+      <shadowSize>(3,3)</shadowSize>
+      <motesPerCell>1</motesPerCell>
+    </skyfaller>
+  </ThingDef>
+
+  <!-- 第一次:整機降落 -->
+  <ThingDef Name="DMS_CrewLifterIncoming" ParentName="DMS_CrewLifterSkyfallerBase">
+    <defName>DMS_CrewLifterIncoming</defName>
+    <label>mobile crew lifter (incoming)</label>
+    <thingClass>DMS.LifterIncoming</thingClass>
+    <!-- 特效:飛行/接近地面揚塵 (CompEffecter,跟隨 skyfaller) + 撞地一次性 (Destroy 時) -->
+    <comps>
+      <li Class="CompProperties_Effecter">
+        <effecterDef>DMS_LifterDescent</effecterDef>
+      </li>
+      <li Class="CompProperties_SpawnEffecterOnDestroy">
+        <effect>DMS_LifterTouchdown</effect>
+      </li>
+    </comps>
+    <skyfaller>
+      <anticipationSound>DropPod_Fall</anticipationSound>
+      <anticipationSoundTicks>100</anticipationSoundTicks>
+      <impactSound>DropPod_Impact</impactSound>
+      <!-- 固定時長,讓 DMS_LifterDescent 的揚塵延遲 (initialDelayTicks) 對得上落地時間 -->
+      <ticksToImpactRange>160~160</ticksToImpactRange>
+      <hitRoof>true</hitRoof>
+      <rotationCurve>
+        <points>
+          <li>(0,-45)</li>
+          <li>(0.5,5)</li>
+          <li>(1,0)</li>
+        </points>
+      </rotationCurve>
+    </skyfaller>
+  </ThingDef>
+
+  <!-- 第一次:整機起飛 -->
+  <ThingDef Name="DMS_CrewLifterLeaving" ParentName="DMS_CrewLifterSkyfallerBase">
+    <defName>DMS_CrewLifterLeaving</defName>
+    <label>mobile crew lifter (leaving)</label>
+    <thingClass>FlyShipLeaving</thingClass>
+    <!-- 特效:生成瞬間點火 + 前 90 tick 揚塵 + 飛行噴焰 (CompEffecter 的 SpawnAttached 會先 Trigger 一次再每 tick 維持) -->
+    <comps>
+      <li Class="CompProperties_Effecter">
+        <effecterDef>DMS_LifterLaunch</effecterDef>
+      </li>
+    </comps>
+    <skyfaller>
+      <reversed>true</reversed>
+      <anticipationSound>Shuttle_Leaving</anticipationSound>
+      <anticipationSoundTicks>-10</anticipationSoundTicks>
+      <ticksToImpactRange>-40~-15</ticksToImpactRange>
+      <moteSpawnTime>0.05</moteSpawnTime>
+      <angleCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(1,50)</li>
+        </points>
+      </angleCurve>
+      <rotationCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(0.15,5)</li>
+          <li>(0.5,45)</li>
+        </points>
+      </rotationCurve>
+      <zPositionCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(0.04,0.1)</li>
+          <li>(0.08,1)</li>
+        </points>
+      </zPositionCurve>
+      <speedCurve>
+        <points>
+          <li>(0.1,0)</li>
+          <li>(0.2,0.1)</li>
+          <li>(0.9,1.0)</li>
+        </points>
+      </speedCurve>
+    </skyfaller>
+  </ThingDef>
+
+  <!-- 第二次:只有返回艙降落 -->
+  <ThingDef ParentName="DMS_CrewLifterIncoming">
+    <defName>DMS_CrewPodIncoming</defName>
+    <label>crew pod (incoming)</label>
+    <graphicData>
+      <texPath>Things/Skyfaller/LifterCrewPod</texPath>
+    </graphicData>
+  </ThingDef>
+
+  <!-- 第二次:只有返回艙起飛,底座留在原地 -->
+  <ThingDef ParentName="DMS_CrewLifterLeaving">
+    <defName>DMS_CrewPodLeaving</defName>
+    <label>crew pod (leaving)</label>
+    <graphicData>
+      <texPath>Things/Skyfaller/LifterCrewPod</texPath>
+    </graphicData>
+  </ThingDef>
+
+  <!-- ======================= 飛行中的世界物件 ======================= -->
+  <WorldObjectDef Name="DMS_TravellingLifterBase" Abstract="True">
+    <worldObjectClass>TravellingTransporters</worldObjectClass>
+    <texture>World/WorldObjects/TravelingTransportPods</texture>
+    <useDynamicDrawer>true</useDynamicDrawer>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconPriority>60</expandingIconPriority>
+    <expandingIconDrawSize>1.6</expandingIconDrawSize>
+    <expandMore>true</expandMore>
+    <allowCaravanIncidentsWhichGenerateMap>true</allowCaravanIncidentsWhichGenerateMap>
+    <fullyExpandedInSpace>true</fullyExpandedInSpace>
+    <validLaunchTarget>false</validLaunchTarget>
+  </WorldObjectDef>
+
+  <WorldObjectDef ParentName="DMS_TravellingLifterBase">
+    <defName>DMS_TravellingCrewLifter</defName>
+    <label>mobile crew lifter</label>
+    <description>A mobile crew lifter in flight.</description>
+    <expandingIconTexture>Things/Skyfaller/MobileCrewLifter</expandingIconTexture>
+  </WorldObjectDef>
+
+  <WorldObjectDef ParentName="DMS_TravellingLifterBase">
+    <defName>DMS_TravellingCrewPod</defName>
+    <label>crew pod</label>
+    <description>A crew pod on its return flight.</description>
+    <expandingIconTexture>Things/Skyfaller/LifterCrewPod</expandingIconTexture>
+  </WorldObjectDef>
+
+</Defs>

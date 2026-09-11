@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
   <!-- EN: Mech LMG -->
@@ -26,10 +26,23 @@
   <!-- EN: An automatic grenade launcher mounted on a low tripod. -->
   <DMS_Gun_AutomaticGrenadeLauncher.description>架设在低脚三脚架上的自动榴弹发射器。</DMS_Gun_AutomaticGrenadeLauncher.description>
   <!-- EN: mech grenade launcher -->
-  <DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_Shoot.label>机兵榴弹发射器</DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_Shoot.label>
+  <DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_LaunchProjectile_AmmoSwitch.label>机兵榴弹发射器</DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_LaunchProjectile_AmmoSwitch.label>
 
   <!-- UNUSED -->
   <DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_ShootCE.label>机兵榴弹发射器</DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_ShootCE.label>
+
+  <!-- EN: HE grenade -->
+  <DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.0.label>高爆榴弹</DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.0.label>
+  <!-- EN: A high-explosive fragmentation round for clearing out clustered targets. The standard belt. -->
+  <DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.0.description>用来清除集群目标的高爆破片榴弹。标准弹链。</DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.0.description>
+  <!-- EN: EMP grenade -->
+  <DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.1.label>EMP榴弹</DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.1.label>
+  <!-- EN: A capacitor round that stuns mechanoids and turrets in a small radius instead of destroying them. Useless against flesh, and the heavier fuze assembly slows the burst. -->
+  <DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.1.description>以放电电容取代炸药的榴弹，会在小范围内瘫痪机械体与炮塔而非将其摧毁。对血肉之躯毫无作用，较重的引信组件也拖慢了连射速度。</DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.1.description>
+  <!-- EN: smoke grenade -->
+  <DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.2.label>烟雾榴弹</DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.2.label>
+  <!-- EN: A screening round that lays a smoke bank where it lands. Lighter than the explosive rounds, so it flies a little further and comes on target faster. -->
+  <DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.2.description>在弹着点铺开一片烟幕的遮蔽弹。比爆炸性弹种轻，因此飞得稍远、瞄准也更快。</DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.2.description>
 
   <!-- EN: Mech HMG -->
   <DMS_Turret_HeavyMachineGun.label>机兵重机枪</DMS_Turret_HeavyMachineGun.label>

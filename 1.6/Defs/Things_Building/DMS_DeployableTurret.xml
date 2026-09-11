@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
 
@@ -80,7 +80,7 @@
 		</building>
 		<placeWorkers Inherit="false">
 			<li>PlaceWorker_TurretTop</li>
-			<li>PlaceWorker_ShowTurretRadius</li>
+			<li>DMS.PlaceWorker_ShowTurretRadiusAny</li>
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
 			<li>Fortified.PlaceWorker_Emplacement</li>
 		</placeWorkers>
@@ -316,7 +316,7 @@
 		</building>
 		<placeWorkers Inherit="false">
 			<li>PlaceWorker_TurretTop</li>
-			<li>PlaceWorker_ShowTurretRadius</li>
+			<li>DMS.PlaceWorker_ShowTurretRadiusAny</li>
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
 			<li>Fortified.PlaceWorker_Emplacement</li>
 		</placeWorkers>
@@ -348,7 +348,11 @@
 		</modExtensions>
 	</ThingDef>
 
-	<!--AGL 架設後的槍身-->
+	<!--
+		AGL 架設後的槍身。彈種切換與 HMG 同一套：CompAmmoSwitch 掛在槍身 Thing 上，
+		FFF 的 Patch_BuildingTurretGun_GetGizmos 會把切換按鈕補到砲塔的 gizmo 列。
+		手持與架設兩邊的 ammos 順序必須一致，換手時才會接續同一個彈種索引。
+	-->
 	<ThingDef ParentName="BaseWeaponTurret">
 		<defName>DMS_Gun_AutomaticGrenadeLauncher</defName>
 		<label>mech grenade launcher</label>
@@ -363,9 +367,43 @@
 			<Flammability>0</Flammability>
 			<RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
 		</statBases>
+		<!-- 彈種切換: 高爆榴彈(預設) / EMP榴彈 / 煙霧榴彈 -->
+		<comps>
+			<li Class="Fortified.CompProperties_AmmoSwitch">
+				<defaultIndex>0</defaultIndex>
+				<includeDefaultAmmo>false</includeDefaultAmmo>
+				<switchCooldown>240</switchCooldown>
+				<soundSwitch>Artillery_ShellLoaded</soundSwitch>
+				<ammos>
+					<li>
+						<label>HE grenade</label>
+						<description>A high-explosive fragmentation round for clearing out clustered targets. The standard belt.</description>
+						<iconPath>UI/Ammoswitch/40x46mm_HE</iconPath>
+						<projectileDef>Bullet_DMS_GrenadeLauncher</projectileDef>
+					</li>
+					<li>
+						<label>EMP grenade</label>
+						<description>A capacitor round that stuns mechanoids and turrets in a small radius instead of destroying them. Useless against flesh, and the heavier fuze assembly slows the burst.</description>
+						<iconPath>UI/Ammoswitch/40x46mm_EMP</iconPath>
+						<projectileDef>DMS_Bullet_AGL_EMP</projectileDef>
+						<warmUpFactor>1.1</warmUpFactor>
+						<burstShotCountOverride>4</burstShotCountOverride>
+					</li>
+					<li>
+						<label>smoke grenade</label>
+						<description>A screening round that lays a smoke bank where it lands. Lighter than the explosive rounds, so it flies a little further and comes on target faster.</description>
+						<iconPath>UI/Ammoswitch/30x29mm_Smoke</iconPath>
+						<projectileDef>DMS_Bullet_AGL_Smoke</projectileDef>
+						<rangeFactor>1.1</rangeFactor>
+						<warmUpFactor>0.8</warmUpFactor>
+						<burstShotCountOverride>3</burstShotCountOverride>
+					</li>
+				</ammos>
+			</li>
+		</comps>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>Fortified.Verb_LaunchProjectile_AmmoSwitch</verbClass>
 				<defaultProjectile>Bullet_DMS_GrenadeLauncher</defaultProjectile>
 				<requireLineOfSight>true</requireLineOfSight>
 				<warmupTime>2.4</warmupTime>          <!--架設 2.4 / 手持 3.0-->
@@ -432,9 +470,43 @@
 		<equippedStatOffsets>
 			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
+		<!-- 彈種切換: 高爆榴彈(預設) / EMP榴彈 / 煙霧榴彈 -->
+		<comps>
+			<li Class="Fortified.CompProperties_AmmoSwitch">
+				<defaultIndex>0</defaultIndex>
+				<includeDefaultAmmo>false</includeDefaultAmmo>
+				<switchCooldown>240</switchCooldown>
+				<soundSwitch>Artillery_ShellLoaded</soundSwitch>
+				<ammos>
+					<li>
+						<label>HE grenade</label>
+						<description>A high-explosive fragmentation round for clearing out clustered targets. The standard belt.</description>
+						<iconPath>UI/Ammoswitch/40x46mm_HE</iconPath>
+						<projectileDef>Bullet_DMS_GrenadeLauncher</projectileDef>
+					</li>
+					<li>
+						<label>EMP grenade</label>
+						<description>A capacitor round that stuns mechanoids and turrets in a small radius instead of destroying them. Useless against flesh, and the heavier fuze assembly slows the burst.</description>
+						<iconPath>UI/Ammoswitch/40x46mm_EMP</iconPath>
+						<projectileDef>DMS_Bullet_AGL_EMP</projectileDef>
+						<warmUpFactor>1.1</warmUpFactor>
+						<burstShotCountOverride>3</burstShotCountOverride>
+					</li>
+					<li>
+						<label>smoke grenade</label>
+						<description>A screening round that lays a smoke bank where it lands. Lighter than the explosive rounds, so it flies a little further and comes on target faster.</description>
+						<iconPath>UI/Ammoswitch/30x29mm_Smoke</iconPath>
+						<projectileDef>DMS_Bullet_AGL_Smoke</projectileDef>
+						<rangeFactor>1.1</rangeFactor>
+						<warmUpFactor>0.8</warmUpFactor>
+						<burstShotCountOverride>2</burstShotCountOverride>
+					</li>
+				</ammos>
+			</li>
+		</comps>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>Fortified.Verb_LaunchProjectile_AmmoSwitch</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_DMS_GrenadeLauncher</defaultProjectile>
 				<warmupTime>3.0</warmupTime>
@@ -545,7 +617,7 @@
 		</building>
 		<placeWorkers Inherit="false">
 			<li>PlaceWorker_TurretTop</li>
-			<li>PlaceWorker_ShowTurretRadius</li>
+			<li>DMS.PlaceWorker_ShowTurretRadiusAny</li>
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
 			<li>Fortified.PlaceWorker_Emplacement</li>
 		</placeWorkers>

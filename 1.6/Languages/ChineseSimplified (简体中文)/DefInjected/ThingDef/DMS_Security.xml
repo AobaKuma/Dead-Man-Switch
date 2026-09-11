@@ -25,7 +25,7 @@
   <!-- EN: A large-caliber multi-barreled autocannon, also known as the GAU-8 "Avenger". Its an ancient practical design with an extremely high rate of fire and a devastating effect on anything unfortunate enough to stand infront of it. -->
   <DMS_Gun_GateKeeper.description>一种重型加特林机炮，具有极高的射速与毁灭性的压制能力而被殖民舰队作为太空船与水面舰艇的迫近防御系统，也经常随着殖民活动而安装在殖民地作为防御系统的一部分。</DMS_Gun_GateKeeper.description>
   <!-- EN: Gatekeeper -->
-  <DMS_Gun_GateKeeper.verbs.Verb_Shoot.label>守门人</DMS_Gun_GateKeeper.verbs.Verb_Shoot.label>
+  <DMS_Gun_GateKeeper.verbs.Verb_ArcSprayProjectile.label>守门人</DMS_Gun_GateKeeper.verbs.Verb_ArcSprayProjectile.label>
   
   <!-- UNUSED -->
   <DMS_Gun_GateKeeper.verbs.Verb_ShootCE.label>守门人</DMS_Gun_GateKeeper.verbs.Verb_ShootCE.label>

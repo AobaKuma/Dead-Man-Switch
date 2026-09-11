@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: lifter platform -->
+  <DMS_LifterPlatform.label>升降艙底座</DMS_LifterPlatform.label>
+  <!-- EN: The landing platform of a mobile lifter, left behind after the pod lifted off. It is of no further use to its owners and can be deconstructed for materials. -->
+  <DMS_LifterPlatform.description>機動升降艙的著陸底座，艙體升空後留在原地。對原主人已無用處，可拆除回收材料。</DMS_LifterPlatform.description>
+
+  <!-- EN: mobile crew lifter -->
+  <DMS_MobileCrewLifter.label>機動載人升降艙</DMS_MobileCrewLifter.label>
+  <!-- EN: A self-fuelled crew lifter built on a detachable landing platform. It needs no launch pad and its tank is filled with the chemfuel used in construction: load it and launch it anywhere within range. After landing, the pod can lift off once more for a return flight, leaving the platform behind. Carry spare chemfuel if the destination has no way to refuel. -->
+  <DMS_MobileCrewLifter.description>建於可分離著陸底座上的自帶燃料載人升降艙。不需要發射台，建造時投入的化學燃料會直接注入油箱：裝載後即可發射至射程內任何地點。著陸後，艙體可再次升空進行返程飛行，底座則留在原地。若目的地無法補給燃料，請自行攜帶化學燃料。</DMS_MobileCrewLifter.description>
+
+  <!-- EN: spent crew pod -->
+  <DMS_LifterCrewPod.label>廢棄返回艙</DMS_LifterCrewPod.label>
+  <!-- EN: The crew pod of a mobile crew lifter, spent after its return flight. Without its platform it cannot launch again, but it can be deconstructed for materials. -->
+  <DMS_LifterCrewPod.description>機動載人升降艙的返回艙，完成返程飛行後已無法再用。沒有底座便無法再次發射，但可拆除回收材料。</DMS_LifterCrewPod.description>
+
+  <!-- EN: mobile crew lifter -->
+  <DMS_ActiveCrewLifter.label>機動載人升降艙</DMS_ActiveCrewLifter.label>
+  <!-- EN: crew pod -->
+  <DMS_ActiveCrewPod.label>返回艙</DMS_ActiveCrewPod.label>
+
+  <!-- EN: mobile crew lifter (incoming) -->
+  <DMS_CrewLifterIncoming.label>機動載人升降艙（降落中）</DMS_CrewLifterIncoming.label>
+  <!-- EN: mobile crew lifter (leaving) -->
+  <DMS_CrewLifterLeaving.label>機動載人升降艙（離場）</DMS_CrewLifterLeaving.label>
+  <!-- EN: crew pod (incoming) -->
+  <DMS_CrewPodIncoming.label>返回艙（降落中）</DMS_CrewPodIncoming.label>
+  <!-- EN: crew pod (leaving) -->
+  <DMS_CrewPodLeaving.label>返回艙（離場）</DMS_CrewPodLeaving.label>
+
+</LanguageData>

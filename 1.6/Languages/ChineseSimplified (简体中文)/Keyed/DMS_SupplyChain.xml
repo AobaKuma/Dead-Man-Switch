@@ -63,4 +63,15 @@
   <DMS_Course_Command>指挥与领导学程</DMS_Course_Command>
   <!-- EN: staff and military science course -->
   <DMS_Course_Staff>参谋作业学程</DMS_Course_Staff>
+  <!-- 机动载人升降舱 Mobile crew lifter -->
+  <!-- EN: Platform attached: next launch lifts off with the whole lifter. -->
+  <DMS_CrewLifter_StageFull>底座已连接：下次发射将整机升空。</DMS_CrewLifter_StageFull>
+  <!-- EN: Landed: next launch sends only the crew pod and leaves the platform behind. -->
+  <DMS_CrewLifter_StagePodOnly>已着陆：下次发射只有返回舱升空，底座会留在原地。</DMS_CrewLifter_StagePodOnly>
+  <!-- EN: Land here -->
+  <DMS_CrewLifter_LandHere>在此降落</DMS_CrewLifter_LandHere>
+  <!-- EN: Choose a landing spot for the lifter. -->
+  <DMS_CrewLifter_ChooseLanding>请为升降舱选择降落点。</DMS_CrewLifter_ChooseLanding>
+  <!-- EN: The lifter cannot land here. -->
+  <DMS_CrewLifter_CannotLandHere>升降舱无法降落在此处。</DMS_CrewLifter_CannotLandHere>
 </LanguageData>

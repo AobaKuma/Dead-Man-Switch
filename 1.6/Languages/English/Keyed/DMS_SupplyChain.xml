@@ -37,4 +37,10 @@
   <DMS_Course_CQB>close-quarters combat course</DMS_Course_CQB>
   <DMS_Course_Command>command and leadership course</DMS_Course_Command>
   <DMS_Course_Staff>staff duties course</DMS_Course_Staff>
+  <!-- 機動載人升降艙 Mobile crew lifter -->
+  <DMS_CrewLifter_StageFull>Platform attached: next launch lifts off with the whole lifter.</DMS_CrewLifter_StageFull>
+  <DMS_CrewLifter_StagePodOnly>Landed: next launch sends only the crew pod and leaves the platform behind.</DMS_CrewLifter_StagePodOnly>
+  <DMS_CrewLifter_LandHere>Land here</DMS_CrewLifter_LandHere>
+  <DMS_CrewLifter_ChooseLanding>Choose a landing spot for the lifter.</DMS_CrewLifter_ChooseLanding>
+  <DMS_CrewLifter_CannotLandHere>The lifter cannot land here.</DMS_CrewLifter_CannotLandHere>
 </LanguageData>

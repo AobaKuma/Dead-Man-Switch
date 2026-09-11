@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 	<!-- 軍用武器為機兵範疇，在原版情況下相同定位的武器傷害都x1.5,重量x1.75，穿甲與鈍傷能力都有額外的0.5 -->
@@ -662,6 +662,56 @@
 			<damageAmountBase>30</damageAmountBase>
 			<stoppingPower>1.5</stoppingPower>
 			<explosionRadius>1.6</explosionRadius>
+			<ai_IsIncendiary>false</ai_IsIncendiary>
+			<arcHeightFactor>0.5</arcHeightFactor>
+			<shadowSize>0.6</shadowSize>
+		</projectile>
+	</ThingDef>
+
+	<!-- AGL EMP 榴彈: 癱瘓機械單位而非擊毀, 對血肉無效 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_AGL_EMP</defName>
+		<label>EMP grenade round</label>
+		<description>A grenade round carrying a discharge capacitor in place of explosive filler. On impact it dumps its charge into everything nearby, seizing up mechanoid systems and turrets without leaving a mark on flesh.</description>
+		<thingClass>Projectile_Explosive</thingClass>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Projectile/LauncherShot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(120,190,255)</color>
+		</graphicData>
+		<projectile>
+			<speed>40</speed>
+			<damageDef>EMP</damageDef>
+			<damageAmountBase>35</damageAmountBase>
+			<explosionRadius>1.6</explosionRadius>
+			<ai_IsIncendiary>false</ai_IsIncendiary>
+			<arcHeightFactor>0.5</arcHeightFactor>
+			<shadowSize>0.6</shadowSize>
+		</projectile>
+	</ThingDef>
+
+	<!-- AGL 煙霧榴彈: 無傷害, 在彈著點鋪一片遮蔽煙幕 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_AGL_Smoke</defName>
+		<label>smoke grenade round</label>
+		<description>A screening round that bursts into a bank of obscurant smoke where it lands. It does no damage at all; a few of them in quick succession will blind a firing line long enough for an assault or a withdrawal.</description>
+		<thingClass>Projectile_Explosive</thingClass>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Projectile/LauncherShot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(140,135,156)</color>
+		</graphicData>
+		<projectile>
+			<speed>40</speed>
+			<damageDef>Smoke</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<explosionRadius>2.9</explosionRadius>
+			<postExplosionGasType>BlindSmoke</postExplosionGasType>
+			<soundExplode>Explosion_Smoke</soundExplode>
 			<ai_IsIncendiary>false</ai_IsIncendiary>
 			<arcHeightFactor>0.5</arcHeightFactor>
 			<shadowSize>0.6</shadowSize>

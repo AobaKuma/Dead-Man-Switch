@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <!--
   CE 環境下把 FFF 的 AmmoSwitch 整組拆掉。
@@ -15,7 +15,7 @@
      對應的彈丸 def 保留 - CE 會把它們轉成自己的 AmmoDef 來源。
 
   ※ 這裡列到的每一把槍都必須在 CE/Patches 底下有對應的 PatchOperationMakeGunCECompatible,
-    否則拔掉 verb 之後會變成沒有 verb 的槍。目前 9 把 (含 AncientCorps 的 KS-23K) 都有。
+    否則拔掉 verb 之後會變成沒有 verb 的槍。目前 11 把 (含 AncientCorps 的 KS-23K、AGL 手持/陣地兩型) 都有。
   ※ 本操作與 MakeGunCECompatible 的先後順序無關: 先拔後補 / 先補後拔結果都是剛好一個 verb,
     所以不必在意 Patches 底下的檔案載入順序 (Buildings/ 會排在 Weapons/ 前面)。
   ※ verb 被換掉之後, 原本的 DefName.verbs.Verb_*_AmmoSwitch.label 翻譯會失效,
@@ -32,6 +32,8 @@
                                      defName="DMS_AssaultShotgun" or
                                      defName="DMS_HeavyMachineGun" or
                                      defName="DMS_Gun_HeavyMachineGun" or
+                                     defName="DMS_AutomaticGrenadeLauncher" or
+                                     defName="DMS_Gun_AutomaticGrenadeLauncher" or
                                      defName="DMS_Autocannon" or
                                      defName="DMS_Gun_Recoilless" or
                                      defName="DMS_Gun_RecoillessLight"
@@ -46,6 +48,8 @@
                                      defName="DMS_AssaultShotgun" or
                                      defName="DMS_HeavyMachineGun" or
                                      defName="DMS_Gun_HeavyMachineGun" or
+                                     defName="DMS_AutomaticGrenadeLauncher" or
+                                     defName="DMS_Gun_AutomaticGrenadeLauncher" or
                                      defName="DMS_Autocannon" or
                                      defName="DMS_Gun_Recoilless" or
                                      defName="DMS_Gun_RecoillessLight"

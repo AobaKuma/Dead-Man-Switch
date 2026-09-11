@@ -334,9 +334,15 @@
     </statBases>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <!-- 掃射 Verb：與手持版 GAU-8 相同，彈著沿目標橫向掃過一條弧線 -->
+        <verbClass>Fortified.Verb_ArcSprayProjectile</verbClass>
+        <sprayWidth>5</sprayWidth>
+        <sprayArching>4</sprayArching>
+        <sprayThicknessCells>3</sprayThicknessCells>
+        <sprayNumExtraCells>30</sprayNumExtraCells> <!-- 要大於或等於發射次數 -->
         <defaultProjectile>DMS_Bullet_CIWS</defaultProjectile>
         <requireLineOfSight>true</requireLineOfSight>
+        <hasStandardCommand>true</hasStandardCommand>
         <warmupTime>2.0</warmupTime>
         <minRange>3.9</minRange>
         <range>59.9</range>
@@ -350,7 +356,6 @@
         <targetParams>
           <canTargetLocations>true</canTargetLocations>
         </targetParams>
-        <forcedMissRadius>1.5</forcedMissRadius>
       </li>
     </verbs>
     <comps>

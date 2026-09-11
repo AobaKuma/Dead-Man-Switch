@@ -10,6 +10,8 @@ namespace DMS
     {
         // 交付/離場時播放的離開用 skyfaller (純視覺)
         public ThingDef leavingSkyfaller;
+        // 起飛後留在原地的無陣營底座建築 (可供玩家拆除回收);null 則不留
+        public ThingDef platformDef;
 
         public CompProperties_SupplyRequest()
         {
@@ -149,7 +151,7 @@ namespace DMS
             SendAway();
         }
 
-        /// <summary>交付完成或期限截止時呼叫:卸下剩餘物品、移除建築、播放離場 skyfaller。</summary>
+        /// <summary>交付完成或期限截止時呼叫:卸下剩餘物品、移除建築、於原地留下底座、播放離場 skyfaller。</summary>
         public void SendAway()
         {
             if (sent) return;
@@ -169,7 +171,15 @@ namespace DMS
             IntVec3 pos = parent.Position;
             innerContainer.TryDropAll(pos, map, ThingPlaceMode.Near);
             ThingDef leaving = Props.leavingSkyfaller;
+            ThingDef platformDef = Props.platformDef;
             parent.Destroy(DestroyMode.Vanish);
+            // 貨艙脫離底座升空:底座以無陣營建築留在原地,玩家可自行拆除回收
+            if (platformDef != null)
+            {
+                Thing platform = ThingMaker.MakeThing(platformDef);
+                platform.SetFactionDirect(null);
+                GenSpawn.Spawn(platform, pos, map);
+            }
             if (leaving != null)
                 SkyfallerMaker.SpawnSkyfaller(leaving, pos, map);
         }

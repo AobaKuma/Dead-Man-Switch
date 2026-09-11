@@ -39,9 +39,12 @@
       <li Class="DMS.CompProperties_SupplyRequest">
         <massCapacity>2000</massCapacity>
         <leavingSkyfaller>DMS_SupplyPodLeaving</leavingSkyfaller>
+        <platformDef>DMS_LifterPlatform</platformDef>
       </li>
     </comps>
   </ThingDef>
+
+  <!-- 起飛後遺留的底座 DMS_LifterPlatform 定義於 Things_Building/DMS_MobileCrewLifter.xml (與載人升降艙共用) -->
 
   <!-- ======================= Skyfallers ======================= -->
   <ThingDef Name="DMS_SupplyPodSkyfallerBase" Abstract="True">
@@ -67,11 +70,20 @@
 
   <ThingDef ParentName="DMS_SupplyPodSkyfallerBase">
     <defName>DMS_SupplyPodIncoming</defName>
+    <!-- 特效:飛行/接近地面揚塵 (CompEffecter) + 撞地一次性 (Destroy 時);見 Effects/DMS_Lifter.xml -->
+    <comps>
+      <li Class="CompProperties_Effecter">
+        <effecterDef>DMS_LifterDescent</effecterDef>
+      </li>
+      <li Class="CompProperties_SpawnEffecterOnDestroy">
+        <effect>DMS_LifterTouchdown</effect>
+      </li>
+    </comps>
     <skyfaller>
       <movementType>Decelerate</movementType>
       <anticipationSound>DropPod_Fall</anticipationSound>
       <anticipationSoundTicks>100</anticipationSoundTicks>
-      <ticksToImpactRange>120~200</ticksToImpactRange>
+      <ticksToImpactRange>160~160</ticksToImpactRange>
       <hitRoof>true</hitRoof>
     </skyfaller>
   </ThingDef>
@@ -79,6 +91,19 @@
   <ThingDef ParentName="DMS_SupplyPodSkyfallerBase">
     <defName>DMS_SupplyPodLeaving</defName>
     <label>mobile cargo lifter (leaving)</label>
+    <!-- 特效:生成瞬間點火 + 前 90 tick 揚塵 + 飛行噴焰 (CompEffecter) -->
+    <comps>
+      <li Class="CompProperties_Effecter">
+        <effecterDef>DMS_LifterLaunch</effecterDef>
+      </li>
+    </comps>
+    <!-- 起飛時只有貨艙升空,底座留在原地 (DMS_LifterPlatform) -->
+    <graphicData>
+      <texPath>Things/Skyfaller/LifterCargoPod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shaderType>CutoutFlying</shaderType>
+    </graphicData>
     <skyfaller>
       <reversed>true</reversed>
       <anticipationSound>Shuttle_Leaving</anticipationSound>
