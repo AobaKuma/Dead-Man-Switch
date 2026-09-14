@@ -7,11 +7,10 @@
   <!-- 專屬軀體 DMS_Frogman（人類內臟＋合成骨架，無胃），男性體型外殼， -->
   <!-- 靠胚胎培養而非機兵培育器生產。                                  -->
   <!-- ============================================================= -->
-  <ThingDef ParentName="BaseAutomatroidHumanRace">
+  <ThingDef ParentName="DMS_ArtificialOrganismHumanlikeBase">
     <defName>DMS_Mech_Frogman</defName>
     <label>Frogman</label>
     <description>The XM132 Frogman is the earliest artificial military organism on known record. Its mesonuclear biological design lets it be cultured in any environment and develop itself into designated adult.\n\nIn the Earth era, such biomatroid AMOs represented was briefly held to be the technology that would replace synthetic mechs and conventional mechanoids alike. A single severe incident ended that line of development for good.\n\nThe adult form is humanlike. It grows its own highly sealed composite plasfibre integument and a closed-loop internal cooling system. Every joint cavity is pressure-compensated and packed with dielectric gel, so it can swim in, wade ashore and go straight into combat. Earth-era marine corps used them for beach reconnaissance, harbour demolition and boarding actions.\n\nAMO technology is tightly controlled under the colonial fleet programme. That is why a bioweapon this well suited to local conditions remains a rare sight across the rim.</description>
-    <thingClass>Fortified.ArtificialOrganismHumanlike</thingClass>
     <!-- 暫用現成的合成機械體男性素體；補上專屬蛙人素材後改成 Things/Synthroid/Body/Frogman 即可。 -->
     <uiIconPath>Things/Synthroid/Body/Synthroid_Male_south</uiIconPath>
     <statBases>
@@ -21,19 +20,7 @@
       <ArmorRating_Sharp>0.45</ArmorRating_Sharp>
       <ArmorRating_Heat>0.6</ArmorRating_Heat>
       <StaggerDurationFactor>0.35</StaggerDurationFactor>
-      <EMPResistance MayRequire="Ludeon.Rimworld.Biotech">4</EMPResistance>                       <!--密封艙體，EMP抵抗力更高-->
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
-      <ControlTakingTime MayRequire="Ludeon.Rimworld.Biotech">25</ControlTakingTime>
-      <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
-      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
     </statBases>
-    <inspectorTabs Inherit="False">
-      <li>ITab_Pawn_Health</li>
-      <li>ITab_Pawn_Needs</li>
-      <li>ITab_Pawn_FormingCaravan</li>
-      <li>ITab_Pawn_Gear</li>
-      <li>ITab_Pawn_Log</li>
-    </inspectorTabs>
     <tools>
       <li>
         <label>left fist</label>
@@ -71,10 +58,7 @@
       </li>
     </tools>
     <race>
-      <mechWeightClass>Light</mechWeightClass>
-      <renderTree>HumanlikeMech</renderTree>
       <thinkTreeMain>DMS_HumanlikeMech</thinkTreeMain>
-      <makesFootprints>true</makesFootprints>
       <body>DMS_Frogman</body>
       <baseBodySize>1.2</baseBodySize>
       <baseHealthScale>1.2</baseHealthScale>
@@ -103,8 +87,6 @@
       </lifeStageAges>
     </race>
     <comps>
-      <li Class="Fortified.CompProperties_MechApparel" />
-      <!-- 自體再生＋口糧→能量（AMO 專屬維生循環） -->
       <li Class="Fortified.CompProperties_ArtificialOrganism">
         <regenIntervalTicks>120</regenIntervalTicks>
         <regenHealAmount>1</regenHealAmount>
@@ -164,7 +146,7 @@
     </modExtensions>
   </ThingDef>
 
-  <PawnKindDef ParentName="BaseAutomatroidKind" Name="DMS_BaseFrogmanKind">
+  <PawnKindDef ParentName="DMS_ArtificialOrganismKindBase" Name="DMS_BaseFrogmanKind">
     <defName>DMS_Mech_Frogman</defName>
     <label>frogman</label>
     <race>DMS_Mech_Frogman</race>
