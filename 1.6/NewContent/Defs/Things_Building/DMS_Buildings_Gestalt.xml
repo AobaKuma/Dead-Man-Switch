@@ -102,6 +102,8 @@
     <uiOrder>2000</uiOrder>
     <drawerType>MapMeshAndRealTime</drawerType>
     <minifiedDef>MinifiedThing</minifiedDef>
+    <!-- 封存技術 I 級（集群司令）：可拆卸但不進貿易池 -->
+    <tradeability>None</tradeability>
     <thingCategories Inherit="False">
       <li>BuildingsMisc</li>
     </thingCategories>

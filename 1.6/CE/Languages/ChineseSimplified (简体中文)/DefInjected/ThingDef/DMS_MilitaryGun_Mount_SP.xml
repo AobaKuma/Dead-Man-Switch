@@ -29,4 +29,18 @@
   <!-- EN: Heavy MachineGun turret -->
   <DMS_Tarbosaurus_SubMachineGun.verbs.Verb_ShootCE.label>机载重机枪</DMS_Tarbosaurus_SubMachineGun.verbs.Verb_ShootCE.label>
   
+  <!-- EN: Mounted GAU-19/A -->
+  <DMS_SubTurret_127Gatling.label>机载 GAU-19/A</DMS_SubTurret_127Gatling.label>
+  <!-- EN: A multibarrel turret mounted on shoulder. -->
+  <DMS_SubTurret_127Gatling.description>一座挂载于肩部的多管机枪炮塔。</DMS_SubTurret_127Gatling.description>
+  
+  <!-- EN: Kord HMG turret -->
+  <DMS_Dozer_KordMG.label>Kord 重机枪炮塔</DMS_Dozer_KordMG.label>
+  <!-- EN: heavy machine gun for mech soldier or infantry support platform.
+
+This weapon is designed specially for mounted use, so only specific unit can equip it. -->
+  <DMS_Dozer_KordMG.description>用于机兵或步兵支援平台的重机枪。
+
+这种武器是专门为挂载使用而设计的，所以只有特定的单位才能装备它。</DMS_Dozer_KordMG.description>
+  
 </LanguageData>

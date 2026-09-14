@@ -49,6 +49,7 @@
         <xpath>
           Defs/ThingDef[
           defName="DMS_Mech_Soldat" or
+          defName="DMS_Mech_Sergeant" or
           defName="DMS_Mech_Phalanx" or
           defName="DMS_Mech_Arquebusier" or
           defName="DMS_Mech_Jaeger" or
@@ -64,6 +65,7 @@
         <xpath>
           Defs/ThingDef[
           defName="DMS_Mech_Soldat" or
+          defName="DMS_Mech_Sergeant" or
           defName="DMS_Mech_Ronin"  or
           defName="DMS_Mech_Phalanx" or
           defName="DMS_Mech_Arquebusier" or

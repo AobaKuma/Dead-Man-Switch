@@ -5,5 +5,15 @@
   <DMS_GestaltEngine.label>中央司令核心</DMS_GestaltEngine.label>
   <!-- EN: Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World. -->
   <DMS_GestaltEngine.description>一種用於大規模指揮機兵作戰的超大型運算核心，具有獨自指揮並保障一支合成作戰旅的能力。在過去的次世代戰爭發生前，無數這樣的控制核心直接或間接的指揮著地球上近九成的正規軍隊，並最終在五個各據一方的AI指揮下讓地球上近半的陸地與海洋都淪為了它們之間的交戰區。</DMS_GestaltEngine.description>
-
+  
+  <!-- EN: command array -->
+  <DMS_Gestalt_CommandArray.label>指揮陣列</DMS_Gestalt_CommandArray.label>
+  <!-- EN: Increases bandwidth when placed near central command core. Each central command core can only use eight command arrays. -->
+  <DMS_Gestalt_CommandArray.description>放置在中央司令核心附近時可提高頻寬。每座中央司令核心最多只能使用八座指揮陣列。</DMS_Gestalt_CommandArray.description>
+  
+  <!-- EN: command transmitter -->
+  <DMS_Gestalt_Transmitter.label>指揮發射器</DMS_Gestalt_Transmitter.label>
+  <!-- EN: Increases command range and provides additional control group when placed near central command core. Each central command core can only use four command transmitters. -->
+  <DMS_Gestalt_Transmitter.description>放置在中央司令核心附近時可增加指揮範圍並提供額外的控制群組。每座中央司令核心最多只能使用四座指揮發射器。</DMS_Gestalt_Transmitter.description>
+  
 </LanguageData>

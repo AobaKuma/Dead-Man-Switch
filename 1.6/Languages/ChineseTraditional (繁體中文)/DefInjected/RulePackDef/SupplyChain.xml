@@ -55,13 +55,6 @@
     <li>stageOpen->[issuerUnit]已提出供應合約的下一期貨物需求。機動貨櫃即將抵達。</li>
     <li>stageOpen->與[issuerUnit]的供應合約已進入下一期。機動貨櫃很快會降落在殖民地附近。</li>
 
-    <li>podLetterLabel->補給貨櫃</li>
-    <li>podLetterLabel->補給貨櫃即將抵達</li>
-    <li>podLetterText->[podOpen]\n\n在期限截止前將 [count] 個[categoryLabel]裝入其中。</li>
-
-    <li>podOpen->來自[issuerUnit]的機動貨櫃正在殖民地附近降落。</li>
-    <li>podOpen->[issuerUnit]派出的機動貨櫃即將在附近著陸。</li>
-
     <li>paymentLetterLabel->報酬已送達</li>
     <li>paymentLetterLabel->交付報酬</li>
     <li>paymentLetterText->[payOpen]</li>

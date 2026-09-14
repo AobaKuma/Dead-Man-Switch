@@ -15,4 +15,18 @@
   <!-- EN: blaster screen shell -->
   <Shell_BlasterSmoke_Releasing_Water.label>反電荷煙幕彈</Shell_BlasterSmoke_Releasing_Water.label>
   
+  <!-- EN: perimeter scanner -->
+  <DMS_PerimeterScanner.label>周界掃描器</DMS_PerimeterScanner.label>
+  <!-- EN: A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius. -->
+  <DMS_PerimeterScanner.description>一種能偵測隱形生物的掃描器。當偵測到半徑範圍內存在靈能隱形的物體時，裝置會發出警報。</DMS_PerimeterScanner.description>
+  
+  <!-- EN: perimeter scanner -->
+  <DMS_PerimeterScannerTemp.label>周界掃描器</DMS_PerimeterScannerTemp.label>
+  <!-- EN: A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius. -->
+  <DMS_PerimeterScannerTemp.description>一種能偵測隱形生物的掃描器。當偵測到半徑範圍內存在靈能隱形的物體時，裝置會發出警報。</DMS_PerimeterScannerTemp.description>
+  
+  <!-- EN: Thermal breach -->
+  <DMS_ThermalBreacher.label>熱蝕破門裝置</DMS_ThermalBreacher.label>
+  <DMS_ThermalBreacher.description>一次性定向熱蝕裝置，專為突破重型安全門、防爆閘門以及反器材使用設計。啟動後會產生劇烈的高溫金屬熱流，並透過聚焦噴口將能量集中於接觸點。數秒內即可在大多數工業級合金表面形成熔蝕通道。\n\n由於反應過程極不穩定，裝置僅能使用一次。操作員必須在部署後立即撤離安全距離，以避免高溫飛濺物與蒸發金屬造成傷害。</DMS_ThermalBreacher.description>
+  
 </LanguageData>

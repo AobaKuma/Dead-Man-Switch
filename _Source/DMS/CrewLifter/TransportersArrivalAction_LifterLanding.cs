@@ -7,7 +7,7 @@ using Verse;
 namespace DMS
 {
     /// <summary>
-    /// 升降艙降落在沒有地圖的地塊:抵達時直接於該地塊生成臨時地圖 (原版商隊營地 WorldObjectDefOf.Camp),
+    /// 升降艙降落在沒有地圖的地塊:抵達時直接於該地塊生成臨時地圖 (DMS_LifterLandingSite,行為同原版商隊營地但機械體也能撐住地圖),
     /// 然後讓玩家在地圖上用瞄準器選擇降落點;取消瞄準則落在自動挑選的備用點。
     /// </summary>
     public class TransportersArrivalAction_LifterLanding : TransportersArrivalAction
@@ -28,14 +28,14 @@ namespace DMS
             return Current.Game.FindMap(tile) == null;
         }
 
-        /// <summary>發射前的選項判定:可通行的地表地塊、尚無地圖、艙內至少一名未倒地殖民者。</summary>
+        /// <summary>發射前的選項判定:可通行的地表地塊、尚無地圖、艙內至少一名未倒地殖民者或玩家機械體。</summary>
         public static FloatMenuAcceptanceReport CanLandAt(IEnumerable<IThingHolder> pods, PlanetTile tile, bool requireNoMapParent = true)
         {
             if (Find.World.Impassable(tile)) return false;
             if (!tile.LayerDef.canFormCaravans) return false;
             if (requireNoMapParent && Find.WorldObjects.AnyMapParentAt(tile)) return false;
             if (!SettleInEmptyTileUtility.CanCreateMapAt(tile)) return false;
-            if (!TransportersArrivalActionUtility.AnyNonDownedColonist(pods)) return false;
+            if (!LifterCrewUtility.AnyNonDownedCrew(pods)) return false;
             return true;
         }
 
@@ -107,7 +107,7 @@ namespace DMS
         {
             Map map = Current.Game.FindMap(tile);
             if (map != null) return map;
-            WorldObjectDef siteDef = WorldObjectDefOf.Camp;
+            WorldObjectDef siteDef = DMS_DefOf.DMS_LifterLandingSite;
             map = GetOrGenerateMapUtility.GetOrGenerateMap(tile, siteDef.overrideMapSize ?? Find.World.info.initialMapSize, siteDef);
             map.Parent.SetFaction(Faction.OfPlayer);
             return map;

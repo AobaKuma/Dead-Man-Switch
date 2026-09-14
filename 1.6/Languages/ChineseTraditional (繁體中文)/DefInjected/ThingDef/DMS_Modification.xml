@@ -32,6 +32,13 @@
   <!-- EN: Use {0_label} -->
   <DMS_CeramicsPlating.comps.CompUsable.useLabel>安裝{0}</DMS_CeramicsPlating.comps.CompUsable.useLabel>
   
+  <!-- EN: Command Coprocessor -->
+  <DMS_CommandCoprocessor.label>指揮協處理器</DMS_CommandCoprocessor.label>
+  <!-- EN: An auxiliary processing board fitted alongside a command automatroid's core processor. It takes over the signal multiplexing and unit bookkeeping that would otherwise occupy the main processor, letting the automatroid keep more units on its command chain at once.\n\nThe extra silicon draws power continuously, slightly increasing the automatroid's energy consumption.\n\nOnly command-type automatroids have a processor bus that can accept it. -->
+  <DMS_CommandCoprocessor.description>一塊加裝在指揮型機兵核心處理器旁的輔助運算板，接手原本會佔用主處理器的訊號多工與單位管理工作，讓機兵能同時把更多單位維持在自己的指揮鏈上。\n\n額外的晶片會持續耗電，略微提高機兵的能源消耗。\n\n只有指揮型機兵的處理器匯流排能接上這塊板子。</DMS_CommandCoprocessor.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_CommandCoprocessor.comps.CompUsable.useLabel>安裝{0}</DMS_CommandCoprocessor.comps.CompUsable.useLabel>
+  
   <!-- EN: Nuclear Battery -->
   <DMS_NuclearBattery.label>裂變電池</DMS_NuclearBattery.label>
   <!-- EN: A nuclear fission reactor powering a quantum battery, this device is commonly found in many unmanned signal stations and defense robots. It consists of six high-density uranium-235 columns with integrated thermocouples all wrapped in a high-strength shell. Its energy is enough to make most models of automatroid operate for decades. -->

@@ -20,6 +20,8 @@ namespace DMS
         public int count;
         public string questTagToAdd;
         public string issuerUnit;
+        public int stage = 1;        // 本階段序號(1-based),供階段開始信件使用
+        public int totalStages = 1;
 
         private Thing pod;
         private bool spawned;
@@ -34,7 +36,7 @@ namespace DMS
         }
 
         // 讓 pod 成為任務的「選擇目標」:
-        // 1. 選中 pod 時 InspectGizmoGrid 會自動附上原版「開啟相關任務」gizmo
+        // 1. CompSupplyRequest 透過 QuestUtility.GetQuestRelatedGizmos 附上「開啟相關任務」gizmo
         //    (判定條件為 QuestLookTargets 或 QuestSelectTargets 包含該 Thing)
         // 2. 任務面板可反向跳轉選中 pod
         public override IEnumerable<GlobalTargetInfo> QuestSelectTargets
@@ -80,16 +82,19 @@ namespace DMS
             IntVec3 cell = FindLandingCell(map);
             SkyfallerMaker.SpawnSkyfaller(skyfallerDef, pod, cell, map);
 
+            // 階段開始信件(唯一一封):帶著陸點與子任務連結
             string[] vars =
             {
                 "issuerUnit", issuerUnit,
                 "categoryLabel", category.label,
                 "count", count.ToString(),
+                "stage", stage.ToString(),
+                "totalStages", totalStages.ToString(),
             };
             Find.LetterStack.ReceiveLetter(
-                SupplyChainText.Resolve("podLetterLabel", vars),
-                SupplyChainText.Resolve("podLetterText", vars),
-                LetterDefOf.NeutralEvent, new TargetInfo(cell, map), null, quest);
+                SupplyChainText.Resolve("stageLetterLabel", vars),
+                SupplyChainText.Resolve("stageLetterText", vars),
+                LetterDefOf.PositiveEvent, new TargetInfo(cell, map), null, quest);
         }
 
         /// <summary>有可用著陸信標區時優先降落其中心,否則沿用貿易空投點。</summary>
@@ -130,6 +135,8 @@ namespace DMS
             Scribe_Values.Look(ref count, "count");
             Scribe_Values.Look(ref questTagToAdd, "questTagToAdd");
             Scribe_Values.Look(ref issuerUnit, "issuerUnit");
+            Scribe_Values.Look(ref stage, "stage", 1);
+            Scribe_Values.Look(ref totalStages, "totalStages", 1);
             Scribe_References.Look(ref pod, "pod");
             Scribe_Values.Look(ref spawned, "spawned");
         }

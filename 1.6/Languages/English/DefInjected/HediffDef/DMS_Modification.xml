@@ -26,6 +26,11 @@ The shaped-charge warhead punches through armor and fortification that the frame
 Although it is an excellent protective armor, it must be completely replaced once damaged.</DMS_CeramicsPlating.description>
   <DMS_CeramicsPlating.descriptionCached />
   
+  <!-- EN: Command Coprocessor -->
+  <DMS_CommandCoprocessor.label>Command Coprocessor</DMS_CommandCoprocessor.label>
+  <!-- EN: An auxiliary processing board wired into the core processor. It offloads signal multiplexing and unit bookkeeping from the main processor, increasing the automatroid's control bandwidth at the cost of slightly higher energy consumption. -->
+  <DMS_CommandCoprocessor.description>An auxiliary processing board wired into the core processor. It offloads signal multiplexing and unit bookkeeping from the main processor, increasing the automatroid's control bandwidth at the cost of slightly higher energy consumption.</DMS_CommandCoprocessor.description>
+  
   <!-- EN: Nuclear Battery -->
   <DMS_NuclearBattery.label>Nuclear Battery</DMS_NuclearBattery.label>
   <!-- EN: The abundant output of installed nuclear-powered quantum batteries eliminates the need to recharge. The reactor can be overloaded to produce a chain reaction meltdown comparable to an anti-grain warhead. -->

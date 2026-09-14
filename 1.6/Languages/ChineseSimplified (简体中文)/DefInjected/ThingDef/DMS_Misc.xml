@@ -15,4 +15,18 @@
   <!-- EN: blaster screen shell -->
   <Shell_BlasterSmoke_Releasing_Water.label>反电荷烟幕弹</Shell_BlasterSmoke_Releasing_Water.label>
   
+  <!-- EN: perimeter scanner -->
+  <DMS_PerimeterScanner.label>周界扫描器</DMS_PerimeterScanner.label>
+  <!-- EN: A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius. -->
+  <DMS_PerimeterScanner.description>一种能侦测隐形生物的扫描器。当侦测到半径范围内存在灵能隐形的物体时，装置会发出警报。</DMS_PerimeterScanner.description>
+  
+  <!-- EN: perimeter scanner -->
+  <DMS_PerimeterScannerTemp.label>周界扫描器</DMS_PerimeterScannerTemp.label>
+  <!-- EN: A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius. -->
+  <DMS_PerimeterScannerTemp.description>一种能侦测隐形生物的扫描器。当侦测到半径范围内存在灵能隐形的物体时，装置会发出警报。</DMS_PerimeterScannerTemp.description>
+  
+  <!-- EN: Thermal breach -->
+  <DMS_ThermalBreacher.label>热蚀破门装置</DMS_ThermalBreacher.label>
+  <DMS_ThermalBreacher.description>一次性定向热蚀装置，专为突破重型安全门、防爆闸门以及反器材使用设计。启动后会产生剧烈的高温金属热流，并通过聚焦喷口将能量集中于接触点。数秒内即可在大多数工业级合金表面形成熔蚀通道。\n\n由于反应过程极不稳定，装置仅能使用一次。操作员必须在部署后立即撤离安全距离，以避免高温飞溅物与蒸发金属造成伤害。</DMS_ThermalBreacher.description>
+  
 </LanguageData>

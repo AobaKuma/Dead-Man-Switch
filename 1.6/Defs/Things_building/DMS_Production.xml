@@ -130,7 +130,6 @@
         <workAmountPerStage>30000</workAmountPerStage>
         <pullFromLinkedStorage>true</pullFromLinkedStorage>
         <northOnly>true</northOnly>
-        <autoEjectProducts>true</autoEjectProducts>
         <activeMote>DMS_Mote_SinteringFurnaceActive</activeMote>
         <phaseEffecter_east>DMS_SinteringFurnaceActive_East</phaseEffecter_east>
         <phaseEffecter_west>DMS_SinteringFurnaceActive_West</phaseEffecter_west>

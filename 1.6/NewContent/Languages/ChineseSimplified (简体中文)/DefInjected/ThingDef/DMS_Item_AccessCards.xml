@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Nara Ind. access key -->
+  <DMS_AccessKey_Nara.label>奈良工业存取钥匙</DMS_AccessKey_Nara.label>
+  <!-- EN: A one-use unified access key used by Nara Industries. It can be used to activate terminals, open crates and doors. -->
+  <DMS_AccessKey_Nara.description>奈良工业使用的一次性通用存取钥匙。可用于启动终端机、开启货箱与门。</DMS_AccessKey_Nara.description>
+  
+  <!-- EN: derelict access key -->
+  <DMS_AccessKey_Neutrals.label>遗弃者存取钥匙</DMS_AccessKey_Neutrals.label>
+  <!-- EN: A one-use unified access key used by derelict automatroids. It can be used to activate terminals, open crates and doors. -->
+  <DMS_AccessKey_Neutrals.description>遗弃机兵使用的一次性通用存取钥匙。可用于启动终端机、开启货箱与门。</DMS_AccessKey_Neutrals.description>
+  
+</LanguageData>

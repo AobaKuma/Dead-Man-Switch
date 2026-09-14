@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <!-- ============================================================= -->
-  <!-- 3x3 Occultech 知識源：有限儲量，供相鄰萃取器抽取。            -->
-  <!-- ============================================================= -->
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_OccultTechFont</defName>
-    <label>Data stele</label>
-    <description>A dense lattice of sealed expeditional data-cores and forbidden schematics, humming with knowledge the colonial fleets never meant to circulate. It holds a finite reserve of occult understanding. On its own it does nothing — an occultech extractor placed alongside it will slowly draw the knowledge out. Once drained, only an inert husk remains.</description>
+    <label>Stele</label>
+    <description>A databank holding technical data and backups of colonial records, along with case analyses and post-incident reviews of every accident that has occurred across all colonization programs to date. A stele serves both as the medium through which the colonial fleets share experience and knowledge with their kin across star systems, and as a backup database buried deep beneath every colonized world. Complex encryption and verification algorithms keep its records from being lost over long voyages through space or ages sealed underground, while also preventing anyone outside the colonial fleets from obtaining the dangerous technology within.\n\nRumor has it that decoding techniques leaked by fleet deviants can perform a destructive scan to extract the data inside — but using such techniques may draw the hostility of the colonial fleets.</description>
     <graphicData>
       <texPath>Things/Building/Stele/Stele</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -57,8 +54,8 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_OccultechExtractor</defName>
-    <label>stele Decoder</label>
-    <description>A parasitic decoding rig. Set it flush against a data stele and supply power, and it will continuously siphon occult knowledge from the font and file it into your expeditional research — no researcher required. Extraction stops if the font runs dry, power is lost, or no font is adjacent.</description>
+    <label>Decoder</label>
+    <description>A destructive decoding rig. It fires a high-energy laser through the holographic storage plates inside a stele and analyzes the scattered spectrum to read the data within — the only way for factions outside the colonial fleets to access a stele's contents. Set it flush against a stele and supply power, and it will continuously extract the knowledge and file it into your expeditional research — no researcher required. Extraction stops if the stele runs dry, power is lost, or no stele is in front of it. It can be uninstalled and reinstalled elsewhere.</description>
     <graphicData>
       <texPath>Things/Building/Stele/SteleDecoder</texPath>
       <graphicClass>Graphic_Multi</graphicClass>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: access console -->
+  <DMS_AccessConsole_Nara.label>存取控制台</DMS_AccessConsole_Nara.label>
+  <!-- EN: A multi-purpose computer interface. Built-in reading device accepts key-cards. -->
+  <DMS_AccessConsole_Nara.description>一種多用途電腦介面。內建的讀取裝置可接受鑰匙卡。</DMS_AccessConsole_Nara.description>
+  
+  <!-- EN: access console -->
+  <DMS_AccessConsole_Neutral.label>存取控制台</DMS_AccessConsole_Neutral.label>
+  <!-- EN: A multi-purpose computer interface. Built-in reading device accepts key-cards. -->
+  <DMS_AccessConsole_Neutral.description>一種多用途電腦介面。內建的讀取裝置可接受鑰匙卡。</DMS_AccessConsole_Neutral.description>
+  
+  <!-- EN: console -->
+  <DMS_ConsoleDouble_Nara.label>控制台</DMS_ConsoleDouble_Nara.label>
+  <!-- EN: A multi-purpose computer interface. -->
+  <DMS_ConsoleDouble_Nara.description>一種多用途電腦介面。</DMS_ConsoleDouble_Nara.description>
+  
+  <!-- EN: console -->
+  <DMS_ConsoleDouble_Neutral.label>控制台</DMS_ConsoleDouble_Neutral.label>
+  <!-- EN: A multi-purpose computer interface. -->
+  <DMS_ConsoleDouble_Neutral.description>一種多用途電腦介面。</DMS_ConsoleDouble_Neutral.description>
+  
+  <!-- EN: console -->
+  <DMS_ConsoleSingle_Nara.label>控制台</DMS_ConsoleSingle_Nara.label>
+  <!-- EN: A multi-purpose computer interface. -->
+  <DMS_ConsoleSingle_Nara.description>一種多用途電腦介面。</DMS_ConsoleSingle_Nara.description>
+  
+  <!-- EN: console -->
+  <DMS_ConsoleSingle_Neutral.label>控制台</DMS_ConsoleSingle_Neutral.label>
+  <!-- EN: A multi-purpose computer interface. -->
+  <DMS_ConsoleSingle_Neutral.description>一種多用途電腦介面。</DMS_ConsoleSingle_Neutral.description>
+  
+  <!-- EN: sealed door -->
+  <DMS_SealedRollingDoor_Single.label>密封門</DMS_SealedRollingDoor_Single.label>
+  <!-- EN: A sealed armored door. -->
+  <DMS_SealedRollingDoor_Single.description>一扇密封的裝甲門。</DMS_SealedRollingDoor_Single.description>
+  
+  <!-- EN: reinforced wall -->
+  <DMS_SuperWall.label>強化牆</DMS_SuperWall.label>
+  <!-- EN: An armored heavily-reinforced wall. -->
+  <DMS_SuperWall.description>一面經過重度強化的裝甲牆。</DMS_SuperWall.description>
+  
+</LanguageData>

@@ -36,6 +36,17 @@ The maximum amount of plating able to be installed on a mech can depend on its b
   <!-- EN: Use {0_label} -->
   <DMS_CeramicsPlating.comps.CompUsable.useLabel>Use {0_label}</DMS_CeramicsPlating.comps.CompUsable.useLabel>
   
+  <!-- EN: Command Coprocessor -->
+  <DMS_CommandCoprocessor.label>Command Coprocessor</DMS_CommandCoprocessor.label>
+  <!-- EN: An auxiliary processing board fitted alongside a command automatroid's core processor. It takes over the signal multiplexing and unit bookkeeping that would otherwise occupy the main processor, letting the automatroid keep more units on its command chain at once.\n\nThe extra silicon draws power continuously, slightly increasing the automatroid's energy consumption.\n\nOnly command-type automatroids have a processor bus that can accept it. -->
+  <DMS_CommandCoprocessor.description>An auxiliary processing board fitted alongside a command automatroid's core processor. It takes over the signal multiplexing and unit bookkeeping that would otherwise occupy the main processor, letting the automatroid keep more units on its command chain at once.
+
+The extra silicon draws power continuously, slightly increasing the automatroid's energy consumption.
+
+Only command-type automatroids have a processor bus that can accept it.</DMS_CommandCoprocessor.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_CommandCoprocessor.comps.CompUsable.useLabel>Use {0_label}</DMS_CommandCoprocessor.comps.CompUsable.useLabel>
+  
   <!-- EN: Nuclear Battery -->
   <DMS_NuclearBattery.label>Nuclear Battery</DMS_NuclearBattery.label>
   <!-- EN: A nuclear fission reactor powering a quantum battery, this device is commonly found in many unmanned signal stations and defense robots. It consists of six high-density uranium-235 columns with integrated thermocouples all wrapped in a high-strength shell. Its energy is enough to make most models of automatroid operate for decades. -->

@@ -30,10 +30,20 @@ namespace DMS
                 landed = ThingMaker.MakeThing(ext.spawnBuilding);
                 landed.SetFactionDirect(Faction.OfPlayer);
                 CompLaunchable_Lifter launchable = landed.TryGetComp<CompLaunchable_Lifter>();
-                if (launchable != null) launchable.podOnly = ext.markPodOnly;
+                if (launchable != null)
+                    launchable.podOnly = (contents as LifterTransporterInfo)?.podOnlyOverride ?? ext.markPodOnly;
+                // 油量設為起飛後的剩餘量。建築 def 有 initialFuelPercent (建造時注入的燃料),
+                // 新 MakeThing 出來的升降艙油箱是滿的,必須先清空再加回,否則每次落地都會白白加滿。
                 CompRefuelable refuelable = landed.TryGetComp<CompRefuelable>();
-                if (refuelable != null && contents is LifterTransporterInfo info && info.fuel > 0f)
-                    refuelable.Refuel(info.fuel);
+                if (refuelable != null && contents is LifterTransporterInfo info)
+                {
+                    refuelable.ConsumeFuel(refuelable.Fuel);
+                    if (info.fuel > 0f) refuelable.Refuel(info.fuel);
+                }
+                // 廢棄返回艙沒有油箱,殘餘燃料記在 CompStoredFuel,拆除時退還
+                CompStoredFuel stored = landed.TryGetComp<CompStoredFuel>();
+                if (stored != null && contents is LifterTransporterInfo storedInfo)
+                    stored.fuel = storedInfo.fuel;
             }
 
             // 先把自己移除,建築才能落在同一格

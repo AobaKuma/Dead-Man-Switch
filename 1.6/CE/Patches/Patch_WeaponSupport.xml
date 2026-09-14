@@ -117,15 +117,6 @@
         </value>
       </li>
 
-      <li Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[
-          defName="DMS_Mech_Sergeant"
-          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
-        <value>
-          <li>CE_SMG</li>
-        </value>
-      </li>
-
 
       <!-- DMS_Mech_Protector -->
       <li Class="PatchOperationAdd">

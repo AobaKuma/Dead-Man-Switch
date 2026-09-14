@@ -52,7 +52,7 @@
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Sentry</defName>
     <label>Sentry gun</label>
-    <description>A light-weighted turret with a built-in battery. While on the power grid it charges its internal battery; during an outage it draws from that reserve and keeps firing until the battery is drained.</description>
+    <description>A light automatic turret with a built-in battery, designed to be carried and set up wherever the line needs a gun. On the power grid it charges its internal cell; cut off from the grid it draws on that reserve and keeps firing until the cell runs dry. Switching it off puts it on standby: it stops watching and pours the saved power into the cell instead, charging twice as fast.\n\nIts tripod folds flat, so a drafted operator can pick it up, carry it forward and drop it into position on the spot. A cell charged before departure will keep it standing watch for days.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Turrets/Tripod</texPath>
@@ -70,12 +70,22 @@
       <WorkToBuild>3000</WorkToBuild>
       <Beauty>-2</Beauty>
       <ShootingAccuracyTurret>1</ShootingAccuracyTurret>
+      <Mass>30</Mass>
     </statBases>
     <comps>
+      <!-- 拾起：把砲塔迷你化後收進操作者的背包，之後可用部署 Gizmo 就地架設 -->
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerObject</useJob>
+        <useLabel>Pick up {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>Fortified.CompMinifyToInventory</compClass>
+      </li>
       <li Class="Fortified.CompProperties_PowerWithInternalBattery">
         <basePowerConsumption>40</basePowerConsumption>
         <chargeRateWatts>40</chargeRateWatts>
         <internalBatteryMax>200</internalBatteryMax>
+        <standbyChargeFactor>2</standbyChargeFactor>   <!-- 開關關閉時待機：不運作，改以 2 倍速率純充電 -->
       </li>
       <li Class="Fortified.CompProperties_PowerColorSwitch">
         <gridColor>(100,100,100,0)</gridColor>
@@ -100,7 +110,8 @@
     </costList>
     <uiIconPath>Things/Turrets/DMS_SentryTurret</uiIconPath>
     <uiIconScale>1.25</uiIconScale>
-        <minifiedDef>MinifiedThing</minifiedDef>
+    <!-- 可部署：拾起後由 FFF 的 MinifiedThingDeployable 提供部署 Gizmo；內部電池的電量會隨物件一起保留 -->
+    <minifiedDef>FFF_MinifiedTurret</minifiedDef>
     <thingCategories>
       <li>BuildingsSecurity</li>
     </thingCategories>

@@ -424,6 +424,88 @@
     </comps>
   </HediffDef>
 
+  <!-- 指揮協處理器：指揮型機兵專用的處理器改裝件，增加其控制帶寬 -->
+  <ThingDef ParentName="BaseModificationItem">
+    <defName>DMS_CommandCoprocessor</defName>
+    <label>Command Coprocessor</label>
+    <description>An auxiliary processing board fitted alongside a command automatroid's core processor. It takes over the signal multiplexing and unit bookkeeping that would otherwise occupy the main processor, letting the automatroid keep more units on its command chain at once.\n\nThe extra silicon draws power continuously, slightly increasing the automatroid's energy consumption.\n\nOnly command-type automatroids have a processor bus that can accept it.</description>
+    <descriptionHyperlinks>
+      <HediffDef>DMS_CommandCoprocessor</HediffDef>
+      <ThingDef>DMS_Mech_Sergeant</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <!-- TODO: 暫用集群控制晶片組的圖，之後換成專屬貼圖 -->
+      <texPath>Things/Resource/ComponentCCC</texPath>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <MarketValue>1200</MarketValue>
+      <Mass>1.5</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <Plasteel>20</Plasteel>
+      <ComponentControlChip>1</ComponentControlChip>
+    </costList>
+    <recipeMaker>
+      <workAmount>6000</workAmount>
+      <researchPrerequisite>DMS_Mechlink</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>DMS_TableMachinePrinter</li>
+      </recipeUsers>
+    </recipeMaker>
+    <comps>
+      <li Class="Fortified.CompProperties_AddHediffOnTarget">
+        <compClass>Fortified.CompTargetable_AddHediffOnTarget</compClass>
+        <hediffDef>DMS_CommandCoprocessor</hediffDef>
+        <soundDef>DMS_EquipGear</soundDef>
+        <!-- 處理器部位：人形機兵用頭部的人工大腦，一體式機體用胸腔內建處理器 -->
+        <targetBodyPartDefs>
+          <li>ArtificialBrain</li>
+          <li>DMS_ChestBrain</li>
+        </targetBodyPartDefs>
+        <!-- 只有指揮型（Fortified.OverseerMech）機兵才有帶寬可增加，新增指揮型機種時記得在此登記 -->
+        <supportRaceDefs>
+          <li>DMS_Mech_Sergeant</li>
+        </supportRaceDefs>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>DMS_CommandCoprocessor</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Command Coprocessor</label>
+    <description>An auxiliary processing board wired into the core processor. It offloads signal multiplexing and unit bookkeeping from the main processor, increasing the automatroid's control bandwidth at the cost of slightly higher energy consumption.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_CommandCoprocessor</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>DMS_CommandCoprocessor</spawnThingOnRemoved>
+    <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
+    <isBad>false</isBad>
+    <countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+    <stages>
+      <li>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">6</MechBandwidth>
+          <MechEnergyUsageFactor MayRequire="Ludeon.Rimworld.Biotech">0.25</MechEnergyUsageFactor>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <!-- CompOverseer 會快取帶寬，安裝/拆除時需要主動通知重算，見 DMS.HediffComp_RefreshOverseer -->
+      <li Class="DMS.HediffCompProperties_RefreshOverseer" />
+      <li Class="Fortified.HediffCompProperties_Modification">
+        <applyJob>FFF_ModificationRemove</applyJob>
+      </li>
+    </comps>
+  </HediffDef>
+
   <ThingDef ParentName="BaseModificationItem">
     <defName>DMS_TB_HeavyHydraulicFrame</defName>
     <label>Heavy Hydraulic Frame</label>

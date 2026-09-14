@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- ==================== Facility furniture ==================== -->
+
+  <!-- EN: personal locker -->
+  <DMS_Personallocker.label>個人置物櫃</DMS_Personallocker.label>
+  <!-- EN: A tall steel locker for storing personal effects. Standard issue in facility changing rooms and dormitories. -->
+  <DMS_Personallocker.description>一種用於存放個人物品的高身鋼製置物櫃，是設施更衣室與宿舍的標準配置。</DMS_Personallocker.description>
+
+  <!-- EN: locker bank -->
+  <DMS_Personallocker_Large.label>三連置物櫃</DMS_Personallocker_Large.label>
+  <!-- EN: A bank of three steel lockers bolted together. Standard issue in facility changing rooms and dormitories. -->
+  <DMS_Personallocker_Large.description>三個拼接固定在一起的鋼製置物櫃，是設施更衣室與宿舍的標準配置。</DMS_Personallocker_Large.description>
+
+  <!-- EN: water dispenser -->
+  <DMS_Waterdispenser.label>飲水機</DMS_Waterdispenser.label>
+  <!-- EN: A bottled water dispenser with hot and cold taps. A small comfort in an otherwise sterile facility. -->
+  <DMS_Waterdispenser.description>一台配有冷熱水龍頭的桶裝飲水機，為冰冷的設施帶來一點小小的舒適。</DMS_Waterdispenser.description>
+
+  <!-- EN: waiting bench -->
+  <DMS_Benches.label>等候長椅</DMS_Benches.label>
+  <!-- EN: A row of three padded seats on a steel frame, of the kind found in facility corridors and waiting areas. Somewhat comfortable to sit on. -->
+  <DMS_Benches.description>鋼架上並排安裝著三張軟墊座椅，常見於設施的走廊與等候區。坐起來還算舒適。</DMS_Benches.description>
+
+  <!-- EN: air purifier -->
+  <DMS_Airpurifier.label>空氣清淨機</DMS_Airpurifier.label>
+  <!-- EN: A free-standing air purification unit. Its filters strip dust and contaminants out of the air, keeping the facility's rooms clean. -->
+  <DMS_Airpurifier.description>一台落地式空氣清淨裝置，其濾網能過濾空氣中的灰塵與污染物，保持設施房間的清潔。</DMS_Airpurifier.description>
+
+  <!-- EN: hydroponic planter -->
+  <DMS_Hydroponics_Flowerpot.label>水耕花盆</DMS_Hydroponics_Flowerpot.label>
+  <!-- EN: A self-contained hydroponic planter with its own nutrient reservoir. Grow decorative flowers here to improve the mood of people nearby. -->
+  <DMS_Hydroponics_Flowerpot.description>一個自帶營養液儲槽的獨立式水耕花盆。在這裡種植觀賞花卉可以改善周圍人員的心情。</DMS_Hydroponics_Flowerpot.description>
+
+  <!-- ==================== Facility furniture (ruined) ==================== -->
+
+  <!-- EN: ruined personal locker -->
+  <DMS_PersonallockerDestroyed.label>損毀的個人置物櫃</DMS_PersonallockerDestroyed.label>
+  <!-- EN: A rusted-out steel locker. Its door has been forced and whatever was inside is long gone. Breaking it down yields some metal scrap. -->
+  <DMS_PersonallockerDestroyed.description>一個鏽蝕殆盡的鋼製置物櫃，櫃門早已被撬開，裡面的東西也早已不知去向。將其破壞可以回收一些金屬碎片。</DMS_PersonallockerDestroyed.description>
+
+  <!-- EN: ruined locker bank -->
+  <DMS_Personallocker_LargeDestroyed.label>損毀的三連置物櫃</DMS_Personallocker_LargeDestroyed.label>
+  <!-- EN: A bank of three rusted-out steel lockers. The doors hang open or are missing entirely, and whatever was inside is long gone. Breaking it down yields some metal scrap. -->
+  <DMS_Personallocker_LargeDestroyed.description>三個鏽蝕殆盡的鋼製置物櫃，櫃門或是敞開或是乾脆不見了，裡面的東西也早已不知去向。將其破壞可以回收一些金屬碎片。</DMS_Personallocker_LargeDestroyed.description>
+
+  <!-- EN: ruined water dispenser -->
+  <DMS_WaterdispenserDestroyed.label>損毀的飲水機</DMS_WaterdispenserDestroyed.label>
+  <!-- EN: The wreck of a water dispenser. The bottle is cracked and empty, and the taps have corroded solid. Breaking it down yields some metal scrap. -->
+  <DMS_WaterdispenserDestroyed.description>一台飲水機的殘骸，水桶已經開裂見底，水龍頭也鏽死了。將其破壞可以回收一些金屬碎片。</DMS_WaterdispenserDestroyed.description>
+
+  <!-- EN: ruined waiting bench -->
+  <DMS_BenchesDestroyed.label>損毀的等候長椅</DMS_BenchesDestroyed.label>
+  <!-- EN: A row of seats on a rusted steel frame. The padding has rotted away and the frame is bent, so nobody will be sitting here again. Breaking it down yields some metal scrap. -->
+  <DMS_BenchesDestroyed.description>鏽蝕鋼架上的一排座椅。將其破壞可以回收一些金屬碎片。</DMS_BenchesDestroyed.description>
+
+  <!-- EN: ruined air purifier -->
+  <DMS_AirpurifierDestroyed.label>損毀的空氣清淨機</DMS_AirpurifierDestroyed.label>
+  <!-- EN: The wreck of an air purification unit. Its filters are clogged solid and the housing has rusted through. Breaking it down yields some metal scrap. -->
+  <DMS_AirpurifierDestroyed.description>一台空氣清淨裝置的殘骸，濾網已被徹底堵死，外殼也已鏽穿。將其破壞可以回收一些金屬碎片。</DMS_AirpurifierDestroyed.description>
+
+  <!-- EN: ruined hydroponic planter -->
+  <DMS_Hydroponics_FlowerpotDestroyed.label>損毀的水耕花盆</DMS_Hydroponics_FlowerpotDestroyed.label>
+  <!-- EN: A dead hydroponic planter. The nutrient reservoir dried out long ago, leaving only a crust of withered roots. Breaking it down yields some metal scrap. -->
+  <DMS_Hydroponics_FlowerpotDestroyed.description>一個早已枯死的水耕花盆，營養液儲槽早就乾涸，只剩下一層枯根結成的硬殼。將其破壞可以回收一些金屬碎片。</DMS_Hydroponics_FlowerpotDestroyed.description>
+
+</LanguageData>

@@ -63,7 +63,8 @@
       <li Class="PatchOperationAdd">
         <xpath>
           Defs/ThingDef[
-          defName="DMS_Mech_Soldat"
+          defName="DMS_Mech_Soldat" or
+          defName="DMS_Mech_Sergeant"
           ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
         <value>
           <li>PLA_SimpleGun</li>
@@ -82,15 +83,6 @@
           <li>PLA_SemiAutoRifle</li>
           <li>PLA_Shotgun</li>
           <li>PLA_SMG</li>
-        </value>
-      </li>
-
-      <li Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[
-          defName="DMS_Mech_Sergeant"
-          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
-        <value>
-          <li>PLA_Pistol</li>
         </value>
       </li>
 

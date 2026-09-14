@@ -25,8 +25,8 @@
   
   <!-- EN: Sergeant -->
   <DMS_Mech_Sergeant.label>軍士</DMS_Mech_Sergeant.label>
-  <!-- EN: As a relay command variant of the Soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. Sergeants extend a mechanitor's effective range, but due to the weight of its radar equipment it can only equip a light weapon for self-defense. -->
-  <DMS_Mech_Sergeant.description>作為士兵系列的中繼指揮改裝型，它擁有非常容易辨認的盤形全向雷達和收發天線。它可以作為機械體的指揮中繼，但由於其重量和火控系統的削減只能裝備輕武器用於自衛。</DMS_Mech_Sergeant.description>
+  <!-- EN: As a relay command variant of the Soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. Sergeants extend a mechanitor's effective range and can be equipped with the same weapons rated for human use as a standard Soldat. -->
+  <DMS_Mech_Sergeant.description>作為士兵系列的中繼指揮改裝型，它擁有非常容易辨認的盤形全向雷達和收發天線。它可以作為機械體的指揮中繼，並能與標準士兵型一樣裝備人類規格的武器。</DMS_Mech_Sergeant.description>
   <!-- EN: head -->
   <DMS_Mech_Sergeant.tools.head.label>頭部</DMS_Mech_Sergeant.tools.head.label>
   <!-- EN: left fist -->

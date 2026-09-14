@@ -81,6 +81,11 @@
             <li>Corpses</li>
             <li>FoodRaw</li>
           </categories>
+          <!-- 木頭沒有獨立的 ThingCategory（原版只掛在 ResourcesRaw 下），
+               改用 stuff 類別 Woody 篩選：原版 WoodLog 與其他模組的木材都會一併納入。 -->
+          <stuffCategoriesToAllow>
+            <li>Woody</li>
+          </stuffCategoriesToAllow>
         </filter>
       </fixedStorageSettings>
       <!-- 預設只勾塊堆與動物屍體：人形屍體要不要進磨床是玩家自己的決定，別替他決定。 -->

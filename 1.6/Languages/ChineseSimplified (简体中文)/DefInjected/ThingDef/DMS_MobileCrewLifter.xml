@@ -13,8 +13,8 @@
 
   <!-- EN: spent crew pod -->
   <DMS_LifterCrewPod.label>废弃返回舱</DMS_LifterCrewPod.label>
-  <!-- EN: The crew pod of a mobile crew lifter, spent after its return flight. Without its platform it cannot launch again, but it can be deconstructed for materials. -->
-  <DMS_LifterCrewPod.description>机动载人升降舱的返回舱，完成返程飞行后已无法再用。没有底座便无法再次发射，但可拆除回收材料。</DMS_LifterCrewPod.description>
+  <!-- EN: The crew pod of a mobile crew lifter, spent after its return flight. Without its platform it cannot launch again, but it can be deconstructed for materials, and any chemfuel left in its tank is recovered along with them. -->
+  <DMS_LifterCrewPod.description>机动载人升降舱的返回舱，完成返程飞行后已无法再用。没有底座便无法再次发射，但可拆除回收材料，油箱里的残余化学燃料也会一并退还。</DMS_LifterCrewPod.description>
 
   <!-- EN: mobile crew lifter -->
   <DMS_ActiveCrewLifter.label>机动载人升降舱</DMS_ActiveCrewLifter.label>

@@ -31,10 +31,25 @@ namespace DMS
     /// 第二次發射只有返回艙升空,底座以無陣營建築留在原地。
     /// 自帶燃料槽,不需要發射台。
     /// </summary>
+    [StaticConstructorOnStartup]
     public class CompLaunchable_Lifter : CompLaunchable
     {
         // 已完成第一次飛行、底座可脫離:下次發射只發射返回艙
         public bool podOnly;
+
+        // 世界地圖上的「往返範圍」環 (仿 CompPilotConsole 的白色射程環 / 黃色燃料環,這裡用綠色)
+        private static readonly Color RoundTripColor = new Color(0.45f, 1f, 0.55f);
+        private static readonly Material RoundTripRadiusMat = MaterialPool.MatFrom(GenDraw.OneSidedLineTexPath, ShaderDatabase.WorldOverlayTransparent, RoundTripColor, 3590);
+        private static readonly Material RoundTripRadiusMatHighVis = MaterialPool.MatFrom(GenDraw.OneSidedLineOpaqueTexPath, ShaderDatabase.WorldOverlayAdditiveTwoSided, RoundTripColor, 3590);
+
+        private static Material GetRoundTripRadiusMat(PlanetTile tile) => tile.LayerDef.isSpace ? RoundTripRadiusMatHighVis : RoundTripRadiusMat;
+
+        /// <summary>以目前油量飛去再飛回 (兩段各扣一次燃料) 的最遠距離;已脫離底座 (podOnly) 就沒有回程,回傳 -1。</summary>
+        private int MaxRoundTripDistance(PlanetLayer layer)
+        {
+            if (podOnly) return -1;
+            return MaxLaunchDistanceAtFuelLevel(FuelLevel / 2f, layer);
+        }
 
         // 世界瞄準時的半徑環快取 (同原版 CompLaunchable 的私有快取)
         private PlanetTile cachedClosest;
@@ -76,7 +91,10 @@ namespace DMS
                     if (transporter.AnyInGroupHasAnythingLeftToLoad)
                     {
                         TaggedString text = "ConfirmSendNotCompletelyLoadedLaunchable".Translate() + ":\n";
-                        text += transporter.leftToLoad.Select((TransferableOneWay x) => x.AnyThing.LabelCap).ToLineList(" -");
+                        // leftToLoad 可能殘留沒有實體的項目 (AnyThing == null),與 FirstThingLeftToLoad 用同樣條件過濾
+                        text += transporter.leftToLoad
+                            .Where((TransferableOneWay x) => x.HasAnyThing && x.CountToTransfer != 0)
+                            .Select((TransferableOneWay x) => x.AnyThing.LabelCap).ToLineList(" -");
                         text += "\n\n" + "ConfirmSendLaunchAnyway".Translate();
                         Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(text, delegate
                         {
@@ -140,6 +158,10 @@ namespace DMS
                     int maxFuel = MaxLaunchDistanceAtFuelLevel(FuelLevel, PlanetLayer.Selected);
                     if (maxFuel < maxEver)
                         GenDraw.DrawWorldRadiusRing(closest, maxFuel, CompPilotConsole.GetFuelRadiusMat(closest));
+                    // 往返範圍:在這個環內落地後,剩餘燃料還夠返回艙飛回來
+                    int maxRoundTrip = MaxRoundTripDistance(PlanetLayer.Selected);
+                    if (maxRoundTrip > 0 && maxRoundTrip < maxFuel)
+                        GenDraw.DrawWorldRadiusRing(closest, maxRoundTrip, GetRoundTripRadiusMat(closest));
                 },
                 LifterTargetingLabel, null, origin, showCancelButton: true);
         }
@@ -263,6 +285,15 @@ namespace DMS
             string cost = string.Format("{0}: {1}", "Cost".Translate().CapitalizeFirst(), "FuelAmount".Translate(fuelNeeded, ThingDefOf.Chemfuel));
             if (fuelNeeded > FuelLevel)
                 cost = (cost + string.Format(" ({0})", "TransportPodNotEnoughFuel".Translate())).Colorize(ColorLibrary.RedReadable);
+            else if (!podOnly)
+            {
+                // 往返所需 = 去程 + 回程 (返回艙同樣的 fuelPerTile);不夠回來就標紅提醒,但不阻止發射
+                float roundTrip = fuelNeeded * 2f;
+                string rt = "DMS_CrewLifter_RoundTripCost".Translate("FuelAmount".Translate(roundTrip, ThingDefOf.Chemfuel));
+                if (roundTrip > FuelLevel)
+                    rt = (rt + string.Format(" ({0})", "DMS_CrewLifter_NoReturnFuel".Translate())).Colorize(ColorLibrary.RedReadable);
+                cost += "\n" + rt;
+            }
 
             if (options.Count == 1)
             {
@@ -279,7 +310,7 @@ namespace DMS
         /// 1. 貨物資訊改用 LifterTransporterInfo 攜帶剩餘燃料
         /// 2. 依 podOnly 切換離場 skyfaller / sentTransporterDef / 世界物件
         /// 3. podOnly 時於原地留下底座
-        /// (CompTransporter 設 max1PerGroup,群組只有自己,不處理多艙群組)
+        /// 群組內的每一艘升降艙各自走 LaunchSingle。
         /// </summary>
         private void TryLaunchLifter(PlanetTile destinationTile, TransportersArrivalAction arrivalAction)
         {
@@ -288,17 +319,40 @@ namespace DMS
                 Log.Error($"Tried to launch {parent}, but it's unspawned.");
                 return;
             }
-            CompTransporter transporter = Transporter;
-            if (transporter == null || !CanLaunch()) return;
+            List<CompTransporter> group = TransportersInGroup;
+            if (group == null)
+            {
+                Log.Error($"Tried to launch {parent}, but it's not in any group.");
+                return;
+            }
+            if (!CanLaunch()) return;
 
             Map map = parent.Map;
             int dist = Find.WorldGrid.TraversalDistanceBetween(map.Tile, destinationTile, passImpassable: true, int.MaxValue, canTraverseLayers: true);
             Current.Game.CurrentMap = map;
-            if (dist > MaxLaunchDistanceAtFuelLevel(FuelLevel, destinationTile.Layer)) return;
+            // 群組發射以油量最少的那一艘為準 (同原版 MinFuelLevelInGroup)
+            float minFuel = float.MaxValue;
+            for (int i = 0; i < group.Count; i++)
+                minFuel = Mathf.Min(minFuel, group[i].Launchable?.FuelLevel ?? 0f);
+            if (dist > MaxLaunchDistanceAtFuelLevel(minFuel, destinationTile.Layer)) return;
 
-            transporter.TryRemoveLord(map);
-            int groupID = transporter.groupID;
+            Transporter.TryRemoveLord(map);
+            int groupID = Transporter.groupID;
             float fuelCost = Mathf.Max(FuelNeededToLaunchAtDist(dist, destinationTile.Layer), 1f);
+            for (int i = 0; i < group.Count; i++)
+            {
+                CompTransporter transporter = group[i];
+                if (transporter.Launchable is CompLaunchable_Lifter lifter)
+                    lifter.LaunchSingle(transporter, map, groupID, destinationTile, arrivalAction, fuelCost);
+                else
+                    Log.Warning($"[DMS] {transporter.parent} is grouped with a crew lifter but has no CompLaunchable_Lifter; skipped.");
+            }
+            CameraJumper.TryHideWorld();
+        }
+
+        /// <summary>群組中單一艘升降艙的起飛:扣油、打包貨物、生成離場 skyfaller、(podOnly) 留下底座。</summary>
+        private void LaunchSingle(CompTransporter transporter, Map map, int groupID, PlanetTile destinationTile, TransportersArrivalAction arrivalAction, float fuelCost)
+        {
             lastLaunchTick = Find.TickManager.TicksGame;
             CompRefuelable refuelable = Refuelable;
             refuelable?.ConsumeFuel(fuelCost);
@@ -334,7 +388,6 @@ namespace DMS
                 GenSpawn.Spawn(platform, pos, map);
             }
             GenSpawn.Spawn(leaving, pos, map);
-            CameraJumper.TryHideWorld();
         }
     }
 }

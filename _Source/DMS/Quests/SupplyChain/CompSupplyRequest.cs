@@ -3,6 +3,8 @@ using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.AI;
+using Verse.Sound;
 
 namespace DMS
 {
@@ -80,6 +82,28 @@ namespace DMS
 
             if (parent.Faction != Faction.OfPlayer || sent) yield break;
 
+            // 「開啟相關任務」gizmo:原版只有 Pawn / CompShuttle 等會主動呼叫,一般 Building 不會,
+            // 這裡自行附上 (以 QuestLookTargets / QuestSelectTargets 是否包含本艙判定)
+            foreach (Gizmo g in QuestUtility.GetQuestRelatedGizmos(parent))
+                yield return g;
+
+            // 原版只在艙內已有物品時提供「取消裝載」;若裝載清單上有東西但尚未搬入任何物品,
+            // 這裡補上取消 gizmo,確保玩家在裝載途中隨時可以中止。
+            if (LoadingInProgressOrReadyToLaunch && !innerContainer.Any && AnythingLeftToLoad)
+            {
+                yield return new Command_Action
+                {
+                    defaultLabel = "CommandCancelLoad".Translate(),
+                    defaultDesc = "CommandCancelLoadDesc".Translate(),
+                    icon = ContentFinder<Texture2D>.Get("UI/Designators/Cancel", true),
+                    action = delegate
+                    {
+                        SoundDefOf.Designate_Cancel.PlayOneShotOnCamera();
+                        CancelLoad();
+                    },
+                };
+            }
+
             // 自動把地圖上符合類別的物品加入裝載清單
             yield return new Command_Action
             {
@@ -111,11 +135,19 @@ namespace DMS
                 Messages.Message("DMS_SupplyPod_AlreadyDesignated".Translate(), parent, MessageTypeDefOf.RejectInput, false);
                 return;
             }
+            // 已在裝載清單上的物品不重複指定 (同一 Thing 加入兩次會使 transferable 數量重複計算)
+            HashSet<Thing> alreadyPlanned = new HashSet<Thing>();
+            if (leftToLoad != null)
+            {
+                for (int i = 0; i < leftToLoad.Count; i++)
+                    alreadyPlanned.AddRange(leftToLoad[i].things);
+            }
             bool any = false;
             foreach (Thing t in map.listerThings.ThingsInGroup(ThingRequestGroup.HaulableEver))
             {
                 if (need <= 0) break;
-                if (!Matches(t) || !t.Spawned || t.IsForbidden(Faction.OfPlayer)) continue;
+                if (!Matches(t) || !t.Spawned || t.IsForbidden(Faction.OfPlayer) || alreadyPlanned.Contains(t)) continue;
+                if (!map.reachability.CanReach(parent.Position, t, PathEndMode.Touch, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly))) continue;
                 int take = Mathf.Min(need, t.stackCount);
                 TransferableOneWay tr = new TransferableOneWay();
                 tr.things.Add(t);
@@ -125,7 +157,9 @@ namespace DMS
             }
             if (any)
             {
-                TransporterUtility.InitiateLoading(Gen.YieldSingle((CompTransporter)this));
+                // 裝載已在進行中時不可重設 groupID,否則正在搬運的殖民者 job 會失效
+                if (!LoadingInProgressOrReadyToLaunch)
+                    TransporterUtility.InitiateLoading(Gen.YieldSingle((CompTransporter)this));
                 Messages.Message("DMS_SupplyPod_Designated".Translate(), parent, MessageTypeDefOf.TaskCompletion, false);
             }
             else
@@ -137,17 +171,21 @@ namespace DMS
         public void Deliver()
         {
             if (sent || !Satisfied) return;
-            // 消耗要求數量的符合物品
+            // 消耗要求數量的符合物品,並累計實際交付市值(品質/耐久/汙損都反映在 MarketValue)
             int toConsume = requestedCount;
+            float deliveredValue = 0f;
             List<Thing> matching = innerContainer.Where(Matches).ToList();
             for (int i = 0; i < matching.Count && toConsume > 0; i++)
             {
                 int take = Mathf.Min(toConsume, matching[i].stackCount);
                 Thing taken = innerContainer.Take(matching[i], take);
                 toConsume -= take;
+                deliveredValue += taken.MarketValue * taken.stackCount;
                 taken.Destroy();
             }
-            QuestUtility.SendQuestTargetSignals(parent.questTags, "Delivered", parent.Named("SUBJECT"));
+            // 任務端以 VALUE 計算報酬;子任務結束時的 Cleanup 會經 SendAway 把本艙送走
+            QuestUtility.SendQuestTargetSignals(parent.questTags, "Delivered",
+                parent.Named("SUBJECT"), deliveredValue.Named("VALUE"));
             SendAway();
         }
 
@@ -159,10 +197,12 @@ namespace DMS
 
             // 邊界:pod 仍在降落途中(位於 incoming skyfaller 容器內)或已離開地圖,
             // 沒有可用的 Map 可播離場動畫,直接銷毀即可。
+            // DestroyMode.QuestLogic:原版不會對 questTags 送出 "pod.Destroyed",
+            // 免得被任務端誤判成補給艙遭摧毀而觸發失敗。
             if (!parent.Spawned || parent.Map == null)
             {
                 if (!parent.Destroyed)
-                    parent.Destroy(DestroyMode.Vanish);
+                    parent.Destroy(DestroyMode.QuestLogic);
                 return;
             }
 
@@ -172,7 +212,7 @@ namespace DMS
             innerContainer.TryDropAll(pos, map, ThingPlaceMode.Near);
             ThingDef leaving = Props.leavingSkyfaller;
             ThingDef platformDef = Props.platformDef;
-            parent.Destroy(DestroyMode.Vanish);
+            parent.Destroy(DestroyMode.QuestLogic);
             // 貨艙脫離底座升空:底座以無陣營建築留在原地,玩家可自行拆除回收
             if (platformDef != null)
             {

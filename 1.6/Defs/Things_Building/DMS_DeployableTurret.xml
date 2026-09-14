@@ -41,15 +41,37 @@
 		<fillPercent>0.4</fillPercent>
 		<pathCost>30</pathCost>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<!-- <designationCategory>DMS_Category</designationCategory> -->
+		<!-- 不在建築面板顯示：架設型槍械由工作台製作（見下方 recipeMaker），再透過部署／拾起切換型態 -->
+		<designationCategory Inherit="false" />
 		<statBases>
 			<MaxHitPoints>180</MaxHitPoints>
 			<Flammability>0.5</Flammability>
 			<WorkToBuild>3000</WorkToBuild>
+			<WorkToMake>50000</WorkToMake>
 			<Mass>12.75</Mass>
 			<Beauty>-2</Beauty>
 			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
 		</statBases>
+		<!--
+			取得方式：工作台配方。
+			recipeMaker 必須掛在「陣地建築」而非手持型態上：GenRecipe.PostProcessProduct 會對
+			Minifiable 的產物自動呼叫 MakeMinified()，因此配方完成時直接產出帶有 InnerThing 的
+			DMS_LightMachineGun；若掛在手持型態上，做出來的會是沒有 InnerThing 的空殼並被遊戲銷毀。
+		-->
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+			<recipeUsers>
+				<li>DMS_TableMachinePrinter</li>
+			</recipeUsers>
+			<researchPrerequisites>
+				<li>DMS_MechBasis</li>
+				<li>GasOperation</li>
+			</researchPrerequisites>
+		</recipeMaker>
 		<comps Inherit="false">
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Mannable">
@@ -96,7 +118,8 @@
 			<ComponentStamped>7</ComponentStamped>
 		</costList>
 		<researchPrerequisites Inherit="false">
-			<li>DMS_DeadMansSwitch</li>
+			<li>DMS_MechBasis</li>
+			<li>GasOperation</li>
 		</researchPrerequisites>
 		<modExtensions>
 			<li Class="Fortified.ForceTargetableExtension" />
@@ -166,7 +189,8 @@
 		與 GPMG 的差異：DMS 的機兵有 MechWeaponExtension 武器白名單，靠 weaponTags 比對，
 		因此這裡必須保留 weaponTags；改用 generateAllowChance 0 + tradeability None
 		阻止 PawnGenerator／商隊生出沒有 InnerThing 的空殼（那會被遊戲直接銷毀）。
-		取得方式：建造 DMS_Turret_LightMachineGun 後由人員「拾起」，故無 recipeMaker。
+		取得方式：由 DMS_Turret_LightMachineGun 的 recipeMaker 製作（產物會自動迷你化成本 def），
+		故此處不放 recipeMaker——直接製作 MinifiedThing 會得到沒有 InnerThing 的空殼。
 	-->
 	<ThingDef ParentName="FFF_MinifiedTurretEquippable">
 		<defName>DMS_LightMachineGun</defName>
@@ -278,14 +302,32 @@
 		<fillPercent>0.4</fillPercent>
 		<pathCost>30</pathCost>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<!-- 不在建築面板顯示：架設型槍械由工作台製作（見下方 recipeMaker），再透過部署／拾起切換型態 -->
+		<designationCategory Inherit="false" />
 		<statBases>
 			<MaxHitPoints>200</MaxHitPoints>
 			<Flammability>0.5</Flammability>
 			<WorkToBuild>3800</WorkToBuild>
+			<WorkToMake>75000</WorkToMake>
 			<Mass>20.70</Mass>
 			<Beauty>-2</Beauty>
 			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
 		</statBases>
+		<!-- 取得方式：工作台配方。recipeMaker 掛在陣地建築上，產物會由 GenRecipe 自動迷你化成手持型態（詳見 LMG 的說明） -->
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+			<recipeUsers>
+				<li>DMS_TableMachinePrinter</li>
+			</recipeUsers>
+			<researchPrerequisites>
+				<li>PrecisionRifling</li>
+				<li>DMS_EquipmentElite</li>
+			</researchPrerequisites>
+		</recipeMaker>
 		<comps Inherit="false">
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Mannable">
@@ -435,8 +477,8 @@
 
 	<!--
 		AGL 手持型態。原本定義於 Defs/Things_Weapon/MilitaryGun.xml，
-		改為可部署後與 LMG 走同一套：無 recipeMaker、tradeability None、generateAllowChance 0，
-		取得方式為建造 DMS_Turret_AutomaticGrenadeLauncher 後由人員「拾起」。
+		改為可部署後與 LMG 走同一套：本 def 不放 recipeMaker、tradeability None、generateAllowChance 0，
+		取得方式為 DMS_Turret_AutomaticGrenadeLauncher 的 recipeMaker（產物會自動迷你化成本 def）。
 	-->
 	<ThingDef ParentName="FFF_MinifiedTurretEquippable">
 		<defName>DMS_AutomaticGrenadeLauncher</defName>
@@ -581,14 +623,31 @@
 		<fillPercent>0.4</fillPercent>
 		<pathCost>30</pathCost>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<!-- 不在建築面板顯示：架設型槍械由工作台製作（見下方 recipeMaker），再透過部署／拾起切換型態 -->
+		<designationCategory Inherit="false" />
 		<statBases>
 			<MaxHitPoints>240</MaxHitPoints>
 			<Flammability>0.5</Flammability>
 			<WorkToBuild>3400</WorkToBuild>
+			<WorkToMake>60000</WorkToMake>
 			<Mass>14.50</Mass>
 			<Beauty>-2</Beauty>
 			<ShootingAccuracyTurret>1.05</ShootingAccuracyTurret>
 		</statBases>
+		<!-- 取得方式：工作台配方。recipeMaker 掛在陣地建築上，產物會由 GenRecipe 自動迷你化成手持型態（詳見 LMG 的說明） -->
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+			<recipeUsers>
+				<li>DMS_TableMachinePrinter</li>
+			</recipeUsers>
+			<researchPrerequisites>
+				<li>DMS_DeadMansSwitch</li>
+			</researchPrerequisites>
+		</recipeMaker>
 		<comps Inherit="false">
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Mannable">
@@ -726,6 +785,7 @@
 		因此 MaxHitPoints / tools / storedConceptLearnOpportunity 都必須在此補回。
 		AmmoSwitch 的 comp 以「附加」方式寫入（不要 Inherit="false"），
 		否則會蓋掉父代的 CompEquippable 與拾起用的 CompProperties_Usable。
+		取得方式與 LMG 相同：由 DMS_Turret_HeavyMachineGun 的 recipeMaker 製作，本 def 不放 recipeMaker。
 	-->
 	<ThingDef ParentName="FFF_MinifiedTurretEquippable">
 		<defName>DMS_HeavyMachineGun</defName>

@@ -51,6 +51,11 @@
   <!-- EN: Apply a battle friend mech belong to your side. -->
   <DMS_CombatMech.description>申请支援一架战斗机兵编入你的部队。</DMS_CombatMech.description>
   
+  <!-- EN: Request mobile crew lifter -->
+  <DMS_Call_MobileLifter.label>征调机动载人升降舱</DMS_Call_MobileLifter.label>
+  <!-- EN: Request a fully fuelled mobile crew lifter to be dropped at a chosen spot and owned directly by your colony. It can fly out once with its platform and once more as a return pod. -->
+  <DMS_Call_MobileLifter.description>向殖民舰队申请一架加满燃料的机动载人升降舱，空投至指定位置并直接归你的殖民地所有。它可连同底座整机出航一次，再以返回舱飞回一次。</DMS_Call_MobileLifter.description>
+
   <DMS_Join_Shuttle.label>扩编轨道运输机</DMS_Join_Shuttle.label>
 
   <DMS_Join_Shuttle.description>向殖民舰队申请徵调一架轨道运输机直接归你的殖民地所有。</DMS_Join_Shuttle.description>

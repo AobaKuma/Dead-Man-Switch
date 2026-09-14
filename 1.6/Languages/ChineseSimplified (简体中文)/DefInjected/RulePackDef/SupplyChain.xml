@@ -55,13 +55,6 @@
     <li>stageOpen->[issuerUnit]已提出供应合约的下一期货物需求。机动货舱即将抵达。</li>
     <li>stageOpen->与[issuerUnit]的供应合约已进入下一期。机动货舱很快会降落在殖民地附近。</li>
 
-    <li>podLetterLabel->补给货舱</li>
-    <li>podLetterLabel->补给货舱即将抵达</li>
-    <li>podLetterText->[podOpen]\n\n在期限截止前将 [count] 个[categoryLabel]装入其中。</li>
-
-    <li>podOpen->来自[issuerUnit]的机动货舱正在殖民地附近降落。</li>
-    <li>podOpen->[issuerUnit]派出的机动货舱即将在附近着陆。</li>
-
     <li>paymentLetterLabel->报酬已送达</li>
     <li>paymentLetterLabel->交付报酬</li>
     <li>paymentLetterText->[payOpen]</li>

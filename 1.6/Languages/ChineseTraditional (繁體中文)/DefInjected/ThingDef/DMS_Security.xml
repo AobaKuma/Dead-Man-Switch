@@ -103,12 +103,8 @@
   
   <!-- EN: Sentry turret -->
   <DMS_Turret_Sentry.label>哨戒機槍</DMS_Turret_Sentry.label>
-  <!-- EN: A quick-deployed, disposable remote-controlled turret that can be used continuously for about 12 hours after being deployed. It will automatically shut down after the energy is used up. These type of equipments are usually deployed in urban combat environments to ambush enemies. -->
-  <DMS_Turret_Sentry.description>一種快速部屬的一次性遙控砲塔，展開後可以持續使用12小時左右。並在能量用光之後自動關機。這類裝備通常被部屬在巷戰環境中來伏擊進入街道的敵人來阻滯對方的突襲。</DMS_Turret_Sentry.description>
-  <!-- EN: Battery power -->
-  <DMS_Turret_Sentry.comps.CompMechPowerCell.labelOverride>電池</DMS_Turret_Sentry.comps.CompMechPowerCell.labelOverride>
-  <!-- EN: This turret has a limited battery life. Once it runs out, it will stop working entirely. -->
-  <DMS_Turret_Sentry.comps.CompMechPowerCell.tooltipOverride>這個砲塔的電池壽命有限。一旦耗盡，它將完全停止工作。</DMS_Turret_Sentry.comps.CompMechPowerCell.tooltipOverride>
+  <!-- EN: A light automatic turret with a built-in battery, designed to be carried and set up wherever the line needs a gun. On the power grid it charges its internal cell; cut off from the grid it draws on that reserve and keeps firing until the cell runs dry. Switching it off puts it on standby: it stops watching and pours the saved power into the cell instead, charging twice as fast.\n\nIts tripod folds flat, so a drafted operator can pick it up, carry it forward and drop it into position on the spot. A cell charged before departure will keep it standing watch for days. -->
+  <DMS_Turret_Sentry.description>一種內建電池的輕型自動砲塔，設計成可隨身攜帶、在任何需要火力的位置架設。接上電網時會為內部電池充電；脫離電網後則改以電池供電，持續射擊直到電量耗盡。將開關關閉即進入待機：停止警戒，把省下的電力全數灌入電池，充電速度加倍。\n\n三腳架可摺疊收攏，徵召中的人員能直接將它拾起、帶往前線並就地部署。出發前充飽的電池足以讓它值守數日。</DMS_Turret_Sentry.description>
   
   <!-- EN: Vasilek -->
   <DMS_Turret_Vasilek.label>矢車菊</DMS_Turret_Vasilek.label>

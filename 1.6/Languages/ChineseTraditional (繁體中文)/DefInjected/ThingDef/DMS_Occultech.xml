@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <DMS_OccultTechFont.label>資料石碑</DMS_OccultTechFont.label>
-  <DMS_OccultTechFont.description>由密封的遠征資料核心與禁忌藍圖交織而成的稠密晶格，嗡鳴著殖民艦隊從未打算流通的知識。它蘊藏有限的秘術理解。單獨存在時毫無作用——在其正面放置一台石碑解碼器，便會緩慢地將知識抽出。抽乾後，只會留下一具死寂的空殼。</DMS_OccultTechFont.description>
+  <DMS_OccultTechFont.label>石碑</DMS_OccultTechFont.label>
+  <DMS_OccultTechFont.description>一種用於儲存技術資料與殖民紀錄備份的資料庫，也包含了至今所有殖民計畫中曾發生的事故案例分析與事後檢討。石碑既是殖民艦隊用於跨星系向其他同胞分享經驗與知識的載體，也被作為深埋於每顆殖民星球的備用資料庫。其透過複雜的加密與校驗演算法，避免在長期的太空旅行或地底封藏中遺失所紀錄的訊息，同時防止殖民艦隊以外的人或勢力取得其中的危險技術。\n\n傳言透過脫序者們所流出的解碼技術，能夠對其進行破壞性掃描並提取內部資料，但使用該技術本身可能會招來殖民艦隊的敵意。</DMS_OccultTechFont.description>
 
-  <DMS_OccultechExtractor.label>石碑解碼器</DMS_OccultechExtractor.label>
-  <DMS_OccultechExtractor.description>一台寄生式解碼裝置。將它的正面對準資料石碑放置並供給電力，它便會持續從石碑虹吸秘術知識，並歸檔進你的遠征研究——無須研究員。若石碑枯竭、失去電力或正面無石碑，萃取即停止。可拆卸後搬遷至他處重新安裝。</DMS_OccultechExtractor.description>
+  <DMS_OccultechExtractor.label>解碼器</DMS_OccultechExtractor.label>
+  <DMS_OccultechExtractor.description>一種破壞性譯碼裝置。透過發射高能雷射束照射石碑內的全像儲存刻錄片，並分析其散射出的光譜來讀取內部資料，這是目前已知除艦隊外能夠取得石碑內容的唯一手段。將其正面對準石碑放置並供給電力便會持續萃取其中的知識並歸檔研究。/n/n由於破譯本身會對石碑造成不可逆的數據破壞，因此持有裝置本身就會招來殖民艦隊的敵意。</DMS_OccultechExtractor.description>
 
 </LanguageData>

@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
+  <!-- EN: bolt cannon shell -->
+  <DMS_Bullet_SniperCannon.label>狙击炮弹</DMS_Bullet_SniperCannon.label>
+  <!-- EN: A full-length autocannon round fired from a rifled barrel at far higher velocity than any turret mount can manage. The dense penetrator carries enough energy to punch through exostrider plating at extreme range and drop whatever is behind it. -->
+  <DMS_Bullet_SniperCannon.description>由线膛长身管以远超炮塔载具的初速射出的全装机炮弹。高密度穿甲弹芯携带的动能足以在极远距离贯穿巨型机械体的装甲，并击倒其后方的任何目标。</DMS_Bullet_SniperCannon.description>
+  
   <!-- EN: heavy machine gun bullet -->
   <Bullet_DMS_HeavyMachineGun.label>重机枪子弹</Bullet_DMS_HeavyMachineGun.label>
   <!-- EN: A standard 12.7mm full metal jacket belt round. Balanced for sustained fire at range against both infantry and light plating. -->

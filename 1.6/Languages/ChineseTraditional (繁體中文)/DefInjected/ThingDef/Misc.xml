@@ -23,4 +23,12 @@
   <!-- EN: verlingbrid drone belt -->
   <DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>部署槳鳥</DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>
   
+  <!-- EN: scanner pack -->
+  <DMS_Apparel_PackScanner.label>掃描器背包</DMS_Apparel_PackScanner.label>
+  <!-- EN: A wearable pack that allows the user to deploy a battery-powered perimeter scanner. The pack contains a propulsion device, letting the user launch the scanner a short distance. The scanner battery lasts for several hours. -->
+  <DMS_Apparel_PackScanner.description>一種可穿戴的背包，讓使用者能部署以電池供電的周界掃描器。背包內建推進裝置，可將掃描器投射到短距離外。掃描器的電池可持續數小時。</DMS_Apparel_PackScanner.description>
+  
+  <!-- EN: scanner pack capsule -->
+  <DMS_Grenade_ScannerPack.label>掃描器投射艙</DMS_Grenade_ScannerPack.label>
+  
 </LanguageData>

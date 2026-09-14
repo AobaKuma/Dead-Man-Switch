@@ -52,7 +52,7 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>Bullet_AutocannonTurret</defaultProjectile>
+				<defaultProjectile>DMS_Bullet_SniperCannon</defaultProjectile>
 				<warmupTime>2.0</warmupTime>
 				<range>49.9</range>
 				<soundCast>DMS_MachineGunHeavy_Shot</soundCast>
@@ -73,6 +73,25 @@
 				<EquippableDef>TransHeavyAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
+	</ThingDef>
+
+	<!-- MSC 專用彈: 單發重彈，高傷高穿甲，不可切換彈種 -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>DMS_Bullet_SniperCannon</defName>
+		<label>bolt cannon shell</label>
+		<description>A full-length autocannon round fired from a rifled barrel at far higher velocity than any turret mount can manage. The dense penetrator carries enough energy to punch through exostrider plating at extreme range and drop whatever is behind it.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.3</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>160</damageAmountBase>
+			<armorPenetrationBase>1.2</armorPenetrationBase>
+			<stoppingPower>4</stoppingPower>
+			<speed>110</speed>
+		</projectile>
 	</ThingDef>
 
 	<!--HMG 的手持/陣地型態已移至 Defs/Things_Building/DMS_DeployableTurret.xml，此處僅保留兩種彈丸-->
@@ -475,10 +494,7 @@
 	<!--====MK44大毒蛇2機炮====-->
 	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
 		<defName>DMS_Gun_MK44_Autocannon</defName>
-		<!-- 取得方式: 探索(高烈度) / DMS武器商 / 稀有任務獎勵 -->
-		<tradeTags>
-			<li>DMS_WeaponUncraftable</li>
-		</tradeTags>
+		<!-- 取得方式: 自行製作(軍用裝備) / 探索(高烈度) / 稀有任務獎勵 -->
 		<thingSetMakerTags>
 			<li>RewardStandardLowFreq</li>
 		</thingSetMakerTags>
@@ -511,8 +527,15 @@
 		<equippedStatOffsets>
 			<MoveSpeed>-0.2</MoveSpeed>
 		</equippedStatOffsets>
-		<!-- 取得方式: 探索獎勵(高烈度) - 不可製造 -->
-		<recipeMaker IsNull="True" />
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<!-- 解鎖: 軍用裝備 (與 MK44 海軍型炮塔一致) -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_EquipmentElite</li>
+			</researchPrerequisites>
+		</recipeMaker>
 		<costList>
 			<Tungsteel>55</Tungsteel>
 			<ComponentStamped>21</ComponentStamped>

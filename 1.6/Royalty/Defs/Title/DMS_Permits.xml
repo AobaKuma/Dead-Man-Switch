@@ -370,6 +370,22 @@
     <cooldownDays>60</cooldownDays>
   </RoyalTitlePermitDef>
   
+  <!-- 機動載人升降艙:重型穿梭機的前置權限 -->
+  <RoyalTitlePermitDef>
+    <defName>DMS_Call_MobileLifter</defName>
+    <label>Request mobile crew lifter</label>
+    <description>Request a fully fuelled mobile crew lifter to be dropped at a chosen spot and owned directly by your colony. It can fly out once with its platform and once more as a return pod.</description>
+    <workerClass>DMS.RoyalTitlePermitWorker_RewardLifter</workerClass>
+    <minTitle>DMS_Captain</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>2</permitPointCost>
+    <uiPosition>(5,5)</uiPosition>
+    <royalAid>
+      <favorCost>12</favorCost>
+    </royalAid>
+    <cooldownDays>60</cooldownDays>
+  </RoyalTitlePermitDef>
+
   <RoyalTitlePermitDef MayRequire="Ludeon.RimWorld.Odyssey">
     <defName>DMS_Join_Shuttle</defName>
     <label>Request shuttle reward</label>
@@ -379,6 +395,7 @@
     <faction>DMS_Army</faction>
     <permitPointCost>3</permitPointCost>
     <uiPosition>(6,5)</uiPosition>
+    <prerequisite>DMS_Call_MobileLifter</prerequisite>
     <royalAid>
       <favorCost>24</favorCost>
     </royalAid>

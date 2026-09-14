@@ -148,7 +148,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_LifterCrewPod</defName>
     <label>spent crew pod</label>
-    <description>The crew pod of a mobile crew lifter, spent after its return flight. Without its platform it cannot launch again, but it can be deconstructed for materials.</description>
+    <description>The crew pod of a mobile crew lifter, spent after its return flight. Without its platform it cannot launch again, but it can be deconstructed for materials, and any chemfuel left in its tank is recovered along with them.</description>
     <thingClass>Building</thingClass>
     <graphicData>
       <texPath>Things/Skyfaller/LifterCrewPod</texPath>
@@ -184,6 +184,12 @@
     <!-- 第二次發射落地時使用 -->
     <dropPodFaller>DMS_CrewPodIncoming</dropPodFaller>
     <dropPodActive>DMS_ActiveCrewPod</dropPodActive>
+    <comps>
+      <!-- 返程後的殘餘燃料,拆除時以化學燃料退還 -->
+      <li Class="DMS.CompProperties_StoredFuel">
+        <fuelDef>Chemfuel</fuelDef>
+      </li>
+    </comps>
   </ThingDef>
 
   <!-- ======================= 落地開艙物件 ======================= -->
@@ -357,6 +363,30 @@
     <label>mobile crew lifter</label>
     <description>A mobile crew lifter in flight.</description>
     <expandingIconTexture>Things/Skyfaller/MobileCrewLifter</expandingIconTexture>
+  </WorldObjectDef>
+
+  <!-- 降落在沒有地圖的地塊時生成的臨時地圖:內容同原版 Camp (無玩家 pawn 時自動移除、可就地定居),
+       但 worldObjectClass 改為 DMS.LifterLandingSite,讓不需機械師的玩家機械體也能撐住地圖 -->
+  <WorldObjectDef ParentName="StaticWorldObjectBase">
+    <defName>DMS_LifterLandingSite</defName>
+    <label>landing site</label>
+    <description>A mobile crew lifter has set down here.</description>
+    <worldObjectClass>DMS.LifterLandingSite</worldObjectClass>
+    <texture>World/WorldObjects/Camp</texture>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconTexture>Things/Skyfaller/MobileCrewLifter</expandingIconTexture>
+    <expandingIconPriority>80</expandingIconPriority>
+    <expandingIconDrawSize>1.6</expandingIconDrawSize>
+    <expandMore>true</expandMore>
+    <isTempIncidentMapOwner>true</isTempIncidentMapOwner>
+    <overrideMapSize>(200, 1, 200)</overrideMapSize>
+    <IncidentTargetTags>
+      <li>Map_TempIncident</li>
+    </IncidentTargetTags>
+    <comps>
+      <li Class="WorldObjectCompProperties_FormCaravan" />
+      <li Class="WorldObjectCompProperties_TimedDetectionRaids" />
+    </comps>
   </WorldObjectDef>
 
   <WorldObjectDef ParentName="DMS_TravellingLifterBase">

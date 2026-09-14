@@ -99,9 +99,8 @@
 			<ComponentSpacer>6</ComponentSpacer>
 			<Chemfuel>60</Chemfuel>
 		</costList>
-		<tradeTags>
-			<li>DMS_Armor</li>
-		</tradeTags>
+		<!-- 封存技術 I 級：不進貿易池（商人不販售、玩家不可出售） -->
+		<tradeability>None</tradeability>
 		<graphicData>
 			<texPath>Things/Apparel/BionicSuitHeavy/Icon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -126,6 +125,8 @@
 		<equippedStatOffsets>
 			<MoveSpeed>0.9</MoveSpeed>
 			<CarryingCapacity>125</CarryingCapacity>
+			<!-- 人工肌肉束直接錨定骨骼：近戰傷害 +30%（MeleeDamageFactor 基準 1.0，偏移後 1.3） -->
+			<MeleeDamageFactor>0.3</MeleeDamageFactor>
 			<PainShockThreshold>0.25</PainShockThreshold>
 			<VacuumResistance MayRequire="ludeon.rimworld.odyssey">0.4</VacuumResistance>
 			<ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>

@@ -21,6 +21,11 @@
   <!-- EN: Disposable ceramic armor that effectively protects the wearer from small arms fire and shrapnel.\n\nAlthough it is an excellent protective armor, it must be completely replaced once damaged. -->
   <DMS_CeramicsPlating.description>一種拋棄式裝甲模塊，其排列的防彈陶瓷板可以有效的抑製子彈或聚能射孔彈的動能與熱侵蝕傷害從而保證機體不受損傷。 \n\n雖然是優秀的防護裝甲但畢竟是一次性的所以一旦損壞就必須重新安裝一塊新的。</DMS_CeramicsPlating.description>
   
+  <!-- EN: Command Coprocessor -->
+  <DMS_CommandCoprocessor.label>指揮協處理器</DMS_CommandCoprocessor.label>
+  <!-- EN: An auxiliary processing board wired into the core processor. It offloads signal multiplexing and unit bookkeeping from the main processor, increasing the automatroid's control bandwidth at the cost of slightly higher energy consumption. -->
+  <DMS_CommandCoprocessor.description>一塊接入核心處理器的輔助運算板，將訊號多工與單位管理從主處理器卸載出去，提高機兵的控制帶寬，代價是略微增加能源消耗。</DMS_CommandCoprocessor.description>
+  
   <!-- EN: Nuclear Battery -->
   <DMS_NuclearBattery.label>裂變電池</DMS_NuclearBattery.label>
   <!-- EN: The abundant output of installed nuclear-powered quantum batteries eliminates the need to recharge. The reactor can be overloaded to produce a chain reaction meltdown comparable to an anti-grain warhead. -->

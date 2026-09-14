@@ -36,6 +36,7 @@
   <DMS_SupplyChain_BonusLetterLabel>供應合約已完成</DMS_SupplyChain_BonusLetterLabel>
   <!-- EN: Every shipment of the supply contract has been delivered. As promised, compensation for the price difference of the goods has been sent at market rates. -->
   <DMS_SupplyChain_BonusLetterText>供應合約的所有貨物均已交付。如先前約定，貨品的價格差額已按市價補償送達。</DMS_SupplyChain_BonusLetterText>
+  <DMS_SupplyChain_Progress>已完成交付：{0} / {1}</DMS_SupplyChain_Progress>
 
   <!-- EN: Boarding deadline: {0} -->
   <DMS_CourtMartial_BoardDeadline>登機期限：{0}</DMS_CourtMartial_BoardDeadline>
@@ -74,4 +75,10 @@
   <DMS_CrewLifter_ChooseLanding>請為升降艙選擇降落點。</DMS_CrewLifter_ChooseLanding>
   <!-- EN: The lifter cannot land here. -->
   <DMS_CrewLifter_CannotLandHere>升降艙無法降落在此處。</DMS_CrewLifter_CannotLandHere>
+  <!-- EN: Round trip: {0} -->
+  <DMS_CrewLifter_RoundTripCost>往返：{0}</DMS_CrewLifter_RoundTripCost>
+  <!-- EN: not enough fuel to return -->
+  <DMS_CrewLifter_NoReturnFuel>燃料不足以返回</DMS_CrewLifter_NoReturnFuel>
+  <!-- EN: Residual fuel: {0} {1} (recovered on deconstruction) -->
+  <DMS_CrewLifter_ResidualFuel>殘餘燃料：{0} {1}（拆除時退還）</DMS_CrewLifter_ResidualFuel>
 </LanguageData>

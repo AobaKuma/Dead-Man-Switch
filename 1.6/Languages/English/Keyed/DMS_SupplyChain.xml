@@ -20,6 +20,7 @@
   <DMS_SupplyChain_FallbackIssuer>the Colonial Fleet</DMS_SupplyChain_FallbackIssuer>
   <DMS_SupplyChain_BonusLetterLabel>Supply contract completed</DMS_SupplyChain_BonusLetterLabel>
   <DMS_SupplyChain_BonusLetterText>Every shipment of the supply contract has been delivered. As promised, compensation for the price difference of the goods has been sent at market rates.</DMS_SupplyChain_BonusLetterText>
+  <DMS_SupplyChain_Progress>Deliveries completed: {0} / {1}</DMS_SupplyChain_Progress>
 
   <!-- 軍事法庭 Court-martial quest -->
   <DMS_CourtMartial_BoardDeadline>Boarding deadline: {0}</DMS_CourtMartial_BoardDeadline>
@@ -43,4 +44,7 @@
   <DMS_CrewLifter_LandHere>Land here</DMS_CrewLifter_LandHere>
   <DMS_CrewLifter_ChooseLanding>Choose a landing spot for the lifter.</DMS_CrewLifter_ChooseLanding>
   <DMS_CrewLifter_CannotLandHere>The lifter cannot land here.</DMS_CrewLifter_CannotLandHere>
+  <DMS_CrewLifter_RoundTripCost>Round trip: {0}</DMS_CrewLifter_RoundTripCost>
+  <DMS_CrewLifter_NoReturnFuel>not enough fuel to return</DMS_CrewLifter_NoReturnFuel>
+  <DMS_CrewLifter_ResidualFuel>Residual fuel: {0} {1} (recovered on deconstruction)</DMS_CrewLifter_ResidualFuel>
 </LanguageData>

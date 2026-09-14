@@ -35,9 +35,16 @@
     </building>
     <destroyable>true</destroyable>
     <drawerType>MapMeshAndRealTime</drawerType>
+    <inspectorTabs>
+      <li>ITab_ContentsTransporter</li>
+    </inspectorTabs>
     <comps>
       <li Class="DMS.CompProperties_SupplyRequest">
-        <massCapacity>2000</massCapacity>
+        <massCapacity>6000</massCapacity>
+        <!-- 單艙獨立裝載 (不與其他運輸艙成組);裝載中仍可開啟裝載對話框增減貨物 -->
+        <max1PerGroup>true</max1PerGroup>
+        <canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+        <showMassInInspectString>true</showMassInInspectString>
         <leavingSkyfaller>DMS_SupplyPodLeaving</leavingSkyfaller>
         <platformDef>DMS_LifterPlatform</platformDef>
       </li>
@@ -55,7 +62,7 @@
     <tickerType>Normal</tickerType>
     <altitudeLayer>Skyfaller</altitudeLayer>
     <drawerType>RealtimeOnly</drawerType>
-    <label>supply pod (incoming)</label>
+    <label>mobile cargo lifter (incoming)</label>
     <graphicData>
       <texPath>Things/Skyfaller/MobileCargoLifter</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -147,8 +154,29 @@
     <rulePack>
       <rulesStrings>
         <!-- e.g. "42nd Forward Logistics Platoon" / "Fleet Quartermaster Detachment 7" -->
-        <li>r_name->[numHead][numTailOrd] [UnitAdj] [UnitType] [Scale]</li>
+        <!-- 序數直接列舉,避免拼接出 11st / 12nd / 13rd -->
+        <li>r_name->[ordinal] [UnitAdj] [UnitType] [Scale]</li>
         <li>r_name->Fleet [UnitAdj] [UnitType] [Scale] [numHead][numTail]</li>
+
+        <li>ordinal->1st</li>
+        <li>ordinal->2nd</li>
+        <li>ordinal->3rd</li>
+        <li>ordinal->4th</li>
+        <li>ordinal->6th</li>
+        <li>ordinal->8th</li>
+        <li>ordinal->11th</li>
+        <li>ordinal->12th</li>
+        <li>ordinal->13th</li>
+        <li>ordinal->21st</li>
+        <li>ordinal->22nd</li>
+        <li>ordinal->33rd</li>
+        <li>ordinal->42nd</li>
+        <li>ordinal->51st</li>
+        <li>ordinal->73rd</li>
+        <li>ordinal->98th</li>
+        <li>ordinal->101st</li>
+        <li>ordinal->104th</li>
+        <li>ordinal->156th</li>
 
         <li>numHead-></li>
         <li>numHead->1</li>
@@ -160,13 +188,6 @@
         <li>numHead->9</li>
         <li>numHead->10</li>
         <li>numHead->15</li>
-
-        <li>numTailOrd->1st</li>
-        <li>numTailOrd->2nd</li>
-        <li>numTailOrd->3rd</li>
-        <li>numTailOrd->4th</li>
-        <li>numTailOrd->6th</li>
-        <li>numTailOrd->8th</li>
 
         <li>numTail->1</li>
         <li>numTail->2</li>
@@ -199,21 +220,13 @@
     <defName>DMS_SupplyChainLetters</defName>
     <rulePack>
       <rulesStrings>
-        <!-- 階段開始信件 (原版語氣:直述事實 + 行動指示) -->
+        <!-- 階段開始信件 (原版語氣:直述事實 + 行動指示);由 QuestPart_SpawnSupplyPod 於補給艙空投時發出 -->
         <li>stageLetterLabel->Supply delivery [stage]/[totalStages]</li>
         <li>stageLetterLabel->Delivery requested: [categoryLabel]</li>
         <li>stageLetterText->[stageOpen]\n\nLoad [count]x [categoryLabel] into the pod and confirm the delivery before the deadline. Payment will arrive by drop pod once the delivery is confirmed.</li>
 
         <li>stageOpen->[issuerUnit] has requested the next delivery of your supply contract. A cargo pod is inbound.</li>
         <li>stageOpen->The next delivery of your supply contract with [issuerUnit] has begun. A cargo pod will land near your colony shortly.</li>
-
-        <!-- 補給艙落地信件 -->
-        <li>podLetterLabel->Supply pod</li>
-        <li>podLetterLabel->Supply pod inbound</li>
-        <li>podLetterText->[podOpen]\n\nLoad [count]x [categoryLabel] into it before the deadline passes.</li>
-
-        <li>podOpen->A supply pod from [issuerUnit] is landing near your colony.</li>
-        <li>podOpen->A supply pod sent by [issuerUnit] is coming down nearby.</li>
 
         <!-- 交付付款信件 -->
         <li>paymentLetterLabel->Payment arrived</li>
@@ -273,6 +286,8 @@
     <root Class="DMS.QuestNode_Root_SupplyChain">
       <subquestDef>DMS_SupplyChain_Delivery</subquestDef>
       <issuerNamePack>DMS_SupplyChainIssuer</issuerNamePack>
+      <!-- 後勤調度員只從自由 WorldPawn 挑選;沒有人選時以此 PawnKind 生成 -->
+      <askerKind>DMS_Officer</askerKind>
       <!-- 難度點數 → 挑戰等級(骷髏數) -->
       <pointsToChallengeRatingCurve>
         <points>
@@ -305,8 +320,12 @@
           <li>(10000, 7000)</li>
         </points>
       </pointsToRequestValueCurve>
+      <!-- 報酬 = 實際交付貨物市值 × markup × growth^stage;實際市值最多只算到合約估值 × cap -->
       <rewardMarkup>1.35</rewardMarkup>
       <rewardGrowthPerStage>1.1</rewardGrowthPerStage>
+      <rewardValueCapFactor>1.5</rewardValueCapFactor>
+      <!-- 單階段要求數量上限 = 補給艙載重 × fraction ÷ 類別中位單重 -->
+      <massCapacityUseFraction>0.9</massCapacityUseFraction>
       <!-- 完成獎勵 = 合約貨物總市值 × factor,以原版獎勵選項(物資/好感度)呈現 -->
       <completionBonusFactor>0.4</completionBonusFactor>
       <giverFactionDef>DMS_Army</giverFactionDef>
@@ -339,9 +358,6 @@
           <category>StoneBlocks</category>
         </li>
         <li>
-          <category>MortarShells</category>
-        </li>
-        <li>
           <category>MeatRaw</category>
           <countFactor>0.5</countFactor>
         </li>
@@ -365,8 +381,7 @@
   <!-- ======================= 子任務:單階段交付 ======================= -->
   <QuestScriptDef>
     <defName>DMS_SupplyChain_Delivery</defName>
-    <successHistoryEvent>DMS_QuestSuccess_Logistics</successHistoryEvent>
-    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Logistics</failedOrExpiredHistoryEvent>
+    <!-- 歷史事件只由母任務結算時記錄,子任務不重複計數 -->
     <rootSelectionWeight>0</rootSelectionWeight>
     <autoAccept>true</autoAccept>
     <questNameRules>

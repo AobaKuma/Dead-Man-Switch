@@ -11,6 +11,9 @@ namespace DMS
     public class LifterTransporterInfo : ActiveTransporterInfo, IExposable
     {
         public float fuel;
+        // 落地後 podOnly 的覆寫值;null 則採用落地 def 的 LifterLandingExtension.markPodOnly。
+        // 權限空投的全新升降艙用 false,讓它落地後仍可整機起飛。
+        public bool? podOnlyOverride;
 
         public LifterTransporterInfo() { }
 
@@ -20,6 +23,7 @@ namespace DMS
         {
             base.ExposeData();
             Scribe_Values.Look(ref fuel, "fuel");
+            Scribe_Values.Look(ref podOnlyOverride, "podOnlyOverride");
         }
     }
 

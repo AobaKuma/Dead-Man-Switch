@@ -29,5 +29,8 @@ namespace DMS
         public static TaleDef DMS_Tale_CourtMartialed;
         public static TaleDef DMS_Tale_Acquitted;
         public static HistoryEventDef DMS_MemberCourtMartialed;
+
+        // 機動載人升降艙降落在空白地塊時生成的臨時地圖世界物件(見 TransportersArrivalAction_LifterLanding / LifterLandingSite)
+        public static WorldObjectDef DMS_LifterLandingSite;
     }
 }
