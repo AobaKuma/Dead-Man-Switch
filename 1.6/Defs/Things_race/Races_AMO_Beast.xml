@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    
+  <ThingDef ParentName="DMS_ArtificialOrganismBase">
+    <defName>DMS_AMO_Beast</defName>
+    <label>beast</label>
+    <description>TODO</description>
+    <uiIconPath>Things/AMO/Beast/Beast_MenuIcon</uiIconPath>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <MoveSpeed>5.5</MoveSpeed>
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1</ArmorRating_Sharp>
+      <EMPResistance>3</EMPResistance>
+    </statBases>
+    <tools Inherit="false">
+      <li>
+        <label>tentacle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2</cooldownTime>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+        <linkedBodyPartsGroup>AMOFirstTentacle</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>tentacle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2</cooldownTime>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+        <linkedBodyPartsGroup>AMOSecondTentacle</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>tentacle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2</cooldownTime>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+        <linkedBodyPartsGroup>AMOThirdTentacle</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>tentacle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2</cooldownTime>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+        <linkedBodyPartsGroup>AMOFourthTentacle</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>teeth</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>3</cooldownTime>
+        <armorPenetration>1</armorPenetration>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+        <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <renderTree>DMS_AMO_Beast</renderTree>
+      <body>DMS_AMOBeast</body>
+      <mechFixedSkillLevel>8</mechFixedSkillLevel>
+      <baseBodySize>3</baseBodySize>
+      <baseHealthScale>1.5</baseHealthScale>
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Legionary_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Legionary_Death</soundDeath>
+          <soundCall>Pawn_Mech_Legionary_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_ArtificialOrganism">
+        <regenIntervalTicks>90</regenIntervalTicks>
+        <regenHealAmount>1</regenHealAmount>
+        <consumeBelowLevel>0.3</consumeBelowLevel>
+        <energyPerRation>0.5</energyPerRation>
+        <rationsPerConsume>1</rationsPerConsume>
+      </li>
+      <li Class="DMS.CompProperties_RationMagazine">
+        <rationDef>DMS_CombatRation</rationDef>
+        <maxRations>4</maxRations>
+        <startingRations>1</startingRations>
+        <loadTicks>240</loadTicks>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>false</EnableWeaponFilter>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+          <li>Spacer</li>
+        </UsableTechLevels>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="DMS_ArtificialOrganismKindBase">
+    <defName>DMS_AMO_Beast</defName>
+    <label>beast</label>
+    <race>DMS_AMO_Beast</race>
+    <combatPower>100</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/AMO/Beast/Beast</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+    <controlGroupPortraitZoom>1.2</controlGroupPortraitZoom>
+    <weaponTags>
+    </weaponTags>
+  </PawnKindDef>
+  
+  <!--========================= PawnRenderTreeDef ==========================-->
+
+  <PawnRenderTreeDef>
+    <defName>DMS_AMO_Beast</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li>
+          <debugLabel>Body</debugLabel>
+          <tagDef>Body</tagDef>
+          <useRottenColor>false</useRottenColor>
+          <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+          <children>
+            <li Class="PawnRenderNodeProperties_Spastic">
+              <debugLabel>TentacleA</debugLabel>
+              <linkedBodyPartsGroup>AMOFirstTentacle</linkedBodyPartsGroup>
+              <texPath>Things/AMO/Beast/Tentacle_A</texPath>
+              <rotateFacing>false</rotateFacing>
+              <drawSize>1</drawSize>
+              <overrideMeshSize>1</overrideMeshSize>
+              <useRottenColor>false</useRottenColor>
+              <rotationRange>-25~25</rotationRange>
+              <durationTicksRange>10~35</durationTicksRange>
+              <nextSpasmTicksRange>0~20</nextSpasmTicksRange>
+              <visibleFacing>
+                <li>East</li>
+                <li>South</li>
+              </visibleFacing>
+              <drawData>
+                <defaultData>
+                  <layer>7</layer>
+                </defaultData>
+                <dataEast>
+                  <offset>(0.48, 0, -0.04)</offset>
+                </dataEast>
+                <dataSouth>
+                  <offset>(-0.281, 0, -0.195)</offset>
+                  <rotationOffset>45</rotationOffset>
+                </dataSouth>
+              </drawData>
+            </li>
+
+            <li Class="PawnRenderNodeProperties_Spastic">
+              <debugLabel>TentacleB</debugLabel>
+              <linkedBodyPartsGroup>AMOSecondTentacle</linkedBodyPartsGroup>
+              <texPath>Things/AMO/Beast/Tentacle_B</texPath>
+              <rotateFacing>false</rotateFacing>
+              <drawSize>1</drawSize>
+              <overrideMeshSize>1</overrideMeshSize>
+              <useRottenColor>false</useRottenColor>
+              <rotationRange>-25~25</rotationRange>
+              <durationTicksRange>10~35</durationTicksRange>
+              <nextSpasmTicksRange>0~20</nextSpasmTicksRange>
+              <visibleFacing>
+                <li>East</li>
+                <li>South</li>
+              </visibleFacing>
+              <drawData>
+                <defaultData>
+                  <layer>7</layer>
+                </defaultData>
+                <dataEast>
+                  <offset>(0.188, 0, -0.172)</offset>
+                </dataEast>
+                <dataSouth>
+                  <offset>(-0.469, 0, -0.164)</offset>
+                  <rotationOffset>45</rotationOffset>
+                </dataSouth>
+              </drawData>
+            </li>
+
+            <li Class="PawnRenderNodeProperties_Spastic">
+              <debugLabel>TentacleC</debugLabel>
+              <linkedBodyPartsGroup>AMOThirdTentacle</linkedBodyPartsGroup>
+              <texPath>Things/AMO/Beast/Tentacle_A</texPath>
+              <rotateFacing>false</rotateFacing>
+              <drawSize>1</drawSize>
+              <overrideMeshSize>1</overrideMeshSize>
+              <useRottenColor>false</useRottenColor>
+              <rotationRange>-25~25</rotationRange>
+              <durationTicksRange>10~35</durationTicksRange>
+              <nextSpasmTicksRange>0~20</nextSpasmTicksRange>
+              <visibleFacing>
+                <li>South</li>
+                <li>West</li>
+              </visibleFacing>
+              <drawData>
+                <defaultData>
+                  <layer>7</layer>
+                </defaultData>
+                <dataSouth>
+                  <offset>(0.281, 0, -0.195)</offset>
+                  <rotationOffset>45</rotationOffset>
+                  <flip>true</flip>
+                </dataSouth>
+                <dataWest>
+                  <offset>(-0.48, 0, -0.04)</offset>
+                  <flip>true</flip>
+                </dataWest>
+              </drawData>
+            </li>
+
+            <li Class="PawnRenderNodeProperties_Spastic">
+              <debugLabel>TentacleD</debugLabel>
+              <linkedBodyPartsGroup>AMOFourthTentacle</linkedBodyPartsGroup>
+              <texPath>Things/AMO/Beast/Tentacle_B</texPath>
+              <rotateFacing>false</rotateFacing>
+              <drawSize>1</drawSize>
+              <overrideMeshSize>1</overrideMeshSize>
+              <useRottenColor>false</useRottenColor>
+              <rotationRange>-25~25</rotationRange>
+              <durationTicksRange>10~35</durationTicksRange>
+              <nextSpasmTicksRange>0~20</nextSpasmTicksRange>
+              <visibleFacing>
+                <li>South</li>
+                <li>West</li>
+              </visibleFacing>
+              <drawData>
+                <defaultData>
+                  <layer>7</layer>
+                </defaultData>
+                <dataSouth>
+                  <offset>(0.469, 0, -0.164)</offset>
+                  <rotationOffset>45</rotationOffset>
+                  <flip>true</flip>
+                </dataSouth>
+                <dataWest>
+                  <offset>(-0.188, 0, -0.172)</offset>
+                  <flip>true</flip>
+                </dataWest>
+              </drawData>
+            </li>
+
+            <li>
+              <debugLabel>Wounds</debugLabel>
+              <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+              <workerClass>PawnRenderNodeWorker_OverlayWounds</workerClass>
+              <overlayLayer>Body</overlayLayer>
+              <useGraphic>false</useGraphic>
+              <baseLayer>10</baseLayer>
+            </li>
+            <li>
+              <debugLabel>Firefoam</debugLabel>
+              <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+              <workerClass>PawnRenderNodeWorker_OverlayFirefoam</workerClass>
+              <overlayLayer>Body</overlayLayer>
+              <useGraphic>false</useGraphic>
+              <baseLayer>20</baseLayer>
+            </li>
+          </children>
+        </li>
+        <li Class="PawnRenderNodeProperties_Carried">
+          <debugLabel>Carried thing</debugLabel>
+          <workerClass>PawnRenderNodeWorker_Carried</workerClass>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+</Defs>
