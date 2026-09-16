@@ -40,6 +40,12 @@
 					<li>30</li>
 				</chargeSpeeds>
 			</li>
+			<!-- 彈藥消耗：燃料由機兵自身載運，10 個爆發量 -->
+			<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+				<ammoSet>AmmoSet_DMS_Flamethrower</ammoSet>
+				<defaultAmmoPickUp>100</defaultAmmoPickUp>
+				<startingAmmoRange>50~100</startingAmmoRange>
+			</li>
 		</comps>
 		<modExtensions>
 			<li Class="Fortified.HeavyEquippableExtension">
@@ -80,6 +86,14 @@
 				<recoilPattern>Mounted</recoilPattern>
 			</li>
 		</verbs>
+		<comps>
+			<!-- 彈藥消耗：5.56×45mm NATO，10 個爆發量 -->
+			<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+				<ammoSet>AmmoSet_556x45mmNATO</ammoSet>
+				<defaultAmmoPickUp>100</defaultAmmoPickUp>
+				<startingAmmoRange>50~100</startingAmmoRange>
+			</li>
+		</comps>
 		<modExtensions>
 			<li Class="Fortified.HeavyEquippableExtension">
 				<EquippableDef>MountedWeapon</EquippableDef>
@@ -161,6 +175,14 @@
 				<recoilPattern>Mounted</recoilPattern>
 			</li>
 		</verbs>
+		<comps>
+			<!-- 彈藥消耗：.50 BMG，10 個爆發量 -->
+			<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+				<ammoSet>AmmoSet_50BMG</ammoSet>
+				<defaultAmmoPickUp>100</defaultAmmoPickUp>
+				<startingAmmoRange>50~100</startingAmmoRange>
+			</li>
+		</comps>
 		<modExtensions>
 			<li Class="Fortified.HeavyEquippableExtension">
 				<EquippableDef>MountedWeapon</EquippableDef>
@@ -200,6 +222,14 @@
 				<recoilPattern>Mounted</recoilPattern>
 			</li>
 		</verbs>
+		<comps>
+			<!-- 彈藥消耗：12 Gauge，10 個爆發量 -->
+			<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+				<ammoSet>AmmoSet_12Gauge</ammoSet>
+				<defaultAmmoPickUp>30</defaultAmmoPickUp>
+				<startingAmmoRange>15~30</startingAmmoRange>
+			</li>
+		</comps>
 		<modExtensions>
 			<li Class="Fortified.HeavyEquippableExtension">
 				<EquippableDef>MountedWeapon</EquippableDef>

@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    誘餌站點外圍大型殘跡（邊緣散布用）：
+    沿用 Ruin_ScatteredSmall.xml 的素材語彙（殘骸、彈坑、鐵絲網、貨櫃、毀損建物），
+    但刻意做成「輕地形」版本 —— 每個變體的 TerrainRect 總數控制在 20 格以內，
+    且完全不使用 FFF_Element_Roof* 元素。
+
+    為什麼要這樣做（重要）：
+      FFF_StructureUtility.SpawnTerrain 會在每一個要鋪設地形的格子上
+      摧毀 building.isNaturalRock 的物件；DMS_Ruin_A~I 動輒鋪設數百格
+      PackedDirt/Concrete 庭院，若直接拿來當邊緣散布，會在山體站點裡
+      一次剷掉大片天然岩石。
+      同理，FFF_Element_RoofRect 的 force 預設為 true，Task_ApplyRoof 在
+      force=true 時會蓋掉 isThickRoof 的厚岩頂。
+      因此本檔的所有變體：地形只鋪建物腳下的小塊，且不含屋頂元素，
+      生成檢查（SpawnTerrain / Task_ApplyRoof）不會大範圍改動地形與岩頂。
+
+    Large outer ruins for the decoy site's edge scatter. Same asset vocabulary as
+    Ruin_ScatteredSmall.xml, but deliberately terrain-light: each variant keeps its
+    total TerrainRect area under ~20 cells and uses no FFF_Element_Roof* elements.
+
+    Rationale: FFF_StructureUtility.SpawnTerrain destroys any isNaturalRock building
+    on every cell it paints, and FFF_Element_RoofRect defaults to force=true, which
+    Task_ApplyRoof uses to overwrite isThickRoof cells. DMS_Ruin_A~I paint hundreds
+    of courtyard cells each, so reusing them verbatim would bulldoze large areas of
+    natural rock and thick roof on mountainous site maps. These variants do not.
+
+    用法 Usage — 由 GenStep 的 satelliteScatter 依地圖尺寸放置，不寫在主結構佈局裡
+    （見 Defs/Quests/DMS_DecoySiteQuest.xml 的 DMS_DecoySiteStructure）：
+      <satelliteScatter>
+        <li>
+          <tag>DMS_DecoySiteEdgeRuin</tag>
+          <count>1</count>
+          <radiusPct>0.22</radiusPct>
+        </li>
+      </satelliteScatter>
+    刻意不用 FFF_Element_RandomSubStructure：元素在 sketch 建構期執行，拿不到 Map，
+    無法依地圖尺寸縮放，且會撐大主結構的 OccupiedRect 使營區偏離地圖中心。
+
+    Placed by the GenStep's satelliteScatter, not as layout elements — elements run at
+    sketch-build time with no Map available, so they can't scale to map size, and they
+    inflate the main structure's OccupiedRect and push the compound off centre.
+  -->
+
+  <!-- ============ 變體 1：崩塌的外圍哨所 Collapsed perimeter post (19x19) ============ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_DecoySiteEdge_Post</defName>
+    <size>(19, 19)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+
+      <!-- 斷續的 L 形外牆 Broken L-shaped wall -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(3, 0, 3)</pos>
+        <size>(5, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(10, 0, 3)</pos>
+        <size>(4, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(3, 0, 4)</pos>
+        <size>(1, 6)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Wall</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(3, 0, 12)</li>
+          <li>(3, 0, 14)</li>
+          <li>(15, 0, 3)</li>
+        </posList>
+      </li>
+
+      <!-- 沙包工事 Sandbag nests -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Sandbags</def>
+        <pos>(6, 0, 5)</pos>
+        <size>(3, 1)</size>
+        <stuff>Cloth</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Sandbags</def>
+        <pos>(12, 0, 9)</pos>
+        <size>(1, 3)</size>
+        <stuff>Cloth</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Barricade</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(9, 0, 1)</li>
+          <li>(11, 0, 1)</li>
+        </posList>
+      </li>
+
+      <!-- 鐵絲網 Razorwire -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>AncientRazorWire</def>
+        <pos>(2, 0, 16)</pos>
+        <size>(5, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientRazorWire</def>
+        <posList>
+          <li>(8, 0, 16)</li>
+          <li>(16, 0, 14)</li>
+          <li>(17, 0, 6)</li>
+        </posList>
+      </li>
+
+      <!-- 殘骸 Wreckage -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Wreckage_SentryGun</def>
+        <rot>1</rot>
+        <posList>
+          <li>(5, 0, 6)</li>
+          <li>(13, 0, 13)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Wreckage_Chunk</def>
+        <pos>(9, 0, 7)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_ChunkSlag_Old</def>
+        <rot>1</rot>
+        <posList>
+          <li>(4, 0, 10)</li>
+          <li>(15, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_ChunkSlag_Old</def>
+        <rot>3</rot>
+        <posList>
+          <li>(9, 0, 14)</li>
+          <li>(6, 0, 13)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_HoundBaseDestroyed</def>
+        <pos>(16, 0, 11)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Eletric_MediumDestoryed</def>
+        <pos>(8, 0, 10)</pos>
+      </li>
+
+      <!-- 物資 Containers -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_LogisticContainerDestroyed</def>
+        <posList>
+          <li>(14, 0, 1)</li>
+          <li>(16, 0, 3)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientBarrel</def>
+        <pos>(11, 0, 5)</pos>
+      </li>
+
+      <!-- 彈坑與詭雷 Craters and IEDs -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>CraterMedium</def>
+        <posList>
+          <li>(6, 0, 11)</li>
+          <li>(15, 0, 16)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>CraterSmall</def>
+        <posList>
+          <li>(1, 0, 2)</li>
+          <li>(17, 0, 9)</li>
+          <li>(11, 0, 17)</li>
+          <li>(3, 0, 17)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>TrapIED_HighExplosive</def>
+        <posList>
+          <li>(7, 0, 8)</li>
+          <li>(12, 0, 15)</li>
+        </posList>
+      </li>
+
+      <!-- 地面（僅建物腳下小塊，避免大範圍剷除天然岩石）
+           Terrain: small pads only, to avoid mass natural-rock removal -->
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PackedDirt</def>
+        <pos>(7, 0, 9)</pos>
+        <size>(3, 3)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainScatter">
+        <def>PackedDirt</def>
+        <posList>
+          <li>(4, 0, 4)</li>
+          <li>(12, 0, 4)</li>
+          <li>(15, 0, 12)</li>
+          <li>(10, 0, 13)</li>
+        </posList>
+      </li>
+    </elements>
+    <tags>
+      <li>DMS_DecoySiteEdgeRuin</li>
+    </tags>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <!-- ============ 變體 2：補給車隊殘骸 Destroyed supply convoy (19x19) ============ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_DecoySiteEdge_Convoy</defName>
+    <size>(19, 19)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+
+      <!-- 側翻的貨櫃列 Overturned container line -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_LogisticContainerDestroyed</def>
+        <posList>
+          <li>(3, 0, 4)</li>
+          <li>(6, 0, 4)</li>
+          <li>(9, 0, 5)</li>
+          <li>(12, 0, 4)</li>
+          <li>(6, 0, 8)</li>
+          <li>(13, 0, 8)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_LogisticContainer</def>
+        <posList>
+          <li>(3, 0, 8)</li>
+          <li>(10, 0, 9)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientMilitaryCrate</def>
+        <posList>
+          <li>(5, 0, 12)</li>
+          <li>(7, 0, 12)</li>
+          <li>(9, 0, 13)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientHermeticCrate</def>
+        <rot>1</rot>
+        <posList>
+          <li>(12, 0, 12)</li>
+          <li>(14, 0, 12)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientBarrel</def>
+        <posList>
+          <li>(2, 0, 11)</li>
+          <li>(16, 0, 10)</li>
+          <li>(11, 0, 16)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientLargeCrate</def>
+        <pos>(16, 0, 14)</pos>
+      </li>
+
+      <!-- 封鎖線 Blocking line -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>AncientRazorWire</def>
+        <pos>(2, 0, 1)</pos>
+        <size>(6, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>AncientRazorWire</def>
+        <pos>(11, 0, 1)</pos>
+        <size>(6, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Sandbags</def>
+        <pos>(8, 0, 2)</pos>
+        <size>(3, 1)</size>
+        <stuff>Cloth</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Fence</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(1, 0, 6)</li>
+          <li>(1, 0, 8)</li>
+          <li>(17, 0, 5)</li>
+          <li>(17, 0, 7)</li>
+        </posList>
+      </li>
+
+      <!-- 護衛殘骸 Escort wreckage -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Wreckage_Ronin</def>
+        <posList>
+          <li>(4, 0, 7)</li>
+          <li>(12, 0, 7)</li>
+          <li>(8, 0, 15)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Wreckage_Chunk</def>
+        <pos>(15, 0, 3)</pos>
+        <rot>2</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_ChunkSlag_Old</def>
+        <rot>2</rot>
+        <posList>
+          <li>(8, 0, 6)</li>
+          <li>(2, 0, 14)</li>
+          <li>(15, 0, 16)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Machine_MediumDestoryed</def>
+        <pos>(5, 0, 16)</pos>
+      </li>
+
+      <!-- 彈坑與詭雷 Craters and IEDs -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>CraterMedium</def>
+        <posList>
+          <li>(9, 0, 10)</li>
+          <li>(16, 0, 1)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>CraterSmall</def>
+        <posList>
+          <li>(1, 0, 3)</li>
+          <li>(11, 0, 3)</li>
+          <li>(17, 0, 12)</li>
+          <li>(13, 0, 17)</li>
+          <li>(3, 0, 17)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>TrapIED_HighExplosive</def>
+        <posList>
+          <li>(9, 0, 2)</li>
+          <li>(6, 0, 10)</li>
+          <li>(14, 0, 14)</li>
+        </posList>
+      </li>
+
+      <!-- 地面：僅車道兩小段 Terrain: two short road segments only -->
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PackedDirt</def>
+        <pos>(8, 0, 6)</pos>
+        <size>(4, 2)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainScatter">
+        <def>PackedDirt</def>
+        <posList>
+          <li>(5, 0, 6)</li>
+          <li>(6, 0, 6)</li>
+          <li>(12, 0, 7)</li>
+          <li>(13, 0, 7)</li>
+          <li>(9, 0, 11)</li>
+          <li>(10, 0, 12)</li>
+        </posList>
+      </li>
+    </elements>
+    <tags>
+      <li>DMS_DecoySiteEdgeRuin</li>
+    </tags>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <!-- ============ 變體 3：毀損的防空／掃描陣地 Wrecked AA-scanner emplacement (19x19) ============ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_DecoySiteEdge_Emplacement</defName>
+    <size>(19, 19)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+
+      <!-- 主要毀損載台 Destroyed emplacements -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_MissileLauncherDestoryed</def>
+        <pos>(5, 0, 6)</pos>
+        <rot>1</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_MissileLauncherDestoryed</def>
+        <pos>(12, 0, 12)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Scanner_LargeDestoryed</def>
+        <pos>(13, 0, 5)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_Scanner_SmallDestoryed</def>
+        <posList>
+          <li>(3, 0, 12)</li>
+          <li>(9, 0, 16)</li>
+          <li>(16, 0, 9)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_FPVHangerDestoryed</def>
+        <pos>(5, 0, 15)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_Eletric_MediumDestoryed</def>
+        <posList>
+          <li>(9, 0, 9)</li>
+          <li>(9, 0, 3)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientMachine</def>
+        <pos>(16, 0, 15)</pos>
+      </li>
+
+      <!-- 殘存工事 Surviving works -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Sandbags</def>
+        <pos>(2, 0, 4)</pos>
+        <size>(1, 4)</size>
+        <stuff>Cloth</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Sandbags</def>
+        <pos>(2, 0, 8)</pos>
+        <size>(3, 1)</size>
+        <stuff>Cloth</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Wall</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(11, 0, 8)</li>
+          <li>(13, 0, 8)</li>
+          <li>(15, 0, 11)</li>
+          <li>(7, 0, 2)</li>
+        </posList>
+      </li>
+      <!-- 止於 x3：FPVHangerDestoryed 為 3x3、中心 (5,0,15)，占 (4..6, 14..16)。
+           Stops at x3 — the 3x3 hangar centred on (5,0,15) covers (4..6, 14..16). -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>AncientRazorWire</def>
+        <pos>(1, 0, 16)</pos>
+        <size>(3, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientRazorWire</def>
+        <posList>
+          <li>(12, 0, 17)</li>
+          <li>(17, 0, 3)</li>
+          <li>(17, 0, 12)</li>
+        </posList>
+      </li>
+
+      <!-- 殘骸與碎片 Debris -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Wreckage_SentryGun</def>
+        <rot>2</rot>
+        <posList>
+          <li>(4, 0, 10)</li>
+          <li>(15, 0, 2)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_ChunkSlag_Old</def>
+        <rot>1</rot>
+        <posList>
+          <li>(7, 0, 11)</li>
+          <li>(11, 0, 15)</li>
+          <li>(2, 0, 2)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Wreckage_Chunk</def>
+        <pos>(8, 0, 6)</pos>
+        <rot>1</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_LogisticContainerDestroyed</def>
+        <posList>
+          <li>(2, 0, 14)</li>
+          <li>(16, 0, 6)</li>
+        </posList>
+      </li>
+
+      <!-- 彈坑與詭雷 Craters and IEDs -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>CraterLarge</def>
+        <pos>(9, 0, 12)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>CraterMedium</def>
+        <posList>
+          <li>(5, 0, 3)</li>
+          <li>(16, 0, 17)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>CraterSmall</def>
+        <posList>
+          <li>(1, 0, 10)</li>
+          <li>(12, 0, 2)</li>
+          <li>(6, 0, 17)</li>
+          <li>(17, 0, 7)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>TrapIED_HighExplosive</def>
+        <posList>
+          <li>(6, 0, 8)</li>
+          <li>(13, 0, 10)</li>
+          <li>(10, 0, 5)</li>
+        </posList>
+      </li>
+
+      <!-- 地面：載台基座小塊 Terrain: small pads under the emplacements -->
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(4, 0, 5)</pos>
+        <size>(3, 3)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(12, 0, 4)</pos>
+        <size>(3, 3)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainScatter">
+        <def>Concrete</def>
+        <posList>
+          <li>(11, 0, 11)</li>
+          <li>(12, 0, 12)</li>
+          <li>(13, 0, 13)</li>
+        </posList>
+      </li>
+    </elements>
+    <tags>
+      <li>DMS_DecoySiteEdgeRuin</li>
+    </tags>
+  </Fortified.Structures.FFF_StructureDef>
+
+</Defs>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       軍務儀典 / Military formality
+       消費 DMS_QuestSuccess_Ceremony、DMS_QuestFailed_Ceremony、
+       DMS_MemberCourtMartialed。
+
+       三個事件都沒有 Doer:前兩個來自 QuestScriptDef,第三個是
+       QuestPart_CourtVerdict 刻意不帶 Doer 記錄的(被告在服刑期間
+       被移出地圖,帶了 Doer 反而全殖民地都收不到消息)。
+       所以這裡一律用 KnowsMemoryThought,不能用 SelfTookMemoryThought,
+       也不能設 doerMustBeMyFaction。
+       ============================================================ -->
+
+  <IssueDef>
+    <defName>DMS_Issue_Formality</defName>
+    <label>military formality</label>
+    <iconPath>UI/Issues/Apostasy</iconPath>
+  </IssueDef>
+
+  <!-- ── 嚴格:授銜、完訓、軍法都是神聖的 ──────────────────────── -->
+  <PreceptDef>
+    <defName>DMS_Formality_Strict</defName>
+    <issue>DMS_Issue_Formality</issue>
+    <label>strict</label>
+    <description>Discipline, ceremony and military law are all part of keeping order. To break their forms is shameful.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>DMS_Meme_ChainOfCommand</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_QuestSuccess_Ceremony</eventDef>
+        <thought>DMS_Thought_Ceremony_Strict</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_QuestFailed_Ceremony</eventDef>
+        <thought>DMS_Thought_CeremonyFailed_Strict</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_MemberCourtMartialed</eventDef>
+        <thought>DMS_Thought_CourtMartialed_Strict</thought>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>DMS_QuestSuccess_Ceremony</eventDef>
+        <points>5</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ── 隨便:誰扛槍誰說話(預設) ─────────────────────────────── -->
+  <PreceptDef>
+    <defName>DMS_Formality_Casual</defName>
+    <issue>DMS_Issue_Formality</issue>
+    <label>casual</label>
+    <description>Rank is just a title. Ceremony is just procedure.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>500</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <comps>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>DMS_QuestSuccess_Ceremony</eventDef>
+        <points>1</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ── 鄙夷:軍階是壓迫的工具 ────────────────────────────────── -->
+  <PreceptDef>
+    <defName>DMS_Formality_Contemptuous</defName>
+    <issue>DMS_Issue_Formality</issue>
+    <label>contemptuous</label>
+    <description>Military law is the oppressor's instrument of violence. To serve as the oppressor's executioner is shameful.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>700</displayOrderInImpact>
+    <conflictingMemes>
+      <li>DMS_Meme_ChainOfCommand</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_QuestSuccess_Ceremony</eventDef>
+        <thought>DMS_Thought_Ceremony_Contemptuous</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_MemberCourtMartialed</eventDef>
+        <thought>DMS_Thought_CourtMartialed_Contemptuous</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ============================ 心情 ============================ -->
+
+  <ThoughtDef>
+    <defName>DMS_Thought_Ceremony_Strict</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <durationDays>8</durationDays>
+    <stackLimit>2</stackLimit>
+    <stages>
+      <li>
+        <label>ceremony observed</label>
+        <description>We observed the forms properly, in front of an official witness. That still means something.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_CeremonyFailed_Strict</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <durationDays>8</durationDays>
+    <stackLimit>2</stackLimit>
+    <stages>
+      <li>
+        <label>ceremony failed</label>
+        <description>We could not even get through a ceremony. It shames all of us.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_CourtMartialed_Strict</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <durationDays>10</durationDays>
+    <stackLimit>2</stackLimit>
+    <stages>
+      <li>
+        <label>member court-martialed</label>
+        <description>One of our officers was convicted and we could not answer it. We all carry that.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_Ceremony_Contemptuous</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <durationDays>6</durationDays>
+    <stackLimit>2</stackLimit>
+    <stages>
+      <li>
+        <label>ceremony observed</label>
+        <description>Someone was handed a rank and permission to give orders. It is just another leash.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_CourtMartialed_Contemptuous</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <durationDays>6</durationDays>
+    <stackLimit>2</stackLimit>
+    <stages>
+      <li>
+        <label>member court-martialed</label>
+        <description>A fleet court ground one of ours down. Sooner or later it comes for the rest of us.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

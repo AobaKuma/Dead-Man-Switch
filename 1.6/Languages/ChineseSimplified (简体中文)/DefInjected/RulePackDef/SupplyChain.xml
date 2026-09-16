@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 发包单位名称:中文重组为「第N[形容][职能][编制]」/「舰队[形容][职能][编制]N」 -->
+  <DMS_SupplyChainIssuer.rulePack.rulesStrings>
+    <li>r_name->第[numHead][numTailOrd][UnitAdj][UnitType][Scale]</li>
+    <li>r_name->舰队[UnitAdj][UnitType][Scale][numHead][numTail]</li>
+
+    <li>numHead-></li>
+    <li>numHead->1</li>
+    <li>numHead->2</li>
+    <li>numHead->3</li>
+    <li>numHead->4</li>
+    <li>numHead->5</li>
+    <li>numHead->7</li>
+    <li>numHead->9</li>
+    <li>numHead->10</li>
+    <li>numHead->15</li>
+
+    <li>numTailOrd->1</li>
+    <li>numTailOrd->2</li>
+    <li>numTailOrd->3</li>
+    <li>numTailOrd->4</li>
+    <li>numTailOrd->6</li>
+    <li>numTailOrd->8</li>
+
+    <li>numTail->1</li>
+    <li>numTail->2</li>
+    <li>numTail->3</li>
+    <li>numTail->5</li>
+    <li>numTail->8</li>
+
+    <li>UnitAdj->前进</li>
+    <li>UnitAdj->轨道</li>
+    <li>UnitAdj->先锋</li>
+    <li>UnitAdj->远征</li>
+    <li>UnitAdj->边疆</li>
+
+    <li>UnitType->后勤</li>
+    <li>UnitType->军需</li>
+    <li>UnitType->补给</li>
+    <li>UnitType->运输</li>
+
+    <li>Scale->排</li>
+    <li>Scale->分遣队</li>
+    <li>Scale->连</li>
+    <li>Scale->组</li>
+  </DMS_SupplyChainIssuer.rulePack.rulesStrings>
+
+  <DMS_SupplyChainLetters.rulePack.rulesStrings>
+    <li>stageLetterLabel->补给交付 [stage]/[totalStages]</li>
+    <li>stageLetterLabel->货物需求：[categoryLabel]</li>
+    <li>stageLetterText->[stageOpen]\n\n在期限内将 [count] 个[categoryLabel]装入货舱并确认交付。货物确认后，报酬会立即以空投舱送达。</li>
+
+    <li>stageOpen->[issuerUnit]已提出供应合约的下一期货物需求。机动货舱即将抵达。</li>
+    <li>stageOpen->与[issuerUnit]的供应合约已进入下一期。机动货舱很快会降落在殖民地附近。</li>
+
+    <li>podLetterLabel->补给货舱</li>
+    <li>podLetterLabel->补给货舱即将抵达</li>
+    <li>podLetterText->[podOpen]\n\n在期限截止前将 [count] 个[categoryLabel]装入其中。</li>
+
+    <li>podOpen->来自[issuerUnit]的机动货舱正在殖民地附近降落。</li>
+    <li>podOpen->[issuerUnit]派出的机动货舱即将在附近着陆。</li>
+
+    <li>paymentLetterLabel->报酬已送达</li>
+    <li>paymentLetterLabel->交付报酬</li>
+    <li>paymentLetterText->[payOpen]</li>
+
+    <li>payOpen->[issuerUnit]已确认这批交付。报酬已以空投舱送达。</li>
+    <li>payOpen->[issuerUnit]确认收到货物。报酬已如约以空投舱送达。</li>
+
+    <li>intervalMessage->交付已确认。[issuerUnit]将在约 [days] 天后提出下一期需求。</li>
+    <li>intervalMessage->交付已确认。[issuerUnit]的下一架机动货舱将在约 [days] 天后抵达。</li>
+  </DMS_SupplyChainLetters.rulePack.rulesStrings>
+
+</LanguageData>

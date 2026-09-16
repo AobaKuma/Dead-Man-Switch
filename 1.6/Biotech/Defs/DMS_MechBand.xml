@@ -70,8 +70,7 @@
     <defName>DMS_BandNode</defName>
     <hediffClass>Fortified.Hediff_BandNode</hediffClass>
     <label>Band node (N.A.C.S.)</label>
-    <description>Following the N.A.C.S. protocol, the assisted computing array has increased this
-      mechanitor's bandwidth.</description>
+    <description>Following the N.A.C.S. protocol, the assisted computing array has increased this mechanitor's bandwidth.</description>
     <modExtensions>
       <li Class="Fortified.BandNodeBuildingExtension">
         <targetBuilding>DMS_BandNode</targetBuilding>

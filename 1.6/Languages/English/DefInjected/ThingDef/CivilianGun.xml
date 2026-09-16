@@ -7,12 +7,36 @@
   <!-- EN: Riot machinegun bullet -->
   <DMS_Bullet_MiniMachineGun.label>Riot machinegun bullet</DMS_Bullet_MiniMachineGun.label>
   
-  <!-- EN: 20 gauge beanbag -->
-  <DMS_Bullet_RiotRevolver.label>20 gauge beanbag</DMS_Bullet_RiotRevolver.label>
+  <!-- EN: 20 gauge rubber slug -->
+  <DMS_Bullet_RiotRevolver.label>20 gauge rubber slug</DMS_Bullet_RiotRevolver.label>
+  <!-- EN: A 20 gauge rubber slug. It arrives as one heavy impact rather than a spread, which puts someone on the ground and rarely does worse than that. Armor plating shrugs it off entirely. -->
+  <DMS_Bullet_RiotRevolver.description>A 20 gauge rubber slug. It arrives as one heavy impact rather than a spread, which puts someone on the ground and rarely does worse than that. Armor plating shrugs it off entirely.</DMS_Bullet_RiotRevolver.description>
+
+  <!-- EN: 20 gauge buckshot -->
+  <DMS_Bullet_RiotRevolver_Buck.label>20 gauge buckshot</DMS_Bullet_RiotRevolver_Buck.label>
+  <!-- EN: A lethal 20 gauge pellet load. The revolver was never meant to be a fighting weapon, but nobody told the cylinder that. -->
+  <DMS_Bullet_RiotRevolver_Buck.description>A lethal 20 gauge pellet load. The revolver was never meant to be a fighting weapon, but nobody told the cylinder that.</DMS_Bullet_RiotRevolver_Buck.description>
+
+  <!-- EN: 20 gauge slug -->
+  <DMS_Bullet_RiotRevolver_Slug.label>20 gauge slug</DMS_Bullet_RiotRevolver_Slug.label>
+  <!-- EN: A single lead slug loaded to a heavier charge than the cylinder was designed around. It carries much further than shot and will crack a light mech shell, at the price of a wrist that regrets every round. -->
+  <DMS_Bullet_RiotRevolver_Slug.description>A single lead slug loaded to a heavier charge than the cylinder was designed around. It carries much further than shot and will crack a light mech shell, at the price of a wrist that regrets every round.</DMS_Bullet_RiotRevolver_Slug.description>
   
-  <!-- EN: 4 gauge bean bag -->
-  <DMS_Bullet_RiotShotgun.label>4 gauge bean bag</DMS_Bullet_RiotShotgun.label>
-  
+  <!-- EN: 4 gauge rubber slug -->
+  <DMS_Bullet_RiotShotgun.label>4 gauge rubber slug</DMS_Bullet_RiotShotgun.label>
+  <!-- EN: A 4 gauge rubber slug. It delivers a crushing, non-penetrating impact intended to knock down a target without killing them. Ineffective against armor plating. -->
+  <DMS_Bullet_RiotShotgun.description>A 4 gauge rubber slug. It delivers a crushing, non-penetrating impact intended to knock down a target without killing them. Ineffective against armor plating.</DMS_Bullet_RiotShotgun.description>
+
+  <!-- EN: 4 gauge EMP shot -->
+  <DMS_Bullet_RiotShotgun_EMP.label>4 gauge EMP shot</DMS_Bullet_RiotShotgun_EMP.label>
+  <!-- EN: A 4 gauge casing carrying a discharge capacitor in place of shot. It dumps its charge into whatever it strikes, seizing up mechanoid systems without leaving a mark on flesh. -->
+  <DMS_Bullet_RiotShotgun_EMP.description>A 4 gauge casing carrying a discharge capacitor in place of shot. It dumps its charge into whatever it strikes, seizing up mechanoid systems without leaving a mark on flesh.</DMS_Bullet_RiotShotgun_EMP.description>
+
+  <!-- EN: 4 gauge breaching round -->
+  <DMS_Bullet_RiotShotgun_Breach.label>4 gauge breaching round</DMS_Bullet_RiotShotgun_Breach.label>
+  <!-- EN: A solid steel breaching slug loaded heavy and meant to be put into a hinge or a lock from arm's length. It transfers everything it has into the structure it strikes, and it does so to exactly one thing at a time. -->
+  <DMS_Bullet_RiotShotgun_Breach.description>A solid steel breaching slug loaded heavy and meant to be put into a hinge or a lock from arm's length. It transfers everything it has into the structure it strikes, and it does so to exactly one thing at a time.</DMS_Bullet_RiotShotgun_Breach.description>
+
   <!-- EN: Elephant Rifle -->
   <DMS_ElephantGun.label>Elephant Rifle</DMS_ElephantGun.label>
   <!-- EN: Single-shot high caliber hunting rifle. While made to hunt big game or stop large hostile lifeforms with sheer kinetic energy, it is also used by early industrial colonies against mechanoids thanks to its simple manufacture requirements. -->
@@ -65,7 +89,20 @@
   <!-- EN: barrel -->
   <DMS_Revolver.tools.barrel.label>barrel</DMS_Revolver.tools.barrel.label>
   <!-- EN: Riot Revolver -->
-  <DMS_Revolver.verbs.Verb_Shoot.label>Riot Revolver</DMS_Revolver.verbs.Verb_Shoot.label>
+  <DMS_Revolver.verbs.Verb_Shoot_AmmoSwitch.label>Riot Revolver</DMS_Revolver.verbs.Verb_Shoot_AmmoSwitch.label>
+  <!-- 彈種切換 / ammo switch -->
+  <!-- EN: rubber slug -->
+  <DMS_Revolver.comps.CompAmmoSwitch.ammos.0.label>rubber slug</DMS_Revolver.comps.CompAmmoSwitch.ammos.0.label>
+  <!-- EN: A less-lethal slug that bruises and knocks down instead of killing. What the revolver was sold with, and what most of its owners never bother to change. -->
+  <DMS_Revolver.comps.CompAmmoSwitch.ammos.0.description>A less-lethal slug that bruises and knocks down instead of killing. What the revolver was sold with, and what most of its owners never bother to change.</DMS_Revolver.comps.CompAmmoSwitch.ammos.0.description>
+  <!-- EN: buckshot -->
+  <DMS_Revolver.comps.CompAmmoSwitch.ammos.1.label>buckshot</DMS_Revolver.comps.CompAmmoSwitch.ammos.1.label>
+  <!-- EN: A lethal spread of pellets for when the situation stops being a disturbance and starts being a fight. Slightly harder to place than a rubber slug. -->
+  <DMS_Revolver.comps.CompAmmoSwitch.ammos.1.description>A lethal spread of pellets for when the situation stops being a disturbance and starts being a fight. Slightly harder to place than a rubber slug.</DMS_Revolver.comps.CompAmmoSwitch.ammos.1.description>
+  <!-- EN: slug -->
+  <DMS_Revolver.comps.CompAmmoSwitch.ammos.2.label>slug</DMS_Revolver.comps.CompAmmoSwitch.ammos.2.label>
+  <!-- EN: A single lead slug that carries much further than shot and punches through light plating. The heavier charge makes the revolver slower to bring on target. -->
+  <DMS_Revolver.comps.CompAmmoSwitch.ammos.2.description>A single lead slug that carries much further than shot and punches through light plating. The heavier charge makes the revolver slower to bring on target.</DMS_Revolver.comps.CompAmmoSwitch.ammos.2.description>
   
   <!-- UNUSED -->
   <DMS_Revolver.tools.stock.label>stock</DMS_Revolver.tools.stock.label>
@@ -80,8 +117,26 @@
   <!-- EN: barrel -->
   <DMS_RiotShotgun.tools.barrel.label>barrel</DMS_RiotShotgun.tools.barrel.label>
   <!-- EN: Rifled slug gun -->
-  <DMS_RiotShotgun.verbs.Verb_Shoot.label>Rifled slug gun</DMS_RiotShotgun.verbs.Verb_Shoot.label>
-  
+  <DMS_RiotShotgun.verbs.Verb_Shoot_AmmoSwitch.label>Rifled slug gun</DMS_RiotShotgun.verbs.Verb_Shoot_AmmoSwitch.label>
+
+  <!-- 彈種切換 / ammo switch -->
+  <!-- EN: rubber slug -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.0.label>rubber slug</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.0.label>
+  <!-- EN: A single rubber slug that knocks a target down instead of killing it. The standard round for riot work and for taking prisoners alive. -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.0.description>A single rubber slug that knocks a target down instead of killing it. The standard round for riot work and for taking prisoners alive.</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.0.description>
+  <!-- EN: buckshot -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.1.label>buckshot</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.1.label>
+  <!-- EN: A lethal spread of pellets for close work against unarmored flesh. Marginally harder to place than a rubber slug. -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.1.description>A lethal spread of pellets for close work against unarmored flesh. Marginally harder to place than a rubber slug.</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.1.description>
+  <!-- EN: EMP shot -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.2.label>EMP shot</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.2.label>
+  <!-- EN: A capacitor slug that discharges on impact, shorting out mechanoid systems instead of destroying them. It does nothing at all to flesh, and the heavy payload cuts the effective range short. -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.2.description>A capacitor slug that discharges on impact, shorting out mechanoid systems instead of destroying them. It does nothing at all to flesh, and the heavy payload cuts the effective range short.</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.2.description>
+  <!-- EN: breaching round -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.3.label>breaching round</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.3.label>
+  <!-- EN: A solid slug meant to be fired into a door or a thin wall from arm's length. It will open a way in where nothing else will, and it is close to useless at any other distance. -->
+  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.3.description>A solid slug meant to be fired into a door or a thin wall from arm's length. It will open a way in where nothing else will, and it is close to useless at any other distance.</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.3.description>
+
   <!-- UNUSED -->
   <DMS_RiotShotgun.tools.stock-1.label>stock</DMS_RiotShotgun.tools.stock-1.label>
   <DMS_RiotShotgun.tools.barrel-1.label>barrel</DMS_RiotShotgun.tools.barrel-1.label>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: ceremony observed -->
+  <DMS_Thought_Ceremony_Strict.stages.ceremony_observed.label>ceremony observed</DMS_Thought_Ceremony_Strict.stages.ceremony_observed.label>
+  <!-- EN: We observed the forms properly, in front of an official witness. That still means something. -->
+  <DMS_Thought_Ceremony_Strict.stages.ceremony_observed.description>We observed the forms properly, in front of an official witness. That still means something.</DMS_Thought_Ceremony_Strict.stages.ceremony_observed.description>
+  
+  <!-- EN: ceremony failed -->
+  <DMS_Thought_CeremonyFailed_Strict.stages.ceremony_failed.label>ceremony failed</DMS_Thought_CeremonyFailed_Strict.stages.ceremony_failed.label>
+  <!-- EN: We could not even get through a ceremony. It shames all of us. -->
+  <DMS_Thought_CeremonyFailed_Strict.stages.ceremony_failed.description>We could not even get through a ceremony. It shames all of us.</DMS_Thought_CeremonyFailed_Strict.stages.ceremony_failed.description>
+  
+  <!-- EN: member court-martialed -->
+  <DMS_Thought_CourtMartialed_Strict.stages.member_courtmartialed.label>member court-martialed</DMS_Thought_CourtMartialed_Strict.stages.member_courtmartialed.label>
+  <!-- EN: One of our officers was convicted and we could not answer it. We all carry that. -->
+  <DMS_Thought_CourtMartialed_Strict.stages.member_courtmartialed.description>One of our officers was convicted and we could not answer it. We all carry that.</DMS_Thought_CourtMartialed_Strict.stages.member_courtmartialed.description>
+  
+  <!-- EN: ceremony observed -->
+  <DMS_Thought_Ceremony_Contemptuous.stages.ceremony_observed.label>ceremony observed</DMS_Thought_Ceremony_Contemptuous.stages.ceremony_observed.label>
+  <!-- EN: Someone was handed a rank and permission to give orders. It is just another leash. -->
+  <DMS_Thought_Ceremony_Contemptuous.stages.ceremony_observed.description>Someone was handed a rank and permission to give orders. It is just another leash.</DMS_Thought_Ceremony_Contemptuous.stages.ceremony_observed.description>
+  
+  <!-- EN: member court-martialed -->
+  <DMS_Thought_CourtMartialed_Contemptuous.stages.member_courtmartialed.label>member court-martialed</DMS_Thought_CourtMartialed_Contemptuous.stages.member_courtmartialed.label>
+  <!-- EN: A fleet court ground one of ours down. Sooner or later it comes for the rest of us. -->
+  <DMS_Thought_CourtMartialed_Contemptuous.stages.member_courtmartialed.description>A fleet court ground one of ours down. Sooner or later it comes for the rest of us.</DMS_Thought_CourtMartialed_Contemptuous.stages.member_courtmartialed.description>
+  
+  <!-- EN: operation completed -->
+  <DMS_Thought_OperationSuccess_Venerated.stages.operation_completed.label>operation completed</DMS_Thought_OperationSuccess_Venerated.stages.operation_completed.label>
+  <!-- EN: We were given a job and we finished it. That is what we are for. -->
+  <DMS_Thought_OperationSuccess_Venerated.stages.operation_completed.description>We were given a job and we finished it. That is what we are for.</DMS_Thought_OperationSuccess_Venerated.stages.operation_completed.description>
+  
+  <!-- EN: operation failed -->
+  <DMS_Thought_OperationFailed_Venerated.stages.operation_failed.label>operation failed</DMS_Thought_OperationFailed_Venerated.stages.operation_failed.label>
+  <!-- EN: We were given a job and we did not finish it. There is no way to dress that up. -->
+  <DMS_Thought_OperationFailed_Venerated.stages.operation_failed.description>We were given a job and we did not finish it. There is no way to dress that up.</DMS_Thought_OperationFailed_Venerated.stages.operation_failed.description>
+  
+  <!-- EN: fire on target -->
+  <DMS_Thought_FireSupport_Venerated.stages.fire_on_target.label>fire on target</DMS_Thought_FireSupport_Venerated.stages.fire_on_target.label>
+  <!-- EN: Somebody called it in and it landed where it was supposed to. Good. -->
+  <DMS_Thought_FireSupport_Venerated.stages.fire_on_target.description>Somebody called it in and it landed where it was supposed to. Good.</DMS_Thought_FireSupport_Venerated.stages.fire_on_target.description>
+  
+  <!-- EN: operation failed -->
+  <DMS_Thought_OperationFailed_Necessary.stages.operation_failed.label>operation failed</DMS_Thought_OperationFailed_Necessary.stages.operation_failed.label>
+  <!-- EN: We took the job and we did not deliver. Somebody is going to pay for that, and it probably will not be the people who gave the order. -->
+  <DMS_Thought_OperationFailed_Necessary.stages.operation_failed.description>We took the job and we did not deliver. Somebody is going to pay for that, and it probably will not be the people who gave the order.</DMS_Thought_OperationFailed_Necessary.stages.operation_failed.description>
+  
+  <!-- EN: I called it in -->
+  <DMS_Thought_FireSupport_Abhorrent_Self.stages.I_called_it_in.label>I called it in</DMS_Thought_FireSupport_Abhorrent_Self.stages.I_called_it_in.label>
+  <!-- EN: I called saturation fire down on a target. Every stray round that landed is on me. -->
+  <DMS_Thought_FireSupport_Abhorrent_Self.stages.I_called_it_in.description>I called saturation fire down on a target. Every stray round that landed is on me.</DMS_Thought_FireSupport_Abhorrent_Self.stages.I_called_it_in.description>
+  
+  <!-- EN: someone called it in -->
+  <DMS_Thought_FireSupport_Abhorrent_Knows.stages.someone_called_it_in.label>someone called it in</DMS_Thought_FireSupport_Abhorrent_Knows.stages.someone_called_it_in.label>
+  <!-- EN: One of us called saturation fire down on a target nobody could see. Such things should never be done. -->
+  <DMS_Thought_FireSupport_Abhorrent_Knows.stages.someone_called_it_in.description>One of us called saturation fire down on a target nobody could see. Such things should never be done.</DMS_Thought_FireSupport_Abhorrent_Knows.stages.someone_called_it_in.description>
+  
+  <!-- EN: sealed technology unlocked -->
+  <DMS_Thought_Occultech_Venerated.stages.sealed_technology_unlocked.label>sealed technology unlocked</DMS_Thought_Occultech_Venerated.stages.sealed_technology_unlocked.label>
+  <!-- EN: We unlocked a piece of sealed technology that had been shelved and forgotten. Let them come and explain why we should not have. -->
+  <DMS_Thought_Occultech_Venerated.stages.sealed_technology_unlocked.description>We unlocked a piece of sealed technology that had been shelved and forgotten. Let them come and explain why we should not have.</DMS_Thought_Occultech_Venerated.stages.sealed_technology_unlocked.description>
+  
+  <!-- EN: sealed technology unlocked -->
+  <DMS_Thought_Occultech_Forbidden.stages.sealed_technology_unlocked.label>sealed technology unlocked</DMS_Thought_Occultech_Forbidden.stages.sealed_technology_unlocked.label>
+  <!-- EN: We unlocked a piece of sealed technology that had been locked away. I hope we have not made an even worse mistake. -->
+  <DMS_Thought_Occultech_Forbidden.stages.sealed_technology_unlocked.description>We unlocked a piece of sealed technology that had been locked away. I hope we have not made an even worse mistake.</DMS_Thought_Occultech_Forbidden.stages.sealed_technology_unlocked.description>
+  
+  <!-- EN: a pod was sealed -->
+  <DMS_Thought_Gestation_Venerated.stages.a_pod_was_sealed.label>a pod was sealed</DMS_Thought_Gestation_Venerated.stages.a_pod_was_sealed.label>
+  <!-- EN: We used our own bodies to gestate something better than ourselves. -->
+  <DMS_Thought_Gestation_Venerated.stages.a_pod_was_sealed.description>We used our own bodies to gestate something better than ourselves.</DMS_Thought_Gestation_Venerated.stages.a_pod_was_sealed.description>
+  
+  <!-- EN: ate synthesized food -->
+  <DMS_Thought_SyntheticFood_Venerated.stages.ate_synthesized_food.label>ate synthesized food</DMS_Thought_SyntheticFood_Venerated.stages.ate_synthesized_food.label>
+  <!-- EN: I ate synthesized food. Clean and precisely measured. -->
+  <DMS_Thought_SyntheticFood_Venerated.stages.ate_synthesized_food.description>I ate synthesized food. Clean and precisely measured.</DMS_Thought_SyntheticFood_Venerated.stages.ate_synthesized_food.description>
+  
+  <!-- EN: I carried that thing -->
+  <DMS_Thought_Gestation_Abhorrent_Self.stages.I_carried_that_thing.label>I carried that thing</DMS_Thought_Gestation_Abhorrent_Self.stages.I_carried_that_thing.label>
+  <!-- EN: My body gave birth to something that is not even alive. -->
+  <DMS_Thought_Gestation_Abhorrent_Self.stages.I_carried_that_thing.description>My body gave birth to something that is not even alive.</DMS_Thought_Gestation_Abhorrent_Self.stages.I_carried_that_thing.description>
+  
+  <!-- EN: we grew one of those -->
+  <DMS_Thought_Gestation_Abhorrent_Knows.stages.we_grew_one_of_those.label>we grew one of those</DMS_Thought_Gestation_Abhorrent_Knows.stages.we_grew_one_of_those.label>
+  <!-- EN: We are using living bodies as seedbeds. Such things are a desecration. -->
+  <DMS_Thought_Gestation_Abhorrent_Knows.stages.we_grew_one_of_those.description>We are using living bodies as seedbeds. Such things are a desecration.</DMS_Thought_Gestation_Abhorrent_Knows.stages.we_grew_one_of_those.description>
+  
+  <!-- EN: ate synthesized food -->
+  <DMS_Thought_SyntheticFood_Abhorrent.stages.ate_synthesized_food.label>ate synthesized food</DMS_Thought_SyntheticFood_Abhorrent.stages.ate_synthesized_food.label>
+  <!-- EN: Something with not a single natural ingredient in it should never be eaten. -->
+  <DMS_Thought_SyntheticFood_Abhorrent.stages.ate_synthesized_food.description>Something with not a single natural ingredient in it should never be eaten.</DMS_Thought_SyntheticFood_Abhorrent.stages.ate_synthesized_food.description>
+  
+</LanguageData>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS_SupplyChain.questNameRules.rulesStrings>
+    <li>questName->供應合約：[categoryLabel]</li>
+    <li>questName->補給需求：[categoryLabel]</li>
+    <li>questName->分期交付：[categoryLabel]</li>
+  </DMS_SupplyChain.questNameRules.rulesStrings>
+
+  <DMS_SupplyChain.questDescriptionRules.rulesStrings>
+    <li>questDescription->來自[issuerFactionName]的後勤調度員[asker_nameFull]向我們傳遞了關於[categoryLabel]的長期供應需求。他們需要大約[totalStages]期的[categoryLabel]供應——總量約 [approxTotalCount] 個——用於[supplyPurpose]。\n\n根據[asker_possessive]的統計，第一期貨物需要大約 [firstCount] 個[categoryLabel]。如果我們同意供應，[asker_pronoun]就會[deployMethod]部署一架機動貨櫃降落在[map_definite]。第一期貨物需要在[deadlineDays]天內完成裝貨並發射，以趕上[freightWindow]。\n\n[asker_nameDef]向我們保證，如果能順利完成第一期供應，後續的[categoryLabel]供應合約仍會優先提供給我們，並會在所有供應合約完成後按市價補償貨品的價格差額。</li>
+
+    <li>supplyPurpose->維持前線駐軍未來幾個象限月的補給</li>
+    <li>supplyPurpose->填補他們行星地面儲備的缺口</li>
+    <li>supplyPurpose->為防線沿線的哨站提供補給</li>
+    <li>supplyPurpose->補充補給車隊遇襲損失的物資</li>
+
+    <li>deployMethod->協調軌道平台</li>
+    <li>deployMethod->調派巡邏航線上的運輸艇</li>
+    <li>deployMethod->向艦隊補給樞紐申請一個投放艙位</li>
+
+    <li>freightWindow->大宗貨物飛船的航班</li>
+    <li>freightWindow->下一次軌道船團的集結</li>
+    <li>freightWindow->艦隊排定的後勤上行運輸</li>
+  </DMS_SupplyChain.questDescriptionRules.rulesStrings>
+
+  <DMS_SupplyChain_Delivery.questNameRules.rulesStrings>
+    <li>questName->交付 [stage]/[totalStages]：[categoryLabel]</li>
+    <li>questName->交付 [stage]/[totalStages]：[targetCount]個[categoryLabel]</li>
+  </DMS_SupplyChain_Delivery.questNameRules.rulesStrings>
+
+  <DMS_SupplyChain_Delivery.questDescriptionRules.rulesStrings>
+    <li>questDescription->[subOpening]\n\n在期限內將 [targetCount] 個[categoryLabel]裝入機動貨櫃並發射，以趕上大宗貨船的航班。貨物確認後，報酬會立即以空投艙送達。\n\n若錯過期限，合約將終止。已收到的報酬歸我們所有。</li>
+
+    <li>subOpening->這是與[issuerFactionName]供應合約的第 [stage]/[totalStages] 期貨物。</li>
+    <li>subOpening->[issuerUnit]已排定第 [stage]/[totalStages] 期貨物：[targetCount]個[categoryLabel]。</li>
+  </DMS_SupplyChain_Delivery.questDescriptionRules.rulesStrings>
+
+</LanguageData>

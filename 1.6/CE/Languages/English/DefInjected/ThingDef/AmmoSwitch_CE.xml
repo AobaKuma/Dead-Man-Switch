@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- CE 會用 VerbPropertiesCE (verbClass = CombatExtended.Verb_ShootCE) 取代原本的
+       Fortified.Verb_*_AmmoSwitch, 所以 verb 標籤的 handle 也跟著換成 Verb_ShootCE。
+       非 CE 版在 1.6/Languages/*/DefInjected/ThingDef/ 底下。 -->
+
+  <DMS_Revolver.verbs.Verb_ShootCE.label>Riot Revolver</DMS_Revolver.verbs.Verb_ShootCE.label>
+  <DMS_RiotShotgun.verbs.Verb_ShootCE.label>Rifled slug gun</DMS_RiotShotgun.verbs.Verb_ShootCE.label>
+  <DMS_AssaultShotgun.verbs.Verb_ShootCE.label>Mech Assault Shotgun</DMS_AssaultShotgun.verbs.Verb_ShootCE.label>
+  <DMS_Gun_HeavyMachineGun.verbs.Verb_ShootCE.label>mech HMG</DMS_Gun_HeavyMachineGun.verbs.Verb_ShootCE.label>
+
+</LanguageData>

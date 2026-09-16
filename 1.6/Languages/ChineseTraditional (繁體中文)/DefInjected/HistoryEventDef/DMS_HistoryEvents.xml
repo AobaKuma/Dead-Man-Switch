@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: military operation completed -->
+  <DMS_QuestSuccess_Military.label>軍事行動達成</DMS_QuestSuccess_Military.label>
+  
+  <!-- EN: military operation failed -->
+  <DMS_QuestFailed_Military.label>軍事行動失敗</DMS_QuestFailed_Military.label>
+  
+  <!-- EN: supply contract fulfilled -->
+  <DMS_QuestSuccess_Logistics.label>補給合約履行</DMS_QuestSuccess_Logistics.label>
+  
+  <!-- EN: supply contract defaulted -->
+  <DMS_QuestFailed_Logistics.label>補給合約違約</DMS_QuestFailed_Logistics.label>
+  
+  <!-- EN: military formality observed -->
+  <DMS_QuestSuccess_Ceremony.label>軍務儀典完成</DMS_QuestSuccess_Ceremony.label>
+  
+  <!-- EN: military formality dishonored -->
+  <DMS_QuestFailed_Ceremony.label>軍務儀典失儀</DMS_QuestFailed_Ceremony.label>
+  
+  <!-- EN: sealed technology recovered -->
+  <DMS_QuestSuccess_Occultech.label>封存科技回收</DMS_QuestSuccess_Occultech.label>
+  
+  <!-- EN: sealed technology lost -->
+  <DMS_QuestFailed_Occultech.label>封存科技遺失</DMS_QuestFailed_Occultech.label>
+  
+  <!-- EN: ate synthesized food -->
+  <DMS_AteSyntheticFood.label>食用合成食品</DMS_AteSyntheticFood.label>
+  
+  <!-- EN: called in fire support -->
+  <DMS_CalledFireSupport.label>呼叫火力支援</DMS_CalledFireSupport.label>
+  
+  <!-- EN: gestated an artificial organism -->
+  <DMS_GestatedMech.label>孕育人造生物體</DMS_GestatedMech.label>
+  
+  <!-- EN: member court-martialed -->
+  <DMS_MemberCourtMartialed.label>成員遭軍法定罪</DMS_MemberCourtMartialed.label>
+  
+</LanguageData>

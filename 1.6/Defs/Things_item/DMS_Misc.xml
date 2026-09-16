@@ -57,7 +57,7 @@
       <postExplosionSpawnThingDefWater>Shell_BlasterSmoke_Releasing_Water</postExplosionSpawnThingDefWater>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef Name="Shell_BlasterSmoke_Releasing_Base" Abstract="True">
     <label>blaster screen shell</label>
     <selectable>false</selectable>
@@ -83,7 +83,7 @@
           <li>Bullet_CataphractCentipede_SR</li>
         </interceptThings>
         <ignoreThings>
-          <li>DMS_Bullet_BlasterSmoke</li> 
+          <li>DMS_Bullet_BlasterSmoke</li>
         </ignoreThings>
       </li>
     </comps>

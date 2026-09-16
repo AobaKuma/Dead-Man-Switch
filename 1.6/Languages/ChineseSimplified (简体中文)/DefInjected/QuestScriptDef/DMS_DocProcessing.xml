@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
+
   <DMS_ProcessDocumentQuest.questNameRules.rulesStrings>
-    <li>questName->舰队文书处理</li>
+    <li>questName->文书处理：[docType]</li>
+    <li>questName->文书积压：[docType]</li>
+    <li>questName->归档委托：[docType]</li>
+    <li>docType->补给账目</li>
+    <li>docType->阵亡通报</li>
+    <li>docType->维修工单</li>
+    <li>docType->审计卷宗</li>
+    <li>docType->情报摘要</li>
+    <li>docType->请领表单</li>
   </DMS_ProcessDocumentQuest.questNameRules.rulesStrings>
-  
+
   <DMS_ProcessDocumentQuest.questDescriptionRules.rulesStrings>
-    <li>questDescription->殖民舰队联系了你，计划空投一些繁杂积压的文书材料。你需要指派具有对应研究能力的人员对文书进行处理。\n\n文书一经损坏则会立即导致任务失败，请妥善保管。</li>
+    <li>questDescription->殖民舰队的副官[asker_nameFull]向我们转交了一批积压待处理的文书。他们的文书部门[docReason]，多出的工作正外包给边境聚落处理。这批文件主要是[docContents]。\n\n如果我们接下委托，文件将以空投舱送至贸易信标或殖民地中心附近。需要指派具有对应研究能力的人员逐份核对并归档。\n\n[asker_nameDef]明确提出了一项条件：舰队要求每一份文件完好缴回。任何文件一经损毁，合约立即终止。整批文书处理完毕后，报酬便会送达。</li>
+
+    <li>docReason->在最近一次人员轮调后严重缺编</li>
+    <li>docReason->因归档系统故障而落后了数个月</li>
+    <li>docReason->被整季的前线报告彻底淹没</li>
+    <li>docReason->正赶在舰队审计前结清账目</li>
+
+    <li>docContents->补给清单、弹药消耗记录与无人机维修日志</li>
+    <li>docContents->阵亡通报与战后报告，有些还残留着硝烟味</li>
+    <li>docContents->盖有机密戳章、只准处理不准细读的档案</li>
+    <li>docContents->请领表单、维修工单，以及从未寄出的信件</li>
   </DMS_ProcessDocumentQuest.questDescriptionRules.rulesStrings>
 
-  <DMS_ProcessDocumentQuest.root.nodes.6.label>文书资料送达</DMS_ProcessDocumentQuest.root.nodes.6.label>
-  <DMS_ProcessDocumentQuest.root.nodes.6.text>来自 [asker_nameFull] 的机密文书已送达。它们已空投至你的贸易信标或殖民地中心附近。</DMS_ProcessDocumentQuest.root.nodes.6.text>
-
-  <DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.label>文书资料损毁</DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.label>
-  <DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.text>由于文书遭到损毁，任务已失败。</DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.text>
-
-  <DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.label>文书处理完毕</DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.label>
-  <DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.text>你们已经成功处理了所有的舰队文书。</DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.text>
-  
 </LanguageData>

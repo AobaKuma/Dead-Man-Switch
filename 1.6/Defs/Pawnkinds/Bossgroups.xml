@@ -292,4 +292,82 @@
     <rewardDef>ComponentFireControl</rewardDef>
   </BossgroupDef>
 
+
+  <!-- DMS_Mech_ClusterWeaver -->
+  <BossDef>
+    <defName>DMS_Boss_ClusterWeaver</defName>
+    <kindDef>DMS_Mech_ClusterWeaver</kindDef>
+    <appearAfterTicks>7200000</appearAfterTicks><!-- 2 years -->
+  </BossDef>
+
+  <BossgroupDef ParentName="BaseBossgroupNonMechanitor">
+    <defName>DMS_ClusterWeaver</defName>
+    <boss>DMS_Boss_ClusterWeaver</boss>
+    <leaderDescription>The {LEADERKIND_label} is a nightmare since ww3, it's not a weapon suitable in a total war but a perfect machine for counterinsurgency, be aware of it can deploy suicide drone swarm to overrun your defense.</leaderDescription>
+    <waves>
+      <li> <!-- 0 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Falcon>2</DMS_Mech_Falcon>
+          <DMS_Mech_Soldat>3</DMS_Mech_Soldat>
+        </escorts>
+      </li>
+      <li> <!-- 1 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Falcon>5</DMS_Mech_Falcon>
+          <DMS_Mech_Soldat>5</DMS_Mech_Soldat>
+        </escorts>
+      </li>
+      <li> <!-- 2 - Repeat starts here -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <DMS_Mech_Falcon>7</DMS_Mech_Falcon>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+        </escorts>
+      </li>
+      <li> <!-- 3 -->
+        <bossCount>3</bossCount>
+        <escorts>
+          <DMS_Mech_Falcon>6</DMS_Mech_Falcon>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Ronin>10</DMS_Mech_Ronin>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 4 -->
+        <bossCount>4</bossCount>
+        <escorts>
+          <DMS_Mech_Falcon>8</DMS_Mech_Falcon>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Ronin>5</DMS_Mech_Ronin>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 5 -->
+        <bossCount>5</bossCount>
+        <escorts>
+          <DMS_Mech_Falcon>8</DMS_Mech_Falcon>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Ronin>8</DMS_Mech_Ronin>
+          <DMS_Mech_Sniper>2</DMS_Mech_Sniper>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+    </waves>
+    <rewardDef>ComponentControlChip</rewardDef>
+  </BossgroupDef>
+
 </Defs>

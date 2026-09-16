@@ -2,7 +2,7 @@
 <Defs>
 
 
-  <ThingSetMakerDef MayRequire="Aoba.DeadManSwitch.Core">
+  <ThingSetMakerDef>
     <defName>DMS_LogisticTerminal</defName>
     <root Class="ThingSetMaker_Sum">
       <options>
@@ -22,24 +22,19 @@
           </thingSetMaker>
         </li>
 
-        <!-- Weapons -->
+        <!-- ============ Weapons ============ -->
+        <!-- 探索獎勵武器分三級。這幾把槍多數已移除製造配方，探索是主要取得管道。 -->
+
+        <!-- 低烈度獎勵 -->
         <li>
-          <chance>0.2</chance>
+          <chance>0.35</chance>
           <thingSetMaker Class="ThingSetMaker_Count">
             <fixedParams>
               <filter>
                 <thingDefs>
-                  <li>DMS_Gun_Recoilless</li>
-                  <li>DMS_Gun_2A38M</li>
-                  <li>DMS_HeavyMachineGun</li>
-                  <li>DMS_Autocannon</li>
-                  <li>DMS_SniperCannon</li>
-                  <li>DMS_M214Gatlinggun</li>
-                  <li>DMS_Gun_MK44_Autocannon</li>
-                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_Gsh30Gatlinggun</li>
-                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_AerialAutocannon</li>
-                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_KordMachineGun</li>
-                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_VladimirovMachineGun</li>
+                  <li>DMS_KnuckledusterRevolver</li>
+                  <li>DMS_SurvivalRifle</li>
+                  <li>DMS_PDW</li>
                 </thingDefs>
               </filter>
               <countRange>1~1</countRange>
@@ -47,29 +42,43 @@
           </thingSetMaker>
         </li>
 
+        <!-- 中烈度獎勵 -->
         <li>
-          <chance>0.35</chance>
+          <chance>0.25</chance>
           <thingSetMaker Class="ThingSetMaker_Count">
             <fixedParams>
               <filter>
                 <thingDefs>
-                  <li>DMS_AssaultPiercer</li>
-                  <li>DMS_PDW</li>
-                  <li>DMS_SurvivalRifle</li>
-                  <li>DMS_LightMachineGun</li>
-                  <li>DMS_AutomaticGrenadeLauncher</li>
-                  <li>DMS_SniperGrenadeLauncher</li>
-                  <li>DMS_MarksmanRifle</li>
-                  <li>DMS_BattleRifle</li>
-                  <li>DMS_SemiAutoRifle</li>
+                  <li>DMS_AntiMaterialRifle</li>
                   <li>DMS_AssaultRifle</li>
-                  <li>DMS_AssaultShotgun</li>
+                  <li>DMS_Gun_2A38M</li>
                   <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_ZlobinRifle</li>
                   <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_VykhlopRifle</li>
                   <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_KS23K</li>
                   <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_PKM</li>
                   <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_YekaterinRifle</li>
                   <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_AtlantGrenadeLauncher</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- 高烈度獎勵 -->
+        <li>
+          <chance>0.1</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_SniperCannon</li>
+                  <li>DMS_Gun_MK44_Autocannon</li>
+                  <li>DMS_Gun_DawnbladeM</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_Gsh30Gatlinggun</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_AerialAutocannon</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_KordMachineGun</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_VladimirovMachineGun</li>
                 </thingDefs>
               </filter>
               <countRange>1~1</countRange>

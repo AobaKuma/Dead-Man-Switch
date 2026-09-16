@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    小型附屬結構（衛星結構）：
+    依 Ruin_ScatteredSmall.xml 的風格製作的 7x7~9x9 小型結構，
+    用於散落在主結構外圍，不可單獨作為主結構（故不掛 DMS_DecoySite 等主結構標籤）。
+
+    Small satellite structures (7x7–9x9) in the Ruin_ScatteredSmall style,
+    meant to be scattered around a main structure. They carry their own tag
+    (DMS_RuinSatellite) and must NOT carry main-structure tags.
+
+    用法 Usage — 首選：GenStep 的 satelliteScatter（環半徑依地圖尺寸縮放，
+    各座獨立生成，不會撐大主結構的 sketch）：
+
+      <satelliteScatter>
+        <li>
+          <tag>DMS_RuinSatellite</tag>
+          <count>4</count>
+          <radiusPct>0.16</radiusPct>
+          <minSpacing>4</minSpacing>
+        </li>
+      </satelliteScatter>
+
+    也可以塞進主結構的 elements 當固定裝飾，但位置固定、拿不到地圖尺寸，
+    且 RandomSubStructure 的隨機結果會被 sketch 快取整局鎖住：
+
+      <li Class="Fortified.Structures.FFF_Element_RandomSubStructure">
+        <tag>DMS_RuinSatellite</tag>
+        <pos>(30, 0, 8)</pos>
+      </li>
+
+    Preferred: the GenStep's satelliteScatter — ring radius scales with map size and each
+    piece is generated separately, so the main structure's sketch stays untouched. Layout
+    elements still work for fixed decoration, but their positions can't scale and
+    RandomSubStructure's roll is frozen by the sketch cache for the whole session.
+  -->
+
+  <!-- ============ 路障檢查哨 Checkpoint (9x9) ============ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_RuinSat_Checkpoint</defName>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Sandbags</def>
+        <pos>(1, 0, 1)</pos>
+        <size>(4, 1)</size>
+        <stuff>Cloth</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Sandbags</def>
+        <pos>(1, 0, 2)</pos>
+        <size>(1, 3)</size>
+        <stuff>Cloth</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Barricade</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(6, 0, 2)</li>
+          <li>(6, 0, 4)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>AncientRazorWire</def>
+        <pos>(2, 0, 7)</pos>
+        <size>(4, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Wreckage_SentryGun</def>
+        <pos>(3, 0, 3)</pos>
+        <rot>1</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>TrapIED_HighExplosive</def>
+        <pos>(4, 0, 5)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>CraterSmall</def>
+        <pos>(6, 0, 6)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(2, 0, 2)</pos>
+        <size>(4, 3)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainScatter">
+        <def>PackedDirt</def>
+        <posList>
+          <li>(6, 0, 1)</li>
+          <li>(1, 0, 6)</li>
+        </posList>
+      </li>
+    </elements>
+    <tags>
+      <li>DMS_RuinSatellite</li>
+    </tags>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <!-- ============ 貨櫃堆置點 Container dump (9x9) ============ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_RuinSat_ContainerDump</defName>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_LogisticContainer</def>
+        <posList>
+          <li>(1, 0, 1)</li>
+          <li>(1, 0, 3)</li>
+          <li>(3, 0, 1)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_LogisticContainerDestroyed</def>
+        <posList>
+          <li>(3, 0, 3)</li>
+          <li>(5, 0, 1)</li>
+          <li>(5, 0, 3)</li>
+          <li>(3, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientBarrel</def>
+        <posList>
+          <li>(6, 0, 5)</li>
+          <li>(1, 0, 6)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientLargeCrate</def>
+        <pos>(6, 0, 7)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>TrapIED_HighExplosive</def>
+        <pos>(5, 0, 6)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>CraterSmall</def>
+        <pos>(7, 0, 2)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PackedDirt</def>
+        <pos>(1, 0, 1)</pos>
+        <size>(6, 6)</size>
+      </li>
+    </elements>
+    <tags>
+      <li>DMS_RuinSatellite</li>
+    </tags>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <!-- ============ 通訊小屋 Comms shack (7x7) ============ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_RuinSat_CommsShack</defName>
+    <size>(7, 7)</size>
+    <disableSuggestedRoof>false</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(1, 0, 1)</pos>
+        <size>(2, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Door</def>
+        <pos>(3, 0, 1)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(4, 0, 1)</pos>
+        <size>(2, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(1, 0, 5)</pos>
+        <size>(5, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(1, 0, 2)</pos>
+        <size>(1, 3)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(5, 0, 2)</pos>
+        <size>(1, 3)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <!-- force=false：作為散布用的小結構，不覆寫既有厚岩頂（Task_ApplyRoof 在
+           force=true 時會蓋掉 isThickRoof 的格子）。
+           force=false so this scatter piece never overwrites existing thick rock
+           roof — Task_ApplyRoof only bypasses the isThickRoof check when forced. -->
+      <li Class="Fortified.Structures.FFF_Element_RoofRect">
+        <def>RoofConstructed</def>
+        <pos>(1, 0, 1)</pos>
+        <size>(5, 5)</size>
+        <force>false</force>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(2, 0, 2)</pos>
+        <size>(3, 3)</size>
+      </li>
+      <!-- 3x1 建物移到 x3（原 x2 會占到 x1 的西牆），並讓出 (4,4) 給原本的燈；
+           燈改放 (2,0,2)。
+           3x1 building moved to x3 (at x2 it ate the west wall at x1); the lamp
+           moves to (2,0,2) since the building now covers (2..4, 4). -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Eletric_MediumDestoryed</def>
+        <pos>(3, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(2, 0, 2)</pos>
+        <rot>2</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientBarrel</def>
+        <pos>(4, 0, 2)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>CraterSmall</def>
+        <pos>(6, 0, 0)</pos>
+      </li>
+    </elements>
+    <tags>
+      <li>DMS_RuinSatellite</li>
+    </tags>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <!-- ============ 殘骸群 Wreck cluster (9x9) ============ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_RuinSat_WreckCluster</defName>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Wreckage_Ronin</def>
+        <pos>(3, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Wreckage_Chunk</def>
+        <pos>(1, 0, 2)</pos>
+        <rot>2</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Wreckage_Chunk</def>
+        <pos>(6, 0, 6)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_ChunkSlag_Old</def>
+        <pos>(5, 0, 2)</pos>
+        <rot>1</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_ChunkSlag_Old</def>
+        <pos>(2, 0, 6)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>CraterMedium</def>
+        <pos>(6, 0, 3)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>CraterSmall</def>
+        <posList>
+          <li>(1, 0, 7)</li>
+          <li>(7, 0, 1)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainScatter">
+        <def>PackedDirt</def>
+        <posList>
+          <li>(4, 0, 2)</li>
+          <li>(3, 0, 6)</li>
+          <li>(6, 0, 5)</li>
+        </posList>
+      </li>
+    </elements>
+    <tags>
+      <li>DMS_RuinSatellite</li>
+    </tags>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <!-- ============ 彈坑帶 Crater field (9x9) ============ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_RuinSat_CraterField</defName>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>CraterMedium</def>
+        <posList>
+          <li>(2, 0, 2)</li>
+          <li>(6, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>CraterSmall</def>
+        <posList>
+          <li>(1, 0, 6)</li>
+          <li>(5, 0, 1)</li>
+          <li>(7, 0, 7)</li>
+          <li>(4, 0, 4)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientRazorWire</def>
+        <posList>
+          <li>(1, 0, 1)</li>
+          <li>(3, 0, 7)</li>
+          <li>(7, 0, 3)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_ChunkSlag_Old</def>
+        <pos>(6, 0, 1)</pos>
+        <rot>2</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>TrapIED_HighExplosive</def>
+        <pos>(4, 0, 6)</pos>
+      </li>
+    </elements>
+    <tags>
+      <li>DMS_RuinSatellite</li>
+    </tags>
+  </Fortified.Structures.FFF_StructureDef>
+
+</Defs>

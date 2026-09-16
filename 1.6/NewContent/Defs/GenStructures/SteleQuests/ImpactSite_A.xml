@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_ImpactSite_A</defName>
+    <size>(7, 7)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(3, 1)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(0, 0, 6)</pos>
+        <size>(3, 1)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(4, 0, 0)</pos>
+        <size>(3, 1)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(4, 0, 6)</pos>
+        <size>(3, 1)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(1, 2)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(0, 0, 4)</pos>
+        <size>(1, 2)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(6, 0, 1)</pos>
+        <size>(1, 2)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(6, 0, 4)</pos>
+        <size>(1, 2)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Autodoor</def>
+        <stuff>Tungsteel</stuff>
+        <posList>
+          <li>(3, 0, 0)</li>
+          <li>(3, 0, 6)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Autodoor</def>
+        <rot>1</rot>
+        <stuff>Tungsteel</stuff>
+        <posList>
+          <li>(0, 0, 3)</li>
+          <li>(6, 0, 3)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_OccultechKey</def>
+        <pos>(3, 0, 3)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(7, 7)</size>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+</Defs>

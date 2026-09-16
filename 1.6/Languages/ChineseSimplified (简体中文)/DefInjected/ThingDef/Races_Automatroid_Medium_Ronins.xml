@@ -4,7 +4,7 @@
   <!-- EN: Gladiator -->
   <DMS_Mech_Gladiator.label>格斗士</DMS_Mech_Gladiator.label>
   <!-- EN: A melee specialized variant of the Ronin. The Gladiator maintains the Ronin's mobility and armor and comes with an upgraded melee combat module and is equipped with an assault shield. -->
-  <DMS_Mech_Gladiator.description>一种格斗特化的浪人改造型号，其身体结构高度灵活并且加强了对於格斗中的钝击防御，装备有一面灵活的格斗盾牌。</DMS_Mech_Gladiator.description>
+  <DMS_Mech_Gladiator.description>一种格斗特化的浪人改造型号。维持了浪人的机动性，并以正面装甲换取高度灵活的身体结构与针对格斗钝击强化的防护，另装备有一面灵活的格斗盾牌。</DMS_Mech_Gladiator.description>
   <!-- EN: assault shield -->
   <DMS_Mech_Gladiator.tools.assault_shield.label>突击盾</DMS_Mech_Gladiator.tools.assault_shield.label>
   <!-- EN: right fist -->
@@ -13,7 +13,7 @@
   <!-- EN: Phalanx -->
   <DMS_Mech_Phalanx.label>方阵步兵</DMS_Mech_Phalanx.label>
   <!-- EN: The Phalanx is a cheap mass-producable variant specialized for urban combat. It comes packed with assault armor and high mobility package making it a fierce unit in close quarters combat. -->
-  <DMS_Mech_Phalanx.description>一种削减了声纳设备以节省成本的量产型辅助机体，专门用於都市战场景为浪人部队提供直射火力掩护与协同攻坚作战，使其成为近距离作战中的凶猛部队。</DMS_Mech_Phalanx.description>
+  <DMS_Mech_Phalanx.description>一种削减了声纳设备与部分装甲以压低单价的量产型辅助机体，专门用于都市战场景为浪人部队提供直射火力掩护。它比浪人更慢也更薄皮，设计上是靠数量铺开的协同火力单位，而非带头突击的主力。</DMS_Mech_Phalanx.description>
   <!-- EN: head -->
   <DMS_Mech_Phalanx.tools.head.label>头部</DMS_Mech_Phalanx.tools.head.label>
   <!-- EN: left fist -->

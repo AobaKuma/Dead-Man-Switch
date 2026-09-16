@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: frogman embryo -->
+  <DMS_FrogmanEmbryo.label>蛙人胚胎</DMS_FrogmanEmbryo.label>
+  <!-- EN: A directed embryo carrying the XM132 development sequence... -->
+  <DMS_FrogmanEmbryo.description>帶有 XM132 定向發育序列的胚胎。單獨放置時處於惰性狀態。由人類代孕者足月懷胎、或在培育艙中培養後，產出的會是一具生體機兵幼體，而不是一個孩子。\n\n發育序列會完全覆寫發育流程，代孕者不會傳遞任何自身基因。介核生命只需要宿主提供體溫與血液供應，因此殖民艦隊的準則是在有培育艙的地方一律使用培育艙。單單持有一枚胚胎，就足以構成艦隊介入的理由。</DMS_FrogmanEmbryo.description>
+
+  <!-- EN: gestation pod -->
+  <DMS_SynthFormingPod.label>發育體</DMS_SynthFormingPod.label>
+  <!-- EN: A biomatroid larva sealed inside the mineral pod it formed around itself after birth... -->
+  <DMS_SynthFormingPod.description>一具生體機兵幼體，封存在它出生後自行形成的礦質外殼裡。發育在殼內持續進行：肌束鋪設於骨架之上、外層封裝固化、控制網格自行組織。介核生命獨力驅動整個過程，不需要電力、原料或人力照看。\n\n外殼會隨著幼體成熟而脹大，並在風中擺動。它無法自保，外殼破損等同於摧毀內部的生體機兵。重量夠輕，可以卸除後搬運到別處。</DMS_SynthFormingPod.description>
+
+  <!-- EN: dormant frogman -->
+  <DMS_MechCapsule_Frogman.label>休眠中的蛙人</DMS_MechCapsule_Frogman.label>
+  <!-- EN: A newly matured XM132 Frogman, still folded inside the capsule it developed in... -->
+  <DMS_MechCapsule_Frogman.description>剛完成成熟的 XM132 蛙人，仍蜷曲在它發育所用的艙體裡。個體已經完整密封，但從未接收過控制訊號。機械師可以接管它。其他人只能把艙體破開，把裡面的東西拆成廢料。</DMS_MechCapsule_Frogman.description>
+
+</LanguageData>

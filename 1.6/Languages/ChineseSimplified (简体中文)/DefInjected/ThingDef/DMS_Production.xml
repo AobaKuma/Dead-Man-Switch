@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
   <!-- EN: Sintering Furnace -->
@@ -32,5 +32,10 @@
 
   <DMS_TableAmmoPrinter.label>弹药生产机</DMS_TableAmmoPrinter.label>
   <DMS_TableAmmoPrinter.description>一种用于根据加工模板大批量生产弹药的特制冲压机，能够透过简单的更换母板来生产不同口径的制式弹药。由于其生产的效率极高并高度可靠，因此这些曾在地球上使用的弹药标准至今也随着殖民舰队在整个银河系范围内大量流通。</DMS_TableAmmoPrinter.description>
+  
+  <!-- EN: Auto mill -->
+  <DMS_AutoMill.label>自动磨床</DMS_AutoMill.label>
+  <!-- EN: An automated milling bench fed by a continuous feed line... -->
+  <DMS_AutoMill.description>一台以连续进料方式运转的自动化石材加工机。只要备妥原料便能无人值守地持续切削出石砖，代价是精度不如人工操作的加工桌。</DMS_AutoMill.description>
   
 </LanguageData>

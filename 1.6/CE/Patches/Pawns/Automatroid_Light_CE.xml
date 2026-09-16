@@ -43,7 +43,8 @@
 					<ArmorRating_Heat>0.1</ArmorRating_Heat>
 				</value>
 			</li>
-			<!--
+			<!-- 備用彈匣。DMS_SubMachineGunMounted 的彈匣是 300 發 .22LR，
+			     所以 1~2 匣等於隨身 300~600 發，打完可由 JobGiver_CheckReload 自行換彈。 -->
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Hyrax"]</xpath>
 				<value>
@@ -54,7 +55,7 @@
 						</primaryMagazineCount>
 					</li>
 				</value>
-			</li>-->
+			</li>
 			<li Class="PatchOperationConditional">
 				<xpath>Defs/ThingDef[defName="DMS_Mech_Hyrax"]/comps</xpath>
 				<nomatch Class="PatchOperationAdd">

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  
+  <!-- EN: cluster weaver -->
+  <DMS_Mech_ClusterWeaver.label>集群织鸟</DMS_Mech_ClusterWeaver.label>
+  <!-- EN: United Army Systems "Sakalava" known as The "Cluster weaver", It's a super-heavy UAV carrier propelled by multiple rotary wings.with 5-meter-wingspan frame dangling UAV pod which can carry up to 30 suicide drones and precisely guiding them kilometers away. While not yet a contender during the total warfare,it still remains one of the most feared threats among local African armed groups after World War III, second only to the Wyvern flocks.\n\nCluster weaver uses a metal-reinforced carbon fiber frame as its main structural material and has virtually no additional armor. Even so, its high-precision radar and three precision turrets can annihilate hostiles before they even get close enough to ambush. which makes it extremely hard for a local militia groups survive an assault from this monster. -->
+  <DMS_Mech_ClusterWeaver.description>联合陆军系统（UAS）「Sakalava」，绰号「集群织鸟」，是一种由多组旋翼推进的超重型FPV母机。其5公尺翼展机体下方悬挂的无人机舱可搭载多达30架自杀无人机，并可在数公里外精准导引。虽然在全面战争时期尚非主力决战兵器，但在第三次世界大战後的地区武装冲突中仍是仅次於「飞龙」群的可怕威胁。\n\n「集群织鸟」采用金属强化碳纤维作为主结构，几乎没有额外装甲。即便如此，其高精度雷达与三座精准炮塔仍可在敌人接近伏击前先行歼灭目标，让地方民兵几乎难以在其攻击下存活。</DMS_Mech_ClusterWeaver.description>
+  <!-- EN: left turret -->
+  <DMS_Mech_ClusterWeaver.comps.CompMultipleTurretGun.subTurrets.0.renderNodeProperties.0.debugLabel>左炮塔</DMS_Mech_ClusterWeaver.comps.CompMultipleTurretGun.subTurrets.0.renderNodeProperties.0.debugLabel>
+  <!-- EN: right turret -->
+  <DMS_Mech_ClusterWeaver.comps.CompMultipleTurretGun.subTurrets.1.renderNodeProperties.0.debugLabel>右炮塔</DMS_Mech_ClusterWeaver.comps.CompMultipleTurretGun.subTurrets.1.renderNodeProperties.0.debugLabel>
+  <!-- EN: head -->
+  <DMS_Mech_ClusterWeaver.tools.head.label>头部</DMS_Mech_ClusterWeaver.tools.head.label>
+
+</LanguageData>

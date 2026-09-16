@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: remnant relay station -->
+  <DMS_DecoySite.label>殘餘中繼站</DMS_DecoySite.label>
+  <!-- EN: A Legacy remnant signal-relay station. Its transmitter array can be repurposed to lure high-value automatroid units - if its garrison is dealt with first. -->
+  <DMS_DecoySite.description>一座先鋒殘餘的訊號中繼站。只要先解決駐守的守軍，其發射天線陣列便能被改用來引誘高價值的自動機兵單位。</DMS_DecoySite.description>
+  <!-- EN: You have arrived at the remnant relay station. Hostile automatroids garrison the compound.\n\nYour presence will not go unnoticed for long - once the station's monitoring protocol identifies you, enemy reinforcements will begin to arrive. -->
+  <DMS_DecoySite.arrivedLetter>你已抵達殘餘中繼站。敵對的自動機兵駐守著這片設施。\n\n你的到來不會被忽視太久——一旦站點的監控協議識別出你的存在，敵方增援就會開始抵達。</DMS_DecoySite.arrivedLetter>
+
+</LanguageData>

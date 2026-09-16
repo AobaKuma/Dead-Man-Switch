@@ -164,4 +164,56 @@
         </modExtensions>
         <minifiedDef>MinifiedThing</minifiedDef>
     </ThingDef>
+
+    <!-- DMS_TableStampManual 手動沖壓機 : 需要人力操作的簡化版沖壓機，繼承機械沖壓機的配方 -->
+    <ThingDef ParentName="DMS_BenchBase">
+        <defName>DMS_TableStampManual</defName>
+        <label>Manual stamping press</label>
+        <!-- 一台去除了自動進料與控制系統的簡化沖壓機，所有工序都得由人親手完成，但佔地更小、耗電更低。 -->
+        <description>A stripped-down stamping press with the feed line and control rack removed. Every stroke has to be set up and fed by hand, but it takes up far less floor space and draws a fraction of the power of a full machinery printer.</description>
+        <graphicData>
+            <texPath>Things/Building/StampTableM</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(5,3)</drawSize>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <costList>
+            <Steel>140</Steel>
+            <ComponentIndustrial>4</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <WorkToBuild>2000</WorkToBuild>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Flammability>0.25</Flammability>
+            <Cleanliness>-2</Cleanliness>
+            <WorkTableWorkSpeedFactor>1.0</WorkTableWorkSpeedFactor>
+        </statBases>
+        <size>(3,1)</size>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+        <recipes>
+        </recipes>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>300</basePowerConsumption>
+            </li>
+        </comps>
+        <researchPrerequisites>
+            <li>DMS_MechBasis</li>
+        </researchPrerequisites>
+        <modExtensions>
+            <li Class="Fortified.ModExtension_RecipeInheritance">
+                <inheritRecipesFrom>
+                    <li>DMS_TableMachinePrinter</li>
+                </inheritRecipesFrom>
+            </li>
+        </modExtensions>
+    </ThingDef>
 </Defs>

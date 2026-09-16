@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 	<!-- 軍用武器為機兵範疇，在原版情況下相同定位的武器傷害都x1.5,重量x1.75，穿甲與鈍傷能力都有額外的0.5 -->
@@ -51,18 +51,66 @@
 			<RangedWeapon_Cooldown>1.35</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>GasOperation</li>
-				<li>DMS_EquipmentElite</li>
+			<!-- 解鎖: 失能機關 -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_DeadMansSwitch</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>70</Tungsteel>
-			<ComponentStamped>4</ComponentStamped>
+			<Tungsteel>20</Tungsteel>
+			<ComponentStamped>6</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
+		<!-- 彈種切換: 鹿彈(預設) / 獨頭彈 / 鎢芯飛鏢彈 / 龍息彈 -->
+		<comps>
+			<li Class="Fortified.CompProperties_AmmoSwitch">
+				<defaultIndex>0</defaultIndex>
+				<includeDefaultAmmo>false</includeDefaultAmmo>
+				<switchCooldown>120</switchCooldown>
+				<soundSwitch>Interact_Rifle</soundSwitch>
+				<ammos>
+					<li>
+						<label>buckshot</label>
+						<description>The standard three round burst of pellets. Nothing clever about it, and nothing unarmored enjoys standing in front of it.</description>
+						<iconPath>UI/Ammoswitch/12Gauge_Normal</iconPath>
+						<useDefaultProjectile>true</useDefaultProjectile>
+					</li>
+					<li>
+						<label>slug</label>
+						<description>A single rifled slug in place of the pellet spread. It reaches far further and punches through light plating, at the cost of one projectile per trigger pull.</description>
+						<iconPath>UI/Ammoswitch/Shotgun_Slug</iconPath>
+						<projectileDef>DMS_Bullet_AssaultShotgun_Slug</projectileDef>
+						<rangeFactor>1.6</rangeFactor>
+						<accuracyFactor>1.1</accuracyFactor>
+						<warmUpFactor>1.15</warmUpFactor>
+						<burstShotCountOverride>1</burstShotCountOverride>
+					</li>
+					<li>
+						<label>tungsten flechette</label>
+						<description>A sabot load of tungsten-cored darts. Each one carries almost no mass, so flesh barely notices them, but five of them per pull will find their way through plating that shrugs off buckshot outright.</description>
+						<iconPath>UI/Ammoswitch/Shotgun_Darts</iconPath>
+						<projectileDef>DMS_Bullet_AssaultShotgun_Flechette</projectileDef>
+						<burstShotCountOverride>5</burstShotCountOverride>
+						<rangeFactor>0.9</rangeFactor>
+						<accuracyFactor>0.85</accuracyFactor>
+					</li>
+					<li>
+						<label>dragon's breath</label>
+						<description>Zirconium pellets that ignite as they leave the barrel. The burning cloud carries only a few paces and does little damage by itself, but four shells of it will set a corridor alight and keep anything from walking down it.</description>
+						<iconPath>UI/Ammoswitch/Shotgun_Dragon</iconPath>
+						<projectileDef>DMS_Bullet_AssaultShotgun_Dragon</projectileDef>
+						<rangeFactor>0.55</rangeFactor>
+						<accuracyFactor>0.9</accuracyFactor>
+						<burstShotCountOverride>4</burstShotCountOverride>
+					</li>
+				</ammos>
+			</li>
+		</comps>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>Fortified.Verb_LaunchProjectile_AmmoSwitch</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_Shotgun</defaultProjectile>
 				<warmupTime>1.2</warmupTime>
@@ -87,6 +135,66 @@
 				<EquippableDef>LightAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
+	</ThingDef>
+
+	<!-- 獨頭彈: 突擊霰彈槍的遠距/穿甲替代彈種 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_AssaultShotgun_Slug</defName>
+		<label>12 gauge slug</label>
+		<description>A single rifled lead slug instead of a spread of pellets. It reaches much further and punches through light plating, but only one projectile leaves the barrel per trigger pull.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>30</damageAmountBase>
+			<stoppingPower>4</stoppingPower>
+			<speed>65</speed>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+
+	<!-- 鎢芯飛鏢彈: 突擊霰彈槍的近距離穿甲彈種 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_AssaultShotgun_Flechette</defName>
+		<label>12 gauge tungsten flechette</label>
+		<description>A sabot shell holding a bundle of tungsten-cored darts. Each dart carries almost no mass and does little to soft tissue, but the cores hold together against plating that stops a lead pellet cold.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(200,210,225)</color>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>10</damageAmountBase>
+			<stoppingPower>0.5</stoppingPower>
+			<speed>90</speed>
+			<armorPenetrationBase>0.55</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+
+	<!-- 龍息彈: 突擊霰彈槍的近距離縱火拒止彈種 -->
+	<ThingDef ParentName="DMS_BaseSwitchableBullet">
+		<defName>DMS_Bullet_AssaultShotgun_Dragon</defName>
+		<label>12 gauge dragon's breath</label>
+		<description>A shell packed with zirconium pellets that ignite the moment they clear the muzzle. The burning cloud spends itself within a few paces, which is exactly the distance the loader cares about.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(255,150,60)</color>
+		</graphicData>
+		<projectile>
+			<damageDef>Flame</damageDef>
+			<damageAmountBase>10</damageAmountBase>
+			<stoppingPower>1</stoppingPower>
+			<speed>50</speed>
+			<armorPenetrationBase>0.10</armorPenetrationBase>
+			<ai_IsIncendiary>true</ai_IsIncendiary>
+		</projectile>
 	</ThingDef>
 
 	<!-- 中距離槍族 -->
@@ -119,15 +227,18 @@
 			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
+			<!-- 解鎖: 失能機關 -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_DeadMansSwitch</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>60</Tungsteel>
-			<ComponentStamped>4</ComponentStamped>
+			<Tungsteel>10</Tungsteel>
+			<ComponentStamped>6</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -192,9 +303,9 @@
 			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>GasOperation</li>
-				<li>DMS_EquipmentAdvanced</li>
+			<!-- 解鎖: 機甲齒輪 -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_MechBasis</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
@@ -205,7 +316,8 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>Bullet_DMS_AMR</defaultProjectile>
+				<!-- 改為 .338 口徑: 不再與反器材步槍共用 12.7mm 彈 -->
+				<defaultProjectile>DMS_Bullet_338Magnum</defaultProjectile>
 				<warmupTime>1.3</warmupTime>
 				<burstShotCount>1</burstShotCount>
 				<range>37.9</range>
@@ -227,6 +339,24 @@
 				<EquippableDef>StandardAutomatroid</EquippableDef>
 			</li>
 		</modExtensions>
+	</ThingDef>
+
+	<!-- .338 彈: 介於全威力步槍彈與 12.7mm 之間的遠距離彈藥 -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>DMS_Bullet_338Magnum</defName>
+		<label>.338 magnum bullet</label>
+		<description>A .338 magnum rifle cartridge. It carries far more energy downrange than a full-power battle rifle round while remaining light enough to be fired from a semi-automatic action without a mech-grade recoil buffer.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>21</damageAmountBase>
+			<stoppingPower>2.5</stoppingPower>
+			<speed>95</speed>
+			<armorPenetrationBase>0.33</armorPenetrationBase>
+		</projectile>
 	</ThingDef>
 
 	<!-- DMS_BattleRifle -->
@@ -258,15 +388,18 @@
 			<RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
+			<!-- 解鎖: 人機工程學 (藍圖自產) -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_HumanoidEngineering</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>60</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>
+			<Tungsteel>10</Tungsteel>
+			<ComponentStamped>7</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -325,15 +458,18 @@
 			<RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
+			<!-- 解鎖: 特種機兵 (藍圖自產) -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_Ronin</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>70</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>
+			<Tungsteel>20</Tungsteel>
+			<ComponentStamped>7</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -365,6 +501,14 @@
 	<!--AMR-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
 		<defName>DMS_AntiMaterialRifle</defName>
+		<!-- 取得方式: 交易 / 探索(中烈度) / 任務獎勵 -->
+		<tradeTags>
+			<li>DMS_WeaponUncraftable</li>
+			<li>WeaponRanged</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardCore</li>
+		</thingSetMakerTags>
 		<label>anti-material rifle</label>
 		<description>A high caliber sniper rifle made to be used by MS-4E Jadger automatroids to destroy armored target at long ranges.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
 		<weaponClasses>
@@ -393,16 +537,15 @@
 		<equippedStatOffsets>
 			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
-		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
-			</researchPrerequisites>
-		</recipeMaker>
+		<!-- 取得方式: 交易 / 探索獎勵(中烈度) - 不可製造 -->
+		<recipeMaker IsNull="True" />
 		<costList>
-			<Tungsteel>70</Tungsteel>
-			<ComponentStamped>4</ComponentStamped>
+			<Tungsteel>20</Tungsteel>
+			<ComponentStamped>6</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -458,15 +601,18 @@
 			<MoveSpeed>-0.15</MoveSpeed>
 		</equippedStatOffsets>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
+			<!-- 解鎖: 特種機兵 (藍圖自產) -->
+			<researchPrerequisites Inherit="False">
+				<li>DMS_Ronin</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>75</Tungsteel>
-			<ComponentStamped>4</ComponentStamped>
+			<Tungsteel>25</Tungsteel>
+			<ComponentStamped>6</ComponentStamped>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>12</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -499,75 +645,7 @@
 		</modExtensions>
 	</ThingDef>
 
-	<!--AGL-->
-	<ThingDef ParentName="DMS_AutomatroidGun">
-		<defName>DMS_AutomaticGrenadeLauncher</defName>
-		<label>Mech Grenade Launcher</label>
-		<description>A handheld automatic grenade launcher for clearing out clustered targets.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
-		<weaponClasses>
-			<li>RangedHeavy</li>
-			<li>LongShots</li>
-		</weaponClasses>
-		<weaponTags>
-			<li>DMS_MechWeaponAntiTank</li>
-			<li>A_MG_GrenadeLauncher</li>
-		</weaponTags>
-		<graphicData>
-			<texPath>Things/Weapons/DMS_AutomaticGrenadeLauncher</texPath>
-			<drawSize>(1.75,1.75)</drawSize>
-		</graphicData>
-		<soundInteract>Interact_Rifle</soundInteract>
-		<statBases>
-			<WorkToMake>75000</WorkToMake>
-			<Mass>20.70</Mass>
-			<RangedWeapon_Cooldown>6</RangedWeapon_Cooldown>
-		</statBases>
-		<equippedStatOffsets>
-			<MoveSpeed>-0.15</MoveSpeed>
-		</equippedStatOffsets>
-		<recipeMaker>
-			<researchPrerequisites>
-				<li>PrecisionRifling</li>
-				<li>DMS_EquipmentElite</li>
-			</researchPrerequisites>
-		</recipeMaker>
-		<costList>
-			<Tungsteel>115</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>
-		</costList>
-		<verbs>
-			<li>
-				<verbClass>Verb_Shoot</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>Bullet_DMS_GrenadeLauncher</defaultProjectile>
-				<warmupTime>3.0</warmupTime>
-				<range>34.9</range>
-				<forcedMissRadius>1.5</forcedMissRadius>
-				<burstShotCount>5</burstShotCount>
-				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-				<soundCast>Shot_IncendiaryLauncher</soundCast>
-				<soundCastTail>GunTail_Medium</soundCastTail>
-				<muzzleFlashScale>14</muzzleFlashScale>
-				<targetParams>
-					<canTargetLocations>true</canTargetLocations>
-				</targetParams>
-			</li>
-		</verbs>
-		<modExtensions>
-			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
-				<def>MF_StandardMuzzleFalsh</def>
-				<drawSize>(0.75,0.75)</drawSize>
-				<offsets>
-					<li>(0.75,0)</li>
-				</offsets>
-				<isAlternately>true</isAlternately>
-			</li>
-			<li Class="Fortified.HeavyEquippableExtension">
-				<EquippableDef>StandardAutomatroid</EquippableDef>
-			</li>
-		</modExtensions>
-	</ThingDef>
-
+	<!--AGL 的手持/陣地型態已移至 Defs/Things_Building/DMS_DeployableTurret.xml，此處僅保留彈丸-->
 	<ThingDef ParentName="BaseBullet">
 		<defName>Bullet_DMS_GrenadeLauncher</defName>
 		<label>grenade round</label>
@@ -590,76 +668,7 @@
 		</projectile>
 	</ThingDef>
 
-	<!--LMG-->
-	<ThingDef ParentName="DMS_AutomatroidGun">
-		<defName>DMS_LightMachineGun</defName>
-		<label>Mech LMG</label>
-		<description>A weapon specializing in supression chambered in a large caliber rifle round.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
-		<weaponClasses>
-			<li>RangedHeavy</li>
-			<li>LongShots</li>
-			<li>Ranged</li>
-		</weaponClasses>
-		<weaponTags>
-			<li>DMS_MechWeaponLongRifle</li>
-			<li>A_SuppressWeapon</li>
-			<li>A_MG_Light</li>
-		</weaponTags>
-		<graphicData>
-			<texPath>Things/Weapons/DMS_LightMachineGun</texPath>
-			<drawSize>(1.5,1.5)</drawSize>
-		</graphicData>
-		<soundInteract>Interact_Rifle</soundInteract>
-		<statBases>
-			<WorkToMake>50000</WorkToMake>
-			<Mass>12.75</Mass>
-			<AccuracyTouch>0.45</AccuracyTouch>
-			<AccuracyShort>0.57</AccuracyShort>
-			<AccuracyMedium>0.5</AccuracyMedium>
-			<AccuracyLong>0.4</AccuracyLong>
-			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
-		</statBases>
-		<equippedStatOffsets>
-			<MoveSpeed>-0.15</MoveSpeed>
-		</equippedStatOffsets>
-		<recipeMaker>
-			<researchPrerequisites>
-				<li>GasOperation</li>
-				<li>DMS_EquipmentElite</li>
-			</researchPrerequisites>
-		</recipeMaker>
-		<costList>
-			<Tungsteel>75</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>
-		</costList>
-		<verbs>
-			<li>
-				<verbClass>Verb_Shoot</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>Bullet_DMS_LightMachineGun</defaultProjectile>
-				<warmupTime>1.7</warmupTime>
-				<range>29.9</range>
-				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
-				<burstShotCount>7</burstShotCount>
-				<soundCast>DMS_MachineGunLight_Shot</soundCast>
-				<soundCastTail>GunTail_Medium</soundCastTail>
-				<muzzleFlashScale>9</muzzleFlashScale>
-			</li>
-		</verbs>
-		<modExtensions>
-			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
-				<def>MF_StandardMuzzleFalsh</def>
-				<drawSize>(0.5,0.5)</drawSize>
-				<offsets>
-					<li>(0.75,0)</li>
-				</offsets>
-				<isAlternately>true</isAlternately>
-			</li>
-			<li Class="Fortified.HeavyEquippableExtension">
-				<EquippableDef>LightAutomatroid</EquippableDef>
-			</li>
-		</modExtensions>
-	</ThingDef>
+	<!--LMG 的手持/陣地型態已移至 Defs/Things_Building/DMS_DeployableTurret.xml，此處僅保留彈丸-->
 	<ThingDef ParentName="BaseBullet">
 		<defName>Bullet_DMS_LightMachineGun</defName>
 		<label>full-power rifle bullet</label>

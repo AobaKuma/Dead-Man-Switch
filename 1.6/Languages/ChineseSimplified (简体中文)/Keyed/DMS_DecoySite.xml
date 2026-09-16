@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_DecoySite_AlreadyActive>已有一项中继站行动正在进行中</DMS_DecoySite_AlreadyActive>
+  <DMS_DecoySite_CannotFindSite>无法定位中继站：在世界地图上找不到合适的地点。</DMS_DecoySite_CannotFindSite>
+
+  <DMS_DecoySite_ExpiredLabel>中继站已失去踪迹</DMS_DecoySite_ExpiredLabel>
+  <DMS_DecoySite_ExpiredText>残党中继站的传讯窗口已经关闭。该站点已转移阵地，位置就此失去踪迹。</DMS_DecoySite_ExpiredText>
+
+  <DMS_DecoySite_ClearedLabel>中继站已肃清</DMS_DecoySite_ClearedLabel>
+  <DMS_DecoySite_ClearedText>残党中继站内的敌人已全数歼灭。站内的设备——包括那座诱饵天线——现在任你使用，但残党仍会持续在这一带活动。</DMS_DecoySite_ClearedText>
+
+  <DMS_DecoySite_EntryCountdownLabel>敌对站点：增援即将抵达</DMS_DecoySite_EntryCountdownLabel>
+  <DMS_DecoySite_EntryCountdownText>你已进入敌对的残党设施。该站点的监控协议已经标记了你的存在。\n\n敌方增援将于 {0} 后抵达。速战速决，尽快离开——或者就地固守。</DMS_DecoySite_EntryCountdownText>
+</LanguageData>

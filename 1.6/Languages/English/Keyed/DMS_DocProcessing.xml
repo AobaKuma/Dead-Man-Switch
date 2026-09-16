@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- {0} = asker's full name -->
+  <DMS_DocQuest_ArrivedLabel>Documents arrived</DMS_DocQuest_ArrivedLabel>
+  <DMS_DocQuest_ArrivedText1>The documents from {0} have arrived by drop pod near your trade beacons or colony center. The fleet expects every one of them back intact.</DMS_DocQuest_ArrivedText1>
+  <DMS_DocQuest_ArrivedText2>Sealed document crates have landed near your trade beacons. The attached manifest is signed by {0}: 'Processed, stamped, and returned in full.'</DMS_DocQuest_ArrivedText2>
+  <DMS_DocQuest_ArrivedText3>The fleet's backlogged paperwork has arrived. {0} requests that processing begin at the earliest opportunity — the clerical division is already behind schedule.</DMS_DocQuest_ArrivedText3>
+
+  <DMS_DocQuest_DestroyedLabel>Documents destroyed</DMS_DocQuest_DestroyedLabel>
+  <DMS_DocQuest_DestroyedText1>Documents under the fleet contract have been destroyed. As stipulated, the contract has ended. The quest has failed.</DMS_DocQuest_DestroyedText1>
+  <DMS_DocQuest_DestroyedText2>Part of the fleet's paperwork is beyond recovery. There is nothing left to return in full, and the contract has ended. The quest has failed.</DMS_DocQuest_DestroyedText2>
+  <DMS_DocQuest_DestroyedText3>The fleet's documents were destroyed in your care. {0} has been notified. The quest has failed.</DMS_DocQuest_DestroyedText3>
+
+  <DMS_DocQuest_CompleteLabel>Documents processed</DMS_DocQuest_CompleteLabel>
+  <DMS_DocQuest_CompleteText1>Every document has been processed and accounted for. As promised, payment has been dispatched.</DMS_DocQuest_CompleteText1>
+  <DMS_DocQuest_CompleteText2>The last file has been verified and crated for return. {0} confirms the contract is fulfilled; payment is on its way.</DMS_DocQuest_CompleteText2>
+  <DMS_DocQuest_CompleteText3>All fleet paperwork has been processed on schedule. {0} notes that follow-up contracts may be offered to us first.</DMS_DocQuest_CompleteText3>
+
+</LanguageData>

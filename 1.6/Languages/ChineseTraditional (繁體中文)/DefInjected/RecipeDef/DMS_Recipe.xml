@@ -15,12 +15,26 @@
   <!-- EN: Growing artifuscle. -->
   <DMS_Make_Artifuscle.jobString>栽培人工肌肉中</DMS_Make_Artifuscle.jobString>
   
+  <!-- EN: Grow artifuscle x5 (artiprotein) -->
+  <DMS_Make_ArtifuscleFromProtein.label>栽培人工肌肉 x5（人工蛋白）</DMS_Make_ArtifuscleFromProtein.label>
+  <!-- EN: Substitute artiprotein for the neutroamine and gold demanded by the conventional feedstock. It is in practice the more cost-effective route to artificial muscle, at the price of a far longer growth cycle. -->
+  <DMS_Make_ArtifuscleFromProtein.description>透過人工蛋白取代常規製造材料中的中性胺及黃金需求，這實際上是一種性價比更加優秀的人工肌肉合成手段，但耗時更長。</DMS_Make_ArtifuscleFromProtein.description>
+  <!-- EN: Growing artifuscle. -->
+  <DMS_Make_ArtifuscleFromProtein.jobString>栽培人工肌肉中</DMS_Make_ArtifuscleFromProtein.jobString>
+  
   <!-- EN: Grow artifuscle x100 -->
   <DMS_Make_ArtifuscleMass.label>栽培人工肌肉 x100</DMS_Make_ArtifuscleMass.label>
   <!-- EN: Grow a large batch of artifuscle. -->
   <DMS_Make_ArtifuscleMass.description>栽培人工肌肉，以塑化纖維作為表皮，用鎢鋼做骨骼，用金做神經絲，用中性胺做血液。</DMS_Make_ArtifuscleMass.description>
   <!-- EN: Growing artifuscle. -->
   <DMS_Make_ArtifuscleMass.jobString>栽培人工肌肉中</DMS_Make_ArtifuscleMass.jobString>
+  
+  <!-- EN: Refine artiprotein x5 -->
+  <DMS_Make_Artiprotein.label>提煉人工蛋白 x5</DMS_Make_Artiprotein.label>
+  <!-- EN: Feed sugars and starches to a controlled enzyme culture and let it assemble protein blocks. The process is slow and power-hungry, but on an orbital station with no room for fields or livestock it is the only stable source of meat nutrition. -->
+  <DMS_Make_Artiprotein.description>透過提供醣類與澱粉等碳水化合物使生物酶在受控環境下合成蛋白質塊，這種培養方式耗時耗電但在空間不足的軌道太空站上是穩定的肉類營養來源。</DMS_Make_Artiprotein.description>
+  <!-- EN: Refining artiprotein. -->
+  <DMS_Make_Artiprotein.jobString>提煉人工蛋白中</DMS_Make_Artiprotein.jobString>
   
   <!-- EN: Make ceramics x20 -->
   <DMS_Make_Ceramics.label>製造防彈陶瓷 x20</DMS_Make_Ceramics.label>
@@ -56,6 +70,13 @@
   <DMS_Make_ComponentStampedMass.description>製造沖壓零件</DMS_Make_ComponentStampedMass.description>
   <!-- EN: stamping compoments. -->
   <DMS_Make_ComponentStampedMass.jobString>製造零件中</DMS_Make_ComponentStampedMass.jobString>
+  
+  <!-- EN: Refine neutroamine x5 -->
+  <DMS_Make_Neutroamine.label>提煉中性胺 x5</DMS_Make_Neutroamine.label>
+  <!-- EN: Synthesize neutroamine from the lipids in meat and the hydrocarbons in chemfuel. The compound is invaluable in medicine, and a synthesis route this cheap would cause no small trouble for the pharmaceutical monopolies of many midworlds once it spreads. -->
+  <DMS_Make_Neutroamine.description>透過肉類中的脂質與化合燃料中的烴類化合物質合成在醫學上十分有用的中性胺，這種廉價的合成路徑一旦普及足以對很多中寰世界的醫藥壟斷產業造成不小的風波。</DMS_Make_Neutroamine.description>
+  <!-- EN: Refining neutroamine. -->
+  <DMS_Make_Neutroamine.jobString>提煉中性胺中</DMS_Make_Neutroamine.jobString>
   
   <!-- EN: Make plasfiber x20 -->
   <DMS_Make_Plasfiber.label>合成塑鋼纖維 x20</DMS_Make_Plasfiber.label>

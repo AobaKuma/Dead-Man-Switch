@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS_OfficerTraining.questNameRules.rulesStrings>
+    <li>questName->[trainee_nameFull]的军官培训</li>
+    <li>questName->[newTitle]训练需求：[trainee_nameFull]</li>
+    <li>questName->舰队教育训练通告</li>
+  </DMS_OfficerTraining.questNameRules.rulesStrings>
+
+  <DMS_OfficerTraining.questDescriptionRules.rulesStrings>
+    
+    <li>questAskerReason->[issuerFactionName]的培训教官[asker_nameFull]向殖民地转达了一则受训通知。</li>
+    <li>questAskerReason->[issuerFactionName]的业务承办人[asker_nameFull]透过舰队频段送来正式通知书。</li>
+    <li>questAskerReason->[issuerFactionName]教育训练处向[playerFactionName]邮寄了一封正式通知信。</li>
+
+    <li>questTrainee->[trainee_nameFull]的服役资历已足以叙任[newTitle]，但舰队指挥部要求该阶级的军官累计足够的课程时数才能授予正式职位。</li>
+    <li>questTrainee->[trainee_nameFull]已列入殖民陆军的[newTitle]提拔名册。但按照规定这个阶级不能授予给没上过正式军事训练课程的人员。</li>
+    <li>questTrainee->在通告上署名的军官[asker_nameFull]指出，[trainee_nameFull]的[newTitle]职位晋升在完成正式军事训练取得资格证书前只能暂时搁置。</li>
+    
+    <li>questExplain->[asker_pronoun]将安排一架轨道运输机接送[trainee_nameDef]前往训练单位进行为期[trainingDays]天的[courseName]，期间食宿与医疗开销将由殖民陆军负担。</li>
+    <li>questExplain->舰队将征调一架轨道运输机接走[trainee_nameDef]前往[courseName]的训练中心进行为期[trainingDays]天的技能培训。</li>
+    <li>questExplain->[trainee_nameDef]将在训练中心受训[trainingDays]天，期间的食宿开销将由殖民陆军承担。</li>
+
+    
+    <li>questEndExplain->结训后[trainee_pronoun]将在训练中心授予[newTitle]身分并归还，在获取相关经验的同时也有可能改掉一点坏习惯。</li>
+    <li>questEndExplain->在完成训练后[trainee_nameDef]将会被授衔并完好无损的送回[playerFactionName]。</li>
+
+    
+    <li>questWarning->要注意的是[trainee_nameDef]在训练期间受[issuerFactionName]的军纪管辖。若[playerFactionName]转为敌对状态，学员就会被依法扣押。</li>
+
+    <li>questDescription->[questAskerReason][questTrainee]\n\n[questExplain][questEndExplain]\n\n[questWarning]</li>
+  </DMS_OfficerTraining.questDescriptionRules.rulesStrings>
+
+</LanguageData>

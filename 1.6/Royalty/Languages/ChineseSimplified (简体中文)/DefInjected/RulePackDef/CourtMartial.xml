@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS_CourtMartialLetters.rulePack.rulesStrings>
+    <li>arrivedLetterLabel->法庭运输机已抵达</li>
+    <li>arrivedLetterLabel->轨道运输机已降落</li>
+    <li>arrivedLetterText->[askerName]征调的轨道运输机已经降落。[defendantName]必须登机前往[issuerFactionName]军事法庭。审理期间敌对状态暂时中止。</li>
+
+    <li>acquitLetterLabel->无罪释放：[defendantName]</li>
+    <li>acquitLetterLabel->判决：无罪</li>
+    <li>acquitLetterText->出乎意料，[defendantName]在法庭上展开了极具说服力的辩护。[issuerFactionName]领航厅裁定指控不成立，下令立即释放——军阶与服役纪录完好无损。\n\n军官团对此印象深刻。[issuerFactionName]已向我们正式致意；双方关系现为盟友。[defendantName]正由空投舱送返。</li>
+
+    <li>verdictLetterLabel->宣判：[defendantName]</li>
+    <li>verdictLetterLabel->判决已下达</li>
+    <li>verdictLetterText->[issuerFactionName]领航厅已宣判。鉴于[defendantName]的主动配合，惩处从轻定为最低刑度：由[oldTitle]降职为[newTitle]，并拘禁[detentionDays]天，即刻执行。\n\n服刑期间的食宿与医疗由舰队负担。</li>
+
+    <li>returnAllyLetterLabel->[defendantName]归来——赢得舰队敬意</li>
+    <li>returnAllyLetterText->[defendantName]已服刑期满，由空投舱送返。\n\n拘禁期间，[defendantName]的言行与供述给[issuerFactionName]军官团留下了深刻印象。舰队向我们正式致意——[issuerFactionName]现已视我们为盟友。</li>
+
+    <li>returnNeutralLetterLabel->[defendantName]归来</li>
+    <li>returnNeutralLetterText->[defendantName]已服刑期满，由空投舱送返。\n\n[issuerFactionName]视本次事件正式了结。双方关系维持中立——停火持续，但仅止于此。</li>
+
+    <li>betrayLetterLabel->法庭协议破裂</li>
+    <li>betrayLetterText->与[issuerFactionName]的军事法庭协议已经破裂。宪兵指挥部宣告审理程序作废，[issuerFactionName]恢复了对我们的敌对状态。</li>
+  </DMS_CourtMartialLetters.rulePack.rulesStrings>
+
+</LanguageData>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef>
+    <defName>DMS_SteleKey_ImpactSite</defName>
+    <label>impact site</label>
+    <description>A colonial fleet broadcast antenna.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>UI/Faction/VanguardIcon</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+    <minMapSize>(250, 0, 250)</minMapSize>
+    <gravShipsCanLandOn>false</gravShipsCanLandOn>
+    <tags>
+      <li>DMS_SteleKey</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMS_SteleKey_ImpactSite</defName>
+    <linkWithSite>DMS_SteleKey_ImpactSite</linkWithSite>
+    <order>1460</order>
+    <genStep Class="Fortified.Structures.GenStep_FFFStructureDef">
+      <structureDefs>
+        <li>DMS_ImpactSite_A</li>
+      </structureDefs>
+      <forcedFaction>DMS_Legacy</forcedFaction>
+      <allowedRotation>All</allowedRotation>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

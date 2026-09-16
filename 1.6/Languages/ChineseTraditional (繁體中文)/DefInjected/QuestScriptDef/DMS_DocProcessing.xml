@@ -1,21 +1,30 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
+
   <DMS_ProcessDocumentQuest.questNameRules.rulesStrings>
-    <li>questName->艦隊文書處理</li>
+    <li>questName->文書處理：[docType]</li>
+    <li>questName->文書積壓：[docType]</li>
+    <li>questName->歸檔委託：[docType]</li>
+    <li>docType->補給帳目</li>
+    <li>docType->陣亡通報</li>
+    <li>docType->維修工單</li>
+    <li>docType->審計卷宗</li>
+    <li>docType->情報摘要</li>
+    <li>docType->請領表單</li>
   </DMS_ProcessDocumentQuest.questNameRules.rulesStrings>
-  
+
   <DMS_ProcessDocumentQuest.questDescriptionRules.rulesStrings>
-    <li>questDescription->殖民艦隊聯絡了你，計劃空投一些繁雜積壓的文書材料。你需要指派具有對應研究能力的人員對文書進行處理。\n\n文書一經損壞則會立即導致任務失敗，請妥善保管。</li>
+    <li>questDescription->殖民艦隊的副官[asker_nameFull]向我們轉交了一批積壓待處理的文書。他們的文書部門[docReason]，多出的工作正外包給邊境聚落處理。這批文件主要是[docContents]。\n\n如果我們接下委託，文件將以空投艙送至貿易信標或殖民地中心附近。需要指派具有對應研究能力的人員逐份核對並歸檔。\n\n[asker_nameDef]明確提出了一項條件：艦隊要求每一份文件完好繳回。任何文件一經損毀，合約立即終止。整批文書處理完畢後，報酬便會送達。</li>
+
+    <li>docReason->在最近一次人員輪調後嚴重缺編</li>
+    <li>docReason->因歸檔系統故障而落後了數個月</li>
+    <li>docReason->被整季的前線報告徹底淹沒</li>
+    <li>docReason->正趕在艦隊審計前結清帳目</li>
+
+    <li>docContents->補給清單、彈藥消耗紀錄與無人機維修日誌</li>
+    <li>docContents->陣亡通報與戰後報告，有些還殘留著硝煙味</li>
+    <li>docContents->蓋有機密戳章、只准處理不准細讀的檔案</li>
+    <li>docContents->請領表單、維修工單，以及從未寄出的信件</li>
   </DMS_ProcessDocumentQuest.questDescriptionRules.rulesStrings>
 
-  <DMS_ProcessDocumentQuest.root.nodes.6.label>文書資料送達</DMS_ProcessDocumentQuest.root.nodes.6.label>
-  <DMS_ProcessDocumentQuest.root.nodes.6.text>來自 [asker_nameFull] 的機密文書已送達。它們已空投至你的貿易信標或殖民地中心附近。</DMS_ProcessDocumentQuest.root.nodes.6.text>
-
-  <DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.label>文書資料損毀</DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.label>
-  <DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.text>由於文書遭到損毀，任務已失敗。</DMS_ProcessDocumentQuest.root.nodes.7.node.nodes.0.text>
-
-  <DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.label>文書處理完畢</DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.label>
-  <DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.text>你們已經成功處理了所有的艦隊文書。</DMS_ProcessDocumentQuest.root.nodes.10.node.nodes.0.text>
-  
 </LanguageData>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
   <!-- EN: Caretta -->
@@ -22,11 +22,8 @@
   <DMS_Mech_Geochelone.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</DMS_Mech_Geochelone.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>
   
   <!-- EN: geochelone -->
-  <DMS_Mech_Geochelone_b.label>geochelone</DMS_Mech_Geochelone_b.label>
   <!-- EN: an unmanned all-terrain tracked pulse shield support platform, featuring a diverse range of production models and variants. -->
-  <DMS_Mech_Geochelone_b.description>an unmanned all-terrain tracked pulse shield support platform, featuring a diverse range of production models and variants.</DMS_Mech_Geochelone_b.description>
   <!-- EN: head -->
-  <DMS_Mech_Geochelone_b.tools.head.label>head</DMS_Mech_Geochelone_b.tools.head.label>
   
   <!-- EN: killdozer -->
   <DMS_Mech_Killdozer.label>killdozer</DMS_Mech_Killdozer.label>
@@ -36,10 +33,7 @@
   <DMS_Mech_Killdozer.tools.dozer_blade.label>dozer blade</DMS_Mech_Killdozer.tools.dozer_blade.label>
   
   <!-- EN: killdozer -->
-  <DMS_Mech_Killdozer_b.label>killdozer</DMS_Mech_Killdozer_b.label>
   <!-- EN: An unmanned assault sapper with a dozer blade for fortification breakthrough in the frontline, and the armor on various parts of the body has also been strengthened. -->
-  <DMS_Mech_Killdozer_b.description>An unmanned assault sapper with a dozer blade for fortification breakthrough in the frontline, and the armor on various parts of the body has also been strengthened.</DMS_Mech_Killdozer_b.description>
   <!-- EN: dozer blade -->
-  <DMS_Mech_Killdozer_b.tools.dozer_blade.label>dozer blade</DMS_Mech_Killdozer_b.tools.dozer_blade.label>
   
 </LanguageData>

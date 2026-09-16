@@ -15,12 +15,26 @@
   <!-- EN: Growing artifuscle. -->
   <DMS_Make_Artifuscle.jobString>Growing artifuscle.</DMS_Make_Artifuscle.jobString>
   
+  <!-- EN: Grow artifuscle x5 (artiprotein) -->
+  <DMS_Make_ArtifuscleFromProtein.label>Grow artifuscle x5 (artiprotein)</DMS_Make_ArtifuscleFromProtein.label>
+  <!-- EN: Substitute artiprotein for the neutroamine and gold demanded by the conventional feedstock. It is in practice the more cost-effective route to artificial muscle, at the price of a far longer growth cycle. -->
+  <DMS_Make_ArtifuscleFromProtein.description>Substitute artiprotein for the neutroamine and gold demanded by the conventional feedstock. It is in practice the more cost-effective route to artificial muscle, at the price of a far longer growth cycle.</DMS_Make_ArtifuscleFromProtein.description>
+  <!-- EN: Growing artifuscle. -->
+  <DMS_Make_ArtifuscleFromProtein.jobString>Growing artifuscle.</DMS_Make_ArtifuscleFromProtein.jobString>
+  
   <!-- EN: Grow artifuscle x100 -->
   <DMS_Make_ArtifuscleMass.label>Grow artifuscle x100</DMS_Make_ArtifuscleMass.label>
   <!-- EN: Grow a large batch of artifuscle. -->
   <DMS_Make_ArtifuscleMass.description>Grow a large batch of artifuscle.</DMS_Make_ArtifuscleMass.description>
   <!-- EN: Growing artifuscle. -->
   <DMS_Make_ArtifuscleMass.jobString>Growing artifuscle.</DMS_Make_ArtifuscleMass.jobString>
+  
+  <!-- EN: Refine artiprotein x5 -->
+  <DMS_Make_Artiprotein.label>Refine artiprotein x5</DMS_Make_Artiprotein.label>
+  <!-- EN: Feed sugars and starches to a controlled enzyme culture and let it assemble protein blocks. The process is slow and power-hungry, but on an orbital station with no room for fields or livestock it is the only stable source of meat nutrition. -->
+  <DMS_Make_Artiprotein.description>Feed sugars and starches to a controlled enzyme culture and let it assemble protein blocks. The process is slow and power-hungry, but on an orbital station with no room for fields or livestock it is the only stable source of meat nutrition.</DMS_Make_Artiprotein.description>
+  <!-- EN: Refining artiprotein. -->
+  <DMS_Make_Artiprotein.jobString>Refining artiprotein.</DMS_Make_Artiprotein.jobString>
   
   <!-- EN: Make ceramics x20 -->
   <DMS_Make_Ceramics.label>Make ceramics x20</DMS_Make_Ceramics.label>
@@ -56,6 +70,13 @@
   <DMS_Make_ComponentStampedMass.description>Make stamponents.</DMS_Make_ComponentStampedMass.description>
   <!-- EN: stamping compoments. -->
   <DMS_Make_ComponentStampedMass.jobString>stamping compoments.</DMS_Make_ComponentStampedMass.jobString>
+  
+  <!-- EN: Refine neutroamine x5 -->
+  <DMS_Make_Neutroamine.label>Refine neutroamine x5</DMS_Make_Neutroamine.label>
+  <!-- EN: Synthesize neutroamine from the lipids in meat and the hydrocarbons in chemfuel. The compound is invaluable in medicine, and a synthesis route this cheap would cause no small trouble for the pharmaceutical monopolies of many midworlds once it spreads. -->
+  <DMS_Make_Neutroamine.description>Synthesize neutroamine from the lipids in meat and the hydrocarbons in chemfuel. The compound is invaluable in medicine, and a synthesis route this cheap would cause no small trouble for the pharmaceutical monopolies of many midworlds once it spreads.</DMS_Make_Neutroamine.description>
+  <!-- EN: Refining neutroamine. -->
+  <DMS_Make_Neutroamine.jobString>Refining neutroamine.</DMS_Make_Neutroamine.jobString>
   
   <!-- EN: Make plasfiber x20 -->
   <DMS_Make_Plasfiber.label>Make plasfiber x20</DMS_Make_Plasfiber.label>

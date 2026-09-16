@@ -3,6 +3,8 @@
 
   <QuestScriptDef>
     <defName>DMS_PromotionCeremony</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Ceremony</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Ceremony</failedOrExpiredHistoryEvent>
     <rootSelectionWeight>0</rootSelectionWeight>
     <rootMinPoints>350</rootMinPoints>
     <questNameRules>

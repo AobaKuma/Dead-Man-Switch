@@ -16,6 +16,7 @@
       <li>DMS_TableArtifuscle</li>
       <li>DMS_LabReactor</li>
       <li>DMS_LabFurnace</li>
+      <li>DMS_TableStampManual</li>
     </fixedBillGiverDefs>
   </WorkGiverDef>
 
@@ -29,10 +30,30 @@
       <li>DMS_TableMachinePrinter</li>
       <li>DMS_ReactionChamber</li>
       <li>DMS_Furnace</li>
+      <li>DMS_AutoMill</li>
       <li MayRequire="CETeam.CombatExtended">DMS_TableAmmoPrinter</li>
     </fixedBillGiverDefs>
     <verb>Operate</verb>
     <gerund>Operating at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+  <!-- 自動磨床的上下料屬於搬運工作。
+       只有 requiredGiverWorkType 為 Hauling 的配方會走這條 WorkGiver。 -->
+  <WorkGiverDef>
+    <defName>DMS_Operate_Haul</defName>
+    <label>Load Machine</label>
+    <giverClass>Fortified.WorkGiver_DoAutonomousBill</giverClass>
+    <workType>Hauling</workType>
+    <priorityInType>100</priorityInType>
+    <fixedBillGiverDefs>
+      <li>DMS_AutoMill</li>
+    </fixedBillGiverDefs>
+    <verb>Load</verb>
+    <gerund>Loading</gerund>
     <requiredCapacities>
       <li>Manipulation</li>
     </requiredCapacities>
@@ -64,6 +85,7 @@
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>ToolCabinet</li>
+          <li>DMS_Hopper</li>
           <li>DMS_MachineCabinet</li>
           <li MayRequire="Aoba.Fortress.Industrial.Citadel">FT_transformer</li>
         </linkableFacilities>
@@ -81,10 +103,13 @@
     <tickerType>Normal</tickerType>
     <building>
       <spawnedConceptLearnOpportunity>DMS_Autofacturer</spawnedConceptLearnOpportunity>
+      <relatedBuildCommands>
+        <li>DMS_Hopper</li>
+      </relatedBuildCommands>
     </building>
     <placeWorkers Inherit="false">
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
   </ThingDef>
-  
+
 </Defs>

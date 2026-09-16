@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
   <!-- EN: Lab Furnace -->
@@ -15,5 +15,10 @@
   <DMS_TableArtifuscle.label>生物培养装置</DMS_TableArtifuscle.label>
   <!-- EN: High-end production equipment for cultivating Artifuscle and bionics. -->
   <DMS_TableArtifuscle.description>培育义肢、仿生的高阶生产设备。</DMS_TableArtifuscle.description>
+  
+  <!-- EN: Manual stamping press -->
+  <DMS_TableStampManual.label>手动冲压机</DMS_TableStampManual.label>
+  <!-- EN: A stripped-down stamping press... -->
+  <DMS_TableStampManual.description>一台拆除了自动进料与控制机柜的简化冲压机。每一次冲压都得由人亲手装料与定位，但占地更小、耗电也仅有机械冲压机的一小部分。</DMS_TableStampManual.description>
   
 </LanguageData>

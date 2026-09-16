@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: strict -->
+  <DMS_Formality_Strict.label>严格</DMS_Formality_Strict.label>
+  <!-- EN: Discipline, ceremony and military law are all part of keeping order. To break their forms is shameful. -->
+  <DMS_Formality_Strict.description>纪律、仪典与军法都是维持秩序的一部分。而破坏它们的形式是可耻的行为。</DMS_Formality_Strict.description>
+  
+  <!-- EN: casual -->
+  <DMS_Formality_Casual.label>随意</DMS_Formality_Casual.label>
+  <!-- EN: Rank is just a title. Ceremony is just procedure. -->
+  <DMS_Formality_Casual.description>军阶只是一个头衔。仪式只是流程。</DMS_Formality_Casual.description>
+  
+  <!-- EN: contemptuous -->
+  <DMS_Formality_Contemptuous.label>鄙夷</DMS_Formality_Contemptuous.label>
+  <!-- EN: Military law is the oppressor's instrument of violence. To serve as the oppressor's executioner is shameful. -->
+  <DMS_Formality_Contemptuous.description>军法是压迫者的暴力工具。而当压迫者的刽子手是可耻的。</DMS_Formality_Contemptuous.description>
+  
+  <!-- EN: venerated -->
+  <DMS_Operations_Venerated.label>崇尚</DMS_Operations_Venerated.label>
+  <!-- EN: The unit exists to be used. A completed operation is the highest thing we do, and a failed one is a wound the whole colony carries. Fire support is not something to apologize for. -->
+  <DMS_Operations_Venerated.description>完成一次军事行动是一个人所能做到最高的事。失败一次则让所有人蒙羞。</DMS_Operations_Venerated.description>
+  
+  <!-- EN: necessary -->
+  <DMS_Operations_Necessary.label>必要</DMS_Operations_Necessary.label>
+  <!-- EN: Nobody enjoys it. We do it because the alternative is worse, and we expect it to be done properly when it has to be done. -->
+  <DMS_Operations_Necessary.description>军事行动并不愉快，但有其必要，而且该做就要做得像样。</DMS_Operations_Necessary.description>
+  
+  <!-- EN: abhorrent -->
+  <DMS_Operations_Abhorrent.label>憎恶</DMS_Operations_Abhorrent.label>
+  <!-- EN: To call down fire on a target you cannot see is an abhorrent act. There is no telling what else is down there. -->
+  <DMS_Operations_Abhorrent.description>对一个看不见的目标叫下火力是令人憎恶的行为，天知道那里还有什么别的。</DMS_Operations_Abhorrent.description>
+  
+  <!-- EN: venerated -->
+  <DMS_SealedTech_Venerated.label>崇尚</DMS_SealedTech_Venerated.label>
+  <!-- EN: To unlock the unknown is the human instinct that drives progress. -->
+  <DMS_SealedTech_Venerated.description>解密未知是人类迈向进步的天性。</DMS_SealedTech_Venerated.description>
+  
+  <!-- EN: acceptable -->
+  <DMS_SealedTech_Acceptable.label>可接受</DMS_SealedTech_Acceptable.label>
+  <!-- EN: Sealed technology is useful, but its risks still deserve caution. -->
+  <DMS_SealedTech_Acceptable.description>封存科技很有用，仍应该谨慎地对待它存在的风险。</DMS_SealedTech_Acceptable.description>
+  
+  <!-- EN: forbidden -->
+  <DMS_SealedTech_Forbidden.label>禁忌</DMS_SealedTech_Forbidden.label>
+  <!-- EN: Sealed technology was shelved for a reason, and we should never dig it back up. -->
+  <DMS_SealedTech_Forbidden.description>封存科技被束之高阁是有其理由的，而我们永远不该把它挖出来。</DMS_SealedTech_Forbidden.description>
+  
+  <!-- EN: venerated -->
+  <DMS_SyntheticLife_Venerated.label>崇尚</DMS_SyntheticLife_Venerated.label>
+  <!-- EN: Flesh is a first draft. What comes out of a gestation pod was designed on purpose, and what comes out of a reaction chamber is food that was designed on purpose too. -->
+  <DMS_SyntheticLife_Venerated.description>人造生命胜过血肉，合成食品也胜过肉类。</DMS_SyntheticLife_Venerated.description>
+  
+  <!-- EN: acceptable -->
+  <DMS_SyntheticLife_Acceptable.label>可接受</DMS_SyntheticLife_Acceptable.label>
+  <!-- EN: It is equipment that happens to be wet. Nobody needs to have feelings about equipment. -->
+  <DMS_SyntheticLife_Acceptable.description>人造生命只是装备，无关紧要。</DMS_SyntheticLife_Acceptable.description>
+  
+  <!-- EN: abhorrent -->
+  <DMS_SyntheticLife_Abhorrent.label>憎恶</DMS_SyntheticLife_Abhorrent.label>
+  <!-- EN: A body is for carrying a person. Using one as a factory for something that was never going to be a person is the worst thing this technology has been put to, and eating what the same machines produce is not far behind. -->
+  <DMS_SyntheticLife_Abhorrent.description>在活人身体里长出机器是令人憎恶的行为，吃下那些机器产出的东西同样可耻。</DMS_SyntheticLife_Abhorrent.description>
+  
+</LanguageData>

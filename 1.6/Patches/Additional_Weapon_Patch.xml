@@ -17,4 +17,16 @@
             <li>A_RC_Melee</li>
         </value>
     </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/Fortified.HeavyEquippableDef[
+            defName="HeavyAutomatroid" or
+            defName="TransHeavyAutomatroid" or
+            defName="BulkyAutomatroid" or
+            defName="StandardAutomatroid"
+            ]/EquippableWithApparel</xpath>
+        <value>
+            <li>DMS_Apparel_BionicSuitHeavy</li>
+        </value>
+    </Operation>
 </Patch>

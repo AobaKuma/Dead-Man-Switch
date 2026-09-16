@@ -1,8 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!--鎮暴棍-->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>DMS_StunBaton</defName>
+		<!-- 取得方式: 交易 / 任務獎勵 -->
+		<tradeTags>
+			<li>DMS_WeaponUncraftable</li>
+			<li>WeaponMelee</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardHighFreq</li>
+		</thingSetMakerTags>
 		<label>Stun Baton</label>
 		<description>An electric stun baton designed for non-lethal riot control and to Subdue out-of-control machines. It's commonly used by automatroid protectors to secure occupied areas safely without casualties.</description>
 		<graphicData>
@@ -81,19 +89,21 @@
 			<Tungsteel>35</Tungsteel>
 			<ComponentStamped>2</ComponentStamped>
 		</costList>
-		<recipeMaker>
-			<researchPrerequisites>
-				<li>DMS_EquipmentAdvanced</li>
-			</researchPrerequisites>
-			<skillRequirements>
-				<Crafting>4</Crafting>
-			</skillRequirements>
-		</recipeMaker>
+		<!-- 取得方式: 交易 - 不可製造 -->
+		<recipeMaker IsNull="True" />
 	</ThingDef>
 
 	<!--高周波開山刀-->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>DMS_Machete</defName>
+		<!-- 取得方式: 交易 / 任務獎勵 -->
+		<tradeTags>
+			<li>DMS_WeaponUncraftable</li>
+			<li>WeaponMelee</li>
+		</tradeTags>
+		<thingSetMakerTags>
+			<li>RewardStandardHighFreq</li>
+		</thingSetMakerTags>
 		<label>Machete</label>
 		<description>It May look like a normal machete, but this weapon is purpose built for a mech melee combat capability.\n\nWith its high frequency vibrating edge, it can cut through most things with ease.</description>
 		<graphicData>
@@ -139,18 +149,14 @@
 			</li>
 		</tools>
 		<costList>
-			<Tungsteel>90</Tungsteel>
-			<ComponentStamped>3</ComponentStamped>
+			<Tungsteel>15</Tungsteel>
+			<ComponentStamped>6</ComponentStamped>
 		</costList>
-		<recipeMaker>
-			<researchPrerequisites>
-				<li>LongBlades</li>
-				<li>DMS_EquipmentElite</li>
-			</researchPrerequisites>
-			<skillRequirements>
-				<Crafting>8</Crafting>
-			</skillRequirements>
-		</recipeMaker>
+		<smeltProducts>
+			<Tungsteel>19</Tungsteel>
+		</smeltProducts>
+		<!-- 取得方式: 交易 - 不可製造 -->
+		<recipeMaker IsNull="True" />
 		<modExtensions>
 			<li Class="Fortified.HeavyEquippableExtension">
 				<EquippableDef>StandardAutomatroid</EquippableDef>
@@ -192,10 +198,13 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>95</Tungsteel>
-			<ComponentStamped>5</ComponentStamped>
+			<Tungsteel>20</Tungsteel>
+			<ComponentStamped>8</ComponentStamped>
 			<Chemfuel>20</Chemfuel>
 		</costList>
+		<smeltProducts>
+			<Tungsteel>19</Tungsteel>
+		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>

@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- ============== 士兵階級 ============================= -->
 
-  <RoyalTitleDef Abstract="True" Name="BaseDMSTitle" >
+  <RoyalTitleDef Abstract="True" Name="BaseDMSTitle">
     <tags>
       <li>DMS_Title</li>
     </tags>
@@ -47,7 +47,7 @@
   </RoyalTitleDef>
 
   <!-- 需求戰術套裝-->
-  <RoyalTitleDef Abstract="True" Name="BaseDMSTitlePlus" ParentName="BaseDMSTitle" >
+  <RoyalTitleDef Abstract="True" Name="BaseDMSTitlePlus" ParentName="BaseDMSTitle">
     <permits>
       <li>TradeSettlement</li>
       <li>TradeCaravan</li>
@@ -93,7 +93,7 @@
   </RoyalTitleDef>
 
   <!-- ============== 軍官階級 ============================= -->
-  
+
   <RoyalTitleDef ParentName="BaseDMSTitlePlus">
     <defName>DMS_Sergeant</defName>
     <label>Sergeant</label>
@@ -105,7 +105,7 @@
     <commonality>0.7</commonality>
   </RoyalTitleDef>
 
-    <!-- 需求獨立房間-->
+  <!-- 需求獨立房間-->
   <RoyalTitleDef Abstract="True" Name="BaseDMSTitlePlusWithRoomReq" ParentName="BaseDMSTitlePlus">
     <changeHeirQuestPoints>1200</changeHeirQuestPoints>
     <bedroomRequirements>
@@ -121,11 +121,15 @@
       </li>
       <li Class="RoomRequirement_ForbiddenBuildings">
         <labelKey>RoomRequirementNoProductionFacilities</labelKey>
-        <buildingTags><li>Production</li></buildingTags>
+        <buildingTags>
+          <li>Production</li>
+        </buildingTags>
       </li>
       <li Class="RoomRequirement_ForbiddenBuildings" MayRequire="Ludeon.RimWorld.Biotech">
         <labelKey>RoomRequirementNoBiotechBuildings</labelKey>
-        <buildingTags><li>Biotech</li></buildingTags>
+        <buildingTags>
+          <li>Biotech</li>
+        </buildingTags>
       </li>
     </bedroomRequirements>
     <requiredApparel Inherit="False">
@@ -171,6 +175,14 @@
     <rewards>
       <Neurocomputer>2</Neurocomputer>
     </rewards>
+    <!-- 這個階級不辦授銜典禮，改跑 DMS_OfficerTraining 受訓任務 -->
+    <modExtensions>
+      <li Class="DMS.TitleTrainingExtension">
+        <trainingDaysRange>3~6</trainingDaysRange>
+        <skillXp>35000</skillXp>
+        <passionUpgradeChance>0.25</passionUpgradeChance>
+      </li>
+    </modExtensions>
   </RoyalTitleDef>
 
 
@@ -183,7 +195,7 @@
     <permitPointsAwarded>1</permitPointsAwarded>
   </RoyalTitleDef>
 
-<!-- 禁用清潔，需要簡單食物-->
+  <!-- 禁用清潔，需要簡單食物-->
   <RoyalTitleDef Abstract="True" Name="BaseDMSTitlePlusWithDisabledWorkTag" ParentName="BaseDMSTitlePlusWithRoomReq">
     <minExpectation>Moderate</minExpectation>
     <changeHeirQuestPoints>1500</changeHeirQuestPoints>
@@ -257,6 +269,14 @@
         </allowedTags>
       </li>
     </requiredApparel>
+    <!-- 這個階級不辦授銜典禮，改跑 DMS_OfficerTraining 受訓任務 -->
+    <modExtensions>
+      <li Class="DMS.TitleTrainingExtension">
+        <trainingDaysRange>5~10</trainingDaysRange>
+        <skillXp>60000</skillXp>
+        <passionUpgradeChance>0.35</passionUpgradeChance>
+      </li>
+    </modExtensions>
   </RoyalTitleDef>
 
   <RoyalTitleDef ParentName="BaseDMSTitlePlusWithDisabledWorkTag">

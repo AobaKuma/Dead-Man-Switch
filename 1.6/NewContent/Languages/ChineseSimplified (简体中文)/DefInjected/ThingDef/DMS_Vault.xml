@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DMS_VaultElevator.label>货运电梯</DMS_VaultElevator.label>
+  <DMS_VaultElevator.description>通往地下军事储存库的入口。电梯仍然有电，但控制系统被锁住了。骇入它以叫回轿厢。</DMS_VaultElevator.description>
+
+  <DMS_VaultElevatorExit.label>货运电梯轿厢</DMS_VaultElevatorExit.label>
+  <DMS_VaultElevatorExit.description>一台通往上方地表平台的电梯轿厢。</DMS_VaultElevatorExit.description>
+
+  <DMS_MechCapsule_VaultInfantry.label>封存中的机兵</DMS_MechCapsule_VaultInfantry.label>
+  <DMS_MechCapsule_VaultInfantry.description>一具处于休眠状态的线列步兵自动机兵，封在储存摇篮里。在有人来领走它之前，库房就先断电了。机械师可以尝试骇入并控制它。</DMS_MechCapsule_VaultInfantry.description>
+
+  <DMS_MechCapsule_VaultAssault.label>封存中的机兵</DMS_MechCapsule_VaultAssault.label>
+  <DMS_MechCapsule_VaultAssault.description>一具处于休眠状态的突击型自动机兵，扣在维护摇篮上，作动器舱门还开着。保养还没做完，库房就被封闭了。机械师可以尝试骇入并控制它。</DMS_MechCapsule_VaultAssault.description>
+
+  <DMS_MechCapsule_VaultFrame.label>封存中的战斗框架</DMS_MechCapsule_VaultFrame.label>
+  <DMS_MechCapsule_VaultFrame.description>一具处于休眠状态的战斗框架，以长期存放用的固定销锁在维修龙门架上。它的指令认证随着拥有它的单位一起失效了。机械师可以尝试骇入并控制它。</DMS_MechCapsule_VaultFrame.description>
+
+</LanguageData>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       軍事行動 / Military operations
+       消費 DMS_QuestSuccess_Military、DMS_QuestFailed_Military、
+       DMS_CalledFireSupport。
+
+       注意事項:
+       1. DMS_QuestSuccess_Military / DMS_QuestFailed_Military 由
+          QuestScriptDef 的 successHistoryEvent 記錄,事件裡沒有 Doer。
+          沒有 Doer 時 IdeoUtility 會通知「所有自由殖民者」,所以
+          KnowsMemoryThought 會全體生效 —— 但也因此不能用
+          SelfTookMemoryThought(它會直接 GetArg<Pawn>(Doer) 而爆掉),
+          也不能設 doerMustBeMyFaction(設了就永遠不觸發)。
+       2. DMS_CalledFireSupport 有 Doer,所以 Knows 只會傳到
+          呼叫者所在的那張地圖(或商隊),這正是我們要的。
+       ============================================================ -->
+
+  <IssueDef>
+    <defName>DMS_Issue_Operations</defName>
+    <label>military operations</label>
+    <iconPath>UI/Issues/Raiding</iconPath>
+  </IssueDef>
+
+  <!-- ── 崇尚:打仗是這個群體存在的理由 ─────────────────────────── -->
+  <PreceptDef>
+    <defName>DMS_Operations_Venerated</defName>
+    <issue>DMS_Issue_Operations</issue>
+    <label>venerated</label>
+    <description>The unit exists to be used. A completed operation is the highest thing we do, and a failed one is a wound the whole colony carries. Fire support is not something to apologize for.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>DMS_Meme_ChainOfCommand</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_QuestSuccess_Military</eventDef>
+        <thought>DMS_Thought_OperationSuccess_Venerated</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_QuestFailed_Military</eventDef>
+        <thought>DMS_Thought_OperationFailed_Venerated</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_CalledFireSupport</eventDef>
+        <thought>DMS_Thought_FireSupport_Venerated</thought>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>DMS_QuestSuccess_Military</eventDef>
+        <points>4</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ── 必要之惡:該做就做(預設) ──────────────────────────────── -->
+  <PreceptDef>
+    <defName>DMS_Operations_Necessary</defName>
+    <issue>DMS_Issue_Operations</issue>
+    <label>necessary</label>
+    <description>Nobody enjoys it. We do it because the alternative is worse, and we expect it to be done properly when it has to be done.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>500</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <associatedMemes>
+      <li>DMS_Meme_ChainOfCommand</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_QuestFailed_Military</eventDef>
+        <thought>DMS_Thought_OperationFailed_Necessary</thought>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>DMS_QuestSuccess_Military</eventDef>
+        <points>2</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ── 憎惡:拒絕主動用兵 ────────────────────────────────────────
+       刻意不用 PreceptComp_UnwillingToDo:那會讓 pawn 直接拒絕執行,
+       在「玩家自己按按鈕呼叫火力支援」的情境等於純粹擋路。
+       改成每呼叫一次就付一次心情代價,由玩家自己決定要不要吃。
+       ──────────────────────────────────────────────────────────── -->
+  <PreceptDef>
+    <defName>DMS_Operations_Abhorrent</defName>
+    <issue>DMS_Issue_Operations</issue>
+    <label>abhorrent</label>
+    <description>To call down fire on a target you cannot see is an abhorrent act. There is no telling what else is down there.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>900</displayOrderInImpact>
+    <conflictingMemes>
+      <li>DMS_Meme_ChainOfCommand</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>DMS_CalledFireSupport</eventDef>
+        <thought>DMS_Thought_FireSupport_Abhorrent_Self</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_CalledFireSupport</eventDef>
+        <thought>DMS_Thought_FireSupport_Abhorrent_Knows</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ============================ 心情 ============================ -->
+
+  <ThoughtDef>
+    <defName>DMS_Thought_OperationSuccess_Venerated</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.6</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>operation completed</label>
+        <description>We were given a job and we finished it. That is what we are for.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_OperationFailed_Venerated</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>2</stackLimit>
+    <stages>
+      <li>
+        <label>operation failed</label>
+        <description>We were given a job and we did not finish it. There is no way to dress that up.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_FireSupport_Venerated</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.6</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>fire on target</label>
+        <description>Somebody called it in and it landed where it was supposed to. Good.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_OperationFailed_Necessary</defName>
+    <durationDays>4</durationDays>
+    <stackLimit>2</stackLimit>
+    <stages>
+      <li>
+        <label>operation failed</label>
+        <description>We took the job and we did not deliver. Somebody is going to pay for that, and it probably will not be the people who gave the order.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_FireSupport_Abhorrent_Self</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>2</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>I called it in</label>
+        <description>I called saturation fire down on a target. Every stray round that landed is on me.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_FireSupport_Abhorrent_Knows</defName>
+    <durationDays>4</durationDays>
+    <stackLimit>2</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>someone called it in</label>
+        <description>One of us called saturation fire down on a target nobody could see. Such things should never be done.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

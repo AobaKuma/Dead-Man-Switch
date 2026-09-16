@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+	讓機兵會自行更換 CE 彈匣。
+
+	DMS 的機兵走自訂 thinkTree（DMS_Mechanoid / DMS_HumanlikeMech），不是 CE 會去 patch 的
+	Humanlike 樹，所以原本樹上沒有任何 CE 換彈節點 —— 帶 CompAmmoUser 的車載武器
+	（蹄兔 .22LR、猛獁 .50 BMG、推土機 12.7×108mm、骇蜥 30×165mm 等）打完一個彈匣後
+	就永久失去火力。
+
+	插入點選在 ThinkNode_QueuedJob 之後：這是唯一同時能被玩家機兵與敵對機兵走到的位置
+	（再往下的 Lord 子樹會攔截所有有 duty 的襲擊者）。JobGiver_CheckReload 自己會處理
+	安全性 —— 被徵召時要求周圍沒有敵人且距上次交火已過一段時間，不需要的時候回傳 null
+	直接落到下一個節點。
+-->
+<Patch>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/ThinkTreeDef[defName="DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_QueuedJob"]</xpath>
+		<order>Append</order>
+		<value>
+			<li Class="CombatExtended.JobGiver_CheckReload" />
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/ThinkTreeDef[defName="DMS_HumanlikeMech"]/thinkRoot/subNodes/li[@Class="ThinkNode_QueuedJob"]</xpath>
+		<order>Append</order>
+		<value>
+			<li Class="CombatExtended.JobGiver_CheckReload" />
+		</value>
+	</Operation>
+
+</Patch>

@@ -115,4 +115,50 @@
       </li>
     </comps>
   </ThingDef>
+
+  <ThingDef ParentName="DMS_BossCallerBase">
+    <defName>DMS_DecoyTransmitter</defName>
+    <label>Decoy radio</label>
+    <description>A high-powered radio, used fake radio signals to lure away the automated defense systems that still exist on the planet. Once activated, it puts out a powerful wave radiation signal which will attract ultra heavy automatroid to attack along with its escorts. If you can defeat it, you can collect the advanced technology from its corpse. The signal pulse burns out the transmitter, so this building can only be used once.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_ClusterWeaver</ThingDef>
+      <ThingDef>ComponentControlChip</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Building/DecoyRadio</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(1.7, 0.75, 0.8)</volume>
+        <offset>(0.15, 0, 0)</offset>
+      </shadowData>
+    </graphicData>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <researchPrerequisites>
+      <li>DMS_Aerospace</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerObject</useJob>
+        <useLabel>Attract cluster weaver threat</useLabel>
+        <useDuration>900</useDuration>
+        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
+      </li>
+      <li Class="DMS.CompPropertiesUseable_SummonRaid">
+        <bossgroupDef>DMS_ClusterWeaver</bossgroupDef>
+        <effecterDef>BurnoutMechlinkBoosterUsed</effecterDef>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf">
+        <delayTicks>120</delayTicks>
+        <spawnKilledLeavings>true</spawnKilledLeavings>
+        <effecterDef>MechbandBuildingDestroyed</effecterDef>
+      </li>
+    </comps>
+  </ThingDef>
+
 </Defs>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================= -->
+  <!-- 3x3 Occultech 知識源：有限儲量，供相鄰萃取器抽取。            -->
+  <!-- ============================================================= -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_OccultTechFont</defName>
+    <label>Data stele</label>
+    <description>A dense lattice of sealed expeditional data-cores and forbidden schematics, humming with knowledge the colonial fleets never meant to circulate. It holds a finite reserve of occult understanding. On its own it does nothing — an occultech extractor placed alongside it will slowly draw the knowledge out. Once drained, only an inert husk remains.</description>
+    <graphicData>
+      <texPath>Things/Building/Stele/Stele</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <drawOffset>(0,1.2,1)</drawOffset>
+      <shadowData>
+        <volume>(2.4,4,2.4)</volume>
+      </shadowData>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>true</rotatable>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <pathCost>50</pathCost>
+    <tickerType>Rare</tickerType>
+    <size>(3,3)</size>
+    <statBases>
+      <MaxHitPoints>6000</MaxHitPoints>
+      <WorkToBuild>80000</WorkToBuild>
+      <Mass>500</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Steel>200</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <designationCategory>DMS_Category</designationCategory>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="Fortified.CompProperties_OccultechSource">
+        <totalReserve>4000</totalReserve>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_OccultechExtractor</defName>
+    <label>stele Decoder</label>
+    <description>A parasitic decoding rig. Set it flush against a data stele and supply power, and it will continuously siphon occult knowledge from the font and file it into your expeditional research — no researcher required. Extraction stops if the font runs dry, power is lost, or no font is adjacent.</description>
+    <graphicData>
+      <texPath>Things/Building/Stele/SteleDecoder</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,3)</drawSize>
+      <damageData>
+        <rect>(0,0,2,1)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>true</rotatable>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <pathCost>30</pathCost>
+    <tickerType>Rare</tickerType>
+    <size>(1,2)</size>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>4000</WorkToBuild>
+      <Mass>60</Mass>
+      <Flammability>0.4</Flammability>
+    </statBases>
+    <costList>
+      <Steel>120</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <designationCategory>DMS_Category</designationCategory>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <!-- 可移動：允許卸除、搬運後重新安裝於他處。 -->
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>300</basePowerConsumption>
+        <idlePowerDraw>50</idlePowerDraw>
+        <shortCircuitInRain>true</shortCircuitInRain>
+      </li>
+      <li Class="Fortified.CompProperties_OccultechExtractor">
+        <knowledgePerDay>50</knowledgePerDay>
+        <knowledgeCategory>DMS_Restricted</knowledgeCategory>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

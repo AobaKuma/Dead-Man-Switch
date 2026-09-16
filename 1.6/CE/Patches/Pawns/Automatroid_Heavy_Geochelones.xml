@@ -133,7 +133,6 @@
 
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/ThingDef[
-				    defName="DMS_Mech_Caretta" or
 					@Name="BaseGeochelone" or
 					@Name="BaseKillDozer"
 					]</xpath>
@@ -147,7 +146,7 @@
 			<!-- ====== Caretta and Geochelone(both are IFV but first one has 20mm cannon)
 			            (Actually, one is artillery and the other is shield bearer right now)======-->
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/statBases</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseGeochelone"]/statBases</xpath>
 				<value>
 					<CarryWeight>250</CarryWeight>
 					<CarryBulk>200</CarryBulk>
@@ -162,7 +161,7 @@
 			</li>
 
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/statBases/ArmorRating_Blunt</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseGeochelone"]/statBases/ArmorRating_Blunt</xpath>
 				<value>
 					<ArmorRating_Blunt>76</ArmorRating_Blunt>
 				</value>
@@ -170,23 +169,23 @@
 
 			<!--only torso-->
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/statBases/ArmorRating_Sharp</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseGeochelone"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
 					<ArmorRating_Sharp>40</ArmorRating_Sharp>
 				</value>
 			</li>
 
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/statBases/ArmorRating_Heat</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseGeochelone"]/statBases/ArmorRating_Heat</xpath>
 				<value>
 					<ArmorRating_Heat>0.35</ArmorRating_Heat>
 				</value>
 			</li>
 
 			<li Class="PatchOperationConditional">
-				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/comps</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseGeochelone"]/comps</xpath>
 				<nomatch Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]</xpath>
+					<xpath>Defs/ThingDef[@Name="BaseGeochelone"]</xpath>
 					<value>
 						<comps />
 					</value>
@@ -194,7 +193,7 @@
 			</li>
 
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/comps</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseGeochelone"]/comps</xpath>
 				<value>
 					<li Class="CombatExtended.CompProperties_ArmorDurability">
 						<Durability>4250</Durability>
@@ -216,7 +215,7 @@
 			</li>
 
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/tools</xpath>
+				<xpath>Defs/ThingDef[@Name="BaseGeochelone"]/tools</xpath>
 				<value>
 					<tools Inherit="False">
 						<li Class="CombatExtended.ToolCE">
@@ -331,8 +330,7 @@
 
 			<!--add partial armor-->
 			<li Class="PatchOperationAddModExtension">
-				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or
-									@Name="BaseGeochelone" or
+				<xpath>Defs/ThingDef[@Name="BaseGeochelone" or
 									@Name="BaseKillDozer"]</xpath>
 				<value>
 					<li Class="CombatExtended.PartialArmorExt">

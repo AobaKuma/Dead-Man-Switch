@@ -12,7 +12,7 @@ namespace DMS
     {
         public static bool Prefix(Pawn pawn, Faction faction)
         {
-            if (pawn == null || pawn.Dead)
+            if (pawn == null || pawn.Dead || faction == null)
             {
                 return true;
             }
@@ -22,9 +22,21 @@ namespace DMS
                 Slate slate = new Slate();
                 slate.Set("titleHolder", pawn);
                 slate.Set("bestowingFaction", faction);
-                if (DMS_DefOf.DMS_PromotionCeremony.CanRun(slate, pawn.MapHeld))
+
+                // 准尉與少校(掛有 TitleTrainingExtension 的階級)不辦典禮,改送去艦隊受訓。
+                // 受訓任務跑不起來時(例如殖民地只剩一個人)自動退回典禮。
+                QuestScriptDef script = DMS_DefOf.DMS_PromotionCeremony;
+                RoyalTitleDef next = pawn.royalty?.GetTitleAwardedWhenUpdating(faction, pawn.royalty.GetFavor(faction));
+                if (next?.GetModExtension<TitleTrainingExtension>() != null
+                    && DMS_DefOf.DMS_OfficerTraining != null
+                    && DMS_DefOf.DMS_OfficerTraining.CanRun(slate, pawn.MapHeld))
                 {
-                    Quest quest = QuestUtility.GenerateQuestAndMakeAvailable(DMS_DefOf.DMS_PromotionCeremony, slate);
+                    script = DMS_DefOf.DMS_OfficerTraining;
+                }
+
+                if (script != null && (script == DMS_DefOf.DMS_OfficerTraining || script.CanRun(slate, pawn.MapHeld)))
+                {
+                    Quest quest = QuestUtility.GenerateQuestAndMakeAvailable(script, slate);
                     if (quest.root.sendAvailableLetter)
                     {
                         QuestUtility.SendLetterQuestAvailable(quest);

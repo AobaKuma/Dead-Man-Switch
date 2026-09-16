@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 口袋地圖本體。只用 Core 的地形產生步驟，建築佈局由 DMS_VaultElevator 追加的
+       DMS_VaultStructure 負責（見 DMS.Building_VaultElevator.GetExtraGenSteps）。
+       Core-only terrain steps; the structure comes from the gen step the portal injects. -->
+  <MapGeneratorDef>
+    <defName>DMS_MilitaryVault</defName>
+    <label>military storage vault</label>
+    <isUnderground>true</isUnderground>
+    <disableCallAid>true</disableCallAid>
+    <pocketMapProperties>
+      <!-- Underground 生物群系與 Underground_RocksFromGrid 都在 Core，不需要任何 DLC。
+           Both the Underground biome and the rock grid step live in Core. -->
+      <biome>Underground</biome>
+      <!-- 深層恆溫機房，比地面冷得多。 -->
+      <temperature>12</temperature>
+      <canBeCleaned>true</canBeCleaned>
+    </pocketMapProperties>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>Underground_RocksFromGrid</li>
+      <li>Terrain</li>
+      <li>RockChunks</li>
+      <!-- DMS_VaultStructure 由 DMS_VaultElevator 動態插入 / injected by the portal -->
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+  <!-- 取代原版 GenStep_AncientStockpile：同樣的流程，但沒有 OdysseyActive 閘門。
+       Same pipeline as vanilla's, minus the Odyssey gate. -->
+  <GenStepDef>
+    <defName>DMS_VaultStructure</defName>
+    <order>551</order>
+    <genStep Class="DMS.DMS_GenStep_Vault">
+      <layoutDef>DMS_MilitaryVault</layoutDef>
+      <sizeRange>40~50</sizeRange>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

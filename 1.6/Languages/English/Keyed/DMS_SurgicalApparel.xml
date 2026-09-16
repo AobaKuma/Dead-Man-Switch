@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- {0} apparel, {1} pawn, {2} removal surgery -->
+  <DMS_SurgicalApparel_WearConfirm>Once worn, {0} closes and anchors completely around {1}. It cannot be removed by normal means, and cannot be stripped while {1} is alive. Only the "{2}" operation will take it off.\n\nProceed?</DMS_SurgicalApparel_WearConfirm>
+
+  <!-- {0} removal surgery -->
+  <DMS_SurgicalApparel_Inspect>Cannot be removed. Requires the "{0}" operation.</DMS_SurgicalApparel_Inspect>
+
+  <!-- {0} pawn, {1} apparel -->
+  <DMS_SurgicalApparel_Removed>{0} has been extracted from {1}.</DMS_SurgicalApparel_Removed>
+
+</LanguageData>

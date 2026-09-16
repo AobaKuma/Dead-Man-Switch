@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- {0} = 委託人全名 -->
+  <!-- EN: Documents arrived -->
+  <DMS_DocQuest_ArrivedLabel>文書資料送達</DMS_DocQuest_ArrivedLabel>
+  <!-- EN: The documents from {0} have arrived by drop pod near your trade beacons or colony center. The fleet expects every one of them back intact. -->
+  <DMS_DocQuest_ArrivedText1>來自 {0} 的文書已由空投艙送達貿易信標或殖民地中心附近。艦隊要求每一份都完好繳回。</DMS_DocQuest_ArrivedText1>
+  <!-- EN: Sealed document crates have landed near your trade beacons. The attached manifest is signed by {0}: 'Processed, stamped, and returned in full.' -->
+  <DMS_DocQuest_ArrivedText2>密封的文件貨箱已降落在貿易信標附近。隨附的貨單上有 {0} 的簽名：「處理、蓋章、如數繳回。」</DMS_DocQuest_ArrivedText2>
+  <!-- EN: The fleet's backlogged paperwork has arrived. {0} requests that processing begin at the earliest opportunity — the clerical division is already behind schedule. -->
+  <DMS_DocQuest_ArrivedText3>艦隊的積壓文書已送達。{0} 要求儘早開始處理——文書部門的進度已經落後了。</DMS_DocQuest_ArrivedText3>
+
+  <!-- EN: Documents destroyed -->
+  <DMS_DocQuest_DestroyedLabel>文書資料損毀</DMS_DocQuest_DestroyedLabel>
+  <!-- EN: Documents under the fleet contract have been destroyed. As stipulated, the contract has ended. The quest has failed. -->
+  <DMS_DocQuest_DestroyedText1>艦隊合約下的文書遭到損毀。依照約定，合約已終止。任務失敗。</DMS_DocQuest_DestroyedText1>
+  <!-- EN: Part of the fleet's paperwork is beyond recovery. There is nothing left to return in full, and the contract has ended. The quest has failed. -->
+  <DMS_DocQuest_DestroyedText2>部分艦隊文書已無法挽回，無法如數繳回。合約已終止，任務失敗。</DMS_DocQuest_DestroyedText2>
+  <!-- EN: The fleet's documents were destroyed in your care. {0} has been notified. The quest has failed. -->
+  <DMS_DocQuest_DestroyedText3>艦隊文書在你們的保管下損毀。{0} 已收到通報。任務失敗。</DMS_DocQuest_DestroyedText3>
+
+  <!-- EN: Documents processed -->
+  <DMS_DocQuest_CompleteLabel>文書處理完畢</DMS_DocQuest_CompleteLabel>
+  <!-- EN: Every document has been processed and accounted for. As promised, payment has been dispatched. -->
+  <DMS_DocQuest_CompleteText1>所有文書均已處理並清點完畢。如先前約定，報酬已經發出。</DMS_DocQuest_CompleteText1>
+  <!-- EN: The last file has been verified and crated for return. {0} confirms the contract is fulfilled; payment is on its way. -->
+  <DMS_DocQuest_CompleteText2>最後一份文件已核對完成並裝箱待運。{0} 確認合約已履行，報酬正在途中。</DMS_DocQuest_CompleteText2>
+  <!-- EN: All fleet paperwork has been processed on schedule. {0} notes that follow-up contracts may be offered to us first. -->
+  <DMS_DocQuest_CompleteText3>所有艦隊文書均已如期處理完畢。{0} 表示後續的委託可能會優先交給我們。</DMS_DocQuest_CompleteText3>
+
+</LanguageData>

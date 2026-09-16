@@ -7,6 +7,13 @@
 		<parent>WeaponsRanged</parent>
 	</ThingCategoryDef>
 
+	<!-- 可切換彈種的彈丸基底: CompProperties_SwitchableAmmo 讓資訊卡顯示傷害/穿甲/擊倒力 -->
+	<ThingDef ParentName="BaseBullet" Name="DMS_BaseSwitchableBullet" Abstract="True">
+		<comps>
+			<li Class="Fortified.CompProperties_SwitchableAmmo" />
+		</comps>
+	</ThingDef>
+
 	<ThingDef Name="DMS_AutomatroidGun" ParentName="BaseGun" Abstract="True">
 		<soundInteract>DMS_EquipGear</soundInteract>
 		<thingCategories Inherit="False">

@@ -894,7 +894,7 @@
                     <defaultProjectile>Bullet_RPG32Rocket_Thermobaric</defaultProjectile>
                     <warmupTime>3.35</warmupTime>
                     <range>43</range>
-                    <minRange>6</minRange>
+                    <!-- 不可設 minRange：破城者是 sapper，DigUtility 會因 ai_IsBuildingDestroyer 發出 UseVerbOnThing，CastPositionFinder 找不到 minRange 外的射擊位時會每 tick 重發 job -->
                     <targetParams>
                         <canTargetLocations>true</canTargetLocations>
                     </targetParams>

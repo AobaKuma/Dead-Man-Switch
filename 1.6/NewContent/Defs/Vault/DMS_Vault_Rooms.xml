@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       DMS 軍事儲存庫 — 房間
+       DMS military storage vault — rooms
+
+       所有填充物都是 DMS 自己的廢棄建築（見 DMS_Vault_Prefabs.xml），
+       兩個關鍵房間另外會蓋 FFF 預製塊（見 DMS_Vault_Structures.xml）。
+       Everything here fills from DMS's own ruined buildings; the two key rooms
+       additionally stamp a hand-authored FFF block when they have the space.
+       ============================================================ -->
+
+  <!-- 電梯廳。放出口電梯、設定玩家出生點，並留幾座還在通電的哨戒砲當見面禮。
+       Elevator lobby: exit car, player spawn spot, and a welcome party of live turrets. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultEntranceHall</defName>
+    <roomContentsWorkerType>DMS.RoomContents_VaultEntrance</roomContentsWorkerType>
+    <minSingleRectWidth>9</minSingleRectWidth>
+    <minSingleRectHeight>9</minSingleRectHeight>
+    <prefabs>
+      <DMS_Prefab_SubstationBank>
+        <countPerTenEdgeCells>2</countPerTenEdgeCells>
+        <minMaxRange>1~3</minMaxRange>
+      </DMS_Prefab_SubstationBank>
+      <DMS_Prefab_VentBank>
+        <countPerTenEdgeCells>1</countPerTenEdgeCells>
+        <minMaxRange>0~2</minMaxRange>
+      </DMS_Prefab_VentBank>
+    </prefabs>
+  </LayoutRoomDef>
+
+  <!-- 軍械庫。貨架來自 FFF 預製塊（房間夠大時）或程序化排列，內容全部來自
+       DMS_LogisticTerminal 這組 ThingSetMaker。
+       Armory. Shelves from the prefab block or procedural rows; contents from the DMS loot table. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultArmory</defName>
+    <roomContentsWorkerType>DMS.RoomContents_VaultArmory</roomContentsWorkerType>
+    <thingSetMakerDef>DMS_LogisticTerminal</thingSetMakerDef>
+    <minSingleRectWidth>9</minSingleRectWidth>
+    <minSingleRectHeight>9</minSingleRectHeight>
+    <prefabs>
+      <DMS_Prefab_CrateCluster>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_CrateCluster>
+      <DMS_Prefab_SubstationBank>
+        <countPerTenEdgeCells>1</countPerTenEdgeCells>
+        <minMaxRange>0~2</minMaxRange>
+      </DMS_Prefab_SubstationBank>
+    </prefabs>
+  </LayoutRoomDef>
+
+  <!-- 機兵封存艙間。整間的重點就是那些搖籃；掉落物少，威脅集中在艙裡。
+       Mech bay. The cradles are the point — little loose loot, all the threat is inside them. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultMechBay</defName>
+    <roomContentsWorkerType>DMS.RoomContents_VaultMechBay</roomContentsWorkerType>
+    <!-- 必出房間（countRange 1），門檻放太高會找不到夠大的矩形而生成失敗。
+         Required room — keep the size gate low enough that the layout can always satisfy it. -->
+    <minSingleRectWidth>9</minSingleRectWidth>
+    <minSingleRectHeight>9</minSingleRectHeight>
+    <prefabs>
+      <DMS_Prefab_RoninWreck>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_RoninWreck>
+      <DMS_Prefab_WreckScatter>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_WreckScatter>
+    </prefabs>
+  </LayoutRoomDef>
+
+  <!-- 指揮室。後勤終端是這張地圖的長期回報來源，報廢機台只是氣氛。
+       Command room. The logistics terminal is the long-tail reward; the dead machines are dressing. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultCommandRoom</defName>
+    <roomContentsWorkerType>DMS.RoomContents_VaultCommand</roomContentsWorkerType>
+    <!-- 後勤終端本體 4x4，收縮 3 格後至少要 9x9 才塞得下。
+         The terminal is 4x4; with contractedBy 3 the room needs 9x9 minimum. -->
+    <minSingleRectWidth>9</minSingleRectWidth>
+    <minSingleRectHeight>9</minSingleRectHeight>
+    <prefabs>
+      <DMS_Prefab_MachineRow>
+        <countPerHundredCells>2</countPerHundredCells>
+        <minMaxRange>1~2</minMaxRange>
+      </DMS_Prefab_MachineRow>
+      <DMS_Prefab_SubstationBank>
+        <countPerTenEdgeCells>2</countPerTenEdgeCells>
+        <minMaxRange>1~3</minMaxRange>
+      </DMS_Prefab_SubstationBank>
+    </prefabs>
+  </LayoutRoomDef>
+
+  <!-- 駐防兵舍。純氣氛房，說明這座設施曾經有人守。
+       Garrison quarters. Pure atmosphere — someone used to hold this place. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultGarrisonQuarters</defName>
+    <dontDestroyWallsDoors>true</dontDestroyWallsDoors>
+    <prefabs>
+      <DMS_Prefab_CrateCluster>
+        <countPerHundredCells>2</countPerHundredCells>
+        <minMaxRange>1~2</minMaxRange>
+      </DMS_Prefab_CrateCluster>
+      <DMS_Prefab_WreckScatter>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>0~2</minMaxRange>
+      </DMS_Prefab_WreckScatter>
+      <DMS_Prefab_VentBank>
+        <countPerTenEdgeCells>1</countPerTenEdgeCells>
+        <minMaxRange>0~2</minMaxRange>
+      </DMS_Prefab_VentBank>
+    </prefabs>
+  </LayoutRoomDef>
+
+  <!-- 動力室。少數還在運轉的機組，也是整座設施還有殘電的理由。
+       Power room. The few units still running — and the reason anything down here still has power. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultPowerPlant</defName>
+    <minSingleRectWidth>8</minSingleRectWidth>
+    <minSingleRectHeight>8</minSingleRectHeight>
+    <prefabs>
+      <DMS_Prefab_MachineRow_Live>
+        <countPerHundredCells>3</countPerHundredCells>
+        <minMaxRange>1~3</minMaxRange>
+      </DMS_Prefab_MachineRow_Live>
+      <DMS_Prefab_SubstationBank>
+        <countPerTenEdgeCells>3</countPerTenEdgeCells>
+        <minMaxRange>1~4</minMaxRange>
+      </DMS_Prefab_SubstationBank>
+      <DMS_Prefab_LabWreck>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_LabWreck>
+    </prefabs>
+  </LayoutRoomDef>
+
+  <!-- 殘骸大廳。塌掉的那一半，地板破了個洞。
+       Wreck hall. The half that collapsed, with a hole in the floor. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultWreckHall</defName>
+    <prefabs>
+      <DMS_Prefab_FloorHole>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_FloorHole>
+      <DMS_Prefab_WreckScatter>
+        <countPerHundredCells>3</countPerHundredCells>
+        <minMaxRange>1~3</minMaxRange>
+      </DMS_Prefab_WreckScatter>
+      <DMS_Prefab_RoninWreck>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_RoninWreck>
+      <DMS_Prefab_MachineRow>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_MachineRow>
+    </prefabs>
+  </LayoutRoomDef>
+
+</Defs>

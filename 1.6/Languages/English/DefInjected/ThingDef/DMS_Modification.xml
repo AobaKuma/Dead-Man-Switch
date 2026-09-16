@@ -15,6 +15,15 @@
   <!-- EN: Use {0_label} -->
   <DMS_BF_ExtendCargo.comps.CompUsable.useLabel>Use {0_label}</DMS_BF_ExtendCargo.comps.CompUsable.useLabel>
   
+  <!-- EN: Recoilless Rifle Rack -->
+  <DMS_BF_RecoillessRifle.label>Recoilless Rifle Rack</DMS_BF_RecoillessRifle.label>
+  <!-- EN: A pair of 65mm recoilless tubes on a shared cradle, built to bolt onto the side pylons of a battle frame. Line units fit it for one reason: a frame's own light armament has no answer to plating or a prepared firing position, and a walking mount can carry the tube into ground a two-man crew would never reach.\n\nLoaded with shaped-charge rockets, the rack defeats armor and fortifications far above the frame's weight class, and its fire control unit reloads a spent tube from carried stores between engagements. The frame pays for it in walking pace, dodging room and cargo allowance, and every backblast marks its position for every observer on the field. -->
+  <DMS_BF_RecoillessRifle.description>A pair of 65mm recoilless tubes on a shared cradle, built to bolt onto the side pylons of a battle frame. Line units fit it for one reason: a frame's own light armament has no answer to plating or a prepared firing position, and a walking mount can carry the tube into ground a two-man crew would never reach.
+
+Loaded with shaped-charge rockets, the rack defeats armor and fortifications far above the frame's weight class, and its fire control unit reloads a spent tube from carried stores between engagements. The frame pays for it in walking pace, dodging room and cargo allowance, and every backblast marks its position for every observer on the field.</DMS_BF_RecoillessRifle.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_BF_RecoillessRifle.comps.CompUsable.useLabel>Use {0_label}</DMS_BF_RecoillessRifle.comps.CompUsable.useLabel>
+  
   <!-- EN: broken ceramics -->
   <DMS_BrokenCeramics.label>broken ceramics</DMS_BrokenCeramics.label>
   

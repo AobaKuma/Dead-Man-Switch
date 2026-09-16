@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 集群織鳥開艙投放野禽無人機的動作，由 DMS.JobGiver_DeployDroneSwarm 發出。 -->
+  <JobDef>
+    <defName>DMS_DeployDroneSwarm</defName>
+    <driverClass>DMS.JobDriver_DeployDroneSwarm</driverClass>
+    <reportString>releasing drone swarm at TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+
+</Defs>

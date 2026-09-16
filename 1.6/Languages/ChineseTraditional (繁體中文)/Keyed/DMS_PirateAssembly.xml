@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 只剩進站倒數這一組 —— 它是由 SitePartDef 上的 FFF_TimedSiteExtension
+       以翻譯鍵讀取的。逾期／失敗／付款信件現在寫在 QuestScriptDef 的
+       QuestNode_Letter 裡（原版寫法），不走 Keyed。
+
+       Only the entry countdown remains here: it is read by translation key from
+       FFF_TimedSiteExtension on the SitePartDef. The expiry, failure and payment
+       letters now live in QuestNode_Letter inside the QuestScriptDef, vanilla
+       style, and are not Keyed. -->
+
+  <DMS_PirateAssembly_EntryCountdownLabel>敵方增援即將抵達</DMS_PirateAssembly_EntryCountdownLabel>
+  <DMS_PirateAssembly_EntryCountdownText>廠內的人手發出了警報。敵方增援將於 {0} 後抵達。</DMS_PirateAssembly_EntryCountdownText>
+
+</LanguageData>

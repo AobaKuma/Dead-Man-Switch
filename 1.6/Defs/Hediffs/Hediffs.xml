@@ -183,6 +183,8 @@
       <li>
         <label>danger</label>
         <minSeverity>1.5</minSeverity>
+        <!-- 神經連結壓到紅線:一具植入體只會記錄一次 (Hediff.recordedTale) -->
+        <tale>DMS_Tale_NeuralOverload</tale>
         <painOffset>0.5</painOffset>
         <capMods>
           <li>
@@ -534,6 +536,8 @@
       <li>
         <label>maximized</label>
         <minSeverity>6</minSeverity>
+        <!-- 校準到頂:機兵與它的槍長在一起了 -->
+        <tale>DMS_Tale_WeaponImprinted</tale>
         <statOffsets>
           <ShootingAccuracyPawn>10</ShootingAccuracyPawn>
           <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">-1</BandwidthCost>

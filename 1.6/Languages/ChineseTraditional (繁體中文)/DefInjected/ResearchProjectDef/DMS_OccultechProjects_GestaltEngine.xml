@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: cluster command -->
+  <DMS_Occultech_GestaltEngine.label>集群司令</DMS_Occultech_GestaltEngine.label>
+  <!-- EN: A facility-scale computer assembled from arrays of microelectronic chips and the power system that drives them... -->
+  <DMS_Occultech_GestaltEngine.description>透過微電子晶片陣列與其供能系統組成的設施級電腦，即使是一台沒有任何配套子系統的主機本身也有媲美人類機械師的機兵指揮與調度能力。像這樣的技術早在人類踏足星空前就廣泛用於人類之間的內鬥，但在人類邁向星空後也被大量的投放用於跨星際的星球環境改造工程並讓無數的荒蕪星球煥發生機。\n\n經 ████ 及 ██ 之審批，將集群司令及相關技術列為I級封存技術，禁止對開發中之星球提供此類技術，除去應急戰備動員外的常態化地面陸軍部署中應避免將該項技術用於任何軍事行動。</DMS_Occultech_GestaltEngine.description>
+  <!-- EN: Sealed file I: cluster command -->
+  <DMS_Occultech_GestaltEngine.discoveredLetterTitle>封存檔案 I：集群司令</DMS_Occultech_GestaltEngine.discoveredLetterTitle>
+  <!-- EN: Researchers have opened a class I sealed file containing the architecture of a cluster command mainframe... -->
+  <DMS_Occultech_GestaltEngine.discoveredLetterText>研究員打開了一份 I 級封存檔案，內容是集群司令主機的架構。\n\n現在可以建造中央司令核心。單獨一台主機便能在沒有機械師的情況下指揮全地圖的機兵，並自行提供控制頻寬與指揮群組。\n\n艦隊對常備陸軍封存了這份檔案，只有在應急動員時才會解封。在常態化的地面部署中動用它會被記上一筆。</DMS_Occultech_GestaltEngine.discoveredLetterText>
+
+</LanguageData>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+	子砲塔（Fortified.CompPropertiesMultipleTurretGun）的 CE 彈藥消耗補丁。
+
+	運作方式：
+	  FortifiedCE.CompProperties_TurretProjectileCE 掛在「子砲塔武器」的 ThingDef 上，
+	  射擊時由 Verb.TryCastNextBurstShot -> EquipmentSource.Notify_UsedWeapon(pawn)
+	  從機兵自身 inventory 扣除對應 AmmoSet 的彈藥；沒彈就停火（RunOutOfAmmo）。
+
+	  defaultAmmoPickUp = 自動補給時的目標攜行量（約 10 個爆發量）
+	  startingAmmoRange = 生成（含敵對）機兵時隨機給予的初始彈量
+
+	本檔處理定義在非 CE 資料夾、但在 CE 下被當作子砲塔使用的武器；
+	CE 專用的子砲塔武器直接寫在 CE/Defs/DMS_MilitaryGun_Mount_SP.xml。
+-->
+<Patch>
+
+	<!-- ===== 鬣蜥 (Iguana) 通用機槍：CE 下使用 DMS_LightMachineGunMounted，.338 Lapua，爆發 15 發 ===== -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="DMS_LightMachineGunMounted"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DMS_LightMachineGunMounted"]/comps</xpath>
+			<value>
+				<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+					<ammoSet>AmmoSet_338Lapua</ammoSet>
+					<defaultAmmoPickUp>150</defaultAmmoPickUp>
+					<startingAmmoRange>75~150</startingAmmoRange>
+				</li>
+			</value>
+		</match>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DMS_LightMachineGunMounted"]</xpath>
+			<value>
+				<comps>
+					<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+						<ammoSet>AmmoSet_338Lapua</ammoSet>
+						<defaultAmmoPickUp>150</defaultAmmoPickUp>
+						<startingAmmoRange>75~150</startingAmmoRange>
+					</li>
+				</comps>
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- ===== 機兵自動補彈：在「充電中」判斷之後插入撿彈 JobGiver ===== -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/ThinkTreeDef[defName="DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[@Class="ThinkNode_ConditionalRecharging"]</xpath>
+		<order>Append</order>
+		<value>
+			<li Class="Fortified.JobGiver_PickUpTurretAmmo" />
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/ThinkTreeDef[defName="DMS_HumanlikeMech"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[@Class="ThinkNode_ConditionalRecharging"]</xpath>
+		<order>Append</order>
+		<value>
+			<li Class="Fortified.JobGiver_PickUpTurretAmmo" />
+		</value>
+	</Operation>
+
+</Patch>

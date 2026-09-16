@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 零點能發生器 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_ZeroPointGenerator</defName>
+    <label>zero-point generator core</label>
+    <thingClass>Building</thingClass>
+    <description>一種透過可控釋放Antigrain能量來在現實宇宙中鑿出孔隙的複雜裝置，能夠從外部的量子起伏中汲取用之不盡的能量並將其聚合為固態的能量塊來方便儲存與二次加工。\n\n由於邊緣世界普遍缺乏Antigrain的生產技術，因此大部分時候需要依賴於使用現成的Antigrain砲彈來作為裝置運轉的激發觸媒。</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/ZPM_Generator</texPath>
+      <drawSize>(4,5)</drawSize>
+      <drawOffset>(0,0.5,0)</drawOffset>
+    </graphicData>
+    <fillPercent>0.65</fillPercent>
+    <costList>
+      <Tungsteel>40</Tungsteel>
+    </costList>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+    </statBases>
+    <building>
+      <expandHomeArea>true</expandHomeArea>
+      <claimable>true</claimable>
+      <deconstructible>false</deconstructible>
+      <paintable>false</paintable>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <pathCost>90</pathCost>
+    <size>(3,3)</size>
+    <defaultPlacingRot>0</defaultPlacingRot>
+    <constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+    <designationCategory>DMS_Category</designationCategory>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <comps>
+      <li Class="Fortified.CompProperties_FueledSpawner">
+        <thingToSpawn>DMS_SolitaryZPM</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>120000~144000</spawnIntervalRange>
+        <spawnForbidden>false</spawnForbidden>
+        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>0.25</fuelConsumptionRate>
+        <fuelCapacity>5.0</fuelCapacity>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>2</initialConfigurableTargetFuelLevel>
+        <fuelFilter>
+          <thingDefs>
+            <li>Shell_AntigrainWarhead</li>
+          </thingDefs>
+        </fuelFilter>
+        <initialFuelPercent>0</initialFuelPercent>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <functionsInVacuum>false</functionsInVacuum>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>5000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+        <soundAmbientProducingPower>ScannerLongRangeMineral_Ambience</soundAmbientProducingPower>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_Anchor</defName>
+    <label>psychic anchor</label>
+    <thingClass>Building</thingClass>
+    <description>一種透過反制技術干涉周圍空間不受超凡機器影響的穩定裝置。對於普通人來說就是一個無害的裝飾，但對於靈能者以及超凡造物來說會因為難以建立維度外的連接而無法展現出其應有的超凡性質。</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/DMS_Anchor_base</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/DMS_Anchor</uiIconPath>
+    <uiIconScale>1.5</uiIconScale>
+    <fillPercent>0.35</fillPercent>
+    <costList>
+      <Tungsteel>40</Tungsteel>
+    </costList>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+    </statBases>
+    <building>
+      <expandHomeArea>true</expandHomeArea>
+      <claimable>true</claimable>
+      <deconstructible>false</deconstructible>
+      <paintable>false</paintable>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <pathCost>90</pathCost>
+    <size>(2,2)</size>
+    <defaultPlacingRot>0</defaultPlacingRot>
+    <constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+    <designationCategory>DMS_Category</designationCategory>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <comps />
+  </ThingDef>
+</Defs>

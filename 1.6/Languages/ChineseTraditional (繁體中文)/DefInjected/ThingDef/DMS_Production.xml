@@ -33,4 +33,9 @@
   <DMS_TableAmmoPrinter.label>彈藥生產機</DMS_TableAmmoPrinter.label>
   <DMS_TableAmmoPrinter.description>一種用於根據加工模板大批量生產彈藥的特製衝壓機，能夠透過簡單的更換母板來生產不同口徑的制式彈藥。由於其生產的效率極高並高度可靠，因此這些曾在地球上使用的彈藥標準至今也隨著殖民艦隊在整個銀河系範圍內大量流通。</DMS_TableAmmoPrinter.description>
   
+  <!-- EN: Auto mill -->
+  <DMS_AutoMill.label>自動磨床</DMS_AutoMill.label>
+  <!-- EN: An automated milling bench fed by a continuous feed line... -->
+  <DMS_AutoMill.description>一台以連續進料方式運轉的自動化石材加工機。只要備妥原料便能無人值守地持續切削出石磚，代價是精度不如人工操作的加工桌。</DMS_AutoMill.description>
+  
 </LanguageData>
