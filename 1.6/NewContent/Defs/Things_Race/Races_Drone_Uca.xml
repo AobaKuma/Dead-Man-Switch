@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 招潮蟹：一種透過基站控制與部署的工作用無人機，其具有輕量化的步履混合結構並具備一支靈巧的機械臂用來完成複雜的工作。
+       常見於無人職守設施的裝置維護與黑燈工廠的自動化機具操作。 -->
+  <ThingDef ParentName="DMS_BaseDroidRace">
+    <defName>DMS_Drone_Uca</defName>
+    <label>uca</label>
+    <description>A work drone controlled and deployed from a base station. It has a lightweight walker-track hybrid chassis and a single dexterous manipulator arm for complex tasks. Commonly seen maintaining equipment in unmanned facilities and operating automated machinery in lights-out factories.</description>
+    <statBases>
+      <MoveSpeed>4.0</MoveSpeed>
+      <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+      <ConstructionSpeed>1.0</ConstructionSpeed>
+      <GeneralLaborSpeed>1.0</GeneralLaborSpeed>
+    </statBases>
+    <race>
+      <body>DMS_Uca</body>
+      <baseBodySize>0.6</baseBodySize>
+      <baseHealthScale>0.7</baseHealthScale>
+      <mechFixedSkillLevel>8</mechFixedSkillLevel>
+      <!-- Construction 含修理＝設施維護；Crafting/Smithing＝黑燈工廠的自動化機具操作 -->
+      <mechEnabledWorkTypes>
+        <li>Construction</li>
+        <li>Crafting</li>
+        <li>Smithing</li>
+      </mechEnabledWorkTypes>
+    </race>
+    <comps>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>90000</totalPowerTicks>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>30</Steel>
+    </butcherProducts>
+    <tools Inherit="False">
+      <li>
+        <label>manipulator claw</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2.0</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <PawnKindDef ParentName="DMS_DroidKind">
+    <defName>DMS_Drone_Uca</defName>
+    <label>uca</label>
+    <labelPlural>ucas</labelPlural>
+    <race>DMS_Drone_Uca</race>
+    <isFighter>false</isFighter>
+    <combatPower>8</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/uca</texPath>
+          <shaderType>Cutout</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.0</drawSize>
+          <shadowData>
+            <volume>(0.25, 0.3, 0.25)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/uca</texPath>
+          <shaderType>Cutout</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.0</drawSize>
+          <shadowData>
+            <volume>(0.25, 0.3, 0.25)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>

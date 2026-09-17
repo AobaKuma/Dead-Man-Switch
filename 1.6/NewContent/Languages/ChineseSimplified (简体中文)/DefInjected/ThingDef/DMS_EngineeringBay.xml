@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: engineering drone bay -->
+  <DMS_EngineeringBay.label>工程无人机基站</DMS_EngineeringBay.label>
+  <!-- EN: A drone base station for facility maintenance and basic production work. The compute provided by its installed cluster control chipset lets simple drones carry out complex tasks. Commonly found in unmanned facilities and lights-out factories.\n\nCan deploy uca (maintenance and machinery operation) or erima (farming and plant care) drones. -->
+  <DMS_EngineeringBay.description>一种用于设施维护与基本生产工作的无人机基站，透过安装的集群控制芯片提供的算力使简单的无人机能执行复杂任务，常见于无人值守设施与黑灯工厂。\n\n可切换部署招潮蟹（设施维护与机具操作）或毛蟹（农耕与绿植养护）无人机。</DMS_EngineeringBay.description>
+
+</LanguageData>

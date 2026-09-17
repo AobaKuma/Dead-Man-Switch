@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: uca -->
+  <DMS_Drone_Uca.label>招潮蟹</DMS_Drone_Uca.label>
+  <!-- EN: A work drone controlled and deployed from a base station. It has a lightweight walker-track hybrid chassis and a single dexterous manipulator arm for complex tasks. Commonly seen maintaining equipment in unmanned facilities and operating automated machinery in lights-out factories. -->
+  <DMS_Drone_Uca.description>一种透过基站控制与部署的工作用无人机，其具有轻量化的步履混合结构并具备一支灵巧的机械臂用来完成复杂的工作。常见于无人值守设施的装置维护与黑灯工厂的自动化机具操作。</DMS_Drone_Uca.description>
+  <!-- EN: manipulator claw -->
+  <DMS_Drone_Uca.tools.manipulator_claw.label>操作钳</DMS_Drone_Uca.tools.manipulator_claw.label>
+
+</LanguageData>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 招潮蟹：輕量化步履混合底盤，兩條「腿＋履帶鞋」加一支大螯機械臂。 -->
+  <BodyDef>
+    <defName>DMS_Uca</defName>
+    <label>walker-track hybrid</label>
+    <corePart>
+      <def>DMS_Chassis</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>DMS_ChestBrain</def>
+          <customLabel>control core</customLabel>
+          <coverage>0.04</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>DMS_Battery</def>
+          <customLabel>main battery</customLabel>
+          <coverage>0.04</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>SightSensor</def>
+          <customLabel>visual sensor</customLabel>
+          <coverage>0.10</coverage>
+        </li>
+        <li>
+          <def>SightSensor</def>
+          <customLabel>infrared sensor</customLabel>
+          <coverage>0.06</coverage>
+        </li>
+        <li>
+          <def>HearingSensor</def>
+          <customLabel>hearing sensor</customLabel>
+          <coverage>0.04</coverage>
+        </li>
+        <li>
+          <def>MechanicalArm</def>
+          <customLabel>manipulator arm</customLabel>
+          <coverage>0.25</coverage>
+          <groups>
+            <li>HeadAttackTool</li>
+          </groups>
+        </li>
+        <li>
+          <def>MechanicalLeg</def>
+          <customLabel>left walker track</customLabel>
+          <coverage>0.15</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>left track shoe</customLabel>
+              <coverage>0.2</coverage>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>MechanicalLeg</def>
+          <customLabel>right walker track</customLabel>
+          <coverage>0.15</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>right track shoe</customLabel>
+              <coverage>0.2</coverage>
+            </li>
+          </parts>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+  <!-- 毛蟹：矮寬箱體，四條狹長獨立履帶，兩支農用機械臂。 -->
+  <BodyDef>
+    <defName>DMS_Erima</defName>
+    <label>quad-track</label>
+    <corePart>
+      <def>DMS_Chassis</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>DMS_ChestBrain</def>
+          <customLabel>control core</customLabel>
+          <coverage>0.04</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>DMS_Battery</def>
+          <customLabel>main battery</customLabel>
+          <coverage>0.04</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>SightSensor</def>
+          <customLabel>visual sensor</customLabel>
+          <coverage>0.08</coverage>
+        </li>
+        <li>
+          <def>SightSensor</def>
+          <customLabel>multispectral sensor</customLabel>
+          <coverage>0.06</coverage>
+        </li>
+        <li>
+          <def>HearingSensor</def>
+          <customLabel>hearing sensor</customLabel>
+          <coverage>0.04</coverage>
+        </li>
+        <li>
+          <def>MechanicalArm</def>
+          <customLabel>harvest arm</customLabel>
+          <coverage>0.12</coverage>
+          <groups>
+            <li>HeadAttackTool</li>
+          </groups>
+        </li>
+        <li>
+          <def>MechanicalArm</def>
+          <customLabel>seeding arm</customLabel>
+          <coverage>0.12</coverage>
+          <groups>
+            <li>HeadAttackTool</li>
+          </groups>
+        </li>
+        <li>
+          <def>MechanicalLeg</def>
+          <customLabel>front left track</customLabel>
+          <coverage>0.08</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>front left drive wheel</customLabel>
+              <coverage>0.2</coverage>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>MechanicalLeg</def>
+          <customLabel>front right track</customLabel>
+          <coverage>0.08</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>front right drive wheel</customLabel>
+              <coverage>0.2</coverage>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>MechanicalLeg</def>
+          <customLabel>rear left track</customLabel>
+          <coverage>0.08</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>rear left drive wheel</customLabel>
+              <coverage>0.2</coverage>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>MechanicalLeg</def>
+          <customLabel>rear right track</customLabel>
+          <coverage>0.08</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>rear right drive wheel</customLabel>
+              <coverage>0.2</coverage>
+            </li>
+          </parts>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+</Defs>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: walker-track hybrid -->
+  <DMS_Uca.label>步履混合机体</DMS_Uca.label>
+  <!-- EN: control core -->
+  <DMS_Uca.corePart.parts.control_core.customLabel>控制核心</DMS_Uca.corePart.parts.control_core.customLabel>
+  <!-- EN: main battery -->
+  <DMS_Uca.corePart.parts.main_battery.customLabel>主电池</DMS_Uca.corePart.parts.main_battery.customLabel>
+  <!-- EN: visual sensor -->
+  <DMS_Uca.corePart.parts.visual_sensor.customLabel>视觉传感器</DMS_Uca.corePart.parts.visual_sensor.customLabel>
+  <!-- EN: infrared sensor -->
+  <DMS_Uca.corePart.parts.infrared_sensor.customLabel>红外线传感器</DMS_Uca.corePart.parts.infrared_sensor.customLabel>
+  <!-- EN: hearing sensor -->
+  <DMS_Uca.corePart.parts.hearing_sensor.customLabel>听觉传感器</DMS_Uca.corePart.parts.hearing_sensor.customLabel>
+  <!-- EN: manipulator arm -->
+  <DMS_Uca.corePart.parts.manipulator_arm.customLabel>操作机械臂</DMS_Uca.corePart.parts.manipulator_arm.customLabel>
+  <!-- EN: left walker track -->
+  <DMS_Uca.corePart.parts.left_walker_track.customLabel>左步履机构</DMS_Uca.corePart.parts.left_walker_track.customLabel>
+  <!-- EN: right walker track -->
+  <DMS_Uca.corePart.parts.right_walker_track.customLabel>右步履机构</DMS_Uca.corePart.parts.right_walker_track.customLabel>
+  <!-- EN: left track shoe -->
+  <DMS_Uca.corePart.parts.left_walker_track.parts.left_track_shoe.customLabel>左履带鞋</DMS_Uca.corePart.parts.left_walker_track.parts.left_track_shoe.customLabel>
+  <!-- EN: right track shoe -->
+  <DMS_Uca.corePart.parts.right_walker_track.parts.right_track_shoe.customLabel>右履带鞋</DMS_Uca.corePart.parts.right_walker_track.parts.right_track_shoe.customLabel>
+
+  <!-- EN: quad-track -->
+  <DMS_Erima.label>四履带机体</DMS_Erima.label>
+  <!-- EN: control core -->
+  <DMS_Erima.corePart.parts.control_core.customLabel>控制核心</DMS_Erima.corePart.parts.control_core.customLabel>
+  <!-- EN: main battery -->
+  <DMS_Erima.corePart.parts.main_battery.customLabel>主电池</DMS_Erima.corePart.parts.main_battery.customLabel>
+  <!-- EN: visual sensor -->
+  <DMS_Erima.corePart.parts.visual_sensor.customLabel>视觉传感器</DMS_Erima.corePart.parts.visual_sensor.customLabel>
+  <!-- EN: multispectral sensor -->
+  <DMS_Erima.corePart.parts.multispectral_sensor.customLabel>多光谱传感器</DMS_Erima.corePart.parts.multispectral_sensor.customLabel>
+  <!-- EN: hearing sensor -->
+  <DMS_Erima.corePart.parts.hearing_sensor.customLabel>听觉传感器</DMS_Erima.corePart.parts.hearing_sensor.customLabel>
+  <!-- EN: harvest arm -->
+  <DMS_Erima.corePart.parts.harvest_arm.customLabel>收割臂</DMS_Erima.corePart.parts.harvest_arm.customLabel>
+  <!-- EN: seeding arm -->
+  <DMS_Erima.corePart.parts.seeding_arm.customLabel>播种臂</DMS_Erima.corePart.parts.seeding_arm.customLabel>
+  <!-- EN: front left track -->
+  <DMS_Erima.corePart.parts.front_left_track.customLabel>左前履带</DMS_Erima.corePart.parts.front_left_track.customLabel>
+  <!-- EN: front right track -->
+  <DMS_Erima.corePart.parts.front_right_track.customLabel>右前履带</DMS_Erima.corePart.parts.front_right_track.customLabel>
+  <!-- EN: rear left track -->
+  <DMS_Erima.corePart.parts.rear_left_track.customLabel>左后履带</DMS_Erima.corePart.parts.rear_left_track.customLabel>
+  <!-- EN: rear right track -->
+  <DMS_Erima.corePart.parts.rear_right_track.customLabel>右后履带</DMS_Erima.corePart.parts.rear_right_track.customLabel>
+  <!-- EN: front left drive wheel -->
+  <DMS_Erima.corePart.parts.front_left_track.parts.front_left_drive_wheel.customLabel>左前驱动轮</DMS_Erima.corePart.parts.front_left_track.parts.front_left_drive_wheel.customLabel>
+  <!-- EN: front right drive wheel -->
+  <DMS_Erima.corePart.parts.front_right_track.parts.front_right_drive_wheel.customLabel>右前驱动轮</DMS_Erima.corePart.parts.front_right_track.parts.front_right_drive_wheel.customLabel>
+  <!-- EN: rear left drive wheel -->
+  <DMS_Erima.corePart.parts.rear_left_track.parts.rear_left_drive_wheel.customLabel>左后驱动轮</DMS_Erima.corePart.parts.rear_left_track.parts.rear_left_drive_wheel.customLabel>
+  <!-- EN: rear right drive wheel -->
+  <DMS_Erima.corePart.parts.rear_right_track.parts.rear_right_drive_wheel.customLabel>右后驱动轮</DMS_Erima.corePart.parts.rear_right_track.parts.rear_right_drive_wheel.customLabel>
+
+</LanguageData>

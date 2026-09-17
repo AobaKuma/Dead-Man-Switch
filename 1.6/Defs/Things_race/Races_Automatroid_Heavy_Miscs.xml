@@ -108,7 +108,7 @@
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_HermitCrab</defName>
     <label>Hermit Crab</label>
-    <description>These large, expensive, and heavy mobile industrial machines are designed to be an all-in-one unit for colonizing new worlds. Their large and expensive magnetic stabilized shells integrate many complex-axis CNC tools and precision machinery, and the same stabilisation field doubles as a short-ranged projectile interceptor - a side effect the manufacturers were happy to advertise. In a pinch, its precision tools allow it to perform surgical procedures as long as the patient overcomes their fear of a machine weighing several tons acting as their surgeon.</description>
+    <description>These large, expensive, and heavy mobile industrial machines are designed to be an all-in-one unit for colonizing new worlds. Their large and expensive magnetic stabilized shells integrate many complex-axis CNC tools and precision machinery, and the same stabilisation field doubles as a short-ranged projectile interceptor - a side effect the manufacturers were happy to advertise. In a pinch, its precision tools allow it to perform surgical procedures as long as the patient overcomes their fear of a machine weighing several tons acting as their surgeon. The shell also houses an engineering drone bay, letting it carry and deploy uca and erima work drones in the field.</description>
     <statBases>
       <MoveSpeed>2.5</MoveSpeed>
       <ArmorRating_Sharp>1.0</ArmorRating_Sharp><!--銳抗-->
@@ -184,6 +184,27 @@
             <li>(5.0, 2.00)</li>
           </points>
         </bodySizeCurve>
+      </li>
+      <!-- 行動工程無人機艙：殼內可攜帶並部署招潮蟹／毛蟹。殖民者可直接把鋼搬給寄居蟹補充。
+           NPC 寄居蟹不自動投放（工作機在敵方手上沒有意義）。 -->
+      <li Class="Fortified.CompProperties_MechPlatform">
+        <gizmoIconPath>UI/Icons/Drone_Send_uca</gizmoIconPath>
+        <fixedIngredient>Steel</fixedIngredient>
+        <costPerPawn>40</costPerPawn>
+        <cooldownTicks>5000</cooldownTicks>
+        <maxPawnsToSpawn>2</maxPawnsToSpawn>
+        <startingIngredientCount>80</startingIngredientCount>
+        <maxIngredientCount>160</maxIngredientCount>
+        <npcAutoDeploy>false</npcAutoDeploy>
+        <spawnPawnKinds>
+          <li>
+            <pawnKind>DMS_Drone_Uca</pawnKind>
+          </li>
+          <li>
+            <pawnKind>DMS_Drone_Erima</pawnKind>
+            <gizmoIconPath>UI/Icons/Drone_Send_erima</gizmoIconPath>
+          </li>
+        </spawnPawnKinds>
       </li>
     </comps>
     <butcherProducts>

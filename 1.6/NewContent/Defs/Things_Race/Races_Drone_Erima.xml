@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 毛蟹：一種透過基站控制與部署的工作用無人機，其具有狹長的四條履帶來攀爬樹幹剪裁枝椏或在農地中活動避免壓毀莊稼，
+       以及兩隻精巧的機械臂用於收割與播種作物，常見於無人農業設施及都市園林用於綠植養護工作。 -->
+  <ThingDef ParentName="DMS_BaseDroidRace">
+    <defName>DMS_Drone_Erima</defName>
+    <label>erima</label>
+    <description>A work drone controlled and deployed from a base station. Four long, narrow tracks let it climb trunks to prune branches and move through fields without crushing crops, while two delicate manipulator arms handle harvesting and sowing. Commonly seen in unmanned agricultural facilities and urban parks tending greenery.</description>
+    <statBases>
+      <MoveSpeed>3.4</MoveSpeed>
+      <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+      <PlantWorkSpeed>1.1</PlantWorkSpeed>
+      <PlantHarvestYield>1.0</PlantHarvestYield>
+    </statBases>
+    <race>
+      <body>DMS_Erima</body>
+      <baseBodySize>0.7</baseBodySize>
+      <baseHealthScale>0.8</baseHealthScale>
+      <mechFixedSkillLevel>8</mechFixedSkillLevel>
+      <mechEnabledWorkTypes>
+        <li>Growing</li>
+        <li>PlantCutting</li>
+      </mechEnabledWorkTypes>
+      <!-- 同 Agrihand：優先種收，其次砍伐 -->
+      <mechWorkTypePriorities>
+        <PlantCutting>2</PlantCutting>
+      </mechWorkTypePriorities>
+    </race>
+    <comps>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>120000</totalPowerTicks>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>30</Steel>
+    </butcherProducts>
+    <tools Inherit="False">
+      <li>
+        <label>pruning arm</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>2.2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <PawnKindDef ParentName="DMS_DroidKind">
+    <defName>DMS_Drone_Erima</defName>
+    <label>erima</label>
+    <labelPlural>erimas</labelPlural>
+    <race>DMS_Drone_Erima</race>
+    <isFighter>false</isFighter>
+    <combatPower>6</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/erima</texPath>
+          <shaderType>Cutout</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.05</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.3, 0.3)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/erima</texPath>
+          <shaderType>Cutout</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.05</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.3, 0.3)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>

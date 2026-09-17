@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 工程無人機基站：一種用於設施維護與基本生產工作的無人機基站，透過安裝的集群控制芯片提供的算力使簡單的無人機能執行複雜任務，
+       常見於無人職守設施與黑燈工廠。可切換部署招潮蟹（工業／維護）與毛蟹（農業／園藝）。 -->
+  <ThingDef ParentName="DMS_BaseDronePlatform">
+    <defName>DMS_EngineeringBay</defName>
+    <label>engineering drone bay</label>
+    <description>A drone base station for facility maintenance and basic production work. The compute provided by its installed cluster control chipset lets simple drones carry out complex tasks. Commonly found in unmanned facilities and lights-out factories.\n\nCan deploy uca (maintenance and machinery operation) or erima (farming and plant care) drones.</description>
+    <size>(3,3)</size>
+    <passability>Impassable</passability>
+    <uiIconScale>0.9</uiIconScale>
+    <graphicData>
+      <texPath>Things/Building/DMS_EngineeringBay</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <shadowData>
+        <volume>(2.4,1.2,2.4)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <WorkToBuild>18000</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>80</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <Steel>250</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+      <ComponentControlChip>1</ComponentControlChip>
+    </costList>
+    <!-- 覆寫父類的 DMS_UAVBasis：併入集群控制科技 -->
+    <researchPrerequisites>
+      <li>DMS_Mechlink</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>500</basePowerConsumption>
+      </li>
+      <li Class="Fortified.CompProperties_MechPlatform">
+        <gizmoIconPath>UI/Icons/Drone_Send_uca</gizmoIconPath>
+        <fixedIngredient>Steel</fixedIngredient>
+        <costPerPawn>40</costPerPawn>
+        <cooldownTicks>5000</cooldownTicks>
+        <maxPawnsToSpawn>2</maxPawnsToSpawn>
+        <startingIngredientCount>60</startingIngredientCount>
+        <maxIngredientCount>360</maxIngredientCount>
+        <npcRandomKind>true</npcRandomKind>
+        <spawnPawnKinds>
+          <li>
+            <pawnKind>DMS_Drone_Uca</pawnKind>
+          </li>
+          <li>
+            <pawnKind>DMS_Drone_Erima</pawnKind>
+            <gizmoIconPath>UI/Icons/Drone_Send_erima</gizmoIconPath>
+          </li>
+        </spawnPawnKinds>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>
