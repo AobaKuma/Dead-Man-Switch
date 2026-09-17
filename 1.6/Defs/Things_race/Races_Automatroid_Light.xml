@@ -23,6 +23,9 @@
       <waterCellCost>1</waterCellCost>
     </race>
     <comps>
+      <li Class="Fortified.CompProperties_Floating">
+        <canCrossWater>true</canCrossWater>
+      </li>
       <li Class="Fortified.CompProperties_FlyingFleckThrower">
         <burstOffsetRange>(1,1.5)</burstOffsetRange>
         <fleckOnSoil>DustPuff</fleckOnSoil>

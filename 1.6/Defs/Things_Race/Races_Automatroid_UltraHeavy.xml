@@ -243,8 +243,7 @@
         <throwRate>6</throwRate>
         <throwTick>5</throwTick>
       </li>
-      <li MayRequire="oskarpotocki.vanillafactionsexpanded.core" Class="VEF.AnimalBehaviours.CompProperties_Floating">
-        <isFloater>true</isFloater>
+      <li Class="Fortified.CompProperties_Floating">
         <canCrossWater>true</canCrossWater>
       </li>
       <li Class="Fortified.CompProperties_CommandRelay">

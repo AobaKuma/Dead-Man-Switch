@@ -63,6 +63,10 @@
       <li Class="Fortified.CompProperties_Drone">
         <returnToDraftPlatformJob>FFF_ReturnToDronePlatform</returnToDraftPlatformJob>
       </li>
+      <!-- 倒地／損毀後可原地拆解，產物沿用 butcherProducts（屍體 x0.5） -->
+      <li Class="Fortified.CompProperties_Recycleable">
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      </li>
     </comps>
     <butcherProducts>
       <Steel>25</Steel>
