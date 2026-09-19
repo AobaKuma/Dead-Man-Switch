@@ -12,9 +12,9 @@
     <graphicData>
       <texPath>Things/Building/DMS_EngineeringBay</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(4,4)</drawSize>
+      <drawSize>(5,5)</drawSize>
       <shadowData>
-        <volume>(2.4,1.2,2.4)</volume>
+        <volume>(3,1.2,3)</volume>
         <offset>(0,0,-0.1)</offset>
       </shadowData>
       <damageData>

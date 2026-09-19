@@ -69,6 +69,12 @@
 				</value>
 			</li>
 
+			<!-- 原版掃射 Verb (Fortified.Verb_ArcSprayProjectile) 不在 MakeGunCECompatible 的移除清單內，
+			     必須先手動移除，否則 CE 環境下砲塔會同時擁有兩個 Verb 且優先用原版那個 -->
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_GateKeeper"]/verbs/li[verbClass="Fortified.Verb_ArcSprayProjectile"]</xpath>
+			</li>
+
 			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
 				<defName>DMS_Gun_GateKeeper</defName>
 				<statBases>
@@ -80,7 +86,11 @@
 				</statBases>
 				<Properties>
 					<recoilAmount>0.38</recoilAmount>
-					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<!-- CE 版掃射 Verb：路徑長度自動等於實際連發數，sprayNumExtraCells 不需設定 -->
+					<verbClass>FortifiedCE.Verb_ArcSprayProjectileCE</verbClass>
+					<sprayWidth>5</sprayWidth>
+					<sprayArching>4</sprayArching>
+					<sprayThicknessCells>3</sprayThicknessCells>
 					<hasStandardCommand>true</hasStandardCommand>
 					<defaultProjectile>Bullet_30x173mmNATO_AP</defaultProjectile>
 					<warmupTime>0.8</warmupTime>

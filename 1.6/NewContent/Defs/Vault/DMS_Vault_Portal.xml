@@ -52,7 +52,9 @@
     <portal>
       <pocketMapGenerator>DMS_MilitaryVault</pocketMapGenerator>
       <exitDef>DMS_VaultElevatorExit</exitDef>
-      <pocketMapSize>75</pocketMapSize>
+      <!-- 結構 60~70 見 DMS_Vault_MapGenerator.xml，地圖要留出四周的岩層。
+           The structure runs 60~70 (see DMS_Vault_MapGenerator.xml); leave rock around it. -->
+      <pocketMapSize>130</pocketMapSize>
     </portal>
     <comps>
       <!-- 數值比照原版 AncientHatch，讓破解時間與玩家既有經驗一致。
@@ -97,7 +99,7 @@
         <sealedGraphicData>
           <graphicClass>Graphic_Multi</graphicClass>
           <texPath>Things/Building/Elevator_sealed/building</texPath>
-          <drawSize>(4,4)</drawSize>
+          <drawSize>(5,5)</drawSize>
         </sealedGraphicData>
       </li>
     </modExtensions>

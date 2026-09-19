@@ -11,22 +11,84 @@
        additionally stamp a hand-authored FFF block when they have the space.
        ============================================================ -->
 
-  <!-- 電梯廳。放出口電梯、設定玩家出生點，並留幾座還在通電的哨戒砲當見面禮。
-       Elevator lobby: exit car, player spawn spot, and a welcome party of live turrets. -->
+  <!-- 大廳長廊。串起所有房間的主幹道：中線鋪地板與電纜，一段一座壁掛配電盤供電，
+       沿途設哨站（掩體 + 哨戒砲 + 震動感測器），兩端牆上裝順著走廊看的攝影機。
+       各項設施在 ModExtension_VaultSecurity 裡指定，留空就不生成那一類。
+       Main hall. The spine that links every room: floored, wired centre strip powered by one wall
+       substation per segment, checkpoints (cover + sentries + seismic sensor) along the way, and a
+       camera on each end wall looking down the corridor. Fixtures come from ModExtension_VaultSecurity;
+       leave one empty to skip that kind. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultMainHall</defName>
+    <roomContentsWorkerType>DMS.RoomContents_VaultMainHall</roomContentsWorkerType>
+    <dontDestroyWallsDoors>true</dontDestroyWallsDoors>
+    <isValidPlayerSpawnRoom>false</isValidPlayerSpawnRoom>
+    <prefabs>
+      <DMS_Prefab_HallDebris>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
+        <minMaxRange>0~3</minMaxRange>
+      </DMS_Prefab_HallDebris>
+      <DMS_Prefab_VentBank>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~2</minMaxRange>
+      </DMS_Prefab_VentBank>
+    </prefabs>
+    <modExtensions>
+      <li Class="DMS.ModExtension_VaultSecurity">
+        <!-- 內部淨寬 5：哨站 3 格寬，兩側各留一條通道。Interior width 5: a 3-wide checkpoint plus a lane each side. -->
+        <corridorExpansion>3</corridorExpansion>
+        <stripTerrain>Concrete</stripTerrain>
+
+        <conduitDef>PowerConduit</conduitDef>
+        <substationDef>DMS_SubstationCabinet_Wall</substationDef>
+
+        <barricadeDef>Barricade</barricadeDef>
+        <barricadeStuff>Steel</barricadeStuff>
+        <turretDef>DMS_Turret_Sentry</turretDef>
+        <!-- 每座哨戒砲 35% 換成報廢品。Each sentry has a 35% chance of being a wreck. -->
+        <wreckedTurretDef>DMS_Wreckage_SentryGun</wreckedTurretDef>
+        <turretWreckChance>0.35</turretWreckChance>
+        <sensorDef>DMS_Building_Sensor</sensorDef>
+        <nestDef>DMS_Building_FPVNest</nestDef>
+        <nestChance>0.5</nestChance>
+        <checkpointSpacing>14</checkpointSpacing>
+        <maxCheckpointsPerRect>2</maxCheckpointsPerRect>
+
+        <cameraDef>DMS_Building_Camera</cameraDef>
+        <initialBatteryPct>1</initialBatteryPct>
+      </li>
+    </modExtensions>
+  </LayoutRoomDef>
+
+  <!-- 電梯廳。放出口電梯、設定玩家出生點。玩家的初始房間，不放砲塔或警戒建築；
+       牆上的配電盤只是電源，不會攻擊。
+       Elevator lobby: exit car and player spawn spot. The starting room, so no turrets or security
+       fixtures here; the wall substations are just power, they never attack. -->
   <LayoutRoomDef>
     <defName>DMS_VaultEntranceHall</defName>
     <roomContentsWorkerType>DMS.RoomContents_VaultEntrance</roomContentsWorkerType>
+    <!-- 必出房間，門檻跟其他必出房間一樣壓在 9，免得被它們先搶走大房間後放不下。
+         5x5 的出口電梯在 9x9 裡塞不下三格 padding，worker 會自己把 padding 縮到放得下為止。
+         Required room; kept at 9 like the other required rooms so they can't starve it of a rect.
+         The 5x5 exit car can't take 3 cells of padding in a 9x9 — the worker shrinks it as needed. -->
     <minSingleRectWidth>9</minSingleRectWidth>
     <minSingleRectHeight>9</minSingleRectHeight>
     <prefabs>
       <DMS_Prefab_SubstationBank>
-        <countPerTenEdgeCells>2</countPerTenEdgeCells>
-        <minMaxRange>1~3</minMaxRange>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
       </DMS_Prefab_SubstationBank>
       <DMS_Prefab_VentBank>
         <countPerTenEdgeCells>1</countPerTenEdgeCells>
         <minMaxRange>0~2</minMaxRange>
       </DMS_Prefab_VentBank>
+      <DMS_Prefab_RestNook_Ruined>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_RestNook_Ruined>
+      <DMS_Prefab_SupplyCache_Edge>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_SupplyCache_Edge>
     </prefabs>
   </LayoutRoomDef>
 
@@ -40,12 +102,19 @@
     <minSingleRectWidth>9</minSingleRectWidth>
     <minSingleRectHeight>9</minSingleRectHeight>
     <prefabs>
+      <DMS_Prefab_SupplyCache>
+        <countRange>1~2</countRange>
+      </DMS_Prefab_SupplyCache>
+      <DMS_Prefab_SupplyCache_Edge>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
+        <minMaxRange>0~2</minMaxRange>
+      </DMS_Prefab_SupplyCache_Edge>
       <DMS_Prefab_CrateCluster>
         <countRange>0~1</countRange>
       </DMS_Prefab_CrateCluster>
       <DMS_Prefab_SubstationBank>
-        <countPerTenEdgeCells>1</countPerTenEdgeCells>
-        <minMaxRange>0~2</minMaxRange>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
       </DMS_Prefab_SubstationBank>
     </prefabs>
   </LayoutRoomDef>
@@ -85,22 +154,45 @@
         <minMaxRange>1~2</minMaxRange>
       </DMS_Prefab_MachineRow>
       <DMS_Prefab_SubstationBank>
-        <countPerTenEdgeCells>2</countPerTenEdgeCells>
-        <minMaxRange>1~3</minMaxRange>
+        <countPerTenEdgeCells>1</countPerTenEdgeCells>
+        <minMaxRange>1~1</minMaxRange>
       </DMS_Prefab_SubstationBank>
+      <DMS_Prefab_LockerRow>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_LockerRow>
+      <DMS_Prefab_SupplyCache>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_SupplyCache>
     </prefabs>
   </LayoutRoomDef>
 
-  <!-- 駐防兵舍。純氣氛房，說明這座設施曾經有人守。
-       Garrison quarters. Pure atmosphere — someone used to hold this place. -->
+  <!-- 駐防兵舍。純氣氛房，說明這座設施曾經有人守：置物櫃、長椅、飲水機，多半已經壞了。
+       Garrison quarters. Pure atmosphere — someone used to hold this place: lockers, benches and
+       a dispenser, mostly wrecked by now. -->
   <LayoutRoomDef>
     <defName>DMS_VaultGarrisonQuarters</defName>
     <dontDestroyWallsDoors>true</dontDestroyWallsDoors>
     <prefabs>
-      <DMS_Prefab_CrateCluster>
-        <countPerHundredCells>2</countPerHundredCells>
+      <DMS_Prefab_LockerRow>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
         <minMaxRange>1~2</minMaxRange>
+      </DMS_Prefab_LockerRow>
+      <DMS_Prefab_LockerRow_Ruined>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
+        <minMaxRange>0~2</minMaxRange>
+      </DMS_Prefab_LockerRow_Ruined>
+      <DMS_Prefab_RestNook_Ruined>
+        <countPerTenEdgeCells>0.4</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_RestNook_Ruined>
+      <DMS_Prefab_CrateCluster>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>0~1</minMaxRange>
       </DMS_Prefab_CrateCluster>
+      <DMS_Prefab_SupplyCache_Edge>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_SupplyCache_Edge>
       <DMS_Prefab_WreckScatter>
         <countPerHundredCells>1</countPerHundredCells>
         <minMaxRange>0~2</minMaxRange>
@@ -124,12 +216,15 @@
         <minMaxRange>1~3</minMaxRange>
       </DMS_Prefab_MachineRow_Live>
       <DMS_Prefab_SubstationBank>
-        <countPerTenEdgeCells>3</countPerTenEdgeCells>
-        <minMaxRange>1~4</minMaxRange>
+        <countPerTenEdgeCells>1</countPerTenEdgeCells>
+        <minMaxRange>1~2</minMaxRange>
       </DMS_Prefab_SubstationBank>
       <DMS_Prefab_LabWreck>
         <countRange>0~1</countRange>
       </DMS_Prefab_LabWreck>
+      <DMS_Prefab_SupplyCache_Edge>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_SupplyCache_Edge>
     </prefabs>
   </LayoutRoomDef>
 
@@ -152,6 +247,114 @@
         <countPerHundredCells>1</countPerHundredCells>
         <minMaxRange>0~1</minMaxRange>
       </DMS_Prefab_MachineRow>
+      <DMS_Prefab_SupplyCache>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_SupplyCache>
+    </prefabs>
+  </LayoutRoomDef>
+
+  <!-- ============================================================
+       大型房間 / Large rooms
+       靠 areaSizeRange 篩出合併過的大房間（2~4 個矩形拼成），小房間抽不到這兩種。
+       areaSizeRange restricts these to merged rooms (2~4 rects); small rooms never roll them.
+       ============================================================ -->
+
+  <!-- 中庭。設施還有人時的休息區：長椅、飲水機、花圃、置物櫃，一半保持完好，一半已經荒廢。
+       Atrium. The break area from when people still lived here: benches, dispensers, planters,
+       lockers — half of it intact, half of it gone to seed. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultAtrium</defName>
+    <areaSizeRange>160~99999</areaSizeRange>
+    <minSingleRectWidth>10</minSingleRectWidth>
+    <minSingleRectHeight>10</minSingleRectHeight>
+    <floorTypes>
+      <li>PavedTile</li>
+    </floorTypes>
+    <edgeTerrain>MetalTile</edgeTerrain>
+    <prefabs>
+      <DMS_Prefab_Garden>
+        <countRange>1~2</countRange>
+      </DMS_Prefab_Garden>
+      <DMS_Prefab_Garden_Ruined>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_Garden_Ruined>
+      <DMS_Prefab_Lounge>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>1~3</minMaxRange>
+      </DMS_Prefab_Lounge>
+      <DMS_Prefab_RestNook>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
+        <minMaxRange>1~3</minMaxRange>
+      </DMS_Prefab_RestNook>
+      <DMS_Prefab_RestNook_Ruined>
+        <countPerTenEdgeCells>0.4</countPerTenEdgeCells>
+        <minMaxRange>0~2</minMaxRange>
+      </DMS_Prefab_RestNook_Ruined>
+      <DMS_Prefab_LockerRow>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_LockerRow>
+      <DMS_Prefab_VentBank>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_VentBank>
+    </prefabs>
+    <fillInterior>
+      <DMS_Hydroponics_Flowerpot>
+        <thingsPerHundredCells>1~2</thingsPerHundredCells>
+      </DMS_Hydroponics_Flowerpot>
+      <DMS_Hydroponics_FlowerpotDestroyed>
+        <thingsPerHundredCells>0.5~1.5</thingsPerHundredCells>
+      </DMS_Hydroponics_FlowerpotDestroyed>
+    </fillInterior>
+  </LayoutRoomDef>
+
+  <!-- 車輛庫。停到報廢的裝甲車與重型設備，整間就是一座露天的廢鐵場。
+       Vehicle bay. Armour and heavy kit parked until it rusted — a scrapyard with a roof. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultVehicleBay</defName>
+    <areaSizeRange>180~99999</areaSizeRange>
+    <minSingleRectWidth>11</minSingleRectWidth>
+    <minSingleRectHeight>11</minSingleRectHeight>
+    <floorTypes>
+      <li>Concrete</li>
+    </floorTypes>
+    <prefabs>
+      <DMS_Prefab_VehicleWreck>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>1~3</minMaxRange>
+      </DMS_Prefab_VehicleWreck>
+      <DMS_Prefab_HeavyWreck_Gatekeeper>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_HeavyWreck_Gatekeeper>
+      <DMS_Prefab_HeavyWreck_Launcher>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_HeavyWreck_Launcher>
+      <DMS_Prefab_HeavyWreck_Radar>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_HeavyWreck_Radar>
+      <DMS_Prefab_CrateCluster>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_CrateCluster>
+      <DMS_Prefab_WreckScatter>
+        <countPerHundredCells>0.5</countPerHundredCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_WreckScatter>
+      <DMS_Prefab_SubstationBank>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_SubstationBank>
+      <DMS_Prefab_LockerRow_Ruined>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_LockerRow_Ruined>
+      <DMS_Prefab_SupplyCache>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_SupplyCache>
+      <DMS_Prefab_SupplyCache_Edge>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~2</minMaxRange>
+      </DMS_Prefab_SupplyCache_Edge>
     </prefabs>
   </LayoutRoomDef>
 

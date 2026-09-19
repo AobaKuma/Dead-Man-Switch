@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DMS_VaultConsole.label>安全控制台</DMS_VaultConsole.label>
+  <DMS_VaultConsole.description>储存库的门禁控制终端。密封的库房门只听这台控制台的，而它的授权早就跟着拥有这里的部队一起失效了。黑入它以放行库房门。</DMS_VaultConsole.description>
+  <DMS_VaultConsole.comps.0.notHackedInspectString>黑入以放行密封的库房门。</DMS_VaultConsole.comps.0.notHackedInspectString>
+  <DMS_VaultConsole.comps.0.hackedInspectString>库房门已放行。</DMS_VaultConsole.comps.0.hackedInspectString>
+  <DMS_VaultConsole.comps.0.hackedMessage>{HACKER_labelShort} 完成了对 {SUBJECT_labelNoParenthesisDef} 的黑入。</DMS_VaultConsole.comps.0.hackedMessage>
+  <DMS_VaultConsole.comps.0.hackedLetterLabel>库房门已放行</DMS_VaultConsole.comps.0.hackedLetterLabel>
+  <DMS_VaultConsole.comps.0.hackedLetterText>储存库的门禁系统已被攻破。密封的库房门已经打开。</DMS_VaultConsole.comps.0.hackedLetterText>
+
+  <DMS_VaultGateConsole.label>闸门控制台</DMS_VaultGateConsole.label>
+  <DMS_VaultGateConsole.description>分区闸门的控制终端。闸门的密封门只听这台控制台的，而它的授权早就跟着拥有这里的部队一起失效了。黑入它以打开闸门。</DMS_VaultGateConsole.description>
+  <DMS_VaultGateConsole.comps.0.notHackedInspectString>黑入以打开分区闸门。</DMS_VaultGateConsole.comps.0.notHackedInspectString>
+  <DMS_VaultGateConsole.comps.0.hackedInspectString>分区闸门已开。</DMS_VaultGateConsole.comps.0.hackedInspectString>
+  <DMS_VaultGateConsole.comps.0.hackedMessage>{HACKER_labelShort} 打开了分区闸门。</DMS_VaultGateConsole.comps.0.hackedMessage>
+
+</LanguageData>

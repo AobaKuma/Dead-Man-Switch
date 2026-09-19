@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using Fortified;
 using Fortified.Structures;
+using HarmonyLib;
 using RimWorld;
 using Verse;
 
@@ -98,6 +101,62 @@ namespace DMS
 
             List<Thing> spawned = new List<Thing>();
             RoomGenUtility.FillWithPadding(def, count, room, map, null, null, spawned, contractedBy);
+        }
+
+        // ── 警戒設施 / Security fixtures ──────────────────────────────────────
+
+        private const string DefenderFactionDefName = "DMS_Legacy";
+
+        /// <summary>
+        /// 設施殘留防務的陣營。沒有陣營的砲塔與感測器不會把玩家當敵人，所以一定要給一個。
+        /// 優先用 DMS_Legacy（殖民遺留，對所有人永久敵對），沒有就退回原版的敵對遠古陣營。
+        /// Faction for the vault's leftover defences. Factionless turrets and scanners never treat the
+        /// player as hostile, so one is mandatory. Prefers DMS_Legacy, falls back to vanilla's ancients.
+        /// </summary>
+        public static Faction DefenderFaction
+        {
+            get
+            {
+                FactionDef def = DefDatabase<FactionDef>.GetNamedSilentFail(DefenderFactionDefName);
+                Faction faction = def != null ? Find.FactionManager.FirstFactionOfDef(def) : null;
+                return faction ?? Faction.OfAncientsHostile;
+            }
+        }
+
+        // FFF 沒有公開設定內建電池電量的方法，直接寫私有欄位。
+        // FFF exposes no setter for the internal battery charge, so we poke the private field.
+        private static readonly FieldInfo StoredEnergyField =
+            AccessTools.Field(typeof(CompPowerTrader_InternalBattery), "storedEnergy");
+
+        /// <summary>
+        /// 把內建電池充到指定比例，讓砲塔一生成就有電可以開火。沒有內建電池的東西直接略過。
+        /// Charges an internal battery so the thing is live from the moment it spawns. No-op otherwise.
+        /// </summary>
+        public static void ChargeInternalBattery(Thing thing, float pct)
+        {
+            if (StoredEnergyField == null) return;
+
+            CompPowerTrader_InternalBattery battery = thing.TryGetComp<CompPowerTrader_InternalBattery>();
+            if (battery == null) return;
+
+            CompProperties_PowerWithInternalBattery props = (CompProperties_PowerWithInternalBattery)battery.props;
+            StoredEnergyField.SetValue(battery, props.internalBatteryMax * UnityEngine.Mathf.Clamp01(pct));
+        }
+
+        /// <summary>
+        /// 生成一件警戒設施：套上防務陣營、充飽內建電池。
+        /// Spawns a security fixture with the defender faction and a charged internal battery.
+        /// </summary>
+        public static Thing SpawnSecurity(ThingDef def, IntVec3 cell, Map map, Rot4 rot, Faction faction,
+            float batteryPct = 1f, ThingDef stuff = null)
+        {
+            Thing thing = ThingMaker.MakeThing(def, def.MadeFromStuff ? stuff ?? GenStuff.DefaultStuffFor(def) : null);
+            if (def.CanHaveFaction)
+            {
+                thing.SetFactionDirect(faction ?? DefenderFaction);
+            }
+            ChargeInternalBattery(thing, batteryPct);
+            return GenSpawn.Spawn(thing, cell, map, rot);
         }
     }
 }

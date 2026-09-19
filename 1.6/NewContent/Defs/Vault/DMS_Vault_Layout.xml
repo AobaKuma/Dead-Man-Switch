@@ -2,7 +2,7 @@
 <Defs>
 
   <!-- DMS 軍事儲存庫的建築版面。
-       走廊串起隨機房間，一半的門換成自動門。結構材質全部走 Core + DMS，不需要 DLC。
+       大廳長廊串起隨機房間，一半的門換成自動門。結構材質全部走 Core + DMS，不需要 DLC。
        Corridor-and-rooms layout; half the doors become autodoors. Core + DMS only. -->
   <StructureLayoutDef>
     <defName>DMS_MilitaryVault</defName>
@@ -12,15 +12,28 @@
     <minRoomWidth>8</minRoomWidth>
     <minRoomHeight>8</minRoomHeight>
 
+    <!-- 大廳長廊：先開通道、再沿通道掛房間（DMS.VaultLayoutGenerator）。主幹 + 支道，
+         房間貼在每段走廊兩側與盡頭，沒掛到房間的地方留成岩層，整體輪廓不是方形。
+         走廊寬度與警戒設施見 DMS_VaultMainHall；房間尺寸與支道數量見下方 ModExtension_VaultLayout。
+         Main hall: corridors first, rooms hung along them (DMS.VaultLayoutGenerator). A spine plus
+         branches, rooms on both sides and at every dead end; whatever is left stays rock, so the
+         footprint is not a rectangle. Width and security fixtures live on DMS_VaultMainHall; room
+         sizes and branch counts in ModExtension_VaultLayout below. -->
+    <corridorDef>DMS_VaultMainHall</corridorDef>
+
     <!-- 結構 / Structure -->
-    <wallDef>Wall</wallDef>
-    <wallStuffDef>Steel</wallStuffDef>
+    <!-- 牆用 DMS_SuperWall：不可破壞、不可拆，玩家只能走門（含駭入控制台開的閘門與獎勵房），
+         不能挖牆繞過分區與密封門。非 stuff 建材，所以不設 wallStuffDef。
+         Walls are DMS_SuperWall: indestructible and non-deconstructible, so the player has to go through
+         doors (including the console-opened gates and treasury) instead of tunnelling around them.
+         Not made from stuff, hence no wallStuffDef. -->
+    <wallDef>DMS_SuperWall</wallDef>
     <doorDef>Door</doorDef>
     <doorStuffDef>Steel</doorStuffDef>
     <wallLampDef>DMS_EmergencyLamp</wallLampDef>
     <terrainDef>MetalTile</terrainDef>
-    <!-- 廢棄多年，牆體本來就該有破損。Years abandoned; the walls should not be pristine. -->
-    <wallDamageRange>0~250</wallDamageRange>
+    <!-- 牆不可破壞，就不做隨機損傷（wallDamageRange 留預設 Invalid）。
+         Indestructible walls take no random damage; wallDamageRange stays at its Invalid default. -->
 
     <roomDefs>
       <!-- 必定出現 / Guaranteed -->
@@ -33,12 +46,22 @@
       <DMS_VaultMechBay>
         <countRange>1</countRange>
       </DMS_VaultMechBay>
+      <!-- 獎勵房：密封門要駭入安全控制台才開（見 DMS_Vault_Treasury.xml）。
+           Treasury: sealed doors that open only after hacking the security console. -->
+      <DMS_VaultTreasury>
+        <countRange>1</countRange>
+      </DMS_VaultTreasury>
 
       <!-- 加權出現 / Weighted -->
       <DMS_VaultCommandRoom>0.8</DMS_VaultCommandRoom>
       <DMS_VaultGarrisonQuarters>1</DMS_VaultGarrisonQuarters>
       <DMS_VaultPowerPlant>0.8</DMS_VaultPowerPlant>
       <DMS_VaultWreckHall>1</DMS_VaultWreckHall>
+
+      <!-- 大型房間：只有面積夠大的合併房間抽得到（見各 def 的 areaSizeRange）。
+           Large rooms: only merged rooms big enough qualify (see each def's areaSizeRange). -->
+      <DMS_VaultAtrium>1</DMS_VaultAtrium>
+      <DMS_VaultVehicleBay>0.8</DMS_VaultVehicleBay>
     </roomDefs>
 
     <!-- 欄位名的拼字沿用原版（junkScaterrers），不是筆誤。
@@ -73,6 +96,37 @@
     </junkScaterrers>
 
     <modExtensions>
+      <li Class="DMS.ModExtension_VaultLayout">
+        <!-- 房間含牆的寬（沿走廊）與深（離開走廊）。必出房間都要 9x9，下限別低於 9。
+             Room width (along the corridor) and depth (away from it), walls included.
+             Required rooms need 9x9, so keep the minimum at 9 or above. -->
+        <roomWidthRange>9~14</roomWidthRange>
+        <roomDepthRange>9~14</roomDepthRange>
+        <!-- 至少兩條支道，分區閘門才有意義。At least two branches so the sector gates mean something. -->
+        <branchCountRange>2~3</branchCountRange>
+        <subBranchChance>0.35</subBranchChance>
+        <branchSpacing>18</branchSpacing>
+        <!-- 相鄰房合併成大房（中庭 / 車輛庫靠這個）。Neighbours merge into big rooms (atrium / vehicle bay need this). -->
+        <mergeChance>0.25</mergeChance>
+        <!-- 沿走廊留空的機率，讓輪廓更不規則。Chance to leave a gap, for a more ragged outline. -->
+        <gapChance>0.12</gapChance>
+        <endRooms>true</endRooms>
+
+        <!-- 分區閘門：每條支道與母走廊的路口封一排密封門，各種寬度混拼填滿 5 格寬的走廊；
+             閘門旁放一台控制台，駭入即開。控制台一律放在從入口走得到的那一側。
+             Sector gates: each branch's junction with its parent is sealed with a row of doors of mixed
+             widths filling the 5-wide corridor, with a console beside it that opens it when hacked.
+             The console always sits on the side the entrance can reach. -->
+        <sectorGates>true</sectorGates>
+        <gateChance>1</gateChance>
+        <gateDoorDefs>
+          <li>DMS_SealedRollingDoor_Single</li>
+          <li>DMS_SealedRollingDoor_Double</li>
+          <li>DMS_SealedRollingDoor_Triple</li>
+          <li>DMS_SealedRollingDoor_Quadruple</li>
+        </gateDoorDefs>
+        <gateConsoleDef>DMS_VaultGateConsole</gateConsoleDef>
+      </li>
       <!-- 一半的門換成自動門，讀起來像還有備援電力的設施。
            Half the doors become autodoors, so the place reads as still partly powered. -->
       <li Class="DMS.ModExtension_VaultDoors">

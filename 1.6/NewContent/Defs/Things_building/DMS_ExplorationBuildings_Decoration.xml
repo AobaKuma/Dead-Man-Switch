@@ -33,6 +33,24 @@
     <statBases>
       <Flammability>0</Flammability>
     </statBases>
+    <!-- 警報反應：收到設施警報後，機械體像原版巨坑那樣從洞裡跳出來（DMS.CompAlertEffector_HoleEmerge）。
+         兵力由派系的 pawnGroupMakers 生成，點數依地圖警戒值在 pointsRange 內縮放（0% → 下限，100% → 上限）；
+         派系用建築自己的，沒有就退回 DMS_Legacy。
+         Alert response: on a facility alarm, mechs leap out of the hole the way vanilla's pit gate
+         works (DMS.CompAlertEffector_HoleEmerge). The squad comes from the faction's pawnGroupMakers,
+         with points scaled across pointsRange by the map's alert level (0% → min, 100% → max);
+         faction is the building's own, else DMS_Legacy. -->
+    <receivesSignals>true</receivesSignals>
+    <comps>
+      <li Class="DMS.CompProperties_AlertEffector_HoleEmerge">
+        <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
+        <triggerChance>0.6</triggerChance>
+        <oneShot>true</oneShot>
+        <pointsRange>150~600</pointsRange>
+        <emergeDurationTicks>300</emergeDurationTicks>
+        <landingRadius>2</landingRadius>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="DMS_HoleBase">

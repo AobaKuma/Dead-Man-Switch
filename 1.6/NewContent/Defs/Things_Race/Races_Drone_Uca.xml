@@ -60,7 +60,7 @@
           <texPath>Things/Automatroid/uca</texPath>
           <shaderType>Cutout</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.0</drawSize>
+          <drawSize>1.5</drawSize>
           <shadowData>
             <volume>(0.25, 0.3, 0.25)</volume>
           </shadowData>
@@ -71,7 +71,7 @@
           <texPath>Things/Automatroid/uca</texPath>
           <shaderType>Cutout</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.0</drawSize>
+          <drawSize>1.5</drawSize>
           <shadowData>
             <volume>(0.25, 0.3, 0.25)</volume>
           </shadowData>

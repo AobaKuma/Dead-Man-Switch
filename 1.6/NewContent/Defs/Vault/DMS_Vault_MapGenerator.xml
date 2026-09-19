@@ -34,7 +34,9 @@
     <order>551</order>
     <genStep Class="DMS.DMS_GenStep_Vault">
       <layoutDef>DMS_MilitaryVault</layoutDef>
-      <sizeRange>40~50</sizeRange>
+      <!-- 比原版儲藏庫（40~50）大一圈，才塞得下長廊、中庭與車輛庫。
+           A size up from vanilla's stockpile (40~50) so the hall, atrium and vehicle bay fit. -->
+      <sizeRange>60~70</sizeRange>
     </genStep>
   </GenStepDef>
 

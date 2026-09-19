@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       DMS 軍事儲存庫 — 獎勵房
+       DMS military storage vault — treasury
+
+       房門全部換成 FFF 的密封門（打不壞、駭不了），只有駭入別處的安全控制台才會放行。
+       封門與控制台的擺放由 DMS.VaultTreasuryUtility 在整棟結構生成完後處理，
+       封門會困住入口時就放棄封門。
+       Every door becomes an FFF sealed door (indestructible, unhackable); only hacking the
+       security console elsewhere in the vault releases them. Sealing and console placement run
+       in DMS.VaultTreasuryUtility after the structure is spawned, and are skipped if sealing
+       would cut the entrance off.
+       ============================================================ -->
+
+  <!-- 安全控制台。駭入後放行所有連結到它的密封門；被拆毀也會放行，獎勵房不會永久封死。
+       Security console. Hacking it releases every linked sealed door; destroying it does too,
+       so the treasury can never be sealed for good. -->
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_VaultConsole</defName>
+    <label>security console</label>
+    <description>The vault's access-control terminal. The sealed storage doors answer only to this console, and its credentials expired along with the unit that owned the place. Hack it to release the doors.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_ConsoleSingle_Neutral</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="DMS.CompProperties_VaultConsole">
+        <defence>1800</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <intellectualSkillPrerequisite>5</intellectualSkillPrerequisite>
+        <lockoutDurationHoursRange>2~4</lockoutDurationHoursRange>
+        <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
+        <notHackedInspectString>Hack to release the sealed storage doors.</notHackedInspectString>
+        <hackedInspectString>Storage doors released.</hackedInspectString>
+        <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
+        <hackedLetterLabel>Storage doors released</hackedLetterLabel>
+        <!-- hackedLetterText 不會做格式化，不能放 {HACKER} 之類的佔位符。No placeholders: the letter text is not formatted. -->
+        <hackedLetterText>Someone has broken into the vault's access-control system. The sealed storage doors are open.</hackedLetterText>
+        <hackedLetterDef>PositiveEvent</hackedLetterDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 分區閘門的控制台。同一套 CompVaultConsole，只是文字不同；由 DMS.VaultSectorGates 放在閘門旁。
+       Sector gate console. Same CompVaultConsole, different wording; placed beside each gate by
+       DMS.VaultSectorGates. -->
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_VaultGateConsole</defName>
+    <label>gate console</label>
+    <description>The control terminal for a sector gate. The gate's sealed doors answer only to this console, and its credentials expired along with the unit that owned the place. Hack it to open the gate.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_ConsoleSingle_Neutral</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="DMS.CompProperties_VaultConsole">
+        <defence>1200</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <intellectualSkillPrerequisite>4</intellectualSkillPrerequisite>
+        <lockoutDurationHoursRange>1~3</lockoutDurationHoursRange>
+        <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
+        <notHackedInspectString>Hack to open the sector gate.</notHackedInspectString>
+        <hackedInspectString>Sector gate open.</hackedInspectString>
+        <hackedMessage>{HACKER_labelShort} has opened the sector gate.</hackedMessage>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 獎勵房本體。戰利品：後勤貨櫃、物資箱，沿牆一排輕武器與義體箱。
+       The treasury itself. Loot: logistic containers, supply crates, small-arms and prosthetic
+       crates along the walls. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultTreasury</defName>
+    <roomContentsWorkerType>DMS.RoomContents_VaultTreasury</roomContentsWorkerType>
+    <dontDestroyWallsDoors>true</dontDestroyWallsDoors>
+    <isValidPlayerSpawnRoom>false</isValidPlayerSpawnRoom>
+    <minConnectedRooms>1</minConnectedRooms>
+    <!-- 密封庫房，不撒碎石雜物。A sealed store; no rubble and trash. -->
+    <spawnJunk>false</spawnJunk>
+    <floorTypes>
+      <li>SterileTile</li>
+    </floorTypes>
+    <prefabs>
+      <DMS_Prefab_TreasuryContainers>
+        <countRange>1~1</countRange>
+      </DMS_Prefab_TreasuryContainers>
+      <DMS_Prefab_SupplyCache>
+        <countRange>1~2</countRange>
+      </DMS_Prefab_SupplyCache>
+    </prefabs>
+    <fillEdges>
+      <DMS_CrateSmall_SmallArms>
+        <groupsPerTenEdgeCells>1~2</groupsPerTenEdgeCells>
+        <groupCountRange>1~2</groupCountRange>
+      </DMS_CrateSmall_SmallArms>
+      <DMS_CrateSmall_Prosthetic>
+        <groupsPerTenEdgeCells>0.5~1</groupsPerTenEdgeCells>
+        <groupCountRange>1~1</groupCountRange>
+      </DMS_CrateSmall_Prosthetic>
+      <DMS_CrateSmall_Parts>
+        <groupsPerTenEdgeCells>0.5~1</groupsPerTenEdgeCells>
+        <groupCountRange>1~2</groupCountRange>
+      </DMS_CrateSmall_Parts>
+    </fillEdges>
+    <modExtensions>
+      <li Class="DMS.ModExtension_VaultTreasury">
+        <sealedDoorDef>DMS_SealedRollingDoor_Single</sealedDoorDef>
+        <consoleDef>DMS_VaultConsole</consoleDef>
+        <!-- 控制台優先放指揮室。The console goes in the command room when there is one. -->
+        <preferredConsoleRoom>DMS_VaultCommandRoom</preferredConsoleRoom>
+      </li>
+    </modExtensions>
+  </LayoutRoomDef>
+
+  <!-- 兩座完好的後勤貨櫃。Two intact logistic containers. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_TreasuryContainers</defName>
+    <size>(5,2)</size>
+    <things>
+      <DMS_LogisticContainer>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(3, 0, 0)</li>
+        </positions>
+      </DMS_LogisticContainer>
+    </things>
+  </PrefabDef>
+
+</Defs>
