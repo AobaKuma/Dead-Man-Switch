@@ -7,7 +7,7 @@
     <label>engineering drone bay</label>
     <description>A drone base station for facility maintenance and basic production work. The compute provided by its installed cluster control chipset lets simple drones carry out complex tasks. Commonly found in unmanned facilities and lights-out factories.\n\nCan deploy uca (maintenance and machinery operation) or erima (farming and plant care) drones.</description>
     <size>(3,3)</size>
-    <passability>Impassable</passability>
+    <passability>PassThroughOnly</passability>
     <uiIconScale>0.9</uiIconScale>
     <graphicData>
       <texPath>Things/Building/DMS_EngineeringBay</texPath>
