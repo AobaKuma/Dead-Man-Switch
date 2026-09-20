@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       荒廢殘餘站點：85x58 的戰前大型站點，半數建物已毀（古代磚瓦、報廢設備、殘骸），
+       但仍有一支殘餘分遣隊（Phalanx／Soldat／Hyrax／EscortLifter）駐守。
+       沒有電梯與門禁，純粹是「打進去、搜刮古代貨箱與殘骸」的大型戰場。
+       守軍由版面 PawnGroup 提供，sendSignalRadius 18 讓分遣隊互相支援。
+
+       Derelict remnant station: an 85x58 pre-war station, half of it wrecked
+       (ancient tile, destroyed machinery, wreckage), still held by a remnant
+       detachment (Phalanx / Soldat / Hyrax / EscortLifter). No elevator or
+       access gate — a large open battlefield to fight through and strip of
+       ancient crates and salvage. Garrison from the in-layout PawnGroup.
+       ============================================================ -->
+
+  <SitePartDef>
+    <defName>DMS_SiteStationSite</defName>
+    <label>derelict remnant station</label>
+    <description>A sprawling pre-war station, half of it collapsed, that a Legacy remnant detachment has dug into. Ancient supply crates and wrecked machinery are scattered through the ruins.</description>
+    <workerClass>Fortified.SitePartWorker_FFF_TimedHostileSite</workerClass>
+    <modExtensions>
+      <!-- 地圖大、守軍分散，倒數放寬一點。Big map, spread-out garrison: a bit more time. -->
+      <li Class="Fortified.FFF_TimedSiteExtension">
+        <baseEntryHours>40</baseEntryHours>
+        <minEntryHours>10</minEntryHours>
+        <maxEntryHours>80</maxEntryHours>
+        <entryLetterLabelKey>DMS_SiteStation_EntryCountdownLabel</entryLetterLabelKey>
+        <entryLetterTextKey>DMS_SiteStation_EntryCountdownText</entryLetterTextKey>
+      </li>
+    </modExtensions>
+    <!-- 世界地圖上用先鋒殘餘的陣營圖標，套陣營色。The Legacy faction icon on the world map, tinted with the faction colour. -->
+    <siteTexture>UI/Faction/LegacyIcon</siteTexture>
+    <expandingIconTexture>UI/Faction/LegacyIcon</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <minThreatPoints>400</minThreatPoints>
+    <!-- 版面 85x58 加衛星結構，地圖不能太小。85x58 plus satellites needs room. -->
+    <minMapSize>(250, 0, 250)</minMapSize>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <approachOrderString>Assault {0}</approachOrderString>
+    <approachingReportString>Assaulting {0}.</approachingReportString>
+    <arrivedLetter>You have arrived at the derelict station. A remnant detachment is dug in among the ruins.\n\nThe station is large and the garrison is spread out — expect them to converge once the shooting starts.</arrivedLetter>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <tags>
+      <li>DMS_SiteStationSite</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMS_SiteStationStructure</defName>
+    <linkWithSite>DMS_SiteStationSite</linkWithSite>
+    <order>400</order>
+    <genStep Class="Fortified.Structures.GenStep_FFFGarrisonedStructure">
+      <useTag>DMS_SiteStation</useTag>
+      <randomOffset>0~2</randomOffset>
+      <filthTypes>
+        <li>Filth_RubbleBuilding</li>
+        <li>Filth_RubbleRock</li>
+        <li>Filth_MachineBits</li>
+        <li>Filth_Ash</li>
+      </filthTypes>
+      <debrisDef>ChunkSlagSteel</debrisDef>
+      <debrisCount>14~22</debrisCount>
+      <scatterRadius>36</scatterRadius>
+      <lootMaker>MapGen_DefaultStockpile</lootMaker>
+      <!-- 版面自帶的 PawnGroup 之外，再依站點威脅點數生成一支守軍（LordJob_DefendPoint），
+           讓兵力隨難度縮放；[enemiesCount] 對應的就是這一支。
+           On top of the layout's own PawnGroup, spawn a garrison from the site's threat points
+           (LordJob_DefendPoint) so strength scales with difficulty; [enemiesCount] describes this group. -->
+      <spawnDefenders>true</spawnDefenders>
+      <defendRadius>26</defendRadius>
+      <!-- 主結構已佔去地圖中央大半，衛星只放外圈。
+           The main structure eats most of the centre; satellites go on the outer ring only. -->
+      <satelliteScatter>
+        <li>
+          <tag>DMS_RuinSatellite</tag>
+          <count>4~6</count>
+          <radiusPct>0.26</radiusPct>
+          <minRadius>58</minRadius>
+          <minSpacing>5</minSpacing>
+        </li>
+        <li>
+          <tag>DMS_RuinScattered</tag>
+          <count>1~2</count>
+          <radiusPct>0.36</radiusPct>
+          <minRadius>72</minRadius>
+          <minSpacing>6</minSpacing>
+        </li>
+      </satelliteScatter>
+    </genStep>
+  </GenStepDef>
+
+  <!-- 任務腳本在 DMS_LegacyInstallationQuest.xml：五座設施共用一個 QuestScriptDef，隨機抽一座。
+       The quest script lives in DMS_LegacyInstallationQuest.xml: one QuestScriptDef rolls one of the five installations. -->
+
+</Defs>

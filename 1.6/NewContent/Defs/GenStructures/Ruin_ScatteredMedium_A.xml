@@ -648,6 +648,9 @@
         <size>(6, 1)</size>
       </li>
     </elements>
+    <tags>
+      <li>DMS_SiteStruct</li>
+    </tags>
   </Fortified.Structures.FFF_StructureDef>
 
   <Fortified.Structures.FFF_StructureDef>
@@ -1546,6 +1549,9 @@
         </posList>
       </li>
     </elements>
+    <tags>
+      <li>DMS_SiteStruct</li>
+    </tags>
   </Fortified.Structures.FFF_StructureDef>
 
   <Fortified.Structures.FFF_StructureDef>
@@ -2455,6 +2461,9 @@
         </posList>
       </li>
     </elements>
+    <tags>
+      <li>DMS_SiteStruct</li>
+    </tags>
   </Fortified.Structures.FFF_StructureDef>
 
   <Fortified.Structures.FFF_StructureDef>
@@ -3416,6 +3425,9 @@
         <pos>(12, 0, 7)</pos>
       </li>
     </elements>
+    <tags>
+      <li>DMS_SiteStruct</li>
+    </tags>
   </Fortified.Structures.FFF_StructureDef>
 
   <Fortified.Structures.FFF_StructureDef>
@@ -3905,6 +3917,9 @@
         </posList>
       </li>
     </elements>
+    <tags>
+      <li>DMS_SiteStruct</li>
+    </tags>
   </Fortified.Structures.FFF_StructureDef>
 
   <Fortified.Structures.FFF_StructureDef>
@@ -4417,6 +4432,9 @@
         </posList>
       </li>
     </elements>
+    <tags>
+      <li>DMS_SiteStruct</li>
+    </tags>
   </Fortified.Structures.FFF_StructureDef>
 
   <Fortified.Structures.FFF_StructureDef>
@@ -5100,6 +5118,9 @@
         </posList>
       </li>
     </elements>
+    <tags>
+      <li>DMS_SiteStruct</li>
+    </tags>
   </Fortified.Structures.FFF_StructureDef>
 
   <Fortified.Structures.FFF_StructureDef>
@@ -6398,5 +6419,8 @@
         <size>(4, 1)</size>
       </li>
     </elements>
+    <tags>
+      <li>DMS_SiteStruct</li>
+    </tags>
   </Fortified.Structures.FFF_StructureDef>
 </Defs>

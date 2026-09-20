@@ -4,4 +4,11 @@
   <DMS_ElevatorUnlocked>Unlocked.</DMS_ElevatorUnlocked>
   <DMS_HoleEmerge_Triggered>A {0}-strong squad is climbing out of the {1}!</DMS_HoleEmerge_Triggered>
 
+  <DMS_AccessKeyTransform_Locked>Locked. Key-cards still required at linked access consoles: {0}</DMS_AccessKeyTransform_Locked>
+  <DMS_AccessKeyTransform_NoConsole>Locked. No access console is linked to it.</DMS_AccessKeyTransform_NoConsole>
+  <DMS_AccessKeyTransform_Unlocked>{THING_labelShort} has been unlocked.</DMS_AccessKeyTransform_Unlocked>
+
+  <DMS_DormantTurretWokenUp>{WAKER_labelShort} has woken a dormant turret.</DMS_DormantTurretWokenUp>
+  <DMS_DormantTurretWokenUpPlural>{WAKER_labelShort} has woken the dormant turrets.</DMS_DormantTurretWokenUpPlural>
+
 </LanguageData>

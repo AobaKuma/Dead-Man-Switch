@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	鬥牛犬背掛固定武裝的 CE 補丁。
+	兩者都是子砲塔（Fortified.CompPropertiesMultipleTurretGun），彈藥由機兵自身 inventory 供應：
+	FortifiedCE.CompProperties_TurretProjectileCE 見 Patch_SubTurretAmmo_CE.xml 的說明。
+	  霰彈型：CE 下改為 KS-23（23x75mmR），數值比照 AncientCorps 的 KS-23K。
+	  噴火型：與壁虎相同，把 DMS_Flameblaster 換成 CE 專用的 DMS_Gecko_FlameTurret（自帶供彈 comp）。
+	CE patch for the BullHound's fixed back mounts. Both are sub-turrets (Fortified.CompPropertiesMultipleTurretGun)
+	fed from the mech's own inventory; see Patch_SubTurretAmmo_CE.xml for how CompProperties_TurretProjectileCE works.
+	  Shotgun pattern: becomes a KS-23 (23x75mmR) under CE, numbers after AncientCorps' KS-23K.
+	  Flamer pattern: as the Gecko, DMS_Flameblaster is swapped for the CE-only DMS_Gecko_FlameTurret (has its own ammo comp).
+-->
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<!--===== 霰彈型：KS-23 / shotgun pattern: KS-23 =====-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_BullHound_ShotgunMounted"]/label</xpath>
+				<value>
+					<label>mounted KS-23</label>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_BullHound_ShotgunMounted"]/description</xpath>
+				<value>
+					<description>A KS-23 carbine shotgun fixed to a bullhound's back mount. Its 23x75mmR shells are built to stop intruders in corridors and doorways outright.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
+				</value>
+			</li>
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_BullHound_ShotgunMounted</defName>
+				<statBases>
+					<Mass>6.75</Mass>
+					<Bulk>11.2</Bulk>
+					<SwayFactor>1.41</SwayFactor>
+					<ShotSpread>0.15</ShotSpread>
+					<SightsEfficiency>1.0</SightsEfficiency>
+					<RangedWeapon_Cooldown>0.75</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_23x75mmR_Buck</defaultProjectile>
+					<warmupTime>0.6</warmupTime>
+					<range>17</range>
+					<soundCast>Shot_Shotgun</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>9</muzzleFlashScale>
+					<recoilAmount>2.89</recoilAmount>
+					<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+					<burstShotCount>3</burstShotCount>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+					<recoilPattern>Mounted</recoilPattern>
+				</Properties>
+				<AmmoUser>
+					<magazineSize>7</magazineSize>
+					<reloadTime>4.5</reloadTime>
+					<ammoSet>AmmoSet_23x75mmR</ammoSet>
+				</AmmoUser>
+				<FireModes>
+					<aiAimMode>Snapshot</aiAimMode>
+					<aimedBurstShotCount>2</aimedBurstShotCount>
+				</FireModes>
+				<weaponTags>
+					<li>CE_AI_BROOM</li>
+					<li>NoSwitch</li>
+				</weaponTags>
+			</li>
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="DMS_BullHound_ShotgunMounted"]/comps</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="DMS_BullHound_ShotgunMounted"]/comps</xpath>
+					<value>
+						<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+							<ammoSet>AmmoSet_23x75mmR</ammoSet>
+							<defaultAmmoPickUp>30</defaultAmmoPickUp>
+							<startingAmmoRange>15~30</startingAmmoRange>
+						</li>
+					</value>
+				</match>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="DMS_BullHound_ShotgunMounted"]</xpath>
+					<value>
+						<comps>
+							<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+								<ammoSet>AmmoSet_23x75mmR</ammoSet>
+								<defaultAmmoPickUp>30</defaultAmmoPickUp>
+								<startingAmmoRange>15~30</startingAmmoRange>
+							</li>
+						</comps>
+					</value>
+				</nomatch>
+			</li>
+
+			<!--===== 噴火型：換成 CE 專用火焰砲塔 / flamer pattern: swap to the CE flame turret =====-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_BullHound_Flamer"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="flame projector"]/turret</xpath>
+				<value>
+					<turret>DMS_Gecko_FlameTurret</turret>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

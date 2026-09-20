@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       殘餘前進基地：鐵絲網圍起的野戰行動基地。地面有口糧／輕武器／零件／義體物資箱，
+       後方一座貨運電梯（DMS_VaultElevator，需駭入）通往地下儲存庫，
+       電梯前的密封防爆門由兩座 DMS_VaultConsole 把關（版面裡兩條 LinkAccessKeyWanter）。
+       守軍為 Soldat／Ape／Noctula，由版面 PawnGroup 提供。
+
+       Remnant forward operating base: a razor-wired field base. Supply crates
+       (rations / small arms / parts / prosthetics) on the surface, and a freight
+       elevator (DMS_VaultElevator, hackable) at the back leading into a buried
+       store; the blast doors in front of it answer to two DMS_VaultConsoles
+       (two LinkAccessKeyWanter elements in the layout). Garrison (Soldat / Ape /
+       Noctula) comes from the in-layout PawnGroup.
+       ============================================================ -->
+
+  <SitePartDef>
+    <defName>DMS_OperationBaseSite</defName>
+    <label>remnant forward base</label>
+    <description>A Legacy remnant forward operating base. Razor wire, sandbags and a supply dump on the surface; a freight elevator into a buried store behind two sets of blast doors.</description>
+    <workerClass>Fortified.SitePartWorker_FFF_TimedHostileSite</workerClass>
+    <modExtensions>
+      <li Class="Fortified.FFF_TimedSiteExtension">
+        <baseEntryHours>32</baseEntryHours>
+        <minEntryHours>8</minEntryHours>
+        <maxEntryHours>64</maxEntryHours>
+        <entryLetterLabelKey>DMS_OperationBase_EntryCountdownLabel</entryLetterLabelKey>
+        <entryLetterTextKey>DMS_OperationBase_EntryCountdownText</entryLetterTextKey>
+      </li>
+    </modExtensions>
+    <!-- 世界地圖上用先鋒殘餘的陣營圖標，套陣營色。The Legacy faction icon on the world map, tinted with the faction colour. -->
+    <siteTexture>UI/Faction/LegacyIcon</siteTexture>
+    <expandingIconTexture>UI/Faction/LegacyIcon</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <minThreatPoints>600</minThreatPoints>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <approachOrderString>Assault {0}</approachOrderString>
+    <approachingReportString>Assaulting {0}.</approachingReportString>
+    <arrivedLetter>You have arrived at the remnant forward base. A line infantry garrison holds the wire.\n\nThe supply dump is in the open. The freight elevator at the back is behind blast doors that answer to two security consoles; hack both, then hack the lift itself to go down.</arrivedLetter>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <tags>
+      <li>DMS_OperationBaseSite</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMS_OperationBaseStructure</defName>
+    <linkWithSite>DMS_OperationBaseSite</linkWithSite>
+    <order>400</order>
+    <genStep Class="Fortified.Structures.GenStep_FFFGarrisonedStructure">
+      <useTag>DMS_OperationBase</useTag>
+      <randomOffset>0~3</randomOffset>
+      <filthTypes>
+        <li>Filth_RubbleBuilding</li>
+        <li>Filth_MachineBits</li>
+        <li>Filth_Ash</li>
+      </filthTypes>
+      <debrisDef>ChunkSlagSteel</debrisDef>
+      <debrisCount>8~14</debrisCount>
+      <scatterRadius>28</scatterRadius>
+      <lootMaker>MapGen_DefaultStockpile</lootMaker>
+      <!-- 版面自帶的 PawnGroup 之外，再依站點威脅點數生成一支守軍（LordJob_DefendPoint），
+           讓兵力隨難度縮放；[enemiesCount] 對應的就是這一支。
+           On top of the layout's own PawnGroup, spawn a garrison from the site's threat points
+           (LordJob_DefendPoint) so strength scales with difficulty; [enemiesCount] describes this group. -->
+      <spawnDefenders>true</spawnDefenders>
+      <defendRadius>24</defendRadius>
+      <satelliteScatter>
+        <li>
+          <tag>DMS_DecoySiteEdgeRuin</tag>
+          <count>1~2</count>
+          <radiusPct>0.22</radiusPct>
+          <minRadius>40</minRadius>
+          <minSpacing>6</minSpacing>
+        </li>
+        <li>
+          <tag>DMS_RuinSatellite</tag>
+          <count>4~6</count>
+          <radiusPct>0.18</radiusPct>
+          <minRadius>36</minRadius>
+          <minSpacing>5</minSpacing>
+        </li>
+        <li>
+          <tag>DMS_RuinScattered</tag>
+          <count>2</count>
+          <radiusPct>0.32</radiusPct>
+          <minRadius>48</minRadius>
+          <minSpacing>6</minSpacing>
+        </li>
+      </satelliteScatter>
+    </genStep>
+  </GenStepDef>
+
+  <!-- 任務腳本在 DMS_LegacyInstallationQuest.xml：五座設施共用一個 QuestScriptDef，隨機抽一座。
+       The quest script lives in DMS_LegacyInstallationQuest.xml: one QuestScriptDef rolls one of the five installations. -->
+
+</Defs>

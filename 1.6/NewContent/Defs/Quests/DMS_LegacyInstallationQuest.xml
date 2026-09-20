@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       先鋒殘餘設施：一個任務涵蓋五座站點（機場另有專屬任務 DMS_AirportAssault）。
+       DMS.QuestNode_Root_DMS_RandomInstallation 依威脅點數過濾、依權重抽一座，
+       把 sitePartDef 與逾期／肅清信件鍵寫回 FFF 的根節點，並提供語法常數 installation
+       （值為 SitePartDef 的 defName）讓名稱與描述分流。
+       每座站點的 SitePartDef／GenStepDef 仍在各自的 DMS_LegacySite_*.xml。
+
+       Legacy remnant installations: one quest covering five sites (the airfield keeps
+       its own DMS_AirportAssault). DMS.QuestNode_Root_DMS_RandomInstallation filters by
+       threat points, rolls one by weight, writes the sitePartDef and expiry / cleared letter
+       keys into FFF's root node, and exposes the grammar constant "installation" (the
+       SitePartDef's defName) so name and description can branch on it. Each site's
+       SitePartDef / GenStepDef stays in its own DMS_LegacySite_*.xml.
+       ============================================================ -->
+
+  <QuestScriptDef>
+    <defName>DMS_LegacyInstallationAssault</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Military</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Military</failedOrExpiredHistoryEvent>
+    <!-- 與海盜組裝廠同級。門檻取最低的一座（發射場）；其餘由 installations 的 minPoints 把關。
+         Same tier as the pirate assembly yard. The floor is the lowest site's (launch site); the rest gate on minPoints. -->
+    <rootSelectionWeight>1.0</rootSelectionWeight>
+    <rootMinPoints>300</rootMinPoints>
+    <expireDaysRange>4~8</expireDaysRange>
+    <sendAvailableLetter>true</sendAvailableLetter>
+    <questNameRules>
+      <rulesStrings>
+        <!-- 儲存庫地面站 / Vault access station -->
+        <li>questName(installation==DMS_VaultStationSite)->Buried arsenal</li>
+        <li>questName(installation==DMS_VaultStationSite)->The [vault]</li>
+        <li>vault->Sealed vault</li>
+        <li>vault->Storage vault</li>
+        <li>vault->Deep store</li>
+        <!-- 維修站 / Repair depot -->
+        <li>questName(installation==DMS_RepairStationSite)->Depot raid</li>
+        <li>questName(installation==DMS_RepairStationSite)->The [depot]</li>
+        <li>depot->Repair depot</li>
+        <li>depot->Maintenance yard</li>
+        <li>depot->Cradle yard</li>
+        <!-- 前進基地 / Forward base -->
+        <li>questName(installation==DMS_OperationBaseSite)->Forward base</li>
+        <li>questName(installation==DMS_OperationBaseSite)->The [base]</li>
+        <li>base->Remnant FOB</li>
+        <li>base->Wire perimeter</li>
+        <li>base->Supply dump</li>
+        <!-- 荒廢站點 / Derelict station -->
+        <li>questName(installation==DMS_SiteStationSite)->Derelict station</li>
+        <li>questName(installation==DMS_SiteStationSite)->The [station]</li>
+        <li>station->Dead station</li>
+        <li>station->Old station</li>
+        <li>station->Rusted station</li>
+        <!-- 廢棄發射場 / Abandoned launch site -->
+        <li>questName(installation==DMS_LaunchSiteSite)->Launch site salvage</li>
+        <li>questName(installation==DMS_LaunchSiteSite)->The [site]</li>
+        <li>site->Dead launch site</li>
+        <li>site->Silo field</li>
+        <li>site->Wrecked pad</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <!-- 儲存庫地面站 / Vault access station -->
+        <li>questDescription(installation==DMS_VaultStationSite)->A supply manifest recovered from remnant traffic lists a [siteFactionName] storage vault — and the surface station that sits on top of it. The station is still manned by (*Threat)[enemiesCount] [enemiesLabel](/Threat), and heavy units are among them.\n\nThe freight elevator into the vault is locked under an armored cover plate. The station's security console is the only thing that can raise it; hack it and the shaft opens. The car still has power, so what is below was never collected.\n\nThe manifest's location fix expires in [siteTimeout]. After that the station will relocate and its position will be lost.\n\nCaution: it is a hostile installation. Once you enter, its monitoring protocol will summon enemy reinforcements after a countdown. Get the shaft open, then decide whether to hold the surface or go down.</li>
+
+        <!-- 維修站 / Repair depot -->
+        <li>questDescription(installation==DMS_RepairStationSite)->A maintenance request on the remnant network leads to a [siteFactionName] field repair depot. The depot is guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat) — engineers, riflemen and a drone screen.\n\nTwo units are still clamped in the depot's cradles, in hibernation, behind a sealed maintenance door. They were never re-authenticated after servicing, so a mechanitor with spare bandwidth can hack one and take it. The depot's security console releases the door. There is also a mobile crew lifter on the pad and a stock of tungsteel in the stores.\n\nThe request's location fix expires in [siteTimeout]. After that the depot will relocate and its position will be lost.\n\nCaution: it is a hostile installation. Once you enter, its monitoring protocol will summon enemy reinforcements after a countdown.</li>
+
+        <!-- 前進基地 / Forward base -->
+        <li>questDescription(installation==DMS_OperationBaseSite)->Remnant traffic has given away a [siteFactionName] forward operating base. It is held by (*Threat)[enemiesCount] [enemiesLabel](/Threat): line infantry behind the wire, with heavy support and night-capable units in reserve.\n\nThe base is a supply hub. Crates of rations, small arms, spare parts and prosthetics sit in the open, and a freight elevator at the back of the compound leads down into a buried store. The blast doors in front of it answer to two security consoles; hack both to open the way, then hack the lift itself.\n\nThe position fix holds for [siteTimeout]. After that the base will strike camp and its position will be lost.\n\nCaution: it is a hostile installation. Once you enter, its monitoring protocol will summon enemy reinforcements after a countdown.</li>
+
+        <!-- 荒廢站點 / Derelict station -->
+        <li>questDescription(installation==DMS_SiteStationSite)->A pre-war station, half of it collapsed, has been located nearby. A [siteFactionName] detachment has dug into the ruins: (*Threat)[enemiesCount] [enemiesLabel](/Threat), shield-bearers and infantry with drone and lifter support, spread across the station's halls.\n\nThe station was abandoned in a hurry. Ancient supply crates, industrial shelving and the wrecks of the old security systems are still scattered through it, along with a working pod launcher pair. Everything the detachment has not already stripped is yours.\n\nThe detachment is expected to move on in [siteTimeout]. After that the station will be picked clean and no longer worth the trip.\n\nCaution: it is a hostile installation. Once you enter, its monitoring protocol will summon enemy reinforcements after a countdown — and the station is large enough to get lost in.</li>
+
+        <!-- 廢棄發射場 / Abandoned launch site -->
+        <li>questDescription(installation==DMS_LaunchSiteSite)->An old missile launch complex has turned up on the scanners. The launchers were destroyed long ago and the compound is falling apart, but a [siteFactionName] patrol of (*Threat)[enemiesCount] [enemiesLabel](/Threat) still sweeps the wreckage.\n\nNobody ever salvaged the place. Wrecked automatroids, a logistics container, sensor and radar mounts and the remains of the launch crews' equipment are all still where they fell.\n\nThe patrol's schedule puts it there for another [siteTimeout]. After that it moves on and the site's position is lost.\n\nCaution: it is a hostile installation. Once you enter, the patrol's monitoring protocol will summon enemy reinforcements after a countdown.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="DMS.QuestNode_Root_DMS_RandomInstallation">
+      <factionDef>DMS_Legacy</factionDef>
+      <baseTimeoutDays>16</baseTimeoutDays>
+      <minTimeoutDays>4</minTimeoutDays>
+      <maxTimeoutDays>30</maxTimeoutDays>
+      <!-- 權重與 minPoints 沿用先前各自任務的設定：入門級的發射場較常出現、重型設施要到中後期。
+           Weights and minPoints carry over from the former per-site quests: the entry-level launch
+           site shows up most, the heavy installations wait for the mid game. -->
+      <installations>
+        <li>
+          <sitePartDef>DMS_LaunchSiteSite</sitePartDef>
+          <weight>1.2</weight>
+          <minPoints>300</minPoints>
+          <expiredLetterLabelKey>DMS_LaunchSite_ExpiredLabel</expiredLetterLabelKey>
+          <expiredLetterTextKey>DMS_LaunchSite_ExpiredText</expiredLetterTextKey>
+          <clearedLetterLabelKey>DMS_LaunchSite_ClearedLabel</clearedLetterLabelKey>
+          <clearedLetterTextKey>DMS_LaunchSite_ClearedText</clearedLetterTextKey>
+        </li>
+        <li>
+          <sitePartDef>DMS_SiteStationSite</sitePartDef>
+          <weight>1</weight>
+          <minPoints>500</minPoints>
+          <expiredLetterLabelKey>DMS_SiteStation_ExpiredLabel</expiredLetterLabelKey>
+          <expiredLetterTextKey>DMS_SiteStation_ExpiredText</expiredLetterTextKey>
+          <clearedLetterLabelKey>DMS_SiteStation_ClearedLabel</clearedLetterLabelKey>
+          <clearedLetterTextKey>DMS_SiteStation_ClearedText</clearedLetterTextKey>
+        </li>
+        <li>
+          <sitePartDef>DMS_RepairStationSite</sitePartDef>
+          <weight>1</weight>
+          <minPoints>700</minPoints>
+          <expiredLetterLabelKey>DMS_RepairStation_ExpiredLabel</expiredLetterLabelKey>
+          <expiredLetterTextKey>DMS_RepairStation_ExpiredText</expiredLetterTextKey>
+          <clearedLetterLabelKey>DMS_RepairStation_ClearedLabel</clearedLetterLabelKey>
+          <clearedLetterTextKey>DMS_RepairStation_ClearedText</clearedLetterTextKey>
+        </li>
+        <li>
+          <sitePartDef>DMS_OperationBaseSite</sitePartDef>
+          <weight>1</weight>
+          <minPoints>900</minPoints>
+          <expiredLetterLabelKey>DMS_OperationBase_ExpiredLabel</expiredLetterLabelKey>
+          <expiredLetterTextKey>DMS_OperationBase_ExpiredText</expiredLetterTextKey>
+          <clearedLetterLabelKey>DMS_OperationBase_ClearedLabel</clearedLetterLabelKey>
+          <clearedLetterTextKey>DMS_OperationBase_ClearedText</clearedLetterTextKey>
+        </li>
+        <li>
+          <sitePartDef>DMS_VaultStationSite</sitePartDef>
+          <weight>1</weight>
+          <minPoints>900</minPoints>
+          <expiredLetterLabelKey>DMS_VaultStation_ExpiredLabel</expiredLetterLabelKey>
+          <expiredLetterTextKey>DMS_VaultStation_ExpiredText</expiredLetterTextKey>
+          <clearedLetterLabelKey>DMS_VaultStation_ClearedLabel</clearedLetterLabelKey>
+          <clearedLetterTextKey>DMS_VaultStation_ClearedText</clearedLetterTextKey>
+        </li>
+      </installations>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

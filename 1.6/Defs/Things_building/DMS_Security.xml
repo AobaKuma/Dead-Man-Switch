@@ -23,10 +23,44 @@
     <tickerType>Normal</tickerType>
     <designationCategory>DMS_Category</designationCategory>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <!-- CompCanBeDormant 需要 / required by CompCanBeDormant -->
+    <receivesSignals>true</receivesSignals>
     <comps>
       <li MayRequire="VanillaExpanded.VFEA" Class="VFEAncients.CompProperties_SolarPowerUp" />
       <li Class="CompProperties_Forbiddable" />
       <li Class="CompProperties_Flickable" />
+      <!-- 休眠：只在地圖生成期、以 NPC 陣營生成時有 npcDormantChance 的機率睡著（DMS.CompCanBeDormant_NPCChance）；
+           玩家蓋的、敵人戰鬥中部署的一律醒著。睡著時 Building_TurretGun.Active 為 false，不開火也不被自動鎖定。
+           喚醒：警戒掃描器的 FFF_AlertScanner_Triggered 訊號、挨打、殖民者走進 wakeUpCheckRadius、玩家在旁邊施工；
+           醒來時轉播同一訊號叫醒附近的其他休眠砲塔。
+           掛在基底上，所有沿用 <comps> 合併的自動砲塔都會繼承；用 <comps Inherit="false"> 的有人操作砲塔
+           （Vasilek、LMG、AGL、HMG）刻意不套用 —— 它們本來就要有人上機才會開火。
+           Dormancy: only when spawned for an NPC faction during map generation, with npcDormantChance
+           (DMS.CompCanBeDormant_NPCChance); player-built and combat-deployed copies stay awake. Asleep,
+           Building_TurretGun.Active is false: no firing, no auto-targeting. Wakes on the alert scanners'
+           FFF_AlertScanner_Triggered signal, on damage, on a colonist inside wakeUpCheckRadius or on nearby
+           player construction, and re-broadcasts the signal to wake neighbouring turrets.
+           Lives on the base so every automatic turret that merges <comps> inherits it; the manned turrets
+           that use <comps Inherit="false"> (Vasilek, LMG, AGL, HMG) deliberately skip it, since they need a
+           gunner to fire anyway. -->
+      <li Class="DMS.CompProperties_CanBeDormant_NPCChance">
+        <npcDormantChance>0.65</npcDormantChance>
+        <wakeUpSignalTag>FFF_AlertScanner_Triggered</wakeUpSignalTag>
+        <maxDistAwakenByOther>25</maxDistAwakenByOther>
+        <wakeUpDelayRange>60~240</wakeUpDelayRange>
+        <canWakeUpFogged>false</canWakeUpFogged>
+      </li>
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpSignalTag>FFF_AlertScanner_Triggered</wakeUpSignalTag>
+        <wakeUpOnDamage>true</wakeUpOnDamage>
+        <wakeUpIfAnyTargetClose>true</wakeUpIfAnyTargetClose>
+        <wakeUpCheckRadius>5.9</wakeUpCheckRadius>
+        <wakeUpOnThingConstructedRadius>3</wakeUpOnThingConstructedRadius>
+        <wakeUpWithDelay>true</wakeUpWithDelay>
+        <onlyWakeUpSameFaction>true</onlyWakeUpSameFaction>
+        <activateMessageKey>DMS_DormantTurretWokenUp</activateMessageKey>
+        <activatePluralMessageKey>DMS_DormantTurretWokenUpPlural</activatePluralMessageKey>
+      </li>
     </comps>
     <modExtensions>
       <li Class="Fortified.ForceTargetableExtension" />

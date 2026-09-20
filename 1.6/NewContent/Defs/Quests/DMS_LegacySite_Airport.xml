@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       殘餘機場：集群織鳥 Boss 的客場地圖。
+       版面（DMS_Airport，Site_LegacyInstallations.xml）本身已放好 DMS_DecoyTransmitter：
+       清掉守軍後在現場啟動它，織鳥會直接降落在機場而不是玩家殖民地。
+       跑道下方另有一座貨運電梯（DMS_VaultElevator），由兩座安全控制台把關。
+       守軍 = 版面內的 FFF_Element_PawnGroup + GenStep 依威脅點數生成的守軍。
+
+       Remnant airfield: the away map for the cluster weaver boss.
+       The layout (DMS_Airport in Site_LegacyInstallations.xml) already carries a
+       DMS_DecoyTransmitter; fire it after the garrison is dead and the weaver
+       lands on the airfield instead of on the colony. A freight elevator under
+       the aprons is gated by two security consoles. The garrison comes from
+       the in-layout FFF_Element_PawnGroup plus the GenStep's threat-point garrison.
+       ============================================================ -->
+
+  <SitePartDef>
+    <defName>DMS_AirportSite</defName>
+    <label>remnant airfield</label>
+    <description>A Legacy remnant drone airfield. The control tower still runs a high-powered decoy radio tuned to the cluster weaver's command band — once the garrison is dealt with, the transmitter can call the mothership down onto the airfield instead of onto your home.</description>
+    <workerClass>Fortified.SitePartWorker_FFF_TimedHostileSite</workerClass>
+    <modExtensions>
+      <!-- 客場 Boss 戰需要時間，倒數比一般站點寬鬆。
+           A boss fight on an away map takes time; looser countdown than the other sites. -->
+      <li Class="Fortified.FFF_TimedSiteExtension">
+        <baseEntryHours>48</baseEntryHours>
+        <minEntryHours>12</minEntryHours>
+        <maxEntryHours>96</maxEntryHours>
+        <entryLetterLabelKey>DMS_Airport_EntryCountdownLabel</entryLetterLabelKey>
+        <entryLetterTextKey>DMS_Airport_EntryCountdownText</entryLetterTextKey>
+      </li>
+    </modExtensions>
+    <!-- 世界地圖上用先鋒殘餘的陣營圖標，套陣營色。The Legacy faction icon on the world map, tinted with the faction colour. -->
+    <siteTexture>UI/Faction/LegacyIcon</siteTexture>
+    <expandingIconTexture>UI/Faction/LegacyIcon</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <minThreatPoints>800</minThreatPoints>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <approachOrderString>Assault {0}</approachOrderString>
+    <approachingReportString>Assaulting {0}.</approachingReportString>
+    <arrivedLetter>You have arrived at the remnant airfield. A drone garrison holds the tower and the aprons.\n\nThe decoy radio in the tower is intact. Clear the field, then use it to call the cluster weaver down here — far from your colony.</arrivedLetter>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <tags>
+      <li>DMS_AirportSite</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMS_AirportStructure</defName>
+    <linkWithSite>DMS_AirportSite</linkWithSite>
+    <order>400</order>
+    <genStep Class="Fortified.Structures.GenStep_FFFGarrisonedStructure">
+      <useTag>DMS_Airport</useTag>
+      <randomOffset>0~3</randomOffset>
+      <filthTypes>
+        <li>Filth_RubbleBuilding</li>
+        <li>Filth_MachineBits</li>
+        <li>Filth_Ash</li>
+      </filthTypes>
+      <!-- 版面已放 DMS_DecoyTransmitter；保底一座，版面若被裁切仍有召喚器。
+           The layout places DMS_DecoyTransmitter; keep it as the centerpiece so a clipped layout still has one. -->
+      <centerpieceDef>DMS_DecoyTransmitter</centerpieceDef>
+      <debrisDef>ChunkSlagSteel</debrisDef>
+      <debrisCount>8~14</debrisCount>
+      <scatterRadius>30</scatterRadius>
+      <lootMaker>MapGen_DefaultStockpile</lootMaker>
+      <!-- 版面自帶的 PawnGroup 之外，再依站點威脅點數生成一支守軍（LordJob_DefendPoint），
+           讓兵力隨難度縮放；[enemiesCount] 對應的就是這一支。
+           On top of the layout's own PawnGroup, spawn a garrison from the site's threat points
+           (LordJob_DefendPoint) so strength scales with difficulty; [enemiesCount] describes this group. -->
+      <spawnDefenders>true</spawnDefenders>
+      <defendRadius>22</defendRadius>
+      <satelliteScatter>
+        <li>
+          <tag>DMS_DecoySiteEdgeRuin</tag>
+          <count>1~2</count>
+          <radiusPct>0.24</radiusPct>
+          <minRadius>48</minRadius>
+          <minSpacing>6</minSpacing>
+        </li>
+        <li>
+          <tag>DMS_RuinSatellite</tag>
+          <count>4~6</count>
+          <radiusPct>0.2</radiusPct>
+          <minRadius>44</minRadius>
+          <minSpacing>5</minSpacing>
+        </li>
+        <li>
+          <tag>DMS_RuinScattered</tag>
+          <count>2</count>
+          <radiusPct>0.34</radiusPct>
+          <minRadius>56</minRadius>
+          <minSpacing>6</minSpacing>
+        </li>
+      </satelliteScatter>
+    </genStep>
+  </GenStepDef>
+
+  <!-- ==================== 任務腳本 Quest script ==================== -->
+
+  <QuestScriptDef>
+    <defName>DMS_AirportAssault</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Military</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Military</failedOrExpiredHistoryEvent>
+    <!-- 隨機任務；門檻設高，讓它只在殖民地已經扛得住織鳥時出現。
+         Random quest; the high floor keeps it away until the colony can take a weaver. -->
+    <rootSelectionWeight>0.4</rootSelectionWeight>
+    <rootMinPoints>1200</rootMinPoints>
+    <expireDaysRange>4~8</expireDaysRange>
+    <sendAvailableLetter>true</sendAvailableLetter>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Silent airfield</li>
+        <li>questName->The [field]</li>
+        <li>field->Remnant airfield</li>
+        <li>field->Drone field</li>
+        <li>field->Weaver's roost</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->Intercepted telemetry points to a [siteFactionName] drone airfield. The field is still active: a garrison of (*Threat)[enemiesCount] [enemiesLabel](/Threat) patrols the tower and the aprons, and the tower's decoy radio is still tuned to the command band of the cluster weaver.\n\nThat radio is the prize. Clear the field and it can be used to call the weaver down onto the airfield — on ground of your choosing, far from your colony. Whatever the mothership drops when it falls is yours to strip.\n\nBeneath the aprons there is also a freight elevator into a buried storage vault. Its blast doors answer to two security consoles in the tower; hack both to open the shaft.\n\nThe telemetry fix holds for [siteTimeout]. After that the field goes dark and its position is lost.\n\nCaution: it is a hostile installation. Once you enter, its monitoring protocol will summon enemy reinforcements after a countdown — and the weaver will not wait for you to finish with them.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="Fortified.QuestNode_Root_FFF_TimedHostileSite">
+      <factionDef>DMS_Legacy</factionDef>
+      <sitePartDef>DMS_AirportSite</sitePartDef>
+      <baseTimeoutDays>16</baseTimeoutDays>
+      <minTimeoutDays>4</minTimeoutDays>
+      <maxTimeoutDays>30</maxTimeoutDays>
+      <expiredLetterLabelKey>DMS_Airport_ExpiredLabel</expiredLetterLabelKey>
+      <expiredLetterTextKey>DMS_Airport_ExpiredText</expiredLetterTextKey>
+      <clearedLetterLabelKey>DMS_Airport_ClearedLabel</clearedLetterLabelKey>
+      <clearedLetterTextKey>DMS_Airport_ClearedText</clearedLetterTextKey>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

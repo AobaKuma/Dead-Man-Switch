@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Fortified;
 using RimWorld;
 using Verse;
 
@@ -24,6 +26,25 @@ namespace DMS
                 VaultRoomUtility.FillWithPadding(map, room, "DMS_MechCapsule_VaultFrame", FrameRange.RandomInRange, 3);
                 VaultRoomUtility.FillWithPadding(map, room, "DMS_MechCapsule_VaultAssault", AssaultRange.RandomInRange, 2);
                 VaultRoomUtility.FillWithPadding(map, room, "DMS_MechCapsule_VaultInfantry", InfantryRange.RandomInRange, 2);
+            }
+
+            // 版面是無陣營鋪的（門與家具才不會被鎖成敵方所有），所以封存艙在這裡才補上防務陣營；
+            // 艙裡的機兵是 SpawnSetup 時就用艙的陣營生成的，得連機兵一起換，否則放出來的是不敵對的遠古機兵。
+            // The layout spawns factionless (so doors and furniture stay usable), so the cradles get the defender
+            // faction here. Their mechs were generated in SpawnSetup with the capsule's then-faction, so they are
+            // re-factioned too; otherwise an alarm releases non-hostile Ancients mechs.
+            Faction defenders = faction ?? VaultRoomUtility.DefenderFaction;
+            HashSet<Thing> seen = new HashSet<Thing>();
+            foreach (IntVec3 c in room.Cells)
+            {
+                List<Thing> things = c.GetThingList(map);
+                for (int i = 0; i < things.Count; i++)
+                {
+                    if (things[i] is Building_MechCapsule capsule && seen.Add(capsule))
+                    {
+                        VaultRoomUtility.SetDefenderFaction(capsule, defenders);
+                    }
+                }
             }
 
             base.FillRoom(map, room, faction, threatPoints);

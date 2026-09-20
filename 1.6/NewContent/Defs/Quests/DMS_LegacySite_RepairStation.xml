@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       殘餘維修站：野戰維修車間。獎勵是版面裡兩座封存艙
+       （DMS_MechCapsule_VaultInfantry / VaultAssault，機械師可駭入收編），
+       鎖在密封捲門後、由 DMS_VaultConsole 放行；另有行動人員升降艙與鎢鋼庫存。
+       守軍為 Pioneer／Arquebusier／Falcon，由版面 PawnGroup 提供。
+
+       Remnant repair depot: a field maintenance yard. The prize is the pair of
+       mothballed mech cradles in the layout (hackable by a mechanitor), behind a
+       sealed rolling door released by the DMS_VaultConsole; plus a mobile crew
+       lifter and a tungsteel stock. Garrison (Pioneer / Arquebusier / Falcon)
+       comes from the in-layout PawnGroup.
+       ============================================================ -->
+
+  <SitePartDef>
+    <defName>DMS_RepairStationSite</defName>
+    <label>remnant repair depot</label>
+    <description>A Legacy remnant field maintenance depot. Units too damaged to walk were cradled here for servicing; two of them are still clamped in their cradles behind a sealed door, waiting for a crew that never came back.</description>
+    <workerClass>Fortified.SitePartWorker_FFF_TimedHostileSite</workerClass>
+    <modExtensions>
+      <li Class="Fortified.FFF_TimedSiteExtension">
+        <baseEntryHours>30</baseEntryHours>
+        <minEntryHours>6</minEntryHours>
+        <maxEntryHours>60</maxEntryHours>
+        <entryLetterLabelKey>DMS_RepairStation_EntryCountdownLabel</entryLetterLabelKey>
+        <entryLetterTextKey>DMS_RepairStation_EntryCountdownText</entryLetterTextKey>
+      </li>
+    </modExtensions>
+    <!-- 世界地圖上用先鋒殘餘的陣營圖標，套陣營色。The Legacy faction icon on the world map, tinted with the faction colour. -->
+    <siteTexture>UI/Faction/LegacyIcon</siteTexture>
+    <expandingIconTexture>UI/Faction/LegacyIcon</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <minThreatPoints>500</minThreatPoints>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <approachOrderString>Assault {0}</approachOrderString>
+    <approachingReportString>Assaulting {0}.</approachingReportString>
+    <arrivedLetter>You have arrived at the remnant repair depot. Automatroids and their drone escorts hold the yard.\n\nThe maintenance bay is sealed. Hack the depot's security console to release the door and reach the cradled units inside.</arrivedLetter>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <tags>
+      <li>DMS_RepairStationSite</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMS_RepairStationStructure</defName>
+    <linkWithSite>DMS_RepairStationSite</linkWithSite>
+    <order>400</order>
+    <genStep Class="Fortified.Structures.GenStep_FFFGarrisonedStructure">
+      <useTag>DMS_RepairStation</useTag>
+      <randomOffset>0~3</randomOffset>
+      <filthTypes>
+        <li>Filth_RubbleBuilding</li>
+        <li>Filth_MachineBits</li>
+        <li>Filth_Fuel</li>
+      </filthTypes>
+      <!-- 維修站，殘骸多一些。A repair yard: more scrap lying around. -->
+      <debrisDef>ChunkSlagSteel</debrisDef>
+      <debrisCount>12~20</debrisCount>
+      <scatterRadius>28</scatterRadius>
+      <lootMaker>MapGen_DefaultStockpile</lootMaker>
+      <!-- 版面自帶的 PawnGroup 之外，再依站點威脅點數生成一支守軍（LordJob_DefendPoint），
+           讓兵力隨難度縮放；[enemiesCount] 對應的就是這一支。
+           On top of the layout's own PawnGroup, spawn a garrison from the site's threat points
+           (LordJob_DefendPoint) so strength scales with difficulty; [enemiesCount] describes this group. -->
+      <spawnDefenders>true</spawnDefenders>
+      <defendRadius>24</defendRadius>
+      <satelliteScatter>
+        <li>
+          <tag>DMS_DecoySiteEdgeRuin</tag>
+          <count>1~2</count>
+          <radiusPct>0.22</radiusPct>
+          <minRadius>42</minRadius>
+          <minSpacing>6</minSpacing>
+        </li>
+        <li>
+          <tag>DMS_RuinSatellite</tag>
+          <count>4~6</count>
+          <radiusPct>0.18</radiusPct>
+          <minRadius>38</minRadius>
+          <minSpacing>5</minSpacing>
+        </li>
+        <li>
+          <tag>DMS_RuinScattered</tag>
+          <count>2</count>
+          <radiusPct>0.32</radiusPct>
+          <minRadius>50</minRadius>
+          <minSpacing>6</minSpacing>
+        </li>
+      </satelliteScatter>
+    </genStep>
+  </GenStepDef>
+
+  <!-- 任務腳本在 DMS_LegacyInstallationQuest.xml：五座設施共用一個 QuestScriptDef，隨機抽一座。
+       The quest script lives in DMS_LegacyInstallationQuest.xml: one QuestScriptDef rolls one of the five installations. -->
+
+</Defs>

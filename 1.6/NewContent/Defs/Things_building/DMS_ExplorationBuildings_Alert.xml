@@ -73,7 +73,7 @@
         <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
         <triggerChance>0.6</triggerChance>
         <oneShot>true</oneShot>
-        <pawnKindDef>DMS_Drone_VerlingBrid</pawnKindDef>
+        <pawnKindDef>DMS_Drone_Wildfowl</pawnKindDef>
         <countToSpawn>4</countToSpawn>
         <targetSearchRadius>40</targetSearchRadius>
         <scatterAroundParent>true</scatterAroundParent>

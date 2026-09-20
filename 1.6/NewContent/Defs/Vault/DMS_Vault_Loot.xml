@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       地下設施貨架上的補給。由 FFF_Element_FillStorage 在 DMS_Vault_UnderMaps.xml 指定，
+       生成時直接放上貨架格位並標記禁止拾取。每一項獨立擲骰，一輪大約 4~6 疊雜貨加偶爾一把槍；
+       各元素用 batches 控制要跑幾輪。
+       Supplies left on the shelves of the underground facilities. Referenced from DMS_Vault_UnderMaps.xml
+       via FFF_Element_FillStorage; items are placed straight onto shelf slots and forbidden. Every option
+       rolls independently, so one round is roughly 4~6 stacks of sundries plus the occasional gun;
+       each element sets batches to decide how many rounds to run.
+       ============================================================ -->
+  <ThingSetMakerDef>
+    <defName>DMS_UnderMapShelfLoot</defName>
+    <root Class="ThingSetMaker_Sum">
+      <options>
+
+        <!-- 零件 / Components -->
+        <li>
+          <chance>0.8</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentIndustrial</li>
+                </thingDefs>
+              </filter>
+              <countRange>3~8</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.5</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentStamped</li>
+                </thingDefs>
+              </filter>
+              <countRange>2~5</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.1</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentSpacer</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~2</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- 原料 / Materials -->
+        <li>
+          <chance>0.7</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Steel</li>
+                </thingDefs>
+              </filter>
+              <countRange>40~120</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.3</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Plasteel</li>
+                </thingDefs>
+              </filter>
+              <countRange>10~30</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.4</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Chemfuel</li>
+                </thingDefs>
+              </filter>
+              <countRange>30~75</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.15</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ReinforcedBarrel</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- 補給 / Provisions -->
+        <li>
+          <chance>0.6</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MealSurvivalPack</li>
+                </thingDefs>
+              </filter>
+              <countRange>4~10</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.5</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_CombatRation</li>
+                </thingDefs>
+              </filter>
+              <countRange>3~8</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.5</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MedicineIndustrial</li>
+                </thingDefs>
+              </filter>
+              <countRange>2~6</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- 偶爾一把輕武器 / Occasionally a small arm -->
+        <li>
+          <chance>0.25</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_KnuckledusterRevolver</li>
+                  <li>DMS_SurvivalRifle</li>
+                  <li>DMS_PDW</li>
+                  <li>DMS_AssaultRifle</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+</Defs>

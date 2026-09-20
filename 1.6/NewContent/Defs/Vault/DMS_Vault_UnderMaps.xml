@@ -1,0 +1,1738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       DMS 地下設施 — 三張手工版面的單體大空間地圖
+       DMS underground facilities — three hand-authored "one big hall + small rooms" maps
+
+       每張都是完整的 FFF_StructureDef：不可破壞的外殼、出口電梯 (DMS_VaultElevatorExit)、
+       貼牆的緊急照明與攝影機、隱藏導線接到變電櫃。由 DMS.DMS_GenStep_UndergroundStructure
+       鋪在口袋地圖中央，警戒設施（攝影機／掃描器／無人機巢／封存艙／哨戒砲塔）由該 GenStep 掛到防務陣營；
+       砲塔依自身的 CompCanBeDormant_NPCChance（掛在 DMS_Turret_Sentry 上）擲骰決定是否休眠。
+       Each is a complete FFF_StructureDef: indestructible shell, exit lift (DMS_VaultElevatorExit),
+       wall-mounted emergency lighting and cameras, hidden conduit back to a substation cabinet.
+       DMS.DMS_GenStep_UndergroundStructure lays it at the pocket map centre and hands the security
+       fixtures (cameras / scanners / drone nests / mech cradles / sentry guns) to the defender faction;
+       the sentries roll their own NPC dormancy (CompCanBeDormant_NPCChance on DMS_Turret_Sentry).
+
+       座標慣例 / Coordinate conventions:
+         * pos 是中心格；偶數尺寸往 +x/+z 延伸；rot 1/3 交換長寬。
+           pos is the centre cell; even sizes extend towards +x/+z; rot 1/3 swaps the footprint.
+         * 貼牆物（燈、攝影機）放在牆前的地板格，rot 朝向牆。
+           Wall attachments (lamps, cameras) sit on the floor cell in front of the wall, rot facing it.
+         * 門：南北向牆用 rot 1，東西向牆用 rot 0。
+           Doors: rot 1 inside a north-south wall, rot 0 inside an east-west wall.
+         * 貨架補給由 FFF_Element_FillStorage 指定 ThingSetMakerDef（DMS_Vault_Loot.xml）填入。
+           Shelf supplies come from FFF_Element_FillStorage pointing at a ThingSetMakerDef (DMS_Vault_Loot.xml).
+       ============================================================ -->
+
+  <!-- ============================================================
+       地圖一：地下物流倉庫 45x35。單體大倉 (x1~33) 堆滿貨櫃排，東側 (x35~43) 四間小房：辦公室、配電室、警衛室、備件庫。
+       Map 1: logistics warehouse. One big hall of container rows plus four small rooms along the east wall:
+       office, switch room, guard post and spares store. Exit lift sits on the west apron.
+       ============================================================ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_UnderMap_Warehouse</defName>
+    <label>underground logistics warehouse</label>
+    <size>(45, 35)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <tags>
+      <li>DMS_UnderMap</li>
+    </tags>
+    <elements>
+
+      <!-- 地板 / Floors -->
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(1, 0, 1)</pos>
+        <size>(33, 13)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(1, 0, 21)</pos>
+        <size>(33, 13)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(1, 0, 14)</pos>
+        <size>(4, 7)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(12, 0, 14)</pos>
+        <size>(22, 7)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(5, 0, 14)</pos>
+        <size>(7, 7)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(34, 0, 1)</pos>
+        <size>(10, 33)</size>
+      </li>
+
+      <!-- 外殼：不可破壞的強化牆 / Shell: indestructible reinforced wall -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(45, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 34)</pos>
+        <size>(45, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(1, 33)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(44, 0, 1)</pos>
+        <size>(1, 33)</size>
+      </li>
+
+      <!-- 東側房間隔牆與門 / East room partitions and doors -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(34, 0, 1)</pos>
+        <size>(1, 3)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(34, 0, 5)</pos>
+        <size>(1, 8)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(34, 0, 14)</pos>
+        <size>(1, 7)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(34, 0, 22)</pos>
+        <size>(1, 7)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(34, 0, 30)</pos>
+        <size>(1, 4)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(35, 0, 9)</pos>
+        <size>(9, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(35, 0, 17)</pos>
+        <size>(9, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(35, 0, 25)</pos>
+        <size>(9, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Door</def>
+        <rot>1</rot>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(34, 0, 4)</li>
+          <li>(34, 0, 13)</li>
+          <li>(34, 0, 21)</li>
+          <li>(34, 0, 29)</li>
+        </posList>
+      </li>
+
+      <!-- 出口電梯 5x5 / Exit lift -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_VaultElevatorExit</def>
+        <pos>(8, 0, 17)</pos>
+      </li>
+
+      <!-- 貨櫃排：兩列一組，中間留叉車走道 / Container rows: paired, with forklift aisles between -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_LogisticContainer</def>
+        <posList>
+          <li>(17, 0, 3)</li>
+          <li>(20, 0, 3)</li>
+          <li>(23, 0, 3)</li>
+          <li>(29, 0, 3)</li>
+          <li>(14, 0, 5)</li>
+          <li>(20, 0, 5)</li>
+          <li>(26, 0, 5)</li>
+          <li>(29, 0, 5)</li>
+          <li>(14, 0, 9)</li>
+          <li>(17, 0, 9)</li>
+          <li>(23, 0, 9)</li>
+          <li>(26, 0, 9)</li>
+          <li>(29, 0, 9)</li>
+          <li>(14, 0, 11)</li>
+          <li>(17, 0, 11)</li>
+          <li>(20, 0, 11)</li>
+          <li>(23, 0, 11)</li>
+          <li>(14, 0, 23)</li>
+          <li>(20, 0, 23)</li>
+          <li>(23, 0, 23)</li>
+          <li>(26, 0, 23)</li>
+          <li>(29, 0, 23)</li>
+          <li>(14, 0, 25)</li>
+          <li>(17, 0, 25)</li>
+          <li>(23, 0, 25)</li>
+          <li>(29, 0, 25)</li>
+          <li>(17, 0, 29)</li>
+          <li>(20, 0, 29)</li>
+          <li>(26, 0, 29)</li>
+          <li>(29, 0, 29)</li>
+          <li>(14, 0, 31)</li>
+          <li>(20, 0, 31)</li>
+          <li>(23, 0, 31)</li>
+          <li>(26, 0, 31)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_LogisticContainerDestroyed</def>
+        <posList>
+          <li>(14, 0, 3)</li>
+          <li>(26, 0, 3)</li>
+          <li>(23, 0, 5)</li>
+          <li>(20, 0, 9)</li>
+          <li>(29, 0, 11)</li>
+          <li>(17, 0, 23)</li>
+          <li>(26, 0, 25)</li>
+          <li>(23, 0, 29)</li>
+          <li>(17, 0, 31)</li>
+        </posList>
+      </li>
+
+      <!-- 西側貨架 / Shelving on the west apron -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Shelf</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(2, 0, 1)</li>
+          <li>(4, 0, 1)</li>
+          <li>(8, 0, 1)</li>
+          <li>(10, 0, 1)</li>
+          <li>(2, 0, 33)</li>
+          <li>(4, 0, 33)</li>
+          <li>(8, 0, 33)</li>
+          <li>(10, 0, 33)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Shelf</def>
+        <rot>1</rot>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(1, 0, 4)</li>
+          <li>(1, 0, 10)</li>
+          <li>(1, 0, 24)</li>
+          <li>(1, 0, 30)</li>
+        </posList>
+      </li>
+
+      <!-- 貨架補給：西側月台貨架兩輪、備件庫三輪（見 DMS_Vault_Loot.xml）/ Shelf supplies: two rounds on the apron shelves, three in the spares store -->
+      <li Class="Fortified.Structures.FFF_Element_FillStorage">
+        <makerDef>DMS_UnderMapShelfLoot</makerDef>
+        <pos>(1, 0, 1)</pos>
+        <size>(11, 33)</size>
+        <batches>2~2</batches>
+        <fillChance>0.75</fillChance>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_FillStorage">
+        <makerDef>DMS_UnderMapShelfLoot</makerDef>
+        <pos>(35, 0, 26)</pos>
+        <size>(9, 8)</size>
+        <batches>3~3</batches>
+      </li>
+
+      <!-- 中央走道：掃描器、翻倒的貨物與雜物 / Central aisle: scanner, spilled cargo and debris -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Scanner_Large</def>
+        <pos>(22, 0, 17)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Wreckage_Chunk</def>
+        <pos>(14, 0, 16)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Machine_MediumDestoryed</def>
+        <pos>(29, 0, 14)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Machine_Medium</def>
+        <pos>(29, 0, 20)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientBarrel</def>
+        <posList>
+          <li>(13, 0, 20)</li>
+          <li>(13, 0, 21)</li>
+          <li>(31, 0, 17)</li>
+          <li>(32, 0, 18)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientMilitaryCrate</def>
+        <posList>
+          <li>(16, 0, 19)</li>
+          <li>(17, 0, 19)</li>
+          <li>(26, 0, 15)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_ChunkSlag_Old</def>
+        <posList>
+          <li>(15, 0, 13)</li>
+          <li>(19, 0, 21)</li>
+          <li>(25, 0, 13)</li>
+          <li>(27, 0, 19)</li>
+          <li>(12, 0, 7)</li>
+          <li>(12, 0, 27)</li>
+        </posList>
+      </li>
+
+      <!-- 牆面通風與排氣 / Wall vents -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_VentMedium</def>
+        <posList>
+          <li>(19, 0, 1)</li>
+          <li>(27, 0, 1)</li>
+          <li>(19, 0, 33)</li>
+          <li>(27, 0, 33)</li>
+        </posList>
+      </li>
+
+      <!-- 警戒設施：攝影機、無人機巢 / Security: cameras and drone nests (defender faction, see GenStep) -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_Camera</def>
+        <rot>2</rot>
+        <posList>
+          <li>(1, 0, 1)</li>
+          <li>(33, 0, 1)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_Camera</def>
+        <posList>
+          <li>(1, 0, 33)</li>
+          <li>(33, 0, 33)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_FPVNest</def>
+        <posList>
+          <li>(12, 0, 12)</li>
+          <li>(12, 0, 22)</li>
+        </posList>
+      </li>
+
+      <!-- 哨戒砲塔：守在電梯月台兩側的走道口，坐在無人機巢的電纜上 / Sentry guns flanking the lift apron, on the nest conduits -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Turret_Sentry</def>
+        <posList>
+          <li>(11, 0, 13)</li>
+          <li>(11, 0, 21)</li>
+        </posList>
+      </li>
+
+      <!-- 緊急照明（貼牆）/ Emergency lighting on the walls -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_EmergencyLamp</def>
+        <rot>2</rot>
+        <posList>
+          <li>(6, 0, 1)</li>
+          <li>(13, 0, 1)</li>
+          <li>(23, 0, 1)</li>
+          <li>(31, 0, 1)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_EmergencyLamp</def>
+        <posList>
+          <li>(6, 0, 33)</li>
+          <li>(13, 0, 33)</li>
+          <li>(23, 0, 33)</li>
+          <li>(31, 0, 33)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_EmergencyLamp</def>
+        <rot>3</rot>
+        <posList>
+          <li>(1, 0, 7)</li>
+          <li>(1, 0, 27)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_EmergencyLamp</def>
+        <rot>1</rot>
+        <posList>
+          <li>(33, 0, 7)</li>
+          <li>(33, 0, 27)</li>
+        </posList>
+      </li>
+
+      <!-- 房間一 (z1~8)：辦公室 / Room 1: office -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Table2x2c</def>
+        <pos>(38, 0, 4)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DiningChair</def>
+        <rot>1</rot>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(37, 0, 4)</li>
+          <li>(37, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DiningChair</def>
+        <rot>3</rot>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(40, 0, 4)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Bookcase</def>
+        <pos>(36, 0, 7)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Dresser</def>
+        <pos>(40, 0, 7)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Eletric_Medium</def>
+        <pos>(41, 0, 1)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_TrashBinBaseDestroyed</def>
+        <pos>(43, 0, 7)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(39, 0, 8)</pos>
+      </li>
+
+      <!-- 房間二 (z10~16)：配電室 — 變電櫃供電給整座倉庫 / Room 2: switch room, the substation powers the whole warehouse -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_SubstationCabinet</def>
+        <pos>(41, 0, 13)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Battery</def>
+        <posList>
+          <li>(36, 0, 11)</li>
+          <li>(38, 0, 11)</li>
+          <li>(40, 0, 11)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Eletric_MediumDestoryed</def>
+        <pos>(38, 0, 15)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_MachineCabinetDestroyed</def>
+        <pos>(41, 0, 15)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(35, 0, 16)</pos>
+      </li>
+
+      <!-- 房間三 (z18~24)：警衛室 — 沙包與封存中的步兵機兵 / Room 3: guard post with sandbags and mothballed infantry -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Sandbags</def>
+        <stuff>Cloth</stuff>
+        <posList>
+          <li>(36, 0, 20)</li>
+          <li>(36, 0, 21)</li>
+          <li>(36, 0, 22)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_MechCapsule_VaultInfantry</def>
+        <posList>
+          <li>(41, 0, 19)</li>
+          <li>(42, 0, 19)</li>
+          <li>(41, 0, 23)</li>
+          <li>(42, 0, 23)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Table1x2c</def>
+        <pos>(39, 0, 21)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Stool</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(38, 0, 21)</li>
+          <li>(40, 0, 22)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Turret_Sentry</def>
+        <pos>(35, 0, 22)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Camera</def>
+        <pos>(43, 0, 21)</pos>
+        <rot>1</rot>
+      </li>
+
+      <!-- 房間四 (z26~33)：備件庫 / Room 4: spares store -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Shelf</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(36, 0, 27)</li>
+          <li>(38, 0, 27)</li>
+          <li>(40, 0, 27)</li>
+          <li>(36, 0, 32)</li>
+          <li>(38, 0, 32)</li>
+          <li>(40, 0, 32)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_LogisticContainer</def>
+        <pos>(42, 0, 29)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>ToolCabinet</def>
+        <pos>(36, 0, 29)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientCrate</def>
+        <posList>
+          <li>(39, 0, 29)</li>
+          <li>(39, 0, 30)</li>
+          <li>(40, 0, 30)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(35, 0, 33)</pos>
+      </li>
+
+      <!-- 隱藏導線：沿牆腳把燈具與攝影機接上變電櫃 / Hidden conduit: skirting run tying lamps and cameras to the substation -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(1, 0, 1)</pos>
+        <size>(33, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(1, 0, 33)</pos>
+        <size>(33, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(1, 0, 2)</pos>
+        <size>(1, 31)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(33, 0, 2)</pos>
+        <size>(1, 31)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(34, 0, 13)</pos>
+        <size>(7, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(35, 0, 14)</pos>
+        <size>(1, 2)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(2, 0, 12)</pos>
+        <size>(11, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(2, 0, 22)</pos>
+        <size>(11, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(34, 0, 4)</pos>
+        <size>(5, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(39, 0, 5)</pos>
+        <size>(1, 3)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(34, 0, 21)</pos>
+        <size>(9, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(34, 0, 29)</pos>
+        <size>(1, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(35, 0, 29)</pos>
+        <size>(1, 4)</size>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <!-- ============================================================
+       地圖二：地下車輛庫 39x37。單體大庫 (z1~27) 停著鏽蝕車輛與封存的戰鬥框架，北側 (z29~35) 四間小房：工具間、宿舍、配電室、警衛室。
+       Map 2: vehicle bay. One big garage of rusted vehicles and mothballed battle frames, with four small rooms
+       along the north wall: workshop, quarters, switch room and guard post. Exit lift sits by the south wall.
+       ============================================================ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_UnderMap_VehicleBay</defName>
+    <label>underground vehicle bay</label>
+    <size>(39, 37)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <tags>
+      <li>DMS_UnderMap</li>
+    </tags>
+    <elements>
+
+      <!-- 地板：混凝土車庫、鋪面車道 / Floors: concrete garage with paved lanes -->
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(1, 0, 1)</pos>
+        <size>(37, 8)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(1, 0, 9)</pos>
+        <size>(37, 3)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(1, 0, 12)</pos>
+        <size>(37, 7)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(1, 0, 19)</pos>
+        <size>(37, 3)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(1, 0, 22)</pos>
+        <size>(37, 6)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(1, 0, 28)</pos>
+        <size>(37, 8)</size>
+      </li>
+
+      <!-- 外殼 / Shell -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(39, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 36)</pos>
+        <size>(39, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(1, 35)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(38, 0, 1)</pos>
+        <size>(1, 35)</size>
+      </li>
+
+      <!-- 北側房間隔牆與門 / North room partitions and doors -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(1, 0, 28)</pos>
+        <size>(4, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(6, 0, 28)</pos>
+        <size>(9, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(16, 0, 28)</pos>
+        <size>(8, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(25, 0, 28)</pos>
+        <size>(8, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(34, 0, 28)</pos>
+        <size>(4, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(10, 0, 29)</pos>
+        <size>(1, 7)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(19, 0, 29)</pos>
+        <size>(1, 7)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(28, 0, 29)</pos>
+        <size>(1, 7)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Door</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(5, 0, 28)</li>
+          <li>(15, 0, 28)</li>
+          <li>(24, 0, 28)</li>
+          <li>(33, 0, 28)</li>
+        </posList>
+      </li>
+
+      <!-- 出口電梯 5x5 / Exit lift -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_VaultElevatorExit</def>
+        <pos>(19, 0, 4)</pos>
+      </li>
+
+      <!-- 南排車位：吉普與卡車 / South stalls: jeeps and trucks -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientRustedJeep</def>
+        <posList>
+          <li>(5, 0, 5)</li>
+          <li>(11, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientRustedTruck</def>
+        <posList>
+          <li>(27, 0, 5)</li>
+          <li>(32, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientRustedCarFrame</def>
+        <pos>(36, 0, 5)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientRustedEngineBlock</def>
+        <posList>
+          <li>(8, 0, 3)</li>
+          <li>(14, 0, 7)</li>
+          <li>(30, 0, 2)</li>
+        </posList>
+      </li>
+
+      <!-- 中排車位：戰車與維修中的車架 / Middle stalls: tank and frames under repair -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientTank</def>
+        <pos>(6, 0, 15)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientRustedCarFrame</def>
+        <pos>(12, 0, 15)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Wreckage_Chunk</def>
+        <pos>(16, 0, 14)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientRustedTruck</def>
+        <pos>(25, 0, 15)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientRustedJeep</def>
+        <pos>(31, 0, 15)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientHydrant</def>
+        <pos>(35, 0, 13)</pos>
+      </li>
+
+      <!-- 北排：封存中的戰鬥框架與突擊機兵，沿牆一列龍門架 / North row: mothballed battle frames and assault mechs in gantries -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_MechCapsule_VaultFrame</def>
+        <posList>
+          <li>(4, 0, 25)</li>
+          <li>(9, 0, 25)</li>
+          <li>(14, 0, 25)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_MechCapsule_VaultAssault</def>
+        <posList>
+          <li>(22, 0, 24)</li>
+          <li>(26, 0, 24)</li>
+          <li>(30, 0, 24)</li>
+          <li>(34, 0, 24)</li>
+        </posList>
+      </li>
+      <!-- 出口電梯兩側的駐防犬舍 / Garrison kennels flanking the exit lift -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_MechCapsule_VaultKennel</def>
+        <posList>
+          <li>(15, 0, 4)</li>
+          <li>(24, 0, 4)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Recharger</def>
+        <posList>
+          <li>(4, 0, 22)</li>
+          <li>(9, 0, 22)</li>
+          <li>(14, 0, 22)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Machine_Medium</def>
+        <pos>(19, 0, 25)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Eletric_Medium</def>
+        <pos>(19, 0, 23)</pos>
+      </li>
+
+      <!-- 雜物與殘骸 / Clutter and wreckage -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientBarrel</def>
+        <posList>
+          <li>(2, 0, 12)</li>
+          <li>(2, 0, 13)</li>
+          <li>(37, 0, 10)</li>
+          <li>(37, 0, 21)</li>
+          <li>(22, 0, 1)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_ChunkSlag_Old</def>
+        <posList>
+          <li>(9, 0, 12)</li>
+          <li>(20, 0, 10)</li>
+          <li>(28, 0, 12)</li>
+          <li>(16, 0, 20)</li>
+          <li>(33, 0, 20)</li>
+          <li>(24, 0, 8)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>ChunkSlagSteel</def>
+        <posList>
+          <li>(3, 0, 19)</li>
+          <li>(36, 0, 17)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Wreckage_Ronin</def>
+        <posList>
+          <li>(23, 0, 18)</li>
+          <li>(13, 0, 1)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_VentLarge</def>
+        <posList>
+          <li>(2, 0, 1)</li>
+          <li>(35, 0, 1)</li>
+        </posList>
+      </li>
+
+      <!-- 警戒設施 / Security -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_Camera</def>
+        <posList>
+          <li>(1, 0, 27)</li>
+          <li>(37, 0, 27)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_Camera</def>
+        <rot>2</rot>
+        <posList>
+          <li>(28, 0, 1)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_FPVNest</def>
+        <posList>
+          <li>(19, 0, 12)</li>
+          <li>(19, 0, 19)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Scanner_Small</def>
+        <pos>(19, 0, 27)</pos>
+      </li>
+
+      <!-- 哨戒砲塔：夾著中央電纜守住兩條車道 / Sentry guns astride the spine conduit, covering both lanes -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Turret_Sentry</def>
+        <posList>
+          <li>(18, 0, 9)</li>
+          <li>(20, 0, 9)</li>
+          <li>(18, 0, 21)</li>
+          <li>(20, 0, 21)</li>
+        </posList>
+      </li>
+
+      <!-- 緊急照明 / Emergency lighting -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_EmergencyLamp</def>
+        <rot>2</rot>
+        <posList>
+          <li>(9, 0, 1)</li>
+          <li>(16, 0, 1)</li>
+          <li>(25, 0, 1)</li>
+          <li>(31, 0, 1)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_EmergencyLamp</def>
+        <posList>
+          <li>(3, 0, 27)</li>
+          <li>(12, 0, 27)</li>
+          <li>(27, 0, 27)</li>
+          <li>(32, 0, 27)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_EmergencyLamp</def>
+        <rot>3</rot>
+        <posList>
+          <li>(1, 0, 8)</li>
+          <li>(1, 0, 18)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_EmergencyLamp</def>
+        <rot>1</rot>
+        <posList>
+          <li>(37, 0, 8)</li>
+          <li>(37, 0, 18)</li>
+        </posList>
+      </li>
+
+      <!-- 房間一 (x1~9)：工具間 / Room 1: workshop -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>TableMachining</def>
+        <pos>(5, 0, 34)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>ToolCabinet</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(1, 0, 32)</li>
+          <li>(8, 0, 30)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Shelf</def>
+        <pos>(1, 0, 30)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientMilitaryCrate</def>
+        <posList>
+          <li>(3, 0, 30)</li>
+          <li>(8, 0, 33)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_TableMachinePrinterDestroyed</def>
+        <pos>(4, 0, 31)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(9, 0, 35)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_FillStorage">
+        <makerDef>DMS_UnderMapShelfLoot</makerDef>
+        <pos>(1, 0, 29)</pos>
+        <size>(9, 7)</size>
+        <batches>1~2</batches>
+      </li>
+
+      <!-- 房間二 (x11~18)：駕駛員宿舍 / Room 2: drivers' quarters -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Bed</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(12, 0, 34)</li>
+          <li>(14, 0, 34)</li>
+          <li>(16, 0, 34)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Dresser</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(11, 0, 30)</li>
+          <li>(16, 0, 30)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Couch</def>
+        <pos>(13, 0, 30)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>EndTable</def>
+        <pos>(18, 0, 34)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(13, 0, 29)</pos>
+        <rot>2</rot>
+      </li>
+
+      <!-- 房間三 (x20~27)：配電室 / Room 3: switch room -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_SubstationCabinet</def>
+        <pos>(21, 0, 34)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Battery</def>
+        <posList>
+          <li>(25, 0, 33)</li>
+          <li>(27, 0, 33)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientGenerator</def>
+        <pos>(20, 0, 30)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_MachineCabinetDestroyed</def>
+        <pos>(26, 0, 30)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(24, 0, 35)</pos>
+      </li>
+
+      <!-- 房間四 (x29~37)：警衛室 / Room 4: guard post -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Sandbags</def>
+        <stuff>Cloth</stuff>
+        <posList>
+          <li>(31, 0, 30)</li>
+          <li>(32, 0, 30)</li>
+          <li>(33, 0, 30)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_MechCapsule_VaultInfantry</def>
+        <posList>
+          <li>(36, 0, 30)</li>
+          <li>(37, 0, 30)</li>
+          <li>(36, 0, 34)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Table1x2c</def>
+        <pos>(30, 0, 33)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Stool</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(29, 0, 33)</li>
+          <li>(31, 0, 34)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Turret_Sentry</def>
+        <pos>(34, 0, 34)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Camera</def>
+        <pos>(33, 0, 35)</pos>
+      </li>
+
+      <!-- 隱藏導線 / Hidden conduit -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(1, 0, 1)</pos>
+        <size>(37, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(1, 0, 27)</pos>
+        <size>(37, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(1, 0, 2)</pos>
+        <size>(1, 25)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(37, 0, 2)</pos>
+        <size>(1, 25)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(19, 0, 8)</pos>
+        <size>(1, 19)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(24, 0, 28)</pos>
+        <size>(1, 7)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(22, 0, 33)</pos>
+        <size>(2, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(5, 0, 28)</pos>
+        <size>(1, 7)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(6, 0, 35)</pos>
+        <size>(3, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(15, 0, 28)</pos>
+        <size>(1, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(13, 0, 29)</pos>
+        <size>(3, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(33, 0, 28)</pos>
+        <size>(1, 7)</size>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <!-- ============================================================
+       地圖三：地下反應爐機房 41x41。單體機房 (x1~31) 中央兩座反應機組與發電機陣列，東側 (x33~39) 四間小房：控制室、燃料庫、封存艙間、休息室。
+       Map 3: reactor hall. One big machine hall with two reactor units and a generator array, plus four small rooms
+       along the east wall: control room, fuel store, mech cradle bay and rest room. Exit lift sits on the west apron.
+       ============================================================ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_UnderMap_ReactorHall</defName>
+    <label>underground reactor hall</label>
+    <size>(41, 41)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <tags>
+      <li>DMS_UnderMap</li>
+    </tags>
+    <elements>
+
+      <!-- 地板 / Floors -->
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(1, 0, 1)</pos>
+        <size>(31, 7)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(1, 0, 33)</pos>
+        <size>(31, 7)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(1, 0, 8)</pos>
+        <size>(12, 25)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(28, 0, 8)</pos>
+        <size>(4, 25)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(13, 0, 8)</pos>
+        <size>(15, 25)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(32, 0, 1)</pos>
+        <size>(8, 10)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(32, 0, 11)</pos>
+        <size>(1, 9)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>SterileTile</def>
+        <pos>(33, 0, 11)</pos>
+        <size>(7, 9)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(32, 0, 20)</pos>
+        <size>(8, 20)</size>
+      </li>
+
+      <!-- 外殼 / Shell -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(41, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 40)</pos>
+        <size>(41, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(1, 39)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(40, 0, 1)</pos>
+        <size>(1, 39)</size>
+      </li>
+
+      <!-- 東側房間隔牆與門 / East room partitions and doors -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(32, 0, 1)</pos>
+        <size>(1, 4)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(32, 0, 6)</pos>
+        <size>(1, 9)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(32, 0, 16)</pos>
+        <size>(1, 9)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(32, 0, 26)</pos>
+        <size>(1, 9)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(32, 0, 36)</pos>
+        <size>(1, 4)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(33, 0, 10)</pos>
+        <size>(7, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(33, 0, 20)</pos>
+        <size>(7, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(33, 0, 30)</pos>
+        <size>(7, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Door</def>
+        <rot>1</rot>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(32, 0, 5)</li>
+          <li>(32, 0, 15)</li>
+          <li>(32, 0, 25)</li>
+          <li>(32, 0, 35)</li>
+        </posList>
+      </li>
+
+      <!-- 出口電梯 5x5 / Exit lift -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_VaultElevatorExit</def>
+        <pos>(7, 0, 20)</pos>
+      </li>
+
+      <!-- 反應機組：兩座主機、燃料節點與儲存罐 / Reactor units: two main machines, fuel nodes and storage cylinders -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientMachine</def>
+        <posList>
+          <li>(20, 0, 12)</li>
+          <li>(20, 0, 28)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientFuelNode</def>
+        <posList>
+          <li>(17, 0, 20)</li>
+          <li>(23, 0, 20)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientStorageCylinder</def>
+        <posList>
+          <li>(14, 0, 9)</li>
+          <li>(14, 0, 31)</li>
+          <li>(25, 0, 9)</li>
+          <li>(25, 0, 31)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientPipes</def>
+        <posList>
+          <li>(20, 0, 15)</li>
+          <li>(20, 0, 16)</li>
+          <li>(20, 0, 24)</li>
+          <li>(20, 0, 25)</li>
+          <li>(16, 0, 20)</li>
+          <li>(24, 0, 20)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientEquipmentBlocks</def>
+        <pos>(19, 0, 20)</pos>
+      </li>
+
+      <!-- 發電機陣列 / Generator array -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientGenerator</def>
+        <posList>
+          <li>(14, 0, 14)</li>
+          <li>(14, 0, 17)</li>
+          <li>(14, 0, 23)</li>
+          <li>(14, 0, 26)</li>
+          <li>(26, 0, 14)</li>
+          <li>(26, 0, 17)</li>
+          <li>(26, 0, 23)</li>
+          <li>(26, 0, 26)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_SubstationCabinet</def>
+        <posList>
+          <li>(29, 0, 12)</li>
+          <li>(29, 0, 28)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Battery</def>
+        <posList>
+          <li>(30, 0, 15)</li>
+          <li>(30, 0, 17)</li>
+          <li>(30, 0, 23)</li>
+          <li>(30, 0, 25)</li>
+        </posList>
+      </li>
+
+      <!-- 西側走道：控制與監測設備 / West aisle: control and monitoring gear -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_Eletric_Medium</def>
+        <posList>
+          <li>(6, 0, 12)</li>
+          <li>(6, 0, 28)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_Machine_Medium</def>
+        <posList>
+          <li>(6, 0, 10)</li>
+          <li>(6, 0, 30)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_LabReactorDestroyed</def>
+        <pos>(3, 0, 5)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_LabReactorDestroyed</def>
+        <pos>(3, 0, 34)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientBarrel</def>
+        <posList>
+          <li>(11, 0, 2)</li>
+          <li>(12, 0, 2)</li>
+          <li>(11, 0, 38)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_ChunkSlag_Old</def>
+        <posList>
+          <li>(12, 0, 6)</li>
+          <li>(28, 0, 6)</li>
+          <li>(12, 0, 34)</li>
+          <li>(28, 0, 35)</li>
+          <li>(18, 0, 4)</li>
+          <li>(22, 0, 36)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_VentLarge</def>
+        <posList>
+          <li>(15, 0, 1)</li>
+          <li>(24, 0, 1)</li>
+          <li>(15, 0, 38)</li>
+          <li>(24, 0, 38)</li>
+        </posList>
+      </li>
+
+      <!-- 警戒設施 / Security -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_Camera</def>
+        <rot>2</rot>
+        <posList>
+          <li>(1, 0, 1)</li>
+          <li>(31, 0, 1)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_Camera</def>
+        <posList>
+          <li>(1, 0, 39)</li>
+          <li>(31, 0, 39)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Scanner_Large</def>
+        <pos>(20, 0, 5)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Scanner_Large</def>
+        <pos>(20, 0, 35)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_FPVNest</def>
+        <posList>
+          <li>(10, 0, 12)</li>
+          <li>(10, 0, 28)</li>
+          <li>(30, 0, 20)</li>
+        </posList>
+      </li>
+
+      <!-- 哨戒砲塔：南北兩座掃描器前方各一對，加上東側巢旁一對 / Sentry guns: a pair before each scanner, a pair beside the east nest -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Turret_Sentry</def>
+        <posList>
+          <li>(18, 0, 2)</li>
+          <li>(22, 0, 2)</li>
+          <li>(18, 0, 38)</li>
+          <li>(22, 0, 38)</li>
+          <li>(30, 0, 19)</li>
+          <li>(30, 0, 21)</li>
+        </posList>
+      </li>
+
+      <!-- 緊急照明 / Emergency lighting -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_EmergencyLamp</def>
+        <rot>2</rot>
+        <posList>
+          <li>(6, 0, 1)</li>
+          <li>(10, 0, 1)</li>
+          <li>(20, 0, 1)</li>
+          <li>(29, 0, 1)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_EmergencyLamp</def>
+        <posList>
+          <li>(6, 0, 39)</li>
+          <li>(10, 0, 39)</li>
+          <li>(20, 0, 39)</li>
+          <li>(29, 0, 39)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_EmergencyLamp</def>
+        <rot>3</rot>
+        <posList>
+          <li>(1, 0, 12)</li>
+          <li>(1, 0, 28)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_EmergencyLamp</def>
+        <rot>1</rot>
+        <posList>
+          <li>(31, 0, 8)</li>
+          <li>(31, 0, 32)</li>
+        </posList>
+      </li>
+
+      <!-- 房間一 (z1~9)：燃料庫 / Room 1: fuel store -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientBarrel</def>
+        <posList>
+          <li>(34, 0, 2)</li>
+          <li>(35, 0, 2)</li>
+          <li>(36, 0, 2)</li>
+          <li>(34, 0, 3)</li>
+          <li>(38, 0, 8)</li>
+          <li>(39, 0, 8)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientFuelNode</def>
+        <posList>
+          <li>(38, 0, 2)</li>
+          <li>(39, 0, 2)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Shelf</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(34, 0, 8)</li>
+          <li>(36, 0, 8)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_LogisticContainer</def>
+        <pos>(37, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(34, 0, 9)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_FillStorage">
+        <makerDef>DMS_UnderMapShelfLoot</makerDef>
+        <pos>(33, 0, 1)</pos>
+        <size>(7, 9)</size>
+        <batches>1~2</batches>
+      </li>
+
+      <!-- 房間二 (z11~19)：控制室 / Room 2: control room -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>AncientDisplayBank</def>
+        <posList>
+          <li>(35, 0, 18)</li>
+          <li>(38, 0, 18)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_Eletric_Medium</def>
+        <posList>
+          <li>(38, 0, 12)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Table1x2c</def>
+        <pos>(36, 0, 14)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DiningChair</def>
+        <rot>1</rot>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(35, 0, 14)</li>
+          <li>(35, 0, 15)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DiningChair</def>
+        <pos>(37, 0, 17)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>AncientLockerBank</def>
+        <pos>(34, 0, 12)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_Camera</def>
+        <pos>(39, 0, 15)</pos>
+        <rot>1</rot>
+      </li>
+
+      <!-- 房間三 (z21~29)：封存艙間 / Room 3: mech cradle bay -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_MechCapsule_VaultAssault</def>
+        <posList>
+          <li>(34, 0, 22)</li>
+          <li>(37, 0, 22)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_MechCapsule_VaultInfantry</def>
+        <posList>
+          <li>(34, 0, 28)</li>
+          <li>(36, 0, 28)</li>
+          <li>(38, 0, 28)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Recharger</def>
+        <pos>(37, 0, 26)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(33, 0, 27)</pos>
+        <rot>3</rot>
+      </li>
+
+      <!-- 房間四 (z31~39)：休息室 / Room 4: rest room -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Bed</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(34, 0, 37)</li>
+          <li>(36, 0, 37)</li>
+          <li>(38, 0, 37)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Couch</def>
+        <pos>(34, 0, 32)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Dresser</def>
+        <pos>(37, 0, 32)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Table1x2c</def>
+        <pos>(39, 0, 34)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>EndTable</def>
+        <pos>(34, 0, 34)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(36, 0, 39)</pos>
+      </li>
+
+      <!-- 隱藏導線 / Hidden conduit -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(1, 0, 1)</pos>
+        <size>(31, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(1, 0, 39)</pos>
+        <size>(31, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(1, 0, 2)</pos>
+        <size>(1, 37)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(31, 0, 2)</pos>
+        <size>(1, 37)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(2, 0, 12)</pos>
+        <size>(8, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(2, 0, 28)</pos>
+        <size>(8, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(32, 0, 5)</pos>
+        <size>(1, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(33, 0, 5)</pos>
+        <size>(1, 5)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(32, 0, 15)</pos>
+        <size>(7, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(32, 0, 25)</pos>
+        <size>(1, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(33, 0, 25)</pos>
+        <size>(1, 3)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(32, 0, 35)</pos>
+        <size>(1, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(33, 0, 35)</pos>
+        <size>(1, 5)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(34, 0, 39)</pos>
+        <size>(2, 1)</size>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+</Defs>

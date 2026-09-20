@@ -4,6 +4,9 @@
   <DMS_VaultElevator.label>貨運電梯</DMS_VaultElevator.label>
   <DMS_VaultElevator.description>通往地下軍事儲存庫的入口。電梯仍然有電，但控制系統被鎖住了。駭入它以叫回車廂。</DMS_VaultElevator.description>
 
+  <DMS_VaultElevator_Sealed.label>封閉的貨運電梯</DMS_VaultElevator_Sealed.label>
+  <DMS_VaultElevator_Sealed.description>一台埋在地下的貨運電梯的地表平台，被裝甲封板鎖住。豎井控制系統連接到附近的門禁控制台；在那裡刷鑰匙卡即可收回封板、叫上車廂。</DMS_VaultElevator_Sealed.description>
+
   <DMS_VaultElevatorExit.label>貨運電梯車廂</DMS_VaultElevatorExit.label>
   <DMS_VaultElevatorExit.description>一台通往上方地表平台的電梯車廂。</DMS_VaultElevatorExit.description>
 

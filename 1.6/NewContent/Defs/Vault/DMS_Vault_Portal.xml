@@ -105,6 +105,59 @@
     </modExtensions>
   </ThingDef>
 
+  <!-- 封板狀態的貨運電梯。用 Elevator_sealed 貼圖，是 FFF 門禁系統的 wanter 端：
+       在版面中以 Task_LinkAccessKeyWanter 連到 access console，刷卡後原地換成上面的 DMS_VaultElevator
+       （CompHackable 直接視為已駭入，鑰匙卡就是唯一門檻）。
+       Sealed freight elevator pad. Uses the Elevator_sealed art and is the wanter end of FFF's
+       access-key system: link it to an access console in the layout with Task_LinkAccessKeyWanter,
+       and swiping the key card swaps it in place for DMS_VaultElevator above (pre-hacked, so the
+       key card is the only gate). -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_VaultElevator_Sealed</defName>
+    <label>sealed freight elevator</label>
+    <description>The surface pad of a buried freight elevator, locked down under an armored cover plate. The shaft controls are tied to a nearby access console; swipe a key-card there to retract the cover and bring the car up.</description>
+    <thingClass>DMS.Building_AccessKeyTransformer</thingClass>
+    <size>(5,5)</size>
+    <rotatable>true</rotatable>
+    <!-- 沒有耐久、不可攻擊、不可拆，所以玩家弄不壞它；但 destroyable 必須為 true，
+         解鎖時 Building_AccessKeyTransformer 才能 Destroy 自己並換成 unlockedDef。
+         No hit points, untargetable and non-deconstructible, so the player cannot break it; but destroyable
+         must stay true or Building_AccessKeyTransformer cannot Destroy itself to swap in unlockedDef. -->
+    <useHitPoints>false</useHitPoints>
+    <tickerType>Never</tickerType>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <fillPercent>0</fillPercent>
+    <passability>Impassable</passability>
+    <holdsRoof>true</holdsRoof>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Elevator_sealed/building</texPath>
+      <drawSize>(5,5)</drawSize>
+    </graphicData>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <isTargetable>false</isTargetable>
+      <isInert>true</isInert>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <modExtensions>
+      <li Class="DMS.ModExtension_AccessKeyTransform">
+        <unlockedDef>DMS_VaultElevator</unlockedDef>
+        <markHacked>true</markHacked>
+        <unlockSound>Hacking_Completed</unlockSound>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
   <!-- 地下側的電梯車廂。由 DMS.RoomContents_VaultEntrance 依上面的 portal.exitDef 放置。
        Underground car. Placed by DMS.RoomContents_VaultEntrance from portal.exitDef above. -->
   <ThingDef ParentName="PocketMapExit">

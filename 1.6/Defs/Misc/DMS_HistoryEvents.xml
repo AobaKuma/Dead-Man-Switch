@@ -15,7 +15,7 @@
        ============================================================ -->
 
   <!-- ── 任務結算:軍事行動 ────────────────────────────────────── -->
-  <!-- DMS_Boss / DMS_DecoySiteAssault / DMS_PirateAssemblyRaid -->
+  <!-- DMS_Boss / DMS_DecoySiteAssault / DMS_PirateAssemblyRaid / DMS_AirportAssault / DMS_LegacyInstallationAssault -->
   <HistoryEventDef>
     <defName>DMS_QuestSuccess_Military</defName>
     <label>military operation completed</label>

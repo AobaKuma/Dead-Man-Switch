@@ -1,9 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using Fortified;
 using Fortified.Structures;
-using HarmonyLib;
 using RimWorld;
 using Verse;
 
@@ -123,24 +121,41 @@ namespace DMS
             }
         }
 
-        // FFF 沒有公開設定內建電池電量的方法，直接寫私有欄位。
-        // FFF exposes no setter for the internal battery charge, so we poke the private field.
-        private static readonly FieldInfo StoredEnergyField =
-            AccessTools.Field(typeof(CompPowerTrader_InternalBattery), "storedEnergy");
+        /// <summary>
+        /// 把生成後的防務設施掛到陣營。封存艙（Building_MechCapsule）裡的機兵一併換：
+        /// 艙在 SpawnSetup 時就用「當下的艙陣營」生成機兵，無陣營生成的艙會給出遠古陣營的機兵，
+        /// 之後只改艙不改機兵，就會出現艙是遺留部隊、機兵卻是遠古的錯配——被警報放出來時甚至不敵對。
+        /// Assigns a defender faction to a spawned fixture. Mech capsules (Building_MechCapsule) generate their
+        /// mech in SpawnSetup using whatever faction the capsule has at that moment, so a factionless capsule holds
+        /// an Ancients mech; changing only the capsule afterwards leaves the mech mismatched (and, once an alarm
+        /// releases it, not even hostile). The held mech is therefore re-factioned together with the capsule.
+        /// </summary>
+        public static void SetDefenderFaction(Thing thing, Faction faction)
+        {
+            if (thing == null || faction == null) return;
+
+            if (thing.def.CanHaveFaction && thing.Faction != faction)
+            {
+                thing.SetFaction(faction);
+            }
+
+            if (thing is Building_MechCapsule capsule && capsule.HasMech && capsule.Mech.Faction != faction)
+            {
+                capsule.Mech.SetFaction(faction);
+            }
+        }
 
         /// <summary>
         /// 把內建電池充到指定比例，讓砲塔一生成就有電可以開火。沒有內建電池的東西直接略過。
+        /// （FFF 的 CompPowerTrader_InternalBattery 對非玩家陣營的新生成建築本來就會隨機灌 50~100%，
+        /// 這裡是要「精確指定」時用，例如儲存庫的警戒設施要滿電。）
         /// Charges an internal battery so the thing is live from the moment it spawns. No-op otherwise.
+        /// (FFF's CompPowerTrader_InternalBattery already rolls 50~100% for fresh non-player spawns; this is
+        /// for when an exact value is wanted, e.g. vault fixtures at full charge.)
         /// </summary>
         public static void ChargeInternalBattery(Thing thing, float pct)
         {
-            if (StoredEnergyField == null) return;
-
-            CompPowerTrader_InternalBattery battery = thing.TryGetComp<CompPowerTrader_InternalBattery>();
-            if (battery == null) return;
-
-            CompProperties_PowerWithInternalBattery props = (CompProperties_PowerWithInternalBattery)battery.props;
-            StoredEnergyField.SetValue(battery, props.internalBatteryMax * UnityEngine.Mathf.Clamp01(pct));
+            thing.TryGetComp<CompPowerTrader_InternalBattery>()?.SetStoredEnergyPct(pct);
         }
 
         /// <summary>

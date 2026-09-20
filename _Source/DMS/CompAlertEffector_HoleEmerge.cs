@@ -69,19 +69,8 @@ namespace DMS
     {
         public new CompProperties_AlertEffector_HoleEmerge Props => (CompProperties_AlertEffector_HoleEmerge)props;
 
-        /// <summary>
-        /// Signal 是全域廣播，只理會同一張地圖的警報，免得地表的感測器把口袋地圖裡的洞也觸發了。
-        /// Signals are global; only honour alarms from this map so a surface sensor can't set off a
-        /// hole down in a pocket map.
-        /// </summary>
-        public override void Notify_SignalReceived(Signal signal)
-        {
-            if (signal.args.TryGetArg("MAP", out Map signalMap) && signalMap != null && signalMap != parent.Map)
-            {
-                return;
-            }
-            base.Notify_SignalReceived(signal);
-        }
+        // 同地圖過濾已由 FFF 的 CompAlertEffector 基類（SignalMapUtility）處理。
+        // Same-map filtering now lives in FFF's CompAlertEffector base (SignalMapUtility).
 
         protected override void DoEffect()
         {
@@ -97,7 +86,29 @@ namespace DMS
             CellRect inside = parent.OccupiedRect().ContractedBy(1);
             if (inside.Area <= 0) inside = CellRect.SingleCell(parent.Position);
 
-            int landingRange = Mathf.Max(parent.def.Size.x, parent.def.Size.z) / 2 + Props.landingRadius;
+            // 落地格：洞緣往外 landingRadius 格內、可站立的格子。
+            // 之前的版本要求落地格「未被戰爭迷霧覆蓋」，但洞多半是被遠處的掃描器觸發、
+            // 周圍還在迷霧裡，於是一格都找不到、退回洞內生成，機體就永遠卡在洞裡。
+            // 迷霧不影響落地（PawnFlyer 落地時直接 TryDrop 到 destCell），所以不再檢查；
+            // 真的一格都沒有時放棄本次觸發，寧可不出兵也不要把機體塞進洞裡。
+            // Landing cells: standable cells within landingRadius of the hole's edge.
+            // The old check also demanded the cell be unfogged, but holes are usually set off by a
+            // distant scanner while their surroundings are still fogged, so nothing qualified, the
+            // fallback landed the pawn back inside the hole, and it stayed stuck there. Fog doesn't
+            // affect landing (PawnFlyer simply TryDrops onto destCell), so it is no longer tested;
+            // if there is genuinely no cell at all the trigger is abandoned rather than spawning
+            // pawns into the hole.
+            List<IntVec3> landingCells = FindLandingCells(map);
+            if (landingCells.Count == 0)
+            {
+                Log.Warning($"[DMS] {parent.LabelCap} at {parent.Position}: no standable cell around the hole to emerge onto; alert response skipped.");
+                foreach (Pawn pawn in pawns)
+                {
+                    Find.WorldPawns.PassToWorld(pawn, RimWorld.Planet.PawnDiscardDecideMode.Discard);
+                }
+                return;
+            }
+
             ThingDef flyerDef = Props.flyerDef ?? ThingDefOf.PawnFlyer_Stun;
 
             List<Thing> flyers = new List<Thing>();
@@ -105,12 +116,7 @@ namespace DMS
             foreach (Pawn pawn in pawns)
             {
                 IntVec3 start = inside.RandomCell;
-                if (!CellFinder.TryFindRandomCellNear(parent.Position, map, landingRange,
-                        c => !c.Fogged(map) && c.Walkable(map) && !c.Impassable(map) && !parent.OccupiedRect().Contains(c),
-                        out IntVec3 landing))
-                {
-                    landing = start;
-                }
+                IntVec3 landing = landingCells.RandomElement();
 
                 GenSpawn.Spawn(pawn, start, map);
                 pawn.rotationTracker.FaceCell(landing);
@@ -137,6 +143,29 @@ namespace DMS
                 Messages.Message("DMS_HoleEmerge_Triggered".Translate(pawns.Count, parent.LabelCap),
                     new LookTargets(parent), MessageTypeDefOf.ThreatBig);
             }
+        }
+
+        /// <summary>
+        /// 洞緣外 landingRadius 格內所有可站立的格子；找不到就逐圈往外擴到 landingRadius + 4。
+        /// All standable cells within landingRadius outside the footprint, widening ring by ring up to
+        /// landingRadius + 4 when the nearest ring is fully blocked.
+        /// </summary>
+        private List<IntVec3> FindLandingCells(Map map)
+        {
+            CellRect footprint = parent.OccupiedRect();
+            List<IntVec3> cells = new List<IntVec3>();
+            for (int radius = Mathf.Max(Props.landingRadius, 1); radius <= Props.landingRadius + 4; radius++)
+            {
+                foreach (IntVec3 c in footprint.ExpandedBy(radius))
+                {
+                    if (!c.InBounds(map) || footprint.Contains(c)) continue;
+                    if (!c.Standable(map)) continue;
+                    if (c.GetEdifice(map) is Building_Door door && !door.Open) continue;
+                    cells.Add(c);
+                }
+                if (cells.Count > 0) break;
+            }
+            return cells;
         }
 
         private Faction ResolveFaction()

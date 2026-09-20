@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       鬥牛犬 BullHound：先鋒殘餘設施的駐防用重型四足機兵。
+       獒犬（Dogge）的設施防禦放大版：不追求機動，而是把重量花在裝甲與固定武裝上，
+       設計目的就是守在走廊與閘門口把入侵者擋下來。
+       只在殘餘設施內以封存搖籃（DMS_MechCapsule_VaultKennel）形式出現、由機械師駭入取得；
+       沒有培養配方、也不出現在先鋒殘餘的襲擊編組裡。
+       兩種型號：霰彈型（近程壓制）與噴火型（走廊清掃），固定武裝不可更換。
+
+       BullHound: heavy quadruped garrison mech of the Legacy remnant installations.
+       A facility-defence enlargement of the Dogge: mobility is traded for plating and
+       a fixed weapon mount, built to sit on corridors and gates and stop intruders.
+       Only found inside installations as mothballed kennels (DMS_MechCapsule_VaultKennel)
+       for a mechanitor to hack; no gestation recipe and never part of Legacy raid groups.
+       Two patterns: shotgun (close suppression) and flamer (corridor clearing); the mount is fixed.
+       ============================================================ -->
+
+  <ThingDef Name="DMS_MechBullHoundBase" ParentName="BaseAutomatroidRace" Abstract="True">
+    <!-- 固定武裝：不可撿拾／裝備手持武器（同蹄兔）。Fixed mount: cannot pick up or equip hand weapons (as Hyrax). -->
+    <thingClass>Pawn</thingClass>
+    <statBases>
+      <MoveSpeed>4.4</MoveSpeed>                                                  <!--比獒犬慢：重裝甲站哨犬 / slower than the Dogge: an armoured sentry-->
+      <ArmorRating_Blunt>0.6</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <StaggerDurationFactor>0.1</StaggerDurationFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
+      <ControlTakingTime MayRequire="Ludeon.Rimworld.Biotech">8</ControlTakingTime>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>DMS_Hound</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>1.9</baseBodySize>
+      <baseHealthScale>2.2</baseHealthScale>
+      <mechWeightClass>Heavy</mechWeightClass>
+      <detritusLeavings>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>12</texOverrideIndex>
+          <spawnChance>0.08</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <comps>
+      <!-- 量級壓迫：比鬣蜥小一圈，只嚇得到近身的人。Mass intimidation: smaller than the Iguana's, only bites at close range. -->
+      <li Class="Fortified.CompProperties_CausePanicInRange">
+        <range>4</range>
+        <tickInterval>400</tickInterval>
+        <chancePerScan>0.06</chancePerScan>
+        <useBodySizeModifier>true</useBodySizeModifier>
+        <bodySizeWeight>1</bodySizeWeight>
+        <bodySizeCurve>
+          <points>
+            <li>(0.5, 0.50)</li>
+            <li>(1.0, 1.00)</li>
+            <li>(1.9, 1.35)</li>
+            <li>(3.5, 1.75)</li>
+          </points>
+        </bodySizeCurve>
+      </li>
+    </comps>
+    <!-- DMS_Hound 只有頭部掛了攻擊部位群組，近戰全部走顎部。DMS_Hound only groups the head, so every melee tool goes through the jaws. -->
+    <tools Inherit="False">
+      <li>
+        <label>jaws</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>2.4</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.7</chanceFactor>
+      </li>
+      <li>
+        <label>ram</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>3.0</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.3</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>10</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>1</DMS_ChunkSlag>
+      <Steel>45</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef Name="DMS_MechBullHoundKindBase" ParentName="BaseAutomatroidKind" Abstract="True">
+    <isFighter>true</isFighter>
+    <maxPerGroup>4</maxPerGroup>
+    <!-- 沒有手持武器：武裝是固定的。No hand weapon: the mount is fixed. -->
+    <weaponTags />
+    <weaponMoney>0~0</weaponMoney>
+    <abilities>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/bullHound</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.8, 0.4, 0.8)</volume>
+            <offset>(0, 0, -0.2)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/bullHound</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.6</drawSize>
+          <shadowData>
+            <volume>(0.8, 0.4, 0.8)</volume>
+            <offset>(0, 0, -0.2)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- ===== 霰彈型 / shotgun pattern ===== -->
+  <ThingDef ParentName="DMS_MechBullHoundBase">
+    <defName>DMS_Mech_BullHound</defName>
+    <label>bullhound</label>
+    <description>A heavy quadruped automatroid built for garrison duty. An enlarged derivative of the Dogge, it gives up the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was posted at gates and corridor junctions of remnant installations to stop intruders at close range.
+
+This pattern mounts an automatic shotgun. The mount is fixed and cannot be swapped.</description>
+    <comps>
+      <li Class="Fortified.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>autoshotgun</ID>
+            <turret>DMS_BullHound_ShotgunMounted</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>1.5</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <!-- 背部脊線掛架：東西向略偏肩、南北向沿脊線上下。Spine mount: shoulder-biased east/west, along the spine north/south. -->
+                <drawData>
+                  <dataNorth>
+                    <offset>(0,0,0.05)</offset>
+                  </dataNorth>
+                  <dataSouth>
+                    <offset>(0,0,0.35)</offset>
+                  </dataSouth>
+                  <dataEast>
+                    <offset>(-0.05,0,0.3)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(0.05,0,0.3)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="DMS_MechBullHoundKindBase">
+    <defName>DMS_Mech_BullHound</defName>
+    <label>bullhound</label>
+    <race>DMS_Mech_BullHound</race>
+    <combatPower>160</combatPower>
+  </PawnKindDef>
+
+  <!-- ===== 噴火型 / flamer pattern =====
+       背掛武裝直接沿用 DMS_Flameblaster（與壁虎同款；CE 下由 BullHound_Mounted_CE.xml 換成 DMS_Gecko_FlameTurret）。
+       The back mount is DMS_Flameblaster itself (same as the Gecko; BullHound_Mounted_CE.xml swaps it to DMS_Gecko_FlameTurret under CE). -->
+  <ThingDef ParentName="DMS_MechBullHoundBase">
+    <defName>DMS_Mech_BullHound_Flamer</defName>
+    <label>bullhound (flamer)</label>
+    <description>A heavy quadruped automatroid built for garrison duty. An enlarged derivative of the Dogge, it gives up the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was posted at gates and corridor junctions of remnant installations to stop intruders at close range.
+
+This pattern mounts a Flameblaster for clearing corridors, with its plating treated against its own flame. The mount is fixed and cannot be swapped.</description>
+    <statBases>
+      <!-- 自身武器的防火處理。Fireproofed against its own weapon. -->
+      <ArmorRating_Heat>1.0</ArmorRating_Heat>
+    </statBases>
+    <comps>
+      <li Class="Fortified.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>flame projector</ID>
+            <turret>DMS_Flameblaster</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>1.2</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <dataNorth>
+                    <offset>(0,0,0.05)</offset>
+                  </dataNorth>
+                  <dataSouth>
+                    <offset>(0,0,0.35)</offset>
+                  </dataSouth>
+                  <dataEast>
+                    <offset>(-0.05,0,0.3)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(0.05,0,0.3)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>
+    </comps>
+    <damageMultipliers>
+      <li>
+        <damageDef>Flame</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+  </ThingDef>
+
+  <PawnKindDef ParentName="DMS_MechBullHoundKindBase">
+    <defName>DMS_Mech_BullHound_Flamer</defName>
+    <label>bullhound (flamer)</label>
+    <race>DMS_Mech_BullHound_Flamer</race>
+    <combatPower>170</combatPower>
+  </PawnKindDef>
+
+</Defs>

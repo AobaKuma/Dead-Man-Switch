@@ -4,4 +4,11 @@
   <DMS_ElevatorUnlocked>已解鎖。</DMS_ElevatorUnlocked>
   <DMS_HoleEmerge_Triggered>有 {0} 台機械體正從{1}裡爬出來！</DMS_HoleEmerge_Triggered>
 
+  <DMS_AccessKeyTransform_Locked>已鎖定。仍需在連結的門禁控制台刷卡：{0} 次</DMS_AccessKeyTransform_Locked>
+  <DMS_AccessKeyTransform_NoConsole>已鎖定。沒有任何門禁控制台連結到它。</DMS_AccessKeyTransform_NoConsole>
+  <DMS_AccessKeyTransform_Unlocked>{THING_labelShort}已解鎖。</DMS_AccessKeyTransform_Unlocked>
+
+  <DMS_DormantTurretWokenUp>{WAKER_labelShort}驚醒了一座休眠中的砲塔。</DMS_DormantTurretWokenUp>
+  <DMS_DormantTurretWokenUpPlural>{WAKER_labelShort}驚醒了休眠中的砲塔。</DMS_DormantTurretWokenUpPlural>
+
 </LanguageData>

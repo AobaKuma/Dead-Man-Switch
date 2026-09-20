@@ -40,4 +40,60 @@
     </genStep>
   </GenStepDef>
 
+  <!-- ============================================================
+       手工版面的地下地圖：三張「單體大空間 + 小房間」FFF_StructureDef（見 DMS_Vault_UnderMaps.xml）。
+       結構步驟直接寫在 genSteps 裡，傳送門只要把 pocketMapGenerator 指到 DMS_UndergroundHall，
+       不需要 ModExtension_PortalLayout。
+       Hand-authored underground maps: three "one big hall + small rooms" FFF_StructureDefs
+       (DMS_Vault_UnderMaps.xml). The structure step is baked into genSteps, so a portal only has to
+       point pocketMapGenerator at DMS_UndergroundHall; no ModExtension_PortalLayout needed.
+       ============================================================ -->
+  <MapGeneratorDef>
+    <defName>DMS_UndergroundHall</defName>
+    <label>underground facility</label>
+    <isUnderground>true</isUnderground>
+    <disableCallAid>true</disableCallAid>
+    <pocketMapProperties>
+      <biome>Underground</biome>
+      <temperature>12</temperature>
+      <canBeCleaned>true</canBeCleaned>
+    </pocketMapProperties>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>Underground_RocksFromGrid</li>
+      <li>Terrain</li>
+      <li>RockChunks</li>
+      <li>DMS_UndergroundHallStructure</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+  <GenStepDef>
+    <defName>DMS_UndergroundHallStructure</defName>
+    <order>551</order>
+    <genStep Class="DMS.DMS_GenStep_UndergroundStructure">
+      <structureDefs>
+        <li>DMS_UnderMap_Warehouse</li>
+        <li>DMS_UnderMap_VehicleBay</li>
+        <li>DMS_UnderMap_ReactorHall</li>
+      </structureDefs>
+      <!-- 只有這些會掛防務陣營；門、家具、貨架保持無陣營讓玩家能直接用。
+           Only these get the defender faction; doors, furniture and shelving stay factionless so the player can use them. -->
+      <defenderDefs>
+        <li>DMS_Building_Camera</li>
+        <li>DMS_Building_Scanner_Small</li>
+        <li>DMS_Building_Scanner_Large</li>
+        <li>DMS_Building_FPVNest</li>
+        <li>DMS_MechCapsule_VaultInfantry</li>
+        <li>DMS_MechCapsule_VaultAssault</li>
+        <li>DMS_MechCapsule_VaultFrame</li>
+        <li>DMS_MechCapsule_VaultKennel</li>
+        <!-- 砲塔掛上陣營後會依自身 CompCanBeDormant_NPCChance.npcDormantChance 決定要不要休眠。
+             Once it has a faction the turret rolls its own CompCanBeDormant_NPCChance.npcDormantChance. -->
+        <li>DMS_Turret_Sentry</li>
+      </defenderDefs>
+      <initialBatteryPct>1</initialBatteryPct>
+    </genStep>
+  </GenStepDef>
+
 </Defs>

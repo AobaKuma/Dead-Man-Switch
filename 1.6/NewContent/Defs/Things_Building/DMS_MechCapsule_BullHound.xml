@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       鬥牛犬的封存犬舍：殘餘設施裡唯一能取得鬥牛犬的途徑。
+       與其他封存艙一樣是斷電的正規軍封存，機械師可駭入收編；
+       但作為駐防犬，警報響起時比其他搖籃更容易自己醒來咬人（triggerChance 較高）。
+       The BullHound kennel: the only way to obtain a bullhound, found inside remnant installations.
+       Like the other cradles it is a powered-down line-unit mothball a mechanitor can hack, but as the
+       installation's watchdog it wakes hostile on an alarm far more readily (higher triggerChance).
+       ============================================================ -->
+
+  <!-- 2x2：駐防犬舍 / garrison kennel -->
+  <ThingDef ParentName="FFF_MechCapsule_Medium">
+    <defName>DMS_MechCapsule_VaultKennel</defName>
+    <label>mothballed bullhound</label>
+    <description>A bullhound garrison automatroid in hibernation mode, clamped into its charging kennel. It was left on watch when the installation was sealed, and its alarm circuit is still live. A mechanitor can attempt to hack and control it.</description>
+    <!-- 警報響應：同地圖的警戒掃描器觸發時，有 triggerChance 的機率讓機兵敵對啟動；每次警報各自擲骰。
+         Alarm response: when an alert scanner on the same map fires, roll triggerChance to wake the mech as a hostile; every alarm rolls again. -->
+    <receivesSignals>true</receivesSignals>
+    <comps>
+      <li Class="Fortified.CompProperties_AlertEffector_ReleaseCapsuleMech">
+        <triggerChance>0.5</triggerChance>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_MechCapsule">
+        <spawnChance>0.75</spawnChance>
+        <!-- 武裝是固定子砲塔，不走手持武器保留判定。The mount is a fixed sub-turret, so the hand-weapon keep roll never applies. -->
+        <weaponChance>1</weaponChance>
+        <possibleGeneratePawn>
+          <DMS_Mech_BullHound>3</DMS_Mech_BullHound>
+          <DMS_Mech_BullHound_Flamer>2</DMS_Mech_BullHound_Flamer>
+        </possibleGeneratePawn>
+        <innerPawnDrawOffset>(0, 0, 0.1)</innerPawnDrawOffset>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

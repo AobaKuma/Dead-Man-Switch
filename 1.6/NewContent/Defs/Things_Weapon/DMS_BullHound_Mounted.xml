@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       鬥牛犬霰彈型的背掛固定武裝（噴火型直接用 DMS_Flameblaster，不另外定義）。
+       貼圖 bullHound_gun 由子砲塔渲染節點取用（PawnRenderNode_SubTurretGun 直接讀砲塔 ThingDef 的 graphicData），
+       drawSize 與機體 2.6 對齊，貼圖是同一張 256 畫布畫的。
+       BullHound shotgun pattern's back mount (the flamer pattern uses DMS_Flameblaster itself, no extra def).
+       The bullHound_gun texture is picked up by the sub-turret render node (PawnRenderNode_SubTurretGun reads the
+       turret ThingDef's graphicData); drawSize matches the body's 2.6 since the sprite was drawn on the same 256 canvas.
+       ============================================================ -->
+
+  <!-- 霰彈型：近程自動霰彈槍 / shotgun pattern: close-range autoshotgun -->
+  <ThingDef ParentName="DMS_AutomatroidTurretGun">
+    <defName>DMS_BullHound_ShotgunMounted</defName>
+    <label>bullhound autoshotgun</label>
+    <description>A short-barrelled automatic shotgun fixed to a bullhound's back mount, built to drop intruders at corridor and doorway range.
+
+This weapon is designed specifically for mounted use, so only specific units can equip it.</description>
+    <graphicData>
+      <texPath>Things/Automatroid/bullHound_gun</texPath>
+      <drawSize>2.6</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>900</MarketValue>
+      <AccuracyTouch>0.85</AccuracyTouch>
+      <AccuracyShort>0.55</AccuracyShort>
+      <AccuracyMedium>0.30</AccuracyMedium>
+      <AccuracyLong>0.15</AccuracyLong>
+      <RangedWeapon_Cooldown>2.2</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Shotgun</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>14.9</range>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>Shot_Shotgun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>DMS_BullHound_Mounted</li>
+    </weaponTags>
+    <modExtensions>
+      <li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+        <def>MF_StandardMuzzleFalsh</def>
+        <drawSize>(0.6,0.6)</drawSize>
+        <offsets>
+          <li>(0.9,0)</li>
+        </offsets>
+        <isAlternately>true</isAlternately>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+
+</Defs>

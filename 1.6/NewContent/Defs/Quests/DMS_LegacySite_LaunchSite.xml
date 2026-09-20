@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       廢棄發射場：67x66 的報廢飛彈發射陣地。版面（DMS_Ruin_LaunchSite）裡全是毀損設備、
+       殘骸與鐵絲網，沒有 PawnGroup，也沒有電梯／門禁。
+       守軍改由 GenStep 的 spawnDefenders 依站點威脅點數生成（殘餘巡邏隊），
+       因此任務描述可以用 [enemiesCount] 給出準確人數。
+       戰利品：GenStep 散落的補給 + 版面裡的後勤貨櫃、殘骸（浪人殘骸、獵犬底座等）。
+
+       Abandoned launch site: a 67x66 wrecked missile launch complex. The layout
+       (DMS_Ruin_LaunchSite) is all destroyed machinery, wreckage and razor wire,
+       with no PawnGroup and no elevator / access gate. The garrison is a remnant
+       patrol spawned by the GenStep's spawnDefenders from the site's threat points,
+       so the description can quote an accurate [enemiesCount]. Loot: the GenStep's
+       scatter plus the containers and wrecks (Ronin wreck, hound base, ...) in the layout.
+       ============================================================ -->
+
+  <SitePartDef>
+    <defName>DMS_LaunchSiteSite</defName>
+    <label>abandoned launch site</label>
+    <description>A wrecked Legacy missile launch complex. The launchers are gone and the compound is falling apart, but a remnant patrol still sweeps the perimeter, and the wreckage has never been salvaged.</description>
+    <workerClass>Fortified.SitePartWorker_FFF_TimedHostileSite</workerClass>
+    <modExtensions>
+      <li Class="Fortified.FFF_TimedSiteExtension">
+        <baseEntryHours>36</baseEntryHours>
+        <minEntryHours>8</minEntryHours>
+        <maxEntryHours>72</maxEntryHours>
+        <entryLetterLabelKey>DMS_LaunchSite_EntryCountdownLabel</entryLetterLabelKey>
+        <entryLetterTextKey>DMS_LaunchSite_EntryCountdownText</entryLetterTextKey>
+      </li>
+    </modExtensions>
+    <!-- 世界地圖上用先鋒殘餘的陣營圖標，套陣營色。The Legacy faction icon on the world map, tinted with the faction colour. -->
+    <siteTexture>UI/Faction/LegacyIcon</siteTexture>
+    <expandingIconTexture>UI/Faction/LegacyIcon</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <minThreatPoints>300</minThreatPoints>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <approachOrderString>Assault {0}</approachOrderString>
+    <approachingReportString>Assaulting {0}.</approachingReportString>
+    <arrivedLetter>You have arrived at the abandoned launch site. A remnant patrol is sweeping the wreckage.\n\nThe complex is wide open and full of cover. Deal with the patrol, then strip what the launch crews left behind.</arrivedLetter>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <tags>
+      <li>DMS_LaunchSiteSite</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMS_LaunchSiteStructure</defName>
+    <linkWithSite>DMS_LaunchSiteSite</linkWithSite>
+    <order>400</order>
+    <genStep Class="Fortified.Structures.GenStep_FFFGarrisonedStructure">
+      <useTag>DMS_LaunchSite</useTag>
+      <randomOffset>0~3</randomOffset>
+      <filthTypes>
+        <li>Filth_RubbleBuilding</li>
+        <li>Filth_RubbleRock</li>
+        <li>Filth_MachineBits</li>
+        <li>Filth_Ash</li>
+        <li>Filth_Fuel</li>
+      </filthTypes>
+      <!-- 報廢陣地：殘骸最多、補給最少。A wreck: the most debris, the least supply. -->
+      <debrisDef>ChunkSlagSteel</debrisDef>
+      <debrisCount>16~26</debrisCount>
+      <scatterRadius>32</scatterRadius>
+      <lootMaker>MapGen_DefaultStockpile</lootMaker>
+      <!-- 版面沒有守軍，依站點威脅點數生成一支巡邏隊（LordJob_DefendPoint），
+           讓兵力隨難度縮放；[enemiesCount] 對應的就是這一支。
+           The layout has no garrison; spawn a patrol from the site's threat points
+           (LordJob_DefendPoint) so strength scales with difficulty; [enemiesCount] describes this group. -->
+      <spawnDefenders>true</spawnDefenders>
+      <defendRadius>26</defendRadius>
+      <satelliteScatter>
+        <li>
+          <tag>DMS_DecoySiteEdgeRuin</tag>
+          <count>1~2</count>
+          <radiusPct>0.24</radiusPct>
+          <minRadius>50</minRadius>
+          <minSpacing>6</minSpacing>
+        </li>
+        <li>
+          <tag>DMS_RuinSatellite</tag>
+          <count>4~6</count>
+          <radiusPct>0.22</radiusPct>
+          <minRadius>48</minRadius>
+          <minSpacing>5</minSpacing>
+        </li>
+        <li>
+          <tag>DMS_RuinScattered</tag>
+          <count>1~2</count>
+          <radiusPct>0.36</radiusPct>
+          <minRadius>66</minRadius>
+          <minSpacing>6</minSpacing>
+        </li>
+      </satelliteScatter>
+    </genStep>
+  </GenStepDef>
+
+  <!-- 任務腳本在 DMS_LegacyInstallationQuest.xml：五座設施共用一個 QuestScriptDef，隨機抽一座。
+       The quest script lives in DMS_LegacyInstallationQuest.xml: one QuestScriptDef rolls one of the five installations. -->
+
+</Defs>

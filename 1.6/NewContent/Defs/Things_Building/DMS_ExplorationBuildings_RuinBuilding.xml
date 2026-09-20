@@ -258,6 +258,20 @@
     <costList>
       <ChunkSlagSteel>3</ChunkSlagSteel>
     </costList>
+    <!-- 地圖生成時有 1% 機率換成完好的後勤貨櫃（同為 2x2，沿用陣營）。只在生成期作用，玩家自己蓋的不受影響。
+         1% chance at map generation to come out as an intact logistic container (same 2x2 footprint, faction carried over).
+         Map-gen only; player-built copies are untouched. -->
+    <modExtensions>
+      <li Class="Fortified.ModExtension_ReplaceBuilding">
+        <replaceChance>0.01</replaceChance>
+        <replacements>
+          <li>
+            <thing>DMS_LogisticContainer</thing>
+            <weight>1</weight>
+          </li>
+        </replacements>
+      </li>
+    </modExtensions>
   </ThingDef>
 
   <!-- (Shield generator) -->

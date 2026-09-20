@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       六個先鋒殘餘設施站點的補充散布：在 Fog（order 1500）之前，於地圖上剩餘的空地
+       隨機放幾座 DMS_SiteStruct_*（Ruin_ScatteredMedium_A/B/C.xml，29x29 中型廢墟）。
+       order 1400 時主結構、衛星、岩塊、植物、動物都已就位，DMS.DMS_GenStep_ScatterStructures
+       只挑「沒建築、沒屋頂、非水面、非鋪設地板」的空地，所以不會壓到既有設施。
+       GenStepDef 的 linkWithSite 只能綁一個 SitePartDef，因此用一個抽象父定義加六個子定義。
+
+       Extra scatter for the six Legacy-installation sites: just before Fog (order 1500),
+       drop a few DMS_SiteStruct_* pieces (29x29 medium ruins from Ruin_ScatteredMedium_A/B/C.xml)
+       onto whatever open ground is left. At order 1400 the main structure, satellites, chunks,
+       plants and animals are all placed, and DMS.DMS_GenStep_ScatterStructures only accepts
+       ground with no buildings, no roof, no water and no laid floor, so nothing is overwritten.
+       linkWithSite takes a single SitePartDef, hence one abstract parent and six children.
+       ============================================================ -->
+
+  <GenStepDef Name="DMS_LegacySiteScatterRuinsBase" Abstract="True">
+    <order>1400</order>
+    <genStep Class="DMS.DMS_GenStep_ScatterStructures">
+      <tag>DMS_SiteStruct</tag>
+      <countRange>3~6</countRange>
+      <minSpacing>6</minSpacing>
+      <randomRotation>true</randomRotation>
+      <attemptsPerPiece>60</attemptsPerPiece>
+      <!-- 廢墟裡的攝影機／無人機巢掛站點派系，才會當作防務運作。
+           Cameras / drone nests in the ruins get the site faction so they act as defences. -->
+      <useSiteFaction>true</useSiteFaction>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef ParentName="DMS_LegacySiteScatterRuinsBase">
+    <defName>DMS_AirportScatterRuins</defName>
+    <linkWithSite>DMS_AirportSite</linkWithSite>
+  </GenStepDef>
+
+  <GenStepDef ParentName="DMS_LegacySiteScatterRuinsBase">
+    <defName>DMS_VaultStationScatterRuins</defName>
+    <linkWithSite>DMS_VaultStationSite</linkWithSite>
+  </GenStepDef>
+
+  <GenStepDef ParentName="DMS_LegacySiteScatterRuinsBase">
+    <defName>DMS_RepairStationScatterRuins</defName>
+    <linkWithSite>DMS_RepairStationSite</linkWithSite>
+  </GenStepDef>
+
+  <GenStepDef ParentName="DMS_LegacySiteScatterRuinsBase">
+    <defName>DMS_OperationBaseScatterRuins</defName>
+    <linkWithSite>DMS_OperationBaseSite</linkWithSite>
+  </GenStepDef>
+
+  <!-- 85x58 主結構已佔去大半地圖，只補 2~3 座。The 85x58 main structure eats most of the map; only 2~3 here. -->
+  <GenStepDef ParentName="DMS_LegacySiteScatterRuinsBase">
+    <defName>DMS_SiteStationScatterRuins</defName>
+    <linkWithSite>DMS_SiteStationSite</linkWithSite>
+    <genStep Class="DMS.DMS_GenStep_ScatterStructures">
+      <countRange>2~3</countRange>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef ParentName="DMS_LegacySiteScatterRuinsBase">
+    <defName>DMS_LaunchSiteScatterRuins</defName>
+    <linkWithSite>DMS_LaunchSiteSite</linkWithSite>
+  </GenStepDef>
+
+</Defs>

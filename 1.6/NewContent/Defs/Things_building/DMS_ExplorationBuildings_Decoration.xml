@@ -146,6 +146,22 @@
     <costList>
       <Steel>50</Steel>
     </costList>
+    <!-- 地圖生成時有 1% 機率換成完好的哨戒砲塔（同為 1x1，沿用站點陣營）。內建電池從 0 開始，
+         接不到導線就只是一座能撿走的死砲塔。只在生成期作用，玩家自己放的殘骸不受影響。
+         1% chance at map generation to come out as a working sentry gun (same 1x1 footprint, site faction
+         carried over). Its internal battery starts empty, so off-grid it is just a dead turret the player can
+         pick up. Map-gen only; player-placed wrecks are untouched. -->
+    <modExtensions>
+      <li Class="Fortified.ModExtension_ReplaceBuilding">
+        <replaceChance>0.01</replaceChance>
+        <replacements>
+          <li>
+            <thing>DMS_Turret_Sentry</thing>
+            <weight>1</weight>
+          </li>
+        </replacements>
+      </li>
+    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="DMS_DecorationBuildingBase">

@@ -122,10 +122,16 @@ namespace DMS
         protected override IEnumerable<GenStepWithParams> GetExtraGenSteps()
         {
             ModExtension_PortalLayout ext = Ext;
-            if (ext?.genStep == null)
+            if (ext == null)
+            {
+                // 沒有擴充就交給 MapGeneratorDef 自己的 genSteps（例如 DMS_UndergroundHall 直接內建結構步驟）。
+                // No extension: the MapGeneratorDef carries its own steps (e.g. DMS_UndergroundHall bakes the structure step in).
+                yield break;
+            }
+            if (ext.genStep == null)
             {
                 Log.ErrorOnce(
-                    $"[DMS] {def.defName} has no ModExtension_PortalLayout.genStep; the pocket map will be empty.",
+                    $"[DMS] {def.defName} has ModExtension_PortalLayout without a genStep; the pocket map will be empty.",
                     def.shortHash);
                 yield break;
             }
