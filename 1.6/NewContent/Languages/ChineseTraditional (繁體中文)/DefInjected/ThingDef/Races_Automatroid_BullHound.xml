@@ -6,7 +6,7 @@
   <!-- EN: A heavy quadruped automatroid built for garrison duty. An enlarged derivative of the Dogge, it gives up the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was posted at gates and corridor junctions of remnant installations to stop intruders at close range.
 
 This pattern mounts an automatic shotgun. The mount is fixed and cannot be swapped. -->
-  <DMS_Mech_BullHound.description>一種為駐防任務打造的重型四足機兵。作為獒犬的放大衍生型，它捨棄了小型同族靠人工肌肉換來的靈活性，換上厚重裝甲與固定的背部掛架，被部署在殘餘設施的閘門與走廊交會處，於近距離攔下入侵者。
+  <DMS_Mech_BullHound.description>一種為設施駐防任務打造的重型四足機兵。它捨棄了小型同族的靈活性，換上厚重裝甲與固定的背部掛架，被部署在設施內用於攔截與殲滅入侵者。
 
 本型號掛載一挺自動霰彈槍。掛架為固定式，無法更換。</DMS_Mech_BullHound.description>
   <!-- EN: jaws -->
@@ -15,13 +15,13 @@ This pattern mounts an automatic shotgun. The mount is fixed and cannot be swapp
   <DMS_Mech_BullHound.tools.ram.label>衝撞</DMS_Mech_BullHound.tools.ram.label>
 
   <!-- EN: bullhound (flamer) -->
-  <DMS_Mech_BullHound_Flamer.label>鬥牛犬（噴火型）</DMS_Mech_BullHound_Flamer.label>
+  <DMS_Mech_BullHound_Flamer.label>鬥牛犬</DMS_Mech_BullHound_Flamer.label>
   <!-- EN: A heavy quadruped automatroid built for garrison duty. An enlarged derivative of the Dogge, it gives up the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was posted at gates and corridor junctions of remnant installations to stop intruders at close range.
 
 This pattern mounts a Flameblaster for clearing corridors, with its plating treated against its own flame. The mount is fixed and cannot be swapped. -->
-  <DMS_Mech_BullHound_Flamer.description>一種為駐防任務打造的重型四足機兵。作為獒犬的放大衍生型，它捨棄了小型同族靠人工肌肉換來的靈活性，換上厚重裝甲與固定的背部掛架，被部署在殘餘設施的閘門與走廊交會處，於近距離攔下入侵者。
+  <DMS_Mech_BullHound_Flamer.description>一種為設施駐防任務打造的重型四足機兵。它捨棄了小型同族的靈活性，換上厚重裝甲與固定的背部掛架，被部署在設施內用於攔截與殲滅入侵者。
 
-本型號掛載火焰發射器用於清掃走廊，裝甲亦針對自身火焰做了處理。掛架為固定式，無法更換。</DMS_Mech_BullHound_Flamer.description>
+本型號掛載火焰發射器用於清掃走廊，裝甲亦針對自身火焰做了防護處理。掛架為固定式，無法更換。</DMS_Mech_BullHound_Flamer.description>
   <!-- EN: jaws -->
   <DMS_Mech_BullHound_Flamer.tools.jaws.label>顎部</DMS_Mech_BullHound_Flamer.tools.jaws.label>
   <!-- EN: ram -->

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 設施砲擊呼叫器用的火力支援：砲彈從隨機地圖邊緣飛進來，落點以目標為中心散布，
+       3~6 發高爆迫擊砲彈。建築觸發不記錄軼事／歷史事件（AirSupportDef 只對玩家 pawn 記）。
+       Fire support used by the facility's fire-support caller: shells fly in from a random map edge,
+       scattered around the target, 3~6 HE mortar rounds. Building-triggered calls record no tale or
+       history event (AirSupportDef only records those for player pawns). -->
+  <Fortified.AirSupportDef>
+    <defName>DMS_AirSupport_FacilityMortar</defName>
+    <label>facility mortar fire mission</label>
+    <comps>
+      <li Class="Fortified.AirSupportComp_SetOriginRandomEdge" />
+      <li Class="Fortified.AirSupportComp_Bombard">
+        <ProjectileDef>Bullet_Shell_HighExplosive</ProjectileDef>
+        <spreadRadius>6</spreadRadius>
+        <burstCount>3~6</burstCount>
+        <burstInterval>40~90</burstInterval>
+        <delayRange>240~360</delayRange>
+        <delayRangeSound>40~50</delayRangeSound>
+        <soundDef>DMS_Shot_DistanceMortar</soundDef>
+      </li>
+    </comps>
+  </Fortified.AirSupportDef>
+</Defs>

@@ -44,8 +44,8 @@
     <comps>
       <li Class="DMS.CompProperties_AlertEffector_HoleEmerge">
         <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
-        <triggerChance>0.6</triggerChance>
-        <oneShot>true</oneShot>
+        <triggerChance>0.3</triggerChance>
+        <oneShot>false</oneShot>
         <pointsRange>150~600</pointsRange>
         <emergeDurationTicks>300</emergeDurationTicks>
         <landingRadius>2</landingRadius>
@@ -494,6 +494,40 @@
     <costList>
       <Steel>50</Steel>
       <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <!-- 鐵絲網：1x2 佔地，貼圖 3x1（Graphic_Multi 旋轉時自動變 1x3）。不可通行，但 fillPercent 極低所以子彈可直接射過；
+       Impassable + fillPercent<1 會觸發原版設定錯誤，因此關閉 disableImpassableShotOverConfigError。
+       Barbed wire: 1x2 footprint, 3x1 texture (Graphic_Multi rotates it to 1x3 for east/west). Impassable but
+       near-zero fillPercent so shots pass straight over; the config error for impassable+shot-over is disabled. -->
+  <ThingDef ParentName="DMS_DecorationBuildingBase">
+    <defName>DMS_Building_BarbedWire</defName>
+    <label>barbed wire</label>
+    <description>A tangle of wire net strung between low stakes. Nothing can walk through it, but it does not stop bullets either way. Tearing it down takes a while and yields a small amount of metal scrap.</description>
+    <graphicData>
+      <texPath>Things/Building/Wire/building</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,1)</drawSize>
+      <shadowData>
+        <volume>(1.8, 0.2, 0.4)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.75</uiIconScale>
+    <passability>Impassable</passability>
+    <fillPercent>0.05</fillPercent>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <blockWind>false</blockWind>
+    <size>(2,1)</size>
+    <rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToBuild>1200</WorkToBuild>
+      <Mass>15</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Steel>15</Steel>
     </costList>
   </ThingDef>
 </Defs>

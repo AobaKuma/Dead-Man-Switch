@@ -2,7 +2,12 @@
 <LanguageData>
 
   <DMS_ElevatorUnlocked>已解鎖。</DMS_ElevatorUnlocked>
-  <DMS_HoleEmerge_Triggered>有 {0} 台機械體正從{1}裡爬出來！</DMS_HoleEmerge_Triggered>
+  <DMS_HoleEmerge_Triggered>{0}架機械體從{1}中出現。</DMS_HoleEmerge_Triggered>
+
+  <DMS_BattleGroupCall_Triggered>{0}正在呼叫增援，快速反應部隊即將抵達。</DMS_BattleGroupCall_Triggered>
+  <DMS_MortarStrike_Triggered>{0}正在呼叫火力支援，遠程砲擊即將抵達。</DMS_MortarStrike_Triggered>
+  <DMS_LauncherCase_TakeWeapon>取出並裝備{0}</DMS_LauncherCase_TakeWeapon>
+  <DMS_LauncherCase_Empty>箱子是空的</DMS_LauncherCase_Empty>
 
   <DMS_AccessKeyTransform_Locked>已鎖定。仍需在連結的門禁控制台刷卡：{0} 次</DMS_AccessKeyTransform_Locked>
   <DMS_AccessKeyTransform_NoConsole>已鎖定。沒有任何門禁控制台連結到它。</DMS_AccessKeyTransform_NoConsole>

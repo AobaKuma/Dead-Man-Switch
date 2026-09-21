@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- {PAWN} pawn, {0} hediff label with stage -->
+  <DMS_BionicShock_LevelUp>{PAWN_labelShort}'s condition has worsened: {0}.</DMS_BionicShock_LevelUp>
+  <DMS_BionicShock_LevelDown>{PAWN_labelShort}'s condition has eased: {0}.</DMS_BionicShock_LevelDown>
+  <!-- {PAWN} pawn, {0} hediff label -->
+  <DMS_BionicShock_Cured>{PAWN_labelShort}'s {0} has been cured.</DMS_BionicShock_Cured>
+
+  <!-- Drug info card. {0} hediff label, {1} signed level offset -->
+  <DMS_BionicShock_StatLabel>{0} level</DMS_BionicShock_StatLabel>
+  <DMS_BionicShock_StatDesc>Each dose changes the level of {0} by {1}. At level 0 the condition is removed.</DMS_BionicShock_StatDesc>
+
+</LanguageData>

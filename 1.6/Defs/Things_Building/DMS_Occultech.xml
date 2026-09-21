@@ -8,10 +8,10 @@
     <graphicData>
       <texPath>Things/Building/Stele/Stele</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(6,6)</drawSize>
-      <drawOffset>(0,1.2,1)</drawOffset>
+      <drawSize>(7,7)</drawSize>
+      <drawOffset>(0,1.2,1.25)</drawOffset>
       <shadowData>
-        <volume>(2.4,4,2.4)</volume>
+        <volume>(3,4,3)</volume>
       </shadowData>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>

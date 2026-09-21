@@ -75,6 +75,8 @@
       <li Class="Fortified.HediffGiver_RandomSilent">
         <mtbDays>30</mtbDays>
         <hediff>DMS_BionicShock</hediff>
+        <levelUpIfExists>true</levelUpIfExists>
+        <levelUpMessageKey>DMS_BionicShock_LevelUp</levelUpMessageKey>
         <partsToAffect>
           <li>Torso</li>
         </partsToAffect>
@@ -177,6 +179,8 @@
       <li Class="Fortified.HediffGiver_RandomSilent">
         <mtbDays>60</mtbDays>
         <hediff>DMS_BionicShock</hediff>
+        <levelUpIfExists>true</levelUpIfExists>
+        <levelUpMessageKey>DMS_BionicShock_LevelUp</levelUpMessageKey>
         <partsToAffect>
           <li>Torso</li>
         </partsToAffect>
@@ -253,6 +257,8 @@
       <li Class="Fortified.HediffGiver_RandomSilent">
         <mtbDays>64</mtbDays>
         <hediff>DMS_BionicShock</hediff>
+        <levelUpIfExists>true</levelUpIfExists>
+        <levelUpMessageKey>DMS_BionicShock_LevelUp</levelUpMessageKey>
         <partsToAffect>
           <li>Torso</li>
         </partsToAffect>
@@ -333,6 +339,8 @@
       <li Class="Fortified.HediffGiver_RandomSilent">
         <mtbDays>64</mtbDays>
         <hediff>DMS_BionicShock</hediff>
+        <levelUpIfExists>true</levelUpIfExists>
+        <levelUpMessageKey>DMS_BionicShock_LevelUp</levelUpMessageKey>
         <partsToAffect>
           <li>Torso</li>
         </partsToAffect>
@@ -415,6 +423,8 @@
       <li Class="Fortified.HediffGiver_RandomSilent">
         <mtbDays>64</mtbDays>
         <hediff>DMS_BionicShock</hediff>
+        <levelUpIfExists>true</levelUpIfExists>
+        <levelUpMessageKey>DMS_BionicShock_LevelUp</levelUpMessageKey>
         <partsToAffect>
           <li>Torso</li>
         </partsToAffect>
@@ -509,6 +519,8 @@
           <li Class="Fortified.HediffGiver_RandomSilent">
             <mtbDays>120</mtbDays>
             <hediff>DMS_BionicShock</hediff>
+            <levelUpIfExists>true</levelUpIfExists>
+            <levelUpMessageKey>DMS_BionicShock_LevelUp</levelUpMessageKey>
             <partsToAffect>
               <li>Torso</li>
             </partsToAffect>
@@ -524,6 +536,8 @@
           <li Class="Fortified.HediffGiver_RandomSilent">
             <mtbDays>100</mtbDays>
             <hediff>DMS_BionicShock</hediff>
+            <levelUpIfExists>true</levelUpIfExists>
+            <levelUpMessageKey>DMS_BionicShock_LevelUp</levelUpMessageKey>
             <partsToAffect>
               <li>Torso</li>
             </partsToAffect>
@@ -539,6 +553,8 @@
           <li Class="Fortified.HediffGiver_RandomSilent">
             <mtbDays>80</mtbDays>
             <hediff>DMS_BionicShock</hediff>
+            <levelUpIfExists>true</levelUpIfExists>
+            <levelUpMessageKey>DMS_BionicShock_LevelUp</levelUpMessageKey>
             <partsToAffect>
               <li>Torso</li>
             </partsToAffect>
@@ -554,6 +570,8 @@
           <li Class="Fortified.HediffGiver_RandomSilent">
             <mtbDays>60</mtbDays>
             <hediff>DMS_BionicShock</hediff>
+            <levelUpIfExists>true</levelUpIfExists>
+            <levelUpMessageKey>DMS_BionicShock_LevelUp</levelUpMessageKey>
             <partsToAffect>
               <li>Torso</li>
             </partsToAffect>
@@ -569,6 +587,8 @@
           <li Class="Fortified.HediffGiver_RandomSilent">
             <mtbDays>45</mtbDays>
             <hediff>DMS_BionicShock</hediff>
+            <levelUpIfExists>true</levelUpIfExists>
+            <levelUpMessageKey>DMS_BionicShock_LevelUp</levelUpMessageKey>
             <partsToAffect>
               <li>Torso</li>
             </partsToAffect>
@@ -584,6 +604,8 @@
           <li Class="Fortified.HediffGiver_RandomSilent">
             <mtbDays>30</mtbDays>
             <hediff>DMS_BionicShock</hediff>
+            <levelUpIfExists>true</levelUpIfExists>
+            <levelUpMessageKey>DMS_BionicShock_LevelUp</levelUpMessageKey>
             <partsToAffect>
               <li>Torso</li>
             </partsToAffect>

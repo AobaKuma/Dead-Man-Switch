@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 設施戰鬥群呼叫器用的波次：遺留部隊快速反應部隊，每次呼叫升一級，第 3 波起隨機重複。
+       Wave table for the facility's battle-group caller: a Legacy quick-reaction force that escalates
+       per call and repeats randomly from wave 3 on. -->
+  <Fortified.RaidWaveDef>
+    <defName>DMS_RaidWave_FacilityQRF</defName>
+    <label>facility quick-reaction force</label>
+    <factionDef>DMS_Legacy</factionDef>
+    <repeatWaveStartIndex>2</repeatWaveStartIndex>
+    <waves>
+      <li>
+        <pawns>
+          <DMS_Mech_Ronin>2</DMS_Mech_Ronin>
+          <DMS_Mech_Falcon>2</DMS_Mech_Falcon>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
+          <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_Protector>1</DMS_Mech_Protector>
+          <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
+          <DMS_Mech_Falcon>4</DMS_Mech_Falcon>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_Protector>2</DMS_Mech_Protector>
+          <DMS_Mech_Ronin>4</DMS_Mech_Ronin>
+          <DMS_Mech_Falcon>6</DMS_Mech_Falcon>
+        </pawns>
+      </li>
+    </waves>
+  </Fortified.RaidWaveDef>
+</Defs>

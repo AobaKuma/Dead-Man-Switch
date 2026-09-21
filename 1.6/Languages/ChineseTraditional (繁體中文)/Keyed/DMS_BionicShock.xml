@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- {PAWN} 角色, {0} 含分級的病症名稱 -->
+  <DMS_BionicShock_LevelUp>{PAWN_labelShort}的病情加重了：{0}。</DMS_BionicShock_LevelUp>
+  <DMS_BionicShock_LevelDown>{PAWN_labelShort}的病情減輕了：{0}。</DMS_BionicShock_LevelDown>
+  <!-- {PAWN} 角色, {0} 病症名稱 -->
+  <DMS_BionicShock_Cured>{PAWN_labelShort}的{0}已被治癒。</DMS_BionicShock_Cured>
+
+  <!-- 藥物資訊卡。{0} 病症名稱, {1} 帶正負號的等級變化 -->
+  <DMS_BionicShock_StatLabel>{0}等級</DMS_BionicShock_StatLabel>
+  <DMS_BionicShock_StatDesc>每服用一劑會使{0}的等級變化{1}。降至 0 級時病症消失。</DMS_BionicShock_StatDesc>
+
+</LanguageData>

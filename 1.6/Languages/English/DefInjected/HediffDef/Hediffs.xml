@@ -3,14 +3,12 @@
   
   <!-- EN: Xeno Limb Syndrome -->
   <DMS_BionicShock.label>Xeno Limb Syndrome</DMS_BionicShock.label>
-  <!-- EN: A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for these symptoms… -->
+  <!-- EN: A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.
+
+There are five classifications of severity for these symptoms. Left untreated, the syndrome will progress to the next level over time and eventually kill the patient. Each dose of neuroglue lowers it by one level and suspends its progression for a while. -->
   <DMS_BionicShock.description>A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.
 
-There are five classifications of severity for these symptoms..</DMS_BionicShock.description>
-  <!-- EN: bionic syndrome has been cured -->
-  <DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>bionic syndrome has been cured</DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>
-  <!-- EN: Initial -->
-  <DMS_BionicShock.stages.Initial.label>Initial</DMS_BionicShock.stages.Initial.label>
+There are five classifications of severity for these symptoms. Left untreated, the syndrome will progress to the next level over time and eventually kill the patient. Each dose of neuroglue lowers it by one level and suspends its progression for a while.</DMS_BionicShock.description>
   <!-- EN: LV.1 Initial -->
   <DMS_BionicShock.stages.LV1_Initial.label>LV.1 Initial</DMS_BionicShock.stages.LV1_Initial.label>
   <!-- EN: LV.2 Minor -->

@@ -305,4 +305,218 @@
       </li>
     </comps>
   </ThingDef>
+
+  <!-- ══════════════════════════════════════════════════════════
+       警報呼叫器（AlertCaller）：收到掃描器的警報後對外呼叫支援，本身不偵測。
+       貼圖已含底座，直接用單張圖；1x1 佔地。
+       Alert callers: respond to scanner alarms by calling in outside support; they do no detecting
+       of their own. Textures already include the pedestal; 1x1 footprint.
+       ══════════════════════════════════════════════════════════ -->
+
+  <!-- 戰鬥群呼叫器：警報後走 FFF RaidWave 系統呼叫 DMS_RaidWave_FacilityQRF，由 quest 負責延遲
+       （最少 2500~5000 tick）、遠處空投、進攻 lord 與信件；每次呼叫波次升級。一次性。
+       Battle-group caller: on alarm, summons DMS_RaidWave_FacilityQRF through FFF's RaidWave system;
+       the quest handles the delay (2500~5000 ticks minimum), distant drop pods, assault lord and
+       letters, escalating a wave per call. One-shot. -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_AlertCaller_BattleGroup</defName>
+    <label>reinforcement uplink</label>
+    <description>An armored uplink terminal tied into the facility's alert network. When the sensors trip, it transmits the intruders' position to the nearest quick-reaction force, which arrives by drop pod shortly after to sweep the area. The transmitter burns out after a single call. Cut power or hit it with an EMP to disable it before dismantling.</description>
+    <graphicData>
+      <texPath>Things/Building/AlertCaller/battleGroup</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(0.9, 0.5, 0.9)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.6</uiIconScale>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="DMS.CompProperties_AlertEffector_CallBattleGroup">
+        <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
+        <triggerChance>0.5</triggerChance>
+        <oneShot>true</oneShot>
+        <raidWaveDef>DMS_RaidWave_FacilityQRF</raidWaveDef>
+        <!-- 不受 RaidWave 兩天全域冷卻限制；但呼叫仍會刷新冷卻，玩家信標會跟著進冷卻。
+             Ignores RaidWave's two-day global cooldown; the call still stamps it, so player beacons go on cooldown. -->
+        <respectCooldown>false</respectCooldown>
+        <callSound>FlickSwitch</callSound>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 砲擊呼叫器：警報後挑半徑 30 內一名敵人，把位置交給 FFF AirSupport 系統執行 DMS_AirSupport_FacilityMortar
+       （邊緣飛入、3~6 發高爆彈、散布半徑 6、延遲 240~360 tick）。厚屋頂（地下）下打不到，只適合地表站點。可重複觸發。
+       Fire-support caller: on alarm, picks one hostile within 30 cells and hands its position to FFF's
+       AirSupport system running DMS_AirSupport_FacilityMortar (edge fly-in, 3~6 HE shells, spread 6,
+       240~360 tick delay). Thick roofs (underground) block it, so surface sites only. Repeatable. -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_AlertCaller_Mortar</defName>
+    <label>fire support uplink</label>
+    <description>A ranging dome tied into the facility's alert network. When the sensors trip, it fixes the intruders' position and relays fire missions to an off-map mortar battery, which walks high-explosive shells onto anything hostile nearby. It has no ammunition of its own and keeps calling as long as it has power and a target. Cut power or hit it with an EMP to disable it before dismantling.</description>
+    <graphicData>
+      <texPath>Things/Building/AlertCaller/mortar</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(0.9, 0.5, 0.9)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="DMS.CompProperties_AlertEffector_MortarStrike">
+        <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
+        <triggerChance>0.6</triggerChance>
+        <oneShot>false</oneShot>
+        <airSupportDef>DMS_AirSupport_FacilityMortar</airSupportDef>
+        <targetSearchRadius>30</targetSearchRadius>
+        <callSound>FlickSwitch</callSound>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ══════════════════════════════════════════════════════════
+       武器箱（LauncherCase）：純靜態容器，不接警報也不會自己開火。
+       Weapon case: a purely static container; it neither listens to alarms nor fires on its own.
+       ══════════════════════════════════════════════════════════ -->
+
+  <!-- 發射器箱：掛在牆上的應急箱，裡面放一具輕型無後座力砲。武器走 CompRefuelable 存放：設施生成的箱子生來就裝好，
+       玩家蓋的從空箱開始，殖民者把輕型無後座力砲放進去就能補裝；燃料條 gizmo 上的勾選框決定要不要自動補裝。
+       右鍵可以直接取出裝備（原本的主武器收進背包）；箱子空了貼圖換成 building_empty。
+       Launcher case: a wall-mounted emergency case holding one light recoilless rifle. The weapon is stored
+       through CompRefuelable: facility cases spawn stocked, player-built ones start empty and are restocked
+       by a colonist loading a light recoilless rifle; the checkbox on the fuel-bar gizmo decides whether they
+       do it automatically. Right-click takes the weapon out and equips it (the previous primary goes into the
+       inventory); the graphic swaps to building_empty once the case is empty. -->
+  <ThingDef ParentName="DMS_BuildingBase">
+    <defName>DMS_Building_LauncherCase</defName>
+    <label>launcher case</label>
+    <description>A wall-mounted emergency case holding a single light recoilless rifle, ready to be grabbed when the facility comes under attack. Anyone can pull the rifle out and shoulder it; the case then sits empty until someone loads a fresh one into it.</description>
+    <thingClass>DMS.Building_RefuelableGraphic</thingClass>
+    <category>Building</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/LauncherCase/building</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>2</drawSize>
+      <drawOffsetNorth>(0,0,0.4)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LauncherCase/icon</uiIconPath>
+    <passability>Standable</passability>
+    <rotatable>true</rotatable>
+    <fillPercent>0</fillPercent>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <size>(1,1)</size>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Mass>8</Mass>
+      <Flammability>0.3</Flammability>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+    </killedLeavings>
+    <building>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <terrainAffordanceNeeded IsNull="True" />
+    <modExtensions>
+      <li Class="DMS.ModExtension_RefuelableGraphic">
+        <emptyGraphicData>
+          <texPath>Things/Building/LauncherCase/building_empty</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+          <drawOffsetNorth>(0,0,0.4)</drawOffsetNorth>
+          <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
+          <damageData>
+            <enabled>false</enabled>
+          </damageData>
+        </emptyGraphicData>
+      </li>
+    </modExtensions>
+    <comps>
+      <!-- 存放：一具輕型無後座力砲 = 一格。initialFuelPercent 0 → 玩家蓋的是空箱，
+           拆除或炸毀時裡面沒拿走的武器會掉出來（CompRefuelable 只在 initialFuelPercent 為 0 時掉燃料）；
+           設施生成的箱子由 CompWeaponCase.preloadWhenNotPlayerOwned 在生成時裝滿。
+           Storage: one light recoilless rifle = one slot. initialFuelPercent 0 → player-built cases start
+           empty, and a weapon still inside drops out when the case is deconstructed or destroyed
+           (CompRefuelable only drops fuel when initialFuelPercent is 0); facility cases are filled on spawn by
+           CompWeaponCase.preloadWhenNotPlayerOwned. -->
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>1</fuelCapacity>
+        <initialFuelPercent>0</initialFuelPercent>
+        <fuelFilter>
+          <thingDefs>
+            <li>DMS_Gun_RecoillessLight</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>Recoilless rifle</fuelLabel>
+        <fuelGizmoLabel>Recoilless rifle</fuelGizmoLabel>
+        <outOfFuelMessage>No recoilless rifle loaded</outOfFuelMessage>
+        <fuelIconPath>Things/Weapons/DMS_RecoillessRifle_Light</fuelIconPath>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <showFuelGizmo>true</showFuelGizmo>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <initialAllowAutoRefuel>true</initialAllowAutoRefuel>
+        <autoRefuelPercent>0</autoRefuelPercent>
+        <targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+        <drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <hideGizmosIfNotPlayerFaction>true</hideGizmosIfNotPlayerFaction>
+        <functionsInVacuum>true</functionsInVacuum>
+      </li>
+      <li Class="DMS.CompProperties_WeaponCase">
+        <preloadWhenNotPlayerOwned>true</preloadWhenNotPlayerOwned>
+        <takeTicks>90</takeTicks>
+      </li>
+    </comps>
+  </ThingDef>
 </Defs>

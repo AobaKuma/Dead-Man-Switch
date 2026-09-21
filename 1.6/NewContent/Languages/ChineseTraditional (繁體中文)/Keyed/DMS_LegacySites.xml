@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <!-- ============ 殘餘機場 Remnant airfield ============ -->
+  <!-- ============ 餘械機場 Remnant airfield ============ -->
   <DMS_Airport_ExpiredLabel>機場已失去訊號</DMS_Airport_ExpiredLabel>
-  <DMS_Airport_ExpiredText>殘餘機場的遙測訊號已經中斷。該機場已全面靜默，位置就此失去蹤跡。</DMS_Airport_ExpiredText>
+  <DMS_Airport_ExpiredText>餘械機場的遙測訊號已經中斷。該機場已全面靜默，位置就此失去蹤跡。</DMS_Airport_ExpiredText>
   <DMS_Airport_ClearedLabel>機場已肅清</DMS_Airport_ClearedLabel>
-  <DMS_Airport_ClearedText>殘餘機場內的敵人已全數殲滅。\n\n塔台裡的誘餌無線電完好無損。用它把集群織鳥引到這座機場來——但要帶上你所有的家當，而且在等它現身的期間，殘餘部隊仍會不斷派來增援。</DMS_Airport_ClearedText>
+  <DMS_Airport_ClearedText>餘械機場內的敵人已全數殲滅。\n\n塔台裡的誘餌無線電完好無損。用它把集群織鳥引到這座機場來——但要帶上你所有的家當，而且在等它現身的期間，餘械部隊仍會不斷派來增援。</DMS_Airport_ClearedText>
   <DMS_Airport_EntryCountdownLabel>敵對機場：增援即將抵達</DMS_Airport_EntryCountdownLabel>
-  <DMS_Airport_EntryCountdownText>你已進入敵對的殘餘機場。塔台的監控協議已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。若打算把織鳥引來這裡，先在那之前肅清機場。</DMS_Airport_EntryCountdownText>
+  <DMS_Airport_EntryCountdownText>你已進入敵對的餘械機場。塔台的監控協議已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。若打算把織鳥引來這裡，先在那之前肅清機場。</DMS_Airport_EntryCountdownText>
 
   <!-- ============ 儲存庫地面站 Vault access station ============ -->
   <DMS_VaultStation_ExpiredLabel>儲存庫站點已失去蹤跡</DMS_VaultStation_ExpiredLabel>
   <DMS_VaultStation_ExpiredText>物資清單上的定位已經失效。儲存庫地面站已轉移陣地，位置就此失去蹤跡。</DMS_VaultStation_ExpiredText>
   <DMS_VaultStation_ClearedLabel>儲存庫站點已肅清</DMS_VaultStation_ClearedLabel>
-  <DMS_VaultStation_ClearedText>儲存庫地面站內的敵人已全數殲滅。\n\n駭入控制室的安全控制台就能升起電梯的封板；車廂仍有電力。地下儲存庫裡留下的一切都任你搬上來——但殘餘部隊仍會持續試探地面。</DMS_VaultStation_ClearedText>
+  <DMS_VaultStation_ClearedText>儲存庫地面站內的敵人已全數殲滅。\n\n駭入控制室的安全控制台就能升起電梯的封板；車廂仍有電力。地下儲存庫裡留下的一切都任你搬上來——但餘械部隊仍會持續試探地面。</DMS_VaultStation_ClearedText>
   <DMS_VaultStation_EntryCountdownLabel>敵對站點：增援即將抵達</DMS_VaultStation_EntryCountdownLabel>
-  <DMS_VaultStation_EntryCountdownText>你已進入敵對的殘餘設施。該站點的監控協議已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。先把豎井打開，再決定要固守地面還是下去。</DMS_VaultStation_EntryCountdownText>
+  <DMS_VaultStation_EntryCountdownText>你已進入敵對的餘械設施。該站點的監控協議已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。</DMS_VaultStation_EntryCountdownText>
 
-  <!-- ============ 殘餘維修站 Remnant repair depot ============ -->
+  <!-- ============ 餘械維修站 Remnant repair depot ============ -->
   <DMS_RepairStation_ExpiredLabel>維修站已失去蹤跡</DMS_RepairStation_ExpiredLabel>
-  <DMS_RepairStation_ExpiredText>那份維修申請已經結案。殘餘維修站已轉移陣地，位置就此失去蹤跡。</DMS_RepairStation_ExpiredText>
+  <DMS_RepairStation_ExpiredText>那份維修申請已經結案。餘械維修站已轉移陣地，位置就此失去蹤跡。</DMS_RepairStation_ExpiredText>
   <DMS_RepairStation_ClearedLabel>維修站已肅清</DMS_RepairStation_ClearedLabel>
-  <DMS_RepairStation_ClearedText>殘餘維修站內的敵人已全數殲滅。\n\n駭入維修站的安全控制台以放行維修間。支架上的機體從未重新認證：機械師可以駭入其中一具並收為己用。停機坪上的升降艙與庫房裡的物資也都歸你。</DMS_RepairStation_ClearedText>
+  <DMS_RepairStation_ClearedText>餘械維修站內的敵人已全數殲滅。\n\n駭入維修站的安全控制台以放行維修間。支架上的機體從未重新認證：機械師可以駭入其中一具並收為己用。停機坪上的升降艙與庫房裡的物資也都歸你。</DMS_RepairStation_ClearedText>
   <DMS_RepairStation_EntryCountdownLabel>敵對維修站：增援即將抵達</DMS_RepairStation_EntryCountdownLabel>
-  <DMS_RepairStation_EntryCountdownText>你已進入敵對的殘餘設施。該站點的監控協議已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。速戰速決，儘快離開——或者就地固守。</DMS_RepairStation_EntryCountdownText>
+  <DMS_RepairStation_EntryCountdownText>你已進入敵對的餘械設施。該站點的監控協議已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。速戰速決，儘快離開或者就地固守。</DMS_RepairStation_EntryCountdownText>
 
-  <!-- ============ 殘餘前進基地 Remnant forward base ============ -->
+  <!-- ============ 餘械前進基地 Remnant forward base ============ -->
   <DMS_OperationBase_ExpiredLabel>前進基地已撤離</DMS_OperationBase_ExpiredLabel>
-  <DMS_OperationBase_ExpiredText>殘餘前進基地已拔營轉移。其位置就此失去蹤跡。</DMS_OperationBase_ExpiredText>
+  <DMS_OperationBase_ExpiredText>餘械前進基地已拔營轉移。其位置就此失去蹤跡。</DMS_OperationBase_ExpiredText>
   <DMS_OperationBase_ClearedLabel>前進基地已肅清</DMS_OperationBase_ClearedLabel>
-  <DMS_OperationBase_ClearedText>殘餘前進基地內的敵人已全數殲滅。\n\n物資堆放場歸你了。駭入兩座安全控制台以開啟防爆門，再駭入貨運電梯本身就能下到地下庫房——但殘餘部隊仍會持續試探防線。</DMS_OperationBase_ClearedText>
+  <DMS_OperationBase_ClearedText>餘械前進基地內的敵人已全數殲滅。\n\n物資堆放場歸你了。駭入兩座安全控制台以開啟防爆門，再駭入貨運電梯本身就能下到地下庫房——但餘械部隊仍會持續試探防線。</DMS_OperationBase_ClearedText>
   <DMS_OperationBase_EntryCountdownLabel>敵對基地：增援即將抵達</DMS_OperationBase_EntryCountdownLabel>
-  <DMS_OperationBase_EntryCountdownText>你已進入敵對的殘餘設施。該站點的監控協議已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。速戰速決，儘快離開——或者就地固守。</DMS_OperationBase_EntryCountdownText>
+  <DMS_OperationBase_EntryCountdownText>你已進入敵對的餘械設施。該站點的監控協議已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。速戰速決，儘快離開或者就地固守。</DMS_OperationBase_EntryCountdownText>
 
-  <!-- ============ 荒廢殘餘站點 Derelict remnant station ============ -->
+  <!-- ============ 荒廢餘械站點 Derelict remnant station ============ -->
   <DMS_SiteStation_ExpiredLabel>站點已被搜刮一空</DMS_SiteStation_ExpiredLabel>
-  <DMS_SiteStation_ExpiredText>殘餘分遣隊已經離開，並在撤走時把荒廢站點搜刮一空。那裡已不值得再跑一趟。</DMS_SiteStation_ExpiredText>
+  <DMS_SiteStation_ExpiredText>餘械分遣隊已經離開，並在撤走時把荒廢站點搜刮一空。那裡已不值得再跑一趟。</DMS_SiteStation_ExpiredText>
   <DMS_SiteStation_ClearedLabel>站點已肅清</DMS_SiteStation_ClearedLabel>
-  <DMS_SiteStation_ClearedText>荒廢站點內的敵人已全數殲滅。\n\n古代貨箱、貨架與殘骸都任你搜刮，運輸艙發射台也還能用。殘餘部隊仍會持續在廢墟一帶試探。</DMS_SiteStation_ClearedText>
+  <DMS_SiteStation_ClearedText>荒廢站點內的敵人已全數殲滅。\n\n古代貨箱、貨架與殘骸都任你搜刮，運輸艙發射台也還能用。餘械部隊仍會持續在廢墟一帶試探。</DMS_SiteStation_ClearedText>
   <DMS_SiteStation_EntryCountdownLabel>敵對站點：增援即將抵達</DMS_SiteStation_EntryCountdownLabel>
-  <DMS_SiteStation_EntryCountdownText>你已進入敵對的殘餘設施。該站點的監控協議已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。這座站點很大——別在他們趕到時把人馬散得到處都是。</DMS_SiteStation_EntryCountdownText>
+  <DMS_SiteStation_EntryCountdownText>你已進入敵對的餘械設施。該站點的監控協議已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。</DMS_SiteStation_EntryCountdownText>
 
   <!-- ============ 廢棄發射場 Abandoned launch site ============ -->
   <DMS_LaunchSite_ExpiredLabel>發射場已失去蹤跡</DMS_LaunchSite_ExpiredLabel>
-  <DMS_LaunchSite_ExpiredText>殘餘巡邏隊已經離開廢棄發射場，掃描器上的定位也隨之消失。</DMS_LaunchSite_ExpiredText>
+  <DMS_LaunchSite_ExpiredText>餘械巡邏隊已經離開廢棄發射場，掃描器上的定位也隨之消失。</DMS_LaunchSite_ExpiredText>
   <DMS_LaunchSite_ClearedLabel>發射場已肅清</DMS_LaunchSite_ClearedLabel>
-  <DMS_LaunchSite_ClearedText>廢棄發射場的殘餘巡邏隊已被殲滅。\n\n殘骸任你打撈。殘餘部隊遲早會再派一支巡邏隊經過這裡。</DMS_LaunchSite_ClearedText>
+  <DMS_LaunchSite_ClearedText>廢棄發射場的餘械巡邏隊已被殲滅。\n\n殘骸任你打撈。餘械部隊遲早會再派一支巡邏隊經過這裡。</DMS_LaunchSite_ClearedText>
   <DMS_LaunchSite_EntryCountdownLabel>敵對站點：增援即將抵達</DMS_LaunchSite_EntryCountdownLabel>
-  <DMS_LaunchSite_EntryCountdownText>你已進入殘餘部隊的巡邏區。巡邏隊的監控協議已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。能撈的趕快撈，然後離開——或者就地固守。</DMS_LaunchSite_EntryCountdownText>
+  <DMS_LaunchSite_EntryCountdownText>你已進入餘械部隊的巡邏區。巡邏隊的監控協議已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。速戰速決，儘快離開或者就地固守。</DMS_LaunchSite_EntryCountdownText>
 
 </LanguageData>

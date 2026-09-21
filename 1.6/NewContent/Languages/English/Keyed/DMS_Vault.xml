@@ -4,6 +4,11 @@
   <DMS_ElevatorUnlocked>Unlocked.</DMS_ElevatorUnlocked>
   <DMS_HoleEmerge_Triggered>A {0}-strong squad is climbing out of the {1}!</DMS_HoleEmerge_Triggered>
 
+  <DMS_BattleGroupCall_Triggered>{0} is calling for reinforcements. A quick-reaction force is on its way.</DMS_BattleGroupCall_Triggered>
+  <DMS_MortarStrike_Triggered>{0} is calling in a fire mission. Incoming shells!</DMS_MortarStrike_Triggered>
+  <DMS_LauncherCase_TakeWeapon>Take and equip {0}</DMS_LauncherCase_TakeWeapon>
+  <DMS_LauncherCase_Empty>Empty</DMS_LauncherCase_Empty>
+
   <DMS_AccessKeyTransform_Locked>Locked. Key-cards still required at linked access consoles: {0}</DMS_AccessKeyTransform_Locked>
   <DMS_AccessKeyTransform_NoConsole>Locked. No access console is linked to it.</DMS_AccessKeyTransform_NoConsole>
   <DMS_AccessKeyTransform_Unlocked>{THING_labelShort} has been unlocked.</DMS_AccessKeyTransform_Unlocked>

@@ -50,6 +50,10 @@
   <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.3.label>空爆煙霧彈</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.3.label>
   <!-- EN: A support warhead that bursts into a smoke screen over the point of impact. -->
   <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.3.description>一種能在落地點產生煙霧的輔助彈頭。</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.3.description>
+  <!-- EN: firefoam -->
+  <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.4.label>消防滅火彈</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.4.label>
+  <!-- EN: A firefighting round that bursts into a spray of fire-retardant foam, smothering flames across a wide area and leaving a layer of foam that keeps them from catching again. It does no damage. -->
+  <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.4.description>一種炸開後噴灑阻燃泡沫的消防彈頭，能撲滅大範圍的火焰並留下一層泡沫防止復燃。不造成任何傷害。</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.4.description>
   
   <!-- EN: 65mm HE-frag rocket -->
   <DMS_Bullet_LRR_HE.label>高爆破片彈</DMS_Bullet_LRR_HE.label>
@@ -70,5 +74,10 @@
   <DMS_Bullet_LRR_Smoke.label>空爆煙霧彈</DMS_Bullet_LRR_Smoke.label>
   <!-- EN: A screening round with a proximity fuze that bursts short of the ground, spreading its obscurant over a wider area than a ground-burst canister. It does no damage at all; it exists to break line of sight so a squad can cross open ground or drag its casualties back. -->
   <DMS_Bullet_LRR_Smoke.description>帶近炸引信的遮蔽彈，在觸地前於空中炸開，煙幕散佈範圍比觸發式煙罐更廣。它完全不造成傷害，存在的意義是切斷視線，讓班組得以通過開闊地或把傷員拖回來。</DMS_Bullet_LRR_Smoke.description>
+  
+  <!-- EN: 65mm firefoam round -->
+  <DMS_Bullet_LRR_Firefoam.label>65mm消防滅火彈</DMS_Bullet_LRR_Firefoam.label>
+  <!-- EN: A firefighting round carrying a pressurised charge of fire-retardant foam. On impact it bursts and blankets the surrounding area, smothering any flames and leaving a layer of foam that keeps them from catching again. It does no damage; it is meant for putting out a burning building from outside without sending anyone into it. -->
+  <DMS_Bullet_LRR_Firefoam.description>裝有加壓阻燃泡沫的消防彈。命中時炸開並覆蓋周圍區域，撲滅所有火焰，並留下一層泡沫防止復燃。它完全不造成傷害，存在的意義是讓人不必衝進火場，就能從外面把燃燒中的建築澆熄。</DMS_Bullet_LRR_Firefoam.description>
   
 </LanguageData>

@@ -27,7 +27,7 @@
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <altitudeLayer>FloorEmplacement</altitudeLayer>
     <fillPercent>0</fillPercent>
-    <passability>Impassable</passability>
+    <passability>PassThroughOnly</passability>
     <holdsRoof>true</holdsRoof>
     <graphicData>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -129,7 +129,7 @@
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <altitudeLayer>FloorEmplacement</altitudeLayer>
     <fillPercent>0</fillPercent>
-    <passability>Impassable</passability>
+    <passability>PassThroughOnly</passability>
     <holdsRoof>true</holdsRoof>
     <graphicData>
       <graphicClass>Graphic_Multi</graphicClass>

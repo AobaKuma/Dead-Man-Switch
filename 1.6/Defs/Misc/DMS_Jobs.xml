@@ -10,4 +10,13 @@
     <playerInterruptible>true</playerInterruptible>
   </JobDef>
 
+  <!-- 從發射器箱取出裡面的武器並裝備，由 CompWeaponCase 的右鍵選項發出。 -->
+  <JobDef>
+    <defName>DMS_TakeWeaponFromCase</defName>
+    <driverClass>DMS.JobDriver_TakeWeaponFromCase</driverClass>
+    <reportString>taking a weapon from TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+
 </Defs>

@@ -3,12 +3,8 @@
   
   <!-- EN: Xeno Limb Syndrome -->
   <DMS_BionicShock.label>異肢癥候群</DMS_BionicShock.label>
-  <!-- EN: A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for these symptoms. -->
-  <DMS_BionicShock.description>由於缺乏生物受體，患者會強烈排斥安裝的神經機械仿生義體，這是一種在前太空世界中常見的一種心理癥候群。\n\n這些癥狀的嚴重程度可分為五個等級。</DMS_BionicShock.description>
-  <!-- EN: bionic syndrome has been cured -->
-  <DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>異肢癥候群已被治愈</DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>
-  <!-- EN: Initial -->
-  <DMS_BionicShock.stages.Initial.label>初始</DMS_BionicShock.stages.Initial.label>
+  <!-- EN: A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for these symptoms. Left untreated, the syndrome will progress to the next level over time and eventually kill the patient. Each dose of neuroglue lowers it by one level and suspends its progression for a while. -->
+  <DMS_BionicShock.description>由於缺乏生物受體，患者會強烈排斥安裝的神經機械仿生義體，這是一種在前太空世界中常見的一種心理癥候群。\n\n這些癥狀的嚴重程度可分為五個等級。若放任不管，病情會隨時間逐級加重，最終導致患者死亡。每服用一劑神經膠可將病情降低一級，並暫時阻止其惡化。</DMS_BionicShock.description>
   <!-- EN: LV.1 Initial -->
   <DMS_BionicShock.stages.LV1_Initial.label>初始</DMS_BionicShock.stages.LV1_Initial.label>
   <!-- EN: LV.2 Minor -->

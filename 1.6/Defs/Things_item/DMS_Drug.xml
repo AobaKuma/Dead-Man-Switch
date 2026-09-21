@@ -4,7 +4,7 @@
   <ThingDef ParentName="MakeableDrugPillBase">
     <defName>Neuroglue</defName>
     <label>Neuroglue</label>
-    <description>A protein-like receptor gel which connects biological tissues and neural machinery. Neuroglue can effectively block phantom limb syndrome and synthetic rejections.\n\nSuch products have been circulating Rimworld and Midworld for many decades, but any organization claiming to have produced this product has been sanctioned by agents from the Coreworld. They Declare that such a product will increase the bionic level of pirates which isn't safe for regional balance.</description>
+    <description>A protein-like receptor gel which connects biological tissues and neural machinery. Neuroglue can effectively block phantom limb syndrome and synthetic rejections, and each dose eases xeno limb syndrome by one level.\n\nSuch products have been circulating Rimworld and Midworld for many decades, but any organization claiming to have produced this product has been sanctioned by agents from the Coreworld. They Declare that such a product will increase the bionic level of pirates which isn't safe for regional balance.</description>
     <possessionCount>10</possessionCount>
     <descriptionHyperlinks>
       <HediffDef>NeuroglueHigh</HediffDef>
@@ -28,6 +28,11 @@
         <li Class="IngestionOutcomeDoer_GiveHediff">
           <hediffDef>NeuroglueHigh</hediffDef>
           <severity>1.0</severity>
+        </li>
+        <!-- 每服用一劑將異肢癥候群降一級；NeuroglueHigh 的 makeImmuneTo 同時會暫停其加重。 -->
+        <li Class="DMS.IngestionOutcomeDoer_ChangeHediffLevel">
+          <hediffDef>DMS_BionicShock</hediffDef>
+          <levelOffset>-1</levelOffset>
         </li>
       </outcomeDoers>
     </ingestible>

@@ -49,6 +49,10 @@
   <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.3.label>airburst smoke round</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.3.label>
   <!-- EN: A support warhead that bursts into a smoke screen over the point of impact. -->
   <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.3.description>A support warhead that bursts into a smoke screen over the point of impact.</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.3.description>
+  <!-- EN: firefoam -->
+  <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.4.label>firefoam</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.4.label>
+  <!-- EN: A firefighting round that bursts into a spray of fire-retardant foam, smothering flames across a wide area and leaving a layer of foam that keeps them from catching again. It does no damage. -->
+  <DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.4.description>A firefighting round that bursts into a spray of fire-retardant foam, smothering flames across a wide area and leaving a layer of foam that keeps them from catching again. It does no damage.</DMS_Gun_RecoillessLight.comps.CompAmmoSwitch.ammos.4.description>
   
   <!-- EN: 65mm HE-frag rocket -->
   <DMS_Bullet_LRR_HE.label>65mm HE-frag rocket</DMS_Bullet_LRR_HE.label>
@@ -69,5 +73,10 @@
   <DMS_Bullet_LRR_Smoke.label>65mm airburst smoke round</DMS_Bullet_LRR_Smoke.label>
   <!-- EN: A screening round with a proximity fuze that bursts short of the ground, spreading its obscurant over a wider area than a ground-burst canister. It does no damage at all; it exists to break line of sight so a squad can cross open ground or drag its casualties back. -->
   <DMS_Bullet_LRR_Smoke.description>A screening round with a proximity fuze that bursts short of the ground, spreading its obscurant over a wider area than a ground-burst canister. It does no damage at all; it exists to break line of sight so a squad can cross open ground or drag its casualties back.</DMS_Bullet_LRR_Smoke.description>
+  
+  <!-- EN: 65mm firefoam round -->
+  <DMS_Bullet_LRR_Firefoam.label>65mm firefoam round</DMS_Bullet_LRR_Firefoam.label>
+  <!-- EN: A firefighting round carrying a pressurised charge of fire-retardant foam. On impact it bursts and blankets the surrounding area, smothering any flames and leaving a layer of foam that keeps them from catching again. It does no damage; it is meant for putting out a burning building from outside without sending anyone into it. -->
+  <DMS_Bullet_LRR_Firefoam.description>A firefighting round carrying a pressurised charge of fire-retardant foam. On impact it bursts and blankets the surrounding area, smothering any flames and leaving a layer of foam that keeps them from catching again. It does no damage; it is meant for putting out a burning building from outside without sending anyone into it.</DMS_Bullet_LRR_Firefoam.description>
   
 </LanguageData>

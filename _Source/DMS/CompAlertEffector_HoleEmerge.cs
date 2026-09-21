@@ -77,8 +77,9 @@ namespace DMS
             if (!parent.Spawned) return;
 
             Map map = parent.Map;
-            Faction faction = ResolveFaction();
-            List<Pawn> pawns = GeneratePawns(faction, map, AlertLevelPct(map));
+            Faction faction = AlertResponseUtility.ResolveFaction(this, Props.spawnFactionDef);
+            List<Pawn> pawns = AlertResponseUtility.GeneratePawns(faction, map, AlertResponseUtility.AlertLevelPct(map),
+                Props.pawnKinds, Props.countRange, Props.pointsRange, Props.pointsByAlertLevel);
             if (pawns.Count == 0) return;
 
             // 洞內生成格：洞的佔地往內縮一圈，3x3 的洞就只剩正中央。
@@ -166,64 +167,6 @@ namespace DMS
                 if (cells.Count > 0) break;
             }
             return cells;
-        }
-
-        private Faction ResolveFaction()
-        {
-            Faction faction = null;
-            if (Props.spawnFactionDef != null)
-            {
-                faction = Find.FactionManager.FirstFactionOfDef(Props.spawnFactionDef);
-            }
-            return faction ?? parent.Faction ?? VaultRoomUtility.DefenderFaction;
-        }
-
-        /// <summary>
-        /// 地圖目前的警戒值比例（0~1）。掃描器是先累加警戒值再廣播 Signal，所以這裡讀到的已經含本次觸發。
-        /// The map's current alert level (0~1). Scanners bump the counter before broadcasting, so the
-        /// value already includes the trigger that got us here.
-        /// </summary>
-        private static float AlertLevelPct(Map map)
-        {
-            return map.GetComponent<MapComponent_AlertCounter>()?.AlertLevelPct ?? 0f;
-        }
-
-        private float PointsFor(float alertPct)
-        {
-            if (Props.pointsByAlertLevel != null)
-            {
-                return Props.pointsByAlertLevel.Evaluate(alertPct * MapComponent_AlertCounter.MaxAlertLevel);
-            }
-            return Props.pointsRange.LerpThroughRange(alertPct);
-        }
-
-        private List<Pawn> GeneratePawns(Faction faction, Map map, float alertPct)
-        {
-            List<Pawn> pawns = new List<Pawn>();
-
-            if (!Props.pawnKinds.NullOrEmpty())
-            {
-                int count = Mathf.RoundToInt(Mathf.Lerp(Props.countRange.min, Props.countRange.max, alertPct));
-                for (int i = 0; i < count; i++)
-                {
-                    Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(
-                        Props.pawnKinds.RandomElement(), faction, PawnGenerationContext.NonPlayer, map.Tile));
-                    if (pawn != null) pawns.Add(pawn);
-                }
-                return pawns;
-            }
-
-            if (faction == null) return pawns;
-
-            PawnGroupMakerParms parms = new PawnGroupMakerParms
-            {
-                groupKind = PawnGroupKindDefOf.Combat,
-                faction = faction,
-                points = PointsFor(alertPct),
-                tile = map.Tile,
-            };
-            pawns.AddRange(PawnGroupMakerUtility.GeneratePawns(parms));
-            return pawns;
         }
     }
 }

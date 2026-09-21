@@ -315,7 +315,7 @@
 			</li>
 		</verbs>
 		<comps>
-			<!-- 彈種切換: 高爆破片(預設) / 聚能穿甲 / 爆破 / 空爆煙霧 -->
+			<!-- 彈種切換: 高爆破片(預設) / 聚能穿甲 / 爆破 / 空爆煙霧 / 消防滅火 -->
 			<li Class="Fortified.CompProperties_AmmoSwitch">
 				<defaultIndex>0</defaultIndex>
 				<includeDefaultAmmo>false</includeDefaultAmmo>
@@ -348,6 +348,15 @@
 						<description>A support warhead that bursts into a smoke screen over the point of impact.</description>
 						<iconPath>UI/Ammoswitch/Shell_Smoke</iconPath>
 						<projectileDef>DMS_Bullet_LRR_Smoke</projectileDef>
+						<rangeFactor>1.5</rangeFactor>
+						<accuracyFactor>0.9</accuracyFactor>
+						<warmUpFactor>0.8</warmUpFactor>
+					</li>
+					<li>
+						<label>firefoam</label>
+						<description>A firefighting round that bursts into a spray of fire-retardant foam, smothering flames across a wide area and leaving a layer of foam that keeps them from catching again. It does no damage.</description>
+						<iconPath>UI/Ammoswitch/Shell_Firefoam</iconPath>
+						<projectileDef>DMS_Bullet_LRR_Firefoam</projectileDef>
 						<rangeFactor>1.5</rangeFactor>
 						<accuracyFactor>0.9</accuracyFactor>
 						<warmUpFactor>0.8</warmUpFactor>
@@ -500,6 +509,31 @@
 			<postExplosionGasType>BlindSmoke</postExplosionGasType>
 			<arcHeightFactor>0.35</arcHeightFactor>
 			<soundExplode>Explosion_Smoke</soundExplode>
+			<shadowSize>0.35</shadowSize>
+		</projectile>
+	</ThingDef>
+
+	<!-- 消防滅火彈: 數值比照原版滅火泡沫砲彈 (Bullet_Shell_Firefoam)，只是直射且範圍縮小 -->
+	<ThingDef ParentName="DMS_BaseRecoillessLightAmmo">
+		<defName>DMS_Bullet_LRR_Firefoam</defName>
+		<label>65mm firefoam round</label>
+		<description>A firefighting round carrying a pressurised charge of fire-retardant foam. On impact it bursts and blankets the surrounding area, smothering any flames and leaving a layer of foam that keeps them from catching again. It does no damage; it is meant for putting out a burning building from outside without sending anyone into it.</description>
+		<thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/DMS_ShellRecoillessLight</texPath>
+		</graphicData>
+		<projectile>
+			<speed>60</speed>
+			<damageDef>Extinguish</damageDef>
+			<explosionRadius>4</explosionRadius>
+			<postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+			<postExplosionSpawnThingCount>3</postExplosionSpawnThingCount>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			<explosionEffect>ExtinguisherExplosion</explosionEffect>
+			<ai_IsIncendiary>false</ai_IsIncendiary>
+			<arcHeightFactor>0.35</arcHeightFactor>
+			<soundExplode>Explosion_EMP</soundExplode>
 			<shadowSize>0.35</shadowSize>
 		</projectile>
 	</ThingDef>

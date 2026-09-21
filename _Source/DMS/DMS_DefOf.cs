@@ -23,6 +23,8 @@ namespace DMS
         public static JobDef DMS_ProcessQuestWorkable;
         // 集群織鳥的無人機投放動作(見 JobDriver_DeployDroneSwarm)
         public static JobDef DMS_DeployDroneSwarm;
+        // 從發射器箱取出武器並裝備(見 JobDriver_TakeWeaponFromCase)
+        public static JobDef DMS_TakeWeaponFromCase;
         public static RulePackDef DMS_QuestDocumentRules;
 
         // 軍法審判判決用(見 QuestPart_CourtVerdict)

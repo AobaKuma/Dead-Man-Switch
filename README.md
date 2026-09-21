@@ -57,7 +57,7 @@
 | **Officer Training** | 軍官訓練：派遣殖民者受訓，畢業後獲得頭銜 |
 | **Court Martial** | 軍法審判：法庭停戰、判決、審判船 |
 | **Promotion Ceremony** | 晉升典禮（Royalty） |
-| **Stele / Occultech Key** | 石碑與秘術科技鑰匙，含撞擊地點（Impact Site）站點 |
+| **Stele / Occultech Key** | 石碑與封存科技鑰匙，含撞擊地點（Impact Site）站點 |
 | **Document Processing** | 文件處理類任務（`CompQuestWorkable` + `JobDriver_ProcessQuestWorkable`） |
 | **Decoy Site / Pirate Assembly** | 誘餌前哨與海盜集會站點 |
 | **Bossgroup** | 首領集團來襲，附專屬 BGM（`QuestPart_BossgroupArrivesWithMusic`） |

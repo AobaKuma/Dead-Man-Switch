@@ -55,7 +55,7 @@
   <!-- EN: field mothball -->
   <DMS_Mothball.label>原地封存</DMS_Mothball.label>
   <!-- EN: Disable system activity on the spot. The unit becomes a dormant storage structure that costs no bandwidth and takes no upkeep, and can be brought back online later by a mechanitor.\n\nStandard practice for garrison units between deployments. -->
-  <DMS_Mothball.description>將機體就地折疊收入自身的運輸框架。單位會轉為休眠建築，不再佔用頻寬也無需維護，日後可由機械師重新啟動。\n\n這是駐防單位在兩次部署之間的標準做法。徵召狀態下無法執行。</DMS_Mothball.description>
+  <DMS_Mothball.description>將機體就地轉為休眠建築，不再佔用頻寬也無需維護，日後可由機械師重新啟動。\n\n這是駐防單位在兩次部署之間的標準做法。倒地狀態下無法執行。</DMS_Mothball.description>
   <!-- EN: fold into transport frame -->
   <DMS_Mothball.verbProperties.label>折疊收納</DMS_Mothball.verbProperties.label>
 

@@ -14,7 +14,7 @@
   </DMS_ProcessDocumentQuest.questNameRules.rulesStrings>
 
   <DMS_ProcessDocumentQuest.questDescriptionRules.rulesStrings>
-    <li>questDescription->殖民艦隊的副官[asker_nameFull]向我們轉交了一批積壓待處理的文書。他們的文書部門[docReason]，多出的工作正外包給邊境聚落處理。這批文件主要是[docContents]。\n\n如果我們接下委託，文件將以空投艙送至貿易信標或殖民地中心附近。需要指派具有對應研究能力的人員逐份核對並歸檔。\n\n[asker_nameDef]明確提出了一項條件：艦隊要求每一份文件完好繳回。任何文件一經損毀，合約立即終止。整批文書處理完畢後，報酬便會送達。</li>
+    <li>questDescription->殖民艦隊的副官[asker_nameFull]向我們轉交了一批積壓待處理的文書。他們的文書部門[docReason]，多出的工作正外包給邊境聚落處理。這批文件主要是[docContents]。\n\n如果我們接下委託，文件將以空投艙送至貿易信標或殖民地中心附近。需要指派具有對應研究能力的人員逐份核對並歸檔。\n\n[asker_nameDef]明確提出了一項條件：艦隊要求每一份文件完好繳回，任何文件一經損毀合約將立即終止。整批文書處理完畢後報酬便會送達。</li>
 
     <li>docReason->在最近一次人員輪調後嚴重缺編</li>
     <li>docReason->因歸檔系統故障而落後了數個月</li>
