@@ -7,16 +7,17 @@
   <!-- EN: Disposable Launcher -->
   <DMS_DeposableRocketLauncher.label>Disposable Launcher</DMS_DeposableRocketLauncher.label>
   <!-- EN: A single use recoilless rifle designed to be fired and discarded. It's light-weight and effective against bunkers and heavy mechs. It has a long fire range and requires line of sight. -->
-  <DMS_DeposableRocketLauncher.description>A single use recoilless rifle designed to be fired and discarded. It's light-weight and effective against bunkers and heavy mechs. It has a long fire range and requires line of sight.</DMS_DeposableRocketLauncher.description>
+  <DMS_DeposableRocketLauncher.description>A counterweighted recoilless rocket-propelled grenade launcher, designed by the colonial fleet as an anti-armor weapon for issue to guerrillas and mech squads. Lighter than reloadable models, it is effective against bunkers and armored vehicles.</DMS_DeposableRocketLauncher.description>
   <!-- EN: charge -->
   <DMS_DeposableRocketLauncher.comps.CompApparelReloadable.chargeNoun>charge</DMS_DeposableRocketLauncher.comps.CompApparelReloadable.chargeNoun>
   <!-- EN: on cooldown -->
   <DMS_DeposableRocketLauncher.comps.CompApparelReloadable.cooldownGerund>on cooldown</DMS_DeposableRocketLauncher.comps.CompApparelReloadable.cooldownGerund>
   <!-- EN: Disposable Launcher -->
-  <DMS_DeposableRocketLauncher.verbs.Verb_Shoot.label>Disposable Launcher</DMS_DeposableRocketLauncher.verbs.Verb_Shoot.label>
+  <DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectile.label>Disposable Launcher</DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectile.label>
   
   <!-- UNUSED -->
-  <DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectileStaticCE.label>deposable launcher</DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectileStaticCE.label>
+  <DMS_DeposableRocketLauncher.verbs.Verb_Shoot.label>Disposable Launcher</DMS_DeposableRocketLauncher.verbs.Verb_Shoot.label>
+  <DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectileStaticCE.label>Disposable Launcher</DMS_DeposableRocketLauncher.verbs.Verb_LaunchProjectileStaticCE.label>
   
 
   <!--==================== 4KG 一次性輕型無後座力砲 ====================-->

@@ -4,7 +4,7 @@
   <!-- EN: Gecko -->
   <DMS_Mech_Gecko.label>Gecko</DMS_Mech_Gecko.label>
   <!-- EN: An urban combat variant of the Iguana, this model is up-armored with additional electromagnetic plating to protect against shaped charge rounds and explosives. -->
-  <DMS_Mech_Gecko.description>An urban combat variant of the Iguana, this model is up-armored with additional electromagnetic plating to protect against shaped charge rounds and explosives.</DMS_Mech_Gecko.description>
+  <DMS_Mech_Gecko.description>The urban-combat conversion of the bipedal Iguana. Its base armor has been deliberately thinned to free up weight for a set of add-on electromagnetic reactive armor bricks that outright negate single high-damage hits from shaped charges and explosives; against small arms fire, however, its skin is thinner than the Iguana's.</DMS_Mech_Gecko.description>
   <!-- EN: Mechanical Head -->
   <DMS_Mech_Gecko.tools.Mechanical_Head.label>Mechanical Head</DMS_Mech_Gecko.tools.Mechanical_Head.label>
   <!-- EN: Left Leg -->
@@ -13,15 +13,14 @@
   <DMS_Mech_Gecko.tools.Right_Leg.label>Right Leg</DMS_Mech_Gecko.tools.Right_Leg.label>
   
   <!-- UNUSED -->
-  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_Target>Aim target</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_Target>
-  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>Fire at will</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>
-  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>Aim at designated target</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>
-  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>
+  <DMS_Mech_Gecko.tools.left_leg.label>left leg</DMS_Mech_Gecko.tools.left_leg.label>
+  <DMS_Mech_Gecko.tools.right_leg.label>right leg</DMS_Mech_Gecko.tools.right_leg.label>
+  <DMS_Mech_Gecko.tools.head.label>head</DMS_Mech_Gecko.tools.head.label>
   
   <!-- EN: Iguana -->
   <DMS_Mech_Iguana.label>Iguana</DMS_Mech_Iguana.label>
   <!-- EN: The modernized and redesigned bipedal walking tank based on the Tarbosaurus. This model is produced without the experimental electromagnetic armor allowing it to maintain greater mobility. -->
-  <DMS_Mech_Iguana.description>The modernized and redesigned bipedal walking tank based on the Tarbosaurus. This model is produced without the experimental electromagnetic armor allowing it to maintain greater mobility.</DMS_Mech_Iguana.description>
+  <DMS_Mech_Iguana.description>A heavy bipedal IFV redesigned on the basis of the Tarbosaurus, with the excellent qualities of small size, low cost and suitability for mass production. This model carries no electromagnetic reactive armor, giving up dedicated protection against shaped charges in exchange for the thickest base armor and best sustained mobility in its class.</DMS_Mech_Iguana.description>
   <!-- EN: Mechanical Head -->
   <DMS_Mech_Iguana.tools.Mechanical_Head.label>Mechanical Head</DMS_Mech_Iguana.tools.Mechanical_Head.label>
   <!-- EN: Left Leg -->
@@ -30,9 +29,8 @@
   <DMS_Mech_Iguana.tools.Right_Leg.label>Right Leg</DMS_Mech_Iguana.tools.Right_Leg.label>
   
   <!-- UNUSED -->
-  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_Target>Aim target</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_Target>
-  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>Fire at will</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>
-  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>Aim at designated target</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>
-  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>
+  <DMS_Mech_Iguana.tools.left_leg.label>left leg</DMS_Mech_Iguana.tools.left_leg.label>
+  <DMS_Mech_Iguana.tools.right_leg.label>right leg</DMS_Mech_Iguana.tools.right_leg.label>
+  <DMS_Mech_Iguana.tools.head.label>head</DMS_Mech_Iguana.tools.head.label>
   
 </LanguageData>

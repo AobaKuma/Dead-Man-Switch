@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS_SupplyChain.questNameRules.rulesStrings>
+    <li>questName->Supply contract: [categoryLabel]</li>
+    <li>questName->Supply request: [categoryLabel]</li>
+    <li>questName->Staged deliveries: [categoryLabel]</li>
+  </DMS_SupplyChain.questNameRules.rulesStrings>
+
+  <DMS_SupplyChain.questDescriptionRules.rulesStrings>
+    <li>questDescription->A logistics coordinator of [issuerFactionName], [asker_nameFull], has forwarded us a long-term supply request for [categoryLabel]. They need roughly [totalStages] shipments of [categoryLabel] — around [approxTotalCount] units in total — to [supplyPurpose].\n\nAccording to [asker_possessive] figures, the first shipment calls for about [firstCount]x [categoryLabel]. If we agree to supply them, [asker_pronoun] will [deployMethod] to deploy a mobile cargo pod at [map_definite]. The first shipment must be loaded and launched within [deadlineDays] days to catch [freightWindow].\n\n[asker_nameDef] assures us that if the first shipment is delivered on schedule, follow-up [categoryLabel] contracts will continue to be offered to us first — and once every shipment is complete, we will be compensated for the price difference of the goods at market rates.</li>
+    <li>supplyPurpose->keep their forward garrisons provisioned through the coming quadrums</li>
+    <li>supplyPurpose->cover a shortfall in their planetside stockpiles</li>
+    <li>supplyPurpose->provision the outposts scattered along their perimeter</li>
+    <li>supplyPurpose->replace stores lost when a supply convoy was ambushed</li>
+    <li>deployMethod->coordinate an orbital platform</li>
+    <li>deployMethod->divert a dropship from its patrol route</li>
+    <li>deployMethod->requisition a drop slot from the fleet's supply hub</li>
+    <li>freightWindow->the bulk freighter's departure window</li>
+    <li>freightWindow->the next orbital convoy assembly</li>
+    <li>freightWindow->the fleet's scheduled logistics uplift</li>
+  </DMS_SupplyChain.questDescriptionRules.rulesStrings>
+
+  <DMS_SupplyChain_Delivery.questNameRules.rulesStrings>
+    <li>questName->Delivery [stage]/[totalStages]: [categoryLabel]</li>
+    <li>questName->Delivery [stage]/[totalStages]: [targetCount]x [categoryLabel]</li>
+  </DMS_SupplyChain_Delivery.questNameRules.rulesStrings>
+
+  <DMS_SupplyChain_Delivery.questDescriptionRules.rulesStrings>
+    <li>questDescription->[subOpening]\n\nLoad [targetCount]x [categoryLabel] into the cargo pod and launch it before the deadline to catch the bulk freighter's departure window. Payment will arrive by drop pod once the shipment is confirmed.\n\nIf the deadline is missed, the contract will end. Payments already received are ours to keep.</li>
+    <li>subOpening->This is shipment [stage] of [totalStages] under the supply contract with [issuerFactionName].</li>
+    <li>subOpening->[issuerUnit] has scheduled shipment [stage] of [totalStages]: [targetCount]x [categoryLabel].</li>
+  </DMS_SupplyChain_Delivery.questDescriptionRules.rulesStrings>
+
+</LanguageData>

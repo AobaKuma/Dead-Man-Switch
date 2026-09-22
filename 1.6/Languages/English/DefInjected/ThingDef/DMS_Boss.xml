@@ -15,4 +15,11 @@
   <!-- EN: Attract geochelone threat -->
   <DMS_DecoyRadio.comps.CompUsable.useLabel>Attract geochelone threat</DMS_DecoyRadio.comps.CompUsable.useLabel>
   
+  <!-- EN: Decoy radio -->
+  <DMS_DecoyTransmitter.label>Decoy radio</DMS_DecoyTransmitter.label>
+  <!-- EN: A high-powered radio, used fake radio signals to lure away the automated defense systems that still exist on the planet. Once activated, it puts out a powerful wave radiation signal which will attract ultra heavy automatroid to attack along with its escorts. If you can defeat it, you can collect the advanced technology from its corpse. The signal pulse burns out the transmitter, so this building can only be used once. -->
+  <DMS_DecoyTransmitter.description>A high-powered radio that uses fake radio signals to lure the automated defense systems still active on the planet. Once activated, it puts out a powerful wave radiation signal which will attract an ultra-heavy automatroid to attack along with its escorts. If you can defeat it, you can collect advanced technology from its wreckage. The signal pulse burns out the transmitter, so this building can only be used once.</DMS_DecoyTransmitter.description>
+  <!-- EN: Attract cluster weaver threat -->
+  <DMS_DecoyTransmitter.comps.CompUsable.useLabel>Attract cluster weaver threat</DMS_DecoyTransmitter.comps.CompUsable.useLabel>
+
 </LanguageData>

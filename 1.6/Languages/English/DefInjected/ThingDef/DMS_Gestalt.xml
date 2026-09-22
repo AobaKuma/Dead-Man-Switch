@@ -4,6 +4,16 @@
   <!-- EN: central command core -->
   <DMS_GestaltEngine.label>central command core</DMS_GestaltEngine.label>
   <!-- EN: Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World. -->
-  <DMS_GestaltEngine.description>A command core used to coordinate large-scaled automatroid squads, it have the ability to independently command and support an entire combined combat brigade without any further assist.</DMS_GestaltEngine.description>
-
+  <DMS_GestaltEngine.description>A super-large computing core for commanding automatroids in large-scale combat, capable of independently commanding and sustaining an entire combined combat brigade. Before the Next Generation War, countless cores like this directly or indirectly commanded nearly ninety percent of Earth's regular armies - and in the end, under five AIs each holding its own domain, nearly half of Earth's land and sea became a war zone between them.</DMS_GestaltEngine.description>
+  
+  <!-- EN: command array -->
+  <DMS_Gestalt_CommandArray.label>command array</DMS_Gestalt_CommandArray.label>
+  <!-- EN: Increases bandwidth when placed near central command core. Each central command core can only use eight command arrays. -->
+  <DMS_Gestalt_CommandArray.description>Increases bandwidth when placed near central command core. Each central command core can only use eight command arrays.</DMS_Gestalt_CommandArray.description>
+  
+  <!-- EN: command transmitter -->
+  <DMS_Gestalt_Transmitter.label>command transmitter</DMS_Gestalt_Transmitter.label>
+  <!-- EN: Increases command range and provides additional control group when placed near central command core. Each central command core can only use four command transmitters. -->
+  <DMS_Gestalt_Transmitter.description>Increases command range and provides additional control group when placed near central command core. Each central command core can only use four command transmitters.</DMS_Gestalt_Transmitter.description>
+  
 </LanguageData>

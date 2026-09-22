@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-
-  <!-- EN: mothballed bullhound -->
-  <DMS_MechCapsule_VaultKennel.label>封存中的斗牛犬</DMS_MechCapsule_VaultKennel.label>
-  <!-- EN: A bullhound garrison automatroid in hibernation mode, clamped into its charging kennel. It was left on watch when the installation was sealed, and its alarm circuit is still live. A mechanitor can attempt to hack and control it. -->
-  <DMS_MechCapsule_VaultKennel.description>一具处于休眠状态的斗牛犬驻防机兵，扣在自己的充电犬舍里。设施封闭时它被留下来看守，警报线路至今还是通的。机械师可以尝试骇入并控制它。</DMS_MechCapsule_VaultKennel.description>
-
-</LanguageData>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: mothballed bullhound -->
+  <DMS_MechCapsule_VaultKennel.label>封存中的斗牛犬</DMS_MechCapsule_VaultKennel.label>
+  <!-- EN: A bullhound garrison automatroid in hibernation mode, clamped into its charging kennel. It was left on watch when the installation was sealed, and its alarm circuit is still live. A mechanitor can attempt to hack and control it. -->
+  <DMS_MechCapsule_VaultKennel.description>一具处于休眠状态的斗牛犬驻防机兵。设施封闭时它被留下来看守，警报线路至今还是通的因此任何警报都会使其重新激活。机械师可以尝试骇入并控制它。</DMS_MechCapsule_VaultKennel.description>
+
+</LanguageData>

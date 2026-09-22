@@ -6,7 +6,7 @@
   <!-- EN: Artifuscle is a type of prosthetic material made from genetically enhanced lab grown muscle-fiber bundles. -->
   <Artifuscle.description>Artifuscle is a type of prosthetic material made from genetically enhanced lab grown muscle-fiber bundles.</Artifuscle.description>
   <!-- EN: Analyze the artificial muscle -->
-  <Artifuscle.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the artificial muscle</Artifuscle.comps.CompAnalyzableUnlockResearch.activateDescString>
+  <Artifuscle.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the artificial muscle to work out how it exchanges organic molecules through liquid neutroamine and the principles behind it, in preparation for cultivating and synthesizing it ourselves.</Artifuscle.comps.CompAnalyzableUnlockResearch.activateDescString>
   <!-- EN: Analyze... -->
   <Artifuscle.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</Artifuscle.comps.CompAnalyzableUnlockResearch.activateLabelString>
   <!-- EN: By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
@@ -28,7 +28,7 @@ Your researchers can now use research benches to begin researching how to actual
   <ComponentControlChip.description>A chipset for remote machine controllers and the core of industrial machines.</ComponentControlChip.description>
   
   <!-- UNUSED -->
-  <ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the cluster control chipsets</ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateDescString>
+  <ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the cluster control chipsets: learn the hopelessly outdated engineering drawing software from the installation disc that came with the chips, and export the engineering files to study how the control chips can be applied to our existing technology.</ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateDescString>
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</ComponentControlChip.comps.CompAnalyzableUnlockResearch.activateLabelString>
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetter>
   <ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Cluster control chipsets studied: {RESEARCH} unlocked</ComponentControlChip.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
@@ -39,9 +39,9 @@ Your researchers can now use research benches to begin researching how to actual
   <!-- EN: Fire Control System -->
   <ComponentFireControl.label>Fire Control System</ComponentFireControl.label>
   <!-- EN: A chipsets designed for weapon control assistance and trajectory tracking. -->
-  <ComponentFireControl.description>A chipsets designed for weapon control assistance and trajectory tracking.</ComponentFireControl.description>
+  <ComponentFireControl.description>A chipset designed for weapon control assistance and trajectory tracking.</ComponentFireControl.description>
   <!-- EN: Analyze the Fire Control System -->
-  <ComponentFireControl.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the Fire Control System</ComponentFireControl.comps.CompAnalyzableUnlockResearch.activateDescString>
+  <ComponentFireControl.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the fire control system chips. We cannot reverse-engineer the radar filtering algorithms and target tracking technology from the packaged chips, but by studying their interfaces we should be able to put them to some use.</ComponentFireControl.comps.CompAnalyzableUnlockResearch.activateDescString>
   <!-- EN: Analyze... -->
   <ComponentFireControl.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</ComponentFireControl.comps.CompAnalyzableUnlockResearch.activateLabelString>
   <!-- EN: By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
@@ -67,7 +67,7 @@ Your researchers can now use research benches to begin researching how to actual
   <!-- EN: Precision electronic components for radar and communication devices. -->
   <ComponentTransmitter.description>Precision electronic components for radar and communication devices.</ComponentTransmitter.description>
   <!-- EN: Analyze the T/R Component -->
-  <ComponentTransmitter.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the T/R Component</ComponentTransmitter.comps.CompAnalyzableUnlockResearch.activateDescString>
+  <ComponentTransmitter.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the T/R component. We may not be able to replicate its gallium nitride synthesis or phased-array component manufacturing processes, but by analyzing the finished product we should be able to put it to some use.</ComponentTransmitter.comps.CompAnalyzableUnlockResearch.activateDescString>
   <!-- EN: Analyze... -->
   <ComponentTransmitter.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</ComponentTransmitter.comps.CompAnalyzableUnlockResearch.activateLabelString>
   <!-- EN: By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
@@ -91,9 +91,7 @@ Your researchers can now use research benches to begin researching how to actual
   <!-- EN: Ceramics -->
   <DMS_Ceramics.label>Ceramics</DMS_Ceramics.label>
   <!-- EN: A military standard composite ceramic plate widely used as a defensive additions for war machines.\n\nits durability is somewhat poor, but it provides excellent protection and is lightweight. -->
-  <DMS_Ceramics.description>A military standard composite ceramic plate widely used as a defensive additions for war machines.
-
-its durability is somewhat poor, but it provides excellent protection and is lightweight.</DMS_Ceramics.description>
+  <DMS_Ceramics.description>A military-standard composite ceramic plate, widely used as a defensive add-on for war machines.\n\nAs a military-standard material its durability is somewhat poor, but it excels in protection and light weight.</DMS_Ceramics.description>
   
   <!-- EN: Encrypted Transmitter -->
   <DMS_EncryptedTransmitter.label>Encrypted Transmitter</DMS_EncryptedTransmitter.label>
@@ -107,7 +105,7 @@ its durability is somewhat poor, but it provides excellent protection and is lig
   <!-- EN: An organic computer which functions as an artificial organic brain. It fills the role of a cheap computational brain for factions without access to rare metals and precision machining. -->
   <Neurocomputer.description>An organic computer which functions as an artificial organic brain. It fills the role of a cheap computational brain for factions without access to rare metals and precision machining.</Neurocomputer.description>
   <!-- EN: Analyze the wetware computer -->
-  <Neurocomputer.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the wetware computer</Neurocomputer.comps.CompAnalyzableUnlockResearch.activateDescString>
+  <Neurocomputer.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the wetware computer to work out its DNA composition and trace its molecular biology, in preparation for reverse engineering and artificial cultivation.</Neurocomputer.comps.CompAnalyzableUnlockResearch.activateDescString>
   <!-- EN: Analyze... -->
   <Neurocomputer.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</Neurocomputer.comps.CompAnalyzableUnlockResearch.activateLabelString>
   <!-- EN: By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
@@ -123,12 +121,10 @@ Your researchers can now use research benches to begin researching how to actual
   <!-- EN: Analyze the wetware computer -->
   <Neurocomputer.comps.CompAnalyzableUnlockResearch.jobString>Analyze the wetware computer</Neurocomputer.comps.CompAnalyzableUnlockResearch.jobString>
   
-  <!-- EN: Plasticfiber -->
-  <Plasfiber.label>Plasticfiber</Plasfiber.label>
+  <!-- EN: Plastic fiber -->
+  <Plasfiber.label>Plasfiber</Plasfiber.label>
   <!-- EN: A type of synthetic fiber made with plasteel and is intrinsically resistant to sharp attacks but not blunt impacts.\n\n Plastifiber has a important role in the medical field as a biomimetic surface material as it does not produce rejection reactions from the immune system. -->
-  <Plasfiber.description>A type of synthetic fiber made with plasteel and is intrinsically resistant to sharp attacks but not blunt impacts.
-
- Plastifiber has an important role in the medical field as a biomimetic surface material as it does not produce rejection reactions from the immune system.</Plasfiber.description>
+  <Plasfiber.description>A synthetic fiber made from plasteel. It is airtight and offers some resistance to punctures, but does not hold up well against blunt impacts.\n\nPlasfiber is important in the medical field: as a biomimetic surface material, it does not trigger rejection by the immune system.</Plasfiber.description>
   
   <!-- EN: Polyester -->
   <Polyester.label>Polyester</Polyester.label>

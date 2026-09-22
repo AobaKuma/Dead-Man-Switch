@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  
+  <!-- EN: cluster weaver -->
+  <DMS_Mech_ClusterWeaver.label>cluster weaver</DMS_Mech_ClusterWeaver.label>
+  <!-- EN: United Army Systems "Sakalava" known as The "Cluster weaver", It's a super-heavy UAV carrier propelled by multiple rotary wings.with 5-meter-wingspan frame dangling UAV pod which can carry up to 30 suicide drones and precisely guiding them kilometers away. While not yet a contender during the total warfare,it still remains one of the most feared threats among local African armed groups after World War III, second only to the Wyvern flocks.\n\nCluster weaver uses a metal-reinforced carbon fiber frame as its main structural material and has virtually no additional armor. Even so, its high-precision radar and three precision turrets can annihilate hostiles before they even get close enough to ambush. which makes it extremely hard for a local militia groups survive an assault from this monster. -->
+  <DMS_Mech_ClusterWeaver.description>United Army Systems "Sakalava", nicknamed the "Cluster Weaver", is a superheavy FPV mothership propelled by multiple rotor sets. The drone bay slung beneath its 5-meter-wingspan frame carries up to 30 suicide drones and can guide them precisely from kilometers away. It was never a decisive weapon of all-out war, but in the regional armed conflicts after the Third World War it remained a terrifying threat second only to the "Wyvern" flocks.\n\nThe Cluster Weaver uses metal-reinforced carbon fiber as its main structure and carries almost no additional armor. Even so, its high-precision radar and three precision turrets can annihilate targets before the enemy gets close enough to ambush it, leaving local militias with little hope of surviving its attacks.</DMS_Mech_ClusterWeaver.description>
+  <!-- EN: left turret -->
+  <DMS_Mech_ClusterWeaver.comps.CompMultipleTurretGun.subTurrets.0.renderNodeProperties.0.debugLabel>left turret</DMS_Mech_ClusterWeaver.comps.CompMultipleTurretGun.subTurrets.0.renderNodeProperties.0.debugLabel>
+  <!-- EN: right turret -->
+  <DMS_Mech_ClusterWeaver.comps.CompMultipleTurretGun.subTurrets.1.renderNodeProperties.0.debugLabel>right turret</DMS_Mech_ClusterWeaver.comps.CompMultipleTurretGun.subTurrets.1.renderNodeProperties.0.debugLabel>
+  <!-- EN: head -->
+  <DMS_Mech_ClusterWeaver.tools.head.label>head</DMS_Mech_ClusterWeaver.tools.head.label>
+
+</LanguageData>

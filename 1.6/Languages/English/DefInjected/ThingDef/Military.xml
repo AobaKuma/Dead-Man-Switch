@@ -4,7 +4,7 @@
   <!-- EN: Army Cap -->
   <DMS_Apparel_ArmyCap.label>Army Cap</DMS_Apparel_ArmyCap.label>
   <!-- EN: A standard issue army patrol cap, great for keeping the sun off your face or the rain out of your eyes. -->
-  <DMS_Apparel_ArmyCap.description>A standard issue army patrol cap, great for keeping the sun off your face or the rain out of your eyes.</DMS_Apparel_ArmyCap.description>
+  <DMS_Apparel_ArmyCap.description>A soft cap for soldiers to wear off the battlefield, doubling as a unit identifier.</DMS_Apparel_ArmyCap.description>
   
   <!-- EN: Operator Helmet -->
   <DMS_Apparel_ArrayHelmet.label>Operator Helmet</DMS_Apparel_ArrayHelmet.label>
@@ -14,14 +14,14 @@
   <!-- EN: Beret -->
   <DMS_Apparel_Beret.label>Beret</DMS_Apparel_Beret.label>
   <!-- EN: A more stylish cap typically used to identify the wearer as belonging in a specialty unit -->
-  <DMS_Apparel_Beret.description>A more stylish cap typically used to identify the wearer as belonging in a specialty unit</DMS_Apparel_Beret.description>
+  <DMS_Apparel_Beret.description>A soft cap for soldiers and officers to wear off the battlefield, doubling as a unit identifier.</DMS_Apparel_Beret.description>
   
   <!-- EN: Bionic Suit -->
   <DMS_Apparel_BionicSuit.label>Bionic Suit</DMS_Apparel_BionicSuit.label>
-  <!-- EN: A step above the civilian model Powered Exoskeleton Suit, this military grade bionic suit is sewn from artificial muscle fibers and amplifies the wearers pre-existing muscular strength. Greatly increases the wearers carrying capacity and movement speed. -->
+  <!-- EN: A military-grade bionic suit sewn from artificial muscle fibers that amplify the wearer's pre-existing muscular strength. Greatly increases the wearer's carrying capacity and movement speed. -->
   <DMS_Apparel_BionicSuit.description>A step above the civilian model Powered Exoskeleton Suit, this military grade bionic suit is sewn from artificial muscle fibers and amplifies the wearers pre-existing muscular strength. Greatly increases the wearers carrying capacity and movement speed.</DMS_Apparel_BionicSuit.description>
   
-  <!-- EN: Night Vision Goggles -->
+  <!-- EN: Night vision goggles -->
   <DMS_Apparel_Gunlink.label>Night Vision Goggles</DMS_Apparel_Gunlink.label>
   <!-- EN: An optical enhancement device which amplifies existing light in low-light conditions and projects it through the display on to the users eyes. Compatible with most helmets and can be worn stand-alone. -->
   <DMS_Apparel_Gunlink.description>An optical enhancement device which amplifies existing light in low-light conditions and projects it through the display on to the users eyes. Compatible with most helmets and can be worn stand-alone.</DMS_Apparel_Gunlink.description>
@@ -29,21 +29,21 @@
   <!-- EN: Soft Kepi -->
   <DMS_Apparel_SoftKepi.label>Soft Kepi</DMS_Apparel_SoftKepi.label>
   <!-- EN: A traditional hat with a flat circular top and a visor. -->
-  <DMS_Apparel_SoftKepi.description>A traditional hat with a flat circular top and a visor.</DMS_Apparel_SoftKepi.description>
+  <DMS_Apparel_SoftKepi.description>A soft cap for soldiers and officers to wear off the battlefield, doubling as a unit identifier.</DMS_Apparel_SoftKepi.description>
   
   <!-- EN: Stealth Mask -->
   <DMS_Apparel_StealthMask.label>Stealth Mask</DMS_Apparel_StealthMask.label>
   <!-- EN: A piece of fabric which obscures the wearer's face. -->
-  <DMS_Apparel_StealthMask.description>A piece of fabric which obscures the wearer's face.</DMS_Apparel_StealthMask.description>
+  <DMS_Apparel_StealthMask.description>Camouflage fabric used to conceal the wearer's facial features, typically used by special forces.</DMS_Apparel_StealthMask.description>
   
   <!-- EN: Tactical Cloak -->
   <DMS_Apparel_TacticalCloak.label>Tactical Cloak</DMS_Apparel_TacticalCloak.label>
   <!-- EN: A cloak capable of low-level active camouflage typically equipped by sappers and special operators in the Colonial Forces. -->
-  <DMS_Apparel_TacticalCloak.description>A cloak capable of low-level active camouflage typically equipped by sappers and special operators in the Colonial Forces.</DMS_Apparel_TacticalCloak.description>
+  <DMS_Apparel_TacticalCloak.description>A tactical camouflage cloak issued to the colonial fleet's psycasters. It offers some benefit to psycasters.</DMS_Apparel_TacticalCloak.description>
   
   <!-- EN: Tactical Helmet -->
   <DMS_Apparel_TacticalHelmet.label>Tactical Helmet</DMS_Apparel_TacticalHelmet.label>
-  <!-- EN: A lightweight combat helmet reinforced with plasteel to prevent backface deformation after it's impacted by a round. Great at protecting the wearer from bullets and shrapnel, not so great at protecting the wearer from blunt force trauma. -->
+  <!-- EN: A lightweight combat helmet reinforced with plasteel to prevent backface deformation after its impacted by a round. Great at protecting the wearer from bullets and shrapnel, not so great at protecting the wearer from blunt force trauma. -->
   <DMS_Apparel_TacticalHelmet.description>A lightweight combat helmet reinforced with plasteel to prevent backface deformation after it's impacted by a round. Great at protecting the wearer from bullets and shrapnel, not so great at protecting the wearer from blunt force trauma.</DMS_Apparel_TacticalHelmet.description>
   
   <!-- EN: Tactical Vest -->
@@ -53,6 +53,7 @@
   
   <!-- EN: Heavy Bionic Suit -->
   <DMS_Apparel_BionicSuitHeavy.label>Heavy Bionic Suit</DMS_Apparel_BionicSuitHeavy.label>
+  <!-- EN: An unrefined prototype of the bionic suit... -->
   <DMS_Apparel_BionicSuitHeavy.description>An unrefined prototype of the bionic suit. Anchoring its frame directly to the pilot's skeleton lets them bear and operate weapons far beyond an unaided soldier's strength.\nEvery artificial muscle bundle only draws properly with the suit fully closed, so once worn it can be taken off again only by surgery.\n\nThe colonial fleets list this as a class I sealed technology. Fielding it without someone of standing to answer for it will sour relations with them sooner or later.</DMS_Apparel_BionicSuitHeavy.description>
   
 </LanguageData>

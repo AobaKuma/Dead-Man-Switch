@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_DecoySite.label>remnant relay station</DMS_DecoySite.label>
+  <DMS_DecoySite.description>A decommissioned remnant signal relay station. Its transmitter array can be repurposed to lure high-value automatroid units - if its garrison is dealt with first.</DMS_DecoySite.description>
+  <DMS_DecoySite.approachOrderString>Assault {0}</DMS_DecoySite.approachOrderString>
+  <DMS_DecoySite.approachingReportString>Assaulting {0}.</DMS_DecoySite.approachingReportString>
+  <DMS_DecoySite.arrivedLetter>You have arrived at the relay station. Hostile automatroids garrison the compound.\n\nYour presence will not go unnoticed for long — once the station's monitoring protocol identifies you, enemy reinforcements will begin to arrive.</DMS_DecoySite.arrivedLetter>
+</LanguageData>

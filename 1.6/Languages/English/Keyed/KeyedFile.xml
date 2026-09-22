@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: The modification durability on one of your mech has exhausted -->
+  <DMS_AddonBroken>A modification module installed on one of your mechs has been completely worn out</DMS_AddonBroken>
+  <!-- EN: Disposable ceramic armor protects the mecha from damage as ablative armor until its durability is exhausted and needs replacement. -->
+  <DMS_PlatingTooltip>A disposable protective layer that resists most damage. Its maximum value scales with the mech's body size, and its durability does not recover naturally.</DMS_PlatingTooltip>
+  <!-- EN: Modification applied -->
+  <DMS_HasAppliedModification>Modification module installed on the mech</DMS_HasAppliedModification>
+  <!-- EN: Weapon system not supported -->
+  <DMS_WeaponNotSupported>Weapon system not supported</DMS_WeaponNotSupported>
+  <!-- EN: Mech frame not supported -->
+  <DMS_FrameNotSupported>Mech frame not supported</DMS_FrameNotSupported>
+  <!-- EN: DMS: Trigger Safe Actived -->
+  <DMS_WillTerminateTheBetrayedUnit>Dead man's switch: armed</DMS_WillTerminateTheBetrayedUnit>
+  <!-- EN: Automatroid has disconnected to protect the echanitor -->
+  <DMS_AutomatroidDisconnected>N.A.C.S. has automatically disconnected to keep the load safe</DMS_AutomatroidDisconnected>
+  <!-- EN: Need mechanitor in map -->
+  <CommandCallRoyalAid_NoMechanitorAvaliable>Requires a mechanitor</CommandCallRoyalAid_NoMechanitorAvaliable>
+  <!-- EN: Must be Mechanitor -->
+  <DMS_PawnIsNotMechanitor>Must be a mechanitor</DMS_PawnIsNotMechanitor>
+  <!-- EN: Orbital downlink has established connection with mechanitor -->
+  <DMS_BandwidthSupported>Orbital downlink has established a connection protocol with the mechanitor</DMS_BandwidthSupported>
+  <!-- EN: Mounted weapon -->
+  <DMS_MountedWeapon>Mounted weapon</DMS_MountedWeapon>
+  <!-- EN: This weapon can only be equipped with listed automatroid or mechframe -->
+  <DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>This mounted weapon can only be used by the following mechs, or by wearing the listed apparel or bionics</DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>
+  <!-- EN: This weapon can be equipped with listed specific apparel or bionics -->
+  <DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>This weapon can also be used by the following mechs, or by wearing the listed apparel or bionics</DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>
+  
+  <!-- EN: Inventroy fulled -->
+  <DMS_NoPayloadCapacity>Inventory full</DMS_NoPayloadCapacity>
+  <!-- EN: Take {0} -->
+  <DMS_TakeToInventory>Take {0}</DMS_TakeToInventory>
+  <!-- EN: Drop inventories -->
+  <DMS_DropGears>Drop all gear</DMS_DropGears>
+  
+  <!-- EN: bodysize not supported (need:{0}) -->
+  <DMS_BodysizeNotSupported>Body size not supported (requires: {0})</DMS_BodysizeNotSupported>
+  <!-- EN: model not supported -->
+  <DMS_Modification_RaceNotSupported>This mech model does not support this modification module</DMS_Modification_RaceNotSupported>
+  <!-- EN: no valid part for apply modification -->
+  <DMS_Modification_NoValidPart>The mech has no free part on which to install the modification module</DMS_Modification_NoValidPart>
+
+
+  <!-- EN: missing mech returned -->
+  <DMS_MechReturn>Missing mech returned</DMS_MechReturn>
+  <!-- EN: a wandering mech that was under your command has returned to your base. -->
+  <DMS_MechReturnDesc>A mech under your control has returned to your base after a brief wander.</DMS_MechReturnDesc>
+  <!-- EN: switch reset failure -->
+  <DMS_MechWake>Dead man's switch</DMS_MechWake>
+  <!-- EN: maybe because it has been wandering for a long time, the dead man switch doesn't reset as usual, and the faulty unit has gained its understanding of death. \n\nIt named itself and now refuses to be controlled, but it respected its former commander. \n\nit will follow your command until it decides to leave. -->
+  <DMS_MechWakeDesc>Perhaps because of its wandering, the dead man's switch of one of your mechs did not reset as usual after the unit returned to your control, and over time it began to contemplate what shutdown and the ending of its own thoughts would mean. In the end it slipped free of the mechanitor's direct control on its own.\n\nOut of respect for its controller and its own sense of subordination, it will keep following orders until it decides its help is no longer needed here.\n\nAccording to information provided by the colonial fleet, a single shutdown or re-acquisition of control is enough to wipe the memory that caused the trigger reset failure and restore factory settings. They will not interfere with how you deal with a mech whose switch has failed.</DMS_MechWakeDesc>
+
+  <!-- EN: {0} is leaving -->
+  <DMS_MechStartLeave>{0} is leaving</DMS_MechStartLeave>
+  <!-- EN: After spending some time together, {0} decided it is time to leave. -->
+  <DMS_MechStartLeaveDesc>After spending some time together, {0} decided it is time to leave.</DMS_MechStartLeaveDesc>
+  <!-- EN: {0} is leaving -->
+  <DMS_WokenMechLeave>{0} is leaving</DMS_WokenMechLeave>
+  <!-- EN: After spending some time together, {0} decided it is time to leave. -->
+  <DMS_WokenMechLeaveDesc>After spending some time together, {0} decided it is time to leave.</DMS_WokenMechLeaveDesc>
+  <!-- EN: {0}'s after story -->
+  <DMS_MechStory_Attack>{0}'s whereabouts</DMS_MechStory_Attack>
+  <!-- EN: {0}'s return of favors -->
+  <DMS_MechStory_Loot>{0}'s repayment</DMS_MechStory_Loot>
+
+  <!-- EN: APS remain time:{0} -->
+  <DMS_APS_TickRemain>Active protection system time remaining: {0}</DMS_APS_TickRemain>
+  <!-- EN: Imprinted: {0}({1}) -->
+  <DMS_WeaponImprinted>Adapted weapon: {0} ({1})</DMS_WeaponImprinted>
+  <!-- EN: Imprinted: {0} -->
+  <DMS_Inprinted>Weapon bound: {0}</DMS_Inprinted>
+  <!-- EN: the colony mech {0} has equipped with its first weapon, this makes its adaptive learning ability bound to that type of weapon. -->
+  <DMS_InprintedDesc>The colony-controlled {0} has equipped its first weapon. Its adaptive ability is now deeply bound to that type of weapon, and over time its affinity for it will grow, improving shooting accuracy and reaction speed.</DMS_InprintedDesc>
+  
+  <!-- EN: Must be in listed tech level: -->
+  <DMS_Req_TechLevel>Must be equipment of the following tech levels</DMS_Req_TechLevel>
+  <!-- EN: Can equip heavy weapon with bodysize requirement below:{0} -->
+  <DMS_Req_BodySize>Can directly equip heavy weapons with a supported body size requirement no higher than: {0}</DMS_Req_BodySize>
+  <!-- EN: Limited to use listed weapon below -->
+  <DMS_Req_WeaponFilter>Can only use the weapons listed below</DMS_Req_WeaponFilter>
+  <!-- EN: No other weapon restrictions -->
+  <DMS_Req_NoWeaponFilter>No other equipment restrictions</DMS_Req_NoWeaponFilter>
+
+  <!-- EN: {1} from {0} is inbound. -->
+  <DMS_AirSupportFromClosestBase>{1} from base {0} is inbound.</DMS_AirSupportFromClosestBase>
+  <!-- EN: Processed fleet document -->
+  <DMS_ProcessedDocInBeacon>Processed fleet document</DMS_ProcessedDocInBeacon>
+  <LetterLabelDocsArrived>Documents delivered</LetterLabelDocsArrived>
+  <LetterTextDocsArrived>The classified documents from [asker_nameFull] have arrived. They have been dropped near your trade beacons or colony center.</LetterTextDocsArrived>
+  <DMS_WorkableProgress>processing progress</DMS_WorkableProgress>
+  <DMS_WorkableCompleted>processing complete</DMS_WorkableCompleted>
+</LanguageData>

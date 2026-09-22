@@ -1,50 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
-  <!-- 補給合約鏈 Supply chain quest -->
+  <!-- EN: Delivery progress: {0} / {1} ({2}) -->
   <DMS_SupplyPod_Progress>Delivery progress: {0} / {1} ({2})</DMS_SupplyPod_Progress>
+  <!-- EN: Auto-designate cargo -->
   <DMS_SupplyPod_AutoDesignate>Auto-designate cargo</DMS_SupplyPod_AutoDesignate>
+  <!-- EN: Automatically designate {0} on this map to be hauled into the pod, up to the requested amount. -->
   <DMS_SupplyPod_AutoDesignateDesc>Automatically designate {0} on this map to be hauled into the pod, up to the requested amount.</DMS_SupplyPod_AutoDesignateDesc>
+  <!-- EN: Confirm delivery -->
   <DMS_SupplyPod_Deliver>Confirm delivery</DMS_SupplyPod_Deliver>
+  <!-- EN: Consume {0}x {1} loaded in this pod and send it away. Anything else loaded will be unloaded first. -->
   <DMS_SupplyPod_DeliverDesc>Consume {0}x {1} loaded in this pod and send it away. Anything else loaded will be unloaded first.</DMS_SupplyPod_DeliverDesc>
+  <!-- EN: Not enough loaded: {0} / {1} -->
   <DMS_SupplyPod_NotEnough>Not enough loaded: {0} / {1}</DMS_SupplyPod_NotEnough>
+  <!-- EN: Requested amount already loaded or designated. -->
   <DMS_SupplyPod_AlreadyDesignated>Requested amount already loaded or designated.</DMS_SupplyPod_AlreadyDesignated>
+  <!-- EN: Cargo designated for loading. -->
   <DMS_SupplyPod_Designated>Cargo designated for loading.</DMS_SupplyPod_Designated>
+  <!-- EN: No haulable {0} found on the map. -->
   <DMS_SupplyPod_NoneFound>No haulable {0} found on the map.</DMS_SupplyPod_NoneFound>
+  <!-- EN: supply pod -->
   <DMS_SupplyPod_SelectLabel>supply pod</DMS_SupplyPod_SelectLabel>
 
+  <!-- EN: Delivery deadline -->
   <DMS_SupplyChain_DeadlineTitle>Delivery deadline</DMS_SupplyChain_DeadlineTitle>
+  <!-- EN: Time remaining to load the requested cargo into the supply pod. -->
   <DMS_SupplyChain_DeadlineTip>Time remaining to load the requested cargo into the supply pod.</DMS_SupplyChain_DeadlineTip>
+  <!-- EN: Supply delivery deadline -->
   <DMS_SupplyChain_AlertLabel>Supply delivery deadline</DMS_SupplyChain_AlertLabel>
+  <!-- EN: Load {0}x {1} into the supply pod and confirm the delivery before the deadline, or the contract will end. -->
   <DMS_SupplyChain_AlertExplanation>Load {0}x {1} into the supply pod and confirm the delivery before the deadline, or the contract will end.</DMS_SupplyChain_AlertExplanation>
+  <!-- EN: the Colonial Fleet -->
   <DMS_SupplyChain_FallbackIssuer>the Colonial Fleet</DMS_SupplyChain_FallbackIssuer>
+  <!-- EN: Supply contract completed -->
   <DMS_SupplyChain_BonusLetterLabel>Supply contract completed</DMS_SupplyChain_BonusLetterLabel>
+  <!-- EN: Every shipment of the supply contract has been delivered. As promised, compensation for the price difference of the goods has been sent at market rates. -->
   <DMS_SupplyChain_BonusLetterText>Every shipment of the supply contract has been delivered. As promised, compensation for the price difference of the goods has been sent at market rates.</DMS_SupplyChain_BonusLetterText>
   <DMS_SupplyChain_Progress>Deliveries completed: {0} / {1}</DMS_SupplyChain_Progress>
 
-  <!-- 軍事法庭 Court-martial quest -->
+  <!-- EN: Boarding deadline: {0} -->
   <DMS_CourtMartial_BoardDeadline>Boarding deadline: {0}</DMS_CourtMartial_BoardDeadline>
+  <!-- EN: Time remaining for the defendant to board the orbital transport. Deadline: {0}. If it leaves empty, the tribunal arrangement collapses and hostilities resume. -->
   <DMS_CourtMartial_BoardDeadlineTip>Time remaining for the defendant to board the orbital transport. Deadline: {0}. If it leaves empty, the tribunal arrangement collapses and hostilities resume.</DMS_CourtMartial_BoardDeadlineTip>
+  <!-- EN: Trial concludes in: {0} -->
   <DMS_CourtMartial_TrialInfo>Trial concludes in: {0}</DMS_CourtMartial_TrialInfo>
+  <!-- EN: Sentence ends in: {0} -->
   <DMS_CourtMartial_DetentionInfo>Sentence ends in: {0}</DMS_CourtMartial_DetentionInfo>
 
 
-  <!-- 軍官受訓晉升 Officer training quest -->
+  <!-- EN: Boarding deadline: {0} -->
   <DMS_OfficerTraining_BoardDeadline>Boarding deadline: {0}</DMS_OfficerTraining_BoardDeadline>
+  <!-- EN: Time remaining for the trainee to board the orbital transport. Deadline: {0}. If it leaves empty, the course allocation is withdrawn. -->
   <DMS_OfficerTraining_BoardDeadlineTip>Time remaining for the trainee to board the orbital transport. Deadline: {0}. If it leaves empty, the course allocation is withdrawn.</DMS_OfficerTraining_BoardDeadlineTip>
+  <!-- EN: Course ends in: {0} -->
   <DMS_OfficerTraining_CourseInfo>Course ends in: {0}</DMS_OfficerTraining_CourseInfo>
+  <!-- EN: no rank -->
   <DMS_OfficerTraining_NoTitle>no rank</DMS_OfficerTraining_NoTitle>
+  <!-- EN: infantry tactics course -->
   <DMS_Course_Infantry>infantry tactics course</DMS_Course_Infantry>
+  <!-- EN: close-quarters combat course -->
   <DMS_Course_CQB>close-quarters combat course</DMS_Course_CQB>
+  <!-- EN: command and leadership course -->
   <DMS_Course_Command>command and leadership course</DMS_Course_Command>
+  <!-- EN: staff and military science course -->
   <DMS_Course_Staff>staff duties course</DMS_Course_Staff>
   <!-- 機動載人升降艙 Mobile crew lifter -->
+  <!-- EN: Platform attached: next launch lifts off with the whole lifter. -->
   <DMS_CrewLifter_StageFull>Platform attached: next launch lifts off with the whole lifter.</DMS_CrewLifter_StageFull>
+  <!-- EN: Landed: next launch sends only the crew pod and leaves the platform behind. -->
   <DMS_CrewLifter_StagePodOnly>Landed: next launch sends only the crew pod and leaves the platform behind.</DMS_CrewLifter_StagePodOnly>
+  <!-- EN: Land here -->
   <DMS_CrewLifter_LandHere>Land here</DMS_CrewLifter_LandHere>
+  <!-- EN: Choose a landing spot for the lifter. -->
   <DMS_CrewLifter_ChooseLanding>Choose a landing spot for the lifter.</DMS_CrewLifter_ChooseLanding>
+  <!-- EN: The lifter cannot land here. -->
   <DMS_CrewLifter_CannotLandHere>The lifter cannot land here.</DMS_CrewLifter_CannotLandHere>
+  <!-- EN: Round trip: {0} -->
   <DMS_CrewLifter_RoundTripCost>Round trip: {0}</DMS_CrewLifter_RoundTripCost>
+  <!-- EN: not enough fuel to return -->
   <DMS_CrewLifter_NoReturnFuel>not enough fuel to return</DMS_CrewLifter_NoReturnFuel>
+  <!-- EN: Residual fuel: {0} {1} (recovered on deconstruction) -->
   <DMS_CrewLifter_ResidualFuel>Residual fuel: {0} {1} (recovered on deconstruction)</DMS_CrewLifter_ResidualFuel>
 </LanguageData>

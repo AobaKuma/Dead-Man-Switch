@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-
-  <DMS_ElevatorUnlocked>已解锁。</DMS_ElevatorUnlocked>
-  <DMS_HoleEmerge_Triggered>有 {0} 台机械体正从{1}里爬出来！</DMS_HoleEmerge_Triggered>
-
-  <DMS_BattleGroupCall_Triggered>{0}正在呼叫增援，快速反应部队即将抵达。</DMS_BattleGroupCall_Triggered>
-  <DMS_MortarStrike_Triggered>{0}正在呼叫火力支援，炮弹来袭！</DMS_MortarStrike_Triggered>
-  <DMS_LauncherCase_TakeWeapon>取出并装备{0}</DMS_LauncherCase_TakeWeapon>
-  <DMS_LauncherCase_Empty>箱子是空的</DMS_LauncherCase_Empty>
-
-  <DMS_AccessKeyTransform_Locked>已锁定。仍需在连结的门禁控制台刷卡：{0} 次</DMS_AccessKeyTransform_Locked>
-  <DMS_AccessKeyTransform_NoConsole>已锁定。没有任何门禁控制台连结到它。</DMS_AccessKeyTransform_NoConsole>
-  <DMS_AccessKeyTransform_Unlocked>{THING_labelShort}已解锁。</DMS_AccessKeyTransform_Unlocked>
-
-  <DMS_DormantTurretWokenUp>{WAKER_labelShort}惊醒了一座休眠中的炮塔。</DMS_DormantTurretWokenUp>
-  <DMS_DormantTurretWokenUpPlural>{WAKER_labelShort}惊醒了休眠中的炮塔。</DMS_DormantTurretWokenUpPlural>
-
-</LanguageData>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DMS_ElevatorUnlocked>已解锁。</DMS_ElevatorUnlocked>
+  <DMS_HoleEmerge_Triggered>{0}架机械体从{1}中出现。</DMS_HoleEmerge_Triggered>
+
+  <DMS_BattleGroupCall_Triggered>{0}正在呼叫增援，快速反应部队即将抵达。</DMS_BattleGroupCall_Triggered>
+  <DMS_MortarStrike_Triggered>{0}正在呼叫火力支援，远程炮击即将抵达。</DMS_MortarStrike_Triggered>
+  <DMS_LauncherCase_TakeWeapon>取出并装备{0}</DMS_LauncherCase_TakeWeapon>
+  <DMS_LauncherCase_Empty>箱子是空的</DMS_LauncherCase_Empty>
+
+  <DMS_AccessKeyTransform_Locked>已锁定。仍需在连结的门禁控制台刷卡：{0} 次</DMS_AccessKeyTransform_Locked>
+  <DMS_AccessKeyTransform_NoConsole>已锁定。没有任何门禁控制台连结到它。</DMS_AccessKeyTransform_NoConsole>
+  <DMS_AccessKeyTransform_Unlocked>{THING_labelShort}已解锁。</DMS_AccessKeyTransform_Unlocked>
+
+  <DMS_DormantTurretWokenUp>{WAKER_labelShort}惊醒了一座休眠中的炮塔。</DMS_DormantTurretWokenUp>
+  <DMS_DormantTurretWokenUpPlural>{WAKER_labelShort}惊醒了休眠中的炮塔。</DMS_DormantTurretWokenUpPlural>
+
+</LanguageData>

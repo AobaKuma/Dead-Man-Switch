@@ -12,14 +12,11 @@
   <!-- EN: Last Command -->
   <DMS_Scenario.scenario.name>Last Command</DMS_Scenario.scenario.name>
   <!-- EN: \n                        When you wake up, all that remains of the world you built are remnants of The Lighthouse.\n                        Time and scavengers have stripped away almost every trace of you and your companions past presence...\n\n                        Just like a long ago when you came here with nothing, you must rebuild anew. Only this time those who toiled and fought alongside you are distant memories of the forgotten past.\n                     -->
-  <DMS_Scenario.scenario.parts.GameStartDialog.text>When you wake up, all that remains of the world you built are remnants of The Lighthouse.
-                        Time and scavengers have stripped away almost every trace of you and your companions past presence...
-
-                        Just like a long ago when you came here with nothing, you must rebuild anew. Only this time those who toiled and fought alongside you are distant memories of the forgotten past.</DMS_Scenario.scenario.parts.GameStartDialog.text>
+  <DMS_Scenario.scenario.parts.GameStartDialog.text>When you wake up, all that remains of the world you built are the remnants of the Lighthouse.\nTime and scavengers have stripped away almost every trace of you and your companions' past presence...\n\nJust like long ago, you have come here with nothing. Only this time, those who toiled and fought alongside you are gone.</DMS_Scenario.scenario.parts.GameStartDialog.text>
   <!-- EN: A group of pioneers have done their part, and it's time for them to begin a new chapter of their lives. -->
   <DMS_Scenario.scenario.summary>A group of pioneers have done their part, and it's time for them to begin a new chapter of their lives.</DMS_Scenario.scenario.summary>
   
   <!-- UNUSED -->
-  <DMS_Scenario.scenario.parts.VFEC_AddStartingStructure.structureLabel>A signal tower</DMS_Scenario.scenario.parts.VFEC_AddStartingStructure.structureLabel>
+  <DMS_Scenario.scenario.parts.VFEC_AddStartingStructure.structureLabel>The Lighthouse</DMS_Scenario.scenario.parts.VFEC_AddStartingStructure.structureLabel>
   
 </LanguageData>

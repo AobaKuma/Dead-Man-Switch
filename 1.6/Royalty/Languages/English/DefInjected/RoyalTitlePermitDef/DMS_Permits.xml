@@ -1,35 +1,35 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-
+  
   <!-- EN: Call artillery bombard -->
   <DMS_Call_MortarSupport.label>Call mortar bombard</DMS_Call_MortarSupport.label>
-  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depended on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
+  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depend on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
   <DMS_Call_MortarSupport.description>Request 81mm mortar support from the nearest base, they will deliver incendiary shells to the targeted position. The number of available mortars is not fixed, and the bombardment accuracy also has certain differences.</DMS_Call_MortarSupport.description>
   
   <!-- EN: Call artillery bombard -->
   <DMS_Call_ArtillerySupport.label>Call artillery bombard</DMS_Call_ArtillerySupport.label>
-  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depended on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
+  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depend on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
   <DMS_Call_ArtillerySupport.description>Request 155mm artillery support from the nearest base. The number of available artillery pieces is not fixed, and the bombardment accuracy also has certain differences.</DMS_Call_ArtillerySupport.description>
-  
+
   <!-- EN: bandwidth support -->
   <DMS_Bandwidth.label>Bandwidth Support</DMS_Bandwidth.label>
-  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depended on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
+  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depend on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
   <DMS_Bandwidth.description>Apply for the access of orbital bandwidth support, the amount of bandwidth is dependent on the applicant's current title. This support will be valid unless death or defection occurs on the applicant.</DMS_Bandwidth.description>
   
   <!-- EN: call aerodrone salvo -->
-  <DMS_CallOrbitalSalvo.label>call Aerodrone Salvo</DMS_CallOrbitalSalvo.label>
+  <DMS_CallOrbitalSalvo.label>Call Aerodrone Salvo</DMS_CallOrbitalSalvo.label>
   <!-- EN: Call a salvo of aerodrone strikes around a target position. -->
   <DMS_CallOrbitalSalvo.description>Call a salvo of aerodrone strikes around a target position.</DMS_CallOrbitalSalvo.description>
-  
-  <!-- EN: call aerodrone strike -->
-  <DMS_CallOrbitalStrike.label>Call Aerodrone Strike</DMS_CallOrbitalStrike.label>
-  <!-- EN: Call a single-impact aerodrone strike at a target position. -->
-  <DMS_CallOrbitalStrike.description>Call a single-impact aerodrone strike on a target position.</DMS_CallOrbitalStrike.description>
   
   <!-- EN: Call recruitment agency -->
   <DMS_Call_TributeCollector.label>Call recruitment agency</DMS_Call_TributeCollector.label>
   <!-- EN: Call for a group of recruitment agency to transfer prisoners of war to the Colonial fleet. -->
-  <DMS_Call_TributeCollector.description>Call for a group of recruitment agency to transfer prisoners of war to the Colonial fleet.</DMS_Call_TributeCollector.description>
+  <DMS_Call_TributeCollector.description>Call for a recruitment agency team to transfer prisoners of war to the Colonial Fleet.</DMS_Call_TributeCollector.description>
+
+  <!-- EN: call aerodrone strike -->
+  <DMS_CallOrbitalStrike.label>Call Aerodrone Strike</DMS_CallOrbitalStrike.label>
+  <!-- EN: Call a single-impact aerodrone strike at a target position. -->
+  <DMS_CallOrbitalStrike.description>Call a single-impact aerodrone strike on a target position.</DMS_CallOrbitalStrike.description>
   
   <!-- EN: call transport shuttle -->
   <DMS_CallTransportShuttle.label>Call Transport Shuttle</DMS_CallTransportShuttle.label>
@@ -51,9 +51,17 @@
   <!-- EN: Apply a battle friend mech belong to your side. -->
   <DMS_CombatMech.description>Apply for a Battle Friend mech to belong to your side.</DMS_CombatMech.description>
   
-  <!-- EN: components drop -->
+  <!-- EN: Request mobile crew lifter -->
+  <DMS_Call_MobileLifter.label>Request mobile crew lifter</DMS_Call_MobileLifter.label>
+  <!-- EN: Request a fully fuelled mobile crew lifter to be dropped at a chosen spot and owned directly by your colony. It can fly out once with its platform and once more as a return pod. -->
+  <DMS_Call_MobileLifter.description>Request a fully fuelled mobile crew lifter to be dropped at a chosen spot and owned directly by your colony. It can fly out once with its platform and once more as a return pod.</DMS_Call_MobileLifter.description>
+
+  <DMS_Join_Shuttle.label>Request shuttle reward</DMS_Join_Shuttle.label>
+
+  <DMS_Join_Shuttle.description>Request a crew transport shuttle to be owned directly by your colony.</DMS_Join_Shuttle.description>
+  <!-- EN: componments drop -->
   <DMS_CompDrop.label>Components Drop</DMS_CompDrop.label>
-  <!-- EN: Call for a drop of stamp components and wetware computer. -->
+  <!-- EN: Call for a drop of stamp componments and wetware computer. -->
   <DMS_CompDrop.description>Call for a drop of stamp components and wetware computer.</DMS_CompDrop.description>
   
   <!-- EN: food supply drop -->
@@ -63,8 +71,8 @@
   
   <!-- EN: combat equipment drop -->
   <DMS_GearDrop.label>Combat Equipment Drop</DMS_GearDrop.label>
-  <!-- EN: Call for a combat supply for a combatant, include a set of tactical armor and emergency gears. -->
-  <DMS_GearDrop.description>Call for a combat supply for a combatant, which includes a set of tactical armor and emergency gears.</DMS_GearDrop.description>
+  <!-- EN: Call for a  set of combat supply and emergency gears. -->
+  <DMS_GearDrop.description>Call for a combat supply drop for a combatant, including a set of tactical armor and some emergency gear.</DMS_GearDrop.description>
   
   <!-- EN: call combatant recruit -->
   <DMS_Join_Combat.label>Call Combatant Recruit</DMS_Join_Combat.label>
@@ -78,7 +86,7 @@
   
   <!-- EN: logistic supply drop -->
   <DMS_LogiDrop.label>Logistics Supply Drop</DMS_LogiDrop.label>
-  <!-- EN: Call for a drop of 20 survival pack, 8 medicine and 4 component. -->
+  <!-- EN: Call for a drop of 20 survival pack, 8 medicine and 4 compoment. -->
   <DMS_LogiDrop.description>Call for a drop of 20 survival packs, 8 medicine and 4 components.</DMS_LogiDrop.description>
   
   <!-- EN: construct material drop -->
@@ -115,5 +123,10 @@
   <DMS_WorkerTeam.label>Call Worker Team</DMS_WorkerTeam.label>
   <!-- EN: Call a group of 4 worker to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe. -->
   <DMS_WorkerTeam.description>Call for a group of 4 workers to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe.</DMS_WorkerTeam.description>
+  
+  <!-- EN: call dragoon support -->
+  <DMS_Platoon_MD.label>Call dragoon support</DMS_Platoon_MD.label>
+  <!-- EN: Call a squad of mobile dragoons to aid you in battle. -->
+  <DMS_Platoon_MD.description>Call three PV-8 "Cyclops" dragoons of the colonial army to aid you in a raid or colony defense.</DMS_Platoon_MD.description>
   
 </LanguageData>

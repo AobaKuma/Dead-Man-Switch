@@ -1,33 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-
-  <!-- EN: lifter platform -->
-  <DMS_LifterPlatform.label>升降舱底座</DMS_LifterPlatform.label>
-  <!-- EN: The landing platform of a mobile lifter, left behind after the pod lifted off. It is of no further use to its owners and can be deconstructed for materials. -->
-  <DMS_LifterPlatform.description>机动升降舱的着陆底座，舱体升空后留在原地。对原主人已无用处，可拆除回收材料。</DMS_LifterPlatform.description>
-
-  <!-- EN: mobile crew lifter -->
-  <DMS_MobileCrewLifter.label>机动载人升降舱</DMS_MobileCrewLifter.label>
-  <!-- EN: A self-fuelled crew lifter built on a detachable landing platform. It needs no launch pad and its tank is filled with the chemfuel used in construction: load it and launch it anywhere within range. After landing, the pod can lift off once more for a return flight, leaving the platform behind. Carry spare chemfuel if the destination has no way to refuel. -->
-  <DMS_MobileCrewLifter.description>建于可分离着陆底座上的自带燃料载人升降舱。不需要发射台，建造时投入的化学燃料会直接注入油箱：装载后即可发射至射程内任何地点。着陆后，舱体可再次升空进行返程飞行，底座则留在原地。若目的地无法补给燃料，请自行携带化学燃料。</DMS_MobileCrewLifter.description>
-
-  <!-- EN: spent crew pod -->
-  <DMS_LifterCrewPod.label>废弃返回舱</DMS_LifterCrewPod.label>
-  <!-- EN: The crew pod of a mobile crew lifter, spent after its return flight. Without its platform it cannot launch again, but it can be deconstructed for materials, and any chemfuel left in its tank is recovered along with them. -->
-  <DMS_LifterCrewPod.description>机动载人升降舱的返回舱，完成返程飞行后已无法再用。没有底座便无法再次发射，但可拆除回收材料，油箱里的残余化学燃料也会一并退还。</DMS_LifterCrewPod.description>
-
-  <!-- EN: mobile crew lifter -->
-  <DMS_ActiveCrewLifter.label>机动载人升降舱</DMS_ActiveCrewLifter.label>
-  <!-- EN: crew pod -->
-  <DMS_ActiveCrewPod.label>返回舱</DMS_ActiveCrewPod.label>
-
-  <!-- EN: mobile crew lifter (incoming) -->
-  <DMS_CrewLifterIncoming.label>机动载人升降舱（降落中）</DMS_CrewLifterIncoming.label>
-  <!-- EN: mobile crew lifter (leaving) -->
-  <DMS_CrewLifterLeaving.label>机动载人升降舱（离场）</DMS_CrewLifterLeaving.label>
-  <!-- EN: crew pod (incoming) -->
-  <DMS_CrewPodIncoming.label>返回舱（降落中）</DMS_CrewPodIncoming.label>
-  <!-- EN: crew pod (leaving) -->
-  <DMS_CrewPodLeaving.label>返回舱（离场）</DMS_CrewPodLeaving.label>
-
-</LanguageData>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: lifter platform -->
+  <DMS_LifterPlatform.label>升降舱底座</DMS_LifterPlatform.label>
+  <!-- EN: The landing platform of a mobile lifter, left behind after the pod lifted off. It is of no further use to its owners and can be deconstructed for materials. -->
+  <DMS_LifterPlatform.description>机动升降舱的着陆底座，舱体升空后留在原地。对原主人已无用处，可拆除回收材料。</DMS_LifterPlatform.description>
+
+  <!-- EN: mobile crew lifter -->
+  <DMS_MobileCrewLifter.label>机动载人升降舱</DMS_MobileCrewLifter.label>
+  <!-- EN: A self-fuelled crew lifter built on a detachable landing platform. It needs no launch pad and its tank is filled with the chemfuel used in construction: load it and launch it anywhere within range. After landing, the pod can lift off once more for a return flight, leaving the platform behind. Carry spare chemfuel if the destination has no way to refuel. -->
+  <DMS_MobileCrewLifter.description>建于可分离着陆底座上的自带燃料载人升降舱。不需要发射台，建造时投入的化学燃料会直接注入油箱：装载后即可发射至射程内任何地点。着陆后，舱体可再次升空进行返程飞行，底座则留在原地。若目的地无法补给燃料，请自行携带化学燃料。</DMS_MobileCrewLifter.description>
+
+  <!-- EN: spent crew pod -->
+  <DMS_LifterCrewPod.label>废弃返回舱</DMS_LifterCrewPod.label>
+  <!-- EN: The crew pod of a mobile crew lifter, spent after its return flight. Without its platform it cannot launch again, but it can be deconstructed for materials, and any chemfuel left in its tank is recovered along with them. -->
+  <DMS_LifterCrewPod.description>机动载人升降舱的返回舱，完成返程飞行后已无法再用。没有底座便无法再次发射，但可拆除回收材料，油箱里的残余化学燃料也会一并退还。</DMS_LifterCrewPod.description>
+
+  <!-- EN: mobile crew lifter -->
+  <DMS_ActiveCrewLifter.label>机动载人升降舱</DMS_ActiveCrewLifter.label>
+  <!-- EN: crew pod -->
+  <DMS_ActiveCrewPod.label>返回舱</DMS_ActiveCrewPod.label>
+
+  <!-- EN: mobile crew lifter (incoming) -->
+  <DMS_CrewLifterIncoming.label>机动载人升降舱（降落中）</DMS_CrewLifterIncoming.label>
+  <!-- EN: mobile crew lifter (leaving) -->
+  <DMS_CrewLifterLeaving.label>机动载人升降舱（离场）</DMS_CrewLifterLeaving.label>
+  <!-- EN: crew pod (incoming) -->
+  <DMS_CrewPodIncoming.label>返回舱（降落中）</DMS_CrewPodIncoming.label>
+  <!-- EN: crew pod (leaving) -->
+  <DMS_CrewPodLeaving.label>返回舱（离场）</DMS_CrewPodLeaving.label>
+
+</LanguageData>

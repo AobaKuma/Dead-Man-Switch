@@ -3,9 +3,7 @@
   
   <!-- EN: Xeno Limb Syndrome -->
   <DMS_BionicShock.label>Xeno Limb Syndrome</DMS_BionicShock.label>
-  <!-- EN: A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.
-
-There are five classifications of severity for these symptoms. Left untreated, the syndrome will progress to the next level over time and eventually kill the patient. Each dose of neuroglue lowers it by one level and suspends its progression for a while. -->
+  <!-- EN: A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for these symptoms. Left untreated, the syndrome will progress to the next level over time and eventually kill the patient. Each dose of neuroglue lowers it by one level and suspends its progression for a while. -->
   <DMS_BionicShock.description>A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.
 
 There are five classifications of severity for these symptoms. Left untreated, the syndrome will progress to the next level over time and eventually kill the patient. Each dose of neuroglue lowers it by one level and suspends its progression for a while.</DMS_BionicShock.description>
@@ -19,11 +17,11 @@ There are five classifications of severity for these symptoms. Left untreated, t
   <DMS_BionicShock.stages.LV4_Catatonic.label>LV.4 Catatonic</DMS_BionicShock.stages.LV4_Catatonic.label>
   <!-- EN: LV.5 Disabled -->
   <DMS_BionicShock.stages.LV5_Disabled.label>LV.5 Disabled</DMS_BionicShock.stages.LV5_Disabled.label>
-
+  
   <!-- EN: Phantom Limb Syndrome -->
   <DMS_BionicShockRemove.label>Phantom Limb Syndrome</DMS_BionicShockRemove.label>
   <!-- EN: A commonly occurring syndrome in pre-spacer worlds when neurally interfaced bionics are removed. -->
-  <DMS_BionicShockRemove.description>A commonly occurring syndrome in pre-spacer worlds when neurally interfaced bionics are removed.</DMS_BionicShockRemove.description>
+  <DMS_BionicShockRemove.description>The patient feels as if the removed neuromechanical bionic were still there. A psychological syndrome common in pre-spacer worlds.</DMS_BionicShockRemove.description>
   <!-- EN: Phantom Limb Syndrome has been cured -->
   <DMS_BionicShockRemove.comps.HediffComp_RemoveIfOtherHediff.message>Phantom Limb Syndrome has been cured</DMS_BionicShockRemove.comps.HediffComp_RemoveIfOtherHediff.message>
   <!-- EN: initial -->
@@ -34,7 +32,7 @@ There are five classifications of severity for these symptoms. Left untreated, t
   <!-- EN: Emotional Misalignment -->
   <DMS_FilterShock.label>Emotional Misalignment</DMS_FilterShock.label>
   <!-- EN: A syndrome caused by a cognitive dissonance created by the user's mind conflicting with the installed bionics. This internal conflict causes emotional trauma as the user struggles to adjust to their new baseline. -->
-  <DMS_FilterShock.description>A syndrome caused by a cognitive dissonance created by the user's mind conflicting with the installed bionics. This internal conflict causes emotional trauma as the user struggles to adjust to their new baseline.</DMS_FilterShock.description>
+  <DMS_FilterShock.description>A psychological syndrome that occurs when the sensory filter briefly fails - colloquially known as "the price of being a pawn". It involves a degree of mental breakdown, but usually does not last long.</DMS_FilterShock.description>
   <!-- EN: catatonic -->
   <DMS_FilterShock.stages.catatonic.label>catatonic</DMS_FilterShock.stages.catatonic.label>
   
@@ -50,7 +48,7 @@ There are five classifications of severity for these symptoms. Left untreated, t
   
   <!-- EN: N.A.C.S. -->
   <DMS_MechlinkOverload.label>N.A.C.S.</DMS_MechlinkOverload.label>
-  <!-- EN: Neural-Auxiliary Computation and Control System- this system's unique protocol allows the user to connect with existing mech and Automatroid tech. -->
+  <!-- EN: Neural-Auxiliary Computation and Control System, this system's unique protocol allows the user to connect with existing mech and Automatroid tech. -->
   <DMS_MechlinkOverload.description>Neural-Auxiliary Computation and Control System- this system's unique protocol allows the user to connect with existing mech and Automatroid tech.</DMS_MechlinkOverload.description>
   <!-- EN: low -->
   <DMS_MechlinkOverload.stages.low.label>low</DMS_MechlinkOverload.stages.low.label>

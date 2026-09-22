@@ -4,7 +4,7 @@
   <!-- EN: Colonization Forces -->
   <DMS_Army.label>Colonization Forces</DMS_Army.label>
   <!-- EN: A militarized colonial organization led by an AI Overlord who optimises warfare with brutal efficiency. They are a warlike people operating as a military meritocracy. Every individual is expected to take responsibility for their actions and their battlespace, and anyone willing to fight can find their place among their ranks. -->
-  <DMS_Army.description>A militarized colonial organization led by an AI Overlord who optimises warfare with brutal efficiency. They are a warlike people operating as a military meritocracy. Every individual is expected to take responsibility for their actions and their battlespace, and anyone willing to fight can find their place among their ranks.</DMS_Army.description>
+  <DMS_Army.description>A militarized colonial organization led by an artificial intelligence. Their culture is built heavily on military rank, and anyone who proves their ability can find their place within it through a strict system of accountability.\n\nWhat is certain is that behind this colonial force stands a vast organization capable of coordinating operations across star systems even when interstellar voyages take decades, with large numbers of mechanized troops and heavy weapons to guarantee their peaceful development of this planet and their infrastructure assistance.</DMS_Army.description>
   <!-- EN: sector commander -->
   <DMS_Army.leaderTitle>sector commander</DMS_Army.leaderTitle>
   <!-- EN: {0} from {1} are attacking your {2}. -->
@@ -14,6 +14,6 @@
   <!-- EN: servicemen -->
   <DMS_Army.pawnsPlural>servicemen</DMS_Army.pawnsPlural>
   <!-- EN: honor -->
-  <DMS_Army.royalFavorLabel>honor</DMS_Army.royalFavorLabel>
+  <DMS_Army.royalFavorLabel>military support</DMS_Army.royalFavorLabel>
   
 </LanguageData>

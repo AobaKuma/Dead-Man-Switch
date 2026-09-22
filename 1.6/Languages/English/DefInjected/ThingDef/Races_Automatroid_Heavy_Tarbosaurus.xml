@@ -4,9 +4,7 @@
   <!-- EN: Tarbosaurus -->
   <DMS_Mech_Tarbosaurus.label>Tarbosaurus</DMS_Mech_Tarbosaurus.label>
   <!-- EN: A bipedal ultra heavy automatroid nicknamed the "Armored Rex" as its distinctive body structure vaguely resembles a carnotaurus. Once seen as the nextgen war-changer in the twilight of the arms races in the early spacer era, it uses artificial muscle fibres to drive its oversized legs.\n\nWhile it failed to change the field of modern warfare as expected, there are still numerous manufacturers replicating it and adding their own improvements to the design. As such, traces of technology adopted in this automatroid can be seen in a great number of weaponry. -->
-  <DMS_Mech_Tarbosaurus.description>A bipedal ultra heavy automatroid nicknamed the "Armored Rex" as its distinctive body structure vaguely resembles a carnotaurus. Once seen as the nextgen war-changer in the twilight of the arms races in the early spacer era, it uses artificial muscle fibres to drive its oversized legs.
-
-While it failed to change the field of modern warfare as expected, there are still numerous manufacturers replicating it and adding their own improvements to the design. As such, traces of technology adopted in this automatroid can be seen in a great number of weaponry.</DMS_Mech_Tarbosaurus.description>
+  <DMS_Mech_Tarbosaurus.description>A bipedal heavy mech nicknamed the "armored rex", characterized by a body structure like a carnivorous dinosaur and two powerful artificial-muscle bionic legs. In the arms race of humanity's early space age it was the much-anticipated next-generation weapon that brought together countless cutting-edge technologies, and the earliest recorded unit to enter service using artificial muscle to drive its joints.\n\nIts enormous size on the battlefield, its hard-to-maintain artificial muscle bundles, and the beam weapons and railguns that never became practical during its service life meant it ultimately failed to change the structure of modern warfare. Even thousands of years later, however, countless manufacturers have acquired the production technology to replicate and improve on its design, and traces of its technology can be glimpsed in countless weapons that came after it.</DMS_Mech_Tarbosaurus.description>
   <!-- EN: Mechanical Head -->
   <DMS_Mech_Tarbosaurus.tools.Mechanical_Head.label>Mechanical Head</DMS_Mech_Tarbosaurus.tools.Mechanical_Head.label>
   <!-- EN: Left Leg -->
@@ -15,13 +13,8 @@ While it failed to change the field of modern warfare as expected, there are sti
   <DMS_Mech_Tarbosaurus.tools.Right_Leg.label>Right Leg</DMS_Mech_Tarbosaurus.tools.Right_Leg.label>
   
   <!-- UNUSED -->
-  <DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.0.command_Target>aim target</DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.0.command_Target>
-  <DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>Fire at will</DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>
-  <DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>Aim at designated target</DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>
-  <DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>
-  <DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.1.command_Target>Aim target</DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.1.command_Target>
-  <DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.1.command_ToggleFire>Fire at will</DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.1.command_ToggleFire>
-  <DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.1.commandDesc_Target>Aim at designated target</DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.1.commandDesc_Target>
-  <DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.1.commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</DMS_Mech_Tarbosaurus.comps.CompMultipleTurretGun.subTurrets.1.commandDesc_ToggleFire>
+  <DMS_Mech_Tarbosaurus.tools.left_leg.label>left leg</DMS_Mech_Tarbosaurus.tools.left_leg.label>
+  <DMS_Mech_Tarbosaurus.tools.right_leg.label>right leg</DMS_Mech_Tarbosaurus.tools.right_leg.label>
+  <DMS_Mech_Tarbosaurus.tools.head.label>head</DMS_Mech_Tarbosaurus.tools.head.label>
   
 </LanguageData>

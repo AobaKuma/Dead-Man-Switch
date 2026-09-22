@@ -4,7 +4,7 @@
   <!-- EN: Battle Friend -->
   <DMS_Mech_BattleFrame.label>Battle Friend</DMS_Mech_BattleFrame.label>
   <!-- EN: Designed as a light infantry fighting unit, the battle friend has a considerable load capacity and ability to use most human equipment. -->
-  <DMS_Mech_BattleFrame.description>Designed as a light infantry fighting unit, the battle friend has a considerable load capacity and ability to use most human equipment.</DMS_Mech_BattleFrame.description>
+  <DMS_Mech_BattleFrame.description>A bipedal combat mech designed as a light infantry support platform, typically fitted with a top sensor head for all-round observation and a forward sensor head for aiming firearms. Historically it was mass-produced for combat in hilly and mountainous terrain. The battle frame has a considerable load capacity for carrying its ammunition and weapons, and can operate most firearms that humans can use.\nBattle friends can carry large amounts of ammunition and be equipped with powerful support weapons, so they were adopted by the armies of many nations in the past, spawning many derivative models developed for local environments and roles.</DMS_Mech_BattleFrame.description>
   <!-- EN: head -->
   <DMS_Mech_BattleFrame.tools.head.label>head</DMS_Mech_BattleFrame.tools.head.label>
   <!-- EN: left fist -->
@@ -14,8 +14,8 @@
   
   <!-- EN: Escort Lifter -->
   <DMS_Mech_EscortLifter.label>Escort Lifter</DMS_Mech_EscortLifter.label>
-  <!-- EN: An early stage mass-production automatroid. Its no longer in regular service but there're still plenty of them modified for transport purposes. -->
-  <DMS_Mech_EscortLifter.description>An early stage mass-production automatroid. Its no longer in regular service but there're still plenty of them modified for transport purposes.</DMS_Mech_EscortLifter.description>
+  <!-- EN: An early stage mass-production automatroid. It's no longer in regular service but there are still plenty of them modified for transport purposes. -->
+  <DMS_Mech_EscortLifter.description>A second-line transport mech for logistics loading and armed escort, one of the derivatives of the battle frame series. Extra cargo boxes and handling tools give it the ability to load cargo on its own, and it has the highest payload of the entire battle frame series; in the colonial fleet's army, many early-batch battle frames were converted and given a second life hauling caravans between colonies.\nWith the top sensor head and much of the military-grade hardware removed, its operating system supports few weapons - only light weapons for self-defense.</DMS_Mech_EscortLifter.description>
   <!-- EN: head -->
   <DMS_Mech_EscortLifter.tools.head.label>head</DMS_Mech_EscortLifter.tools.head.label>
   <!-- EN: left fist -->
@@ -26,7 +26,7 @@
   <!-- EN: Field Command -->
   <DMS_Mech_FieldCommand.label>Field Command</DMS_Mech_FieldCommand.label>
   <!-- EN: A battle friend subvariant. It functions as a mechanitor command relay, however due to the weight of the relay equipment it can only use a light weapon. -->
-  <DMS_Mech_FieldCommand.description>A battle friend subvariant. It functions as a mechanitor command relay, however due to the weight of the relay equipment it can only use a light weapon.</DMS_Mech_FieldCommand.description>
+  <DMS_Mech_FieldCommand.description>A battle frame derivative for frontline relay command. The three-faced phased array radar mounted on top of the frame continuously provides accurate, clear wide-area terrain scanning and directional shortwave communication with friendly units in line of sight, letting a commander use it as a command relay to issue precise orders to other mechs.\nSince so much of its space and weight goes to supporting the radar system, its limited weapon system can only carry light weapons for self-defense.</DMS_Mech_FieldCommand.description>
   <!-- EN: head -->
   <DMS_Mech_FieldCommand.tools.head.label>head</DMS_Mech_FieldCommand.tools.head.label>
   <!-- EN: left fist -->
@@ -36,8 +36,8 @@
   
   <!-- EN: Shaft Worker -->
   <DMS_Mech_ShaftWorker.label>Shaft Worker</DMS_Mech_ShaftWorker.label>
-  <!-- EN: An early stage mass-produced automatroid. Its no longer in regular service but there're still lots of them modified to used for mining and construct purpose. -->
-  <DMS_Mech_ShaftWorker.description>An early stage mass-produced automatroid. Its no longer in regular service but there're still lots of them modified to used for mining and construct purpose.</DMS_Mech_ShaftWorker.description>
+  <!-- EN: An early stage mass-produced automatroid. It's no longer in regular service but there are still lots of them modified to used for mining and construct purpose. -->
+  <DMS_Mech_ShaftWorker.description>A colonial work-pattern battle frame derivative for building colonial outposts and extracting resources... which is not entirely accurate. The shaft worker's bipedal walking design differs from the battle frame's, but the high interchangeability of parts means most people never notice the difference. Compared with the battle frame it is taller, carries thicker work-protection plating and an external power pack module, and the computing demands of its terrain-mapping and excavation systems make it occupy more control bandwidth than a frontline combat unit. Its weapon system, simplified to cut costs, can only carry light weapons for self-defense.</DMS_Mech_ShaftWorker.description>
   <!-- EN: head -->
   <DMS_Mech_ShaftWorker.tools.head.label>head</DMS_Mech_ShaftWorker.tools.head.label>
   <!-- EN: left fist -->

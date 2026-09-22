@@ -4,9 +4,7 @@
   <!-- EN: Grenadier -->
   <DMS_Mech_Grenadier.label>Grenadier</DMS_Mech_Grenadier.label>
   <!-- EN: A bipedal humanoid robot built in the image of other pre-existing mechanoids. Grenadiers are specialized to use light weapons and grenade launchers.\n\nThe Grenadier has to carry a battery backpack which makes it unable to fight like other mechs without cover. -->
-  <DMS_Mech_Grenadier.description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Grenadiers are specialized to use light weapons and grenade launchers.
-
-The Grenadier has to carry a battery backpack which makes it unable to fight like other mechs without cover.</DMS_Mech_Grenadier.description>
+  <DMS_Mech_Grenadier.description>A Soldat derivative for attacking and defending in trenches and underground tunnel networks, using a composite camera and a specialized operating system to enhance its ballistic calculations when using indirect-fire weapons.\n\nBest equipped with explosives such as hand grenades or grenade launchers to clear fortifications and positions.\n\nThe battery pack it carries has a long battery life, but also leaves it unable to fight without cover.</DMS_Mech_Grenadier.description>
   <!-- EN: head -->
   <DMS_Mech_Grenadier.tools.head.label>head</DMS_Mech_Grenadier.tools.head.label>
   <!-- EN: left fist -->
@@ -17,9 +15,7 @@ The Grenadier has to carry a battery backpack which makes it unable to fight lik
   <!-- EN: Kanonier -->
   <DMS_Mech_Kanonier.label>Kanonier</DMS_Mech_Kanonier.label>
   <!-- EN: A bipedal humanoid robot built in the image of other pre-existing mechanoids. Kanoniers are specialized to use rocket launchers or recoilless rifles.\n\nThe Kanonier has to carry a battery backpack which makes it unable to fight like other mechs without cover. -->
-  <DMS_Mech_Kanonier.description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Kanoniers are specialized to use rocket launchers or recoilless rifles.
-
-The Kanonier has to carry a battery backpack which makes it unable to fight like other mechs without cover.</DMS_Mech_Kanonier.description>
+  <DMS_Mech_Kanonier.description>A Soldat conversion using a high-strength alloy skeleton, with higher output to carry heavy weapons such as rocket launchers and recoilless rifles.\n\nThe battery pack it carries has a long battery life, but also leaves it unable to fight without cover.</DMS_Mech_Kanonier.description>
   <!-- EN: head -->
   <DMS_Mech_Kanonier.tools.head.label>head</DMS_Mech_Kanonier.tools.head.label>
   <!-- EN: left fist -->
@@ -40,10 +36,8 @@ The Kanonier has to carry a battery backpack which makes it unable to fight like
   
   <!-- EN: Soldat -->
   <DMS_Mech_Soldat.label>Soldat</DMS_Mech_Soldat.label>
-  <!-- EN: A bipedal humanoid robot built in the image of other pre-existing mechanoids. Soldats can be equipped with weapons rated for human use.\n\nThe Soldat has to carry a battery backpack which makes it unable to fight like other mechs without cover. -->
-  <DMS_Mech_Soldat.description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Soldats can be equipped with weapons rated for human use.
-
-The Soldat has to carry a battery backpack which makes it unable to fight like other mechs without cover.</DMS_Mech_Soldat.description>
+  <!-- EN: A bipedal humanoid robot built in the image of other pre-existing mechanoids. Soldat's can be equipped with weapons rated for human use.\n\nThe Soldat has to carry a battery backpack which makes it unable to fight like other mechs without cover. -->
+  <DMS_Mech_Soldat.description>An ancient humanoid mech model dating back to the civil wars before humanity's age of colonization, used to advance the line alongside armored groups on open plains and to clear underground fortifications. Thanks to its design philosophy and tactical role, the Soldat is remarkably cheap to produce and maintain, but can only operate relatively simple weapons.\n\nThe battery pack it carries has a long battery life, but also leaves it unable to fight without cover.</DMS_Mech_Soldat.description>
   <!-- EN: head -->
   <DMS_Mech_Soldat.tools.head.label>head</DMS_Mech_Soldat.tools.head.label>
   <!-- EN: left fist -->

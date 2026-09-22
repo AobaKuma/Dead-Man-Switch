@@ -1,52 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-
-  <!-- ============ 残余机场 Remnant airfield ============ -->
-  <DMS_Airport_ExpiredLabel>机场已失去信号</DMS_Airport_ExpiredLabel>
-  <DMS_Airport_ExpiredText>残余机场的遥测信号已经中断。该机场已全面静默，位置就此失去踪迹。</DMS_Airport_ExpiredText>
-  <DMS_Airport_ClearedLabel>机场已肃清</DMS_Airport_ClearedLabel>
-  <DMS_Airport_ClearedText>残余机场内的敌人已全数歼灭。\n\n塔台里的诱饵无线电完好无损。用它把集群织鸟引到这座机场来——但要带上你所有的家当，而且在等它现身的期间，残余部队仍会不断派来增援。</DMS_Airport_ClearedText>
-  <DMS_Airport_EntryCountdownLabel>敌对机场：增援即将抵达</DMS_Airport_EntryCountdownLabel>
-  <DMS_Airport_EntryCountdownText>你已进入敌对的残余机场。塔台的监控协议已经标记了你的存在。\n\n敌方增援将于 {0} 后抵达。若打算把织鸟引来这里，先在那之前肃清机场。</DMS_Airport_EntryCountdownText>
-
-  <!-- ============ 储存库地面站 Vault access station ============ -->
-  <DMS_VaultStation_ExpiredLabel>储存库站点已失去踪迹</DMS_VaultStation_ExpiredLabel>
-  <DMS_VaultStation_ExpiredText>物资清单上的定位已经失效。储存库地面站已转移阵地，位置就此失去踪迹。</DMS_VaultStation_ExpiredText>
-  <DMS_VaultStation_ClearedLabel>储存库站点已肃清</DMS_VaultStation_ClearedLabel>
-  <DMS_VaultStation_ClearedText>储存库地面站内的敌人已全数歼灭。\n\n骇入控制室的安全控制台就能升起电梯的封板；车厢仍有电力。地下储存库里留下的一切都任你搬上来——但残余部队仍会持续试探地面。</DMS_VaultStation_ClearedText>
-  <DMS_VaultStation_EntryCountdownLabel>敌对站点：增援即将抵达</DMS_VaultStation_EntryCountdownLabel>
-  <DMS_VaultStation_EntryCountdownText>你已进入敌对的残余设施。该站点的监控协议已经标记了你的存在。\n\n敌方增援将于 {0} 后抵达。先把竖井打开，再决定要固守地面还是下去。</DMS_VaultStation_EntryCountdownText>
-
-  <!-- ============ 残余维修站 Remnant repair depot ============ -->
-  <DMS_RepairStation_ExpiredLabel>维修站已失去踪迹</DMS_RepairStation_ExpiredLabel>
-  <DMS_RepairStation_ExpiredText>那份维修申请已经结案。残余维修站已转移阵地，位置就此失去踪迹。</DMS_RepairStation_ExpiredText>
-  <DMS_RepairStation_ClearedLabel>维修站已肃清</DMS_RepairStation_ClearedLabel>
-  <DMS_RepairStation_ClearedText>残余维修站内的敌人已全数歼灭。\n\n骇入维修站的安全控制台以放行维修间。支架上的机体从未重新认证：机械师可以骇入其中一具并收为己用。停机坪上的升降舱与库房里的物资也都归你。</DMS_RepairStation_ClearedText>
-  <DMS_RepairStation_EntryCountdownLabel>敌对维修站：增援即将抵达</DMS_RepairStation_EntryCountdownLabel>
-  <DMS_RepairStation_EntryCountdownText>你已进入敌对的残余设施。该站点的监控协议已经标记了你的存在。\n\n敌方增援将于 {0} 后抵达。速战速决，尽快离开——或者就地固守。</DMS_RepairStation_EntryCountdownText>
-
-  <!-- ============ 残余前进基地 Remnant forward base ============ -->
-  <DMS_OperationBase_ExpiredLabel>前进基地已撤离</DMS_OperationBase_ExpiredLabel>
-  <DMS_OperationBase_ExpiredText>残余前进基地已拔营转移。其位置就此失去踪迹。</DMS_OperationBase_ExpiredText>
-  <DMS_OperationBase_ClearedLabel>前进基地已肃清</DMS_OperationBase_ClearedLabel>
-  <DMS_OperationBase_ClearedText>残余前进基地内的敌人已全数歼灭。\n\n物资堆放场归你了。骇入两座安全控制台以开启防爆门，再骇入货运电梯本身就能下到地下库房——但残余部队仍会持续试探防线。</DMS_OperationBase_ClearedText>
-  <DMS_OperationBase_EntryCountdownLabel>敌对基地：增援即将抵达</DMS_OperationBase_EntryCountdownLabel>
-  <DMS_OperationBase_EntryCountdownText>你已进入敌对的残余设施。该站点的监控协议已经标记了你的存在。\n\n敌方增援将于 {0} 后抵达。速战速决，尽快离开——或者就地固守。</DMS_OperationBase_EntryCountdownText>
-
-  <!-- ============ 荒废残余站点 Derelict remnant station ============ -->
-  <DMS_SiteStation_ExpiredLabel>站点已被搜刮一空</DMS_SiteStation_ExpiredLabel>
-  <DMS_SiteStation_ExpiredText>残余分遣队已经离开，并在撤走时把荒废站点搜刮一空。那里已不值得再跑一趟。</DMS_SiteStation_ExpiredText>
-  <DMS_SiteStation_ClearedLabel>站点已肃清</DMS_SiteStation_ClearedLabel>
-  <DMS_SiteStation_ClearedText>荒废站点内的敌人已全数歼灭。\n\n古代货箱、货架与残骸都任你搜刮，运输舱发射台也还能用。残余部队仍会持续在废墟一带试探。</DMS_SiteStation_ClearedText>
-  <DMS_SiteStation_EntryCountdownLabel>敌对站点：增援即将抵达</DMS_SiteStation_EntryCountdownLabel>
-  <DMS_SiteStation_EntryCountdownText>你已进入敌对的残余设施。该站点的监控协议已经标记了你的存在。\n\n敌方增援将于 {0} 后抵达。这座站点很大——别在他们赶到时把人马散得到处都是。</DMS_SiteStation_EntryCountdownText>
-
-  <!-- ============ 废弃发射场 Abandoned launch site ============ -->
-  <DMS_LaunchSite_ExpiredLabel>发射场已失去踪迹</DMS_LaunchSite_ExpiredLabel>
-  <DMS_LaunchSite_ExpiredText>残余巡逻队已经离开废弃发射场，扫描器上的定位也随之消失。</DMS_LaunchSite_ExpiredText>
-  <DMS_LaunchSite_ClearedLabel>发射场已肃清</DMS_LaunchSite_ClearedLabel>
-  <DMS_LaunchSite_ClearedText>废弃发射场的残余巡逻队已被歼灭。\n\n残骸任你打捞。残余部队迟早会再派一支巡逻队经过这里。</DMS_LaunchSite_ClearedText>
-  <DMS_LaunchSite_EntryCountdownLabel>敌对站点：增援即将抵达</DMS_LaunchSite_EntryCountdownLabel>
-  <DMS_LaunchSite_EntryCountdownText>你已进入残余部队的巡逻区。巡逻队的监控协议已经标记了你的存在。\n\n敌方增援将于 {0} 后抵达。能捞的赶快捞，然后离开——或者就地固守。</DMS_LaunchSite_EntryCountdownText>
-
-</LanguageData>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- ============ 残余机场 Remnant airfield ============ -->
+  <DMS_Airport_ExpiredLabel>机场已失去信号</DMS_Airport_ExpiredLabel>
+  <DMS_Airport_ExpiredText>残余机场的遥测信号已经中断。该机场已全面静默，位置就此失去踪迹。</DMS_Airport_ExpiredText>
+  <DMS_Airport_ClearedLabel>机场已肃清</DMS_Airport_ClearedLabel>
+  <DMS_Airport_ClearedText>残余机场内的敌人已全数歼灭。\n\n塔台里的诱饵无线电完好无损。用它把集群织鸟引到这座机场来——但要带上你所有的家当，而且在等它现身的期间，残余部队仍会不断派来增援。</DMS_Airport_ClearedText>
+  <DMS_Airport_EntryCountdownLabel>敌对机场：增援即将抵达</DMS_Airport_EntryCountdownLabel>
+  <DMS_Airport_EntryCountdownText>你已进入敌对的残余机场。塔台的监控协议已经标记了你的存在。\n\n敌方增援将于 {0} 后抵达。若打算把织鸟引来这里，先在那之前肃清机场。</DMS_Airport_EntryCountdownText>
+
+  <!-- ============ 储存库地面站 Vault access station ============ -->
+  <DMS_VaultStation_ExpiredLabel>储存库站点已失去踪迹</DMS_VaultStation_ExpiredLabel>
+  <DMS_VaultStation_ExpiredText>物资清单上的定位已经失效。储存库地面站已转移阵地，位置就此失去踪迹。</DMS_VaultStation_ExpiredText>
+  <DMS_VaultStation_ClearedLabel>储存库站点已肃清</DMS_VaultStation_ClearedLabel>
+  <DMS_VaultStation_ClearedText>储存库地面站内的敌人已全数歼灭。\n\n骇入控制室的安全控制台就能升起电梯的封板；轿厢仍有电力。地下储存库里留下的一切都任你搬上来——但残余部队仍会持续试探地面。</DMS_VaultStation_ClearedText>
+  <DMS_VaultStation_EntryCountdownLabel>敌对站点：增援即将抵达</DMS_VaultStation_EntryCountdownLabel>
+  <DMS_VaultStation_EntryCountdownText>你已进入敌对的残余设施。该站点的监控协议已经标记了你的存在。\n\n敌方增援将于 {0} 后抵达。</DMS_VaultStation_EntryCountdownText>
+
+  <!-- ============ 残余维修站 Remnant repair depot ============ -->
+  <DMS_RepairStation_ExpiredLabel>维修站已失去踪迹</DMS_RepairStation_ExpiredLabel>
+  <DMS_RepairStation_ExpiredText>那份维修申请已经结案。残余维修站已转移阵地，位置就此失去踪迹。</DMS_RepairStation_ExpiredText>
+  <DMS_RepairStation_ClearedLabel>维修站已肃清</DMS_RepairStation_ClearedLabel>
+  <DMS_RepairStation_ClearedText>残余维修站内的敌人已全数歼灭。\n\n骇入维修站的安全控制台以放行维修间。支架上的机体从未重新认证：机械师可以骇入其中一具并收为己用。停机坪上的升降舱与库房里的物资也都归你。</DMS_RepairStation_ClearedText>
+  <DMS_RepairStation_EntryCountdownLabel>敌对维修站：增援即将抵达</DMS_RepairStation_EntryCountdownLabel>
+  <DMS_RepairStation_EntryCountdownText>你已进入敌对的残余设施。该站点的监控协议已经标记了你的存在。\n\n敌方增援将于 {0} 后抵达。速战速决，尽快离开或者就地固守。</DMS_RepairStation_EntryCountdownText>
+
+  <!-- ============ 残余前进基地 Remnant forward base ============ -->
+  <DMS_OperationBase_ExpiredLabel>前进基地已撤离</DMS_OperationBase_ExpiredLabel>
+  <DMS_OperationBase_ExpiredText>残余前进基地已拔营转移。其位置就此失去踪迹。</DMS_OperationBase_ExpiredText>
+  <DMS_OperationBase_ClearedLabel>前进基地已肃清</DMS_OperationBase_ClearedLabel>
+  <DMS_OperationBase_ClearedText>残余前进基地内的敌人已全数歼灭。\n\n物资堆放场归你了。骇入两座安全控制台以开启防爆门，再骇入货运电梯本身就能下到地下库房——但残余部队仍会持续试探防线。</DMS_OperationBase_ClearedText>
+  <DMS_OperationBase_EntryCountdownLabel>敌对基地：增援即将抵达</DMS_OperationBase_EntryCountdownLabel>
+  <DMS_OperationBase_EntryCountdownText>你已进入敌对的残余设施。该站点的监控协议已经标记了你的存在。\n\n敌方增援将于 {0} 后抵达。速战速决，尽快离开或者就地固守。</DMS_OperationBase_EntryCountdownText>
+
+  <!-- ============ 荒废残余站点 Derelict remnant station ============ -->
+  <DMS_SiteStation_ExpiredLabel>站点已被搜刮一空</DMS_SiteStation_ExpiredLabel>
+  <DMS_SiteStation_ExpiredText>残余分遣队已经离开，并在撤走时把荒废站点搜刮一空。那里已不值得再跑一趟。</DMS_SiteStation_ExpiredText>
+  <DMS_SiteStation_ClearedLabel>站点已肃清</DMS_SiteStation_ClearedLabel>
+  <DMS_SiteStation_ClearedText>荒废站点内的敌人已全数歼灭。\n\n古代货箱、货架与残骸都任你搜刮，运输舱发射台也还能用。残余部队仍会持续在废墟一带试探。</DMS_SiteStation_ClearedText>
+  <DMS_SiteStation_EntryCountdownLabel>敌对站点：增援即将抵达</DMS_SiteStation_EntryCountdownLabel>
+  <DMS_SiteStation_EntryCountdownText>你已进入敌对的残余设施。该站点的监控协议已经标记了你的存在。\n\n敌方增援将于 {0} 后抵达。</DMS_SiteStation_EntryCountdownText>
+
+  <!-- ============ 废弃发射场 Abandoned launch site ============ -->
+  <DMS_LaunchSite_ExpiredLabel>发射场已失去踪迹</DMS_LaunchSite_ExpiredLabel>
+  <DMS_LaunchSite_ExpiredText>残余巡逻队已经离开废弃发射场，扫描器上的定位也随之消失。</DMS_LaunchSite_ExpiredText>
+  <DMS_LaunchSite_ClearedLabel>发射场已肃清</DMS_LaunchSite_ClearedLabel>
+  <DMS_LaunchSite_ClearedText>废弃发射场的残余巡逻队已被歼灭。\n\n残骸任你打捞。残余部队迟早会再派一支巡逻队经过这里。</DMS_LaunchSite_ClearedText>
+  <DMS_LaunchSite_EntryCountdownLabel>敌对站点：增援即将抵达</DMS_LaunchSite_EntryCountdownLabel>
+  <DMS_LaunchSite_EntryCountdownText>你已进入残余部队的巡逻区。巡逻队的监控协议已经标记了你的存在。\n\n敌方增援将于 {0} 后抵达。速战速决，尽快离开或者就地固守。</DMS_LaunchSite_EntryCountdownText>
+
+</LanguageData>

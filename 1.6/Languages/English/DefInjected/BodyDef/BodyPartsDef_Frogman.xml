@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: biomatroid -->
+  <DMS_Frogman.label>biomatroid</DMS_Frogman.label>
+  <!-- EN: left lung -->
+  <DMS_Frogman.corePart.parts.left_lung.customLabel>left lung</DMS_Frogman.corePart.parts.left_lung.customLabel>
+  <!-- EN: right lung -->
+  <DMS_Frogman.corePart.parts.right_lung.customLabel>right lung</DMS_Frogman.corePart.parts.right_lung.customLabel>
+  <!-- EN: left kidney -->
+  <DMS_Frogman.corePart.parts.left_kidney.customLabel>left kidney</DMS_Frogman.corePart.parts.left_kidney.customLabel>
+  <!-- EN: right kidney -->
+  <DMS_Frogman.corePart.parts.right_kidney.customLabel>right kidney</DMS_Frogman.corePart.parts.right_kidney.customLabel>
+  <!-- EN: left eye -->
+  <DMS_Frogman.corePart.parts.Neck.parts.Head.parts.left_eye.customLabel>left eye</DMS_Frogman.corePart.parts.Neck.parts.Head.parts.left_eye.customLabel>
+  <!-- EN: right eye -->
+  <DMS_Frogman.corePart.parts.Neck.parts.Head.parts.right_eye.customLabel>right eye</DMS_Frogman.corePart.parts.Neck.parts.Head.parts.right_eye.customLabel>
+  <!-- EN: left ear -->
+  <DMS_Frogman.corePart.parts.Neck.parts.Head.parts.left_ear.customLabel>left ear</DMS_Frogman.corePart.parts.Neck.parts.Head.parts.left_ear.customLabel>
+  <!-- EN: right ear -->
+  <DMS_Frogman.corePart.parts.Neck.parts.Head.parts.right_ear.customLabel>right ear</DMS_Frogman.corePart.parts.Neck.parts.Head.parts.right_ear.customLabel>
+  <!-- EN: left shoulder -->
+  <DMS_Frogman.corePart.parts.left_shoulder.customLabel>left shoulder</DMS_Frogman.corePart.parts.left_shoulder.customLabel>
+  <!-- EN: left clavicle -->
+  <DMS_Frogman.corePart.parts.left_shoulder.parts.left_clavicle.customLabel>left clavicle</DMS_Frogman.corePart.parts.left_shoulder.parts.left_clavicle.customLabel>
+  <!-- EN: left arm -->
+  <DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.customLabel>left arm</DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+  <!-- EN: left humerus -->
+  <DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_humerus.customLabel>left humerus</DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_humerus.customLabel>
+  <!-- EN: left radius -->
+  <DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_radius.customLabel>left radius</DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_radius.customLabel>
+  <!-- EN: left hand -->
+  <DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>left hand</DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+  <!-- EN: left pinky -->
+  <DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_pinky.customLabel>left pinky</DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_pinky.customLabel>
+  <!-- EN: left ring finger -->
+  <DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_ring_finger.customLabel>left ring finger</DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_ring_finger.customLabel>
+  <!-- EN: left middle finger -->
+  <DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_middle_finger.customLabel>left middle finger</DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_middle_finger.customLabel>
+  <!-- EN: left index finger -->
+  <DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_index_finger.customLabel>left index finger</DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_index_finger.customLabel>
+  <!-- EN: left thumb -->
+  <DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_thumb.customLabel>left thumb</DMS_Frogman.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_thumb.customLabel>
+  <!-- EN: right shoulder -->
+  <DMS_Frogman.corePart.parts.right_shoulder.customLabel>right shoulder</DMS_Frogman.corePart.parts.right_shoulder.customLabel>
+  <!-- EN: right clavicle -->
+  <DMS_Frogman.corePart.parts.right_shoulder.parts.right_clavicle.customLabel>right clavicle</DMS_Frogman.corePart.parts.right_shoulder.parts.right_clavicle.customLabel>
+  <!-- EN: right arm -->
+  <DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.customLabel>right arm</DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+  <!-- EN: right humerus -->
+  <DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_humerus.customLabel>right humerus</DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_humerus.customLabel>
+  <!-- EN: right radius -->
+  <DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_radius.customLabel>right radius</DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_radius.customLabel>
+  <!-- EN: right hand -->
+  <DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>right hand</DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+  <!-- EN: right pinky -->
+  <DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.parts.right_pinky.customLabel>right pinky</DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.parts.right_pinky.customLabel>
+  <!-- EN: right ring finger -->
+  <DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.parts.right_ring_finger.customLabel>right ring finger</DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.parts.right_ring_finger.customLabel>
+  <!-- EN: right middle finger -->
+  <DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.parts.right_middle_finger.customLabel>right middle finger</DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.parts.right_middle_finger.customLabel>
+  <!-- EN: right index finger -->
+  <DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.parts.right_index_finger.customLabel>right index finger</DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.parts.right_index_finger.customLabel>
+  <!-- EN: right thumb -->
+  <DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.parts.right_thumb.customLabel>right thumb</DMS_Frogman.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.parts.right_thumb.customLabel>
+  <!-- EN: left leg -->
+  <DMS_Frogman.corePart.parts.left_leg.customLabel>left leg</DMS_Frogman.corePart.parts.left_leg.customLabel>
+  <!-- EN: left femur -->
+  <DMS_Frogman.corePart.parts.left_leg.parts.left_femur.customLabel>left femur</DMS_Frogman.corePart.parts.left_leg.parts.left_femur.customLabel>
+  <!-- EN: left tibia -->
+  <DMS_Frogman.corePart.parts.left_leg.parts.left_tibia.customLabel>left tibia</DMS_Frogman.corePart.parts.left_leg.parts.left_tibia.customLabel>
+  <!-- EN: left foot -->
+  <DMS_Frogman.corePart.parts.left_leg.parts.left_foot.customLabel>left foot</DMS_Frogman.corePart.parts.left_leg.parts.left_foot.customLabel>
+  <!-- EN: right leg -->
+  <DMS_Frogman.corePart.parts.right_leg.customLabel>right leg</DMS_Frogman.corePart.parts.right_leg.customLabel>
+  <!-- EN: right femur -->
+  <DMS_Frogman.corePart.parts.right_leg.parts.right_femur.customLabel>right femur</DMS_Frogman.corePart.parts.right_leg.parts.right_femur.customLabel>
+  <!-- EN: right tibia -->
+  <DMS_Frogman.corePart.parts.right_leg.parts.right_tibia.customLabel>right tibia</DMS_Frogman.corePart.parts.right_leg.parts.right_tibia.customLabel>
+  <!-- EN: right foot -->
+  <DMS_Frogman.corePart.parts.right_leg.parts.right_foot.customLabel>right foot</DMS_Frogman.corePart.parts.right_leg.parts.right_foot.customLabel>
+
+</LanguageData>

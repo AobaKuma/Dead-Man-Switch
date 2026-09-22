@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Metabolic Surge -->
+  <DMS_FrogmanRationRecovery.label>Metabolic Surge</DMS_FrogmanRationRecovery.label>
+  <!-- EN: Feed one loaded C-Ration into the frogman's internal bioreactor... -->
+  <DMS_FrogmanRationRecovery.description>Feed one loaded C-Ration into the frogman's internal bioreactor. The chassis burns the entire packet at once, recharging its cells to full and sealing every wound on the parts it still has.\n\nDestroyed parts cannot be regrown this way.</DMS_FrogmanRationRecovery.description>
+  <!-- EN: trigger metabolic surge -->
+  <DMS_FrogmanRationRecovery.verbProperties.label>trigger metabolic surge</DMS_FrogmanRationRecovery.verbProperties.label>
+
+</LanguageData>

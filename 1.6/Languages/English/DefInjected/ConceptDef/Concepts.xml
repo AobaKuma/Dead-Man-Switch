@@ -19,11 +19,11 @@
   <!-- EN: Heavy weapon -->
   <DMS_HeavyWeapon.label>Heavy weapon</DMS_HeavyWeapon.label>
   <!-- EN: Obviously you got a very heavy weapon. These weapons are not designed for direct use or even not useable by human, so you may need a person or equipped with exoskeleton or a dedicated mech to equip these kind of weapons. The specific equipment conditions can be checked in the weapon's infocard -->
-  <DMS_HeavyWeapon.helpText>Obviously you got a very heavy weapon. These weapons are not designed for direct use or even not useable by human, so you may need a person or equipped with exoskeleton or a dedicated mech to equip these kind of weapons. The specific equipment conditions can be checked in the weapon's infocard</DMS_HeavyWeapon.helpText>
+  <DMS_HeavyWeapon.helpText>You have evidently acquired a very heavy weapon. Weapons like this were not designed to be used directly by an ordinary human, so you may need someone fitted with an exoskeleton, or a dedicated mech, to equip them. The exact requirements can be checked under "supported body size" in the weapon's info card.</DMS_HeavyWeapon.helpText>
   
   <!-- EN: Weapon system -->
   <DMS_WeaponSystems.label>Weapon system</DMS_WeaponSystems.label>
   <!-- EN: Apparently you'll be able to create mechs that can customize weapons. Note that these mechs usually have restrictions on the weapons that can be equipped. You can view all the weapons supported by the mech in the weapon system properties in the infocard. -->
-  <DMS_WeaponSystems.helpText>Apparently you'll be able to create mechs that can customize weapons. Note that these mechs usually have restrictions on the weapons that can be equipped. You can view all the weapons supported by the mech in the weapon system properties in the infocard.</DMS_WeaponSystems.helpText>
+  <DMS_WeaponSystems.helpText>You will evidently be able to produce mechs that can customize their weapons. Note that the weapons these mechs can equip are usually restricted; every weapon supported by a mech can be viewed under "weapon systems" in the mech's info card.</DMS_WeaponSystems.helpText>
   
 </LanguageData>

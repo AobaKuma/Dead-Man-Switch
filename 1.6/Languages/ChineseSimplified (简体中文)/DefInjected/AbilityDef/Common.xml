@@ -1,62 +1,62 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-  
-  <!-- EN: Recoilless Rifle Shot -->
-  <DMS_BF_RecoillessShot.label>无后座力炮射击</DMS_BF_RecoillessShot.label>
-  <!-- EN: Fire one of the rack's 65mm shaped-charge rockets. The jet defeats armor and fortification that the frame's own weapon cannot touch, but it goes into a single narrow channel and does little to anything standing beside the point of impact.\n\nSpent tubes are reloaded from the frame's carried stores between engagements. -->
-  <DMS_BF_RecoillessShot.description>发射挂架上的一发65mm聚能穿甲火箭。金属射流能贯穿框架自身武装完全处理不了的装甲与工事，但爆轰集中在一条窄通道，对弹着点旁边的目标几乎没有效果。\n\n空管由框架自携的弹药在交战间隙重新装填。</DMS_BF_RecoillessShot.description>
-  <!-- EN: fire recoilless rifle -->
-  <DMS_BF_RecoillessShot.verbProperties.label>发射无后座力炮</DMS_BF_RecoillessShot.verbProperties.label>
-  
-  <!-- EN: Flashbang barrage -->
-  <DMS_FlashLauncher.label>曲射闪光弹</DMS_FlashLauncher.label>
-  <!-- EN: Launch an indirect-fired flashbang to stun the enemy. -->
-  <DMS_FlashLauncher.description>透过腰间的曲射榴弹筒来抛射闪光弹使敌人短暂致盲，以便安全撤退或让队友进行突击。</DMS_FlashLauncher.description>
-  
-  <!-- EN: Bionic Longjump -->
-  <DMS_LongJump.label>爆发跳跃</DMS_LongJump.label>
-  <!-- EN: Jump to a distant location using bionic muscles. -->
-  <DMS_LongJump.description>使用人工肌肉的爆发性进行一次长距离的跳跃</DMS_LongJump.description>
-  <!-- EN: jump -->
-  <DMS_LongJump.verbProperties.label>跳跃</DMS_LongJump.verbProperties.label>
-  
-  <!-- EN: Launch Missile -->
-  <DMS_MissileLauncher.label>攻顶导弹</DMS_MissileLauncher.label>
-  <!-- EN: Launch a long range guided missile with a high explosive payload. -->
-  <DMS_MissileLauncher.description>发射一枚制导导弹从上而下的远程曲射打击目标，这种导弹十分致命但需要一定的时间来复装。</DMS_MissileLauncher.description>
-  
-  <!-- EN: Fission Overload -->
-  <DMS_NuclearOverload.label>临界超载</DMS_NuclearOverload.label>
-  <!-- EN: In order to avoid catastrophic environmental pollution or capture by the enemy, the fission battery can be manually forced into a meltdown. \n\nA meltdown will cause all unreacted nuclear material to atomize instantl, causing a violent explosive reaction. -->
-  <DMS_NuclearOverload.description>为避免机体重创後核电池泄漏导致的环境污染，裂变电池能够手动过载来在瞬间将核燃料反应，而外在表现来说就是核爆，这样的爆炸足以将尚未反应的核物质连带周围的一切清理一空。</DMS_NuclearOverload.description>
-  <!-- EN: Overloading the fission battery will create a devastating explosion and destroy this unit. \n\nAre you sure to do this? -->
-  <DMS_NuclearOverload.confirmationDialogText>将裂变电池超载将产生一场规模十足的爆炸并导致该单位彻底损失。\n\n你确定要这麽做吗?</DMS_NuclearOverload.confirmationDialogText>
-  <!-- EN: fission overload -->
-  <DMS_NuclearOverload.verbProperties.label>临界超载</DMS_NuclearOverload.verbProperties.label>
-  
-  <!-- EN: Self-Repair -->
-  <DMS_RepairMode.label>维修模式</DMS_RepairMode.label>
-  <!-- EN: Initialize self-repair mode to rebuild missing parts, all sensors will temporarily be disabled to prevent electrical damage. -->
-  <DMS_RepairMode.description>启动自我修复协议来透过电感应记忆合金来重组损毁的机械部位，所有感测器将暂时停用以防止修复过程中造成的二次损坏。\n\n要注意对於遭受重大受损的机体而言启动本协议具有一定的停机危险性。</DMS_RepairMode.description>
-  <!-- EN: initialize self-repair mode -->
-  <DMS_RepairMode.verbProperties.label>启动维修模式</DMS_RepairMode.verbProperties.label>
-  
-  <!-- EN: Particle Smoke Barrage -->
-  <DMS_SmokeLauncher.label>反电荷烟幕弹</DMS_SmokeLauncher.label>
-  <!-- EN: Launch an antiparticle smoke screen to interfere with incoming charged munitions. -->
-  <DMS_SmokeLauncher.description>发射载有反电荷粒子的烟雾弹，能够在短时间内有效的拦截范围内的电荷弹。</DMS_SmokeLauncher.description>
-  
-  <!-- EN: strafing -->
-  <DMS_Strafing.label>扫射</DMS_Strafing.label>
-  <!-- EN: Concentrate firepower to conduct a strafing attack in a specific direction. -->
-  <DMS_Strafing.description>集中火力对特定方向进行扫射攻击。</DMS_Strafing.description>
-  
-
-  <!-- EN: field mothball -->
-  <DMS_Mothball.label>原地封存</DMS_Mothball.label>
-  <!-- EN: Disable system activity on the spot. The unit becomes a dormant storage structure that costs no bandwidth and takes no upkeep, and can be brought back online later by a mechanitor.\n\nStandard practice for garrison units between deployments. -->
-  <DMS_Mothball.description>将机体就地折叠收入自身的运输框架。单位会转为休眠建筑，不再占用带宽也无需维护，日后可由机械师重新启动。\n\n这是驻防单位在两次部署之间的标准做法。征召状态下无法执行。</DMS_Mothball.description>
-  <!-- EN: fold into transport frame -->
-  <DMS_Mothball.verbProperties.label>折叠收纳</DMS_Mothball.verbProperties.label>
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Recoilless Rifle Shot -->
+  <DMS_BF_RecoillessShot.label>无后座力炮射击</DMS_BF_RecoillessShot.label>
+  <!-- EN: Fire one of the rack's 65mm shaped-charge rockets. The jet defeats armor and fortification that the frame's own weapon cannot touch, but it goes into a single narrow channel and does little to anything standing beside the point of impact.\n\nSpent tubes are reloaded from the frame's carried stores between engagements. -->
+  <DMS_BF_RecoillessShot.description>发射挂架上的一发65mm聚能穿甲火箭。金属射流能贯穿框架自身武装完全处理不了的装甲与工事，但爆轰集中在一条窄通道，对弹着点旁边的目标几乎没有效果。\n\n空管由框架自携的弹药在交战间隙重新装填。</DMS_BF_RecoillessShot.description>
+  <!-- EN: fire recoilless rifle -->
+  <DMS_BF_RecoillessShot.verbProperties.label>发射无后座力炮</DMS_BF_RecoillessShot.verbProperties.label>
+  
+  <!-- EN: Flashbang barrage -->
+  <DMS_FlashLauncher.label>曲射闪光弹</DMS_FlashLauncher.label>
+  <!-- EN: Launch an indirect-fired flashbang to stun the enemy. -->
+  <DMS_FlashLauncher.description>通过抛射筒来发射一枚闪光震撼榴弹使目标范围内的敌人短暂致盲，这是一种十分有用的主动式模块能便于安全撤退或让队友进行攻坚突击。</DMS_FlashLauncher.description>
+  
+  <!-- EN: Bionic Longjump -->
+  <DMS_LongJump.label>爆发跳跃</DMS_LongJump.label>
+  <!-- EN: Jump to a distant location using bionic muscles. -->
+  <DMS_LongJump.description>使用人工肌肉的爆发性进行一次长距离的跳跃。</DMS_LongJump.description>
+  <!-- EN: jump -->
+  <DMS_LongJump.verbProperties.label>跳跃</DMS_LongJump.verbProperties.label>
+  
+  <!-- EN: Launch Missile -->
+  <DMS_MissileLauncher.label>攻顶导弹</DMS_MissileLauncher.label>
+  <!-- EN: Launch a long range guided missile with a high explosive payload. -->
+  <DMS_MissileLauncher.description>发射一枚制导导弹从上而下的远程曲射打击目标，这种导弹十分致命但需要一定的时间来复装。</DMS_MissileLauncher.description>
+  
+  <!-- EN: Fission Overload -->
+  <DMS_NuclearOverload.label>临界超载</DMS_NuclearOverload.label>
+  <!-- EN: In order to avoid catastrophic environmental pollution or capture by the enemy, the fission battery can be manually forced into a meltdown. \n\nA meltdown will cause all unreacted nuclear material to atomize instantly, causing a violent explosive reaction. -->
+  <DMS_NuclearOverload.description>为避免机体重创后核电池泄漏导致的环境污染，裂变电池能够手动过载来在瞬间将核燃料反应，而外在表现来说就是核爆，这样的爆炸足以将尚未反应的核物质连带周围的一切清理一空。</DMS_NuclearOverload.description>
+  <!-- EN: Overloading the fission battery will create a devastating explosion and destroy this unit. \n\nAre you sure to do this? -->
+  <DMS_NuclearOverload.confirmationDialogText>将裂变电池超载将产生一场规模十足的爆炸并导致该单位彻底损失。\n\n你确定要这么做吗?</DMS_NuclearOverload.confirmationDialogText>
+  <!-- EN: fission overload -->
+  <DMS_NuclearOverload.verbProperties.label>临界超载</DMS_NuclearOverload.verbProperties.label>
+  
+  <!-- EN: Self-Repair -->
+  <DMS_RepairMode.label>维修模式</DMS_RepairMode.label>
+  <!-- EN: Initialize self-repair mode to rebuild missing parts, all sensors will temporarily be disabled to prevent electrical damage. -->
+  <DMS_RepairMode.description>启动自我修复协议来通过电感应记忆合金来重组损毁的机械部位，所有传感器将暂时停用以防止修复过程中造成的二次损坏。\n\n要注意对于遭受重大受损的机体而言启动本协议具有一定的停机危险性。</DMS_RepairMode.description>
+  <!-- EN: initialize self-repair mode -->
+  <DMS_RepairMode.verbProperties.label>启动维修模式</DMS_RepairMode.verbProperties.label>
+  
+  <!-- EN: Particle Smoke Barrage -->
+  <DMS_SmokeLauncher.label>反电荷烟幕弹</DMS_SmokeLauncher.label>
+  <!-- EN: Launch an antiparticle smoke screen to interfere with incoming charged munitions. -->
+  <DMS_SmokeLauncher.description>发射载有反电荷粒子的烟雾弹，能够在短时间内有效的拦截范围内的电荷弹。</DMS_SmokeLauncher.description>
+  
+  <!-- EN: strafing -->
+  <DMS_Strafing.label>扫射</DMS_Strafing.label>
+  <!-- EN: Concentrate firepower to conduct a strafing attack in a specific direction. -->
+  <DMS_Strafing.description>集中火力对特定方向进行扫射攻击。</DMS_Strafing.description>
+  
+
+  <!-- EN: field mothball -->
+  <DMS_Mothball.label>原地封存</DMS_Mothball.label>
+  <!-- EN: Disable system activity on the spot. The unit becomes a dormant storage structure that costs no bandwidth and takes no upkeep, and can be brought back online later by a mechanitor.\n\nStandard practice for garrison units between deployments. -->
+  <DMS_Mothball.description>将机体就地转为休眠建筑，不再占用带宽也无需维护，日后可由机械师重新启动。\n\n这是驻防单位在两次部署之间的标准做法。倒地状态下无法执行。</DMS_Mothball.description>
+  <!-- EN: fold into transport frame -->
+  <DMS_Mothball.verbProperties.label>折叠收纳</DMS_Mothball.verbProperties.label>
+
 </LanguageData>

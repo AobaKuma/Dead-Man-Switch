@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-
-  <DMS_OccultTechFont.label>石碑</DMS_OccultTechFont.label>
-  <DMS_OccultTechFont.description>一种用于存储技术资料与殖民记录备份的数据库，也包含了至今所有殖民计划中曾发生的事故案例分析与事后检讨。石碑既是殖民舰队用于跨星系向其他同胞分享经验与知识的载体，也被作为深埋于每颗殖民星球的备用数据库。其通过复杂的加密与校验算法，避免在长期的太空旅行或地底封藏中丢失所记录的信息，同时防止殖民舰队以外的人或势力获取其中的危险技术。\n\n传言通过脱序者们所流出的解码技术，能够对其进行破坏性扫描并提取内部数据，但使用该技术本身可能会招来殖民舰队的敌意。</DMS_OccultTechFont.description>
-
-  <DMS_OccultechExtractor.label>解码器</DMS_OccultechExtractor.label>
-  <DMS_OccultechExtractor.description>一种破坏性译码装置。通过发射高能激光束照射石碑内的全息存储刻录片，并分析其散射出的光谱来读取内部数据，这是殖民舰队以外的势力唯一能够获取石碑内容的手段。将其正面对准石碑放置并供给电力，便会持续萃取其中的知识并归档进你的远征研究——无须研究员。若石碑枯竭、失去电力或正面无石碑，萃取即停止。可拆卸后搬迁至他处重新安装。</DMS_OccultechExtractor.description>
-
-</LanguageData>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DMS_OccultTechFont.label>石碑</DMS_OccultTechFont.label>
+  <DMS_OccultTechFont.description>一种用于储存技术数据与殖民纪录备份的数据库，也包含了至今所有殖民计划中曾发生的事故案例分析与事后检讨。石碑既是殖民舰队用于跨星系向其他同胞分享经验与知识的载体，也被作为深埋于每颗殖民星球的备用数据库。其通过复杂的加密与校验算法，避免在长期的太空旅行或地底封藏中遗失所纪录的信息，同时防止殖民舰队以外的人或势力取得其中的危险技术。\n\n传言通过脱序者们所流出的解码技术，能够对其进行破坏性扫描并提取内部数据，但使用该技术本身可能会招来殖民舰队的敌意。</DMS_OccultTechFont.description>
+
+  <DMS_OccultechExtractor.label>解码器</DMS_OccultechExtractor.label>
+  <DMS_OccultechExtractor.description>一种破坏性译码装置。通过发射高能激光束照射石碑内的全像储存刻录片，并分析其散射出的光谱来读取内部数据，这是目前已知除舰队外能够取得石碑内容的唯一手段。将其正面对准石碑放置并供给电力便会持续萃取其中的知识并归档研究。\n\n由于破译本身会对石碑造成不可逆的数据破坏，因此持有装置本身就会招来殖民舰队的敌意。</DMS_OccultechExtractor.description>
+
+</LanguageData>

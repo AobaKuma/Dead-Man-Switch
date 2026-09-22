@@ -1,53 +1,53 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-  
-  <!-- EN: chain of command -->
-  <DMS_Meme_ChainOfCommand.label>指挥链</DMS_Meme_ChainOfCommand.label>
-  <!-- EN: The unit was never stood down. Rank is real and orders travel one way. -->
-  <DMS_Meme_ChainOfCommand.description>我們是一支軍隊。紀律至上，命令一致。</DMS_Meme_ChainOfCommand.description>
-  <!-- EN:
-    <li>memeAdjective->regimental</li>
-    <li>memeAdjective->uniformed</li>
-    <li>memeAdjective->disciplined</li>
-    <li>memeCreed->command</li>
-    <li>memeCreed->service</li>
-    <li>memeCreed->regiment</li>
-    <li>memeHyphenPrefix->rank</li>
-    <li>memeHyphenPrefix->drill</li>
-    <li>memeConcept->duty</li>
-    <li>memeConcept->discipline</li>
-    <li>memeConcept->command</li>
-    <li>memeConcept->rank</li>
-    <li>memeConcept->orders</li>
-    <li>memeLeaderNoun->commander</li>
-    <li>memeLeaderNoun->colonel</li>
-    <li>memeLeaderNoun->marshal</li>
-    <li>memeLeaderNoun->captain</li>
-    <li>memeMoralist->adjutant</li>
-    <li>memeMoralist->provost</li>
-    <li>memeMoralist->inspector</li>
-  -->
-  <DMS_Meme_ChainOfCommand.generalRules.rulesStrings>
-    <li>memeAdjective->建制</li>
-    <li>memeAdjective->制式</li>
-    <li>memeAdjective->严整</li>
-    <li>memeCreed->指挥部</li>
-    <li>memeCreed->勤务</li>
-    <li>memeCreed->团</li>
-    <li>memeHyphenPrefix->阶级</li>
-    <li>memeHyphenPrefix->操典</li>
-    <li>memeConcept->职责</li>
-    <li>memeConcept->纪律</li>
-    <li>memeConcept->指挥</li>
-    <li>memeConcept->军阶</li>
-    <li>memeConcept->命令</li>
-    <li>memeLeaderNoun->指挥官</li>
-    <li>memeLeaderNoun->上校</li>
-    <li>memeLeaderNoun->元帅</li>
-    <li>memeLeaderNoun->队长</li>
-    <li>memeMoralist->副官</li>
-    <li>memeMoralist->宪兵官</li>
-    <li>memeMoralist->督察</li>
-  </DMS_Meme_ChainOfCommand.generalRules.rulesStrings>
-  
-</LanguageData>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: chain of command -->
+  <DMS_Meme_ChainOfCommand.label>指挥链</DMS_Meme_ChainOfCommand.label>
+  <!-- EN: We are an army, discipline paramount, orders consistent. -->
+  <DMS_Meme_ChainOfCommand.description>我们是一支军队。纪律至上，命令一致。</DMS_Meme_ChainOfCommand.description>
+  <!-- EN:
+    <li>memeAdjective->regimental</li>
+    <li>memeAdjective->uniformed</li>
+    <li>memeAdjective->disciplined</li>
+    <li>memeCreed->command</li>
+    <li>memeCreed->service</li>
+    <li>memeCreed->regiment</li>
+    <li>memeHyphenPrefix->rank</li>
+    <li>memeHyphenPrefix->drill</li>
+    <li>memeConcept->duty</li>
+    <li>memeConcept->discipline</li>
+    <li>memeConcept->command</li>
+    <li>memeConcept->rank</li>
+    <li>memeConcept->orders</li>
+    <li>memeLeaderNoun->commander</li>
+    <li>memeLeaderNoun->colonel</li>
+    <li>memeLeaderNoun->marshal</li>
+    <li>memeLeaderNoun->captain</li>
+    <li>memeMoralist->adjutant</li>
+    <li>memeMoralist->provost</li>
+    <li>memeMoralist->inspector</li>
+  -->
+  <DMS_Meme_ChainOfCommand.generalRules.rulesStrings>
+    <li>memeAdjective->建制</li>
+    <li>memeAdjective->制式</li>
+    <li>memeAdjective->严整</li>
+    <li>memeCreed->指挥部</li>
+    <li>memeCreed->勤务</li>
+    <li>memeCreed->团</li>
+    <li>memeHyphenPrefix->阶级</li>
+    <li>memeHyphenPrefix->操典</li>
+    <li>memeConcept->职责</li>
+    <li>memeConcept->纪律</li>
+    <li>memeConcept->指挥</li>
+    <li>memeConcept->军阶</li>
+    <li>memeConcept->命令</li>
+    <li>memeLeaderNoun->指挥官</li>
+    <li>memeLeaderNoun->上校</li>
+    <li>memeLeaderNoun->元帅</li>
+    <li>memeLeaderNoun->队长</li>
+    <li>memeMoralist->副官</li>
+    <li>memeMoralist->宪兵官</li>
+    <li>memeMoralist->督察</li>
+  </DMS_Meme_ChainOfCommand.generalRules.rulesStrings>
+  
+</LanguageData>

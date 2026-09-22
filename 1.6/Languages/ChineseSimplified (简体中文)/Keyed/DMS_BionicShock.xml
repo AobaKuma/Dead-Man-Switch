@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-
-  <!-- {PAWN} 角色, {0} 含分级的病症名称 -->
-  <DMS_BionicShock_LevelUp>{PAWN_labelShort}的病情加重了：{0}。</DMS_BionicShock_LevelUp>
-  <DMS_BionicShock_LevelDown>{PAWN_labelShort}的病情减轻了：{0}。</DMS_BionicShock_LevelDown>
-  <!-- {PAWN} 角色, {0} 病症名称 -->
-  <DMS_BionicShock_Cured>{PAWN_labelShort}的{0}已被治愈。</DMS_BionicShock_Cured>
-
-  <!-- 药物信息卡。{0} 病症名称, {1} 带正负号的等级变化 -->
-  <DMS_BionicShock_StatLabel>{0}等级</DMS_BionicShock_StatLabel>
-  <DMS_BionicShock_StatDesc>每服用一剂会使{0}的等级变化{1}。降至 0 级时病症消失。</DMS_BionicShock_StatDesc>
-
-</LanguageData>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- {PAWN} 角色, {0} 含分级的病症名称 -->
+  <DMS_BionicShock_LevelUp>{PAWN_labelShort}的病情加重了：{0}。</DMS_BionicShock_LevelUp>
+  <DMS_BionicShock_LevelDown>{PAWN_labelShort}的病情减轻了：{0}。</DMS_BionicShock_LevelDown>
+  <!-- {PAWN} 角色, {0} 病症名称 -->
+  <DMS_BionicShock_Cured>{PAWN_labelShort}的{0}已被治愈。</DMS_BionicShock_Cured>
+
+  <!-- 药物信息卡。{0} 病症名称, {1} 带正负号的等级变化 -->
+  <DMS_BionicShock_StatLabel>{0}等级</DMS_BionicShock_StatLabel>
+  <DMS_BionicShock_StatDesc>每服用一剂会使{0}的等级变化{1}。降至 0 级时病症消失。</DMS_BionicShock_StatDesc>
+
+</LanguageData>

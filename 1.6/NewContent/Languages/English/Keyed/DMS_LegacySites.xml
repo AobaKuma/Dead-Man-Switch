@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <!-- ============ Remnant airfield (DMS_LegacySite_Airport.xml) ============ -->
+  <!-- ============ 餘械機場 Remnant airfield ============ -->
   <DMS_Airport_ExpiredLabel>Airfield gone dark</DMS_Airport_ExpiredLabel>
   <DMS_Airport_ExpiredText>The remnant airfield's telemetry has cut out. The field has gone dark and its position is lost.</DMS_Airport_ExpiredText>
   <DMS_Airport_ClearedLabel>Airfield secured</DMS_Airport_ClearedLabel>
@@ -9,7 +9,7 @@
   <DMS_Airport_EntryCountdownLabel>Hostile airfield: reinforcements inbound</DMS_Airport_EntryCountdownLabel>
   <DMS_Airport_EntryCountdownText>You have entered a hostile remnant airfield. The tower's monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Clear the field before then if you intend to call the weaver here.</DMS_Airport_EntryCountdownText>
 
-  <!-- ============ Vault access station (DMS_LegacySite_VaultStation.xml) ============ -->
+  <!-- ============ 儲存庫地面站 Vault access station ============ -->
   <DMS_VaultStation_ExpiredLabel>Vault station lost</DMS_VaultStation_ExpiredLabel>
   <DMS_VaultStation_ExpiredText>The manifest's location fix has expired. The vault access station has relocated and its position is lost.</DMS_VaultStation_ExpiredText>
   <DMS_VaultStation_ClearedLabel>Vault station secured</DMS_VaultStation_ClearedLabel>
@@ -17,7 +17,7 @@
   <DMS_VaultStation_EntryCountdownLabel>Hostile station: reinforcements inbound</DMS_VaultStation_EntryCountdownLabel>
   <DMS_VaultStation_EntryCountdownText>You have entered a hostile remnant installation. Its monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Get the shaft open, then decide whether to hold the surface or go down.</DMS_VaultStation_EntryCountdownText>
 
-  <!-- ============ Remnant repair depot (DMS_LegacySite_RepairStation.xml) ============ -->
+  <!-- ============ 餘械維修站 Remnant repair depot ============ -->
   <DMS_RepairStation_ExpiredLabel>Repair depot lost</DMS_RepairStation_ExpiredLabel>
   <DMS_RepairStation_ExpiredText>The maintenance request has been closed out. The remnant repair depot has relocated and its position is lost.</DMS_RepairStation_ExpiredText>
   <DMS_RepairStation_ClearedLabel>Repair depot secured</DMS_RepairStation_ClearedLabel>
@@ -25,7 +25,7 @@
   <DMS_RepairStation_EntryCountdownLabel>Hostile depot: reinforcements inbound</DMS_RepairStation_EntryCountdownLabel>
   <DMS_RepairStation_EntryCountdownText>You have entered a hostile remnant installation. Its monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Finish your business and get out — or dig in.</DMS_RepairStation_EntryCountdownText>
 
-  <!-- ============ Remnant forward base (DMS_LegacySite_OperationBase.xml) ============ -->
+  <!-- ============ 餘械前進基地 Remnant forward base ============ -->
   <DMS_OperationBase_ExpiredLabel>Forward base struck</DMS_OperationBase_ExpiredLabel>
   <DMS_OperationBase_ExpiredText>The remnant forward base has struck camp and moved on. Its position is lost.</DMS_OperationBase_ExpiredText>
   <DMS_OperationBase_ClearedLabel>Forward base secured</DMS_OperationBase_ClearedLabel>
@@ -33,7 +33,7 @@
   <DMS_OperationBase_EntryCountdownLabel>Hostile base: reinforcements inbound</DMS_OperationBase_EntryCountdownLabel>
   <DMS_OperationBase_EntryCountdownText>You have entered a hostile remnant installation. Its monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Finish your business and get out — or dig in.</DMS_OperationBase_EntryCountdownText>
 
-  <!-- ============ Derelict remnant station (DMS_LegacySite_SiteStation.xml) ============ -->
+  <!-- ============ 荒廢餘械站點 Derelict remnant station ============ -->
   <DMS_SiteStation_ExpiredLabel>Station picked clean</DMS_SiteStation_ExpiredLabel>
   <DMS_SiteStation_ExpiredText>The remnant detachment has moved on and stripped the derelict station on its way out. It is no longer worth the trip.</DMS_SiteStation_ExpiredText>
   <DMS_SiteStation_ClearedLabel>Station cleared</DMS_SiteStation_ClearedLabel>
@@ -41,7 +41,7 @@
   <DMS_SiteStation_EntryCountdownLabel>Hostile station: reinforcements inbound</DMS_SiteStation_EntryCountdownLabel>
   <DMS_SiteStation_EntryCountdownText>You have entered a hostile remnant installation. Its monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. The station is large — do not get strung out across it when they do.</DMS_SiteStation_EntryCountdownText>
 
-  <!-- ============ Abandoned launch site (DMS_LegacySite_LaunchSite.xml) ============ -->
+  <!-- ============ 廢棄發射場 Abandoned launch site ============ -->
   <DMS_LaunchSite_ExpiredLabel>Launch site lost</DMS_LaunchSite_ExpiredLabel>
   <DMS_LaunchSite_ExpiredText>The remnant patrol has moved on from the abandoned launch site and the scanner fix has been lost with it.</DMS_LaunchSite_ExpiredText>
   <DMS_LaunchSite_ClearedLabel>Launch site cleared</DMS_LaunchSite_ClearedLabel>

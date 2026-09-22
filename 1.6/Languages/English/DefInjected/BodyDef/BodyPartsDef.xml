@@ -10,7 +10,7 @@
   <!-- EN: central hearing sensor -->
   <DMS_Bipedal.corePart.parts.top_searching_sensor.parts.central_hearing_sensor.customLabel>central hearing sensor</DMS_Bipedal.corePart.parts.top_searching_sensor.parts.central_hearing_sensor.customLabel>
   <!-- EN: main searching sensor -->
-  <DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.main_searching_sensor.customLabel>main searching sensor</DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.main_searching_sensor.customLabel>
+  <DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.main_searching_sensor.customLabel>main system computer</DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.main_searching_sensor.customLabel>
   <!-- EN: central sight sensor -->
   <DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.main_searching_sensor.parts.central_sight_sensor.customLabel>central sight sensor</DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.main_searching_sensor.parts.central_sight_sensor.customLabel>
   <!-- EN: phased array radar -->
@@ -30,7 +30,7 @@
   <!-- EN: range finder -->
   <DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.left_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.range_finder.customLabel>range finder</DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.left_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.range_finder.customLabel>
   <!-- EN: trigger safety -->
-  <DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.left_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.trigger_safty.customLabel>trigger safety</DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.left_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.trigger_safty.customLabel>
+  <DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.left_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.trigger_safety.customLabel>trigger safety</DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.left_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.trigger_safety.customLabel>
   <!-- EN: mount lock -->
   <DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.left_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.mount_lock.customLabel>mount lock</DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.left_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.mount_lock.customLabel>
   <!-- EN: right weapon mount -->
@@ -44,7 +44,7 @@
   <!-- EN: range finder -->
   <DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.right_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.range_finder.customLabel>range finder</DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.right_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.range_finder.customLabel>
   <!-- EN: weapon safety -->
-  <DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.right_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.weapon_safty.customLabel>weapon safety</DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.right_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.weapon_safty.customLabel>
+  <DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.right_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.weapon_safety.customLabel>weapon safety</DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.right_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.weapon_safety.customLabel>
   <!-- EN: mount lock -->
   <DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.right_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.mount_lock.customLabel>mount lock</DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.right_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.mount_lock.customLabel>
   <!-- EN: left leg -->
@@ -67,6 +67,10 @@
   <DMS_Bipedal.corePart.parts.main_battery_array.customLabel>main battery array</DMS_Bipedal.corePart.parts.main_battery_array.customLabel>
   <!-- EN: secondary battery array -->
   <DMS_Bipedal.corePart.parts.secondary_battery_array.customLabel>secondary battery array</DMS_Bipedal.corePart.parts.secondary_battery_array.customLabel>
+  
+  <!-- UNUSED -->
+  <DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.left_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.trigger_safty.customLabel>trigger safety</DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.left_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.trigger_safty.customLabel>
+  <DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.right_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.weapon_safty.customLabel>weapon safety</DMS_Bipedal.corePart.parts.DMS_HeadRadar.parts.right_weapon_mount.parts.horizontal_rotor.parts.vertical_rotor.parts.weapon_safty.customLabel>
   
   <!-- EN: caterpillar -->
   <DMS_Caterpillar.label>caterpillar</DMS_Caterpillar.label>

@@ -2,12 +2,15 @@
 <LanguageData>
   
   <!-- EN: This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral -->
-  <DMS_Geochelone.leaderDescription>This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral</DMS_Geochelone.leaderDescription>
+  <DMS_Geochelone.leaderDescription>{LEADERKIND_label} is a superheavy tracked mech with thick armor and a pulse shield projector, used to cover accompanying mechs as they advance in urban combat. It has very little firepower of its own, but is fitted with smoke launchers that effectively neutralize charged rounds.</DMS_Geochelone.leaderDescription>
   
   <!-- EN: This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral. -->
-  <DMS_Sergeant.leaderDescription>This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral.</DMS_Sergeant.leaderDescription>
+  <DMS_Sergeant.leaderDescription>{LEADERKIND_label} is a central command mech that serves as a mechanitor's control relay and proxy commander for a vast legion. It is not much of a threat by itself, but watch out for the large numbers of soldats accompanying it.</DMS_Sergeant.leaderDescription>
   
   <!-- EN: This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral -->
-  <DMS_Tarbosaurus.leaderDescription>This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral</DMS_Tarbosaurus.leaderDescription>
+  <DMS_Tarbosaurus.leaderDescription>{LEADERKIND_label} has been a terror since the next-generation wars; the soldiers who fought these monsters called them "a walking gunship". Watch its powerful legs, which can jump again and again to crush distant shooters, and watch the shotgun and machine gun turrets that lay down suppressing fire. Above all, watch the superheavy weapon it carries - that is not something out of a cowboy story.</DMS_Tarbosaurus.leaderDescription>
   
+  <!-- EN: The {LEADERKIND_label} is a nightmare since ww3, it's not a weapon suitable in a total war but a perfect machine for counterinsurgency, be aware of it can deploy suicide drone swarm to overrun your defense. -->
+  <DMS_ClusterWeaver.leaderDescription>The {LEADERKIND_label} has been a guerrilla's nightmare since the Third World War. Its fragile main structure may not suit all-out war, but it is the perfect machine for pacification operations. Beware - it can deploy swarms of suicide drones to break through your defenses.</DMS_ClusterWeaver.leaderDescription>
+
 </LanguageData>

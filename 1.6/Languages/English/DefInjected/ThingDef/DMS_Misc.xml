@@ -6,13 +6,27 @@
   
   <!-- EN: Blaster Screen Shell -->
   <Shell_BlasterSmoke.label>Blaster Screen Shell</Shell_BlasterSmoke.label>
-  <!-- EN: An artillery shell containing reagents that generate an active-particle field which triggers charged ammo's detonation mid-flight. These shells are a preferred countermeasure while fighting against mech legions and mid-world megacorps. Does not affect other projectiles. -->
-  <Shell_BlasterSmoke.description>An artillery shell containing reagents that generate an active-particle field which triggers charged ammo's detonation mid-flight. These shells are a preferred countermeasure while fighting against mech legions and mid-world megacorps. Does not affect other projectiles.</Shell_BlasterSmoke.description>
+  <!-- EN: An artillery shell containing reagents that generate an active-particle field which triggers charged ammo's detonation mid-flight. These shells are a preferred countermeasure while fighting against mech legions and mid-world megacorps. Does not effect other projectiles. -->
+  <Shell_BlasterSmoke.description>A smoke shell loaded with special particles. On impact it produces a charged-particle field that triggers charged munitions to burn out in mid-air, making it the perfect countermeasure against mechanoid legions or the megacorps and stellar empires of the midworlds. It is not common on the rim, however - not only because those who need it usually cannot produce it, but because it cannot intercept bullets from conventional firearms.</Shell_BlasterSmoke.description>
   
   <!-- EN: blaster screen shell -->
   <Shell_BlasterSmoke_Releasing.label>blaster screen shell</Shell_BlasterSmoke_Releasing.label>
   
   <!-- EN: blaster screen shell -->
   <Shell_BlasterSmoke_Releasing_Water.label>blaster screen shell</Shell_BlasterSmoke_Releasing_Water.label>
+  
+  <!-- EN: perimeter scanner -->
+  <DMS_PerimeterScanner.label>perimeter scanner</DMS_PerimeterScanner.label>
+  <!-- EN: A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius. -->
+  <DMS_PerimeterScanner.description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius.</DMS_PerimeterScanner.description>
+  
+  <!-- EN: perimeter scanner -->
+  <DMS_PerimeterScannerTemp.label>perimeter scanner</DMS_PerimeterScannerTemp.label>
+  <!-- EN: A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius. -->
+  <DMS_PerimeterScannerTemp.description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius.</DMS_PerimeterScannerTemp.description>
+  
+  <!-- EN: Thermal breach -->
+  <DMS_ThermalBreacher.label>thermal breaching charge</DMS_ThermalBreacher.label>
+  <DMS_ThermalBreacher.description>A single-use directional thermal breaching charge designed for cutting through heavy security doors and for anti-materiel use. When activated it produces a violent stream of superheated metal, focused on the contact point through a shaped nozzle. Within seconds it burns a channel through the surface of most industrial-grade alloys.\n\nBecause the reaction is extremely unstable, the device can only be used once. The operator must withdraw to a safe distance immediately after deploying it to avoid injury from high-temperature spatter and vaporized metal.</DMS_ThermalBreacher.description>
   
 </LanguageData>

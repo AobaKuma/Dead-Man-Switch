@@ -1,221 +1,221 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-  
-  <!-- EN: bolt cannon shell -->
-  <DMS_Bullet_SniperCannon.label>狙击炮弹</DMS_Bullet_SniperCannon.label>
-  <!-- EN: A full-length autocannon round fired from a rifled barrel at far higher velocity than any turret mount can manage. The dense penetrator carries enough energy to punch through exostrider plating at extreme range and drop whatever is behind it. -->
-  <DMS_Bullet_SniperCannon.description>由线膛长身管以远超炮塔载具的初速射出的全装机炮弹。高密度穿甲弹芯携带的动能足以在极远距离贯穿巨型机械体的装甲，并击倒其后方的任何目标。</DMS_Bullet_SniperCannon.description>
-  
-  <!-- EN: heavy machine gun bullet -->
-  <Bullet_DMS_HeavyMachineGun.label>重机枪子弹</Bullet_DMS_HeavyMachineGun.label>
-  <!-- EN: A standard 12.7mm full metal jacket belt round. Balanced for sustained fire at range against both infantry and light plating. -->
-  <Bullet_DMS_HeavyMachineGun.description>标准12.7mm全金属被覆弹链弹。在射程、对步兵与对轻装甲的持续火力之间取得平衡。</Bullet_DMS_HeavyMachineGun.description>
-  
-  <!-- EN: 20mm tungsten core shell -->
-  <DMS_Bullet_Autocannon_TungstenCore.label>钨芯弹</DMS_Bullet_Autocannon_TungstenCore.label>
-  
-  <!-- EN: A sub-caliber sabot round carrying a tungsten penetrator. The dense core defeats plating that standard high explosive shells merely scratch, but the heavier propellant charge slows the cycle rate and the flatter, faster projectile is zeroed for a shorter engagement envelope. -->
-  <DMS_Bullet_Autocannon_TungstenCore.description>装有钨合金穿甲弹芯的次口径脱壳穿甲弹。高密度弹芯能贯穿标准高爆弹只能刮伤的装甲，但更重的发射药拖慢了循环速度，而弹道更平直快速的弹头也只针对较短的交战距离校正。</DMS_Bullet_Autocannon_TungstenCore.description>
-  
-  <!-- EN: 12.7mm hollow point -->
-  <DMS_Bullet_HMG_HollowPoint.label>空尖弹</DMS_Bullet_HMG_HollowPoint.label>
-  
-  <!-- EN: An expanding 12.7mm round loaded to a lighter charge. The soft nose dumps its energy into soft tissue instead of punching through, and the reduced pressure lets the action cycle far faster at the cost of range and penetration. Near useless against armored plating. -->
-  <DMS_Bullet_HMG_HollowPoint.description>装填较轻发射药的重机枪扩张弹。软质弹头把能量全部倾注在软组织里而不是穿透过去，较低的膛压也让枪机循环快得多，代价是射程与穿甲能力。对装甲板几乎无用。</DMS_Bullet_HMG_HollowPoint.description>
-  
-  
-  <!-- EN: Mech Autocannon -->
-  <DMS_Autocannon.label>机兵轻机炮</DMS_Autocannon.label>
-  <!-- EN: An autocannon designed for mech soldier or mounting on to an infantry support platform.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless its mounted to a support platform. -->
-  <DMS_Autocannon.description>适用於机兵与步兵支援平台的轻型机炮。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_Autocannon.description>
-  <!-- EN: stock -->
-  <DMS_Autocannon.tools.stock.label>枪托</DMS_Autocannon.tools.stock.label>
-  <!-- EN: barrel -->
-  <DMS_Autocannon.tools.barrel.label>枪管</DMS_Autocannon.tools.barrel.label>
-  <!-- EN: Mech Autocannon -->
-  <DMS_Autocannon.verbs.Verb_Shoot.label>机兵轻机炮</DMS_Autocannon.verbs.Verb_Shoot.label>
-  
-  <!-- UNUSED -->
-  <DMS_Autocannon.tools.muzzle-0.label>枪口</DMS_Autocannon.tools.muzzle-0.label>
-  <DMS_Autocannon.tools.barrel-1.label>枪管</DMS_Autocannon.tools.barrel-1.label>
-  <DMS_Autocannon.tools.muzzle-1.label>枪口</DMS_Autocannon.tools.muzzle-1.label>
-  <DMS_Autocannon.verbs.Verb_ShootCE.label>机兵轻机炮</DMS_Autocannon.verbs.Verb_ShootCE.label>
-  
-  <!-- EN: heavy grenade round -->
-  <DMS_Bullet_DGL.label>重型榴弹</DMS_Bullet_DGL.label>
-  
-  <!-- EN: Armor Piercing Shell -->
-  <DMS_Bullet_Dragoon_Rifle.label>穿甲钢芯弹</DMS_Bullet_Dragoon_Rifle.label>
-  
-  <!-- EN: 2A38M -->
-  <DMS_Gun_2A38M.label>2A38M</DMS_Gun_2A38M.label>
-  <!-- EN: A dual-barrel heavy autocannon for infantry suppression and anti air needs.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
-  <DMS_Gun_2A38M.description>用於步兵压制/防空平台的双管重型机炮。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_Gun_2A38M.description>
-  <!-- EN: stock -->
-  <DMS_Gun_2A38M.tools.stock.label>枪托</DMS_Gun_2A38M.tools.stock.label>
-  <!-- EN: barrel -->
-  <DMS_Gun_2A38M.tools.barrel.label>枪管</DMS_Gun_2A38M.tools.barrel.label>
-  <!-- EN: 2A38M -->
-  <DMS_Gun_2A38M.verbs.Verb_Shoot.label>2A38M</DMS_Gun_2A38M.verbs.Verb_Shoot.label>
-  
-  <!-- UNUSED -->
-  <DMS_Gun_2A38M.tools.muzzle-0.label>枪口</DMS_Gun_2A38M.tools.muzzle-0.label>
-  <DMS_Gun_2A38M.tools.barrel-1.label>枪管</DMS_Gun_2A38M.tools.barrel-1.label>
-  <DMS_Gun_2A38M.tools.muzzle-1.label>枪口</DMS_Gun_2A38M.tools.muzzle-1.label>
-  <DMS_Gun_2A38M.verbs.Verb_ShootCE.label>2A38M</DMS_Gun_2A38M.verbs.Verb_ShootCE.label>
-  
-  <!-- EN: MPQFS-85M "Dawnblade" -->
-  <DMS_Gun_DawnbladeM.label>黎明之刃</DMS_Gun_DawnbladeM.label>
-  <!-- EN: A multi-role quick-firing autocannon modified for mech use. The weapon is only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.\n\nThis weapon is designed exclusively for use on super-heavy units or to be installed as an emplacement. -->
-  <DMS_Gun_DawnbladeM.description>搭载於重型机兵与龙骑兵平台的轻量化速射舰炮系统，只有那些重型机兵能够负载并使用这种毁灭性的陆基火力。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_Gun_DawnbladeM.description>
-  <!-- EN: stock -->
-  <DMS_Gun_DawnbladeM.tools.stock.label>枪托</DMS_Gun_DawnbladeM.tools.stock.label>
-  <!-- EN: barrel -->
-  <DMS_Gun_DawnbladeM.tools.barrel.label>炮管</DMS_Gun_DawnbladeM.tools.barrel.label>
-  <!-- EN: MPQFS-85M "Dawnblade" -->
-  <DMS_Gun_DawnbladeM.verbs.Verb_Shoot.label>黎明之刃</DMS_Gun_DawnbladeM.verbs.Verb_Shoot.label>
-  
-  <!-- UNUSED -->
-  <DMS_Gun_DawnbladeM.tools.muzzle-0.label>炮口</DMS_Gun_DawnbladeM.tools.muzzle-0.label>
-  <DMS_Gun_DawnbladeM.tools.barrel-1.label>炮管</DMS_Gun_DawnbladeM.tools.barrel-1.label>
-  <DMS_Gun_DawnbladeM.tools.muzzle-1.label>炮口</DMS_Gun_DawnbladeM.tools.muzzle-1.label>
-  <DMS_Gun_DawnbladeM.verbs.Verb_ShootCE.label>黎明之刃</DMS_Gun_DawnbladeM.verbs.Verb_ShootCE.label>
-  
-  <!-- EN: Mech Heavy Grenade Launcher -->
-  <DMS_Gun_DragoonGrenade.label>龙骑兵榴弹枪</DMS_Gun_DragoonGrenade.label>
-  <!-- EN: A hand held mortar designed for mech operation built with a six round revolving action to allow for quick successive shots.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
-  <DMS_Gun_DragoonGrenade.description>专为重型机兵与机动龙骑兵设计的手持式迫击炮。基本上是一种极端放大的低速榴弹发射器。但足以为进攻部队提供一定的曲射火力支援。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_Gun_DragoonGrenade.description>
-  <!-- EN: stock -->
-  <DMS_Gun_DragoonGrenade.tools.stock.label>枪托</DMS_Gun_DragoonGrenade.tools.stock.label>
-  <!-- EN: barrel -->
-  <DMS_Gun_DragoonGrenade.tools.barrel.label>枪管</DMS_Gun_DragoonGrenade.tools.barrel.label>
-  <!-- EN: Mech Heavy Grenade Launcher -->
-  <DMS_Gun_DragoonGrenade.verbs.Verb_Shoot.label>龙骑兵榴弹枪</DMS_Gun_DragoonGrenade.verbs.Verb_Shoot.label>
-  
-  <!-- UNUSED -->
-  <DMS_Gun_DragoonGrenade.tools.muzzle-0.label>枪口</DMS_Gun_DragoonGrenade.tools.muzzle-0.label>
-  <DMS_Gun_DragoonGrenade.tools.barrel-1.label>枪管</DMS_Gun_DragoonGrenade.tools.barrel-1.label>
-  <DMS_Gun_DragoonGrenade.tools.muzzle-1.label>枪口</DMS_Gun_DragoonGrenade.tools.muzzle-1.label>
-  <DMS_Gun_DragoonGrenade.verbs.Verb_ShootCE.label>龙骑兵榴弹枪</DMS_Gun_DragoonGrenade.verbs.Verb_ShootCE.label>
-  
-  <!-- EN: Mech Anti-Tank Rifle -->
-  <DMS_Gun_DragoonRifle.label>龙骑兵重型步枪</DMS_Gun_DragoonRifle.label>
-  <!-- EN: A lightweight mass producable anti-tank rifle for heavy mechs and dragoons.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
-  <DMS_Gun_DragoonRifle.description>一种用於重型机兵与机动龙骑兵的轻量级反坦克炮，使用弹夹供弹来提供持续的反装甲火力输出。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_Gun_DragoonRifle.description>
-  <!-- EN: stock -->
-  <DMS_Gun_DragoonRifle.tools.stock.label>枪托</DMS_Gun_DragoonRifle.tools.stock.label>
-  <!-- EN: barrel -->
-  <DMS_Gun_DragoonRifle.tools.barrel.label>枪管</DMS_Gun_DragoonRifle.tools.barrel.label>
-  <!-- EN: Mech Anti-Tank Rifle -->
-  <DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>龙骑兵重型步枪</DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>
-  
-  <!-- UNUSED -->
-  <DMS_Gun_DragoonRifle.tools.muzzle-0.label>枪口</DMS_Gun_DragoonRifle.tools.muzzle-0.label>
-  <DMS_Gun_DragoonRifle.tools.barrel-1.label>枪管</DMS_Gun_DragoonRifle.tools.barrel-1.label>
-  <DMS_Gun_DragoonRifle.tools.muzzle-1.label>枪口</DMS_Gun_DragoonRifle.tools.muzzle-1.label>
-  <DMS_Gun_DragoonRifle.verbs.Verb_ShootCE.label>龙骑兵重步枪</DMS_Gun_DragoonRifle.verbs.Verb_ShootCE.label>
-  
-  <!-- EN: MK44 BushMasterII AutoCannon -->
-  <DMS_Gun_MK44_Autocannon.label>大毒蛇机炮</DMS_Gun_MK44_Autocannon.label>
-  <!-- EN: The MK44 Bushmaster II autocannon is a low-rate-of-fire (200 RPM), high-power, and high-precision weapon. It can be equipped on medium-sized mechanoids and fires 30×173mm NATO ammunition, effectively filling the role of a precision burst-fire autocannon. -->
-  <DMS_Gun_MK44_Autocannon.description>MK44大毒蛇II型机炮是一款低射速（200 发/分）、高威力、高精准度的武器。它可以装备在中型机械体上，发射30×173毫米北约弹药，有效地充当了一门精确点射自动炮的角色。</DMS_Gun_MK44_Autocannon.description>
-  <!-- EN: stock -->
-  <DMS_Gun_MK44_Autocannon.tools.stock.label>枪托</DMS_Gun_MK44_Autocannon.tools.stock.label>
-  <!-- EN: barrel -->
-  <DMS_Gun_MK44_Autocannon.tools.barrel.label>枪管</DMS_Gun_MK44_Autocannon.tools.barrel.label>
-  <!-- EN: MK44 BushMasterII AutoCannon -->
-  <DMS_Gun_MK44_Autocannon.verbs.Verb_Shoot.label>大毒蛇机炮</DMS_Gun_MK44_Autocannon.verbs.Verb_Shoot.label>
-  
-  <!-- EN: Recoilless Rifle -->
-  <DMS_Gun_Recoilless.label>无後坐力炮</DMS_Gun_Recoilless.label>
-  <!-- EN: A recoilless rifle designed to counter heavy-armored targets at range.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
-  <DMS_Gun_Recoilless.description>一种无後坐力炮，用於狙击射程内的重型武装目标。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_Gun_Recoilless.description>
-  <!-- EN: stock -->
-  <DMS_Gun_Recoilless.tools.stock.label>枪托</DMS_Gun_Recoilless.tools.stock.label>
-  <!-- EN: barrel -->
-  <DMS_Gun_Recoilless.tools.barrel.label>枪管</DMS_Gun_Recoilless.tools.barrel.label>
-  <!-- EN: Recoilless Rifle -->
-  <DMS_Gun_Recoilless.verbs.Verb_Shoot.label>无後坐力炮</DMS_Gun_Recoilless.verbs.Verb_Shoot.label>
-  
-  <!-- 彈種切換 / ammo switch -->
-  <!-- EN: airburst dart canister -->
-  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.label>空爆箭形弹</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.label>
-  <!-- EN: An explosive canister with a wide blast of spike darts but ordinary penetration. Best used against groups of unarmored targets. -->
-  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.description>一种爆炸时抛洒大量尖锐箭形弹丸、但穿甲能力普通的弹药，适合打击无装甲目标群。</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.description>
-  <!-- EN: shaped-charge shell -->
-  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.label>聚能穿甲弹</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.label>
-  <!-- EN: A chemical-energy penetrator with very high armor penetration, backed by a fragmentation sleeve that throws a forward cone of splinters. Best used against heavily armored targets. -->
-  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.description>一种穿甲能力极高的化学能穿甲弹，外层破片套筒会向前抛出锥形弹片，适合打击重装甲目标。</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.description>
-  <!-- EN: demolition shell -->
-  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.label>反工事高爆弹</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.label>
-  <!-- EN: A high-explosive shell specialized against structures, able to tear down turrets, walls and other high-durability targets. -->
-  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.description>一种对建筑特化的高爆弹，能有效拆毁炮塔与墙体等高耐久目标。</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.description>
-  <!-- EN: airburst smoke shell -->
-  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.label>空爆烟雾弹</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.label>
-  <!-- EN: A support warhead that bursts into a smoke screen over the point of impact. -->
-  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.description>一种能在落地点产生烟雾的辅助弹头。</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.description>
-  
-  <!-- UNUSED -->
-  <DMS_Gun_Recoilless.tools.muzzle-0.label>枪口</DMS_Gun_Recoilless.tools.muzzle-0.label>
-  <DMS_Gun_Recoilless.tools.barrel-1.label>枪管</DMS_Gun_Recoilless.tools.barrel-1.label>
-  <DMS_Gun_Recoilless.tools.muzzle-1.label>枪口</DMS_Gun_Recoilless.tools.muzzle-1.label>
-  <DMS_Gun_Recoilless.verbs.Verb_ShootCE.label>无後坐力炮</DMS_Gun_Recoilless.verbs.Verb_ShootCE.label>
-  
-  <!-- EN: Mech HMG -->
-  <DMS_HeavyMachineGun.label>机兵重机枪</DMS_HeavyMachineGun.label>
-  <!-- EN: A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless its mounted to a support platform.\n\nIts tripod folds under the receiver, so a drafted operator can set it down into a firing position on the spot and break it back down just as quickly. -->
-  <DMS_HeavyMachineGun.description>一挺发射大口径机枪弹的重型机枪，普遍用於重型机兵或步兵支援平台。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。\n\n三脚架收折在机匣下方，征召中的操作者可以就地把它架设成射击阵地，也能同样迅速地拆收带走。</DMS_HeavyMachineGun.description>
-  <!-- EN: stock -->
-  <DMS_HeavyMachineGun.tools.stock.label>枪托</DMS_HeavyMachineGun.tools.stock.label>
-  <!-- EN: barrel -->
-  <DMS_HeavyMachineGun.tools.barrel.label>枪管</DMS_HeavyMachineGun.tools.barrel.label>
-  <!-- EN: Mech HMG -->
-  <DMS_HeavyMachineGun.verbs.Verb_Shoot.label>机兵重机枪</DMS_HeavyMachineGun.verbs.Verb_Shoot.label>
-  
-  <!-- UNUSED -->
-  <DMS_HeavyMachineGun.tools.muzzle-0.label>枪口</DMS_HeavyMachineGun.tools.muzzle-0.label>
-  <DMS_HeavyMachineGun.tools.barrel-1.label>枪管</DMS_HeavyMachineGun.tools.barrel-1.label>
-  <DMS_HeavyMachineGun.tools.muzzle-1.label>枪口</DMS_HeavyMachineGun.tools.muzzle-1.label>
-  <DMS_HeavyMachineGun.verbs.Verb_ShootCE.label>机兵重机枪</DMS_HeavyMachineGun.verbs.Verb_ShootCE.label>
-  
-  <!-- EN: Bolt Cannon -->
-  <DMS_SniperCannon.label>机兵狙击炮</DMS_SniperCannon.label>
-  <!-- EN: An ultra heavy rifle chambered in autocannon rounds. This rifle has proven the capability to reach out and touch an exostrider at immense distances. It is specifically designed for long-range anti-mech operations.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
-  <DMS_SniperCannon.description>一种能发射机炮炮弹的重型步枪，专为远距离反机甲狙击作战而设计。在过去的战争中证明了能够在远处狙击巨黾的薄弱部位来使其瘫痪。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_SniperCannon.description>
-  <!-- EN: stock -->
-  <DMS_SniperCannon.tools.stock.label>枪托</DMS_SniperCannon.tools.stock.label>
-  <!-- EN: barrel -->
-  <DMS_SniperCannon.tools.barrel.label>枪管</DMS_SniperCannon.tools.barrel.label>
-  <!-- EN: Bolt Cannon -->
-  <DMS_SniperCannon.verbs.Verb_Shoot.label>机兵狙击炮</DMS_SniperCannon.verbs.Verb_Shoot.label>
-  
-  <!-- UNUSED -->
-  <DMS_SniperCannon.tools.muzzle-0.label>枪口</DMS_SniperCannon.tools.muzzle-0.label>
-  <DMS_SniperCannon.tools.barrel-1.label>枪管</DMS_SniperCannon.tools.barrel-1.label>
-  <DMS_SniperCannon.tools.muzzle-1.label>枪口</DMS_SniperCannon.tools.muzzle-1.label>
-  <DMS_SniperCannon.verbs.Verb_ShootCE.label>机兵狙击炮</DMS_SniperCannon.verbs.Verb_ShootCE.label>
-  
-
-  <!--==================== 重型無後座力砲: 可切換彈種 ====================-->
-  
-  <!-- EN: Airburst canister -->
-  <DMS_Bullet_RR.label>空爆霰弹</DMS_Bullet_RR.label>
-  <!-- EN: a shaped charge canister that bursts sharp metal darts mid-air. throws a forward cone of darts down the firing line, so it also hurts whatever was standing behind the cover. -->
-  <DMS_Bullet_RR.description>一种聚能装药霰弹，在空中炸开并抛洒尖锐的金属箭形弹丸。弹丸沿着射向喷成一道向前的锥形弹幕，因此躲在掩体后方的目标同样会被扫到。</DMS_Bullet_RR.description>
-  
-  <!-- EN: 73mm HE-frag shell -->
-  <DMS_Bullet_RR_HE.label>高爆破片弹</DMS_Bullet_RR_HE.label>
-  <!-- EN: A thin-cased high explosive shell tuned for area effect rather than penetration. It sweeps a wide circle clear of infantry and light emplacements, but the blast wave spends itself against anything properly armored. -->
-  <DMS_Bullet_RR_HE.description>薄壳高爆弹，调校方向是面杀伤而非穿透。它能把一大圈范围内的步兵与轻型工事清空，但爆震波打在正经装甲上就只是浪费。</DMS_Bullet_RR_HE.description>
-  
-  <!-- EN: 73mm demolition shell -->
-  <DMS_Bullet_RR_Demolition.label>爆破弹</DMS_Bullet_RR_Demolition.label>
-  <!-- EN: A heavy demolition shell with a slow, heaving filler and a delayed fuze that lets it seat against the target before it lets go. It is meant for walls, bunkers and load-bearing structures; against personnel it is merely adequate, and its weight costs range. -->
-  <DMS_Bullet_RR_Demolition.description>重型爆破弹，填装低爆速的推挤型炸药，并采用延迟引信，让弹头先坐进目标再引爆。它是为墙体、碉堡与承重结构准备的；对人员只能算堪用，而且弹重也吃掉了一部分射程。</DMS_Bullet_RR_Demolition.description>
-  
-  <!-- EN: 73mm airburst smoke shell -->
-  <DMS_Bullet_RR_Smoke.label>空爆烟雾弹</DMS_Bullet_RR_Smoke.label>
-  <!-- EN: A large screening shell with a proximity fuze that opens above head height, laying an obscurant bank far wider than any hand-thrown canister. It does no damage at all; it exists to blind a firing line long enough for an assault or a withdrawal to happen. -->
-  <DMS_Bullet_RR_Smoke.description>大型遮蔽弹，近炸引信在头顶高度炸开，铺出远比任何手投烟罐更宽的烟幕带。它完全不造成伤害，存在的意义是让一整条火线瞎掉足够久，好让突击或撤退得以完成。</DMS_Bullet_RR_Smoke.description>
-  
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: bolt cannon shell -->
+  <DMS_Bullet_SniperCannon.label>狙击炮弹</DMS_Bullet_SniperCannon.label>
+  <!-- EN: A full-length autocannon round fired from a rifled barrel at far higher velocity than any turret mount can manage. The dense penetrator carries enough energy to punch through exostrider plating at extreme range and drop whatever is behind it. -->
+  <DMS_Bullet_SniperCannon.description>由线膛长身管以远超炮塔载具的初速射出的全装机炮弹。高密度穿甲弹芯携带的动能足以在极远距离贯穿巨型机械体的装甲，并击倒其后方的任何目标。</DMS_Bullet_SniperCannon.description>
+  
+  <!-- EN: heavy machine gun bullet -->
+  <Bullet_DMS_HeavyMachineGun.label>重机枪子弹</Bullet_DMS_HeavyMachineGun.label>
+  <!-- EN: A standard 12.7mm full metal jacket belt round. Balanced for sustained fire at range against both infantry and light plating. -->
+  <Bullet_DMS_HeavyMachineGun.description>标准12.7mm全金属被覆弹链弹。在射程、对步兵与对轻装甲的持续火力之间取得平衡。</Bullet_DMS_HeavyMachineGun.description>
+  
+  <!-- EN: 20mm tungsten core shell -->
+  <DMS_Bullet_Autocannon_TungstenCore.label>钨芯弹</DMS_Bullet_Autocannon_TungstenCore.label>
+  
+  <!-- EN: A sub-caliber sabot round carrying a tungsten penetrator. The dense core defeats plating that standard high explosive shells merely scratch, but the heavier propellant charge slows the cycle rate and the flatter, faster projectile is zeroed for a shorter engagement envelope. -->
+  <DMS_Bullet_Autocannon_TungstenCore.description>装有钨合金穿甲弹芯的次口径脱壳穿甲弹。高密度弹芯能贯穿标准高爆弹只能刮伤的装甲，但更重的发射药拖慢了循环速度，而弹道更平直快速的弹头也只针对较短的交战距离校正。</DMS_Bullet_Autocannon_TungstenCore.description>
+  
+  <!-- EN: 12.7mm hollow point -->
+  <DMS_Bullet_HMG_HollowPoint.label>空尖弹</DMS_Bullet_HMG_HollowPoint.label>
+  
+  <!-- EN: An expanding 12.7mm round loaded to a lighter charge. The soft nose dumps its energy into soft tissue instead of punching through, and the reduced pressure lets the action cycle far faster at the cost of range and penetration. Near useless against armored plating. -->
+  <DMS_Bullet_HMG_HollowPoint.description>装填较轻发射药的重机枪空尖弹。软质弹头把能量全部倾注在软组织里而不是穿通过去，较低的膛压也让枪机循环快得多，代价是射程与穿甲能力。对装甲板几乎无用。</DMS_Bullet_HMG_HollowPoint.description>
+  
+  
+  <!-- EN: Mech Autocannon -->
+  <DMS_Autocannon.label>机兵轻机炮</DMS_Autocannon.label>
+  <!-- EN: An autocannon designed for mech soldier or mounting on to an infantry support platform.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform. -->
+  <DMS_Autocannon.description>适用于机兵与步兵支援平台的轻型机炮。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_Autocannon.description>
+  <!-- EN: stock -->
+  <DMS_Autocannon.tools.stock.label>枪托</DMS_Autocannon.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Autocannon.tools.barrel.label>枪管</DMS_Autocannon.tools.barrel.label>
+  <!-- EN: Mech Autocannon -->
+  <DMS_Autocannon.verbs.Verb_Shoot.label>机兵轻机炮</DMS_Autocannon.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Autocannon.tools.muzzle-0.label>枪口</DMS_Autocannon.tools.muzzle-0.label>
+  <DMS_Autocannon.tools.barrel-1.label>枪管</DMS_Autocannon.tools.barrel-1.label>
+  <DMS_Autocannon.tools.muzzle-1.label>枪口</DMS_Autocannon.tools.muzzle-1.label>
+  <DMS_Autocannon.verbs.Verb_ShootCE.label>机兵轻机炮</DMS_Autocannon.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: heavy grenade round -->
+  <DMS_Bullet_DGL.label>重型榴弹</DMS_Bullet_DGL.label>
+  
+  <!-- EN: Armor Piercing Shell -->
+  <DMS_Bullet_Dragoon_Rifle.label>穿甲钢芯弹</DMS_Bullet_Dragoon_Rifle.label>
+  
+  <!-- EN: 2A38M -->
+  <DMS_Gun_2A38M.label>2A38M</DMS_Gun_2A38M.label>
+  <!-- EN: A dual-barrel heavy autocannon for infantry suppression and anti air needs.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
+  <DMS_Gun_2A38M.description>用于步兵压制/防空平台的双管重型机炮。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_Gun_2A38M.description>
+  <!-- EN: stock -->
+  <DMS_Gun_2A38M.tools.stock.label>枪托</DMS_Gun_2A38M.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_2A38M.tools.barrel.label>枪管</DMS_Gun_2A38M.tools.barrel.label>
+  <!-- EN: 2A38M -->
+  <DMS_Gun_2A38M.verbs.Verb_Shoot.label>2A38M</DMS_Gun_2A38M.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_2A38M.tools.muzzle-0.label>枪口</DMS_Gun_2A38M.tools.muzzle-0.label>
+  <DMS_Gun_2A38M.tools.barrel-1.label>枪管</DMS_Gun_2A38M.tools.barrel-1.label>
+  <DMS_Gun_2A38M.tools.muzzle-1.label>枪口</DMS_Gun_2A38M.tools.muzzle-1.label>
+  <DMS_Gun_2A38M.verbs.Verb_ShootCE.label>2A38M</DMS_Gun_2A38M.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: MPQFS-85M "Dawnblade" -->
+  <DMS_Gun_DawnbladeM.label>黎明之刃</DMS_Gun_DawnbladeM.label>
+  <!-- EN: A multirole quick-firing autocannon modified for mech use. The weapon is only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.\n\nThis weapon is designed exclusively for use on super-heavy units or to be installed as an emplacement. -->
+  <DMS_Gun_DawnbladeM.description>搭载于重型机兵与龙骑兵平台的轻量化速射舰炮系统，只有那些重型机兵能够负载并使用这种毁灭性的陆基火力。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_Gun_DawnbladeM.description>
+  <!-- EN: stock -->
+  <DMS_Gun_DawnbladeM.tools.stock.label>枪托</DMS_Gun_DawnbladeM.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_DawnbladeM.tools.barrel.label>炮管</DMS_Gun_DawnbladeM.tools.barrel.label>
+  <!-- EN: MPQFS-85M "Dawnblade" -->
+  <DMS_Gun_DawnbladeM.verbs.Verb_Shoot.label>黎明之刃</DMS_Gun_DawnbladeM.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_DawnbladeM.tools.muzzle-0.label>炮口</DMS_Gun_DawnbladeM.tools.muzzle-0.label>
+  <DMS_Gun_DawnbladeM.tools.barrel-1.label>炮管</DMS_Gun_DawnbladeM.tools.barrel-1.label>
+  <DMS_Gun_DawnbladeM.tools.muzzle-1.label>炮口</DMS_Gun_DawnbladeM.tools.muzzle-1.label>
+  <DMS_Gun_DawnbladeM.verbs.Verb_ShootCE.label>黎明之刃</DMS_Gun_DawnbladeM.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Mech Heavy Grenade Launcher -->
+  <DMS_Gun_DragoonGrenade.label>龙骑兵榴弹枪</DMS_Gun_DragoonGrenade.label>
+  <!-- EN: A hand held mortar designed for mech operation built with a six round revolving action to allow for quick successive shots.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
+  <DMS_Gun_DragoonGrenade.description>专为重型机兵与机动龙骑兵设计的手持式迫击炮。基本上是一种极端放大的低速榴弹发射器。但足以为进攻部队提供一定的曲射火力支援。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_Gun_DragoonGrenade.description>
+  <!-- EN: stock -->
+  <DMS_Gun_DragoonGrenade.tools.stock.label>枪托</DMS_Gun_DragoonGrenade.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_DragoonGrenade.tools.barrel.label>枪管</DMS_Gun_DragoonGrenade.tools.barrel.label>
+  <!-- EN: Mech Heavy Grenade Launcher -->
+  <DMS_Gun_DragoonGrenade.verbs.Verb_Shoot.label>龙骑兵榴弹枪</DMS_Gun_DragoonGrenade.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_DragoonGrenade.tools.muzzle-0.label>枪口</DMS_Gun_DragoonGrenade.tools.muzzle-0.label>
+  <DMS_Gun_DragoonGrenade.tools.barrel-1.label>枪管</DMS_Gun_DragoonGrenade.tools.barrel-1.label>
+  <DMS_Gun_DragoonGrenade.tools.muzzle-1.label>枪口</DMS_Gun_DragoonGrenade.tools.muzzle-1.label>
+  <DMS_Gun_DragoonGrenade.verbs.Verb_ShootCE.label>龙骑兵榴弹枪</DMS_Gun_DragoonGrenade.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Mech Anti-Tank Rifle -->
+  <DMS_Gun_DragoonRifle.label>龙骑兵重型步枪</DMS_Gun_DragoonRifle.label>
+  <!-- EN: A lightweight mass producible anti-tank rifle for heavy mechs and dragoons.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
+  <DMS_Gun_DragoonRifle.description>一种用于重型机兵与机动龙骑兵的轻量级反战车炮，使用弹夹供弹来提供持续的反装甲火力输出。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_Gun_DragoonRifle.description>
+  <!-- EN: stock -->
+  <DMS_Gun_DragoonRifle.tools.stock.label>枪托</DMS_Gun_DragoonRifle.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_DragoonRifle.tools.barrel.label>枪管</DMS_Gun_DragoonRifle.tools.barrel.label>
+  <!-- EN: Mech Anti-Tank Rifle -->
+  <DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>龙骑兵重型步枪</DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_DragoonRifle.tools.muzzle-0.label>枪口</DMS_Gun_DragoonRifle.tools.muzzle-0.label>
+  <DMS_Gun_DragoonRifle.tools.barrel-1.label>枪管</DMS_Gun_DragoonRifle.tools.barrel-1.label>
+  <DMS_Gun_DragoonRifle.tools.muzzle-1.label>枪口</DMS_Gun_DragoonRifle.tools.muzzle-1.label>
+  <DMS_Gun_DragoonRifle.verbs.Verb_ShootCE.label>龙骑兵重步枪</DMS_Gun_DragoonRifle.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: MK44 BushMasterII AutoCannon -->
+  <DMS_Gun_MK44_Autocannon.label>大毒蛇机炮</DMS_Gun_MK44_Autocannon.label>
+  <!-- EN: The MK44 Bushmaster II autocannon is a low-rate-of-fire (200 RPM), high-power, and high-precision weapon. It can be equipped on medium-sized mechanoids and fires 30×173mm NATO ammunition, effectively filling the role of a precision burst-fire autocannon. -->
+  <DMS_Gun_MK44_Autocannon.description>MK44大毒蛇II型机炮是一款低射速（200 发/分）、高威力、高精准度的武器。它可以装备在中型机械体上，发射30×173毫米北约弹药，有效地充当了一门精确点射自动炮的角色。</DMS_Gun_MK44_Autocannon.description>
+  <!-- EN: stock -->
+  <DMS_Gun_MK44_Autocannon.tools.stock.label>枪托</DMS_Gun_MK44_Autocannon.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_MK44_Autocannon.tools.barrel.label>枪管</DMS_Gun_MK44_Autocannon.tools.barrel.label>
+  <!-- EN: MK44 BushMasterII AutoCannon -->
+  <DMS_Gun_MK44_Autocannon.verbs.Verb_Shoot.label>大毒蛇机炮</DMS_Gun_MK44_Autocannon.verbs.Verb_Shoot.label>
+  
+  <!-- EN: Recoilless Rifle -->
+  <DMS_Gun_Recoilless.label>无后坐力炮</DMS_Gun_Recoilless.label>
+  <!-- EN: A recoilless rifle designed to counter heavy-armored targets at range.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
+  <DMS_Gun_Recoilless.description>一种无后坐力炮，用于狙击射程内的重型武装目标。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_Gun_Recoilless.description>
+  <!-- EN: stock -->
+  <DMS_Gun_Recoilless.tools.stock.label>枪托</DMS_Gun_Recoilless.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_Recoilless.tools.barrel.label>枪管</DMS_Gun_Recoilless.tools.barrel.label>
+  <!-- EN: Recoilless Rifle -->
+  <DMS_Gun_Recoilless.verbs.Verb_Shoot.label>无后坐力炮</DMS_Gun_Recoilless.verbs.Verb_Shoot.label>
+  
+  <!-- 弹种切换 / ammo switch -->
+  <!-- EN: airburst dart canister -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.label>空爆箭形弹</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.label>
+  <!-- EN: An explosive canister with a wide blast of spike darts but ordinary penetration. Best used against groups of unarmored targets. -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.description>一种爆炸时抛洒大量尖锐箭形弹丸、但穿甲能力普通的弹药，适合打击无装甲目标群。</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.0.description>
+  <!-- EN: shaped-charge shell -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.label>聚能穿甲弹</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.label>
+  <!-- EN: A chemical-energy penetrator with very high armor penetration, backed by a fragmentation sleeve that throws a forward cone of splinters. Best used against heavily armored targets. -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.description>一种穿甲能力极高的化学能穿甲弹，外层破片套筒会向前抛出锥形弹片，适合打击重装甲目标。</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.1.description>
+  <!-- EN: demolition shell -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.label>反工事高爆弹</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.label>
+  <!-- EN: A high-explosive shell specialized against structures, able to tear down turrets, walls and other high-durability targets. -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.description>一种对建筑特化的高爆弹，能有效拆毁炮塔与墙体等高耐久目标。</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.2.description>
+  <!-- EN: airburst smoke shell -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.label>空爆烟雾弹</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.label>
+  <!-- EN: A support warhead that bursts into a smoke screen over the point of impact. -->
+  <DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.description>一种能在落地点产生烟雾的辅助弹头。</DMS_Gun_Recoilless.comps.CompAmmoSwitch.ammos.3.description>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_Recoilless.tools.muzzle-0.label>枪口</DMS_Gun_Recoilless.tools.muzzle-0.label>
+  <DMS_Gun_Recoilless.tools.barrel-1.label>枪管</DMS_Gun_Recoilless.tools.barrel-1.label>
+  <DMS_Gun_Recoilless.tools.muzzle-1.label>枪口</DMS_Gun_Recoilless.tools.muzzle-1.label>
+  <DMS_Gun_Recoilless.verbs.Verb_ShootCE.label>无后坐力炮</DMS_Gun_Recoilless.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Mech HMG -->
+  <DMS_HeavyMachineGun.label>机兵重机枪</DMS_HeavyMachineGun.label>
+  <!-- EN: A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform.\n\nIts tripod folds under the receiver, so a drafted operator can set it down into a firing position on the spot and break it back down just as quickly. -->
+  <DMS_HeavyMachineGun.description>一挺发射大口径机枪弹的重型机枪，普遍用于重型机兵或步兵支援平台。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。\n\n三脚架收折在机匣下方，征召中的操作者可以就地把它架设成射击阵地，也能同样迅速地拆收带走。</DMS_HeavyMachineGun.description>
+  <!-- EN: stock -->
+  <DMS_HeavyMachineGun.tools.stock.label>枪托</DMS_HeavyMachineGun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_HeavyMachineGun.tools.barrel.label>枪管</DMS_HeavyMachineGun.tools.barrel.label>
+  <!-- EN: Mech HMG -->
+  <DMS_HeavyMachineGun.verbs.Verb_Shoot.label>机兵重机枪</DMS_HeavyMachineGun.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_HeavyMachineGun.tools.muzzle-0.label>枪口</DMS_HeavyMachineGun.tools.muzzle-0.label>
+  <DMS_HeavyMachineGun.tools.barrel-1.label>枪管</DMS_HeavyMachineGun.tools.barrel-1.label>
+  <DMS_HeavyMachineGun.tools.muzzle-1.label>枪口</DMS_HeavyMachineGun.tools.muzzle-1.label>
+  <DMS_HeavyMachineGun.verbs.Verb_ShootCE.label>机兵重机枪</DMS_HeavyMachineGun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Bolt Cannon -->
+  <DMS_SniperCannon.label>机兵狙击炮</DMS_SniperCannon.label>
+  <!-- EN: An ultra heavy rifle chambered in autocannon rounds. This rifle has proven the capability to reach out and touch an exostrider at immense distances. It is specifically designed for long-range anti-mech operations.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
+  <DMS_SniperCannon.description>一种能发射机炮炮弹的重型步枪，专为远距离反机甲狙击作战而设计。在过去的战争中证明了能够在远处狙击巨黾的薄弱部位来使其瘫痪。\n\n这种武器是专门为机兵设计的，因为其重量因此所以只有特定的机兵才能操作。</DMS_SniperCannon.description>
+  <!-- EN: stock -->
+  <DMS_SniperCannon.tools.stock.label>枪托</DMS_SniperCannon.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_SniperCannon.tools.barrel.label>枪管</DMS_SniperCannon.tools.barrel.label>
+  <!-- EN: Bolt Cannon -->
+  <DMS_SniperCannon.verbs.Verb_Shoot.label>机兵狙击炮</DMS_SniperCannon.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_SniperCannon.tools.muzzle-0.label>枪口</DMS_SniperCannon.tools.muzzle-0.label>
+  <DMS_SniperCannon.tools.barrel-1.label>枪管</DMS_SniperCannon.tools.barrel-1.label>
+  <DMS_SniperCannon.tools.muzzle-1.label>枪口</DMS_SniperCannon.tools.muzzle-1.label>
+  <DMS_SniperCannon.verbs.Verb_ShootCE.label>机兵狙击炮</DMS_SniperCannon.verbs.Verb_ShootCE.label>
+  
+
+  <!--==================== 重型无后座力炮: 可切换弹种 ====================-->
+  
+  <!-- EN: Airburst canister -->
+  <DMS_Bullet_RR.label>空爆霰弹</DMS_Bullet_RR.label>
+  <!-- EN: a shaped charge canister that bursts sharp metal darts mid-air. throws a forward cone of darts down the firing line, so it also hurts whatever was standing behind the cover. -->
+  <DMS_Bullet_RR.description>一种聚能装药霰弹，在空中炸开并抛洒尖锐的金属箭形弹丸。弹丸沿着射向喷成一道向前的锥形弹幕，因此躲在掩体后方的目标同样会被扫到。</DMS_Bullet_RR.description>
+  
+  <!-- EN: 73mm HE-frag shell -->
+  <DMS_Bullet_RR_HE.label>高爆破片弹</DMS_Bullet_RR_HE.label>
+  <!-- EN: A thin-cased high explosive shell tuned for area effect rather than penetration. It sweeps a wide circle clear of infantry and light emplacements, but the blast wave spends itself against anything properly armored. -->
+  <DMS_Bullet_RR_HE.description>薄壳高爆弹，调校方向是面杀伤而非穿透。它能把一大圈范围内的步兵与轻型工事清空，但爆震波打在正经装甲上就只是浪费。</DMS_Bullet_RR_HE.description>
+  
+  <!-- EN: 73mm demolition shell -->
+  <DMS_Bullet_RR_Demolition.label>爆破弹</DMS_Bullet_RR_Demolition.label>
+  <!-- EN: A heavy demolition shell with a slow, heaving filler and a delayed fuze that lets it seat against the target before it lets go. It is meant for walls, bunkers and load-bearing structures; against personnel it is merely adequate, and its weight costs range. -->
+  <DMS_Bullet_RR_Demolition.description>重型爆破弹，填装低爆速的推挤型炸药，并采用延迟引信，让弹头先坐进目标再引爆。它是为墙体、碉堡与承重结构准备的；对人员只能算堪用，而且弹重也吃掉了一部分射程。</DMS_Bullet_RR_Demolition.description>
+  
+  <!-- EN: 73mm airburst smoke shell -->
+  <DMS_Bullet_RR_Smoke.label>空爆烟雾弹</DMS_Bullet_RR_Smoke.label>
+  <!-- EN: A large screening shell with a proximity fuze that opens above head height, laying an obscurant bank far wider than any hand-thrown canister. It does no damage at all; it exists to blind a firing line long enough for an assault or a withdrawal to happen. -->
+  <DMS_Bullet_RR_Smoke.description>大型遮蔽弹，近炸引信在头顶高度炸开，铺出远比任何手投烟罐更宽的烟幕带。它完全不造成伤害，存在的意义是让一整条火线瞎掉足够久，好让突击或撤退得以完成。</DMS_Bullet_RR_Smoke.description>
+  
 </LanguageData>

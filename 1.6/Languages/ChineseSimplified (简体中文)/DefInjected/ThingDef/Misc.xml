@@ -1,34 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-  
-  <!-- EN: hound drone pack -->
-  <DMS_Apparel_PackHound.label>猎犬部署背包</DMS_Apparel_PackHound.label>
-  <!-- EN: A container and assembly kit for carrying and deploying remote-controlled  hound drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone. -->
-  <DMS_Apparel_PackHound.description>用於在战斗中携带和部署猎犬无人机的大号背包，并能够作为遥控基站来指挥和回收无人机。</DMS_Apparel_PackHound.description>
-  <!-- EN: drone -->
-  <DMS_Apparel_PackHound.comps.CompApparelReloadable.chargeNoun>无人机</DMS_Apparel_PackHound.comps.CompApparelReloadable.chargeNoun>
-  <!-- EN: on cooldown -->
-  <DMS_Apparel_PackHound.comps.CompApparelReloadable.cooldownGerund>准备中</DMS_Apparel_PackHound.comps.CompApparelReloadable.cooldownGerund>
-  <!-- EN: hound drone pack -->
-  <DMS_Apparel_PackHound.verbs.Verb_Deploy.label>部署猎犬</DMS_Apparel_PackHound.verbs.Verb_Deploy.label>
-  
-  <!-- EN: verlingbrid drone belt -->
-  <DMS_Apparel_PackVerling.label>桨鸟部署腰带</DMS_Apparel_PackVerling.label>
-  <!-- EN: A remote controller and assembly module for deploying verlingbrid drones, capable deploying drones in combat and acting as a remote-controlled base station to control the drones. -->
-  <DMS_Apparel_PackVerling.description>用於在战斗中携带和部署桨鸟无人机的遥控器和组装模组，并能够作为遥控基站来指挥和回收无人机。</DMS_Apparel_PackVerling.description>
-  <!-- EN: drone -->
-  <DMS_Apparel_PackVerling.comps.CompApparelReloadable.chargeNoun>无人机</DMS_Apparel_PackVerling.comps.CompApparelReloadable.chargeNoun>
-  <!-- EN: on cooldown -->
-  <DMS_Apparel_PackVerling.comps.CompApparelReloadable.cooldownGerund>准备中</DMS_Apparel_PackVerling.comps.CompApparelReloadable.cooldownGerund>
-  <!-- EN: verlingbrid drone belt -->
-  <DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>部署桨鸟</DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>
-  
-  <!-- EN: scanner pack -->
-  <DMS_Apparel_PackScanner.label>扫描器背包</DMS_Apparel_PackScanner.label>
-  <!-- EN: A wearable pack that allows the user to deploy a battery-powered perimeter scanner. The pack contains a propulsion device, letting the user launch the scanner a short distance. The scanner battery lasts for several hours. -->
-  <DMS_Apparel_PackScanner.description>一种可穿戴的背包，让使用者能部署以电池供电的周界扫描器。背包内置推进装置，可将扫描器投射到短距离外。扫描器的电池可持续数小时。</DMS_Apparel_PackScanner.description>
-  
-  <!-- EN: scanner pack capsule -->
-  <DMS_Grenade_ScannerPack.label>扫描器投射舱</DMS_Grenade_ScannerPack.label>
-  
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: hound drone pack -->
+  <DMS_Apparel_PackHound.label>猎犬部署背包</DMS_Apparel_PackHound.label>
+  <!-- EN: A container and assembly kit for carrying and deploying remote-controlled  hound drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone. -->
+  <DMS_Apparel_PackHound.description>用于在战斗中携带和部署猎犬无人机的大号背包，并能够作为遥控基站来指挥和回收无人机。</DMS_Apparel_PackHound.description>
+  <!-- EN: drone -->
+  <DMS_Apparel_PackHound.comps.CompApparelReloadable.chargeNoun>无人机</DMS_Apparel_PackHound.comps.CompApparelReloadable.chargeNoun>
+  <!-- EN: on cooldown -->
+  <DMS_Apparel_PackHound.comps.CompApparelReloadable.cooldownGerund>准备中</DMS_Apparel_PackHound.comps.CompApparelReloadable.cooldownGerund>
+  <!-- EN: hound drone pack -->
+  <DMS_Apparel_PackHound.verbs.Verb_Deploy.label>部署猎犬</DMS_Apparel_PackHound.verbs.Verb_Deploy.label>
+  
+  <!-- EN: verlingbrid drone belt -->
+  <DMS_Apparel_PackVerling.label>桨鸟部署腰带</DMS_Apparel_PackVerling.label>
+  <!-- EN: A remote controller and assembly module for deploying verlingbrid drones, capable deploying drones in combat and acting as a remote-controlled base station to control the drones. -->
+  <DMS_Apparel_PackVerling.description>用于在战斗中携带和部署桨鸟无人机的遥控器和组装模块，并能够作为遥控基站来指挥和回收无人机。</DMS_Apparel_PackVerling.description>
+  <!-- EN: drone -->
+  <DMS_Apparel_PackVerling.comps.CompApparelReloadable.chargeNoun>无人机</DMS_Apparel_PackVerling.comps.CompApparelReloadable.chargeNoun>
+  <!-- EN: on cooldown -->
+  <DMS_Apparel_PackVerling.comps.CompApparelReloadable.cooldownGerund>准备中</DMS_Apparel_PackVerling.comps.CompApparelReloadable.cooldownGerund>
+  <!-- EN: verlingbrid drone belt -->
+  <DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>部署桨鸟</DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>
+  
+  <!-- EN: scanner pack -->
+  <DMS_Apparel_PackScanner.label>扫描器背包</DMS_Apparel_PackScanner.label>
+  <!-- EN: A wearable pack that allows the user to deploy a battery-powered perimeter scanner. The pack contains a propulsion device, letting the user launch the scanner a short distance. The scanner battery lasts for several hours. -->
+  <DMS_Apparel_PackScanner.description>一种可穿戴的背包，让使用者能部署以电池供电的周界扫描器。背包内置推进装置，可将扫描器投射到短距离外。扫描器的电池可持续数小时。</DMS_Apparel_PackScanner.description>
+  
+  <!-- EN: scanner pack capsule -->
+  <DMS_Grenade_ScannerPack.label>扫描器投射舱</DMS_Grenade_ScannerPack.label>
+  
 </LanguageData>

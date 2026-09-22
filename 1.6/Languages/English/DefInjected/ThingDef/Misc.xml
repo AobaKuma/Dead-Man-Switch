@@ -4,23 +4,31 @@
   <!-- EN: hound drone pack -->
   <DMS_Apparel_PackHound.label>hound drone pack</DMS_Apparel_PackHound.label>
   <!-- EN: A container and assembly kit for carrying and deploying remote-controlled  hound drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone. -->
-  <DMS_Apparel_PackHound.description>A container and assembly kit for carrying and deploying remote-controlled  hound drones, capable of quickly deploying a Hound drone in combat and acting as a remote-controlled base station to control and recover the drone.</DMS_Apparel_PackHound.description>
+  <DMS_Apparel_PackHound.description>A large pack for carrying and deploying hound drones in combat, which also serves as a remote base station to command and recover the drones.</DMS_Apparel_PackHound.description>
   <!-- EN: drone -->
   <DMS_Apparel_PackHound.comps.CompApparelReloadable.chargeNoun>drone</DMS_Apparel_PackHound.comps.CompApparelReloadable.chargeNoun>
   <!-- EN: on cooldown -->
   <DMS_Apparel_PackHound.comps.CompApparelReloadable.cooldownGerund>on cooldown</DMS_Apparel_PackHound.comps.CompApparelReloadable.cooldownGerund>
   <!-- EN: hound drone pack -->
-  <DMS_Apparel_PackHound.verbs.Verb_Deploy.label>hound drone pack</DMS_Apparel_PackHound.verbs.Verb_Deploy.label>
+  <DMS_Apparel_PackHound.verbs.Verb_Deploy.label>Deploy hound</DMS_Apparel_PackHound.verbs.Verb_Deploy.label>
   
   <!-- EN: verlingbrid drone belt -->
-  <DMS_Apparel_PackVerling.label>verlingbrid drone belt</DMS_Apparel_PackVerling.label>
+  <DMS_Apparel_PackVerling.label>Verling bird drone belt</DMS_Apparel_PackVerling.label>
   <!-- EN: A remote controller and assembly module for deploying verlingbrid drones, capable deploying drones in combat and acting as a remote-controlled base station to control the drones. -->
-  <DMS_Apparel_PackVerling.description>A remote controller and assembly module for deploying verlingbrid drones, capable deploying drones in combat and acting as a remote-controlled base station to control the drones.</DMS_Apparel_PackVerling.description>
+  <DMS_Apparel_PackVerling.description>A remote controller and assembly module for carrying and deploying Verling bird drones in combat, which also serves as a remote base station to command and recover the drones.</DMS_Apparel_PackVerling.description>
   <!-- EN: drone -->
   <DMS_Apparel_PackVerling.comps.CompApparelReloadable.chargeNoun>drone</DMS_Apparel_PackVerling.comps.CompApparelReloadable.chargeNoun>
   <!-- EN: on cooldown -->
   <DMS_Apparel_PackVerling.comps.CompApparelReloadable.cooldownGerund>on cooldown</DMS_Apparel_PackVerling.comps.CompApparelReloadable.cooldownGerund>
   <!-- EN: verlingbrid drone belt -->
-  <DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>verlingbrid drone belt</DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>
+  <DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>Deploy Verling bird</DMS_Apparel_PackVerling.verbs.Verb_Deploy.label>
+  
+  <!-- EN: scanner pack -->
+  <DMS_Apparel_PackScanner.label>scanner pack</DMS_Apparel_PackScanner.label>
+  <!-- EN: A wearable pack that allows the user to deploy a battery-powered perimeter scanner. The pack contains a propulsion device, letting the user launch the scanner a short distance. The scanner battery lasts for several hours. -->
+  <DMS_Apparel_PackScanner.description>A wearable pack that allows the user to deploy a battery-powered perimeter scanner. The pack contains a propulsion device, letting the user launch the scanner a short distance. The scanner battery lasts for several hours.</DMS_Apparel_PackScanner.description>
+  
+  <!-- EN: scanner pack capsule -->
+  <DMS_Grenade_ScannerPack.label>scanner pack capsule</DMS_Grenade_ScannerPack.label>
   
 </LanguageData>

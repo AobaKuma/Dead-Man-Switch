@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_PirateAssemblySite.label>pirate assembly yard</DMS_PirateAssemblySite.label>
+  <DMS_PirateAssemblySite.description>An old automatroid assembly yard, seized by pirates and put back into service. The machines coming off the line are their own.</DMS_PirateAssemblySite.description>
+  <DMS_PirateAssemblySite.approachOrderString>Attack {0}</DMS_PirateAssemblySite.approachOrderString>
+  <DMS_PirateAssemblySite.approachingReportString>Attacking {0}.</DMS_PirateAssemblySite.approachingReportString>
+  <DMS_PirateAssemblySite.arrivedLetter>You have arrived at the pirate assembly yard.\n\nOnce the crew raise the alarm, enemy reinforcements will begin to arrive.</DMS_PirateAssemblySite.arrivedLetter>
+</LanguageData>

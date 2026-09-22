@@ -1,30 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- UNUSED -->
-  <DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.command_Target>Aim target</DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.command_Target>
-  <DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>Fire at will</DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>
-  <DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>Aim at designated target</DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>
-  <DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</DMS_Mech_Dogge.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>
-  
   <!-- EN: Falcon -->
   <DMS_Mech_Falcon.label>Falcon</DMS_Mech_Falcon.label>
   <!-- EN: A heavy-duty tri-rotor drone built for working in conjunction with recon units and anti-tank units. -->
-  <DMS_Mech_Falcon.description>A heavy-duty tri-rotor drone built for working in conjunction with recon units and anti-tank units.</DMS_Mech_Falcon.description>
+  <DMS_Mech_Falcon.description>A light tri-rotor drone for armed aerial reconnaissance and anti-tank strikes.</DMS_Mech_Falcon.description>
   <!-- EN: head -->
   <DMS_Mech_Falcon.tools.head.label>head</DMS_Mech_Falcon.tools.head.label>
   
   <!-- EN: hyrax -->
   <DMS_Mech_Hyrax.label>hyrax</DMS_Mech_Hyrax.label>
   <!-- EN: A lightweight tracked platform, this type of automatic weapon can be usually said to be the first practical product developed by any killer machine manufacturer. -->
-  <DMS_Mech_Hyrax.description>A lightweight tracked platform, this type of automatic weapon can be usually said to be the first practical product developed by any killer machine manufacturer.</DMS_Mech_Hyrax.description>
+  <DMS_Mech_Hyrax.description>A remote-controlled machine gun carrier on a light tracked platform. Automatic weapons of this construction are usually the first practical product any drone arms manufacturer develops.</DMS_Mech_Hyrax.description>
   <!-- EN: head -->
   <DMS_Mech_Hyrax.tools.head.label>head</DMS_Mech_Hyrax.tools.head.label>
   
   <!-- EN: Noctula -->
   <DMS_Mech_Noctula.label>Noctula</DMS_Mech_Noctula.label>
   <!-- EN: A stealth operation command-relay drone nicknamed "Night bat". The drone is a command-relay variant of the Falcon. -->
-  <DMS_Mech_Noctula.description>A stealth operation command-relay drone nicknamed "Night bat". The drone is a command-relay variant of the Falcon.</DMS_Mech_Noctula.description>
+  <DMS_Mech_Noctula.description>A tri-rotor drone with optical stealth capability, codenamed "Noctula". It is the command-relay conversion of the Falcon, providing command chain support for jaegers on operations.</DMS_Mech_Noctula.description>
   <!-- EN: head -->
   <DMS_Mech_Noctula.tools.head.label>head</DMS_Mech_Noctula.tools.head.label>
   

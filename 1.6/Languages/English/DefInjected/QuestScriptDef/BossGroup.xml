@@ -1,13 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <DMS_Boss.questContentRules.rulesStrings>
+  <!-- EN:
     <li>bossDefeatedLetterLabel->[escortees0_label] defeated</li>
     <li>bossDefeatedStudyChipLetterText->[defeated][study][manufacture]</li>
     <li>bossDefeatedLetterText->[defeated][manufacture]</li>
     <li>defeated->The wandering [escortees0_label] has been defeated and has dropped a [reward_label]!</li>
     <li>manufacture->\n\nIf it wasn't get destroyed during the neutralization process, you should be able to find that [reward_label] among the wreckage.</li>
     <li>study->\n\nYou can unlock subsequent technologies by studying [reward_label].</li>
+  -->
+
+  <DMS_Boss.questContentRules.rulesStrings>
+    <li>bossDefeatedLetterLabel->[escortees0_label] defeated: [reward_label]</li>
+    <li>bossDefeatedStudyChipLetterText->[defeated][study][manufacture]</li>
+    <li>bossDefeatedLetterText->[defeated][manufacture]</li>
+    <li>defeated->The wandering [escortees0_label] has been defeated and has dropped a [reward_label]!</li>
+    <li>manufacture->\n\nIf it was not destroyed in the fighting, you should be able to find the [reward_label] among the wreckage and put it to use in some advanced technical work.</li>
+    <li>study->\n\nStudying the [reward_label] lets you unlock more advanced technology research.</li>
   </DMS_Boss.questContentRules.rulesStrings>
 
   <DMS_Boss.questDescriptionRules.rulesStrings>
@@ -25,10 +34,10 @@
   <!-- EN: wandering legacies have arrived！ -->
   <DMS_Boss.root.LetterBossgroupArrived>[escortees0_label] has arrived. These broken weapons are [escortees0_faction_name], and their mission now should come to an end.\n\n {LEADERDESC}\n\nThis unit consists of the following mechs\n{WAVEDESC}</DMS_Boss.root.LetterBossgroupArrived>
   <!-- EN: Your signal has been sent out, and the attracted Automatroids will arriving in no time. Prepare to engage. -->
-  <DMS_Boss.root.LetterBossgroupSummoned>Your signal has been sent. [escortees0_label] and the accompanying automatroids has receiving the threat signal, may arrive at any moment.\n\nPrepare for engagement.</DMS_Boss.root.LetterBossgroupSummoned>
+  <DMS_Boss.root.LetterBossgroupSummoned>Your signal has gone out. [escortees0_label] and the remnant mechs accompanying it have picked up the threat signal and may arrive at any moment. Prepare for engagement.</DMS_Boss.root.LetterBossgroupSummoned>
   <!-- EN: Wandering legacies -->
-  <DMS_Boss.root.LetterLabelBossgroupArrived>Approaching [escortees0_label]</DMS_Boss.root.LetterLabelBossgroupArrived>
+  <DMS_Boss.root.LetterLabelBossgroupArrived>Wandering [escortees0_label]</DMS_Boss.root.LetterLabelBossgroupArrived>
   <!-- EN: The wandering legacies has been attracted -->
-  <DMS_Boss.root.LetterLabelBossgroupSummoned>The wandering [escortees0_label] has been attracted</DMS_Boss.root.LetterLabelBossgroupSummoned>
+  <DMS_Boss.root.LetterLabelBossgroupSummoned>Remnant mechs attracted</DMS_Boss.root.LetterLabelBossgroupSummoned>
   
 </LanguageData>

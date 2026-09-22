@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS_CourtMartialLetters.rulePack.rulesStrings>
+    <li>arrivedLetterLabel->Tribunal transport arrived</li>
+    <li>arrivedLetterLabel->Orbital transport landed</li>
+    <li>arrivedLetterText->The orbital transport requisitioned by [askerName] has landed. [defendantName] must board it to attend the [issuerFactionName] military tribunal. Hostilities are suspended while the proceedings hold.</li>
+    <li>acquitLetterLabel->Acquitted: [defendantName]</li>
+    <li>acquitLetterLabel->Verdict: not guilty</li>
+    <li>acquitLetterText->Against expectations, [defendantName] mounted a compelling defense before the tribunal. The Navigation Hall of [issuerFactionName] has ruled the charges unfounded and ordered an immediate release — rank and record intact.\n\nThe officer corps was visibly impressed. [issuerFactionName] has extended formal recognition to us; our standing is now that of an ally. [defendantName] is being returned by drop pod.</li>
+    <li>verdictLetterLabel->Verdict: [defendantName]</li>
+    <li>verdictLetterLabel->Sentence pronounced</li>
+    <li>verdictLetterText->The Navigation Hall of [issuerFactionName] has pronounced sentence. In consideration of [defendantName]'s cooperation, the punishment is set at the minimum: demotion from [oldTitle] to [newTitle], and [detentionDays] days of detention, effective immediately.\n\nThe fleet will cover room, board and medical care for the duration.</li>
+    <li>returnAllyLetterLabel->[defendantName] returned — fleet's respect earned</li>
+    <li>returnAllyLetterText->[defendantName] has served the sentence and been returned by drop pod.\n\nThroughout detention, [defendantName]'s bearing and testimony left a strong impression on the [issuerFactionName] officer corps. The fleet has extended formal recognition to us — our standing with [issuerFactionName] is now that of an ally.</li>
+    <li>returnNeutralLetterLabel->[defendantName] returned</li>
+    <li>returnNeutralLetterText->[defendantName] has served the sentence and been returned by drop pod.\n\n[issuerFactionName] considers the incident formally closed. Relations remain neutral — the ceasefire holds, but no warmth came of it.</li>
+    <li>betrayLetterLabel->Tribunal terms violated</li>
+    <li>betrayLetterText->The court-martial arrangement with [issuerFactionName] has collapsed. The military police command has declared the proceedings void, and [issuerFactionName] has resumed hostilities against us.</li>
+  </DMS_CourtMartialLetters.rulePack.rulesStrings>
+
+</LanguageData>

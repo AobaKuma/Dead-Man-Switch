@@ -3,40 +3,69 @@
 
   <!-- EN: Mech LMG -->
   <DMS_Turret_LightMachineGun.label>mech LMG</DMS_Turret_LightMachineGun.label>
+  <!-- EN: A weapon specializing in supression chambered in a large caliber rifle round.\n\nThis weapon is designed specifically for automatroid use; without external equipment or augmented strength, an ordinary human will struggle to use it properly.\n\nIts folding bipod lets a drafted operator drop it into a firing position on the spot, and pick it back up just as quickly. -->
   <DMS_Turret_LightMachineGun.description>A weapon specializing in suppression chambered in a large caliber rifle round.
 
-This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.
+This weapon is designed specifically for automatroid use; without external equipment or augmented strength, an ordinary human will struggle to use it properly.
 
 Its folding bipod lets a drafted operator drop it into a firing position on the spot, and pick it back up just as quickly.</DMS_Turret_LightMachineGun.description>
 
   <!-- EN: mech LMG -->
   <DMS_Gun_LightMachineGun.label>mech LMG</DMS_Gun_LightMachineGun.label>
+  <!-- EN: A light machine gun mounted on a folding bipod. -->
   <DMS_Gun_LightMachineGun.description>A light machine gun mounted on a folding bipod.</DMS_Gun_LightMachineGun.description>
+  <!-- EN: mech LMG -->
   <DMS_Gun_LightMachineGun.verbs.Verb_Shoot.label>mech LMG</DMS_Gun_LightMachineGun.verbs.Verb_Shoot.label>
 
+  <!-- UNUSED -->
+  <DMS_Gun_LightMachineGun.verbs.Verb_ShootCE.label>mech LMG</DMS_Gun_LightMachineGun.verbs.Verb_ShootCE.label>
+
+  <!-- EN: Mech Grenade Launcher -->
   <DMS_Turret_AutomaticGrenadeLauncher.label>Mech Grenade Launcher</DMS_Turret_AutomaticGrenadeLauncher.label>
+  <!-- EN: A handheld automatic grenade launcher for clearing out clustered targets.\n\nThis weapon is designed specifically for automatroid use; without external equipment or augmented strength, an ordinary human will struggle to use it properly.\n\nDropped onto its tripod it gains the reach and the settled arc it can never hold from the shoulder, and a crew can break it down again in seconds. -->
   <DMS_Turret_AutomaticGrenadeLauncher.description>A handheld automatic grenade launcher for clearing out clustered targets.
 
-This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.
+This weapon is designed specifically for automatroid use; without external equipment or augmented strength, an ordinary human will struggle to use it properly.
 
 Dropped onto its tripod it gains the reach and the settled arc it can never hold from the shoulder, and a crew can break it down again in seconds.</DMS_Turret_AutomaticGrenadeLauncher.description>
 
+  <!-- EN: mech grenade launcher -->
   <DMS_Gun_AutomaticGrenadeLauncher.label>mech grenade launcher</DMS_Gun_AutomaticGrenadeLauncher.label>
+  <!-- EN: An automatic grenade launcher mounted on a low tripod. -->
   <DMS_Gun_AutomaticGrenadeLauncher.description>An automatic grenade launcher mounted on a low tripod.</DMS_Gun_AutomaticGrenadeLauncher.description>
+  <!-- EN: mech grenade launcher -->
   <DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_LaunchProjectile_AmmoSwitch.label>mech grenade launcher</DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_LaunchProjectile_AmmoSwitch.label>
 
   <!-- UNUSED -->
   <DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_ShootCE.label>mech grenade launcher</DMS_Gun_AutomaticGrenadeLauncher.verbs.Verb_ShootCE.label>
 
-  <DMS_Turret_HeavyMachineGun.label>Mech HMG</DMS_Turret_HeavyMachineGun.label>
-  <DMS_Turret_HeavyMachineGun.description>A heavy machine gun for mech soldiers or infantry support platforms.
+  <!-- EN: HE grenade -->
+  <DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.0.label>HE grenade</DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.0.label>
+  <!-- EN: A high-explosive fragmentation round for clearing out clustered targets. The standard belt. -->
+  <DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.0.description>A high-explosive fragmentation round for clearing out clustered targets. The standard belt.</DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.0.description>
+  <!-- EN: EMP grenade -->
+  <DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.1.label>EMP grenade</DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.1.label>
+  <!-- EN: A capacitor round that stuns mechanoids and turrets in a small radius instead of destroying them. Useless against flesh, and the heavier fuze assembly slows the burst. -->
+  <DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.1.description>A capacitor round that stuns mechanoids and turrets in a small radius instead of destroying them. Useless against flesh, and the heavier fuze assembly slows the burst.</DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.1.description>
+  <!-- EN: smoke grenade -->
+  <DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.2.label>smoke grenade</DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.2.label>
+  <!-- EN: A screening round that lays a smoke bank where it lands. Lighter than the explosive rounds, so it flies a little further and comes on target faster. -->
+  <DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.2.description>A screening round that lays a smoke bank where it lands. Lighter than the explosive rounds, so it flies a little further and comes on target faster.</DMS_Gun_AutomaticGrenadeLauncher.comps.CompAmmoSwitch.ammos.2.description>
 
-This weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless it's mounted to a support platform.
+  <!-- EN: Mech HMG -->
+  <DMS_Turret_HeavyMachineGun.label>Mech HMG</DMS_Turret_HeavyMachineGun.label>
+  <!-- EN: A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for automatroid use; it is so heavy that only specific automatroids can operate it, unless it is mounted on a support platform.\n\nOn its tripod the receiver stops fighting the gunner: the beaten zone tightens, the belt runs longer, and the gun holds ground no shoulder ever could. -->
+  <DMS_Turret_HeavyMachineGun.description>A heavy machine gun firing large-caliber machine gun rounds, widely used on heavy mechs and infantry support platforms.
+
+This weapon is designed specifically for automatroid use; it is so heavy that only specific automatroids can operate it.
 
 On its tripod the receiver stops fighting the gunner: the beaten zone tightens, the belt runs longer, and the gun holds ground no shoulder ever could.</DMS_Turret_HeavyMachineGun.description>
 
+  <!-- EN: mech HMG -->
   <DMS_Gun_HeavyMachineGun.label>mech HMG</DMS_Gun_HeavyMachineGun.label>
+  <!-- EN: A heavy machine gun mounted on a tripod. -->
   <DMS_Gun_HeavyMachineGun.description>A heavy machine gun mounted on a tripod.</DMS_Gun_HeavyMachineGun.description>
+  <!-- EN: mech HMG -->
   <DMS_Gun_HeavyMachineGun.verbs.Verb_LaunchProjectile_AmmoSwitch.label>mech HMG</DMS_Gun_HeavyMachineGun.verbs.Verb_LaunchProjectile_AmmoSwitch.label>
 
   <!-- UNUSED -->

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS_OfficerTraining.questNameRules.rulesStrings>
+    <li>questName->[trainee_nameFull]'s officer training</li>
+    <li>questName->[newTitle] training requirement: [trainee_nameFull]</li>
+    <li>questName->Fleet service education notice</li>
+  </DMS_OfficerTraining.questNameRules.rulesStrings>
+
+  <DMS_OfficerTraining.questDescriptionRules.rulesStrings>
+    <li>questAskerReason->[asker_nameFull], a training instructor of [issuerFactionName], has passed a course notice on to the colony.</li>
+    <li>questAskerReason->[asker_nameFull], the case officer handling this for [issuerFactionName], has sent formal notice over the fleet band.</li>
+    <li>questAskerReason->The service education command of [issuerFactionName] has mailed a formal notice to [playerFactionName].</li>
+    <li>questTrainee->[trainee_nameFull] has the service record for the rank of [newTitle], but fleet command requires officers of that grade to log enough course hours before the post can be formally conferred.</li>
+    <li>questTrainee->[trainee_nameFull] is now carried on the Colonial Forces' promotion roll for [newTitle]. Regulations, however, forbid conferring that grade on anyone who has not sat a formal military training course.</li>
+    <li>questTrainee->[asker_nameFull], the officer who signed the notice, points out that [trainee_nameFull]'s promotion to [newTitle] stays on hold until formal military training produces a certificate of qualification.</li>
+    <li>questExplain->[asker_pronoun] will arrange an orbital transport to carry [trainee_nameDef] to the training establishment for a [trainingDays]-day [courseName], with board and medical care charged to the Colonial Forces.</li>
+    <li>questExplain->The fleet will requisition an orbital transport to collect [trainee_nameDef] for [trainingDays] days of instruction at the training centre running the [courseName].</li>
+    <li>questExplain->[trainee_nameDef] will train at the centre for [trainingDays] days, with board for the duration charged to the Colonial Forces.</li>
+    <li>questEndExplain->On graduation [trainee_pronoun] will be granted the rank of [newTitle] at the centre and returned to us, having gained the relevant experience and, quite possibly, shed a bad habit along the way.</li>
+    <li>questEndExplain->Once the course is complete [trainee_nameDef] will be commissioned and returned to [playerFactionName] intact.</li>
+    <li>questWarning->Note that [trainee_nameDef] falls under [issuerFactionName] military discipline for the duration of the course. Should [playerFactionName] turn hostile, the trainee will be detained as the regulations provide.</li>
+    <li>questDescription->[questAskerReason] [questTrainee]\n\n[questExplain] [questEndExplain]\n\n[questWarning]</li>
+    <li>questDescription->[questAskerReason] [questTrainee]\n\n[questExplain] [questEndExplain]\n\n[questWarning]</li>
+    <li>questDescription->[questAskerReason] [questTrainee]\n\n[questExplain] [questEndExplain]\n\n[questWarning]</li>
+  </DMS_OfficerTraining.questDescriptionRules.rulesStrings>
+
+</LanguageData>

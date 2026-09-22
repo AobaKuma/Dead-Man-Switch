@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: bullhound -->
+  <DMS_Mech_BullHound.label>bullhound</DMS_Mech_BullHound.label>
+  <!-- EN: A heavy quadruped automatroid built for garrison duty. An enlarged derivative of the Dogge, it gives up the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was posted at gates and corridor junctions of remnant installations to stop intruders at close range.
+
+This pattern mounts an automatic shotgun. The mount is fixed and cannot be swapped. -->
+  <DMS_Mech_BullHound.description>A heavy quadruped automatroid built for garrison duty. An enlarged derivative of the Dogge, it gives up the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was posted at gates and corridor junctions of remnant installations to stop intruders at close range.
+
+This pattern mounts an automatic shotgun. The mount is fixed and cannot be swapped.</DMS_Mech_BullHound.description>
+  <!-- EN: jaws -->
+  <DMS_Mech_BullHound.tools.jaws.label>jaws</DMS_Mech_BullHound.tools.jaws.label>
+  <!-- EN: ram -->
+  <DMS_Mech_BullHound.tools.ram.label>ram</DMS_Mech_BullHound.tools.ram.label>
+
+  <!-- EN: bullhound (flamer) -->
+  <DMS_Mech_BullHound_Flamer.label>bullhound (flamer)</DMS_Mech_BullHound_Flamer.label>
+  <!-- EN: A heavy quadruped automatroid built for garrison duty. An enlarged derivative of the Dogge, it gives up the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was posted at gates and corridor junctions of remnant installations to stop intruders at close range.
+
+This pattern mounts a Flameblaster for clearing corridors, with its plating treated against its own flame. The mount is fixed and cannot be swapped. -->
+  <DMS_Mech_BullHound_Flamer.description>A heavy quadruped automatroid built for garrison duty. An enlarged derivative of the Dogge, it gives up the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was posted at gates and corridor junctions of remnant installations to stop intruders at close range.
+
+This pattern mounts a Flameblaster for clearing corridors, with its plating treated against its own flame. The mount is fixed and cannot be swapped.</DMS_Mech_BullHound_Flamer.description>
+  <!-- EN: jaws -->
+  <DMS_Mech_BullHound_Flamer.tools.jaws.label>jaws</DMS_Mech_BullHound_Flamer.tools.jaws.label>
+  <!-- EN: ram -->
+  <DMS_Mech_BullHound_Flamer.tools.ram.label>ram</DMS_Mech_BullHound_Flamer.tools.ram.label>
+
+</LanguageData>

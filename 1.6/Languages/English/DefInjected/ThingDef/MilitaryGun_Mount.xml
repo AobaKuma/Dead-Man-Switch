@@ -19,14 +19,14 @@ This weapon is designed specifically for mounted use, so only specific units can
   <!-- EN: Kord -->
   <DMS_Gun_Kord_Vehicle.label>Kord</DMS_Gun_Kord_Vehicle.label>
   <!-- EN: Kord anti-everything machinegun chambered in death.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
-  <DMS_Gun_Kord_Vehicle.description>Kord anti-everything machinegun chambered in death.
-
-This weapon is designed specifically for mounted use, so only specific units can equip it.</DMS_Gun_Kord_Vehicle.description>
+  <DMS_Gun_Kord_Vehicle.description>A large-caliber vehicle-mounted machine gun for heavy units.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</DMS_Gun_Kord_Vehicle.description>
   <!-- EN: Kord -->
   <DMS_Gun_Kord_Vehicle.verbs.Verb_Shoot.label>Kord</DMS_Gun_Kord_Vehicle.verbs.Verb_Shoot.label>
   
   <!-- UNUSED -->
   <DMS_Gun_Kord_Vehicle.tools.barrel.label>barrel</DMS_Gun_Kord_Vehicle.tools.barrel.label>
+  <DMS_Gun_Kord_Vehicle.tools.muzzle.label>muzzle</DMS_Gun_Kord_Vehicle.tools.muzzle.label>
+  <DMS_Gun_Kord_Vehicle.verbs.Verb_ShootCE.label>Kord</DMS_Gun_Kord_Vehicle.verbs.Verb_ShootCE.label>
   
   <!-- EN: 2B9A Vasilek -->
   <DMS_Gun_Vasilek_B.label>2B9A Vasilek</DMS_Gun_Vasilek_B.label>
@@ -34,6 +34,11 @@ This weapon is designed specifically for mounted use, so only specific units can
   <DMS_Gun_Vasilek_B.description>An ancient design for rapid fire indirect artillery fire. The Vasilek can fire four mortar rounds in one burst.</DMS_Gun_Vasilek_B.description>
   <!-- EN: 2B9A Vasilek -->
   <DMS_Gun_Vasilek_B.verbs.Verb_Shoot.label>2B9A Vasilek</DMS_Gun_Vasilek_B.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_Vasilek_B.tools.barrel.label>barrel</DMS_Gun_Vasilek_B.tools.barrel.label>
+  <DMS_Gun_Vasilek_B.tools.muzzle.label>muzzle</DMS_Gun_Vasilek_B.tools.muzzle.label>
+  <DMS_Gun_Vasilek_B.verbs.Verb_ShootMortarCE.label>2B9A Vasilek</DMS_Gun_Vasilek_B.verbs.Verb_ShootMortarCE.label>
   
   <!-- EN: Mounted HMG -->
   <DMS_HeavyMachineGunMounted.label>Mounted HMG</DMS_HeavyMachineGunMounted.label>
@@ -46,38 +51,43 @@ This weapon is designed specifically for mounted use, so only specific units can
   
   <!-- UNUSED -->
   <DMS_HeavyMachineGunMounted.tools.barrel.label>barrel</DMS_HeavyMachineGunMounted.tools.barrel.label>
+  <DMS_HeavyMachineGunMounted.tools.muzzle.label>muzzle</DMS_HeavyMachineGunMounted.tools.muzzle.label>
+  <DMS_HeavyMachineGunMounted.verbs.Verb_ShootCE.label>Mounted HMG</DMS_HeavyMachineGunMounted.verbs.Verb_ShootCE.label>
   
   <!-- EN: Mounted LMG -->
   <DMS_LightMachineGunMounted.label>Mounted LMG</DMS_LightMachineGunMounted.label>
-  <!-- EN: A Suppressive weapon chambered in a standard rifle round.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
-  <DMS_LightMachineGunMounted.description>A Suppressive weapon chambered in a standard rifle round.
-
-This weapon is designed specifically for mounted use, so only specific units can equip it.</DMS_LightMachineGunMounted.description>
+  <!-- EN: A suppressive weapon chambered in a standard rifle round.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
+  <DMS_LightMachineGunMounted.description>A suppressive weapon chambered in full-power rifle rounds.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</DMS_LightMachineGunMounted.description>
   <!-- EN: Mounted LMG -->
   <DMS_LightMachineGunMounted.verbs.Verb_Shoot.label>Mounted LMG</DMS_LightMachineGunMounted.verbs.Verb_Shoot.label>
   
   <!-- UNUSED -->
   <DMS_LightMachineGunMounted.tools.barrel.label>barrel</DMS_LightMachineGunMounted.tools.barrel.label>
+  <DMS_LightMachineGunMounted.tools.muzzle.label>muzzle</DMS_LightMachineGunMounted.tools.muzzle.label>
+  <DMS_LightMachineGunMounted.verbs.Verb_ShootCE.label>Mounted LMG</DMS_LightMachineGunMounted.verbs.Verb_ShootCE.label>
   
   <!-- EN: Close Inbound Defense System -->
   <DMS_ShotgunGunMounted.label>Close Inbound Defense System</DMS_ShotgunGunMounted.label>
   <!-- EN: A multi-barrel shotgun designed to suppress enemies at close-range.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
-  <DMS_ShotgunGunMounted.description>A multi-barrel shotgun designed to suppress enemies at close-range.
-
-This weapon is designed specifically for mounted use, so only specific units can equip it.</DMS_ShotgunGunMounted.description>
+  <DMS_ShotgunGunMounted.description>A multi-barrel shotgun turret for suppressing enemy infantry at close quarters. It reacts quickly at short range and fires three shells in succession.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</DMS_ShotgunGunMounted.description>
   <!-- EN: Close Inbound Defense System -->
   <DMS_ShotgunGunMounted.verbs.Verb_Shoot.label>Close Inbound Defense System</DMS_ShotgunGunMounted.verbs.Verb_Shoot.label>
   
+  <!-- UNUSED -->
+  <DMS_ShotgunGunMounted.tools.barrel.label>barrel</DMS_ShotgunGunMounted.tools.barrel.label>
+  <DMS_ShotgunGunMounted.tools.muzzle.label>muzzle</DMS_ShotgunGunMounted.tools.muzzle.label>
+  <DMS_ShotgunGunMounted.verbs.Verb_ShootCE.label>Close Inbound Defense System</DMS_ShotgunGunMounted.verbs.Verb_ShootCE.label>
+  
   <!-- EN: Mounted SMG -->
   <DMS_SubMachineGunMounted.label>Mounted SMG</DMS_SubMachineGunMounted.label>
-  <!-- EN: A Suppressive weapon chambered in pistol rounds.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
-  <DMS_SubMachineGunMounted.description>A Suppressive weapon chambered in pistol rounds.
-
-This weapon is designed specifically for mounted use, so only specific units can equip it.</DMS_SubMachineGunMounted.description>
+  <!-- EN: A suppressive weapon chambered in pistol rounds.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
+  <DMS_SubMachineGunMounted.description>A suppressive weapon chambered in pistol-caliber rounds.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</DMS_SubMachineGunMounted.description>
   <!-- EN: Mounted SMG -->
   <DMS_SubMachineGunMounted.verbs.Verb_Shoot.label>Mounted SMG</DMS_SubMachineGunMounted.verbs.Verb_Shoot.label>
   
   <!-- UNUSED -->
   <DMS_SubMachineGunMounted.tools.barrel.label>barrel</DMS_SubMachineGunMounted.tools.barrel.label>
+  <DMS_SubMachineGunMounted.tools.muzzle.label>muzzle</DMS_SubMachineGunMounted.tools.muzzle.label>
+  <DMS_SubMachineGunMounted.verbs.Verb_ShootCE.label>Mounted SMG</DMS_SubMachineGunMounted.verbs.Verb_ShootCE.label>
   
 </LanguageData>

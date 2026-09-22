@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 單一 Def 的兩種版本共用同一份規則表，靠語法常數與 priority 分流。
+       翻譯時必須保留 (askerIsNull==true) / (asker_factionLeader==True) 這些條件
+       以及 (priority=1)，否則兩種版本會抓錯文本。
+
+       Both variants share one rule set, separated by grammar constants and rule
+       priority. The (askerIsNull==true) / (asker_factionLeader==True) conditions
+       and (priority=1) must be preserved verbatim in translation. -->
+
+  <DMS_PirateAssemblyRaid.questNameRules.rulesStrings>
+    <li>questName(priority=1)->[asker_nameDef] and the [yard]</li>
+    <li>questName(priority=1)->The [yard] Contract</li>
+    <li>questName->[bandit] [yard]</li>
+    <li>bandit->Pirate</li>
+    <li>bandit->Raider</li>
+    <li>bandit->Outlaw</li>
+    <li>bandit->Marauder</li>
+    <li>yard->Assembly Yard</li>
+    <li>yard->Mech Works</li>
+    <li>yard->Foundry</li>
+  </DMS_PirateAssemblyRaid.questNameRules.rulesStrings>
+
+  <DMS_PirateAssemblyRaid.questDescriptionRules.rulesStrings>
+    <li>questDescription(askerIsNull==true)->We've intercepted messages about an old automatroid assembly yard not far from [map_definite]. A [siteFaction_name] crew has seized it and put the line back into service. The machines coming off it are being built for their own raids.\n\nThe yard is defended by (*Threat)[enemiesCount] [enemiesLabel](/Threat).\n\nWhatever is still on the assembly racks is ours for the taking. Units that have not been finished never had their command authentication locked, so a mechanitor with spare bandwidth can hack one and take control of it.\n\nEntering the yard will alert the crew, and enemy reinforcements will arrive some time later.</li>
+    <li>questDescription(asker_factionLeader==True)->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has sent us a message. A [siteFaction_name] crew has seized an old automatroid assembly yard nearby and put the line back into service. Every machine it turns out is one more that will be hitting [asker_faction_name] caravans.\n\n[asker_nameDef] is asking us to shut the yard down, which means eliminating all enemies and turrets. It is defended by (*Threat)[enemiesCount] [enemiesLabel](/Threat).\n\nWhatever is still on the assembly racks is ours to keep. Units that have not been finished never had their command authentication locked, so a mechanitor with spare bandwidth can hack one and take control of it.\n\nEntering the yard will alert the crew, and enemy reinforcements will arrive some time later.</li>
+  </DMS_PirateAssemblyRaid.questDescriptionRules.rulesStrings>
+
+</LanguageData>

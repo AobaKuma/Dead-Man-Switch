@@ -1,52 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-
-  <!-- ============ 残余机场 Remnant airfield ============ -->
-  <!-- EN: remnant airfield -->
-  <DMS_AirportSite.label>残余机场</DMS_AirportSite.label>
-  <!-- EN: A Legacy remnant drone airfield. The control tower still runs a high-powered decoy radio tuned to the cluster weaver's command band - once the garrison is dealt with, the transmitter can call the mothership down onto the airfield instead of onto your home. -->
-  <DMS_AirportSite.description>一座先锋残余的无人机机场。塔台里仍运作著一台调到集群织鸟指挥频段的高功率诱饵无线电——只要先解决驻守的守军，就能用它把母机引到这座机场，而不是引到你家门口。</DMS_AirportSite.description>
-  <!-- EN: You have arrived at the remnant airfield. A drone garrison holds the tower and the aprons.\n\nThe decoy radio in the tower is intact. Clear the field, then use it to call the cluster weaver down here - far from your colony. -->
-  <DMS_AirportSite.arrivedLetter>你已抵达残余机场。一支无人机守军占据着塔台与停机坪。\n\n塔台里的诱饵无线电完好无损。先肃清机场，再用它把集群织鸟引到这里——远离你的殖民地。</DMS_AirportSite.arrivedLetter>
-
-  <!-- ============ 储存库地面站 Vault access station ============ -->
-  <!-- EN: vault access station -->
-  <DMS_VaultStationSite.label>储存库地面站</DMS_VaultStationSite.label>
-  <!-- EN: A Legacy remnant surface station built over a buried military storage vault. The freight elevator is locked under an armored cover plate; the station's security console is the only thing that can raise it. -->
-  <DMS_VaultStationSite.description>一座先锋残余的地面站，建在一处埋藏于地下的军事储存库之上。货运电梯被锁在装甲封板之下；站内的安全控制台是唯一能升起封板的东西。</DMS_VaultStationSite.description>
-  <!-- EN: You have arrived at the vault access station. A remnant garrison holds the compound.\n\nThe freight elevator is sealed under its cover plate. Hack the security console in the control room to raise it. -->
-  <DMS_VaultStationSite.arrivedLetter>你已抵达储存库地面站。一支残余守军驻守着这片设施。\n\n货运电梯被封板锁住。骇入控制室里的安全控制台就能将它升起。</DMS_VaultStationSite.arrivedLetter>
-
-  <!-- ============ 残余维修站 Remnant repair depot ============ -->
-  <!-- EN: remnant repair depot -->
-  <DMS_RepairStationSite.label>残余维修站</DMS_RepairStationSite.label>
-  <!-- EN: A Legacy remnant field maintenance depot. Units too damaged to walk were cradled here for servicing; two of them are still clamped in their cradles behind a sealed door, waiting for a crew that never came back. -->
-  <DMS_RepairStationSite.description>一座先锋残余的野战维修站。损毁到无法行走的机体会被架上这里的支架维修；其中两具至今仍被夹在密封门后的支架上，等著一支再也没回来的维修班。</DMS_RepairStationSite.description>
-  <!-- EN: You have arrived at the remnant repair depot. Automatroids and their drone escorts hold the yard.\n\nThe maintenance bay is sealed. Hack the depot's security console to release the door and reach the cradled units inside. -->
-  <DMS_RepairStationSite.arrivedLetter>你已抵达残余维修站。自动机兵与它们的无人机护卫占据着厂区。\n\n维修间已被密封。骇入维修站的安全控制台以放行门扉，就能接触到里面架在支架上的机体。</DMS_RepairStationSite.arrivedLetter>
-
-  <!-- ============ 残余前进基地 Remnant forward base ============ -->
-  <!-- EN: remnant forward base -->
-  <DMS_OperationBaseSite.label>残余前进基地</DMS_OperationBaseSite.label>
-  <!-- EN: A Legacy remnant forward operating base. Razor wire, sandbags and a supply dump on the surface; a freight elevator into a buried store behind two sets of blast doors. -->
-  <DMS_OperationBaseSite.description>一座先锋残余的前进作战基地。地面上是铁丝网、沙包与物资堆放场；两道防爆门之后，一座货运电梯通往地下库房。</DMS_OperationBaseSite.description>
-  <!-- EN: You have arrived at the remnant forward base. A line infantry garrison holds the wire.\n\nThe supply dump is in the open. The freight elevator at the back is behind blast doors that answer to two security consoles; hack both, then hack the lift itself to go down. -->
-  <DMS_OperationBaseSite.arrivedLetter>你已抵达残余前进基地。一支线列步兵守军把守着铁丝网防线。\n\n物资堆放场就在露天处。后方的货运电梯位在防爆门之后，防爆门听命于两座安全控制台；两座都骇入之后，再骇入电梯本身即可下去。</DMS_OperationBaseSite.arrivedLetter>
-
-  <!-- ============ 荒废残余站点 Derelict remnant station ============ -->
-  <!-- EN: derelict remnant station -->
-  <DMS_SiteStationSite.label>荒废残余站点</DMS_SiteStationSite.label>
-  <!-- EN: A sprawling pre-war station, half of it collapsed, that a Legacy remnant detachment has dug into. Ancient supply crates and wrecked machinery are scattered through the ruins. -->
-  <DMS_SiteStationSite.description>一座占地广阔、半数已经倒塌的战前站点，一支先锋残余分遣队据守于此。古代补给箱与报废的机械散落在废墟各处。</DMS_SiteStationSite.description>
-  <!-- EN: You have arrived at the derelict station. A remnant detachment is dug in among the ruins.\n\nThe station is large and the garrison is spread out - expect them to converge once the shooting starts. -->
-  <DMS_SiteStationSite.arrivedLetter>你已抵达荒废站点。一支残余分遣队据守在废墟之中。\n\n这座站点很大，守军分布得很散——一旦开火，预期他们会朝你集结过来。</DMS_SiteStationSite.arrivedLetter>
-
-  <!-- ============ 废弃发射场 Abandoned launch site ============ -->
-  <!-- EN: abandoned launch site -->
-  <DMS_LaunchSiteSite.label>废弃发射场</DMS_LaunchSiteSite.label>
-  <!-- EN: A wrecked Legacy missile launch complex. The launchers are gone and the compound is falling apart, but a remnant patrol still sweeps the perimeter, and the wreckage has never been salvaged. -->
-  <DMS_LaunchSiteSite.description>一处报废的先锋导弹发射阵地。发射器早已不在，整片设施也正在崩坏，但一支残余巡逻队仍在外围巡视，而那些残骸从来没有人打捞过。</DMS_LaunchSiteSite.description>
-  <!-- EN: You have arrived at the abandoned launch site. A remnant patrol is sweeping the wreckage.\n\nThe complex is wide open and full of cover. Deal with the patrol, then strip what the launch crews left behind. -->
-  <DMS_LaunchSiteSite.arrivedLetter>你已抵达废弃发射场。一支残余巡逻队正在残骸间巡视。\n\n这片阵地开阔而掩体遍布。先解决巡逻队，再搜刮发射组留下的一切。</DMS_LaunchSiteSite.arrivedLetter>
-
-</LanguageData>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- ============ 残余机场 Remnant airfield ============ -->
+  <!-- EN: remnant airfield -->
+  <DMS_AirportSite.label>残余机场</DMS_AirportSite.label>
+  <!-- EN: A Legacy remnant drone airfield. The control tower still runs a high-powered decoy radio tuned to the cluster weaver's command band - once the garrison is dealt with, the transmitter can call the mothership down onto the airfield instead of onto your home. -->
+  <DMS_AirportSite.description>一座先锋残余的无人机机场。塔台里仍运作着一台调到集群织鸟指挥频段的高功率诱饵无线电——只要先解决驻守的守军，就能用它把母机引到这座机场，而不是引到你家门口。</DMS_AirportSite.description>
+  <!-- EN: You have arrived at the remnant airfield. A drone garrison holds the tower and the aprons.\n\nThe decoy radio in the tower is intact. Clear the field, then use it to call the cluster weaver down here - far from your colony. -->
+  <DMS_AirportSite.arrivedLetter>你已抵达残余机场。一支无人机守军占据着塔台与停机坪。\n\n塔台里的诱饵无线电完好无损。先肃清机场，再用它把集群织鸟引到这里——远离你的殖民地。</DMS_AirportSite.arrivedLetter>
+
+  <!-- ============ 储存库地面站 Vault access station ============ -->
+  <!-- EN: vault access station -->
+  <DMS_VaultStationSite.label>储存库地面站</DMS_VaultStationSite.label>
+  <!-- EN: A Legacy remnant surface station built over a buried military storage vault. The freight elevator is locked under an armored cover plate; the station's security console is the only thing that can raise it. -->
+  <DMS_VaultStationSite.description>一座先锋残余的地面站，建在一处埋藏于地下的军事储存库之上。货运电梯被锁在装甲封板之下；站内的安全控制台是唯一能升起封板的东西。</DMS_VaultStationSite.description>
+  <!-- EN: You have arrived at the vault access station. A remnant garrison holds the compound.\n\nThe freight elevator is sealed under its cover plate. Hack the security console in the control room to raise it. -->
+  <DMS_VaultStationSite.arrivedLetter>你已抵达储存库地面站。一支残余守军驻守着这片设施。\n\n货运电梯被封板锁住。骇入控制室里的安全控制台就能将它升起。</DMS_VaultStationSite.arrivedLetter>
+
+  <!-- ============ 残余维修站 Remnant repair depot ============ -->
+  <!-- EN: remnant repair depot -->
+  <DMS_RepairStationSite.label>残余维修站</DMS_RepairStationSite.label>
+  <!-- EN: A Legacy remnant field maintenance depot. Units too damaged to walk were cradled here for servicing; two of them are still clamped in their cradles behind a sealed door, waiting for a crew that never came back. -->
+  <DMS_RepairStationSite.description>一座先锋残余的野战维修站。损毁到无法行走的机体会被架上这里的支架维修；其中两具至今仍被夹在密封门后的支架上，等着一支再也没回来的维修班。</DMS_RepairStationSite.description>
+  <!-- EN: You have arrived at the remnant repair depot. Automatroids and their drone escorts hold the yard.\n\nThe maintenance bay is sealed. Hack the depot's security console to release the door and reach the cradled units inside. -->
+  <DMS_RepairStationSite.arrivedLetter>你已抵达残余维修站。自动机兵与它们的无人机护卫占据着厂区。\n\n维修间已被密封。骇入维修站的安全控制台以放行门扉，就能接触到里面架在支架上的机体。</DMS_RepairStationSite.arrivedLetter>
+
+  <!-- ============ 残余前进基地 Remnant forward base ============ -->
+  <!-- EN: remnant forward base -->
+  <DMS_OperationBaseSite.label>残余前进基地</DMS_OperationBaseSite.label>
+  <!-- EN: A Legacy remnant forward operating base. Razor wire, sandbags and a supply dump on the surface; a freight elevator into a buried store behind two sets of blast doors. -->
+  <DMS_OperationBaseSite.description>一座先锋残余的前进作战基地。地面上是铁丝网、沙包与物资堆放场；两道防爆门之后，一座货运电梯通往地下库房。</DMS_OperationBaseSite.description>
+  <!-- EN: You have arrived at the remnant forward base. A line infantry garrison holds the wire.\n\nThe supply dump is in the open. The freight elevator at the back is behind blast doors that answer to two security consoles; hack both, then hack the lift itself to go down. -->
+  <DMS_OperationBaseSite.arrivedLetter>你已抵达残余前进基地。一支线列步兵守军把守着铁丝网防线。\n\n物资堆放场就在露天处。后方的货运电梯位在防爆门之后，防爆门听命于两座安全控制台；两座都骇入之后，再骇入电梯本身即可下去。</DMS_OperationBaseSite.arrivedLetter>
+
+  <!-- ============ 荒废残余站点 Derelict remnant station ============ -->
+  <!-- EN: derelict remnant station -->
+  <DMS_SiteStationSite.label>荒废残余站点</DMS_SiteStationSite.label>
+  <!-- EN: A sprawling pre-war station, half of it collapsed, that a Legacy remnant detachment has dug into. Ancient supply crates and wrecked machinery are scattered through the ruins. -->
+  <DMS_SiteStationSite.description>一座占地广阔、半数已经倒塌的战前站点，一支先锋残余分遣队据守于此。古代补给箱与报废的机械散落在废墟各处。</DMS_SiteStationSite.description>
+  <!-- EN: You have arrived at the derelict station. A remnant detachment is dug in among the ruins.\n\nThe station is large and the garrison is spread out - expect them to converge once the shooting starts. -->
+  <DMS_SiteStationSite.arrivedLetter>你已抵达荒废站点。一支残余分遣队据守在废墟之中。\n\n这座站点很大，守军分布得很散——一旦开火，预期他们会朝你集结过来。</DMS_SiteStationSite.arrivedLetter>
+
+  <!-- ============ 废弃发射场 Abandoned launch site ============ -->
+  <!-- EN: abandoned launch site -->
+  <DMS_LaunchSiteSite.label>废弃发射场</DMS_LaunchSiteSite.label>
+  <!-- EN: A wrecked Legacy missile launch complex. The launchers are gone and the compound is falling apart, but a remnant patrol still sweeps the perimeter, and the wreckage has never been salvaged. -->
+  <DMS_LaunchSiteSite.description>一处报废的先锋导弹发射阵地。发射器早已不在，整片设施也正在崩坏，但一支残余巡逻队仍在外围巡视，而那些残骸从来没有人打捞过。</DMS_LaunchSiteSite.description>
+  <!-- EN: You have arrived at the abandoned launch site. A remnant patrol is sweeping the wreckage.\n\nThe complex is wide open and full of cover. Deal with the patrol, then strip what the launch crews left behind. -->
+  <DMS_LaunchSiteSite.arrivedLetter>你已抵达废弃发射场。一支残余巡逻队正在残骸间巡视。\n\n这片阵地开阔而掩体遍布。先解决巡逻队，再搜刮发射组留下的一切。</DMS_LaunchSiteSite.arrivedLetter>
+
+</LanguageData>

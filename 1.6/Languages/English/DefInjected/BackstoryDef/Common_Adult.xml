@@ -18,16 +18,16 @@
   <!-- EN: [PAWN_nameDef] participated in the grand colonization and came to a rimworld. Their job was to establish a functional forward outpost well in advance of the main Colonial Force and send data back to show the fleet that the planet was still worth the long voyage. -->
   <DMS_Civilian03.description>[PAWN_nameDef] participated in the grand colonization and came to a rimworld. Their job was to establish a functional forward outpost well in advance of the main Colonial Force and send data back to show the fleet that the planet was still worth the long voyage.</DMS_Civilian03.description>
   <!-- EN: Colonial Astropath -->
-  <DMS_Civilian03.title>Colonial Astropath</DMS_Civilian03.title>
+  <DMS_Civilian03.title>Colonial Vanguard</DMS_Civilian03.title>
   <!-- EN: Astropath -->
-  <DMS_Civilian03.titleShort>Astropath</DMS_Civilian03.titleShort>
+  <DMS_Civilian03.titleShort>Vanguard</DMS_Civilian03.titleShort>
   
   <!-- EN: [PAWN_nameDef] participated in the grand colonization and came to a rimworld. Their duty was to exterminate any alien diseases or biological hazards found by the forward outpost in advance of the main Colonial Force's arrival. -->
   <DMS_Civilian04.description>[PAWN_nameDef] participated in the grand colonization and came to a rimworld. Their duty was to exterminate any alien diseases or biological hazards found by the forward outpost in advance of the main Colonial Force's arrival.</DMS_Civilian04.description>
   <!-- EN: Xeno Biologist -->
-  <DMS_Civilian04.title>Xeno Biologist</DMS_Civilian04.title>
+  <DMS_Civilian04.title>Vanguard Medic</DMS_Civilian04.title>
   <!-- EN: Biologist -->
-  <DMS_Civilian04.titleShort>Biologist</DMS_Civilian04.titleShort>
+  <DMS_Civilian04.titleShort>Medic</DMS_Civilian04.titleShort>
   
   <!-- EN: [PAWN_nameDef] is from a professional pioneering group. [PAWN_nameDef] was responsible for researching the flora and fauna of the planet before the arrival of the main Colonial Force to make their future colonization work easier. -->
   <DMS_Civilian05.description>[PAWN_nameDef] is from a professional pioneering group. [PAWN_nameDef] was responsible for researching the flora and fauna of the planet before the arrival of the main Colonial Force to make their future colonization work easier.</DMS_Civilian05.description>
@@ -65,7 +65,7 @@
   <DMS_Civilian09.titleShort>Farmer</DMS_Civilian09.titleShort>
   
   <!-- EN: >[PAWN_nameDef] was responsible for smithing tools and replacement parts for a colony site where a stamping printer was not allocated. [PAWN_pronoun] developed a working knowledge of cutting and assembly machinery. -->
-  <DMS_Civilian10.description>>[PAWN_nameDef] was responsible for smithing tools and replacement parts for a colony site where a stamping printer was not allocated. [PAWN_pronoun] developed a working knowledge of cutting and assembly machinery.</DMS_Civilian10.description>
+  <DMS_Civilian10.description>[PAWN_nameDef] was responsible for hand-forging tools and replacement parts at colony sites that were never allocated a stamping printer, and picked up a working knowledge of tailoring and machine assembly along the way.</DMS_Civilian10.description>
   <!-- EN: Colonial Mechanic -->
   <DMS_Civilian10.title>Colonial Mechanic</DMS_Civilian10.title>
   <!-- EN: Mechanic -->

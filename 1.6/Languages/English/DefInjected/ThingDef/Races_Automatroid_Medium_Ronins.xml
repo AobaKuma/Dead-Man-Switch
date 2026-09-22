@@ -4,7 +4,7 @@
   <!-- EN: Gladiator -->
   <DMS_Mech_Gladiator.label>Gladiator</DMS_Mech_Gladiator.label>
   <!-- EN: A melee specialized variant of the Ronin. The Gladiator maintains the Ronin's mobility and armor and comes with an upgraded melee combat module and is equipped with an assault shield. -->
-  <DMS_Mech_Gladiator.description>A melee specialized variant of the Ronin. The Gladiator maintains the Ronin's mobility and armor and comes with an upgraded melee combat module and is equipped with an assault shield.</DMS_Mech_Gladiator.description>
+  <DMS_Mech_Gladiator.description>A melee-specialized conversion of the Ronin. It retains the Ronin's mobility, trading frontal armor for a highly agile body structure and protection reinforced against melee blunt impacts, and carries a nimble melee shield.</DMS_Mech_Gladiator.description>
   <!-- EN: assault shield -->
   <DMS_Mech_Gladiator.tools.assault_shield.label>assault shield</DMS_Mech_Gladiator.tools.assault_shield.label>
   <!-- EN: right fist -->
@@ -13,7 +13,7 @@
   <!-- EN: Phalanx -->
   <DMS_Mech_Phalanx.label>Phalanx</DMS_Mech_Phalanx.label>
   <!-- EN: The Phalanx is a cheap mass-producible variant specialized for urban combat. It comes packed with assault armor and high mobility package making it a fierce unit in close quarters combat. -->
-  <DMS_Mech_Phalanx.description>The Phalanx is a cheap mass-producible variant specialized for urban combat. It comes packed with assault armor and high mobility package making it a fierce unit in close quarters combat.</DMS_Mech_Phalanx.description>
+  <DMS_Mech_Phalanx.description>A mass-produced auxiliary unit with the sonar equipment and part of the armor stripped out to keep the unit price down, dedicated to providing direct fire cover for ronin squads in urban combat. Slower and thinner-skinned than the Ronin, it is designed as a coordinated fire unit spread out in numbers, not a spearhead.</DMS_Mech_Phalanx.description>
   <!-- EN: head -->
   <DMS_Mech_Phalanx.tools.head.label>head</DMS_Mech_Phalanx.tools.head.label>
   <!-- EN: left fist -->
@@ -29,6 +29,11 @@
   <DMS_Mech_Protector.tools.ballistic_shield.label>ballistic shield</DMS_Mech_Protector.tools.ballistic_shield.label>
   <!-- EN: right fist -->
   <DMS_Mech_Protector.tools.right_fist.label>right fist</DMS_Mech_Protector.tools.right_fist.label>
+  
+  <!-- UNUSED -->
+  <DMS_Mech_Protector.tools.head.label>head</DMS_Mech_Protector.tools.head.label>
+  <DMS_Mech_Protector.tools.left_fist.label>left fist</DMS_Mech_Protector.tools.left_fist.label>
+  <DMS_Mech_Protector.tools.right_fist-1.label>right fist</DMS_Mech_Protector.tools.right_fist-1.label>
   
   <!-- EN: Ronin -->
   <DMS_Mech_Ronin.label>Ronin</DMS_Mech_Ronin.label>
@@ -49,7 +54,7 @@
   <!-- EN: Siegebreaker -->
   <DMS_Mech_Siegebreaker.label>Siegebreaker</DMS_Mech_Siegebreaker.label>
   <!-- EN: The Siegebreaker comes with top of the line armor making it ideal for sapping and breaching jobs. -->
-  <DMS_Mech_Siegebreaker.description>The Siegebreaker comes with top of the line armor making it ideal for sapping and breaching jobs.</DMS_Mech_Siegebreaker.description>
+  <DMS_Mech_Siegebreaker.description>With superior armor protection, the Siegebreaker stands at the very front of the line to break through enemy defenses.</DMS_Mech_Siegebreaker.description>
   <!-- EN: head -->
   <DMS_Mech_Siegebreaker.tools.head.label>head</DMS_Mech_Siegebreaker.tools.head.label>
   <!-- EN: left fist -->
