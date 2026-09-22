@@ -8,7 +8,7 @@
   </DMS_SupplyChain.questNameRules.rulesStrings>
 
   <DMS_SupplyChain.questDescriptionRules.rulesStrings>
-    <li>questDescription->來自[issuerFactionName]的後勤調度員[asker_nameFull]向我們傳遞了關於[categoryLabel]的長期供應需求。他們需要大約[totalStages]期的[categoryLabel]供應——總量約 [approxTotalCount] 個——用於[supplyPurpose]。\n\n根據[asker_possessive]的統計，第一期貨物需要大約 [firstCount] 個[categoryLabel]。如果我們同意供應，[asker_pronoun]就會[deployMethod]部署一架機動貨櫃降落在[map_definite]。第一期貨物需要在[deadlineDays]天內完成裝貨並發射，以趕上[freightWindow]。\n\n[asker_nameDef]向我們保證，如果能順利完成第一期供應，後續的[categoryLabel]供應合約仍會優先提供給我們，並會在所有供應合約完成後按市價補償貨品的價格差額。</li>
+    <li>questDescription->來自[issuerFactionName]的後勤調度員[asker_nameFull]向我們傳遞了關於[categoryLabel]的長期供應需求。他們需要大約[totalStages]期的[categoryLabel]供應，總量約 [approxTotalCount] 個，用於[supplyPurpose]。\n\n根據[asker_possessive]的統計，第一期貨物需要大約 [firstCount] 個[categoryLabel]。如果我們同意供應，[asker_pronoun]就會[deployMethod]部署一架機動貨櫃降落在[map_definite]。第一期貨物需要在[deadlineDays]天內完成裝貨並發射，以趕上[freightWindow]。\n\n[asker_nameDef]向我們保證，如果能順利完成第一期供應，後續的[categoryLabel]供應合約仍會優先提供給我們，並會在所有供應合約完成後按市價補償貨品的價格差額。</li>
 
     <li>supplyPurpose->維持前線駐軍未來幾個象限月的補給</li>
     <li>supplyPurpose->填補他們行星地面儲備的缺口</li>

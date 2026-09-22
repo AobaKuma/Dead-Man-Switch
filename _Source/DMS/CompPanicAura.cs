@@ -128,7 +128,7 @@ namespace DMS
         /// Pawns with BodySize > this value are immune (treated as too large/imposing to panic).
         /// Pawn.BodySize = CurLifeStage.bodySizeFactor × RaceProps.baseBodySize.
         /// Reference values: human ≈ 1.0, muffalo ≈ 2.0, heavy mechs vary.
-        /// Default is float.MaxValue (no exemption — all body sizes are affected).
+        /// Default is float.MaxValue (no exemption; all body sizes are affected).
         /// </summary>
         public float maxAffectedBodySize = float.MaxValue;
 

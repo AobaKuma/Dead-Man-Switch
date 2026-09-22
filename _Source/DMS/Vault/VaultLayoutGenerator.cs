@@ -368,10 +368,10 @@ namespace DMS
         }
 
         /// <summary>
-        /// 房間要整個在容器裡，而且內部（去掉牆）不能碰到任何既有矩形，既有矩形的內部也不能碰到它——
+        /// 房間要整個在容器裡，而且內部（去掉牆）不能碰到任何既有矩形，既有矩形的內部也不能碰到它；
         /// 牆線可以共用，房間本身不能疊。
         /// The room must sit inside the container, and its interior may not touch any existing rect,
-        /// nor may any existing interior touch it — walls may be shared, rooms may not overlap.
+        /// nor may any existing interior touch it; walls may be shared, rooms may not overlap.
         /// </summary>
         private static bool Fits(CellRect container, CellRect rect, List<CellRect> corridors, List<CellRect> rooms)
         {

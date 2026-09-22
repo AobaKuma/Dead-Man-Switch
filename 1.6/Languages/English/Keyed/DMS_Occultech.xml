@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- ==================================================================== -->
+  <!-- 封存科技制裁 / Occultech sanctions                                    -->
+  <!-- 由 DMS.OccultechSanctionUtility 與 Patch_OccultechSanction 發出。      -->
+  <!-- ==================================================================== -->
+
+  <!-- 豁免：臨時解禁令。{0} 研究, {1} 軍官名, {2} 其官階, {3} 艦隊名 -->
+  <DMS_Occultech_ExemptLabel>Temporary release order: {0}</DMS_Occultech_ExemptLabel>
+  <DMS_Occultech_ExemptText>Our researchers have decoded {0}.\n\n{1} holds the rank of {2} on the {3} service roll, and has filed a temporary release order against the classification on the grounds of emergency necessity. The file is logged as an authorized wartime exception rather than an unauthorized decryption.\n\nNo sanction follows. The order stands only as long as an officer of that rank remains with us.</DMS_Occultech_ExemptText>
+
+  <!-- 限制級：扣好感度。{0} 研究, {1} 艦隊名, {2} 扣除量, {3} 變動前, {4} 變動後, {5} 豁免所需官階 -->
+  <DMS_Occultech_RestrictedLabel>Restricted file opened: {0}</DMS_Occultech_RestrictedLabel>
+  <DMS_Occultech_RestrictedText>We have decoded {0}, a restricted-class file. Technology at this classification is withheld for environmental and ethical reasons, or for the permanent changes it works on the people who use it, not because it is dangerous to anyone else.\n\n{1} has logged the decryption against our name. Goodwill {3} → {4} ({2}).\n\nHad a colonist of {5} rank or above been with us, they could have signed a temporary release order and the matter would have ended there.</DMS_Occultech_RestrictedText>
+
+  <!-- 封存級：立即敵對。{0} 研究, {1} 艦隊名, {2} 豁免所需官階 -->
+  <DMS_Occultech_SealedLabel>Seal broken: {0}</DMS_Occultech_SealedLabel>
+  <DMS_Occultech_SealedText>We have opened {0}, a sealed-class file. Technology at this classification is withheld because its spread starts arms races across star systems. Inside the fleets the contents are common knowledge: line personnel are taught to recognize the signature and report it. Outside them, holding it is cause enough.\n\n{1} has recognized the signature and declared us hostile.\n\nWhile we keep any sealed technology, they will go no further than a truce: the relationship cannot return to alliance until we formally renounce the file over the comms console. A colonist of {2} rank or above could have carried it without any of this.</DMS_Occultech_SealedText>
+  <DMS_Occultech_SealedRaidLine>{0} response elements are already inbound.</DMS_Occultech_SealedRaidLine>
+
+  <!-- 隱匿級：永久敵對。{0} 研究, {1} 艦隊名, {2} 連坐派系名單 -->
+  <DMS_Occultech_OccultedLabel>Occulted file opened: {0}</DMS_Occultech_OccultedLabel>
+  <DMS_Occultech_OccultedText>We have opened {0}, an occulted-class file. Knowing that technology of this class exists is itself the hazard: every seal that fails is another chance for hundreds of millions of people to be spent on someone's private ambition.\n\n{1} has declared a standing kill order against this colony. There is no release order, no rank and no argument that lifts it. Their hunting elements will keep coming.\n\nWord has gone out along their lines. {2} have broken off with us as well; those ties, at least, can be repaired in time.\n\nOne road out remains. Submit our highest-ranking officer to a fleet court-martial and let them serve a full year, and the kill order ends. At neutral, never better.</DMS_Occultech_OccultedText>
+  <DMS_Occultech_OccultedNoAllies>No other faction</DMS_Occultech_OccultedNoAllies>
+
+  <!-- 關係校正提示。{0} 艦隊名 -->
+  <DMS_Occultech_AllyBlockedMessage>{0} will not ally with us while we hold sealed technology.</DMS_Occultech_AllyBlockedMessage>
+
+  <!-- 永久敵對解除。{0} 艦隊名 -->
+  <DMS_Occultech_PardonLabel>Kill order rescinded</DMS_Occultech_PardonLabel>
+  <DMS_Occultech_PardonText>The sentence has been served in full. {0} has rescinded its standing kill order against this colony and restored us to neutral standing.\n\nThe file we opened is still open. They have simply stopped sending people to close it.</DMS_Occultech_PardonText>
+
+  <!-- 放棄技術。{0} 艦隊名, {1} 放棄清單 -->
+  <DMS_Occultech_RenouncedLabel>Sealed files surrendered</DMS_Occultech_RenouncedLabel>
+  <DMS_Occultech_RenouncedText>We have transmitted a formal renunciation to {0} and purged our copies of the following files:\n\n{1}\n\nEverything they unlocked is locked again, and the research must be done from the beginning if we ever change our minds. With the files gone, {0} is willing to consider an alliance once more.</DMS_Occultech_RenouncedText>
+  <DMS_Occultech_RenouncedMessage>{0} sealed research project(s) renounced.</DMS_Occultech_RenouncedMessage>
+
+  <!-- 通訊台對話。{0} 艦隊名, {1} 清單 -->
+  <DMS_Occultech_RenounceOption>Renounce sealed technology</DMS_Occultech_RenounceOption>
+  <DMS_Occultech_RenounceBlockedPermanent>They are not taking our calls on this. Only a court-martial ends a kill order.</DMS_Occultech_RenounceBlockedPermanent>
+  <DMS_Occultech_RenounceConfirm>You open a channel to the {0} records office and offer to surrender everything we hold under seal.\n\nThe following research will be reset to zero and everything it unlocks will be locked again:\n\n{1}\n\nThis cannot be undone: the work would have to be redone from nothing. In exchange, {0} will consider an alliance with us again.</DMS_Occultech_RenounceConfirm>
+  <DMS_Occultech_RenounceAccept>Surrender the files.</DMS_Occultech_RenounceAccept>
+
+</LanguageData>

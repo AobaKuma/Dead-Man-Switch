@@ -124,7 +124,7 @@ namespace DMS
         /// <summary>
         /// 把生成後的防務設施掛到陣營。封存艙（Building_MechCapsule）裡的機兵一併換：
         /// 艙在 SpawnSetup 時就用「當下的艙陣營」生成機兵，無陣營生成的艙會給出遠古陣營的機兵，
-        /// 之後只改艙不改機兵，就會出現艙是遺留部隊、機兵卻是遠古的錯配——被警報放出來時甚至不敵對。
+        /// 之後只改艙不改機兵，就會出現艙是遺留部隊、機兵卻是遠古的錯配，被警報放出來時甚至不敵對。
         /// Assigns a defender faction to a spawned fixture. Mech capsules (Building_MechCapsule) generate their
         /// mech in SpawnSetup using whatever faction the capsule has at that moment, so a factionless capsule holds
         /// an Ancients mech; changing only the capsule afterwards leaves the mech mismatched (and, once an alarm

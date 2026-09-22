@@ -2,8 +2,8 @@
 <Defs>
 
   <!-- ============================================================
-       DMS 軍事儲存庫 — 房間
-       DMS military storage vault — rooms
+       DMS 軍事儲存庫：房間
+       DMS military storage vault: rooms
 
        所有填充物都是 DMS 自己的廢棄建築（見 DMS_Vault_Prefabs.xml），
        兩個關鍵房間另外會蓋 FFF 預製塊（見 DMS_Vault_Structures.xml）。
@@ -70,7 +70,7 @@
     <!-- 必出房間，門檻跟其他必出房間一樣壓在 9，免得被它們先搶走大房間後放不下。
          5x5 的出口電梯在 9x9 裡塞不下三格 padding，worker 會自己把 padding 縮到放得下為止。
          Required room; kept at 9 like the other required rooms so they can't starve it of a rect.
-         The 5x5 exit car can't take 3 cells of padding in a 9x9 — the worker shrinks it as needed. -->
+         The 5x5 exit car can't take 3 cells of padding in a 9x9; the worker shrinks it as needed. -->
     <minSingleRectWidth>9</minSingleRectWidth>
     <minSingleRectHeight>9</minSingleRectHeight>
     <prefabs>
@@ -120,12 +120,12 @@
   </LayoutRoomDef>
 
   <!-- 機兵封存艙間。整間的重點就是那些搖籃；掉落物少，威脅集中在艙裡。
-       Mech bay. The cradles are the point — little loose loot, all the threat is inside them. -->
+       Mech bay. The cradles are the point: little loose loot, all the threat is inside them. -->
   <LayoutRoomDef>
     <defName>DMS_VaultMechBay</defName>
     <roomContentsWorkerType>DMS.RoomContents_VaultMechBay</roomContentsWorkerType>
     <!-- 必出房間（countRange 1），門檻放太高會找不到夠大的矩形而生成失敗。
-         Required room — keep the size gate low enough that the layout can always satisfy it. -->
+         Required room: keep the size gate low enough that the layout can always satisfy it. -->
     <minSingleRectWidth>9</minSingleRectWidth>
     <minSingleRectHeight>9</minSingleRectHeight>
     <prefabs>
@@ -168,7 +168,7 @@
   </LayoutRoomDef>
 
   <!-- 駐防兵舍。純氣氛房，說明這座設施曾經有人守：置物櫃、長椅、飲水機，多半已經壞了。
-       Garrison quarters. Pure atmosphere — someone used to hold this place: lockers, benches and
+       Garrison quarters. Pure atmosphere: someone used to hold this place: lockers, benches and
        a dispenser, mostly wrecked by now. -->
   <LayoutRoomDef>
     <defName>DMS_VaultGarrisonQuarters</defName>
@@ -205,7 +205,7 @@
   </LayoutRoomDef>
 
   <!-- 動力室。少數還在運轉的機組，也是整座設施還有殘電的理由。
-       Power room. The few units still running — and the reason anything down here still has power. -->
+       Power room. The few units still running, and the reason anything down here still has power. -->
   <LayoutRoomDef>
     <defName>DMS_VaultPowerPlant</defName>
     <minSingleRectWidth>8</minSingleRectWidth>
@@ -261,7 +261,7 @@
 
   <!-- 中庭。設施還有人時的休息區：長椅、飲水機、花圃、置物櫃，一半保持完好，一半已經荒廢。
        Atrium. The break area from when people still lived here: benches, dispensers, planters,
-       lockers — half of it intact, half of it gone to seed. -->
+       lockers: half of it intact, half of it gone to seed. -->
   <LayoutRoomDef>
     <defName>DMS_VaultAtrium</defName>
     <areaSizeRange>160~99999</areaSizeRange>
@@ -310,7 +310,7 @@
   </LayoutRoomDef>
 
   <!-- 車輛庫。停到報廢的裝甲車與重型設備，整間就是一座露天的廢鐵場。
-       Vehicle bay. Armour and heavy kit parked until it rusted — a scrapyard with a roof. -->
+       Vehicle bay. Armour and heavy kit parked until it rusted: a scrapyard with a roof. -->
   <LayoutRoomDef>
     <defName>DMS_VaultVehicleBay</defName>
     <areaSizeRange>180~99999</areaSizeRange>

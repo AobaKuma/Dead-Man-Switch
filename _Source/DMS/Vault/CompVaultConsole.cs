@@ -17,13 +17,13 @@ namespace DMS
     /// 獎勵房的安全控制台：駭入後放行所有連結到它的密封門。
     /// 門是 FFF 的 <see cref="Building_RollingDoor_AccessLink"/>（門禁鑰匙系統的「wanter」端），
     /// 這裡用駭入取代鑰匙卡，所以自己實作 <see cref="IAccessKeyActivatable"/>，
-    /// 並且允許一座控制台連結多扇門——房間有幾扇門就封幾扇。
+    /// 並且允許一座控制台連結多扇門，房間有幾扇門就封幾扇。
     ///
     /// The treasury's security console: hacking it releases every sealed door linked to it.
     /// The doors are FFF's <see cref="Building_RollingDoor_AccessLink"/> (the "wanter" end of the
     /// access-key system); hacking stands in for the key card, so this comp implements
     /// <see cref="IAccessKeyActivatable"/> itself and, unlike the stock comp, links to any number of
-    /// doors — a room gets every one of its doors sealed.
+    /// doors: a room gets every one of its doors sealed.
     ///
     /// 控制台被拆毀而不是被駭入時也會放行，免得獎勵房永遠打不開。
     /// Destroying the console instead of hacking it releases the doors too, so the room can never

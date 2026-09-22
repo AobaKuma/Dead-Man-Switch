@@ -10,7 +10,7 @@
     meant to be scattered around a main structure. They carry their own tag
     (DMS_RuinSatellite) and must NOT carry main-structure tags.
 
-    用法 Usage — 首選：GenStep 的 satelliteScatter（環半徑依地圖尺寸縮放，
+    用法 Usage：首選：GenStep 的 satelliteScatter（環半徑依地圖尺寸縮放，
     各座獨立生成，不會撐大主結構的 sketch）：
 
       <satelliteScatter>
@@ -30,7 +30,7 @@
         <pos>(30, 0, 8)</pos>
       </li>
 
-    Preferred: the GenStep's satelliteScatter — ring radius scales with map size and each
+    Preferred: the GenStep's satelliteScatter; ring radius scales with map size and each
     piece is generated separately, so the main structure's sketch stays untouched. Layout
     elements still work for fixed decoration, but their positions can't scale and
     RandomSubStructure's roll is frozen by the sketch cache for the whole session.
@@ -195,7 +195,7 @@
       <!-- force=false：作為散布用的小結構，不覆寫既有厚岩頂（Task_ApplyRoof 在
            force=true 時會蓋掉 isThickRoof 的格子）。
            force=false so this scatter piece never overwrites existing thick rock
-           roof — Task_ApplyRoof only bypasses the isThickRoof check when forced. -->
+           roof; Task_ApplyRoof only bypasses the isThickRoof check when forced. -->
       <li Class="Fortified.Structures.FFF_Element_RoofRect">
         <def>RoofConstructed</def>
         <pos>(1, 0, 1)</pos>

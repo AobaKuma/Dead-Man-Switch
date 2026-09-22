@@ -89,7 +89,7 @@
        ・有委託人：中立人類派系的領袖出面委託，完成後可挑選獎勵。
 
        描述文本靠語法常數分流（askerIsNull==true / asker_factionLeader==True），
-       任務名稱則靠 priority ——[asker_nameDef] 在沒有委託人時無法解析，
+       任務名稱則靠 priority：[asker_nameDef] 在沒有委託人時無法解析，
        規則會自動退回沒有 priority 的那幾條。兩種機制都是原版的用法。
 
        其餘結構照 OpportunitySite_BanditCamp：取地點 → 依威脅點數算酬勞
@@ -195,7 +195,7 @@
           <preferCloserTiles>true</preferCloserTiles>
         </li>
 
-        <!-- 站點派系由此節點挑選。刻意不加 mustBeHostileToFactionOf ——
+        <!-- 站點派系由此節點挑選。刻意不加 mustBeHostileToFactionOf：
              無委託人的版本沒有 asker 可以當基準，照 ItemStash 的做法留空。
              The site faction comes from this node. mustBeHostileToFactionOf is
              deliberately omitted: the no-asker variant has no pawn to key off,
@@ -215,7 +215,7 @@
           <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
         </li>
 
-        <!-- 酬勞依實際生成的威脅點數計算 —— SitePartDef 的 minThreatPoints
+        <!-- 酬勞依實際生成的威脅點數計算：SitePartDef 的 minThreatPoints
              可能把實際點數推高於任務輸入的 points。
              Reward is based on the threat points actually generated; the
              SitePartDef's minThreatPoints floor can raise them. -->
@@ -294,7 +294,7 @@
                    讓玩家挑選的獎勵組。
 
                    Only the commissioned variant pays. Keying off askerIsNull's
-                   elseNode is the inverse test — "reward only if there is an
+                   elseNode is the inverse test: "reward only if there is an
                    asker". QuestNode_GiveRewards emits the QuestPart_Choice that
                    renders as the selectable reward group on the quest card. -->
               <li Class="QuestNode_IsSet">

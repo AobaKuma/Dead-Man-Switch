@@ -147,12 +147,12 @@
   <!-- EN: substation cabinet -->
   <DMS_SubstationCabinet.label>變電櫃</DMS_SubstationCabinet.label>
   <!-- EN: A ruggedised metal cabinet that taps an underground power conduit and distributes electricity to surface equipment. The high-voltage internals make shut-down hazardous - only an operator with solid technical knowledge (Intellectual 8+) can safely cut power; anyone less experienced risks a serious electrical burn. An EMP strike will temporarily disable the cabinet without ongoing danger. -->
-  <DMS_SubstationCabinet.description>一座從地下輸電管線取電並向地表設備配電的加固金屬櫃。其內部的高壓元件使關停作業十分危險——只有具備紮實技術知識（智識8+）的操作者才能安全切斷電源，經驗不足者可能遭受嚴重的電灼傷。EMP打擊可暫時癱瘓變電櫃，且不會造成後續危險。</DMS_SubstationCabinet.description>
+  <DMS_SubstationCabinet.description>一座從地下輸電管線取電並向地表設備配電的加固金屬櫃。其內部的高壓元件使關停作業十分危險：只有具備紮實技術知識（智識8+）的操作者才能安全切斷電源，經驗不足者可能遭受嚴重的電灼傷。EMP打擊可暫時癱瘓變電櫃，且不會造成後續危險。</DMS_SubstationCabinet.description>
 
   <!-- EN: wall substation panel -->
   <DMS_SubstationCabinet_Wall.label>壁掛式變電盤</DMS_SubstationCabinet_Wall.label>
   <!-- EN: A compact substation panel mounted flush against a wall, routing underground power to surface equipment. Like its cabinet counterpart, shutting it down safely requires real technical skill - anyone less experienced risks a severe electrical burn from the exposed high-voltage contacts. Vulnerable to EMP. -->
-  <DMS_SubstationCabinet_Wall.description>一塊緊貼牆面安裝的小型變電盤，將地下電力輸送至地表設備。與變電櫃一樣，安全關停需要真正的技術能力——經驗不足者可能被外露的高壓觸點嚴重灼傷。易受EMP影響。</DMS_SubstationCabinet_Wall.description>
+  <DMS_SubstationCabinet_Wall.description>一塊緊貼牆面安裝的小型變電盤，將地下電力輸送至地表設備。與變電櫃一樣，安全關停需要真正的技術能力，經驗不足者可能被外露的高壓觸點嚴重灼傷。易受EMP影響。</DMS_SubstationCabinet_Wall.description>
 
   <!-- EN: emergency lighting -->
   <DMS_EmergencyLamp.label>應急照明</DMS_EmergencyLamp.label>
@@ -180,7 +180,7 @@
   <!-- EN: peacekeeping distress beacon -->
   <DMS_RaidWaveBeacon_PeacekeepingOperators.label>維和求救信標</DMS_RaidWaveBeacon_PeacekeepingOperators.label>
   <!-- EN: A tampered emergency transponder repurposed to broadcast a false peacekeeping distress call. Once activated, it summons a Legacy remnant peacekeeping detachment - Protector shieldbearers screening a Ronin spearhead, with Falcon marksmen providing overwatch - to storm the signal's origin. The burst burns out the transmitter, so this building can only be used once. -->
-  <DMS_RaidWaveBeacon_PeacekeepingOperators.description>一台遭到改裝的緊急應答機，被用來廣播偽造的維和求救訊號。啟動後將召來一支先鋒殘餘的維和特遣隊——塔盾手在前掩護、浪人擔任突擊矛頭、游隼提供火力支援——直撲訊號來源。訊號脈衝會燒毀發射器，因此該建築只能使用一次。</DMS_RaidWaveBeacon_PeacekeepingOperators.description>
+  <DMS_RaidWaveBeacon_PeacekeepingOperators.description>一台遭到改裝的緊急應答機，被用來廣播偽造的維和求救訊號。啟動後將召來一支先鋒殘餘的維和特遣隊：塔盾手在前掩護、浪人擔任突擊矛頭、游隼提供火力支援，直撲訊號來源。訊號脈衝會燒毀發射器，因此該建築只能使用一次。</DMS_RaidWaveBeacon_PeacekeepingOperators.description>
 
   <!-- ==================== Ruined facility buildings ==================== -->
 

@@ -1,75 +1,150 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-
-  <!-- 先锋残余设施任务。机场（DMS_AirportAssault）独立；其余五座共用 DMS_LegacyInstallationAssault，
-       靠语法常数 installation（SitePartDef 的 defName）分流，翻译时必须保留 (installation==…) 条件。
-       [siteFactionName]／[siteTimeout] 由 QuestNode_Root_FFF_TimedHostileSite 提供，
-       [enemiesLabel]／[enemiesCount] 由 SitePartWorker_FFF_TimedHostileSite 提供；
-       (*Threat)…(/Threat) 是原版的威胁标色，翻译时须保留。
-       Legacy-installation quests. The airfield has its own quest; the other five share
-       DMS_LegacyInstallationAssault and branch on the grammar constant "installation" — keep the
-       (installation==…) conditions and the (*Threat)…(/Threat) colour tags verbatim. -->
-
-  <!-- ============ 残余机场 Remnant airfield ============ -->
-  <DMS_AirportAssault.questNameRules.rulesStrings>
-    <li>questName->静默的机场</li>
-    <li>questName->[field]</li>
-    <li>field->残余机场</li>
-    <li>field->无人机场</li>
-    <li>field->航空基地</li>
-  </DMS_AirportAssault.questNameRules.rulesStrings>
-  <DMS_AirportAssault.questDescriptionRules.rulesStrings>
-    <li>questDescription->截获的遥测数据指向一座[siteFactionName]控制的无人机机场。机场仍在运作：一支(*Threat)[enemiesCount]名[enemiesLabel](/Threat)守军在塔台与停机坪之间巡逻，而塔台的通讯装置至今仍调在集群织鸟的指挥频段上。\n\n那台无线电就是目标。肃清机场之后，就能用它把织鸟引到机场来。\n\n停机坪下方另有一座货运电梯，通往一处埋藏的储存库。电梯前的防爆门听命于塔台里的两座安全控制台；两座都骇入就能打开竖井。\n\n遥测定位还能维持 [siteTimeout]。在那之后机场将全面静默，位置就此失去踪迹。\n\n注意：那是一处敌对设施。你一旦进入，站点的监控协议便会在倒数结束后召来敌方增援——而织鸟不会等你先把他们处理完。</li>
-  </DMS_AirportAssault.questDescriptionRules.rulesStrings>
-
-  <!-- ============ 五座设施共用 Shared by the five installations ============ -->
-  <DMS_LegacyInstallationAssault.questNameRules.rulesStrings>
-    <!-- 储存库地面站 Vault access station -->
-    <li>questName(installation==DMS_VaultStationSite)->地下军火库</li>
-    <li>questName(installation==DMS_VaultStationSite)->[vault]</li>
-    <li>vault->密封的储存库</li>
-    <li>vault->军事储存库</li>
-    <li>vault->深层仓储</li>
-    <!-- 残余维修站 Remnant repair depot -->
-    <li>questName(installation==DMS_RepairStationSite)->突袭维修站</li>
-    <li>questName(installation==DMS_RepairStationSite)->[depot]</li>
-    <li>depot->维修站</li>
-    <li>depot->维修厂区</li>
-    <li>depot->支架厂</li>
-    <!-- 残余前进基地 Remnant forward base -->
-    <li>questName(installation==DMS_OperationBaseSite)->前进基地</li>
-    <li>questName(installation==DMS_OperationBaseSite)->[base]</li>
-    <li>base->残余前哨基地</li>
-    <li>base->铁丝网防线</li>
-    <li>base->物资堆放场</li>
-    <!-- 荒废残余站点 Derelict remnant station -->
-    <li>questName(installation==DMS_SiteStationSite)->荒废站点</li>
-    <li>questName(installation==DMS_SiteStationSite)->[station]</li>
-    <li>station->死寂的站点</li>
-    <li>station->旧站点</li>
-    <li>station->锈蚀的站点</li>
-    <!-- 废弃发射场 Abandoned launch site -->
-    <li>questName(installation==DMS_LaunchSiteSite)->发射场打捞</li>
-    <li>questName(installation==DMS_LaunchSiteSite)->[site]</li>
-    <li>site->死寂的发射场</li>
-    <li>site->发射井阵地</li>
-    <li>site->报废的发射台</li>
-  </DMS_LegacyInstallationAssault.questNameRules.rulesStrings>
-  <DMS_LegacyInstallationAssault.questDescriptionRules.rulesStrings>
-    <!-- 储存库地面站 Vault access station -->
-    <li>questDescription(installation==DMS_VaultStationSite)->从残余部队的通讯中截获的一份物资清单，列出了一座[siteFactionName]控制的储存库——以及建在它上方的地面站。该站仍由(*Threat)[enemiesCount]名[enemiesLabel](/Threat)驻守，其中还有重型机体。\n\n通往储存库的货运电梯被锁在装甲封板之下。站内的安全控制台是唯一能升起封板的东西；骇入它，竖井就会开启。轿厢仍有电力，这表示下面的东西从来没被搬走过。\n\n清单上的定位将于 [siteTimeout] 后失效。在那之后地面站将转移阵地，位置就此失去踪迹。\n\n注意：那是一处敌对设施。你一旦进入，站点的监控协议便会在倒数结束后召来敌方增援。</li>
-
-    <!-- 残余维修站 Remnant repair depot -->
-    <li>questDescription(installation==DMS_RepairStationSite)->从残余部队的通讯中截获的物资流量，把我们引向一座[siteFactionName]控制的野战维修站。维修站由(*Threat)[enemiesCount]名[enemiesLabel](/Threat)把守——工兵、火枪兵，外加一道无人机屏障。\n\n两具机体至今仍夹在维修站的支架上休眠，藏在一道密封的维修门后。它们在维修后从未重新认证，因此有剩余带宽的机械师可以骇入其中一具并收为己用。维修站的安全控制台能放行那道门。停机坪上还有一台行动人员升降舱，库房里也存着一批钨钢。\n\n申请单上的定位将于 [siteTimeout] 后失效。在那之后维修站将转移阵地，位置就此失去踪迹。\n\n注意：那是一处敌对设施。你一旦进入，站点的监控协议便会在倒数结束后召来敌方增援。</li>
-
-    <!-- 残余前进基地 Remnant forward base -->
-    <li>questDescription(installation==DMS_OperationBaseSite)->残余部队的通讯泄漏了一座[siteFactionName]控制的前进作战基地。基地由(*Threat)[enemiesCount]名[enemiesLabel](/Threat)据守：铁丝网后是线列步兵，另有重型支援与夜战单位留作预备队。\n\n这座基地是补给枢纽。口粮、轻武器、备用零件与义体的物资箱就堆在露天处，而设施后方的一座货运电梯通往地下库房。电梯前的防爆门听命于两座安全控制台；两座都骇入就能打开通路，接着再骇入电梯本身。\n\n定位还能维持 [siteTimeout]。在那之后基地将拔营转移，位置就此失去踪迹。\n\n注意：那是一处敌对设施。你一旦进入，站点的监控协议便会在倒数结束后召来敌方增援。</li>
-
-    <!-- 荒废残余站点 Derelict remnant station -->
-    <li>questDescription(installation==DMS_SiteStationSite)->附近发现了一座半数已经倒塌的荒废站点。一支[siteFactionName]分遣队据守在废墟之中：(*Threat)[enemiesCount]名[enemiesLabel](/Threat)，持盾兵与步兵配有无人机和升降机支援，分散在站点的各个厅室里。\n\n这座站点是仓皇撤离的。古代补给箱、工业货架与旧安全系统的残骸仍散落其中，还有一对能用的运输舱发射台。分遣队还没搜刮走的一切都归你。\n\n分遣队预计将于 [siteTimeout] 后离开。在那之后站点会被搜刮一空，不再值得跑这一趟。\n\n注意：那是一处敌对设施。你一旦进入，站点的监控协议便会在倒数结束后召来敌方增援——而这座站点大到足以让人迷路。</li>
-
-    <!-- 废弃发射场 Abandoned launch site -->
-    <li>questDescription(installation==DMS_LaunchSiteSite)->扫描器上出现了一处旧的导弹发射阵地。发射器早在很久以前就被摧毁，整片设施也正在崩坏，但一支由(*Threat)[enemiesCount]名[enemiesLabel](/Threat)组成的[siteFactionName]巡逻队仍在残骸间巡视。\n\n从来没有人打捞过那里。报废的自动机兵、后勤货柜、传感器与雷达的基座，以及发射组装备的残骸，全都还留在它们倒下的地方。\n\n依巡逻队的班表，他们还会在那里待 [siteTimeout]。在那之后巡逻队将移防，站点的位置就此失去踪迹。\n\n注意：那是一处敌对设施。你一旦进入，巡逻队的监控协议便会在倒数结束后召来敌方增援。</li>
-  </DMS_LegacyInstallationAssault.questDescriptionRules.rulesStrings>
-
-</LanguageData>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<LanguageData>
+
+
+
+  <!-- 先锋残余设施任务。机场（DMS_AirportAssault）独立；其余五座共用 DMS_LegacyInstallationAssault，
+
+       靠语法常数 installation（SitePartDef 的 defName）分流，翻译时必须保留 (installation==…) 条件。
+
+       [siteFactionName]／[siteTimeout] 由 QuestNode_Root_FFF_TimedHostileSite 提供，
+
+       [enemiesLabel]／[enemiesCount] 由 SitePartWorker_FFF_TimedHostileSite 提供；
+
+       (*Threat)…(/Threat) 是原版的威胁标色，翻译时须保留。
+
+       Legacy-installation quests. The airfield has its own quest; the other five share
+
+       DMS_LegacyInstallationAssault and branch on the grammar constant "installation"; keep the
+
+       (installation==…) conditions and the (*Threat)…(/Threat) colour tags verbatim. -->
+
+
+
+  <!-- ============ 残余机场 Remnant airfield ============ -->
+
+  <DMS_AirportAssault.questNameRules.rulesStrings>
+
+    <li>questName->静默的机场</li>
+
+    <li>questName->[field]</li>
+
+    <li>field->残余机场</li>
+
+    <li>field->无人机场</li>
+
+    <li>field->航空基地</li>
+
+  </DMS_AirportAssault.questNameRules.rulesStrings>
+
+  <DMS_AirportAssault.questDescriptionRules.rulesStrings>
+
+    <li>questDescription->截获的遥测数据指向一座[siteFactionName]控制的无人机机场。机场仍在运作：一支(*Threat)[enemiesCount]名[enemiesLabel](/Threat)守军在塔台与停机坪之间巡逻，而塔台的通讯装置至今仍调在集群织鸟的指挥频段上。\n\n那台无线电就是目标。肃清机场之后，就能用它把织鸟引到机场来。\n\n停机坪下方另有一座货运电梯，通往一处埋藏的储存库。电梯前的防爆门听命于塔台里的两座安全控制台；两座都骇入就能打开竖井。\n\n遥测定位还能维持 [siteTimeout]。在那之后机场将全面静默，位置就此失去踪迹。\n\n注意：那是一处敌对设施。你一旦进入，站点的监控协议便会在倒数结束后召来敌方增援，而织鸟不会等你先把他们处理完。</li>
+
+  </DMS_AirportAssault.questDescriptionRules.rulesStrings>
+
+
+
+  <!-- ============ 五座设施共用 Shared by the five installations ============ -->
+
+  <DMS_LegacyInstallationAssault.questNameRules.rulesStrings>
+
+    <!-- 储存库地面站 Vault access station -->
+
+    <li>questName(installation==DMS_VaultStationSite)->地下军火库</li>
+
+    <li>questName(installation==DMS_VaultStationSite)->[vault]</li>
+
+    <li>vault->密封的储存库</li>
+
+    <li>vault->军事储存库</li>
+
+    <li>vault->深层仓储</li>
+
+    <!-- 残余维修站 Remnant repair depot -->
+
+    <li>questName(installation==DMS_RepairStationSite)->突袭维修站</li>
+
+    <li>questName(installation==DMS_RepairStationSite)->[depot]</li>
+
+    <li>depot->维修站</li>
+
+    <li>depot->维修厂区</li>
+
+    <li>depot->支架厂</li>
+
+    <!-- 残余前进基地 Remnant forward base -->
+
+    <li>questName(installation==DMS_OperationBaseSite)->前进基地</li>
+
+    <li>questName(installation==DMS_OperationBaseSite)->[base]</li>
+
+    <li>base->残余前哨基地</li>
+
+    <li>base->铁丝网防线</li>
+
+    <li>base->物资堆放场</li>
+
+    <!-- 荒废残余站点 Derelict remnant station -->
+
+    <li>questName(installation==DMS_SiteStationSite)->荒废站点</li>
+
+    <li>questName(installation==DMS_SiteStationSite)->[station]</li>
+
+    <li>station->死寂的站点</li>
+
+    <li>station->旧站点</li>
+
+    <li>station->锈蚀的站点</li>
+
+    <!-- 废弃发射场 Abandoned launch site -->
+
+    <li>questName(installation==DMS_LaunchSiteSite)->发射场打捞</li>
+
+    <li>questName(installation==DMS_LaunchSiteSite)->[site]</li>
+
+    <li>site->死寂的发射场</li>
+
+    <li>site->发射井阵地</li>
+
+    <li>site->报废的发射台</li>
+
+  </DMS_LegacyInstallationAssault.questNameRules.rulesStrings>
+
+  <DMS_LegacyInstallationAssault.questDescriptionRules.rulesStrings>
+
+    <!-- 储存库地面站 Vault access station -->
+
+    <li>questDescription(installation==DMS_VaultStationSite)->从残余部队的通讯中截获的一份物资清单，列出了一座[siteFactionName]控制的储存库，以及建在它上方的地面站。该站仍由(*Threat)[enemiesCount]名[enemiesLabel](/Threat)驻守，其中还有重型机体。\n\n通往储存库的货运电梯被锁在装甲封板之下。站内的安全控制台是唯一能升起封板的东西；骇入它，竖井就会开启。轿厢仍有电力，这表示下面的东西从来没被搬走过。\n\n清单上的定位将于 [siteTimeout] 后失效。在那之后地面站将转移阵地，位置就此失去踪迹。\n\n注意：那是一处敌对设施。你一旦进入，站点的监控协议便会在倒数结束后召来敌方增援。</li>
+
+
+
+    <!-- 残余维修站 Remnant repair depot -->
+
+    <li>questDescription(installation==DMS_RepairStationSite)->从残余部队的通讯中截获的物资流量，把我们引向一座[siteFactionName]控制的野战维修站。维修站由(*Threat)[enemiesCount]名[enemiesLabel](/Threat)把守：工兵、火枪兵，外加一道无人机屏障。\n\n两具机体至今仍夹在维修站的支架上休眠，藏在一道密封的维修门后。它们在维修后从未重新认证，因此有剩余带宽的机械师可以骇入其中一具并收为己用。维修站的安全控制台能放行那道门。停机坪上还有一台行动人员升降舱，库房里也存着一批钨钢。\n\n申请单上的定位将于 [siteTimeout] 后失效。在那之后维修站将转移阵地，位置就此失去踪迹。\n\n注意：那是一处敌对设施。你一旦进入，站点的监控协议便会在倒数结束后召来敌方增援。</li>
+
+
+
+    <!-- 残余前进基地 Remnant forward base -->
+
+    <li>questDescription(installation==DMS_OperationBaseSite)->残余部队的通讯泄漏了一座[siteFactionName]控制的前进作战基地。基地由(*Threat)[enemiesCount]名[enemiesLabel](/Threat)据守：铁丝网后是线列步兵，另有重型支援与夜战单位留作预备队。\n\n这座基地是补给枢纽。口粮、轻武器、备用零件与义体的物资箱就堆在露天处，而设施后方的一座货运电梯通往地下库房。电梯前的防爆门听命于两座安全控制台；两座都骇入就能打开通路，接着再骇入电梯本身。\n\n定位还能维持 [siteTimeout]。在那之后基地将拔营转移，位置就此失去踪迹。\n\n注意：那是一处敌对设施。你一旦进入，站点的监控协议便会在倒数结束后召来敌方增援。</li>
+
+
+
+    <!-- 荒废残余站点 Derelict remnant station -->
+
+    <li>questDescription(installation==DMS_SiteStationSite)->附近发现了一座半数已经倒塌的荒废站点。一支[siteFactionName]分遣队据守在废墟之中：(*Threat)[enemiesCount]名[enemiesLabel](/Threat)，持盾兵与步兵配有无人机和升降机支援，分散在站点的各个厅室里。\n\n这座站点是仓皇撤离的。古代补给箱、工业货架与旧安全系统的残骸仍散落其中，还有一对能用的运输舱发射台。分遣队还没搜刮走的一切都归你。\n\n分遣队预计将于 [siteTimeout] 后离开。在那之后站点会被搜刮一空，不再值得跑这一趟。\n\n注意：那是一处敌对设施。你一旦进入，站点的监控协议便会在倒数结束后召来敌方增援，而这座站点大到足以让人迷路。</li>
+
+
+
+    <!-- 废弃发射场 Abandoned launch site -->
+
+    <li>questDescription(installation==DMS_LaunchSiteSite)->扫描器上出现了一处旧的导弹发射阵地。发射器早在很久以前就被摧毁，整片设施也正在崩坏，但一支由(*Threat)[enemiesCount]名[enemiesLabel](/Threat)组成的[siteFactionName]巡逻队仍在残骸间巡视。\n\n从来没有人打捞过那里。报废的自动机兵、后勤货柜、传感器与雷达的基座，以及发射组装备的残骸，全都还留在它们倒下的地方。\n\n依巡逻队的班表，他们还会在那里待 [siteTimeout]。在那之后巡逻队将移防，站点的位置就此失去踪迹。\n\n注意：那是一处敌对设施。你一旦进入，巡逻队的监控协议便会在倒数结束后召来敌方增援。</li>
+
+  </DMS_LegacyInstallationAssault.questDescriptionRules.rulesStrings>
+
+
+
+</LanguageData>
+

@@ -68,7 +68,7 @@ namespace DMS
             return newTitle != null && newTitle.GetModExtension<TitleTrainingExtension>() != null;
         }
 
-        /// <summary>同一個 pawn 只能有一份受訓任務在跑 —— GenerateBestowingCeremonyQuest 會被反覆呼叫。</summary>
+        /// <summary>同一個 pawn 只能有一份受訓任務在跑：GenerateBestowingCeremonyQuest 會被反覆呼叫。</summary>
         private static bool HasOngoingTraining(Pawn pawn)
         {
             List<Quest> quests = Find.QuestManager.QuestsListForReading;

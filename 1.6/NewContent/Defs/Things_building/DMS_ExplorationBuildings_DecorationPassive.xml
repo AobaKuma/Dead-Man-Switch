@@ -76,7 +76,7 @@
   <ThingDef ParentName="FFF_SubstationCabinet">
     <defName>DMS_SubstationCabinet_Wall</defName>
     <label>wall substation panel</label>
-    <description>A compact substation panel mounted flush against a wall, routing underground power to surface equipment. Like its cabinet counterpart, shutting it down safely requires real technical skill — anyone less experienced risks a severe electrical burn from the exposed high-voltage contacts. Vulnerable to EMP.</description>
+    <description>A compact substation panel mounted flush against a wall, routing underground power to surface equipment. Like its cabinet counterpart, shutting it down safely requires real technical skill: anyone less experienced risks a severe electrical burn from the exposed high-voltage contacts. Vulnerable to EMP.</description>
     <graphicData>
       <texPath>Things/Building/DistributionBox_Wall/building</texPath>
       <graphicClass>Graphic_Multi</graphicClass>

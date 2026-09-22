@@ -4,7 +4,7 @@
   <SitePartDef>
     <defName>DMS_DecoySite</defName>
     <label>remnant relay station</label>
-    <description>A decommisioned remnant signal-relay station. Its transmitter array can be repurposed to lure high-value automatroid units — if its garrison is dealt with first.</description>
+    <description>A decommisioned remnant signal-relay station. Its transmitter array can be repurposed to lure high-value automatroid units, if its garrison is dealt with first.</description>
     <workerClass>Fortified.SitePartWorker_FFF_TimedHostileSite</workerClass>
     <modExtensions>
       <!-- 進入站點後的增援倒數設定（難度縮放：小時 ÷ threatScale）。
@@ -30,7 +30,7 @@
     <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
     <approachOrderString>Assault {0}</approachOrderString>
     <approachingReportString>Assaulting {0}.</approachingReportString>
-    <arrivedLetter>You have arrived at the relay station. Hostile automatroids garrison the compound.\n\nYour presence will not go unnoticed for long — once the station's monitoring protocol identifies you, enemy reinforcements will begin to arrive.</arrivedLetter>
+    <arrivedLetter>You have arrived at the relay station. Hostile automatroids garrison the compound.\n\nYour presence will not go unnoticed for long: once the station's monitoring protocol identifies you, enemy reinforcements will begin to arrive.</arrivedLetter>
     <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
     <tags>
       <li>DMS_DecoySite</li>
@@ -99,7 +99,7 @@
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->While broadcasting the falsified peacekeeping distress call, the beacon triangulated the source relaying it: a [siteFactionName] signal-relay station.\n\nThe station is guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat). Its transmitter array is still intact — a decoy antenna on site can be rigged to lure a high-value automatroid unit.\n\nThe relay's transmission window closes in [siteTimeout]. After that, the station will relocate and its position will be lost.\n\nCaution: it is a hostile installation. Once you enter, its monitoring protocol will summon enemy reinforcements after a countdown — strike fast and leave faster.</li>
+        <li>questDescription->While broadcasting the falsified peacekeeping distress call, the beacon triangulated the source relaying it: a [siteFactionName] signal-relay station.\n\nThe station is guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat). Its transmitter array is still intact: a decoy antenna on site can be rigged to lure a high-value automatroid unit.\n\nThe relay's transmission window closes in [siteTimeout]. After that, the station will relocate and its position will be lost.\n\nCaution: it is a hostile installation. Once you enter, its monitoring protocol will summon enemy reinforcements after a countdown; strike fast and leave faster.</li>
       </rulesStrings>
     </questDescriptionRules>
     <root Class="Fortified.QuestNode_Root_FFF_TimedHostileSite">

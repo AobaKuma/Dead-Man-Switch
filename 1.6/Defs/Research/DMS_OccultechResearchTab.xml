@@ -23,26 +23,76 @@
     </modExtensions>
   </ResearchTabDef>
 
+  <!-- ====================================================================== -->
+  <!-- 制裁規則（DMS.ModExtension_OccultechSanction）                          -->
+  <!-- 每完成一項該類別的研究時結算一次，終生只結算一次；紀錄存在                -->
+  <!-- GameComponent_OccultechSanction。沒掛本擴充的知識類別完全不受影響。      -->
+  <!-- exemptSeniority 以 seniority 表示而非引用 RoyalTitleDef：軍銜 Def 位於    -->
+  <!-- 1.6/Royalty/ 之下，無 Royalty DLC 時不存在，直接跨引用會炸 Def 解析。    -->
+  <!-- ====================================================================== -->
+
+  <!-- 限制級：環境／人倫因素或對使用者的永久性影響。緊急情況下可由軍官下達臨時解禁令。 -->
   <KnowledgeCategoryDef>
     <defName>DMS_Restricted</defName>
     <label>restricted</label>
     <color>(0.6, 0.6, 0.4, 1)</color>
     <texPath>UI/DMS/ResearchCategory_Restricted</texPath>
+    <modExtensions>
+      <li Class="DMS.ModExtension_OccultechSanction">
+        <tier>Restricted</tier>
+        <goodwillPenalty>-80</goodwillPenalty>
+        <!-- 准尉 DMS_WarrantOfficer = 200 -->
+        <exemptSeniority>200</exemptSeniority>
+      </li>
+    </modExtensions>
   </KnowledgeCategoryDef>
 
+  <!-- 封存級：擴散即構成跨星系軍備競賽或非人道武器升級。必須保密並杜絕任何傳播與使用。 -->
   <KnowledgeCategoryDef>
     <defName>DMS_Sealed</defName>
     <label>sealed</label>
     <color>(1, 0.5, 0.1, 1)</color>
     <texPath>UI/DMS/ResearchCategory_Sealed</texPath>
     <overflowCategory>DMS_Restricted</overflowCategory>
+    <modExtensions>
+      <li Class="DMS.ModExtension_OccultechSanction">
+        <tier>Sealed</tier>
+        <hostileOnComplete>true</hostileOnComplete>
+        <raidOnComplete>true</raidOnComplete>
+        <raidPointsFactor>1.25</raidPointsFactor>
+        <minRaidPoints>400</minRaidPoints>
+        <!-- 准將 DMS_Brigadier = 1000 -->
+        <exemptSeniority>1000</exemptSeniority>
+        <!-- 回到盟友前必須向艦隊申報放棄（通訊台對話）。 -->
+        <renounceable>true</renounceable>
+      </li>
+    </modExtensions>
   </KnowledgeCategoryDef>
 
+  <!-- 隱匿級：知道它存在本身就構成危害。無豁免條件，只能靠軍事法庭解除永久敵對。 -->
   <KnowledgeCategoryDef>
     <defName>DMS_Occulted</defName>
     <label>occulted</label>
     <color>(1, 0, 0, 1)</color>
     <texPath>UI/DMS/ResearchCategory_Occulted</texPath>
     <overflowCategory>DMS_Sealed</overflowCategory>
+    <modExtensions>
+      <li Class="DMS.ModExtension_OccultechSanction">
+        <tier>Occulted</tier>
+        <hostileOnComplete>true</hostileOnComplete>
+        <permanentHostility>true</permanentHostility>
+        <raidOnComplete>true</raidOnComplete>
+        <raidPointsFactor>1.5</raidPointsFactor>
+        <minRaidPoints>600</minRaidPoints>
+        <!-- 追殺：永久敵對期間的週期性襲擊。 -->
+        <huntIntervalDays>4~7</huntIntervalDays>
+        <huntPointsFactor>1.25</huntPointsFactor>
+        <!-- 連坐：三個艦隊友好派系一併敵對（不鎖好感，可自行修復）。 -->
+        <hostileAllyCount>3</hostileAllyCount>
+        <!-- 無豁免、不可申報放棄。 -->
+        <exemptSeniority>-1</exemptSeniority>
+        <renounceable>false</renounceable>
+      </li>
+    </modExtensions>
   </KnowledgeCategoryDef>
 </Defs>

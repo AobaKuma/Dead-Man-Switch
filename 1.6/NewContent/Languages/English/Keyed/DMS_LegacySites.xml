@@ -5,7 +5,7 @@
   <DMS_Airport_ExpiredLabel>Airfield gone dark</DMS_Airport_ExpiredLabel>
   <DMS_Airport_ExpiredText>The remnant airfield's telemetry has cut out. The field has gone dark and its position is lost.</DMS_Airport_ExpiredText>
   <DMS_Airport_ClearedLabel>Airfield secured</DMS_Airport_ClearedLabel>
-  <DMS_Airport_ClearedText>All hostiles at the remnant airfield have been neutralized.\n\nThe decoy radio in the tower is intact. Use it to call the cluster weaver down onto the airfield — but bring everything you have, and expect the remnants to keep sending reinforcements while you wait for it.</DMS_Airport_ClearedText>
+  <DMS_Airport_ClearedText>All hostiles at the remnant airfield have been neutralized.\n\nThe decoy radio in the tower is intact. Use it to call the cluster weaver down onto the airfield, but bring everything you have, and expect the remnants to keep sending reinforcements while you wait for it.</DMS_Airport_ClearedText>
   <DMS_Airport_EntryCountdownLabel>Hostile airfield: reinforcements inbound</DMS_Airport_EntryCountdownLabel>
   <DMS_Airport_EntryCountdownText>You have entered a hostile remnant airfield. The tower's monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Clear the field before then if you intend to call the weaver here.</DMS_Airport_EntryCountdownText>
 
@@ -13,7 +13,7 @@
   <DMS_VaultStation_ExpiredLabel>Vault station lost</DMS_VaultStation_ExpiredLabel>
   <DMS_VaultStation_ExpiredText>The manifest's location fix has expired. The vault access station has relocated and its position is lost.</DMS_VaultStation_ExpiredText>
   <DMS_VaultStation_ClearedLabel>Vault station secured</DMS_VaultStation_ClearedLabel>
-  <DMS_VaultStation_ClearedText>All hostiles at the vault access station have been neutralized.\n\nHack the security console in the control room to raise the elevator's cover plate; the car still has power. Whatever was left in the vault below is yours to bring up — but the remnants will keep probing the surface.</DMS_VaultStation_ClearedText>
+  <DMS_VaultStation_ClearedText>All hostiles at the vault access station have been neutralized.\n\nHack the security console in the control room to raise the elevator's cover plate; the car still has power. Whatever was left in the vault below is yours to bring up, but the remnants will keep probing the surface.</DMS_VaultStation_ClearedText>
   <DMS_VaultStation_EntryCountdownLabel>Hostile station: reinforcements inbound</DMS_VaultStation_EntryCountdownLabel>
   <DMS_VaultStation_EntryCountdownText>You have entered a hostile remnant installation. Its monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Get the shaft open, then decide whether to hold the surface or go down.</DMS_VaultStation_EntryCountdownText>
 
@@ -23,15 +23,15 @@
   <DMS_RepairStation_ClearedLabel>Repair depot secured</DMS_RepairStation_ClearedLabel>
   <DMS_RepairStation_ClearedText>All hostiles at the remnant repair depot have been neutralized.\n\nHack the depot's security console to release the maintenance bay. The units in the cradles were never re-authenticated: a mechanitor can hack one and take it. The lifter on the pad and the stores are yours as well.</DMS_RepairStation_ClearedText>
   <DMS_RepairStation_EntryCountdownLabel>Hostile depot: reinforcements inbound</DMS_RepairStation_EntryCountdownLabel>
-  <DMS_RepairStation_EntryCountdownText>You have entered a hostile remnant installation. Its monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Finish your business and get out — or dig in.</DMS_RepairStation_EntryCountdownText>
+  <DMS_RepairStation_EntryCountdownText>You have entered a hostile remnant installation. Its monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Finish your business and get out, or dig in.</DMS_RepairStation_EntryCountdownText>
 
   <!-- ============ 餘械前進基地 Remnant forward base ============ -->
   <DMS_OperationBase_ExpiredLabel>Forward base struck</DMS_OperationBase_ExpiredLabel>
   <DMS_OperationBase_ExpiredText>The remnant forward base has struck camp and moved on. Its position is lost.</DMS_OperationBase_ExpiredText>
   <DMS_OperationBase_ClearedLabel>Forward base secured</DMS_OperationBase_ClearedLabel>
-  <DMS_OperationBase_ClearedText>All hostiles at the remnant forward base have been neutralized.\n\nThe supply dump is yours. Hack both security consoles to open the blast doors, then hack the freight elevator itself to reach the store below — but the remnants will keep probing the perimeter.</DMS_OperationBase_ClearedText>
+  <DMS_OperationBase_ClearedText>All hostiles at the remnant forward base have been neutralized.\n\nThe supply dump is yours. Hack both security consoles to open the blast doors, then hack the freight elevator itself to reach the store below, but the remnants will keep probing the perimeter.</DMS_OperationBase_ClearedText>
   <DMS_OperationBase_EntryCountdownLabel>Hostile base: reinforcements inbound</DMS_OperationBase_EntryCountdownLabel>
-  <DMS_OperationBase_EntryCountdownText>You have entered a hostile remnant installation. Its monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Finish your business and get out — or dig in.</DMS_OperationBase_EntryCountdownText>
+  <DMS_OperationBase_EntryCountdownText>You have entered a hostile remnant installation. Its monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Finish your business and get out, or dig in.</DMS_OperationBase_EntryCountdownText>
 
   <!-- ============ 荒廢餘械站點 Derelict remnant station ============ -->
   <DMS_SiteStation_ExpiredLabel>Station picked clean</DMS_SiteStation_ExpiredLabel>
@@ -39,7 +39,7 @@
   <DMS_SiteStation_ClearedLabel>Station cleared</DMS_SiteStation_ClearedLabel>
   <DMS_SiteStation_ClearedText>All hostiles at the derelict station have been neutralized.\n\nThe ancient crates, the shelving and the wrecks are yours to strip, and the pod launchers still work. Expect the remnants to keep probing the ruins.</DMS_SiteStation_ClearedText>
   <DMS_SiteStation_EntryCountdownLabel>Hostile station: reinforcements inbound</DMS_SiteStation_EntryCountdownLabel>
-  <DMS_SiteStation_EntryCountdownText>You have entered a hostile remnant installation. Its monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. The station is large — do not get strung out across it when they do.</DMS_SiteStation_EntryCountdownText>
+  <DMS_SiteStation_EntryCountdownText>You have entered a hostile remnant installation. Its monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. The station is large; do not get strung out across it when they do.</DMS_SiteStation_EntryCountdownText>
 
   <!-- ============ 廢棄發射場 Abandoned launch site ============ -->
   <DMS_LaunchSite_ExpiredLabel>Launch site lost</DMS_LaunchSite_ExpiredLabel>
@@ -47,6 +47,6 @@
   <DMS_LaunchSite_ClearedLabel>Launch site cleared</DMS_LaunchSite_ClearedLabel>
   <DMS_LaunchSite_ClearedText>The remnant patrol at the abandoned launch site has been neutralized.\n\nThe wreckage is yours to salvage. Expect the remnants to send another patrol through eventually.</DMS_LaunchSite_ClearedText>
   <DMS_LaunchSite_EntryCountdownLabel>Hostile site: reinforcements inbound</DMS_LaunchSite_EntryCountdownLabel>
-  <DMS_LaunchSite_EntryCountdownText>You have entered a remnant patrol zone. The patrol's monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Salvage what you can and get out — or dig in.</DMS_LaunchSite_EntryCountdownText>
+  <DMS_LaunchSite_EntryCountdownText>You have entered a remnant patrol zone. The patrol's monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Salvage what you can and get out, or dig in.</DMS_LaunchSite_EntryCountdownText>
 
 </LanguageData>

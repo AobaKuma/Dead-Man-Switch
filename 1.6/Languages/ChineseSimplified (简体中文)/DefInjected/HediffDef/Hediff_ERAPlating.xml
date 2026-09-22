@@ -1,9 +1,18 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-  
-  <!-- EN: electromagnetic reactive plating -->
-  <DMS_Hediff_ERAPlating.label>电磁反应装甲</DMS_Hediff_ERAPlating.label>
-  <!-- EN: An add-on array of electromagnetic reactive armor bricks bolted over the chassis. When a shaped charge jet or a heavy explosive hit lands, the brick above it detonates outward and defeats the penetrator entirely, at the cost of being consumed and shocking the frame underneath.\n\nIt does nothing against small arms or melee — those are the job of the base plating. Spent bricks must be replenished with steel. -->
-  <DMS_Hediff_ERAPlating.description>一组栓固在底盘外的电磁反应装甲砖阵列。当成形装药射流或重型爆炸物命中时，对应位置的装甲砖会向外引爆，彻底抵销穿甲体，代价是该砖块被消耗殆尽，并对底下的机体造成电击。\n\n它对轻武器与近战毫无作用——那是基础装甲的工作。耗尽的装甲砖必须以钢铁补充。</DMS_Hediff_ERAPlating.description>
-  
-</LanguageData>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+  
+
+  <!-- EN: electromagnetic reactive plating -->
+
+  <DMS_Hediff_ERAPlating.label>电磁反应装甲</DMS_Hediff_ERAPlating.label>
+
+  <!-- EN: An add-on array of electromagnetic reactive armor bricks bolted over the chassis. When a shaped charge jet or a heavy explosive hit lands, the brick above it detonates outward and defeats the penetrator entirely, at the cost of being consumed and shocking the frame underneath.\n\nIt does nothing against small arms or melee; those are the job of the base plating. Spent bricks must be replenished with steel. -->
+
+  <DMS_Hediff_ERAPlating.description>一组栓固在底盘外的电磁反应装甲砖阵列。当成形装药射流或重型爆炸物命中时，对应位置的装甲砖会向外引爆，彻底抵销穿甲体，代价是该砖块被消耗殆尽，并对底下的机体造成电击。\n\n它对轻武器与近战毫无作用，那是基础装甲的工作。耗尽的装甲砖必须以钢铁补充。</DMS_Hediff_ERAPlating.description>
+
+  
+
+</LanguageData>
+

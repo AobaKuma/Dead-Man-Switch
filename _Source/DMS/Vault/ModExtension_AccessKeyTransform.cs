@@ -14,7 +14,7 @@ namespace DMS
         public ThingDef unlockedDef;
 
         /// <summary>
-        /// 新建築若掛有 CompHackable，直接視為已駭入——鑰匙卡已經是一道門檻，不再要求玩家駭第二次。
+        /// 新建築若掛有 CompHackable，直接視為已駭入，鑰匙卡已經是一道門檻，不再要求玩家駭第二次。
         /// If the new building carries a CompHackable, mark it hacked outright; the key card was the gate.
         /// </summary>
         public bool markHacked = true;

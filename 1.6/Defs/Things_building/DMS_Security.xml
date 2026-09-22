@@ -34,7 +34,7 @@
            喚醒：警戒掃描器的 FFF_AlertScanner_Triggered 訊號、挨打、殖民者走進 wakeUpCheckRadius、玩家在旁邊施工；
            醒來時轉播同一訊號叫醒附近的其他休眠砲塔。
            掛在基底上，所有沿用 <comps> 合併的自動砲塔都會繼承；用 <comps Inherit="false"> 的有人操作砲塔
-           （Vasilek、LMG、AGL、HMG）刻意不套用 —— 它們本來就要有人上機才會開火。
+           （Vasilek、LMG、AGL、HMG）刻意不套用：它們本來就要有人上機才會開火。
            Dormancy: only when spawned for an NPC faction during map generation, with npcDormantChance
            (DMS.CompCanBeDormant_NPCChance); player-built and combat-deployed copies stay awake, and any
            player-faction turret (including claimed ones) always counts as awake. Asleep,

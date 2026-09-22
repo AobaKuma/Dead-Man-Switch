@@ -8,7 +8,7 @@
        Hand-authored FFF blocks for the two key rooms. Stamped at the room centre by tag;
        if the room is too small the worker falls back to procedural filling.
 
-       這兩塊都只放內裝，不含牆體 —— 牆由 StructureLayoutDef 負責。
+       這兩塊都只放內裝，不含牆體，牆由 StructureLayoutDef 負責。
        Interior only; the walls belong to the StructureLayoutDef.
        ============================================================ -->
 

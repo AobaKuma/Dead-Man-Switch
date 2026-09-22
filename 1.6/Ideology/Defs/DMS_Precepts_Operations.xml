@@ -10,7 +10,7 @@
        1. DMS_QuestSuccess_Military / DMS_QuestFailed_Military 由
           QuestScriptDef 的 successHistoryEvent 記錄,事件裡沒有 Doer。
           沒有 Doer 時 IdeoUtility 會通知「所有自由殖民者」,所以
-          KnowsMemoryThought 會全體生效 —— 但也因此不能用
+          KnowsMemoryThought 會全體生效，但也因此不能用
           SelfTookMemoryThought(它會直接 GetArg<Pawn>(Doer) 而爆掉),
           也不能設 doerMustBeMyFaction(設了就永遠不觸發)。
        2. DMS_CalledFireSupport 有 Doer,所以 Knows 只會傳到

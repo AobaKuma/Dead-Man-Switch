@@ -10,7 +10,7 @@
 
     注意：這些佈局保留大面積 TerrainRect（數百格 PackedDirt/Concrete 庭院），
     FFF_StructureUtility.SpawnTerrain 會在每一格摧毁 isNaturalRock，
-    山地站點上會挖出一大片平地 —— 這是刻意保留的行為。
+    山地站點上會挖出一大片平地，這是刻意保留的行為。
     較轕的替代方案見 DMS_DecoySiteEdgeRuins.xml。
     DMS_Ruin_A 另帶 FFF_Element_PawnGroup（0~1500 點 DMS_Legacy），
     被挑中時會在 GenStep 守軍之外追加敵人。
@@ -998,7 +998,7 @@
         </posList>
       </li>
       <!-- (19,0,22) 上移：Battery(19,0,21) rot2 已占 (19,22)。
-           Moved — Battery at (19,0,21) already covers (19,22). -->
+           Moved; Battery at (19,0,21) already covers (19,22). -->
       <li Class="Fortified.Structures.FFF_Element_ThingScatter">
         <def>DMS_Building_FPVNest</def>
         <posList>
@@ -1015,7 +1015,7 @@
         <pos>(22, 0, 18)</pos>
       </li>
       <!-- (21,0,23) 左移：橫放電池 (20,0,23) rot3 已占 (20,23)+(21,23)。
-           Moved — the horizontal battery at (20,0,23) covers (20,23)+(21,23). -->
+           Moved; the horizontal battery at (20,0,23) covers (20,23)+(21,23). -->
       <li Class="Fortified.Structures.FFF_Element_ThingScatter">
         <def>DMS_EmergencyLamp</def>
         <posList>
@@ -1057,7 +1057,7 @@
         <pos>(18, 0, 22)</pos>
       </li>
       <!-- 移至 x20：Battery(19,0,21) rot2 占 (19,21)+(19,22)，導線不可同格。
-           Moved to x20 — Battery at (19,0,21) already covers (19,22). -->
+           Moved to x20; Battery at (19,0,21) already covers (19,22). -->
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>HiddenConduit</def>
         <pos>(20, 0, 22)</pos>
@@ -2594,7 +2594,7 @@
       </li>
       <!-- 從 x7 起：橫放的電池 (5,0,5) rot3 已占 (5,5)+(6,5)，導線不可同格。
            (7,5) 與電池相鄰，仍在同一電網。
-           Starts at x7 — the rot3 battery at (5,0,5) covers (5,5)+(6,5). (7,5) is
+           Starts at x7; the rot3 battery at (5,0,5) covers (5,5)+(6,5). (7,5) is
            adjacent to it, so they still share one net. -->
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>PowerConduit</def>

@@ -2,8 +2,8 @@
 <Defs>
 
   <!-- ============================================================
-       DMS 軍事儲存庫 — 獎勵房
-       DMS military storage vault — treasury
+       DMS 軍事儲存庫：獎勵房
+       DMS military storage vault: treasury
 
        房門全部換成 FFF 的密封門（打不壞、駭不了），只有駭入別處的安全控制台才會放行。
        封門與控制台的擺放由 DMS.VaultTreasuryUtility 在整棟結構生成完後處理，

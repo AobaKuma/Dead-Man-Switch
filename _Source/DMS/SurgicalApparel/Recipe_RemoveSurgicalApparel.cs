@@ -6,7 +6,7 @@ namespace DMS
 {
     /// <summary>
     /// 拆卸「需要手術才能脫下」的裝備。
-    /// 設計取向：安全但耗時 —— 不做手術失敗判定、不造成傷害，裝備完好回收。
+    /// 設計取向：安全但耗時，不做手術失敗判定、不造成傷害，裝備完好回收。
     /// 只要在 RecipeDef 中設定 targetsBodyPart = false 即可對整體施作。
     /// </summary>
     public class Recipe_RemoveSurgicalApparel : Recipe_Surgery

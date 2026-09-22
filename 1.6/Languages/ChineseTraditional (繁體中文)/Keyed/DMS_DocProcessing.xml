@@ -8,8 +8,8 @@
   <DMS_DocQuest_ArrivedText1>來自 {0} 的文書已由空投艙送達貿易信標或殖民地中心附近。艦隊要求每一份都完好繳回。</DMS_DocQuest_ArrivedText1>
   <!-- EN: Sealed document crates have landed near your trade beacons. The attached manifest is signed by {0}: 'Processed, stamped, and returned in full.' -->
   <DMS_DocQuest_ArrivedText2>密封的文件貨箱已降落在貿易信標附近。隨附的貨單上有 {0} 的簽名：「處理、蓋章、如數繳回。」</DMS_DocQuest_ArrivedText2>
-  <!-- EN: The fleet's backlogged paperwork has arrived. {0} requests that processing begin at the earliest opportunity — the clerical division is already behind schedule. -->
-  <DMS_DocQuest_ArrivedText3>艦隊的積壓文書已送達。{0} 要求儘早開始處理——文書部門的進度已經落後了。</DMS_DocQuest_ArrivedText3>
+  <!-- EN: The fleet's backlogged paperwork has arrived. {0} requests that processing begin at the earliest opportunity: the clerical division is already behind schedule. -->
+  <DMS_DocQuest_ArrivedText3>艦隊的積壓文書已送達。{0} 要求儘早開始處理：文書部門的進度已經落後了。</DMS_DocQuest_ArrivedText3>
 
   <!-- EN: Documents destroyed -->
   <DMS_DocQuest_DestroyedLabel>文書資料損毀</DMS_DocQuest_DestroyedLabel>

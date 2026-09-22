@@ -176,7 +176,7 @@
         <size>(7, 6)</size>
       </li>
 
-      <!-- 室內設備：誘餌天線為核心 Interior — DMS_DecoyRadio centerpiece -->
+      <!-- 室內設備：誘餌天線為核心 Interior: DMS_DecoyRadio centerpiece -->
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>DMS_DecoyRadio</def>
         <pos>(14, 0, 14)</pos>
@@ -420,7 +420,7 @@
         <size>(1, 3)</size>
       </li>
       <!-- 止於 x20：Battery(21,0,20) rot2 占 (21,20)+(21,21)，導線不可延伸到 x21。
-           Stops at x20 — Battery at (21,0,20) covers (21,20)+(21,21). -->
+           Stops at x20; Battery at (21,0,20) covers (21,20)+(21,21). -->
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>PowerConduit</def>
         <pos>(16, 0, 20)</pos>
@@ -475,7 +475,7 @@
         <rot>1</rot>
       </li>
       <!-- (7,0,15) 左移一格：Wreckage_Chunk 為 2x2，會壓到 x8 的鐵絲網縱列。
-           Moved off x8 — the 2x2 chunk overlapped the razorwire column at x8. -->
+           Moved off x8; the 2x2 chunk overlapped the razorwire column at x8. -->
       <li Class="Fortified.Structures.FFF_Element_ThingScatter">
         <def>DMS_Wreckage_Chunk</def>
         <posList>

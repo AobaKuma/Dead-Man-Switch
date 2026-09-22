@@ -8,8 +8,8 @@
   <DMS_DocQuest_ArrivedText1>The documents from {0} have arrived by drop pod near your trade beacons or colony center. The fleet expects every one of them back intact.</DMS_DocQuest_ArrivedText1>
   <!-- EN: Sealed document crates have landed near your trade beacons. The attached manifest is signed by {0}: 'Processed, stamped, and returned in full.' -->
   <DMS_DocQuest_ArrivedText2>Sealed document crates have landed near your trade beacons. The attached manifest is signed by {0}: 'Processed, stamped, and returned in full.'</DMS_DocQuest_ArrivedText2>
-  <!-- EN: The fleet's backlogged paperwork has arrived. {0} requests that processing begin at the earliest opportunity — the clerical division is already behind schedule. -->
-  <DMS_DocQuest_ArrivedText3>The fleet's backlogged paperwork has arrived. {0} requests that processing begin at the earliest opportunity — the clerical division is already behind schedule.</DMS_DocQuest_ArrivedText3>
+  <!-- EN: The fleet's backlogged paperwork has arrived. {0} requests that processing begin at the earliest opportunity: the clerical division is already behind schedule. -->
+  <DMS_DocQuest_ArrivedText3>The fleet's backlogged paperwork has arrived. {0} requests that processing begin at the earliest opportunity: the clerical division is already behind schedule.</DMS_DocQuest_ArrivedText3>
 
   <!-- EN: Documents destroyed -->
   <DMS_DocQuest_DestroyedLabel>Documents destroyed</DMS_DocQuest_DestroyedLabel>

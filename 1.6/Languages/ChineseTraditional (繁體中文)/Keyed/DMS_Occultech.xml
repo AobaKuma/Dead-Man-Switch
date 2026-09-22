@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- ==================================================================== -->
+  <!-- 封存科技制裁                                                          -->
+  <!-- 由 DMS.OccultechSanctionUtility 與 Patch_OccultechSanction 發出。      -->
+  <!-- ==================================================================== -->
+
+  <!-- 豁免：臨時解禁令。{0} 研究, {1} 軍官名, {2} 其官階, {3} 艦隊名 -->
+  <DMS_Occultech_ExemptLabel>臨時解禁令：{0}</DMS_Occultech_ExemptLabel>
+  <DMS_Occultech_ExemptText>研究人員解析完成了{0}。\n\n{1}在{3}的在籍名冊上持有{2}軍銜，已依緊急必要性對該項管制簽署臨時解禁令。這份檔案因此被登記為獲授權的戰時例外，而非未授權解密。\n\n本次不產生任何制裁。解禁令的效力僅維持在我們仍有該階以上軍官的期間。</DMS_Occultech_ExemptText>
+
+  <!-- 限制級：扣好感度。{0} 研究, {1} 艦隊名, {2} 扣除量, {3} 變動前, {4} 變動後, {5} 豁免所需官階 -->
+  <DMS_Occultech_RestrictedLabel>限制級檔案已開封：{0}</DMS_Occultech_RestrictedLabel>
+  <DMS_Occultech_RestrictedText>我們解析了限制級檔案{0}。這個等級的技術之所以被列管，是出於環境與人倫因素，或是它對使用者本人造成的永久性影響，而不是因為它對其他人有多危險。\n\n{1}已將這次解密記在我們的名下。好感度 {3} → {4}（{2}）。\n\n如果殖民地裡有{5}以上軍銜的成員，對方本可簽署一紙臨時解禁令，這件事到此就結束了。</DMS_Occultech_RestrictedText>
+
+  <!-- 封存級：立即敵對。{0} 研究, {1} 艦隊名, {2} 豁免所需官階 -->
+  <DMS_Occultech_SealedLabel>封存已破：{0}</DMS_Occultech_SealedLabel>
+  <DMS_Occultech_SealedText>我們開啟了封存級檔案{0}。這個等級的技術被封存，是因為它的擴散本身就會在星系之間點燃軍備競賽。這些內容在艦隊內部是公開的：一線人員被教導去辨識它的技術特徵並上報。在艦隊之外，持有它本身就足以構成理由。\n\n{1}已經辨識出技術特徵，並向我們宣告敵對。\n\n只要我們還持有任何封存級技術，他們最多就是停火：在我們透過通訊台正式申報放棄之前，關係不可能回到盟友。若殖民地裡有{2}以上軍銜的成員，這一切原本都不會發生。</DMS_Occultech_SealedText>
+  <DMS_Occultech_SealedRaidLine>{0}的應處部隊已經在路上了。</DMS_Occultech_SealedRaidLine>
+
+  <!-- 隱匿級：永久敵對。{0} 研究, {1} 艦隊名, {2} 連坐派系名單 -->
+  <DMS_Occultech_OccultedLabel>隱匿級檔案已開封：{0}</DMS_Occultech_OccultedLabel>
+  <DMS_Occultech_OccultedText>我們開啟了隱匿級檔案{0}。光是知道這個等級的技術存在，本身就是危害：每一道失效的封存，都是又一次讓成千上億的人為了某些人的一己私利被犧牲的機會。\n\n{1}已對本殖民地發布長期追殺令。沒有任何解禁令、任何軍銜、任何說詞能夠撤銷它。他們的獵殺部隊會不斷前來。\n\n消息已經沿著他們的線路傳開。{2}也一併與我們斷絕了關係；至少這些關係還有時間可以修補。\n\n只剩一條路。把我們官階最高的軍官交付艦隊軍事法庭，讓他服滿一年刑期，追殺令就會結束，但也只到中立為止，不會更好。</DMS_Occultech_OccultedText>
+  <DMS_Occultech_OccultedNoAllies>沒有其他派系</DMS_Occultech_OccultedNoAllies>
+
+  <!-- 關係校正提示。{0} 艦隊名 -->
+  <DMS_Occultech_AllyBlockedMessage>只要我們還持有封存級技術，{0}就不會與我們結盟。</DMS_Occultech_AllyBlockedMessage>
+
+  <!-- 永久敵對解除。{0} 艦隊名 -->
+  <DMS_Occultech_PardonLabel>追殺令已撤銷</DMS_Occultech_PardonLabel>
+  <DMS_Occultech_PardonText>刑期已經服滿。{0}撤銷了對本殖民地的長期追殺令，並將我們恢復為中立立場。\n\n我們開啟的那份檔案仍然是開著的。他們只是不再派人來把它闔上了。</DMS_Occultech_PardonText>
+
+  <!-- 放棄技術。{0} 艦隊名, {1} 放棄清單 -->
+  <DMS_Occultech_RenouncedLabel>封存檔案已繳回</DMS_Occultech_RenouncedLabel>
+  <DMS_Occultech_RenouncedText>我們已向{0}發出正式的放棄聲明，並清除了以下檔案的所有副本：\n\n{1}\n\n這些檔案解鎖的一切都重新上鎖了，日後若要改變心意，研究必須從頭開始。檔案既然已經交出，{0}願意重新考慮結盟。</DMS_Occultech_RenouncedText>
+  <DMS_Occultech_RenouncedMessage>已放棄 {0} 項封存級研究。</DMS_Occultech_RenouncedMessage>
+
+  <!-- 通訊台對話。{0} 艦隊名, {1} 清單 -->
+  <DMS_Occultech_RenounceOption>放棄封存級技術</DMS_Occultech_RenounceOption>
+  <DMS_Occultech_RenounceBlockedPermanent>這件事他們不接受通訊。追殺令只能由軍事法庭終結。</DMS_Occultech_RenounceBlockedPermanent>
+  <DMS_Occultech_RenounceConfirm>你接通了{0}的檔案管理處，表示願意繳回我們手上所有列為封存的內容。\n\n以下研究將歸零，其解鎖的一切也會重新上鎖：\n\n{1}\n\n此舉無法撤銷：若要重新取得，必須從零開始。作為交換，{0}會重新考慮與我們結盟。</DMS_Occultech_RenounceConfirm>
+  <DMS_Occultech_RenounceAccept>繳回檔案。</DMS_Occultech_RenounceAccept>
+
+</LanguageData>

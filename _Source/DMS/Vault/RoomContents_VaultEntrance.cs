@@ -7,7 +7,7 @@ namespace DMS
 {
     /// <summary>
     /// 地下設施的電梯廳：放出口電梯、拉玩家出生點。
-    /// 這是玩家的初始房間，刻意不放任何砲塔或警戒建築——落地就被打不公平，防務從走廊才開始。
+    /// 這是玩家的初始房間，刻意不放任何砲塔或警戒建築，落地就被打不公平，防務從走廊才開始。
     /// The elevator lobby: exit car and player spawn spot. This is the player's starting room, so it
     /// deliberately holds no turrets or security fixtures; the defences begin in the corridor.
     ///

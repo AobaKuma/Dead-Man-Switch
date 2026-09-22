@@ -4,7 +4,7 @@
   <!--
     誘餌站點外圍大型殘跡（邊緣散布用）：
     沿用 Ruin_ScatteredSmall.xml 的素材語彙（殘骸、彈坑、鐵絲網、貨櫃、毀損建物），
-    但刻意做成「輕地形」版本 —— 每個變體的 TerrainRect 總數控制在 20 格以內，
+    但刻意做成「輕地形」版本：每個變體的 TerrainRect 總數控制在 20 格以內，
     且完全不使用 FFF_Element_Roof* 元素。
 
     為什麼要這樣做（重要）：
@@ -27,7 +27,7 @@
     of courtyard cells each, so reusing them verbatim would bulldoze large areas of
     natural rock and thick roof on mountainous site maps. These variants do not.
 
-    用法 Usage — 由 GenStep 的 satelliteScatter 依地圖尺寸放置，不寫在主結構佈局裡
+    用法 Usage：由 GenStep 的 satelliteScatter 依地圖尺寸放置，不寫在主結構佈局裡
     （見 Defs/Quests/DMS_DecoySiteQuest.xml 的 DMS_DecoySiteStructure）：
       <satelliteScatter>
         <li>
@@ -39,7 +39,7 @@
     刻意不用 FFF_Element_RandomSubStructure：元素在 sketch 建構期執行，拿不到 Map，
     無法依地圖尺寸縮放，且會撐大主結構的 OccupiedRect 使營區偏離地圖中心。
 
-    Placed by the GenStep's satelliteScatter, not as layout elements — elements run at
+    Placed by the GenStep's satelliteScatter, not as layout elements; elements run at
     sketch-build time with no Map available, so they can't scale to map size, and they
     inflate the main structure's OccupiedRect and push the compound off centre.
   -->
@@ -446,7 +446,7 @@
         </posList>
       </li>
       <!-- 止於 x3：FPVHangerDestoryed 為 3x3、中心 (5,0,15)，占 (4..6, 14..16)。
-           Stops at x3 — the 3x3 hangar centred on (5,0,15) covers (4..6, 14..16). -->
+           Stops at x3; the 3x3 hangar centred on (5,0,15) covers (4..6, 14..16). -->
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>AncientRazorWire</def>
         <pos>(1, 0, 16)</pos>

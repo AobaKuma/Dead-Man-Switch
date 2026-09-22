@@ -2,8 +2,8 @@
 <Defs>
 
   <!-- ============================================================
-       DMS 軍事儲存庫 — 出入口
-       DMS military storage vault — surface entrance / underground exit
+       DMS 軍事儲存庫：出入口
+       DMS military storage vault: surface entrance / underground exit
 
        地表電梯（Core 的 MapPortal）→ 產生口袋地圖 → DMS_VaultStructure 依
        StructureLayoutDef 佈局 → 入口房間放下對應的出口。

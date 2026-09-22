@@ -5,9 +5,9 @@
   <!-- EN: remnant airfield -->
   <DMS_AirportSite.label>餘械機場</DMS_AirportSite.label>
   <!-- EN: A Legacy remnant drone airfield. The control tower still runs a high-powered decoy radio tuned to the cluster weaver's command band - once the garrison is dealt with, the transmitter can call the mothership down onto the airfield instead of onto your home. -->
-  <DMS_AirportSite.description>一座先鋒餘械的無人機機場。塔台裡仍運作著一台調到集群織鳥指揮頻段的高功率誘餌無線電——只要先解決駐守的守軍，就能用它把母機引到這座機場，而不是引到你家門口。</DMS_AirportSite.description>
+  <DMS_AirportSite.description>一座先鋒餘械的無人機機場。塔台裡仍運作著一台調到集群織鳥指揮頻段的高功率誘餌無線電：只要先解決駐守的守軍，就能用它把母機引到這座機場，而不是引到你家門口。</DMS_AirportSite.description>
   <!-- EN: You have arrived at the remnant airfield. A drone garrison holds the tower and the aprons.\n\nThe decoy radio in the tower is intact. Clear the field, then use it to call the cluster weaver down here - far from your colony. -->
-  <DMS_AirportSite.arrivedLetter>你已抵達餘械機場。一支無人機守軍佔據著塔台與停機坪。\n\n塔台裡的誘餌無線電完好無損。先肅清機場，再用它把集群織鳥引到這裡——遠離你的殖民地。</DMS_AirportSite.arrivedLetter>
+  <DMS_AirportSite.arrivedLetter>你已抵達餘械機場。一支無人機守軍佔據著塔台與停機坪。\n\n塔台裡的誘餌無線電完好無損。先肅清機場，再用它把集群織鳥引到這裡，遠離你的殖民地。</DMS_AirportSite.arrivedLetter>
 
   <!-- ============ 儲存庫地面站 Vault access station ============ -->
   <!-- EN: vault access station -->
@@ -39,7 +39,7 @@
   <!-- EN: A sprawling pre-war station, half of it collapsed, that a Legacy remnant detachment has dug into. Ancient supply crates and wrecked machinery are scattered through the ruins. -->
   <DMS_SiteStationSite.description>一座佔地廣闊、半數已經倒塌的戰前站點，一支先鋒餘械分遣隊據守於此。古代補給箱與報廢的機械散落在廢墟各處。</DMS_SiteStationSite.description>
   <!-- EN: You have arrived at the derelict station. A remnant detachment is dug in among the ruins.\n\nThe station is large and the garrison is spread out - expect them to converge once the shooting starts. -->
-  <DMS_SiteStationSite.arrivedLetter>你已抵達荒廢站點。一支餘械分遣隊據守在廢墟之中。\n\n這座站點很大，守軍分布得很散——一旦開火，預期他們會朝你集結過來。</DMS_SiteStationSite.arrivedLetter>
+  <DMS_SiteStationSite.arrivedLetter>你已抵達荒廢站點。一支餘械分遣隊據守在廢墟之中。\n\n這座站點很大，守軍分布得很散，一旦開火，預期他們會朝你集結過來。</DMS_SiteStationSite.arrivedLetter>
 
   <!-- ============ 廢棄發射場 Abandoned launch site ============ -->
   <!-- EN: abandoned launch site -->

@@ -2,8 +2,8 @@
 <Defs>
 
   <!-- ============================================================
-       DMS 地下設施 — 三張手工版面的單體大空間地圖
-       DMS underground facilities — three hand-authored "one big hall + small rooms" maps
+       DMS 地下設施：三張手工版面的單體大空間地圖
+       DMS underground facilities: three hand-authored "one big hall + small rooms" maps
 
        每張都是完整的 FFF_StructureDef：不可破壞的外殼、出口電梯 (DMS_VaultElevatorExit)、
        貼牆的緊急照明與攝影機、隱藏導線接到變電櫃。由 DMS.DMS_GenStep_UndergroundStructure
@@ -432,7 +432,7 @@
         <pos>(39, 0, 8)</pos>
       </li>
 
-      <!-- 房間二 (z10~16)：配電室 — 變電櫃供電給整座倉庫 / Room 2: switch room, the substation powers the whole warehouse -->
+      <!-- 房間二 (z10~16)：配電室：變電櫃供電給整座倉庫 / Room 2: switch room, the substation powers the whole warehouse -->
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>DMS_SubstationCabinet</def>
         <pos>(41, 0, 13)</pos>
@@ -458,7 +458,7 @@
         <pos>(35, 0, 16)</pos>
       </li>
 
-      <!-- 房間三 (z18~24)：警衛室 — 沙包與封存中的步兵機兵 / Room 3: guard post with sandbags and mothballed infantry -->
+      <!-- 房間三 (z18~24)：警衛室：沙包與封存中的步兵機兵 / Room 3: guard post with sandbags and mothballed infantry -->
       <li Class="Fortified.Structures.FFF_Element_ThingScatter">
         <def>Sandbags</def>
         <stuff>Cloth</stuff>

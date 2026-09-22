@@ -4,7 +4,7 @@
   <ThingDef ParentName="DMS_BossCallerBase">
     <defName>DMS_RaidWaveBeacon_PeacekeepingOperators</defName>
     <label>peacekeeping distress beacon</label>
-    <description>A tampered emergency transponder repurposed to broadcast a false peacekeeping distress call. Once activated, it summons a Legacy remnant peacekeeping detachment — Protector shieldbearers screening a Ronin spearhead, with Falcon marksmen providing overwatch — to storm the signal's origin. The burst burns out the transmitter, so this building can only be used once.</description>
+    <description>A tampered emergency transponder repurposed to broadcast a false peacekeeping distress call. Once activated, it summons a Legacy remnant peacekeeping detachment: Protector shieldbearers screening a Ronin spearhead, with Falcon marksmen providing overwatch, to storm the signal's origin. The burst burns out the transmitter, so this building can only be used once.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_Mech_Protector</ThingDef>
       <ThingDef>DMS_Mech_Ronin</ThingDef>

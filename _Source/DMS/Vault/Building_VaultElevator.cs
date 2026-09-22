@@ -7,7 +7,7 @@ namespace DMS
 {
     /// <summary>
     /// DMS 版地下設施出入口：一台仍能運作的貨運電梯。
-    /// A DMS entrance to an underground facility — a freight elevator that still runs.
+    /// A DMS entrance to an underground facility: a freight elevator that still runs.
     ///
     /// 直接繼承 <see cref="MapPortal"/>（Core），不走 Odyssey 的 AncientHatch，因此不需要 DLC。
     /// 自行處理三件事：

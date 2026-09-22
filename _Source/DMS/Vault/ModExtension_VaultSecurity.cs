@@ -7,7 +7,7 @@ namespace DMS
     /// 掛在走廊 LayoutRoomDef 上，指定 <see cref="RoomContents_VaultMainHall"/> 要鋪的警戒設施。
     /// 每一項都可以留空，留空就不生成那一類設施。
     /// Attached to the corridor LayoutRoomDef; tells <see cref="RoomContents_VaultMainHall"/> which
-    /// security fixtures to lay down. Every entry is optional — leave one null to skip that kind.
+    /// security fixtures to lay down. Every entry is optional; leave one null to skip that kind.
     /// </summary>
     public class ModExtension_VaultSecurity : DefModExtension
     {
@@ -29,7 +29,7 @@ namespace DMS
 
         /// <summary>
         /// 整條走廊掛一座的壁掛配電盤（須為 wall attachment），是走廊上所有設施的電源。
-        /// Wall-mounted substation (a wall attachment) — one per corridor, powering everything on it.
+        /// Wall-mounted substation (a wall attachment), one per corridor, powering everything on it.
         /// </summary>
         public ThingDef substationDef;
 
@@ -44,7 +44,7 @@ namespace DMS
 
         /// <summary>
         /// 每座砲塔有這個機率換成報廢品（例如 DMS_Wreckage_SentryGun），讓哨站看起來年久失修、也讓火力不那麼整齊。
-        /// Chance each turret is a wreck instead (e.g. DMS_Wreckage_SentryGun) — the checkpoints read as
+        /// Chance each turret is a wreck instead (e.g. DMS_Wreckage_SentryGun); the checkpoints read as
         /// neglected, and the firepower is less uniform.
         /// </summary>
         public ThingDef wreckedTurretDef;

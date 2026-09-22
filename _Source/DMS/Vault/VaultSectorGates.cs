@@ -7,7 +7,7 @@ namespace DMS
 {
     /// <summary>
     /// 分區閘門：在每條支道跟母走廊的路口封一整排密封門（各種寬度拼滿走廊），旁邊放一台控制台。
-    /// 控制台放在「從入口走得到」的那一側——順著走廊樹判斷：入口所在的子樹那側就是可及側。
+    /// 控制台放在「從入口走得到」的那一側，順著走廊樹判斷：入口所在的子樹那側就是可及側。
     /// 這樣玩家永遠能從自己所在的分區一路駭出去，不會被封死。
     ///
     /// Sector gates: a full row of sealed doors (assorted widths, mixed to fill the corridor) where each

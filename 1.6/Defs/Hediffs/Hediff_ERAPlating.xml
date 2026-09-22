@@ -14,7 +14,7 @@
   <HediffDef>
     <defName>DMS_Hediff_ERAPlating</defName>
     <label>electromagnetic reactive plating</label>
-    <description>An add-on array of electromagnetic reactive armor bricks bolted over the chassis. When a shaped charge jet or a heavy explosive hit lands, the brick above it detonates outward and defeats the penetrator entirely, at the cost of being consumed and shocking the frame underneath.\n\nIt does nothing against small arms or melee — those are the job of the base plating. Spent bricks must be replenished with steel.</description>
+    <description>An add-on array of electromagnetic reactive armor bricks bolted over the chassis. When a shaped charge jet or a heavy explosive hit lands, the brick above it detonates outward and defeats the penetrator entirely, at the cost of being consumed and shocking the frame underneath.\n\nIt does nothing against small arms or melee; those are the job of the base plating. Spent bricks must be replenished with steel.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <scenarioCanAdd>false</scenarioCanAdd>

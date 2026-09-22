@@ -63,7 +63,7 @@ namespace DMS
             if (signal.tag != inSignal || arrived) return;
 
             Map map = mapParent?.Map;
-            // arrived 要在確定真的降落之後才立起來 —— 它同時決定 ExposeData 是深度
+            // arrived 要在確定真的降落之後才立起來：它同時決定 ExposeData 是深度
             // 持有還是只存參照,提前立起來會讓沒降落的穿梭機在存讀後變成 null。
             if (map == null || shuttle == null) return;
             arrived = true;

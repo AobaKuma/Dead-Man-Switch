@@ -14,7 +14,7 @@ namespace DMS
     /// 它是 FFF 門禁系統的 wanter 端（<see cref="IAccessKeyWanter"/>），由 access console
     /// （<see cref="CompAccessKeyActivatable"/>）透過 <see cref="AccessKeyLinkUtility"/> 連結；
     /// 連上幾座控制台就需要幾張鑰匙卡。全部用掉後，依 <see cref="ModExtension_AccessKeyTransform"/>
-    /// 在原地生成 unlockedDef——目前用在封板狀態的貨運電梯，解鎖後變回可進入的 DMS_VaultElevator。
+    /// 在原地生成 unlockedDef，目前用在封板狀態的貨運電梯，解鎖後變回可進入的 DMS_VaultElevator。
     ///
     /// It is the wanter end of FFF's access-key system, linked from an access console. Every linked
     /// console costs one key card; once all are spent it spawns unlockedDef in place. Used for the

@@ -62,6 +62,13 @@
     <label>sealed technology lost</label>
   </HistoryEventDef>
 
+  <!-- 封存科技制裁造成好感度變動時的理由，顯示在「好感度變動：XXX」的訊息裡。
+       刻意不讓任何 precept 消費它：制裁本身已經是懲罰，不該再疊一層信仰心情。 -->
+  <HistoryEventDef>
+    <defName>DMS_OccultechResearched</defName>
+    <label>occultech research decoded</label>
+  </HistoryEventDef>
+
   <!-- ── 行為事件 ─────────────────────────────────────────────── -->
 
   <!-- 合成／培養出來的食物的 ingestible.ateEvent,目前掛在

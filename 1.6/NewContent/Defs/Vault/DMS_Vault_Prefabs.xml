@@ -12,7 +12,7 @@
        ============================================================ -->
 
   <!-- 殘骸堆：整間屋子被翻過一遍之後剩下的東西。
-       Wreck scatter — what's left after the place was picked over. -->
+       Wreck scatter: what's left after the place was picked over. -->
   <PrefabDef>
     <defName>DMS_Prefab_WreckScatter</defName>
     <size>(5,5)</size>
@@ -63,7 +63,7 @@
   </PrefabDef>
 
   <!-- 還在運轉的機房一角。少數幾台沒壞的機器，用來對比整體的荒廢。
-       A corner that still runs — a few intact units to contrast with the decay. -->
+       A corner that still runs: a few intact units to contrast with the decay. -->
   <PrefabDef>
     <defName>DMS_Prefab_MachineRow_Live</defName>
     <size>(5,3)</size>
@@ -91,7 +91,7 @@
   </PrefabDef>
 
   <!-- 長廊牆邊的殘骸：被推到牆角的報廢哨戒砲與垃圾桶，不擋路。
-       Hall debris pushed against the wall — a dead sentry and a bin; never blocks the lane. -->
+       Hall debris pushed against the wall: a dead sentry and a bin; never blocks the lane. -->
   <PrefabDef>
     <defName>DMS_Prefab_HallDebris</defName>
     <edgeOnly>true</edgeOnly>

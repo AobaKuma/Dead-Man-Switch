@@ -15,6 +15,8 @@ namespace DMS
         public static QuestScriptDef DMS_PromotionCeremony;
         public static QuestScriptDef DMS_OfficerTraining;
         public static QuestScriptDef DMS_Stele;
+        // 軍事法庭:封存科技隱匿級的永久敵對只能靠它解除(見 OccultechSanctionUtility)。
+        public static QuestScriptDef DMS_CourtMartial;
 		public static PawnKindDef DMS_Officer_Ceremonist;
         public static PawnKindDef DMS_Escort;
         public static ThingDef DMS_Shuttle;
@@ -31,6 +33,9 @@ namespace DMS
         public static TaleDef DMS_Tale_CourtMartialed;
         public static TaleDef DMS_Tale_Acquitted;
         public static HistoryEventDef DMS_MemberCourtMartialed;
+
+        // 封存科技制裁造成好感度變動時的理由(見 OccultechSanctionUtility)。
+        public static HistoryEventDef DMS_OccultechResearched;
 
         // 機動載人升降艙降落在空白地塊時生成的臨時地圖世界物件(見 TransportersArrivalAction_LifterLanding / LifterLandingSite)
         public static WorldObjectDef DMS_LifterLandingSite;

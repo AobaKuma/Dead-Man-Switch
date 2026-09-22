@@ -24,7 +24,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4565-beta" />
-    <PackageReference Include="Lib.Harmony" Version="2.4.1" />
+    <!-- ExcludeAssets=runtime：只取編譯期的 0Harmony 參考，不要把 0Harmony.dll 複製到
+         1.6/Assemblies/。Harmony 由 brrainz.harmony 提供（About.xml 已列為硬相依），
+         模組自己再夾帶一份會與它衝突。 -->
+    <PackageReference Include="Lib.Harmony" Version="2.4.1">
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
 
     <Publicize Include="Assembly-CSharp:RimWorld.CompTargetable.selectedTarget" />
     <Publicize Include="Assembly-CSharp:RimWorld.LordToil_Siege.SetAsDefender" />
@@ -32,6 +37,10 @@
     <Publicize Include="Assembly-CSharp:RimWorld.QuestPart_LendColonistsToFaction.Complete" />
     <!-- Patch_Recipe_ImplantEmbryo_ApplyOnPawn 需要沿用原版的手術失敗判定。 -->
     <Publicize Include="Assembly-CSharp:RimWorld.Recipe_Surgery.CheckSurgeryFail" />
+    <!-- OccultechSanctionUtility.RenounceAll 需要把單一研究的進度歸零；
+         原生只提供 ResetAllProgress()，沒有 per-project 的清除方法。 -->
+    <Publicize Include="Assembly-CSharp:RimWorld.ResearchManager.progress" />
+    <Publicize Include="Assembly-CSharp:RimWorld.ResearchManager.anomalyKnowledge" />
 
   </ItemGroup>
   <ItemGroup>

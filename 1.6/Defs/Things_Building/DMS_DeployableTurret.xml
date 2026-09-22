@@ -3,7 +3,7 @@
 <Defs>
 
 	<!--
-		可部署武器 — 結構參考 Fortification: Industrial 的 FT_GPMG 三件式寫法：
+		可部署武器：結構參考 Fortification: Industrial 的 FT_GPMG 三件式寫法：
 
 			1. 陣地建築  DMS_Turret_LightMachineGun  (Building_TurretGun, minifiedDef 指向 3)
 			2. 砲塔槍身  DMS_Gun_LightMachineGun     (BaseWeaponTurret, 架設後的數值)
@@ -190,7 +190,7 @@
 		因此這裡必須保留 weaponTags；改用 generateAllowChance 0 + tradeability None
 		阻止 PawnGenerator／商隊生出沒有 InnerThing 的空殼（那會被遊戲直接銷毀）。
 		取得方式：由 DMS_Turret_LightMachineGun 的 recipeMaker 製作（產物會自動迷你化成本 def），
-		故此處不放 recipeMaker——直接製作 MinifiedThing 會得到沒有 InnerThing 的空殼。
+		故此處不放 recipeMaker，直接製作 MinifiedThing 會得到沒有 InnerThing 的空殼。
 	-->
 	<ThingDef ParentName="FFF_MinifiedTurretEquippable">
 		<defName>DMS_LightMachineGun</defName>

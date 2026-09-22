@@ -31,7 +31,7 @@ namespace DMS
     ///
     /// Treasury: the room itself only lays out the loot (the def's prefabs / fillEdges).
     /// Sealing the doors and placing the console happen in
-    /// <see cref="VaultTreasuryUtility.SealTreasuries"/> once the whole structure is spawned — every
+    /// <see cref="VaultTreasuryUtility.SealTreasuries"/> once the whole structure is spawned; every
     /// door has to exist and the console has to have found a home before it is safe to seal anything.
     /// </summary>
     public class RoomContents_VaultTreasury : RoomContentsWorker

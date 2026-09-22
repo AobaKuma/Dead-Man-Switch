@@ -11,9 +11,9 @@ namespace DMS
 {
     /// <summary>
     /// 設施地板開口的警報反應：收到警報後，機械體從洞裡一隻隻跳出來，
-    /// 做法比照原版巨坑（PitGate）——先生成在洞內、再用 PawnFlyer 拋到洞外落地。
+    /// 做法比照原版巨坑（PitGate）：先生成在洞內、再用 PawnFlyer 拋到洞外落地。
     /// Alert response for facility floor openings: on alarm, mechs leap out of the hole one after
-    /// another, the way vanilla's pit gate does it — spawned inside the hole, then thrown to a landing
+    /// another, the way vanilla's pit gate does it: spawned inside the hole, then thrown to a landing
     /// cell outside with a PawnFlyer.
     ///
     /// 兵力兩種給法：<see cref="pawnKinds"/> 有填就從裡面抽 <see cref="countRange"/> 隻；

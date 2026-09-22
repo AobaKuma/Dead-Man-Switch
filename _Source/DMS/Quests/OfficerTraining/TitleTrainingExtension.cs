@@ -39,7 +39,7 @@ namespace DMS
     }
 
     /// <summary>
-    /// 特質白名單條目。刻意不用 Verse.TraitRequirement —— 那個是 TraitDef 直接參照,
+    /// 特質白名單條目。刻意不用 Verse.TraitRequirement：那個是 TraitDef 直接參照,
     /// defName 打錯或該特質來自沒裝的 DLC 會在載入期噴紅字;這裡改成字串延遲解析,
     /// 找不到就當作沒這條。
     /// </summary>

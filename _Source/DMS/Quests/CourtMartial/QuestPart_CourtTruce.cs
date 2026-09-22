@@ -25,6 +25,12 @@ namespace DMS
         public float allyChancePerSocialLevel = 0.03f;
         public int allyGoodwill = 75;
 
+        /// <summary>
+        /// 這是否為封存科技隱匿級的永久敵對審判。為 true 時:服刑期滿歸還即解除永久敵對並回到
+        /// 中立,且無論擲骰結果都不會升為盟友(見 OccultechSanctionUtility.EndPermanentHostility)。
+        /// </summary>
+        public bool occultechTrial;
+
         private bool resolved;
 
         private const int CheckIntervalTicks = 250;
@@ -54,16 +60,20 @@ namespace DMS
 
             if (inSignalAcquitted != null && signal.tag == inSignalAcquitted)
             {
-                // 無罪釋放:直接盟友(信件由宣判 part 發出)
+                // 無罪釋放:直接盟友(信件由宣判 part 發出)。封存科技制裁下不得升為盟友。
                 resolved = true;
-                SetGoodwillAndRelation(allyGoodwill, FactionRelationKind.Ally);
+                ResolveOccultech();
+                SetGoodwillAndRelation(
+                    AllyBlocked ? 0 : allyGoodwill,
+                    AllyBlocked ? FactionRelationKind.Neutral : FactionRelationKind.Ally);
                 Complete();
                 return;
             }
             if (signal.tag == inSignalSuccess)
             {
                 resolved = true;
-                bool ally = Rand.Chance(AllyChance);
+                ResolveOccultech();
+                bool ally = !AllyBlocked && Rand.Chance(AllyChance);
                 if (ally)
                     SetGoodwillAndRelation(allyGoodwill, FactionRelationKind.Ally);
                 else
@@ -90,6 +100,21 @@ namespace DMS
             }
         }
 
+        /// <summary>
+        /// 封存科技制裁是否擋下盟友結局:隱匿級審判本身只能回到中立,持有未放棄的封存級技術
+        /// 時也一樣(必須先向艦隊申報放棄)。
+        /// </summary>
+        private bool AllyBlocked => occultechTrial || OccultechSanctionUtility.IsAllyLocked;
+
+        /// <summary>隱匿級審判服刑期滿:解除永久敵對。必須在調整好感度之前執行。</summary>
+        private void ResolveOccultech()
+        {
+            if (occultechTrial)
+            {
+                OccultechSanctionUtility.EndPermanentHostility();
+            }
+        }
+
         public float AllyChance
         {
             get
@@ -113,12 +138,17 @@ namespace DMS
         private void SetGoodwillAndRelation(int targetGoodwill, FactionRelationKind kind)
         {
             if (faction == null) return;
-            Faction player = Faction.OfPlayer;
-            int delta = targetGoodwill - faction.GoodwillWith(player);
-            if (delta != 0)
-                faction.TryAffectGoodwillWith(player, delta, false, false, null, null);
-            if (faction.RelationKindWith(player) != kind)
-                faction.SetRelationDirect(player, kind, false, null, null);
+            // 繞過封存科技的關係守衛:軍事法庭本來就是制裁機制認可的出路,
+            // 否則休戰協議會被自己的永久敵對封鎖打回去。
+            OccultechSanctionUtility.WithGuardSuppressed(delegate
+            {
+                Faction player = Faction.OfPlayer;
+                int delta = targetGoodwill - faction.GoodwillWith(player);
+                if (delta != 0)
+                    faction.TryAffectGoodwillWith(player, delta, false, false, null, null);
+                if (faction.RelationKindWith(player) != kind)
+                    faction.SetRelationDirect(player, kind, false, null, null);
+            });
         }
 
         public override void ExposeData()
@@ -133,6 +163,7 @@ namespace DMS
             Scribe_Values.Look(ref baseAllyChance, "baseAllyChance", 0.15f);
             Scribe_Values.Look(ref allyChancePerSocialLevel, "allyChancePerSocialLevel", 0.03f);
             Scribe_Values.Look(ref allyGoodwill, "allyGoodwill", 75);
+            Scribe_Values.Look(ref occultechTrial, "occultechTrial");
             Scribe_Values.Look(ref resolved, "resolved");
         }
     }

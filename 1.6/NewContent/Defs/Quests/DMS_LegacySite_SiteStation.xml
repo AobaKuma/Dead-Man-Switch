@@ -10,7 +10,7 @@
        Derelict remnant station: an 85x58 pre-war station, half of it wrecked
        (ancient tile, destroyed machinery, wreckage), still held by a remnant
        detachment (Phalanx / Soldat / Hyrax / EscortLifter). No elevator or
-       access gate — a large open battlefield to fight through and strip of
+       access gate: a large open battlefield to fight through and strip of
        ancient crates and salvage. Garrison from the in-layout PawnGroup.
        ============================================================ -->
 
@@ -44,7 +44,7 @@
     <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
     <approachOrderString>Assault {0}</approachOrderString>
     <approachingReportString>Assaulting {0}.</approachingReportString>
-    <arrivedLetter>You have arrived at the derelict station. A remnant detachment is dug in among the ruins.\n\nThe station is large and the garrison is spread out — expect them to converge once the shooting starts.</arrivedLetter>
+    <arrivedLetter>You have arrived at the derelict station. A remnant detachment is dug in among the ruins.\n\nThe station is large and the garrison is spread out; expect them to converge once the shooting starts.</arrivedLetter>
     <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
     <tags>
       <li>DMS_SiteStationSite</li>

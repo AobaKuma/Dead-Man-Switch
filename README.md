@@ -1,6 +1,6 @@
 # The Dead Man's Switch (DMS)
 
-> **RimWorld 1.6 模組** — `Aoba.DeadManSwitch.Core` · 版本 `2.0.00-pre.1`
+> **RimWorld 1.6 模組**：`Aoba.DeadManSwitch.Core` · 版本 `2.0.00-pre.1`
 > Steam Workshop: <https://steamcommunity.com/sharedfiles/filedetails/?id=3121742525>
 > GitHub: <https://github.com/AobaKuma/Dead-Man-Switch>
 
@@ -86,7 +86,7 @@
 |---|---|
 | Harmony | `brrainz.harmony` |
 | Biotech DLC | `ludeon.rimworld.biotech` |
-| **Fortified Feature Framework (FFF)** | `AOBA.Framework` — <https://github.com/AobaKuma/Fortified-Framework> |
+| **Fortified Feature Framework (FFF)** | `AOBA.Framework`：<https://github.com/AobaKuma/Fortified-Framework> |
 
 > 大部分機兵／載具／砲塔的底層邏輯已移至 Fortified Framework，本模組的 `DMS.dll` 只保留模組專屬內容（任務、金庫、Frogman、說書人等）。
 

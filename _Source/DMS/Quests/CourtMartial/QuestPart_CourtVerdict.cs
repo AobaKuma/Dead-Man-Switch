@@ -64,16 +64,20 @@ namespace DMS
                 return;
             }
 
-            // 有罪:降一級,進入服刑
+            // 有罪:降一級,進入服刑。
+            // 被告可能根本沒有軍銜：無 Royalty DLC，或 FindDefendant 走了市場價值 fallback。
+            // 這種情況沒有階可降，改用不提降職的判決文本，否則信件會出現「由 ? 降職為 ?」。
             RoyalTitleDef current = defendant.royalty?.GetCurrentTitle(faction);
+            bool demoted = current != null && current.seniority > 0;
             string oldTitle = current?.GetLabelFor(defendant) ?? "?";
-            if (current != null && current.seniority > 0)
+            if (demoted)
                 defendant.royalty.ReduceTitle(faction);
             string newTitle = defendant.royalty?.GetCurrentTitle(faction)?.GetLabelFor(defendant) ?? oldTitle;
 
+            string verdictTextKey = demoted ? "verdictLetterText" : "verdictLetterNoDemotionText";
             Find.LetterStack.ReceiveLetter(
                 SupplyChainText.Resolve(CourtMartialText.Pack, "verdictLetterLabel", LetterVars(oldTitle, newTitle)),
-                SupplyChainText.Resolve(CourtMartialText.Pack, "verdictLetterText", LetterVars(oldTitle, newTitle)),
+                SupplyChainText.Resolve(CourtMartialText.Pack, verdictTextKey, LetterVars(oldTitle, newTitle)),
                 LetterDefOf.NeutralEvent, null, faction, quest);
             // 降階是一生一次的紀錄:TaleDef 用 Permanent + maxPerPawn 1,重複判決不會洗版。
             TaleRecorder.RecordTale(DMS_DefOf.DMS_Tale_CourtMartialed, defendant);

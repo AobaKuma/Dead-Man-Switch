@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <!-- 只剩進站倒數這一組 —— 它是由 SitePartDef 上的 FFF_TimedSiteExtension
+  <!-- 只剩進站倒數這一組：它是由 SitePartDef 上的 FFF_TimedSiteExtension
        以翻譯鍵讀取的。逾期／失敗／付款信件現在寫在 QuestScriptDef 的
        QuestNode_Letter 裡（原版寫法），不走 Keyed。
 

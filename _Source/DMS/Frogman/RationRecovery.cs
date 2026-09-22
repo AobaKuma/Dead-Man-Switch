@@ -78,7 +78,7 @@ namespace DMS
 
         public int RationsNeeded => Mathf.Max(0, MaxRations - LoadedRations);
 
-        // —— Fortified.IRationSource ——
+        // ===== Fortified.IRationSource =====
         public ThingDef RationDef => Props.rationDef;
 
         public override void PostPostMake()
@@ -286,7 +286,7 @@ namespace DMS
     /// <summary>
     /// 蛙人的維生循環：把一份 C 口糧丟進體內的生化反應堆，
     /// 一次補滿電力並讓合成肌束把受損部位重新長回來。
-    /// 缺失的部位長不回來——那要靠自我修復模式重建結構。
+    /// 缺失的部位長不回來，那要靠自我修復模式重建結構。
     /// </summary>
     public class CompAbilityEffect_RationRecovery : CompAbilityEffect
     {
