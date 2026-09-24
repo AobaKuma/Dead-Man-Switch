@@ -119,7 +119,11 @@
     <defName>DMS_EmergencyLamp</defName>
     <label>emergency lighting</label>
     <description>An emergency lighting system that automatically switches to its internal battery only when grid power is lost, glowing red for extended periods to maintain a minimum level of illumination even during an outage.</description>
-    <designationCategory>FFF_DevCategory</designationCategory>
+    <designationCategory>DMS_Category</designationCategory>
+    <designatorDropdown>DMS_DefenseEquipment</designatorDropdown>
+    <researchPrerequisites>
+      <li>DMS_EquipmentAdvanced</li>
+    </researchPrerequisites>
     <altitudeLayer>BuildingOnTop</altitudeLayer>
     <tickerType>Normal</tickerType>
     <building>

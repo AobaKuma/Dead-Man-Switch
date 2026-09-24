@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       設施檔案庫（DMS_DataArchive）：放設施伺服核心與設施數據輔機的地下設施。
+       完全沿用軍事儲存庫的程序化管線（DMS.DMS_LayoutWorker_Vault：走廊先行、分區閘門、密封獎勵房），
+       只換房型：運維室（放伺服機房的安全控制台與封鎖中控）、伺服機房（密封，設施伺服核心 + 機櫃 + 毒氣釋放口 +
+       檢修開口）、磁帶庫（機櫃列 + 貨架補給）、冷卻機房。入口是荒廢站點地表的 DMS_ArchiveElevator。
+       Facility data archive: the underground facility that holds the facility server core and its data racks.
+       Reuses the vault's procedural pipeline (corridor-first, sector gates, sealed treasury) with its own
+       rooms: operations (the server hall's security console and the lockdown controller), server hall
+       (sealed; core + racks + gas vents + service opening), tape store (rack rows + shelf supplies) and
+       cooling plant. The way in is DMS_ArchiveElevator on the derelict station's surface.
+       ============================================================ -->
+
+  <MapGeneratorDef>
+    <defName>DMS_DataArchive</defName>
+    <label>facility data archive</label>
+    <isUnderground>true</isUnderground>
+    <disableCallAid>true</disableCallAid>
+    <pocketMapProperties>
+      <biome>Underground</biome>
+      <!-- 機房冷卻，比儲存庫再冷一點。Server cooling: a little colder than the vault. -->
+      <temperature>8</temperature>
+      <canBeCleaned>true</canBeCleaned>
+    </pocketMapProperties>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>Underground_RocksFromGrid</li>
+      <li>Terrain</li>
+      <li>RockChunks</li>
+      <!-- DMS_DataArchiveStructure 由 DMS_ArchiveElevator 動態插入 / injected by the portal -->
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+  <GenStepDef>
+    <defName>DMS_DataArchiveStructure</defName>
+    <order>551</order>
+    <genStep Class="DMS.DMS_GenStep_Vault">
+      <layoutDef>DMS_DataArchive</layoutDef>
+      <!-- 房型比儲存庫少，縮一圈避免空走廊過長；分區之間要留 6 格岩層，比原本的 50~60 加大一圈。
+           Fewer room types than the vault, so a size down from it; a size up from the old 50~60 for the 6-cell
+           rock gap between sectors. -->
+      <sizeRange>60~70</sizeRange>
+    </genStep>
+  </GenStepDef>
+
+  <StructureLayoutDef>
+    <defName>DMS_DataArchive</defName>
+    <workerClass>DMS.DMS_LayoutWorker_Vault</workerClass>
+    <canHaveMultipleLayoutsInRoom>true</canHaveMultipleLayoutsInRoom>
+    <clearRoomsEntirely>true</clearRoomsEntirely>
+    <minRoomWidth>9</minRoomWidth>
+    <minRoomHeight>9</minRoomHeight>
+    <corridorDef>DMS_ArchiveCorridor</corridorDef>
+
+    <wallDef>DMS_SuperWall</wallDef>
+    <doorDef>Door</doorDef>
+    <doorStuffDef>Steel</doorStuffDef>
+    <wallLampDef>DMS_EmergencyLamp</wallLampDef>
+    <terrainDef>MetalTile</terrainDef>
+
+    <roomDefs>
+      <!-- 必定出現 / Guaranteed -->
+      <DMS_VaultEntranceHall>
+        <countRange>1</countRange>
+      </DMS_VaultEntranceHall>
+      <DMS_ArchiveOperations>
+        <countRange>1</countRange>
+      </DMS_ArchiveOperations>
+      <DMS_ArchiveServerHall>
+        <countRange>1</countRange>
+      </DMS_ArchiveServerHall>
+      <DMS_ArchiveTapeStore>
+        <countRange>1~2</countRange>
+      </DMS_ArchiveTapeStore>
+
+      <!-- 加權出現 / Weighted -->
+      <DMS_ArchiveCoolingPlant>1</DMS_ArchiveCoolingPlant>
+      <DMS_VaultPowerPlant>0.6</DMS_VaultPowerPlant>
+      <DMS_VaultGarrisonQuarters>0.6</DMS_VaultGarrisonQuarters>
+      <DMS_VaultWreckHall>0.4</DMS_VaultWreckHall>
+      <DMS_VaultMessHall>0.3</DMS_VaultMessHall>
+    </roomDefs>
+
+    <junkScaterrers>
+      <Filth_Dirt>
+        <groupsPerHundredCells>1~3</groupsPerHundredCells>
+        <itemsPerGroup>2~4</itemsPerGroup>
+        <groupDistRange>3~5</groupDistRange>
+      </Filth_Dirt>
+      <Filth_MachineBits>
+        <groupsPerHundredCells>0~2</groupsPerHundredCells>
+        <itemsPerGroup>2~4</itemsPerGroup>
+        <groupDistRange>2~4</groupDistRange>
+      </Filth_MachineBits>
+    </junkScaterrers>
+
+    <modExtensions>
+      <li Class="DMS.ModExtension_VaultLayout">
+        <!-- 伺服機房要塞 2x2 核心加兩側機櫃，房間下限拉到 11。
+             The server hall fits a 2x2 core with racks around it, so rooms start at 11. -->
+        <roomWidthRange>11~14</roomWidthRange>
+        <roomDepthRange>11~14</roomDepthRange>
+        <branchCountRange>1~2</branchCountRange>
+        <!-- 十字樞紐：主幹上的交叉寬走廊，兩側長支道，每一臂都是分區閘門。
+             Cross hubs: wide crossings on the spine with a branch off each side and a sector gate at every arm. -->
+        <hubCountRange>1</hubCountRange>
+        <hubSize>17</hubSize>
+        <hubArmWidth>11</hubArmWidth>
+        <hubBranchChance>0.85</hubBranchChance>
+        <subBranchChance>0.2</subBranchChance>
+        <branchSpacing>18</branchSpacing>
+        <!-- 沒有大型房型，不合併。No large room types here, so no merging. -->
+        <mergeChance>0</mergeChance>
+        <gapChance>0.1</gapChance>
+        <endRooms>true</endRooms>
+        <!-- 分區間隙：不同分區的房間與走廊之間至少隔 6 格岩層，每條支道起頭因此是一段兩側不掛房間的連絡走廊。
+             6 格是原版自動接線的範圍，壁掛燈、配電盤之類的用電設施就搆不到隔壁分區的電纜。
+             Sector gap: at least 6 cells of rock between different sectors' rooms and corridors, so every branch
+             starts with a stretch of bare link corridor. 6 is vanilla's auto-connect range, so wall lamps,
+             substations and other powered fixtures can't reach the next sector's conduit. -->
+        <sectorGap>6</sectorGap>
+        <sectorGates>true</sectorGates>
+        <gateChance>1</gateChance>
+        <!-- 1x3 密封門置中，兩側補強化牆。A 1x3 sealed door in the middle, reinforced wall either side. -->
+        <gateDoorDef>DMS_SealedRollingDoor_Triple</gateDoorDef>
+        <gateWallDef>DMS_SuperWall</gateWallDef>
+        <gateConsoleDef>DMS_VaultGateConsole</gateConsoleDef>
+      </li>
+      <!-- 檔案庫仍有電，大多數門是自動門。The archive still has power: most doors are autodoors. -->
+      <li Class="DMS.ModExtension_VaultDoors">
+        <reinforcedDoorDef>Autodoor</reinforcedDoorDef>
+        <reinforcedDoorStuff>Steel</reinforcedDoorStuff>
+        <reinforcedDoorRatio>0.8</reinforcedDoorRatio>
+      </li>
+      <!-- 封鎖中控放在運維室；沒有就動力室、冷卻機房。The lockdown controller goes in operations, else power or cooling. -->
+      <li Class="DMS.ModExtension_FacilityLockdown">
+        <controllerDef>DMS_Building_LockdownController</controllerDef>
+        <preferredRooms>
+          <li>DMS_ArchiveOperations</li>
+          <li>DMS_VaultPowerPlant</li>
+          <li>DMS_ArchiveCoolingPlant</li>
+        </preferredRooms>
+      </li>
+      <!-- 檢修通道網（通風管道）：在岩層裡挖 1 格寬的管道，把同一分區的設備間（必接）與其他一般房間（機率）串起來，
+           接回該分區的走廊一兩處，並延伸出一間只能從管道進入的密室。所有開口都是原版通風口：不能走，要打破或拆掉才進得去。
+           走廊的配電盤掛在密室裡，電纜沿管道穿過通風口接到走廊中線。管道只接同一分區，不會繞過閘門或密封門。
+           Maintenance tunnels (vent ducts): 1-wide ducts dug through the rock linking a sector's equipment rooms
+           (always) and other ordinary rooms (by chance), opening onto that sector's corridor in one or two places and
+           running on to a secret room reachable only from the duct. Every opening is a vanilla vent: not walkable,
+           break or deconstruct it to get through. The corridor's substation hangs in the secret room, its conduit
+           running under the vents to the corridor strip. Tunnels never leave their sector, so they can't get round a
+           gate or a sealed door. -->
+      <li Class="DMS.ModExtension_VaultTunnels">
+        <equipmentRooms>
+          <li>DMS_VaultPowerPlant</li>
+          <li>DMS_ArchiveCoolingPlant</li>
+        </equipmentRooms>
+        <extraRoomChance>0.35</extraRoomChance>
+        <otherSectorChance>0.5</otherSectorChance>
+        <secretRoomSize>6~8</secretRoomSize>
+        <!-- 密室裡靠牆擺一座主動式通風口與一兩台設施機器。One active vent and a machine or two against the secret room's walls. -->
+        <secretRoomFixtures>
+          <li>
+            <defs>
+              <li>DMS_Building_VentSmall</li>
+              <li>DMS_Building_VentMedium</li>
+              <li>DMS_Building_VentLarge</li>
+            </defs>
+            <count>1</count>
+          </li>
+          <li>
+            <defs>
+              <li>DMS_Building_Machine_Medium</li>
+              <li>DMS_Building_Eletric_Medium</li>
+            </defs>
+            <count>1~2</count>
+          </li>
+        </secretRoomFixtures>
+        <floorDef>Concrete</floorDef>
+        <hatchDef>Vent</hatchDef>
+        <conduitDef>HiddenConduit</conduitDef>
+        <substationDef>DMS_SubstationCabinet_Wall</substationDef>
+        <corridorLinks>1~2</corridorLinks>
+        <maxLegLength>45</maxLegLength>
+      </li>
+    </modExtensions>
+  </StructureLayoutDef>
+
+  <!-- ============================================================
+       房型 / Rooms
+       ============================================================ -->
+
+  <!-- 主走廊：沿用儲存庫的走廊 worker（哨站、攝影機、FPV 巢、中線電纜），另加毒氣釋放口。
+       Main corridor: the vault's corridor worker (checkpoints, cameras, FPV nests, strip conduit) plus gas vents. -->
+  <LayoutRoomDef>
+    <defName>DMS_ArchiveCorridor</defName>
+    <roomContentsWorkerType>DMS.RoomContents_VaultMainHall</roomContentsWorkerType>
+    <dontDestroyWallsDoors>true</dontDestroyWallsDoors>
+    <isValidPlayerSpawnRoom>false</isValidPlayerSpawnRoom>
+    <prefabs>
+      <DMS_Prefab_VentBank>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~2</minMaxRange>
+      </DMS_Prefab_VentBank>
+      <DMS_Prefab_DataRackRow_Edge>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~2</minMaxRange>
+      </DMS_Prefab_DataRackRow_Edge>
+    </prefabs>
+    <modExtensions>
+      <li Class="DMS.ModExtension_VaultSecurity">
+        <corridorExpansion>3</corridorExpansion>
+        <stripTerrain>Concrete</stripTerrain>
+
+        <!-- 暗裝電纜壓在走廊整圈牆線下，不走中線。Hidden conduit under the corridor's wall lines, not down the centre. -->
+        <conduitDef>HiddenConduit</conduitDef>
+        <conduitAlongWalls>true</conduitAlongWalls>
+        <substationDef>DMS_SubstationCabinet_Wall</substationDef>
+        <!-- 配電盤改放檢修通道（見 DMS_DataArchive 的 ModExtension_VaultTunnels）。The substation lives in a maintenance tunnel instead. -->
+        <wallSubstation>false</wallSubstation>
+
+        <barricadeDef>Barricade</barricadeDef>
+        <barricadeStuff>Steel</barricadeStuff>
+        <turretDef>DMS_Turret_Sentry</turretDef>
+        <wreckedTurretDef>DMS_Wreckage_SentryGun</wreckedTurretDef>
+        <!-- 檔案庫保養得比儲存庫好。Better maintained than the vault. -->
+        <turretWreckChance>0.2</turretWreckChance>
+        <!-- 砲塔不放哨站，改放走廊角落（死巷、樞紐臂末端），數量也少很多。
+             No turrets at the checkpoints; they go in the corridor corners (dead ends, hub arm ends), and far fewer. -->
+        <checkpointTurrets>false</checkpointTurrets>
+        <cornerTurretChance>0.35</cornerTurretChance>
+        <maxCornerTurretsPerRect>1</maxCornerTurretsPerRect>
+        <sensorDef>DMS_Building_Sensor</sensorDef>
+        <nestDef>DMS_Building_FPVNest</nestDef>
+        <nestChance>0.7</nestChance>
+        <gasVentDef>DMS_Building_GasVent</gasVentDef>
+        <gasVentChance>0.5</gasVentChance>
+        <checkpointSpacing>16</checkpointSpacing>
+        <maxCheckpointsPerRect>2</maxCheckpointsPerRect>
+
+        <cameraDef>DMS_Building_Camera</cameraDef>
+        <initialBatteryPct>1</initialBatteryPct>
+      </li>
+    </modExtensions>
+  </LayoutRoomDef>
+
+  <!-- 運維室：文書與配電；伺服機房的安全控制台與封鎖中控優先放這裡。
+       Operations: paperwork and power; the server hall's console and the lockdown controller prefer this room. -->
+  <LayoutRoomDef>
+    <defName>DMS_ArchiveOperations</defName>
+    <minSingleRectWidth>9</minSingleRectWidth>
+    <minSingleRectHeight>9</minSingleRectHeight>
+    <prefabs>
+      <DMS_Prefab_MachineRow_Live>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_MachineRow_Live>
+      <DMS_Prefab_SubstationBank>
+        <countPerTenEdgeCells>1</countPerTenEdgeCells>
+        <minMaxRange>1~1</minMaxRange>
+      </DMS_Prefab_SubstationBank>
+      <DMS_Prefab_LockerRow>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_LockerRow>
+      <DMS_Prefab_DataRackRow_Edge>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_DataRackRow_Edge>
+      <!-- 值班桌；伺服機房控制台與封鎖中控也優先放這間，牆邊別塞滿。
+           A duty desk; the server hall console and lockdown controller prefer this room, so keep walls free. -->
+      <DMS_Prefab_ConsoleDesk_Edge>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_ConsoleDesk_Edge>
+    </prefabs>
+    <scatter>
+      <Filth_ScatteredDocuments>
+        <groupsPerHundredCells>1~2</groupsPerHundredCells>
+        <itemsPerGroup>1~3</itemsPerGroup>
+        <groupDistRange>1~3</groupDistRange>
+      </Filth_ScatteredDocuments>
+    </scatter>
+  </LayoutRoomDef>
+
+  <!-- 伺服機房（密封）：設施伺服核心、兩側毒氣釋放口與檢修開口由 worker 放；機櫃列交給 prefabs。
+       密封門與運維室的安全控制台由 VaultTreasuryUtility 處理（worker 繼承獎勵房）。
+       Server hall (sealed): the worker places the core, a gas vent either side and a service opening; racks come
+       from the prefabs. VaultTreasuryUtility seals the doors and puts the console in operations (the worker
+       derives from the treasury). -->
+  <LayoutRoomDef>
+    <defName>DMS_ArchiveServerHall</defName>
+    <roomContentsWorkerType>DMS.RoomContents_ArchiveServerHall</roomContentsWorkerType>
+    <minSingleRectWidth>11</minSingleRectWidth>
+    <minSingleRectHeight>11</minSingleRectHeight>
+    <prefabs>
+      <DMS_Prefab_DataRackRow_Edge>
+        <countPerTenEdgeCells>1</countPerTenEdgeCells>
+        <minMaxRange>2~3</minMaxRange>
+      </DMS_Prefab_DataRackRow_Edge>
+      <DMS_Prefab_DataRackRow>
+        <countPerHundredCells>2</countPerHundredCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_DataRackRow>
+    </prefabs>
+    <modExtensions>
+      <li Class="DMS.ModExtension_VaultTreasury">
+        <sealedDoorDef>DMS_SealedRollingDoor_Single</sealedDoorDef>
+        <consoleDef>DMS_VaultConsole</consoleDef>
+        <preferredConsoleRoom>DMS_ArchiveOperations</preferredConsoleRoom>
+      </li>
+    </modExtensions>
+  </LayoutRoomDef>
+
+  <!-- 磁帶庫：機櫃列＋靠牆貨架，貨架上的補給由 worker 以 DMS_ArchiveShelfLoot 擺上。
+       Tape store: rack rows and wall shelves; the worker stocks the shelves from DMS_ArchiveShelfLoot. -->
+  <LayoutRoomDef>
+    <defName>DMS_ArchiveTapeStore</defName>
+    <roomContentsWorkerType>DMS.RoomContents_ArchiveTapeStore</roomContentsWorkerType>
+    <minSingleRectWidth>9</minSingleRectWidth>
+    <minSingleRectHeight>9</minSingleRectHeight>
+    <prefabs>
+      <DMS_Prefab_DataRackRow>
+        <countPerHundredCells>3</countPerHundredCells>
+        <minMaxRange>2~3</minMaxRange>
+      </DMS_Prefab_DataRackRow>
+      <!-- 借還櫃台。The check-out desk. -->
+      <DMS_Prefab_ConsoleDesk_Edge>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_ConsoleDesk_Edge>
+    </prefabs>
+    <fillEdges>
+      <Shelf>
+        <stuff>Steel</stuff>
+        <groupsPerTenEdgeCells>1~2</groupsPerTenEdgeCells>
+        <groupCountRange>1~2</groupCountRange>
+      </Shelf>
+    </fillEdges>
+    <scatter>
+      <Filth_ScatteredDocuments>
+        <groupsPerHundredCells>1~3</groupsPerHundredCells>
+        <itemsPerGroup>1~3</itemsPerGroup>
+        <groupDistRange>1~3</groupDistRange>
+      </Filth_ScatteredDocuments>
+    </scatter>
+  </LayoutRoomDef>
+
+  <!-- 冷卻機房：通風機組與還在運轉的機器，偶爾有一個檢修開口。
+       Cooling plant: vent banks and running machinery, sometimes a service opening. -->
+  <LayoutRoomDef>
+    <defName>DMS_ArchiveCoolingPlant</defName>
+    <minSingleRectWidth>8</minSingleRectWidth>
+    <minSingleRectHeight>8</minSingleRectHeight>
+    <prefabs>
+      <DMS_Prefab_VentBank>
+        <countPerTenEdgeCells>1</countPerTenEdgeCells>
+        <minMaxRange>2~3</minMaxRange>
+      </DMS_Prefab_VentBank>
+      <DMS_Prefab_MachineRow_Live>
+        <countPerHundredCells>2</countPerHundredCells>
+        <minMaxRange>1~1</minMaxRange>
+      </DMS_Prefab_MachineRow_Live>
+      <DMS_Prefab_ArchiveFloorHole>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_ArchiveFloorHole>
+      <DMS_Prefab_GasVentPair>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_GasVentPair>
+      <!-- 冷卻液儲罐（Core）。這間是檢修通道必接的設備間，牆邊別塞滿。
+           Coolant tanks (Core). An equipment room the tunnels must reach, so leave wall space. -->
+      <AncientStorageCylinder_Edge>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
+        <minMaxRange>1~2</minMaxRange>
+      </AncientStorageCylinder_Edge>
+    </prefabs>
+    <!-- 冷凝水積在地上。Condensation pooling on the floor. -->
+    <scatter>
+      <Filth_Water>
+        <groupsPerHundredCells>1~2</groupsPerHundredCells>
+        <itemsPerGroup>2~4</itemsPerGroup>
+        <groupDistRange>1~3</groupDistRange>
+      </Filth_Water>
+    </scatter>
+  </LayoutRoomDef>
+
+  <!-- ============================================================
+       預製塊 / Prefabs
+       ============================================================ -->
+
+  <!-- 數據輔機一排兩台。2x1 的機櫃朝北並排在後排（佔 x..x+1），前排留作通道。
+       A row of two data racks. North-facing 2x1 racks (covering x..x+1) along the back row; the front row stays clear. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_DataRackRow</defName>
+    <size>(4,2)</size>
+    <things>
+      <DMS_FacilityDataRack>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+        </positions>
+      </DMS_FacilityDataRack>
+    </things>
+  </PrefabDef>
+
+  <!-- 靠牆版本：最上排貼牆，機櫃正面朝房內。朝南的 2x1 佔 x-1..x。
+       Wall version: backs to the wall on the top row, fronts facing into the room. A south-facing 2x1 covers x-1..x. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_DataRackRow_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(4,2)</size>
+    <things>
+      <DMS_FacilityDataRack>
+        <relativeRotation>Opposite</relativeRotation>
+        <positions>
+          <li>(1, 0, 1)</li>
+          <li>(3, 0, 1)</li>
+        </positions>
+      </DMS_FacilityDataRack>
+    </things>
+  </PrefabDef>
+
+  <!-- 檢修開口：警報時機兵從這裡爬上來。Service opening: mechs climb out of it on alarm. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_ArchiveFloorHole</defName>
+    <size>(3,3)</size>
+    <things>
+      <DMS_Hole_3x3Empty>
+        <position>(1, 0, 1)</position>
+      </DMS_Hole_3x3Empty>
+    </things>
+  </PrefabDef>
+
+  <!-- 一對毒氣釋放口。A pair of gas vents. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_GasVentPair</defName>
+    <size>(3,1)</size>
+    <things>
+      <DMS_Building_GasVent>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+        </positions>
+      </DMS_Building_GasVent>
+    </things>
+  </PrefabDef>
+
+  <!-- ============================================================
+       磁帶庫貨架補給：每項獨立擲骰。技術匣只放管制級，封存級留給伺服核心。
+       Tape store shelf supplies: every option rolls on its own. Only restricted data caches here;
+       the sealed ones are the server core's.
+       ============================================================ -->
+  <ThingSetMakerDef>
+    <defName>DMS_ArchiveShelfLoot</defName>
+    <root Class="ThingSetMaker_Sum">
+      <options>
+        <li>
+          <chance>0.7</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentIndustrial</li>
+                </thingDefs>
+              </filter>
+              <countRange>3~8</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.5</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Steel</li>
+                </thingDefs>
+              </filter>
+              <countRange>30~60</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.3</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MedicineIndustrial</li>
+                </thingDefs>
+              </filter>
+              <countRange>2~4</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.35</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_AccessKey_Nara</li>
+                  <li>DMS_AccessKey_Neutrals</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.15</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_DataCache_Restricted</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <!-- ============================================================
+       地表入口：檔案庫貨運電梯。繼承儲存庫電梯（DMS_ElevatorBase），換口袋地圖與駭入難度。
+       Surface entrance: the archive freight elevator. Inherits the vault lift (DMS_ElevatorBase) with its own
+       pocket map and hack budget.
+       ============================================================ -->
+  <ThingDef ParentName="DMS_ElevatorBase">
+    <defName>DMS_ArchiveElevator</defName>
+    <label>archive freight elevator</label>
+    <description>The surface lift of a buried facility data archive. The colony fleet kept its records hosts underground, away from temperature swings, tremors and interference, and left only this lift up top. The car still has power, but its controls are locked. Hack it to bring the car up.</description>
+    <portal>
+      <pocketMapGenerator>DMS_DataArchive</pocketMapGenerator>
+      <exitDef>DMS_VaultElevatorExit</exitDef>
+      <!-- 結構 50~60，留出四周岩層。The structure runs 50~60; leave rock around it. -->
+      <pocketMapSize>120</pocketMapSize>
+    </portal>
+    <comps Inherit="False">
+      <!-- 比儲存庫電梯（39000）少一半：檔案庫真正的難關在下面。
+           Half the vault lift's 39000: the real obstacle is below. -->
+      <li Class="CompProperties_Hackable">
+        <defence>20000</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <lockoutDurationHoursRange>6~18</lockoutDurationHoursRange>
+        <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
+        <notHackedInspectString>Hack to open.</notHackedInspectString>
+        <intellectualSkillPrerequisite>4</intellectualSkillPrerequisite>
+        <hackingCompletedSound>Hacking_Completed</hackingCompletedSound>
+        <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
+      </li>
+      <li Class="CompProperties_Sealable">
+        <sealTexPath>UI/Commands/DMS_UnlockContainer</sealTexPath>
+        <sealCommandLabel>Seal shaft</sealCommandLabel>
+        <sealCommandDesc>Choose a colonist to permanently seal the lift shaft. Anything or anyone left below will be lost forever.</sealCommandDesc>
+        <cannotSealLabel>Cannot seal</cannotSealLabel>
+        <confirmSealText>Sealing the lift shaft is permanent. Anything or anyone left below will be lost forever.{0}\n\nAre you sure you want to continue?</confirmSealText>
+        <sealedInspectString>Permanently sealed.</sealedInspectString>
+        <cannotEnterLabel>Sealed</cannotEnterLabel>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(90,200,160,0)</glowColor>
+      </li>
+      <li Class="Fortified.CompProperties_FacilityLockdownGate">
+        <overrideWork>6000</overrideWork>
+        <overrideSkillPrerequisite>6</overrideSkillPrerequisite>
+      </li>
+    </comps>
+    <modExtensions Inherit="False">
+      <li Class="DMS.ModExtension_PortalLayout">
+        <genStep>DMS_DataArchiveStructure</genStep>
+        <layout>DMS_DataArchive</layout>
+      </li>
+      <li Class="DMS.ModExtension_SealedGraphic">
+        <sealedGraphicData>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <texPath>Things/Building/Elevator_sealed/building</texPath>
+          <drawSize>(5,5)</drawSize>
+        </sealedGraphicData>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

@@ -56,8 +56,15 @@ namespace DMS
         public SoundDef emergeSound;
         public EffecterDef emergeEffecter;
 
-        /// <summary>跳出來後直接攻擊玩家。Assault the player once out.</summary>
-        public bool assaultOnEmerge = true;
+        /// <summary>
+        /// 跳出來後的行動。false（預設）＝警報回應（<see cref="LordJob_AlarmResponse"/>）：
+        /// 當下走得到警報位置就前往，之後每次警報重新判定，只打看得到的敵人。
+        /// true ＝舊行為：直接進攻殖民地，知道殖民者在哪。
+        /// What the squad does once out. false (default) = alarm response (<see cref="LordJob_AlarmResponse"/>):
+        /// head for the alarm if it can be reached right then, re-judge on every later alarm, and only fight
+        /// what it can see. true = the old behaviour: assault the colony, knowing where the colonists are.
+        /// </summary>
+        public bool assaultOnEmerge = false;
 
         public CompProperties_AlertEffector_HoleEmerge()
         {
@@ -71,6 +78,29 @@ namespace DMS
 
         // 同地圖過濾已由 FFF 的 CompAlertEffector 基類（SignalMapUtility）處理。
         // Same-map filtering now lives in FFF's CompAlertEffector base (SignalMapUtility).
+
+        /// <summary>
+        /// 觸發這次 DoEffect 的警報位置。基類的 DoEffect 不帶訊號，所以在這裡先記下來；
+        /// 基類是在 Notify_SignalReceived 裡同步呼叫 DoEffect，呼叫完就清掉。
+        /// Position of the alarm behind the current DoEffect. The base DoEffect gets no signal, so it is noted
+        /// here; the base calls DoEffect synchronously inside Notify_SignalReceived, and it is cleared after.
+        /// </summary>
+        private IntVec3 triggeringAlarmCell = IntVec3.Invalid;
+
+        public override void Notify_SignalReceived(Signal signal)
+        {
+            triggeringAlarmCell = signal.tag == Props.listenSignal && parent.Spawned
+                ? AlertResponseUtility.AlarmCell(signal, parent.Map)
+                : IntVec3.Invalid;
+            try
+            {
+                base.Notify_SignalReceived(signal);
+            }
+            finally
+            {
+                triggeringAlarmCell = IntVec3.Invalid;
+            }
+        }
 
         protected override void DoEffect()
         {
@@ -128,11 +158,18 @@ namespace DMS
 
             float interval = Props.emergeDurationTicks.TicksToSeconds() / pawns.Count;
             SpawnRequest request = new SpawnRequest(flyers, cells, 1, interval);
-            if (Props.assaultOnEmerge && faction != null)
+            if (faction != null)
             {
-                request.lord = LordMaker.MakeNewLord(faction,
-                    new LordJob_AssaultColony(faction, canKidnap: false, canTimeoutOrFlee: false, sappers: false,
-                        useAvoidGridSmart: false, canSteal: false), map);
+                // 警報回應：崗位在成員落地後才依當下的可達性決定（見 LordToil_AlarmResponse）。
+                // 不是被訊號叫出來的（triggeringAlarmCell 無效）就原地待命，等下一次警報。
+                // Alarm response: each member's post is judged by reachability once it lands (see
+                // LordToil_AlarmResponse). Not summoned by a signal (triggeringAlarmCell invalid) → hold in place
+                // until the next alarm.
+                LordJob lordJob = Props.assaultOnEmerge
+                    ? new LordJob_AssaultColony(faction, canKidnap: false, canTimeoutOrFlee: false, sappers: false,
+                        useAvoidGridSmart: false, canSteal: false)
+                    : new LordJob_AlarmResponse(triggeringAlarmCell, Props.listenSignal);
+                request.lord = LordMaker.MakeNewLord(faction, lordJob, map);
             }
             map.deferredSpawner.AddRequest(request);
 

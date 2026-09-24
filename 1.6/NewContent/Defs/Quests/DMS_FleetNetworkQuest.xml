@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       SAGE 節點：殖民艦隊追緝網路上的戰略主機。只在隱匿級追殺進行中（且未暫停）時出現，
+       由 DMS.QuestNode_Root_DMS_FleetNetworkSite 把關；追殺每觸發一次也有 35% 機率主動派發
+       （OccultechSanctionUtility.TryOfferNetworkSite）。打爛 SAGE 會暫停追殺，由建築本身的
+       DMS.CompHuntBreaker 處理，與任務成敗無關：肅清即算完成。
+       版面 DMS_SageNode 在 GenStructures/Site_FleetNetwork.xml。
+
+       SAGE node: a strategic host on the colony fleet's tracking network. Only offered while the Occulted hunt
+       is running and not suspended (gated by DMS.QuestNode_Root_DMS_FleetNetworkSite); each hunt also has a 35%
+       chance to offer one outright (OccultechSanctionUtility.TryOfferNetworkSite). Destroying the SAGE suspends
+       the hunt through the building's own DMS.CompHuntBreaker, independent of the quest: clearing the site
+       completes it. The DMS_SageNode layout lives in GenStructures/Site_FleetNetwork.xml.
+       ============================================================ -->
+
+  <SitePartDef>
+    <defName>DMS_SageNodeSite</defName>
+    <label>SAGE node</label>
+    <description>A strategic command host on the colony fleet's tracking network, guarded by Legacy remnant machines.</description>
+    <workerClass>Fortified.SitePartWorker_FFF_TimedHostileSite</workerClass>
+    <modExtensions>
+      <li Class="Fortified.FFF_TimedSiteExtension">
+        <baseEntryHours>36</baseEntryHours>
+        <minEntryHours>10</minEntryHours>
+        <maxEntryHours>72</maxEntryHours>
+        <entryLetterLabelKey>DMS_SageNode_EntryCountdownLabel</entryLetterLabelKey>
+        <entryLetterTextKey>DMS_SageNode_EntryCountdownText</entryLetterTextKey>
+      </li>
+    </modExtensions>
+    <siteTexture>UI/Faction/LegacyIcon</siteTexture>
+    <expandingIconTexture>UI/Faction/LegacyIcon</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <minThreatPoints>500</minThreatPoints>
+    <minMapSize>(200, 0, 200)</minMapSize>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <approachOrderString>Assault {0}</approachOrderString>
+    <approachingReportString>Assaulting {0}.</approachingReportString>
+    <arrivedLetter>You have arrived at the SAGE node. Sentry towers cover the approaches, and the node is wired for fire support.</arrivedLetter>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <tags>
+      <li>DMS_SageNodeSite</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMS_SageNodeStructure</defName>
+    <linkWithSite>DMS_SageNodeSite</linkWithSite>
+    <order>400</order>
+    <genStep Class="Fortified.Structures.GenStep_FFFGarrisonedStructure">
+      <useTag>DMS_SageNode</useTag>
+      <randomOffset>0~2</randomOffset>
+      <filthTypes>
+        <li>Filth_RubbleBuilding</li>
+        <li>Filth_MachineBits</li>
+      </filthTypes>
+      <debrisDef>ChunkSlagSteel</debrisDef>
+      <debrisCount>6~10</debrisCount>
+      <scatterRadius>24</scatterRadius>
+      <lootMaker>MapGen_DefaultStockpile</lootMaker>
+      <spawnDefenders>true</spawnDefenders>
+      <defendRadius>20</defendRadius>
+      <satelliteScatter>
+        <li>
+          <tag>DMS_RuinSatellite</tag>
+          <count>3~4</count>
+          <radiusPct>0.26</radiusPct>
+          <minRadius>34</minRadius>
+          <minSpacing>5</minSpacing>
+        </li>
+      </satelliteScatter>
+    </genStep>
+  </GenStepDef>
+
+  <QuestScriptDef>
+    <defName>DMS_FleetNetworkSite</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Military</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Military</failedOrExpiredHistoryEvent>
+    <rootSelectionWeight>1.2</rootSelectionWeight>
+    <rootMinPoints>500</rootMinPoints>
+    <expireDaysRange>4~8</expireDaysRange>
+    <sendAvailableLetter>true</sendAvailableLetter>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName(installation==DMS_SageNodeSite)->SAGE</li>
+        <li>questName(installation==DMS_SageNodeSite)->Blind the [sage]</li>
+        <li>sage->SAGE node</li>
+        <li>sage->strategic host</li>
+        <li>sage->air-defense host</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription(installation==DMS_SageNodeSite)->We have found the host that is coordinating [fleetName]'s hunt for us: a SAGE node, the distributed strategic command computer the fleet uses for planetary air defense and to tie together the radar and navigation networks across several continents. Its rack array is guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat), and it is wired into a full facility alarm system with fire support.\n\nThe SAGE core can be hacked two or three times. Each run pulls technical blueprints, sealed data caches or access keys out of its strategic database, and each run will set off the facility's alarm again. Destroying it will cripple the fleet's hunt; within a year or two another computer on the SAGE network will be promoted to host and pick up where it left off.\n\nThe node's coordinates hold for [siteTimeout], until the network rotates its hosts.\n\nCaution: it is a hostile installation. Once you enter, its monitoring protocol will summon enemy reinforcements after a countdown, and the node can call in mortar fire.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="DMS.QuestNode_Root_DMS_FleetNetworkSite">
+      <factionDef>DMS_Legacy</factionDef>
+      <baseTimeoutDays>12</baseTimeoutDays>
+      <minTimeoutDays>4</minTimeoutDays>
+      <maxTimeoutDays>24</maxTimeoutDays>
+      <!-- 目前只有一種站點；保留清單寫法，之後要加別的網路節點站點只需加一項。
+           Only one site kind for now; the list form stays so another network node is a one-entry addition. -->
+      <installations>
+        <li>
+          <sitePartDef>DMS_SageNodeSite</sitePartDef>
+          <weight>1</weight>
+          <minPoints>500</minPoints>
+          <expiredLetterLabelKey>DMS_SageNode_ExpiredLabel</expiredLetterLabelKey>
+          <expiredLetterTextKey>DMS_SageNode_ExpiredText</expiredLetterTextKey>
+          <clearedLetterLabelKey>DMS_SageNode_ClearedLabel</clearedLetterLabelKey>
+          <clearedLetterTextKey>DMS_SageNode_ClearedText</clearedLetterTextKey>
+        </li>
+      </installations>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

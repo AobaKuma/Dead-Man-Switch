@@ -31,6 +31,23 @@ namespace DMS
             return map?.GetComponent<MapComponent_AlertCounter>()?.AlertLevelPct ?? 0f;
         }
 
+        /// <summary>
+        /// 警報訊號指向的格子：POSITION 參數（掃描器、伺服主機都有帶），沒有就用 SUBJECT 所在位置；
+        /// 都沒有或不在這張地圖上時回傳 Invalid。
+        /// The cell an alarm signal points at: its POSITION arg (scanners and server hosts both send one),
+        /// else where its SUBJECT is; Invalid when neither is there or it isn't on this map.
+        /// </summary>
+        public static IntVec3 AlarmCell(Signal signal, Map map)
+        {
+            if (map == null) return IntVec3.Invalid;
+            if (signal.args.TryGetArg("POSITION", out IntVec3 cell) && cell.InBounds(map)) return cell;
+            if (signal.args.TryGetArg("SUBJECT", out Thing subject) && subject != null && subject.MapHeld == map)
+            {
+                return subject.PositionHeld;
+            }
+            return IntVec3.Invalid;
+        }
+
         /// <summary>派系：指定的 → 建築自己的 → DMS 遺留部隊。Faction: explicit → the parent's → DMS_Legacy.</summary>
         public static Faction ResolveFaction(ThingComp comp, FactionDef spawnFactionDef)
         {

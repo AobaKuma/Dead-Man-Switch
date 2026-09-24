@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DMS_FacilityServerCore.label>设施伺服核心</DMS_FacilityServerCore.label>
+  <DMS_FacilityServerCore.description>一台体积不小的晶体管电脑，这种古老但可靠性极高的设备常见于殖民舰队的各种设施内作为无纸化办公与文书资料储存的主机。其内部使用一种特殊的放射性电池来为自身提供运行能源来确保在无人值守的状态下仍能够长期运行。\n\n这些伺服核心的底层资料内通常储存有重要的科技蓝图与通行密钥纪录备份，骇入必然会牵动整个设施的警报系统响应，因此在开始骇入之前最好做充足的防御准备。</DMS_FacilityServerCore.description>
+
+  <DMS_FacilityDataRack.label>设施数据辅机</DMS_FacilityDataRack.label>
+  <DMS_FacilityDataRack.description>与设施伺服核心并联运作的磁带与磁芯存储器机柜，负责存放主机调阅频率较低的归档资料。它本身不具备独立的运算与存取接口，所有资料都必须经由主机读出。</DMS_FacilityDataRack.description>
+
+  <DMS_SiteServerCore.label>站点伺服主机</DMS_SiteServerCore.label>
+  <DMS_SiteServerCore.description>一台体积较小的晶体管电脑，这种古老但可靠性极高的设备常见于殖民舰队的各种设施内作为无纸化办公与文书资料储存的主机。其内部使用一种特殊的放射性电池来为自身提供运行能源来确保在无人值守的状态下仍能够长期运行。\n\n这种小型站点上使用的主机通常来说不会储存太机密的数据，但仍可以从中提取到有价值的情报。一旦骇入就会触发主机的安全警报响应，因此在开始骇入之前最好做充足的防御准备。</DMS_SiteServerCore.description>
+
+  <DMS_SageCore.label>贤者</DMS_SageCore.label>
+  <DMS_SageCore.description>一种分布式计算的战略指挥计算机，能够根据使用需求无上限的扩充辅机并提升计算能力，被殖民舰队用于殖民星球上的战略防空以及连接数个大陆上的无数雷达追踪及导航网络。将其摧毁必然会对殖民舰队在星球上的追缉行动造成严重的影响，但在一两年内整个SAGE网络内的另一台计算机就会升格为主机继续执行任务。\n\n它的底层储存区保留着部分战略数据库的副本，骇入时整个设施的警报系统都会被牵动。</DMS_SageCore.description>
+
+  <DMS_Building_GasVent.label>毒气释放口</DMS_Building_GasVent.label>
+  <DMS_Building_GasVent.description>安装在地板上、连接着设施警报网络的格栅。警报响起时，它会先发出短暂的嘶嘶声，接着朝周围喷出大量毒气。设施里的机械守军不需要呼吸，其他人最好戴着防毒面具。它的存量足够释放数次，并会从下方的储气槽慢慢补充。切断电源或以EMP瘫痪就能让它停下，即使正在喷发中也一样。</DMS_Building_GasVent.description>
+
+  <DMS_Building_LockdownController.label>设施封锁中控</DMS_Building_LockdownController.label>
+  <DMS_Building_LockdownController.description>一个用于协调地下设施封锁出入口闸门的应急控制装置，一旦完成封锁就会使出入口无法使用。这类安全装置在设计上会在自身被摧毁后完全封锁设施，此时就必需要有人从外面帮助才能开门。\n\n设施的警戒值达到上限时它就会启动，并在一分钟后封死出入口。骇入它就能解除封锁，也可以事先骇入让它失效。它使用设施的放射性电池运作，切断电源没有作用；EMP只能暂停倒数。</DMS_Building_LockdownController.description>
+
+  <DMS_ArchiveElevator.label>档案库货运电梯</DMS_ArchiveElevator.label>
+  <DMS_ArchiveElevator.description>一座地下设施档案库的地表电梯。殖民舰队把文书与资料主机设在地下，以隔绝温差、震动与电磁干扰，地表只留下这座电梯。车厢仍然有电，但控制系统已经上锁，必须骇入才能把车厢叫上来。</DMS_ArchiveElevator.description>
+
+</LanguageData>

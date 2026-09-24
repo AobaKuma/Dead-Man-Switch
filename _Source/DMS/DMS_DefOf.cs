@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 
 namespace DMS
 {
@@ -27,6 +28,8 @@ namespace DMS
         public static JobDef DMS_DeployDroneSwarm;
         // 從發射器箱取出武器並裝備(見 JobDriver_TakeWeaponFromCase)
         public static JobDef DMS_TakeWeaponFromCase;
+        // 設施增援的警報回應勤務：前往崗位、只打看得到的敵人(見 LordJob_AlarmResponse)
+        public static DutyDef DMS_AlarmResponse;
         public static RulePackDef DMS_QuestDocumentRules;
 
         // 軍法審判判決用(見 QuestPart_CourtVerdict)
@@ -39,5 +42,8 @@ namespace DMS
 
         // 機動載人升降艙降落在空白地塊時生成的臨時地圖世界物件(見 TransportersArrivalAction_LifterLanding / LifterLandingSite)
         public static WorldObjectDef DMS_LifterLandingSite;
+
+        // 追殺期間派發的 SAGE 節點任務（見 OccultechSanctionUtility.TryOfferNetworkSite）。
+        public static QuestScriptDef DMS_FleetNetworkSite;
     }
 }

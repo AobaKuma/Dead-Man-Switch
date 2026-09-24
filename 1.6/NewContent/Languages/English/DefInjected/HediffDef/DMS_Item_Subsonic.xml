@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- DMS_SubsonicTrauma -->
+  <DMS_SubsonicTrauma.label>infrasonic trauma</DMS_SubsonicTrauma.label>
+  <DMS_SubsonicTrauma.description>Tuned infrasound has set this creature's inner ear and viscera resonating. It causes nausea, disorientation and deep, diffuse pain that no wound explains. Repeated exposure stacks up quickly, and at its worst the pain alone is enough to cause shock.\n\nThe effect fades on its own within a couple of hours.</DMS_SubsonicTrauma.description>
+  <DMS_SubsonicTrauma.stages.0.label>discomfort</DMS_SubsonicTrauma.stages.0.label>
+  <DMS_SubsonicTrauma.stages.1.label>disoriented</DMS_SubsonicTrauma.stages.1.label>
+  <DMS_SubsonicTrauma.stages.2.label>agonizing</DMS_SubsonicTrauma.stages.2.label>
+
+  <!-- DMS_SubsonicModule -->
+  <DMS_SubsonicModule.label>infrasonic module</DMS_SubsonicModule.label>
+  <DMS_SubsonicModule.description>A tuned infrasound emitter array mounted on the hull. It lets the mech release a burst of infrasound that wracks nearby living enemies with pain and panic.</DMS_SubsonicModule.description>
+
+</LanguageData>

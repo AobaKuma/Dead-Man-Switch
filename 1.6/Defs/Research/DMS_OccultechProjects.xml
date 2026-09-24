@@ -142,4 +142,31 @@
     </descriptionHyperlinks>
   </ResearchProjectDef>
 
+  <!-- ============================================================= -->
+  <!-- 次聲波基礎：封存檔案 I 級 · 次聲波與震波技術                     -->
+  <!-- 前置為原版微電子基礎（MicroelectronicsBasics）。                  -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_Subsonic</defName>
+    <label>infrasonics</label>
+    <description>A tuned infrasound device is enough to inflict severe, irreversible damage on the sensory systems of the living things around it, along with pain intense enough to cause shock. The development of infrasonic weapons has therefore been prohibited under the laws of war. The positive applications of infrasonic technology to medicine and geological survey are nonetheless equally present.\n\nApproved by ████ and ██, infrasonics and its related technologies are designated class I sealed technology. Sale of such technology to developing worlds is prohibited, and its related technologies are to be progressively declassified once a colonial world's society attains class I standard.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Sealed</knowledgeCategory>
+    <knowledgeCost>750</knowledgeCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>6.00</researchViewY>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file I: infrasonics</discoveredLetterTitle>
+    <discoveredLetterText>Researchers have opened a class I sealed file containing the design principles of tuned infrasound emitters and seismic survey charges.\n\nFour devices can now be produced: an infrasonic module that gives a mech an area panic ability, an infrasonic emitter tower that periodically drives off nearby enemies, infrasonic grenades that reach every living thing in their radius regardless of walls, and a blast scanner that maps deep ore with a mortar-driven shockwave.\n\nThe blast scanner's shockwave carries far into the ground. Whatever sleeps down there will hear it too.\n\nThe fleets sealed this file because of what these devices do to people. Fielding them openly will be noted.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_SubsonicModule</ThingDef>
+      <ThingDef>DMS_Building_SubsonicEmitter</ThingDef>
+      <ThingDef>DMS_Weapon_GrenadeSubsonic</ThingDef>
+      <ThingDef>DMS_Building_BlastScanner</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
 </Defs>

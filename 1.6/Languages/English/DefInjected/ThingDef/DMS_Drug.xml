@@ -19,4 +19,23 @@
   <!-- EN: Taking {0}. -->
   <Neuroglue.ingestible.ingestReportString>Injecting {0}.</Neuroglue.ingestible.ingestReportString>
   
+
+  <!-- EN: combat regeneration serum -->
+  <DMS_CombatRegenSerum.label>combat regeneration serum</DMS_CombatRegenSerum.label>
+  <!-- EN: A highly concentrated neuro-targeted agent laden with stem cells. It lets the body regrow missing parts to their original state within two to three days, but the process burns through enormous amounts of energy, so the patient must eat far more than usual to keep up. The pain of regrowth and the risk of rejection take a heavy toll on the subject's mental health, which is why agents of this kind are rarely seen on the rim.\n\nNon-addictive. Each dose carries a chance of triggering level 3 xeno limb syndrome. -->
+  <DMS_CombatRegenSerum.description>A highly concentrated neuro-targeted agent laden with stem cells. It lets the body regrow missing parts to their original state within two to three days, but the process burns through enormous amounts of energy, so the patient must eat far more than usual to keep up. The pain of regrowth and the risk of rejection take a heavy toll on the subject's mental health, which is why agents of this kind are rarely seen on the rim.\n\nNon-addictive. Each dose carries a chance of triggering level 3 xeno limb syndrome.</DMS_CombatRegenSerum.description>
+  <!-- EN: Take {0} -->
+  <DMS_CombatRegenSerum.ingestible.ingestCommandString>Inject {0}</DMS_CombatRegenSerum.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <DMS_CombatRegenSerum.ingestible.ingestReportString>Injecting {0}.</DMS_CombatRegenSerum.ingestible.ingestReportString>
+  
+  <!-- EN: sensibility blocker -->
+  <DMS_SensibilityBlocker.label>sensibility blocker</DMS_SensibilityBlocker.label>
+  <!-- EN: A highly concentrated neuro-targeted agent that suppresses the receptors behind affective thought. Outwardly, the subject's aversion to their surroundings all but vanishes for as long as it lasts, which once made it a standard combat drug for exoskeleton pilots on long missions. Subjects keep a complete memory of the experience after it wears off, however, and once it was found to cause possible sensory loss its use was gradually banned.\n\nTemporarily suspends secondary needs such as beauty, comfort, outdoors, indoors and space, and negates the mood penalties of environment-related thoughts. -->
+  <DMS_SensibilityBlocker.description>A highly concentrated neuro-targeted agent that suppresses the receptors behind affective thought. Outwardly, the subject's aversion to their surroundings all but vanishes for as long as it lasts, which once made it a standard combat drug for exoskeleton pilots on long missions. Subjects keep a complete memory of the experience after it wears off, however, and once it was found to cause possible sensory loss its use was gradually banned.\n\nTemporarily suspends secondary needs such as beauty, comfort, outdoors, indoors and space, and negates the mood penalties of environment-related thoughts.</DMS_SensibilityBlocker.description>
+  <!-- EN: Take {0} -->
+  <DMS_SensibilityBlocker.ingestible.ingestCommandString>Inject {0}</DMS_SensibilityBlocker.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <DMS_SensibilityBlocker.ingestible.ingestReportString>Injecting {0}.</DMS_SensibilityBlocker.ingestible.ingestReportString>
+  
 </LanguageData>

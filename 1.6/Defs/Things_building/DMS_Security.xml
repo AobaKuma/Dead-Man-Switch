@@ -83,6 +83,12 @@
     </researchPrerequisites>
   </ThingDef>
 
+  <!-- 開拓裝備的可建造物共用的下拉選單：應急照明、哨戒砲塔、發射器箱 -->
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_DefenseEquipment</defName>
+    <label>defense equipment</label>
+  </DesignatorDropdownGroupDef>
+
   <!--哨戒砲塔-->
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Sentry</defName>
@@ -98,6 +104,10 @@
     <size>(1,1)</size>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <designationCategory>DMS_Category</designationCategory>
+    <designatorDropdown>DMS_DefenseEquipment</designatorDropdown>
+    <researchPrerequisites>
+      <li>DMS_EquipmentAdvanced</li>
+    </researchPrerequisites>
     <fillPercent>0.7</fillPercent>
     <statBases>
       <MaxHitPoints>150</MaxHitPoints>

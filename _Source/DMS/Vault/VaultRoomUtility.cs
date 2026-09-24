@@ -173,5 +173,88 @@ namespace DMS
             ChargeInternalBattery(thing, batteryPct);
             return GenSpawn.Spawn(thing, cell, map, rot);
         }
+
+        /// <summary>矩形邊上某格往外的方向（牆角取 x 方向）。Outward direction from a rect edge cell (x wins at corners).</summary>
+        public static IntVec3 OutwardDirection(CellRect rect, IntVec3 edgeCell)
+        {
+            if (edgeCell.x == rect.minX) return IntVec3.West;
+            if (edgeCell.x == rect.maxX) return IntVec3.East;
+            if (edgeCell.z == rect.minZ) return IntVec3.South;
+            return IntVec3.North;
+        }
+
+        /// <summary>
+        /// 從 start 沿 step 一格格往前鋪電纜（不超出 bounds），走到既有的輸電物上就停；acceptTouch 時側鄰格有輸電物
+        /// （來的那格不算）也算接上。接得上才真的鋪，接不上什麼都不鋪、回傳 false。
+        /// Runs conduit from start along step (staying inside bounds) until it reaches an existing transmitter; with
+        /// acceptTouch, one beside it (not the cell it came from) counts too. Lays it only if it connects; otherwise
+        /// lays nothing and returns false.
+        /// </summary>
+        public static bool TryRunConduit(Map map, ThingDef conduitDef, IntVec3 start, IntVec3 step, CellRect bounds, IntVec3 cameFrom,
+            bool acceptTouch = false)
+        {
+            List<IntVec3> cells = new List<IntVec3>();
+            bool reached = false;
+            IntVec3 prev = cameFrom;
+            for (IntVec3 c = start; bounds.Contains(c) && c.InBounds(map); prev = c, c += step)
+            {
+                if (c.GetTransmitter(map) != null)
+                {
+                    reached = true;
+                    break;
+                }
+                cells.Add(c);
+                if (!acceptTouch) continue;
+                foreach (IntVec3 d in GenAdj.CardinalDirections)
+                {
+                    IntVec3 n = c + d;
+                    if (n != prev && n.InBounds(map) && n.GetTransmitter(map) != null) reached = true;
+                }
+                if (reached) break;
+            }
+            if (!reached) return false;
+
+            foreach (IntVec3 c in cells) GenSpawn.Spawn(conduitDef, c, map);
+            return true;
+        }
+
+        /// <summary>可站、除了電纜之外沒有任何建築。Standable with no building on it except conduit.</summary>
+        public static bool IsClearFloor(Map map, IntVec3 cell)
+        {
+            if (!cell.InBounds(map) || !cell.Standable(map)) return false;
+            List<Thing> things = cell.GetThingList(map);
+            for (int i = 0; i < things.Count; i++)
+            {
+                ThingDef def = things[i].def;
+                if (def.category == ThingCategory.Building && (def.building == null || !def.building.isPowerConduit)) return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 比照 Placeworker_AttachedToWall：面向的那格要是實牆（非門），本格不能已有同向的壁掛物。
+        /// Mirrors Placeworker_AttachedToWall: the faced cell must be solid, doorless wall, and nothing
+        /// may already hang on this cell facing the same way.
+        /// </summary>
+        public static bool CanAttachToWall(Map map, IntVec3 cell, Rot4 rot, IntVec3 wall)
+        {
+            if (!cell.InBounds(map) || !wall.InBounds(map)) return false;
+
+            Building edifice = wall.GetEdifice(map);
+            if (edifice == null || edifice.def.IsDoor || edifice.def.Fillage != FillCategory.Full) return false;
+
+            if (cell.GetEdifice(map) != null) return false;
+
+            List<Thing> things = cell.GetThingList(map);
+            for (int i = 0; i < things.Count; i++)
+            {
+                if (things[i].def.building != null && things[i].def.building.isAttachment && things[i].Rotation == rot)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }

@@ -135,6 +135,24 @@
 3. **追殺**：每 `4~7` 遊戲日降一波艦隊襲擊（`points = max(600, 當前威脅點數 × 1.25)`）。
 4. **連坐**：隨機三個派系轉為敵對。優先選與艦隊實際為盟友者，不足時從其他非隱藏、目前尚未與玩家敵對的派系補滿。這三者**不鎖好感**，玩家可以自行修復關係。
 
+### 暫停追殺：摧毀 SAGE
+
+殖民艦隊的追殺靠的是 SAGE 網路（`DMS_SageCore`，賢者）。打爛一台 SAGE 就能讓追殺暫停，但**不會**解除永久敵對：好感度封鎖、連坐全部照舊，軍事法庭仍是唯一出路。
+
+| 狀態 | 摧毀 SAGE 的效果 |
+|---|---|
+| 永久敵對、未暫停 | 追殺暫停 `1~2` 年（60~120 天），發信 |
+| 永久敵對、已暫停 | 每座再疊加 **15 天**，接在目前的結束時間之後 |
+| 未處於永久敵對 | 無效果，只發中性訊息 |
+
+- 只有打爛（`KillFinalize`）才算；SAGE 不可拆除。站點伺服主機與設施伺服核心被摧毀**不影響**追殺。
+- 暫停期間完成新的隱匿級研究：制裁照常結算，但暫停不受影響，追殺要等暫停結束才重新排程。
+- 暫停結束：發「追緝網路恢復」信件，依 `huntIntervalDays` 重新排程追殺，並補一次軍事法庭傳票（暫停期間沒有追殺，也就沒有人補發）。
+- 軍事法庭服刑期滿（`EndPermanentHostility`）時一併清除暫停。
+- **SAGE 節點任務**（`DMS_FleetNetworkSite`）：只在追殺進行中且未暫停時出現，同時最多一份；每次追殺觸發時也有 35% 機率主動派發（`OccultechSanctionUtility.TryOfferNetworkSite`）。站點守軍為先鋒殘餘。
+
+實作：`_Source/DMS/FacilityServer/CompHuntBreaker.cs`、`GameComponent_OccultechSanction.SuspendHunt` / `huntSuspendedUntilTick`、`OccultechSanctionUtility.TrySuspendHunt`。完整設計見 `FACILITY_SERVER_PLAN.md`。
+
 ### 解除永久敵對：軍事法庭
 
 沿用既有的 `DMS_CourtMartial`（`1.6/Defs/Quests/CourtMartial.xml` + `_Source/DMS/Quests/CourtMartial/`），但在永久敵對下改寫三項參數：
@@ -178,7 +196,7 @@
 
 ### 除錯
 
-`_Source/DMS/Occultech/DebugActions_Occultech.cs` 提供四個 DebugAction（分類 `DMS`）：重放任一專案的制裁、解除永久敵對、放棄封存級技術、輸出目前狀態。
+`_Source/DMS/Occultech/DebugActions_Occultech.cs` 提供七個 DebugAction（分類 `DMS`）：重放任一專案的制裁、解除永久敵對、放棄封存級技術、輸出目前狀態、暫停追殺一年、立即結束追殺暫停、派發 SAGE 節點任務。
 
 ---
 
@@ -231,6 +249,18 @@
   - 第三個配方（`DMS_Recipe.xml:972` 附近）同屬本專案
 - 設定：封存理由不是武器，而是「能自產蛋白與藥物前驅物的殖民地就不再向任何人採購」
 
+#### 5. `DMS_Occultech_Subsonic`：infrasonics／次聲波基礎
+
+- 知識成本 750，前置 `MicroelectronicsBasics`（原版：微電子基礎），座標 (1, 6)
+- 脈衝邏輯全部走 `DMS.SubsonicUtility.DoPulse`：只作用於**血肉生物**（機兵免疫）、預設穿牆；每次脈衝疊加 `DMS_SubsonicTrauma`（大型生物依體型遞減，約兩小時消退，最高段疼痛足以休克），並以 `panicChance × (1 − FFF_FearResistance)` 觸發 PanicFlee
+- **解鎖**：
+  - `DMS_SubsonicModule`（次聲波改裝模塊，機械列印機製作）→ 掛載後取得技能 `DMS_SubsonicBurst`：以自身為中心 7.9 格、只打敵對、冷卻 2500 ticks（`CompAbilityEffect_SubsonicPulse`）
+  - `DMS_Building_SubsonicEmitter`（次聲波塔，1×1、繪製 2×2、250W）：範圍 9.9 格，每 900~1500 ticks 間歇脈衝，範圍內沒有敵人時不發射（`CompSubsonicEmitter`）
+  - `DMS_Weapon_GrenadeSubsonic`（次聲波手雷）：半徑 3.9、**不分敵我**、無視牆壁，無爆炸傷害（`Projectile_SubsonicGrenade` + `ModExtension_SubsonicPulse`）
+  - `DMS_Building_BlastScanner`（爆破探勘裝置，1×1、繪製 2×2）：裝填一發 `Shell_HighExplosive`（`CompRefuelable`）→ 點燃引信 240 ticks → 探明 2~3 處深層礦脈，80% 機率在裝置 6~16 格內生成蟲巢隧道（威脅點數 × 0.6，每 220 點一巢，1~4 巢），冷卻 2 天；無基岩的生態域不可用（`CompBlastScanner`）
+- 相關檔：`1.6/NewContent/Defs/Things_Item/DMS_Item_Subsonic.xml`、`1.6/NewContent/Defs/Things_Building/DMS_Buildings_Subsonic.xml`、`_Source/DMS/Subsonic/`
+- 模塊與手雷目前暫用 `ComponentCCC` 與原版 EMP 手雷貼圖（XML 內有 TODO）
+
 ---
 
 ## 知識取得管道
@@ -244,7 +274,7 @@
 | defName | 標籤 | 對應類別 | 市價 | 進度 | 退回經驗 | 解封清單 | 取得 |
 |---|---|---|---|---|---|---|---|
 | `DMS_DataCache_Restricted` | restricted technical data cache | 管制 | 300 | 150 | 1500 | BasicFoundation | `RewardStandardMidFreq`、物資箱（權重 3） |
-| `DMS_DataCache_Sealed` | sealed data cache | 封存 | 700 | 250 | 2000 | AdvancedMastery、Frogman、BionicSuitHeavy、GestaltEngine、Biosynthesis | `RewardStandardCore`、物資箱（權重 1） |
+| `DMS_DataCache_Sealed` | sealed data cache | 封存 | 700 | 250 | 2000 | AdvancedMastery、Frogman、BionicSuitHeavy、GestaltEngine、Biosynthesis、Subsonic | `RewardStandardCore`、物資箱（權重 1） |
 | `DMS_DataCache_Occulted` | occulted data cache | 禁忌 | 1400 | 400 | 3000 | BasicSecondary | `RewardStandardLowFreq`，**不進物資箱**，只走任務獎勵 |
 
 > ⚠️ 新增 Occultech 專案時，記得把 defName 補進對應等級的 `researchProjects` 清單，否則永遠抽不到。
@@ -330,7 +360,7 @@
 | 路徑 | 內容 |
 |---|---|
 | `1.6/Defs/Research/DMS_OccultechResearchTab.xml` | 分頁、三個知識類別 |
-| `1.6/Defs/Research/DMS_OccultechProjects.xml` | 全部 7 個專案 |
+| `1.6/Defs/Research/DMS_OccultechProjects.xml` | 全部 8 個專案 |
 | `1.6/Defs/Things_Building/DMS_Occultech.xml` | 石碑、解碼器 |
 | `1.6/NewContent/Defs/Things_Item/DMS_Item_Occultech.xml` | 固態零點能、密鑰、三階資料匣 |
 | `1.6/NewContent/Defs/Things_Building/DMS_ExplorationBuildings_Occultech.xml` | 零點能發生器 |
@@ -344,6 +374,9 @@
 | `_Source/DMS/Occultech/GameComponent_OccultechSanction.cs` | 制裁存檔狀態、追殺排程、週期校正 |
 | `_Source/DMS/Occultech/Patch_OccultechSanction.cs` | 四個 Harmony patch（研究完成、好感度封鎖、關係校正、通訊台對話） |
 | `_Source/DMS/Occultech/DebugActions_Occultech.cs` | 除錯入口 |
+| `_Source/DMS/FacilityServer/CompHuntBreaker.cs` | SAGE 被摧毀時暫停追殺 |
+| `_Source/DMS/Quests/QuestNode_Root_DMS_FleetNetworkSite.cs` | SAGE 節點任務（追殺期間限定） |
+| `1.6/NewContent/Defs/Quests/DMS_FleetNetworkQuest.xml` | SAGE 節點站點與任務 |
 | `1.6/Ideology/Defs/DMS_Precepts_SealedTech.xml` | 議題、三個教義、兩個心情 |
 | `_Source/DMS/Quests/Stele/Main.cs` | `QuestNode_Root_Stele`、`QuestPart_SubquestGenerator_Stele` |
 | `_Source/DMS/Quests/Stele/Sub_Site.cs` | `QuestNode_Root_OccultechKey_Site` |
@@ -407,7 +440,7 @@ English / 繁體中文 / 简体中文 **三語皆已補齊**：
 - **集滿 4 把密鑰之後沒有結算邏輯**：`signalKeysFound` 有宣告、有存檔，但沒有任何 QuestPart 監聽它，主線目前只在 `RewardChoice` 給石碑
 - `DMS_ExpKnowledge_BasicFoundation` / `AdvancedMastery` / `BasicSecondary` 三個佔位專案沒有實際解鎖物，描述也是範例文字
 - `DMS_ExpKnowledge_AdvancedMastery` 與 `BasicSecondary` 沒有繼承 `DMS_BaseOccultTech`，欄位是各自重複寫的
-- 目前實裝的 4 個專案**全部是 Sealed 級**；Restricted 與 Occulted 兩欄只有佔位專案。`DMS_DataCache_Occulted` 的解封清單也只有一個 `BasicSecondary`
+- 目前實裝的 5 個專案**全部是 Sealed 級**；Restricted 與 Occulted 兩欄只有佔位專案。`DMS_DataCache_Occulted` 的解封清單也只有一個 `BasicSecondary`
 - 解碼器的 `knowledgeCategory` 固定為 `DMS_Restricted`，實際能推進的只有靠溢流抵達 Sealed 的部分
 
 ### 制裁機制的已知限制

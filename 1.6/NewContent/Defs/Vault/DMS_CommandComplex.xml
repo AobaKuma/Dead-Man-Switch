@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       地下指揮中樞（DMS_CommandComplex）：超大型地下設施變體。300x300 的口袋地圖，設施本體 240~260 見方。
+       沿用軍事儲存庫的程序化管線（DMS.DMS_LayoutWorker_Vault：走廊先行、分區閘門、密封獎勵房、檢修通道網），
+       房型混用儲存庫與檔案庫：軍械庫、機兵艙、指揮室、獎勵房、運維室、伺服機房、磁帶庫、動力室、冷卻機房……
+       主幹上有 3~5 座十字樞紐與 3~5 條 T 字支道、每條支道最多 3 條子支道，才撐得滿這個尺寸。
+       入口是 DMS_CommandComplexElevator。
+
+       Underground command complex: the very large underground facility variant. A 300x300 pocket map with a
+       240~260 footprint. Reuses the vault's procedural pipeline (corridor-first, sector gates, sealed treasuries,
+       maintenance tunnels) with both the vault's and the archive's rooms: armories, mech bays, command rooms,
+       treasuries, operations, server halls, tape stores, power and cooling plants. The spine carries 3~5 cross hubs
+       and 3~5 T branches, each branch growing up to 3 sub-branches, which is what it takes to fill the footprint.
+       The way in is DMS_CommandComplexElevator.
+       ============================================================ -->
+
+  <MapGeneratorDef>
+    <defName>DMS_CommandComplex</defName>
+    <label>underground command complex</label>
+    <isUnderground>true</isUnderground>
+    <disableCallAid>true</disableCallAid>
+    <pocketMapProperties>
+      <biome>Underground</biome>
+      <temperature>10</temperature>
+      <canBeCleaned>true</canBeCleaned>
+    </pocketMapProperties>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>Underground_RocksFromGrid</li>
+      <li>Terrain</li>
+      <li>RockChunks</li>
+      <!-- DMS_CommandComplexStructure 由 DMS_CommandComplexElevator 動態插入 / injected by the portal -->
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+  <GenStepDef>
+    <defName>DMS_CommandComplexStructure</defName>
+    <order>551</order>
+    <genStep Class="DMS.DMS_GenStep_Vault">
+      <layoutDef>DMS_CommandComplex</layoutDef>
+      <!-- 300 的地圖四周各留 20~30 格岩層給檢修通道與密室。20~30 cells of rock on each side for tunnels and secret rooms. -->
+      <sizeRange>240~260</sizeRange>
+    </genStep>
+  </GenStepDef>
+
+  <StructureLayoutDef>
+    <defName>DMS_CommandComplex</defName>
+    <workerClass>DMS.DMS_LayoutWorker_Vault</workerClass>
+    <canHaveMultipleLayoutsInRoom>true</canHaveMultipleLayoutsInRoom>
+    <clearRoomsEntirely>true</clearRoomsEntirely>
+    <minRoomWidth>9</minRoomWidth>
+    <minRoomHeight>9</minRoomHeight>
+    <corridorDef>DMS_VaultMainHall</corridorDef>
+
+    <wallDef>DMS_SuperWall</wallDef>
+    <doorDef>Door</doorDef>
+    <doorStuffDef>Steel</doorStuffDef>
+    <wallLampDef>DMS_EmergencyLamp</wallLampDef>
+    <terrainDef>MetalTile</terrainDef>
+
+    <!-- countRange 的下限是保證數量、上限是加權抽選的封頂；weight 只在保證數量之外抽。
+         countRange's min is guaranteed and its max caps the weighted rolls; weight only applies beyond the guarantee. -->
+    <roomDefs>
+      <DMS_VaultEntranceHall>
+        <countRange>1</countRange>
+      </DMS_VaultEntranceHall>
+
+      <!-- 儲存庫房型 / Vault rooms -->
+      <DMS_VaultArmory>
+        <countRange>2~5</countRange>
+        <weight>0.5</weight>
+      </DMS_VaultArmory>
+      <DMS_VaultMechBay>
+        <countRange>2~4</countRange>
+        <weight>0.4</weight>
+      </DMS_VaultMechBay>
+      <DMS_VaultCommandRoom>
+        <countRange>1~3</countRange>
+        <weight>0.3</weight>
+      </DMS_VaultCommandRoom>
+      <DMS_VaultTreasury>
+        <countRange>2~3</countRange>
+        <weight>0.1</weight>
+      </DMS_VaultTreasury>
+      <DMS_VaultGarrisonQuarters>
+        <countRange>1~99</countRange>
+        <weight>1</weight>
+      </DMS_VaultGarrisonQuarters>
+      <DMS_VaultPowerPlant>
+        <countRange>2~5</countRange>
+        <weight>0.4</weight>
+      </DMS_VaultPowerPlant>
+      <DMS_VaultWreckHall>0.8</DMS_VaultWreckHall>
+      <DMS_VaultAtrium>0.8</DMS_VaultAtrium>
+      <DMS_VaultVehicleBay>0.6</DMS_VaultVehicleBay>
+      <!-- 生活區（純裝飾）：駐軍規模大，至少各一間。Living quarters (decoration only): a garrison this size has at least one of each. -->
+      <DMS_VaultMessHall>
+        <countRange>1~4</countRange>
+        <weight>0.4</weight>
+      </DMS_VaultMessHall>
+      <DMS_VaultInfirmary>
+        <countRange>1~3</countRange>
+        <weight>0.3</weight>
+      </DMS_VaultInfirmary>
+
+      <!-- 檔案庫房型 / Archive rooms -->
+      <DMS_ArchiveOperations>
+        <countRange>1~3</countRange>
+        <weight>0.3</weight>
+      </DMS_ArchiveOperations>
+      <DMS_ArchiveServerHall>
+        <countRange>1~2</countRange>
+        <weight>0.1</weight>
+      </DMS_ArchiveServerHall>
+      <DMS_ArchiveTapeStore>
+        <countRange>2~99</countRange>
+        <weight>0.8</weight>
+      </DMS_ArchiveTapeStore>
+      <DMS_ArchiveCoolingPlant>
+        <countRange>1~4</countRange>
+        <weight>0.4</weight>
+      </DMS_ArchiveCoolingPlant>
+    </roomDefs>
+
+    <junkScaterrers>
+      <Filth_Trash>
+        <groupsPerHundredCells>0~2</groupsPerHundredCells>
+        <itemsPerGroup>2~4</itemsPerGroup>
+        <groupDistRange>3~5</groupDistRange>
+      </Filth_Trash>
+      <Filth_Dirt>
+        <groupsPerHundredCells>1~3</groupsPerHundredCells>
+        <itemsPerGroup>2~4</itemsPerGroup>
+        <groupDistRange>3~5</groupDistRange>
+      </Filth_Dirt>
+      <Filth_MachineBits>
+        <groupsPerHundredCells>0~2</groupsPerHundredCells>
+        <itemsPerGroup>2~4</itemsPerGroup>
+        <groupDistRange>2~4</groupDistRange>
+      </Filth_MachineBits>
+      <Filth_RubbleRock>
+        <groupsPerHundredCells>1~3</groupsPerHundredCells>
+        <itemsPerGroup>3~8</itemsPerGroup>
+        <groupDistRange>3~5</groupDistRange>
+        <minGroups>1</minGroups>
+      </Filth_RubbleRock>
+    </junkScaterrers>
+
+    <modExtensions>
+      <li Class="DMS.ModExtension_VaultLayout">
+        <!-- 伺服機房要 11 格，房間下限跟著拉到 11。The server hall needs 11, so rooms start at 11. -->
+        <roomWidthRange>11~16</roomWidthRange>
+        <roomDepthRange>11~16</roomDepthRange>
+        <!-- 主幹 3~5 座十字樞紐加 3~5 條 T 字支道、每條支道最多 3 條子支道，才撐得滿 250 見方。
+             3~5 cross hubs and 3~5 T branches on the spine, up to 3 sub-branches per branch; that's what fills 250
+             cells square. -->
+        <branchCountRange>3~5</branchCountRange>
+        <!-- 十字樞紐：主幹上的交叉寬走廊，兩側長支道，每一臂都是分區閘門。
+             Cross hubs: wide crossings on the spine with a branch off each side and a sector gate at every arm. -->
+        <hubCountRange>3~5</hubCountRange>
+        <hubSize>17</hubSize>
+        <hubArmWidth>11</hubArmWidth>
+        <hubBranchChance>0.85</hubBranchChance>
+        <subBranchChance>0.7</subBranchChance>
+        <maxSubBranches>3</maxSubBranches>
+        <branchSpacing>22</branchSpacing>
+        <mergeChance>0.25</mergeChance>
+        <gapChance>0.08</gapChance>
+        <endRooms>true</endRooms>
+        <!-- 分區間隙：不同分區的房間與走廊之間至少隔 6 格岩層，每條支道起頭因此是一段兩側不掛房間的連絡走廊。
+             6 格是原版自動接線的範圍，壁掛燈、配電盤之類的用電設施就搆不到隔壁分區的電纜。
+             Sector gap: at least 6 cells of rock between different sectors' rooms and corridors, so every branch
+             starts with a stretch of bare link corridor. 6 is vanilla's auto-connect range, so wall lamps,
+             substations and other powered fixtures can't reach the next sector's conduit. -->
+        <sectorGap>6</sectorGap>
+
+        <!-- 分區閘門：5 格寬的走廊中間一扇 1x3 密封門、兩側各一格強化牆。
+             Sector gates: a 1x3 sealed door in the middle of the 5-wide corridor, reinforced wall either side. -->
+        <sectorGates>true</sectorGates>
+        <gateChance>1</gateChance>
+        <gateDoorDef>DMS_SealedRollingDoor_Triple</gateDoorDef>
+        <gateWallDef>DMS_SuperWall</gateWallDef>
+        <gateConsoleDef>DMS_VaultGateConsole</gateConsoleDef>
+      </li>
+      <!-- 指揮中樞維護得最好，多數門是自動門。The best-kept facility: most doors are autodoors. -->
+      <li Class="DMS.ModExtension_VaultDoors">
+        <reinforcedDoorDef>Autodoor</reinforcedDoorDef>
+        <reinforcedDoorStuff>Steel</reinforcedDoorStuff>
+        <reinforcedDoorRatio>0.7</reinforcedDoorRatio>
+      </li>
+      <li Class="DMS.ModExtension_FacilityLockdown">
+        <controllerDef>DMS_Building_LockdownController</controllerDef>
+        <preferredRooms>
+          <li>DMS_VaultCommandRoom</li>
+          <li>DMS_ArchiveOperations</li>
+          <li>DMS_VaultPowerPlant</li>
+        </preferredRooms>
+      </li>
+      <!-- 檢修通道網：同儲存庫／檔案庫，設備間是動力室與冷卻機房。
+           Maintenance tunnels: as in the vault and archive, with the power and cooling plants as equipment rooms. -->
+      <li Class="DMS.ModExtension_VaultTunnels">
+        <equipmentRooms>
+          <li>DMS_VaultPowerPlant</li>
+          <li>DMS_ArchiveCoolingPlant</li>
+        </equipmentRooms>
+        <extraRoomChance>0.3</extraRoomChance>
+        <otherSectorChance>0.5</otherSectorChance>
+        <secretRoomSize>6~8</secretRoomSize>
+        <secretRoomFixtures>
+          <li>
+            <defs>
+              <li>DMS_Building_VentSmall</li>
+              <li>DMS_Building_VentMedium</li>
+              <li>DMS_Building_VentLarge</li>
+            </defs>
+            <count>1</count>
+          </li>
+          <li>
+            <defs>
+              <li>DMS_Building_Machine_Medium</li>
+              <li>DMS_Building_Eletric_Medium</li>
+            </defs>
+            <count>1~2</count>
+          </li>
+        </secretRoomFixtures>
+        <floorDef>Concrete</floorDef>
+        <hatchDef>Vent</hatchDef>
+        <conduitDef>HiddenConduit</conduitDef>
+        <substationDef>DMS_SubstationCabinet_Wall</substationDef>
+        <corridorLinks>1~2</corridorLinks>
+        <maxLegLength>45</maxLegLength>
+      </li>
+    </modExtensions>
+  </StructureLayoutDef>
+
+  <!-- ============================================================
+       地表入口：指揮中樞貨運電梯。繼承儲存庫電梯（DMS_ElevatorBase），換口袋地圖與駭入難度。
+       目前沒有站點放置它，掛在開發者類別下方便測試。
+       Surface entrance: the command complex freight elevator. Inherits the vault lift (DMS_ElevatorBase) with its
+       own pocket map and hack budget. No site places it yet; it sits in the dev category for testing.
+       ============================================================ -->
+  <ThingDef ParentName="DMS_ElevatorBase">
+    <defName>DMS_CommandComplexElevator</defName>
+    <label>command complex freight elevator</label>
+    <description>The surface lift of a buried command complex. The colony fleet ran its regional operations from here: a whole district of barracks, armories, records halls and command rooms sealed under the rock, with only this lift up top. The car still has power, but its controls are locked behind the fleet's strongest encryption. Hack it to bring the car up.</description>
+    <portal>
+      <pocketMapGenerator>DMS_CommandComplex</pocketMapGenerator>
+      <exitDef>DMS_VaultElevatorExit</exitDef>
+      <!-- 結構 240~260，四周留岩層。The structure runs 240~260; leave rock around it. -->
+      <pocketMapSize>300</pocketMapSize>
+    </portal>
+    <comps Inherit="False">
+      <!-- 比儲存庫電梯（39000）難五成。Half again the vault lift's 39000. -->
+      <li Class="CompProperties_Hackable">
+        <defence>60000</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <lockoutDurationHoursRange>8~24</lockoutDurationHoursRange>
+        <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
+        <notHackedInspectString>Hack to open.</notHackedInspectString>
+        <intellectualSkillPrerequisite>8</intellectualSkillPrerequisite>
+        <hackingCompletedSound>Hacking_Completed</hackingCompletedSound>
+        <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
+      </li>
+      <li Class="CompProperties_Sealable">
+        <sealTexPath>UI/Commands/DMS_UnlockContainer</sealTexPath>
+        <sealCommandLabel>Seal shaft</sealCommandLabel>
+        <sealCommandDesc>Choose a colonist to permanently seal the lift shaft. Anything or anyone left below will be lost forever.</sealCommandDesc>
+        <cannotSealLabel>Cannot seal</cannotSealLabel>
+        <confirmSealText>Sealing the lift shaft is permanent. Anything or anyone left below will be lost forever.{0}\n\nAre you sure you want to continue?</confirmSealText>
+        <sealedInspectString>Permanently sealed.</sealedInspectString>
+        <cannotEnterLabel>Sealed</cannotEnterLabel>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(220,70,50,0)</glowColor>
+      </li>
+      <li Class="Fortified.CompProperties_FacilityLockdownGate">
+        <overrideWork>6000</overrideWork>
+        <overrideSkillPrerequisite>6</overrideSkillPrerequisite>
+      </li>
+    </comps>
+    <modExtensions Inherit="False">
+      <li Class="DMS.ModExtension_PortalLayout">
+        <genStep>DMS_CommandComplexStructure</genStep>
+        <layout>DMS_CommandComplex</layout>
+      </li>
+      <li Class="DMS.ModExtension_SealedGraphic">
+        <sealedGraphicData>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <texPath>Things/Building/Elevator_sealed/building</texPath>
+          <drawSize>(5,5)</drawSize>
+        </sealedGraphicData>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DMS_FacilityServerCore.label>facility server core</DMS_FacilityServerCore.label>
+  <DMS_FacilityServerCore.description>A sizable transistor computer. Old but extremely reliable, machines like this serve as paperless office and records hosts throughout the colony fleet's facilities. A special radioisotope cell inside keeps it running for years without anyone tending it.\n\nThe lower data layers of these server cores usually hold backups of important technical blueprints and access key records. Breaking into it will inevitably set off the whole facility's alarm response, so it is best to prepare your defenses before you start hacking.</DMS_FacilityServerCore.description>
+
+  <DMS_FacilityDataRack.label>facility data rack</DMS_FacilityDataRack.label>
+  <DMS_FacilityDataRack.description>A cabinet of tape drives and core memory wired in parallel with a facility server core, holding the archives the host rarely calls up. It has no processing or access interface of its own; everything on it has to be read out through the host.</DMS_FacilityDataRack.description>
+
+  <DMS_SiteServerCore.label>site server</DMS_SiteServerCore.label>
+  <DMS_SiteServerCore.description>A compact transistor computer. Old but extremely reliable, machines like this serve as paperless office and records hosts throughout the colony fleet's facilities. A special radioisotope cell inside keeps it running for years without anyone tending it.\n\nThe hosts used at small sites like this rarely hold anything truly classified, but valuable intelligence can still be pulled from them. Hacking it will trip the host's security alarm response, so it is best to prepare your defenses before you start.</DMS_SiteServerCore.description>
+
+  <DMS_SageCore.label>SAGE</DMS_SageCore.label>
+  <DMS_SageCore.description>A distributed strategic command computer that can take on auxiliary racks without limit, adding computing power as demand grows. The colony fleet uses it for planetary strategic air defense and to link the countless radar tracking and navigation networks spread across several continents. Destroying it is certain to cripple the fleet's hunting operations on the planet, though within a year or two another computer in the SAGE network will be promoted to host and carry on the task.\n\nIts lower storage still keeps copies of parts of the strategic database. Hacking it will bring the whole facility's alarm system down on you.</DMS_SageCore.description>
+
+  <DMS_Building_GasVent.label>gas vent</DMS_Building_GasVent.label>
+  <DMS_Building_GasVent.description>A floor grate wired into the facility's alert network. When the alarm sounds, it hisses for a moment and then floods the area with toxic gas. The facility's mechanical garrison doesn't breathe; anyone else had better have a gas mask. It holds enough for a few releases and slowly refills from a tank below. Cut its power or hit it with an EMP to shut it down, even in the middle of a release.</DMS_Building_GasVent.description>
+
+  <DMS_Building_LockdownController.label>lockdown controller</DMS_Building_LockdownController.label>
+  <DMS_Building_LockdownController.description>An emergency control unit that coordinates the blast gates at a buried facility's entrances. Once it completes a lockdown, the lifts in and out stop working. The unit is built to fail safe: if it is destroyed, the facility seals itself completely, and the doors can then only be opened with help from outside.\n\nIt engages when the facility's alert level reaches its maximum and seals the exits one minute later. Hacking it lifts the lockdown, and it can be hacked ahead of time. It runs on the facility's radioisotope cells, so cutting power does nothing; an EMP will only pause the countdown.</DMS_Building_LockdownController.description>
+
+  <DMS_ArchiveElevator.label>archive freight elevator</DMS_ArchiveElevator.label>
+  <DMS_ArchiveElevator.description>The surface lift of a buried facility data archive. The colony fleet kept its records hosts underground, away from temperature swings, tremors and interference, and left only this lift up top. The car still has power, but its controls are locked. Hack it to bring the car up.</DMS_ArchiveElevator.description>
+
+</LanguageData>

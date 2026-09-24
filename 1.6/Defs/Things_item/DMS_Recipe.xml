@@ -810,7 +810,7 @@
   <!-- 合成生物學 · 封存檔案 I -->
   <RecipeDef>
     <defName>DMS_Make_Artiprotein</defName>
-    <label>Refine artiprotein x5</label>
+    <label>Refine artiprotein x25</label>
     <description>Feed sugars and starches to a controlled enzyme culture and let it assemble protein blocks. The process is slow and power-hungry, but on an orbital station with no room for fields or livestock it is the only stable source of meat nutrition.</description>
     <jobString>Refining artiprotein.</jobString>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -824,7 +824,7 @@
       <li>DMS_ReactionChamber</li>
       <li>DMS_LabReactor</li>
     </recipeUsers>
-    <workAmount>4000</workAmount>
+    <workAmount>20000</workAmount>
     <ingredients>
       <li>
         <filter>
@@ -838,7 +838,7 @@
             <li>Hay</li>
           </disallowedThingDefs>
         </filter>
-        <count>15</count>
+        <count>75</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
@@ -853,7 +853,7 @@
       </disallowedThingDefs>
     </fixedIngredientFilter>
     <products>
-      <DMS_Artiprotein>5</DMS_Artiprotein>
+      <DMS_Artiprotein>25</DMS_Artiprotein>
     </products>
     <skillRequirements>
       <Crafting>6</Crafting>

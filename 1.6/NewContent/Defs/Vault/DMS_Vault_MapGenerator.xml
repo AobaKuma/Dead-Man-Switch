@@ -34,9 +34,11 @@
     <order>551</order>
     <genStep Class="DMS.DMS_GenStep_Vault">
       <layoutDef>DMS_MilitaryVault</layoutDef>
-      <!-- 比原版儲藏庫（40~50）大一圈，才塞得下長廊、中庭與車輛庫。
-           A size up from vanilla's stockpile (40~50) so the hall, atrium and vehicle bay fit. -->
-      <sizeRange>60~70</sizeRange>
+      <!-- 比原版儲藏庫（40~50）大一圈，才塞得下長廊、中庭與車輛庫；分區之間還要留 6 格岩層，再加大一圈。
+           口袋地圖 130 見方，四周仍留得下檢修通道。
+           A size up from vanilla's stockpile (40~50) so the hall, atrium and vehicle bay fit, and another size up
+           for the 6-cell rock gap between sectors. The pocket map is 130 square, still leaving rock for the tunnels. -->
+      <sizeRange>70~80</sizeRange>
     </genStep>
   </GenStepDef>
 

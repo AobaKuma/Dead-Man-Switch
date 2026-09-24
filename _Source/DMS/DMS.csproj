@@ -41,6 +41,15 @@
          原生只提供 ResetAllProgress()，沒有 per-project 的清除方法。 -->
     <Publicize Include="Assembly-CSharp:RimWorld.ResearchManager.progress" />
     <Publicize Include="Assembly-CSharp:RimWorld.ResearchManager.anomalyKnowledge" />
+    <!-- CompServerHackable：多階段駭入要在階段之間重置原版 CompHackable 的私有狀態，並讀 lastHackTick 判定「新的一次駭入」。
+         CompServerHackable resets vanilla CompHackable's private state between stages and reads lastHackTick
+         to detect each new hacking session. -->
+    <Publicize Include="Assembly-CSharp:RimWorld.CompHackable.progress" />
+    <Publicize Include="Assembly-CSharp:RimWorld.CompHackable.hacked" />
+    <Publicize Include="Assembly-CSharp:RimWorld.CompHackable.lastHackTick" />
+    <Publicize Include="Assembly-CSharp:RimWorld.CompHackable.lastUser" />
+    <Publicize Include="Assembly-CSharp:RimWorld.CompHackable.progressLastLockout" />
+    <Publicize Include="Assembly-CSharp:RimWorld.CompHackable.sentLetter" />
 
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using LudeonTK;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace DMS
@@ -81,7 +82,51 @@ namespace DMS
                 + $"  allyLocked={OccultechSanctionUtility.IsAllyLocked}\n"
                 + $"  highest fleet rank: {holder?.LabelShort ?? "<none>"} (seniority {seniority})\n"
                 + $"  held renounceable: {OccultechSanctionUtility.HeldRenounceableProjects().Select(p => p.defName).ToCommaList(useAnd: false)}\n"
-                + $"  collateral factions: {comp.CollateralFactions.Select(f => f.Name).ToCommaList(useAnd: false)}");
+                + $"  collateral factions: {comp.CollateralFactions.Select(f => f.Name).ToCommaList(useAnd: false)}\n"
+                + $"  huntSuspended={comp.HuntSuspended} resumesIn={comp.HuntResumeTicksLeft.ToStringTicksToPeriod()}");
+        }
+
+        [DebugAction("DMS", "Occultech: 暫停追殺一年 / Suspend hunt (1 year)",
+            actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void SuspendHunt()
+        {
+            GameComponent_OccultechSanction comp = GameComponent_OccultechSanction.CompSafe;
+            if (comp == null) return;
+            int left = comp.SuspendHunt(GenDate.TicksPerYear);
+            Messages.Message($"[DMS] Hunt suspended; resumes in {left.ToStringTicksToPeriod()}.",
+                MessageTypeDefOf.TaskCompletion, historical: false);
+        }
+
+        [DebugAction("DMS", "Occultech: 立即結束追殺暫停 / End hunt suspension now",
+            actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void EndHuntSuspension()
+        {
+            GameComponent_OccultechSanction.CompSafe?.EndHuntSuspensionNow();
+        }
+
+        [DebugAction("DMS", "Occultech: 派發 SAGE 節點任務 / Offer SAGE node quest",
+            actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void OfferNetworkSite()
+        {
+            QuestScriptDef root = DMS_DefOf.DMS_FleetNetworkSite;
+            // 前期威脅點數常低於 rootMinPoints，唯一的站點會被 minPoints 濾掉；除錯時直接墊到門檻。
+            // Early-game points often sit below rootMinPoints, which filters out the only installation; lift them to the floor.
+            float points = Mathf.Max(StorytellerUtility.DefaultSiteThreatPointsNow(), root.rootMinPoints);
+            QuestNode_Root_DMS_FleetNetworkSite.ignoreHuntGate = true;
+            try
+            {
+                if (!root.CanRun(points, Find.CurrentMap))
+                {
+                    Messages.Message("[DMS] SAGE node quest can't run (one is already active, or no installation is eligible).",
+                        MessageTypeDefOf.RejectInput, historical: false);
+                    return;
+                }
+                QuestUtility.GenerateQuestAndMakeAvailable(root, points);
+            }
+            finally
+            {
+                QuestNode_Root_DMS_FleetNetworkSite.ignoreHuntGate = false;
+            }
         }
     }
 }

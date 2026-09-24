@@ -1649,6 +1649,12 @@
         <wanterPos>(31, 0, 38)</wanterPos>
         <activatablePos>(32, 0, 35)</activatablePos>
       </li>
+      <!-- 站點伺服主機：可駭入一次（DMS.CompServerHackable），駭入時拉設施警報。
+           Site server: one hack (DMS.CompServerHackable); hacking it trips the facility alarm. -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_SiteServerCore</def>
+        <pos>(17, 0, 12)</pos>
+      </li>
     </elements>
     <tags>
       <li>DMS_VaultStation</li>
@@ -4498,6 +4504,17 @@
           <DMS_Mech_EscortLifter>5</DMS_Mech_EscortLifter>
         </options>
       </li> -->
+      <!-- 站點伺服主機：可駭入一次（DMS.CompServerHackable），駭入時拉設施警報。
+           Site server: one hack (DMS.CompServerHackable); hacking it trips the facility alarm. -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_SiteServerCore</def>
+        <pos>(37, 0, 7)</pos>
+      </li>
+      <!-- 設施檔案庫的地表電梯（需駭入）。Surface lift down to the facility data archive (hack to open). -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_ArchiveElevator</def>
+        <pos>(74, 0, 9)</pos>
+      </li>
     </elements>
     <tags>
       <li>DMS_SiteStation</li>
@@ -6265,6 +6282,12 @@
           <DMS_Mech_Soldat>3</DMS_Mech_Soldat>
         </options>
       </li> -->
+      <!-- 站點伺服主機：可駭入一次（DMS.CompServerHackable），駭入時拉設施警報。
+           Site server: one hack (DMS.CompServerHackable); hacking it trips the facility alarm. -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_SiteServerCore</def>
+        <pos>(34, 0, 7)</pos>
+      </li>
     </elements>
     <tags>
       <li>DMS_Airport</li>
@@ -9277,6 +9300,12 @@
       <li Class="Fortified.Structures.FFF_Element_LinkAccessKeyWanter">
         <wanterPos>(39, 0, 37)</wanterPos>
         <activatablePos>(40, 0, 36)</activatablePos>
+      </li>
+      <!-- 站點伺服主機：可駭入一次（DMS.CompServerHackable），駭入時拉設施警報。
+           Site server: one hack (DMS.CompServerHackable); hacking it trips the facility alarm. -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_SiteServerCore</def>
+        <pos>(31, 0, 24)</pos>
       </li>
     </elements>
     <tags>
@@ -12855,6 +12884,12 @@
         <pos>(43, 0, 57)</pos>
         <size>(10, 4)</size>
       </li>
+      <!-- 站點伺服主機：可駭入一次（DMS.CompServerHackable），駭入時拉設施警報。
+           Site server: one hack (DMS.CompServerHackable); hacking it trips the facility alarm. -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_SiteServerCore</def>
+        <pos>(40, 0, 52)</pos>
+      </li>
     </elements>
     <tags>
       <li>DMS_LaunchSite</li>
@@ -14977,6 +15012,12 @@
       <li Class="Fortified.Structures.FFF_Element_LinkAccessKeyWanter">
         <wanterPos>(33, 0, 35)</wanterPos>
         <activatablePos>(14, 0, 26)</activatablePos>
+      </li>
+      <!-- 站點伺服主機：可駭入一次（DMS.CompServerHackable），駭入時拉設施警報。
+           Site server: one hack (DMS.CompServerHackable); hacking it trips the facility alarm. -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_SiteServerCore</def>
+        <pos>(32, 0, 38)</pos>
       </li>
     </elements>
     <tags>

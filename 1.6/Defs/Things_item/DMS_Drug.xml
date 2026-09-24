@@ -156,4 +156,241 @@
       </li>
     </stages>
   </ThoughtDef>
+  <!-- ══════════════════════════════════════════════════════════
+       戰鬥再生合劑：不具成癮性的肢體再生藥劑。藥效 2~3 天，期間由 DMS.HediffComp_RegrowMissingParts
+       把缺失部位平均分批長回（已裝仿生件的部位不處理）；再生期間飢餓速率大增、疼痛並有心情懲罰，
+       且每劑有機率因排異反應直接引發 LV.3 異肢症（已經更高則不變）。
+       Combat regeneration serum: a non-addictive limb-regrowth agent. Lasts 2~3 days, during which
+       DMS.HediffComp_RegrowMissingParts regrows missing parts in evenly spaced batches (parts under a
+       bionic are skipped). Regrowth sharply raises hunger, hurts and weighs on mood, and each dose has a
+       chance to trigger xeno limb syndrome straight at LV.3 (never lowers a higher level).
+       ══════════════════════════════════════════════════════════ -->
+  <ThingDef ParentName="MakeableDrugPillBase">
+    <defName>DMS_CombatRegenSerum</defName>
+    <label>combat regeneration serum</label>
+    <description>A highly concentrated neuro-targeted agent laden with stem cells. It lets the body regrow missing parts to their original state within two to three days, but the process burns through enormous amounts of energy, so the patient must eat far more than usual to keep up. The pain of regrowth and the risk of rejection take a heavy toll on the subject's mental health, which is why agents of this kind are rarely seen on the rim.\n\nNon-addictive. Each dose carries a chance of triggering level 3 xeno limb syndrome.</description>
+    <possessionCount>2</possessionCount>
+    <descriptionHyperlinks>
+      <HediffDef>DMS_CombatRegenHigh</HediffDef>
+      <HediffDef>DMS_BionicShock</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <!-- TODO: 暫用受體凝膠的貼圖 / placeholder: reuses the neuroglue texture -->
+      <texPath>Things/Resource/Neuroglue</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>2500</WorkToMake>
+      <MarketValue>150</MarketValue>
+      <Mass>0.05</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>DMS_CombatRegenHigh</hediffDef>
+          <severity>1.0</severity>
+        </li>
+        <!-- 排異反應：25% 機率直接到達異肢症 LV.3 / Rejection: 25% chance of xeno limb syndrome at LV.3 -->
+        <li Class="DMS.IngestionOutcomeDoer_SetHediffLevel">
+          <chance>0.25</chance>
+          <hediffDef>DMS_BionicShock</hediffDef>
+          <level>3</level>
+          <partsToAffect>
+            <li>Torso</li>
+          </partsToAffect>
+          <messageKey>DMS_CombatRegen_Rejection</messageKey>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DMS_Occultech_Biosynthesis</researchPrerequisite>
+      <recipeUsers>
+        <li>DMS_TableArtifuscle</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Neutroamine>4</Neutroamine>
+      <DMS_Artiprotein>10</DMS_Artiprotein>
+    </costList>
+    <comps>
+      <!-- 沒有 chemical / addictiveness → 不會成癮 / no chemical or addictiveness → non-addictive -->
+      <li Class="CompProperties_Drug">
+        <listOrder>1010</listOrder>
+        <overdoseSeverityOffset>0.08~0.14</overdoseSeverityOffset>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>DMS_CombatRegenHigh</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>regenerating</label>
+    <description>Stem cells from a combat regeneration serum are rebuilding missing body parts. The regrowth burns through huge amounts of energy and is painful.</description>
+    <defaultLabelColor>(0.6, 1, 0.6)</defaultLabelColor>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>120000~180000</disappearsAfterTicks><!-- 2~3 天 / 2~3 days -->
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="DMS.HediffCompProperties_RegrowMissingParts"/>
+    </comps>
+    <stages>
+      <li>
+        <hungerRateFactor>3</hungerRateFactor><!-- 生長期間大量消耗能量 / regrowth burns energy -->
+        <painOffset>0.2</painOffset>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 再生期間的疼痛與排異感造成的心情懲罰 / Mood penalty from regrowth pain and rejection -->
+  <ThoughtDef>
+    <defName>DMS_CombatRegenPain</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>DMS_CombatRegenHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>regrowing flesh</label>
+        <description>Something is growing inside me. It itches, it aches, and it doesn't feel like mine.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- ══════════════════════════════════════════════════════════
+       知能阻斷合劑：藥效期間以原版 HediffStage.disablesNeeds 暫停次要需求（美觀、舒適、戶外、室內、空間），
+       結束時由原版 HediffComp_RecoveryThought 留下記憶類的心情懲罰。
+       Sensibility blocker: while active, vanilla HediffStage.disablesNeeds suspends the secondary needs
+       (beauty, comfort, outdoors, indoors, space); when it ends, vanilla HediffComp_RecoveryThought leaves
+       a mood memory behind.
+       ══════════════════════════════════════════════════════════ -->
+  <ThingDef ParentName="MakeableDrugPillBase">
+    <defName>DMS_SensibilityBlocker</defName>
+    <label>sensibility blocker</label>
+    <description>A highly concentrated neuro-targeted agent that suppresses the receptors behind affective thought. Outwardly, the subject's aversion to their surroundings all but vanishes for as long as it lasts, which once made it a standard combat drug for exoskeleton pilots on long missions. Subjects keep a complete memory of the experience after it wears off, however, and once it was found to cause possible sensory loss its use was gradually banned.\n\nTemporarily suspends secondary needs such as beauty, comfort, outdoors, indoors and space, and negates the mood penalties of environment-related thoughts.</description>
+    <possessionCount>3</possessionCount>
+    <descriptionHyperlinks>
+      <HediffDef>DMS_SensibilityBlockerHigh</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <!-- TODO: 暫用受體凝膠的貼圖 / placeholder: reuses the neuroglue texture -->
+      <texPath>Things/Resource/Neuroglue</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>1500</WorkToMake>
+      <MarketValue>45</MarketValue>
+      <Mass>0.05</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>DMS_SensibilityBlockerHigh</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DMS_Occultech_Biosynthesis</researchPrerequisite>
+      <recipeUsers>
+        <li>DMS_TableArtifuscle</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Neutroamine>3</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1011</listOrder>
+        <overdoseSeverityOffset>0.08~0.14</overdoseSeverityOffset>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>DMS_SensibilityBlockerHigh</defName>
+    <hediffClass>Hediff_High</hediffClass>
+    <label>sensibility blocked</label>
+    <description>A sensibility blocker is suppressing affective thought. The subject no longer cares about their surroundings: secondary needs are suspended and environment-related negative thoughts have no effect on mood.</description>
+    <defaultLabelColor>(0.6, 0.7, 1)</defaultLabelColor>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1</severityPerDay><!-- 約 1 天 / about 1 day -->
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_RecoveryThought">
+        <thought>DMS_SensibilityBlockerAftermath</thought>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <disablesNeeds>
+          <li>Beauty</li>
+          <li>Comfort</li>
+          <li>Outdoors</li>
+          <li>Indoors</li>
+          <li>RoomSize</li>
+        </disablesNeeds>
+      </li>
+    </stages>
+    <!-- 環境相關的負面想法心情歸零（正面心情照常）/ Environment-related negative thoughts give 0 mood (positive moods still apply) -->
+    <modExtensions>
+      <li Class="DMS.ModExtension_NullifyNegativeThoughts">
+        <thoughts>
+          <li>AteWithoutTable</li>
+          <li>SleptOutside</li>
+          <li>SleptOnGround</li>
+          <li>SleptInCold</li>
+          <li>SleptInHeat</li>
+          <li>SleptInBarracks</li>
+          <li>SleepDisturbed</li>
+          <li>SleptInBedroom</li>
+          <li>HospitalPatientRoomStats</li>
+          <li>PrisonCell</li>
+          <li>PrisonBarracks</li>
+          <li>EnvironmentDark</li>
+          <li>EnvironmentCold</li>
+          <li>EnvironmentHot</li>
+          <li>SoakingWet</li>
+          <li>ObservedLayingCorpse</li>
+          <li>ObservedLayingRottingCorpse</li>
+          <li>ToxicFallout</li>
+          <li MayRequire="Ludeon.RimWorld.Anomaly">EntityInRoom</li>
+          <li MayRequire="Ludeon.RimWorld.Anomaly">UnnaturalDarkness</li>
+          <li MayRequire="Ludeon.RimWorld.Anomaly">SwallowedByDarkness</li>
+        </thoughts>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <!-- 藥效結束後仍保有完整記憶 / Full memory remains once the drug wears off -->
+  <ThoughtDef>
+    <defName>DMS_SensibilityBlockerAftermath</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>hollow memories</label>
+        <description>I remember every moment of it. I just can't remember feeling anything.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
 </Defs>	

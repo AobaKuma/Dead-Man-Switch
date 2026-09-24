@@ -27,6 +27,10 @@ namespace DMS
         private List<Faction> collateralFactions = new List<Faction>();
         private int nextHuntTick = -1;
 
+        // 追殺暫停（摧毀 SAGE）：到這個 tick 之前不追殺；-1 = 未暫停。
+        // Hunt suspension (SAGE destroyed): no hunting before this tick; -1 = not suspended.
+        private int huntSuspendedUntilTick = -1;
+
         private static Game cachedGame;
         private static GameComponent_OccultechSanction cached;
 
@@ -55,6 +59,30 @@ namespace DMS
 
         /// <summary>隱匿級永久敵對是否生效中。</summary>
         public bool PermanentHostile => permanentHostile;
+
+        /// <summary>追殺是否正被暫停（SAGE 被摧毀）。Whether the hunt is currently suspended (a SAGE was destroyed).</summary>
+        public bool HuntSuspended => huntSuspendedUntilTick > Find.TickManager.TicksGame;
+
+        /// <summary>距離追殺恢復還有幾 tick；未暫停為 0。Ticks until the hunt resumes; 0 when not suspended.</summary>
+        public int HuntResumeTicksLeft => HuntSuspended ? huntSuspendedUntilTick - Find.TickManager.TicksGame : 0;
+
+        /// <summary>
+        /// 暫停追殺；已在暫停中時疊加在目前的結束時間之後。回傳暫停後的剩餘 ticks。
+        /// Suspends the hunt; while already suspended, stacks onto the current end. Returns the ticks left.
+        /// </summary>
+        public int SuspendHunt(int ticks)
+        {
+            int now = Find.TickManager.TicksGame;
+            huntSuspendedUntilTick = System.Math.Max(now, huntSuspendedUntilTick) + System.Math.Max(0, ticks);
+            nextHuntTick = -1;
+            return HuntResumeTicksLeft;
+        }
+
+        /// <summary>除錯用：讓暫停在下一 tick 結束。Debug: end the suspension on the next tick.</summary>
+        public void EndHuntSuspensionNow()
+        {
+            if (huntSuspendedUntilTick > 0) huntSuspendedUntilTick = Find.TickManager.TicksGame;
+        }
 
         /// <summary>連坐敵對的派系（唯讀；僅供顯示）。</summary>
         public List<Faction> CollateralFactions => collateralFactions;
@@ -120,6 +148,9 @@ namespace DMS
         public void BeginPermanentHostility(FloatRange huntIntervalDays)
         {
             permanentHostile = true;
+            // 暫停中完成新的隱匿級研究：暫停不受影響，恢復時才排程追殺。
+            // A new Occulted project during a suspension leaves it alone; the hunt is scheduled on resume.
+            if (HuntSuspended) return;
             ScheduleNextHunt(huntIntervalDays);
         }
 
@@ -128,6 +159,7 @@ namespace DMS
         {
             permanentHostile = false;
             nextHuntTick = -1;
+            huntSuspendedUntilTick = -1;
         }
 
         public void AddCollateralFaction(Faction faction)
@@ -161,15 +193,32 @@ namespace DMS
             base.GameComponentTick();
             int now = Find.TickManager.TicksGame;
 
+            // 暫停結束：SAGE 網路內另一台主機升格，重新排程追殺並補一張軍事法庭傳票
+            // （暫停期間沒有追殺，也就沒有人補發傳票）。
+            // Suspension over: another SAGE host takes over. Reschedule the hunt and re-offer the court martial
+            // (nothing re-offers it while the hunt is paused).
+            if (huntSuspendedUntilTick > 0 && now >= huntSuspendedUntilTick)
+            {
+                huntSuspendedUntilTick = -1;
+                if (permanentHostile)
+                {
+                    ModExtension_OccultechSanction ext = OccultechSanctionUtility.OccultedSanction;
+                    ScheduleNextHunt(ext?.huntIntervalDays ?? new FloatRange(4f, 7f));
+                    OccultechSanctionUtility.SendHuntResumedLetter();
+                    OccultechSanctionUtility.EnsureCourtMartialOffered();
+                }
+            }
+
             // 追殺：永久敵對期間週期性派遣艦隊襲擊，同時確保玩家手上有一份可接的軍事法庭傳票。
             // 那是解除永久敵對唯一的出路，不能只靠說書人隨機抽中。
-            if (permanentHostile && nextHuntTick > 0 && now >= nextHuntTick)
+            if (permanentHostile && !HuntSuspended && nextHuntTick > 0 && now >= nextHuntTick)
             {
                 ModExtension_OccultechSanction ext = OccultechSanctionUtility.OccultedSanction;
                 OccultechSanctionUtility.TryFireFleetRaid(
                     ext?.huntPointsFactor ?? 1.25f,
                     ext?.minRaidPoints ?? 300f);
                 OccultechSanctionUtility.EnsureCourtMartialOffered();
+                OccultechSanctionUtility.TryOfferNetworkSite();
                 ScheduleNextHunt(ext?.huntIntervalDays ?? new FloatRange(4f, 7f));
             }
 
@@ -186,6 +235,7 @@ namespace DMS
             Scribe_Collections.Look(ref collateralFactions, "dms_occultechCollateral", LookMode.Reference);
             Scribe_Values.Look(ref permanentHostile, "dms_occultechPermanentHostile");
             Scribe_Values.Look(ref nextHuntTick, "dms_occultechNextHuntTick", -1);
+            Scribe_Values.Look(ref huntSuspendedUntilTick, "dms_occultechHuntSuspendedUntil", -1);
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {

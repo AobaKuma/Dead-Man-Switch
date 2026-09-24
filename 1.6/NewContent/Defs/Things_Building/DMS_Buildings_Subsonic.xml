@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ==================================================================== -->
+  <!-- 封存檔案 I 級：次聲波基礎（DMS_Occultech_Subsonic）的建築類解鎖物。      -->
+  <!-- 兩者都是 1x1 佔地、2x2 繪製。                                           -->
+  <!-- ==================================================================== -->
+
+  <!-- 次聲波塔：有電時間歇性地對範圍內敵對生物放次聲波脈衝（DMS.CompSubsonicEmitter） -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_Building_SubsonicEmitter</defName>
+    <label>infrasonic emitter</label>
+    <description>A tower-mounted array of tuned infrasound emitters. While powered, it periodically releases a burst of infrasound that passes through walls and reaches every hostile living creature within range, wracking them with nausea and pain and sending many into a panic. It only fires when enemies are in range. Mechs are unaffected.</description>
+    <descriptionHyperlinks>
+      <HediffDef>DMS_SubsonicTrauma</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_SubsonicEmitter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(0.6,0.8,0.6)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconScale>1.2</uiIconScale>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <specialDisplayRadius>9.9</specialDisplayRadius>
+    <designationCategory>DMS_Category</designationCategory>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>40</Mass>
+    </statBases>
+    <costList>
+      <Steel>80</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>DMS_Occultech_Subsonic</li>
+    </researchPrerequisites>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="DMS.CompProperties_SubsonicEmitter">
+        <pulse>
+          <radius>9.9</radius>
+          <hediff>DMS_SubsonicTrauma</hediff>
+          <severity>0.25</severity>
+          <panicChance>0.3</panicChance>
+          <hostileOnly>true</hostileOnly>
+          <ignoreWalls>true</ignoreWalls>
+          <fleck>PsycastAreaEffect</fleck>
+          <sound>Explosion_EMP</sound>
+        </pulse>
+        <intervalTicks>900~1500</intervalTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 爆破探勘裝置：裝填一發高爆迫擊砲彈、點火引爆後探明深層礦脈，高機率驚醒地下蟲群（DMS.CompBlastScanner） -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_Building_BlastScanner</defName>
+    <label>blast scanner</label>
+    <description>A precision geological survey device. A mortar shell loaded into its charge chamber drives a seismic shockwave deep into the ground, and the device reads the returning echoes to map ore deposits far below the surface. One charge maps several deep deposits at once.\n\nSurveying this way is never quiet. The shockwave all but inevitably wakes insect colonies dormant underground, and they tend to dig their way out close to whatever disturbed them.\n\nLoad a high-explosive shell, then light the fuse. The device needs time to recalibrate between charges.</description>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_BlastScanner</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(0.6,0.6,0.6)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconScale>1.2</uiIconScale>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <designationCategory>DMS_Category</designationCategory>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>5000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>35</Mass>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>DMS_Occultech_Subsonic</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_ShowDeepResources</li>
+    </placeWorkers>
+    <comps>
+      <!-- 裝藥室：一發高爆砲彈，不隨時間消耗，只在引爆時扣除。 -->
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>charge</fuelLabel>
+        <fuelGizmoLabel>Charge</fuelGizmoLabel>
+        <fuelCapacity>1</fuelCapacity>
+        <initialFuelPercent>0</initialFuelPercent>
+        <fuelConsumptionRate>0</fuelConsumptionRate>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+        <outOfFuelMessage>No charge loaded</outOfFuelMessage>
+        <fuelFilter>
+          <thingDefs>
+            <li>Shell_HighExplosive</li>
+          </thingDefs>
+        </fuelFilter>
+      </li>
+      <li Class="DMS.CompProperties_BlastScanner">
+        <fuseTicks>240</fuseTicks>
+        <cooldownTicks>120000</cooldownTicks>
+        <lumpCount>2~3</lumpCount>
+        <infestationChance>0.8</infestationChance>
+        <infestationDistance>6~16</infestationDistance>
+        <infestationPointsFactor>0.6</infestationPointsFactor>
+        <hiveCountLimits>1~4</hiveCountLimits>
+        <igniteSound>Interact_Ignite</igniteSound>
+        <detonateSound>Explosion_Bomb</detonateSound>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

@@ -13,7 +13,7 @@
        the entrance room drops the matching exit. Core + DMS/FFF only; no DLC required.
        ============================================================ -->
 
-  <ThingDef ParentName="BuildingBase">
+  <ThingDef ParentName="BuildingBase" Name="DMS_ElevatorBase">
     <defName>DMS_VaultElevator</defName>
     <label>freight elevator</label>
     <description>The entrance to a buried military storage vault. The lift still has power, but its controls are locked. Hack it to bring the car up.</description>
@@ -81,6 +81,13 @@
       <li Class="CompProperties_Glower">
         <glowRadius>3</glowRadius>
         <glowColor>(217,178,73,0)</glowColor>
+      </li>
+      <!-- 設施封鎖：封鎖時拒絕進出；中控被毀時，地表端提供緊急解鎖（Fortified.CompFacilityLockdownGate）。
+           Facility lockdown: refuses entry while locked; once the controller is destroyed, the surface end
+           offers an emergency override (Fortified.CompFacilityLockdownGate). -->
+      <li Class="Fortified.CompProperties_FacilityLockdownGate">
+        <overrideWork>6000</overrideWork>
+        <overrideSkillPrerequisite>6</overrideSkillPrerequisite>
       </li>
     </comps>
     <inspectorTabs>
@@ -179,6 +186,13 @@
       <li Class="CompProperties_Glower">
         <glowRadius>8</glowRadius>
         <glowColor>(217,178,73,0)</glowColor>
+      </li>
+      <!-- 設施封鎖：封鎖時拒絕進出；中控被毀時，地表端提供緊急解鎖（Fortified.CompFacilityLockdownGate）。
+           Facility lockdown: refuses entry while locked; once the controller is destroyed, the surface end
+           offers an emergency override (Fortified.CompFacilityLockdownGate). -->
+      <li Class="Fortified.CompProperties_FacilityLockdownGate">
+        <overrideWork>6000</overrideWork>
+        <overrideSkillPrerequisite>6</overrideSkillPrerequisite>
       </li>
     </comps>
   </ThingDef>

@@ -53,7 +53,7 @@ namespace DMS
 
             foreach (LayoutRoom treasury in rooms)
             {
-                LayoutRoomDef def = treasury.defs?.FirstOrDefault(d => d.roomContentsWorkerType == typeof(RoomContents_VaultTreasury));
+                LayoutRoomDef def = treasury.defs?.FirstOrDefault(d => IsTreasuryWorker(d.roomContentsWorkerType));
                 ModExtension_VaultTreasury ext = def?.GetModExtension<ModExtension_VaultTreasury>();
                 if (ext?.sealedDoorDef == null || ext.consoleDef == null) continue;
 
@@ -131,6 +131,15 @@ namespace DMS
             return null;
         }
 
+        /// <summary>
+        /// 獎勵房的 worker（含子類，例如設施檔案庫的伺服機房）。
+        /// A treasury worker, subclasses included (e.g. the data archive's server hall).
+        /// </summary>
+        public static bool IsTreasuryWorker(System.Type worker)
+        {
+            return worker != null && typeof(RoomContents_VaultTreasury).IsAssignableFrom(worker);
+        }
+
         /// <summary>入口、走廊、獎勵房本身都不放控制台。No console in the entrance, a corridor or a treasury.</summary>
         private static bool IsOffLimits(LayoutRoom room)
         {
@@ -140,7 +149,7 @@ namespace DMS
             {
                 System.Type worker = def.roomContentsWorkerType;
                 if (worker == typeof(RoomContents_VaultEntrance)
-                    || worker == typeof(RoomContents_VaultTreasury)
+                    || IsTreasuryWorker(worker)
                     || typeof(RoomContents_Corridor).IsAssignableFrom(worker))
                 {
                     return true;

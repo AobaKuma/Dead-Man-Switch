@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 次聲波塔 DMS.CompSubsonicEmitter -->
+  <DMS_SubsonicEmitter_Charging>下次脈衝：{0}</DMS_SubsonicEmitter_Charging>
+  <DMS_SubsonicEmitter_Ready>待命中，等待敵人進入範圍</DMS_SubsonicEmitter_Ready>
+
+  <!-- 爆破探勘裝置 DMS.CompBlastScanner -->
+  <DMS_BlastScanner_Ignite>點燃引信</DMS_BlastScanner_Ignite>
+  <DMS_BlastScanner_IgniteDesc>點燃已裝填的炸藥引信。引信燒完後，震波會探明地圖上數處深層礦脈，但極有可能驚醒地下休眠的蟲群。</DMS_BlastScanner_IgniteDesc>
+  <DMS_BlastScanner_FuseLit>引信已經點燃了。</DMS_BlastScanner_FuseLit>
+  <DMS_BlastScanner_FuseBurning>引信燃燒中：{0}</DMS_BlastScanner_FuseBurning>
+  <DMS_BlastScanner_Cooldown>重新校準中：{0}</DMS_BlastScanner_Cooldown>
+  <DMS_BlastScanner_NoCharge>尚未裝填炸藥，請先裝入一發高爆砲彈。</DMS_BlastScanner_NoCharge>
+  <DMS_BlastScanner_FoundLabel>探明深層礦脈</DMS_BlastScanner_FoundLabel>
+  <DMS_BlastScanner_FoundText>{0}的震波探明了新的深層礦脈：\n\n{1}\n\n可以使用深層鑽機開採。</DMS_BlastScanner_FoundText>
+  <DMS_BlastScanner_NothingFound>{0}已引爆，但回波沒有顯示任何新的礦脈。</DMS_BlastScanner_NothingFound>
+  <DMS_BlastScanner_InsectsLabel>蟲群甦醒</DMS_BlastScanner_InsectsLabel>
+  <DMS_BlastScanner_InsectsText>{0}的震波驚醒了地下休眠的蟲群，牠們正在挖掘通往地表的通道。</DMS_BlastScanner_InsectsText>
+
+</LanguageData>

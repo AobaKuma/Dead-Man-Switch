@@ -138,6 +138,9 @@
     <blockWind>false</blockWind>
     <castEdgeShadows>false</castEdgeShadows>
     <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+    </statBases>
     <costList>
       <Steel>50</Steel>
       <ComponentIndustrial>5</ComponentIndustrial>
@@ -191,6 +194,9 @@
     <uiIconScale>0.5</uiIconScale>
     <size>(1,1)</size>
     <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+    </statBases>
     <costList>
       <Steel>50</Steel>
       <ComponentIndustrial>5</ComponentIndustrial>
@@ -405,11 +411,6 @@
     </comps>
   </ThingDef>
 
-  <!-- ══════════════════════════════════════════════════════════
-       武器箱（LauncherCase）：純靜態容器，不接警報也不會自己開火。
-       Weapon case: a purely static container; it neither listens to alarms nor fires on its own.
-       ══════════════════════════════════════════════════════════ -->
-
   <!-- 發射器箱：掛在牆上的應急箱，裡面放一具輕型無後座力砲。武器走 CompRefuelable 存放：設施生成的箱子生來就裝好，
        玩家蓋的從空箱開始，殖民者把輕型無後座力砲放進去就能補裝；燃料條 gizmo 上的勾選框決定要不要自動補裝。
        右鍵可以直接取出裝備（原本的主武器收進背包）；箱子空了貼圖換成 building_empty。
@@ -423,6 +424,11 @@
     <label>launcher case</label>
     <description>A wall-mounted emergency case holding a single light recoilless rifle, ready to be grabbed when the facility comes under attack. Anyone can pull the rifle out and shoulder it; the case then sits empty until someone loads a fresh one into it.</description>
     <thingClass>DMS.Building_RefuelableGraphic</thingClass>
+    <designationCategory>DMS_Category</designationCategory>
+    <designatorDropdown>DMS_DefenseEquipment</designatorDropdown>
+    <researchPrerequisites>
+      <li>DMS_EquipmentAdvanced</li>
+    </researchPrerequisites>
     <category>Building</category>
     <useHitPoints>true</useHitPoints>
     <selectable>true</selectable>
@@ -519,4 +525,140 @@
       </li>
     </comps>
   </ThingDef>
+
+  <!-- ══════════════════════════════════════════════════════════
+       毒氣釋放口（GasVent）：地板格柵，收到警報後預警 2 秒、再噴 12 秒毒氣。存量 3 發、每天回補 1 發。
+       不分敵我，但守軍是機兵，毒氣實際上只傷得到入侵者；沒有 Biotech 時由 DMS.MapComponent_DMSToxGasFallback
+       補上毒素累積。斷電或 EMP 會讓它停下，連噴到一半的也一樣。室外無屋頂時毒氣很快散掉，所以只放室內。
+       Gas vent: a floor grate. On alarm it warns for 2 seconds, then vents tox gas for 12. Three charges, one
+       refilled per day. Indiscriminate, but the garrison is mechanical, so in practice only intruders choke;
+       without Biotech, DMS.MapComponent_DMSToxGasFallback supplies the toxic buildup. Power loss or an EMP stops
+       it, even mid-release. Gas disperses fast under open sky, so it belongs indoors.
+       ══════════════════════════════════════════════════════════ -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_GasVent</defName>
+    <label>gas vent</label>
+    <description>A floor grate wired into the facility's alert network. When the alarm sounds, it hisses for a moment and then floods the area with toxic gas. The facility's mechanical garrison doesn't breathe; anyone else had better have a gas mask. It holds enough for a few releases and slowly refills from a tank below. Cut its power or hit it with an EMP to shut it down, even in the middle of a release.</description>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_GasVent</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <!-- 地板格柵：可站立、不擋路、不當掩體。A floor grate: standable, no path cost, no cover. -->
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <pathCost>0</pathCost>
+    <fillPercent>0</fillPercent>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <building>
+      <isEdifice>false</isEdifice>
+      <claimable>false</claimable>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="DMS.CompProperties_AlertEffector_GasVent">
+        <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
+        <triggerChance>0.8</triggerChance>
+        <oneShot>false</oneShot>
+        <gasType>ToxGas</gasType>
+        <cellsToFill>60</cellsToFill>
+        <durationSeconds>12</durationSeconds>
+        <warmupTicks>120</warmupTicks>
+        <cooldownTicks>600</cooldownTicks>
+        <maxCharges>3</maxCharges>
+        <rechargeTicks>60000</rechargeTicks>
+        <warmupEffecter>FFF_Scanner_Alert</warmupEffecter>
+        <!-- 原版 Core 的毒氣噴發特效（含嘶聲）。Vanilla Core's tox-gas release effecter (with its hiss). -->
+        <releasingEffecter>ToxGasReleasing</releasingEffecter>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ══════════════════════════════════════════════════════════
+       設施封鎖中控（LockdownController）：只放在地下口袋地圖。警戒值滿 100% 時倒數 1 分鐘，封死地下出入口。
+       駭入即解除（警報前也可以先駭）；被摧毀時直接死鎖設施，只能由地表的人對入口電梯做緊急解鎖。
+       自帶電池，斷電無效；EMP 只能暫停倒數。邏輯全在 FFF（Fortified.CompFacilityLockdownController /
+       MapComponent_FacilityLockdown），出入口要掛 Fortified.CompProperties_FacilityLockdownGate。
+       不繼承 DMS_AlertBuildingBase：那個父類帶 CompCanBeDormant，中控必須永遠清醒。
+       Lockdown controller: underground pocket maps only. At 100% alert it counts down one minute, then seals
+       the lifts. Hacking it lifts the lockdown (and can be done before any alarm); destroying it seals the
+       facility for good, leaving only an emergency override from the surface. Self-powered; EMP only pauses
+       the countdown. The logic lives in FFF; the lifts carry Fortified.CompProperties_FacilityLockdownGate.
+       Not a DMS_AlertBuildingBase child: that base brings CompCanBeDormant, and the controller never sleeps.
+       ══════════════════════════════════════════════════════════ -->
+  <ThingDef ParentName="DMS_BuildingBase">
+    <defName>DMS_Building_LockdownController</defName>
+    <label>lockdown controller</label>
+    <description>An emergency control unit that coordinates the blast gates at a buried facility's entrances. Once it completes a lockdown, the lifts in and out stop working. The unit is built to fail safe: if it is destroyed, the facility seals itself completely, and the doors can then only be opened with help from outside.\n\nIt engages when the facility's alert level reaches its maximum and seals the exits one minute later. Hacking it lifts the lockdown, and it can be hacked ahead of time. It runs on the facility's radioisotope cells, so cutting power does nothing; an EMP will only pause the countdown.</description>
+    <category>Building</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <!-- TODO：專屬貼圖 LockdownController_north/_south/_east 補上前，暫用變電箱。
+           TODO: placeholder (substation cabinet) until LockdownController_north/_south/_east exist. -->
+      <texPath>Things/Building/DistributionBox/building</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <!-- 南北向貼圖是橫的，佔地 2x1（轉東西向變 1x2）；互動格在正面，背面靠牆，跟配電櫃同一套朝向。
+         The north/south art is landscape, so 2x1 (1x2 turned east/west); the interaction cell is in front and the
+         back goes to the wall, the same convention as the substation cabinet. -->
+    <size>(2,1)</size>
+    <rotatable>true</rotatable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <fillPercent>0.7</fillPercent>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+    </building>
+    <comps>
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+      <li Class="CompProperties_Hackable">
+        <defence>4000</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <intellectualSkillPrerequisite>6</intellectualSkillPrerequisite>
+        <!-- 鎖定短：駭入失手時仍有機會在一天寬限內解開。Short lockout: a botched hack can still be retried within the one-day grace. -->
+        <lockoutDurationHoursRange>2~4</lockoutDurationHoursRange>
+        <glowIfHacked>false</glowIfHacked>
+      </li>
+      <li Class="Fortified.CompProperties_FacilityLockdownController">
+        <checkInterval>60</checkInterval>
+        <countdownEffecter>FFF_Scanner_Alert</countdownEffecter>
+        <lockedEffecter>FFF_Scanner_Trigger</lockedEffecter>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(255,60,40,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+
 </Defs>

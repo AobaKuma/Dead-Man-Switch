@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: infrasonic trauma -->
+  <DMS_SubsonicTrauma.label>次声波创伤</DMS_SubsonicTrauma.label>
+  <DMS_SubsonicTrauma.description>调谐过的次声波让这个生物的内耳与内脏产生共振，造成恶心、失去方向感，以及找不到任何伤口的深层弥漫性疼痛。反复暴露会迅速叠加，最严重时光是疼痛就足以使其休克。\n\n症状会在几个小时内自行消退。</DMS_SubsonicTrauma.description>
+  <DMS_SubsonicTrauma.stages.0.label>不适</DMS_SubsonicTrauma.stages.0.label>
+  <DMS_SubsonicTrauma.stages.1.label>晕眩</DMS_SubsonicTrauma.stages.1.label>
+  <DMS_SubsonicTrauma.stages.2.label>剧痛</DMS_SubsonicTrauma.stages.2.label>
+
+  <!-- EN: infrasonic module -->
+  <DMS_SubsonicModule.label>次声波改装模块</DMS_SubsonicModule.label>
+  <DMS_SubsonicModule.description>安装在外壳上的调谐次声波发生器阵列，让机兵能释放一次次声波，使周围的敌对生物陷入剧痛与恐慌。</DMS_SubsonicModule.description>
+
+</LanguageData>

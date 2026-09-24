@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SAGE 节点任务：[fleetName] 由 DMS.QuestNode_Root_DMS_FleetNetworkSite 提供；保留 (installation==…) 条件与 (*Threat) 标色。 -->
+  <DMS_FleetNetworkSite.questNameRules.rulesStrings>
+    <li>questName(installation==DMS_SageNodeSite)->贤者</li>
+    <li>questName(installation==DMS_SageNodeSite)->致盲[sage]</li>
+    <li>sage->SAGE 节点</li>
+    <li>sage->战略主机</li>
+    <li>sage->防空主机</li>
+  </DMS_FleetNetworkSite.questNameRules.rulesStrings>
+  <DMS_FleetNetworkSite.questDescriptionRules.rulesStrings>
+    <li>questDescription(installation==DMS_SageNodeSite)->我们找到了正在协调[fleetName]追杀行动的主机：一座 SAGE 节点。那是舰队用于星球战略防空、并串连数个大陆上雷达与导航网络的分布式战略指挥计算机。它的机柜阵列由(*Threat)[enemiesCount]名[enemiesLabel](/Threat)看守，并连接着一整套附带火力支援的设施警报系统。\n\n贤者主机可以骇入两到三次，每一次都能从它的战略数据库中提取出科技蓝图、封存技术匣或访问密钥，而每一次都会再度触发设施警报。将它摧毁能重创舰队的追缉行动，但在一两年内，SAGE 网络中的另一台计算机就会升格为主机继续执行任务。\n\n在网络完成主机轮换之前，节点坐标在[siteTimeout]内有效。\n\n注意：这是一座敌对设施。一旦进入，它的监控协议就会在倒数结束后呼叫敌方援军，而且节点能够呼叫迫击炮火力支援。</li>
+  </DMS_FleetNetworkSite.questDescriptionRules.rulesStrings>
+
+</LanguageData>

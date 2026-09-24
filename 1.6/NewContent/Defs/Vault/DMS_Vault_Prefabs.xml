@@ -479,4 +479,230 @@
     </things>
   </PrefabDef>
 
+  <!-- ============================================================
+       室內陳設 / Interior furnishings
+       只用 Core 與 DMS 的建築，不引用任何 DLC 的 def。
+       靠牆的預製塊照上面的約定：最上排貼牆，面向房內的東西加 relativeRotation Opposite；
+       朝南的偶數寬物件從 position 往 -x 延伸（2x1 放在 x 佔 x-1..x）。
+       Core and DMS buildings only; no DLC defs. Edge prefabs follow the convention above: the top row
+       sits against the wall and things facing the room take relativeRotation Opposite. A south-facing
+       even-width thing extends towards -x (a 2x1 at x covers x-1..x).
+       ============================================================ -->
+
+  <!-- 值班桌：靠牆一組報廢的雙聯控制台加一台門禁終端，前面一張椅子。
+       Duty desk: a dead double console and an access terminal against the wall, a chair in front. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_ConsoleDesk_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(3,2)</size>
+    <things>
+      <DMS_ConsoleDouble_Destroyed>
+        <position>(1, 0, 1)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_ConsoleDouble_Destroyed>
+      <DMS_AccessConsole_Destroyed>
+        <chance>0.6</chance>
+        <position>(2, 0, 1)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_AccessConsole_Destroyed>
+      <DiningChair>
+        <chance>0.7</chance>
+        <position>(1, 0, 0)</position>
+        <stuff>Steel</stuff>
+      </DiningChair>
+    </things>
+  </PrefabDef>
+
+  <!-- 控制台列：指揮室牆邊一整排報廢的操作台。
+       Console bank: a whole row of dead operator stations along a command room wall. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_ConsoleBank_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <DMS_ConsoleDouble_Destroyed>
+        <position>(1, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_ConsoleDouble_Destroyed>
+      <DMS_ConsoleSingle_Destroyed>
+        <chance>0.6</chance>
+        <position>(2, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_ConsoleSingle_Destroyed>
+      <DMS_ConsoleDouble_Destroyed>
+        <chance>0.7</chance>
+        <position>(4, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_ConsoleDouble_Destroyed>
+    </things>
+  </PrefabDef>
+
+  <!-- 上下舖兩排，每排三張遠古床（Core）。少一兩張是被拆走了。
+       Two rows of three ancient beds (Core). A missing one or two were hauled off. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_BunkRows</defName>
+    <size>(5,4)</size>
+    <things>
+      <AncientBed>
+        <chance>0.8</chance>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+          <li>(4, 0, 0)</li>
+          <li>(0, 0, 2)</li>
+          <li>(2, 0, 2)</li>
+          <li>(4, 0, 2)</li>
+        </positions>
+      </AncientBed>
+    </things>
+  </PrefabDef>
+
+  <!-- 食堂長桌：1x2 鋼桌配四張凳子，排法照原版 TableWithStools_1x2。
+       Mess table: a 1x2 steel table and four stools, laid out like vanilla's TableWithStools_1x2. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_MessTable</defName>
+    <rotations>North</rotations>
+    <size>(3,2)</size>
+    <things>
+      <Table1x2c>
+        <position>(1, 0, 0)</position>
+        <stuff>Steel</stuff>
+      </Table1x2c>
+      <Stool>
+        <chance>0.66</chance>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+          <li>(0, 0, 1)</li>
+          <li>(2, 0, 1)</li>
+        </positions>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Stool>
+    </things>
+  </PrefabDef>
+
+  <!-- 廚房設備列：冰箱、爐台、烤箱、水槽、微波爐（全是 Core 的遠古廚具，1x1 不轉向）。
+       Galley: fridge, stove, oven, sink and microwave (Core ancient kitchenware, 1x1, never rotated). -->
+  <PrefabDef>
+    <defName>DMS_Prefab_Galley_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <AncientRefrigerator>
+        <position>(0, 0, 0)</position>
+      </AncientRefrigerator>
+      <AncientStove>
+        <position>(1, 0, 0)</position>
+      </AncientStove>
+      <AncientOven>
+        <chance>0.7</chance>
+        <position>(2, 0, 0)</position>
+      </AncientOven>
+      <AncientKitchenSink>
+        <position>(3, 0, 0)</position>
+      </AncientKitchenSink>
+      <AncientMicrowave>
+        <chance>0.6</chance>
+        <position>(4, 0, 0)</position>
+      </AncientMicrowave>
+    </things>
+  </PrefabDef>
+
+  <!-- 醫療工作站：靠牆一座報廢的人工肌肉培養槽、一台空氣清淨機，偶爾留下一箱義體。
+       Med station: a dead artifuscle chamber and an air purifier against the wall, sometimes a crate of prosthetics. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_MedStation_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <DMS_TableArtifuscleDestroyed>
+        <position>(1, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_TableArtifuscleDestroyed>
+      <DMS_AirpurifierDestroyed>
+        <chance>0.6</chance>
+        <position>(3, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_AirpurifierDestroyed>
+      <DMS_CrateSmall_Prosthetic>
+        <chance>0.3</chance>
+        <position>(4, 0, 0)</position>
+      </DMS_CrateSmall_Prosthetic>
+    </things>
+  </PrefabDef>
+
+  <!-- 維修工作台：靠牆一台報廢的機械列印機，前面一張凳子。工作台類不轉向，正面本來就朝房內。
+       Maintenance bench: a dead machinery printer against the wall with a stool in front. Benches keep
+       their default rotation; their front already faces the room. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_MaintenanceBench_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(3,3)</size>
+    <things>
+      <DMS_TableMachinePrinterDestroyed>
+        <position>(1, 0, 1)</position>
+      </DMS_TableMachinePrinterDestroyed>
+      <Stool>
+        <chance>0.5</chance>
+        <position>(1, 0, 0)</position>
+        <stuff>Steel</stuff>
+      </Stool>
+    </things>
+  </PrefabDef>
+
+  <!-- 被撬開的保全貨櫃。A security container someone already pried open. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_SecurityContainer_Ruined</defName>
+    <size>(3,3)</size>
+    <things>
+      <DMS_ContainerNaraDestroyed>
+        <position>(1, 0, 1)</position>
+      </DMS_ContainerNaraDestroyed>
+    </things>
+  </PrefabDef>
+
+  <!-- 報廢卡車（Core）與散落的引擎零件。卡車 2x4：長度 4 的那一邊從 position 往回 1 格，所以 z 放 1。
+       A rusted truck (Core) with engine parts strewn about. The truck is 2x4; its 4-long side starts one cell
+       behind the position, hence z = 1. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_TruckWreck</defName>
+    <size>(5,5)</size>
+    <things>
+      <AncientRustedTruck>
+        <position>(1, 0, 1)</position>
+      </AncientRustedTruck>
+      <AncientRustedEngineBlock>
+        <chance>0.6</chance>
+        <position>(4, 0, 1)</position>
+      </AncientRustedEngineBlock>
+      <AncientWheel>
+        <chance>0.6</chance>
+        <positions>
+          <li>(4, 0, 3)</li>
+          <li>(0, 0, 4)</li>
+        </positions>
+      </AncientWheel>
+    </things>
+  </PrefabDef>
+
+  <!-- 報廢運兵車（Core）。A rusted troop carrier (Core). -->
+  <PrefabDef>
+    <defName>DMS_Prefab_TroopCarrierWreck</defName>
+    <size>(5,5)</size>
+    <things>
+      <AncientRustedJeep>
+        <position>(2, 0, 2)</position>
+      </AncientRustedJeep>
+      <AncientWheel>
+        <chance>0.5</chance>
+        <position>(0, 0, 1)</position>
+      </AncientWheel>
+      <AncientRustedEngineBlock>
+        <chance>0.5</chance>
+        <position>(4, 0, 3)</position>
+      </AncientRustedEngineBlock>
+    </things>
+  </PrefabDef>
+
 </Defs>

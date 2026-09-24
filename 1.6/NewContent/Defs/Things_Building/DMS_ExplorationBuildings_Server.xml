@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ══════════════════════════════════════════════════════════
+       電晶體電腦：設施伺服核心、設施數據輔機、站點伺服主機、賢者 SAGE。
+       可駭入的三台用 DMS.CompProperties_ServerHackable（多階段駭入、每次開工都拉設施警報、每階段掉一件獎勵）；
+       SAGE 另掛 DMS.CompProperties_HuntBreaker，打爛時暫停殖民艦隊的隱匿級追殺。
+       Transistor computers: facility server core, facility data rack, site server and SAGE.
+       The three hackable ones use DMS.CompProperties_ServerHackable (multi-stage hacking, every session trips
+       the facility alarm, one reward per stage); SAGE also carries DMS.CompProperties_HuntBreaker, which
+       suspends the colony fleet's Occulted-tier hunt when it is destroyed.
+       ══════════════════════════════════════════════════════════ -->
+
+  <!-- 共用父類：不可建造、不可認領、不可拆除（只能打爛）；tick Normal 是偵測駭入作業所需。
+       Shared base: not buildable, not claimable, not deconstructible (destroy only); ticks Normal for session detection. -->
+  <ThingDef ParentName="DMS_BuildingBase" Name="DMS_ServerBuildingBase" Abstract="True">
+    <category>Building</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <pathCost>50</pathCost>
+    <fillPercent>0.9</fillPercent>
+    <blockLight>true</blockLight>
+    <tickerType>Normal</tickerType>
+    <receivesSignals>true</receivesSignals>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <statBases>
+      <Flammability>0.3</Flammability>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <killedLeavings>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </killedLeavings>
+    <comps>
+      <!-- 放射性電池的微光；駭乾後由 CompHackable.glowIfHacked=false 熄滅。
+           The radioisotope cell's faint glow; goes dark once drained (CompHackable.glowIfHacked=false). -->
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(90,200,160,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 設施伺服核心：3~4 次駭入，獎勵為科技藍圖／封存技術匣／訪問密鑰。只出現在地下的設施檔案庫，
+       空投穿不過岩頂，所以不設保底援軍，警報交給地板開口、FPV 巢與毒氣釋放口。
+       Facility server core: 3~4 hacks for techprints / sealed data caches / access keys. Only in the
+       underground data archive; drop pods can't get through the rock, so no fallback wave: the floor
+       openings, FPV nests and gas vents answer the alarm. -->
+  <ThingDef ParentName="DMS_ServerBuildingBase">
+    <defName>DMS_FacilityServerCore</defName>
+    <label>facility server core</label>
+    <description>A sizable transistor computer. Old but extremely reliable, machines like this serve as paperless office and records hosts throughout the colony fleet's facilities. A special radioisotope cell inside keeps it running for years without anyone tending it.\n\nThe lower data layers of these server cores usually hold backups of important technical blueprints and access key records. Breaking into it will inevitably set off the whole facility's alarm response, so it is best to prepare your defenses before you start hacking.</description>
+    <graphicData>
+      <texPath>Things/Building/AlertCaller/FacilityServerCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <shadowData>
+        <volume>(1.8, 0.8, 1.6)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <statBases>
+      <MaxHitPoints>900</MaxHitPoints>
+      <Mass>120</Mass>
+    </statBases>
+    <comps>
+      <li Class="DMS.CompProperties_ServerHackable">
+        <defence>1800</defence>
+        <defencePerStage>600</defencePerStage>
+        <stageCount>3~4</stageCount>
+        <effectHacking>HackingTerminal</effectHacking>
+        <intellectualSkillPrerequisite>6</intellectualSkillPrerequisite>
+        <lockoutDurationHoursRange>6~12</lockoutDurationHoursRange>
+        <glowIfHacked>false</glowIfHacked>
+        <alertIncrement>35</alertIncrement>
+        <alarmSound>FlickSwitch</alarmSound>
+        <fallbackThing>DMS_DataCache_Restricted</fallbackThing>
+        <rewards>
+          <li>
+            <kind>Techprint</kind>
+            <weight>5</weight>
+          </li>
+          <li>
+            <kind>Thing</kind>
+            <thingDef>DMS_DataCache_Sealed</thingDef>
+            <weight>3</weight>
+            <maxPerBuilding>2</maxPerBuilding>
+          </li>
+          <li>
+            <kind>AccessKey</kind>
+            <weight>4</weight>
+            <maxPerBuilding>2</maxPerBuilding>
+            <keyWeights>
+              <DMS_AccessKey_Nara>1</DMS_AccessKey_Nara>
+              <DMS_AccessKey_Neutrals>1</DMS_AccessKey_Neutrals>
+            </keyWeights>
+          </li>
+        </rewards>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 設施數據輔機：純裝飾。南北向貼圖是橫的，所以佔地 2x1（轉東西向變 1x2）。貼圖缺 east，Graphic_Multi 會用 west 翻轉。
+       Facility data rack: dressing only. The north/south art is landscape, so the footprint is 2x1 (1x2 when turned
+       east/west). No east texture; Graphic_Multi mirrors west. -->
+  <ThingDef ParentName="DMS_ServerBuildingBase">
+    <defName>DMS_FacilityDataRack</defName>
+    <label>facility data rack</label>
+    <description>A cabinet of tape drives and core memory wired in parallel with a facility server core, holding the archives the host rarely calls up. It has no processing or access interface of its own; everything on it has to be read out through the host.</description>
+    <tickerType>Never</tickerType>
+    <hasInteractionCell>false</hasInteractionCell>
+    <graphicData>
+      <texPath>Things/Building/AlertCaller/FacilityDataRack</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <size>(2,1)</size>
+    <rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Mass>60</Mass>
+    </statBases>
+    <comps Inherit="False" />
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </killedLeavings>
+  </ThingDef>
+
+  <!-- 站點伺服主機：單次駭入，獎勵只有科技藍圖／訪問密鑰（不含技術匣）。放在地表設施，地圖上沒有警報反應建築時直接叫援軍。
+       摧毀不影響追殺。
+       Site server: one hack, techprint or access key only (no data cache). Surface facilities; with nothing on the map
+       answering the alarm it calls the QRF directly. Destroying it doesn't affect the hunt. -->
+  <ThingDef ParentName="DMS_ServerBuildingBase">
+    <defName>DMS_SiteServerCore</defName>
+    <label>site server</label>
+    <description>A compact transistor computer. Old but extremely reliable, machines like this serve as paperless office and records hosts throughout the colony fleet's facilities. A special radioisotope cell inside keeps it running for years without anyone tending it.\n\nThe hosts used at small sites like this rarely hold anything truly classified, but valuable intelligence can still be pulled from them. Hacking it will trip the host's security alarm response, so it is best to prepare your defenses before you start.</description>
+    <graphicData>
+      <texPath>Things/Building/AlertCaller/SiteServerCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>350</MaxHitPoints>
+      <Mass>40</Mass>
+    </statBases>
+    <comps>
+      <li Class="DMS.CompProperties_ServerHackable">
+        <defence>1200</defence>
+        <stageCount>1</stageCount>
+        <effectHacking>HackingTerminal</effectHacking>
+        <intellectualSkillPrerequisite>4</intellectualSkillPrerequisite>
+        <lockoutDurationHoursRange>4~8</lockoutDurationHoursRange>
+        <glowIfHacked>false</glowIfHacked>
+        <alertIncrement>40</alertIncrement>
+        <fallbackRaidWave>DMS_RaidWave_FacilityQRF</fallbackRaidWave>
+        <alarmSound>FlickSwitch</alarmSound>
+        <!-- 無 Royalty 時退回密鑰，遵守「不含技術匣」。Without Royalty, fall back to a key: still no data cache. -->
+        <fallbackThing>DMS_AccessKey_Neutrals</fallbackThing>
+        <rewards>
+          <li>
+            <kind>Techprint</kind>
+            <weight>5</weight>
+          </li>
+          <li>
+            <kind>AccessKey</kind>
+            <weight>5</weight>
+            <keyWeights>
+              <DMS_AccessKey_Nara>1</DMS_AccessKey_Nara>
+              <DMS_AccessKey_Neutrals>1</DMS_AccessKey_Neutrals>
+            </keyWeights>
+          </li>
+        </rewards>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 賢者 SAGE：2~3 次駭入，獎勵同設施伺服核心，另有低權重的禁忌級技術匣。打爛時暫停追殺：首次 1~2 年，
+       已在暫停中則每座再加 15 天。南北向貼圖是橫的，所以佔地 3x1（轉東西向變 1x3，drawSize 也會跟著對調）。
+       貼圖缺 west，Graphic_Multi 會用 east 翻轉。
+       SAGE: 2~3 hacks, the core's reward pool plus a rare occulted data cache. Destroying it suspends the hunt:
+       1~2 years the first time, +15 days per further node while already suspended. The north/south art is
+       landscape, so the footprint is 3x1 (1x3 east/west; drawSize swaps with it). No west texture; east is mirrored. -->
+  <ThingDef ParentName="DMS_ServerBuildingBase">
+    <defName>DMS_SageCore</defName>
+    <label>SAGE</label>
+    <description>A distributed strategic command computer that can take on auxiliary racks without limit, adding computing power as demand grows. The colony fleet uses it for planetary strategic air defense and to link the countless radar tracking and navigation networks spread across several continents. Destroying it is certain to cripple the fleet's hunting operations on the planet, though within a year or two another computer in the SAGE network will be promoted to host and carry on the task.\n\nIts lower storage still keeps copies of parts of the strategic database. Hacking it will bring the whole facility's alarm system down on you.</description>
+    <graphicData>
+      <texPath>Things/Building/AlertCaller/Sage</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5,3)</drawSize>
+    </graphicData>
+    <uiIconScale>0.7</uiIconScale>
+    <size>(3,1)</size>
+    <rotatable>true</rotatable>
+    <staticSunShadowHeight>0.8</staticSunShadowHeight>
+    <statBases>
+      <MaxHitPoints>1600</MaxHitPoints>
+      <Mass>300</Mass>
+    </statBases>
+    <comps>
+      <li Class="DMS.CompProperties_ServerHackable">
+        <defence>2500</defence>
+        <defencePerStage>800</defencePerStage>
+        <stageCount>2~3</stageCount>
+        <effectHacking>HackingTerminal</effectHacking>
+        <intellectualSkillPrerequisite>10</intellectualSkillPrerequisite>
+        <lockoutDurationHoursRange>8~16</lockoutDurationHoursRange>
+        <glowIfHacked>false</glowIfHacked>
+        <alertIncrement>50</alertIncrement>
+        <fallbackRaidWave>DMS_RaidWave_FacilityQRF</fallbackRaidWave>
+        <alarmSound>FlickSwitch</alarmSound>
+        <fallbackThing>DMS_DataCache_Restricted</fallbackThing>
+        <rewards>
+          <li>
+            <kind>Techprint</kind>
+            <weight>4</weight>
+          </li>
+          <li>
+            <kind>Thing</kind>
+            <thingDef>DMS_DataCache_Sealed</thingDef>
+            <weight>3</weight>
+            <maxPerBuilding>2</maxPerBuilding>
+          </li>
+          <li>
+            <kind>Thing</kind>
+            <thingDef>DMS_DataCache_Occulted</thingDef>
+            <weight>1</weight>
+            <maxPerBuilding>1</maxPerBuilding>
+          </li>
+          <li>
+            <kind>AccessKey</kind>
+            <weight>3</weight>
+            <keyWeights>
+              <DMS_AccessKey_Nara>1</DMS_AccessKey_Nara>
+              <DMS_AccessKey_Neutrals>1</DMS_AccessKey_Neutrals>
+            </keyWeights>
+          </li>
+        </rewards>
+      </li>
+      <li Class="DMS.CompProperties_HuntBreaker">
+        <suspendYears>1~2</suspendYears>
+        <stackDaysWhileSuspended>15</stackDaysWhileSuspended>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

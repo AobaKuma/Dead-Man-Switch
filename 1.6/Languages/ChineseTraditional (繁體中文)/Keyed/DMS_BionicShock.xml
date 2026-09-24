@@ -11,4 +11,16 @@
   <DMS_BionicShock_StatLabel>{0}等級</DMS_BionicShock_StatLabel>
   <DMS_BionicShock_StatDesc>每服用一劑會使{0}的等級變化{1}。降至 0 級時病症消失。</DMS_BionicShock_StatDesc>
 
+
+  <!-- 戰鬥再生合劑。{PAWN} 角色, {0} 長回的部位 -->
+  <DMS_CombatRegen_PartRegrown>{PAWN_labelShort}的{0}已經長回來了。</DMS_CombatRegen_PartRegrown>
+
+  <!-- {PAWN} 角色, {0} 含分級的病症名稱 -->
+  <DMS_CombatRegen_Rejection>{PAWN_labelShort}對再生藥劑產生了排異反應：{0}。</DMS_CombatRegen_Rejection>
+
+  <!-- 藥物資訊卡（IngestionOutcomeDoer_SetHediffLevel）。{0} 病症名稱, {1} 等級, {2} 機率 -->
+  <DMS_SetHediffLevel_StatLabel>{0}機率</DMS_SetHediffLevel_StatLabel>
+  <DMS_SetHediffLevel_StatValue>{1}（{0}級）</DMS_SetHediffLevel_StatValue>
+  <DMS_SetHediffLevel_StatDesc>每劑有{2}的機率使{0}直接達到{1}級；若已高於此等級則不變。</DMS_SetHediffLevel_StatDesc>
+
 </LanguageData>

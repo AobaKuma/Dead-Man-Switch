@@ -50,25 +50,41 @@ namespace DMS
         protected override void DoEffect()
         {
             if (!parent.Spawned || Props.raidWaveDef == null) return;
+            if (!BattleGroupCallUtility.TryCall(Props.raidWaveDef, parent, Props.respectCooldown, Props.callSound, Props.callEffecter)) return;
 
-            RaidWaveWorker worker = Props.raidWaveDef.Worker;
-            if (Props.respectCooldown)
+            Messages.Message("DMS_BattleGroupCall_Triggered".Translate(parent.LabelCap),
+                new LookTargets(parent), MessageTypeDefOf.ThreatBig);
+        }
+    }
+
+    /// <summary>
+    /// 呼叫一波 RaidWave 援軍的共用邏輯（戰鬥群呼叫器、伺服主機的保底警報都用這個）。
+    /// Shared "call a RaidWave" logic (battle-group caller, and the server hosts' fallback alarm).
+    /// </summary>
+    public static class BattleGroupCallUtility
+    {
+        /// <summary>成功呼叫回傳 true；受冷卻限制被擋下回傳 false。True when called; false when blocked by the cooldown.</summary>
+        public static bool TryCall(RaidWaveDef raidWaveDef, Thing source, bool respectCooldown, SoundDef sound = null, EffecterDef effecter = null)
+        {
+            if (raidWaveDef == null || source?.MapHeld == null) return false;
+            Map map = source.MapHeld;
+
+            RaidWaveWorker worker = raidWaveDef.Worker;
+            if (respectCooldown)
             {
                 AcceptanceReport report = worker.CanResolve();
                 if (!report.Accepted)
                 {
-                    Log.Message($"[DMS] {parent.LabelCap} at {parent.Position}: raid wave call blocked ({report.Reason}).");
-                    return;
+                    Log.Message($"[DMS] {source.LabelCap} at {source.PositionHeld}: raid wave call blocked ({report.Reason}).");
+                    return false;
                 }
             }
 
-            worker.Resolve(parent.Map);
+            worker.Resolve(map);
 
-            (Props.callSound ?? SoundDefOf.FlickSwitch).PlayOneShot(new TargetInfo(parent.Position, parent.Map));
-            Props.callEffecter?.Spawn(parent.Position, parent.Map).Cleanup();
-
-            Messages.Message("DMS_BattleGroupCall_Triggered".Translate(parent.LabelCap),
-                new LookTargets(parent), MessageTypeDefOf.ThreatBig);
+            (sound ?? SoundDefOf.FlickSwitch).PlayOneShot(new TargetInfo(source.PositionHeld, map));
+            effecter?.Spawn(source.PositionHeld, map).Cleanup();
+            return true;
         }
     }
 }

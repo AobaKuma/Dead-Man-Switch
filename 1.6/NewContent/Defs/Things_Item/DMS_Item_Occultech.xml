@@ -78,9 +78,9 @@
   <!-- ==================================================================== -->
   <ThingDef ParentName="ResourceBase" Name="DMS_BaseDataCache" Abstract="True">
     <graphicData>
-      <texPath>Things/Resource/EncryptedTransmitter</texPath>
+      <texPath>Things/Misc/DataCache</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>0.85</drawSize>
+      <drawSize>1.2</drawSize>
     </graphicData>
     <soundInteract>Metal_Drop</soundInteract>
     <soundDrop>Standard_Drop</soundDrop>
@@ -157,6 +157,7 @@
           <li>DMS_Occultech_BionicSuitHeavy</li>
           <li>DMS_Occultech_GestaltEngine</li>
           <li>DMS_Occultech_Biosynthesis</li>
+          <li>DMS_Occultech_Subsonic</li>
         </researchProjects>
         <progressAmount>250</progressAmount>
         <fallbackXpAmount>2000</fallbackXpAmount>

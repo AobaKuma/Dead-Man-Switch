@@ -36,10 +36,15 @@
     <!-- 警報反應：收到設施警報後，機械體像原版巨坑那樣從洞裡跳出來（DMS.CompAlertEffector_HoleEmerge）。
          兵力由派系的 pawnGroupMakers 生成，點數依地圖警戒值在 pointsRange 內縮放（0% → 下限，100% → 上限）；
          派系用建築自己的，沒有就退回 DMS_Legacy。
+         落地後走警報回應（DMS.LordJob_AlarmResponse）：當下走得到警報位置就前往，走不到就原地待命，
+         之後每次警報重新判定；只打看得到的敵人。assaultOnEmerge 設 true 可改回直接進攻殖民地。
          Alert response: on a facility alarm, mechs leap out of the hole the way vanilla's pit gate
          works (DMS.CompAlertEffector_HoleEmerge). The squad comes from the faction's pawnGroupMakers,
          with points scaled across pointsRange by the map's alert level (0% → min, 100% → max);
-         faction is the building's own, else DMS_Legacy. -->
+         faction is the building's own, else DMS_Legacy.
+         Once down they run an alarm response (DMS.LordJob_AlarmResponse): head for the alarm if it can be
+         reached right then, otherwise hold in place, and re-judge on every later alarm; they only fight
+         what they can see. Set assaultOnEmerge to true for the old straight assault on the colony. -->
     <receivesSignals>true</receivesSignals>
     <comps>
       <li Class="DMS.CompProperties_AlertEffector_HoleEmerge">

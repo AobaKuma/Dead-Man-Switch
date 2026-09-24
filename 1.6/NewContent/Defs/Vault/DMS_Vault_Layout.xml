@@ -57,6 +57,9 @@
       <DMS_VaultGarrisonQuarters>1</DMS_VaultGarrisonQuarters>
       <DMS_VaultPowerPlant>0.8</DMS_VaultPowerPlant>
       <DMS_VaultWreckHall>1</DMS_VaultWreckHall>
+      <!-- 生活區（純裝飾）。Living quarters (decoration only). -->
+      <DMS_VaultMessHall>0.6</DMS_VaultMessHall>
+      <DMS_VaultInfirmary>0.5</DMS_VaultInfirmary>
 
       <!-- 大型房間：只有面積夠大的合併房間抽得到（見各 def 的 areaSizeRange）。
            Large rooms: only merged rooms big enough qualify (see each def's areaSizeRange). -->
@@ -103,7 +106,13 @@
         <roomWidthRange>9~14</roomWidthRange>
         <roomDepthRange>9~14</roomDepthRange>
         <!-- 至少兩條支道，分區閘門才有意義。At least two branches so the sector gates mean something. -->
-        <branchCountRange>2~3</branchCountRange>
+        <branchCountRange>1~2</branchCountRange>
+        <!-- 十字樞紐：主幹上的交叉寬走廊，兩側長支道，每一臂都是分區閘門。
+             Cross hubs: wide crossings on the spine with a branch off each side and a sector gate at every arm. -->
+        <hubCountRange>1~2</hubCountRange>
+        <hubSize>17</hubSize>
+        <hubArmWidth>11</hubArmWidth>
+        <hubBranchChance>0.85</hubBranchChance>
         <subBranchChance>0.35</subBranchChance>
         <branchSpacing>18</branchSpacing>
         <!-- 相鄰房合併成大房（中庭 / 車輛庫靠這個）。Neighbours merge into big rooms (atrium / vehicle bay need this). -->
@@ -111,20 +120,23 @@
         <!-- 沿走廊留空的機率，讓輪廓更不規則。Chance to leave a gap, for a more ragged outline. -->
         <gapChance>0.12</gapChance>
         <endRooms>true</endRooms>
+        <!-- 分區間隙：不同分區的房間與走廊之間至少隔 6 格岩層，每條支道起頭因此是一段兩側不掛房間的連絡走廊。
+             6 格是原版自動接線的範圍，壁掛燈、配電盤之類的用電設施就搆不到隔壁分區的電纜。
+             Sector gap: at least 6 cells of rock between different sectors' rooms and corridors, so every branch
+             starts with a stretch of bare link corridor. 6 is vanilla's auto-connect range, so wall lamps,
+             substations and other powered fixtures can't reach the next sector's conduit. -->
+        <sectorGap>6</sectorGap>
 
-        <!-- 分區閘門：每條支道與母走廊的路口封一排密封門，各種寬度混拼填滿 5 格寬的走廊；
+        <!-- 分區閘門：每條支道與母走廊的路口封一排：5 格寬的走廊中間一扇 1x3 密封門、兩側各一格強化牆；
              閘門旁放一台控制台，駭入即開。控制台一律放在從入口走得到的那一側。
-             Sector gates: each branch's junction with its parent is sealed with a row of doors of mixed
-             widths filling the 5-wide corridor, with a console beside it that opens it when hacked.
-             The console always sits on the side the entrance can reach. -->
+             Sector gates: each branch's junction with its parent is sealed with one row: a 1x3 sealed door in
+             the middle of the 5-wide corridor with a reinforced wall cell either side, and a console beside it
+             that opens it when hacked. The console always sits on the side the entrance can reach. -->
         <sectorGates>true</sectorGates>
         <gateChance>1</gateChance>
-        <gateDoorDefs>
-          <li>DMS_SealedRollingDoor_Single</li>
-          <li>DMS_SealedRollingDoor_Double</li>
-          <li>DMS_SealedRollingDoor_Triple</li>
-          <li>DMS_SealedRollingDoor_Quadruple</li>
-        </gateDoorDefs>
+        <!-- 1x3 密封門置中，兩側補強化牆。A 1x3 sealed door in the middle, reinforced wall either side. -->
+        <gateDoorDef>DMS_SealedRollingDoor_Triple</gateDoorDef>
+        <gateWallDef>DMS_SuperWall</gateWallDef>
         <gateConsoleDef>DMS_VaultGateConsole</gateConsoleDef>
       </li>
       <!-- 一半的門換成自動門，讀起來像還有備援電力的設施。
@@ -133,6 +145,57 @@
         <reinforcedDoorDef>Autodoor</reinforcedDoorDef>
         <reinforcedDoorStuff>Steel</reinforcedDoorStuff>
         <reinforcedDoorRatio>0.5</reinforcedDoorRatio>
+      </li>
+      <!-- 設施封鎖中控：警戒值滿時倒數封死電梯（邏輯在 FFF）。依序偏好指揮室、動力室，不放電梯廳、走廊與獎勵房。
+           Lockdown controller: seals the lifts after a countdown once the alert maxes out (logic in FFF). Prefers the
+           command room, then the power room; never the lobby, a corridor or the treasury. -->
+      <li Class="DMS.ModExtension_FacilityLockdown">
+        <controllerDef>DMS_Building_LockdownController</controllerDef>
+        <preferredRooms>
+          <li>DMS_VaultCommandRoom</li>
+          <li>DMS_VaultPowerPlant</li>
+        </preferredRooms>
+      </li>
+      <!-- 檢修通道網（通風管道）：在岩層裡挖 1 格寬的管道，把同一分區的設備間（必接）與其他一般房間（機率）串起來，
+           接回該分區的走廊一兩處，並延伸出一間只能從管道進入的密室。所有開口都是原版通風口：不能走，要打破或拆掉才進得去。
+           走廊的配電盤掛在密室裡，電纜沿管道穿過通風口接到走廊中線。管道只接同一分區，不會繞過閘門或密封門。
+           Maintenance tunnels (vent ducts): 1-wide ducts dug through the rock linking a sector's equipment rooms
+           (always) and other ordinary rooms (by chance), opening onto that sector's corridor in one or two places and
+           running on to a secret room reachable only from the duct. Every opening is a vanilla vent: not walkable,
+           break or deconstruct it to get through. The corridor's substation hangs in the secret room, its conduit
+           running under the vents to the corridor strip. Tunnels never leave their sector, so they can't get round a
+           gate or a sealed door. -->
+      <li Class="DMS.ModExtension_VaultTunnels">
+        <equipmentRooms>
+          <li>DMS_VaultPowerPlant</li>
+        </equipmentRooms>
+        <extraRoomChance>0.35</extraRoomChance>
+        <otherSectorChance>0.5</otherSectorChance>
+        <secretRoomSize>6~8</secretRoomSize>
+        <!-- 密室裡靠牆擺一座主動式通風口與一兩台設施機器。One active vent and a machine or two against the secret room's walls. -->
+        <secretRoomFixtures>
+          <li>
+            <defs>
+              <li>DMS_Building_VentSmall</li>
+              <li>DMS_Building_VentMedium</li>
+              <li>DMS_Building_VentLarge</li>
+            </defs>
+            <count>1</count>
+          </li>
+          <li>
+            <defs>
+              <li>DMS_Building_Machine_Medium</li>
+              <li>DMS_Building_Eletric_Medium</li>
+            </defs>
+            <count>1~2</count>
+          </li>
+        </secretRoomFixtures>
+        <floorDef>Concrete</floorDef>
+        <hatchDef>Vent</hatchDef>
+        <conduitDef>HiddenConduit</conduitDef>
+        <substationDef>DMS_SubstationCabinet_Wall</substationDef>
+        <corridorLinks>1~2</corridorLinks>
+        <maxLegLength>45</maxLegLength>
       </li>
     </modExtensions>
   </StructureLayoutDef>

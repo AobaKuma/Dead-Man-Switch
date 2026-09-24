@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 次聲波塔 DMS.CompSubsonicEmitter -->
+  <DMS_SubsonicEmitter_Charging>Next pulse in: {0}</DMS_SubsonicEmitter_Charging>
+  <DMS_SubsonicEmitter_Ready>Ready, waiting for hostiles in range</DMS_SubsonicEmitter_Ready>
+
+  <!-- 爆破探勘裝置 DMS.CompBlastScanner -->
+  <DMS_BlastScanner_Ignite>Light fuse</DMS_BlastScanner_Ignite>
+  <DMS_BlastScanner_IgniteDesc>Light the fuse on the loaded charge. When it burns down, the shockwave maps several deep ore deposits across the map, and is very likely to wake dormant insects underground.</DMS_BlastScanner_IgniteDesc>
+  <DMS_BlastScanner_FuseLit>The fuse is already burning.</DMS_BlastScanner_FuseLit>
+  <DMS_BlastScanner_FuseBurning>Fuse burning: {0}</DMS_BlastScanner_FuseBurning>
+  <DMS_BlastScanner_Cooldown>Recalibrating: {0}</DMS_BlastScanner_Cooldown>
+  <DMS_BlastScanner_NoCharge>No charge loaded. Load a high-explosive shell first.</DMS_BlastScanner_NoCharge>
+  <DMS_BlastScanner_FoundLabel>Deep deposits mapped</DMS_BlastScanner_FoundLabel>
+  <DMS_BlastScanner_FoundText>The shockwave from the {0} has mapped new deep deposits:\n\n{1}\n\nA deep drill can extract them.</DMS_BlastScanner_FoundText>
+  <DMS_BlastScanner_NothingFound>The {0} detonated, but the echoes revealed nothing new.</DMS_BlastScanner_NothingFound>
+  <DMS_BlastScanner_InsectsLabel>Insects woken</DMS_BlastScanner_InsectsLabel>
+  <DMS_BlastScanner_InsectsText>The shockwave from the {0} has woken an insect colony dormant underground. They are digging their way to the surface.</DMS_BlastScanner_InsectsText>
+
+</LanguageData>

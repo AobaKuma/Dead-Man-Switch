@@ -11,13 +11,13 @@
        additionally stamp a hand-authored FFF block when they have the space.
        ============================================================ -->
 
-  <!-- 大廳長廊。串起所有房間的主幹道：中線鋪地板與電纜，一段一座壁掛配電盤供電，
-       沿途設哨站（掩體 + 哨戒砲 + 震動感測器），兩端牆上裝順著走廊看的攝影機。
+  <!-- 大廳長廊。串起所有房間的主幹道：中線鋪地板與電纜（電源在檢修通道的密室裡），
+       沿途設哨站（掩體 + 震動感測器），哨戒砲放在走廊角落，兩端牆上裝順著走廊看的攝影機。
        各項設施在 ModExtension_VaultSecurity 裡指定，留空就不生成那一類。
-       Main hall. The spine that links every room: floored, wired centre strip powered by one wall
-       substation per segment, checkpoints (cover + sentries + seismic sensor) along the way, and a
-       camera on each end wall looking down the corridor. Fixtures come from ModExtension_VaultSecurity;
-       leave one empty to skip that kind. -->
+       Main hall. The spine that links every room: floored, wired centre strip (powered from the maintenance
+       tunnels' secret rooms), checkpoints (cover + seismic sensor) along the way, sentries in the corridor
+       corners, and a camera on each end wall looking down the corridor. Fixtures come from
+       ModExtension_VaultSecurity; leave one empty to skip that kind. -->
   <LayoutRoomDef>
     <defName>DMS_VaultMainHall</defName>
     <roomContentsWorkerType>DMS.RoomContents_VaultMainHall</roomContentsWorkerType>
@@ -39,8 +39,12 @@
         <corridorExpansion>3</corridorExpansion>
         <stripTerrain>Concrete</stripTerrain>
 
-        <conduitDef>PowerConduit</conduitDef>
+        <!-- 暗裝電纜壓在走廊整圈牆線下，不走中線。Hidden conduit under the corridor's wall lines, not down the centre. -->
+        <conduitDef>HiddenConduit</conduitDef>
+        <conduitAlongWalls>true</conduitAlongWalls>
         <substationDef>DMS_SubstationCabinet_Wall</substationDef>
+        <!-- 配電盤改放檢修通道（見 DMS_MilitaryVault 的 ModExtension_VaultTunnels）。The substation lives in a maintenance tunnel instead. -->
+        <wallSubstation>false</wallSubstation>
 
         <barricadeDef>Barricade</barricadeDef>
         <barricadeStuff>Steel</barricadeStuff>
@@ -48,6 +52,11 @@
         <!-- 每座哨戒砲 35% 換成報廢品。Each sentry has a 35% chance of being a wreck. -->
         <wreckedTurretDef>DMS_Wreckage_SentryGun</wreckedTurretDef>
         <turretWreckChance>0.35</turretWreckChance>
+        <!-- 砲塔不放哨站，改放走廊角落（死巷、樞紐臂末端），數量也少很多。
+             No turrets at the checkpoints; they go in the corridor corners (dead ends, hub arm ends), and far fewer. -->
+        <checkpointTurrets>false</checkpointTurrets>
+        <cornerTurretChance>0.35</cornerTurretChance>
+        <maxCornerTurretsPerRect>1</maxCornerTurretsPerRect>
         <sensorDef>DMS_Building_Sensor</sensorDef>
         <nestDef>DMS_Building_FPVNest</nestDef>
         <nestChance>0.5</nestChance>
@@ -89,6 +98,10 @@
       <DMS_Prefab_SupplyCache_Edge>
         <countRange>0~1</countRange>
       </DMS_Prefab_SupplyCache_Edge>
+      <!-- 電梯口的值班桌。The duty desk by the lift. -->
+      <DMS_Prefab_ConsoleDesk_Edge>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_ConsoleDesk_Edge>
     </prefabs>
   </LayoutRoomDef>
 
@@ -116,7 +129,22 @@
         <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
         <minMaxRange>0~1</minMaxRange>
       </DMS_Prefab_SubstationBank>
+      <!-- 槍械保養台與被撬開的保全貨櫃；貨架擺滿時放不下就算了。
+           A weapons bench and a pried-open security container; skipped when the shelving leaves no room. -->
+      <DMS_Prefab_MaintenanceBench_Edge>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_MaintenanceBench_Edge>
+      <DMS_Prefab_SecurityContainer_Ruined>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_SecurityContainer_Ruined>
     </prefabs>
+    <scatter>
+      <Filth_OilSmear>
+        <groupsPerHundredCells>0~1</groupsPerHundredCells>
+        <itemsPerGroup>1~3</itemsPerGroup>
+        <groupDistRange>1~3</groupDistRange>
+      </Filth_OilSmear>
+    </scatter>
   </LayoutRoomDef>
 
   <!-- 機兵封存艙間。整間的重點就是那些搖籃；掉落物少，威脅集中在艙裡。
@@ -136,7 +164,25 @@
         <countPerHundredCells>1</countPerHundredCells>
         <minMaxRange>0~1</minMaxRange>
       </DMS_Prefab_WreckScatter>
+      <DMS_Prefab_MaintenanceBench_Edge>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_MaintenanceBench_Edge>
     </prefabs>
+    <!-- 牆邊一兩座遠古充電座（Core，純裝飾，不能充電）。
+         An ancient recharger or two along the walls (Core; decoration only, they don't charge). -->
+    <fillEdges>
+      <AncientBasicRecharger>
+        <groupsPerTenEdgeCells>0.3~0.6</groupsPerTenEdgeCells>
+        <groupCountRange>1~1</groupCountRange>
+      </AncientBasicRecharger>
+    </fillEdges>
+    <scatter>
+      <Filth_OilSmear>
+        <groupsPerHundredCells>1~2</groupsPerHundredCells>
+        <itemsPerGroup>2~4</itemsPerGroup>
+        <groupDistRange>1~3</groupDistRange>
+      </Filth_OilSmear>
+    </scatter>
   </LayoutRoomDef>
 
   <!-- 指揮室。後勤終端是這張地圖的長期回報來源，報廢機台只是氣氛。
@@ -164,7 +210,25 @@
       <DMS_Prefab_SupplyCache>
         <countRange>0~1</countRange>
       </DMS_Prefab_SupplyCache>
+      <!-- 操作台列與遠古顯示牆。牆邊不要塞滿：封鎖中控與獎勵房控制台也優先放這間。
+           Operator consoles and an ancient display bank. Keep some wall free: the lockdown controller and
+           the treasury console prefer this room too. -->
+      <DMS_Prefab_ConsoleBank_Edge>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
+        <minMaxRange>1~1</minMaxRange>
+      </DMS_Prefab_ConsoleBank_Edge>
+      <AncientDisplayBank_Edge>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </AncientDisplayBank_Edge>
     </prefabs>
+    <scatter>
+      <Filth_ScatteredDocuments>
+        <groupsPerHundredCells>1~2</groupsPerHundredCells>
+        <itemsPerGroup>1~3</itemsPerGroup>
+        <groupDistRange>1~3</groupDistRange>
+      </Filth_ScatteredDocuments>
+    </scatter>
   </LayoutRoomDef>
 
   <!-- 駐防兵舍。純氣氛房，說明這座設施曾經有人守：置物櫃、長椅、飲水機，多半已經壞了。
@@ -174,6 +238,14 @@
     <defName>DMS_VaultGarrisonQuarters</defName>
     <dontDestroyWallsDoors>true</dontDestroyWallsDoors>
     <prefabs>
+      <!-- 大件先放：床位兩排、一張長桌。Big pieces first: bunk rows and a mess table. -->
+      <DMS_Prefab_BunkRows>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>1~2</minMaxRange>
+      </DMS_Prefab_BunkRows>
+      <DMS_Prefab_MessTable>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_MessTable>
       <DMS_Prefab_LockerRow>
         <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
         <minMaxRange>1~2</minMaxRange>
@@ -202,6 +274,13 @@
         <minMaxRange>0~2</minMaxRange>
       </DMS_Prefab_VentBank>
     </prefabs>
+    <scatter>
+      <Filth_MoldyUniform>
+        <groupsPerHundredCells>0~1</groupsPerHundredCells>
+        <itemsPerGroup>1~2</itemsPerGroup>
+        <groupDistRange>1~3</groupDistRange>
+      </Filth_MoldyUniform>
+    </scatter>
   </LayoutRoomDef>
 
   <!-- 動力室。少數還在運轉的機組，也是整座設施還有殘電的理由。
@@ -225,7 +304,24 @@
       <DMS_Prefab_SupplyCache_Edge>
         <countRange>0~1</countRange>
       </DMS_Prefab_SupplyCache_Edge>
+      <!-- 停擺的遠古發電機組與儲罐（Core）。儲罐別放太多：這間是檢修通道必接的設備間，牆邊要留開口。
+           Dead ancient generators and storage tanks (Core). Not too many tanks: this is an equipment room
+           the maintenance tunnels must reach, so the walls need free spots for hatches. -->
+      <AncientGenerator_SmallCluster>
+        <countRange>0~1</countRange>
+      </AncientGenerator_SmallCluster>
+      <AncientStorageCylinder_Edge>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~2</minMaxRange>
+      </AncientStorageCylinder_Edge>
     </prefabs>
+    <scatter>
+      <Filth_OilSmear>
+        <groupsPerHundredCells>0~2</groupsPerHundredCells>
+        <itemsPerGroup>2~4</itemsPerGroup>
+        <groupDistRange>1~3</groupDistRange>
+      </Filth_OilSmear>
+    </scatter>
   </LayoutRoomDef>
 
   <!-- 殘骸大廳。塌掉的那一半，地板破了個洞。
@@ -250,7 +346,31 @@
       <DMS_Prefab_SupplyCache>
         <countRange>0~1</countRange>
       </DMS_Prefab_SupplyCache>
+      <!-- 砸下來的遠古設備塊（Core）。Ancient equipment blocks that came down with the ceiling (Core). -->
+      <AncientEquipmentBlocks_Rows>
+        <countRange>0~1</countRange>
+      </AncientEquipmentBlocks_Rows>
     </prefabs>
+    <!-- 塌方處：碎石地面、建材瓦礫與鋼渣。Where it caved in: gravel floor, building rubble and steel slag. -->
+    <scatterTerrain>
+      <Gravel>
+        <groupsPerHundredCells>1~2</groupsPerHundredCells>
+        <itemsPerGroup>6~12</itemsPerGroup>
+        <groupDistRange>1~3</groupDistRange>
+      </Gravel>
+    </scatterTerrain>
+    <scatter>
+      <Filth_RubbleBuilding>
+        <groupsPerHundredCells>1~3</groupsPerHundredCells>
+        <itemsPerGroup>3~6</itemsPerGroup>
+        <groupDistRange>1~3</groupDistRange>
+      </Filth_RubbleBuilding>
+      <ChunkSlagSteel>
+        <groupsPerHundredCells>0~2</groupsPerHundredCells>
+        <itemsPerGroup>1~2</itemsPerGroup>
+        <groupDistRange>1~2</groupDistRange>
+      </ChunkSlagSteel>
+    </scatter>
   </LayoutRoomDef>
 
   <!-- ============================================================
@@ -324,6 +444,14 @@
         <countPerHundredCells>1</countPerHundredCells>
         <minMaxRange>1~3</minMaxRange>
       </DMS_Prefab_VehicleWreck>
+      <!-- 更早一代的遠古車輛（Core），跟 DMS 的裝甲車停在一起。
+           Older ancient vehicles (Core), parked alongside DMS's armour. -->
+      <DMS_Prefab_TruckWreck>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_TruckWreck>
+      <DMS_Prefab_TroopCarrierWreck>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_TroopCarrierWreck>
       <DMS_Prefab_HeavyWreck_Gatekeeper>
         <countRange>0~1</countRange>
       </DMS_Prefab_HeavyWreck_Gatekeeper>
@@ -355,7 +483,98 @@
         <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
         <minMaxRange>0~2</minMaxRange>
       </DMS_Prefab_SupplyCache_Edge>
+      <AncientBarrel_Cluster>
+        <countPerHundredCells>0.5</countPerHundredCells>
+        <minMaxRange>0~2</minMaxRange>
+      </AncientBarrel_Cluster>
     </prefabs>
+    <scatter>
+      <Filth_OilSmear>
+        <groupsPerHundredCells>1~3</groupsPerHundredCells>
+        <itemsPerGroup>2~5</itemsPerGroup>
+        <groupDistRange>1~3</groupDistRange>
+      </Filth_OilSmear>
+    </scatter>
+  </LayoutRoomDef>
+
+  <!-- ============================================================
+       生活區 / Living quarters
+       純裝飾房型，說明這裡曾經有人長駐。只用 Core 與 DMS 的建築。
+       Decorative rooms showing people once lived down here. Core and DMS buildings only.
+       ============================================================ -->
+
+  <!-- 食堂。靠牆一排遠古廚具，中間幾張長桌，角落一台販賣機；有的凳子被搬走了。
+       Mess hall. Ancient kitchenware along one wall, long tables in the middle, a vending machine in a
+       corner; some of the stools walked off. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultMessHall</defName>
+    <minSingleRectWidth>9</minSingleRectWidth>
+    <minSingleRectHeight>9</minSingleRectHeight>
+    <floorTypes>
+      <li>SterileTile</li>
+    </floorTypes>
+    <prefabs>
+      <DMS_Prefab_Galley_Edge>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
+        <minMaxRange>1~2</minMaxRange>
+      </DMS_Prefab_Galley_Edge>
+      <DMS_Prefab_MessTable>
+        <countPerHundredCells>3</countPerHundredCells>
+        <minMaxRange>2~4</minMaxRange>
+      </DMS_Prefab_MessTable>
+      <DMS_Prefab_RestNook_Ruined>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_RestNook_Ruined>
+      <DMS_Prefab_SupplyCache_Edge>
+        <countRange>0~1</countRange>
+      </DMS_Prefab_SupplyCache_Edge>
+    </prefabs>
+    <fillEdges>
+      <AncientVendingMachine>
+        <groupsPerTenEdgeCells>0.2~0.4</groupsPerTenEdgeCells>
+        <groupCountRange>1~2</groupCountRange>
+      </AncientVendingMachine>
+    </fillEdges>
+    <scatter>
+      <Filth_Trash>
+        <groupsPerHundredCells>1~2</groupsPerHundredCells>
+        <itemsPerGroup>2~4</itemsPerGroup>
+        <groupDistRange>2~4</groupDistRange>
+      </Filth_Trash>
+    </scatter>
+  </LayoutRoomDef>
+
+  <!-- 醫務室。一組遠古手術台（Core 預製塊），牆邊是報廢的醫療機具，地上還有沒擦掉的舊血跡。
+       Infirmary. A set of ancient operating tables (a Core prefab), dead medical kit along the walls and
+       old bloodstains nobody cleaned up. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultInfirmary</defName>
+    <minSingleRectWidth>9</minSingleRectWidth>
+    <minSingleRectHeight>9</minSingleRectHeight>
+    <floorTypes>
+      <li>SterileTile</li>
+    </floorTypes>
+    <prefabs>
+      <OperatingTables>
+        <countRange>0~1</countRange>
+      </OperatingTables>
+      <DMS_Prefab_MedStation_Edge>
+        <countPerTenEdgeCells>0.5</countPerTenEdgeCells>
+        <minMaxRange>1~2</minMaxRange>
+      </DMS_Prefab_MedStation_Edge>
+      <DMS_Prefab_LockerRow_Ruined>
+        <countPerTenEdgeCells>0.3</countPerTenEdgeCells>
+        <minMaxRange>0~1</minMaxRange>
+      </DMS_Prefab_LockerRow_Ruined>
+    </prefabs>
+    <scatter>
+      <Filth_Blood>
+        <groupsPerHundredCells>0~1</groupsPerHundredCells>
+        <itemsPerGroup>1~3</itemsPerGroup>
+        <groupDistRange>1~2</groupDistRange>
+      </Filth_Blood>
+    </scatter>
   </LayoutRoomDef>
 
 </Defs>

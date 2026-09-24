@@ -125,6 +125,8 @@
 		<equippedStatOffsets>
 			<MoveSpeed>0.9</MoveSpeed>
 			<CarryingCapacity>125</CarryingCapacity>
+			<!-- 物品欄/遠行隊負重 +40 kg（原版 體型×35，扣掉戰鬥服自重 26 kg 後幾乎無法攜物） -->
+			<FFF_MassCarryCapacity>40</FFF_MassCarryCapacity>
 			<!-- 人工肌肉束直接錨定骨骼：近戰傷害 +30%（MeleeDamageFactor 基準 1.0，偏移後 1.3） -->
 			<MeleeDamageFactor>0.3</MeleeDamageFactor>
 			<PainShockThreshold>0.25</PainShockThreshold>

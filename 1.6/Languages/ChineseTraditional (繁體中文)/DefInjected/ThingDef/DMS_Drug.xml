@@ -19,4 +19,23 @@
   <!-- EN: Taking {0}. -->
   <Neuroglue.ingestible.ingestReportString>注射{0}</Neuroglue.ingestible.ingestReportString>
   
+
+  <!-- EN: combat regeneration serum -->
+  <DMS_CombatRegenSerum.label>戰鬥再生合劑</DMS_CombatRegenSerum.label>
+  <!-- EN: A highly concentrated neuro-targeted agent laden with stem cells. It lets the body regrow missing parts to their original state within two to three days, but the process burns through enormous amounts of energy, so the patient must eat far more than usual to keep up. The pain of regrowth and the risk of rejection take a heavy toll on the subject's mental health, which is why agents of this kind are rarely seen on the rim.\n\nNon-addictive. Each dose carries a chance of triggering level 3 xeno limb syndrome. -->
+  <DMS_CombatRegenSerum.description>一種高濃度的神經靶向藥劑，包含大量幹細胞，能夠使人體將缺失部位在兩到三天內修復如初，但期間會大量消耗能量，導致需要大量的進食來補充。由於生長過程的疼痛及可能的排異反應對受試者的精神健康有極大的影響，這類藥劑並不常見於邊緣世界。\n\n一種不具備成癮性的肢體再生藥劑，但有機率導致三級異肢症。</DMS_CombatRegenSerum.description>
+  <!-- EN: Take {0} -->
+  <DMS_CombatRegenSerum.ingestible.ingestCommandString>注射{0}</DMS_CombatRegenSerum.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <DMS_CombatRegenSerum.ingestible.ingestReportString>注射{0}</DMS_CombatRegenSerum.ingestible.ingestReportString>
+  
+  <!-- EN: sensibility blocker -->
+  <DMS_SensibilityBlocker.label>知能阻斷合劑</DMS_SensibilityBlocker.label>
+  <!-- EN: A highly concentrated neuro-targeted agent that suppresses the receptors behind affective thought. Outwardly, the subject's aversion to their surroundings all but vanishes for as long as it lasts, which once made it a standard combat drug for exoskeleton pilots on long missions. Subjects keep a complete memory of the experience after it wears off, however, and once it was found to cause possible sensory loss its use was gradually banned.\n\nTemporarily suspends secondary needs such as beauty, comfort, outdoors, indoors and space, and negates the mood penalties of environment-related thoughts. -->
+  <DMS_SensibilityBlocker.description>一種高濃度的神經靶向藥劑，能夠有效抑制人腦中對於感性思維的受體作用，外在表現為施藥對象對於周遭環境的厭惡感在有效期間內趨近於無，這在過去常被用於外骨骼駕駛員在執行長時間任務時的戰鬥用藥物。但施藥對象在藥效結束後仍有完整的記憶，因此在發現其會導致可能的感官缺失後被逐漸禁止使用。\n\n暫時阻斷美觀度、舒適度、戶外、室內、空間等次要需求，並使環境相關的負面想法不再影響心情。</DMS_SensibilityBlocker.description>
+  <!-- EN: Take {0} -->
+  <DMS_SensibilityBlocker.ingestible.ingestCommandString>注射{0}</DMS_SensibilityBlocker.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <DMS_SensibilityBlocker.ingestible.ingestReportString>注射{0}</DMS_SensibilityBlocker.ingestible.ingestReportString>
+  
 </LanguageData>

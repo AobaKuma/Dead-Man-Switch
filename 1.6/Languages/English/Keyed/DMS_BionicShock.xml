@@ -11,4 +11,16 @@
   <DMS_BionicShock_StatLabel>{0} level</DMS_BionicShock_StatLabel>
   <DMS_BionicShock_StatDesc>Each dose changes the level of {0} by {1}. At level 0 the condition is removed.</DMS_BionicShock_StatDesc>
 
+
+  <!-- 戰鬥再生合劑。{PAWN} 角色, {0} 長回的部位 -->
+  <DMS_CombatRegen_PartRegrown>{PAWN_labelShort}'s {0} has grown back.</DMS_CombatRegen_PartRegrown>
+
+  <!-- {PAWN} 角色, {0} 含分級的病症名稱 -->
+  <DMS_CombatRegen_Rejection>{PAWN_labelShort} is rejecting the regeneration serum: {0}.</DMS_CombatRegen_Rejection>
+
+  <!-- 藥物資訊卡（IngestionOutcomeDoer_SetHediffLevel）。{0} 病症名稱, {1} 等級, {2} 機率 -->
+  <DMS_SetHediffLevel_StatLabel>{0} chance</DMS_SetHediffLevel_StatLabel>
+  <DMS_SetHediffLevel_StatValue>{1} (level {0})</DMS_SetHediffLevel_StatValue>
+  <DMS_SetHediffLevel_StatDesc>Each dose has a {2} chance to bring {0} to level {1}. A higher level is left unchanged.</DMS_SetHediffLevel_StatDesc>
+
 </LanguageData>

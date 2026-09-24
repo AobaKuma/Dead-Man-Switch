@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!-- DMS零件分類 火控、濕件、收發組件等DMS專用零件 -->
+  <ThingCategoryDef>
+    <defName>DMS_Components</defName>
+    <label>DMS components</label>
+    <parent>Manufactured</parent>
+    <iconPath>Things/Resource/ComponentFCS</iconPath>
+  </ThingCategoryDef>
+
   <!-- 尼龍纖維 玩家能量產的丐版合成纖維，美觀度低但作為衣服十分耐用-->
   <ThingDef ParentName="ResourceBase">
     <defName>Polyester</defName>
@@ -368,7 +376,7 @@
       <li>ExoticMisc</li>
     </tradeTags>
     <thingCategories>
-      <li>Manufactured</li>
+      <li>DMS_Components</li>
     </thingCategories>
   </ThingDef>
 
@@ -431,7 +439,7 @@
       <li>ExoticMisc</li>
     </tradeTags>
     <thingCategories>
-      <li>Manufactured</li>
+      <li>DMS_Components</li>
     </thingCategories>
   </ThingDef>
 
@@ -492,7 +500,7 @@
       <li>ExoticMisc</li>
     </tradeTags>
     <thingCategories>
-      <li>Manufactured</li>
+      <li>DMS_Components</li>
     </thingCategories>
     <allowedArchonexusCount>10</allowedArchonexusCount>
   </ThingDef>
@@ -550,7 +558,7 @@
       <li>ExoticMisc</li>
     </tradeTags>
     <thingCategories>
-      <li>Manufactured</li>
+      <li>DMS_Components</li>
     </thingCategories>
     <allowedArchonexusCount>10</allowedArchonexusCount>
   </ThingDef>
@@ -616,7 +624,7 @@
       <li>ExoticMisc</li>
     </tradeTags>
     <thingCategories>
-      <li>Manufactured</li>
+      <li>DMS_Components</li>
     </thingCategories>
     <allowedArchonexusCount>10</allowedArchonexusCount>
   </ThingDef>
@@ -652,7 +660,7 @@
       <li>ExoticMisc</li>
     </tradeTags>
     <thingCategories>
-      <li>Manufactured</li>
+      <li>DMS_Components</li>
     </thingCategories>
     <allowedArchonexusCount>10</allowedArchonexusCount>
   </ThingDef>

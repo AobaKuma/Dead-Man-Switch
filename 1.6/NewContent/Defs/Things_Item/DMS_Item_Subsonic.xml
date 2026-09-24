@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ==================================================================== -->
+  <!-- 封存檔案 I 級：次聲波基礎（DMS_Occultech_Subsonic）的物品類解鎖物。      -->
+  <!-- 脈衝邏輯共用 DMS.SubsonicUtility：只作用於血肉生物，機兵免疫。           -->
+  <!-- 建築類（次聲波塔、爆破探勘裝置）見 Things_Building/DMS_Buildings_Subsonic.xml -->
+  <!-- ==================================================================== -->
+
+  <!-- 次聲波創傷：每次脈衝疊加嚴重度，約兩小時內自然消退。疊到最高段足以痛到休克。 -->
+  <HediffDef>
+    <defName>DMS_SubsonicTrauma</defName>
+    <label>infrasonic trauma</label>
+    <description>Tuned infrasound has set this creature's inner ear and viscera resonating. It causes nausea, disorientation and deep, diffuse pain that no wound explains. Repeated exposure stacks up quickly, and at its worst the pain alone is enough to cause shock.\n\nThe effect fades on its own within a couple of hours.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <isBad>true</isBad>
+    <makesSickThought>true</makesSickThought>
+    <initialSeverity>0.01</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-12</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>discomfort</label>
+        <painOffset>0.1</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.3</minSeverity>
+        <label>disoriented</label>
+        <painOffset>0.25</painOffset>
+        <vomitMtbDays>0.05</vomitMtbDays>
+        <statOffsets>
+          <ShootingAccuracyPawn>-0.3</ShootingAccuracyPawn>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.3</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.7</minSeverity>
+        <label>agonizing</label>
+        <painOffset>0.5</painOffset>
+        <vomitMtbDays>0.02</vomitMtbDays>
+        <statOffsets>
+          <ShootingAccuracyPawn>-0.5</ShootingAccuracyPawn>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.3</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.4</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.4</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.6</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ==================================================================== -->
+  <!-- 次聲波改裝模組：掛載後取得範圍恐慌技能                                    -->
+  <!-- ==================================================================== -->
+  <ThingDef ParentName="BaseModificationItem">
+    <defName>DMS_SubsonicModule</defName>
+    <label>infrasonic module</label>
+    <description>A tuned infrasound emitter array packaged to bolt onto a mech's hull and draw from its power cell. On command it releases a single burst of infrasound around the mech. Living enemies caught in it are wracked with nausea and pain, and many break and flee outright. Mechs are unaffected.\n\nThe emitter draws power continuously, slightly increasing the mech's energy consumption.</description>
+    <descriptionHyperlinks>
+      <HediffDef>DMS_SubsonicModule</HediffDef>
+      <AbilityDef>DMS_SubsonicBurst</AbilityDef>
+      <HediffDef>DMS_SubsonicTrauma</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <!-- TODO: 暫用集群控制晶片組的圖，之後換成專屬貼圖 -->
+      <texPath>Things/Resource/ComponentCCC</texPath>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <MarketValue>650</MarketValue>
+      <Mass>2</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <workAmount>4000</workAmount>
+      <researchPrerequisite>DMS_Occultech_Subsonic</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>DMS_TableMachinePrinter</li>
+      </recipeUsers>
+    </recipeMaker>
+    <comps>
+      <li Class="Fortified.CompProperties_AddHediffOnTarget">
+        <compClass>Fortified.CompTargetable_AddHediffOnTarget</compClass>
+        <hediffDef>DMS_SubsonicModule</hediffDef>
+        <soundDef>DMS_EquipGear</soundDef>
+        <targetBodyPartDefs />
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>DMS_SubsonicModule</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>infrasonic module</label>
+    <description>A tuned infrasound emitter array mounted on the hull. It lets the mech release a burst of infrasound that wracks nearby living enemies with pain and panic.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_SubsonicModule</ThingDef>
+      <AbilityDef>DMS_SubsonicBurst</AbilityDef>
+    </descriptionHyperlinks>
+    <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
+    <isBad>false</isBad>
+    <spawnThingOnRemoved>DMS_SubsonicModule</spawnThingOnRemoved>
+    <countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+    <stages>
+      <li>
+        <statOffsets>
+          <MechEnergyUsageFactor>0.05</MechEnergyUsageFactor>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="Fortified.HediffCompProperties_Modification">
+        <applyJob>FFF_ModificationRemove</applyJob>
+      </li>
+    </comps>
+    <abilities>
+      <li>DMS_SubsonicBurst</li>
+    </abilities>
+  </HediffDef>
+
+  <!-- 不設 Ability_EffectRadius：範圍由 DMS.CompAbilityEffect_SubsonicPulse 自己處理，
+       否則原版會對範圍內每個目標各呼叫一次 Apply。 -->
+  <AbilityDef ParentName="DMS_AddHediffSelfBase">
+    <defName>DMS_SubsonicBurst</defName>
+    <label>infrasonic burst</label>
+    <description>Release a burst of tuned infrasound around this mech. Hostile living creatures in range suffer infrasonic trauma and may panic and flee. Mechs and allies are unaffected.</description>
+    <iconPath>UI/Ability/Infrasound</iconPath>
+    <aiCanUse>true</aiCanUse>
+    <cooldownTicksRange>2500</cooldownTicksRange>
+    <comps>
+      <li Class="DMS.CompProperties_AbilitySubsonicPulse">
+        <pulse>
+          <radius>7.9</radius>
+          <hediff>DMS_SubsonicTrauma</hediff>
+          <severity>0.35</severity>
+          <panicChance>0.4</panicChance>
+          <hostileOnly>true</hostileOnly>
+          <ignoreWalls>true</ignoreWalls>
+          <fleck>PsycastAreaEffect</fleck>
+          <sound>Explosion_EMP</sound>
+        </pulse>
+        <aiMinTargets>2</aiMinTargets>
+      </li>
+    </comps>
+    <verbProperties>
+      <range>7.9</range>
+    </verbProperties>
+  </AbilityDef>
+
+  <!-- ==================================================================== -->
+  <!-- 次聲波手雷：無視阻擋、不分敵我的範圍次聲波                               -->
+  <!-- ==================================================================== -->
+  <ThingDef ParentName="BaseMakeableGrenade">
+    <defName>DMS_Weapon_GrenadeSubsonic</defName>
+    <label>infrasonic grenades</label>
+    <description>Grenades that release a single burst of tuned infrasound instead of shrapnel. Infrasound passes through walls and cover alike, so the burst reaches every living creature in its radius, friend or foe, wracking them with nausea and pain and sending many into a panic. Buildings and mechs are unaffected.</description>
+    <descriptionHyperlinks>
+      <HediffDef>DMS_SubsonicTrauma</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <!-- TODO: 暫用原版 EMP 手雷貼圖，之後換成專屬貼圖 -->
+      <texPath>Things/Item/Equipment/WeaponRanged/EMPGrenades</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.3</uiIconScale>
+    <soundInteract>Interact_Grenade</soundInteract>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <Mass>1</Mass>
+      <RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
+      <WorkToMake>20000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>20</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>DMS_Occultech_Subsonic</researchPrerequisite>
+    </recipeMaker>
+    <weaponTags>
+      <li>DMS_GrenadeSubsonic</li>
+    </weaponTags>
+    <thingCategories>
+      <li>Grenades</li>
+    </thingCategories>
+    <tradeability>Sellable</tradeability>
+    <verbs>
+      <li>
+        <label>throw infrasonic grenade</label>
+        <verbClass>Verb_LaunchProjectile</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>12.9</range>
+        <forcedMissRadius>1.9</forcedMissRadius>
+        <warmupTime>1.5</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <defaultProjectile>DMS_Proj_GrenadeSubsonic</defaultProjectile>
+        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+      </li>
+    </verbs>
+    <smeltable>true</smeltable>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>DMS_Proj_GrenadeSubsonic</defName>
+    <label>infrasonic grenade</label>
+    <thingClass>DMS.Projectile_SubsonicGrenade</thingClass>
+    <graphicData>
+      <!-- TODO: 暫用原版 EMP 手雷投射物貼圖 -->
+      <texPath>Things/Projectile/GrenadeEMP</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <!-- explosionRadius 只給 AI 與瞄準預覽用；實際範圍看下方 ModExtension。 -->
+      <explosionRadius>3.9</explosionRadius>
+      <damageDef>Stun</damageDef>
+      <explosionDelay>60</explosionDelay>
+    </projectile>
+    <modExtensions>
+      <li Class="DMS.ModExtension_SubsonicPulse">
+        <pulse>
+          <radius>3.9</radius>
+          <hediff>DMS_SubsonicTrauma</hediff>
+          <severity>0.6</severity>
+          <panicChance>0.5</panicChance>
+          <hostileOnly>false</hostileOnly>
+          <ignoreWalls>true</ignoreWalls>
+          <fleck>PsycastAreaEffect</fleck>
+          <sound>Explosion_EMP</sound>
+        </pulse>
+      </li>
+    </modExtensions>
+  </ThingDef>
+</Defs>

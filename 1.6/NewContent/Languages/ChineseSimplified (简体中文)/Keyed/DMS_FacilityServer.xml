@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 伺服主机骇入（DMS.CompServerHackable） -->
+  <DMS_ServerHack_Stage>骇入阶段：{0} / {1}</DMS_ServerHack_Stage>
+  <DMS_ServerHack_Depleted>资料已全数提取</DMS_ServerHack_Depleted>
+  <DMS_ServerHack_AlarmWarning>每次开始骇入都会触发设施警报</DMS_ServerHack_AlarmWarning>
+  <DMS_ServerHack_AlarmTripped>{HACKER_nameDef}开始骇入{SERVER_definite}，设施警报已被触发！</DMS_ServerHack_AlarmTripped>
+  <DMS_ServerHack_AlarmTrippedNoHacker>有人正在骇入{SERVER_definite}，设施警报已被触发！</DMS_ServerHack_AlarmTrippedNoHacker>
+  <DMS_ServerHack_StageLetterLabel>资料提取：{SERVER_label}</DMS_ServerHack_StageLetterLabel>
+  <DMS_ServerHack_StageLetterText>我们从{SERVER_definite}的底层储存区中提取出了{REWARD_labelShort}。\n\n骇入进度：{DONE} / {TOTAL}。若要继续提取，必须重新开始骇入，这会再次触发设施警报。</DMS_ServerHack_StageLetterText>
+
+  <!-- 追杀暂停（DMS.CompHuntBreaker） -->
+  <DMS_HuntBreaker_InspectActive>摧毁此节点可暂时中断殖民舰队的追杀</DMS_HuntBreaker_InspectActive>
+  <DMS_HuntBreaker_InspectSuspended>追杀已中断，预计{0}后恢复</DMS_HuntBreaker_InspectSuspended>
+  <DMS_HuntBreaker_NoHunt>{NODE_definite}已被摧毁。它所连接的追缉网络陷入一片寂静，但殖民舰队目前并未追缉我们。</DMS_HuntBreaker_NoHunt>
+  <DMS_HuntBreaker_Extended>{NODE_definite}已被摧毁，追缉网络的重建时间被进一步延后：追杀预计在{DURATION}后恢复。</DMS_HuntBreaker_Extended>
+  <DMS_HuntBreaker_SuspendedLabel>追杀中断</DMS_HuntBreaker_SuspendedLabel>
+  <DMS_HuntBreaker_SuspendedText>{NODE_definite}已被摧毁。\n\n失去这个节点后，{FLEET}在星球上的雷达追踪与导航网络出现了大面积的空白，他们已经无法掌握我们的位置，追杀行动被迫中止。\n\n但这只是暂时的。SAGE 网络内的其他计算机迟早会接手这个节点的工作，预计约{DURATION}后追杀就会重新开始。\n\n请注意：我们与舰队的永久敌对状态并未因此解除。</DMS_HuntBreaker_SuspendedText>
+  <DMS_HuntBreaker_ResumedLabel>追缉网络恢复</DMS_HuntBreaker_ResumedLabel>
+  <DMS_HuntBreaker_ResumedText>SAGE 网络内的另一台计算机已经升格为主机，{FLEET}的追缉网络重新上线了。\n\n他们再次掌握了我们的位置，追杀行动即将恢复。</DMS_HuntBreaker_ResumedText>
+
+  <!-- 毒气释放口（DMS.CompAlertEffector_GasVent） -->
+  <DMS_GasVent_Warning>{VENT_definite}发出嘶嘶声：毒气即将喷出！</DMS_GasVent_Warning>
+  <DMS_GasVent_Charges>毒气存量：{0} / {1}</DMS_GasVent_Charges>
+  <DMS_GasVent_Arming>正在加压</DMS_GasVent_Arming>
+  <DMS_GasVent_Releasing>正在释放毒气</DMS_GasVent_Releasing>
+
+  <!-- SAGE 节点站点 -->
+  <DMS_SageNode_EntryCountdownLabel>SAGE 节点：援军倒数</DMS_SageNode_EntryCountdownLabel>
+  <DMS_SageNode_EntryCountdownText>SAGE 节点的战略防空网已经锁定我们的位置。{0}后，舰队的快速反应部队就会抵达。</DMS_SageNode_EntryCountdownText>
+  <DMS_SageNode_ExpiredLabel>SAGE 节点失联</DMS_SageNode_ExpiredLabel>
+  <DMS_SageNode_ExpiredText>SAGE 网络完成了例行的节点轮换，我们掌握的坐标已经失效。</DMS_SageNode_ExpiredText>
+  <DMS_SageNode_ClearedLabel>SAGE 节点已肃清</DMS_SageNode_ClearedLabel>
+  <DMS_SageNode_ClearedText>守卫 SAGE 节点的机兵已经被清除。贤者主机仍在运作：可以先骇入提取它的战略数据库，再将它彻底摧毁。</DMS_SageNode_ClearedText>
+
+</LanguageData>

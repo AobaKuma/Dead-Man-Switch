@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 
@@ -729,6 +730,81 @@ namespace DMS
             catch (Exception ex)
             {
                 Log.Warning($"[DMS] Could not offer a court-martial for the occultech kill order: {ex}");
+            }
+        }
+
+        // ─────────────────────────────── 追殺暫停（SAGE） ───────────────────────────────
+
+        /// <summary>
+        /// 追殺期間每次追殺觸發時，主動派發 SAGE 節點任務的機率。
+        /// Chance, each time the hunt fires, to offer a SAGE node quest.
+        /// </summary>
+        private const float NetworkSiteOfferChance = 0.35f;
+
+        /// <summary>
+        /// 追殺網路節點（SAGE）被摧毀：永久敵對中就暫停追殺。第一次擲 suspendYears；已在暫停中則疊加
+        /// stackDaysWhileSuspended（小於 0 時再擲一次 suspendYears）。不處於永久敵對時只發中性訊息。
+        /// A tracking-network node (SAGE) was destroyed: suspend the hunt if the kill order is active. The first
+        /// time rolls suspendYears; while already suspended it stacks stackDaysWhileSuspended (or re-rolls
+        /// suspendYears when that is negative). Outside a kill order it only posts a neutral message.
+        /// </summary>
+        public static void TrySuspendHunt(CompProperties_HuntBreaker props, Thing source, Map map)
+        {
+            GameComponent_OccultechSanction comp = GameComponent_OccultechSanction.CompSafe;
+            GlobalTargetInfo look = map != null ? new GlobalTargetInfo(source.PositionHeld, map) : GlobalTargetInfo.Invalid;
+            if (comp == null || !comp.PermanentHostile)
+            {
+                Messages.Message("DMS_HuntBreaker_NoHunt".Translate(source.Named("NODE")), look, MessageTypeDefOf.NeutralEvent);
+                return;
+            }
+
+            bool wasSuspended = comp.HuntSuspended;
+            int left = comp.SuspendHunt(props.RollTicks(wasSuspended));
+
+            if (wasSuspended)
+            {
+                Messages.Message("DMS_HuntBreaker_Extended".Translate(source.Named("NODE"), left.ToStringTicksToPeriod().Named("DURATION")),
+                    look, MessageTypeDefOf.PositiveEvent);
+                return;
+            }
+
+            Faction fleet = Fleet;
+            Find.LetterStack.ReceiveLetter(
+                "DMS_HuntBreaker_SuspendedLabel".Translate(),
+                "DMS_HuntBreaker_SuspendedText".Translate(source.Named("NODE"), (fleet?.Name ?? "?").Named("FLEET"),
+                    left.ToStringTicksToPeriod().Named("DURATION")),
+                LetterDefOf.PositiveEvent, look);
+        }
+
+        public static void SendHuntResumedLetter()
+        {
+            Faction fleet = Fleet;
+            Find.LetterStack.ReceiveLetter(
+                "DMS_HuntBreaker_ResumedLabel".Translate(),
+                "DMS_HuntBreaker_ResumedText".Translate((fleet?.Name ?? "?").Named("FLEET")),
+                LetterDefOf.ThreatBig, null, fleet);
+        }
+
+        /// <summary>
+        /// 追殺觸發時以一定機率派發 SAGE 節點任務，讓被追殺的玩家陸續看到反擊的機會；任務本身的 TestRun 會擋掉重複。
+        /// On each hunt, sometimes offer a SAGE node quest so a hunted player keeps seeing a way to strike back;
+        /// the quest's own TestRun prevents duplicates.
+        /// </summary>
+        public static void TryOfferNetworkSite()
+        {
+            if (!Rand.Chance(NetworkSiteOfferChance)) return;
+            QuestScriptDef root = DMS_DefOf.DMS_FleetNetworkSite;
+            Map map = Find.AnyPlayerHomeMap;
+            if (root == null || map == null) return;
+            float points = StorytellerUtility.DefaultSiteThreatPointsNow();
+            try
+            {
+                if (!root.CanRun(points, map)) return;
+                QuestUtility.GenerateQuestAndMakeAvailable(root, points);
+            }
+            catch (Exception ex)
+            {
+                Log.Warning($"[DMS] Could not offer a fleet network site: {ex}");
             }
         }
 

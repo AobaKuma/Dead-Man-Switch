@@ -1,17 +1,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace DMS
 {
     /// <summary>
-    /// 分區閘門：在每條支道跟母走廊的路口封一整排密封門（各種寬度拼滿走廊），旁邊放一台控制台。
+    /// 分區閘門：在每條支道跟母走廊的路口封一整排，旁邊放一台控制台。設了 gateDoorDef 就是單扇門（例如 1x3）
+    /// 置中、兩側補強化牆；沒設則用各種寬度的密封門拼滿走廊。
     /// 控制台放在「從入口走得到」的那一側，順著走廊樹判斷：入口所在的子樹那側就是可及側。
     /// 這樣玩家永遠能從自己所在的分區一路駭出去，不會被封死。
     ///
-    /// Sector gates: a full row of sealed doors (assorted widths, mixed to fill the corridor) where each
-    /// branch meets its parent, with a console beside it. The console sits on whichever side the
+    /// Sector gates: a row across the junction where each branch meets its parent, with a console beside it.
+    /// With gateDoorDef set the row is one door (e.g. the 1x3) centred between reinforced walls; otherwise it's
+    /// sealed doors of assorted widths mixed to fill the corridor. The console sits on whichever side the
     /// entrance can reach, decided on the corridor tree: the side whose subtree holds the entrance.
     /// The player can therefore always hack outward from wherever they start; nothing is ever sealed
     /// off for good.
@@ -20,13 +23,24 @@ namespace DMS
     {
         public static void SpawnGates(StructureLayout layout, VaultLayoutPlan plan, Map map, Faction faction, ModExtension_VaultLayout ext)
         {
-            if (plan == null || ext == null || !ext.sectorGates) return;
-            if (ext.gateConsoleDef == null || ext.gateDoorDefs.NullOrEmpty()) return;
+            if (plan == null || ext == null || !ext.sectorGates || ext.gateConsoleDef == null) return;
 
-            if (!ext.gateDoorDefs.Any(d => d.Size.x == 1))
+            if (ext.gateDoorDef != null)
             {
-                Log.ErrorOnce("[DMS] ModExtension_VaultLayout.gateDoorDefs needs a 1-wide door or some corridor widths cannot be sealed.", 0x4A7E);
-                return;
+                if (ext.gateWallDef == null)
+                {
+                    Log.ErrorOnce("[DMS] ModExtension_VaultLayout.gateDoorDef needs a gateWallDef to fill the rest of the junction.", 0x4A81);
+                    return;
+                }
+            }
+            else
+            {
+                if (ext.gateDoorDefs.NullOrEmpty()) return;
+                if (!ext.gateDoorDefs.Any(d => d.Size.x == 1))
+                {
+                    Log.ErrorOnce("[DMS] ModExtension_VaultLayout.gateDoorDefs needs a 1-wide door or some corridor widths cannot be sealed.", 0x4A7E);
+                    return;
+                }
             }
 
             int entranceCorridor = FindEntranceCorridor(layout, plan);
@@ -34,7 +48,8 @@ namespace DMS
             for (int i = 0; i < plan.corridors.Count; i++)
             {
                 VaultLayoutPlan.Corridor child = plan.corridors[i];
-                if (child.parent < 0 || !Rand.Chance(ext.gateChance)) continue;
+                // 樞紐兩臂之間是內部接口，不設閘門。The joint between a hub's two bars is internal: no gate.
+                if (child.parent < 0 || child.internalJunction || !Rand.Chance(ext.gateChance)) continue;
 
                 // 入口在這條支道底下的話，控制台要放在支道那一側。
                 // If the entrance hangs somewhere under this branch, the console goes on the branch side.
@@ -70,7 +85,7 @@ namespace DMS
         /// <summary>node 是否在 root 的子樹裡（含 root 本身）。Whether node lies in root's subtree, root included.</summary>
         private static bool IsInSubtree(VaultLayoutPlan plan, int node, int root)
         {
-            for (int guard = 0; node >= 0 && guard < 32; guard++)
+            for (int guard = 0; node >= 0 && guard < 256; guard++)
             {
                 if (node == root) return true;
                 node = plan.corridors[node].parent;
@@ -86,21 +101,30 @@ namespace DMS
             CellRect rect = child.rect;
             bool alongX = !child.horizontal; // 支道垂直 → 路口那排門沿 x 排。Vertical branch → the gate row runs along x.
 
-            // 路口線：支道跟母走廊共用的那條牆線，開口的部分就是要封的格子。
+            // 路口線：支道跟母走廊共用的那條牆線，開口的部分就是要封的格子。開口是兩者內部寬度重疊的那一段：
+            // 走廊接到較寬的樞紐（或反過來）時，只有較窄那一邊的寬度是通的。
             // The junction line: the wall line the branch shares with its parent; the opening is what gets sealed.
+            // The opening is where the two interiors overlap: where a corridor meets a wider hub (or the other way
+            // round), only the narrower one's width is open.
             int junction = child.horizontal
                 ? (child.side > 0 ? rect.minX : rect.maxX)
                 : (child.side > 0 ? rect.minZ : rect.maxZ);
 
+            CellRect parentRect = parent.rect;
             List<IntVec3> cells = new List<IntVec3>();
             if (alongX)
             {
-                for (int x = rect.minX + 1; x <= rect.maxX - 1; x++) cells.Add(new IntVec3(x, 0, junction));
+                int lo = Mathf.Max(rect.minX, parentRect.minX) + 1;
+                int hi = Mathf.Min(rect.maxX, parentRect.maxX) - 1;
+                for (int x = lo; x <= hi; x++) cells.Add(new IntVec3(x, 0, junction));
             }
             else
             {
-                for (int z = rect.minZ + 1; z <= rect.maxZ - 1; z++) cells.Add(new IntVec3(junction, 0, z));
+                int lo = Mathf.Max(rect.minZ, parentRect.minZ) + 1;
+                int hi = Mathf.Min(rect.maxZ, parentRect.maxZ) - 1;
+                for (int z = lo; z <= hi; z++) cells.Add(new IntVec3(junction, 0, z));
             }
+            if (cells.Count == 0) return;
 
             // 路口應該是開口；有實牆擋著就不是我們要的地方。The junction should be open; solid wall means it isn't.
             foreach (IntVec3 c in cells)
@@ -109,6 +133,9 @@ namespace DMS
                 Building edifice = c.GetEdifice(map);
                 if (edifice != null && !edifice.def.IsDoor && edifice.def.Fillage == FillCategory.Full) return;
             }
+
+            // 單扇門模式下路口要至少跟門一樣寬。In single-door mode the junction has to be at least as wide as the door.
+            if (ext.gateDoorDef != null && ext.gateDoorDef.Size.x > cells.Count) return;
 
             // 控制台先找位置，找不到就不封門。Find the console a home first; no console, no gate.
             IntVec3 axisStep = alongX ? IntVec3.North : IntVec3.East;      // 沿支道軸的一步 / one step along the branch axis
@@ -130,24 +157,43 @@ namespace DMS
 
             ClearGateCells(map, cells);
 
-            // 各種寬度隨機拼滿整排。Fill the row with doors of assorted widths.
             Rot4 doorRot = alongX ? Rot4.North : Rot4.East;
+            if (ext.gateDoorDef != null)
+            {
+                // 單扇門置中，兩側補牆（寬度差為奇數時多出的那格補在後側）。
+                // One door in the middle, wall either side (an odd leftover cell goes on the far side).
+                int width = ext.gateDoorDef.Size.x;
+                int start = (cells.Count - width) / 2;
+                ThingDef wallStuff = ext.gateWallDef.MadeFromStuff ? GenStuff.DefaultStuffFor(ext.gateWallDef) : null;
+                for (int i = 0; i < cells.Count; i++)
+                {
+                    if (i >= start && i < start + width) continue;
+                    GenSpawn.Spawn(ThingMaker.MakeThing(ext.gateWallDef, wallStuff), cells[i], map, WipeMode.Vanish);
+                }
+                SpawnGateDoor(map, ext.gateDoorDef, cells, start, doorRot, comp);
+                return;
+            }
+
+            // 各種寬度隨機拼滿整排。Fill the row with doors of assorted widths.
             int index = 0;
             while (index < cells.Count)
             {
                 int remaining = cells.Count - index;
                 ThingDef doorDef = ext.gateDoorDefs.Where(d => d.Size.x <= remaining).RandomElement();
-                int width = doorDef.Size.x;
+                SpawnGateDoor(map, doorDef, cells, index, doorRot, comp);
+                index += doorDef.Size.x;
+            }
+        }
 
-                CellRect target = CellRect.FromLimits(cells[index], cells[index + width - 1]);
-                IntVec3 pos = FindSpawnPosition(target, doorRot, doorDef.Size);
-                Thing door = GenSpawn.Spawn(ThingMaker.MakeThing(doorDef), pos, map, doorRot);
-                if (!comp.Link(door))
-                {
-                    Log.ErrorOnce($"[DMS] {doorDef.defName} is not an access-link door; the gate will never open.", 0x4A80);
-                }
-
-                index += width;
+        /// <summary>在閘門排 index 起放一扇門並連到控制台。Spawns one gate door starting at index and links it to the console.</summary>
+        private static void SpawnGateDoor(Map map, ThingDef doorDef, List<IntVec3> cells, int index, Rot4 doorRot, CompVaultConsole comp)
+        {
+            CellRect target = CellRect.FromLimits(cells[index], cells[index + doorDef.Size.x - 1]);
+            IntVec3 pos = FindSpawnPosition(target, doorRot, doorDef.Size);
+            Thing door = GenSpawn.Spawn(ThingMaker.MakeThing(doorDef), pos, map, doorRot);
+            if (!comp.Link(door))
+            {
+                Log.ErrorOnce($"[DMS] {doorDef.defName} is not an access-link door; the gate will never open.", 0x4A80);
             }
         }
 
@@ -182,11 +228,14 @@ namespace DMS
         }
 
         /// <summary>
-        /// 控制台貼牆放在閘門旁：可及側是母走廊就放在開口兩旁、母走廊牆下；是支道就放在支道兩側牆邊、路口內一格。
+        /// 控制台貼牆放在閘門的可及側，兩種位置都試：開口兩端往內幾格、貼著側牆；或開口兩旁、貼著路口那道牆。
+        /// 走廊接走廊時只有其中一種有牆可貼（母走廊側是路口牆，支道側是側牆），接到較寬的樞紐時兩種都可能。
         /// 面朝離開牆的方向，這樣互動格才在走廊裡。
-        /// The console hugs a wall next to the gate: on the parent side it goes just past either end of the
-        /// opening under the parent's wall; on the branch side it goes against either side wall one cell in.
-        /// It faces away from the wall so its interaction cell is in the corridor.
+        /// The console hugs a wall on the reachable side of the gate, trying both kinds of spot: a few cells in from
+        /// either end of the opening against the side wall, or just past either end of the opening against the
+        /// junction wall. Corridor-to-corridor only one kind has a wall (the junction wall on the parent side, the
+        /// side walls on the branch side); against a wider hub either may. It faces away from the wall so its
+        /// interaction cell is in the corridor.
         /// </summary>
         private static bool TryFindConsoleSpot(Map map, List<IntVec3> gateCells, IntVec3 rowStep, IntVec3 toChild, bool childSide,
             out IntVec3 cell, out Rot4 rot)
@@ -195,21 +244,16 @@ namespace DMS
             IntVec3 last = gateCells[gateCells.Count - 1];
             List<(IntVec3 cell, IntVec3 wallDir)> candidates = new List<(IntVec3, IntVec3)>();
 
-            if (childSide)
+            IntVec3 inward = childSide ? toChild : -toChild;
+            for (int depth = 1; depth <= 3; depth++)
             {
-                for (int depth = 1; depth <= 3; depth++)
-                {
-                    candidates.Add((first + toChild * depth, -rowStep));
-                    candidates.Add((last + toChild * depth, rowStep));
-                }
+                candidates.Add((first + inward * depth, -rowStep));
+                candidates.Add((last + inward * depth, rowStep));
             }
-            else
+            for (int offset = 1; offset <= 3; offset++)
             {
-                for (int offset = 1; offset <= 3; offset++)
-                {
-                    candidates.Add((first - rowStep * offset - toChild, toChild));
-                    candidates.Add((last + rowStep * offset - toChild, toChild));
-                }
+                candidates.Add((first - rowStep * offset + inward, -inward));
+                candidates.Add((last + rowStep * offset + inward, -inward));
             }
 
             foreach ((IntVec3 c, IntVec3 wallDir) in candidates.InRandomOrder())

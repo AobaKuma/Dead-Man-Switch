@@ -164,14 +164,55 @@ namespace DMS
             // 獎勵房要等所有門都生成完才封得起來。Treasuries can only be sealed once every door exists.
             VaultTreasuryUtility.SealTreasuries(layoutStructureSketch, map, faction);
 
+            // 設施封鎖中控：每張地圖恰好一座（版面有掛 ModExtension_FacilityLockdown 才放）。
+            // Lockdown controller: exactly one per map (only when the layout carries ModExtension_FacilityLockdown).
+            FacilityLockdownPlacement.PlaceController(layoutStructureSketch, map, faction,
+                Def.GetModExtension<ModExtension_FacilityLockdown>());
+
             // 分區閘門：入口房已經填好、出生點已定，才知道控制台該放哪一側。
             // Sector gates: only now, with the entrance filled and the start spot set, do we know
             // which side of each gate the console belongs on.
-            VaultLayoutPlan plan = VaultLayoutGenerator.TakePlan(layoutStructureSketch.structureLayout);
-            VaultSectorGates.SpawnGates(layoutStructureSketch.structureLayout, plan, map, faction,
-                Def.GetModExtension<ModExtension_VaultLayout>());
+            StructureLayout layout = layoutStructureSketch.structureLayout;
+            VaultLayoutPlan plan = VaultLayoutGenerator.TakePlan(layout);
+            plan?.MoveToMap(layout.container);
+            VaultSectorGates.SpawnGates(layout, plan, map, faction, Def.GetModExtension<ModExtension_VaultLayout>());
+
+            // 檢修通道網要在閘門之後：挖管道時要避開閘門，也要知道每段走廊屬於哪個分區。
+            // Tunnels after the gates: digging has to keep clear of them and know which sector each corridor is.
+            SpawnPower(layout, plan, map, faction);
 
             ChargeInternalBatteries(layoutStructureSketch, map);
+        }
+
+        /// <summary>
+        /// 走廊的電源：有 ModExtension_VaultTunnels 就挖檢修通道網、配電盤放在管道裡；一座都沒放成就退回走廊牆上。
+        /// 之後把密封的伺服機房接上走廊電網。
+        /// Corridor power: with ModExtension_VaultTunnels, dig the tunnel network with the substations in it; if none
+        /// went in, fall back to the corridor wall. Then tie the sealed server halls into the corridor grid.
+        /// </summary>
+        private void SpawnPower(StructureLayout layout, VaultLayoutPlan plan, Map map, Faction faction)
+        {
+            ModExtension_VaultTunnels tunnels = Def.GetModExtension<ModExtension_VaultTunnels>();
+            if (tunnels == null) return;
+
+            Faction defenders = faction ?? VaultRoomUtility.DefenderFaction;
+            int substations = VaultMaintenanceTunnels.Spawn(layout, plan, map, defenders, tunnels, Def.wallDef, Def.terrainDef);
+
+            LayoutRoom corridor = layout.Rooms.FirstOrDefault(r => r.requiredDef == Def.corridorDef);
+            if (substations == 0)
+            {
+                Log.Warning("[DMS] No maintenance tunnel could be dug; hanging the substation on the corridor wall instead.");
+                VaultMaintenanceTunnels.SpawnCorridorSubstation(map, corridor, tunnels.substationDef, tunnels.conduitDef, defenders);
+            }
+
+            List<CellRect> corridorInteriors = corridor?.rects.Select(r => r.ContractedBy(1)).ToList() ?? new List<CellRect>();
+            foreach (LayoutRoom room in layout.Rooms)
+            {
+                if (room.defs != null && room.defs.Any(d => d.roomContentsWorkerType == typeof(RoomContents_ArchiveServerHall)))
+                {
+                    RoomContents_ArchiveServerHall.ConnectPower(map, room, corridorInteriors, defenders);
+                }
+            }
         }
 
         /// <summary>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 設施增援的警報回應勤務（由 DMS.LordJob_AlarmResponse 分派，焦點 = 崗位）。
+       1. 看得到的敵人才打：needLOSToAcquireNonPawnTargets 讓建築、砲塔也要有視線（pawn 原版就要），
+          不會像 AssaultColony 那樣知道殖民者在哪一路找過去。chaseTarget：已經看到的目標躲到掩體後，
+          仍會追一小段（原版約 400 tick 沒重新鎖定就放掉）。
+       2. 還沒到崗位就往崗位走（警報位置；警報當下走不到的話就是原地）。
+       3. 到了就在附近徘徊待命。
+       Alarm-response duty for facility reinforcements (assigned by DMS.LordJob_AlarmResponse; focus = post).
+       1. Only fights what it can see: needLOSToAcquireNonPawnTargets extends vanilla's pawn LOS check to
+          buildings and turrets, so it never homes in on colonists the way AssaultColony does. chaseTarget:
+          a target it has already seen that ducks behind cover is still pursued briefly (vanilla drops it
+          after ~400 ticks without re-acquiring).
+       2. Otherwise heads for its post (the alarm's position, or where it stood if that was unreachable).
+       3. Once there, wanders nearby on watch. -->
+  <DutyDef>
+    <defName>DMS_AlarmResponse</defName>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_AIFightEnemies">
+          <targetAcquireRadius>40</targetAcquireRadius>
+          <targetKeepRadius>50</targetKeepRadius>
+          <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+          <chaseTarget>true</chaseTarget>
+        </li>
+        <li Class="DMS.JobGiver_GotoAlarmPost">
+          <arriveRadius>6</arriveRadius>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <expiryInterval>120</expiryInterval>
+        </li>
+        <li Class="JobGiver_WanderNearDutyLocation">
+          <wanderRadius>5</wanderRadius>
+          <ticksBetweenWandersRange>60~120</ticksBetweenWandersRange>
+          <expiryInterval>90</expiryInterval>
+          <maxDanger>Deadly</maxDanger>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+</Defs>

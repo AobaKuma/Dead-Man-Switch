@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -55,15 +56,21 @@ namespace DMS
                     SpawnStrip(map, room, seg);
                     SpawnCheckpoints(map, seg, defenders);
                     SpawnCameras(map, seg, defenders);
+                    SpawnCornerTurrets(map, seg, defenders);
                 }
 
                 // 各段的電纜在路口相接，整條走廊共用一座配電盤就夠；長的那段優先。
+                // 配電盤改放檢修通道時（wallSubstation = false）由 DMS_LayoutWorker_Vault 處理。
                 // The strips join at the junctions, so one substation serves the whole corridor;
-                // try the longest segment first.
-                segments.SortByDescending(seg => seg.Length);
-                foreach (Segment seg in segments)
+                // try the longest segment first. With wallSubstation off, DMS_LayoutWorker_Vault puts
+                // it in a maintenance tunnel instead.
+                if (ext.wallSubstation)
                 {
-                    if (TrySpawnSubstation(map, seg, defenders)) break;
+                    segments.SortByDescending(seg => seg.Length);
+                    foreach (Segment seg in segments)
+                    {
+                        if (TrySpawnSubstation(map, seg, defenders)) break;
+                    }
                 }
             }
 
@@ -108,13 +115,22 @@ namespace DMS
 
         /// <summary>
         /// 沿中線鋪電纜，並往兩端延伸到走廊房間的邊界為止：T 字的直段這樣才會穿過橫段的中線，
-        /// 兩段的電網才接得起來。
+        /// 兩段的電網才接得起來。conduitAlongWalls 時改壓在整圈牆線下。
         /// Lays conduit along the centre line and keeps going past the rect until it leaves the
         /// corridor room, so a T-junction's stem crosses the bar's centre line and the grids join.
+        /// With conduitAlongWalls it goes under the whole wall ring instead.
         /// </summary>
         private void SpawnStrip(Map map, LayoutRoom room, Segment seg)
         {
             if (ext.conduitDef == null) return;
+
+            // 沿牆：整圈牆線（含路口那條線，之後的閘門會蓋在上面）。
+            // Along the walls: the whole wall ring, junction lines included (the gates go on top of them later).
+            if (ext.conduitAlongWalls)
+            {
+                foreach (IntVec3 cell in seg.Rect.EdgeCells) SpawnConduit(map, cell);
+                return;
+            }
 
             for (int along = 0; along < seg.Length; along++)
             {
@@ -204,21 +220,14 @@ namespace DMS
                 }
             }
 
-            // 前後砲塔，坐在中線電纜上；有機率是壞的。
-            // Turrets fore and aft on the strip conduit; some of them are wrecks.
-            if (ext.turretDef != null)
+            // 前後砲塔，坐在中線電纜上；有機率是壞的。checkpointTurrets 關掉時砲塔改放走廊角落。
+            // Turrets fore and aft on the strip conduit; some of them are wrecks. With checkpointTurrets off they go in
+            // the corridor corners instead.
+            if (ext.turretDef != null && ext.checkpointTurrets)
             {
                 for (int a = -1; a <= 1; a += 2)
                 {
-                    IntVec3 cell = seg.Cell(along + a, 0);
-                    if (ext.wreckedTurretDef != null && Rand.Chance(ext.turretWreckChance))
-                    {
-                        // 報廢品不掛防務陣營，玩家可以直接拆。Wrecks are factionless so the player can just clear them.
-                        GenSpawn.Spawn(ThingMaker.MakeThing(ext.wreckedTurretDef), cell, map, Rot4.North);
-                        continue;
-                    }
-
-                    VaultRoomUtility.SpawnSecurity(ext.turretDef, cell, map, Rot4.North, faction, ext.initialBatteryPct);
+                    SpawnTurret(map, seg.Cell(along + a, 0), faction);
                 }
             }
 
@@ -241,6 +250,84 @@ namespace DMS
                     VaultRoomUtility.SpawnSecurity(ext.nestDef, cell, map, Rot4.North, faction, ext.initialBatteryPct);
                 }
             }
+
+            // 毒氣釋放口：哨站前後 3~5 格的中線上，玩家推進到哨站時正好噴在接近路線上。
+            // Gas vents on the centre line 3~5 cells before and after the checkpoint, right on the approach.
+            if (ext.gasVentDef != null)
+            {
+                for (int dir = -1; dir <= 1; dir += 2)
+                {
+                    if (!Rand.Chance(ext.gasVentChance)) continue;
+                    IntVec3 cell = seg.Cell(along + dir * Rand.RangeInclusive(3, 5), 0);
+                    if (!seg.Interior.Contains(cell) || cell.GetEdifice(map) != null) continue;
+                    if (cell.GetFirstThing(map, ext.gasVentDef) != null) continue;
+                    VaultRoomUtility.SpawnSecurity(ext.gasVentDef, cell, map, Rot4.North, faction, ext.initialBatteryPct);
+                }
+            }
+        }
+
+        /// <summary>放一座砲塔；有機率換成報廢品。Spawns a turret, or sometimes a wreck.</summary>
+        private void SpawnTurret(Map map, IntVec3 cell, Faction faction)
+        {
+            if (ext.wreckedTurretDef != null && Rand.Chance(ext.turretWreckChance))
+            {
+                // 報廢品不掛防務陣營，玩家可以直接拆。Wrecks are factionless so the player can just clear them.
+                GenSpawn.Spawn(ThingMaker.MakeThing(ext.wreckedTurretDef), cell, map, Rot4.North);
+                return;
+            }
+            VaultRoomUtility.SpawnSecurity(ext.turretDef, cell, map, Rot4.North, faction, ext.initialBatteryPct);
+        }
+
+        // ── 角落砲塔 / Corner turrets ────────────────────────────────────────
+
+        /// <summary>
+        /// 走廊矩形的四個內角中，兩面都是實牆的（死巷、樞紐臂末端；路口那側還開著所以不算）才放，
+        /// 每個各擲一次 cornerTurretChance，每段最多 maxCornerTurretsPerRect 座；門旁邊不放，免得堵住門。
+        /// 角落離中線電纜不超過半個走廊寬，砲塔會自己接上電網。
+        /// Of a corridor rect's four inside corners, only those walled on both sides count (dead ends, hub arm ends;
+        /// a junction side is still open). Each rolls cornerTurretChance, up to maxCornerTurretsPerRect per rect, and
+        /// none goes beside a door where it would block it. A corner is at most half a corridor from the strip, so the
+        /// turret connects to the grid on its own.
+        /// </summary>
+        private void SpawnCornerTurrets(Map map, Segment seg, Faction faction)
+        {
+            if (ext.turretDef == null || ext.cornerTurretChance <= 0f || ext.maxCornerTurretsPerRect <= 0) return;
+
+            CellRect interior = seg.Interior;
+            IntVec3[] corners =
+            {
+                new IntVec3(interior.minX, 0, interior.minZ),
+                new IntVec3(interior.minX, 0, interior.maxZ),
+                new IntVec3(interior.maxX, 0, interior.minZ),
+                new IntVec3(interior.maxX, 0, interior.maxZ),
+            };
+
+            int placed = 0;
+            foreach (IntVec3 corner in corners.InRandomOrder())
+            {
+                if (placed >= ext.maxCornerTurretsPerRect) break;
+                if (!corner.InBounds(map) || !IsWalledCorner(map, corner, interior)) continue;
+                if (!VaultRoomUtility.IsClearFloor(map, corner)) continue;
+                if (GenAdj.CardinalDirections.Any(d => (corner + d).InBounds(map) && (corner + d).GetEdifice(map) is Building_Door)) continue;
+                if (!Rand.Chance(ext.cornerTurretChance)) continue;
+
+                SpawnTurret(map, corner, faction);
+                placed++;
+            }
+        }
+
+        private static bool IsWalledCorner(Map map, IntVec3 corner, CellRect interior)
+        {
+            IntVec3 dx = corner.x == interior.minX ? IntVec3.West : IntVec3.East;
+            IntVec3 dz = corner.z == interior.minZ ? IntVec3.South : IntVec3.North;
+            return IsSolidWall(map, corner + dx) && IsSolidWall(map, corner + dz);
+        }
+
+        private static bool IsSolidWall(Map map, IntVec3 cell)
+        {
+            if (!cell.InBounds(map)) return false;
+            Building edifice = cell.GetEdifice(map);
+            return edifice != null && !edifice.def.IsDoor && edifice.def.Fillage == FillCategory.Full;
         }
 
         // ── 供電 / Substation ───────────────────────────────────────────────
@@ -260,9 +347,9 @@ namespace DMS
                 IntVec3 cell = seg.Cell(along, sign * seg.HalfWidth);
                 Rot4 rot = sign > 0 ? seg.Side : seg.Side.Opposite;
 
-                if (!CanAttachToWall(map, cell, rot, seg.WallCell(along, sign))) continue;
+                if (!VaultRoomUtility.CanAttachToWall(map, cell, rot, seg.WallCell(along, sign))) continue;
 
-                if (ext.conduitDef != null)
+                if (ext.conduitDef != null && !ext.conduitAlongWalls)
                 {
                     for (int s = 1; s < seg.HalfWidth; s++)
                     {
@@ -300,9 +387,9 @@ namespace DMS
                     {
                         IntVec3 cell = seg.Cell(along, sign * s);
                         IntVec3 wall = cell + rot.FacingCell;
-                        if (!CanAttachToWall(map, cell, rot, wall)) continue;
+                        if (!VaultRoomUtility.CanAttachToWall(map, cell, rot, wall)) continue;
 
-                        if (ext.conduitDef != null && s != 0)
+                        if (ext.conduitDef != null && !ext.conduitAlongWalls && s != 0)
                         {
                             SpawnConduit(map, cell);
                         }
@@ -314,32 +401,6 @@ namespace DMS
 
             NextEnd: ;
             }
-        }
-
-        /// <summary>
-        /// 比照 Placeworker_AttachedToWall：面向的那格要是實牆（非門），本格不能已有同向的壁掛物。
-        /// Mirrors Placeworker_AttachedToWall: the faced cell must be solid, doorless wall, and nothing
-        /// may already hang on this cell facing the same way.
-        /// </summary>
-        private static bool CanAttachToWall(Map map, IntVec3 cell, Rot4 rot, IntVec3 wall)
-        {
-            if (!cell.InBounds(map) || !wall.InBounds(map)) return false;
-
-            Building edifice = wall.GetEdifice(map);
-            if (edifice == null || edifice.def.IsDoor || edifice.def.Fillage != FillCategory.Full) return false;
-
-            if (cell.GetEdifice(map) != null) return false;
-
-            List<Thing> things = cell.GetThingList(map);
-            for (int i = 0; i < things.Count; i++)
-            {
-                if (things[i].def.building != null && things[i].def.building.isAttachment && things[i].Rotation == rot)
-                {
-                    return false;
-                }
-            }
-
-            return true;
         }
     }
 }
