@@ -68,6 +68,15 @@ namespace DMS
         /// <summary>整張地圖一個網路都沒長出來時，仍在最長的走廊旁挖一段檢修迴路放配電盤。
         /// If no network grew anywhere, still dig a service loop off the longest corridor to hold the substation.</summary>
         public bool standaloneWhenNoEquipment = true;
+
+        /// <summary>
+        /// 跨分區連通：所有網路規劃好之後，每個網路有這個機率再挖一段管道接到離它最近、還沒連在一起的別的分區網路。
+        /// 連通後就多了一條繞過分區閘門的路（兩頭仍要打破通風口才進得去），電網也跟著相連。0 = 各分區的管道互不相通。
+        /// Cross-sector links: once every network is planned, each has this chance of one more duct to the nearest
+        /// network of another sector it isn't already joined to. That adds a way round the sector gates (still behind
+        /// breakable vents at either end) and joins the power too. 0 = sectors' tunnels never meet.
+        /// </summary>
+        public float crossSectorChance = 0f;
     }
 
     /// <summary>
@@ -75,8 +84,9 @@ namespace DMS
     /// 串起來，再在一兩處接回該分區的主走廊，並延伸出一間只能從管道進入的密室。每個開口都是通風口（原版 Vent），
     /// 要打破或拆掉才進得去。配電盤掛在密室裡，電纜沿管道穿過開口接到走廊中線，整條走廊的電都從這裡來。
     ///
-    /// 管道只接同一分區：房間的分區由它的門通往哪段走廊決定，網路只開口到那段走廊；不同分區的管道與密室彼此至少
-    /// 隔一道牆，不碰天然洞穴，也不貼著既有的門，所以不會多出繞過分區閘門或密封門的路。
+    /// 每個網路只開口到同一分區：房間的分區由它的門通往哪段走廊決定，網路只開口到那段走廊；不同分區的管道與密室
+    /// 彼此至少隔一道牆，不碰天然洞穴，也不貼著既有的門。只有 crossSectorChance 大於 0 時，才會在規劃完之後
+    /// 另外挖連接管道把不同分區的網路接起來（見 LinkAcrossSectors）。
     ///
     /// Maintenance tunnels: 1-wide, walled ducts dug through the rock outside the structure, linking a sector's
     /// equipment rooms (always) and other ordinary rooms (by chance), opening back onto that sector's corridor in one
@@ -84,10 +94,10 @@ namespace DMS
     /// Vent) that has to be broken or deconstructed to get through. The substation hangs in the secret room and its
     /// conduit runs through an opening to the corridor strip, so it powers the corridor.
     ///
-    /// Tunnels stay inside one sector: a room's sector is the corridor its doors open onto, and its network only opens
-    /// onto that corridor. Different sectors' tunnels and secret rooms keep at least a wall between them, never breach
-    /// a natural cave and never sit against an existing door, so they add no way around the sector gates or sealed
-    /// doors.
+    /// Each network opens onto one sector only: a room's sector is the corridor its doors open onto, and its network only
+    /// opens onto that corridor. Different sectors' tunnels and secret rooms keep at least a wall between them, never
+    /// breach a natural cave and never sit against an existing door. Only with crossSectorChance above 0 are link ducts
+    /// dug afterwards to join different sectors' networks (see LinkAcrossSectors).
     /// </summary>
     public static class VaultMaintenanceTunnels
     {
@@ -161,6 +171,12 @@ namespace DMS
                     foreach (IntVec3 cell in rect) ctx.structure.Add(cell);
                 }
             }
+            // 走廊嵌入結構不是版面房間，但一樣是結構的一部分，管道不能挖穿。
+            // Corridor embeds aren't layout rooms but are just as much structure; ducts mustn't dig through them.
+            foreach (VaultLayoutPlan.Embed embed in plan.embeds)
+            {
+                foreach (IntVec3 cell in embed.rect) ctx.structure.Add(cell);
+            }
 
             List<Network> networks = new List<Network>();
 
@@ -169,7 +185,7 @@ namespace DMS
             Dictionary<int, List<LayoutRoom>> others = new Dictionary<int, List<LayoutRoom>>();
             foreach (LayoutRoom room in layout.Rooms)
             {
-                if (IsOffLimits(room)) continue;
+                if (VaultRoomUtility.IsOffLimits(room)) continue;
                 int sector = HomeSector(ctx, layout, room);
                 if (sector < 0) continue;
 
@@ -204,6 +220,8 @@ namespace DMS
                 }
             }
 
+            if (ext.crossSectorChance > 0f) LinkAcrossSectors(ctx, networks);
+
             int substations = 0;
             foreach (Network net in networks)
             {
@@ -213,24 +231,6 @@ namespace DMS
         }
 
         // ── 分區 / Sectors ──────────────────────────────────────────────────
-
-        /// <summary>走廊、獎勵房（含伺服機房）與電梯廳不接管道。Corridors, treasuries (server halls included) and the lift lobby never get ducts.</summary>
-        private static bool IsOffLimits(LayoutRoom room)
-        {
-            if (room.defs.NullOrEmpty()) return true;
-            foreach (LayoutRoomDef def in room.defs)
-            {
-                System.Type worker = def.roomContentsWorkerType;
-                if (worker == null) continue;
-                if (typeof(RoomContents_Corridor).IsAssignableFrom(worker)
-                    || VaultTreasuryUtility.IsTreasuryWorker(worker)
-                    || worker == typeof(RoomContents_VaultEntrance))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
 
         private static int SectorOf(Context ctx, IntVec3 cell)
         {
@@ -332,6 +332,66 @@ namespace DMS
                 return null;
             }
             return net;
+        }
+
+        /// <summary>
+        /// 跨分區連通：網路依隨機順序各擲一次 crossSectorChance，中了就挖一段管道接到離它最近、還沒連在一起的別的分區網路
+        /// （用併查集記錄誰已經連通，免得繞出多餘的迴圈）。連接管道只把這兩個分區當成自己人，旁邊碰到第三個分區仍然不行；
+        /// 新挖的格子算在發起的網路名下，生成時跟它一起挖、砌牆、鋪電纜。
+        /// Cross-sector links: networks roll crossSectorChance in random order; a hit digs one duct to the nearest network
+        /// of another sector not already joined to it (a union-find tracks who is joined, so no redundant loops). The link
+        /// only treats those two sectors as its own and still keeps clear of any third one; its new cells belong to the
+        /// network that started it and are dug, walled and wired with it.
+        /// </summary>
+        private static void LinkAcrossSectors(Context ctx, List<Network> networks)
+        {
+            if (networks.Count < 2) return;
+            int[] group = Enumerable.Range(0, networks.Count).ToArray();
+            int Find(int i) => group[i] == i ? i : group[i] = Find(group[i]);
+
+            foreach (int i in Enumerable.Range(0, networks.Count).InRandomOrder().ToList())
+            {
+                if (!Rand.Chance(ctx.ext.crossSectorChance)) continue;
+                Network a = networks[i];
+                Vector3 centre = Centre(a);
+
+                List<int> candidates = Enumerable.Range(0, networks.Count)
+                    .Where(j => Find(j) != Find(i) && networks[j].sector != a.sector)
+                    .OrderBy(j => (Centre(networks[j]) - centre).sqrMagnitude)
+                    .ToList();
+                foreach (int j in candidates)
+                {
+                    if (!TryLink(ctx, a, networks[j])) continue;
+                    group[Find(j)] = Find(i);
+                    break;
+                }
+            }
+        }
+
+        private static Vector3 Centre(Network net)
+        {
+            Vector3 centre = Vector3.zero;
+            foreach (IntVec3 c in net.cells) centre += c.ToVector3Shifted();
+            return net.cells.Count > 0 ? centre / net.cells.Count : centre;
+        }
+
+        /// <summary>從 a 的管道挖到 b 的管道。Digs a duct from a's tunnel into b's.</summary>
+        private static bool TryLink(Context ctx, Network a, Network b)
+        {
+            Dictionary<IntVec3, Site> goals = new Dictionary<IntVec3, Site>();
+            foreach (IntVec3 c in b.cells) goals[c] = null;
+            if (a.cells.Count == 0 || goals.Count == 0) return false;
+
+            List<IntVec3> path = FindPath(ctx, a.sector, a.cells, goals, out _, b.sector);
+            if (path == null) return false;
+
+            foreach (IntVec3 c in path)
+            {
+                if (ctx.owner.ContainsKey(c)) continue;
+                ctx.owner[c] = a.sector;
+                a.cells.Add(c);
+            }
+            return true;
         }
 
         /// <summary>配電盤的位置：優先密室，挖不下才用管道壁龕。Where the substation goes: a secret room, else a niche off the tunnel.</summary>
@@ -450,7 +510,7 @@ namespace DMS
             Map map = ctx.map;
             foreach (IntVec3 c in rect)
             {
-                if (c.x < MapMargin || c.z < MapMargin || c.x >= map.Size.x - MapMargin || c.z >= map.Size.z - MapMargin) return false;
+                if (!InsideMargin(map, c)) return false;
                 if (ctx.structure.Contains(c) || ctx.owner.ContainsKey(c) || ctx.reserved.ContainsKey(c)) return false;
                 if (!IsNaturalRock(map, c)) return false;
             }
@@ -470,13 +530,10 @@ namespace DMS
         private static bool TryPlanNiche(Context ctx, Network net)
         {
             HashSet<IntVec3> hatchOuters = new HashSet<IntVec3>(net.hatches.Select(h => h.outer));
-            Vector3 centre = Vector3.zero;
-            foreach (IntVec3 c in net.cells) centre += c.ToVector3Shifted();
-            centre /= net.cells.Count;
-
+            Vector3 centre = Centre(net);
             foreach (IntVec3 t in net.cells.Where(c => !hatchOuters.Contains(c)).OrderBy(c => (c.ToVector3Shifted() - centre).sqrMagnitude))
             {
-                foreach (Rot4 rot in new[] { Rot4.North, Rot4.East, Rot4.South, Rot4.West }.InRandomOrder())
+                foreach (Rot4 rot in Rot4.AllRotations.InRandomOrder())
                 {
                     IntVec3 n = t + rot.FacingCell;
                     if (ctx.owner.ContainsKey(n) || !CanCarve(ctx, n, net.sector)) continue;
@@ -552,10 +609,10 @@ namespace DMS
                     IntVec3 inner = wall - dir;
                     IntVec3 outer = wall + dir;
                     if (!innerOk(inner) || !VaultRoomUtility.IsClearFloor(ctx.map, inner)) continue;
-                    if (ctx.structure.Contains(outer) || !IsSolidWall(ctx.map, wall)) continue;
+                    if (ctx.structure.Contains(outer) || !VaultRoomUtility.IsSolidWall(ctx.map, wall)) continue;
 
                     IntVec3 along = new IntVec3(dir.z, 0, dir.x);
-                    if (!IsSolidWall(ctx.map, wall + along) || !IsSolidWall(ctx.map, wall - along)) continue;
+                    if (!VaultRoomUtility.IsSolidWall(ctx.map, wall + along) || !VaultRoomUtility.IsSolidWall(ctx.map, wall - along)) continue;
                     if (AnyDoorNear(ctx.map, wall, HatchClearance)) continue;
                     if (!CanCarve(ctx, outer, sector)) continue;
 
@@ -563,13 +620,6 @@ namespace DMS
                 }
             }
             return sites;
-        }
-
-        private static bool IsSolidWall(Map map, IntVec3 cell)
-        {
-            if (!cell.InBounds(map)) return false;
-            Building edifice = cell.GetEdifice(map);
-            return edifice != null && !edifice.def.IsDoor && edifice.def.Fillage == FillCategory.Full;
         }
 
         private static bool AnyDoorNear(Map map, IntVec3 cell, int radius)
@@ -589,13 +639,14 @@ namespace DMS
         /// Whether a tunnel may go here: outside the structure, in natural rock; the eight neighbours may only be
         /// rock, structure, or this sector's tunnel, and no cardinal neighbour may be a structure door. That keeps
         /// tunnels out of natural caves, away from other sectors, and from gaining a door they weren't given.
+        /// alsoSector（跨分區連接管道用）也算自己人。alsoSector (for cross-sector link ducts) counts as its own too.
         /// </summary>
-        private static bool CanCarve(Context ctx, IntVec3 cell, int sector)
+        private static bool CanCarve(Context ctx, IntVec3 cell, int sector, int alsoSector = -1)
         {
             Map map = ctx.map;
-            if (cell.x < MapMargin || cell.z < MapMargin || cell.x >= map.Size.x - MapMargin || cell.z >= map.Size.z - MapMargin) return false;
+            if (!InsideMargin(map, cell)) return false;
             if (ctx.structure.Contains(cell) || ctx.reserved.ContainsKey(cell)) return false;
-            if (ctx.owner.TryGetValue(cell, out int own)) return own == sector;
+            if (ctx.owner.TryGetValue(cell, out int own)) return own == sector || own == alsoSector;
             if (!IsNaturalRock(map, cell)) return false;
 
             for (int i = 0; i < 8; i++)
@@ -604,7 +655,7 @@ namespace DMS
                 if (!n.InBounds(map)) return false;
                 if (ctx.owner.TryGetValue(n, out int other) || ctx.reserved.TryGetValue(n, out other))
                 {
-                    if (other != sector) return false;
+                    if (other != sector && other != alsoSector) return false;
                     continue;
                 }
                 if (ctx.structure.Contains(n))
@@ -615,6 +666,11 @@ namespace DMS
                 if (!IsNaturalRock(map, n)) return false;
             }
             return true;
+        }
+
+        private static bool InsideMargin(Map map, IntVec3 c)
+        {
+            return c.x >= MapMargin && c.z >= MapMargin && c.x < map.Size.x - MapMargin && c.z < map.Size.z - MapMargin;
         }
 
         private static bool IsNaturalRock(Map map, IntVec3 cell)
@@ -638,7 +694,8 @@ namespace DMS
         private static readonly NodeComparer Comparer = new NodeComparer();
 
         /// <summary>多起點 Dijkstra（含轉彎成本與長度上限），回傳起點到終點的格子序列。Multi-source Dijkstra with turn cost and a length cap.</summary>
-        private static List<IntVec3> FindPath(Context ctx, int sector, IEnumerable<IntVec3> sources, Dictionary<IntVec3, Site> goals, out IntVec3 origin)
+        private static List<IntVec3> FindPath(Context ctx, int sector, IEnumerable<IntVec3> sources, Dictionary<IntVec3, Site> goals, out IntVec3 origin,
+            int alsoSector = -1)
         {
             origin = IntVec3.Invalid;
             Dictionary<IntVec3, int> cost = new Dictionary<IntVec3, int>();
@@ -680,7 +737,7 @@ namespace DMS
                 foreach (IntVec3 d in GenAdj.CardinalDirections)
                 {
                     IntVec3 next = cur + d;
-                    if (!CanCarve(ctx, next, sector)) continue;
+                    if (!CanCarve(ctx, next, sector, alsoSector)) continue;
 
                     int step = StepCost + (inDir.IsValid && d != inDir ? TurnCost : 0);
                     int nc = node.cost + step;
@@ -707,13 +764,12 @@ namespace DMS
             // 挖開並鋪地板。Dig out and floor.
             foreach (IntVec3 cell in carved)
             {
-                cell.GetEdifice(map)?.Destroy(DestroyMode.Vanish);
+                VaultRoomUtility.RemoveEdifice(map, cell);
                 map.terrainGrid.SetTerrain(cell, ctx.floorDef);
             }
 
             // 兩側砌牆（岩層換成設施牆）；密室的格子由密室自己處理。
             // Line with the facility's wall in place of the rock; the secret room's cells are its own business.
-            ThingDef wallStuff = ctx.wallDef.MadeFromStuff ? GenStuff.DefaultStuffFor(ctx.wallDef) : null;
             foreach (IntVec3 cell in carved)
             {
                 for (int i = 0; i < 8; i++)
@@ -721,7 +777,7 @@ namespace DMS
                     IntVec3 n = cell + GenAdj.AdjacentCells[i];
                     if (!n.InBounds(map) || ctx.structure.Contains(n) || ctx.owner.ContainsKey(n) || ctx.reserved.ContainsKey(n)) continue;
                     if (n.GetEdifice(map)?.def == ctx.wallDef) continue;
-                    GenSpawn.Spawn(ThingMaker.MakeThing(ctx.wallDef, wallStuff), n, map, WipeMode.Vanish);
+                    GenSpawn.Spawn(VaultRoomUtility.MakeThing(ctx.wallDef), n, map, WipeMode.Vanish);
                 }
             }
 
@@ -735,7 +791,7 @@ namespace DMS
             IntVec3 substationCell = IntVec3.Invalid;
             if (!net.secretRoom.IsEmpty)
             {
-                substationCell = SpawnSecretRoom(ctx, net, wallStuff, faction);
+                substationCell = SpawnSecretRoom(ctx, net, faction);
             }
             else if (net.niche.IsValid && ctx.ext.substationDef != null)
             {
@@ -780,18 +836,10 @@ namespace DMS
         {
             Map map = ctx.map;
             ThingDef def = ctx.ext.hatchDef ?? ThingDefOf.Door;
-            ThingDef stuff = def.MadeFromStuff ? ctx.ext.hatchStuff ?? GenStuff.DefaultStuffFor(def) : null;
-            Thing.allowDestroyNonDestroyable = true;
-            try
-            {
-                cell.GetEdifice(map)?.Destroy(DestroyMode.Vanish);
-            }
-            finally
-            {
-                Thing.allowDestroyNonDestroyable = false;
-            }
+            // 開口常開在走廊或房間的牆上，那面牆上的燈與配電盤要留著。Openings often cut a corridor or room wall; keep what hangs on it.
+            VaultRoomUtility.RemoveEdifice(map, cell);
             Rot4 rot = def.IsDoor ? Rot4.North : Rot4.FromIntVec3(dir);
-            GenSpawn.Spawn(ThingMaker.MakeThing(def, stuff), cell, map, rot, WipeMode.Vanish);
+            GenSpawn.Spawn(VaultRoomUtility.MakeThing(def, ctx.ext.hatchStuff), cell, map, rot, WipeMode.Vanish);
         }
 
         /// <summary>
@@ -799,7 +847,7 @@ namespace DMS
         /// Digs the secret room, walls it, opens its vent and hangs the substation on an inner wall (not the cell right
         /// inside the vent). Returns the substation's cell, or Invalid.
         /// </summary>
-        private static IntVec3 SpawnSecretRoom(Context ctx, Network net, ThingDef wallStuff, Faction faction)
+        private static IntVec3 SpawnSecretRoom(Context ctx, Network net, Faction faction)
         {
             Map map = ctx.map;
             CellRect rect = net.secretRoom;
@@ -807,38 +855,25 @@ namespace DMS
 
             foreach (IntVec3 cell in interior)
             {
-                cell.GetEdifice(map)?.Destroy(DestroyMode.Vanish);
+                VaultRoomUtility.RemoveEdifice(map, cell);
                 map.terrainGrid.SetTerrain(cell, ctx.floorDef);
             }
             foreach (IntVec3 cell in rect.EdgeCells)
             {
                 if (cell == net.secretVent || !cell.InBounds(map)) continue;
-                GenSpawn.Spawn(ThingMaker.MakeThing(ctx.wallDef, wallStuff), cell, map, WipeMode.Vanish);
+                GenSpawn.Spawn(VaultRoomUtility.MakeThing(ctx.wallDef), cell, map, WipeMode.Vanish);
             }
             SpawnOpening(ctx, net.secretVent, net.secretDir);
 
             if (ctx.ext.substationDef == null) return IntVec3.Invalid;
             IntVec3 entry = net.secretVent + net.secretDir;
-            IntVec3 substation = IntVec3.Invalid;
-            IntVec3 interaction = IntVec3.Invalid;
-            foreach (IntVec3 cell in interior.EdgeCells.InRandomOrder())
+            if (!TryFindWallMount(map, interior, Rot4.AllRotations,
+                    (cell, rot) => cell != entry && cell + rot.FacingCell != net.secretVent, out IntVec3 substation, out Rot4 substationRot))
             {
-                if (cell == entry || !VaultRoomUtility.IsClearFloor(map, cell)) continue;
-                foreach (Rot4 rot in new[] { Rot4.North, Rot4.East, Rot4.South, Rot4.West })
-                {
-                    IntVec3 wall = cell + rot.FacingCell;
-                    IntVec3 front = cell - rot.FacingCell;
-                    if (interior.Contains(wall) || wall == net.secretVent || !interior.Contains(front) || !front.Standable(map)) continue;
-                    if (!VaultRoomUtility.CanAttachToWall(map, cell, rot, wall)) continue;
-
-                    VaultRoomUtility.SpawnSecurity(ctx.ext.substationDef, cell, map, rot, faction);
-                    substation = cell;
-                    interaction = front;
-                    break;
-                }
-                if (substation.IsValid) break;
+                return IntVec3.Invalid;
             }
-            if (!substation.IsValid) return IntVec3.Invalid;
+            VaultRoomUtility.SpawnSecurity(ctx.ext.substationDef, substation, map, substationRot, faction);
+            IntVec3 interaction = substation - substationRot.FacingCell;
 
             // 靠牆擺設施，通風口內側與配電盤互動格留空。Fixtures against the walls, leaving the vent's inside cell and the substation's interaction cell clear.
             HashSet<IntVec3> keepClear = new HashSet<IntVec3> { entry, interaction };
@@ -863,26 +898,21 @@ namespace DMS
         {
             foreach (IntVec3 cell in interior.Cells.InRandomOrder())
             {
-                foreach (Rot4 rot in new[] { Rot4.North, Rot4.East, Rot4.South, Rot4.West }.InRandomOrder())
+                foreach (Rot4 rot in Rot4.AllRotations.InRandomOrder())
                 {
                     CellRect rect = GenAdj.OccupiedRect(cell, rot, def.Size);
                     if (!rect.FullyContainedWithin(interior)) continue;
                     if (rect.GetEdgeCells(rot).Any(c => interior.Contains(c + rot.FacingCell))) continue;
                     if (rect.Cells.Any(c => keepClear.Contains(c) || !VaultRoomUtility.IsClearFloor(map, c))) continue;
 
-                    Thing thing = ThingMaker.MakeThing(def, def.MadeFromStuff ? GenStuff.DefaultStuffFor(def) : null);
-                    GenSpawn.Spawn(thing, cell, map, rot, WipeMode.Vanish);
+                    GenSpawn.Spawn(VaultRoomUtility.MakeThing(def), cell, map, rot, WipeMode.Vanish);
                     return true;
                 }
             }
             return false;
         }
 
-        private static void SpawnConduit(Context ctx, IntVec3 cell)
-        {
-            if (!cell.InBounds(ctx.map) || cell.GetTransmitter(ctx.map) != null) return;
-            GenSpawn.Spawn(ctx.ext.conduitDef, cell, ctx.map);
-        }
+        private static void SpawnConduit(Context ctx, IntVec3 cell) => VaultRoomUtility.TrySpawnConduit(ctx.map, ctx.ext.conduitDef, cell);
 
         // ── 備援 / Fallback ────────────────────────────────────────────────
 
@@ -899,24 +929,48 @@ namespace DMS
                 CellRect interior = rect.ContractedBy(1);
                 // 只掛長邊側牆，電纜往內直走才碰得到中線。Long side walls only, so the spur meets the strip.
                 Rot4[] rots = interior.Width >= interior.Height ? new[] { Rot4.North, Rot4.South } : new[] { Rot4.East, Rot4.West };
-                foreach (IntVec3 cell in interior.EdgeCells.InRandomOrder())
+                // 牆下已有走廊電纜就直接接上；否則拉一段到中線（接得上才鋪）。
+                // Wall conduit already there connects it; else a spur to the strip (only laid if it connects).
+                if (!TryFindWallMount(map, interior, rots,
+                        (cell, rot) => conduitDef == null || (cell + rot.FacingCell).GetTransmitter(map) != null
+                            || VaultRoomUtility.TryRunConduit(map, conduitDef, cell - rot.FacingCell, -rot.FacingCell, interior, cell),
+                        out IntVec3 mount, out Rot4 mountRot))
                 {
-                    if (!VaultRoomUtility.IsClearFloor(map, cell)) continue;
-                    foreach (Rot4 rot in rots)
-                    {
-                        IntVec3 wall = cell + rot.FacingCell;
-                        IntVec3 front = cell - rot.FacingCell;
-                        if (interior.Contains(wall) || !interior.Contains(front) || !front.Standable(map)) continue;
-                        if (!VaultRoomUtility.CanAttachToWall(map, cell, rot, wall)) continue;
-                        // 牆下已有走廊電纜就直接接上；否則拉一段到中線。Wall conduit already there connects it; else a spur to the strip.
-                        if (conduitDef != null && wall.GetTransmitter(map) == null
-                            && !VaultRoomUtility.TryRunConduit(map, conduitDef, front, -rot.FacingCell, interior, cell)) continue;
+                    continue;
+                }
+                VaultRoomUtility.SpawnSecurity(substationDef, mount, map, mountRot, faction);
+                return true;
+            }
+            return false;
+        }
 
-                        VaultRoomUtility.SpawnSecurity(substationDef, cell, map, rot, faction);
-                        return true;
-                    }
+        /// <summary>
+        /// 在 interior 內緣找一格掛壁掛物：朝 rots 之一面向一道實牆、正前方那格在房內且站得住，最後由 accept 決定
+        /// （accept 一回傳 true 就用這一格，所以它可以有副作用）。
+        /// Finds a cell on interior's inner edge to hang a wall attachment: facing a solid wall along one of rots, with
+        /// the cell in front inside and standable, and accept having the final say (the cell is used as soon as accept
+        /// returns true, so it may have side effects).
+        /// </summary>
+        private static bool TryFindWallMount(Map map, CellRect interior, IEnumerable<Rot4> rots, System.Func<IntVec3, Rot4, bool> accept,
+            out IntVec3 cell, out Rot4 rot)
+        {
+            foreach (IntVec3 c in interior.EdgeCells.InRandomOrder())
+            {
+                if (!VaultRoomUtility.IsClearFloor(map, c)) continue;
+                foreach (Rot4 r in rots)
+                {
+                    IntVec3 wall = c + r.FacingCell;
+                    IntVec3 front = c - r.FacingCell;
+                    if (interior.Contains(wall) || !interior.Contains(front) || !front.Standable(map)) continue;
+                    if (!VaultRoomUtility.CanAttachToWall(map, c, r, wall) || !accept(c, r)) continue;
+
+                    cell = c;
+                    rot = r;
+                    return true;
                 }
             }
+            cell = IntVec3.Invalid;
+            rot = Rot4.North;
             return false;
         }
     }

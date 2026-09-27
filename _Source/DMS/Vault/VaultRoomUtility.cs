@@ -60,7 +60,7 @@ namespace DMS
                 Thing item = items[items.Count - 1];
 
                 if (!room.TryGetRandomCellInRoom(map, out IntVec3 cell, 0, 0,
-                        (IntVec3 c) => ShelfValidator(map, c, item.def), ignoreBuildings: true))
+                        (IntVec3 c) => ShelfValidator(map, c), ignoreBuildings: true))
                 {
                     return false;
                 }
@@ -72,10 +72,22 @@ namespace DMS
             return true;
         }
 
-        private static bool ShelfValidator(Map map, IntVec3 c, ThingDef itemDef)
+        /// <summary>
+        /// 貨架格還放得下一疊。原版 Building_Storage.SpaceRemainingFor 正負號反了（已存數 − 容量，空貨架是負數），
+        /// 用它判斷會讓每座貨架都被當成滿的，所以自己按格數：這一格的物品疊數少於 maxItemsInCell 就還有位置。
+        /// A shelf cell with room for one more stack. Vanilla Building_Storage.SpaceRemainingFor has its sign flipped
+        /// (held − capacity, negative on an empty shelf), which reads every shelf as full, so count per cell instead:
+        /// fewer stacks than maxItemsInCell means there's room.
+        /// </summary>
+        private static bool ShelfValidator(Map map, IntVec3 c)
         {
             if (!(c.GetFirstThing(map, ThingDefOf.Shelf) is Building_Storage storage)) return false;
-            return storage.SpaceRemainingFor(itemDef) > 0;
+            int stacks = 0;
+            foreach (Thing t in c.GetThingList(map))
+            {
+                if (t.def.category == ThingCategory.Item) stacks++;
+            }
+            return stacks < storage.def.building.maxItemsInCell;
         }
 
         /// <summary>依 defName 取 ThingDef，缺了就記一次錯誤。Look up a ThingDef, warning once if absent.</summary>
@@ -165,13 +177,65 @@ namespace DMS
         public static Thing SpawnSecurity(ThingDef def, IntVec3 cell, Map map, Rot4 rot, Faction faction,
             float batteryPct = 1f, ThingDef stuff = null)
         {
-            Thing thing = ThingMaker.MakeThing(def, def.MadeFromStuff ? stuff ?? GenStuff.DefaultStuffFor(def) : null);
+            Thing thing = MakeThing(def, stuff);
             if (def.CanHaveFaction)
             {
                 thing.SetFactionDirect(faction ?? DefenderFaction);
             }
             ChargeInternalBattery(thing, batteryPct);
             return GenSpawn.Spawn(thing, cell, map, rot);
+        }
+
+        /// <summary>造一件東西；需要材質時用 stuff，沒給就用預設材質。Makes a thing, with stuff (or the default stuff) when it needs one.</summary>
+        public static Thing MakeThing(ThingDef def, ThingDef stuff = null)
+        {
+            return ThingMaker.MakeThing(def, def.MadeFromStuff ? stuff ?? GenStuff.DefaultStuffFor(def) : null);
+        }
+
+        /// <summary>這格還沒有輸電物就鋪一格電纜。Lays conduit on a cell that has no transmitter yet.</summary>
+        public static void TrySpawnConduit(Map map, ThingDef conduitDef, IntVec3 cell)
+        {
+            if (conduitDef == null || !cell.InBounds(map) || cell.GetTransmitter(map) != null) return;
+            GenSpawn.Spawn(conduitDef, cell, map);
+        }
+
+        // ── 房型 / Room kinds ────────────────────────────────────────────────
+
+        /// <summary>房間的某個房型用的是這個 worker。Whether one of the room's defs uses this contents worker.</summary>
+        public static bool HasWorker(LayoutRoom room, System.Type worker)
+        {
+            return room?.defs != null && room.defs.Any(d => d.roomContentsWorkerType == worker);
+        }
+
+        public static bool IsEntrance(LayoutRoom room) => HasWorker(room, typeof(RoomContents_VaultEntrance));
+
+        /// <summary>
+        /// 不放額外設施（檢修口、控制台、封鎖中控）的房間：沒有房型的、入口檢查點（太小又塞滿結構）、走廊、
+        /// 獎勵房（含伺服機房）、電梯廳（出生點）。
+        /// Rooms that take no extra fixtures (hatches, consoles, the lockdown controller): untyped rooms, entrance
+        /// checkpoints (small and full of their structure), corridors, treasuries (server halls included) and the lift
+        /// lobby (the spawn room).
+        /// </summary>
+        public static bool IsOffLimits(LayoutRoom room)
+        {
+            if (room.defs.NullOrEmpty() || VaultCheckpointUtility.IsCheckpoint(room)) return true;
+            return room.defs.Any(d =>
+            {
+                System.Type worker = d.roomContentsWorkerType;
+                return worker == typeof(RoomContents_VaultEntrance)
+                    || VaultTreasuryUtility.IsTreasuryWorker(worker)
+                    || (worker != null && typeof(RoomContents_Corridor).IsAssignableFrom(worker));
+            });
+        }
+
+        // ── 格子 / Cells ────────────────────────────────────────────────────
+
+        /// <summary>實心、不是門的建築（牆、岩石）。A full-fillage edifice that isn't a door (wall, rock).</summary>
+        public static bool IsSolidWall(Map map, IntVec3 cell)
+        {
+            if (!cell.InBounds(map)) return false;
+            Building edifice = cell.GetEdifice(map);
+            return edifice != null && !edifice.def.IsDoor && edifice.def.Fillage == FillCategory.Full;
         }
 
         /// <summary>矩形邊上某格往外的方向（牆角取 x 方向）。Outward direction from a rect edge cell (x wins at corners).</summary>
@@ -238,12 +302,7 @@ namespace DMS
         /// </summary>
         public static bool CanAttachToWall(Map map, IntVec3 cell, Rot4 rot, IntVec3 wall)
         {
-            if (!cell.InBounds(map) || !wall.InBounds(map)) return false;
-
-            Building edifice = wall.GetEdifice(map);
-            if (edifice == null || edifice.def.IsDoor || edifice.def.Fillage != FillCategory.Full) return false;
-
-            if (cell.GetEdifice(map) != null) return false;
+            if (!cell.InBounds(map) || !IsSolidWall(map, wall) || cell.GetEdifice(map) != null) return false;
 
             List<Thing> things = cell.GetThingList(map);
             for (int i = 0; i < things.Count; i++)
@@ -255,6 +314,64 @@ namespace DMS
             }
 
             return true;
+        }
+
+        // ── 壁掛物 / Wall attachments ────────────────────────────────────────
+
+        /// <summary>
+        /// 生成期間拆掉一格的建築（牆、門、岩石，含不可破壞的設施牆）。用 WillReplace：原版 Building.DeSpawn 在其他模式下
+        /// 會把掛在上面的燈、配電盤等打包成迷你化物品丟在地上；WillReplace 讓它們留在原地，由
+        /// <see cref="RemoveOrphanedAttachments"/> 在最後清掉真正沒牆可掛的。WillReplace 也不留資源、不標記屋頂坍塌。
+        /// Takes down whatever edifice is on a cell during generation (wall, door, rock, indestructible facility walls
+        /// included). Uses WillReplace: in any other mode vanilla Building.DeSpawn packs the lamps, substations and so on
+        /// hanging on it into minified items on the floor; WillReplace leaves them in place for
+        /// <see cref="RemoveOrphanedAttachments"/> to clear the ones really left without a wall. WillReplace also leaves
+        /// no resources and marks no roof collapse.
+        /// </summary>
+        public static void RemoveEdifice(Map map, IntVec3 cell)
+        {
+            Building edifice = cell.GetEdifice(map);
+            if (edifice != null) AllowingIndestructibleDestroy(() => edifice.Destroy(DestroyMode.WillReplace));
+        }
+
+        /// <summary>執行期間允許拆掉不可破壞的東西（設施牆等）。Runs action with indestructible things (facility walls, …) destroyable.</summary>
+        public static void AllowingIndestructibleDestroy(System.Action action)
+        {
+            bool allow = Thing.allowDestroyNonDestroyable;
+            Thing.allowDestroyNonDestroyable = true;
+            try
+            {
+                action();
+            }
+            finally
+            {
+                Thing.allowDestroyNonDestroyable = allow;
+            }
+        }
+
+        /// <summary>
+        /// 清掉失去支撐的壁掛物（燈、配電盤、攝影機……）：面向的那格已經沒有能掛東西的牆。
+        /// 檢查點改寫牆面、檢修通道開口、閘門換牆都會拆牆，掛在上面的東西不會自己跟著消失，
+        /// 所以整座設施生成完之後統一掃一遍。回傳清掉幾件。
+        /// Removes wall attachments (lamps, substations, cameras, …) left with nothing to hang on: the cell they face
+        /// no longer holds anything that supports attachments. Checkpoint wall rewrites, tunnel hatches and gates all
+        /// take walls down without taking what hangs on them, so the whole facility is swept once when it's done.
+        /// Returns how many were removed.
+        /// </summary>
+        public static int RemoveOrphanedAttachments(Map map)
+        {
+            List<Thing> orphans = map.listerThings.ThingsInGroup(ThingRequestGroup.BuildingArtificial)
+                .Where(t => t.def.building != null && t.def.building.isAttachment && GenConstruct.GetWallAttachedTo(t) == null)
+                .ToList();
+
+            AllowingIndestructibleDestroy(() =>
+            {
+                foreach (Thing orphan in orphans)
+                {
+                    if (!orphan.Destroyed) orphan.Destroy(DestroyMode.Vanish);
+                }
+            });
+            return orphans.Count;
         }
     }
 }

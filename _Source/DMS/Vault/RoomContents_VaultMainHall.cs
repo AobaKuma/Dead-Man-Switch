@@ -149,11 +149,7 @@ namespace DMS
             }
         }
 
-        private void SpawnConduit(Map map, IntVec3 cell)
-        {
-            if (!cell.InBounds(map) || cell.GetTransmitter(map) != null) return;
-            GenSpawn.Spawn(ext.conduitDef, cell, map);
-        }
+        private void SpawnConduit(Map map, IntVec3 cell) => VaultRoomUtility.TrySpawnConduit(map, ext.conduitDef, cell);
 
         // ── 哨站 / Checkpoints ───────────────────────────────────────────────
 
@@ -320,14 +316,7 @@ namespace DMS
         {
             IntVec3 dx = corner.x == interior.minX ? IntVec3.West : IntVec3.East;
             IntVec3 dz = corner.z == interior.minZ ? IntVec3.South : IntVec3.North;
-            return IsSolidWall(map, corner + dx) && IsSolidWall(map, corner + dz);
-        }
-
-        private static bool IsSolidWall(Map map, IntVec3 cell)
-        {
-            if (!cell.InBounds(map)) return false;
-            Building edifice = cell.GetEdifice(map);
-            return edifice != null && !edifice.def.IsDoor && edifice.def.Fillage == FillCategory.Full;
+            return VaultRoomUtility.IsSolidWall(map, corner + dx) && VaultRoomUtility.IsSolidWall(map, corner + dz);
         }
 
         // ── 供電 / Substation ───────────────────────────────────────────────
@@ -375,11 +364,11 @@ namespace DMS
         {
             if (ext.cameraDef == null) return;
 
-            for (int end = 0; end < 2; end++)
-            {
-                int along = end == 0 ? 0 : seg.Length - 1;
-                Rot4 rot = end == 0 ? seg.Axis.Opposite : seg.Axis;
+            TrySpawnCamera(0, seg.Axis.Opposite);
+            TrySpawnCamera(seg.Length - 1, seg.Axis);
 
+            bool TrySpawnCamera(int along, Rot4 rot)
+            {
                 // 中線優先；被燈具佔了就往旁邊挪。Centre first; shuffle sideways if a lamp is in the way.
                 for (int s = 0; s <= seg.HalfWidth; s++)
                 {
@@ -395,11 +384,10 @@ namespace DMS
                         }
 
                         VaultRoomUtility.SpawnSecurity(ext.cameraDef, cell, map, rot, faction, ext.initialBatteryPct);
-                        goto NextEnd;
+                        return true;
                     }
                 }
-
-            NextEnd: ;
+                return false;
             }
         }
     }

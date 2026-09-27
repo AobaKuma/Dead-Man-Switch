@@ -252,7 +252,8 @@
 #### 5. `DMS_Occultech_Subsonic`：infrasonics／次聲波基礎
 
 - 知識成本 750，前置 `MicroelectronicsBasics`（原版：微電子基礎），座標 (1, 6)
-- 脈衝邏輯全部走 `DMS.SubsonicUtility.DoPulse`：只作用於**血肉生物**（機兵免疫）、預設穿牆；每次脈衝疊加 `DMS_SubsonicTrauma`（大型生物依體型遞減，約兩小時消退，最高段疼痛足以休克），並以 `panicChance × (1 − FFF_FearResistance)` 觸發 PanicFlee
+- 脈衝邏輯全部走 `DMS.SubsonicUtility.DoPulse`：作用於所有**非機械體且聽覺 > 0** 的單位（`SubsonicUtility.HearingFactor`，全聾／無耳者免疫）、預設穿牆；每次脈衝疊加 `DMS_SubsonicTrauma`，嚴重度 = `severity × 聽覺 ÷ max(1, 體型)`（約兩小時消退，最高段疼痛足以休克），並以 `panicChance × 聽覺 × (1 − FFF_FearResistance)` 觸發 PanicFlee。聽覺可超過 100%（仿生耳），效果隨之放大；創傷本身會降低聽覺，連續疊加會自然遞減
+- **聽覺器官傷害**：每次脈衝另對每個 `HearingSource` 部位（耳朵）各造成一次 `DMS_InfrasoundRupture` 傷害（armorCategory `Blunt`、`DamageWorker_AddInjury`），頭盔與天生鈍器護甲先抵擋；傷口可能留疤成永久聽力損失。每耳傷害：模塊 3、次聲波塔 2、手雷 5（`pulse.earDamage` / `earDamageDef` / `earArmorPenetration`）
 - **解鎖**：
   - `DMS_SubsonicModule`（次聲波改裝模塊，機械列印機製作）→ 掛載後取得技能 `DMS_SubsonicBurst`：以自身為中心 7.9 格、只打敵對、冷卻 2500 ticks（`CompAbilityEffect_SubsonicPulse`）
   - `DMS_Building_SubsonicEmitter`（次聲波塔，1×1、繪製 2×2、250W）：範圍 9.9 格，每 900~1500 ticks 間歇脈衝，範圍內沒有敵人時不發射（`CompSubsonicEmitter`）

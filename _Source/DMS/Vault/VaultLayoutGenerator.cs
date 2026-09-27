@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Fortified.Structures;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -77,6 +78,49 @@ namespace DMS
         /// </summary>
         public int sectorGap = 0;
 
+        // ── 入口檢查點 / Entrance checkpoints ──────────────────────────────
+
+        /// <summary>
+        /// 入口檢查點的房型（掛 <see cref="ModExtension_VaultCheckpoint"/>，指定要蓋的 FFF 結構）。
+        /// 沿走廊掛房間時，有 checkpointChance 的機率改成「走廊 → 檢查點 → 房間」：檢查點與走廊、房間各共用一道牆線，
+        /// 房間往外推出檢查點的深度，只能穿過檢查點的兩扇門進出。null = 不放。
+        /// The entrance checkpoint room type (carrying <see cref="ModExtension_VaultCheckpoint"/>, which names the FFF
+        /// structure to stamp). When hanging a room along a corridor there is a checkpointChance it becomes
+        /// corridor → checkpoint → room instead: the checkpoint shares a wall line with each, the room is pushed out by
+        /// the checkpoint's depth, and the only way in from the corridor is through the checkpoint's two doors.
+        /// null = none.
+        /// </summary>
+        public LayoutRoomDef checkpointRoomDef;
+
+        /// <summary>每間沿走廊的房間改走檢查點的機率。Chance each room along a corridor gets a checkpoint in front of it.</summary>
+        public float checkpointChance = 0f;
+
+        // ── 電梯廳 / Lift lobby ───────────────────────────────────────────────
+
+        /// <summary>
+        /// 電梯廳接走廊用的門，由寬到窄試，放得下的第一種就用（見 <see cref="VaultEntranceDoor"/>）。
+        /// 不論有沒有設，電梯廳都會被調到直接貼著走廊的房間；空的話就只保留版面原本的門。
+        /// Doors for the lift lobby's corridor opening, tried widest first; the first that fits is used (see
+        /// <see cref="VaultEntranceDoor"/>). Set or not, the lobby is always moved to a room right on a corridor; empty
+        /// keeps the layout's own door.
+        /// </summary>
+        public List<ThingDef> entranceDoorDefs = new List<ThingDef>();
+
+        // ── 走廊嵌入結構 / Corridor embeds ─────────────────────────────────────
+
+        /// <summary>
+        /// 房間都掛好之後，沿走廊兩側沒掛房間的空牆往岩層裡嵌的 FFF 結構（壁龕、小隔間……），依各自的 baseWeight 抽。
+        /// 結構預設朝北：z = 0 那排落在走廊的牆線上（牆、開口、門照結構畫的），往 +z 長進岩層；size.x 沿走廊。
+        /// FFF structures (niches, small bays, …) set into the rock along the bare stretches of corridor wall once every
+        /// room is hung, picked by baseWeight. They face north by default: the z = 0 row lands on the corridor's wall line
+        /// (walls, openings and doors as drawn) and they grow into the rock towards +z; size.x runs along the corridor.
+        /// </summary>
+        public List<FFF_StructureDef> embedStructures = new List<FFF_StructureDef>();
+
+        /// <summary>空牆上放得下一個嵌入結構時真的放的機率；沒放就跳過一小段再試。
+        /// Chance an embed actually goes in where one fits; otherwise skip ahead a little and try again.</summary>
+        public float embedChance = 0.5f;
+
         // ── 分區閘門 / Sector gates ─────────────────────────────────────────
 
         /// <summary>
@@ -134,6 +178,34 @@ namespace DMS
 
         public List<Corridor> corridors = new List<Corridor>();
 
+        /// <summary>
+        /// 入口檢查點：矩形、蓋結構時的朝向（結構的 z=0 那一面朝走廊）、對應的版面房間。
+        /// An entrance checkpoint: its rect, the rotation to stamp it with (the structure's z = 0 side faces the
+        /// corridor), and its layout room.
+        /// </summary>
+        public class Checkpoint
+        {
+            public CellRect rect;
+            public Rot4 rot;
+            public LayoutRoom room;
+        }
+
+        public List<Checkpoint> checkpoints = new List<Checkpoint>();
+
+        /// <summary>
+        /// 走廊嵌入結構：蓋在哪（含貼著走廊的那排牆線）、用什麼朝向、蓋哪一張。不是版面房間，原版不會填它。
+        /// A corridor embed: where it goes (the row on the corridor's wall line included), its rotation and which
+        /// structure. Not a layout room, so vanilla never fills it.
+        /// </summary>
+        public class Embed
+        {
+            public CellRect rect;
+            public Rot4 rot;
+            public FFF_StructureDef structure;
+        }
+
+        public List<Embed> embeds = new List<Embed>();
+
         /// <summary>產生時容器的左下角（版面座標）。The container's corner at generation time, in layout space.</summary>
         public IntVec3 origin;
 
@@ -147,6 +219,7 @@ namespace DMS
             IntVec3 offset = spawnedContainer.Min - origin;
             if (offset == IntVec3.Zero) return;
             foreach (Corridor c in corridors) c.rect = c.rect.MovedBy(offset);
+            foreach (Embed e in embeds) e.rect = e.rect.MovedBy(offset);
             origin = spawnedContainer.Min;
         }
     }
@@ -198,10 +271,23 @@ namespace DMS
                 gap = SectorGap(ext),
                 corridors = plan.corridors.Select(c => c.rect).ToList(),
                 corridorSectors = SectorIds(plan, ext),
+                checkpointSize = VaultCheckpointUtility.SizeOf(ext.checkpointRoomDef),
+                checkpointChance = ext.checkpointChance,
             };
+            for (int i = 0; i < occ.corridors.Count; i++) occ.Take(occ.corridors[i], occ.corridorSectors[i]);
             for (int i = 0; i < occ.corridors.Count; i++)
             {
                 HangRooms(occ, occ.corridors[i], occ.corridorSectors[i], ext);
+            }
+
+            // 房間都掛好了，剩下的空牆才拿來嵌結構。Every room is hung; only the bare wall left gets embeds.
+            if (!ext.embedStructures.NullOrEmpty())
+            {
+                for (int i = 0; i < occ.corridors.Count; i++)
+                {
+                    PlaceEmbeds(occ, i, ext);
+                }
+                plan.embeds.AddRange(occ.embeds);
             }
             List<CellRect> corridors = occ.corridors;
             List<CellRect> rooms = occ.rooms;
@@ -220,6 +306,18 @@ namespace DMS
                 layout.AddRoom(group);
             }
 
+            // 檢查點最後加：共用的牆線格在 roomIds 裡歸給後加的房間，路口那排牆因此算檢查點的。
+            // 門在 DMS_LayoutWorker_Vault 開完原版的門之後才依結構重排（VaultCheckpointUtility.FixDoors）。
+            // Checkpoints go in last: shared wall-line cells belong to the later room in roomIds, so the joint rows
+            // count as the checkpoint's. Their doors are laid out from the structure once DMS_LayoutWorker_Vault has
+            // let vanilla place its own (VaultCheckpointUtility.FixDoors).
+            foreach (VaultLayoutPlan.Checkpoint cp in occ.checkpoints)
+            {
+                cp.room = layout.AddRoom(new List<CellRect> { cp.rect }, ext.checkpointRoomDef);
+                cp.room.noExteriorDoors = true;
+                plan.checkpoints.Add(cp);
+            }
+
             layout.FinalizeRooms();
             Plans[layout] = plan;
             return layout;
@@ -235,7 +333,21 @@ namespace DMS
             public List<CellRect> corridors;
             public List<int> corridorSectors;
             public readonly List<CellRect> rooms = new List<CellRect>();
-            public readonly List<int> roomSectors = new List<int>();
+
+            /// <summary>檢查點的尺寸（x 沿走廊、z 離開走廊，含牆）；沒設檢查點時為 null。Checkpoint size (x along the corridor, z away from it, walls included); null when there are none.</summary>
+            public IntVec2? checkpointSize;
+            public float checkpointChance;
+            public readonly List<VaultLayoutPlan.Checkpoint> checkpoints = new List<VaultLayoutPlan.Checkpoint>();
+            public readonly List<VaultLayoutPlan.Embed> embeds = new List<VaultLayoutPlan.Embed>();
+
+            /// <summary>
+            /// 所有已佔的矩形與所屬分區，走廊排在最前面（索引與 corridors 相同），之後依放置順序是房間、檢查點、嵌入結構。
+            /// Every taken rect with its sector: corridors first (same indices as corridors), then rooms, checkpoints and
+            /// embeds in the order they were placed.
+            /// </summary>
+            public readonly List<(CellRect rect, int sector)> taken = new List<(CellRect, int)>();
+
+            public void Take(CellRect rect, int sector) => taken.Add((rect, sector));
         }
 
         private static int SectorGap(ModExtension_VaultLayout ext) => ext.sectorGates ? Mathf.Max(0, ext.sectorGap) : 0;
@@ -444,19 +556,6 @@ namespace DMS
         }
 
         /// <summary>
-        /// 沿某軸、從 start 走 length 格、以 crossCentre 為中心線的走廊矩形。
-        /// A corridor rect running along one axis from start for length cells, centred on crossCentre.
-        /// </summary>
-        private static CellRect MakeCorridor(bool horizontal, int start, int length, int crossCentre, int width, CellRect container)
-        {
-            int half = width / 2;
-            CellRect rect = horizontal
-                ? new CellRect(container.minX + start, container.minZ + crossCentre - half, length, width)
-                : new CellRect(container.minX + crossCentre - half, container.minZ + start, width, length);
-            return rect.ClipInsideRect(container);
-        }
-
-        /// <summary>
         /// 從 parent 走廊在 pos 處往 side 方向長一條支道，跟 parent 共用牆線；長度隨機，太短就不長。
         /// 支道會在碰到 exclude（母走廊，或整座樞紐）以外的走廊前 clearance 格停下：兩條走廊一旦相疊就會併成同一個
         /// 房間、變成沒有閘門的路口；有分區間隙時，clearance 也讓不同分區的走廊之間留出那道岩層。
@@ -475,19 +574,11 @@ namespace DMS
             while (others.Any(o => o.Overlaps(rect.ExpandedBy(clearance))))
             {
                 // 從遠端往回縮一格。Pull the far end back by one.
-                bool growsPositive = side > 0;
-                if (horizontal)
-                {
-                    rect = growsPositive ? new CellRect(rect.minX, rect.minZ, rect.Width - 1, rect.Height)
-                                         : new CellRect(rect.minX + 1, rect.minZ, rect.Width - 1, rect.Height);
-                    if (rect.Width < minLength) return CellRect.Empty;
-                }
-                else
-                {
-                    rect = growsPositive ? new CellRect(rect.minX, rect.minZ, rect.Width, rect.Height - 1)
-                                         : new CellRect(rect.minX, rect.minZ + 1, rect.Width, rect.Height - 1);
-                    if (rect.Height < minLength) return CellRect.Empty;
-                }
+                int length = (horizontal ? rect.Width : rect.Height) - 1;
+                if (length < minLength) return CellRect.Empty;
+                rect = horizontal
+                    ? OffSide(parent, false, side, rect.minZ, rect.Height, length)
+                    : OffSide(parent, true, side, rect.minX, rect.Width, length);
             }
             return rect;
         }
@@ -495,28 +586,51 @@ namespace DMS
         private static CellRect GrowBranchRaw(CellRect container, CellRect parent, bool horizontal, int pos, int width, int side,
             out int minLength)
         {
-            int half = width / 2;
             minLength = width * 2;
 
-            if (horizontal)
+            // 支道水平時 pos 是 z，從 parent 的左或右牆線往外長；垂直時反過來。
+            // A horizontal branch has pos as z and grows off parent's left/right wall line; vertical, the other way round.
+            int start = horizontal ? (side > 0 ? parent.maxX : parent.minX) : (side > 0 ? parent.maxZ : parent.minZ);
+            int room = side > 0
+                ? (horizontal ? container.maxX : container.maxZ) - start + 1
+                : start - (horizontal ? container.minX : container.minZ) + 1;
+            int length = Mathf.Clamp(room * BranchLengthPct.RandomInRange / 100, 0, room);
+            if (length < minLength) return CellRect.Empty;
+            return OffSide(parent, !horizontal, side, pos - width / 2, width, length).ClipInsideRect(container);
+        }
+
+        /// <summary>
+        /// 貼在 baseRect 某一側、共用它的牆線往外長 depth 格的矩形。along 為 true 表示 baseRect 沿 x 走：矩形長在上下兩側，
+        /// 從 x = cursor 起寬 w 格；否則長在左右兩側，從 z = cursor 起。side &gt; 0 是往 +z／+x 長。
+        /// A rect on one side of baseRect, sharing its wall line and reaching depth cells out. With along set baseRect runs
+        /// along x, so the rect sits above or below it, w wide from x = cursor; otherwise it sits left or right, from
+        /// z = cursor. side &gt; 0 grows towards +z / +x.
+        /// </summary>
+        private static CellRect OffSide(CellRect baseRect, bool along, int side, int cursor, int w, int depth)
+        {
+            if (along)
             {
-                // 支道水平：pos 是 z，從 parent 的左或右牆線往外長。Horizontal branch: pos is z, grows off parent's left/right wall.
-                int startX = side > 0 ? parent.maxX : parent.minX;
-                int room = side > 0 ? container.maxX - startX + 1 : startX - container.minX + 1;
-                int length = Mathf.Clamp(room * BranchLengthPct.RandomInRange / 100, 0, room);
-                if (length < minLength) return CellRect.Empty;
-                int minX = side > 0 ? startX : startX - length + 1;
-                return new CellRect(minX, pos - half, length, width).ClipInsideRect(container);
+                return new CellRect(cursor, side > 0 ? baseRect.maxZ : baseRect.minZ - depth + 1, w, depth);
             }
-            else
+            return new CellRect(side > 0 ? baseRect.maxX : baseRect.minX - depth + 1, cursor, depth, w);
+        }
+
+        /// <summary>
+        /// 用 OffSide 往外長的結構的朝向：結構的 z = 0 那面貼著 baseRect。
+        /// The rotation for a structure grown out with OffSide: its z = 0 side against baseRect.
+        /// </summary>
+        private static Rot4 OffSideRot(bool along, int side) => along ? (side > 0 ? Rot4.North : Rot4.South) : (side > 0 ? Rot4.East : Rot4.West);
+
+        /// <summary>深度從 depthRange 隨機值往下試，第一個 Fits 的就用。Tries depths from a random pick in the range downwards; the first that fits wins.</summary>
+        private static bool TryFitDepth(Occupancy occ, int sector, IntRange depthRange, System.Func<int, CellRect> rectAt, out CellRect placed)
+        {
+            for (int depth = depthRange.RandomInRange; depth >= depthRange.min; depth--)
             {
-                int startZ = side > 0 ? parent.maxZ : parent.minZ;
-                int room = side > 0 ? container.maxZ - startZ + 1 : startZ - container.minZ + 1;
-                int length = Mathf.Clamp(room * BranchLengthPct.RandomInRange / 100, 0, room);
-                if (length < minLength) return CellRect.Empty;
-                int minZ = side > 0 ? startZ : startZ - length + 1;
-                return new CellRect(pos - half, minZ, width, length).ClipInsideRect(container);
+                placed = rectAt(depth);
+                if (Fits(occ, placed, sector)) return true;
             }
+            placed = CellRect.Empty;
+            return false;
         }
 
         // ── 房間 / Rooms ──────────────────────────────────────────────────────
@@ -546,7 +660,12 @@ namespace DMS
                         continue;
                     }
 
-                    if (TryPlaceRoom(occ, corridor, sector, horizontal, side, cursor, w, ext.roomDepthRange, out CellRect placed))
+                    if (Rand.Chance(occ.checkpointChance)
+                        && TryPlaceCheckpointRoom(occ, corridor, sector, horizontal, side, cursor, w, ext.roomDepthRange))
+                    {
+                        cursor += w - 1;
+                    }
+                    else if (TryPlaceRoom(occ, corridor, sector, horizontal, side, cursor, w, ext.roomDepthRange, out CellRect placed))
                     {
                         AddRoom(occ, placed, sector);
                         cursor += w - 1;
@@ -571,7 +690,118 @@ namespace DMS
         private static void AddRoom(Occupancy occ, CellRect rect, int sector)
         {
             occ.rooms.Add(rect);
-            occ.roomSectors.Add(sector);
+            occ.Take(rect, sector);
+        }
+
+        // ── 走廊嵌入結構 / Corridor embeds ─────────────────────────────────────
+
+        /// <summary>
+        /// 沿一段走廊的兩側往前掃，每個位置抽一張放得下的嵌入結構，擲 embedChance：成功就放下並跳過它的寬度，
+        /// 失敗就跳過最窄那張的寬度；什麼都放不下就前進一格。
+        /// Sweeps both sides of a corridor: at each position one of the embeds that fit is picked and embedChance rolled;
+        /// on success it goes in and the sweep jumps past it, on failure it skips the narrowest embed's width; where
+        /// nothing fits it moves on one cell.
+        /// </summary>
+        private static void PlaceEmbeds(Occupancy occ, int corridorIndex, ModExtension_VaultLayout ext)
+        {
+            CellRect corridor = occ.corridors[corridorIndex];
+            int sector = occ.corridorSectors[corridorIndex];
+            bool horizontal = corridor.Width >= corridor.Height;
+            int start = horizontal ? corridor.minX : corridor.minZ;
+            int end = horizontal ? corridor.maxX : corridor.maxZ;
+            List<FFF_StructureDef> structures = ext.embedStructures.Where(s => s != null).ToList();
+            if (structures.Count == 0) return;
+            int minWidth = structures.Min(s => s.size.x);
+
+            for (int side = -1; side <= 1; side += 2)
+            {
+                int cursor = start;
+                while (cursor + minWidth - 1 <= end)
+                {
+                    List<VaultLayoutPlan.Embed> fitting = new List<VaultLayoutPlan.Embed>();
+                    foreach (FFF_StructureDef s in structures)
+                    {
+                        if (TryFitEmbed(occ, corridorIndex, sector, horizontal, side, cursor, s, out VaultLayoutPlan.Embed e)) fitting.Add(e);
+                    }
+                    if (!fitting.TryRandomElementByWeight(e => e.structure.baseWeight, out VaultLayoutPlan.Embed chosen))
+                    {
+                        cursor++;
+                        continue;
+                    }
+                    if (!Rand.Chance(ext.embedChance))
+                    {
+                        cursor += minWidth;
+                        continue;
+                    }
+
+                    occ.embeds.Add(chosen);
+                    occ.Take(chosen.rect, sector);
+                    cursor += chosen.structure.size.x;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 嵌入結構能不能從 cursor 起貼在走廊這一側：整排 z = 0 要落在這段走廊的牆線上（不超出走廊兩端），
+        /// 其餘部分只能是岩層：不碰任何房間、檢查點、別的嵌入結構或別段走廊（連共用牆線都不行），
+        /// 並守住分區間隙（<see cref="Fits"/>）。結構實際佔地要跟算出來的矩形一致（跟 FFF 生成時的定位方式相同）。
+        /// Whether an embed can sit on this side of the corridor from cursor: its whole z = 0 row on this corridor's wall
+        /// line (not past either end), and the rest in plain rock: touching no room, checkpoint, other embed or other
+        /// corridor (not even a shared wall line), and keeping the sector gap (<see cref="Fits"/>). The structure's real
+        /// footprint must match the rect worked out (positioned as FFF's Generate does).
+        /// </summary>
+        private static bool TryFitEmbed(Occupancy occ, int corridorIndex, int sector, bool horizontal, int side, int cursor,
+            FFF_StructureDef structure, out VaultLayoutPlan.Embed embed)
+        {
+            embed = null;
+            CellRect corridor = occ.corridors[corridorIndex];
+            int w = structure.size.x;
+            int depth = structure.size.z;
+            if (cursor + w - 1 > (horizontal ? corridor.maxX : corridor.maxZ)) return false;
+
+            CellRect rect = OffSide(corridor, horizontal, side, cursor, w, depth);
+            Rot4 rot = OffSideRot(horizontal, side);
+
+            if (!Fits(occ, rect, sector)) return false;
+            // 除了自己這段走廊，什麼都不能碰（連共用牆線都不行）。Nothing but its own corridor may touch it, not even a shared wall line.
+            for (int i = 0; i < occ.taken.Count; i++)
+            {
+                if (i != corridorIndex && occ.taken[i].rect.Overlaps(rect)) return false;
+            }
+            if (FFF_StructureUtility.FootprintAt(structure, rect.CenterCell, rot) != rect) return false;
+
+            embed = new VaultLayoutPlan.Embed { rect = rect, rot = rot, structure = structure };
+            return true;
+        }
+
+        /// <summary>
+        /// 在走廊某側掛「檢查點 + 房間」：檢查點置中於房間寬度內、貼著走廊牆線，房間接在檢查點的後牆線上。
+        /// 兩者都放得下才一起放，否則回傳 false 讓呼叫端照常掛一間房。
+        /// Hangs checkpoint + room on one side of the corridor: the checkpoint is centred within the room's width
+        /// against the corridor's wall line, and the room starts on the checkpoint's back wall line. Both go in or
+        /// neither does; false lets the caller hang an ordinary room instead.
+        /// </summary>
+        private static bool TryPlaceCheckpointRoom(Occupancy occ, CellRect corridor, int sector, bool horizontal, int side,
+            int cursor, int w, IntRange depthRange)
+        {
+            if (occ.checkpointSize == null) return false;
+            int cpWidth = occ.checkpointSize.Value.x;
+            int cpDepth = occ.checkpointSize.Value.z;
+            if (w < cpWidth) return false;
+
+            CellRect cp = OffSide(corridor, horizontal, side, cursor + (w - cpWidth) / 2, cpWidth, cpDepth);
+            if (!Fits(occ, cp, sector)) return false;
+
+            // 房間跟檢查點只共用後牆線，彼此不衝突，可以分開檢查。
+            // Room and checkpoint only share the back wall line, so they can be checked independently.
+            if (!TryFitDepth(occ, sector, depthRange, depth => OffSide(cp, horizontal, side, cursor, w, depth), out CellRect room))
+            {
+                return false;
+            }
+            AddRoom(occ, room, sector);
+            occ.checkpoints.Add(new VaultLayoutPlan.Checkpoint { rect = cp, rot = OffSideRot(horizontal, side) });
+            occ.Take(cp, sector);
+            return true;
         }
 
         /// <summary>
@@ -582,60 +812,20 @@ namespace DMS
         private static bool TryPlaceRoom(Occupancy occ, CellRect corridor, int sector, bool horizontal, int side, int cursor, int w,
             IntRange depthRange, out CellRect placed)
         {
-            int depth = depthRange.RandomInRange;
-            for (; depth >= depthRange.min; depth--)
-            {
-                CellRect rect;
-                if (horizontal)
-                {
-                    int minZ = side > 0 ? corridor.maxZ : corridor.minZ - depth + 1;
-                    rect = new CellRect(cursor, minZ, w, depth);
-                }
-                else
-                {
-                    int minX = side > 0 ? corridor.maxX : corridor.minX - depth + 1;
-                    rect = new CellRect(minX, cursor, depth, w);
-                }
-
-                if (Fits(occ, rect, sector))
-                {
-                    placed = rect;
-                    return true;
-                }
-            }
-
-            placed = CellRect.Empty;
-            return false;
+            return TryFitDepth(occ, sector, depthRange, depth => OffSide(corridor, horizontal, side, cursor, w, depth), out placed);
         }
 
+        /// <summary>盡頭的房間：接在走廊端牆外，至少跟走廊一樣寬、置中。An end room past the corridor's end wall, at least as wide as the corridor and centred on it.</summary>
         private static void TryPlaceEndRoom(Occupancy occ, CellRect corridor, int sector, bool horizontal, int end,
             ModExtension_VaultLayout ext)
         {
-            int w = ext.roomWidthRange.RandomInRange;
             int corridorWidth = horizontal ? corridor.Height : corridor.Width;
-            w = Mathf.Max(w, corridorWidth);
+            int w = Mathf.Max(ext.roomWidthRange.RandomInRange, corridorWidth);
             int crossMin = (horizontal ? corridor.minZ : corridor.minX) - (w - corridorWidth) / 2;
 
-            int depth = ext.roomDepthRange.RandomInRange;
-            for (; depth >= ext.roomDepthRange.min; depth--)
+            if (TryFitDepth(occ, sector, ext.roomDepthRange, depth => OffSide(corridor, !horizontal, end, crossMin, w, depth), out CellRect rect))
             {
-                CellRect rect;
-                if (horizontal)
-                {
-                    int minX = end > 0 ? corridor.maxX : corridor.minX - depth + 1;
-                    rect = new CellRect(minX, crossMin, depth, w);
-                }
-                else
-                {
-                    int minZ = end > 0 ? corridor.maxZ : corridor.minZ - depth + 1;
-                    rect = new CellRect(crossMin, minZ, w, depth);
-                }
-
-                if (Fits(occ, rect, sector))
-                {
-                    AddRoom(occ, rect, sector);
-                    return;
-                }
+                AddRoom(occ, rect, sector);
             }
         }
 
@@ -658,21 +848,12 @@ namespace DMS
 
             CellRect interior = rect.ContractedBy(1);
             CellRect halo = rect.ExpandedBy(occ.gap);
-            for (int i = 0; i < occ.corridors.Count; i++)
+            foreach ((CellRect other, int otherSector) in occ.taken)
             {
-                if (Blocks(occ.corridors[i], occ.corridorSectors[i])) return false;
-            }
-            for (int i = 0; i < occ.rooms.Count; i++)
-            {
-                if (Blocks(occ.rooms[i], occ.roomSectors[i])) return false;
+                if (interior.Overlaps(other) || other.ContractedBy(1).Overlaps(rect)) return false;
+                if (occ.gap > 0 && otherSector != sector && halo.Overlaps(other)) return false;
             }
             return true;
-
-            bool Blocks(CellRect other, int otherSector)
-            {
-                if (interior.Overlaps(other) || other.ContractedBy(1).Overlaps(rect)) return true;
-                return occ.gap > 0 && otherSector != sector && halo.Overlaps(other);
-            }
         }
 
         // ── 合併 / Grouping ───────────────────────────────────────────────────

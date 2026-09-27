@@ -97,13 +97,7 @@ namespace DMS
 
             ThingDef conduitDef = VaultRoomUtility.ThingNamed(ConduitDefName);
             if (conduitDef == null) return;
-            foreach (IntVec3 cell in interior.EdgeCells)
-            {
-                if (cell.InBounds(map) && cell.GetTransmitter(map) == null)
-                {
-                    GenSpawn.Spawn(conduitDef, cell, map);
-                }
-            }
+            foreach (IntVec3 cell in interior.EdgeCells) VaultRoomUtility.TrySpawnConduit(map, conduitDef, cell);
         }
 
         /// <summary>沿某一側牆，從核心那一列往南北交替找第一個空格。Walks one side wall outward from the core's row.</summary>

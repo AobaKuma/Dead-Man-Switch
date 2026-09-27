@@ -69,6 +69,43 @@
     </modExtensions>
   </LayoutRoomDef>
 
+  <!-- 入口檢查點。版面有 checkpointChance 的機率在房間與走廊之間夾一間（見各版面的 ModExtension_VaultLayout），
+       填充時從 DMS_Room_Checkpoint_A~D 挑一張適合後面那間房的蓋上，牆、門與開口照結構改寫，從走廊只能穿過它進出後面的房間。
+       只由版面指定，不會被隨機抽到；檢修通道、控制台與封鎖中控都不會選它。
+       Entrance checkpoint. With checkpointChance the layout slips one between a room and its corridor (see each
+       layout's ModExtension_VaultLayout); at fill time one of DMS_Room_Checkpoint_A~D suited to the room behind is
+       stamped, its walls, doors and openings rewritten from the structure, so it is the only way in from the corridor.
+       Only ever placed by the layout, never
+       rolled; tunnels, consoles and the lockdown controller all skip it. -->
+  <LayoutRoomDef>
+    <defName>DMS_VaultCheckpoint</defName>
+    <roomContentsWorkerType>DMS.RoomContents_VaultCheckpoint</roomContentsWorkerType>
+    <dontPlaceRandomly>true</dontPlaceRandomly>
+    <dontDestroyWallsDoors>true</dontDestroyWallsDoors>
+    <isValidPlayerSpawnRoom>false</isValidPlayerSpawnRoom>
+    <spawnJunk>false</spawnJunk>
+    <modExtensions>
+      <li Class="DMS.ModExtension_VaultCheckpoint">
+        <!-- 依各結構的 baseWeight（預設 1）抽一張；全部要一樣大。One is picked by each structure's baseWeight (default 1); all must be the same size. -->
+        <structures>
+          <li>DMS_Room_Checkpoint_A</li>
+          <li>DMS_Room_Checkpoint_B</li>
+          <li>DMS_Room_Checkpoint_C</li>
+          <li>DMS_Room_Checkpoint_D</li>
+        </structures>
+        <!-- 結構不帶內容物，交給 FFF 的 Task_FillStorage：貨架放一輪地下倉庫的雜貨（見 DMS_Vault_Loot.xml），
+             書櫃放幾本隨機的書；每座貨架與書櫃各有 fillChance 的機率。
+             The structures carry no contents; FFF's Task_FillStorage puts one round of the underground stores'
+             sundries on the shelves (see DMS_Vault_Loot.xml) and a few random books in the bookcases, each shelf
+             and bookcase with fillChance. -->
+        <shelfLoot>DMS_UnderMapShelfLoot</shelfLoot>
+        <shelfBatches>1~1</shelfBatches>
+        <fillChance>0.8</fillChance>
+        <booksPerBookcase>1~4</booksPerBookcase>
+      </li>
+    </modExtensions>
+  </LayoutRoomDef>
+
   <!-- 電梯廳。放出口電梯、設定玩家出生點。玩家的初始房間，不放砲塔或警戒建築；
        牆上的配電盤只是電源，不會攻擊。
        Elevator lobby: exit car and player spawn spot. The starting room, so no turrets or security

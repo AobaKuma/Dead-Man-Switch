@@ -14,12 +14,12 @@
     <li>questName(priority=1)->[yard]的委託</li>
     <li>questName->[bandit][yard]</li>
     <li>bandit->海盜</li>
-    <li>bandit->掠奪者</li>
+    <li>bandit->非法</li>
     <li>bandit->不法之徒</li>
-    <li>bandit->劫掠者</li>
-    <li>yard->組裝廠</li>
+    <li>bandit->劫掠的</li>
+    <li>yard->兵工廠</li>
     <li>yard->機兵工坊</li>
-    <li>yard->鑄造廠</li>
+    <li>yard->作坊</li>
   </DMS_PirateAssemblyRaid.questNameRules.rulesStrings>
 
   <DMS_PirateAssemblyRaid.questDescriptionRules.rulesStrings>

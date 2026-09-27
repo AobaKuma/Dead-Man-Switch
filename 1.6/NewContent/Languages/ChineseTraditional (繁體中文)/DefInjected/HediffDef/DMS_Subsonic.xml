@@ -3,7 +3,7 @@
 
   <!-- EN: infrasonic trauma -->
   <DMS_SubsonicTrauma.label>次聲波創傷</DMS_SubsonicTrauma.label>
-  <DMS_SubsonicTrauma.description>調諧過的次聲波讓這個生物的內耳與內臟產生共振，造成噁心、失去方向感，以及找不到任何傷口的深層瀰漫性疼痛。反覆暴露會迅速疊加，最嚴重時光是疼痛就足以使其休克。\n\n症狀會在幾個小時內自行消退。</DMS_SubsonicTrauma.description>
+  <DMS_SubsonicTrauma.description>調諧過的次聲波讓這個生物的內耳與內臟產生共振，造成噁心、失去方向感，以及找不到任何傷口的深層瀰漫性疼痛。聽覺越敏銳的生物受害越深，全聾者則完全不受影響。反覆暴露會迅速疊加，最嚴重時光是疼痛就足以使其休克。\n\n症狀會在幾個小時內自行消退。</DMS_SubsonicTrauma.description>
   <DMS_SubsonicTrauma.stages.0.label>不適</DMS_SubsonicTrauma.stages.0.label>
   <DMS_SubsonicTrauma.stages.1.label>暈眩</DMS_SubsonicTrauma.stages.1.label>
   <DMS_SubsonicTrauma.stages.2.label>劇痛</DMS_SubsonicTrauma.stages.2.label>
@@ -11,5 +11,16 @@
   <!-- EN: infrasonic module -->
   <DMS_SubsonicModule.label>次聲波改裝模塊</DMS_SubsonicModule.label>
   <DMS_SubsonicModule.description>安裝在外殼上的調諧次聲波發生器陣列，讓機兵能釋放一次次聲波，使周圍的敵對生物陷入劇痛與恐慌。</DMS_SubsonicModule.description>
+
+  <!-- EN: infrasonic rupture（聽覺器官損傷） -->
+  <DMS_InfrasoundRupture.label>次聲波撕裂傷</DMS_InfrasoundRupture.label>
+  <DMS_InfrasoundRupture.labelNoun>次聲波撕裂傷</DMS_InfrasoundRupture.labelNoun>
+  <DMS_InfrasoundRupture.labelNounPretty>{1}內的{0}</DMS_InfrasoundRupture.labelNounPretty>
+  <DMS_InfrasoundRupture.description>被共振的次聲波從內部撕裂的組織。若不加以治療，可能留下疤痕並造成永久性聽力損失。</DMS_InfrasoundRupture.description>
+  <DMS_InfrasoundRupture.comps.HediffComp_TendDuration.labelTendedWell>已處置</DMS_InfrasoundRupture.comps.HediffComp_TendDuration.labelTendedWell>
+  <DMS_InfrasoundRupture.comps.HediffComp_TendDuration.labelTendedWellInner>已處置</DMS_InfrasoundRupture.comps.HediffComp_TendDuration.labelTendedWellInner>
+  <DMS_InfrasoundRupture.comps.HediffComp_TendDuration.labelSolidTendedWell>已修復</DMS_InfrasoundRupture.comps.HediffComp_TendDuration.labelSolidTendedWell>
+  <DMS_InfrasoundRupture.comps.HediffComp_GetsPermanent.permanentLabel>次聲波疤痕</DMS_InfrasoundRupture.comps.HediffComp_GetsPermanent.permanentLabel>
+  <DMS_InfrasoundRupture.injuryProps.destroyedLabel>震裂</DMS_InfrasoundRupture.injuryProps.destroyedLabel>
 
 </LanguageData>

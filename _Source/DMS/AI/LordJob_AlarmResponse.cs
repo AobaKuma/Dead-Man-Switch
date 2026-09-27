@@ -8,14 +8,17 @@ using Verse.AI.Group;
 namespace DMS
 {
     /// <summary>
-    /// 設施增援的警報回應。
+    /// 設施增援的警報回應。洞口跳出的增援（<see cref="CompAlertEffector_HoleEmerge"/>）與
+    /// 被警報喚醒的封存艙機兵（<see cref="CompAlertEffector_WakeCapsuleMech"/>）都用這套。
     ///
     /// 每一次警報響起（包括叫出這批增援的那一次），當下走得到警報位置的成員就把它當成新崗位前往；
     /// 走不到的留在原本的崗位（剛落地的就是落地點）。之後聽到同一張地圖的新警報會重新判定。
     /// 交戰只看視線：勤務 <c>DMS_AlarmResponse</c> 的戰鬥節點要求看得到才會鎖定目標，
     /// 不像 AssaultColony 那樣知道殖民者在哪、一路找過去。
     ///
-    /// Alarm response for facility reinforcements.
+    /// Alarm response for facility reinforcements, used both by squads leaping out of holes
+    /// (<see cref="CompAlertEffector_HoleEmerge"/>) and by capsule mechs woken by an alarm
+    /// (<see cref="CompAlertEffector_WakeCapsuleMech"/>).
     /// Every time the alarm sounds (including the one that summoned this squad), members that can reach
     /// the alarm's position at that moment take it as their new post and head there; those that can't
     /// keep their old post (for a squad that just landed, the landing spot). Later alarms on the same map

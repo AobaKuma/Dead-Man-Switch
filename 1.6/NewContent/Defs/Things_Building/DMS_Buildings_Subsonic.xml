@@ -66,6 +66,8 @@
           <hediff>DMS_SubsonicTrauma</hediff>
           <severity>0.25</severity>
           <panicChance>0.3</panicChance>
+          <earDamageDef>DMS_InfrasoundRupture</earDamageDef>
+          <earDamage>2</earDamage>
           <hostileOnly>true</hostileOnly>
           <ignoreWalls>true</ignoreWalls>
           <fleck>PsycastAreaEffect</fleck>

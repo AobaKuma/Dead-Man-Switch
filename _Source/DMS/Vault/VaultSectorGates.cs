@@ -25,15 +25,12 @@ namespace DMS
         {
             if (plan == null || ext == null || !ext.sectorGates || ext.gateConsoleDef == null) return;
 
-            if (ext.gateDoorDef != null)
+            if (ext.gateDoorDef != null && ext.gateWallDef == null)
             {
-                if (ext.gateWallDef == null)
-                {
-                    Log.ErrorOnce("[DMS] ModExtension_VaultLayout.gateDoorDef needs a gateWallDef to fill the rest of the junction.", 0x4A81);
-                    return;
-                }
+                Log.ErrorOnce("[DMS] ModExtension_VaultLayout.gateDoorDef needs a gateWallDef to fill the rest of the junction.", 0x4A81);
+                return;
             }
-            else
+            if (ext.gateDoorDef == null)
             {
                 if (ext.gateDoorDefs.NullOrEmpty()) return;
                 if (!ext.gateDoorDefs.Any(d => d.Size.x == 1))
@@ -60,19 +57,33 @@ namespace DMS
 
         // ── 走廊樹 / Corridor tree ────────────────────────────────────────────
 
-        /// <summary>入口房掛在哪一段走廊上（共用牆線就算）。Which corridor the entrance room hangs off (sharing a wall line counts).</summary>
+        /// <summary>
+        /// 入口房掛在哪一段走廊上（共用牆線就算）。入口前面夾了檢查點的話，入口房被推離走廊、碰不到任何走廊，
+        /// 改看跟它相連的檢查點貼著哪段走廊；不然會退回主幹，支道上的入口就會被閘門關在控制台的另一邊。
+        /// Which corridor the entrance room hangs off (sharing a wall line counts). With a checkpoint in front, the
+        /// entrance is pushed off the corridor and touches none, so look at the checkpoint connected to it instead;
+        /// otherwise this falls back to the spine and an entrance on a branch ends up behind a gate whose console is
+        /// on the far side.
+        /// </summary>
         private static int FindEntranceCorridor(StructureLayout layout, VaultLayoutPlan plan)
         {
-            LayoutRoom entrance = layout.Rooms.FirstOrDefault(r =>
-                r.defs != null && r.defs.Any(d => d.roomContentsWorkerType == typeof(RoomContents_VaultEntrance)));
+            LayoutRoom entrance = layout.Rooms.FirstOrDefault(VaultRoomUtility.IsEntrance);
             if (entrance == null) return 0;
+
+            // 檢查點的版面房間已由原版移到地圖座標（plan.checkpoints 的 rect 沒有）。
+            // The checkpoints' layout rooms were moved into map space by vanilla (plan.checkpoints' rects weren't).
+            List<CellRect> rects = new List<CellRect>(entrance.rects);
+            if (entrance.connections != null)
+            {
+                rects.AddRange(entrance.connections.Where(VaultCheckpointUtility.IsCheckpoint).SelectMany(r => r.rects));
+            }
 
             int best = 0;
             int bestScore = -1;
             for (int i = 0; i < plan.corridors.Count; i++)
             {
                 CellRect corridor = plan.corridors[i].rect;
-                int score = entrance.rects.Sum(r => r.Overlaps(corridor) ? r.GetAdjacencyScore(corridor) : 0);
+                int score = rects.Sum(r => SharedWallLength(r, corridor));
                 if (score > bestScore)
                 {
                     bestScore = score;
@@ -80,6 +91,19 @@ namespace DMS
                 }
             }
             return best;
+        }
+
+        /// <summary>
+        /// 房間牆上有幾格正對著走廊內部，也就是兩者共用的牆長。原版 GetAdjacencyScore 在兩個矩形重疊時一律回 0，
+        /// 而共用牆線的房間與走廊一定重疊一格，所以不能用它。
+        /// How many of the room's wall cells face straight into the corridor, i.e. the length of wall they share.
+        /// Vanilla GetAdjacencyScore returns 0 whenever the rects overlap, and a room sharing a wall line with a
+        /// corridor always overlaps it by one cell, so it can't be used here.
+        /// </summary>
+        private static int SharedWallLength(CellRect room, CellRect corridor)
+        {
+            CellRect inside = corridor.ContractedBy(1);
+            return room.EdgeCells.Count(c => !room.IsCorner(c) && inside.Contains(c + VaultRoomUtility.OutwardDirection(room, c)));
         }
 
         /// <summary>node 是否在 root 的子樹裡（含 root 本身）。Whether node lies in root's subtree, root included.</summary>
@@ -111,28 +135,14 @@ namespace DMS
                 : (child.side > 0 ? rect.minZ : rect.maxZ);
 
             CellRect parentRect = parent.rect;
+            int lo = alongX ? Mathf.Max(rect.minX, parentRect.minX) + 1 : Mathf.Max(rect.minZ, parentRect.minZ) + 1;
+            int hi = alongX ? Mathf.Min(rect.maxX, parentRect.maxX) - 1 : Mathf.Min(rect.maxZ, parentRect.maxZ) - 1;
             List<IntVec3> cells = new List<IntVec3>();
-            if (alongX)
-            {
-                int lo = Mathf.Max(rect.minX, parentRect.minX) + 1;
-                int hi = Mathf.Min(rect.maxX, parentRect.maxX) - 1;
-                for (int x = lo; x <= hi; x++) cells.Add(new IntVec3(x, 0, junction));
-            }
-            else
-            {
-                int lo = Mathf.Max(rect.minZ, parentRect.minZ) + 1;
-                int hi = Mathf.Min(rect.maxZ, parentRect.maxZ) - 1;
-                for (int z = lo; z <= hi; z++) cells.Add(new IntVec3(junction, 0, z));
-            }
+            for (int i = lo; i <= hi; i++) cells.Add(alongX ? new IntVec3(i, 0, junction) : new IntVec3(junction, 0, i));
             if (cells.Count == 0) return;
 
             // 路口應該是開口；有實牆擋著就不是我們要的地方。The junction should be open; solid wall means it isn't.
-            foreach (IntVec3 c in cells)
-            {
-                if (!c.InBounds(map)) return;
-                Building edifice = c.GetEdifice(map);
-                if (edifice != null && !edifice.def.IsDoor && edifice.def.Fillage == FillCategory.Full) return;
-            }
+            if (cells.Any(c => !c.InBounds(map) || VaultRoomUtility.IsSolidWall(map, c))) return;
 
             // 單扇門模式下路口要至少跟門一樣寬。In single-door mode the junction has to be at least as wide as the door.
             if (ext.gateDoorDef != null && ext.gateDoorDef.Size.x > cells.Count) return;
@@ -164,11 +174,10 @@ namespace DMS
                 // One door in the middle, wall either side (an odd leftover cell goes on the far side).
                 int width = ext.gateDoorDef.Size.x;
                 int start = (cells.Count - width) / 2;
-                ThingDef wallStuff = ext.gateWallDef.MadeFromStuff ? GenStuff.DefaultStuffFor(ext.gateWallDef) : null;
                 for (int i = 0; i < cells.Count; i++)
                 {
                     if (i >= start && i < start + width) continue;
-                    GenSpawn.Spawn(ThingMaker.MakeThing(ext.gateWallDef, wallStuff), cells[i], map, WipeMode.Vanish);
+                    GenSpawn.Spawn(VaultRoomUtility.MakeThing(ext.gateWallDef), cells[i], map, WipeMode.Vanish);
                 }
                 SpawnGateDoor(map, ext.gateDoorDef, cells, start, doorRot, comp);
                 return;
@@ -258,13 +267,7 @@ namespace DMS
 
             foreach ((IntVec3 c, IntVec3 wallDir) in candidates.InRandomOrder())
             {
-                IntVec3 wall = c + wallDir;
-                if (!c.InBounds(map) || !wall.InBounds(map)) continue;
-
-                Building edifice = wall.GetEdifice(map);
-                if (edifice == null || edifice.def.IsDoor || edifice.def.Fillage != FillCategory.Full) continue;
-                if (c.GetEdifice(map) != null || c.GetThingList(map).Any(t => t.def.category == ThingCategory.Building && !t.def.building.isPowerConduit)) continue;
-                if (!c.Standable(map)) continue;
+                if (!VaultRoomUtility.IsSolidWall(map, c + wallDir) || !VaultRoomUtility.IsClearFloor(map, c)) continue;
 
                 cell = c;
                 rot = Rot4.FromIntVec3(-wallDir);

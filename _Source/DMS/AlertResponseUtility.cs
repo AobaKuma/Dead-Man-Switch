@@ -3,6 +3,7 @@ using Fortified;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.AI.Group;
 
 namespace DMS
 {
@@ -46,6 +47,44 @@ namespace DMS
                 return subject.PositionHeld;
             }
             return IntVec3.Invalid;
+        }
+
+        /// <summary>
+        /// 效果器收到的訊號若正是它在聽的警報，回傳警報位置；其他訊號或建築未生成時回傳 Invalid。
+        /// FFF 的 DoEffect 不帶訊號，警報回應類的效果器在 Notify_SignalReceived 先用這個記下位置。
+        /// The alarm's position when the signal is the one this effector listens for; Invalid for any other
+        /// signal or an unspawned building. FFF's DoEffect gets no signal, so alarm-response effectors note the
+        /// position with this in Notify_SignalReceived.
+        /// </summary>
+        public static IntVec3 AlarmCellFor(CompAlertEffector effector, Signal signal)
+        {
+            ThingWithComps parent = effector.parent;
+            if (signal.tag != effector.Props.listenSignal || !parent.Spawned) return IntVec3.Invalid;
+            return AlarmCell(signal, parent.Map);
+        }
+
+        /// <summary>
+        /// 把已生成的單位改交給警報回應（<see cref="LordJob_AlarmResponse"/>）：先退出原本的 lord
+        /// （退完沒人了就整個移除），再開一個新的。回傳新的 lord；單位未生成或沒有派系時回傳 null。
+        /// Hands a spawned pawn over to an alarm response (<see cref="LordJob_AlarmResponse"/>): it leaves its
+        /// current lord (removing that lord if it is left empty) and gets a new one. Returns the new lord, or null
+        /// when the pawn isn't spawned or has no faction.
+        /// </summary>
+        public static Lord JoinAlarmResponse(Pawn pawn, IntVec3 alarmCell, string listenSignal)
+        {
+            if (pawn == null || !pawn.Spawned || pawn.Faction == null) return null;
+
+            Lord previous = pawn.GetLord();
+            if (previous != null)
+            {
+                previous.RemovePawn(pawn);
+                if (previous.ownedPawns.Count == 0)
+                {
+                    previous.lordManager.RemoveLord(previous);
+                }
+            }
+            return LordMaker.MakeNewLord(pawn.Faction, new LordJob_AlarmResponse(alarmCell, listenSignal), pawn.Map,
+                new List<Pawn> { pawn });
         }
 
         /// <summary>派系：指定的 → 建築自己的 → DMS 遺留部隊。Faction: explicit → the parent's → DMS_Legacy.</summary>

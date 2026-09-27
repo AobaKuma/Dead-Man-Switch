@@ -52,8 +52,8 @@
     <portal>
       <pocketMapGenerator>DMS_MilitaryVault</pocketMapGenerator>
       <exitDef>DMS_VaultElevatorExit</exitDef>
-      <!-- 結構 60~70 見 DMS_Vault_MapGenerator.xml，地圖要留出四周的岩層。
-           The structure runs 60~70 (see DMS_Vault_MapGenerator.xml); leave rock around it. -->
+      <!-- 結構 90~100 見 DMS_Vault_MapGenerator.xml，地圖要留出四周的岩層。
+           The structure runs 90~100 (see DMS_Vault_MapGenerator.xml); leave rock around it. -->
       <pocketMapSize>130</pocketMapSize>
     </portal>
     <comps>

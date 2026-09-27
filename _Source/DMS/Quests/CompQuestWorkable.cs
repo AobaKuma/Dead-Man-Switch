@@ -32,6 +32,12 @@ namespace DMS
             }
         }
 
+        // 由任務生成時指定工作量
+        public void SetWorkAmount(float amount)
+        {
+            workAmount = Mathf.Max(1f, amount);
+        }
+
         public float ProgressPercent => progress / WorkAmount;
         public bool IsCompleted => isCompleted;
 

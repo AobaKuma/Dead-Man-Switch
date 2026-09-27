@@ -5,13 +5,19 @@
        封存庫的機兵搖籃。與海盜組裝廠的容器不同，這裡的是「正規軍封存」：
        指令認證還在、但電源早就斷了，所以一樣可以被機械師駭入接管。
        Vault mech cradles. Unlike the pirate assembly capsules these are
-       properly mothballed line units: still hackable, just long dead.
+       properly mothballed line units — still hackable, just long dead.
+
+       警報喚醒走 DMS.CompAlertEffector_WakeCapsuleMech：醒來後跟洞口增援一樣是警報回應
+       （DMS.LordJob_AlarmResponse），當下走得到警報位置就前往、走不到就守在艙邊，只打看得到的敵人。
+       Alarm wake-ups go through DMS.CompAlertEffector_WakeCapsuleMech: once awake the mech runs the same
+       alarm response as the hole reinforcements (DMS.LordJob_AlarmResponse), heading for the alarm if it can
+       be reached right then, otherwise holding by its cradle, and only fighting what it can see.
        ============================================================ -->
 
   <!-- 1x1：步兵級封存艙 / infantry-class cradle -->
   <ThingDef ParentName="FFF_MechCapsule_Small">
     <defName>DMS_MechCapsule_VaultInfantry</defName>
-    <label>mothballed mech</label>
+    <label>hibernated mech</label>
     <description>A line infantry automatroid in hibernation mode, sealed in a storage cradle. The vault lost power before anyone came to collect it. A mechanitor can attempt to hack and control it.</description>
     <!-- 警報響應：同地圖的警戒掃描器（攝影機／掃描器）觸發時，有 triggerChance 的機率讓機兵敵對啟動。
          每次警報各自擲骰，掃描器重新武裝後再觸發會再擲一次。
@@ -19,7 +25,7 @@
          Every alarm rolls again, so a scanner that re-arms and re-triggers gives another chance. -->
     <receivesSignals>true</receivesSignals>
     <comps>
-      <li Class="Fortified.CompProperties_AlertEffector_ReleaseCapsuleMech">
+      <li Class="DMS.CompProperties_AlertEffector_WakeCapsuleMech">
         <triggerChance>0.35</triggerChance>
       </li>
     </comps>
@@ -42,7 +48,7 @@
   <!-- 2x2：突擊級封存艙 / assault-class cradle -->
   <ThingDef ParentName="FFF_MechCapsule_Medium">
     <defName>DMS_MechCapsule_VaultAssault</defName>
-    <label>mothballed mech</label>
+    <label>hibernated mech</label>
     <description>An assault-pattern automatroid in hibernation mode, clamped into a maintenance cradle with its actuator bays still open. The vault was sealed before the servicing was finished. A mechanitor can attempt to hack and control it.</description>
     <!-- 警報響應：同地圖的警戒掃描器（攝影機／掃描器）觸發時，有 triggerChance 的機率讓機兵敵對啟動。
          每次警報各自擲骰，掃描器重新武裝後再觸發會再擲一次。
@@ -50,7 +56,7 @@
          Every alarm rolls again, so a scanner that re-arms and re-triggers gives another chance. -->
     <receivesSignals>true</receivesSignals>
     <comps>
-      <li Class="Fortified.CompProperties_AlertEffector_ReleaseCapsuleMech">
+      <li Class="DMS.CompProperties_AlertEffector_WakeCapsuleMech">
         <triggerChance>0.25</triggerChance>
       </li>
     </comps>
@@ -72,7 +78,7 @@
   <!-- 3x3：戰鬥框架龍門架 / battle frame gantry -->
   <ThingDef ParentName="FFF_MechCapsule_Large">
     <defName>DMS_MechCapsule_VaultFrame</defName>
-    <label>mothballed battle frame</label>
+    <label>hibernated battle frame</label>
     <description>A battle frame in hibernation mode, pinned into a service gantry for long-term storage. Its command authentication expired with the unit that owned it. A mechanitor can attempt to hack and control it.</description>
     <!-- 警報響應：同地圖的警戒掃描器（攝影機／掃描器）觸發時，有 triggerChance 的機率讓機兵敵對啟動。
          每次警報各自擲骰，掃描器重新武裝後再觸發會再擲一次。
@@ -80,7 +86,7 @@
          Every alarm rolls again, so a scanner that re-arms and re-triggers gives another chance. -->
     <receivesSignals>true</receivesSignals>
     <comps>
-      <li Class="Fortified.CompProperties_AlertEffector_ReleaseCapsuleMech">
+      <li Class="DMS.CompProperties_AlertEffector_WakeCapsuleMech">
         <triggerChance>0.15</triggerChance>
       </li>
     </comps>

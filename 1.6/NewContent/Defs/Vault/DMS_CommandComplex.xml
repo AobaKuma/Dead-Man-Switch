@@ -176,6 +176,28 @@
              starts with a stretch of bare link corridor. 6 is vanilla's auto-connect range, so wall lamps,
              substations and other powered fixtures can't reach the next sector's conduit. -->
         <sectorGap>6</sectorGap>
+        <!-- 入口檢查點：每間沿走廊的房間有這個機率在門前夾一間 8x6 的警衛站，房間往外推 5 格，只能穿過檢查點進出。
+             Entrance checkpoints: each room along a corridor has this chance of an 8x6 guard post in front of it;
+             the room is pushed 5 cells out and can only be reached through the checkpoint. -->
+        <checkpointRoomDef>DMS_VaultCheckpoint</checkpointRoomDef>
+        <checkpointChance>0.3</checkpointChance>
+        <!-- 電梯廳一定直接貼著走廊，用捲門接出去：由寬到窄試，放得下的第一種就用。
+             The lift lobby always sits right on a corridor and opens onto it through a rolling door, tried widest first. -->
+        <entranceDoorDefs>
+          <li>DMS_RollingDoor_Triple</li>
+          <li>DMS_RollingDoor_Double</li>
+          <li>DMS_RollingDoor_Single</li>
+        </entranceDoorDefs>
+        <!-- 走廊嵌入結構：房間掛完後，沿走廊沒掛房間的空牆往岩層裡嵌（預設朝北：z = 0 那排落在走廊牆線上）。
+             Corridor embeds: once the rooms are hung, set into the rock along bare corridor wall (north by default: the
+             z = 0 row lands on the corridor's wall line). -->
+        <embedStructures>
+          <li>DMS_Embed_A</li>
+          <li>DMS_Embed_B</li>
+          <li>DMS_Embed_C</li>
+          <li>DMS_Embed_D</li>
+        </embedStructures>
+        <embedChance>0.5</embedChance>
 
         <!-- 分區閘門：5 格寬的走廊中間一扇 1x3 密封門、兩側各一格強化牆。
              Sector gates: a 1x3 sealed door in the middle of the 5-wide corridor, reinforced wall either side. -->
@@ -232,6 +254,10 @@
         <substationDef>DMS_SubstationCabinet_Wall</substationDef>
         <corridorLinks>1~2</corridorLinks>
         <maxLegLength>45</maxLegLength>
+        <!-- 跨分區連通：每個管道網有這個機率再挖一段管道，接到最近的別的分區網路；多出一條繞過閘門的路（兩頭仍要打破通風口）。
+             Cross-sector links: each duct network has this chance of one more duct to the nearest other sector's
+             network, adding a way round the gates (still behind breakable vents at either end). -->
+        <crossSectorChance>0.5</crossSectorChance>
       </li>
     </modExtensions>
   </StructureLayoutDef>

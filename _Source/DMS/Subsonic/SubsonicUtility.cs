@@ -33,13 +33,28 @@ namespace DMS
         /// <summary>次聲波穿牆，不看視線。Infrasound goes through walls; no line-of-sight check.</summary>
         public bool ignoreWalls = true;
 
+        /// <summary>
+        /// 聽覺器官（HearingSource 部位）受到的傷害類型；null 就不造成實際傷害。
+        /// 走原版 DamageWorker_AddInjury，所以頭盔與天生的鈍器護甲會先抵擋。
+        /// Damage dealt to hearing organs (HearingSource parts); null means no real damage.
+        /// Goes through vanilla's injury worker, so helmets and natural blunt armor absorb it first.
+        /// </summary>
+        public DamageDef earDamageDef;
+
+        /// <summary>每個聽覺器官各自承受的傷害量。Damage applied to each hearing organ separately.</summary>
+        public float earDamage = 0f;
+
+        public float earArmorPenetration = 0f;
+
         public FleckDef fleck;
         public SoundDef sound;
     }
 
     /// <summary>
-    /// 次聲波只作用於血肉生物：機械體沒有可以被震壞的感官與內臟。
-    /// Infrasound only works on flesh: mechs have no senses or viscera for it to shake apart.
+    /// 次聲波作用於所有「非機械體且具有聽覺」的單位，聽覺越好受害越深；聽覺為 0（全聾、沒有耳朵）即免疫。
+    /// 聽覺可超過 100%（仿生耳等），效果會跟著超過基準值。
+    /// Infrasound hits every non-mechanoid that can hear, harder the better it hears; zero hearing
+    /// (deaf, no ears) means immune. Hearing can exceed 100% (bionic ears etc.) and so can the effect.
     /// </summary>
     public static class SubsonicUtility
     {
@@ -74,12 +89,13 @@ namespace DMS
                 {
                     Pawn pawn = tmpPawns[i];
                     if (pawn == source || pawn.Dead || !pawn.Spawned) continue;
-                    if (pawn.RaceProps == null || !pawn.RaceProps.IsFlesh) continue;
                     if ((pawn.Position - center).LengthHorizontalSquared > radiusSq) continue;
                     if (props.hostileOnly && !IsHostile(pawn, source, sourceFaction)) continue;
+                    float hearing = HearingFactor(pawn);
+                    if (hearing <= 0f) continue;
                     if (!props.ignoreWalls && !GenSight.LineOfSight(center, pawn.Position, map, skipFirstCell: true)) continue;
 
-                    Affect(pawn, props, state, source);
+                    Affect(pawn, props, state, source, hearing);
                     affected++;
                 }
             }
@@ -102,12 +118,50 @@ namespace DMS
             {
                 Pawn pawn = pawns[i];
                 if (pawn == source || pawn.Dead || pawn.Downed) continue;
-                if (pawn.RaceProps == null || !pawn.RaceProps.IsFlesh) continue;
                 if ((pawn.Position - center).LengthHorizontalSquared > radiusSq) continue;
                 if (props.hostileOnly && !IsHostile(pawn, source, sourceFaction)) continue;
+                if (HearingFactor(pawn) <= 0f) continue;
                 return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// 效果倍率 = 聽覺能力等級；機械體一律 0。
+        /// Effect multiplier = hearing capacity level; always 0 for mechanoids.
+        /// </summary>
+        public static float HearingFactor(Pawn pawn)
+        {
+            if (pawn?.RaceProps == null || pawn.RaceProps.IsMechanoid || pawn.health?.capacities == null) return 0f;
+            return Mathf.Max(0f, pawn.health.capacities.GetLevel(PawnCapacityDefOf.Hearing));
+        }
+
+        private static readonly List<BodyPartRecord> tmpEars = new List<BodyPartRecord>();
+
+        private static void DamageEars(Pawn pawn, SubsonicPulseProps props, Thing source)
+        {
+            if (props.earDamageDef == null || props.earDamage <= 0f) return;
+
+            tmpEars.Clear();
+            foreach (BodyPartRecord part in pawn.health.hediffSet.GetNotMissingParts())
+            {
+                if (part.def.tags.Contains(BodyPartTagDefOf.HearingSource))
+                    tmpEars.Add(part);
+            }
+            try
+            {
+                for (int i = 0; i < tmpEars.Count; i++)
+                {
+                    if (pawn.Dead) return;
+                    DamageInfo dinfo = new DamageInfo(props.earDamageDef, props.earDamage, props.earArmorPenetration,
+                        instigator: source, hitPart: tmpEars[i]);
+                    pawn.TakeDamage(dinfo);
+                }
+            }
+            finally
+            {
+                tmpEars.Clear();
+            }
         }
 
         private static bool IsHostile(Pawn pawn, Thing source, Faction sourceFaction)
@@ -116,13 +170,18 @@ namespace DMS
             return sourceFaction != null && pawn.HostileTo(sourceFaction);
         }
 
-        private static void Affect(Pawn pawn, SubsonicPulseProps props, MentalStateDef state, Thing source)
+        private static void Affect(Pawn pawn, SubsonicPulseProps props, MentalStateDef state, Thing source, float hearing)
         {
+            // 倍率已在傷害前取得，所以同一次脈衝打壞耳朵不會回頭削弱這一發本身。
+            // hearing was read before the damage, so ears ruined by this pulse don't weaken this pulse.
+            DamageEars(pawn, props, source);
+            if (pawn.Dead || !pawn.Spawned) return;
+
             if (props.hediff != null && props.severity > 0f)
             {
                 // 大型生物的體腔與耳道對同一頻段的共振較弱。
                 // Large creatures resonate less at the same frequency.
-                float severity = props.severity / Mathf.Max(1f, pawn.BodySize);
+                float severity = props.severity * hearing / Mathf.Max(1f, pawn.BodySize);
                 HealthUtility.AdjustSeverity(pawn, props.hediff, severity);
             }
 
@@ -134,7 +193,7 @@ namespace DMS
             if (props.panicChance <= 0f || pawn.Downed || pawn.InMentalState) return;
             if (pawn.mindState?.mentalStateHandler == null) return;
 
-            float chance = props.panicChance * (1f - pawn.GetStatValue(FFF_DefOf.FFF_FearResistance));
+            float chance = props.panicChance * hearing * (1f - pawn.GetStatValue(FFF_DefOf.FFF_FearResistance));
             if (!Rand.Chance(Mathf.Clamp01(chance))) return;
             if (!state.Worker.StateCanOccur(pawn)) return;
 

@@ -32,9 +32,8 @@ namespace DMS
             if (rooms.NullOrEmpty()) return;
 
             Faction defenders = faction ?? VaultRoomUtility.DefenderFaction;
-            List<LayoutRoom> allowed = rooms.Where(r => !IsOffLimits(r)).ToList();
-
-            IEnumerable<LayoutRoom> ordered = allowed
+            IEnumerable<LayoutRoom> ordered = rooms
+                .Where(r => !VaultRoomUtility.IsOffLimits(r))
                 .OrderBy(r => PreferenceIndex(r, ext.preferredRooms))
                 .ThenByDescending(r => r.Area);
 
@@ -76,22 +75,6 @@ namespace DMS
                 if (room.HasLayoutDef(preferred[i])) return i;
             }
             return preferred.Count;
-        }
-
-        private static bool IsOffLimits(LayoutRoom room)
-        {
-            if (room.defs.NullOrEmpty()) return true;
-            foreach (LayoutRoomDef def in room.defs)
-            {
-                System.Type worker = def.roomContentsWorkerType;
-                if (worker == typeof(RoomContents_VaultEntrance)
-                    || VaultTreasuryUtility.IsTreasuryWorker(worker)
-                    || typeof(RoomContents_Corridor).IsAssignableFrom(worker))
-                {
-                    return true;
-                }
-            }
-            return false;
         }
     }
 }

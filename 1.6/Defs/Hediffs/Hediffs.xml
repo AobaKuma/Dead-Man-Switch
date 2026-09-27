@@ -120,6 +120,9 @@
     <stages>
       <li>
         <label>low</label>
+        <statOffsets>
+          <WorkSpeedGlobalOffsetMech>0.20</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
         <capMods>
           <li>
             <capacity>Moving</capacity>
@@ -134,6 +137,9 @@
       <li>
         <label>medium</label>
         <minSeverity>0.5</minSeverity>
+        <statOffsets>
+          <WorkSpeedGlobalOffsetMech>0.15</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
         <capMods>
           <li>
             <capacity>Moving</capacity>
@@ -149,11 +155,17 @@
         <label>high</label>
         <minSeverity>0.90</minSeverity>
         <painOffset>0.1</painOffset>
+        <statOffsets>
+          <WorkSpeedGlobalOffsetMech>0.10</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
       </li>
       <li>
         <label>very high</label>
         <minSeverity>1.2</minSeverity>
         <painOffset>0.2</painOffset>
+        <statOffsets>
+          <WorkSpeedGlobalOffsetMech>0.05</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
         <capMods>
           <li>
             <capacity>Moving</capacity>

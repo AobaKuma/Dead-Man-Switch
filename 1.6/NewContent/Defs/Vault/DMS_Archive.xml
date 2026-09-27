@@ -39,10 +39,12 @@
     <order>551</order>
     <genStep Class="DMS.DMS_GenStep_Vault">
       <layoutDef>DMS_DataArchive</layoutDef>
-      <!-- 房型比儲存庫少，縮一圈避免空走廊過長；分區之間要留 6 格岩層，比原本的 50~60 加大一圈。
-           Fewer room types than the vault, so a size down from it; a size up from the old 50~60 for the 6-cell
-           rock gap between sectors. -->
-      <sizeRange>60~70</sizeRange>
+      <!-- 房型比儲存庫少，比儲存庫小一圈。分區之間要留 6 格岩層，從原本的 50~60 放大到 80~90
+           （模擬中位數約 7 間房，比原本多）。口袋地圖 120 見方，四周仍留 15 格以上的岩層。
+           Fewer room types than the vault, so a size down from it. The 6-cell rock gap between sectors took it from
+           50~60 to 80~90 (median about 7 rooms in simulation, more than before). The pocket map is 120 square,
+           still leaving 15+ cells of rock on every side. -->
+      <sizeRange>80~90</sizeRange>
     </genStep>
   </GenStepDef>
 
@@ -122,6 +124,28 @@
              starts with a stretch of bare link corridor. 6 is vanilla's auto-connect range, so wall lamps,
              substations and other powered fixtures can't reach the next sector's conduit. -->
         <sectorGap>6</sectorGap>
+        <!-- 入口檢查點：每間沿走廊的房間有這個機率在門前夾一間 8x6 的警衛站，房間往外推 5 格，只能穿過檢查點進出。
+             Entrance checkpoints: each room along a corridor has this chance of an 8x6 guard post in front of it;
+             the room is pushed 5 cells out and can only be reached through the checkpoint. -->
+        <checkpointRoomDef>DMS_VaultCheckpoint</checkpointRoomDef>
+        <checkpointChance>0.35</checkpointChance>
+        <!-- 電梯廳一定直接貼著走廊，用捲門接出去：由寬到窄試，放得下的第一種就用。
+             The lift lobby always sits right on a corridor and opens onto it through a rolling door, tried widest first. -->
+        <entranceDoorDefs>
+          <li>DMS_RollingDoor_Triple</li>
+          <li>DMS_RollingDoor_Double</li>
+          <li>DMS_RollingDoor_Single</li>
+        </entranceDoorDefs>
+        <!-- 走廊嵌入結構：房間掛完後，沿走廊沒掛房間的空牆往岩層裡嵌（預設朝北：z = 0 那排落在走廊牆線上）。
+             Corridor embeds: once the rooms are hung, set into the rock along bare corridor wall (north by default: the
+             z = 0 row lands on the corridor's wall line). -->
+        <embedStructures>
+          <li>DMS_Embed_A</li>
+          <li>DMS_Embed_B</li>
+          <li>DMS_Embed_C</li>
+          <li>DMS_Embed_D</li>
+        </embedStructures>
+        <embedChance>0.5</embedChance>
         <sectorGates>true</sectorGates>
         <gateChance>1</gateChance>
         <!-- 1x3 密封門置中，兩側補強化牆。A 1x3 sealed door in the middle, reinforced wall either side. -->
@@ -146,13 +170,13 @@
       </li>
       <!-- 檢修通道網（通風管道）：在岩層裡挖 1 格寬的管道，把同一分區的設備間（必接）與其他一般房間（機率）串起來，
            接回該分區的走廊一兩處，並延伸出一間只能從管道進入的密室。所有開口都是原版通風口：不能走，要打破或拆掉才進得去。
-           走廊的配電盤掛在密室裡，電纜沿管道穿過通風口接到走廊中線。管道只接同一分區，不會繞過閘門或密封門。
+           走廊的配電盤掛在密室裡，電纜沿管道穿過通風口接到走廊中線。管道各自只開口到同一分區，但可能經由連接管道跨分區相通（見 crossSectorChance）。
            Maintenance tunnels (vent ducts): 1-wide ducts dug through the rock linking a sector's equipment rooms
            (always) and other ordinary rooms (by chance), opening onto that sector's corridor in one or two places and
            running on to a secret room reachable only from the duct. Every opening is a vanilla vent: not walkable,
            break or deconstruct it to get through. The corridor's substation hangs in the secret room, its conduit
-           running under the vents to the corridor strip. Tunnels never leave their sector, so they can't get round a
-           gate or a sealed door. -->
+           running under the vents to the corridor strip. Each network only opens onto its own sector, but link ducts may
+           join sectors (see crossSectorChance). -->
       <li Class="DMS.ModExtension_VaultTunnels">
         <equipmentRooms>
           <li>DMS_VaultPowerPlant</li>
@@ -185,6 +209,10 @@
         <substationDef>DMS_SubstationCabinet_Wall</substationDef>
         <corridorLinks>1~2</corridorLinks>
         <maxLegLength>45</maxLegLength>
+        <!-- 跨分區連通：每個管道網有這個機率再挖一段管道，接到最近的別的分區網路；多出一條繞過閘門的路（兩頭仍要打破通風口）。
+             Cross-sector links: each duct network has this chance of one more duct to the nearest other sector's
+             network, adding a way round the gates (still behind breakable vents at either end). -->
+        <crossSectorChance>0.5</crossSectorChance>
       </li>
     </modExtensions>
   </StructureLayoutDef>
@@ -538,7 +566,7 @@
     <portal>
       <pocketMapGenerator>DMS_DataArchive</pocketMapGenerator>
       <exitDef>DMS_VaultElevatorExit</exitDef>
-      <!-- 結構 50~60，留出四周岩層。The structure runs 50~60; leave rock around it. -->
+      <!-- 結構 80~90，留出四周岩層。The structure runs 80~90; leave rock around it. -->
       <pocketMapSize>120</pocketMapSize>
     </portal>
     <comps Inherit="False">

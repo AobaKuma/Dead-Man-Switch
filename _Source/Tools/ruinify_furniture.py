@@ -10,6 +10,7 @@ from PIL import Image, ImageFilter
 
 SRC_ROOT = sys.argv[1]
 DST_ROOT = sys.argv[2]
+ONLY = set(sys.argv[3:])  # optional set names to regenerate; default all
 VARIANTS = ["A", "B", "C"]
 PX_PER_CELL = 256
 
@@ -21,8 +22,8 @@ BURNT = np.array([16, 16, 16])
 OUTLINE = np.array([0, 0, 0])
 
 SETS = {
-    "DMS_Personallocker": "DMS_Personallocker/DMS_1X1_Personallocker",
-    "DMS_Personallocker_Large": "DMS_Personallocker_Large/DMS_3X1_Personallocker",
+    "DMS_Personallocker": "DMS_Personallocker/Personallocker",
+    "DMS_Personallocker_Large": "DMS_Personallocker_Large/Personallocker",
     "DMS_Waterdispenser": "DMS_Waterdispenser/DMS_1X1_Waterdispenser",
     "DMS_Benches": "DMS_Benches/DMS_3X1_Benches",
     "DMS_Airpurifier": "DMS_Airpurifier/DMS_Airpurifier",
@@ -158,6 +159,8 @@ def ruinify(src, seed):
 
 count = 0
 for name, base in SETS.items():
+    if ONLY and name not in ONLY:
+        continue
     for src in sorted(glob.glob(os.path.join(SRC_ROOT, base + "_*.png"))):
         rot = os.path.basename(src).rsplit("_", 1)[1][:-4]
         for vi, v in enumerate(VARIANTS):

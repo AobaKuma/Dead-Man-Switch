@@ -69,7 +69,13 @@ namespace DMS
         }
 
         /// <summary>同一個 pawn 只能有一份受訓任務在跑：GenerateBestowingCeremonyQuest 會被反覆呼叫。</summary>
-        private static bool HasOngoingTraining(Pawn pawn)
+        public static bool HasOngoingTraining(Pawn pawn)
+        {
+            return GetActiveTraining(pawn) != null;
+        }
+
+        /// <summary>找出該 pawn 尚未結束(待接受或進行中)的受訓任務。</summary>
+        public static Quest GetActiveTraining(Pawn pawn)
         {
             List<Quest> quests = Find.QuestManager.QuestsListForReading;
             for (int i = 0; i < quests.Count; i++)
@@ -78,10 +84,28 @@ namespace DMS
                 if (q.State != QuestState.NotYetAccepted && q.State != QuestState.Ongoing) continue;
                 foreach (QuestPart part in q.PartsListForReading)
                 {
-                    if (part is QuestPart_TrainingGraduation g && g.trainee == pawn) return true;
+                    if (part is QuestPart_TrainingGraduation g && g.trainee == pawn) return q;
                 }
             }
-            return false;
+            return null;
+        }
+
+        /// <summary>
+        /// 比照原版 EndExistingBestowingCeremonyQuest:恩寵變動時把還沒接受的受訓任務作廢,
+        /// 讓重新生成的任務拿到正確的目標階級。已接受(學員可能已在艦隊)的不動。
+        /// </summary>
+        public static void EndPendingTraining(Pawn pawn)
+        {
+            List<Quest> quests = Find.QuestManager.QuestsListForReading;
+            for (int i = quests.Count - 1; i >= 0; i--)
+            {
+                Quest q = quests[i];
+                if (q.State != QuestState.NotYetAccepted) continue;
+                if (q.PartsListForReading.Any(p => p is QuestPart_TrainingGraduation g && g.trainee == pawn))
+                {
+                    q.End(QuestEndOutcome.InvalidPreAcceptance, sendLetter: false);
+                }
+            }
         }
 
         protected override bool TestRunInt(Slate slate)

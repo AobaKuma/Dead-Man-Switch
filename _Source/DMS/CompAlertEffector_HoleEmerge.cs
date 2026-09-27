@@ -89,9 +89,7 @@ namespace DMS
 
         public override void Notify_SignalReceived(Signal signal)
         {
-            triggeringAlarmCell = signal.tag == Props.listenSignal && parent.Spawned
-                ? AlertResponseUtility.AlarmCell(signal, parent.Map)
-                : IntVec3.Invalid;
+            triggeringAlarmCell = AlertResponseUtility.AlarmCellFor(this, signal);
             try
             {
                 base.Notify_SignalReceived(signal);

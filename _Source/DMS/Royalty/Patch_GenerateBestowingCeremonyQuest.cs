@@ -19,6 +19,15 @@ namespace DMS
 
             if (faction.def == DMS_DefOf.DMS_Army)
             {
+                // 原版只認得 QuestPart_BestowingCeremony,看不到受訓任務,每 37500 tick
+                // 還是會再叫一次;這時受訓因「已有任務」跑不起來,就會退回典禮而兩份並存。
+                // 所以任一種任務還在,就不再生成。
+                if (QuestNode_Root_OfficerTraining.HasOngoingTraining(pawn)
+                    || RoyalTitleUtility.GetCurrentBestowingCeremonyQuest(pawn, faction) != null)
+                {
+                    return false;
+                }
+
                 Slate slate = new Slate();
                 slate.Set("titleHolder", pawn);
                 slate.Set("bestowingFaction", faction);
@@ -45,6 +54,16 @@ namespace DMS
                 return false;
             }
             else return true;
+        }
+    }
+
+    [HarmonyPatch(typeof(RoyalTitleUtility), nameof(RoyalTitleUtility.EndExistingBestowingCeremonyQuest))]
+    internal static class Patch_EndExistingBestowingCeremonyQuest //恩寵變動重生任務前,連同未接受的受訓任務一併作廢
+    {
+        public static void Postfix(Pawn pawn, Faction faction)
+        {
+            if (pawn == null || faction?.def != DMS_DefOf.DMS_Army) return;
+            QuestNode_Root_OfficerTraining.EndPendingTraining(pawn);
         }
     }
 }

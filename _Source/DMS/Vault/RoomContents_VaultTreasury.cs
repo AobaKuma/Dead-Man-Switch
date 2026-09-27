@@ -106,7 +106,7 @@ namespace DMS
             ModExtension_VaultTreasury ext, Map map, Faction faction)
         {
             IEnumerable<LayoutRoom> candidates = rooms
-                .Where(r => r != treasury && !IsOffLimits(r))
+                .Where(r => r != treasury && !VaultRoomUtility.IsOffLimits(r))
                 .OrderByDescending(r => ext.preferredConsoleRoom != null && r.HasLayoutDef(ext.preferredConsoleRoom))
                 .ThenByDescending(r => r.Area);
 
@@ -138,25 +138,6 @@ namespace DMS
         public static bool IsTreasuryWorker(System.Type worker)
         {
             return worker != null && typeof(RoomContents_VaultTreasury).IsAssignableFrom(worker);
-        }
-
-        /// <summary>入口、走廊、獎勵房本身都不放控制台。No console in the entrance, a corridor or a treasury.</summary>
-        private static bool IsOffLimits(LayoutRoom room)
-        {
-            if (room.defs.NullOrEmpty()) return true;
-
-            foreach (LayoutRoomDef def in room.defs)
-            {
-                System.Type worker = def.roomContentsWorkerType;
-                if (worker == typeof(RoomContents_VaultEntrance)
-                    || IsTreasuryWorker(worker)
-                    || typeof(RoomContents_Corridor).IsAssignableFrom(worker))
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
 
         /// <summary>

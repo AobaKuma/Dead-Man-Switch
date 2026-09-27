@@ -80,6 +80,11 @@ namespace DMS
             StructureLayout layout = base.GenerateStructure(parms);
             if (Def.corridorDef != null)
             {
+                // 先把入口檢查點的門照結構重排（會封掉側牆上的門），再替失去出口的房間補走廊門。
+                // Lay the entrance checkpoints' doors out from their structure first (sealing side-wall doors), then
+                // give any room that lost its exit a corridor door.
+                VaultLayoutGenerator.Plans.TryGetValue(layout, out VaultLayoutPlan plan);
+                VaultCheckpointUtility.FixDoors(layout, plan, Def.corridorDef);
                 EnsureCorridorDoors(layout);
             }
             return layout;
@@ -99,8 +104,14 @@ namespace DMS
             foreach (LayoutRoom room in layout.Rooms)
             {
                 if (room.requiredDef == Def.corridorDef || room.connections.Count > 0) continue;
+                if (!TryConnect(room))
+                {
+                    Log.Warning($"[DMS] Vault room {room.id} shares no wall with a corridor; it may be unreachable.");
+                }
+            }
 
-                bool done = false;
+            bool TryConnect(LayoutRoom room)
+            {
                 foreach (LayoutRoom corridor in corridors)
                 {
                     foreach (CellRect rect in room.rects)
@@ -112,18 +123,11 @@ namespace DMS
                             layout.Add(cell, RoomLayoutCellType.Door);
                             room.connections.Add(corridor);
                             corridor.connections.Add(room);
-                            done = true;
-                            break;
+                            return true;
                         }
-                        if (done) break;
                     }
-                    if (done) break;
                 }
-
-                if (!done)
-                {
-                    Log.Warning($"[DMS] Vault room {room.id} shares no wall with a corridor; it may be unreachable.");
-                }
+                return false;
             }
         }
 
@@ -153,6 +157,14 @@ namespace DMS
         {
             base.PostLayoutFlushedToSketch(parms);
             ReplaceDoors(parms.layoutSketch);
+
+            // 房型已指派、房間還沒填：把電梯廳調到走廊邊並裝上捲門（在隨機換自動門之後，免得被換掉）。
+            // Room types are set but nothing is filled yet: put the lobby on a corridor and fit its rolling door
+            // (after the random autodoor swap so it isn't swapped out).
+            if (Def.corridorDef != null)
+            {
+                VaultEntranceDoor.Apply(parms, Def.corridorDef, Def.GetModExtension<ModExtension_VaultLayout>());
+            }
         }
 
         public override void Spawn(LayoutStructureSketch layoutStructureSketch, Map map, IntVec3 pos,
@@ -160,6 +172,15 @@ namespace DMS
             bool canReuseSketch = false, Faction faction = null)
         {
             base.Spawn(layoutStructureSketch, map, pos, threatPoints, allSpawnedThings, roofs, canReuseSketch, faction);
+
+            StructureLayout layout = layoutStructureSketch.structureLayout;
+            VaultLayoutPlan plan = VaultLayoutGenerator.TakePlan(layout);
+            plan?.MoveToMap(layout.container);
+
+            // 走廊與房間都生成完了，才在走廊空牆上嵌結構；要在閘門與檢修通道之前，它們才會避開。
+            // Corridors and rooms are up, so the embeds go into the bare corridor wall now; before the gates and tunnels
+            // so those keep clear of them.
+            VaultCorridorEmbeds.Spawn(plan, map, faction);
 
             // 獎勵房要等所有門都生成完才封得起來。Treasuries can only be sealed once every door exists.
             VaultTreasuryUtility.SealTreasuries(layoutStructureSketch, map, faction);
@@ -172,14 +193,16 @@ namespace DMS
             // 分區閘門：入口房已經填好、出生點已定，才知道控制台該放哪一側。
             // Sector gates: only now, with the entrance filled and the start spot set, do we know
             // which side of each gate the console belongs on.
-            StructureLayout layout = layoutStructureSketch.structureLayout;
-            VaultLayoutPlan plan = VaultLayoutGenerator.TakePlan(layout);
-            plan?.MoveToMap(layout.container);
             VaultSectorGates.SpawnGates(layout, plan, map, faction, Def.GetModExtension<ModExtension_VaultLayout>());
 
             // 檢修通道網要在閘門之後：挖管道時要避開閘門，也要知道每段走廊屬於哪個分區。
             // Tunnels after the gates: digging has to keep clear of them and know which sector each corridor is.
             SpawnPower(layout, plan, map, faction);
+
+            // 檢查點改寫牆面、檢修通道開口、閘門都會拆牆，掛在上面的燈與配電盤等不會自己消失；最後統一清掉。
+            // Checkpoint wall rewrites, tunnel hatches and gates all take walls down without what hangs on them;
+            // sweep the orphans once at the end.
+            VaultRoomUtility.RemoveOrphanedAttachments(map);
 
             ChargeInternalBatteries(layoutStructureSketch, map);
         }
@@ -208,7 +231,7 @@ namespace DMS
             List<CellRect> corridorInteriors = corridor?.rects.Select(r => r.ContractedBy(1)).ToList() ?? new List<CellRect>();
             foreach (LayoutRoom room in layout.Rooms)
             {
-                if (room.defs != null && room.defs.Any(d => d.roomContentsWorkerType == typeof(RoomContents_ArchiveServerHall)))
+                if (VaultRoomUtility.HasWorker(room, typeof(RoomContents_ArchiveServerHall)))
                 {
                     RoomContents_ArchiveServerHall.ConnectPower(map, room, corridorInteriors, defenders);
                 }

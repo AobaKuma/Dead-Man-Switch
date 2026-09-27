@@ -8,18 +8,21 @@
        The BullHound kennel: the only way to obtain a bullhound, found inside remnant installations.
        Like the other cradles it is a powered-down line-unit mothball a mechanitor can hack, but as the
        installation's watchdog it wakes hostile on an alarm far more readily (higher triggerChance).
+       醒來後的 AI 同其他封存艙：警報回應（DMS.LordJob_AlarmResponse），見 DMS_Vault_MechCapsules.xml。
+       Once awake it runs the same alarm response as the other cradles (DMS.LordJob_AlarmResponse); see
+       DMS_Vault_MechCapsules.xml.
        ============================================================ -->
 
   <!-- 2x2：駐防犬舍 / garrison kennel -->
   <ThingDef ParentName="FFF_MechCapsule_Medium">
     <defName>DMS_MechCapsule_VaultKennel</defName>
-    <label>mothballed bullhound</label>
-    <description>A bullhound garrison automatroid in hibernation mode, clamped into its charging kennel. It was left on watch when the installation was sealed, and its alarm circuit is still live. A mechanitor can attempt to hack and control it.</description>
+    <label>hibernated bullhound</label>
+    <description>A bullhound garrison automatroid in hibernation mode, clamped into a charging kennel with its back mount still loaded. It was left on watch when the installation was sealed, and its alarm circuit is still live. A mechanitor can attempt to hack and control it.</description>
     <!-- 警報響應：同地圖的警戒掃描器觸發時，有 triggerChance 的機率讓機兵敵對啟動；每次警報各自擲骰。
          Alarm response: when an alert scanner on the same map fires, roll triggerChance to wake the mech as a hostile; every alarm rolls again. -->
     <receivesSignals>true</receivesSignals>
     <comps>
-      <li Class="Fortified.CompProperties_AlertEffector_ReleaseCapsuleMech">
+      <li Class="DMS.CompProperties_AlertEffector_WakeCapsuleMech">
         <triggerChance>0.5</triggerChance>
       </li>
     </comps>

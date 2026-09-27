@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Linq;
 using Fortified;
 using RimWorld;
 using Verse;
@@ -34,17 +34,9 @@ namespace DMS
             // faction here. Their mechs were generated in SpawnSetup with the capsule's then-faction, so they are
             // re-factioned too; otherwise an alarm releases non-hostile Ancients mechs.
             Faction defenders = faction ?? VaultRoomUtility.DefenderFaction;
-            HashSet<Thing> seen = new HashSet<Thing>();
-            foreach (IntVec3 c in room.Cells)
+            foreach (Building_MechCapsule capsule in room.Cells.SelectMany(c => c.GetThingList(map)).OfType<Building_MechCapsule>().Distinct().ToList())
             {
-                List<Thing> things = c.GetThingList(map);
-                for (int i = 0; i < things.Count; i++)
-                {
-                    if (things[i] is Building_MechCapsule capsule && seen.Add(capsule))
-                    {
-                        VaultRoomUtility.SetDefenderFaction(capsule, defenders);
-                    }
-                }
+                VaultRoomUtility.SetDefenderFaction(capsule, defenders);
             }
 
             base.FillRoom(map, room, faction, threatPoints);

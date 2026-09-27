@@ -60,9 +60,25 @@
           </curve>
           <roundRandom>true</roundRandom>
         </li>
+        <!-- 每顆星 ≈ 3 天處理時間:一名研究速度 100% 的人員每天約有半天在工作 → 3 × 60000 × 0.5 = 90000 -->
+        <li Class="DMS.QuestNode_DocWorkload">
+          <documentCount>$documentCount</documentCount>
+          <workPerStar>90000</workPerStar>
+          <storeAs>docWork</storeAs>
+          <pointsToChallengeRatingCurve>
+            <points>
+              <li>(100, 1)</li>
+              <li>(1200, 1)</li>
+              <li>(1800, 2)</li>
+              <li>(4000, 2)</li>
+              <li>(5000, 3)</li>
+            </points>
+          </pointsToChallengeRatingCurve>
+        </li>
         <li Class="QuestNode_Set">
           <name>rewardValue</name>
-          <value>$($documentCount * 75)</value> 
+          <!-- 報酬依星級:每顆星(≈3 天處理時間)1000 -->
+          <value>$($challengeRating * 1000)</value>
         </li>
         <li Class="QuestNode_LoopCount">
           <loopCount>$documentCount</loopCount>
@@ -71,6 +87,10 @@
               <li Class="QuestNode_GenerateThing">
                 <def>DMS_QuestDocument</def>
                 <storeAs>tempDoc</storeAs>
+              </li>
+              <li Class="DMS.QuestNode_SetDocWork">
+                <thing>$tempDoc</thing>
+                <workAmount>$docWork</workAmount>
               </li>
               <li Class="QuestNode_DropPods">
                 <contents>$tempDoc</contents>

@@ -137,4 +137,848 @@
     </elements>
   </Fortified.Structures.FFF_StructureDef>
 
+  <!-- ============ 入口檢查點 8x6 / Entrance checkpoints 8x6 ============
+       夾在走廊與房間之間的警衛站，DMS_VaultCheckpoint 依 baseWeight 從 A~D 抽一張蓋上（見 DMS.RoomContents_VaultCheckpoint）。
+       四張都一樣大：z = 0 那排牆接走廊、z = 5 那排接房間，旋轉由版面決定，z = 0 那面永遠朝走廊。
+       牆上沒有牆的格子就是開口，蓋的時候版面的牆會照結構拆掉：可以是門、擋路的東西（鐵絲網），或直接相通。
+       獎勵房前面只會抽到靠房間那面全是門的（A、C），電梯廳前面不會抽到被擋住的（D）。
+       Guard posts between a corridor and a room; DMS_VaultCheckpoint stamps one of A~D by baseWeight (see
+       DMS.RoomContents_VaultCheckpoint). All four are the same size: the z = 0 wall row meets the corridor and the z = 5
+       row the room; the layout picks the rotation, z = 0 always towards the corridor. Any wall cell without a wall is an
+       opening and the layout's wall there comes down: a door, something in the way (barbed wire), or straight through.
+       A treasury only gets one whose room side is all doors (A, C); the lift lobby never gets a blocked one (D). -->
+
+  <!-- A：前後各一扇門（x = 3），左半通道與候檢長椅，右半警衛裝備區。
+       A: a door front and back (x = 3); passage and waiting benches on the left, the guards' kit on the right. -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_Room_Checkpoint_A</defName>
+    <size>(8, 6)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(3, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 5)</pos>
+        <size>(3, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(4, 0, 0)</pos>
+        <size>(4, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(4, 0, 5)</pos>
+        <size>(4, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(8, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 5)</pos>
+        <size>(8, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(7, 0, 1)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(7, 0, 1)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>FFF_RCdoor</def>
+        <posList>
+          <li>(3, 0, 0)</li>
+          <li>(3, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Benches</def>
+        <rot>1</rot>
+        <posList>
+          <li>(1, 0, 2)</li>
+          <li>(1, 0, 4)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_LauncherCase</def>
+        <pos>(5, 0, 1)</pos>
+        <rot>2</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Shelf</def>
+        <pos>(6, 0, 1)</pos>
+        <rot>3</rot>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Dresser</def>
+        <pos>(6, 0, 3)</pos>
+        <rot>3</rot>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Shelf</def>
+        <pos>(5, 0, 4)</pos>
+        <rot>2</rot>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(4, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(8, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(0, 0, 5)</pos>
+        <size>(8, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(4, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(7, 0, 1)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(4, 0, 1)</pos>
+        <size>(3, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_RoofRect">
+        <def>RoofConstructed</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(8, 6)</size>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <!-- B：朝走廊整面敞開的候檢區，中間一條金屬地板通道穿過後牆 2 格寬的缺口進房間。
+       B: a waiting area wide open to the corridor; a metal-floored lane runs through a 2-wide gap in the back wall. -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_Room_Checkpoint_B</defName>
+    <size>(8, 6)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(1, 5)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(7, 0, 0)</pos>
+        <size>(1, 5)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(1, 5)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(7, 0, 0)</pos>
+        <size>(1, 5)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 5)</pos>
+        <size>(3, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(5, 0, 5)</pos>
+        <size>(3, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 5)</pos>
+        <size>(8, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Shelf</def>
+        <pos>(1, 0, 2)</pos>
+        <rot>1</rot>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Benches</def>
+        <pos>(6, 0, 3)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Airpurifier</def>
+        <pos>(1, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(2, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Waterdispenser</def>
+        <pos>(6, 0, 4)</pos>
+        <rot>2</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(3, 6)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(5, 0, 0)</pos>
+        <size>(3, 6)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(3, 0, 0)</pos>
+        <size>(2, 6)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_RoofRect">
+        <def>RoofConstructed</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(8, 6)</size>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <!-- C：朝走廊敞開的登記處，辦公桌與書櫃，後牆一扇自動門（x = 2）通房間。
+       C: a registration desk open to the corridor, with desks and bookcases; an autodoor (x = 2) in the back wall. -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_Room_Checkpoint_C</defName>
+    <size>(8, 6)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(1, 5)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(7, 0, 0)</pos>
+        <size>(1, 5)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(1, 5)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(7, 0, 0)</pos>
+        <size>(1, 5)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 5)</pos>
+        <size>(2, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(3, 0, 5)</pos>
+        <size>(5, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 5)</pos>
+        <size>(8, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Benches</def>
+        <pos>(1, 0, 1)</pos>
+        <rot>1</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Bookcase</def>
+        <rot>3</rot>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(6, 0, 1)</li>
+          <li>(6, 0, 3)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Table1x2c</def>
+        <pos>(4, 0, 2)</pos>
+        <rot>3</rot>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(1, 0, 3)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Table1x2c</def>
+        <pos>(3, 0, 3)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>WallLamp</def>
+        <pos>(4, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DiningChair</def>
+        <pos>(4, 0, 4)</pos>
+        <rot>3</rot>
+        <stuff>WoodLog</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Autodoor</def>
+        <pos>(2, 0, 5)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(8, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(2, 0, 1)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(1, 0, 1)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(3, 0, 1)</pos>
+        <size>(5, 5)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(0, 0, 5)</pos>
+        <size>(3, 1)</size>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <!-- D：封鎖的機房通道，前後 4 格寬的開口都拉了鐵絲網（不能走，要拆掉或打掉才過得去），裡面有配電箱與通風機。
+       D: a sealed plant passage; the 4-wide openings front and back are strung with barbed wire (impassable until
+       removed or broken), with a substation cabinet and vents inside. -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_Room_Checkpoint_D</defName>
+    <size>(8, 6)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(2, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 5)</pos>
+        <size>(2, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(6, 0, 0)</pos>
+        <size>(2, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(6, 0, 5)</pos>
+        <size>(2, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(8, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 5)</pos>
+        <size>(8, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(7, 0, 1)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(7, 0, 1)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_BarbedWire</def>
+        <posList>
+          <li>(2, 0, 0)</li>
+          <li>(2, 0, 5)</li>
+          <li>(4, 0, 0)</li>
+          <li>(4, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_SubstationCabinet</def>
+        <pos>(1, 0, 1)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_VentMedium</def>
+        <pos>(6, 0, 2)</pos>
+        <rot>1</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_VentLarge</def>
+        <pos>(2, 0, 3)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(6, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(8, 6)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainColorRect">
+        <color>Structure_GreyDark</color>
+        <pos>(2, 0, 0)</pos>
+        <size>(4, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainColorRect">
+        <color>Structure_GreyDark</color>
+        <pos>(2, 0, 5)</pos>
+        <size>(4, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainColorRect">
+        <color>Structure_GreyDark</color>
+        <pos>(1, 0, 1)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainColorRect">
+        <color>Structure_GreyDark</color>
+        <pos>(6, 0, 1)</pos>
+        <size>(1, 3)</size>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_Embed_A</defName>
+    <size>(13, 5)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(12, 0, 0)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(12, 0, 0)</pos>
+        <size>(1, 4)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 4)</pos>
+        <size>(13, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 4)</pos>
+        <size>(13, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_SuperWall</def>
+        <posList>
+          <li>(3, 0, 0)</li>
+          <li>(6, 0, 0)</li>
+          <li>(9, 0, 0)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_BarbedWire</def>
+        <posList>
+          <li>(1, 0, 0)</li>
+          <li>(4, 0, 0)</li>
+          <li>(7, 0, 0)</li>
+          <li>(10, 0, 0)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_CrateSmall_Prosthetic</def>
+        <pos>(1, 0, 1)</pos>
+        <rot>1</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_CrateSmall_Parts</def>
+        <pos>(11, 0, 1)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_LogisticContainerDestroyed</def>
+        <posList>
+          <li>(1, 0, 2)</li>
+          <li>(4, 0, 2)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Shelf</def>
+        <pos>(7, 0, 2)</pos>
+        <rot>2</rot>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(6, 0, 3)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_LauncherCase</def>
+        <pos>(7, 0, 3)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Building_VentMedium</def>
+        <pos>(10, 0, 3)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(13, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(13, 4)</size>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_Embed_B</defName>
+    <size>(18, 4)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(1, 3)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(1, 3)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(17, 0, 0)</pos>
+        <size>(1, 3)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(16, 0, 1)</pos>
+        <size>(2, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(15, 0, 2)</pos>
+        <size>(3, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 3)</pos>
+        <size>(18, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 3)</pos>
+        <size>(18, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_SuperWall</def>
+        <pos>(17, 0, 0)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_BarbedWire</def>
+        <rot>2</rot>
+        <posList>
+          <li>(2, 0, 0)</li>
+          <li>(5, 0, 0)</li>
+          <li>(7, 0, 0)</li>
+          <li>(10, 0, 0)</li>
+          <li>(13, 0, 0)</li>
+          <li>(16, 0, 0)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Building_BarbedWire</def>
+        <rot>3</rot>
+        <posList>
+          <li>(5, 0, 1)</li>
+          <li>(9, 0, 1)</li>
+          <li>(13, 0, 1)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_Recharger</def>
+        <rot>2</rot>
+        <posList>
+          <li>(3, 0, 2)</li>
+          <li>(7, 0, 2)</li>
+          <li>(11, 0, 2)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>WallLamp</def>
+        <posList>
+          <li>(3, 0, 2)</li>
+          <li>(11, 0, 2)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_EmergencyLamp</def>
+        <pos>(7, 0, 2)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(18, 4)</size>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_Embed_C</defName>
+    <size>(9, 2)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(9, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(9, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_SuperWall</def>
+        <posList>
+          <li>(0, 0, 0)</li>
+          <li>(4, 0, 0)</li>
+          <li>(8, 0, 0)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>HiddenConduit</def>
+        <posList>
+          <li>(0, 0, 0)</li>
+          <li>(8, 0, 0)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>PavedTile</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(9, 2)</size>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_Embed_D</defName>
+    <size>(9, 12)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(3, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(6, 0, 0)</pos>
+        <size>(3, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 1)</pos>
+        <size>(1, 10)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(8, 0, 1)</pos>
+        <size>(1, 10)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(2, 0, 4)</pos>
+        <size>(3, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(6, 0, 4)</pos>
+        <size>(2, 1)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Bed</def>
+        <pos>(3, 0, 7)</pos>
+        <size>(1, 2)</size>
+        <rot>3</rot>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Bed</def>
+        <pos>(7, 0, 7)</pos>
+        <size>(1, 2)</size>
+        <rot>3</rot>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(4, 0, 5)</pos>
+        <size>(1, 6)</size>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMS_SuperWall</def>
+        <pos>(0, 0, 11)</pos>
+        <size>(9, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_RollingDoor_Triple</def>
+        <pos>(4, 0, 0)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Table1x2c</def>
+        <pos>(1, 0, 1)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DiningChair</def>
+        <pos>(2, 0, 1)</pos>
+        <rot>3</rot>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Table1x2c</def>
+        <pos>(6, 0, 1)</pos>
+        <rot>1</rot>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DiningChair</def>
+        <pos>(4, 0, 2)</pos>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DiningChair</def>
+        <pos>(7, 0, 2)</pos>
+        <rot>2</rot>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Table1x2c</def>
+        <pos>(4, 0, 3)</pos>
+        <rot>3</rot>
+        <stuff>Steel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Personallocker</def>
+        <pos>(7, 0, 3)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Door</def>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(1, 0, 4)</li>
+          <li>(5, 0, 4)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Bed</def>
+        <rot>3</rot>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(3, 0, 5)</li>
+          <li>(3, 0, 10)</li>
+          <li>(7, 0, 5)</li>
+          <li>(7, 0, 10)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>EndTable</def>
+        <rot>2</rot>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(3, 0, 6)</li>
+          <li>(3, 0, 9)</li>
+          <li>(7, 0, 6)</li>
+          <li>(7, 0, 9)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMS_EmergencyLamp</def>
+        <posList>
+          <li>(2, 0, 10)</li>
+          <li>(6, 0, 10)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(9, 12)</size>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
 </Defs>

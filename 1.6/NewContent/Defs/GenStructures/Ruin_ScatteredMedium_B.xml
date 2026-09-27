@@ -1562,6 +1562,12 @@
         <def>RoofConstructed</def>
         <pos>(21, 0, 14)</pos>
       </li>
+      <!-- 書櫃放幾本隨機的書（不設 makerDef，所以貨架不動）。A few random books in the bookcases (no makerDef, so shelves are left alone). -->
+      <li Class="Fortified.Structures.FFF_Element_FillStorage">
+        <pos>(0, 0, 0)</pos>
+        <size>(29, 29)</size>
+        <booksPerBookcase>1~3</booksPerBookcase>
+      </li>
     </elements>
     <tags>
       <li>DMS_SiteStruct</li>
@@ -2589,6 +2595,12 @@
           <li>(7, 0, 23)</li>
           <li>(11, 0, 26)</li>
         </posList>
+      </li>
+      <!-- 書櫃放幾本隨機的書（不設 makerDef，所以貨架不動）。A few random books in the bookcases (no makerDef, so shelves are left alone). -->
+      <li Class="Fortified.Structures.FFF_Element_FillStorage">
+        <pos>(0, 0, 0)</pos>
+        <size>(29, 29)</size>
+        <booksPerBookcase>1~3</booksPerBookcase>
       </li>
     </elements>
     <tags>
@@ -6184,6 +6196,12 @@
           <li>(12, 0, 24)</li>
           <li>(12, 0, 27)</li>
         </posList>
+      </li>
+      <!-- 書櫃放幾本隨機的書（不設 makerDef，所以貨架不動）。A few random books in the bookcases (no makerDef, so shelves are left alone). -->
+      <li Class="Fortified.Structures.FFF_Element_FillStorage">
+        <pos>(0, 0, 0)</pos>
+        <size>(29, 29)</size>
+        <booksPerBookcase>1~3</booksPerBookcase>
       </li>
     </elements>
     <tags>

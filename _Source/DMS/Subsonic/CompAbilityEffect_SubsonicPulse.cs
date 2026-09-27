@@ -51,9 +51,10 @@ namespace DMS
             for (int i = 0; i < pawns.Count; i++)
             {
                 Pawn p = pawns[i];
-                if (p.Dead || p.Downed || p.InMentalState || !p.RaceProps.IsFlesh) continue;
+                if (p.Dead || p.Downed || p.InMentalState) continue;
                 if ((p.Position - caster.Position).LengthHorizontalSquared > radiusSq) continue;
                 if (!p.HostileTo(caster)) continue;
+                if (SubsonicUtility.HearingFactor(p) <= 0f) continue;
                 if (++count >= Props.aiMinTargets) return true;
             }
             return false;

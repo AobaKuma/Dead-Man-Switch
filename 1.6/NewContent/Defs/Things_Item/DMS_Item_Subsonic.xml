@@ -10,7 +10,7 @@
   <HediffDef>
     <defName>DMS_SubsonicTrauma</defName>
     <label>infrasonic trauma</label>
-    <description>Tuned infrasound has set this creature's inner ear and viscera resonating. It causes nausea, disorientation and deep, diffuse pain that no wound explains. Repeated exposure stacks up quickly, and at its worst the pain alone is enough to cause shock.\n\nThe effect fades on its own within a couple of hours.</description>
+    <description>Tuned infrasound has set this creature's inner ear and viscera resonating. It causes nausea, disorientation and deep, diffuse pain that no wound explains. The keener a creature's hearing, the harder it is hit; a deaf creature is unaffected. Repeated exposure stacks up quickly, and at its worst the pain alone is enough to cause shock.\n\nThe effect fades on its own within a couple of hours.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <isBad>true</isBad>
@@ -92,6 +92,50 @@
         </capMods>
       </li>
     </stages>
+  </HediffDef>
+
+  <!-- 聽覺器官損傷：每次脈衝對每個 HearingSource 部位各打一次。
+       armorCategory = Blunt，走 DamageWorker_AddInjury，頭盔（覆蓋耳朵的頭部裝備）與天生鈍器護甲會先抵擋；
+       不用原版 Blunt 的 DamageWorker_Blunt，免得多出內傷擴散與擊暈。 -->
+  <DamageDef>
+    <defName>DMS_InfrasoundRupture</defName>
+    <label>infrasonic rupture</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <armorCategory>Blunt</armorCategory>
+    <externalViolence>true</externalViolence>
+    <makesBlood>false</makesBlood>
+    <buildingDamageFactor>0</buildingDamageFactor>
+    <hediff>DMS_InfrasoundRupture</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <overkillPctToDestroyPart>0.4~1.0</overkillPctToDestroyPart>
+    <deathMessage>{0} has been killed by infrasound.</deathMessage>
+  </DamageDef>
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>DMS_InfrasoundRupture</defName>
+    <label>infrasonic rupture</label>
+    <labelNoun>an infrasonic rupture</labelNoun>
+    <description>Tissue torn apart from the inside by resonating infrasound. Left untreated, it can scar into permanent hearing loss.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>treated</labelTendedWell>
+        <labelTendedWellInner>treated</labelTendedWellInner>
+        <labelSolidTendedWell>repaired</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.05</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>infrasonic scarring</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <bleedRate>0.005</bleedRate>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Ruptured</destroyedLabel>
+    </injuryProps>
   </HediffDef>
 
   <!-- ==================================================================== -->
@@ -188,6 +232,8 @@
           <hediff>DMS_SubsonicTrauma</hediff>
           <severity>0.35</severity>
           <panicChance>0.4</panicChance>
+          <earDamageDef>DMS_InfrasoundRupture</earDamageDef>
+          <earDamage>3</earDamage>
           <hostileOnly>true</hostileOnly>
           <ignoreWalls>true</ignoreWalls>
           <fleck>PsycastAreaEffect</fleck>
@@ -282,6 +328,8 @@
           <hediff>DMS_SubsonicTrauma</hediff>
           <severity>0.6</severity>
           <panicChance>0.5</panicChance>
+          <earDamageDef>DMS_InfrasoundRupture</earDamageDef>
+          <earDamage>5</earDamage>
           <hostileOnly>false</hostileOnly>
           <ignoreWalls>true</ignoreWalls>
           <fleck>PsycastAreaEffect</fleck>
