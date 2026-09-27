@@ -51,6 +51,41 @@ namespace DMS
         /// <summary>樞紐每一臂的寬度（含牆），要比走廊寬。Width of each hub arm, walls included; wider than a corridor.</summary>
         public int hubArmWidth = 11;
 
+        /// <summary>
+        /// 相鄰兩座樞紐中心之間的最小距離。拉大它能在樞紐之間留出大片岩層，降低通道密度（通風中樞也才放得進去）。
+        /// 0 = 舊行為：樞紐跨度加兩條走廊寬，或 branchSpacing，取大者。
+        /// Minimum distance between neighbouring hub centres. Raising it leaves broad rock between hubs and thins the
+        /// corridors out (which is also what gives the vent centre room). 0 keeps the old rule: the hub span plus two
+        /// corridor widths, or branchSpacing, whichever is larger.
+        /// </summary>
+        public int hubSpacing = 0;
+
+        // ── 直線長度與迴廊 / Straight runs and cloisters ─────────────────────
+
+        /// <summary>
+        /// 單一直線走廊的長度上限（含牆），0 = 不限。主幹（穿過樞紐也算同一段）與支道超過就轉折：接一段垂直的連接走廊，
+        /// 往旁邊偏 jogOffsetRange 格再繼續；樞紐兩側的支道隔著樞紐在同一條線上，各自的第一段只給一半。
+        /// Length cap on one straight corridor, walls included; 0 = none. The spine (straight through its hubs) and the
+        /// branches bend past it: a perpendicular connector, a jogOffsetRange step sideways, and on. A hub's two side
+        /// branches line up across it, so each one's first run only gets half.
+        /// </summary>
+        public int maxStraightLength = 0;
+
+        /// <summary>轉折時中線往旁邊偏移的格數。How far the centre line steps sideways at a bend.</summary>
+        public IntRange jogOffsetRange = new IntRange(18, 30);
+
+        /// <summary>
+        /// 迴廊（四條走廊圍成一圈、中庭放房間）的數量。一部分放在主幹上：中庭擋住視線，直線到那裡就斷；其餘有機率接在支道盡頭。
+        /// 迴廊整圈跟進來的走廊同一個分區，只在主幹出口設閘門。預設 0 = 不放。
+        /// Cloisters (four corridors round a courtyard of rooms). Some sit on the spine, where the courtyard breaks the line
+        /// of sight; the rest may cap branch ends. A cloister is the incoming corridor's sector, gated only where the spine
+        /// leaves it. 0 (the default) = none.
+        /// </summary>
+        public IntRange loopCountRange = IntRange.Zero;
+
+        /// <summary>迴廊的邊長（含牆）。A cloister's side length, walls included.</summary>
+        public IntRange loopSizeRange = new IntRange(31, 39);
+
         /// <summary>樞紐兩側各自長出支道的機率。Chance each side of a hub grows a branch.</summary>
         public float hubBranchChance = 0.85f;
 
@@ -379,8 +414,54 @@ namespace DMS
 
         // ── 走廊 / Corridors ──────────────────────────────────────────────────
 
+        /// <summary>沒有直線長度上限時用的值（夠大、加減不會溢位）。The cap when straight runs are unlimited: big, but safe to add to.</summary>
+        private const int NoCap = 100000;
+
+        /// <summary>支道盡頭還有迴廊額度時，真的接一座迴廊的機率。Chance a branch end takes a cloister while any are left.</summary>
+        private const float BranchLoopChance = 0.5f;
+
+        /// <summary>生成走廊時共用的狀態。Shared state while the corridors grow.</summary>
+        private class Growth
+        {
+            public CellRect container;
+            public int width;
+            public ModExtension_VaultLayout ext;
+            public VaultLayoutPlan plan;
+            /// <summary>單一直線段的長度上限（含牆）。Length cap on one straight run, walls included.</summary>
+            public int cap;
+            /// <summary>還能接在支道盡頭的迴廊數。Cloisters still available for branch ends.</summary>
+            public int loopsLeft;
+
+            public int Clearance => CorridorClearance(ext);
+        }
+
+        /// <summary>
+        /// 主幹上的樞紐或迴廊。From / To 是它沿主幹佔的範圍（含牆），half 用來算它跟支道、轉折的距離。
+        /// A hub or cloister on the spine. From / To is the stretch of spine it takes (walls included); half is used for
+        /// how far branches and bends keep from it.
+        /// </summary>
+        private class SpineNode
+        {
+            public int centre;
+            public int half;
+            public int size;
+            public bool loop;
+
+            public int From => centre - half;
+            public int To => From + size - 1;
+        }
+
         private static void GrowCorridors(CellRect container, int width, ModExtension_VaultLayout ext, VaultLayoutPlan plan)
         {
+            Growth g = new Growth
+            {
+                container = container,
+                width = width,
+                ext = ext,
+                plan = plan,
+                cap = ext.maxStraightLength > 0 ? Mathf.Max(ext.maxStraightLength, width * 4) : NoCap
+            };
+
             // 主幹沿較長的軸走，不一定貫穿整個容器。The spine follows the longer axis and needn't span it.
             bool horizontal = container.Width >= container.Height;
             int axisLength = horizontal ? container.Width : container.Height;
@@ -389,83 +470,132 @@ namespace DMS
             int crossCentre = (horizontal ? container.Height : container.Width) / 2;
 
             int axisMin = horizontal ? container.minX : container.minZ;
-            int crossAbs = (horizontal ? container.minZ : container.minX) + crossCentre;
+            int crossMin = horizontal ? container.minZ : container.minX;
+            int crossMax = horizontal ? container.maxZ : container.maxX;
+            int crossAbs = crossMin + crossCentre;
             int spineA = axisMin + spineStart;
             int spineB = spineA + spineLength - 1;
 
-            // 樞紐位置：離主幹兩端與彼此都要夠遠。Hub positions: clear of the spine's ends and of each other.
+            // 迴廊：一部分放在主幹上當節點，剩下的留給支道盡頭。Cloisters: some sit on the spine as nodes, the rest wait for branch ends.
+            int loops = Mathf.Max(0, ext.loopCountRange.RandomInRange);
+            int spineLoops = Rand.RangeInclusive(0, loops);
+            g.loopsLeft = loops - spineLoops;
+
+            // 節點位置：離主幹兩端與彼此都要夠遠。十字樞紐先放，迴廊只用剩下的空位，才不會把樞紐擠掉；
+            // 主幹上放不下的迴廊改留給支道盡頭。
+            // Node positions, clear of the spine's ends and each other. The cross hubs go first and cloisters only take
+            // what room is left, so they never crowd the hubs out; a cloister that doesn't fit on the spine is left for a
+            // branch end instead.
             int hubHalf = ext.hubSize / 2;
-            List<int> hubs = new List<int>();
+            List<SpineNode> nodes = new List<SpineNode>();
             int hubCount = ext.hubCountRange.RandomInRange;
-            int hubMinPos = spineA + hubHalf + width;
-            int hubMaxPos = spineB - hubHalf - width;
-            for (int i = 0; i < hubCount && hubMaxPos >= hubMinPos; i++)
+            for (int i = 0; i < hubCount; i++)
             {
-                for (int attempt = 0; attempt < 20; attempt++)
+                TryPlaceNode(g, nodes, new SpineNode { half = hubHalf, size = hubHalf * 2 + 1 }, spineA, spineB);
+            }
+            for (int i = 0; i < spineLoops; i++)
+            {
+                int size = LoopSize(ext, width);
+                if (size + width * 2 > crossMax - crossMin + 1
+                    || !TryPlaceNode(g, nodes, new SpineNode { half = size / 2, size = size, loop = true }, spineA, spineB))
                 {
-                    int candidate = Rand.RangeInclusive(hubMinPos, hubMaxPos);
-                    if (hubs.All(h => Mathf.Abs(h - candidate) >= Mathf.Max(ext.hubSize + width * 2, ext.branchSpacing)))
-                    {
-                        hubs.Add(candidate);
-                        break;
-                    }
+                    g.loopsLeft++;
                 }
             }
-            hubs.Sort();
+            nodes.SortBy(n => n.centre);
 
-            // 主幹：一段走廊、一座樞紐、一段走廊……樞紐是前一段的子節點，下一段與兩側支道是樞紐的子節點，
-            // 所以樞紐的每一臂都是一個會設閘門的路口。
-            // The spine: corridor, hub, corridor, … A hub is a child of the segment before it, and the next segment
-            // and the side branches are the hub's children, so every arm of a hub is a gated junction.
+            // 主幹的轉折：主幹換線時，節點要能整個落在容器裡。Spine bends: whichever line the spine is on, its nodes must fit the container.
+            int reserve = Mathf.Max(width, nodes.Count > 0 ? nodes.Max(n => n.half) : 0) + 1;
+            List<(int at, int cross)> bends = PlanSpineBends(g, nodes, spineA, spineB, crossAbs, crossMin + reserve, crossMax - reserve);
+
+            // 主幹：一段走廊、一個節點或轉折、一段走廊……樞紐是前一段的子節點，下一段與兩側支道是樞紐的子節點，
+            // 所以樞紐的每一臂都是一個會設閘門的路口；迴廊只在出口設閘門；轉折是內部接口。
+            // The spine: corridor, node or bend, corridor, … A hub is a child of the segment before it, and the next
+            // segment and the side branches are the hub's children, so every arm of a hub is a gated junction; a cloister
+            // is gated only on its way out; a bend is internal.
             List<(int index, int from, int to)> segments = new List<(int, int, int)>();
             int cursor = spineA;
             int parent = -1;
-            foreach (int h in hubs)
+            bool internalNext = false;
+            int cross = crossAbs;
+            List<(int along, int across, int h, List<CellRect> hubRects)> hubArms = new List<(int, int, int, List<CellRect>)>();
+            List<(int at, SpineNode node, int bend)> events = nodes.Select(n => (n.From, n, -1))
+                .Concat(bends.Select((b, i) => (b.at, (SpineNode)null, i)))
+                .OrderBy(e => e.Item1)
+                .ToList();
+            foreach ((int at, SpineNode node, int bend) in events)
             {
-                int hubFrom = h - hubHalf;
-                int hubTo = h + hubHalf;
+                int seg = AddCorridor(plan, AxisRect(horizontal, cursor, at, cross, width, container), parent, horizontal, 1, internalNext);
+                segments.Add((seg, cursor, at));
+                internalNext = false;
 
-                int seg = AddCorridor(plan, AxisRect(horizontal, cursor, hubFrom, crossAbs, width, container), parent, horizontal, 1);
-                segments.Add((seg, cursor, hubFrom));
+                if (node == null)
+                {
+                    // 轉折：在這段的末端接一段垂直的連接走廊，下一段從連接走廊的外牆線、換到新的線上繼續（見 BendConnector）。
+                    // Bend: a perpendicular connector at this segment's end; the next segment carries on from the
+                    // connector's outer wall line, on the new line (see BendConnector).
+                    int next = bends[bend].cross;
+                    CellRect connector = BendConnector(!horizontal, cross, next, width, at - width + 1, at);
+                    parent = AddCorridor(plan, connector.ClipInsideRect(container), seg, !horizontal, next > cross ? 1 : -1, true);
+                    cursor = at;
+                    cross = next;
+                    internalNext = true;
+                }
+                else if (node.loop)
+                {
+                    parent = AddLoop(g, horizontal, node.From, 1, cross, node.size, seg);
+                    cursor = node.To;
+                }
+                else
+                {
+                    int h = node.centre;
+                    int hubFrom = node.From;
+                    int hubTo = node.To;
+                    CellRect barAlong = AxisRect(horizontal, hubFrom, hubTo, cross, ext.hubArmWidth, container);
+                    CellRect barAcross = AxisRect(!horizontal, cross - hubHalf, cross + hubHalf, h, ext.hubArmWidth, container);
+                    int along = AddCorridor(plan, barAlong, seg, horizontal, 1);
+                    int across = AddCorridor(plan, barAcross, along, !horizontal, 0, true);
 
-                CellRect barAlong = AxisRect(horizontal, hubFrom, hubTo, crossAbs, ext.hubArmWidth, container);
-                CellRect barAcross = AxisRect(!horizontal, crossAbs - hubHalf, crossAbs + hubHalf, h, ext.hubArmWidth, container);
-                int along = AddCorridor(plan, barAlong, seg, horizontal, 1);
-                int across = AddCorridor(plan, barAcross, along, !horizontal, 0);
-                plan.corridors[across].internalJunction = true;
+                    hubArms.Add((along, across, h, new List<CellRect> { barAlong, barAcross, plan.corridors[seg].rect }));
+                    parent = along;
+                    cursor = hubTo;
+                }
+            }
+            int last = AddCorridor(plan, AxisRect(horizontal, cursor, spineB, cross, width, container), parent, horizontal, 1, internalNext);
+            segments.Add((last, cursor, spineB));
 
-                // 樞紐的支道跟樞紐前一段主幹在幾何上本來就只隔幾格（斜對角），兩者經由樞紐相連，不算間距。
-                // A hub branch sits only a few cells diagonally from the spine segment before the hub by construction;
-                // the two are joined through the hub, so that segment is exempt from the spacing.
-                List<CellRect> hubRects = new List<CellRect> { barAlong, barAcross, plan.corridors[seg].rect };
+            // 樞紐兩側的支道：整條主幹（含轉折與迴廊）都放好之後才長，否則子支道可能佔到主幹之後才轉過去的那條線。
+            // 樞紐的支道跟樞紐前後兩段主幹在幾何上本來就只隔幾格（斜對角），都經由樞紐相連，不算間距。
+            // 兩側支道隔著樞紐在同一條線上，所以各自的第一段只能用一半的長度上限（扣掉樞紐本身）。
+            // Hub side branches grow only once the whole spine (bends and cloisters too) is down; otherwise a sub-branch
+            // could take a line the spine only bends onto later. A hub branch sits only a few cells diagonally from the
+            // spine segments either side of the hub by construction; they're all joined through the hub, so those
+            // segments are exempt from the spacing. The two side branches line up across the hub, so each one's first run
+            // only gets half the cap, less the hub itself.
+            int hubRunCap = g.cap >= NoCap ? NoCap : Mathf.Max(width * 2, (g.cap - ext.hubSize) / 2);
+            foreach ((int along, int across, int h, List<CellRect> hubRects) in hubArms)
+            {
+                CellRect barAcross = plan.corridors[across].rect;
+                // 樞紐之後的那段主幹（樞紐橫臂以外、以 along 為母走廊的那一條）。The spine segment after the hub: along's child other than the cross bar.
+                int after = plan.corridors.FindIndex(c => c.parent == along && c.rect != barAcross);
+                if (after >= 0) hubRects.Add(plan.corridors[after].rect);
                 for (int side = -1; side <= 1; side += 2)
                 {
                     if (!Rand.Chance(ext.hubBranchChance)) continue;
-                    CellRect branch = GrowBranch(container, barAcross, !horizontal, h, width, side, plan, hubRects, CorridorClearance(ext));
-                    if (branch.IsEmpty) continue;
-                    int branchIndex = AddCorridor(plan, branch, across, !horizontal, side);
-                    GrowSubBranches(container, width, ext, plan, branchIndex, horizontal);
+                    List<int> runs = AddBranch(g, barAcross, across, !horizontal, h, side, hubRects, hubRunCap);
+                    GrowSubBranches(g, runs, horizontal);
                 }
-
-                parent = along;
-                cursor = hubTo;
             }
-            int last = AddCorridor(plan, AxisRect(horizontal, cursor, spineB, crossAbs, width, container), parent, horizontal, 1);
-            segments.Add((last, cursor, spineB));
 
-            // T 字支道：在主幹段上隔開一段距離各長一條，避開樞紐，隨機往哪一側。
-            // T branches: spaced out along the spine segments, clear of the hubs, each going off one side.
+            // T 字支道：在主幹段上隔開一段距離各長一條，避開節點與轉折，隨機往哪一側。
+            // T branches: spaced out along the spine segments, clear of the nodes and bends, each going off one side.
             int branches = ext.branchCountRange.RandomInRange;
-            List<int> used = new List<int>(hubs);
-            // 支道離樞紐的最小距離：支道半寬 + 走廊間距 + 1 才碰不到樞紐的橫臂；不小於舊值。
-            // Closest a branch may sit to a hub: its half width + the corridor clearance + 1 keeps it off the hub's
-            // bar; never less than the old value.
-            int hubClearance = Mathf.Max(hubHalf + width + 2, hubHalf + width / 2 + CorridorClearance(ext) + 1);
+            List<int> used = nodes.Select(n => n.centre).Concat(bends.Select(b => b.at)).ToList();
             for (int i = 0; i < branches; i++)
             {
                 int pos = -1;
                 int segIndex = -1;
-                for (int attempt = 0; attempt < 20 && pos < 0; attempt++)
+                for (int attempt = 0; attempt < 40 && pos < 0; attempt++)
                 {
                     (int index, int from, int to) seg = segments.RandomElement();
                     int lo = seg.from + width;
@@ -473,7 +603,7 @@ namespace DMS
                     if (hi < lo) continue;
                     int candidate = Rand.RangeInclusive(lo, hi);
                     if (used.All(u => Mathf.Abs(u - candidate) >= ext.branchSpacing)
-                        && hubs.All(h => Mathf.Abs(h - candidate) >= hubClearance))
+                        && nodes.All(n => Mathf.Abs(n.centre - candidate) >= NodeClearance(g, n)))
                     {
                         pos = candidate;
                         segIndex = seg.index;
@@ -484,17 +614,352 @@ namespace DMS
 
                 int branchSide = Rand.Bool ? 1 : -1;
                 CellRect parentRect = plan.corridors[segIndex].rect;
-                CellRect branch = GrowBranch(container, parentRect, !horizontal, pos, width, branchSide, plan, new List<CellRect> { parentRect },
-                    CorridorClearance(ext));
-                if (branch.IsEmpty) continue;
-                int branchIndex = AddCorridor(plan, branch, segIndex, !horizontal, branchSide);
-                GrowSubBranches(container, width, ext, plan, branchIndex, horizontal);
+                // 視線會穿過母走廊，第一段扣掉它的寬度。The view carries across the parent, so the first run gives up its width.
+                List<int> runs = AddBranch(g, parentRect, segIndex, !horizontal, pos, branchSide, new List<CellRect> { parentRect }, g.cap - width);
+                GrowSubBranches(g, runs, horizontal);
             }
         }
 
-        private static int AddCorridor(VaultLayoutPlan plan, CellRect rect, int parent, bool horizontal, int side)
+        /// <summary>
+        /// 支道離節點中心的最小距離：半跨度 + 支道半寬 + 走廊間距 + 1 才碰不到節點的橫臂；不小於舊值。
+        /// Closest a branch may sit to a node's centre: its half span + the branch's half width + the corridor clearance
+        /// + 1 keeps it off the node's bar; never less than the old value.
+        /// </summary>
+        private static int NodeClearance(Growth g, SpineNode node)
         {
-            plan.corridors.Add(new VaultLayoutPlan.Corridor { rect = rect, parent = parent, horizontal = horizontal, side = side });
+            return Mathf.Max(node.half + g.width + 2, node.half + g.width / 2 + g.Clearance + 1);
+        }
+
+        /// <summary>
+        /// 在主幹上找個位置放節點：離兩端至少一個走廊寬，跟既有節點的中心至少隔兩者半跨度加兩個走廊寬，
+        /// 也不小於 branchSpacing 與 hubSpacing。
+        /// Finds the node a place on the spine: a corridor width clear of either end, and from every other node's centre
+        /// at least both half spans plus two corridor widths, and never less than branchSpacing or hubSpacing.
+        /// </summary>
+        private static bool TryPlaceNode(Growth g, List<SpineNode> nodes, SpineNode node, int spineA, int spineB)
+        {
+            int lo = spineA + node.half + g.width;
+            int hi = spineB - (node.size - node.half - 1) - g.width;
+            if (hi < lo) return false;
+
+            // 間距拉大後隨機位置常撞到，多試幾次。Wide spacing makes random picks collide more often; try harder.
+            for (int attempt = 0; attempt < 60; attempt++)
+            {
+                int candidate = Rand.RangeInclusive(lo, hi);
+                if (nodes.All(o => Mathf.Abs(o.centre - candidate) >= Mathf.Max(node.half + o.half + 1 + g.width * 2, g.ext.branchSpacing, g.ext.hubSpacing)))
+                {
+                    node.centre = candidate;
+                    nodes.Add(node);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 規劃主幹的轉折，讓每一段直線（含穿過樞紐的部分）都不超過長度上限。迴廊中間是房間，視線到那裡就斷，
+        /// 所以迴廊之後重新起算；樞紐則是直通的，要算進同一段。轉折偏向放在允許範圍的後段，免得轉太多次；
+        /// 連接走廊要離節點夠遠，換過去的線也要讓後面的節點整個落在容器裡。找不到位置就停，那一段就維持原樣。
+        /// Plans the spine's bends so no straight run (hubs included, since they're straight through) exceeds the cap.
+        /// A cloister has rooms in its middle, so the line of sight breaks there and counting restarts after it. Bends
+        /// lean towards the late end of what's allowed so there aren't too many; their connectors keep clear of the nodes,
+        /// and the new line must leave room for the nodes further on. Where none fits, planning stops and that run stays.
+        /// </summary>
+        private static List<(int at, int cross)> PlanSpineBends(Growth g, List<SpineNode> nodes, int spineA, int spineB,
+            int cross, int crossLo, int crossHi)
+        {
+            List<(int, int)> bends = new List<(int, int)>();
+            if (g.cap >= NoCap) return bends;
+
+            int w = g.width;
+            int minRun = w * 3;
+            int margin = g.Clearance + 1;
+            int runStart = spineA;
+            for (int guard = 0; guard < 32; guard++)
+            {
+                // 視線會多看進迴廊近端那條走廊的寬度；迴廊之後從遠端那條的內側起算。
+                // The view reaches across the cloister's near side; after the cloister it restarts inside the far side.
+                SpineNode loop = nodes.FirstOrDefault(n => n.loop && n.From >= runStart);
+                int runEnd = loop != null ? loop.From + w - 1 : spineB;
+                if (runEnd - runStart + 1 <= g.cap)
+                {
+                    if (loop == null) break;
+                    runStart = loop.To - w + 1;
+                    continue;
+                }
+
+                // 轉折的連接走廊佔 [at - w + 1, at]。The bend's connector takes [at - w + 1, at].
+                int hi = Mathf.Min(runStart + g.cap - 1, (loop?.From ?? spineB) - minRun);
+                int lo = runStart + minRun;
+                List<int> clear = new List<int>();
+                for (int at = lo; at <= hi; at++)
+                {
+                    if (nodes.All(n => at < n.From - margin || at - w + 1 > n.To + margin)) clear.Add(at);
+                }
+                if (clear.Count == 0) break;
+
+                List<int> late = clear.Where(at => at >= hi - g.cap / 4).ToList();
+                int pick = late.Count > 0 ? late.RandomElement() : clear[clear.Count - 1];
+                if (!TryPickBendCross(g, cross, crossLo, crossHi, out int next)) break;
+
+                bends.Add((pick, next));
+                cross = next;
+                runStart = pick - w + 1;
+            }
+            return bends;
+        }
+
+        /// <summary>轉折往哪一側、偏移多少：jogOffsetRange 隨機，兩側先試隨機的一側。Which way and how far a bend steps: jogOffsetRange, either side in random order.</summary>
+        private static bool TryPickBendCross(Growth g, int cross, int lo, int hi, out int next)
+        {
+            int offset = Mathf.Max(g.ext.jogOffsetRange.RandomInRange, g.width + 2);
+            int first = Rand.Bool ? 1 : -1;
+            for (int k = 0; k < 2; k++)
+            {
+                next = cross + (k == 0 ? first : -first) * offset;
+                if (next >= lo && next <= hi) return true;
+            }
+            next = cross;
+            return false;
+        }
+
+        /// <summary>迴廊的邊長（含牆）：至少留得下中庭，取奇數讓入口置中。A cloister's side, walls included: room for a courtyard, odd so the entrance centres.</summary>
+        private static int LoopSize(ModExtension_VaultLayout ext, int width)
+        {
+            int size = Mathf.Max(ext.loopSizeRange.RandomInRange, width * 2 + 9);
+            return size % 2 == 0 ? size + 1 : size;
+        }
+
+        /// <summary>
+        /// 迴廊：一圈四條走廊圍成的方框，中庭留給房間。近端那條的外牆線落在 near 上（跟進來的走廊共用），往 dir 方向長
+        /// size 格，垂直方向以 cross 為中心。四條都是內部接口，整圈跟進來的走廊同一個分區。回傳遠端那條的索引。
+        /// A cloister: four corridors round a square, the courtyard left for rooms. The near side's outer wall line sits
+        /// on near (shared with the corridor coming in), it reaches size cells towards dir, centred on cross the other
+        /// way. All four joints are internal, so the ring is the incoming corridor's sector. Returns the far side's index.
+        /// </summary>
+        private static int AddLoop(Growth g, bool horizontal, int near, int dir, int cross, int size, int parent)
+        {
+            int w = g.width;
+            int far = near + dir * (size - 1);
+            int c0 = cross - size / 2;
+            int c1 = c0 + size - 1;
+            int nearBar = AddCorridor(g.plan, Limits(!horizontal, c0, c1, near, near + dir * (w - 1)), parent, !horizontal, dir, true);
+            // 兩側只長在兩條橫邊的內牆線之間，跟它們各共用一條牆線（T 字接法）；整塊疊在角落會讓原版
+            // FinalizeRooms 兩邊都不砌外牆，角落就破了。
+            // The sides only run between the two bars' inner wall lines, sharing one wall line with each (a T joint);
+            // overlapping whole at the corners makes vanilla's FinalizeRooms skip the outer walls on both, leaving the
+            // corners open.
+            int innerNear = near + dir * (w - 1);
+            int innerFar = far - dir * (w - 1);
+            int sideLo = AddCorridor(g.plan, Limits(horizontal, innerNear, innerFar, c0, c0 + w - 1), nearBar, horizontal, dir, true);
+            AddCorridor(g.plan, Limits(horizontal, innerNear, innerFar, c1 - w + 1, c1), nearBar, horizontal, dir, true);
+            return AddCorridor(g.plan, Limits(!horizontal, c0, c1, far - dir * (w - 1), far), sideLo, !horizontal, dir, true);
+        }
+
+        /// <summary>
+        /// 在 runs 裡的直線段上長出最多 maxSubBranches 條子支道，同一段上的彼此隔 branchSpacing。
+        /// Grows up to maxSubBranches sub-branches off the given straight runs, spaced by branchSpacing on the same run.
+        /// </summary>
+        private static void GrowSubBranches(Growth g, List<int> runs, bool subHorizontal)
+        {
+            if (runs.Count == 0) return;
+            ModExtension_VaultLayout ext = g.ext;
+            int width = g.width;
+
+            // 子支道離直線段兩端的距離：至少一個走廊寬，有分區間隙時還要讓子支道跟母走廊隔開那麼多格。
+            // 路口可能在任一端（母走廊或轉折），所以兩端都留。
+            // How far a sub-branch keeps from either end of its run: at least a corridor width, and with a sector gap far
+            // enough that it clears the parent by that much. The junction (parent or bend) can be at either end; keep
+            // both clear.
+            int margin = Mathf.Max(width, width / 2 + g.Clearance + 1);
+            Dictionary<int, List<int>> used = new Dictionary<int, List<int>>();
+            for (int s = 0; s < ext.maxSubBranches; s++)
+            {
+                if (!Rand.Chance(ext.subBranchChance)) continue;
+
+                int subPos = -1;
+                int runIndex = -1;
+                for (int attempt = 0; attempt < 10 && subPos < 0; attempt++)
+                {
+                    int r = runs.RandomElementByWeight(i => Length(g.plan.corridors[i].rect, !subHorizontal));
+                    CellRect run = g.plan.corridors[r].rect;
+                    int subLength = Length(run, !subHorizontal);
+                    int subMin = !subHorizontal ? run.minX : run.minZ;
+                    if (SectorGap(ext) > 0 && subLength - margin - 1 < margin) continue;
+
+                    int candidate = subMin + Rand.RangeInclusive(margin, Mathf.Max(margin, subLength - margin - 1));
+                    if (!used.TryGetValue(r, out List<int> taken) || taken.All(u => Mathf.Abs(u - candidate) >= ext.branchSpacing))
+                    {
+                        subPos = candidate;
+                        runIndex = r;
+                    }
+                }
+                if (subPos < 0) break;
+                if (!used.TryGetValue(runIndex, out List<int> list)) used[runIndex] = list = new List<int>();
+                list.Add(subPos);
+
+                int subSide = Rand.Bool ? 1 : -1;
+                CellRect runRect = g.plan.corridors[runIndex].rect;
+                AddBranch(g, runRect, runIndex, subHorizontal, subPos, subSide, new List<CellRect> { runRect }, g.cap - width);
+            }
+        }
+
+        private static int Length(CellRect rect, bool horizontal) => horizontal ? rect.Width : rect.Height;
+
+        /// <summary>
+        /// 從 parent 在 pos 處往 side 方向長一條支道並加進版面，跟 parent 共用牆線；總長隨機。第一段直線最長 firstRunCap，
+        /// 之後每段最長 cap，超過就轉折：在段末接一段垂直的連接走廊，往旁邊偏 jogOffsetRange 格再繼續。第一段接母走廊的
+        /// 路口是閘門，轉折都是內部接口。每段在碰到 exclude（母走廊，或整座樞紐）以外的走廊前 clearance 格停下：兩條走廊
+        /// 一旦相疊就會併成同一個房間、變成沒有閘門的路口；有分區間隙時，clearance 也讓不同分區的走廊之間留出那道岩層。
+        /// 第一段太短就不長。長完之後，還有迴廊額度時有機率在盡頭接一座迴廊。回傳各直線段的索引（子支道長在上面）。
+        /// Grows a branch off parent at pos towards side and adds it to the plan, sharing parent's wall line; random total
+        /// length. The first straight run is at most firstRunCap and every later one at most cap; past that it bends: a
+        /// perpendicular connector at the run's end, a jogOffsetRange step sideways, and on. The first run's joint with
+        /// the parent is the gated junction; the bends are internal. Each run stops clearance cells short of any corridor
+        /// outside exclude (the parent, or its whole hub), since overlapping corridors merge into one room: a junction
+        /// with no gate. With a sector gap, clearance also keeps that band of rock between sectors' corridors. Too short a
+        /// first run means no branch. Once grown, a branch end may take a cloister while any are left. Returns the
+        /// straight runs' indices (sub-branches grow off them).
+        /// </summary>
+        private static List<int> AddBranch(Growth g, CellRect parentRect, int parentIndex, bool horizontal, int pos, int side,
+            List<CellRect> exclude, int firstRunCap)
+        {
+            List<int> runs = new List<int>();
+            CellRect raw = GrowBranchRaw(g.container, parentRect, horizontal, pos, g.width, side, out int minLength);
+            if (raw.IsEmpty) return runs;
+
+            int w = g.width;
+            int clearance = g.Clearance;
+            int start = horizontal ? (side > 0 ? raw.minX : raw.maxX) : (side > 0 ? raw.minZ : raw.maxZ);
+            int end = horizontal ? (side > 0 ? raw.maxX : raw.minX) : (side > 0 ? raw.maxZ : raw.minZ);
+            // 自己的各段彼此相疊是正常的，只跟別人比。Own pieces overlap each other by design; only check against the rest.
+            List<CellRect> others = g.plan.corridors.Select(c => c.rect).Where(r => !exclude.Contains(r)).ToList();
+            List<int> pieces = new List<int>();
+
+            int cursor = start;
+            int cross = pos;
+            int parent = parentIndex;
+            int cap = Mathf.Max(firstRunCap, minLength);
+            while (true)
+            {
+                bool first = runs.Count == 0;
+                int min = first ? minLength : w * 2;
+                // 長度從視線的起點（轉折後是連接走廊的內牆）算；轉折後的矩形從連接走廊的外牆線起，少了連接走廊那段。
+                // Length counts from where the view starts (after a bend, the connector's inside wall); after a bend the
+                // rect starts on the connector's outer wall line, short of the connector's own width.
+                int skip = first ? 0 : w - 1;
+                int length = Mathf.Min(Mathf.Abs(end - cursor) + 1, cap);
+                CellRect run = RunRect(horizontal, cursor + side * skip, side, length - skip, cross, w);
+                bool shrunk = false;
+                while (!run.FullyContainedWithin(g.container) || others.Any(o => o.Overlaps(run.ExpandedBy(clearance))))
+                {
+                    // 從遠端往回縮一格。Pull the far end back by one.
+                    length--;
+                    shrunk = true;
+                    if (length - skip < min)
+                    {
+                        run = CellRect.Empty;
+                        break;
+                    }
+                    run = RunRect(horizontal, cursor + side * skip, side, length - skip, cross, w);
+                }
+                if (run.IsEmpty) break;
+
+                int index = AddCorridor(g.plan, run, parent, horizontal, side, !first);
+                runs.Add(index);
+                pieces.Add(index);
+
+                int far = cursor + side * (length - 1);
+                int nextCursor = far - side * (w - 1);
+                // 撞到東西、走到底，或剩下的不夠再長一段，就停。Stop on a collision, at the end, or when too little is left for another run.
+                if (shrunk || far == end || Mathf.Abs(end - nextCursor) + 1 < w * 3) break;
+                if (!TryBend(g, horizontal, far, side, cross, others, out CellRect connector, out int nextCross)) break;
+
+                parent = AddCorridor(g.plan, connector, index, !horizontal, nextCross > cross ? 1 : -1, true);
+                pieces.Add(parent);
+                cursor = nextCursor;
+                cross = nextCross;
+                cap = g.cap;
+            }
+
+            if (runs.Count > 0 && g.loopsLeft > 0 && Rand.Chance(BranchLoopChance))
+            {
+                // 轉折後的矩形比視線短了連接走廊那段，上限跟著扣掉。After a bend the rect is shorter than the view by the connector; so is its cap.
+                TryAddBranchLoop(g, horizontal, side, runs[runs.Count - 1], pieces, cross, cap - (runs.Count > 1 ? w - 1 : 0));
+            }
+            return runs;
+        }
+
+        /// <summary>
+        /// 支道的轉折：在直線段末端 far 接一段垂直的連接走廊，偏移 jogOffsetRange 格（兩側先試隨機的一側）。
+        /// 連接走廊和接下來最短的一段都要落在容器裡、離別的走廊 clearance 格以上。
+        /// A branch bend: a perpendicular connector at the run's far end, stepping jogOffsetRange sideways (either side in
+        /// random order). The connector and the shortest next run must both fit the container and keep clearance from
+        /// every other corridor.
+        /// </summary>
+        private static bool TryBend(Growth g, bool horizontal, int far, int side, int cross, List<CellRect> others,
+            out CellRect connector, out int nextCross)
+        {
+            int w = g.width;
+            int offset = Mathf.Max(g.ext.jogOffsetRange.RandomInRange, w + 2);
+            int first = Rand.Bool ? 1 : -1;
+            for (int k = 0; k < 2; k++)
+            {
+                int next = cross + (k == 0 ? first : -first) * offset;
+                CellRect conn = BendConnector(!horizontal, cross, next, w, far - side * (w - 1), far);
+                CellRect stub = RunRect(horizontal, far, side, w * 2, next, w);
+                if (!conn.FullyContainedWithin(g.container) || !stub.FullyContainedWithin(g.container)) continue;
+                if (others.Any(o => o.Overlaps(conn.ExpandedBy(g.Clearance)) || o.Overlaps(stub.ExpandedBy(g.Clearance)))) continue;
+
+                connector = conn;
+                nextCross = next;
+                return true;
+            }
+            connector = CellRect.Empty;
+            nextCross = cross;
+            return false;
+        }
+
+        /// <summary>
+        /// 在支道最後一段的盡頭接一座迴廊；放不下就把那一段往回縮，縮到最短為止。視線會多看進迴廊近端那條走廊，
+        /// 所以那一段先讓出它的寬度，才不會超過 runCap（最後一段矩形本身的長度上限）。迴廊整圈要在容器裡，離支道以外的走廊 clearance 格以上。
+        /// Puts a cloister on the end of the branch's last run, pulling the run back if it doesn't fit, as far as its
+        /// minimum. The view carries on across the cloister's near side, so the run first gives up that width to stay
+        /// within runCap (the cap on the last run's own rect). The whole ring must sit in the container and keep clearance from every corridor outside the
+        /// branch.
+        /// </summary>
+        private static void TryAddBranchLoop(Growth g, bool horizontal, int side, int lastRun, List<int> pieces, int cross, int runCap)
+        {
+            int w = g.width;
+            int size = LoopSize(g.ext, w);
+            CellRect run = g.plan.corridors[lastRun].rect;
+            int runLength = Length(run, horizontal);
+            int start = horizontal ? (side > 0 ? run.minX : run.maxX) : (side > 0 ? run.minZ : run.maxZ);
+            List<CellRect> others = g.plan.corridors.Where((c, i) => !pieces.Contains(i)).Select(c => c.rect).ToList();
+
+            for (int length = Mathf.Min(runLength, runCap - (w - 1)); length >= w * 2; length -= 2)
+            {
+                int near = start + side * (length - 1);
+                CellRect bounds = Limits(horizontal, near, near + side * (size - 1), cross - size / 2, cross - size / 2 + size - 1);
+                if (!bounds.FullyContainedWithin(g.container) || others.Any(o => o.Overlaps(bounds.ExpandedBy(g.Clearance)))) continue;
+
+                if (length != runLength) g.plan.corridors[lastRun].rect = RunRect(horizontal, start, side, length, cross, w);
+                AddLoop(g, horizontal, near, side, cross, size, lastRun);
+                g.loopsLeft--;
+                return;
+            }
+        }
+
+        private static int AddCorridor(VaultLayoutPlan plan, CellRect rect, int parent, bool horizontal, int side, bool internalJunction = false)
+        {
+            plan.corridors.Add(new VaultLayoutPlan.Corridor
+            {
+                rect = rect,
+                parent = parent,
+                horizontal = horizontal,
+                side = side,
+                internalJunction = internalJunction
+            });
             return plan.corridors.Count - 1;
         }
 
@@ -511,76 +976,39 @@ namespace DMS
             return rect.ClipInsideRect(container);
         }
 
-        /// <summary>在一條支道上長出最多 maxSubBranches 條子支道，彼此隔 branchSpacing。Grows up to maxSubBranches sub-branches off a branch, spaced by branchSpacing.</summary>
-        private static void GrowSubBranches(CellRect container, int width, ModExtension_VaultLayout ext, VaultLayoutPlan plan,
-            int branchIndex, bool subHorizontal)
+        /// <summary>
+        /// 轉折的連接走廊：沿自己的軸從舊線那一側的牆線，長到新線遠側的牆線；另一個方向佔 [from, to]（舊線那段的末端）。
+        /// 兩端都只跟相接的走廊共用一條牆線（T 字接法），下一段則從它的外牆線接出去。整塊疊在一起的 L 形轉角會讓原版
+        /// FinalizeRooms 兩邊都不砌外牆，轉角就破了。horizontal 是連接走廊本身的軸。
+        /// A bend's connector: along its own axis from the old line's wall on the side it turns to, out to the new line's far
+        /// wall; across, it takes [from, to] (the end of the old run). Each end shares only one wall line with the corridor
+        /// it meets (a T joint), and the next run leaves from its outer wall line. An L corner overlapping whole makes
+        /// vanilla's FinalizeRooms skip the outer walls on both, leaving the corner open. horizontal is the connector's own
+        /// axis.
+        /// </summary>
+        private static CellRect BendConnector(bool horizontal, int cross, int next, int width, int from, int to)
         {
-            CellRect branch = plan.corridors[branchIndex].rect;
-            int subLength = !subHorizontal ? branch.Width : branch.Height;
-            int subMin = !subHorizontal ? branch.minX : branch.minZ;
-
-            // 子支道離支道兩端的距離：至少一個走廊寬，有分區間隙時還要讓子支道跟支道的母走廊隔開那麼多格。
-            // 支道可能往任一側長，路口可能在任一端，所以兩端都留。
-            // How far a sub-branch keeps from either end of its branch: at least a corridor width, and with a sector
-            // gap far enough that it clears the branch's parent by that much. The branch may grow either way, so the
-            // junction can be at either end; keep both clear.
-            int margin = Mathf.Max(width, width / 2 + CorridorClearance(ext) + 1);
-            if (SectorGap(ext) > 0 && subLength - margin - 1 < margin) return;
-
-            List<int> subUsed = new List<int>();
-            for (int s = 0; s < ext.maxSubBranches; s++)
-            {
-                if (!Rand.Chance(ext.subBranchChance)) continue;
-
-                int subPos = -1;
-                for (int attempt = 0; attempt < 10; attempt++)
-                {
-                    int candidate = subMin + Rand.RangeInclusive(margin, Mathf.Max(margin, subLength - margin - 1));
-                    if (subUsed.All(u => Mathf.Abs(u - candidate) >= ext.branchSpacing))
-                    {
-                        subPos = candidate;
-                        break;
-                    }
-                }
-                if (subPos < 0) break;
-                subUsed.Add(subPos);
-
-                int subSide = Rand.Bool ? 1 : -1;
-                CellRect sub = GrowBranch(container, branch, subHorizontal, subPos, width, subSide, plan, new List<CellRect> { branch },
-                    CorridorClearance(ext));
-                if (!sub.IsEmpty)
-                {
-                    AddCorridor(plan, sub, branchIndex, subHorizontal, subSide);
-                }
-            }
+            int half = width / 2;
+            int startLine = next > cross ? cross - half + width - 1 : cross - half;
+            int endLine = next > cross ? next - half + width - 1 : next - half;
+            return Limits(horizontal, startLine, endLine, from, to);
         }
 
         /// <summary>
-        /// 從 parent 走廊在 pos 處往 side 方向長一條支道，跟 parent 共用牆線；長度隨機，太短就不長。
-        /// 支道會在碰到 exclude（母走廊，或整座樞紐）以外的走廊前 clearance 格停下：兩條走廊一旦相疊就會併成同一個
-        /// 房間、變成沒有閘門的路口；有分區間隙時，clearance 也讓不同分區的走廊之間留出那道岩層。
-        /// Grows a branch off parent at pos towards side, sharing parent's wall line. It stops clearance cells short of
-        /// any corridor outside exclude (the parent, or its whole hub), since overlapping corridors merge into one room:
-        /// a junction with no gate. With a sector gap, clearance also keeps that band of rock between sectors' corridors.
-        /// Random length; too short to be worth it returns empty.
+        /// 沿軸兩個座標、垂直方向兩個座標圍出的矩形（順序不拘）。horizontal 表示軸是 x。
+        /// The rect between two axis coordinates and two cross coordinates, in any order. horizontal means the axis is x.
         /// </summary>
-        private static CellRect GrowBranch(CellRect container, CellRect parent, bool horizontal, int pos, int width, int side,
-            VaultLayoutPlan plan, List<CellRect> exclude, int clearance)
+        private static CellRect Limits(bool horizontal, int axis0, int axis1, int cross0, int cross1)
         {
-            CellRect rect = GrowBranchRaw(container, parent, horizontal, pos, width, side, out int minLength);
-            if (rect.IsEmpty) return rect;
+            int a0 = Mathf.Min(axis0, axis1), a1 = Mathf.Max(axis0, axis1);
+            int c0 = Mathf.Min(cross0, cross1), c1 = Mathf.Max(cross0, cross1);
+            return horizontal ? CellRect.FromLimits(a0, c0, a1, c1) : CellRect.FromLimits(c0, a0, c1, a1);
+        }
 
-            List<CellRect> others = plan.corridors.Select(c => c.rect).Where(r => !exclude.Contains(r)).ToList();
-            while (others.Any(o => o.Overlaps(rect.ExpandedBy(clearance))))
-            {
-                // 從遠端往回縮一格。Pull the far end back by one.
-                int length = (horizontal ? rect.Width : rect.Height) - 1;
-                if (length < minLength) return CellRect.Empty;
-                rect = horizontal
-                    ? OffSide(parent, false, side, rect.minZ, rect.Height, length)
-                    : OffSide(parent, true, side, rect.minX, rect.Width, length);
-            }
-            return rect;
+        /// <summary>從 from 往 side 方向長 length 格、以 cross 為中心寬 width 的直線段。A straight run length cells from from towards side, width wide centred on cross.</summary>
+        private static CellRect RunRect(bool horizontal, int from, int side, int length, int cross, int width)
+        {
+            return Limits(horizontal, from, from + side * (length - 1), cross - width / 2, cross - width / 2 + width - 1);
         }
 
         private static CellRect GrowBranchRaw(CellRect container, CellRect parent, bool horizontal, int pos, int width, int side,

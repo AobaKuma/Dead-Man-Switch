@@ -15,6 +15,8 @@
 
   <DMS_Building_GasVent.label>毒气释放口</DMS_Building_GasVent.label>
   <DMS_Building_GasVent.description>安装在地板上、连接着设施警报网络的格栅。警报响起时，它会先发出短暂的嘶嘶声，接着朝周围喷出大量毒气。设施里的机械守军不需要呼吸，其他人最好戴着防毒面具。它的存量足够释放数次，并会从下方的储气槽慢慢补充。切断电源或以EMP瘫痪就能让它停下，即使正在喷发中也一样。</DMS_Building_GasVent.description>
+  <DMS_Building_SubsonicEmitter_Security.label>警戒次声波塔</DMS_Building_SubsonicEmitter_Security.label>
+  <DMS_Building_SubsonicEmitter_Security.description>架设在塔上、连接着设施警报网络的次声波发生器阵列。平时保持静默，警报响起后约一小时内会反复释放次声波，穿透墙壁作用于范围内所有入侵者，使其恶心、剧痛，并让不少人陷入恐慌。设施的机兵守军不受影响。切断电源或以 EMP 攻击即可使其停火。</DMS_Building_SubsonicEmitter_Security.description>
 
   <DMS_Building_LockdownController.label>设施封锁中控</DMS_Building_LockdownController.label>
   <DMS_Building_LockdownController.description>一个用于协调地下设施封锁出入口闸门的应急控制装置，一旦完成封锁就会使出入口无法使用。这类安全装置在设计上会在自身被摧毁后完全封锁设施，此时就必需要有人从外面帮助才能开门。\n\n设施的警戒值达到上限时它就会启动，并在一分钟后封死出入口。骇入它就能解除封锁，也可以事先骇入让它失效。它使用设施的放射性电池运作，切断电源没有作用；EMP只能暂停倒数。</DMS_Building_LockdownController.description>

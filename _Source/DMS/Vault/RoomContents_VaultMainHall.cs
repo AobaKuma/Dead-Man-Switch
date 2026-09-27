@@ -247,6 +247,18 @@ namespace DMS
                 }
             }
 
+            // 次聲波塔：跟反應設施同一排靠牆，挑一個還空著的角位（反應設施已佔的那格會被跳過）。
+            // Infrasonic emitter: same row against the wall as the effector, in whichever slot is still free.
+            if (ext.subsonicEmitterDef != null && seg.HalfWidth >= 2 && Rand.Chance(ext.subsonicEmitterChance))
+            {
+                foreach (IntVec3 cell in CheckpointWallSlots(seg, along).InRandomOrder())
+                {
+                    if (!seg.Interior.Contains(cell) || cell.GetEdifice(map) != null) continue;
+                    VaultRoomUtility.SpawnSecurity(ext.subsonicEmitterDef, cell, map, Rot4.North, faction, ext.initialBatteryPct);
+                    break;
+                }
+            }
+
             // 毒氣釋放口：哨站前後 3~5 格的中線上，玩家推進到哨站時正好噴在接近路線上。
             // Gas vents on the centre line 3~5 cells before and after the checkpoint, right on the approach.
             if (ext.gasVentDef != null)
@@ -258,6 +270,18 @@ namespace DMS
                     if (!seg.Interior.Contains(cell) || cell.GetEdifice(map) != null) continue;
                     if (cell.GetFirstThing(map, ext.gasVentDef) != null) continue;
                     VaultRoomUtility.SpawnSecurity(ext.gasVentDef, cell, map, Rot4.North, faction, ext.initialBatteryPct);
+                }
+            }
+        }
+
+        /// <summary>哨站前後兩格外、兩側靠牆的四個角位。The four wall slots two rows past the checkpoint, either side.</summary>
+        private static IEnumerable<IntVec3> CheckpointWallSlots(Segment seg, int along)
+        {
+            for (int a = -2; a <= 2; a += 4)
+            {
+                for (int sign = -1; sign <= 1; sign += 2)
+                {
+                    yield return seg.Cell(along + a, sign * seg.HalfWidth);
                 }
             }
         }

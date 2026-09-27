@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Fortified;
 using RimWorld;
 using UnityEngine;
@@ -108,7 +109,8 @@ namespace DMS
         }
 
         public static List<Pawn> GeneratePawns(Faction faction, Map map, float alertPct,
-            List<PawnKindDef> pawnKinds, IntRange countRange, FloatRange pointsRange, SimpleCurve pointsByAlertLevel)
+            List<PawnKindDef> pawnKinds, IntRange countRange, FloatRange pointsRange, SimpleCurve pointsByAlertLevel,
+            PawnGroupKindDef groupKind = null)
         {
             List<Pawn> pawns = new List<Pawn>();
 
@@ -126,9 +128,17 @@ namespace DMS
 
             if (faction == null) return pawns;
 
+            // 派系沒有指定種類的 pawnGroupMaker 時退回 Combat，免得產生失敗。
+            // Fall back to Combat when the faction has no maker of the requested kind, so generation doesn't fail.
+            if (groupKind == null || faction.def.pawnGroupMakers.NullOrEmpty()
+                || !faction.def.pawnGroupMakers.Any(m => m.kindDef == groupKind))
+            {
+                groupKind = PawnGroupKindDefOf.Combat;
+            }
+
             PawnGroupMakerParms parms = new PawnGroupMakerParms
             {
-                groupKind = PawnGroupKindDefOf.Combat,
+                groupKind = groupKind,
                 faction = faction,
                 points = PointsFor(alertPct, pointsRange, pointsByAlertLevel),
                 tile = map.Tile,

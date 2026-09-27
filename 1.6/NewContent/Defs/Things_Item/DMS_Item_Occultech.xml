@@ -4,7 +4,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>DMS_SolitaryZPM</defName>
     <label>solidified enegry</label>
-    <description>一種透過約束場固化為穩定物質態的實體能量，是人類得以解明其運作原理的超凡技術之一，也是大部分超凡造物的能量來源。不過對於大多數現有的人類技術而言無法直接利用其內部的能量。</description>
+    <description>Physical energy solidified into a stable material state by a confinement field - one of the transcendent technologies whose working principles humanity has managed to decipher, and the power source of most transcendent artifacts. Most existing human technology, however, cannot make direct use of the energy inside it.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_TableMachinePrinter</ThingDef>
     </descriptionHyperlinks>

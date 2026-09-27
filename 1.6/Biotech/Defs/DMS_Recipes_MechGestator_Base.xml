@@ -31,9 +31,9 @@
     <recipeUsers><li>DMS_MechGestatorLarge</li></recipeUsers>
   </RecipeDef>
   
-  <RecipeDef Name="DMS_AerospaceMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
+  <RecipeDef Name="DMS_AdvancedControlMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
     <gestationCycles>12</gestationCycles>
-    <researchPrerequisite>DMS_Aerospace</researchPrerequisite>
+    <researchPrerequisite>DMS_AdvancedControl</researchPrerequisite>
     <recipeUsers><li>DMS_MechGestatorLarge</li></recipeUsers>
   </RecipeDef>
 

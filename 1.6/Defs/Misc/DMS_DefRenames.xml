@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- 更名過的 Def: 讀舊存檔 / 舊翻譯鍵時自動轉成新名稱 (由框架的 Patch_BackCompatibility 套用) -->
+	<!-- 已發布的名稱不可從這裡移除, 否則該版本之前的存檔會遺失對應資料 -->
+	<Fortified.DefRenameDef>
+		<defName>DMS_DefRenames</defName>
+		<renames>
+			<!-- 先進控制系統 -->
+			<li>
+				<defType>ResearchProjectDef</defType>
+				<oldDefName>DMS_Aerospace</oldDefName>
+				<newDefName>DMS_AdvancedControl</newDefName>
+			</li>
+		</renames>
+	</Fortified.DefRenameDef>
+
+</Defs>

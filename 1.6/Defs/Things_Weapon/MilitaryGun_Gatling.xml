@@ -32,11 +32,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>25</Tungsteel>
-			<ComponentStamped>7</ComponentStamped>
+			<Steel>160</Steel>
+			<Tungsteel>50</Tungsteel>
+			<ComponentStamped>10</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>12</Tungsteel>
+			<Tungsteel>30</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>
@@ -105,11 +106,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>20</Tungsteel>
-			<ComponentStamped>12</ComponentStamped>
+			<Steel>120</Steel>
+			<Tungsteel>80</Tungsteel>
+			<ComponentStamped>14</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>25</Tungsteel>
+			<Tungsteel>45</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>
@@ -181,11 +183,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>50</Tungsteel>
-			<ComponentStamped>17</ComponentStamped>
+			<Steel>200</Steel>
+			<Tungsteel>120</Tungsteel>
+			<ComponentStamped>18</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>44</Tungsteel>
+			<Tungsteel>63</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>
@@ -328,11 +331,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>250</Tungsteel>
-			<ComponentStamped>81</ComponentStamped>
+			<Steel>300</Steel>
+			<Tungsteel>200</Tungsteel>
+			<ComponentStamped>35</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>256</Tungsteel>
+			<Tungsteel>112</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>

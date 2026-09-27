@@ -60,6 +60,9 @@
         <sensorDef>DMS_Building_Sensor</sensorDef>
         <nestDef>DMS_Building_FPVNest</nestDef>
         <nestChance>0.5</nestChance>
+        <!-- 哨站旁靠牆的警戒次聲波塔。Security infrasonic emitter against the wall beside a checkpoint. -->
+        <subsonicEmitterDef>DMS_Building_SubsonicEmitter_Security</subsonicEmitterDef>
+        <subsonicEmitterChance>0.35</subsonicEmitterChance>
         <checkpointSpacing>14</checkpointSpacing>
         <maxCheckpointsPerRect>2</maxCheckpointsPerRect>
 

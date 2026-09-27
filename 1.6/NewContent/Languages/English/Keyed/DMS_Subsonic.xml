@@ -4,6 +4,9 @@
   <!-- 次聲波塔 DMS.CompSubsonicEmitter -->
   <DMS_SubsonicEmitter_Charging>Next pulse in: {0}</DMS_SubsonicEmitter_Charging>
   <DMS_SubsonicEmitter_Ready>Ready, waiting for hostiles in range</DMS_SubsonicEmitter_Ready>
+  <DMS_SubsonicEmitter_Engaged>{EMITTER_definite} is powering up: infrasound incoming!</DMS_SubsonicEmitter_Engaged>
+  <DMS_SubsonicEmitter_Standby>Standby, awaiting facility alarm</DMS_SubsonicEmitter_Standby>
+  <DMS_SubsonicEmitter_EngagedFor>Engaged: {0} remaining</DMS_SubsonicEmitter_EngagedFor>
 
   <!-- 爆破探勘裝置 DMS.CompBlastScanner -->
   <DMS_BlastScanner_Ignite>Light fuse</DMS_BlastScanner_Ignite>

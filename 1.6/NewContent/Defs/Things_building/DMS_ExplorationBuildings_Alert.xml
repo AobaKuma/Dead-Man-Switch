@@ -593,6 +593,80 @@
   </ThingDef>
 
   <!-- ══════════════════════════════════════════════════════════
+       警戒次聲波塔（SubsonicEmitter_Security）：玩家版次聲波塔（DMS_Building_SubsonicEmitter）的設施版本。
+       平時待機不發聲；收到警報後作動約一小時，期間範圍內有入侵者就間歇放次聲波脈衝，再次警報會重新計時。
+       只打與設施陣營敵對的生物，機兵守軍免疫。斷電、EMP 會讓它停火。放在哨站旁靠牆（見 ModExtension_VaultSecurity）。
+       Security infrasonic emitter: the facility version of the player's tower. Silent on standby; an alarm engages
+       it for about an hour, during which it pulses whenever intruders are in range, and each new alarm restarts
+       the clock. Only creatures hostile to the facility are hit, and the mech garrison is immune. Power loss or an
+       EMP silences it. Placed against the wall beside checkpoints (see ModExtension_VaultSecurity).
+       ══════════════════════════════════════════════════════════ -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_SubsonicEmitter_Security</defName>
+    <label>security infrasonic emitter</label>
+    <description>A tower-mounted infrasound array wired into the facility's alert network. It stays silent until the alarm sounds, then for about an hour releases burst after burst of infrasound through the walls at every intruder within range, wracking them with nausea and pain and sending many into a panic. The facility's mechanical garrison is unaffected. Cut its power or hit it with an EMP to silence it.</description>
+    <descriptionHyperlinks>
+      <HediffDef>DMS_SubsonicTrauma</HediffDef>
+      <ThingDef>DMS_Building_SubsonicEmitter</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_SubsonicEmitter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(0.6,0.8,0.6)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconScale>1.2</uiIconScale>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <fillPercent>0.4</fillPercent>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <specialDisplayRadius>9.9</specialDisplayRadius>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>80</Steel>
+      <ComponentStamped>4</ComponentStamped>
+    </costList>
+    <building>
+      <claimable>false</claimable>
+      <ai_combatDangerous>true</ai_combatDangerous>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="DMS.CompProperties_AlertEffector_SubsonicEmitter">
+        <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
+        <triggerChance>1</triggerChance>
+        <oneShot>false</oneShot>
+        <activeTicks>2500</activeTicks>
+        <firstPulseDelayTicks>120</firstPulseDelayTicks>
+        <intervalTicks>600~900</intervalTicks>
+        <pulse>
+          <radius>9.9</radius>
+          <hediff>DMS_SubsonicTrauma</hediff>
+          <severity>0.25</severity>
+          <panicChance>0.3</panicChance>
+          <earDamageDef>DMS_InfrasoundRupture</earDamageDef>
+          <earDamage>2</earDamage>
+          <hostileOnly>true</hostileOnly>
+          <ignoreWalls>true</ignoreWalls>
+          <fleck>PsycastAreaEffect</fleck>
+          <sound>Explosion_EMP</sound>
+        </pulse>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ══════════════════════════════════════════════════════════
        設施封鎖中控（LockdownController）：只放在地下口袋地圖。警戒值滿 100% 時倒數 1 分鐘，封死地下出入口。
        駭入即解除（警報前也可以先駭）；被摧毀時直接死鎖設施，只能由地表的人對入口電梯做緊急解鎖。
        自帶電池，斷電無效；EMP 只能暫停倒數。邏輯全在 FFF（Fortified.CompFacilityLockdownController /

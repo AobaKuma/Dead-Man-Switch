@@ -3023,7 +3023,7 @@
           <li>(47, 0, 38)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientIndustrialShelf</def>
         <pos>(64, 0, 18)</pos>
         <rot>2</rot>
@@ -3093,7 +3093,7 @@
         <def>DMS_LogisticContainer</def>
         <pos>(58, 0, 21)</pos>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientCratePallet</def>
         <posList>
           <li>(61, 0, 21)</li>
@@ -3148,7 +3148,7 @@
           <li>(7, 0, 28)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientEmergencyLight_Red</def>
         <pos>(11, 0, 23)</pos>
         <rot>2</rot>
@@ -3277,7 +3277,7 @@
           <li>(4, 0, 33)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientMilitaryGeneratorSmall</def>
         <pos>(60, 0, 31)</pos>
       </li>
@@ -3309,7 +3309,7 @@
           <li>(12, 0, 33)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientShelf</def>
         <posList>
           <li>(50, 0, 33)</li>
@@ -3357,7 +3357,7 @@
         <pos>(6, 0, 36)</pos>
         <stuff>Steel</stuff>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientTableMachining</def>
         <pos>(17, 0, 36)</pos>
         <rot>2</rot>
@@ -3367,11 +3367,11 @@
         <pos>(20, 0, 36)</pos>
         <rot>2</rot>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientIndustrialShelf</def>
         <pos>(22, 0, 36)</pos>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientDestroyedConsole</def>
         <pos>(4, 0, 37)</pos>
       </li>
@@ -3380,11 +3380,11 @@
         <pos>(8, 0, 37)</pos>
         <stuff>Steel</stuff>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientPlantPot</def>
         <pos>(10, 0, 37)</pos>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientArmchair</def>
         <pos>(11, 0, 37)</pos>
       </li>
@@ -3410,12 +3410,12 @@
         <pos>(46, 0, 38)</pos>
         <rot>3</rot>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientSmallShelf</def>
         <pos>(50, 0, 38)</pos>
         <rot>1</rot>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientForklift</def>
         <pos>(54, 0, 39)</pos>
         <rot>1</rot>
@@ -14165,7 +14165,7 @@
           <li>(45, 0, 30)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientEmergencyLight_Red</def>
         <rot>2</rot>
         <posList>
@@ -14225,7 +14225,7 @@
         <pos>(7, 0, 9)</pos>
         <rot>1</rot>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientIndustrialTruck</def>
         <pos>(42, 0, 9)</pos>
         <rot>3</rot>
@@ -14340,7 +14340,7 @@
           <li>(20, 0, 39)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientIndustrialTruck</def>
         <pos>(29, 0, 20)</pos>
       </li>
@@ -14360,7 +14360,7 @@
           <li>(42, 0, 42)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientShower</def>
         <posList>
           <li>(7, 0, 24)</li>
@@ -14423,12 +14423,12 @@
           <li>(11, 0, 34)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientForklift</def>
         <pos>(30, 0, 32)</pos>
         <rot>2</rot>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientEmergencyLight_Red</def>
         <rot>3</rot>
         <posList>
@@ -14436,7 +14436,7 @@
           <li>(13, 0, 36)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientForklift</def>
         <pos>(42, 0, 31)</pos>
         <rot>3</rot>
@@ -14494,7 +14494,7 @@
           <li>(42, 0, 40)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientTV</def>
         <pos>(19, 0, 37)</pos>
         <rot>3</rot>
@@ -14580,7 +14580,7 @@
         <def>AncientKitchenSink</def>
         <pos>(17, 0, 45)</pos>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter" MayRequire="Ludeon.RimWorld.Odyssey">
         <def>AncientEmergencyLight_Red</def>
         <posList>
           <li>(27, 0, 45)</li>

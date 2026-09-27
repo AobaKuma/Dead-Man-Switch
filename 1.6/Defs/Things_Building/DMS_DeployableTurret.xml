@@ -114,7 +114,8 @@
 		</thingCategories>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<costList>
-			<Tungsteel>25</Tungsteel>
+			<Steel>75</Steel>
+			<Tungsteel>45</Tungsteel>
 			<ComponentStamped>7</ComponentStamped>
 		</costList>
 		<researchPrerequisites Inherit="false">
@@ -370,7 +371,8 @@
 		</thingCategories>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
 		<costList>
-			<Tungsteel>15</Tungsteel>
+			<Steel>90</Steel>
+			<Tungsteel>50</Tungsteel>
 			<ComponentStamped>9</ComponentStamped>
 		</costList>
 		<researchPrerequisites Inherit="false">
@@ -688,7 +690,8 @@
 		</thingCategories>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
 		<costList>
-			<Tungsteel>20</Tungsteel>
+			<Steel>100</Steel>
+			<Tungsteel>55</Tungsteel>
 			<ComponentStamped>8</ComponentStamped>
 		</costList>
 		<researchPrerequisites Inherit="false">

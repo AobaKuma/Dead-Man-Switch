@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 地下設施洞口增援專用的兵力組成（DMS_HoleBase 的 groupKind），與派系一般的 Combat 分開，
+       調整這裡不會影響任務、遺址與襲擊。組成寫在 DMS_Legacy 的 pawnGroupMakers（Faction_Hostile.xml）。
+       Squad makeup used only by the underground facility's hole reinforcements (DMS_HoleBase's groupKind),
+       kept apart from the faction's regular Combat so tuning it leaves quests, sites and raids alone.
+       The options live in DMS_Legacy's pawnGroupMakers (Faction_Hostile.xml). -->
+  <PawnGroupKindDef>
+    <defName>DMS_FacilityReinforcement</defName>
+    <workerClass>PawnGroupKindWorker_Normal</workerClass>
+  </PawnGroupKindDef>
+</Defs>

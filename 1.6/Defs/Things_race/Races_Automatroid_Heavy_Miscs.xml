@@ -78,6 +78,8 @@
     <race>DMS_Mech_Ape</race>
     <isFighter>true</isFighter>
     <combatPower>140</combatPower>
+    <!-- 手持 HMG 不會生成, 猿人實際只能拿機砲 (市值約 1444); 下限須高於機砲市值, 否則會生成空手猿人 -->
+    <weaponMoney>1500~4000</weaponMoney>
     <lifeStages>
       <li>
         <bodyGraphicData>

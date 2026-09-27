@@ -96,6 +96,16 @@ namespace DMS
         /// <summary>每座哨站的每一側放一個釋放口的機率。Chance per checkpoint side.</summary>
         public float gasVentChance = 0.5f;
 
+        /// <summary>
+        /// 哨站旁靠牆的設施次聲波塔；null = 不放。與反應設施放在同一排，但選另一側牆。
+        /// Facility infrasonic emitter against the wall beside a checkpoint; null = none. Same row as the effector,
+        /// on whichever wall side is still free.
+        /// </summary>
+        public ThingDef subsonicEmitterDef;
+
+        /// <summary>每座哨站放一座次聲波塔的機率。Chance per checkpoint.</summary>
+        public float subsonicEmitterChance = 0.3f;
+
         /// <summary>兩座哨站之間的目標間距。Target spacing between checkpoints.</summary>
         public int checkpointSpacing = 14;
 

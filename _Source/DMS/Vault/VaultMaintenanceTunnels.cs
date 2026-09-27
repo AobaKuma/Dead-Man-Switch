@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Fortified.Structures;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -77,6 +78,33 @@ namespace DMS
         /// breakable vents at either end) and joins the power too. 0 = sectors' tunnels never meet.
         /// </summary>
         public float crossSectorChance = 0f;
+
+        // ── 通風中樞 / Vent centre ─────────────────────────────────────────
+
+        /// <summary>
+        /// 通風中樞：遠離主結構、埋在岩層裡的一座 FFF 結構（依各自的 baseWeight 抽），從它的牆上拉通風管道到各個分區，
+        /// 跟主結構之間只有管道相連。空 = 不放。見 <see cref="VaultMaintenanceTunnels"/> 的 VentCenter 部分。
+        /// Vent centre: an FFF structure (picked by baseWeight) buried in the rock well away from the main structure,
+        /// with vent ducts running from its walls out to the sectors; ducts are its only link to the main structure.
+        /// Empty = none. See the VentCenter part of <see cref="VaultMaintenanceTunnels"/>.
+        /// </summary>
+        public List<FFF_StructureDef> ventCenterStructures = new List<FFF_StructureDef>();
+
+        /// <summary>每張地圖放一座通風中樞的機率。Chance of a vent centre per map.</summary>
+        public float ventCenterChance = 1f;
+
+        /// <summary>
+        /// 通風中樞離主結構（含既有管道與密室）最近的距離範圍：至少 min 格，最近那一點不超過 max 格。
+        /// How far the vent centre sits from the main structure (tunnels and secret rooms included): at least min cells
+        /// away, its nearest point no more than max.
+        /// </summary>
+        public IntRange ventCenterDistance = new IntRange(6, 24);
+
+        /// <summary>從中樞拉出去的管道數，每條接到不同的分區。Ducts out of the centre, each to a different sector.</summary>
+        public IntRange ventCenterLinks = new IntRange(2, 4);
+
+        /// <summary>中樞管道的長度上限（它離得遠，比一般管道長）。Length cap for a centre duct (it's far off, so longer than maxLegLength).</summary>
+        public int ventCenterMaxLegLength = 80;
     }
 
     /// <summary>
@@ -99,7 +127,7 @@ namespace DMS
     /// breach a natural cave and never sit against an existing door. Only with crossSectorChance above 0 are link ducts
     /// dug afterwards to join different sectors' networks (see LinkAcrossSectors).
     /// </summary>
-    public static class VaultMaintenanceTunnels
+    public static partial class VaultMaintenanceTunnels
     {
         private const int MapMargin = 3;
         /// <summary>檢修口附近這麼多格內不能已有別的門（含閘門）。No other door (gates included) this close to a hatch.</summary>
@@ -117,6 +145,8 @@ namespace DMS
             public IntVec3 outer;
             public IntVec3 dir;
             public bool corridor;
+            /// <summary>開在通風中樞牆上。In the vent centre's wall.</summary>
+            public bool hub;
         }
 
         private class Network
@@ -130,6 +160,8 @@ namespace DMS
             public CellRect secretRoom = CellRect.Empty;
             public IntVec3 secretVent = IntVec3.Invalid;
             public IntVec3 secretDir;
+            /// <summary>由通風中樞供電、自己沒有配電盤的網路。A network powered from the vent centre, with no substation of its own.</summary>
+            public bool hubFed;
         }
 
         private class Context
@@ -144,6 +176,10 @@ namespace DMS
             public Dictionary<IntVec3, int> owner = new Dictionary<IntVec3, int>();
             /// <summary>密室佔用的格子（含牆）屬於哪個分區。Which sector a secret room cell (walls included) belongs to.</summary>
             public Dictionary<IntVec3, int> reserved = new Dictionary<IntVec3, int>();
+            /// <summary>通風中樞裡不是實牆的格子：管道不能貼著它們挖，免得破進中樞。The vent centre's non-wall cells; no tunnel may touch them.</summary>
+            public HashSet<IntVec3> hubOpen = new HashSet<IntVec3>();
+            /// <summary>通風中樞本身有電源（例如配電櫃）。The vent centre carries its own power source (a substation cabinet, say).</summary>
+            public bool hubPowered;
         }
 
         /// <summary>
@@ -221,6 +257,22 @@ namespace DMS
             }
 
             if (ext.crossSectorChance > 0f) LinkAcrossSectors(ctx, networks);
+
+            // 通風中樞最後規劃：它要避開前面所有的管道與密室，管道再從它接到各分區（既有網路或該分區的房間／走廊）。
+            // 中樞要在網路之前蓋好，網路開口時才拆得到中樞的牆。
+            // The vent centre is planned last, clear of every tunnel and secret room so far, with its ducts reaching into
+            // each sector (an existing network, or that sector's rooms/corridor). It is stamped before the networks spawn so
+            // their openings can cut its walls.
+            Dictionary<int, List<LayoutRoom>> roomsBySector = new Dictionary<int, List<LayoutRoom>>();
+            foreach (int sector in equipment.Keys.Union(others.Keys))
+            {
+                List<LayoutRoom> list = new List<LayoutRoom>();
+                if (equipment.TryGetValue(sector, out List<LayoutRoom> eq)) list.AddRange(eq);
+                if (others.TryGetValue(sector, out List<LayoutRoom> o)) list.AddRange(o);
+                roomsBySector[sector] = list;
+            }
+            VentCenter hub = TryPlanVentCenter(ctx, networks, roomsBySector);
+            if (hub != null) SpawnVentCenter(ctx, hub, faction);
 
             int substations = 0;
             foreach (Network net in networks)
@@ -653,6 +705,8 @@ namespace DMS
             {
                 IntVec3 n = cell + GenAdj.AdjacentCells[i];
                 if (!n.InBounds(map)) return false;
+                // 通風中樞只能經由牆上的開口進去，管道不能貼著它的地板或門。The vent centre is entered only through a wall opening.
+                if (ctx.hubOpen.Contains(n)) return false;
                 if (ctx.owner.TryGetValue(n, out int other) || ctx.reserved.TryGetValue(n, out other))
                 {
                     if (other != sector && other != alsoSector) return false;
@@ -695,9 +749,10 @@ namespace DMS
 
         /// <summary>多起點 Dijkstra（含轉彎成本與長度上限），回傳起點到終點的格子序列。Multi-source Dijkstra with turn cost and a length cap.</summary>
         private static List<IntVec3> FindPath(Context ctx, int sector, IEnumerable<IntVec3> sources, Dictionary<IntVec3, Site> goals, out IntVec3 origin,
-            int alsoSector = -1)
+            int alsoSector = -1, int maxLength = 0)
         {
             origin = IntVec3.Invalid;
+            int cap = maxLength > 0 ? maxLength : ctx.ext.maxLegLength;
             Dictionary<IntVec3, int> cost = new Dictionary<IntVec3, int>();
             Dictionary<IntVec3, IntVec3> parent = new Dictionary<IntVec3, IntVec3>();
             Dictionary<IntVec3, int> length = new Dictionary<IntVec3, int>();
@@ -731,7 +786,7 @@ namespace DMS
                     return path;
                 }
 
-                if (length[cur] >= ctx.ext.maxLegLength) continue;
+                if (length[cur] >= cap) continue;
                 IntVec3 inDir = parent.TryGetValue(cur, out IntVec3 prev) ? cur - prev : IntVec3.Invalid;
 
                 foreach (IntVec3 d in GenAdj.CardinalDirections)
@@ -798,13 +853,16 @@ namespace DMS
                 VaultRoomUtility.SpawnSecurity(ctx.ext.substationDef, net.niche, map, net.nicheRot, faction);
                 substationCell = net.niche;
             }
-            if (!substationCell.IsValid) return false;
+            // 由通風中樞供電的網路沒有自己的配電盤。A network fed from the vent centre has no substation of its own.
+            if (!substationCell.IsValid && !net.hubFed) return false;
 
             // 電纜：整條管道，再穿過走廊開口接到走廊中線。至少一個開口接上走廊電網，這座配電盤才算數。
             // Conduit through the tunnel, then through each corridor opening to the strip. The substation only counts
             // once at least one opening has tied it into the corridor grid.
             if (ctx.ext.conduitDef == null) return false;
             foreach (IntVec3 cell in net.cells) SpawnConduit(ctx, cell);
+            // 中樞牆裡本來就埋著電纜；開口那格補一段，管道才接得上。The centre's walls carry conduit; patch the opening so the duct joins it.
+            foreach (Site site in net.hatches.Where(h => h.hub)) SpawnConduit(ctx, site.wall);
             if (!net.secretRoom.IsEmpty)
             {
                 // 密室：沿內緣一圈，再穿過通風口接到管道。Secret room: round its inner edge, then under the vent to the tunnel.
@@ -824,7 +882,8 @@ namespace DMS
                 SpawnConduit(ctx, site.wall);
                 linked = true;
             }
-            return linked;
+            // 中樞供電的網路：中樞本身有電源才算一座配電盤。Hub-fed: counts only if the centre has a power source.
+            return linked && (substationCell.IsValid || ctx.hubPowered);
         }
 
         /// <summary>

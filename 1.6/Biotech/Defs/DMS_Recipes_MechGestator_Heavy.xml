@@ -465,7 +465,7 @@
   </RecipeDef>
 
   <!--DMS_Mech_ClusterWeaver-->
-  <RecipeDef ParentName="DMS_AerospaceMechanoidRecipe">
+  <RecipeDef ParentName="DMS_AdvancedControlMechanoidRecipe">
     <defName>DMS_Make_ClusterWeaver</defName>
     <label>Gestate ClusterWeaver</label>
     <description>Gestate a ClusterWeaver Automatroid.</description>

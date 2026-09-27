@@ -44,6 +44,12 @@ namespace DMS
         /// <summary>派系；null 用建築自己的，再沒有就用 DMS 遺留部隊。Faction; falls back to the parent's, then DMS_Legacy.</summary>
         public FactionDef spawnFactionDef;
 
+        /// <summary>
+        /// 走點數時用派系的哪一種 pawnGroupMaker；null 或派系沒有這種就用 Combat。
+        /// Which of the faction's pawnGroupMakers the points path uses; null, or a faction without one, means Combat.
+        /// </summary>
+        public PawnGroupKindDef groupKind;
+
         /// <summary>拋出用的 flyer，預設落地會短暫暈眩。Flyer used for the leap; the default stuns briefly on landing.</summary>
         public ThingDef flyerDef;
 
@@ -107,7 +113,7 @@ namespace DMS
             Map map = parent.Map;
             Faction faction = AlertResponseUtility.ResolveFaction(this, Props.spawnFactionDef);
             List<Pawn> pawns = AlertResponseUtility.GeneratePawns(faction, map, AlertResponseUtility.AlertLevelPct(map),
-                Props.pawnKinds, Props.countRange, Props.pointsRange, Props.pointsByAlertLevel);
+                Props.pawnKinds, Props.countRange, Props.pointsRange, Props.pointsByAlertLevel, Props.groupKind);
             if (pawns.Count == 0) return;
 
             // 洞內生成格：洞的佔地往內縮一圈，3x3 的洞就只剩正中央。

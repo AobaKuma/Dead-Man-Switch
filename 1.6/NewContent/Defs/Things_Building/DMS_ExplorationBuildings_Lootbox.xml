@@ -464,6 +464,11 @@
                 <thingDefs>
                   <li>DMS_SyntheticArm</li>
                   <li>DMS_SyntheticLeg</li>
+                  <li>DMS_SyntheticEye</li>
+                  <li>DMS_SyntheticHeart</li>
+                  <li>DMS_SyntheticLung</li>
+                  <li>DMS_SyntheticKidney</li>
+                  <li>DMS_SyntheticLiver</li>
                 </thingDefs>
               </filter>
               <countRange>1</countRange>

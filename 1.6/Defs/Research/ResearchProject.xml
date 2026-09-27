@@ -87,7 +87,6 @@
     </prerequisites>
     <researchViewX>2.00</researchViewX>
     <researchViewY>1.90</researchViewY>
-    <generalRules />
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech">
@@ -260,7 +259,7 @@
     <techLevel>Industrial</techLevel>
     <prerequisites>
       <li>MicroelectronicsBasics</li>
-      <li>DMS_Aerospace</li>
+      <li>DMS_AdvancedControl</li>
     </prerequisites>
     <researchViewX>6.00</researchViewX>
     <researchViewY>3.20</researchViewY>
@@ -345,7 +344,7 @@
     <baseCost>1500</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>
-      <li>DMS_Aerospace</li>
+      <li>DMS_AdvancedControl</li>
       <li>SterileMaterials</li>
     </prerequisites>
     <researchViewX>5.00</researchViewX>
@@ -572,9 +571,9 @@
   </ResearchProjectDef>
 
 
-  <!--航太應用：超重型旋翼機兵與集群控制 -->
+  <!--先進控制系統：集群控制鏈路與超重型旋翼機兵 -->
   <ResearchProjectDef ParentName="DMS_BaseTech">
-    <defName>DMS_Aerospace</defName>
+    <defName>DMS_AdvancedControl</defName>
     <label>Advanced control</label>
     <description>In the millennium, when printed circuits became widespread, the improvement in computing power and density of microelectronics laid the foundation for more advanced cluster control link integration, and brought possibilities for more intelligent production lines and automatroid designs.</description>
     <baseCost>1500</baseCost>

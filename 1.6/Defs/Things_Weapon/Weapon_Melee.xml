@@ -198,12 +198,13 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>20</Tungsteel>
-			<ComponentStamped>8</ComponentStamped>
+			<Steel>60</Steel>
+			<Tungsteel>40</Tungsteel>
+			<ComponentStamped>6</ComponentStamped>
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>19</Tungsteel>
+			<Tungsteel>21</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>

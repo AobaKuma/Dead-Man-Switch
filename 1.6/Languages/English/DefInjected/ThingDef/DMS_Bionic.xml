@@ -53,4 +53,29 @@
   <!-- EN: An advanced artificial leg. With its biogel nerve-link, powerful mini-servos, and lattice-dust healing system, it is better than a biological leg in almost every way. -->
   <DMS_SyntheticLeg.description>An advanced artificial leg composed of synthetic muscle and plasfiber skin grown on a tungsteel skeleton.</DMS_SyntheticLeg.description>
   
+  <!-- EN: Biosynthetic eye -->
+  <DMS_SyntheticEye.label>Biosynthetic eye</DMS_SyntheticEye.label>
+  <!-- EN: A compact compound eye cultured on an artifuscle framework. Its three primary lenses each carry receptors for a different band of the spectrum, and a micro-processor merges their input into visual signals the brain can understand, giving it far greater visual capability than a natural eye. -->
+  <DMS_SyntheticEye.description>A compact compound eye cultured on an artifuscle framework. Its three primary lenses each carry receptors for a different band of the spectrum, and a micro-processor merges their input into visual signals the brain can understand, giving it far greater visual capability than a natural eye.</DMS_SyntheticEye.description>
+  
+  <!-- EN: Biosynthetic heart -->
+  <DMS_SyntheticHeart.label>Biosynthetic heart</DMS_SyntheticHeart.label>
+  <!-- EN: A heart grown from engineered sauropsid cardiac muscle around a plasfiber valve lattice, designed for augmented soldiers whose oxygen demand had long outstripped what a natural heart could deliver. Its tireless beat comes at the price of occasional immune rejection. -->
+  <DMS_SyntheticHeart.description>A heart grown from engineered sauropsid cardiac muscle around a plasfiber valve lattice, designed for augmented soldiers whose oxygen demand had long outstripped what a natural heart could deliver. Its tireless beat comes at the price of occasional immune rejection.</DMS_SyntheticHeart.description>
+  
+  <!-- EN: Biosynthetic lung -->
+  <DMS_SyntheticLung.label>Biosynthetic lung</DMS_SyntheticLung.label>
+  <!-- EN: A cultured lung whose alveoli are lined with an artificial filtration membrane. Unlike the mechanical membrane lung, it breathes exactly like living tissue, and filters out part of the airborne toxins before they reach the bloodstream. -->
+  <DMS_SyntheticLung.description>A cultured lung whose alveoli are lined with an artificial filtration membrane. Unlike the mechanical membrane lung, it breathes exactly like living tissue, and filters out part of the airborne toxins before they reach the bloodstream.</DMS_SyntheticLung.description>
+  
+  <!-- EN: Biosynthetic kidney -->
+  <DMS_SyntheticKidney.label>Biosynthetic kidney</DMS_SyntheticKidney.label>
+  <!-- EN: A cultured kidney whose nephrons are reinforced with synthetic filter fibers. It cleans the blood faster than natural tissue and noticeably speeds up the body's immune response to infection. -->
+  <DMS_SyntheticKidney.description>A cultured kidney whose nephrons are reinforced with synthetic filter fibers. It cleans the blood faster than natural tissue and noticeably speeds up the body's immune response to infection.</DMS_SyntheticKidney.description>
+  
+  <!-- EN: Biosynthetic liver -->
+  <DMS_SyntheticLiver.label>Biosynthetic liver</DMS_SyntheticLiver.label>
+  <!-- EN: A liver grown on a porous artifuscle framework and seeded with engineered enzyme cultures. It breaks down toxins and spoiled food far more efficiently than a natural liver. -->
+  <DMS_SyntheticLiver.description>A liver grown on a porous artifuscle framework and seeded with engineered enzyme cultures. It breaks down toxins and spoiled food far more efficiently than a natural liver.</DMS_SyntheticLiver.description>
+  
 </LanguageData>

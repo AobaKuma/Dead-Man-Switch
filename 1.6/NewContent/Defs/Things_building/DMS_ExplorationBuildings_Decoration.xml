@@ -52,6 +52,9 @@
         <triggerChance>0.3</triggerChance>
         <oneShot>false</oneShot>
         <pointsRange>150~600</pointsRange>
+        <!-- 用設施專用的組成（以鬥牛犬、蹄兔為主），見 DMS_PawnGroupKinds.xml。
+             Uses the facility-only makeup (mostly bullhounds and hyraxes); see DMS_PawnGroupKinds.xml. -->
+        <groupKind>DMS_FacilityReinforcement</groupKind>
         <emergeDurationTicks>300</emergeDurationTicks>
         <landingRadius>2</landingRadius>
       </li>

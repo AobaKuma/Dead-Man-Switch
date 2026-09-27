@@ -154,19 +154,32 @@
         <!-- 伺服機房要 11 格，房間下限跟著拉到 11。The server hall needs 11, so rooms start at 11. -->
         <roomWidthRange>11~16</roomWidthRange>
         <roomDepthRange>11~16</roomDepthRange>
-        <!-- 主幹 3~5 座十字樞紐加 3~5 條 T 字支道、每條支道最多 3 條子支道，才撐得滿 250 見方。
-             3~5 cross hubs and 3~5 T branches on the spine, up to 3 sub-branches per branch; that's what fills 250
-             cells square. -->
-        <branchCountRange>3~5</branchCountRange>
+        <!-- 主幹 2~4 座十字樞紐加 2~4 條 T 字支道、每條支道最多 3 條子支道，撐滿 250 見方，路口之間留大片岩層。
+             2~4 cross hubs and 2~4 T branches on the spine, up to 3 sub-branches per branch; that fills 250 cells
+             square while leaving broad rock between junctions. -->
+        <branchCountRange>2~4</branchCountRange>
         <!-- 十字樞紐：主幹上的交叉寬走廊，兩側長支道，每一臂都是分區閘門。
              Cross hubs: wide crossings on the spine with a branch off each side and a sector gate at every arm. -->
-        <hubCountRange>3~5</hubCountRange>
+        <hubCountRange>2~4</hubCountRange>
+        <!-- 樞紐中心至少隔 55 格：樞紐之間留出大片岩層，通道不會太密，通風中樞也放得進去。
+             Hub centres at least 55 apart: broad rock between hubs keeps the corridors sparse and gives the vent
+             centre somewhere to go. -->
+        <hubSpacing>55</hubSpacing>
+        <!-- 直線走廊最長 100 格（含牆，穿過樞紐也算同一段），超過就轉折：接一段垂直的連接走廊、往旁邊偏 18~30 格再繼續。
+             另有 1~2 座迴廊（四條走廊圍一圈、中庭放房間）：放在主幹上會擋住視線，也可能接在支道盡頭。
+             Straight corridors at most 100 cells (walls included, straight through hubs counting as one run); past that
+             they bend: a perpendicular connector and an 18~30 cell step sideways. Plus 1~2 cloisters (four corridors
+             round a courtyard of rooms): on the spine they break the line of sight, or they may cap a branch end. -->
+        <maxStraightLength>100</maxStraightLength>
+        <jogOffsetRange>18~30</jogOffsetRange>
+        <loopCountRange>1~2</loopCountRange>
+        <loopSizeRange>31~39</loopSizeRange>
         <hubSize>17</hubSize>
         <hubArmWidth>11</hubArmWidth>
         <hubBranchChance>0.85</hubBranchChance>
         <subBranchChance>0.7</subBranchChance>
         <maxSubBranches>3</maxSubBranches>
-        <branchSpacing>22</branchSpacing>
+        <branchSpacing>34</branchSpacing>
         <mergeChance>0.25</mergeChance>
         <gapChance>0.08</gapChance>
         <endRooms>true</endRooms>
@@ -258,6 +271,20 @@
              Cross-sector links: each duct network has this chance of one more duct to the nearest other sector's
              network, adding a way round the gates (still behind breakable vents at either end). -->
         <crossSectorChance>0.5</crossSectorChance>
+        <!-- 通風中樞：遠離主結構、埋在岩層裡的一座結構，從它的牆上拉通風管道到各分區（接進該分區的管道網，沒有就接到房間或走廊），
+             跟主結構之間只有這些管道相連，兩頭都是通風口。中樞裡的配電櫃也會替它接到的網路供電。
+             Vent centre: a structure buried in the rock well away from the main structure, with vent ducts from its walls
+             out to the sectors (into a sector's duct network, else to one of its rooms or its corridor). Those ducts are its
+             only link to the main structure, with a vent at either end. Its substation cabinet powers the networks it joins. -->
+        <ventCenterStructures>
+          <li>DMS_Room_VentCenter_A</li>
+          <li>DMS_Room_VentCenter_B</li>
+          <li>DMS_Room_VentCenter_C</li>
+        </ventCenterStructures>
+        <ventCenterChance>1</ventCenterChance>
+        <ventCenterDistance>6~24</ventCenterDistance>
+        <ventCenterLinks>2~4</ventCenterLinks>
+        <ventCenterMaxLegLength>80</ventCenterMaxLegLength>
       </li>
     </modExtensions>
   </StructureLayoutDef>

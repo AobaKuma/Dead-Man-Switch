@@ -175,7 +175,7 @@ dotnet build DMS.csproj -c Release
 
 - **分支**：`main` 為發布分支，`DMS2-Dev` 為 2.0 開發分支。
 - **`.rimignore`**：定義發布到 Workshop 時排除的檔案（`_Source/`、`.idea/`、`*.bat`、`*.pdb` 等）。
-- **`.disabled` 檔案**：以 `.disabled` 結尾的 XML（如 `HireableFaction.disabled`、`Patch_AncientBuildings_DevCategory.disabled`）為暫時停用的內容，不會被載入。
+- **`.disabled` 檔案**：以 `.disabled` 結尾的 XML（如 `HireableFaction.disabled`）為暫時停用的內容，不會被載入。
 - **翻譯**：所有新 Def 都應在 `Languages/` 下補上 English、繁體中文、简体中文三種語言。
 - **相依於 FFF**：新增機兵／武器功能前，先確認 Fortified Framework 是否已提供對應的 Comp / Extension，避免重複實作。
 

@@ -210,8 +210,9 @@
       <Steel>500</Steel>
       <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
+    <!-- 解鎖: 先進控制系統 -->
     <researchPrerequisites>
-      <li>DMS_DeadMansSwitch</li>
+      <li>DMS_AdvancedControl</li>
     </researchPrerequisites>
     <building>
       <barDrawData>

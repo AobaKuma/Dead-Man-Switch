@@ -4,6 +4,9 @@
   <!-- 次聲波塔 DMS.CompSubsonicEmitter -->
   <DMS_SubsonicEmitter_Charging>下次脈衝：{0}</DMS_SubsonicEmitter_Charging>
   <DMS_SubsonicEmitter_Ready>待命中，等待敵人進入範圍</DMS_SubsonicEmitter_Ready>
+  <DMS_SubsonicEmitter_Engaged>{EMITTER_definite}開始充能：次聲波即將發射！</DMS_SubsonicEmitter_Engaged>
+  <DMS_SubsonicEmitter_Standby>待機中，等待設施警報</DMS_SubsonicEmitter_Standby>
+  <DMS_SubsonicEmitter_EngagedFor>作動中：剩餘 {0}</DMS_SubsonicEmitter_EngagedFor>
 
   <!-- 爆破探勘裝置 DMS.CompBlastScanner -->
   <DMS_BlastScanner_Ignite>點燃引信</DMS_BlastScanner_Ignite>

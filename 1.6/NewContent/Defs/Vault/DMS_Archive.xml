@@ -109,6 +109,8 @@
         <!-- 十字樞紐：主幹上的交叉寬走廊，兩側長支道，每一臂都是分區閘門。
              Cross hubs: wide crossings on the spine with a branch off each side and a sector gate at every arm. -->
         <hubCountRange>1</hubCountRange>
+        <!-- 直線走廊最長 100 格（含牆），超過就轉折。Straight corridors at most 100 cells (walls included); past that they bend. -->
+        <maxStraightLength>100</maxStraightLength>
         <hubSize>17</hubSize>
         <hubArmWidth>11</hubArmWidth>
         <hubBranchChance>0.85</hubBranchChance>
@@ -213,6 +215,20 @@
              Cross-sector links: each duct network has this chance of one more duct to the nearest other sector's
              network, adding a way round the gates (still behind breakable vents at either end). -->
         <crossSectorChance>0.5</crossSectorChance>
+        <!-- 通風中樞：遠離主結構、埋在岩層裡的一座結構，從它的牆上拉通風管道到各分區（接進該分區的管道網，沒有就接到房間或走廊），
+             跟主結構之間只有這些管道相連，兩頭都是通風口。中樞裡的配電櫃也會替它接到的網路供電。
+             Vent centre: a structure buried in the rock well away from the main structure, with vent ducts from its walls
+             out to the sectors (into a sector's duct network, else to one of its rooms or its corridor). Those ducts are its
+             only link to the main structure, with a vent at either end. Its substation cabinet powers the networks it joins. -->
+        <ventCenterStructures>
+          <li>DMS_Room_VentCenter_A</li>
+          <li>DMS_Room_VentCenter_B</li>
+          <li>DMS_Room_VentCenter_C</li>
+        </ventCenterStructures>
+        <ventCenterChance>1</ventCenterChance>
+        <ventCenterDistance>6~24</ventCenterDistance>
+        <ventCenterLinks>2~4</ventCenterLinks>
+        <ventCenterMaxLegLength>80</ventCenterMaxLegLength>
       </li>
     </modExtensions>
   </StructureLayoutDef>
@@ -266,6 +282,9 @@
         <nestChance>0.7</nestChance>
         <gasVentDef>DMS_Building_GasVent</gasVentDef>
         <gasVentChance>0.5</gasVentChance>
+        <!-- 哨站旁靠牆的警戒次聲波塔。Security infrasonic emitter against the wall beside a checkpoint. -->
+        <subsonicEmitterDef>DMS_Building_SubsonicEmitter_Security</subsonicEmitterDef>
+        <subsonicEmitterChance>0.25</subsonicEmitterChance>
         <checkpointSpacing>16</checkpointSpacing>
         <maxCheckpointsPerRect>2</maxCheckpointsPerRect>
 

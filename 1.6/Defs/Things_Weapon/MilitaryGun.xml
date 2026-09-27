@@ -42,7 +42,7 @@
 		</graphicData>
 		<soundInteract>Interact_Rifle</soundInteract>
 		<statBases>
-			<WorkToMake>41000</WorkToMake>
+			<WorkToMake>40000</WorkToMake>
 			<Mass>6.75</Mass>
 			<AccuracyTouch>0.70</AccuracyTouch>
 			<AccuracyShort>0.64</AccuracyShort>
@@ -57,11 +57,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>20</Tungsteel>
-			<ComponentStamped>6</ComponentStamped>
+			<Steel>60</Steel>
+			<Tungsteel>30</Tungsteel>
+			<ComponentStamped>5</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>12</Tungsteel>
+			<Tungsteel>16</Tungsteel>
 		</smeltProducts>
 		<!-- 彈種切換: 鹿彈(預設) / 獨頭彈 / 鎢芯飛鏢彈 / 龍息彈 -->
 		<comps>
@@ -233,11 +234,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>10</Tungsteel>
-			<ComponentStamped>6</ComponentStamped>
+			<Steel>60</Steel>
+			<Tungsteel>30</Tungsteel>
+			<ComponentStamped>5</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>12</Tungsteel>
+			<Tungsteel>16</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>
@@ -309,8 +311,9 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>50</Tungsteel>
-			<ComponentStamped>2</ComponentStamped>
+			<Steel>60</Steel>
+			<Tungsteel>35</Tungsteel>
+			<ComponentStamped>3</ComponentStamped>
 		</costList>
 		<verbs>
 			<li>
@@ -379,7 +382,7 @@
 		</graphicData>
 		<soundInteract>Interact_Rifle</soundInteract>
 		<statBases>
-			<WorkToMake>42000</WorkToMake>
+			<WorkToMake>45000</WorkToMake>
 			<Mass>5.8</Mass>
 			<AccuracyTouch>0.65</AccuracyTouch>
 			<AccuracyShort>0.75</AccuracyShort>
@@ -394,11 +397,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>10</Tungsteel>
-			<ComponentStamped>7</ComponentStamped>
+			<Steel>70</Steel>
+			<Tungsteel>40</Tungsteel>
+			<ComponentStamped>6</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>12</Tungsteel>
+			<Tungsteel>21</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>
@@ -449,7 +453,7 @@
 		</graphicData>
 		<soundInteract>Interact_Rifle</soundInteract>
 		<statBases>
-			<WorkToMake>60000</WorkToMake>
+			<WorkToMake>55000</WorkToMake>
 			<Mass>6</Mass>
 			<AccuracyTouch>0.65</AccuracyTouch>
 			<AccuracyShort>0.75</AccuracyShort>
@@ -464,11 +468,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>20</Tungsteel>
+			<Steel>70</Steel>
+			<Tungsteel>45</Tungsteel>
 			<ComponentStamped>7</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>12</Tungsteel>
+			<Tungsteel>24</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>
@@ -540,11 +545,12 @@
 		<!-- 取得方式: 交易 / 探索獎勵(中烈度) - 不可製造 -->
 		<recipeMaker IsNull="True" />
 		<costList>
-			<Tungsteel>20</Tungsteel>
+			<Steel>80</Steel>
+			<Tungsteel>50</Tungsteel>
 			<ComponentStamped>6</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>12</Tungsteel>
+			<Tungsteel>24</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>
@@ -607,11 +613,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>25</Tungsteel>
-			<ComponentStamped>6</ComponentStamped>
+			<Steel>75</Steel>
+			<Tungsteel>45</Tungsteel>
+			<ComponentStamped>7</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>12</Tungsteel>
+			<Tungsteel>24</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>

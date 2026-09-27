@@ -42,11 +42,12 @@
 		<!-- 取得方式: 探索獎勵(高烈度) - 不可製造 -->
 		<recipeMaker IsNull="True" />
 		<costList>
-			<Tungsteel>25</Tungsteel>
-			<ComponentStamped>10</ComponentStamped>
+			<Steel>120</Steel>
+			<Tungsteel>80</Tungsteel>
+			<ComponentStamped>12</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>31</Tungsteel>
+			<Tungsteel>42</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>
@@ -150,7 +151,7 @@
 		</graphicData>
 		<soundInteract>Interact_Rifle</soundInteract>
 		<statBases>
-			<WorkToMake>60000</WorkToMake>
+			<WorkToMake>65000</WorkToMake>
 			<AccuracyTouch>0.65</AccuracyTouch>
 			<AccuracyShort>0.70</AccuracyShort>
 			<AccuracyMedium>0.8</AccuracyMedium>
@@ -168,11 +169,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>10</Tungsteel>
+			<Steel>100</Steel>
+			<Tungsteel>60</Tungsteel>
 			<ComponentStamped>9</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>25</Tungsteel>
+			<Tungsteel>32</Tungsteel>
 		</smeltProducts>
 		<!-- 彈種切換: 標準機砲彈(預設) / 鎢芯穿甲彈 -->
 		<comps>
@@ -254,6 +256,7 @@
 		</graphicData>
 		<soundInteract>Artillery_ShellLoaded</soundInteract>
 		<statBases>
+			<WorkToMake>80000</WorkToMake>
 			<AccuracyTouch>0.84</AccuracyTouch>
 			<AccuracyShort>0.95</AccuracyShort>
 			<AccuracyMedium>0.92</AccuracyMedium>
@@ -276,11 +279,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>20</Tungsteel>
-			<ComponentStamped>9</ComponentStamped>
+			<Steel>120</Steel>
+			<Tungsteel>80</Tungsteel>
+			<ComponentStamped>10</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>25</Tungsteel>
+			<Tungsteel>39</Tungsteel>
 		</smeltProducts>
 		<!-- 彈種切換: 高爆破片 / 聚能穿甲(預設) / 爆破 / 空爆煙霧 -->
 		<comps>
@@ -516,7 +520,7 @@
 		</weaponTags>
 		<soundInteract>Interact_Rifle</soundInteract>
 		<statBases>
-			<WorkToMake>90000</WorkToMake>
+			<WorkToMake>100000</WorkToMake>
 			<AccuracyTouch>0.80</AccuracyTouch>
 			<AccuracyShort>0.85</AccuracyShort>
 			<AccuracyMedium>0.88</AccuracyMedium>
@@ -537,11 +541,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>55</Tungsteel>
-			<ComponentStamped>21</ComponentStamped>
+			<Steel>200</Steel>
+			<Tungsteel>130</Tungsteel>
+			<ComponentStamped>20</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>44</Tungsteel>
+			<Tungsteel>69</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>
@@ -594,8 +599,7 @@
 		</graphicData>
 		<statBases>
 			<Mass>92</Mass>
-			<WorkToMake>80000</WorkToMake>
-			<MarketValue>1200</MarketValue>
+			<WorkToMake>100000</WorkToMake>
 			<AccuracyTouch>0.75</AccuracyTouch>
 			<AccuracyShort>0.85</AccuracyShort>
 			<AccuracyMedium>0.80</AccuracyMedium>
@@ -612,11 +616,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>20</Tungsteel>
-			<ComponentStamped>12</ComponentStamped>
+			<Steel>200</Steel>
+			<Tungsteel>120</Tungsteel>
+			<ComponentStamped>18</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>25</Tungsteel>
+			<Tungsteel>63</Tungsteel>
 		</smeltProducts>
 		<comps Inherit="False">
 			<li>
@@ -684,7 +689,7 @@
 		</graphicData>
 		<soundInteract>Interact_Rifle</soundInteract>
 		<statBases>
-			<WorkToMake>60000</WorkToMake>
+			<WorkToMake>80000</WorkToMake>
 			<AccuracyTouch>0.50</AccuracyTouch>
 			<AccuracyShort>0.80</AccuracyShort>
 			<AccuracyMedium>0.90</AccuracyMedium>
@@ -703,11 +708,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>35</Tungsteel>
-			<ComponentStamped>10</ComponentStamped>
+			<Steel>120</Steel>
+			<Tungsteel>80</Tungsteel>
+			<ComponentStamped>12</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>31</Tungsteel>
+			<Tungsteel>42</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>
@@ -784,6 +790,7 @@
 		</graphicData>
 		<soundInteract>Artillery_ShellLoaded</soundInteract>
 		<statBases>
+			<WorkToMake>70000</WorkToMake>
 			<RangedWeapon_Cooldown>1.1</RangedWeapon_Cooldown>
 			<Mass>35</Mass>
 		</statBases>
@@ -801,11 +808,12 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>20</Tungsteel>
-			<ComponentStamped>9</ComponentStamped>
+			<Steel>100</Steel>
+			<Tungsteel>70</Tungsteel>
+			<ComponentStamped>10</ComponentStamped>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>25</Tungsteel>
+			<Tungsteel>36</Tungsteel>
 		</smeltProducts>
 		<verbs>
 			<li>
@@ -899,7 +907,7 @@
 		</graphicData>
 		<statBases>
 			<Mass>259</Mass>
-			<WorkToMake>100000</WorkToMake>
+			<WorkToMake>120000</WorkToMake>
 			<AccuracyTouch>0.89</AccuracyTouch>
 			<AccuracyShort>1.00</AccuracyShort>
 			<AccuracyMedium>1.00</AccuracyMedium>
@@ -916,12 +924,13 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<Tungsteel>75</Tungsteel>
-			<ComponentStamped>38</ComponentStamped>
+			<Steel>250</Steel>
+			<Tungsteel>160</Tungsteel>
+			<ComponentStamped>24</ComponentStamped>
 			<ComponentFireControl>1</ComponentFireControl>
 		</costList>
 		<smeltProducts>
-			<Tungsteel>62</Tungsteel>
+			<Tungsteel>84</Tungsteel>
 		</smeltProducts>
 		<comps Inherit="False">
 			<li>

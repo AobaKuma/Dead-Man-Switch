@@ -8,6 +8,9 @@
     <possessionCount>10</possessionCount>
     <descriptionHyperlinks>
       <HediffDef>NeuroglueHigh</HediffDef>
+      <HediffDef>DMS_BionicShock</HediffDef>
+      <HediffDef>DMS_SyntheticRejection</HediffDef>
+      <HediffDef>DMS_BionicShockRemove</HediffDef>
     </descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Resource/Neuroglue</texPath>
@@ -80,6 +83,13 @@
         </makeImmuneTo>
       </li>
     </stages>
+    <modExtensions>
+      <li Class="Fortified.InfoDisplayExtension">
+        <infos>
+          <li>DMS_Info_Neuroglue</li>
+        </infos>
+      </li>
+    </modExtensions>
   </HediffDef>
 
   <ThingDef ParentName="MakeableDrugPillBase">
@@ -176,7 +186,7 @@
     </descriptionHyperlinks>
     <graphicData>
       <!-- TODO: 暫用受體凝膠的貼圖 / placeholder: reuses the neuroglue texture -->
-      <texPath>Things/Resource/Neuroglue</texPath>
+      <texPath>Things/Resource/Epipen_Regen</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <socialPropernessMatters>false</socialPropernessMatters>
@@ -282,7 +292,7 @@
     </descriptionHyperlinks>
     <graphicData>
       <!-- TODO: 暫用受體凝膠的貼圖 / placeholder: reuses the neuroglue texture -->
-      <texPath>Things/Resource/Neuroglue</texPath>
+      <texPath>Things/Resource/Epipen_Cogblock</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <socialPropernessMatters>false</socialPropernessMatters>

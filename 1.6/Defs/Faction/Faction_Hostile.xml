@@ -98,6 +98,64 @@
                     <DMS_Mech_Mammoth>0.5</DMS_Mech_Mammoth>
                 </options>
             </li>
+
+            <!-- 地下設施洞口增援（DMS_FacilityReinforcement）：以鬥牛犬與蹄兔為主，其餘機兵權重調低。
+                 原版會依「單價 / 本隊最貴單價」壓低便宜機種的權重（≤0.2 倍時 ×0.01），
+                 所以 20 點的蹄兔不能跟 160 點的鬥牛犬放在同一組，否則幾乎抽不到；蹄兔另開一組只配便宜機種。
+                 Underground facility hole reinforcements (DMS_FacilityReinforcement): mostly bullhounds and
+                 hyraxes, other mechs weighted down. Vanilla scales a cheap option's weight by its cost over the
+                 group's priciest (×0.01 at ≤0.2), so a 20-point hyrax can't share a group with a 160-point
+                 bullhound or it almost never rolls; the hyraxes get their own group of cheap units. -->
+            <li>
+                <!-- 鬥牛犬獵犬群 / Bullhound pack -->
+                <kindDef>DMS_FacilityReinforcement</kindDef>
+                <commonality>35</commonality>
+                <options>
+                    <DMS_Mech_BullHound>4</DMS_Mech_BullHound>
+                    <DMS_Mech_BullHound_Flamer>3</DMS_Mech_BullHound_Flamer>
+                    <DMS_Mech_Phalanx>0.5</DMS_Mech_Phalanx>
+                    <DMS_Mech_Ronin>0.5</DMS_Mech_Ronin>
+                </options>
+            </li>
+            <li>
+                <!-- 蹄兔群（蹄兔每隊上限 10，多的點數由其他輕型機補上）/ Hyrax swarm (hyrax is capped at 10 per group; light mechs fill the rest) -->
+                <kindDef>DMS_FacilityReinforcement</kindDef>
+                <commonality>35</commonality>
+                <options>
+                    <DMS_Mech_Hyrax>8</DMS_Mech_Hyrax>
+                    <DMS_Mech_Falcon>1</DMS_Mech_Falcon>
+                    <DMS_Mech_Dogge>1</DMS_Mech_Dogge>
+                    <DMS_Mech_Soldat>1</DMS_Mech_Soldat>
+                </options>
+            </li>
+            <li>
+                <!-- 一般混編 / Mixed -->
+                <kindDef>DMS_FacilityReinforcement</kindDef>
+                <commonality>20</commonality>
+                <options>
+                    <DMS_Mech_BullHound>4</DMS_Mech_BullHound>
+                    <DMS_Mech_BullHound_Flamer>2</DMS_Mech_BullHound_Flamer>
+                    <DMS_Mech_Falcon>1.5</DMS_Mech_Falcon>
+                    <DMS_Mech_Soldat_B>1.5</DMS_Mech_Soldat_B>
+                    <DMS_Mech_Pioneer>2</DMS_Mech_Pioneer>
+                    <DMS_Mech_Arquebusier>1</DMS_Mech_Arquebusier>
+                    <DMS_Mech_Iguana>0.2</DMS_Mech_Iguana>
+                </options>
+            </li>
+            <li>
+                <!-- 突破混編 / Breach -->
+                <kindDef>DMS_FacilityReinforcement</kindDef>
+                <commonality>10</commonality>
+                <options>
+                    <DMS_Mech_BullHound>4</DMS_Mech_BullHound>
+                    <DMS_Mech_BullHound_Flamer>3</DMS_Mech_BullHound_Flamer>
+                    <DMS_Mech_Phalanx>2</DMS_Mech_Phalanx>
+                    <DMS_Mech_Ronin>2</DMS_Mech_Ronin>
+                    <DMS_Mech_Protector>0.5</DMS_Mech_Protector>
+                    <DMS_Mech_Siegebreaker>0.5</DMS_Mech_Siegebreaker>
+                    <DMS_Mech_Mammoth>0.2</DMS_Mech_Mammoth>
+                </options>
+            </li>
         </pawnGroupMakers>
     </FactionDef>
 </Defs>

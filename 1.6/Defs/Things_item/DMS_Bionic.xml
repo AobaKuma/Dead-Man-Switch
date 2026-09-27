@@ -117,6 +117,13 @@
         <scaleAdjustment>0.75</scaleAdjustment>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="Fortified.InfoDisplayExtension">
+        <infos>
+          <li>DMS_Info_BionicShock</li>
+        </infos>
+      </li>
+    </modExtensions>
   </HediffDef>
 
   <RecipeDef ParentName="DMS_SurgeryInstallBase">
@@ -199,6 +206,13 @@
       <partEfficiency>1.15</partEfficiency>
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
+    <modExtensions>
+      <li Class="Fortified.InfoDisplayExtension">
+        <infos>
+          <li>DMS_Info_BionicShock</li>
+        </infos>
+      </li>
+    </modExtensions>
   </HediffDef>
 
   <ThingDef ParentName="DMS_BioMechBionicBase">
@@ -281,6 +295,13 @@
         <scaleAdjustment>0.75</scaleAdjustment>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="Fortified.InfoDisplayExtension">
+        <infos>
+          <li>DMS_Info_BionicShock</li>
+        </infos>
+      </li>
+    </modExtensions>
   </HediffDef>
 
   <ThingDef ParentName="DMS_BioMechBionicBase">
@@ -364,6 +385,13 @@
         <scaleAdjustment>0.75</scaleAdjustment>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="Fortified.InfoDisplayExtension">
+        <infos>
+          <li>DMS_Info_BionicShock</li>
+        </infos>
+      </li>
+    </modExtensions>
   </HediffDef>
 
   <ThingDef ParentName="DMS_BioMechBionicBase">
@@ -449,6 +477,13 @@
         <scaleAdjustment>0.75</scaleAdjustment>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="Fortified.InfoDisplayExtension">
+        <infos>
+          <li>DMS_Info_BionicShock</li>
+        </infos>
+      </li>
+    </modExtensions>
   </HediffDef>
 
   <ThingDef ParentName="DMS_BioMechBionicBase">
@@ -622,6 +657,13 @@
         <scaleAdjustment>0.5</scaleAdjustment>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="Fortified.InfoDisplayExtension">
+        <infos>
+          <li>DMS_Info_BionicShock</li>
+        </infos>
+      </li>
+    </modExtensions>
   </HediffDef>
 
   <ThingDef ParentName="DMS_BioMechBionicBase">
@@ -660,6 +702,13 @@
         <soundOnUsed>MechlinkInstalled</soundOnUsed>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="Fortified.InfoDisplayExtension">
+        <infos>
+          <li>DMS_Info_BionicShock</li>
+        </infos>
+      </li>
+    </modExtensions>
   </ThingDef>
 
   <!-- 感官過濾芯片 -->
@@ -935,6 +984,13 @@
       <partEfficiency>1.25</partEfficiency>
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
+    <modExtensions>
+      <li Class="Fortified.InfoDisplayExtension">
+        <infos>
+          <li>DMS_Info_SyntheticRejection</li>
+        </infos>
+      </li>
+    </modExtensions>
   </HediffDef>
 
   <ThingDef ParentName="DMS_SynthicBionicBase">
@@ -1015,6 +1071,13 @@
 			<scaleAdjustment>0.5</scaleAdjustment>
 		</li>
 	</comps>
+    <modExtensions>
+      <li Class="Fortified.InfoDisplayExtension">
+        <infos>
+          <li>DMS_Info_SyntheticRejection</li>
+        </infos>
+      </li>
+    </modExtensions>
   </HediffDef>
 
   <ThingDef ParentName="DMS_SynthicBionicBase">
@@ -1059,6 +1122,371 @@
       <li>Leg</li>
     </appliedOnFixedBodyParts>
     <addsHediff>DMS_SyntheticLeg</addsHediff>
+  </RecipeDef>
+
+  <!-- 生物合成眼 -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>DMS_SyntheticEye</defName>
+    <label>Biosynthetic eye</label>
+    <labelNoun>a biosynthetic eye</labelNoun>
+    <description>An installed biosynthetic eye.</description>
+    <descriptionHyperlinks><ThingDef>DMS_SyntheticEye</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>DMS_SyntheticEye</spawnThingOnRemoved>
+    <hediffGivers>
+      <li Class="Fortified.HediffGiver_RandomSilent">
+        <mtbDays>40</mtbDays>
+        <hediff>DMS_SyntheticRejection</hediff>
+        <partsToAffect>
+          <li>Torso</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+    <stages>
+      <li>
+        <statOffsets>
+          <RestFallRateFactor>0.05</RestFallRateFactor>
+          <AimingDelayFactor>-0.15</AimingDelayFactor>
+        </statOffsets>
+      </li>
+    </stages>
+    <addedPartProps>
+      <solid>false</solid>
+      <partEfficiency>1.25</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+    <comps MayRequire="V1024.EBFramework">             <!-- 部件血量加多少% -->
+      <li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" MayRequire="V1024.EBFramework">
+        <scaleAdjustment>0.5</scaleAdjustment>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.InfoDisplayExtension">
+        <infos>
+          <li>DMS_Info_SyntheticRejection</li>
+        </infos>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <ThingDef ParentName="DMS_SynthicBionicBase">
+    <defName>DMS_SyntheticEye</defName>
+    <label>Biosynthetic eye</label>
+    <description>A compact compound eye cultured on an artifuscle framework. Its three primary lenses each carry receptors for a different band of the spectrum, and a micro-processor merges their input into visual signals the brain can understand, giving it far greater visual capability than a natural eye.</description>
+    <descriptionHyperlinks><RecipeDef>DMS_InstallSyntheticEye</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Artifuscle>10</Artifuscle>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <statBases>
+      <Mass>0.3</Mass>
+    </statBases>
+  </ThingDef>
+
+  <RecipeDef ParentName="DMS_SurgeryInstallBase">
+    <defName>DMS_InstallSyntheticEye</defName>
+    <label>Install biosynthetic eye</label>
+    <description>Install a biosynthetic eye.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_SyntheticEye</ThingDef>
+      <HediffDef>DMS_SyntheticEye</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing biosynthetic eye.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMS_SyntheticEye</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DMS_SyntheticEye</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Eye</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>DMS_SyntheticEye</addsHediff>
+  </RecipeDef>
+
+  <!-- ============ 器官手術：生物合成器官 ============ -->
+
+  <HediffDef Name="DMS_SyntheticOrganHediffBase" ParentName="AddedBodyPartBase" Abstract="True">
+    <hediffGivers>
+      <li Class="Fortified.HediffGiver_RandomSilent">
+        <mtbDays>40</mtbDays>
+        <hediff>DMS_SyntheticRejection</hediff>
+        <partsToAffect>
+          <li>Torso</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+    <addedPartProps>
+      <solid>false</solid>
+      <partEfficiency>1.25</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+    <comps MayRequire="V1024.EBFramework">             <!-- 部件血量加多少% -->
+      <li Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust" MayRequire="V1024.EBFramework">
+        <scaleAdjustment>0.5</scaleAdjustment>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.InfoDisplayExtension">
+        <infos>
+          <li>DMS_Info_SyntheticRejection</li>
+        </infos>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <ThingDef Name="DMS_SyntheticOrganBase" ParentName="DMS_SynthicBionicBase" Abstract="True">
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <Mass>1</Mass>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>DMS_OrganSurgery</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- 生物合成心臟 -->
+  <HediffDef ParentName="DMS_SyntheticOrganHediffBase">
+    <defName>DMS_SyntheticHeart</defName>
+    <label>Biosynthetic heart</label>
+    <labelNoun>a biosynthetic heart</labelNoun>
+    <description>An installed biosynthetic heart.</description>
+    <descriptionHyperlinks><ThingDef>DMS_SyntheticHeart</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>DMS_SyntheticHeart</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <statOffsets>
+          <RestFallRateFactor>-0.05</RestFallRateFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="DMS_SyntheticOrganBase">
+    <defName>DMS_SyntheticHeart</defName>
+    <label>Biosynthetic heart</label>
+    <description>A heart grown from engineered sauropsid cardiac muscle around a plasfiber valve lattice, designed for augmented soldiers whose oxygen demand had long outstripped what a natural heart could deliver. Its tireless beat comes at the price of occasional immune rejection.</description>
+    <descriptionHyperlinks><RecipeDef>DMS_InstallSyntheticHeart</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Artifuscle>25</Artifuscle>
+      <Neutroamine>15</Neutroamine>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+  </ThingDef>
+
+  <RecipeDef ParentName="DMS_SurgeryInstallBase">
+    <defName>DMS_InstallSyntheticHeart</defName>
+    <label>Install biosynthetic heart</label>
+    <description>Install a biosynthetic heart.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_SyntheticHeart</ThingDef>
+      <HediffDef>DMS_SyntheticHeart</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing biosynthetic heart.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMS_SyntheticHeart</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DMS_SyntheticHeart</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Heart</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>DMS_SyntheticHeart</addsHediff>
+  </RecipeDef>
+
+  <!-- 生物合成肺 -->
+  <HediffDef ParentName="DMS_SyntheticOrganHediffBase">
+    <defName>DMS_SyntheticLung</defName>
+    <label>Biosynthetic lung</label>
+    <labelNoun>a biosynthetic lung</labelNoun>
+    <description>An installed biosynthetic lung.</description>
+    <descriptionHyperlinks><ThingDef>DMS_SyntheticLung</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>DMS_SyntheticLung</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <statOffsets>
+          <ToxicResistance>0.15</ToxicResistance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="DMS_SyntheticOrganBase">
+    <defName>DMS_SyntheticLung</defName>
+    <label>Biosynthetic lung</label>
+    <description>A cultured lung whose alveoli are lined with an artificial filtration membrane. Unlike the mechanical membrane lung, it breathes exactly like living tissue, and filters out part of the airborne toxins before they reach the bloodstream.</description>
+    <descriptionHyperlinks><RecipeDef>DMS_InstallSyntheticLung</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Artifuscle>20</Artifuscle>
+      <Neutroamine>10</Neutroamine>
+    </costList>
+  </ThingDef>
+
+  <RecipeDef ParentName="DMS_SurgeryInstallBase">
+    <defName>DMS_InstallSyntheticLung</defName>
+    <label>Install biosynthetic lung</label>
+    <description>Install a biosynthetic lung.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_SyntheticLung</ThingDef>
+      <HediffDef>DMS_SyntheticLung</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing biosynthetic lung.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMS_SyntheticLung</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DMS_SyntheticLung</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Lung</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>DMS_SyntheticLung</addsHediff>
+  </RecipeDef>
+
+  <!-- 生物合成腎 -->
+  <HediffDef ParentName="DMS_SyntheticOrganHediffBase">
+    <defName>DMS_SyntheticKidney</defName>
+    <label>Biosynthetic kidney</label>
+    <labelNoun>a biosynthetic kidney</labelNoun>
+    <description>An installed biosynthetic kidney.</description>
+    <descriptionHyperlinks><ThingDef>DMS_SyntheticKidney</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>DMS_SyntheticKidney</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <statOffsets>
+          <ToxicEnvironmentResistance>0.1</ToxicEnvironmentResistance>
+          <ImmunityGainSpeed>0.08</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="DMS_SyntheticOrganBase">
+    <defName>DMS_SyntheticKidney</defName>
+    <label>Biosynthetic kidney</label>
+    <description>A cultured kidney whose nephrons are reinforced with synthetic filter fibers. It cleans the blood faster than natural tissue and noticeably speeds up the body's immune response to infection.</description>
+    <descriptionHyperlinks><RecipeDef>DMS_InstallSyntheticKidney</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Artifuscle>15</Artifuscle>
+      <Neutroamine>10</Neutroamine>
+    </costList>
+  </ThingDef>
+
+  <RecipeDef ParentName="DMS_SurgeryInstallBase">
+    <defName>DMS_InstallSyntheticKidney</defName>
+    <label>Install biosynthetic kidney</label>
+    <description>Install a biosynthetic kidney.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_SyntheticKidney</ThingDef>
+      <HediffDef>DMS_SyntheticKidney</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing biosynthetic kidney.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMS_SyntheticKidney</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DMS_SyntheticKidney</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Kidney</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>DMS_SyntheticKidney</addsHediff>
+  </RecipeDef>
+
+  <!-- 生物合成肝 -->
+  <HediffDef ParentName="DMS_SyntheticOrganHediffBase">
+    <defName>DMS_SyntheticLiver</defName>
+    <label>Biosynthetic liver</label>
+    <labelNoun>a biosynthetic liver</labelNoun>
+    <description>An installed biosynthetic liver.</description>
+    <descriptionHyperlinks><ThingDef>DMS_SyntheticLiver</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>DMS_SyntheticLiver</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <foodPoisoningChanceFactor>0.5</foodPoisoningChanceFactor>
+        <statOffsets>
+          <ToxicResistance>0.1</ToxicResistance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="DMS_SyntheticOrganBase">
+    <defName>DMS_SyntheticLiver</defName>
+    <label>Biosynthetic liver</label>
+    <description>A liver grown on a porous artifuscle framework and seeded with engineered enzyme cultures. It breaks down toxins and spoiled food far more efficiently than a natural liver.</description>
+    <descriptionHyperlinks><RecipeDef>DMS_InstallSyntheticLiver</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Artifuscle>20</Artifuscle>
+      <Neutroamine>10</Neutroamine>
+    </costList>
+  </ThingDef>
+
+  <RecipeDef ParentName="DMS_SurgeryInstallBase">
+    <defName>DMS_InstallSyntheticLiver</defName>
+    <label>Install biosynthetic liver</label>
+    <description>Install a biosynthetic liver.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_SyntheticLiver</ThingDef>
+      <HediffDef>DMS_SyntheticLiver</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing biosynthetic liver.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMS_SyntheticLiver</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DMS_SyntheticLiver</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Liver</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>DMS_SyntheticLiver</addsHediff>
   </RecipeDef>
 
 </Defs>	
