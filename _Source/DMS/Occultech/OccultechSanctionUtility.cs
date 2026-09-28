@@ -263,6 +263,17 @@ namespace DMS
         }
 
         /// <summary>
+        /// 軍事法庭接受或結束時呼叫，讓 <see cref="CourtMartialOngoing"/> 立刻重新計算：
+        /// 休戰剛生效的那一小段時間裡，關係守衛若還讀到「沒有審判」的快取，會把休戰打回敵對。
+        /// Call when a court-martial is accepted or ends so <see cref="CourtMartialOngoing"/> is recomputed at once:
+        /// a relation guard still reading a stale "no trial" right after the truce starts would knock it back to hostile.
+        /// </summary>
+        public static void InvalidateCourtCache()
+        {
+            courtCacheTick = -1;
+        }
+
+        /// <summary>
         /// 不走快取的版本。兜底校正（<see cref="EnforceFleetRelation"/>）必須用這個：
         /// 玩家剛按下接受、休戰才生效的那幾十 tick 內，快取可能還停在「沒有審判」，
         /// 校正就會把剛談好的休戰一巴掌打回敵對。
@@ -433,6 +444,16 @@ namespace DMS
             if (ext.raidOnComplete)
             {
                 TryFireFleetRaid(ext.raidPointsFactor, ext.minRaidPoints);
+            }
+
+            // 還沒接受的一般傳票（生成時不是隱匿級審判）改不了刑度，接了也解除不了永久敵對，
+            // 卻會擋住 EnsureCourtMartialOffered 發正確的那一張。撤掉它並立刻補發。
+            // A pending ordinary summons (generated before the kill order) has the wrong terms and can't lift the
+            // permanent hostility, yet it would stop EnsureCourtMartialOffered issuing the right one. Withdraw it and
+            // re-offer at once.
+            if (WithdrawOrdinaryCourtMartialOffers())
+            {
+                EnsureCourtMartialOffered();
             }
 
             string names = collateral.Count > 0
@@ -722,15 +743,51 @@ namespace DMS
             {
                 return;
             }
+            float points = StorytellerUtility.DefaultThreatPointsNow(map);
             try
             {
-                QuestUtility.GenerateQuestAndMakeAvailable(
-                    DMS_DefOf.DMS_CourtMartial, StorytellerUtility.DefaultThreatPointsNow(map));
+                // 先 TestRun：產生不出被告時靜默略過，不要每次追殺都在 RunInt 裡丟例外。
+                // TestRun first: when there's no defendant to be had, skip quietly instead of throwing in RunInt every hunt.
+                if (!DMS_DefOf.DMS_CourtMartial.CanRun(points, map))
+                {
+                    return;
+                }
+                QuestUtility.GenerateQuestAndMakeAvailable(DMS_DefOf.DMS_CourtMartial, points);
             }
             catch (Exception ex)
             {
                 Log.Warning($"[DMS] Could not offer a court-martial for the occultech kill order: {ex}");
             }
+        }
+
+        /// <summary>
+        /// 撤掉還沒接受、而且不是隱匿級審判的軍事法庭傳票。回傳是否撤掉了任何一張。
+        /// Withdraws pending court-martial summonses that aren't occultech trials. Returns whether any was withdrawn.
+        /// </summary>
+        private static bool WithdrawOrdinaryCourtMartialOffers()
+        {
+            List<Quest> quests = Find.QuestManager?.QuestsListForReading;
+            if (quests == null)
+            {
+                return false;
+            }
+            bool withdrawn = false;
+            // End 會把任務移入歷史但不改清單長度；保險起見先複製一份再逐一結束。
+            // End moves quests to history without shrinking the list; copy first anyway to be safe.
+            foreach (Quest quest in quests.ToList())
+            {
+                if (quest.root != DMS_DefOf.DMS_CourtMartial || quest.State != QuestState.NotYetAccepted)
+                {
+                    continue;
+                }
+                if (quest.PartsListForReading.OfType<QuestPart_CourtTruce>().Any(p => p.occultechTrial))
+                {
+                    continue;
+                }
+                quest.End(QuestEndOutcome.InvalidPreAcceptance, sendLetter: false);
+                withdrawn = true;
+            }
+            return withdrawn;
         }
 
         // ─────────────────────────────── 追殺暫停（SAGE） ───────────────────────────────

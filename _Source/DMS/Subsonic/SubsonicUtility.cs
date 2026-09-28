@@ -24,7 +24,10 @@ namespace DMS
         /// <summary>每個受害者陷入恐慌的機率，再乘上 (1 - 恐懼抗性)。Panic chance per victim, times (1 - fear resistance).</summary>
         public float panicChance = 0.25f;
 
-        /// <summary>null 用原版 PanicFlee。null means vanilla PanicFlee.</summary>
+        /// <summary>
+        /// null 用原版 PanicFlee（會跑出地圖）。打到玩家的小人時一律換成 FFF_FleeInPlace，見 PanicSafetyUtility。
+        /// null means vanilla PanicFlee (leaves the map). Player pawns always get FFF_FleeInPlace instead; see PanicSafetyUtility.
+        /// </summary>
         public MentalStateDef mentalState;
 
         /// <summary>只影響與來源敵對者；手雷不分敵我。Only affect pawns hostile to the source; the grenade hits everyone.</summary>
@@ -195,6 +198,8 @@ namespace DMS
 
             float chance = props.panicChance * hearing * (1f - pawn.GetStatValue(FFF_DefOf.FFF_FearResistance));
             if (!Rand.Chance(Mathf.Clamp01(chance))) return;
+            // 手雷不分敵我，敵人用的次聲波也會打到玩家。Grenades hit everyone, and hostile pulses hit the player.
+            state = PanicSafetyUtility.SafeStateFor(pawn, state);
             if (!state.Worker.StateCanOccur(pawn)) return;
 
             pawn.mindState.mentalStateHandler.TryStartMentalState(state, forceWake: true,

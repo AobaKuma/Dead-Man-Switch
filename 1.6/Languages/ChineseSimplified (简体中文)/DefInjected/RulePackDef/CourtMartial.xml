@@ -20,6 +20,8 @@
 
     <li>acquitLetterText->出乎意料，[defendantName]在法庭上展开了极具说服力的辩护。[issuerFactionName]领航厅裁定指控不成立，下令立即释放，军阶与服役纪录完好无损。\n\n军官团对此印象深刻。[issuerFactionName]已向我们正式致意；双方关系现为盟友。[defendantName]正由空投舱送返。</li>
 
+    <li>acquitNoAllyLetterText->出乎意料，[defendantName]在法庭上展开了极具说服力的辩护。[issuerFactionName]领航厅裁定指控不成立，下令立即释放，军阶与服役纪录完好无损。\n\n事件就此了结，但我们手上仍握有封存级技术，[issuerFactionName]对我们始终有所保留：双方关系恢复中立，仅止于此。[defendantName]正由空投舱送返。</li>
+
 
 
     <li>verdictLetterLabel->宣判：[defendantName]</li>
@@ -27,7 +29,7 @@
     <li>verdictLetterLabel->判决已下达</li>
 
     <li>verdictLetterText->[issuerFactionName]领航厅已宣判。鉴于[defendantName]的主动配合，惩处从轻定为最低刑度：由[oldTitle]降职为[newTitle]，并拘禁[detentionDays]天，即刻执行。\n\n服刑期间的食宿与医疗由舰队负担。</li>
-    <li>verdictLetterNoDemotionText->[issuerFactionName]领航厅已宣判。[defendantName]不在舰队名册上，没有军衔可褒夺：惩处定为拘禁[detentionDays]天，即刻执行。
+    <li>verdictLetterNoDemotionText->[issuerFactionName]领航厅已宣判。[defendantName]不在舰队名册上，没有军衔可褫夺：惩处定为拘禁[detentionDays]天，即刻执行。
 
 服刑期间的食宿与医疗由舰队负担。</li>
 

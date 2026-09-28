@@ -8,6 +8,7 @@
     <li>acquitLetterLabel->Acquitted: [defendantName]</li>
     <li>acquitLetterLabel->Verdict: not guilty</li>
     <li>acquitLetterText->Against expectations, [defendantName] mounted a compelling defense before the tribunal. The Navigation Hall of [issuerFactionName] has ruled the charges unfounded and ordered an immediate release, rank and record intact.\n\nThe officer corps was visibly impressed. [issuerFactionName] has extended formal recognition to us; our standing is now that of an ally. [defendantName] is being returned by drop pod.</li>
+    <li>acquitNoAllyLetterText->Against expectations, [defendantName] mounted a compelling defense before the tribunal. The Navigation Hall of [issuerFactionName] has ruled the charges unfounded and ordered an immediate release, rank and record intact.\n\nThe incident is closed, but the sealed technology still in our hands keeps [issuerFactionName] at arm's length: relations return to neutral, and no further. [defendantName] is being returned by drop pod.</li>
     <li>verdictLetterLabel->Verdict: [defendantName]</li>
     <li>verdictLetterLabel->Sentence pronounced</li>
     <li>verdictLetterText->The Navigation Hall of [issuerFactionName] has pronounced sentence. In consideration of [defendantName]'s cooperation, the punishment is set at the minimum: demotion from [oldTitle] to [newTitle], and [detentionDays] days of detention, effective immediately.\n\nThe fleet will cover room, board and medical care for the duration.</li>

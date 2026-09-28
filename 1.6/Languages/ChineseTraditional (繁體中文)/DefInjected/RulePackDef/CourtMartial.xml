@@ -9,6 +9,7 @@
     <li>acquitLetterLabel->無罪釋放：[defendantName]</li>
     <li>acquitLetterLabel->判決：無罪</li>
     <li>acquitLetterText->出乎意料，[defendantName]在法庭上展開了極具說服力的辯護。[issuerFactionName]領航廳裁定指控不成立，下令立即釋放，軍階與服役紀錄完好無損。\n\n軍官團對此印象深刻。[issuerFactionName]已向我們正式致意；雙方關係現為盟友。[defendantName]正由空投艙送返。</li>
+    <li>acquitNoAllyLetterText->出乎意料，[defendantName]在法庭上展開了極具說服力的辯護。[issuerFactionName]領航廳裁定指控不成立，下令立即釋放，軍階與服役紀錄完好無損。\n\n事件就此了結，但我們手上仍握有封存級技術，[issuerFactionName]對我們始終有所保留：雙方關係恢復中立，僅止於此。[defendantName]正由空投艙送返。</li>
 
     <li>verdictLetterLabel->宣判：[defendantName]</li>
     <li>verdictLetterLabel->判決已下達</li>

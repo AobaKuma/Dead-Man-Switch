@@ -12,10 +12,10 @@
   <!-- ============ 儲存庫地面站 Vault access station ============ -->
   <!-- EN: vault access station -->
   <DMS_VaultStationSite.label>儲存庫地面站</DMS_VaultStationSite.label>
-  <!-- EN: A Legacy remnant surface station built over a buried military storage vault. The freight elevator is locked under an armored cover plate; the station's security console is the only thing that can raise it. -->
-  <DMS_VaultStationSite.description>一座先鋒餘械的地面站，建在一處埋藏於地下的軍事儲存庫之上。貨運電梯被鎖在裝甲封板之下；站內的安全控制台是唯一能升起封板的東西。</DMS_VaultStationSite.description>
-  <!-- EN: You have arrived at the vault access station. A remnant garrison holds the compound.\n\nThe freight elevator is sealed under its cover plate. Hack the security console in the control room to raise it. -->
-  <DMS_VaultStationSite.arrivedLetter>你已抵達儲存庫地面站。一支餘械守軍駐守著這片設施。\n\n貨運電梯被封板鎖住。駭入控制室裡的安全控制台就能將它升起。</DMS_VaultStationSite.arrivedLetter>
+  <!-- EN: A Legacy remnant surface station built over a buried military storage vault. The freight elevator is locked under an armored cover plate that only the access console beside it can raise, and the console answers to a key-card. -->
+  <DMS_VaultStationSite.description>一座先鋒餘械的地面站，建在一處埋藏於地下的軍事儲存庫之上。貨運電梯被鎖在裝甲封板之下，只有旁邊的門禁控制台能升起它，而控制台只認鑰匙卡。</DMS_VaultStationSite.description>
+  <!-- EN: You have arrived at the vault access station. A remnant garrison holds the compound.\n\nThe freight elevator is sealed under its cover plate. Swipe an access key-card at the access console beside it to raise the plate. -->
+  <DMS_VaultStationSite.arrivedLetter>你已抵達儲存庫地面站。一支餘械守軍駐守著這片設施。\n\n貨運電梯被封板鎖住。在旁邊的門禁控制台刷一張鑰匙卡就能將它升起。</DMS_VaultStationSite.arrivedLetter>
 
   <!-- ============ 餘械維修站 Remnant repair depot ============ -->
   <!-- EN: remnant repair depot -->

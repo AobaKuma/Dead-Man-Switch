@@ -53,10 +53,16 @@ namespace DMS
 
             if (Rand.Chance(AcquitChance))
             {
-                // 無罪釋放:不降職,先讓休戰 part 收到無罪訊號(直接盟友),再提前歸還
+                // 無罪釋放:不降職,先讓休戰 part 收到無罪訊號(直接盟友),再提前歸還。
+                // 持有未放棄的封存級技術時休戰 part 只會給中立,信件不能宣稱結為盟友。
+                // Acquittal: no demotion; the truce part gets the signal (straight to ally), then the early return.
+                // While unrenounced sealed tech is held the truce part only grants neutral, so the letter mustn't claim an alliance.
+                bool allyBlocked = quest.PartsListForReading.OfType<QuestPart_CourtTruce>().FirstOrDefault()?.AllyBlocked
+                    ?? OccultechSanctionUtility.IsAllyLocked;
                 Find.LetterStack.ReceiveLetter(
                     SupplyChainText.Resolve(CourtMartialText.Pack, "acquitLetterLabel", LetterVars("", "")),
-                    SupplyChainText.Resolve(CourtMartialText.Pack, "acquitLetterText", LetterVars("", "")),
+                    SupplyChainText.Resolve(CourtMartialText.Pack,
+                        allyBlocked ? "acquitNoAllyLetterText" : "acquitLetterText", LetterVars("", "")),
                     LetterDefOf.PositiveEvent, null, faction, quest);
                 TaleRecorder.RecordTale(DMS_DefOf.DMS_Tale_Acquitted, defendant);
                 Find.SignalManager.SendSignal(new Signal(outSignalAcquitted));

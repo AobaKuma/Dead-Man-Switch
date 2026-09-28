@@ -33,6 +33,8 @@ namespace DMS
         public CompProperties_AlertEffector_GasVent()
         {
             compClass = typeof(CompAlertEffector_GasVent);
+            // 還沒被發現的區域裡噴氣只會白白耗掉存量。Venting in an undiscovered area just wastes charges.
+            inactiveWhenFogged = true;
         }
     }
 

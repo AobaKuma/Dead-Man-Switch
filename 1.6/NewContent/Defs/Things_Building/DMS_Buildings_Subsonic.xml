@@ -66,6 +66,9 @@
           <hediff>DMS_SubsonicTrauma</hediff>
           <severity>0.25</severity>
           <panicChance>0.3</panicChance>
+          <!-- FFF 的暫時恐慌：短暫原地逃竄後恢復，不會像原版 PanicFlee 那樣跑出地圖、讓玩家永久失去小人。
+               FFF's temporary panic: a brief scramble then recovery, instead of vanilla PanicFlee running off the map for good. -->
+          <mentalState>FFF_FleeInPlace</mentalState>
           <earDamageDef>DMS_InfrasoundRupture</earDamageDef>
           <earDamage>2</earDamage>
           <hostileOnly>true</hostileOnly>

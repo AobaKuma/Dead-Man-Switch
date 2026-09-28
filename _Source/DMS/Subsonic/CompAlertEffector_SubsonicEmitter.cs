@@ -23,6 +23,8 @@ namespace DMS
         public CompProperties_AlertEffector_SubsonicEmitter()
         {
             compClass = typeof(CompAlertEffector_SubsonicEmitter);
+            // 還在迷霧裡代表附近沒有入侵者，作動只是空轉計時。Still fogged means no intruders nearby; engaging would just run the clock.
+            inactiveWhenFogged = true;
         }
 
         public override IEnumerable<string> ConfigErrors(ThingDef parentDef)

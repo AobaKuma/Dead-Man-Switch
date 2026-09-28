@@ -13,7 +13,7 @@
   <DMS_VaultStation_ExpiredLabel>Vault station lost</DMS_VaultStation_ExpiredLabel>
   <DMS_VaultStation_ExpiredText>The manifest's location fix has expired. The vault access station has relocated and its position is lost.</DMS_VaultStation_ExpiredText>
   <DMS_VaultStation_ClearedLabel>Vault station secured</DMS_VaultStation_ClearedLabel>
-  <DMS_VaultStation_ClearedText>All hostiles at the vault access station have been neutralized.\n\nHack the security console in the control room to raise the elevator's cover plate; the car still has power. Whatever was left in the vault below is yours to bring up, but the remnants will keep probing the surface.</DMS_VaultStation_ClearedText>
+  <DMS_VaultStation_ClearedText>All hostiles at the vault access station have been neutralized.\n\nSwipe an access key-card at the access console beside the elevator to raise its cover plate; the car still has power. Whatever was left in the vault below is yours to bring up, but the remnants will keep probing the surface.</DMS_VaultStation_ClearedText>
   <DMS_VaultStation_EntryCountdownLabel>Hostile station: reinforcements inbound</DMS_VaultStation_EntryCountdownLabel>
   <DMS_VaultStation_EntryCountdownText>You have entered a hostile remnant installation. Its monitoring protocol has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Get the shaft open, then decide whether to hold the surface or go down.</DMS_VaultStation_EntryCountdownText>
 

@@ -8,7 +8,7 @@ namespace DMS
     /// ThingComp that emits a fear aura: every <see cref="CompProperties_PanicAura.intervalTicks"/> ticks,
     /// each hostile humanlike pawn within <see cref="CompProperties_PanicAura.radius"/> cells has a
     /// <see cref="CompProperties_PanicAura.panicChance"/> probability of being forced into the
-    /// PanicFlee MentalState. Pawns whose <see cref="Pawn.BodySize"/> exceeds
+    /// PanicFlee MentalState (the player's own pawns get FFF_FleeInPlace instead; see PanicSafetyUtility). Pawns whose <see cref="Pawn.BodySize"/> exceeds
     /// <see cref="CompProperties_PanicAura.maxAffectedBodySize"/> are immune (e.g. heavy mechs).
     /// </summary>
     public class CompPanicAura : ThingComp
@@ -75,8 +75,14 @@ namespace DMS
                 if (!Rand.Chance(Props.panicChance))
                     continue;
 
+                // 玩家的小人改用 FFF 的暫時恐慌，避免跑出地圖永久失去（見 PanicSafetyUtility）。
+                // The player's pawns get FFF's temporary panic so they can't run off the map for good.
+                MentalStateDef state = PanicSafetyUtility.SafeStateFor(pawn, MentalStateDefOf.PanicFlee);
+                if (!state.Worker.StateCanOccur(pawn))
+                    continue;
+
                 pawn.mindState.mentalStateHandler.TryStartMentalState(
-                    MentalStateDefOf.PanicFlee,
+                    state,
                     reason: null,
                     forced: false,
                     forceWake: false,
@@ -97,7 +103,8 @@ namespace DMS
                 && pawn.Awake()
                 && pawn.HostileTo(parent)
                 && pawn.BodySize <= Props.maxAffectedBodySize
-                && pawn.mindState?.mentalStateHandler?.CurStateDef != MentalStateDefOf.PanicFlee;
+                && pawn.mindState?.mentalStateHandler != null
+                && !pawn.InMentalState;
         }
 
         // ── Inspect string ─────────────────────────────────────────────────────

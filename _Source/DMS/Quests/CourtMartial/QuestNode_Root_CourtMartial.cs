@@ -84,6 +84,42 @@ namespace DMS
             return best ?? richest;
         }
 
+        /// <summary>
+        /// 挑出任務地圖與被告。slate 指定了 map 就只看那張；否則先試 QuestGen_Get.GetMap 隨機挑的那張，
+        /// 挑不出被告再逐一試其他玩家據點。TestRun 與 Run 各自呼叫 GetMap 會各擲一次骰，
+        /// 多據點時可能 TestRun 通過、Run 卻挑到沒有可用被告的地圖而丟出例外。
+        /// Picks the quest map and defendant. A map set on the slate is the only candidate; otherwise the map
+        /// QuestGen_Get.GetMap rolls comes first, then every other player home. TestRun and Run each calling GetMap
+        /// roll separately, so with several homes TestRun could pass while Run lands on a map with no usable defendant.
+        /// </summary>
+        private static bool TryFindMapAndDefendant(Slate slate, Faction fleet, out Map map, out Pawn defendant)
+        {
+            defendant = null;
+            if (slate.TryGet("map", out map) && map != null)
+            {
+                defendant = FindDefendant(fleet, map);
+                return defendant != null;
+            }
+
+            Map rolled = QuestGen_Get.GetMap(false, null);
+            IEnumerable<Map> candidates = Find.Maps.Where(m => m.IsPlayerHome && m != rolled);
+            if (rolled != null)
+            {
+                candidates = candidates.Prepend(rolled);
+            }
+            foreach (Map m in candidates)
+            {
+                defendant = FindDefendant(fleet, m);
+                if (defendant != null)
+                {
+                    map = m;
+                    return true;
+                }
+            }
+            map = null;
+            return false;
+        }
+
         protected override bool TestRunInt(Slate slate)
         {
             // 不要求 Royalty:本任務的 Def 已移出 1.6/Royalty/，無 DLC 時仍會載入。
@@ -93,17 +129,21 @@ namespace DMS
             if (transportShipDef?.shipThing == null) return false;
             Faction fleet = Fleet;
             if (fleet == null || !fleet.HostileTo(Faction.OfPlayer)) return false;
-            Map map = QuestGen_Get.GetMap(false, null);
-            return map != null && FindDefendant(fleet, map) != null;
+            return TryFindMapAndDefendant(slate, fleet, out _, out _);
         }
 
         protected override void RunInt()
         {
             Slate slate = QuestGen.slate;
             Quest quest = QuestGen.quest;
-            Map map = QuestGen_Get.GetMap(false, null);
             Faction fleet = Fleet;
-            Pawn defendant = FindDefendant(fleet, map);
+            if (!TryFindMapAndDefendant(slate, fleet, out Map map, out Pawn defendant))
+            {
+                // 生成時才發現沒有可用被告(TestRun 之後殖民地狀況變了):明確報錯，不要在後面 NRE。
+                // No usable defendant at generation time (the colony changed since TestRun): fail loudly, not with an NRE later.
+                Log.Error("[DMS] Court-martial generated with no map holding a usable defendant.");
+                return;
+            }
             // 被告可能是 FindDefendant 的 fallback 挑出來的無銜殖民者,title 允許為 null。
             // seniority 0 在刑期曲線上對應最長刑期，沒有軍銜就沒有從輕的餘地。
             RoyalTitleDef title = defendant.royalty?.GetCurrentTitle(fleet);

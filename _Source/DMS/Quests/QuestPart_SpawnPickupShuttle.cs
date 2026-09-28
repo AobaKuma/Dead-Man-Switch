@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using RimWorld;
 using RimWorld.Planet;
 using Verse;
+using Verse.AI;
 
 namespace DMS
 {
@@ -76,7 +77,7 @@ namespace DMS
             wait.showGizmos = false;
             ship.AddJob(wait);
 
-            IntVec3 cell = DropCellFinder.GetBestShuttleLandingSpot(map, Faction.OfPlayer);
+            IntVec3 cell = FindLandingSpot(map);
             ship.ArriveAt(cell, map.Parent);
             ship.Start();
 
@@ -85,6 +86,75 @@ namespace DMS
                 SupplyChainText.Resolve(LetterPack, ArrivedLabelKeyword, vars),
                 SupplyChainText.Resolve(LetterPack, ArrivedTextKeyword, vars),
                 LetterDefOf.NeutralEvent, new TargetInfo(cell, map), null, quest);
+        }
+
+        /// <summary>
+        /// 挑降落點。原版 GetBestShuttleLandingSpot 的問題：著陸信標區只檢查有沒有東西擋著，敵人就在旁邊也照降；
+        /// 最後一層保底完全不看敵人與可達性，甚至可能回傳站不上去的格子；而且從不確認乘客走不走得到。
+        /// 接人的任務裡乘客上不了機就是逾時失敗，所以這裡依序嘗試、每一層都要求乘客走得到：
+        /// 1. 安全的著陸信標區（尊重玩家的指定）；
+        /// 2. 殖民地建築旁的安全點（原版的敵人 35 格、火場 15 格、可達殖民地等檢查）；
+        /// 3. 全圖隨機的安全點；
+        /// 4. 放寬距離的安全點；
+        /// 5. 不安全但玩家指定的信標區；
+        /// 6. 原版結果。
+        /// 尺寸用實際的運輸機，不是原版寫死的 ThingDefOf.Shuttle。
+        ///
+        /// Picks the landing spot. Vanilla GetBestShuttleLandingSpot's gaps: a landing-beacon zone is only checked for
+        /// blocking things, so the ship lands right beside hostiles; the last fallback ignores hostiles and
+        /// reachability entirely and can even return an unstandable cell; and nothing checks the passenger can walk
+        /// there. For a pickup quest a passenger who can't board means a timeout failure, so each tier below also
+        /// requires the passenger to reach it: a safe beacon zone (the player's choice comes first), a safe spot by
+        /// colony buildings (vanilla's 35-cell hostile / 15-cell fire / reaches-the-colony checks), a safe random spot,
+        /// a safe spot with relaxed distances, the beacon zone even if unsafe, then vanilla's answer.
+        /// Sized by the actual ship rather than vanilla's hard-coded ThingDefOf.Shuttle.
+        /// </summary>
+        protected virtual IntVec3 FindLandingSpot(Map map)
+        {
+            const int Attempts = 4;
+            Faction player = Faction.OfPlayer;
+            IntVec2 size = shuttle.def.Size;
+            IntVec2 paddedSize = size + new IntVec2(2, 2);
+
+            bool hasBeacon = DropCellFinder.TryFindShipLandingArea(map, out IntVec3 beacon, out _);
+            if (hasBeacon && DropCellFinder.SkyfallerCanLandAt(beacon, map, size, player) && PassengerCanReach(map, beacon))
+            {
+                return beacon;
+            }
+
+            for (int i = 0; i < Attempts; i++)
+            {
+                IntVec3 cell = DropCellFinder.TryFindSafeLandingSpotCloseToColony(map, size, player);
+                if (cell.IsValid && PassengerCanReach(map, cell)) return cell;
+            }
+            for (int i = 0; i < Attempts; i++)
+            {
+                if (DropCellFinder.FindSafeLandingSpot(out IntVec3 cell, player, map, 35, 15, 25, paddedSize)
+                    && PassengerCanReach(map, cell)) return cell;
+            }
+            for (int i = 0; i < Attempts; i++)
+            {
+                if (DropCellFinder.FindSafeLandingSpot(out IntVec3 cell, player, map, 15, 8, 10, paddedSize)
+                    && PassengerCanReach(map, cell)) return cell;
+            }
+
+            if (hasBeacon)
+            {
+                return beacon;
+            }
+            Log.Warning($"[DMS] {GetType().Name}: no safe landing spot the passenger can reach on {map}; using vanilla's pick.");
+            return DropCellFinder.GetBestShuttleLandingSpot(map, player);
+        }
+
+        /// <summary>
+        /// 乘客走不走得到降落點。乘客不在這張地圖上（出門、商隊中）時無從判斷，一律放行。
+        /// Whether the passenger can walk to the spot. A passenger off this map (away, in a caravan) can't be judged and passes.
+        /// </summary>
+        private bool PassengerCanReach(Map map, IntVec3 cell)
+        {
+            if (passenger == null || !passenger.Spawned || passenger.Map != map) return true;
+            return map.reachability.CanReach(passenger.Position, cell, PathEndMode.Touch,
+                TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly));
         }
 
         public override void ExposeData()

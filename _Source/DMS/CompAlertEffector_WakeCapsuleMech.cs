@@ -7,13 +7,15 @@ namespace DMS
 {
     /// <summary>
     /// 封存艙被警報喚醒的機兵，改走設施增援同一套警報回應（<see cref="LordJob_AlarmResponse"/>）：
-    /// 當下走得到警報位置就前往、走不到就守在艙邊，之後每次警報重新判定，只打看得到的敵人。
+    /// 艙邊走不到警報位置時這次警報不喚醒（不消耗觸發機率與 oneShot）；醒來後前往警報位置，
+    /// 之後每次警報重新判定，只打看得到的敵人。
     /// 釋放、陣營、音效與訊息都沿用 FFF 的 <see cref="CompAlertEffector_ReleaseCapsuleMech"/>，
     /// 這裡只把它掛上的 AssaultColony lord 換掉；醒來的陣營不敵對玩家時（FFF 給 DefendPoint）不動。
     ///
     /// Mechs a capsule releases on an alarm run the same alarm response as the facility reinforcements
-    /// (<see cref="LordJob_AlarmResponse"/>): head for the alarm if it can be reached right then, otherwise
-    /// hold by the capsule; re-judge on every later alarm; only fight what they can see. Release, faction,
+    /// (<see cref="LordJob_AlarmResponse"/>). An alarm the capsule's surroundings can't reach doesn't wake it
+    /// (neither the trigger roll nor oneShot is spent); once awake they head for the alarm, re-judge on every
+    /// later alarm, and only fight what they can see. Release, faction,
     /// sound and message all stay with FFF's <see cref="CompAlertEffector_ReleaseCapsuleMech"/>; this only
     /// swaps out the AssaultColony lord it assigns. Wake-ups under a faction not hostile to the player (FFF
     /// gives those DefendPoint) are left alone.
@@ -42,6 +44,20 @@ namespace DMS
             {
                 triggeringAlarmCell = IntVec3.Invalid;
             }
+        }
+
+        /// <summary>艙邊走不到警報位置就不喚醒，見 <see cref="CompAlertEffector_HoleEmerge"/>。A capsule whose surroundings can't reach the alarm stays asleep.</summary>
+        protected override bool CanFire(Signal? signal)
+        {
+            return base.CanFire(signal) && AlertResponseUtility.CanReachAlarmFrom(this, signal,
+                parent.OccupiedRect().ExpandedBy(1).Cells, WakeFaction());
+        }
+
+        /// <summary>醒來後的陣營，順序同 <see cref="Building_MechCapsule.ReleaseHostile"/>。The faction on wake-up, resolved as ReleaseHostile does.</summary>
+        private Faction WakeFaction()
+        {
+            Faction faction = Props.spawnFactionDef != null ? Find.FactionManager.FirstFactionOfDef(Props.spawnFactionDef) : null;
+            return faction ?? parent.Faction ?? (parent as Building_MechCapsule)?.Mech?.Faction ?? Faction.OfAncientsHostile;
         }
 
         protected override void DoEffect()

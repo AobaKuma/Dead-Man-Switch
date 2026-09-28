@@ -214,11 +214,20 @@ namespace DMS
             if (permanentHostile && !HuntSuspended && nextHuntTick > 0 && now >= nextHuntTick)
             {
                 ModExtension_OccultechSanction ext = OccultechSanctionUtility.OccultedSanction;
-                OccultechSanctionUtility.TryFireFleetRaid(
-                    ext?.huntPointsFactor ?? 1.25f,
-                    ext?.minRaidPoints ?? 300f);
-                OccultechSanctionUtility.EnsureCourtMartialOffered();
-                OccultechSanctionUtility.TryOfferNetworkSite();
+
+                // 已接受的軍事法庭審理中是休戰：艦隊此時是中立，原版 RaidEnemy 會把非敵對的指定派系
+                // 換成隨機敵對派系，變成「追殺」叫來別人的襲擊。這一輪改為順延；審判失敗時追殺照常接續。
+                // An accepted court-martial is a truce: the fleet is neutral, and vanilla RaidEnemy swaps a
+                // non-hostile forced faction for a random hostile one, so the hunt would summon someone else's raid.
+                // Postpone this round instead; if the trial fails the hunt carries on from there.
+                if (!OccultechSanctionUtility.CourtMartialOngoing)
+                {
+                    OccultechSanctionUtility.TryFireFleetRaid(
+                        ext?.huntPointsFactor ?? 1.25f,
+                        ext?.minRaidPoints ?? 300f);
+                    OccultechSanctionUtility.EnsureCourtMartialOffered();
+                    OccultechSanctionUtility.TryOfferNetworkSite();
+                }
                 ScheduleNextHunt(ext?.huntIntervalDays ?? new FloatRange(4f, 7f));
             }
 

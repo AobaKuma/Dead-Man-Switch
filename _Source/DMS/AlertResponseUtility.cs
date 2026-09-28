@@ -65,6 +65,90 @@ namespace DMS
         }
 
         /// <summary>
+        /// 增援設施的 CanFire 共用判定：訊號指向的警報位置從出兵點走得到才觸發。
+        /// 沒有訊號或訊號不帶位置時不擋（出兵後原地待命）。
+        /// Shared CanFire check for reinforcement facilities: fire only when the alarm's position can be reached
+        /// from the exit cells. No signal, or one without a position, isn't blocked (the squad holds in place).
+        /// </summary>
+        public static bool CanReachAlarmFrom(CompAlertEffector effector, Signal? signal, IEnumerable<IntVec3> exitCells, Faction faction)
+        {
+            if (!signal.HasValue) return true;
+            IntVec3 alarmCell = AlarmCellFor(effector, signal.Value);
+            return !alarmCell.IsValid || FacilityCanReachAlarm(effector.parent.Map, exitCells, alarmCell, faction);
+        }
+
+        /// <summary>
+        /// 增援設施的出兵點走不走得到警報位置（Touch）。增援在觸發前還沒生成，沒有 pawn 可以問
+        /// <c>pawn.CanReach</c>，所以直接走 region：門依 <paramref name="faction"/> 判定（見 <see cref="DoorPassableFor"/>），
+        /// 其餘比照 <see cref="TraverseMode.PassDoors"/>。
+        /// Whether a reinforcement facility's exit cells can reach the alarm (Touch). The squad doesn't exist
+        /// before the trigger, so there's no pawn to ask <c>pawn.CanReach</c>; this walks regions directly,
+        /// judging doors for <paramref name="faction"/> (see <see cref="DoorPassableFor"/>) and everything else
+        /// like <see cref="TraverseMode.PassDoors"/>.
+        /// </summary>
+        public static bool FacilityCanReachAlarm(Map map, IEnumerable<IntVec3> exitCells, IntVec3 alarmCell, Faction faction)
+        {
+            if (map == null || !alarmCell.InBounds(map)) return false;
+
+            TraverseParms passDoors = TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly);
+            bool Enterable(Region r) => r != null && r.Allows(passDoors, isDestination: false)
+                && (r.door == null || DoorPassableFor(r.door, faction));
+
+            // Touch：警報格本身或相鄰八格任一個 region 到得了就算。
+            // Touch: reaching the alarm cell's region or any of its eight neighbours' counts.
+            HashSet<Region> destRegions = new HashSet<Region>();
+            foreach (IntVec3 c in GenAdj.CellsAdjacent8Way(new TargetInfo(alarmCell, map)).Append(alarmCell))
+            {
+                if (!c.InBounds(map)) continue;
+                Region r = c.GetRegion(map);
+                if (Enterable(r)) destRegions.Add(r);
+            }
+            if (destRegions.Count == 0) return false;
+
+            HashSet<Region> visited = new HashSet<Region>();
+            bool found = false;
+            foreach (IntVec3 c in exitCells)
+            {
+                if (!c.InBounds(map)) continue;
+                Region root = c.GetRegion(map);
+                if (!Enterable(root) || visited.Contains(root)) continue;
+
+                RegionTraverser.BreadthFirstTraverse(root,
+                    (from, to) => Enterable(to),
+                    r =>
+                    {
+                        visited.Add(r);
+                        found = destRegions.Contains(r);
+                        return found;
+                    });
+                if (found) return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 不靠 pawn 判定門對某派系通不通，比照 <see cref="Building_Door.PawnCanOpen"/>：
+        /// 開著且不會自己關的門都能過；FFF 的門禁／封鎖門未啟用時誰都打不開，啟用後不看派系；
+        /// 無主的門能過；其餘要與門的派系不敵對。
+        /// Whether a door lets a faction through, without a pawn, mirroring <see cref="Building_Door.PawnCanOpen"/>:
+        /// an open door that stays open always does; FFF's access and sealed doors open for nobody until activated
+        /// and ignore faction after; unowned doors do; anything else needs a faction not hostile to the door's.
+        /// </summary>
+        public static bool DoorPassableFor(Building_Door door, Faction faction)
+        {
+            if (door.FreePassage) return true;
+            switch (door)
+            {
+                case Building_RollingDoor_AccessLink link:
+                    return link.activated;
+                case Building_RollingDoor_Access access:
+                    return access.Comp?.activated ?? true;
+            }
+            if (door.Faction == null || faction == null) return true;
+            return door.Faction == faction || !door.Faction.HostileTo(faction);
+        }
+
+        /// <summary>
         /// 把已生成的單位改交給警報回應（<see cref="LordJob_AlarmResponse"/>）：先退出原本的 lord
         /// （退完沒人了就整個移除），再開一個新的。回傳新的 lord；單位未生成或沒有派系時回傳 null。
         /// Hands a spawned pawn over to an alarm response (<see cref="LordJob_AlarmResponse"/>): it leaves its

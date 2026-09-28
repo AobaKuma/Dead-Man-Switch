@@ -38,7 +38,17 @@ namespace DMS
         protected override void Enable(SignalArgs receivedArgs)
         {
             base.Enable(receivedArgs);
+            // 任務此刻才轉為 Ongoing：先讓關係守衛看到審判開始，再談休戰。
+            // The quest has only just become Ongoing: let the relation guards see the trial before the truce is set.
+            OccultechSanctionUtility.InvalidateCourtCache();
             SetGoodwillAndRelation(0, FactionRelationKind.Neutral);
+        }
+
+        // Publicizer 把原版的 protected 開成 public，覆寫必須跟著 public。Publicizer opens it up, so the override is public too.
+        public override void Complete(SignalArgs signalArgs)
+        {
+            base.Complete(signalArgs);
+            OccultechSanctionUtility.InvalidateCourtCache();
         }
 
         public override void QuestPartTick()
@@ -102,9 +112,9 @@ namespace DMS
 
         /// <summary>
         /// 封存科技制裁是否擋下盟友結局:隱匿級審判本身只能回到中立,持有未放棄的封存級技術
-        /// 時也一樣(必須先向艦隊申報放棄)。
+        /// 時也一樣(必須先向艦隊申報放棄)。宣判 part 用它挑無罪信件的文本。
         /// </summary>
-        private bool AllyBlocked => occultechTrial || OccultechSanctionUtility.IsAllyLocked;
+        public bool AllyBlocked => occultechTrial || OccultechSanctionUtility.IsAllyLocked;
 
         /// <summary>隱匿級審判服刑期滿:解除永久敵對。必須在調整好感度之前執行。</summary>
         private void ResolveOccultech()

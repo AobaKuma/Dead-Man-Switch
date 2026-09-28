@@ -48,6 +48,83 @@ namespace DMS
 
         public int RemainingKeys => countToActivate < 0 ? 0 : countToActivate;
 
+        /// <summary>找不到版面連結時，自動連結控制台的搜尋半徑。Search radius for a console when no layout link exists.</summary>
+        private const float AutoLinkRadius = 12f;
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            // 版面的 Task_LinkAccessKeyWanter 在整份版面生成完才跑，所以等目前的 long event（地圖生成、讀檔）結束再檢查；
+            // 一般遊戲中生成時沒有 long event，會立刻執行。
+            // The layout's Task_LinkAccessKeyWanter runs only after the whole layout has spawned, so wait for the current
+            // long event (map generation, loading) to finish; spawned during play there's none and this runs at once.
+            LongEventHandler.ExecuteWhenFinished(TryAutoLink);
+        }
+
+        /// <summary>
+        /// 保底連結。沒有任何控制台連過來時（手動放置、舊存檔、版面連結失敗），控制台照樣收卡卻什麼都不會發生，
+        /// 鑰匙卡白白被吃掉。這裡改連最近一台還沒連結、也還沒啟用的門禁控制台；
+        /// 若附近那台早已刷過卡卻沒連到任何東西（舊版留下的卡死存檔），視為卡已經刷過，直接解鎖。
+        ///
+        /// Fallback link. With no console linked (placed by hand, an old save, a failed layout link) a console still
+        /// takes the card and nothing happens, so the key is simply eaten. Link the nearest access console that is
+        /// neither linked nor activated; if the nearby one was already swiped with nothing linked (a save stuck by the
+        /// old behaviour), treat the card as spent and unlock at once.
+        /// </summary>
+        private void TryAutoLink()
+        {
+            if (!Spawned || activated || countToActivate >= 0) return;
+
+            IAccessKeyActivatable best = null;
+            IAccessKeyActivatable spentUnlinked = null;
+            float bestDist = float.MaxValue;
+            float spentDist = float.MaxValue;
+            HashSet<Thing> seen = new HashSet<Thing>();
+            foreach (IntVec3 c in GenRadial.RadialCellsAround(Position, AutoLinkRadius, useCenter: true))
+            {
+                if (!c.InBounds(Map)) continue;
+                List<Thing> things = c.GetThingList(Map);
+                for (int i = 0; i < things.Count; i++)
+                {
+                    Thing t = things[i];
+                    // 封鎖門自己就是 activatable 兼 wanter，刷卡開的是它本身，不能被搶來連。
+                    // Access doors are their own activatable and wanter; the card opens the door itself, so never borrow one.
+                    if (t == this || t is Building_Door || !seen.Add(t) || AccessKeyLinkUtility.IsWanter(t)) continue;
+                    IAccessKeyActivatable act = AccessKeyLinkUtility.GetActivatable(t);
+                    if (act == null || act.LinkedAccessWanter != null) continue;
+
+                    float dist = t.Position.DistanceToSquared(Position);
+                    if (act.AccessKeyActivated)
+                    {
+                        // 會吐戰利品的控制台刷卡本來就有用途，不算「卡刷進空氣」。Loot consoles had a use of their own.
+                        bool dropsLoot = act is CompAccessKeyActivatable comp && comp.Props.lootMaker != null;
+                        if (!dropsLoot && dist < spentDist)
+                        {
+                            spentDist = dist;
+                            spentUnlinked = act;
+                        }
+                    }
+                    else if (act.CanLinkWanter(this) && dist < bestDist)
+                    {
+                        bestDist = dist;
+                        best = act;
+                    }
+                }
+            }
+
+            if (best != null && AccessKeyLinkUtility.TryLink(best, this))
+            {
+                Log.Message($"[DMS] {def.defName} at {Position} had no linked console; linked to {best.ParentThing} instead.");
+                return;
+            }
+            if (spentUnlinked != null)
+            {
+                spentUnlinked.LinkedAccessWanter = this;
+                Log.Message($"[DMS] {def.defName} at {Position}: {spentUnlinked.ParentThing} was already swiped with nothing linked; unlocking.");
+                Unlock();
+            }
+        }
+
         // ── IAccessKeyWanter ───────────────────────────────────────────────────
 
         public void Notify_LinkedTo(IAccessKeyActivatable activatable)

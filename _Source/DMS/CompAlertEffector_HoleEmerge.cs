@@ -106,6 +106,18 @@ namespace DMS
             }
         }
 
+        /// <summary>
+        /// 落地點走不到警報位置的洞不出兵；FFF 在觸發機率之前問這裡，所以不消耗 oneShot 與機率，
+        /// 之後走得到的警報仍會觸發它。
+        /// A hole whose landing cells can't reach the alarm sits this one out. FFF asks before the trigger roll, so
+        /// neither oneShot nor the roll is spent and a later reachable alarm still fires it.
+        /// </summary>
+        protected override bool CanFire(Signal? signal)
+        {
+            return base.CanFire(signal) && AlertResponseUtility.CanReachAlarmFrom(this, signal,
+                FindLandingCells(parent.Map), AlertResponseUtility.ResolveFaction(this, Props.spawnFactionDef));
+        }
+
         protected override void DoEffect()
         {
             if (!parent.Spawned) return;

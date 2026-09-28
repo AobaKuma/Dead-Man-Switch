@@ -19,7 +19,7 @@
   <SitePartDef>
     <defName>DMS_VaultStationSite</defName>
     <label>vault access station</label>
-    <description>A Legacy remnant surface station built over a buried military storage vault. The freight elevator is locked under an armored cover plate; the station's security console is the only thing that can raise it.</description>
+    <description>A Legacy remnant surface station built over a buried military storage vault. The freight elevator is locked under an armored cover plate that only the access console beside it can raise, and the console answers to a key-card.</description>
     <workerClass>Fortified.SitePartWorker_FFF_TimedHostileSite</workerClass>
     <modExtensions>
       <li Class="Fortified.FFF_TimedSiteExtension">
@@ -43,7 +43,7 @@
     <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
     <approachOrderString>Assault {0}</approachOrderString>
     <approachingReportString>Assaulting {0}.</approachingReportString>
-    <arrivedLetter>You have arrived at the vault access station. A remnant garrison holds the compound.\n\nThe freight elevator is sealed under its cover plate. Hack the security console in the control room to raise it.</arrivedLetter>
+    <arrivedLetter>You have arrived at the vault access station. A remnant garrison holds the compound.\n\nThe freight elevator is sealed under its cover plate. Swipe an access key-card at the access console beside it to raise the plate.</arrivedLetter>
     <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
     <tags>
       <li>DMS_VaultStationSite</li>
