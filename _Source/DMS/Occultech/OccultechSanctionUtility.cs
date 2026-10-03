@@ -422,7 +422,7 @@ namespace DMS
             Faction fleet, GameComponent_OccultechSanction comp)
         {
             SetFleetHostile(fleet);
-            comp.BeginPermanentHostility(ext.huntIntervalDays);
+            comp.BeginPermanentHostility();
 
             List<Faction> collateral = PickFleetAllies(fleet, ext.hostileAllyCount);
             foreach (Faction f in collateral)
@@ -793,12 +793,6 @@ namespace DMS
         // ─────────────────────────────── 追殺暫停（SAGE） ───────────────────────────────
 
         /// <summary>
-        /// 追殺期間每次追殺觸發時，主動派發 SAGE 節點任務的機率。
-        /// Chance, each time the hunt fires, to offer a SAGE node quest.
-        /// </summary>
-        private const float NetworkSiteOfferChance = 0.35f;
-
-        /// <summary>
         /// 追殺網路節點（SAGE）被摧毀：永久敵對中就暫停追殺。第一次擲 suspendYears；已在暫停中則疊加
         /// stackDaysWhileSuspended（小於 0 時再擲一次 suspendYears）。不處於永久敵對時只發中性訊息。
         /// A tracking-network node (SAGE) was destroyed: suspend the hunt if the kill order is active. The first
@@ -840,29 +834,6 @@ namespace DMS
                 "DMS_HuntBreaker_ResumedLabel".Translate(),
                 "DMS_HuntBreaker_ResumedText".Translate((fleet?.Name ?? "?").Named("FLEET")),
                 LetterDefOf.ThreatBig, null, fleet);
-        }
-
-        /// <summary>
-        /// 追殺觸發時以一定機率派發 SAGE 節點任務，讓被追殺的玩家陸續看到反擊的機會；任務本身的 TestRun 會擋掉重複。
-        /// On each hunt, sometimes offer a SAGE node quest so a hunted player keeps seeing a way to strike back;
-        /// the quest's own TestRun prevents duplicates.
-        /// </summary>
-        public static void TryOfferNetworkSite()
-        {
-            if (!Rand.Chance(NetworkSiteOfferChance)) return;
-            QuestScriptDef root = DMS_DefOf.DMS_FleetNetworkSite;
-            Map map = Find.AnyPlayerHomeMap;
-            if (root == null || map == null) return;
-            float points = StorytellerUtility.DefaultSiteThreatPointsNow();
-            try
-            {
-                if (!root.CanRun(points, map)) return;
-                QuestUtility.GenerateQuestAndMakeAvailable(root, points);
-            }
-            catch (Exception ex)
-            {
-                Log.Warning($"[DMS] Could not offer a fleet network site: {ex}");
-            }
         }
 
         // ─────────────────────────────── 工具 ───────────────────────────────

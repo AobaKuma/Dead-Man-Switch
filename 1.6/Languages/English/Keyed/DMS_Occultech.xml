@@ -31,6 +31,9 @@
   <DMS_Occultech_PardonLabel>Kill order rescinded</DMS_Occultech_PardonLabel>
   <DMS_Occultech_PardonText>The sentence has been served in full. {0} has rescinded its standing kill order against this colony and restored us to neutral standing.\n\nThe file we opened is still open. They have simply stopped sending people to close it.</DMS_Occultech_PardonText>
 
+  <!-- 軍事法庭審判了追緝綁定的角色。{DEFENDANT} 被告 -->
+  <DMS_CourtMartial_HuntdownEnded>{DEFENDANT_nameDef} has answered to the tribunal. The fleet has called off its hunt for {DEFENDANT_objective}.</DMS_CourtMartial_HuntdownEnded>
+
   <!-- 放棄技術。{0} 艦隊名, {1} 放棄清單 -->
   <DMS_Occultech_RenouncedLabel>Sealed files surrendered</DMS_Occultech_RenouncedLabel>
   <DMS_Occultech_RenouncedText>We have transmitted a formal renunciation to {0} and purged our copies of the following files:\n\n{1}\n\nEverything they unlocked is locked again, and the research must be done from the beginning if we ever change our minds. With the files gone, {0} is willing to consider an alliance once more.</DMS_Occultech_RenouncedText>

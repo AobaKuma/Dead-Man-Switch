@@ -73,6 +73,7 @@ namespace DMS
                 // 無罪釋放:直接盟友(信件由宣判 part 發出)。封存科技制裁下不得升為盟友。
                 resolved = true;
                 ResolveOccultech();
+                ResolveBoundHuntdowns();
                 SetGoodwillAndRelation(
                     AllyBlocked ? 0 : allyGoodwill,
                     AllyBlocked ? FactionRelationKind.Neutral : FactionRelationKind.Ally);
@@ -83,6 +84,7 @@ namespace DMS
             {
                 resolved = true;
                 ResolveOccultech();
+                ResolveBoundHuntdowns();
                 bool ally = !AllyBlocked && Rand.Chance(AllyChance);
                 if (ally)
                     SetGoodwillAndRelation(allyGoodwill, FactionRelationKind.Ally);
@@ -122,6 +124,22 @@ namespace DMS
             if (occultechTrial)
             {
                 OccultechSanctionUtility.EndPermanentHostility();
+            }
+        }
+
+        /// <summary>
+        /// 被告若是某個追緝綁定的角色（例如叛逃者開局的主角），審判結案即撤銷該追緝。
+        /// 休戰破裂或被告死亡時不會走到這裡，追緝照常繼續。
+        /// If the defendant is the pawn a huntdown is bound to (e.g. the Deviant start's lead), the concluded trial
+        /// ends that huntdown. A broken truce or a dead defendant never gets here, so the hunt carries on.
+        /// </summary>
+        private void ResolveBoundHuntdowns()
+        {
+            if (defendant == null) return;
+            if (Fortified.HuntdownUtility.StopAllBoundTo(defendant) > 0)
+            {
+                Messages.Message("DMS_CourtMartial_HuntdownEnded".Translate(defendant.Named("DEFENDANT")),
+                    defendant, MessageTypeDefOf.PositiveEvent);
             }
         }
 

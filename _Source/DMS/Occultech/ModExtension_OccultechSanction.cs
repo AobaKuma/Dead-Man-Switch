@@ -1,3 +1,4 @@
+using Fortified;
 using RimWorld;
 using Verse;
 
@@ -57,9 +58,11 @@ namespace DMS
         /// </summary>
         public bool permanentHostility;
 
-        /// <summary>永久敵對期間的追殺襲擊間隔（遊戲日）與強度係數。</summary>
-        public FloatRange huntIntervalDays = new FloatRange(4f, 7f);
-        public float huntPointsFactor = 1.25f;
+        /// <summary>
+        /// 永久敵對期間的追殺（間隔、強度、伴隨任務都在 HuntdownDef 裡）。
+        /// The kill-order hunt during permanent hostility; interval, strength and quests live on the HuntdownDef.
+        /// </summary>
+        public HuntdownDef huntdown;
 
         /// <summary>連坐：與多少個艦隊友好派系一併敵對（不鎖好感，可自行修復）。</summary>
         public int hostileAllyCount;

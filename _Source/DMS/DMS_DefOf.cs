@@ -43,7 +43,7 @@ namespace DMS
         // 機動載人升降艙降落在空白地塊時生成的臨時地圖世界物件(見 TransportersArrivalAction_LifterLanding / LifterLandingSite)
         public static WorldObjectDef DMS_LifterLandingSite;
 
-        // 追殺期間派發的 SAGE 節點任務（見 OccultechSanctionUtility.TryOfferNetworkSite）。
+        // 追殺期間派發的 SAGE 節點任務（見 1.6/Defs/Misc/DMS_Huntdowns.xml 的 questsOnWave）。
         public static QuestScriptDef DMS_FleetNetworkSite;
     }
 }

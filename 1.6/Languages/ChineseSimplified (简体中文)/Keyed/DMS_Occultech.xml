@@ -31,6 +31,9 @@
   <DMS_Occultech_PardonLabel>追杀令已撤销</DMS_Occultech_PardonLabel>
   <DMS_Occultech_PardonText>刑期已经服满。{0}撤销了对本殖民地的长期追杀令，并将我们恢复为中立立场。\n\n我们开启的那份档案仍然是开着的。他们只是不再派人来把它阖上了。</DMS_Occultech_PardonText>
 
+  <!-- EN: {DEFENDANT_nameDef} has answered to the tribunal. The fleet has called off its hunt for {DEFENDANT_objective}. -->
+  <DMS_CourtMartial_HuntdownEnded>{DEFENDANT_nameDef}已在军事法庭上接受审判，舰队撤销了对{DEFENDANT_objective}的追缉。</DMS_CourtMartial_HuntdownEnded>
+
   <!-- 放弃技术。{0} 舰队名, {1} 放弃清单 -->
   <DMS_Occultech_RenouncedLabel>封存档案已缴回</DMS_Occultech_RenouncedLabel>
   <DMS_Occultech_RenouncedText>我们已向{0}发出正式的放弃声明，并清除了以下档案的所有副本：\n\n{1}\n\n这些档案解锁的一切都重新上锁了，日后若要改变心意，研究必须从头开始。档案既然已经交出，{0}愿意重新考虑结盟。</DMS_Occultech_RenouncedText>

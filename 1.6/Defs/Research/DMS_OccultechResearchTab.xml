@@ -84,9 +84,8 @@
         <raidOnComplete>true</raidOnComplete>
         <raidPointsFactor>1.5</raidPointsFactor>
         <minRaidPoints>600</minRaidPoints>
-        <!-- 追殺：永久敵對期間的週期性襲擊。 -->
-        <huntIntervalDays>4~7</huntIntervalDays>
-        <huntPointsFactor>1.25</huntPointsFactor>
+        <!-- 追殺：永久敵對期間的週期性襲擊（Fortified Huntdown，見 Misc/DMS_Huntdowns.xml）。 -->
+        <huntdown>DMS_OccultechHunt</huntdown>
         <!-- 連坐：三個艦隊友好派系一併敵對（不鎖好感，可自行修復）。 -->
         <hostileAllyCount>3</hostileAllyCount>
         <!-- 無豁免、不可申報放棄。 -->

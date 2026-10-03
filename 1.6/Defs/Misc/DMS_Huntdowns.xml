@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 封存科技隱匿級的追殺令（Fortified.HuntdownDef）。由 GameComponent_OccultechSanction 在永久敵對時啟動、
+       軍事法庭結案時結束；SAGE 被摧毀時暫停（CompHuntBreaker）。
+       每 4~7 天對任一玩家據點發動一次艦隊襲擊，並確保手上有一份軍事法庭傳票、有機會派發 SAGE 節點任務。
+       Occulted-tier kill order. Started on permanent hostility, ended by the court-martial, suspended by SAGE kills.
+       Every 4~7 days a fleet raid hits a player home; each hunt also offers a court-martial and sometimes a SAGE site. -->
+  <Fortified.HuntdownDef>
+    <defName>DMS_OccultechHunt</defName>
+    <label>occultech kill order</label>
+    <workerClass>DMS.HuntdownWorker_Occultech</workerClass>
+    <faction>DMS_Army</faction>
+    <followGravship>false</followGravship>
+    <retargetPlayerHome>true</retargetPlayerHome>
+    <repeatWhileStaying>true</repeatWhileStaying>
+    <sendWarningLetter>false</sendWarningLetter>
+    <showAlert>false</showAlert>
+    <warningDelayRange>0~0</warningDelayRange>
+    <!-- 4~7 天 4~7 days -->
+    <raidDelayRange>240000~420000</raidDelayRange>
+    <waves>
+      <li>
+        <pointsMultiplier>1.25</pointsMultiplier>
+        <minPoints>300</minPoints>
+      </li>
+    </waves>
+    <questsOnWave>
+      <!-- 軍事法庭是解除永久敵對唯一的出路，每次追殺都確保有一份傳票。
+           The court-martial is the only way out, so every hunt makes sure one is on offer. -->
+      <li>
+        <quest>DMS_CourtMartial</quest>
+      </li>
+      <li>
+        <quest>DMS_FleetNetworkSite</quest>
+        <chance>0.35</chance>
+        <siteThreatPoints>true</siteThreatPoints>
+      </li>
+    </questsOnWave>
+  </Fortified.HuntdownDef>
+
+</Defs>
