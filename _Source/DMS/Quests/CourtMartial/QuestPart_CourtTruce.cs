@@ -168,15 +168,10 @@ namespace DMS
             if (faction == null) return;
             // 繞過封存科技的關係守衛:軍事法庭本來就是制裁機制認可的出路,
             // 否則休戰協議會被自己的永久敵對封鎖打回去。
-            OccultechSanctionUtility.WithGuardSuppressed(delegate
-            {
-                Faction player = Faction.OfPlayer;
-                int delta = targetGoodwill - faction.GoodwillWith(player);
-                if (delta != 0)
-                    faction.TryAffectGoodwillWith(player, delta, false, false, null, null);
-                if (faction.RelationKindWith(player) != kind)
-                    faction.SetRelationDirect(player, kind, false, null, null);
-            });
+            // 直接設定確切值:TryAffectGoodwillWith 會溢出、可能被拒絕,見 DMSRelationUtility。
+            // Set the exact value: TryAffectGoodwillWith overshoots and can be refused, see DMSRelationUtility.
+            OccultechSanctionUtility.WithGuardSuppressed(() =>
+                DMSRelationUtility.SetGoodwillAndKind(faction, targetGoodwill, kind));
         }
 
         public override void ExposeData()

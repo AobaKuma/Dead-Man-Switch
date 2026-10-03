@@ -429,16 +429,8 @@ namespace DMS
             {
                 comp.AddCollateralFaction(f);
                 // 連坐派系「不鎖好感」：只是打到敵對線以下，玩家之後可以自行修復。
-                int delta = -100 - f.GoodwillWith(Faction.OfPlayer);
-                if (delta != 0)
-                {
-                    f.TryAffectGoodwillWith(Faction.OfPlayer, delta, canSendMessage: false,
-                        canSendHostilityLetter: false, DMS_DefOf.DMS_OccultechResearched);
-                }
-                if (f.RelationKindWith(Faction.OfPlayer) != FactionRelationKind.Hostile)
-                {
-                    f.SetRelationDirect(Faction.OfPlayer, FactionRelationKind.Hostile, false, null, null);
-                }
+                DMSRelationUtility.SetGoodwillAndKind(f, -100, FactionRelationKind.Hostile,
+                    reason: DMS_DefOf.DMS_OccultechResearched);
             }
 
             if (ext.raidOnComplete)
@@ -515,19 +507,8 @@ namespace DMS
             {
                 return;
             }
-            WithGuardSuppressed(() =>
-            {
-                int delta = -100 - fleet.GoodwillWith(Faction.OfPlayer);
-                if (delta != 0)
-                {
-                    fleet.TryAffectGoodwillWith(Faction.OfPlayer, delta, canSendMessage: false,
-                        canSendHostilityLetter: false, DMS_DefOf.DMS_OccultechResearched);
-                }
-                if (fleet.RelationKindWith(Faction.OfPlayer) != FactionRelationKind.Hostile)
-                {
-                    fleet.SetRelationDirect(Faction.OfPlayer, FactionRelationKind.Hostile, false, null, null);
-                }
-            });
+            WithGuardSuppressed(() => DMSRelationUtility.SetGoodwillAndKind(fleet, -100, FactionRelationKind.Hostile,
+                reason: DMS_DefOf.DMS_OccultechResearched));
         }
 
         /// <summary>把艦隊設回指定好感度／關係（供軍事法庭與放棄流程使用）。</summary>
@@ -538,19 +519,7 @@ namespace DMS
             {
                 return;
             }
-            WithGuardSuppressed(() =>
-            {
-                int delta = goodwill - fleet.GoodwillWith(Faction.OfPlayer);
-                if (delta != 0)
-                {
-                    fleet.TryAffectGoodwillWith(Faction.OfPlayer, delta, canSendMessage: false,
-                        canSendHostilityLetter: false);
-                }
-                if (fleet.RelationKindWith(Faction.OfPlayer) != kind)
-                {
-                    fleet.SetRelationDirect(Faction.OfPlayer, kind, false, null, null);
-                }
-            });
+            WithGuardSuppressed(() => DMSRelationUtility.SetGoodwillAndKind(fleet, goodwill, kind));
         }
 
         /// <summary>
