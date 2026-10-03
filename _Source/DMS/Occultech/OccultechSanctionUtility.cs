@@ -429,7 +429,7 @@ namespace DMS
             {
                 comp.AddCollateralFaction(f);
                 // 連坐派系「不鎖好感」：只是打到敵對線以下，玩家之後可以自行修復。
-                DMSRelationUtility.SetGoodwillAndKind(f, -100, FactionRelationKind.Hostile,
+                Fortified.FactionRelationUtility.SetGoodwillAndKind(f, -100, FactionRelationKind.Hostile,
                     reason: DMS_DefOf.DMS_OccultechResearched);
             }
 
@@ -507,7 +507,7 @@ namespace DMS
             {
                 return;
             }
-            WithGuardSuppressed(() => DMSRelationUtility.SetGoodwillAndKind(fleet, -100, FactionRelationKind.Hostile,
+            WithGuardSuppressed(() => Fortified.FactionRelationUtility.SetGoodwillAndKind(fleet, -100, FactionRelationKind.Hostile,
                 reason: DMS_DefOf.DMS_OccultechResearched));
         }
 
@@ -519,7 +519,7 @@ namespace DMS
             {
                 return;
             }
-            WithGuardSuppressed(() => DMSRelationUtility.SetGoodwillAndKind(fleet, goodwill, kind));
+            WithGuardSuppressed(() => Fortified.FactionRelationUtility.SetGoodwillAndKind(fleet, goodwill, kind));
         }
 
         /// <summary>
