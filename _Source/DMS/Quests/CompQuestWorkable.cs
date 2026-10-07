@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -22,6 +23,15 @@ namespace DMS
         private string labelOverride;
         // 覆盖描述
         private string descriptionOverride;
+
+        static ThingDef[] ownerThingDefs = null;
+
+        public static ThingDef[] GetOwnerThingDefs()
+        {
+            ownerThingDefs ??= DefDatabase<ThingDef>.AllDefs.Where(thingDef => thingDef.comps is { } comps && comps.Any(comp => typeof(CompQuestWorkable).IsAssignableFrom(comp.compClass))).ToArray();
+
+            return ownerThingDefs;
+        }
 
         public float WorkAmount
         {

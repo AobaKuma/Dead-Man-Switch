@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -60,7 +61,11 @@ namespace DMS
     // 分配工作
     public class WorkGiver_ProcessQuestWorkable : WorkGiver_Scanner
     {
-        public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForGroup(ThingRequestGroup.HaulableAlways);
+        public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
+        {
+            return CompQuestWorkable.GetOwnerThingDefs().Where(thingDef => thingDef.alwaysHaulable).SelectMany(pawn.Map.listerThings.ThingsOfDef);
+        }
+
         public override PathEndMode PathEndMode => PathEndMode.ClosestTouch;
 
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
