@@ -11,10 +11,16 @@
        suspends the colony fleet's Occulted-tier hunt when it is destroyed.
        ══════════════════════════════════════════════════════════ -->
 
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_ServerRacks</defName>
+    <label>server racks</label>
+  </DesignatorDropdownGroupDef>
+
   <!-- 共用父類：不可建造、不可認領、不可拆除（只能打爛）；tick Normal 是偵測駭入作業所需。
        Shared base: not buildable, not claimable, not deconstructible (destroy only); ticks Normal for session detection. -->
   <ThingDef ParentName="DMS_BuildingBase" Name="DMS_ServerBuildingBase" Abstract="True">
     <category>Building</category>
+    <designatorDropdown>DMS_ServerRacks</designatorDropdown>
     <selectable>true</selectable>
     <useHitPoints>true</useHitPoints>
     <pathCost>50</pathCost>

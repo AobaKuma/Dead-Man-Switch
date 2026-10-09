@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <!-- 壁掛式面板繼承自 DMS_SubstationCabinet，不必另設 -->
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_SubstationCabinets</defName>
+    <label>substation cabinets</label>
+  </DesignatorDropdownGroupDef>
+
   <ThingDef ParentName="BuildingBase" Name="FFF_SubstationCabinet">
     <defName>DMS_SubstationCabinet</defName>
     <label>substation cabinet</label>
+    <designatorDropdown>DMS_SubstationCabinets</designatorDropdown>
     <description>A ruggedised metal cabinet that taps an underground power conduit and distributes electricity to surface equipment. The high-voltage internals make shut-down hazardous – only an operator with solid technical knowledge (Intellectual 8+) can safely cut power; anyone less experienced risks a serious electrical burn. An EMP strike will temporarily disable the cabinet without ongoing danger.</description>
     <thingClass>Building</thingClass>
     <category>Building</category>

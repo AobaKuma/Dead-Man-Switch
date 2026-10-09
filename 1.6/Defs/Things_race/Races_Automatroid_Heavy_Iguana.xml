@@ -262,7 +262,7 @@
       <ArmorRating_Sharp>1.4</ArmorRating_Sharp>                                     <!--近距離裝甲型：基礎裝甲加厚，再外掛反應裝甲 / close-range armored: thickened plating plus add-on ERA-->
       <ArmorRating_Heat>0.9</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
-      <MeleeCooldownMultiplier>0.8</MeleeCooldownMultiplier>                       <!--巷戰近身：出腿更快 / faster kicks in street fighting-->
+      <MeleeCooldownFactor>0.8</MeleeCooldownFactor>                               <!--巷戰近身：出腿更快 / faster kicks in street fighting-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">5</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>

@@ -50,6 +50,7 @@
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_FPVNest</defName>
     <label>FPV nest</label>
+    <designatorDropdown>DMS_FPVStations</designatorDropdown>
     <description>An automated drone nest used for facility defense. When alerted by the facility's other sensors, it automatically launches FPV drones to drive off or kill intruders, and it will also release drones to fight back when attacked. It is connected to the facility's underground logistics system below, so its expended drone stock is automatically replenished over time.</description>
     <graphicData>
       <texPath>Things/Building/DMS_Building_HangerSmall</texPath>
@@ -83,10 +84,17 @@
     </comps>
   </ThingDef>
 
+  <!-- FPV 設施：完好版在此，廢墟版在 Decoration.xml -->
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_FPVStations</defName>
+    <label>FPV stations</label>
+  </DesignatorDropdownGroupDef>
+
   <!-- FPV 機庫 -->
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_FPVHanger</defName>
     <label>FPV hangar</label>
+    <designatorDropdown>DMS_FPVStations</designatorDropdown>
     <description>An automated drone hangar used for facility defense. When alerted by the facility's other sensors, it automatically launches FPV drones to drive off or kill intruders, and it will also release drones to fight back when attacked. It is connected to the facility's underground logistics system below, so its expended drone stock is automatically replenished over time.</description>
     <graphicData>
       <texPath>Things/Building/DMS_Building_HangerLarge</texPath>
@@ -224,10 +232,17 @@
   </ThingDef>
 
 
+  <!-- 哨戒塔：完好版在此，廢墟版在 Decoration.xml -->
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_SentryTowers</defName>
+    <label>sentry towers</label>
+  </DesignatorDropdownGroupDef>
+
   <!-- 大型無人哨塔 （每300Tick監視半徑30格LOS範圍內的Pawn） -->
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_Scanner_Large</defName>
     <label>large sentry tower</label>
+    <designatorDropdown>DMS_SentryTowers</designatorDropdown>
     <!-- 一種長期自持運行的無人警戒平台，具有多種類型的傳感器來監控大片範圍內的可疑活動。一旦被驚動到就會廣播警報訊號來讓周圍的自動化防禦設施啟動迎敵。 -->
     <description>A tall observation tower with automated sensors. Detects hostiles within a wide radius. Disable with EMP or power cut before attempting to dismantle.</description>
     <graphicData>
@@ -273,6 +288,7 @@
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_Scanner_Small</defName>
     <label>small sentry tower</label>
+    <designatorDropdown>DMS_SentryTowers</designatorDropdown>
     <description>An unmanned sentry platform built for long-term unattended operation, fitted with multiple types of sensors to monitor a wide area for suspicious activity. Once an intruder enters its range, it broadcasts an alert that activates the automated defenses to engage.</description>
     <graphicData>
       <texPath>Things/Building/DMS_Building_ScannerSmall</texPath>
@@ -319,6 +335,11 @@
        of their own. Textures already include the pedestal; 1x1 footprint.
        ══════════════════════════════════════════════════════════ -->
 
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_Uplinks</defName>
+    <label>uplinks</label>
+  </DesignatorDropdownGroupDef>
+
   <!-- 戰鬥群呼叫器：警報後走 FFF RaidWave 系統呼叫 DMS_RaidWave_FacilityQRF，由 quest 負責延遲
        （最少 2500~5000 tick）、遠處空投、進攻 lord 與信件；每次呼叫波次升級。一次性。
        Battle-group caller: on alarm, summons DMS_RaidWave_FacilityQRF through FFF's RaidWave system;
@@ -327,6 +348,7 @@
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_AlertCaller_BattleGroup</defName>
     <label>reinforcement uplink</label>
+    <designatorDropdown>DMS_Uplinks</designatorDropdown>
     <description>An armored uplink terminal tied into the facility's alert network. When the sensors trip, it transmits the intruders' position to the nearest quick-reaction force, which arrives by drop pod shortly after to sweep the area. The transmitter burns out after a single call. Cut power or hit it with an EMP to disable it before dismantling.</description>
     <graphicData>
       <texPath>Things/Building/AlertCaller/battleGroup</texPath>
@@ -374,6 +396,7 @@
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_AlertCaller_Mortar</defName>
     <label>fire support uplink</label>
+    <designatorDropdown>DMS_Uplinks</designatorDropdown>
     <description>A ranging dome tied into the facility's alert network. When the sensors trip, it fixes the intruders' position and relays fire missions to an off-map mortar battery, which walks high-explosive shells onto anything hostile nearby. It has no ammunition of its own and keeps calling as long as it has power and a target. Cut power or hit it with an EMP to disable it before dismantling.</description>
     <graphicData>
       <texPath>Things/Building/AlertCaller/mortar</texPath>

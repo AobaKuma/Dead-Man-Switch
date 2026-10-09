@@ -198,6 +198,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_MK44NavyDestoryed</defName>
     <label>destroyed MK44 BushMaster-II</label>
+    <designatorDropdown>DMS_Wreckages</designatorDropdown>
     <description>The burnt-out remains of a MK44 BushMaster II autocannon. Its barrel and rotary platform have been torn apart, leaving a hulk that still makes excellent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Misc/DMS_M161</texPath>
@@ -236,6 +237,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_OkhotnikDestoryed</defName>
     <label>destroyed Okhotnik</label>
+    <designatorDropdown>DMS_Wreckages</designatorDropdown>
     <description>The burnt-out remains of a Okhotnik turret. Its barrel and rotary platform have been torn apart, leaving a hulk that still makes excellent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Misc/DMS_Weapon_Base</texPath>
@@ -274,6 +276,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_GatekeeperDestoryed</defName>
     <label>destroyed gatekeeper</label>
+    <designatorDropdown>DMS_Wreckages</designatorDropdown>
     <description>The burnt-out remains of a Gatekeeper close-in defense turret. Its rotary cannon has been torn apart and its fire-control systems gutted, leaving a hulk that still makes excellent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Turrets</texPath>
@@ -296,6 +299,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_RadarDestoryed</defName>
     <label>destroyed radar</label>
+    <designatorDropdown>DMS_Wreckages</designatorDropdown>
     <description>The wreck of an air-defense radar station. Its antenna array has been shredded and the emitter is long dead, leaving the surrounding airspace unwatched. The remaining mount makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Radar</texPath>
@@ -317,6 +321,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_MissileLauncherDestoryed</defName>
     <label>destroyed launcher</label>
+    <designatorDropdown>DMS_Wreckages</designatorDropdown>
     <description>The wreck of a missile launch platform. Its launch cells are scorched hollow, and any remaining ordnance was removed or destroyed long ago. The remaining frame makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Launchers</texPath>
@@ -337,6 +342,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_FPVHangerDestoryed</defName>
     <label>destroyed FPV hangar</label>
+    <designatorDropdown>DMS_FPVStations</designatorDropdown>
     <description>A drone launch bay that has been utterly destroyed and can no longer launch drones. The remaining wreck makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Misc/DMS_Building_HangerLarge</texPath>
@@ -358,6 +364,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_FPVNestDestoryed</defName>
     <label>destroyed FPV nest</label>
+    <designatorDropdown>DMS_FPVStations</designatorDropdown>
     <description>A drone launch nest that has been utterly destroyed and can no longer launch drones. The remaining wreck makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Misc/DMS_Building_HangerSmall</texPath>
@@ -378,6 +385,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_Machine_Medium</defName>
     <label>facility machine</label>
+    <designatorDropdown>DMS_FacilityMachines</designatorDropdown>
     <description>A machine of unknown purpose. Its internal components are intact and still running; breaking it down yields some resources.</description>
     <graphicData>
       <texPath>Things/Building/MachineDeco/building_A</texPath>
@@ -394,10 +402,16 @@
     </costList>
   </ThingDef>
 
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_FacilityMachines</defName>
+    <label>facility machines</label>
+  </DesignatorDropdownGroupDef>
+
   <!-- 1x3裝飾機器 -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_Eletric_Medium</defName>
     <label>facility machine</label>
+    <designatorDropdown>DMS_FacilityMachines</designatorDropdown>
     <description>A machine of unknown purpose. Its internal components are intact and still running; breaking it down yields some resources.</description>
     <graphicData>
       <texPath>Things/Building/MachineDeco/building_B</texPath>
@@ -419,6 +433,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_Machine_MediumDestoryed</defName>
     <label>facility machine</label>
+    <designatorDropdown>DMS_FacilityMachines</designatorDropdown>
     <description>A machine of unknown purpose. Its internal components rusted and failed long ago; breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_MachineDeco/building_A</texPath>
@@ -439,6 +454,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_Eletric_MediumDestoryed</defName>
     <label>facility machine</label>
+    <designatorDropdown>DMS_FacilityMachines</designatorDropdown>
     <description>A machine of unknown purpose. Its internal components rusted and failed long ago; breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_MachineDeco/building_B</texPath>
@@ -458,6 +474,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_Scanner_LargeDestoryed</defName>
     <label>disabled large sentry tower</label>
+    <designatorDropdown>DMS_SentryTowers</designatorDropdown>
     <description>A large unmanned sentry platform that ceased functioning long ago. Its sensor array is completely destroyed, no longer able to detect intruders or broadcast alerts. The remaining tower structure makes decent cover. Tearing it down completely takes a while, but yields a small amount of metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Misc/DMS_Building_ScannerLarge</texPath>
@@ -484,6 +501,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_Scanner_SmallDestoryed</defName>
     <label>disabled small sentry tower</label>
+    <designatorDropdown>DMS_SentryTowers</designatorDropdown>
     <description>A small unmanned sentry platform that ceased functioning long ago. Its sensors are completely destroyed, no longer able to detect intruders or broadcast alerts. The remaining wreck makes passable cover, and a small amount of metal scrap can be salvaged from it.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Misc/DMS_Building_ScannerSmall</texPath>

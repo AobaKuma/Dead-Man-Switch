@@ -85,6 +85,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_TableArtifuscleDestroyed</defName>
     <label>ruined artifuscle chamber</label>
+    <designatorDropdown>DMS_RuinedMachines</designatorDropdown>
     <description>The wreck of a high-end artifuscle cultivation chamber. Its growth vats have shattered and their contents rotted away long ago. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/ArtifuscleTable</texPath>
@@ -107,6 +108,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_TableMachinePrinterDestroyed</defName>
     <label>ruined machinery printer</label>
+    <designatorDropdown>DMS_RuinedMachines</designatorDropdown>
     <description>The wreck of a composite metal printer. Its forging rams are seized solid and the print bed is buried under collapsed tooling. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/StampTable</texPath>
@@ -129,6 +131,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_LabReactorDestroyed</defName>
     <label>ruined lab reactor</label>
+    <designatorDropdown>DMS_RuinedMachines</designatorDropdown>
     <description>The wreck of an experimental reaction chamber. Its vessel has ruptured and whatever it once processed has crusted over the burst plumbing. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/LabReactor</texPath>
@@ -151,6 +154,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_LabFurnaceDestroyed</defName>
     <label>ruined lab furnace</label>
+    <designatorDropdown>DMS_RuinedMachines</designatorDropdown>
     <description>The wreck of an experimental sintering furnace, burnt out from the inside. Its heating elements are slagged and the chamber lining has collapsed. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/Lab_Furnace</texPath>
@@ -173,6 +177,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_MachineCabinetDestroyed</defName>
     <label>ruined machine cabinet</label>
+    <designatorDropdown>DMS_RuinedMachines</designatorDropdown>
     <description>The wreck of a calibration cabinet. Its precision instruments have been smashed or stripped, leaving only a gutted shell. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/MachineCabinet</texPath>
@@ -195,6 +200,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_HoundBaseDestroyed</defName>
     <label>ruined hound station</label>
+    <designatorDropdown>DMS_RuinedMachines</designatorDropdown>
     <description>The wreck of a hound unit charging station. Its docking cradle is empty and the charging contacts have corroded beyond repair. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/Drone_Platform</texPath>
@@ -217,6 +223,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_TrashBinBaseDestroyed</defName>
     <label>ruined trashpan station</label>
+    <designatorDropdown>DMS_RuinedMachines</designatorDropdown>
     <description>The wreck of a trashpan unit charging station. Its docking cradle is empty and the charging contacts have corroded beyond repair. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/Drone_Platform_Pan</texPath>
@@ -239,6 +246,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_LogisticContainerDestroyed</defName>
     <label>ruined logistic container</label>
+    <designatorDropdown>DMS_LogisticStations</designatorDropdown>
     <description>A breached military cargo container. Whatever supplies it once held were looted or destroyed long ago, leaving only the torn shell. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/DMS_LogisticContainer</texPath>
@@ -278,6 +286,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_LargeShieldGeneratorDestroyed</defName>
     <label>ruined heavy shield generator</label>
+    <designatorDropdown>DMS_RuinedMachines</designatorDropdown>
     <description>A ruined ultra-class energy shield generator. It's energy coils and projection circuits have corroded beyond repair. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/DMS_LargeShieldGenerator</texPath>
@@ -304,10 +313,16 @@
     </costList>
   </ThingDef>
 
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_RuinedMachines</defName>
+    <label>ruined machines</label>
+  </DesignatorDropdownGroupDef>
+
   <!-- (Security Container) -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_ContainerNaraDestroyed</defName>
     <label>ruined security container</label>
+    <designatorDropdown>DMS_RuinedMachines</designatorDropdown>
     <description>A breached armored cargo container. Whatever supplies it once held were looted or destroyed long ago, leaving only the torn shell. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/DMS_ContainerNara_Ruined</texPath>
@@ -399,6 +414,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_PerimeterScannerDestroyed</defName>
     <label>ruined perimeter scanner</label>
+    <designatorDropdown>DMS_RuinedMachines</designatorDropdown>
     <description>The wreck of a perimeter scanner. Its sensor is broken and platform have corroded beyond repair.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/DMS_PerimeterScanner</texPath>

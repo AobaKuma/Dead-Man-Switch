@@ -22,10 +22,16 @@
     </comps>
   </ThingDef>
 
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_Lockers</defName>
+    <label>lockers</label>
+  </DesignatorDropdownGroupDef>
+
   <!-- 個人置物櫃 -->
   <ThingDef ParentName="DMS_FurnitureBase">
     <defName>DMS_Personallocker</defName>
     <label>personal locker</label>
+    <designatorDropdown>DMS_Lockers</designatorDropdown>
     <description>A tall steel locker for storing personal effects. Standard issue in facility changing rooms and dormitories.</description>
     <graphicData>
       <texPath>Things/Building/DMS_Personallocker/Personallocker</texPath>
@@ -53,6 +59,7 @@
   <ThingDef ParentName="DMS_FurnitureBase">
     <defName>DMS_Personallocker_Large</defName>
     <label>locker bank</label>
+    <designatorDropdown>DMS_Lockers</designatorDropdown>
     <description>A bank of three steel lockers bolted together. Standard issue in facility changing rooms and dormitories.</description>
     <graphicData>
       <texPath>Things/Building/DMS_Personallocker_Large/Personallocker</texPath>
@@ -228,6 +235,7 @@
   <ThingDef ParentName="DMS_FurnitureDestroyedBase">
     <defName>DMS_PersonallockerDestroyed</defName>
     <label>ruined personal locker</label>
+    <designatorDropdown>DMS_Lockers</designatorDropdown>
     <description>A rusted-out steel locker. Its door has been forced and whatever was inside is long gone. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/Furniture/DMS_Personallocker</texPath>
@@ -250,6 +258,7 @@
   <ThingDef ParentName="DMS_FurnitureDestroyedBase">
     <defName>DMS_Personallocker_LargeDestroyed</defName>
     <label>ruined locker bank</label>
+    <designatorDropdown>DMS_Lockers</designatorDropdown>
     <description>A bank of three rusted-out steel lockers. The doors hang open or are missing entirely, and whatever was inside is long gone. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/Furniture/DMS_Personallocker_Large</texPath>
@@ -277,6 +286,7 @@
   <ThingDef ParentName="DMS_FurnitureDestroyedBase">
     <defName>DMS_WaterdispenserDestroyed</defName>
     <label>ruined water dispenser</label>
+    <designatorDropdown>DMS_RuinedFurniture</designatorDropdown>
     <description>The wreck of a water dispenser. The bottle is cracked and empty, and the taps have corroded solid. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/Furniture/DMS_Waterdispenser</texPath>
@@ -301,6 +311,7 @@
   <ThingDef ParentName="DMS_FurnitureDestroyedBase">
     <defName>DMS_BenchesDestroyed</defName>
     <label>ruined waiting bench</label>
+    <designatorDropdown>DMS_RuinedFurniture</designatorDropdown>
     <description>A row of seats on a rusted steel frame. The padding has rotted away and the frame is bent, so nobody will be sitting here again. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/Furniture/DMS_Benches</texPath>
@@ -325,10 +336,16 @@
     </costList>
   </ThingDef>
 
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_RuinedFurniture</defName>
+    <label>ruined furniture</label>
+  </DesignatorDropdownGroupDef>
+
   <!-- 空氣清淨機殘骸 -->
   <ThingDef ParentName="DMS_FurnitureDestroyedBase">
     <defName>DMS_AirpurifierDestroyed</defName>
     <label>ruined air purifier</label>
+    <designatorDropdown>DMS_RuinedFurniture</designatorDropdown>
     <description>The wreck of an air purification unit. Its filters are clogged solid and the housing has rusted through. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/Furniture/DMS_Airpurifier</texPath>
@@ -351,6 +368,7 @@
   <ThingDef ParentName="DMS_FurnitureDestroyedBase">
     <defName>DMS_Hydroponics_FlowerpotDestroyed</defName>
     <label>ruined hydroponic planter</label>
+    <designatorDropdown>DMS_RuinedFurniture</designatorDropdown>
     <description>A dead hydroponic planter. The nutrient reservoir dried out long ago, leaving only a crust of withered roots. Breaking it down yields some metal scrap.</description>
     <graphicData>
       <texPath>Things/Building/Ruin_Building/Furniture/DMS_Hydroponics_Flowerpot</texPath>

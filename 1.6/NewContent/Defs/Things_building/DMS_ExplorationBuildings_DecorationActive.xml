@@ -22,10 +22,16 @@
   </ThingDef>
 
 
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_ActiveVents</defName>
+    <label>active vents</label>
+  </DesignatorDropdownGroupDef>
+
   <!-- 小型通風裝置 -->
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_VentSmall</defName>
     <label>active vent</label>
+    <designatorDropdown>DMS_ActiveVents</designatorDropdown>
     <description>An active vent used for facility ventilation and NBC gas filtration. By keeping the facility under positive pressure, it prevents harmful gases from spreading through the facility's air circulation.</description>
     <graphicData>
       <texPath>Things/Building/ActiveVent_S/building</texPath>
@@ -57,6 +63,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_VentMedium</defName>
     <label>active vent</label>
+    <designatorDropdown>DMS_ActiveVents</designatorDropdown>
     <description>An active vent used for facility ventilation and NBC gas filtration. By keeping the facility under positive pressure, it prevents harmful gases from spreading through the facility's air circulation.</description>
     <graphicData>
       <texPath>Things/Building/ActiveVent_M/building</texPath>
@@ -115,6 +122,7 @@
   <ThingDef ParentName="DMS_DecorationBuildingBase">
     <defName>DMS_Building_VentLarge</defName>
     <label>active vent</label>
+    <designatorDropdown>DMS_ActiveVents</designatorDropdown>
     <description>An active vent used for facility ventilation and NBC gas filtration. By keeping the facility under positive pressure, it prevents harmful gases from spreading through the facility's air circulation.</description>
     <graphicData>
       <texPath>Things/Building/ActiveVent_L/building</texPath>
@@ -261,9 +269,16 @@
     <uiOrder>4</uiOrder>
   </ThingDef>
 
+  <!-- 後勤站：容器、終端與其廢墟版（廢墟版在 RuinBuilding.xml） -->
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_LogisticStations</defName>
+    <label>logistic stations</label>
+  </DesignatorDropdownGroupDef>
+
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_LogisticContainer</defName>
     <label>logistic container</label>
+    <designatorDropdown>DMS_LogisticStations</designatorDropdown>
     <thingClass>Fortified.Building_ListedContainer</thingClass>
     <description>A Standard issue cargo container containing supplies for military logistics.</description>
     <rotatable>false</rotatable>
@@ -320,6 +335,7 @@
   <ThingDef ParentName="BuildingBase" Name="DMS_LogisticTerminalBuildingBase">
     <defName>DMS_LogisticTerminal</defName>
     <label>logistic terminal</label>
+    <designatorDropdown>DMS_LogisticStations</designatorDropdown>
     <description>Logistic terminal linked to cargo line below.</description>
     <thingClass>Fortified.Building_LogisticTerminal</thingClass>
     <uiIconPath>Things/Building/DMS_LogisticTerminal/DMS_LogisticTerminal_Icon</uiIconPath>

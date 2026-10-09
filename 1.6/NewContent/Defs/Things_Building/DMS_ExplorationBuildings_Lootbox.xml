@@ -23,6 +23,11 @@
     <staticSunShadowHeight>0.2</staticSunShadowHeight>
   </ThingDef>
 
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_SupplyCrates</defName>
+    <label>supply crates</label>
+  </DesignatorDropdownGroupDef>
+
   <ThingDef ParentName="DMS_BaseLootBox" Name="DMS_BaseCrateSmall" Abstract="True">
     <graphicData>
       <texPath>Things/Building/LootBoxes/SmallBox</texPath>
@@ -35,6 +40,7 @@
       <WoodLog>20</WoodLog>
     </costList>
     <size>(1,1)</size>
+    <designatorDropdown>DMS_SupplyCrates</designatorDropdown>
     <!-- ModExtension_Lootbox 不放在抽象父級：modExtensions 是 list，子級不加 Inherit="False" 會多疊一個 li。 -->
   </ThingDef>
 

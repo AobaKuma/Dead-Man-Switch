@@ -13,9 +13,16 @@
        the entrance room drops the matching exit. Core + DMS/FFF only; no DLC required.
        ============================================================ -->
 
+  <!-- Archive / CommandComplex 電梯繼承自 DMS_VaultElevator，不必另設 -->
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_VaultElevators</defName>
+    <label>freight elevators</label>
+  </DesignatorDropdownGroupDef>
+
   <ThingDef ParentName="BuildingBase" Name="DMS_ElevatorBase">
     <defName>DMS_VaultElevator</defName>
     <label>freight elevator</label>
+    <designatorDropdown>DMS_VaultElevators</designatorDropdown>
     <description>The entrance to a buried military storage vault. The lift still has power, but its controls are locked. Hack it to bring the car up.</description>
     <thingClass>DMS.Building_VaultElevator</thingClass>
     <size>(5,5)</size>
@@ -122,6 +129,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_VaultElevator_Sealed</defName>
     <label>sealed freight elevator</label>
+    <designatorDropdown>DMS_VaultElevators</designatorDropdown>
     <description>The surface pad of a buried freight elevator, locked down under an armored cover plate. The shaft controls are tied to a nearby access console; swipe a key-card there to retract the cover and bring the car up.</description>
     <thingClass>DMS.Building_AccessKeyTransformer</thingClass>
     <size>(5,5)</size>
