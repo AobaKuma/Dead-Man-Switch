@@ -4,7 +4,7 @@
   <!-- EN: Gecko -->
   <DMS_Mech_Gecko.label>Gecko</DMS_Mech_Gecko.label>
   <!-- EN: An urban combat variant of the Iguana, this model is up-armored with additional electromagnetic plating to protect against shaped charge rounds and explosives. -->
-  <DMS_Mech_Gecko.description>The urban-combat conversion of the bipedal Iguana. Its base armor has been deliberately thinned to free up weight for a set of add-on electromagnetic reactive armor bricks that outright negate single high-damage hits from shaped charges and explosives; against small arms fire, however, its skin is thinner than the Iguana's.</DMS_Mech_Gecko.description>
+  <DMS_Mech_Gecko.description>A close-range armored variant of the Iguana, built to hold streets and breach buildings. Its plating is thickened well beyond the base chassis, and an add-on array of electromagnetic reactive armor bricks negates shaped charges and explosives outright. The extra tonnage makes it slower and more expensive than the Iguana, and its weapon options are limited to short-range heavy arms.</DMS_Mech_Gecko.description>
   <!-- EN: Mechanical Head -->
   <DMS_Mech_Gecko.tools.Mechanical_Head.label>Mechanical Head</DMS_Mech_Gecko.tools.Mechanical_Head.label>
   <!-- EN: Left Leg -->
@@ -20,7 +20,7 @@
   <!-- EN: Iguana -->
   <DMS_Mech_Iguana.label>Iguana</DMS_Mech_Iguana.label>
   <!-- EN: The modernized and redesigned bipedal walking tank based on the Tarbosaurus. This model is produced without the experimental electromagnetic armor allowing it to maintain greater mobility. -->
-  <DMS_Mech_Iguana.description>A heavy bipedal IFV redesigned on the basis of the Tarbosaurus, with the excellent qualities of small size, low cost and suitability for mass production. This model carries no electromagnetic reactive armor, giving up dedicated protection against shaped charges in exchange for the thickest base armor and best sustained mobility in its class.</DMS_Mech_Iguana.description>
+  <DMS_Mech_Iguana.description>The modernized, redesigned bipedal walking tank based on the Tarbosaurus. Small, cheap and suited to mass production, it is the modular model of the line: its weapon mount takes a wide range of heavy weapons, so it can be refitted for the mission at hand. It carries no electromagnetic reactive armor and its base plating is moderate, relying on its mobility and smoke launchers to survive.</DMS_Mech_Iguana.description>
   <!-- EN: Mechanical Head -->
   <DMS_Mech_Iguana.tools.Mechanical_Head.label>Mechanical Head</DMS_Mech_Iguana.tools.Mechanical_Head.label>
   <!-- EN: Left Leg -->

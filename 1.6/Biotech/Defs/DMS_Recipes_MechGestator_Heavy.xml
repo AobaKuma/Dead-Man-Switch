@@ -67,7 +67,7 @@
       <DMS_Mech_Gecko>1</DMS_Mech_Gecko>
     </products>
     <researchPrerequisite>DMS_Hypothesis</researchPrerequisite>
-    <gestationCycles>5</gestationCycles>
+    <gestationCycles>6</gestationCycles>
     <descriptionHyperlinks>
       <ThingDef>Neurocomputer</ThingDef>
       <ThingDef>DMS_Mech_Gecko</ThingDef>
@@ -79,7 +79,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>90</count>
       </li>  
       <li>
         <filter>
@@ -87,7 +87,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>165</count>
+        <count>240</count>
       </li>
       <li>
         <filter>
@@ -95,7 +95,7 @@
             <li>Plasfiber</li>
           </thingDefs>
         </filter>
-        <count>30</count>
+        <count>45</count>
       </li>
       <li>
         <filter>
@@ -119,7 +119,7 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>18</count>
+        <count>24</count>
       </li>
       <li>
         <filter>

@@ -11,8 +11,7 @@
 	  defaultAmmoPickUp = 自動補給時的目標攜行量（約 10 個爆發量）
 	  startingAmmoRange = 生成（含敵對）機兵時隨機給予的初始彈量
 
-	本檔處理定義在非 CE 資料夾、但在 CE 下被當作子砲塔使用的武器；
-	CE 專用的子砲塔武器直接寫在 CE/Defs/DMS_MilitaryGun_Mount_SP.xml。
+	本檔處理在 CE 下被當作子砲塔使用的武器（原版 Def，CE 屬性見 Patches/Weapons/MiliGuns*_CE.xml）。
 -->
 <Patch>
 
@@ -37,6 +36,144 @@
 						<ammoSet>AmmoSet_338Lapua</ammoSet>
 						<defaultAmmoPickUp>150</defaultAmmoPickUp>
 						<startingAmmoRange>75~150</startingAmmoRange>
+					</li>
+				</comps>
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- ===== 下掛武器：原版 Def 在 CE 下共用，補上由機兵 inventory 供彈的 comp（取代已移除的 CE 專用下掛砲塔 Def） =====
+	     Sub-turret weapons: the vanilla-side defs are CE-patched in MiliGuns*_CE.xml and reused as-is; add the inventory-fed ammo comp here. -->
+
+	<!-- ===== DMS_Flameblaster ===== -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="DMS_Flameblaster"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DMS_Flameblaster"]/comps</xpath>
+			<value>
+				<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+						<ammoSet>AmmoSet_DMS_Flamethrower</ammoSet>
+						<defaultAmmoPickUp>100</defaultAmmoPickUp>
+						<startingAmmoRange>50~100</startingAmmoRange>
+					</li>
+			</value>
+		</match>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DMS_Flameblaster"]</xpath>
+			<value>
+				<comps>
+					<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+						<ammoSet>AmmoSet_DMS_Flamethrower</ammoSet>
+						<defaultAmmoPickUp>100</defaultAmmoPickUp>
+						<startingAmmoRange>50~100</startingAmmoRange>
+					</li>
+				</comps>
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- ===== DMS_ShotgunGunMounted ===== -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="DMS_ShotgunGunMounted"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DMS_ShotgunGunMounted"]/comps</xpath>
+			<value>
+				<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+						<ammoSet>AmmoSet_12Gauge</ammoSet>
+						<defaultAmmoPickUp>30</defaultAmmoPickUp>
+						<startingAmmoRange>15~30</startingAmmoRange>
+					</li>
+			</value>
+		</match>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DMS_ShotgunGunMounted"]</xpath>
+			<value>
+				<comps>
+					<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+						<ammoSet>AmmoSet_12Gauge</ammoSet>
+						<defaultAmmoPickUp>30</defaultAmmoPickUp>
+						<startingAmmoRange>15~30</startingAmmoRange>
+					</li>
+				</comps>
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- ===== DMS_HeavyMachineGunMounted ===== -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="DMS_HeavyMachineGunMounted"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DMS_HeavyMachineGunMounted"]/comps</xpath>
+			<value>
+				<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+						<ammoSet>AmmoSet_50BMG</ammoSet>
+						<defaultAmmoPickUp>100</defaultAmmoPickUp>
+						<startingAmmoRange>50~100</startingAmmoRange>
+					</li>
+			</value>
+		</match>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DMS_HeavyMachineGunMounted"]</xpath>
+			<value>
+				<comps>
+					<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+						<ammoSet>AmmoSet_50BMG</ammoSet>
+						<defaultAmmoPickUp>100</defaultAmmoPickUp>
+						<startingAmmoRange>50~100</startingAmmoRange>
+					</li>
+				</comps>
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- ===== DMS_SubMachineGunMounted ===== -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="DMS_SubMachineGunMounted"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DMS_SubMachineGunMounted"]/comps</xpath>
+			<value>
+				<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+						<ammoSet>AmmoSet_22LR</ammoSet>
+						<defaultAmmoPickUp>100</defaultAmmoPickUp>
+						<startingAmmoRange>50~100</startingAmmoRange>
+					</li>
+			</value>
+		</match>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DMS_SubMachineGunMounted"]</xpath>
+			<value>
+				<comps>
+					<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+						<ammoSet>AmmoSet_22LR</ammoSet>
+						<defaultAmmoPickUp>100</defaultAmmoPickUp>
+						<startingAmmoRange>50~100</startingAmmoRange>
+					</li>
+				</comps>
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- ===== DMS_Gun_Kord_Vehicle ===== -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="DMS_Gun_Kord_Vehicle"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DMS_Gun_Kord_Vehicle"]/comps</xpath>
+			<value>
+				<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+						<ammoSet>AmmoSet_127x108mm</ammoSet>
+						<defaultAmmoPickUp>120</defaultAmmoPickUp>
+						<startingAmmoRange>60~120</startingAmmoRange>
+					</li>
+			</value>
+		</match>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DMS_Gun_Kord_Vehicle"]</xpath>
+			<value>
+				<comps>
+					<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+						<ammoSet>AmmoSet_127x108mm</ammoSet>
+						<defaultAmmoPickUp>120</defaultAmmoPickUp>
+						<startingAmmoRange>60~120</startingAmmoRange>
 					</li>
 				</comps>
 			</value>

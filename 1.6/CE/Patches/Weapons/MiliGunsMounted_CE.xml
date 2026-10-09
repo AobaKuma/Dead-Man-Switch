@@ -95,8 +95,7 @@
                     </targetParams>
                     <recoilPattern>Mounted</recoilPattern>
                 </Properties>
-                <!-- 蹄兔 (Hyrax) 的車載武器。CE 下只有蹄兔使用此 def：地鼠/獵犬的下掛版本會被
-                     MiliGunsMounted_CE_Replace.xml 換成 DMS_Iguana_SubMachineGun。 -->
+                <!-- 蹄兔 (Hyrax) 的車載武器，同時也是地鼠/獵犬的下掛武器（下掛時另由 Patch_SubTurretAmmo_CE.xml 補供彈 comp）。 -->
                 <AmmoUser>
                     <magazineSize>300</magazineSize>
                     <reloadTime>6.5</reloadTime>

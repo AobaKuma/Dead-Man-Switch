@@ -298,7 +298,7 @@
           <texPath>Things/Automatroid/Dogge</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2</drawSize>
+          <drawSize>2.4</drawSize>
           <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
@@ -307,7 +307,7 @@
           <texPath>Things/Automatroid/OldTexture/Dogge</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2</drawSize>
+          <drawSize>2.4</drawSize>
           <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>

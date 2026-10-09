@@ -309,28 +309,30 @@
         <bossCount>1</bossCount>
         <escorts>
           <DMS_Mech_Falcon>2</DMS_Mech_Falcon>
-          <DMS_Mech_Soldat>3</DMS_Mech_Soldat>
+          <DMS_Mech_Lanius>1</DMS_Mech_Lanius>
         </escorts>
       </li>
       <li> <!-- 1 -->
         <bossCount>1</bossCount>
         <escorts>
           <DMS_Mech_Falcon>5</DMS_Mech_Falcon>
-          <DMS_Mech_Soldat>5</DMS_Mech_Soldat>
+          <DMS_Mech_Lanius>2</DMS_Mech_Lanius>
         </escorts>
       </li>
       <li> <!-- 2 - Repeat starts here -->
         <bossCount>2</bossCount>
         <escorts>
           <DMS_Mech_Falcon>7</DMS_Mech_Falcon>
-          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Lanius>3</DMS_Mech_Lanius>
+          <DMS_Mech_Lanius_RR>1</DMS_Mech_Lanius_RR>
         </escorts>
       </li>
       <li> <!-- 3 -->
         <bossCount>3</bossCount>
         <escorts>
           <DMS_Mech_Falcon>6</DMS_Mech_Falcon>
-          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Lanius>3</DMS_Mech_Lanius>
+          <DMS_Mech_Lanius_RR>1</DMS_Mech_Lanius_RR>
           <DMS_Mech_Ronin>10</DMS_Mech_Ronin>
         </escorts>
         <bossApparel>
@@ -343,7 +345,8 @@
         <bossCount>4</bossCount>
         <escorts>
           <DMS_Mech_Falcon>8</DMS_Mech_Falcon>
-          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Lanius>4</DMS_Mech_Lanius>
+          <DMS_Mech_Lanius_RR>1</DMS_Mech_Lanius_RR>
           <DMS_Mech_Ronin>5</DMS_Mech_Ronin>
         </escorts>
         <bossApparel>
@@ -356,7 +359,8 @@
         <bossCount>5</bossCount>
         <escorts>
           <DMS_Mech_Falcon>8</DMS_Mech_Falcon>
-          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Lanius>5</DMS_Mech_Lanius>
+          <DMS_Mech_Lanius_RR>2</DMS_Mech_Lanius_RR>
           <DMS_Mech_Ronin>8</DMS_Mech_Ronin>
           <DMS_Mech_Sniper>2</DMS_Mech_Sniper>
         </escorts>

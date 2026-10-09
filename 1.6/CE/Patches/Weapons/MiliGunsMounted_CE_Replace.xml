@@ -2,6 +2,9 @@
 
 <Patch>
 
+	<!-- 壁虎／鬣蜥／地鼠／獵犬／骇蜥／推土機的下掛武器在 CE 下直接使用原版 Def（已於 MiliGuns*_CE.xml CE 化），
+	     彈藥 comp 由 Patch_SubTurretAmmo_CE.xml 統一補上，不再需要 CE 專用的下掛砲塔 Def。 -->
+
 	<!-- 蹄兔在 CE 下沿用 DMS_SubMachineGunMounted（於 MiliGunsMounted_CE.xml 取得 CE 屬性與 .22LR AmmoUser），
 	     所以這裡不需要替換武器。原本有一條把它換成自己的空操作，已移除。 -->
 
@@ -13,59 +16,11 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="DMS_Mech_Gecko"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="flame thrower"]/turret</xpath>
-			<value>
-				<turret>DMS_Gecko_FlameTurret</turret>
-		     </value>
-    </Operation>
-
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="DMS_Mech_Gecko"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="close inbound system"]/turret</xpath>
-		<value>
-			<turret>DMS_Tarbosaurus_ShotgunGun</turret>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="DMS_Mech_Geochelone"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="defense machinegun"]/turret</xpath>
-		<value>
-			<turret>DMS_Iguana_SubMachineGun</turret>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="DMS_Mech_Dogge"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="machine gun"]/turret</xpath>
-		<value>
-			<turret>DMS_Iguana_SubMachineGun</turret>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="DMS_Mech_Iguana"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="General-purpose machine gun"]/turret</xpath>
 		<value>
 			<turret>DMS_LightMachineGunMounted</turret>
 		</value>
 	</Operation>
 
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="DMS_Mech_Tarbosaurus"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="General-purpose machine gun"]/turret</xpath>
-		<value>
-			<turret>DMS_Tarbosaurus_SubMachineGun</turret>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="DMS_Mech_Tarbosaurus"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="close inbound system"]/turret</xpath>
-		<value>
-			<turret>DMS_Tarbosaurus_ShotgunGun</turret>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="DMS_Mech_Killdozer"]/comps/li[@Class="Fortified.CompProperties_VehicleWeapon"]/defaultWeapon</xpath>
-		<value>
-			<defaultWeapon>DMS_Dozer_KordMG</defaultWeapon>
-		</value>
-	</Operation>
 	
 </Patch>			

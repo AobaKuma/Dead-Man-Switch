@@ -299,7 +299,7 @@
     <lifeStages>                                                                 <!--身體圖片-->
       <li>
         <bodyGraphicData>
-          <texPath>Things/Automatroid/soldat</texPath>
+          <texPath>Things/Automatroid/kanonier</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
@@ -308,7 +308,7 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Automatroid/OldTexture/soldat</texPath>
+          <texPath>Things/Automatroid/OldTexture/kanonier</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
@@ -434,7 +434,6 @@
     <abilities>
       <li>DMS_Mothball</li>
       <li>DMS_CallDrop</li>
-      <li>DMS_CallDrop_Falcon</li>
     </abilities>
   </PawnKindDef>
 

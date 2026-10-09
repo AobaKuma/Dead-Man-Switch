@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       伯勞鳥 Lanius
+      一種能夠裝備步兵口徑槍械的大型無人機平台，被設計用於在掌握制空權的地面作戰環境中為超重型無人母機提供火力掩護，具有兩具煙幕彈發射器來在戰鬥中掩蔽其脆弱的升力結構不被命中。
+
+      分為餘械艦隊版本以及殖民艦隊版本，主要是塗裝顏色略顯不同。
+      武器系統與火槍手近似，然後帶自動釋放的煙霧包技能(能用四次)。
+      NPC版本有兩種型號：壓制型(機兵輕機槍)，支援型(無後座力砲)
+
+       ============================================================ -->
+  <ThingDef Name="DMS_MechLaniusBase" ParentName="BaseAutomatroidRace" Abstract="True">
+    <statBases>
+      <MoveSpeed>7</MoveSpeed>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>      <!--銳抗-->
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>      <!--鈍抗-->
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>      <!--能抗-->
+      <MaxFlightTime>30</MaxFlightTime>
+      <FlightCooldown>10</FlightCooldown>
+      <AimingDelayFactor>1.1</AimingDelayFactor>
+      <StaggerDurationFactor>0.5</StaggerDurationFactor>
+      <ControlTakingTime MayRequire="Ludeon.Rimworld.Biotech">8</ControlTakingTime>
+    </statBases>
+    <race>
+      <body>DMS_Chop</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>1.5</baseBodySize>
+      <baseHealthScale>1.75</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
+      <flightStartChanceOnJobStart>0.05</flightStartChanceOnJobStart>
+      <waterCellCost>1</waterCellCost>
+      <detritusLeavings>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>12</texOverrideIndex>
+          <spawnChance>0.08</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_Floating">
+        <canCrossWater>true</canCrossWater>
+      </li>
+      <li Class="Fortified.CompProperties_FlyingFleckThrower">
+        <burstOffsetRange>(1.2,2)</burstOffsetRange>
+        <fleckOnSoil>DustPuff</fleckOnSoil>
+        <fleckOnSnow>AirPuff</fleckOnSnow>
+        <activeAnimation>DMS_Hover</activeAnimation>
+        <sizeRange>(1.5,2.2)</sizeRange>
+        <speedRange>(0.75,1)</speedRange>
+        <throwRate>1</throwRate>
+        <throwTick>5</throwTick>
+      </li>
+    </comps>
+    <tools Inherit="False">
+      <li>
+        <label>ram</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>3.0</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.3</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>10</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>1</DMS_ChunkSlag>
+      <Steel>45</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_MechLaniusBase">
+    <defName>DMS_Mech_Lanius</defName>
+    <label>Lanius</label>
+    <description>A large drone platform able to carry infantry-caliber firearms, built to give fire cover to ultraheavy mother-drones in ground battles where air superiority is already held. Its lift structure is fragile, so it carries two smoke-grenade launchers to screen itself from incoming fire.\n\nIt flies over terrain no ground unit can cross and can mount a wider range of weapons than the Falcon, but its armament is limited to weapons an infantryman could carry. The launchers hold four smoke charges in total.</description>
+    <statBases>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
+    </statBases>
+    <comps>
+      <!-- 裝備的武器繪製在機腹下方；座標依 butcherBird 貼圖（drawSize 3）估算，需進遊戲微調。 -->
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <defaultWeapon />
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.1</rotationSmoothTime>
+        <drawData>
+          <dataEast>
+            <offset>(0.35,-0.1,-0.3)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.35,-0.1,-0.3)</offset>
+          </dataWest>
+          <dataSouth>
+            <offset>(0,-0.1,-0.3)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(0,-0.1,0)</offset>
+          </dataNorth>
+        </drawData>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>SimpleGun</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>A_AR_LongRifle</li>
+          <li>A_SAR_LongRifle</li>
+          <li>A_BR_LongRifle</li>
+          <li>A_MG_Light</li>
+          <li>ElephantGun</li>
+          <li>SniperRifle</li>
+          <li>AssaultRifle</li>
+          <li>A_SR_GrenadeLauncher</li>
+          <li MayRequire="ceteam.combatextended">BinocularsRadio</li>
+          <li>DMS_Gun_Recoilless</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons>
+          <li MayRequire="ceteam.combatextended">Gun_BinocularsRadio</li>
+          <li MayRequire="ceteam.combatextendedarmory">CE_ATFour</li>
+        </BypassUsableWeapons>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind" Name="DMS_BaseLaniusKind" Abstract="True">
+    <race>DMS_Mech_Lanius</race>
+    <isFighter>true</isFighter>
+    <combatPower>200</combatPower>
+    <weaponMoney>570~3000</weaponMoney>
+    <abilities>
+      <li>DMS_SmokeLauncher</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/butcherBird</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.5</drawSize>
+          <color>(100, 102, 100)</color>
+          <shadowData>
+            <volume>(1.5,1,1.5)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/butcherBird</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.5</drawSize>
+          <color>(105, 102, 99)</color>
+          <shadowData>
+            <volume>(1.5,1,1.5)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMS_BaseLaniusKind">
+    <defName>DMS_Mech_Lanius</defName>
+    <label>butcher bird</label>
+    <maxPerGroup>8</maxPerGroup>
+    <weaponTags>
+      <li>A_SR_GrenadeLauncher</li>
+      <li>A_MG_Light</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMS_BaseLaniusKind">
+    <defName>DMS_Mech_Lanius_RR</defName>
+    <label>cannon bird</label>
+    <maxPerGroup>4</maxPerGroup>
+    <weaponTags>
+      <li>DMS_Gun_Recoilless</li>
+    </weaponTags>
+  </PawnKindDef>
+
+</Defs>

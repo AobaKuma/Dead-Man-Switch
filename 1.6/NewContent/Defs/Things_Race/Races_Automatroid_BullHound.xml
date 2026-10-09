@@ -116,7 +116,7 @@
           <texPath>Things/Automatroid/bullHound</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2.6</drawSize>
+          <drawSize>2.3</drawSize>
           <shadowData>
             <volume>(0.8, 0.4, 0.8)</volume>
             <offset>(0, 0, -0.2)</offset>
@@ -128,7 +128,7 @@
           <texPath>Things/Automatroid/bullHound</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2.6</drawSize>
+          <drawSize>2.3</drawSize>
           <shadowData>
             <volume>(0.8, 0.4, 0.8)</volume>
             <offset>(0, 0, -0.2)</offset>
@@ -144,7 +144,7 @@
     <label>bullhound</label>
     <description>A heavy quadruped automatroid built for garrison duty. An enlarged derivative of the Dogge, it gives up the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was posted at gates and corridor junctions of remnant installations to stop intruders at close range.
 
-This pattern mounts an automatic shotgun. The mount is fixed and cannot be swapped.</description>
+This model mounts an automatic shotgun. The mount is fixed and cannot be swapped.</description>
     <comps>
       <li Class="Fortified.CompPropertiesMultipleTurretGun">
         <subTurrets>
@@ -193,14 +193,14 @@ This pattern mounts an automatic shotgun. The mount is fixed and cannot be swapp
   </PawnKindDef>
 
   <!-- ===== 噴火型 / flamer pattern =====
-       背掛武裝直接沿用 DMS_Flameblaster（與壁虎同款；CE 下由 BullHound_Mounted_CE.xml 換成 DMS_Gecko_FlameTurret）。
-       The back mount is DMS_Flameblaster itself (same as the Gecko; BullHound_Mounted_CE.xml swaps it to DMS_Gecko_FlameTurret under CE). -->
+       背掛武裝直接沿用 DMS_Flameblaster（與壁虎同款；CE 下由 Patch_SubTurretAmmo_CE.xml 補上供彈 comp）。
+       The back mount is DMS_Flameblaster itself (same as the Gecko; Patch_SubTurretAmmo_CE.xml adds its ammo comp under CE). -->
   <ThingDef ParentName="DMS_MechBullHoundBase">
     <defName>DMS_Mech_BullHound_Flamer</defName>
     <label>bullhound (flamer)</label>
     <description>A heavy quadruped automatroid built for garrison duty. An enlarged derivative of the Dogge, it gives up the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was posted at gates and corridor junctions of remnant installations to stop intruders at close range.
 
-This pattern mounts a Flameblaster for clearing corridors, with its plating treated against its own flame. The mount is fixed and cannot be swapped.</description>
+This model mounts a Flameblaster for clearing corridors, with its plating treated against its own flame. The mount is fixed and cannot be swapped.</description>
     <statBases>
       <!-- 自身武器的防火處理。Fireproofed against its own weapon. -->
       <ArmorRating_Heat>1.0</ArmorRating_Heat>

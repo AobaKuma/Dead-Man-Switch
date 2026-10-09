@@ -4,11 +4,11 @@
 	兩者都是子砲塔（Fortified.CompPropertiesMultipleTurretGun），彈藥由機兵自身 inventory 供應：
 	FortifiedCE.CompProperties_TurretProjectileCE 見 Patch_SubTurretAmmo_CE.xml 的說明。
 	  霰彈型：CE 下改為 KS-23（23x75mmR），數值比照 AncientCorps 的 KS-23K。
-	  噴火型：與壁虎相同，把 DMS_Flameblaster 換成 CE 專用的 DMS_Gecko_FlameTurret（自帶供彈 comp）。
+	  噴火型：直接沿用已 CE 化的 DMS_Flameblaster，供彈 comp 由 Patch_SubTurretAmmo_CE.xml 補上。
 	CE patch for the BullHound's fixed back mounts. Both are sub-turrets (Fortified.CompPropertiesMultipleTurretGun)
 	fed from the mech's own inventory; see Patch_SubTurretAmmo_CE.xml for how CompProperties_TurretProjectileCE works.
 	  Shotgun pattern: becomes a KS-23 (23x75mmR) under CE, numbers after AncientCorps' KS-23K.
-	  Flamer pattern: as the Gecko, DMS_Flameblaster is swapped for the CE-only DMS_Gecko_FlameTurret (has its own ammo comp).
+	  Flamer pattern: uses the CE-patched DMS_Flameblaster as-is; its ammo comp comes from Patch_SubTurretAmmo_CE.xml.
 -->
 <Patch>
 	<Operation Class="PatchOperationSequence">
@@ -94,13 +94,6 @@
 				</nomatch>
 			</li>
 
-			<!--===== 噴火型：換成 CE 專用火焰砲塔 / flamer pattern: swap to the CE flame turret =====-->
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="DMS_Mech_BullHound_Flamer"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="flame projector"]/turret</xpath>
-				<value>
-					<turret>DMS_Gecko_FlameTurret</turret>
-				</value>
-			</li>
 
 		</operations>
 	</Operation>

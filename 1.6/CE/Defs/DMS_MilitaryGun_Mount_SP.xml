@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+	<!--
+		【已棄用 / DEPRECATED】本檔的 CE 專用下掛砲塔 Def 已不再被任何機兵或補丁使用。
+		CE 下機兵改為直接使用原版下掛武器 Def（CE 屬性見 Patches/Weapons/MiliGuns*_CE.xml），
+		供彈 comp 統一由 Patches/Patch_SubTurretAmmo_CE.xml 補上。僅保留作為數值參考，請勿再引用這些 defName。
+		This file is no longer used: the CE-only sub-turret defs below are not referenced by any mech or patch.
+		Mechs use the vanilla-side mounted weapon defs under CE instead; ammo comps come from Patch_SubTurretAmmo_CE.xml.
+		Kept for reference only; do not reference these defNames.
+	-->
 	<!-- ==================== 邪道流下挂武器 ==================== -->
 
 	<!-- ==壁虎下挂喷火器== -->
@@ -9,6 +17,7 @@
 		<graphicData>
 			<texPath>Things/Weapons/DMS_Flameblaster</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.75</drawSize>
 		</graphicData>
 		<description>A flamethrower used by mechs that will ignite flammable materials within its range.</description>
 		<statBases>

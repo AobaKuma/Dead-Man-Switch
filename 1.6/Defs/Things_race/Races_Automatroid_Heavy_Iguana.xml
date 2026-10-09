@@ -6,13 +6,14 @@
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Iguana</defName>
     <label>Iguana</label>
-    <description>The modernized and redesigned bipedal walking tank based on the Tarbosaurus. This model ships without the add-on electromagnetic reactive plating, trading standoff protection for the thickest base armor and the best sustained mobility in its class.</description>
+    <description>The modernized, redesigned bipedal walking tank based on the Tarbosaurus. Small, cheap and suited to mass production, it is the modular model of the line: its weapon mount takes a wide range of heavy weapons, so it can be refitted for the mission at hand. It carries no electromagnetic reactive armor and its base plating is moderate, relying on its mobility and smoke launchers to survive.</description>
     <statBases>
       <MoveSpeed>4.6</MoveSpeed>                                                    <!--移動速度：未加掛反應裝甲，全系列最快-->
-      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>                                     <!--護甲-->
-      <ArmorRating_Sharp>1.4</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.7</ArmorRating_Blunt>                                     <!--護甲-->
+      <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
       <ArmorRating_Heat>0.75</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
+      <AimingDelayFactor>0.8</AimingDelayFactor>                                   <!--長射程火力支援：瞄準更快 / long-range fire support: quicker to lay the gun-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
@@ -199,6 +200,7 @@
     <butcherProducts>
       <DMS_ChunkSlag>2</DMS_ChunkSlag>
       <Steel>55</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
     </butcherProducts>
   </ThingDef>
 
@@ -253,21 +255,22 @@
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Gecko</defName>
     <label>Gecko</label>
-    <description>An urban combat variant of the Iguana. The base plating is thinned down to save weight, and the freed tonnage goes into an add-on array of electromagnetic reactive armor bricks that defeat shaped charge rounds and explosives outright. Against small arms it is the thinner-skinned of the two.</description>
+    <description>A close-range armored variant of the Iguana, built to hold streets and breach buildings. Its plating is thickened well beyond the base chassis, and an add-on array of electromagnetic reactive armor bricks negates shaped charges and explosives outright. The extra tonnage makes it slower and more expensive than the Iguana, and its weapon options are limited to short-range heavy arms.</description>
     <statBases>
-      <MoveSpeed>4.3</MoveSpeed>                                                    <!--移動速度-->
-      <ArmorRating_Blunt>1.1</ArmorRating_Blunt>                                     <!--護甲-->
-      <ArmorRating_Sharp>0.9</ArmorRating_Sharp>                                     <!--基礎裝甲刻意薄於鬣蜥：重量讓給外掛反應裝甲-->
-      <ArmorRating_Heat>0.75</ArmorRating_Heat>
+      <MoveSpeed>3.9</MoveSpeed>                                                    <!--移動速度-->
+      <ArmorRating_Blunt>1.4</ArmorRating_Blunt>                                     <!--護甲-->
+      <ArmorRating_Sharp>1.4</ArmorRating_Sharp>                                     <!--近距離裝甲型：基礎裝甲加厚，再外掛反應裝甲 / close-range armored: thickened plating plus add-on ERA-->
+      <ArmorRating_Heat>0.9</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
-      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+      <MeleeCooldownMultiplier>0.8</MeleeCooldownMultiplier>                       <!--巷戰近身：出腿更快 / faster kicks in street fighting-->
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>        <!--帶寬消耗-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">5</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
     <race>
       <body>DMS_Bipedal</body>                                                      <!--身體(另外的def)-->
       <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
       <baseBodySize>2.5</baseBodySize>
-      <baseHealthScale>3</baseHealthScale>
+      <baseHealthScale>3.5</baseHealthScale>
       <mechWeightClass>Heavy</mechWeightClass>
       <!-- 出廠加掛電磁反應裝甲：見 Defs/Hediffs/Hediff_ERAPlating.xml -->
       <hediffGiverSets>
@@ -395,12 +398,9 @@
           <li>DMS_MechWeaponTransHeavy</li>
           <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
           <li>A_MG_GrenadeLauncher</li>
-          <li>A_SR_GrenadeLauncher</li>
           <li>DMS_MechWeaponHeavy</li>
-          <li>H_Gatling127mm</li>
           <li>H_Gatling20mm</li>
           <li>V_Gatling556mm</li>
-          <li>DMS_Gun_Recoilless</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -473,6 +473,7 @@
     <butcherProducts>
       <DMS_ChunkSlag>2</DMS_ChunkSlag>
       <Steel>55</Steel>
+      <Tungsteel>15</Tungsteel>
     </butcherProducts>
     <damageMultipliers>
       <li>
@@ -522,7 +523,6 @@
     <weaponTags>
       <li>DMS_MechWeaponHeavy</li>
       <li>A_MG_GrenadeLauncher</li>
-      <li>DMS_Gun_Recoilless</li>
     </weaponTags>
     <weaponMoney>3000~9999</weaponMoney>
   </PawnKindDef>

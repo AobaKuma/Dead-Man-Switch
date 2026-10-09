@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--伯勞鳥 Lanius：中型機體，但需先進控制系統科技，使用小型培育艙-->
+  <RecipeDef ParentName="DMS_AdvancedControlMechanoidRecipe">
+    <defName>DMS_Make_Lanius</defName>
+    <label>Gestate Lanius</label>
+    <description>Gestate a Lanius Automatroid, a large drone platform able to carry infantry-caliber firearms. Built to give fire cover to ultraheavy mother-drones, it carries two smoke-grenade launchers that screen its fragile lift structure from incoming fire.\n\nIt flies over terrain no ground unit can cross and can mount a wider range of weapons than the Falcon, but its armament is limited to weapons an infantryman could carry, and it demands three points of bandwidth.</description>
+    <products>
+      <DMS_Mech_Lanius>1</DMS_Mech_Lanius>
+    </products>
+    <gestationCycles>3</gestationCycles>
+    <recipeUsers Inherit="False">
+      <li>DMS_MechGestatorSmall</li>
+    </recipeUsers>
+    <descriptionHyperlinks>
+      <ThingDef>ComponentIndustrial</ThingDef>
+      <ThingDef>ComponentStamped</ThingDef>
+      <ThingDef>DMS_Mech_Lanius</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+</Defs>

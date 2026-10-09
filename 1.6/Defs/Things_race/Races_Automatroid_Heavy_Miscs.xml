@@ -29,7 +29,6 @@
         <UsableWeaponTags>
           <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
           <li>DMS_MechWeaponLight</li>
-          <!--<li>DMS_MechWeaponMedium</li>-->
           <li>A_AR_LongRifle</li>
           <li>A_SuppressWeapon</li>
           <li>DMS_MechWeaponTransHeavy</li>
@@ -102,7 +101,6 @@
     </lifeStages>
     <weaponTags>
       <li>DMS_MechWeaponTransHeavy</li>
-      <!--<li>DMS_MechWeaponMedium</li>-->
     </weaponTags>
   </PawnKindDef>
 
