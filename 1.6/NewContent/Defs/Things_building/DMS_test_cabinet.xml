@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="DMS_BuildingBase">
+    <defName>DMS_Building_Medcab</defName>
+    <label>Medicine cabinet</label>
+    <description>A wall-mounted emergency case holding a single light recoilless rifle, ready to be grabbed when the facility comes under attack. Anyone can pull the rifle out and shoulder it; the case then sits empty until someone loads a fresh one into it.</description>
+    <thingClass>DMS.Building_RefuelableGraphic</thingClass>
+    <designationCategory>DMS_Category</designationCategory>
+    <designatorDropdown>DMS_DefenseEquipment</designatorDropdown>
+    <researchPrerequisites>
+      <li>DMS_EquipmentAdvanced</li>
+    </researchPrerequisites>
+    <category>Building</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/Medcab/building</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>2</drawSize>
+      <drawOffsetNorth>(0,0,0.4)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Medcab/icon</uiIconPath>
+    <passability>Standable</passability>
+    <rotatable>true</rotatable>
+    <fillPercent>0</fillPercent>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <size>(1,1)</size>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Mass>8</Mass>
+      <Flammability>0.3</Flammability>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+    </killedLeavings>
+    <building>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <terrainAffordanceNeeded IsNull="True" />
+    <modExtensions>
+      <li Class="DMS.ModExtension_RefuelableGraphic">
+        <emptyGraphicData>
+          <texPath>Things/Building/Medcab/building_empty</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+          <drawOffsetNorth>(0,0,0.4)</drawOffsetNorth>
+          <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
+          <damageData>
+            <enabled>false</enabled>
+          </damageData>
+        </emptyGraphicData>
+      </li>
+    </modExtensions>
+    <comps>
+      <!-- 存放：一具輕型無後座力砲 = 一格。initialFuelPercent 0 → 玩家蓋的是空箱，
+           拆除或炸毀時裡面沒拿走的武器會掉出來（CompRefuelable 只在 initialFuelPercent 為 0 時掉燃料）；
+           設施生成的箱子由 CompWeaponCase.preloadWhenNotPlayerOwned 在生成時裝滿。
+           Storage: one light recoilless rifle = one slot. initialFuelPercent 0 → player-built cases start
+           empty, and a weapon still inside drops out when the case is deconstructed or destroyed
+           (CompRefuelable only drops fuel when initialFuelPercent is 0); facility cases are filled on spawn by
+           CompWeaponCase.preloadWhenNotPlayerOwned. -->
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>5</fuelCapacity>
+        <initialFuelPercent>0</initialFuelPercent>
+        <fuelFilter>
+          <thingDefs>
+            <li>MedicineIndustrial</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>Medicine</fuelLabel>
+        <fuelGizmoLabel>Medicine</fuelGizmoLabel>
+        <outOfFuelMessage>No medicine loaded</outOfFuelMessage>
+        <fuelIconPath>Things/Weapons/DMS_RecoillessRifle_Light</fuelIconPath>
+        <minimumFueledThreshold>5</minimumFueledThreshold>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <showFuelGizmo>true</showFuelGizmo>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <initialAllowAutoRefuel>true</initialAllowAutoRefuel>
+        <autoRefuelPercent>0</autoRefuelPercent>
+        <targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+        <drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <hideGizmosIfNotPlayerFaction>true</hideGizmosIfNotPlayerFaction>
+        <functionsInVacuum>true</functionsInVacuum>
+      </li>
+      <li Class="DMS.CompProperties_WeaponCase">
+        <preloadWhenNotPlayerOwned>true</preloadWhenNotPlayerOwned>
+        <takeTicks>90</takeTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>
