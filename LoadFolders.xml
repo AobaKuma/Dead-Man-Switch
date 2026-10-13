@@ -1,8 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <loadFolders>
+	<!--
+		1.4～1.6 凍結在 1.8.27（標籤 dms-1.8.27-final），三個版本共用 1.6/Shared 的舊版貼圖。
+		1.6/Shared 緊接在 / 之後，也就是 1.8.27 根目錄 Textures/ 的位置，貼圖優先順序與 1.8.27 相同。
+		1.4–1.6 are frozen at 1.8.27 (tag dms-1.8.27-final) and share the old textures in 1.6/Shared.
+		1.6/Shared sits right after /, where 1.8.27's root Textures/ used to be, so texture priority is unchanged.
+	-->
+	<v1.4>
+		<li>/</li>
+		<li>1.6/Shared</li>
+		<li>1.4</li>
+		<li IfModActive="Ludeon.RimWorld.Royalty">1.4/Royalty</li>
+		<li IfModActive="Ludeon.RimWorld.Ideology">1.4/Ideology</li>
+		<li IfModActive="Ludeon.RimWorld.Biotech">1.4/Biotech</li>
+		<li IfModActive="CETeam.CombatExtended,CETeam.CombatExtended_steam">1.4/CE</li>
+		<li IfModActive="hlx.gestaltengine,hlx.gestaltengine_steam,mlie.gestaltengine,mlie.gestaltengine_steam">1.4/Mod/GestaltEngine</li>
+		<li IfModActive="vanillaracesexpanded.android,vanillaracesexpanded.android_steam">1.4/Mod/VREA</li>
+	</v1.4>
+	<v1.5>
+		<li>/</li>
+		<li>1.6/Shared</li>
+		<li>1.5</li>
+		<li IfModActive="Ludeon.RimWorld.Royalty">1.5/Royalty</li>
+		<li IfModActive="Ludeon.RimWorld.Ideology">1.5/Ideology</li>
+		<li IfModActive="Ludeon.RimWorld.Biotech">1.5/Biotech</li>
+
+		<li IfModActive="CETeam.CombatExtended,CETeam.CombatExtended_steam">1.5/CE</li>
+		<li IfModActive="hlx.gestaltengine,hlx.gestaltengine_steam,mlie.gestaltengine,mlie.gestaltengine_steam,mlie.reinforcedmechanoid2,mlie.reinforcedmechanoid2_steam">1.5/Mod/GestaltEngine</li>
+		<li IfModActive="wvc.sergkart.biotech.moremechanoidsworkmodes,wvc.sergkart.biotech.moremechanoidsworkmodes_steam">1.5/Mod/WVC</li>
+
+		<li IfModActive="vanillaracesexpanded.android,vanillaracesexpanded.android_steam">1.5/Mod/VREA</li>
+		<li IfModActive="oskarpotocki.vfe.pirates,oskarpotocki.vfe.pirates_steam">1.5/Mod/VFEP</li>
+
+		<li IfModActive="dimonsever000.factionlanguages,dimonsever000.factionlanguages_steam">1.5/Mod/RimLanguage</li>
+		<li IfModActive="xmb.ancienturbanruins.mo,xmb.ancienturbanruins.mo_steam">1.5/Mod/AUR</li>
+
+		<li IfModActive="kentington.saveourship2,kentington.saveourship2_steam">1.5/Mod/SaveOurShip2</li>
+		<li IfModActive="issaczhuang.pla.armory,issaczhuang.pla.armory_steam">1.5/Mod/PLAA</li>
+		<li IfModActive="samael.pca,samael.pca_steam">1.5/Mod/PCA</li>
+		<li IfModActive="solaris.ratkinracemod,solaris.ratkinracemod_steam">1.5/Mod/RK</li>
+	</v1.5>
+
 	<v1.6>
 		<li>/</li>
+		<li>1.6/Shared</li>
 		<li>1.6</li>
 		<li IfModActive="Ludeon.RimWorld.Royalty">1.6/Royalty</li>
 		<li IfModActive="Ludeon.RimWorld.Ideology">1.6/Ideology</li>
@@ -13,15 +55,41 @@
 
 		<li IfModActive="vanillaracesexpanded.android,vanillaracesexpanded.android_steam">1.6/Mod/VREA</li>
 		<li IfModActive="oskarpotocki.vfe.pirates,oskarpotocki.vfe.pirates_steam">1.6/Mod/VFEP</li>
-		
+
 		<li IfModActive="dimonsever000.factionlanguages,dimonsever000.factionlanguages_steam">1.6/Mod/RimLanguage</li>
 		<li IfModActive="xmb.ancienturbanruins.mo,xmb.ancienturbanruins.mo_steam">1.6/Mod/AUR</li>
-		
+
 		<li IfModActive="issaczhuang.pla.armory,issaczhuang.pla.armory_steam">1.6/Mod/PLAA</li>
 		<li IfModActive="samael.pca,samael.pca_steam">1.6/Mod/PCA</li>
 		<li IfModActive="solaris.ratkinracemod,solaris.ratkinracemod_steam">1.6/Mod/RK</li>
 		<li IfModActive="ASEL.MonolynRace,ASEL.MonolynRace_steam">1.6/Mod/Monolyn</li>
-		
-		<li>1.6/NewContent</li>
 	</v1.6>
+
+	<!--
+		1.7 = DMS 2.0。新版貼圖在 1.7/Textures，不讀 1.6/Shared；根目錄 / 只提供 Defs/ 與 Sounds/。
+		1.7 = DMS 2.0. New textures live in 1.7/Textures and 1.6/Shared is not read; / only provides Defs/ and Sounds/.
+	-->
+	<v1.7>
+		<li>/</li>
+		<li>1.7</li>
+		<li IfModActive="Ludeon.RimWorld.Royalty">1.7/Royalty</li>
+		<li IfModActive="Ludeon.RimWorld.Ideology">1.7/Ideology</li>
+		<li IfModActive="Ludeon.RimWorld.Biotech">1.7/Biotech</li>
+
+		<!-- Combat Extended 尚無 1.7 版，1.7/CE 暫不載入。Combat Extended has no 1.7 release yet, so 1.7/CE is not loaded. -->
+		<li IfModActive="hlx.gestaltengine,hlx.gestaltengine_steam,mlie.gestaltengine,mlie.gestaltengine_steam,mlie.reinforcedmechanoid2,mlie.reinforcedmechanoid2_steam">1.7/Mod/GestaltEngine</li>
+
+		<li IfModActive="vanillaracesexpanded.android,vanillaracesexpanded.android_steam">1.7/Mod/VREA</li>
+		<li IfModActive="oskarpotocki.vfe.pirates,oskarpotocki.vfe.pirates_steam">1.7/Mod/VFEP</li>
+
+		<li IfModActive="dimonsever000.factionlanguages,dimonsever000.factionlanguages_steam">1.7/Mod/RimLanguage</li>
+		<li IfModActive="xmb.ancienturbanruins.mo,xmb.ancienturbanruins.mo_steam">1.7/Mod/AUR</li>
+
+		<li IfModActive="issaczhuang.pla.armory,issaczhuang.pla.armory_steam">1.7/Mod/PLAA</li>
+		<li IfModActive="samael.pca,samael.pca_steam">1.7/Mod/PCA</li>
+		<li IfModActive="solaris.ratkinracemod,solaris.ratkinracemod_steam">1.7/Mod/RK</li>
+		<li IfModActive="ASEL.MonolynRace,ASEL.MonolynRace_steam">1.7/Mod/Monolyn</li>
+
+		<li>1.7/NewContent</li>
+	</v1.7>
 </loadFolders>
