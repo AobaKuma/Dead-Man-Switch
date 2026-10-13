@@ -35,3 +35,10 @@
 *.zip
 *.7z
 *.rar
+
+# 1.7 上傳時原版會為每個載入資料夾烘焙資源包 Assets.zip，必須隨模組上傳；
+# 其附屬檔 Assets.zip.* 只供本機增量烘焙使用。
+# On 1.7 upload the game bakes an Assets.zip into each load folder, which must ship;
+# its Assets.zip.* sidecars are only for local incremental baking.
+!Assets.zip
+Assets.zip.*
