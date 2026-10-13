@@ -191,6 +191,9 @@
     <defName>DMS_Mech_Lanius_RR</defName>
     <label>cannon bird</label>
     <maxPerGroup>4</maxPerGroup>
+    <!-- 只有無後座力砲一種武器（市值約 1755），下限必須高於它，否則可能抽不到武器。
+         The recoilless rifle is the only weapon here (market value ~1755); the floor must sit above it or the roll can come up empty. -->
+    <weaponMoney>1800~3000</weaponMoney>
     <weaponTags>
       <li>DMS_Gun_Recoilless</li>
     </weaponTags>
