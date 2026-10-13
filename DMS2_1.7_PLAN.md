@@ -13,7 +13,10 @@
 | 4 建置 | ✅ 0 錯誤，28 個 CS0649 警告 | `58cf9087` |
 | 5 1.7 專屬調整 | ✅ | `.rimignore`／`.gitignore`／README 的 commit |
 | 6-1 與 Workshop 比對 | ✅ 只剩預期差異（Monolyn UnitSuit 貼圖大小寫：git 版的 `Apparel_Thin` 與其他套裝一致，比 Workshop 版正確） | — |
-| 6-2／6-3 遊戲內測試 | ⏳ 待進行 | — |
+| 6-2 冒煙測試 | ✅ `-quicktest` 地圖正常生成；載入 `1.7/Assemblies/DMS.dll`、FFF 1.7、Harmony 3.0.0-rc.2；無 `Patching exception`、無 DMS 錯誤；塗裝著色器載入成功 | — |
+| 6-3 遊戲內檢查清單 | ⏳ 待進行（需手動操作） | — |
+
+6-2 記錄中仍有幾則**搬遷前就存在**的警告（舊的 1.6 資料夾在 1.7 下載入時也一模一樣，與本次搬遷無關）：`Parsed 2.9 as int`／`Parsed 4.9 as int`（某個 ThingDef 的 CompProperties 整數欄位填了小數）、`No SoundDef named Recipe_Cooking`（`1.7/Defs/Things_Building/DMS_Misc.xml` 的 `activateSound`）、FFF `CompProperties_ContinuousDamager` 在欄位初始值使用 `DamageDefOf`，以及英文／繁中翻譯各 183 個錯誤。
 | 7 發布 | ⏳ 等 FFF 1.7 上架 Workshop | — |
 > 盤點日期：2026-10-13 · 遊戲 1.7.4976 rev1043 · 參考文件：FFF 的 `_Sources/Fortified/Docs/RimWorld_1.7_Update.md`、`RimWorld_1.7_vs_1.6.md`
 
