@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--遊隼-->
+  <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
+    <defName>DMS_Make_Falcon</defName>
+    <label>gestate falcon</label>
+    <researchPrerequisite>DMS_Automatroid</researchPrerequisite>
+    <description>Gestate a Falcon Automatroid.</description>
+    <products>
+      <DMS_Mech_Falcon>1</DMS_Mech_Falcon>
+    </products>
+    <gestationCycles>2</gestationCycles>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Falcon</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!--夜蝠-->
+  <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
+    <defName>DMS_Make_Noctula</defName>
+    <label>Gestate Noctula</label>
+    <researchPrerequisite>DMS_Automatroid</researchPrerequisite>
+    <description>Gestate a Noctula Automatroid.</description>
+    <products>
+      <DMS_Mech_Noctula>1</DMS_Mech_Noctula>
+    </products>
+    <gestationCycles>3</gestationCycles>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Noctula</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentTransmitter</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!--獒犬-->
+  <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
+    <defName>DMS_Make_Dogge</defName>
+    <label>Gestate Dogge</label>
+    <researchPrerequisite>DMS_MechBasis</researchPrerequisite>
+    <description>Gestate a Dogge Automatroid.</description>
+    <products>
+      <DMS_Mech_Dogge>1</DMS_Mech_Dogge>
+    </products>
+    <gestationCycles>1</gestationCycles>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Dogge</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>150</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>7</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!--士兵-->
+  <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
+    <defName>DMS_Make_Soldat</defName>
+    <label>Gestate Soldat</label>
+    <description>Gestate a Soldat Automatroid.</description>
+    <products>
+      <DMS_Mech_Soldat>1</DMS_Mech_Soldat>
+    </products>
+    <gestationCycles>1</gestationCycles>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Soldat</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>115</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!--擲彈手-->
+  <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
+    <defName>DMS_Make_Grenadier</defName>
+    <label>Gestate Grenadier</label>
+    <description>Gestate a Grenadier Automatroid.</description>
+    <products>
+      <DMS_Mech_Grenadier>1</DMS_Mech_Grenadier>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Grenadier</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Synthread</li>
+            <li>Polyester</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Synthread</li>
+        <li>Polyester</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  
+  <!--軍士-->
+  <RecipeDef ParentName="DMS_LegionMechanoidRecipe">
+    <defName>DMS_Make_Sergeant</defName>
+    <label>Gestate Sergeant</label>
+    <description>Gestate a sergeant Automatroid.</description>
+    <products>
+      <DMS_Mech_Sergeant>1</DMS_Mech_Sergeant>
+    </products>
+    <gestationCycles>1</gestationCycles>
+    <descriptionHyperlinks>
+      <ThingDef>ComponentTransmitter</ThingDef>
+      <ThingDef>DMS_Mech_Sergeant</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentTransmitter</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+</Defs>

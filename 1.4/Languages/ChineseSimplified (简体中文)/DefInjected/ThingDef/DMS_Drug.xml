@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Neuroglue -->
+  <Neuroglue.label>受体凝胶</Neuroglue.label>
+  <!-- EN: A protein-like receptor gel mediates biological tissues and neural machinery, which can effectively block phantom limb syndrome and synthetic rejection. also block nanomechanical infections.\n\nSuch products have been circulating Rimworld and Midworld for many decades, but any organization claiming to have produced this product has been sanctioned by agents from the Coreworld. They Declare that such a product will increase the bionical level of pirates which isn't safe for regional balance. -->
+  <Neuroglue.description>一种用于中介生物组织与神经机械的类蛋白质受体凝胶，透过静脉注射进入内循环系统，可以有效的阻断仿生排异反应与异肢症候群。也能够使奈米机械感染良性化。\n\n此类产品已在边缘世界和中寰世界流通了数十年，但任何声称生产该产品的组织都无一不受到了来自核心世界特工的制裁。他们宣称这样的产品会提高海盗的仿生水平并对区域平衡造成严重破坏。</Neuroglue.description>
+  <!-- EN: Take {0} -->
+  <Neuroglue.ingestible.ingestCommandString>注射{0}</Neuroglue.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <Neuroglue.ingestible.ingestReportString>注射{0}</Neuroglue.ingestible.ingestReportString>
+  
+</LanguageData>

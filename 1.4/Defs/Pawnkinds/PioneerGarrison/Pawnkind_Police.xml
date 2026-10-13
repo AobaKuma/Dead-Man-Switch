@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- T2警務人員 -->
+  <PawnKindDef ParentName="DMS_OutlanderBase" Name="DMS_PoliceBase">
+    <defName>DMS_Police</defName>
+    <label>police</label>
+    <combatPower>60</combatPower>
+    <isFighter>true</isFighter>
+    <gearHealthRange>0.6~2</gearHealthRange>
+    <backstoryCategories>
+      <li>Mili_Standard</li>
+      <li>FleetChild</li>
+    </backstoryCategories>
+    <apparelTags>
+      <li>IndustrialMilitaryBasic</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelMoney>400~600</apparelMoney>
+    <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <weaponMoney>250~400</weaponMoney>
+    <techHediffsChance>0.04</techHediffsChance>
+    <techHediffsMoney>1200~1700</techHediffsMoney>
+    <techHediffsTags>
+      <li>DMS_BM_Bionic</li>
+      <li>Simple</li>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>15~24</initialResistanceRange>
+  </PawnKindDef>
+
+<!-- 配槍巡警-->
+  <PawnKindDef ParentName="DMS_PoliceBase">
+    <defName>DMS_Police_Pistol</defName>
+    <label>police</label>
+    <titleRequired MayRequire="Ludeon.RimWorld.Royalty">DMS_Private</titleRequired>
+    <apparelRequired>
+      <li>DMS_Apparel_ArmyCap</li>
+      <li>Apparel_FlakVest</li>
+    </apparelRequired>
+    <specificApparelRequirements>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <apparelLayer>Middle</apparelLayer> 
+        <stuff>Steel</stuff>
+      </li>
+      <li>
+        <colorGenerator Class="ColorGenerator_Options">
+          <options>
+            <li>
+              <only>(60, 70, 100)</only>
+            </li>
+          </options>
+        </colorGenerator>
+      </li>
+    </specificApparelRequirements>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>5~8</range>
+      </li>
+      <li>
+        <skill>Shooting</skill>
+        <range>7~10</range>
+      </li>
+    </skills>
+    <apparelTags>
+      <li>DMS_Tactical</li>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+    <weaponTags Inherit="False">
+			<li>Revolver</li>
+      <li>ShortShots</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <!-- 民警(近戰)-->
+  <PawnKindDef ParentName="DMS_PoliceBase">
+    <defName>DMS_Police_Melee</defName>
+    <label>police</label>
+    <apparelRequired>
+      <li>DMS_Apparel_ArmyCap</li>
+      <li>DMS_Apparel_TacticalVest</li>
+    </apparelRequired>
+    <titleRequired MayRequire="Ludeon.RimWorld.Royalty">DMS_Reservist</titleRequired>
+    <specificApparelRequirements>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <apparelLayer>Middle</apparelLayer> 
+        <stuff>Steel</stuff>
+      </li>
+      <li>
+        <colorGenerator Class="ColorGenerator_Options">
+          <options>
+            <li>
+              <only>(60, 70, 100)</only>
+            </li>
+          </options>
+        </colorGenerator>
+      </li>
+    </specificApparelRequirements>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>8~12</range>
+      </li>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~8</range>
+      </li>
+    </skills>
+    <apparelTags>
+      <li>DMS_Tactical</li>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+    <weaponTags Inherit="False">
+			<li>A_RC_Melee</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <!-- 警務長 -->
+  <PawnKindDef ParentName="DMS_PoliceBase">
+    <defName>DMS_Police_Leader</defName>
+    <label>police leader</label>
+    <titleRequired MayRequire="Ludeon.RimWorld.Royalty">DMS_PreSergeant</titleRequired>
+    <apparelRequired>
+      <li>DMS_Apparel_ArmyCap</li>
+      <li>Apparel_FlakVest</li>
+    </apparelRequired>
+    <specificApparelRequirements>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <apparelLayer>Middle</apparelLayer> 
+        <stuff>Steel</stuff>
+      </li>
+      <li>
+        <colorGenerator Class="ColorGenerator_Options">
+          <options>
+            <li>
+              <only>(60, 70, 100)</only>
+            </li>
+          </options>
+        </colorGenerator>
+      </li>
+    </specificApparelRequirements>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>5~8</range>
+      </li>
+      <li>
+        <skill>Shooting</skill>
+        <range>8~12</range>
+      </li>
+      <li>
+        <skill>Social</skill>
+        <range>8~10</range>
+      </li>
+    </skills>
+    <apparelTags>
+      <li>DMS_Tactical</li>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+    <weaponTags Inherit="False">
+			<li>Revolver</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <!-- 特勤步槍手(AR,衝鋒槍)-->
+  <PawnKindDef ParentName="DMS_PoliceBase">
+    <defName>DMS_Police_Assault</defName>
+    <label>police assaulter</label>
+    <combatPower>70</combatPower>
+    <titleRequired MayRequire="Ludeon.RimWorld.Royalty">DMS_Corporal</titleRequired>
+    <apparelRequired>
+      <li>DMS_Apparel_TacticalHelmet</li>
+      <li>DMS_Apparel_TacticalVest</li>
+    </apparelRequired>
+    <specificApparelRequirements>
+      <li>
+        <colorGenerator Class="ColorGenerator_Options">
+          <options>
+            <li>
+              <only>(60, 70, 100)</only>
+            </li>
+          </options>
+        </colorGenerator>
+      </li>
+      <li>
+        <bodyPartGroup>UpperHead</bodyPartGroup>        
+        <apparelLayer>Middle</apparelLayer> 
+        <stuff>Steel</stuff>
+        <color>(68,68,68)</color>
+      </li>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <apparelLayer>Middle</apparelLayer> 
+        <stuff>Steel</stuff>
+      </li>
+    </specificApparelRequirements>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>5~8</range>
+      </li>
+      <li>
+        <skill>Shooting</skill>
+        <range>8~12</range>
+      </li>
+    </skills>
+    <apparelTags>
+      <li>DMS_Tactical</li>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+    <weaponMoney>530~2000</weaponMoney>
+    <weaponTags Inherit="False">
+			<li>A_RC_LongRifle</li>
+      <li>AssaultRifle</li>
+    </weaponTags>
+  </PawnKindDef>  
+
+    <!-- 特勤射手(狙擊)-->
+  <PawnKindDef ParentName="DMS_PoliceBase">
+    <defName>DMS_Police_Ranged</defName>
+    <label>police sniper</label>
+    <combatPower>100</combatPower>
+    <titleRequired MayRequire="Ludeon.RimWorld.Royalty">DMS_Corporal</titleRequired>
+    <apparelRequired>
+      <li>DMS_Apparel_ArmyCap</li>
+      <li>Apparel_FlakVest</li>
+    </apparelRequired>
+    <specificApparelRequirements>
+      <li>
+        <colorGenerator Class="ColorGenerator_Options">
+          <options>
+            <li>
+              <only>(60, 70, 100)</only>
+            </li>
+          </options>
+        </colorGenerator>
+      </li>
+      <li>
+        <bodyPartGroup>UpperHead</bodyPartGroup>
+        <color>(68,68,68)</color>
+      </li>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <apparelLayer>Middle</apparelLayer> 
+        <stuff>Steel</stuff>
+      </li>
+    </specificApparelRequirements>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>10~14</range>
+      </li>
+    </skills>
+    <apparelTags>
+      <li>DMS_Tactical</li>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+    <weaponMoney>530~2000</weaponMoney>
+    <weaponTags Inherit="False">
+			<li>SniperRifle</li>
+    </weaponTags>
+  </PawnKindDef>  
+
+</Defs>

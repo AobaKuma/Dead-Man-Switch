@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Nutrition port -->
+  <DMS_NutrientPort.label>Nutrition port</DMS_NutrientPort.label>
+  <!-- EN: A total overhaul of the patient's digestive system, replacing it with a fueling port and nutrient storage. -->
+  <DMS_NutrientPort.description>A total overhaul of the patient's digestive system, replacing it with a fueling port and nutrient storage.</DMS_NutrientPort.description>
+  
+  <!-- EN: Mechaneural Arm -->
+  <DMS_ProstheticArm.label>Mechaneural Arm</DMS_ProstheticArm.label>
+  <!-- EN: An advanced artificial arm. Features Silenced mini-servos which provide great strength while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way. -->
+  <DMS_ProstheticArm.description>An advanced artificial arm. Features Silenced mini-servos which provide great strength while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way.</DMS_ProstheticArm.description>
+  
+  <!-- EN: Mechaneural Visual Sensor -->
+  <DMS_ProstheticEye.label>Mechaneural Visual Sensor</DMS_ProstheticEye.label>
+  <!-- EN: An artificial light receiver with an integrated nerve-link. The sensor is equipped with night vision and aim assistance making it superior to its biological counterpart. -->
+  <DMS_ProstheticEye.description>An artificial light receiver with an integrated nerve-link. The sensor is equipped with night vision and aim assistance making it superior to its biological counterpart.</DMS_ProstheticEye.description>
+  
+  <!-- EN: Mechaneural kidney -->
+  <DMS_ProstheticKidney.label>Mechaneural kidney</DMS_ProstheticKidney.label>
+  <!-- EN: A biocompatible liquid filter implant that filters impurities and waste products out of the blood through osmotic pressure to ensure the acid-base balance of the implantee's internal circulatory system. -->
+  <DMS_ProstheticKidney.description>A biocompatible liquid filter implant that filters impurities and waste products out of the blood through osmotic pressure to ensure the acid-base balance of the implantee's internal circulatory system.</DMS_ProstheticKidney.description>
+  
+  <!-- EN: Mechaneural leg -->
+  <DMS_ProstheticLeg.label>Mechaneural leg</DMS_ProstheticLeg.label>
+  <!-- EN: An advanced artificial leg. With its biogel nerve-link, powerful mini-servos, and lattice-dust healing system, it is better than a biological leg in almost every way. -->
+  <DMS_ProstheticLeg.description>An advanced artificial leg. With its biogel nerve-link, powerful mini-servos, and lattice-dust healing system, it is better than a biological leg in almost every way.</DMS_ProstheticLeg.description>
+  
+  <!-- EN: Mechaneural lung -->
+  <DMS_ProstheticLung.label>Mechaneural lung</DMS_ProstheticLung.label>
+  <!-- EN: A plasteel fiber-based membrane lung prosthesis. It works like an artificial lung. During World War III, due to the lack of protective equipment, most soldiers were exposed to highly concentrated nuclear, biological, and chemical pollution, which caused massive ulceration and paralysis of respiratory organs. These types of prostheses were widely used in the military and gradually perfected through frontline surgeries and rehabilitation efforts for disabled soldiers. -->
+  <DMS_ProstheticLung.description>A plasteel fiber-based membrane lung prosthesis. It works like an artificial lung. During World War III, due to the lack of protective equipment, most soldiers were exposed to highly concentrated nuclear, biological, and chemical pollution, which caused massive ulceration and paralysis of respiratory organs. These types of prostheses were widely used in the military and gradually perfected through frontline surgeries and rehabilitation efforts for disabled soldiers.</DMS_ProstheticLung.description>
+  
+  <!-- EN: Biomechanical neurochord -->
+  <DMS_ProstheticSpine.label>Biomechanical neurochord</DMS_ProstheticSpine.label>
+  <!-- EN: An advanced biomechanical spine which works as a sub-brain which is compatible with other prostheses sharing the reflex nerves. -->
+  <DMS_ProstheticSpine.description>An advanced biomechanical spine which works as a sub-brain which is compatible with other prostheses sharing the reflex nerves.</DMS_ProstheticSpine.description>
+  <!-- EN: Implant {0_label} -->
+  <DMS_ProstheticSpine.comps.CompUsableImplant.useLabel>Implant {0_label}</DMS_ProstheticSpine.comps.CompUsableImplant.useLabel>
+  
+  <!-- EN: Emotion Filter -->
+  <DMS_SensoryFilter.label>Emotion Filter</DMS_SensoryFilter.label>
+  <!-- EN: An emotion filter which screens most non-essential emotions out of the patient's brain, but leaves basic essential emotionality relatively intact. This allows the patient to still form relationships with others while stile being a perfect soldier during war. While better than an Emotional Neutralizer, the filter is still inhumane.\n	 -->
+  <DMS_SensoryFilter.description>An emotion filter which screens most non-essential emotions out of the patient's brain, but leaves basic essential emotionality relatively intact. This allows the patient to still form relationships with others while stile being a perfect soldier during war. While better than an Emotional Neutralizer, the filter is still inhumane.</DMS_SensoryFilter.description>
+  
+  <!-- EN: Biosynthetic arm -->
+  <DMS_SyntheticArm.label>Biosynthetic arm</DMS_SyntheticArm.label>
+  <!-- EN: An advanced artificial arm composed of synthetic muscles and plasfiber skin grown on bone made by tungsteel. -->
+  <DMS_SyntheticArm.description>An advanced artificial arm composed of synthetic muscles and plasfiber skin grown on bone made by tungsteel.</DMS_SyntheticArm.description>
+  
+  <!-- EN: Biosynthetic leg -->
+  <DMS_SyntheticLeg.label>Biosynthetic leg</DMS_SyntheticLeg.label>
+  <!-- EN: An advanced artificial leg. With its biogel nerve-link, powerful mini-servos, and lattice-dust healing system, it is better than a biological leg in almost every way. -->
+  <DMS_SyntheticLeg.description>An advanced artificial leg. With its biogel nerve-link, powerful mini-servos, and lattice-dust healing system, it is better than a biological leg in almost every way.</DMS_SyntheticLeg.description>
+  
+</LanguageData>

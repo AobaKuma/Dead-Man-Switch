@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <!-- Mechlink -->
+  <ThingDef ParentName="MechanitorImplantBase">
+    <defName>DMS_MechLink</defName>
+    <label>Cluster transceiver</label>
+    <description>A man-made bionic implant that allows direct control of mechanoids. No one know if this is the early form of mechlinking or if it's a reverse engineered product of later generations. It functions as a regular mechlink when installed in a colonist.\n\nDue to processing precision issues, these imitation mechlink devices from rim worlds often have installation side effects.</description>
+    <thingClass>Mechlink</thingClass>
+    <descriptionHyperlinks><HediffDef>MechlinkImplant</HediffDef></descriptionHyperlinks>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Beauty>-4</Beauty>
+      <Mass>1</Mass>
+      <MarketValue>2000</MarketValue>
+			<WorkToMake>60000</WorkToMake>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <costList>
+      <Plasfiber>20</Plasfiber>
+      <ComponentSpacer>5</ComponentSpacer>
+      <ComponentTransmitter>1</ComponentTransmitter>
+      <MedicineUltratech>5</MedicineUltratech>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>DMS_Mechlink</researchPrerequisite>
+      <recipeUsers>
+        <li>DMS_TableArtifuscle</li>
+      </recipeUsers>
+      <displayPriority>300</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Misc/DMS_Mechlink</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Usable">
+        <compClass>CompUsableImplant</compClass>
+        <useJob>InstallMechlink</useJob>
+        <useLabel>Install {0_label} to become mechanitor</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <compClass>CompUseEffect_InstallImplantMechlink</compClass>
+        <hediffDef>MechlinkImplant</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <requiresPsychicallySensitive>true</requiresPsychicallySensitive>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <compClass>CompUseEffect_InstallImplantMechlink</compClass>
+        <hediffDef>DMS_MechlinkOverload</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <requiresPsychicallySensitive>true</requiresPsychicallySensitive>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <compClass>CompUseEffect_InstallImplantMechlink</compClass>
+        <hediffDef>DMS_MechlinkKillSwitch</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <requiresPsychicallySensitive>true</requiresPsychicallySensitive>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <compClass>CompUseEffect_InstallImplantMechlink</compClass>
+        <hediffDef>DMS_MechlinkRejection</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <requiresPsychicallySensitive>true</requiresPsychicallySensitive>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>MechlinkInstalled</soundOnUsed>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Mechlink -->
+  <ThingDef ParentName="MechanitorImplantBase">
+    <defName>DMS_MechLink_Nerfed</defName>
+    <label>Boid Controller</label>
+    <description>A man-made bionic implant that allows direct control of mechanoids. This is a simplified version which is cheaper to manufacture and obtainable at a lower tech level. Due to limited production quality, it will fail and terminate after a while.</description>
+    <thingClass>Mechlink</thingClass>
+    <descriptionHyperlinks>
+      <HediffDef>MechlinkImplant</HediffDef>
+    </descriptionHyperlinks>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <Beauty>-4</Beauty>
+      <Mass>1</Mass>
+      <MarketValue>1200</MarketValue>
+			<WorkToMake>10000</WorkToMake>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <costList>
+      <MedicineIndustrial>5</MedicineIndustrial>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentTransmitter>1</ComponentTransmitter>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>DMS_Automatroid</researchPrerequisite>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <displayPriority>300</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Mechlink</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.65</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Usable">
+        <compClass>CompUsableImplant</compClass>
+        <useJob>InstallMechlink</useJob>
+        <useLabel>Install {0_label} to become mechanitor</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <compClass>CompUseEffect_InstallImplantMechlink</compClass>
+        <hediffDef>MechlinkImplant</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <requiresPsychicallySensitive>true</requiresPsychicallySensitive>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <compClass>CompUseEffect_InstallImplantMechlink</compClass>
+        <hediffDef>DMS_MechlinkOverload</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <requiresPsychicallySensitive>true</requiresPsychicallySensitive>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <compClass>CompUseEffect_InstallImplantMechlink</compClass>
+        <hediffDef>DMS_MechlinkFatalTrigger</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <requiresPsychicallySensitive>true</requiresPsychicallySensitive>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <compClass>CompUseEffect_InstallImplantMechlink</compClass>
+        <hediffDef>DMS_MechlinkRejection</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <requiresPsychicallySensitive>true</requiresPsychicallySensitive>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>MechlinkInstalled</soundOnUsed>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>	

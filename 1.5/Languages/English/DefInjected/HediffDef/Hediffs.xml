@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Xeno Limb Syndrome -->
+  <DMS_BionicShock.label>Xeno Limb Syndrome</DMS_BionicShock.label>
+  <!-- EN: A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for thes symptoms.. -->
+  <DMS_BionicShock.description>A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.
+
+There are five classifications of severity for thes symptoms..</DMS_BionicShock.description>
+  <!-- EN: bionic syndrome has been cured -->
+  <DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>bionic syndrome has been cured</DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>
+  <!-- EN: Initial -->
+  <DMS_BionicShock.stages.Initial.label>Initial</DMS_BionicShock.stages.Initial.label>
+  <!-- EN: LV.1 Initial -->
+  <DMS_BionicShock.stages.LV1_Initial.label>LV.1 Initial</DMS_BionicShock.stages.LV1_Initial.label>
+  <!-- EN: LV.2 Minor -->
+  <DMS_BionicShock.stages.LV2_Minor.label>LV.2 Minor</DMS_BionicShock.stages.LV2_Minor.label>
+  <!-- EN: LV.3 Serious -->
+  <DMS_BionicShock.stages.LV3_Serious.label>LV.3 Serious</DMS_BionicShock.stages.LV3_Serious.label>
+  <!-- EN: LV.4 Catatonic -->
+  <DMS_BionicShock.stages.LV4_Catatonic.label>LV.4 Catatonic</DMS_BionicShock.stages.LV4_Catatonic.label>
+  <!-- EN: LV.5 Disabled -->
+  <DMS_BionicShock.stages.LV5_Disabled.label>LV.5 Disabled</DMS_BionicShock.stages.LV5_Disabled.label>
+  
+  <!-- UNUSED -->
+  <DMS_BionicShock.stages.initial.label>initial</DMS_BionicShock.stages.initial.label>
+  <DMS_BionicShock.stages.LV1_initial.label>LV.1 Initial</DMS_BionicShock.stages.LV1_initial.label>
+  <DMS_BionicShock.stages.LV2_minor.label>LV.2 Minor</DMS_BionicShock.stages.LV2_minor.label>
+  <DMS_BionicShock.stages.LV3_serious.label>LV.3 Serious</DMS_BionicShock.stages.LV3_serious.label>
+  <DMS_BionicShock.stages.LV4_catatonic.label>LV.4 Catatonic</DMS_BionicShock.stages.LV4_catatonic.label>
+  <DMS_BionicShock.stages.LV5_disabled.label>LV.5 Disabled</DMS_BionicShock.stages.LV5_disabled.label>
+  
+  <!-- EN: Phantom Limb Syndrome -->
+  <DMS_BionicShockRemove.label>Phantom Limb Syndrome</DMS_BionicShockRemove.label>
+  <!-- EN: A commonly occurring syndrome in pre-spacer worlds when neurally interfaced bionics are removed. -->
+  <DMS_BionicShockRemove.description>A commonly occurring syndrome in pre-spacer worlds when neurally interfaced bionics are removed.</DMS_BionicShockRemove.description>
+  <!-- EN: Phantom Limb Syndrome has been cured -->
+  <DMS_BionicShockRemove.comps.HediffComp_RemoveIfOtherHediff.message>Phantom Limb Syndrome has been cured</DMS_BionicShockRemove.comps.HediffComp_RemoveIfOtherHediff.message>
+  <!-- EN: initial -->
+  <DMS_BionicShockRemove.stages.initial.label>initial</DMS_BionicShockRemove.stages.initial.label>
+  <!-- EN: pain -->
+  <DMS_BionicShockRemove.stages.pain.label>pain</DMS_BionicShockRemove.stages.pain.label>
+  
+  <!-- EN: Emotional Misalignment -->
+  <DMS_FilterShock.label>Emotional Misalignment</DMS_FilterShock.label>
+  <!-- EN: A syndrome caused by a cognitive dissonance created by the user's mind conflicting with the installed bionics. This internal conflict causes emotional trauma as the user struggles to adjust to their new baseline. -->
+  <DMS_FilterShock.description>A syndrome caused by a cognitive dissonance created by the user's mind conflicting with the installed bionics. This internal conflict causes emotional trauma as the user struggles to adjust to their new baseline.</DMS_FilterShock.description>
+  <!-- EN: catatonic -->
+  <DMS_FilterShock.stages.catatonic.label>catatonic</DMS_FilterShock.stages.catatonic.label>
+  
+  <!-- EN: Fatal Trigger -->
+  <DMS_MechlinkFatalTrigger.label>Fatal Trigger</DMS_MechlinkFatalTrigger.label>
+  <!-- EN: Due to the instability of this device, this safty protocol was created to automatically eject and destroy the disabled mechlink before it can cause catastrophic damage to the user's brain. -->
+  <DMS_MechlinkFatalTrigger.description>Due to the instability of this device, this safty protocol was created to automatically eject and destroy the disabled mechlink before it can cause catastrophic damage to the user's brain.</DMS_MechlinkFatalTrigger.description>
+  
+  <!-- EN: Kill Switch -->
+  <DMS_MechlinkKillSwitch.label>Kill Switch</DMS_MechlinkKillSwitch.label>
+  <!-- EN: This device will destroy the mechlink by overloading the neural interface after the user's death. -->
+  <DMS_MechlinkKillSwitch.description>This device will destroy the mechlink by overloading the neural interface after the user's death.</DMS_MechlinkKillSwitch.description>
+  
+  <!-- EN: N.A.C.S. -->
+  <DMS_MechlinkOverload.label>N.A.C.S.</DMS_MechlinkOverload.label>
+  <!-- EN: Neural-Auxiliary Computation and Control System- this system's unique protocol allows the user to connect with existing mech and Automatroid tech. -->
+  <DMS_MechlinkOverload.description>Neural-Auxiliary Computation and Control System- this system's unique protocol allows the user to connect with existing mech and Automatroid tech.</DMS_MechlinkOverload.description>
+  <!-- EN: low -->
+  <DMS_MechlinkOverload.stages.low.label>low</DMS_MechlinkOverload.stages.low.label>
+  <!-- EN: medium -->
+  <DMS_MechlinkOverload.stages.medium.label>medium</DMS_MechlinkOverload.stages.medium.label>
+  <!-- EN: high -->
+  <DMS_MechlinkOverload.stages.high.label>high</DMS_MechlinkOverload.stages.high.label>
+  <!-- EN: very high -->
+  <DMS_MechlinkOverload.stages.very_high.label>very high</DMS_MechlinkOverload.stages.very_high.label>
+  <!-- EN: overloaded -->
+  <DMS_MechlinkOverload.stages.overloaded.label>overloaded</DMS_MechlinkOverload.stages.overloaded.label>
+  <!-- EN: danger -->
+  <DMS_MechlinkOverload.stages.danger.label>danger</DMS_MechlinkOverload.stages.danger.label>
+  
+  <!-- EN: Mechlink Rejection -->
+  <DMS_MechlinkRejection.label>Mechlink Rejection</DMS_MechlinkRejection.label>
+  <!-- EN: Due to limited technology and the lack of medical nanites, there are some side-effect after installing this mechlink. It will take some time before the implantee's nervous system adjusts to its presence. -->
+  <DMS_MechlinkRejection.description>Due to limited technology and the lack of medical nanites, there are some side-effect after installing this mechlink. It will take some time before the implantee's nervous system adjusts to its presence.</DMS_MechlinkRejection.description>
+  <!-- EN: fever -->
+  <DMS_MechlinkRejection.stages.fever.label>fever</DMS_MechlinkRejection.stages.fever.label>
+  
+  <!-- EN: Synthetic Rejection -->
+  <DMS_SyntheticRejection.label>Synthetic Rejection</DMS_SyntheticRejection.label>
+  <!-- EN: Due to modifications of circulatory system, synthetic bionic enhancements can be rejected temporarily by the body. The effect does not last long, and the body's abiity to fight infections is reduced for its duration. -->
+  <DMS_SyntheticRejection.description>Due to modifications of circulatory system, synthetic bionic enhancements can be rejected temporarily by the body. The effect does not last long, and the body's abiity to fight infections is reduced for its duration.</DMS_SyntheticRejection.description>
+  <!-- EN: Bionic Rejection Syndrome has been cured. -->
+  <DMS_SyntheticRejection.comps.HediffComp_RemoveIfOtherHediff.message>Bionic Rejection Syndrome has been cured.</DMS_SyntheticRejection.comps.HediffComp_RemoveIfOtherHediff.message>
+  <!-- EN: fever -->
+  <DMS_SyntheticRejection.stages.fever.label>fever</DMS_SyntheticRejection.stages.fever.label>
+  
+  <!-- EN: calibration -->
+  <DMS_WeaponInprint.label>calibration</DMS_WeaponInprint.label>
+  <!-- EN: This Synth is integrated with an adaptive mechanism that allows its body to develop reflexive actions based on its handling experience and increase the density of artificial muscles in specific parts to better adapt to the weapon. As a result, an MG-1 can achieve superior combat effectiveness when operating the weapon it is adapted to.\n\nHowever, overfitting issues in the system prevent it from calibrating itself to only one weapon, usually the first weapon equipped upon startup. -->
+  <DMS_WeaponInprint.description>This Synth is integrated with an adaptive mechanism that allows its body to develop reflexive actions based on its handling experience and increase the density of artificial muscles in specific parts to better adapt to the weapon. As a result, an MG-1 can achieve superior combat effectiveness when operating the weapon it is adapted to.
+
+However, overfitting issues in the system prevent it from calibrating itself to only one weapon, usually the first weapon equipped upon startup.</DMS_WeaponInprint.description>
+  <!-- EN: Adapt to specific weapons and have better combat effectiveness when using adapted weapons. the effect will increase over time. -->
+  <DMS_WeaponInprint.descriptionShort>Adapt to specific weapons and have better combat effectiveness when using adapted weapons. the effect will increase over time.</DMS_WeaponInprint.descriptionShort>
+  <!-- EN: acquaintance -->
+  <DMS_WeaponInprint.stages.acquaintance.label>acquaintance</DMS_WeaponInprint.stages.acquaintance.label>
+  <!-- EN: adaptation -->
+  <DMS_WeaponInprint.stages.adaptation.label>adaptation</DMS_WeaponInprint.stages.adaptation.label>
+  <!-- EN: optimization -->
+  <DMS_WeaponInprint.stages.optimization.label>optimization</DMS_WeaponInprint.stages.optimization.label>
+  <!-- EN: experienced -->
+  <DMS_WeaponInprint.stages.experienced.label>experienced</DMS_WeaponInprint.stages.experienced.label>
+  <!-- EN: specialized -->
+  <DMS_WeaponInprint.stages.specialized.label>specialized</DMS_WeaponInprint.stages.specialized.label>
+  <!-- EN: maximized -->
+  <DMS_WeaponInprint.stages.maximized.label>maximized</DMS_WeaponInprint.stages.maximized.label>
+  
+</LanguageData>

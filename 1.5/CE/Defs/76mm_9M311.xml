@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingCategoryDef>
+		<defName>Ammo9M311</defName>
+		<label>9M311 Treugol'nik Missile</label>
+		<parent>AmmoRockets</parent>
+	</ThingCategoryDef>
+
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_9M311</defName>
+		<label>9M311 Treugol'nik Missiles</label>
+		<ammoTypes>
+			<Ammo_9M311_SAM>Bullet_9M311_SAM</Ammo_9M311_SAM>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="9M311Base" ParentName="HeavyAmmoBase" Abstract="True">
+		<description>The 9M311 "Treugol'nik" is a Russian surface to air missile (SAM) designed to engage aircraft at a top speed of 500m/s.</description>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+		</statBases>
+		<tradeTags>
+			<li>CE_AutoEnableTrade_Sellable</li>
+			<li>CE_AutoEnableCrafting_TableMachining</li>
+		</tradeTags>
+		<thingCategories>
+			<li>Ammo9M311</li>
+		</thingCategories>
+		<stackLimit>10</stackLimit>
+		<cookOffFlashScale>30</cookOffFlashScale>
+		<cookOffSound>MortarBomb_Explode</cookOffSound>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="9M311Base">
+		<defName>Ammo_9M311_SAM</defName>
+		<label>9M311 Treugol'nik Missile (SAM)</label>
+		<graphicData>
+			<texPath>Things/Ammo/76mm9M311Missile/Item</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>248.27</MarketValue>
+			<Mass>42</Mass>
+			<Bulk>67</Bulk>
+		</statBases>
+		<ammoClass>GrenadeHE</ammoClass>
+		<detonateProjectile>Bullet_9M311_SAM</detonateProjectile>
+	</ThingDef>
+
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef ParentName="BaseBulletCE">
+		<defName>Bullet_9M311_SAM</defName>
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<label>9M311 Treugol'nik Missile (SAM)</label>
+		<graphicData>
+			<texPath>Things/Ammo/76mm9M311Missile/Projectile</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>2</drawSize>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<suppressionFactor>1.5</suppressionFactor>
+			<explosionRadius>2.5</explosionRadius>
+			<speed>110</speed>
+			<damageDef>Bomb</damageDef>
+			<armorPenetrationSharp>0</armorPenetrationSharp>
+			<damageAmountBase>286</damageAmountBase>
+			<armorPenetrationBlunt>0</armorPenetrationBlunt>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			<aimHeightOffset>3.5</aimHeightOffset>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+			<flyOverhead>true</flyOverhead>
+			<gravityFactor>35</gravityFactor>
+			<soundAmbient>RocketPropelledLoop_Small</soundAmbient>
+			<armingDelay>0.5</armingDelay>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+					<Fragment_Large>20</Fragment_Large>
+					<Fragment_Medium>50</Fragment_Medium>
+					<Fragment_Small>125</Fragment_Small>
+				</fragments>
+				<fragAngleRange>-100~-5</fragAngleRange>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- ==================== Recipes ========================== -->
+
+	<RecipeDef ParentName="LauncherAmmoRecipeBase">
+		<defName>MakeAmmo_9M311_SAM</defName>
+		<label>make 9M311 SAM Missile</label>
+		<description>Craft 1 9M311 SAM Missiles.</description>
+		<jobString>Making 9M311 SAM Missiles.</jobString>
+		<workAmount>11000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>45</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>4</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>4</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>ComponentIndustrial</li>
+				<li>FSX</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_9M311_SAM>1</Ammo_9M311_SAM>
+		</products>
+	</RecipeDef>
+</Defs>

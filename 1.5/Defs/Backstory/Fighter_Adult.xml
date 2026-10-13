@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>DMS_Military01</defName>
+    <title>Reformed Bandit</title>
+    <titleShort>Bandit</titleShort>
+    <description>[PAWN_nameDef] failed as a bandit and was unfortunately captured by a colonial group. While serving a labor sentence, [PAWN_nameDef] realized how much better the life of these people had and decided to stay after being released from prison.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Mili_Standard</li>
+    </spawnCategories>
+    <skillGains>
+      <Medicine>4</Medicine>
+      <Shooting>8</Shooting>
+      <Melee>12</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military02</defName>
+    <title>Retired Medic</title>
+    <titleShort>Medic</titleShort>
+    <description>[PAWN_nameDef] served as a medic in the Armed Forces and retired from military life prematurely after a serious injury.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Civil_Expert</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>8</Shooting>
+      <Medicine>16</Medicine>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military03</defName>
+    <title>Correctional Officer</title>
+    <titleShort>Deputy</titleShort>
+    <description>[PAWN_nameDef] was a security for guarding the bandits and raiders who were captured, Supervising them until they were free to go after serving their sentences.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Mili_Standard</li>
+    </spawnCategories>
+    <skillGains>
+      <Social>8</Social>
+      <Shooting>8</Shooting>
+      <Melee>8</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military04</defName>
+    <title>Voluntary Militia</title>
+    <titleShort>Militia</titleShort>
+    <description>After seeing the astonishing extent of this planet, [PAWN_nameDef] became a Voluntary Militia Trooper in the Colonial Forces. [PAWN_nameDef] transfered to various colonial strongholds in need of bodies, and had to use whatever was on hand to protect them.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Mili_Standard</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>12</Shooting>
+      <Medicine>8</Medicine>
+      <Melee>4</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military05</defName>
+    <title>Reserve Colonist</title>
+    <titleShort>Reservist</titleShort>
+    <description>[PAWN_nameDef] participated in the Colonist Physical Exam and only passed due to a clerical error. [PAWN_nameDef] has no special skills and followed the enlistment orders of the Colonial Fleet to receive simple training, enough to function as a substitute colonist. [PAWN_nameDef] was sent planetside to assist in the ongoing colonization work</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Civil_Expert</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>2</Shooting>
+      <Melee>2</Melee>      
+      <Plants>2</Plants>
+      <Animals>2</Animals>
+      <Crafting>2</Crafting>
+      <Mining>2</Mining>
+      <Construction>2</Construction>
+      <Cooking>2</Cooking>
+      <Medicine>2</Medicine>
+      <Artistic>2</Artistic>
+      <Social>2</Social>
+      <Intellectual>2</Intellectual>
+    </skillGains>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military06</defName>
+    <title>Riot Suppression Specialist</title>
+    <titleShort>Specialist</titleShort>
+    <description>Due to the chaotic distribution of the faction-controlled areas in most rim worlds, [PAWN_nameDef] was assigned to accompany the special police tasked with using limited violence to uproot the countless bandit camps infesting the planet one by one.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Mili_Expert</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>12</Shooting>
+      <Melee>12</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military07</defName>
+    <title>Shuttle Pilot</title>
+    <titleShort>Pilot</titleShort>
+    <description>[PAWN_nameDef] was responsible for flying a transport shuttle containing people and materials across a large sector of the planet. [PAWN_nameDef] learned to solve a lot of annoying mechanical and human problems along the way.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Mili_Expert</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>12</Shooting>
+      <Social>6</Social>
+      <Crafting>6</Crafting>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military08</defName>
+    <title>Armed Escort</title>
+    <titleShort>Escort</titleShort>
+    <description>[PAWN_nameDef] is from a professional pioneering group. To deal with the constant threats to their squad during the pioneering period, [PAWN_nameDef] used a healthy variety of firearms to kill anything that posed a threat to the colonists [PAWN_nameDef] was assigned to protect.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Mili_Expert</li>
+      <li>Pioneer</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>15</Shooting>
+      <Melee>5</Melee>
+      <Medicine>4</Medicine>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+</Defs>

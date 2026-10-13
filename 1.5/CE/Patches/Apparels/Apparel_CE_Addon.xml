@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_DeposableRocketLauncher"]/statBases</xpath>
+				<value>
+					<Bulk>6</Bulk>
+					<WornBulk>3</WornBulk>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_DeposableRocketLauncher"]/verbs</xpath>
+				<value>
+					<verbs>
+						<li Class="CombatExtended.VerbPropertiesCE">
+							<verbClass>CombatExtended.Verb_LaunchProjectileStaticCE</verbClass>
+							<warmupTime>2.2</warmupTime>
+							<minRange>4</minRange>
+							<range>39.9</range>
+							<burstShotCount>1</burstShotCount>
+							<soundCast>RocketswarmLauncher_Fire</soundCast>
+							<soundCastTail>GunTail_Medium</soundCastTail>
+							<muzzleFlashScale>25</muzzleFlashScale>
+							<consumeFuelPerShot>1</consumeFuelPerShot>
+							<targetable>true</targetable>
+							<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+							<ai_IsWeapon>true</ai_IsWeapon>
+							<targetParams>
+								<canTargetLocations>true</canTargetLocations>
+								<canTargetBuildings>true</canTargetBuildings>
+								<canTargetPawns>true</canTargetPawns>
+							</targetParams>
+							<hasStandardCommand>true</hasStandardCommand>
+							<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+							<ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+							<defaultProjectile>Bullet_RPG32Rocket_HEAT</defaultProjectile>
+							<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+						</li>
+					</verbs>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_Ronin"  or
+          defName="DMS_Mech_Siegebreaker" or
+          defName="DMS_Mech_Protector" or
+          defName="DMS_Mech_Gladiator"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>RK_Sword</li>
+          <li>RK_Murderer</li>
+          <li>RK_MeleeWeapon_Lance</li>
+          <li>RK_WonderSoldier</li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_BattleFrame" or
+          defName="DMS_Mech_Protector" or
+          defName="DMS_Mech_Gladiator"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>RK_EliteDefender</li>
+          <li>RK_Gunlance</li>
+        </value>
+      </li>
+      
+
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_Arquebusier" or
+          defName="DMS_Mech_Jaeger" or
+          defName="DMS_Mech_Sniper"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>RK_3TierWeapon</li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_Soldat" or
+          defName="DMS_Mech_Phalanx" or
+          defName="DMS_Mech_Arquebusier" or
+          defName="DMS_Mech_Jaeger" or
+          defName="DMS_Mech_Pioneer"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>RK_Crossbow</li>
+          <li>RK_1TierRange</li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_Soldat" or
+          defName="DMS_Mech_Ronin"  or
+          defName="DMS_Mech_Phalanx" or
+          defName="DMS_Mech_Arquebusier" or
+          defName="DMS_Mech_Jaeger" or
+          defName="DMS_Mech_Pioneer" or
+          defName="DMS_Mech_Sniper"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>RK_Rifle</li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_Ronin"  or
+          defName="DMS_Mech_Siegebreaker"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>RK_2TierWeapon</li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Kanonier"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>RK_Invader</li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Kanonier"
+          ]/weaponTags</xpath>
+        <value>
+          <li>RK_Invader</li>
+        </value>
+      </li>
+
+      <!-- BypassUsableWeapons -->
+
+      <li MayRequire="bbb.ratkinweapon.morefailure,bbb.ratkinweapon.morefailure_steam" Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Machine_VerlingBird" or
+          defName="DMS_Machine_VerlingBirdA" or
+          defName="DMS_Machine_Hound"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>RK_Detonator</li>
+        </value>
+      </li>
+      
+      <li MayRequire="bbb.ratkinweapon.morefailure,bbb.ratkinweapon.morefailure_steam" Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_BattleFrame" or
+          defName="DMS_Mech_Arquebusier" or
+          defName="DMS_Mech_Ape"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>RK_LMG</li>
+        </value>
+      </li>
+
+      <li MayRequire="bbb.ratkinweapon.morefailure,bbb.ratkinweapon.morefailure_steam" Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Arquebusier" or
+          defName="DMS_Mech_Pioneer"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>RK_AssaultRifle</li>
+        </value>
+      </li>
+
+      <li MayRequire="bbb.ratkinweapon.morefailure,bbb.ratkinweapon.morefailure_steam" Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_BattleFrame" or
+          defName="DMS_Mech_Iguana" or
+          defName="DMS_Mech_Gecko"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>RK_InfernoGrenadeLauncher</li>
+          <li>RK_AntiTank</li>
+        </value>
+      </li>
+
+    </operations>
+  </Operation>
+</Patch>

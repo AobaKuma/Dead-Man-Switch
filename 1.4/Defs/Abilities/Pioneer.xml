@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- CE報點(待修復) -->
+	<AbilityDef MayRequire="ceteam.combatextended">
+		<defName>DMS_PioneerSpotter</defName>
+		<label>artillery spotter</label>
+		<description>directing artillery and mortar fire support onto a target.</description>
+		<iconPath>UI/Ability/Spotter</iconPath>
+		<cooldownTicksRange>60</cooldownTicksRange>
+		<displayOrder>200</displayOrder>
+		<aiCanUse>false</aiCanUse>
+		<verbProperties>
+			<verbClass>CombatExtended.Verb_MarkForArtillery</verbClass>
+			<range>99.9</range>
+			<warmupTime>0.5</warmupTime>
+			<targetable>true</targetable>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+</Defs>

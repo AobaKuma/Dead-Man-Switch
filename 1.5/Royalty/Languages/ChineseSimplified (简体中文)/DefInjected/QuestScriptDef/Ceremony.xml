@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN:
+    <li>questDescription->[faction_name] is ready to grant [pawn_definite] the title of [newTitle] in a promotion ceremony.\n\nThe officiator of the ceremony will arrive by shuttle to perform the ceremony.\n\nThe officiator will only give a title if there exists a throneroom meeting the requirements of the position. There's a chance of gaining extra honor depending on how many viewers attend the ceremony. Additionally, every viewer gains a mood bonus.\n\nYou can betray the officiator but this will make [faction_name] your enemy.\n\nIf you miss or fail this ceremony, there will be another opportunity later. If the officiator or guards are harmed for any reason, there will be diplomatic consequences.</li>
+  -->
+  <DMS_PromotionCeremony.questDescriptionRules.rulesStrings>
+    <li>questDescription->[faction_name] 已准备好在晋升仪式中授予[pawn_definite] [newTitle] 头衔。 \n\n仪式人员将乘坐航天飞机到达并执行仪式。才会授予头衔使满意。有机会获得额外的荣誉，具体取决於参加仪式的观众数量。每个观众都会获得心情奖励。 \n\n你可以背叛仪式者，但这将使[faction_name]成为你的敌人。如果礼仪人员或卫兵因任何原因受到伤害就会产生外交问题。</li>
+  </DMS_PromotionCeremony.questDescriptionRules.rulesStrings>
+  <!-- EN:
+    <li>questName->[pawn_definite]'s [newTitle] promotion</li>
+  -->
+  <DMS_PromotionCeremony.questNameRules.rulesStrings>
+    <li>questName->[pawn_definite]的[newTitle]授勳</li>
+  </DMS_PromotionCeremony.questNameRules.rulesStrings>
+  
+</LanguageData>

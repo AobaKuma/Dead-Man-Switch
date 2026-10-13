@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Flame Turret -->
+  <DMS_Gecko_FlameTurret.label>喷火枪</DMS_Gecko_FlameTurret.label>
+  <!-- EN: A flame launcher used by mechs that can effectively ignite flammable materials within a range -->
+  <DMS_Gecko_FlameTurret.description>一种机兵使用的火焰发射器，能够有效引燃射程内的可燃物。</DMS_Gecko_FlameTurret.description>
+  <!-- EN: Flame Turret -->
+  <DMS_Gecko_FlameTurret.verbs.Verb_ShootCE.label>喷火枪</DMS_Gecko_FlameTurret.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: light MachineGun turret -->
+  <DMS_Iguana_SubMachineGun.label>机载轻机枪</DMS_Iguana_SubMachineGun.label>
+  <!-- EN: Supressive weapon chambered in pistol caliber round.\n\nThis weapon is designed specially for mounted use, so only specific unit can equip it. -->
+  <DMS_Iguana_SubMachineGun.description>使用全威力步枪子弹的压制性武器。\n\n这种武器是专门为挂载使用而设计的，所以只有特定的单位才能装备它。</DMS_Iguana_SubMachineGun.description>
+  <!-- EN: light MachineGun turret -->
+  <DMS_Iguana_SubMachineGun.verbs.Verb_ShootCE.label>机载轻机枪</DMS_Iguana_SubMachineGun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: close inbound defense system -->
+  <DMS_Tarbosaurus_ShotgunGun.label>迫近防御系统</DMS_Tarbosaurus_ShotgunGun.label>
+  <!-- EN: a multi-barrel turret designed to suppress enemies in close-range. -->
+  <DMS_Tarbosaurus_ShotgunGun.description>一种用於压制近接敌方步兵的多管霰弹炮塔，能在近距离快速反应并连续发射三枚霰弹。</DMS_Tarbosaurus_ShotgunGun.description>
+  <!-- EN: close inbound defense system -->
+  <DMS_Tarbosaurus_ShotgunGun.verbs.Verb_ShootCE.label>迫近防御系统</DMS_Tarbosaurus_ShotgunGun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Heavy MachineGun turret -->
+  <DMS_Tarbosaurus_SubMachineGun.label>机载重机枪</DMS_Tarbosaurus_SubMachineGun.label>
+  <!-- EN: heavy machine gun for mech soldier or infantry support platform.\n\nThis weapon is designed specially for mounted use, so only specific unit can equip it. -->
+  <DMS_Tarbosaurus_SubMachineGun.description>用於机兵或步兵支援平台的重机枪。\n\n这种武器是专门为挂载使用而设计的，所以只有特定的单位才能装备它。</DMS_Tarbosaurus_SubMachineGun.description>
+  <!-- EN: Heavy MachineGun turret -->
+  <DMS_Tarbosaurus_SubMachineGun.verbs.Verb_ShootCE.label>机载重机枪</DMS_Tarbosaurus_SubMachineGun.verbs.Verb_ShootCE.label>
+  
+</LanguageData>

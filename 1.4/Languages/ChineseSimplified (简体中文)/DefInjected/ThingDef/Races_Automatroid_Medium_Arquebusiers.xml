@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: arquebusier -->
+  <DMS_Mech_Arquebusier.label>火枪手</DMS_Mech_Arquebusier.label>
+  <!-- EN: Standard Arquebusier model, has good precision fire capability in all ranges, makes it the backbone of robot army. -->
+  <DMS_Mech_Arquebusier.description>标准型火枪手，在所有射程内都具有良好的精确射击能力，是机兵部队的中坚力量。</DMS_Mech_Arquebusier.description>
+  <!-- EN: head -->
+  <DMS_Mech_Arquebusier.tools.head.label>头部</DMS_Mech_Arquebusier.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Arquebusier.tools.left_fist.label>左拳</DMS_Mech_Arquebusier.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Arquebusier.tools.right_fist.label>右拳</DMS_Mech_Arquebusier.tools.right_fist.label>
+  
+  <!-- EN: jaeger -->
+  <DMS_Mech_Jaeger.label>猎兵</DMS_Mech_Jaeger.label>
+  <!-- EN: an arquebusier variant focuses on stealth action and guerilla deployment for sabotage behind enemy lines. has higher mobility and invisibility. -->
+  <DMS_Mech_Jaeger.description>匿踪作战型火枪手，侧重于隐蔽行动和游击部署，以在敌后进行破坏具有较高的机动性和隐蔽性。</DMS_Mech_Jaeger.description>
+  <!-- EN: head -->
+  <DMS_Mech_Jaeger.tools.head.label>头部</DMS_Mech_Jaeger.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Jaeger.tools.left_fist.label>左拳</DMS_Mech_Jaeger.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Jaeger.tools.right_fist.label>右拳</DMS_Mech_Jaeger.tools.right_fist.label>
+  
+  <!-- EN: pioneer -->
+  <DMS_Mech_Pioneer.label>先锋</DMS_Mech_Pioneer.label>
+  <!-- EN: forward reconnaissance variant of Arquebusier. with improved sight sensor equipped, it has better capability in field operations, capable to hunting if needed. -->
+  <DMS_Mech_Pioneer.description>前沿侦察型火枪手。由于配备了改进的瞄准感测器，它在野外作战中具有更好的能力。</DMS_Mech_Pioneer.description>
+  <!-- EN: head -->
+  <DMS_Mech_Pioneer.tools.head.label>头部</DMS_Mech_Pioneer.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Pioneer.tools.left_fist.label>左拳</DMS_Mech_Pioneer.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Pioneer.tools.right_fist.label>右拳</DMS_Mech_Pioneer.tools.right_fist.label>
+  
+  <!-- EN: sniper -->
+  <DMS_Mech_Sniper.label>狙击手</DMS_Mech_Sniper.label>
+  <!-- EN: Having the improved sight sensor and fire control system, this Arquebusier variant has the best long range fire precision among all other variants. -->
+  <DMS_Mech_Sniper.description>长距离特种作战用型号，在所有其他型号中具有最佳的远程射击精度。</DMS_Mech_Sniper.description>
+  <!-- EN: head -->
+  <DMS_Mech_Sniper.tools.head.label>头部</DMS_Mech_Sniper.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Sniper.tools.left_fist.label>左拳</DMS_Mech_Sniper.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Sniper.tools.right_fist.label>右拳</DMS_Mech_Sniper.tools.right_fist.label>
+  
+</LanguageData>

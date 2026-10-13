@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Received {TITLE} title -->
+  <DMS_GainedTitle.stages.Received_title.label>獲得了 {TITLE} 頭銜</DMS_GainedTitle.stages.Received_title.label>
+  <!-- EN: I've got promoted to {TITLE}. I love the recognition! -->
+  <DMS_GainedTitle.stages.Received_title.description>我已晉升為{TITLE}。我喜歡這種認可！</DMS_GainedTitle.stages.Received_title.description>
+  
+  <!-- EN: Lost military rank -->
+  <DMS_LostTitle.stages.Lost_military_rank.label>失去軍銜</DMS_LostTitle.stages.Lost_military_rank.label>
+  <!-- EN: I lost my military rank. -->
+  <DMS_LostTitle.stages.Lost_military_rank.description>我失去了軍銜。</DMS_LostTitle.stages.Lost_military_rank.description>
+  
+</LanguageData>

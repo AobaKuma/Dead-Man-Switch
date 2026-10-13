@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Gecko -->
+  <DMS_Mech_Gecko.label>Gecko</DMS_Mech_Gecko.label>
+  <!-- EN: An urban combat variant of the Iguana, this model is up-armored with additional electromagnetic plating to protect against shaped charge rounds and explosives. -->
+  <DMS_Mech_Gecko.description>An urban combat variant of the Iguana, this model is up-armored with additional electromagnetic plating to protect against shaped charge rounds and explosives.</DMS_Mech_Gecko.description>
+  <!-- EN: Mechanical Head -->
+  <DMS_Mech_Gecko.tools.Mechanical_Head.label>Mechanical Head</DMS_Mech_Gecko.tools.Mechanical_Head.label>
+  <!-- EN: Left Leg -->
+  <DMS_Mech_Gecko.tools.Left_Leg.label>Left Leg</DMS_Mech_Gecko.tools.Left_Leg.label>
+  <!-- EN: Right Leg -->
+  <DMS_Mech_Gecko.tools.Right_Leg.label>Right Leg</DMS_Mech_Gecko.tools.Right_Leg.label>
+  
+  <!-- UNUSED -->
+  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_Target>Aim target</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_Target>
+  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>Fire at will</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>
+  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>Aim at designated target</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>
+  <DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</DMS_Mech_Gecko.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>
+  
+  <!-- EN: Iguana -->
+  <DMS_Mech_Iguana.label>Iguana</DMS_Mech_Iguana.label>
+  <!-- EN: The modernized and redesigned bipedal walking tank based on the Tarbosaurus. This model is produced without the experimental electromagnetic armor allowing it to maintain greater mobility. -->
+  <DMS_Mech_Iguana.description>The modernized and redesigned bipedal walking tank based on the Tarbosaurus. This model is produced without the experimental electromagnetic armor allowing it to maintain greater mobility.</DMS_Mech_Iguana.description>
+  <!-- EN: Mechanical Head -->
+  <DMS_Mech_Iguana.tools.Mechanical_Head.label>Mechanical Head</DMS_Mech_Iguana.tools.Mechanical_Head.label>
+  <!-- EN: Left Leg -->
+  <DMS_Mech_Iguana.tools.Left_Leg.label>Left Leg</DMS_Mech_Iguana.tools.Left_Leg.label>
+  <!-- EN: Right Leg -->
+  <DMS_Mech_Iguana.tools.Right_Leg.label>Right Leg</DMS_Mech_Iguana.tools.Right_Leg.label>
+  
+  <!-- UNUSED -->
+  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_Target>Aim target</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_Target>
+  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>Fire at will</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.command_ToggleFire>
+  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>Aim at designated target</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_Target>
+  <DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>Toggle turret to manual control mode to prevent unnecessary shooting.</DMS_Mech_Iguana.comps.CompMultipleTurretGun.subTurrets.0.commandDesc_ToggleFire>
+  
+</LanguageData>

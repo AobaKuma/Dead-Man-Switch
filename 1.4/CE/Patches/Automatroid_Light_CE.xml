@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Combat Extended</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+	<!-- ========== PawnKind Patches ========== -->
+	<li Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnKindDef[defName="DMS_Machine_VerlingBirdA"]</xpath>
+		<value>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>0</min>
+					<max>2</max>
+				</primaryMagazineCount>
+			</li>
+		</value>
+	</li>
+
+	<li Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnKindDef[defName="DMS_Machine_Hound_RC" or defName="DMS_Machine_Hound_FS"]</xpath>
+		<value>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>4</min>
+					<max>6</max>
+				</primaryMagazineCount>
+			</li>
+		</value>
+	</li>
+
+	<!-- TrashBin -->
+	<li Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="DMS_Machine_TrashBin"]</xpath>
+		<value>
+			<li Class="CombatExtended.RacePropertiesExtensionCE">
+				<bodyShape>Humanoid</bodyShape>
+			</li>
+		</value>
+	</li>
+
+	<li Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DMS_Machine_TrashBin"]/statBases</xpath>
+		<value>
+			<CarryWeight>30</CarryWeight>
+			<CarryBulk>25</CarryBulk>
+			<MeleeDodgeChance>0.05</MeleeDodgeChance>
+			<MeleeCritChance>0.01</MeleeCritChance>
+			<MeleeParryChance>0.01</MeleeParryChance>
+			<MaxHitPoints>150</MaxHitPoints>
+		</value>
+	</li>
+
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DMS_Machine_TrashBin"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>4</ArmorRating_Blunt>
+		</value>
+	</li>
+
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DMS_Machine_TrashBin"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>2</ArmorRating_Sharp>
+		</value>
+	</li>
+
+	<li Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DMS_Machine_TrashBin"]/comps</xpath>
+		<value>
+			<li Class="CombatExtended.CompProperties_ArmorDurability">
+				<Durability>300</Durability>
+				<Regenerates>true</Regenerates>
+				<RegenInterval>950</RegenInterval>
+				<RegenValue>5</RegenValue>
+				<Repairable>true</Repairable>
+				<RepairIngredients>
+					<Steel>3</Steel>
+				</RepairIngredients>
+				<RepairTime>80</RepairTime>
+				<RepairValue>100</RepairValue>
+				<CanOverHeal>true</CanOverHeal>
+				<MaxOverHeal>20</MaxOverHeal>
+				<MinArmorPct>0.75</MinArmorPct>
+			</li>
+		</value>
+	</li>
+
+
+	<!-- Verling Bird -->
+	<li Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[@Name="VerlingBirdBase"]</xpath>
+		<value>
+			<li Class="CombatExtended.RacePropertiesExtensionCE">
+				<bodyShape>Vehicle</bodyShape>
+			</li>
+		</value>
+	</li>
+
+	<li Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="VerlingBirdBase"]/statBases</xpath>
+		<value>
+			<CarryWeight>20</CarryWeight>
+			<CarryBulk>32</CarryBulk>
+			<AimingAccuracy>0.2</AimingAccuracy>
+			<ShootingAccuracyPawn>0.35</ShootingAccuracyPawn>
+			<MeleeDodgeChance>8</MeleeDodgeChance>
+			<MeleeCritChance>0.01</MeleeCritChance>
+			<MeleeParryChance>0.00</MeleeParryChance>
+			<MaxHitPoints>25</MaxHitPoints>
+		</value>
+	</li>
+
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="VerlingBirdBase"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+		</value>
+	</li>
+
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="VerlingBirdBase"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+		</value>
+	</li>
+
+	
+		<!-- Hound -->
+		<li Class="PatchOperationAddModExtension">
+			<xpath>Defs/ThingDef[@Name="DMS_MechHoundBase"]</xpath>
+			<value>
+				<li Class="CombatExtended.RacePropertiesExtensionCE">
+					<bodyShape>QuadrupedLow</bodyShape>
+				</li>
+			</value>
+		</li>
+	
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@Name="DMS_MechHoundBase"]/statBases</xpath>
+			<value>
+				<CarryWeight>40</CarryWeight>
+				<CarryBulk>50</CarryBulk>
+				<AimingAccuracy>0.4</AimingAccuracy>
+			    <ShootingAccuracyPawn>0.6</ShootingAccuracyPawn>
+				<MeleeDodgeChance>4</MeleeDodgeChance>
+				<MeleeCritChance>0.01</MeleeCritChance>
+				<MeleeParryChance>0.03</MeleeParryChance>
+				<MaxHitPoints>125</MaxHitPoints>
+			</value>
+		</li>
+	
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[@Name="DMS_MechHoundBase"]/statBases/ArmorRating_Blunt</xpath>
+			<value>
+				<ArmorRating_Blunt>2</ArmorRating_Blunt>
+			</value>
+		</li>
+	
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[@Name="DMS_MechHoundBase"]/statBases/ArmorRating_Sharp</xpath>
+			<value>
+				<ArmorRating_Sharp>1</ArmorRating_Sharp>
+			</value>
+		</li>
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@Name="BaseMechRace_Falcon"]/statBases</xpath>
+			<value>
+				<CarryWeight>60</CarryWeight>
+				<CarryBulk>20</CarryBulk>
+				<AimingAccuracy>0.8</AimingAccuracy>
+				<ShootingAccuracyPawn>0.90</ShootingAccuracyPawn>
+				<MeleeDodgeChance>0.5</MeleeDodgeChance>
+				<MeleeCritChance>0.07</MeleeCritChance>
+				<MeleeParryChance>0.06</MeleeParryChance>
+				<MaxHitPoints>200</MaxHitPoints>
+				<NightVisionEfficiency>0.8</NightVisionEfficiency>
+				<ReloadSpeed>0.8</ReloadSpeed>
+			</value>
+		</li>
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@Name="DMS_MechHoundBase"]/comps</xpath>
+			<value>
+				<li Class="CombatExtended.CompProperties_ArmorDurability">
+					<Durability>225</Durability>
+					<Regenerates>true</Regenerates>
+					<RegenInterval>950</RegenInterval>
+					<RegenValue>5</RegenValue>
+					<Repairable>true</Repairable>
+					<RepairIngredients>
+						<Steel>3</Steel>
+					</RepairIngredients>
+					<RepairTime>80</RepairTime>
+					<RepairValue>100</RepairValue>
+					<CanOverHeal>true</CanOverHeal>
+					<MaxOverHeal>20</MaxOverHeal>
+					<MinArmorPct>0.75</MinArmorPct>
+				</li>
+			</value>
+		</li>
+
+		<li Class="PatchOperationAddModExtension">
+			<xpath>Defs/ThingDef[@Name="BaseMechRace_Falcon"]</xpath>
+			<value>
+				<li Class="CombatExtended.RacePropertiesExtensionCE">
+					<bodyShape>QuadrupedLow</bodyShape>
+				</li>
+			</value>
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[@Name="BaseMechRace_Falcon"]/statBases/ArmorRating_Blunt</xpath>
+			<value>
+				<ArmorRating_Blunt>8</ArmorRating_Blunt>
+			</value>
+		</li>
+	
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[@Name="BaseMechRace_Falcon"]/statBases/ArmorRating_Sharp</xpath>
+			<value>
+				<ArmorRating_Sharp>4</ArmorRating_Sharp>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationAddModExtension">
+			<xpath>Defs/PawnKindDef[defName="DMS_Mech_Falcon"]</xpath>
+			<value>
+				<li Class="CombatExtended.LoadoutPropertiesExtension">
+					<primaryMagazineCount>
+						<min>4</min>
+						<max>8</max>
+					</primaryMagazineCount>
+				</li>
+			</value>
+		</li>
+</operations>
+</match>
+</Operation>
+
+</Patch>

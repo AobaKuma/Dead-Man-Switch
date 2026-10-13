@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="MakeableShellBase">
+    <defName>Shell_BlasterSmoke</defName>
+    <label>blaster screen shell</label>
+    <description>An artillery shell containing reagents that, when combined, generate deadly tox gas. When fired, it will stick into the ground and release tox gas for some time before expiring.\n\nTox gas burns the lungs and eyes, causing a temporary shortness of breath and reduction in sight. Continued exposure to tox gas results in toxic buildup that can be lethal.</description>
+    <possessionCount>2</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/Shell/Shell_Toxic</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <costList>
+      <Steel>10</Steel>
+      <Chemfuel>10</Chemfuel>
+    </costList>
+    <costListForDifficulty>
+      <difficultyVar>classicMortars</difficultyVar>
+      <costList>
+        <Steel>15</Steel>
+        <Chemfuel>15</Chemfuel>
+      </costList>
+    </costListForDifficulty>
+    <recipeMaker>
+      <researchPrerequisite>ToxGas</researchPrerequisite>
+      <displayPriority>120</displayPriority>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveDamageType>Smoke</explosiveDamageType>
+        <explosiveRadius>11</explosiveRadius>
+        <postExplosionGasType>BlindSmoke</postExplosionGasType>
+        <wickTicks>30~60</wickTicks>
+      </li>
+    </comps>
+    <projectileWhenLoaded>DMS_Bullet_Shell_BlasterSmoke</projectileWhenLoaded>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_Shell_BlasterSmoke</defName>
+    <label>blaster screen shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellTox</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>ToxGas</damageDef>
+      <speed>41</speed>
+      <explosionRadius>0.1</explosionRadius>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>ToxicShellLanded</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+      <postExplosionSpawnThingDef>Shell_BlasterSmoke_Releasing</postExplosionSpawnThingDef>
+      <postExplosionSpawnThingDefWater>Shell_BlasterSmoke_Releasing_Water</postExplosionSpawnThingDefWater>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef Name="Shell_BlasterSmoke_Releasing_Base" Abstract="True">
+    <label>blaster screen shell</label>
+    <selectable>false</selectable>
+    <tickerType>Normal</tickerType>
+    <thingClass>ThingWithComps</thingClass>
+    <useHitPoints>false</useHitPoints>
+    <rotatable>false</rotatable>
+    <comps>
+      <li Class="CompProperties_DestroyAfterDelay">
+        <delayTicks>15000</delayTicks><!-- 1/4 day -->
+      </li>
+      <li Class="DMS.CompProperties_AntiBlasterSmoke">
+        <Size>10</Size>
+        <chanceToFail>0.75</chanceToFail>
+        <activeTicks>1900</activeTicks>
+        <fleckDef>LineEMP</fleckDef>
+        <effecterDef>BlasterSmokeReleasing</effecterDef>
+        <spawnLeaving>Filth_Ash</spawnLeaving>
+        <interceptThings>
+          <li>Bullet_ChargeBlasterHeavy</li>
+          <li>Bullet_ChargeRifle</li>
+          <li>Bullet_ChargeLance</li>
+        </interceptThings>
+        <ignoreThings>
+          <li>DMS_Bullet_Shell_BlasterSmoke</li> 
+        </ignoreThings>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="Shell_BlasterSmoke_Releasing_Base">
+    <defName>Shell_BlasterSmoke_Releasing</defName>
+    <graphicData>
+      <texPath>Things/Item/Resource/Shell/ToxLanded</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="Shell_BlasterSmoke_Releasing_Base">
+    <defName>Shell_BlasterSmoke_Releasing_Water</defName>
+    <graphicData>
+      <texPath>Things/Item/Resource/Shell/ToxLanded_Water</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>BlasterSmokeReleasing</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>GasReleasing</soundDef>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>10</positionRadius>
+        <fleckDef>Fleck_BlasterDust</fleckDef>
+        <chancePerTick>0.05</chancePerTick>
+        <scale>1~3</scale>
+        <burstCount>1~5</burstCount>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>10</positionRadius>
+        <fleckDef>Fleck_BlasterParticle</fleckDef>
+        <chancePerTick>0.01</chancePerTick>
+        <scale>1~3</scale>
+        <burstCount>3</burstCount>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Fleck_BlasterDust</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.2</fadeInTime>
+    <solidTime>2.0</solidTime>
+    <fadeOutTime>0.8</fadeOutTime>
+    <growthRate>0.8</growthRate>
+    <acceleration>(0, 0, 0.5)</acceleration>
+    <graphicData>
+      <texPath>Things/Gas/GasCloudThickA</texPath>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(20, 20, 24, 200)</color>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Fleck_BlasterParticle</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.4</fadeInTime>
+    <solidTime>0.8</solidTime>
+    <fadeOutTime>1.8</fadeOutTime>
+    <growthRate>0.8</growthRate>
+    <acceleration>(0, 0, 0.25)</acceleration>
+    <graphicData>
+      <texPath>Effects/particle</texPath>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(200, 200, 200, 200)</color>
+    </graphicData>
+  </FleckDef>
+
+<!-- 火焰噴射器(WIP) -->
+  <ThingDef ParentName="LightMechanoidGunRanged">
+    <defName>DMS_Gun_MiniFlameblaster</defName>
+    <label>mini-flameblaster</label>
+    <description>A small burst-oriented flamethrower used by mechanoids.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/MiniFlameblaster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <Mass>1.5</Mass>
+      <AccuracyTouch>0.40</AccuracyTouch>
+      <AccuracyShort>0.48</AccuracyShort>
+      <AccuracyMedium>0.35</AccuracyMedium>
+      <AccuracyLong>0.26</AccuracyLong>
+      <RangedWeapon_Cooldown>4.0</RangedWeapon_Cooldown>      
+    </statBases>
+    <weaponTags>
+      <li>MechanoidGunMiniFlameblaster</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_SpewFire</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>0</warmupTime>
+        <range>4.9</range>
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+        <burstShotCount>10</burstShotCount>
+        <soundCast>Shot_MiniFlameblaster</soundCast>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+</Defs>

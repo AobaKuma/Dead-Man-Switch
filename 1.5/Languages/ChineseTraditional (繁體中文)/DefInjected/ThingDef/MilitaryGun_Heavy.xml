@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: heavy machine gun bullet -->
+  <Bullet_DMS_HeavyMachineGun.label>重機槍子彈</Bullet_DMS_HeavyMachineGun.label>
+  
+  <!-- EN: Mech Autocannon -->
+  <DMS_Autocannon.label>機兵輕機炮</DMS_Autocannon.label>
+  <!-- EN: An autocannon designed for mech soldier or mounting on to an infantry support platform.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless its mounted to a support platform. -->
+  <DMS_Autocannon.description>適用於機兵與步兵支援平臺的輕型機炮。\n\n這種武器是專門為機兵設計的，因為其重量因此所以只有特定的機兵才能操作。</DMS_Autocannon.description>
+  <!-- EN: stock -->
+  <DMS_Autocannon.tools.stock.label>槍托</DMS_Autocannon.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Autocannon.tools.barrel.label>槍管</DMS_Autocannon.tools.barrel.label>
+  <!-- EN: Mech Autocannon -->
+  <DMS_Autocannon.verbs.Verb_Shoot.label>機兵輕機炮</DMS_Autocannon.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Autocannon.tools.muzzle-0.label>槍口</DMS_Autocannon.tools.muzzle-0.label>
+  <DMS_Autocannon.tools.barrel-1.label>槍管</DMS_Autocannon.tools.barrel-1.label>
+  <DMS_Autocannon.tools.muzzle-1.label>槍口</DMS_Autocannon.tools.muzzle-1.label>
+  <DMS_Autocannon.verbs.Verb_ShootCE.label>機兵輕機炮</DMS_Autocannon.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: heavy grenade round -->
+  <DMS_Bullet_DGL.label>重型榴彈</DMS_Bullet_DGL.label>
+  
+  <!-- EN: Armor Piercing Shell -->
+  <DMS_Bullet_Dragoon_Rifle.label>穿甲鋼芯彈</DMS_Bullet_Dragoon_Rifle.label>
+  
+  <!-- EN: Shape-charged Grenade -->
+  <DMS_Bullet_RR.label>無後坐力榴彈</DMS_Bullet_RR.label>
+  
+  <!-- EN: 2A38M -->
+  <DMS_Gun_2A38M.label>2A38M</DMS_Gun_2A38M.label>
+  <!-- EN: A dual-barrel heavy autocannon for infantry suppression and anti air needs.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
+  <DMS_Gun_2A38M.description>用於步兵壓制/防空平臺的雙管重型機炮。\n\n這種武器是專門為機兵設計的，因為其重量因此所以只有特定的機兵才能操作。</DMS_Gun_2A38M.description>
+  <!-- EN: stock -->
+  <DMS_Gun_2A38M.tools.stock.label>槍托</DMS_Gun_2A38M.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_2A38M.tools.barrel.label>槍管</DMS_Gun_2A38M.tools.barrel.label>
+  <!-- EN: 2A38M -->
+  <DMS_Gun_2A38M.verbs.Verb_Shoot.label>2A38M</DMS_Gun_2A38M.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_2A38M.tools.muzzle-0.label>槍口</DMS_Gun_2A38M.tools.muzzle-0.label>
+  <DMS_Gun_2A38M.tools.barrel-1.label>槍管</DMS_Gun_2A38M.tools.barrel-1.label>
+  <DMS_Gun_2A38M.tools.muzzle-1.label>槍口</DMS_Gun_2A38M.tools.muzzle-1.label>
+  <DMS_Gun_2A38M.verbs.Verb_ShootCE.label>2A38M</DMS_Gun_2A38M.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: MPQFS-85M "Dawnblade" -->
+  <DMS_Gun_DawnbladeM.label>黎明之刃</DMS_Gun_DawnbladeM.label>
+  <!-- EN: A multi-role quick-firing autocannon modified for mech use. The weapon is only capable of being mounted on super-heavy units like the Tarbosaurus. Its terrifying rate of fire and power have proven to be effective at destroying exostriders in past mechanoid wars.\n\nThis weapon is designed exclusively for use on super-heavy units or to be installed as an emplacement. -->
+  <DMS_Gun_DawnbladeM.description>搭載於重型機兵與龍騎兵平臺的輕量化速射艦炮系統，只有那些重型機兵能夠負載並使用這種毀滅性的陸基火力。\n\n這種武器是專門為機兵設計的，因為其重量因此所以只有特定的機兵才能操作。</DMS_Gun_DawnbladeM.description>
+  <!-- EN: stock -->
+  <DMS_Gun_DawnbladeM.tools.stock.label>槍托</DMS_Gun_DawnbladeM.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_DawnbladeM.tools.barrel.label>炮管</DMS_Gun_DawnbladeM.tools.barrel.label>
+  <!-- EN: MPQFS-85M "Dawnblade" -->
+  <DMS_Gun_DawnbladeM.verbs.Verb_Shoot.label>黎明之刃</DMS_Gun_DawnbladeM.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_DawnbladeM.tools.muzzle-0.label>炮口</DMS_Gun_DawnbladeM.tools.muzzle-0.label>
+  <DMS_Gun_DawnbladeM.tools.barrel-1.label>炮管</DMS_Gun_DawnbladeM.tools.barrel-1.label>
+  <DMS_Gun_DawnbladeM.tools.muzzle-1.label>炮口</DMS_Gun_DawnbladeM.tools.muzzle-1.label>
+  <DMS_Gun_DawnbladeM.verbs.Verb_ShootCE.label>黎明之刃</DMS_Gun_DawnbladeM.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Mech Heavy Grenade Launcher -->
+  <DMS_Gun_DragoonGrenade.label>龍騎兵榴彈槍</DMS_Gun_DragoonGrenade.label>
+  <!-- EN: A hand held mortar designed for mech operation built with a six round revolving action to allow for quick successive shots.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
+  <DMS_Gun_DragoonGrenade.description>專為重型機兵與機動龍騎兵設計的手持式迫擊炮。基本上是一種極端放大的低速榴彈發射器。但足以為進攻部隊提供一定的曲射火力支援。\n\n這種武器是專門為機兵設計的，因為其重量因此所以只有特定的機兵才能操作。</DMS_Gun_DragoonGrenade.description>
+  <!-- EN: stock -->
+  <DMS_Gun_DragoonGrenade.tools.stock.label>槍托</DMS_Gun_DragoonGrenade.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_DragoonGrenade.tools.barrel.label>槍管</DMS_Gun_DragoonGrenade.tools.barrel.label>
+  <!-- EN: Mech Heavy Grenade Launcher -->
+  <DMS_Gun_DragoonGrenade.verbs.Verb_Shoot.label>龍騎兵榴彈槍</DMS_Gun_DragoonGrenade.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_DragoonGrenade.tools.muzzle-0.label>槍口</DMS_Gun_DragoonGrenade.tools.muzzle-0.label>
+  <DMS_Gun_DragoonGrenade.tools.barrel-1.label>槍管</DMS_Gun_DragoonGrenade.tools.barrel-1.label>
+  <DMS_Gun_DragoonGrenade.tools.muzzle-1.label>槍口</DMS_Gun_DragoonGrenade.tools.muzzle-1.label>
+  <DMS_Gun_DragoonGrenade.verbs.Verb_ShootCE.label>龍騎兵榴彈槍</DMS_Gun_DragoonGrenade.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Mech Anti-Tank Rifle -->
+  <DMS_Gun_DragoonRifle.label>龍騎兵重型步槍</DMS_Gun_DragoonRifle.label>
+  <!-- EN: A lightweight mass producable anti-tank rifle for heavy mechs and dragoons.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
+  <DMS_Gun_DragoonRifle.description>一種用於重型機兵與機動龍騎兵的輕量級反戰車炮，使用彈夾供彈來提供持續的反裝甲火力輸出。\n\n這種武器是專門為機兵設計的，因為其重量因此所以只有特定的機兵才能操作。</DMS_Gun_DragoonRifle.description>
+  <!-- EN: stock -->
+  <DMS_Gun_DragoonRifle.tools.stock.label>槍托</DMS_Gun_DragoonRifle.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_DragoonRifle.tools.barrel.label>槍管</DMS_Gun_DragoonRifle.tools.barrel.label>
+  <!-- EN: Mech Anti-Tank Rifle -->
+  <DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>龍騎兵重型步槍</DMS_Gun_DragoonRifle.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_DragoonRifle.tools.muzzle-0.label>槍口</DMS_Gun_DragoonRifle.tools.muzzle-0.label>
+  <DMS_Gun_DragoonRifle.tools.barrel-1.label>槍管</DMS_Gun_DragoonRifle.tools.barrel-1.label>
+  <DMS_Gun_DragoonRifle.tools.muzzle-1.label>槍口</DMS_Gun_DragoonRifle.tools.muzzle-1.label>
+  <DMS_Gun_DragoonRifle.verbs.Verb_ShootCE.label>龍騎兵重步槍</DMS_Gun_DragoonRifle.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Recoilless Rifle -->
+  <DMS_Gun_Recoilless.label>無後坐力炮</DMS_Gun_Recoilless.label>
+  <!-- EN: A recoilless rifle designed to counter heavy-armored targets at range.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
+  <DMS_Gun_Recoilless.description>一種無後坐力炮，用於狙擊射程內的重型武裝目標。\n\n這種武器是專門為機兵設計的，因為其重量因此所以只有特定的機兵才能操作。</DMS_Gun_Recoilless.description>
+  <!-- EN: stock -->
+  <DMS_Gun_Recoilless.tools.stock.label>槍托</DMS_Gun_Recoilless.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_Recoilless.tools.barrel.label>槍管</DMS_Gun_Recoilless.tools.barrel.label>
+  <!-- EN: Recoilless Rifle -->
+  <DMS_Gun_Recoilless.verbs.Verb_Shoot.label>無後坐力炮</DMS_Gun_Recoilless.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_Recoilless.tools.muzzle-0.label>槍口</DMS_Gun_Recoilless.tools.muzzle-0.label>
+  <DMS_Gun_Recoilless.tools.barrel-1.label>槍管</DMS_Gun_Recoilless.tools.barrel-1.label>
+  <DMS_Gun_Recoilless.tools.muzzle-1.label>槍口</DMS_Gun_Recoilless.tools.muzzle-1.label>
+  <DMS_Gun_Recoilless.verbs.Verb_ShootCE.label>無後坐力炮</DMS_Gun_Recoilless.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Mech HMG -->
+  <DMS_HeavyMachineGun.label>機兵重機槍</DMS_HeavyMachineGun.label>
+  <!-- EN: A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it unless its mounted to a support platform. -->
+  <DMS_HeavyMachineGun.description>一挺發射大口徑機槍彈的重型機槍，普遍用於重型機兵或步兵支援平臺。\n\n這種武器是專門為機兵設計的，因為其重量因此所以只有特定的機兵才能操作。</DMS_HeavyMachineGun.description>
+  <!-- EN: stock -->
+  <DMS_HeavyMachineGun.tools.stock.label>槍托</DMS_HeavyMachineGun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_HeavyMachineGun.tools.barrel.label>槍管</DMS_HeavyMachineGun.tools.barrel.label>
+  <!-- EN: Mech HMG -->
+  <DMS_HeavyMachineGun.verbs.Verb_Shoot.label>機兵重機槍</DMS_HeavyMachineGun.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_HeavyMachineGun.tools.muzzle-0.label>槍口</DMS_HeavyMachineGun.tools.muzzle-0.label>
+  <DMS_HeavyMachineGun.tools.barrel-1.label>槍管</DMS_HeavyMachineGun.tools.barrel-1.label>
+  <DMS_HeavyMachineGun.tools.muzzle-1.label>槍口</DMS_HeavyMachineGun.tools.muzzle-1.label>
+  <DMS_HeavyMachineGun.verbs.Verb_ShootCE.label>機兵重機槍</DMS_HeavyMachineGun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Bolt Cannon -->
+  <DMS_SniperCannon.label>機兵狙擊炮</DMS_SniperCannon.label>
+  <!-- EN: An ultra heavy rifle chambered in autocannon rounds. This rifle has proven the capability to reach out and touch an exostrider at immense distances. It is specifically designed for long-range anti-mech operations.\n\nThis weapon is designed specifically for automatroid use,it's so heavy only specific automatroids can operate it. -->
+  <DMS_SniperCannon.description>一種能發射機炮炮彈的重型步槍，專為遠距離反機甲狙擊作戰而設計。在過去的戰爭中證明了能夠在遠處狙擊巨黽的薄弱部位來使其癱瘓。\n\n這種武器是專門為機兵設計的，因為其重量因此所以只有特定的機兵才能操作。</DMS_SniperCannon.description>
+  <!-- EN: stock -->
+  <DMS_SniperCannon.tools.stock.label>槍托</DMS_SniperCannon.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_SniperCannon.tools.barrel.label>槍管</DMS_SniperCannon.tools.barrel.label>
+  <!-- EN: Bolt Cannon -->
+  <DMS_SniperCannon.verbs.Verb_Shoot.label>機兵狙擊炮</DMS_SniperCannon.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_SniperCannon.tools.muzzle-0.label>槍口</DMS_SniperCannon.tools.muzzle-0.label>
+  <DMS_SniperCannon.tools.barrel-1.label>槍管</DMS_SniperCannon.tools.barrel-1.label>
+  <DMS_SniperCannon.tools.muzzle-1.label>槍口</DMS_SniperCannon.tools.muzzle-1.label>
+  <DMS_SniperCannon.verbs.Verb_ShootCE.label>機兵狙擊炮</DMS_SniperCannon.verbs.Verb_ShootCE.label>
+  
+</LanguageData>

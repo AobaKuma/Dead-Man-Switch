@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN:
+    <li>r_name(p=1)->[common], [edition]</li>
+    <li>common->[commonPrefix] Standard Communications</li>
+    <li>commonPrefix->Colonial Fleet</li>
+    <li>commonPrefix->Colonization</li>
+    <li>edition(p=0.3)->7th LTE Edition</li>
+    <li>edition(p=1.5)->6th Edition</li>
+    <li>edition(p=0.7)->5th Edition</li>
+    <li>edition(p=0.5)->4th Edition</li>
+    <li>edition(p=0.3)->3th Edition</li>
+    <li>edition(p=0.1)->2th Edition</li>
+  -->
+  <DMS_FleetDialect_Standard.rulePack.rulesStrings>
+    <li>r_name(p=1)->[common], [edition]</li>
+    <li>common->[commonPrefix] Standard Communications</li>
+    <li>commonPrefix->Colonial Fleet</li>
+    <li>commonPrefix->Colonization</li>
+    <li>edition(p=0.3)->7th LTE Edition</li>
+    <li>edition(p=1.5)->6th Edition</li>
+    <li>edition(p=0.7)->5th Edition</li>
+    <li>edition(p=0.5)->4th Edition</li>
+    <li>edition(p=0.3)->3th Edition</li>
+    <li>edition(p=0.1)->2th Edition</li>
+  </DMS_FleetDialect_Standard.rulePack.rulesStrings>
+
+</LanguageData>

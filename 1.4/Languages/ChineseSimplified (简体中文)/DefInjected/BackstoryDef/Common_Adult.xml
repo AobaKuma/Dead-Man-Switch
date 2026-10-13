@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: [PAWN_nameDef] participated in a grand colonization plan and came to rimworld. [PAWN_pronoun] received a long period of survival training and physical exercise during the voyage. Compared to most people who live on this planet, [PAWN_pronoun] is fully prepared. -->
+  <DMS_Civilian01.baseDesc>[PAWN_nameDef]来自另一个星系，参与了一场宏大的殖民计划而来到这片边缘世界。[PAWN_pronoun]在航行的途中接受了长时间的求生训练与体能锻炼。相对于大多数流落到这个星球的人来说[PAWN_pronoun]是做足了准备而来</DMS_Civilian01.baseDesc>
+  <!-- EN: Colonial pioneer -->
+  <DMS_Civilian01.title>先锋殖民者</DMS_Civilian01.title>
+  <!-- EN: pioneer -->
+  <DMS_Civilian01.titleShort>殖民者</DMS_Civilian01.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] participated in a grand colonization plan and came to rimworld. [PAWN_pronoun] is one of the most experienced colonists in the colonization team and has participated in numerous successful and failed colonization projects throughout his life. -->
+  <DMS_Civilian02.baseDesc>[PAWN_nameDef]来自另一个星系，参与了一场宏大的殖民计划而来到这片边缘世界。[PAWN_pronoun]是殖民团队中最有经验的殖民者之一，在一生当中参与了无数次成功或失败的殖民计划。</DMS_Civilian02.baseDesc>
+  <!-- EN: Survival expert -->
+  <DMS_Civilian02.title>生存专家</DMS_Civilian02.title>
+  <!-- EN: Survivalist -->
+  <DMS_Civilian02.titleShort>生存专家</DMS_Civilian02.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] participated in a grand colonization plan and came to rimworld. [PAWN_pronoun]'s job is to establish an advance outpost well in advance of the arrival of the main force and send signals back to show the fleet that the planet is still worth the long voyage. -->
+  <DMS_Civilian03.baseDesc>[PAWN_nameDef]来自另一个星系，参与了一场宏大的殖民计划而来到这片边缘世界。[PAWN_pronoun]的职责是远在大部队到达前建立先遣哨站并不断回传讯号来向舰队表示这颗星球依然值得度过漫长的远航而来。</DMS_Civilian03.baseDesc>
+  <!-- EN: Colonial guard -->
+  <DMS_Civilian03.title>先锋队员</DMS_Civilian03.title>
+  <!-- EN: guard -->
+  <DMS_Civilian03.titleShort>先锋队员</DMS_Civilian03.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] participated in a grand colonization plan and came to rimworld. [PAWN_pronoun]'s duty is to conduct medical or chemical extermination of alien diseases and biological hazards at advance outposts long before large forces arrive. -->
+  <DMS_Civilian04.baseDesc>[PAWN_nameDef]来自另一个星系，参与了一场宏大的殖民计划而来到这片边缘世界。[PAWN_pronoun]的职责是远在大部队到达前在先遣哨站里对外星疾病与生物灾害进行医学上或化学上的驱逐。</DMS_Civilian04.baseDesc>
+  <!-- EN: Colonial medic -->
+  <DMS_Civilian04.title>先锋军医</DMS_Civilian04.title>
+  <!-- EN: medic -->
+  <DMS_Civilian04.titleShort>军医</DMS_Civilian04.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] is from a professional pioneering group. Responsible for completing the ecological and species research on this planet before the arrival of the large army, so that future colonization work will be smoother. -->
+  <DMS_Civilian05.baseDesc>[PAWN_nameDef]是来自一个职业拓荒团体。负责在大部队到达之前先行完成这颗星球的生态与物种研究，以便未来的殖民工作更加顺畅。</DMS_Civilian05.baseDesc>
+  <!-- EN: Ecologist -->
+  <DMS_Civilian05.title>生态学家</DMS_Civilian05.title>
+  <!-- EN: ecologist -->
+  <DMS_Civilian05.titleShort>生态学家</DMS_Civilian05.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] is from a professional pioneering group. Responsible for cooperating with the orbiting detectors to complete the collection and labeling of geological data on the planet before the arrival of the colonization group. -->
+  <DMS_Civilian06.baseDesc>[PAWN_nameDef]是来自一个职业拓荒团体。负责在殖民团到来前配合轨道上的探测器完成对本星球的地质数据收集与标注。</DMS_Civilian06.baseDesc>
+  <!-- EN: Geologist -->
+  <DMS_Civilian06.title>地质学家</DMS_Civilian06.title>
+  <!-- EN: geologist -->
+  <DMS_Civilian06.titleShort>地质学家</DMS_Civilian06.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] is from a professional pioneering group. Responsible for the planning and construction of permanent and temporary residences at landing sites. Of course, also have to learn to save [PAWN_pronoun] own life from attacks by local natives. -->
+  <DMS_Civilian07.baseDesc>[PAWN_nameDef]来自一个职业拓荒者团体。负责在登陆点上规划与建设永久居住地与临时住所。当然的，也得学会从当地土著的袭击中保住[PAWN_pronoun]自己的命</DMS_Civilian07.baseDesc>
+  <!-- EN: Colonial architect -->
+  <DMS_Civilian07.title>殖民地建筑师</DMS_Civilian07.title>
+  <!-- EN: architect -->
+  <DMS_Civilian07.titleShort>建筑师</DMS_Civilian07.titleShort>
+  
+  <!-- EN: As we all know, most of the planets in rimworld are in a state of disorganized social organization, but the job of [PAWN_nameDef] is to establish good relations with these local indigenous people as much as possible on behalf of the colonial fleet, to facilitate future colonization work can go more smoothly. -->
+  <DMS_Civilian08.baseDesc>[PAWN_nameDef]来自一个职业拓荒者团体。负责在登陆点上规划与建设永久居住地与临时住所。当然的，也得学会从当地土著的袭击中保住[PAWN_pronoun]自己的命</DMS_Civilian08.baseDesc>
+  <!-- EN: Local diplomat -->
+  <DMS_Civilian08.title>土著外交官</DMS_Civilian08.title>
+  <!-- EN: diplomat -->
+  <DMS_Civilian08.titleShort>外交官</DMS_Civilian08.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] is responsible for caring for the plants in the community, and testing soil pH and moisture. Track growth and choose crops suitable for local conditions. -->
+  <DMS_Civilian09.baseDesc>[PAWN_nameDef]负责在殖民地中照护植物，检测土壤酸碱值，湿度。追踪成长情况并选育适应了当地环境的优良作物。</DMS_Civilian09.baseDesc>
+  <!-- EN: Colonial farmer -->
+  <DMS_Civilian09.title>殖民地农务员</DMS_Civilian09.title>
+  <!-- EN: farmer -->
+  <DMS_Civilian09.titleShort>农务员</DMS_Civilian09.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] was responsible for hand forging tools and parts in a colony site where stamping printers were not allocated, and also developed knowledge of cutting and assembly machinery. -->
+  <DMS_Civilian10.baseDesc>[PAWN_nameDef]负责在那些没能分配到冲压打印机的殖民地站点中途手锻造工具与零件，同时也练就了裁缝与组装机械的知识。</DMS_Civilian10.baseDesc>
+  <!-- EN: Colonial mechanic -->
+  <DMS_Civilian10.title>殖民地机工</DMS_Civilian10.title>
+  <!-- EN: mechanic -->
+  <DMS_Civilian10.titleShort>机工</DMS_Civilian10.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] has been working with mines almost all [PAWN_pronoun] life, digging with machinery and explosives. Of course, sometimes [PAWN_pronoun] also has to dig with [PAWN_pronoun] own hands. -->
+  <DMS_Civilian11.baseDesc>[PAWN_nameDef]这辈子几乎都在与矿山打交道，用机械挖，用炸药挖，当然的有时候[PAWN_pronoun]也得亲手挥舞著工具挖。</DMS_Civilian11.baseDesc>
+  <!-- EN: Colonial miner -->
+  <DMS_Civilian11.title>殖民地矿工</DMS_Civilian11.title>
+  <!-- EN: miner -->
+  <DMS_Civilian11.titleShort>矿工</DMS_Civilian11.titleShort>
+  
+</LanguageData>

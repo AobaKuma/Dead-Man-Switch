@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DMS_Mech_Lady" or defName="DMS_Mech_Gladiator"]/inspectorTabs/li[.="ITab_Pawn_Gear"]</xpath>
+		<value>
+			<li>CombatExtended.ITab_Inventory</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[@Name="BaseAutomatroidKind"]</xpath>
+				<value>
+					<aiAvoidCover>false</aiAvoidCover>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="BaseAutomatroidRace"]/statBases</xpath>
+				<value>
+					<SmokeSensitivity>0</SmokeSensitivity>
+				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[@Name="BaseAutomatroidRace"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="BaseAutomatroidRace"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="BaseAutomatroidRace"]/comps</xpath>
+				<value>
+					<li>
+						<compClass>CombatExtended.CompAmmoGiver</compClass>
+					</li>
+					<li Class="CombatExtended.CompProperties_MechAmmo">
+						<gizmoIconSetMagCount>UI/Buttons/SetMagCount</gizmoIconSetMagCount>
+						<gizmoIconTakeAmmoNow>UI/Buttons/TakeAmmoNow</gizmoIconTakeAmmoNow>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[@Name="BaseAutomatroidRace"]</xpath>
+				<value>
+					<li Class="CombatExtended.PartialArmorExt">
+						<stats>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+						</stats>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[@Name="BaseAutomatroidRace"]</xpath>
+				<value>
+					<li Class="CombatExtended.PartialArmorExt">
+						<stats>
+							<li>
+								<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+								<parts>
+									<li>SightSensor</li>
+									<li>HearingSensor</li>
+									<li>SmellSensor</li>
+								</parts>
+							</li>
+							<li>
+								<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+								<parts>
+									<li>SightSensor</li>
+									<li>HearingSensor</li>
+									<li>SmellSensor</li>
+								</parts>
+							</li>
+						</stats>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[@Name="BaseAutomatroidHumanRace"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Humanoid</bodyShape>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseAutomatroidRace"]/tools</xpath>
+				<value>
+					<tools>
+						<li Class="CombatExtended.ToolCE">
+							<label>head</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>5</power>
+							<cooldownTime>1.85</cooldownTime>
+							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+							<chanceFactor>0.2</chanceFactor>
+							<armorPenetrationBlunt>0.625</armorPenetrationBlunt>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseAutomatroidWalker"]/tools</xpath>
+				<value>
+					<tools>
+						<li Class="CombatExtended.ToolCE">
+							<label>left fist</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>7</power>
+							<cooldownTime>1.11</cooldownTime>
+							<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>1.688</armorPenetrationBlunt>
+							<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>right fist</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>7</power>
+							<cooldownTime>1.11</cooldownTime>
+							<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>1.688</armorPenetrationBlunt>
+							<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+
+			<!-- ========== Base DMS Machine ========== -->
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="BaseDMSMachine"]/statBases</xpath>
+				<value>
+					<SmokeSensitivity>0</SmokeSensitivity>
+					<NightVisionEfficiency>0.25</NightVisionEfficiency>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseDMSMachine"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.00</ArmorRating_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="BaseDMSMachine"]/comps</xpath>
+				<value>
+					<li>
+						<compClass>CombatExtended.CompPawnGizmo</compClass>
+					</li>
+					<li>
+						<compClass>CombatExtended.CompAmmoGiver</compClass>
+					</li>
+					<li Class="CombatExtended.CompProperties_MechAmmo">
+						<gizmoIconSetMagCount>UI/Buttons/SetMagCount</gizmoIconSetMagCount>
+						<gizmoIconTakeAmmoNow>UI/Buttons/TakeAmmoNow</gizmoIconTakeAmmoNow>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAddModExtension"> <!-- new -->
+				<xpath>Defs/ThingDef[@Name="BaseDMSMachine"]</xpath>
+				<value>
+					<li Class="CombatExtended.PartialArmorExt">
+						<stats>
+							<li>
+								<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+								<parts>
+									<li>SightSensor</li>
+									<li>HearingSensor</li>
+									<li>SmellSensor</li>
+								</parts>
+							</li>
+							<li>
+								<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+								<parts>
+									<li>SightSensor</li>
+									<li>HearingSensor</li>
+									<li>SmellSensor</li>
+								</parts>
+							</li>
+						</stats>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseDMSMachine"]/tools</xpath>
+				<value>
+					<tools>
+						<li Class="CombatExtended.ToolCE">
+							<label>head</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>6</power>
+							<cooldownTime>2.5</cooldownTime>
+							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>1.875</armorPenetrationBlunt>
+						</li>
+					</tools>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

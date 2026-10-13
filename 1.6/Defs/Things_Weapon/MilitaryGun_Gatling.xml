@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!-- M214 5.56mm 壁虎的次要武器，也可以被猿人與戰鬥框架裝備-->
 	<ThingDef ParentName="DMS_AutomatroidGun">
@@ -26,19 +26,14 @@
 			<skillRequirements>
 				<Crafting>8</Crafting>
 			</skillRequirements>
-			<!-- 解鎖: 人機工程學 (藍圖自產) -->
-			<researchPrerequisites Inherit="False">
-				<li>DMS_HumanoidEngineering</li>
+			<researchPrerequisites>
+				<li>MultibarrelWeapons</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Steel>160</Steel>
-			<Tungsteel>50</Tungsteel>
-			<ComponentStamped>10</ComponentStamped>
+			<Tungsteel>75</Tungsteel>
+			<ComponentStamped>5</ComponentStamped>
 		</costList>
-		<smeltProducts>
-			<Tungsteel>30</Tungsteel>
-		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Fortified.Verb_ArcSprayProjectile</verbClass>
@@ -100,19 +95,14 @@
 			<skillRequirements>
 				<Crafting>8</Crafting>
 			</skillRequirements>
-			<!-- 解鎖: 特種機兵 (藍圖自產) -->
-			<researchPrerequisites Inherit="False">
-				<li>DMS_Ronin</li>
+			<researchPrerequisites>
+				<li>MultibarrelWeapons</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Steel>120</Steel>
-			<Tungsteel>80</Tungsteel>
-			<ComponentStamped>14</ComponentStamped>
+			<Tungsteel>120</Tungsteel>
+			<ComponentStamped>8</ComponentStamped>
 		</costList>
-		<smeltProducts>
-			<Tungsteel>45</Tungsteel>
-		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Fortified.Verb_ArcSprayProjectile</verbClass>
@@ -183,13 +173,9 @@
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Steel>200</Steel>
-			<Tungsteel>120</Tungsteel>
-			<ComponentStamped>18</ComponentStamped>
+			<Tungsteel>225</Tungsteel>
+			<ComponentStamped>10</ComponentStamped>
 		</costList>
-		<smeltProducts>
-			<Tungsteel>63</Tungsteel>
-		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Fortified.Verb_ArcSprayProjectile</verbClass>
@@ -325,19 +311,15 @@
 			<skillRequirements>
 				<Crafting>12</Crafting>
 			</skillRequirements>
-			<!-- 解鎖: 次世代兵器 -->
-			<researchPrerequisites Inherit="False">
-				<li>DMS_Synthroid</li>
+			<researchPrerequisites>
+				<li>DMS_EquipmentHeavy</li>
+				<li>MultibarrelWeapons</li>
 			</researchPrerequisites>
 		</recipeMaker>
 		<costList>
-			<Steel>300</Steel>
-			<Tungsteel>200</Tungsteel>
-			<ComponentStamped>35</ComponentStamped>
+			<Tungsteel>275</Tungsteel>
+			<ComponentStamped>25</ComponentStamped>
 		</costList>
-		<smeltProducts>
-			<Tungsteel>112</Tungsteel>
-		</smeltProducts>
 		<verbs>
 			<li>
 				<verbClass>Fortified.Verb_ArcSprayProjectile</verbClass>

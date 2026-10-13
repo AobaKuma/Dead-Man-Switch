@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!--give grenades to birdy-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[@Name="BaseMakeableGrenade"]</xpath>
+        <value>
+            <weaponTags>
+                <li>VerlingBird_Weapon</li>
+            </weaponTags>
+        </value>
+    </Operation>
+
+    <!--vanilla
+    blunt weapon tag for RC units-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="MeleeWeapon_Mace"]/weaponTags</xpath>
+        <value>
+            <li>A_RC_Melee</li>
+        </value>
+    </Operation>
+</Patch>

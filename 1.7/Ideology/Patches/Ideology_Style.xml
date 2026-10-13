@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Combat Extended</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/StyleCategoryDef[defName="DMS_Industrial"]/thingDefStyles/li[styleDef="Gun_DMSSmokeLauncher"or styleDef="Gun_DMSEMPLauncher"]</xpath>
+					<match Class="PatchOperationRemove">
+						<xpath>Defs/StyleCategoryDef[defName="DMS_Industrial"]/thingDefStyles/li[styleDef="Gun_DMSSmokeLauncher"or styleDef="Gun_DMSEMPLauncher"]</xpath>
+					</match>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingStyleDef[defName="Gun_DMSEMPLauncher"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingStyleDef[defName="Gun_DMSSmokeLauncher"]</xpath>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

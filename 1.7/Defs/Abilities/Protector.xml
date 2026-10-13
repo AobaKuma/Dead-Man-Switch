@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<AbilityDef>
+		<defName>DMS_FlashShock</defName>
+		<label>Assault Flash</label>
+		<description>Activate the Assault Flash Array temporarily blinding incoming enemies. The device's battery will slowly recharge after use.</description>
+		<iconPath>UI/Ability/FlashShock</iconPath>
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<warmupStartSound>TurretAcquireTarget</warmupStartSound>
+		<verbProperties>
+		  <verbClass>Verb_CastAbility</verbClass>
+		  <range>7.9</range>
+		  <minRange>2</minRange>
+		  <warmupTime>1</warmupTime>
+		  <soundCast>BulletImpact_Metal</soundCast>
+		  <muzzleFlashScale>120</muzzleFlashScale>
+		  <targetParams>
+			<canTargetLocations>true</canTargetLocations>
+		  </targetParams>
+		</verbProperties>
+		<comps>
+		  <li Class="Fortified.CompProperties_AbilityDirectionalExplosion">
+			<range>7.9</range>
+			<lineWidthEnd>8</lineWidthEnd>
+			<explosionDamage>Stun</explosionDamage>
+			<damageAmount>15</damageAmount>
+		  </li>
+		</comps>
+	  </AbilityDef>
+</Defs>

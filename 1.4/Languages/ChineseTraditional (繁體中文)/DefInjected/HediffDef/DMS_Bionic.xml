@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: nutrition port -->
+  <DMS_NutrientPort.label>營養接口</DMS_NutrientPort.label>
+  <!-- EN: A total overhaul of the patient's digestive system, replacing it with a fueling port and nutrient storage. -->
+  <DMS_NutrientPort.description>對消化系統進行徹底移除，並用加注口和儲存營養的容器取代。</DMS_NutrientPort.description>
+  <!-- EN: an nutrition port -->
+  <DMS_NutrientPort.labelNoun>營養接口</DMS_NutrientPort.labelNoun>
+  
+  <!-- EN: mechaneural arm -->
+  <DMS_ProstheticArm.label>機械仿生臂</DMS_ProstheticArm.label>
+  <!-- EN: An installed neural-mechanical arm. -->
+  <DMS_ProstheticArm.description>一條安裝的神經機械仿生臂</DMS_ProstheticArm.description>
+  <!-- EN: fist -->
+  <DMS_ProstheticArm.comps.HediffComp_VerbGiver.tools.fist.label>仿生拳頭</DMS_ProstheticArm.comps.HediffComp_VerbGiver.tools.fist.label>
+  <!-- EN: a neural-mechanical arm -->
+  <DMS_ProstheticArm.labelNoun>一條神經機械仿生臂</DMS_ProstheticArm.labelNoun>
+  
+  <!-- EN: visual sensor -->
+  <DMS_ProstheticEye.label>機械傳感器</DMS_ProstheticEye.label>
+  <!-- EN: An installed visual sensor, as a replacement of eye. -->
+  <DMS_ProstheticEye.description>一顆安裝的視覺感應器，作為眼睛的替代品。</DMS_ProstheticEye.description>
+  <!-- EN: a bionic sensor -->
+  <DMS_ProstheticEye.labelNoun>一顆機械傳感器</DMS_ProstheticEye.labelNoun>
+  
+  <!-- EN: mechaneural leg -->
+  <DMS_ProstheticLeg.label>機械仿生腿</DMS_ProstheticLeg.label>
+  <!-- EN: An installed neural-mechanical leg. -->
+  <DMS_ProstheticLeg.description>一條安裝的神經機械仿生腿</DMS_ProstheticLeg.description>
+  <!-- EN: a neural-mechanical leg -->
+  <DMS_ProstheticLeg.labelNoun>一條神經機械仿生腿</DMS_ProstheticLeg.labelNoun>
+  
+  <!-- EN: mechaneural neurochord -->
+  <DMS_ProstheticSpine.label>機械仿生脊椎</DMS_ProstheticSpine.label>
+  <!-- EN: An installed bionic spine. -->
+  <DMS_ProstheticSpine.description>一條安裝的機械仿生脊椎</DMS_ProstheticSpine.description>
+  <!-- EN: An advanced neural-mechanical spine work as a sub-brain \n\n It can take over the user's reflex nerves and thereby reduce the operator's brain burden, but has some side effects. -->
+  <DMS_ProstheticSpine.labelNoun>一種先進的神經機械仿生脊椎\n\n它可以接管使用者的反射神經，從而減輕操作者的大腦負擔，但有一些副作用。</DMS_ProstheticSpine.labelNoun>
+  
+  <!-- EN: sensory filter -->
+  <DMS_SensoryFilter.label>情感過濾裝置</DMS_SensoryFilter.label>
+  <!-- EN: No will for fear,\nNo more to disgust,\nNo way to feel,\nNo tears to cry... \n\nAnd what else... \nWill this little pawn have to sacrifice? -->
+  <DMS_SensoryFilter.description>不再恐懼，不再反感，不再感受，不再悲痛。那麼...還有什麼東西能被省略呢?</DMS_SensoryFilter.description>
+  <!-- EN: a sensory filter -->
+  <DMS_SensoryFilter.labelNoun>一個作用中的情感過濾裝置，將一條鮮活的生命變成一枚隨意操弄的棋子</DMS_SensoryFilter.labelNoun>
+  
+  <!-- EN: biosynthetic arm -->
+  <DMS_SyntheticArm.label>生物仿生臂</DMS_SyntheticArm.label>
+  <!-- EN: An installed biosynthetic arm. -->
+  <DMS_SyntheticArm.description>一條安裝的生物仿生臂</DMS_SyntheticArm.description>
+  <!-- EN: fist -->
+  <DMS_SyntheticArm.comps.HediffComp_VerbGiver.tools.fist.label>仿生拳頭</DMS_SyntheticArm.comps.HediffComp_VerbGiver.tools.fist.label>
+  <!-- EN: a biosynthetic arm -->
+  <DMS_SyntheticArm.labelNoun>一條生物仿生臂</DMS_SyntheticArm.labelNoun>
+  
+  <!-- EN: biosynthetic leg -->
+  <DMS_SyntheticLeg.label>生物仿生腿</DMS_SyntheticLeg.label>
+  <!-- EN: An installed biosynthetic leg. -->
+  <DMS_SyntheticLeg.description>一條安裝的生物仿生腿</DMS_SyntheticLeg.description>
+  <!-- EN: a biosynthetic leg -->
+  <DMS_SyntheticLeg.labelNoun>一條生物仿生腿</DMS_SyntheticLeg.labelNoun>
+  
+</LanguageData>

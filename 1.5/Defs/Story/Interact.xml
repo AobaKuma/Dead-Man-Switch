@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <DMS_Story.DialogueDef>
+    <defName>FirstGreeting</defName>
+    <title>殖民地辦公室</title>
+    <subTitle>前台接待櫃員 格蕾希雅</subTitle>
+    <reacts>
+      <li>FirstGreeting_Default</li>
+    </reacts>
+  </DMS_Story.DialogueDef>
+
+  <DMS_Story.ReactDef>
+    <defName>FirstGreeting_Default</defName>
+    <options>
+      <li>FirstGreeting_OptionA</li>
+      <li>FirstGreeting_OptionB</li>
+      <li>FirstGreeting_OptionC</li>
+    </options>
+    <hasReventOption>false</hasReventOption>
+  </DMS_Story.ReactDef>
+
+  <DMS_Story.OptionDef>
+    <defName>FirstGreeting_OptionA</defName>
+    <optionLabel>test2</optionLabel>
+  </DMS_Story.OptionDef>
+  <DMS_Story.OptionDef>
+    <defName>FirstGreeting_OptionB</defName>
+    <optionLabel>test2</optionLabel>
+  </DMS_Story.OptionDef>
+  <DMS_Story.OptionDef>
+    <defName>FirstGreeting_OptionC</defName>
+    <optionLabel>test2</optionLabel>
+  </DMS_Story.OptionDef>
+</Defs>

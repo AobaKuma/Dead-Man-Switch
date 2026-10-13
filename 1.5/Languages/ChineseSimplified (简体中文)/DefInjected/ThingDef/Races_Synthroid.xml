@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Dogge -->
+  <DMS_Mech_Dogge.label>獒犬</DMS_Mech_Dogge.label>
+  <!-- EN: A four-legged robot dog which excels at providing forward reconnaissance and urban combat support during operations. It can equipped with small-caliber firearms or flamethrowers to provide offensive capabilities. -->
+  <DMS_Mech_Dogge.description>一种中型四足机枪平台，其优越的机动性来自於四肢采用的合成人工肌肉束，其高度较低因此适合在开阔平地上提供机动火力支援。</DMS_Mech_Dogge.description>
+  <!-- EN: head -->
+  <DMS_Mech_Dogge.tools.head.label>头部</DMS_Mech_Dogge.tools.head.label>
+  
+  <!-- EN: Lady -->
+  <DMS_Mech_Lady.label>女士</DMS_Mech_Lady.label>
+  <!-- EN: The MG-1 Lady is a mech that makes use of synthetic mechanical technology. It was originally designed to reduce the cognitive bias syndrome caused by long-term cooperation with machines in the military. Much of its anatomical structures is similar to a humans, and its internal parts can almost be directly transplanted into a human body. Due to its overly human appearance, it was primarily used as a sniper's observer or an officer's bodyguard. -->
+  <DMS_Mech_Lady.description>MG-1 Lady 是一种高度使用合成技术的机兵。设计之初是为了降低军队中人类长期与机兵协同作战所带来的认知偏差症候群因此在大部分解剖学结构上都与人类相似，内部器官也几乎能直接移植人体。但由於其样貌的过度似人因此仅有限的配备给狙击手部队与军官作为狙击观察员或保镳。</DMS_Mech_Lady.description>
+  <!-- EN: head -->
+  <DMS_Mech_Lady.tools.head.label>头部</DMS_Mech_Lady.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Lady.tools.left_fist-0.label>左拳</DMS_Mech_Lady.tools.left_fist-0.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Lady.tools.right_fist-0.label>右拳</DMS_Mech_Lady.tools.right_fist-0.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Lady.tools.left_fist-1.label>左拳</DMS_Mech_Lady.tools.left_fist-1.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Lady.tools.right_fist-1.label>右拳</DMS_Mech_Lady.tools.right_fist-1.label>
+  
+</LanguageData>

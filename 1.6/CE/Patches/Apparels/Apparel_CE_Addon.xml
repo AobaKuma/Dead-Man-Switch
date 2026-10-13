@@ -26,7 +26,7 @@
 							<targetable>true</targetable>
 							<ai_AvoidFriendlyFireRadius>4</ai_AvoidFriendlyFireRadius>
 							<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
-							<ai_IsWeapon>false</ai_IsWeapon>
+							<ai_IsWeapon>true</ai_IsWeapon>
 							<targetParams>
 								<canTargetLocations>true</canTargetLocations>
 								<canTargetBuildings>true</canTargetBuildings>

@@ -1,41 +1,22 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-  
-  <!-- EN: C-Ration -->
-  <DMS_CombatRation.label>C口粮</DMS_CombatRation.label>
-  <!-- EN: A high energy organic polymer ration, invented during World War III as a nutritional supplement for augmented human troops during combat. For soldiers equipped with nutritional interfaces, it provides enough calories for internal organs to function for a long. But for normal humans, it might cause some slight gastrointestinal discomfort. -->
-  <DMS_CombatRation.description>一种块状高能量有机聚合物口粮，在第三次世界大战期间发明作为战斗中增强的人类部队的营养补充剂与人工肌肉的培养基添加物。对于接受营养接口手术的士兵来说可以一次性补充足够内脏长时间运作的热量与多种维生素。\n\n但对于正常人来说，虽然也能有一样的效果但可能会引起一些轻微的肠胃不适。</DMS_CombatRation.description>
-  <!-- EN: Take {0} -->
-  <DMS_CombatRation.ingestible.ingestCommandString>使用{0}</DMS_CombatRation.ingestible.ingestCommandString>
-  <!-- EN: Taking {0}. -->
-  <DMS_CombatRation.ingestible.ingestReportString>使用{0}</DMS_CombatRation.ingestible.ingestReportString>
-  
-  <!-- EN: Neuroglue -->
-  <Neuroglue.label>受体凝胶</Neuroglue.label>
-  <!-- EN: A protein-like receptor gel which connects biological tissues and neural machinery. Neuroglue can effectively block phantom limb syndrome and synthetic rejections, and each dose eases xeno limb syndrome by one level.\n\nSuch products have been circulating Rimworld and Midworld for many decades, but any organization claiming to have produced this product has been sanctioned by agents from the Coreworld. They Declare that such a product will increase the bionic level of pirates which isn't safe for regional balance. -->
-  <Neuroglue.description>一种用于中介生物组织与神经机械的类蛋白质受体凝胶，通过静脉注射进入内循环系统，可以有效的阻断仿生排异反应与幻肢症候群，每服用一剂可将异肢症候群降低一级。也能够使纳米机械感染良性化。\n\n此类产品已在边缘世界和中寰世界流通了数十年，但任何声称生产该产品的组织都无一不受到了来自核心世界的制裁。他们宣称这样的产品会提高海盗的仿生水平并对区域平衡造成严重破坏。</Neuroglue.description>
-  <!-- EN: Take {0} -->
-  <Neuroglue.ingestible.ingestCommandString>注射{0}</Neuroglue.ingestible.ingestCommandString>
-  <!-- EN: Taking {0}. -->
-  <Neuroglue.ingestible.ingestReportString>注射{0}</Neuroglue.ingestible.ingestReportString>
-  
-
-  <!-- EN: combat regeneration serum -->
-  <DMS_CombatRegenSerum.label>战斗再生合剂</DMS_CombatRegenSerum.label>
-  <!-- EN: A highly concentrated neuro-targeted agent laden with stem cells. It lets the body regrow missing parts to their original state within two to three days, but the process burns through enormous amounts of energy, so the patient must eat far more than usual to keep up. The pain of regrowth and the risk of rejection take a heavy toll on the subject's mental health, which is why agents of this kind are rarely seen on the rim.\n\nNon-addictive. Each dose carries a chance of triggering level 3 xeno limb syndrome. -->
-  <DMS_CombatRegenSerum.description>一种高浓度的神经靶向药剂，包含大量干细胞，能够使人体将缺失部位在两到三天内修复如初，但期间会大量消耗能量，导致需要大量的进食来补充。由于生长过程的疼痛及可能的排异反应对受试者的精神健康有极大的影响，这类药剂并不常见于边缘世界。\n\n一种不具备成瘾性的肢体再生药剂，但有几率导致三级异肢症。</DMS_CombatRegenSerum.description>
-  <!-- EN: Take {0} -->
-  <DMS_CombatRegenSerum.ingestible.ingestCommandString>注射{0}</DMS_CombatRegenSerum.ingestible.ingestCommandString>
-  <!-- EN: Taking {0}. -->
-  <DMS_CombatRegenSerum.ingestible.ingestReportString>注射{0}</DMS_CombatRegenSerum.ingestible.ingestReportString>
-  
-  <!-- EN: sensibility blocker -->
-  <DMS_SensibilityBlocker.label>知能阻断合剂</DMS_SensibilityBlocker.label>
-  <!-- EN: A highly concentrated neuro-targeted agent that suppresses the receptors behind affective thought. Outwardly, the subject's aversion to their surroundings all but vanishes for as long as it lasts, which once made it a standard combat drug for exoskeleton pilots on long missions. Subjects keep a complete memory of the experience after it wears off, however, and once it was found to cause possible sensory loss its use was gradually banned.\n\nTemporarily suspends secondary needs such as beauty, comfort, outdoors, indoors and space, and negates the mood penalties of environment-related thoughts. -->
-  <DMS_SensibilityBlocker.description>一种高浓度的神经靶向药剂，能够有效抑制人脑中对于感性思维的受体作用，外在表现为施药对象对于周遭环境的厌恶感在有效期间内趋近于无，这在过去常被用于外骨骼驾驶员在执行长时间任务时的战斗用药物。但施药对象在药效结束后仍有完整的记忆，因此在发现其会导致可能的感官缺失后被逐渐禁止使用。\n\n暂时阻断美观度、舒适度、户外、室内、空间等次要需求，并使环境相关的负面想法不再影响心情。</DMS_SensibilityBlocker.description>
-  <!-- EN: Take {0} -->
-  <DMS_SensibilityBlocker.ingestible.ingestCommandString>注射{0}</DMS_SensibilityBlocker.ingestible.ingestCommandString>
-  <!-- EN: Taking {0}. -->
-  <DMS_SensibilityBlocker.ingestible.ingestReportString>注射{0}</DMS_SensibilityBlocker.ingestible.ingestReportString>
-  
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: C-Ration -->
+  <DMS_CombatRation.label>C口粮</DMS_CombatRation.label>
+  <!-- EN: A high energy organic polymer ration, invented during World War III as a nutritional supplement for augmented human troops during combat. For soldiers equipped with nutritional interfaces, it provides enough calories for internal organs to function for a long. But for normal humans, it might cause some slight gastrointestinal discomfort. -->
+  <DMS_CombatRation.description>一种块状高能量有机聚合物口粮，在第三次世界大战期间发明作为战斗中增强的人类部队的营养补充剂与人工肌肉的培养基添加物。对於接受营养接口手术的士兵来说可以一次性补充足够内脏长时间运作的热量与多种维生素。\n\n但对於正常人来说，虽然也能有一样的效果但可能会引起一些轻微的肠胃不适。</DMS_CombatRation.description>
+  <!-- EN: Take {0} -->
+  <DMS_CombatRation.ingestible.ingestCommandString>使用{0}</DMS_CombatRation.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <DMS_CombatRation.ingestible.ingestReportString>使用{0}</DMS_CombatRation.ingestible.ingestReportString>
+  
+  <!-- EN: Neuroglue -->
+  <Neuroglue.label>受体凝胶</Neuroglue.label>
+  <!-- EN: A protein-like receptor gel which connects biological tissues and neural machinery. Neuroglue can effectively block phantom limb syndrome and synthetic rejections.\n\nSuch products have been circulating Rimworld and Midworld for many decades, but any organization claiming to have produced this product has been sanctioned by agents from the Coreworld. They Declare that such a product will increase the bionic level of pirates which isn't safe for regional balance. -->
+  <Neuroglue.description>一种用於中介生物组织与神经机械的类蛋白质受体凝胶，透过静脉注射进入内循环系统，可以有效的阻断仿生排异反应与异肢症候群。也能够使奈米机械感染良性化。\n\n此类产品已在边缘世界和中寰世界流通了数十年，但任何声称生产该产品的组织都无一不受到了来自核心世界的制裁。他们宣称这样的产品会提高海盗的仿生水平并对区域平衡造成严重破坏。</Neuroglue.description>
+  <!-- EN: Take {0} -->
+  <Neuroglue.ingestible.ingestCommandString>注射{0}</Neuroglue.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <Neuroglue.ingestible.ingestReportString>注射{0}</Neuroglue.ingestible.ingestReportString>
+  
 </LanguageData>

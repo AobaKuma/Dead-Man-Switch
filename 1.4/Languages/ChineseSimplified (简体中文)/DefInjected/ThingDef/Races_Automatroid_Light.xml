@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: falcon -->
+  <DMS_Mech_Falcon.label>游隼</DMS_Mech_Falcon.label>
+  <!-- EN: A heavy-duty tri-rotor drone for cooperating in field recon and anti-tank strikes. -->
+  <DMS_Mech_Falcon.description>重型三旋翼无人机，用于空中武装侦察和反坦克打击。</DMS_Mech_Falcon.description>
+  <!-- EN: head -->
+  <DMS_Mech_Falcon.tools.head.label>头部</DMS_Mech_Falcon.tools.head.label>
+  
+  <!-- EN: noctula -->
+  <DMS_Mech_Noctula.label>夜蝠</DMS_Mech_Noctula.label>
+  <!-- EN: Stealth operaton command-relay Noctula nicknamed "Night bat" is a command-relay variant of tri-rotor drone falcon. -->
+  <DMS_Mech_Noctula.description>匿踪中继无人机，代号“夜蝠”，是游隼的指令中继改装型，用于为猎兵行动时提供指挥链支持。</DMS_Mech_Noctula.description>
+  <!-- EN: head -->
+  <DMS_Mech_Noctula.tools.head.label>头部</DMS_Mech_Noctula.tools.head.label>
+  
+</LanguageData>

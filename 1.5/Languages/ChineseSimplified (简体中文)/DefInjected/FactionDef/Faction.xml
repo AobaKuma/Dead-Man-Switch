@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Colonization Forces -->
+  <DMS_Army.label>武装殖民舰队</DMS_Army.label>
+  <!-- EN: A militarized colonial organization led by an AI Overlord who optimises warfare with brutal efficiency. They are a warlike people operating as a military meritocracy. Every individual is expected to take responibility for their actions and their battlespace, and anyone willing to fight can find their place among their ranks. -->
+  <DMS_Army.description>由人工智慧系统领导的军事化武装殖民组织。他们的文化高度基于军事阶级制度。任何人只要证明了自己的能力就能透过严格的责任机制找到自己在其中的位置。\n\n可以确定的是，这支殖民势力的背后是一个即使星际航行需要数十年也能协调跨星系行动的庞大组织，并具有大量的机械部队与重型武器来保障他们在这颗星球上的和平开发与基础建设援助。</DMS_Army.description>
+  <!-- EN: sector commander -->
+  <DMS_Army.leaderTitle>区域指挥官</DMS_Army.leaderTitle>
+  <!-- EN: serviceman -->
+  <DMS_Army.pawnSingular>殖民者</DMS_Army.pawnSingular>
+  <!-- EN: servicemens -->
+  <DMS_Army.pawnsPlural>殖民者</DMS_Army.pawnsPlural>
+  <!-- EN: honor -->
+  <DMS_Army.royalFavorLabel>军事支援</DMS_Army.royalFavorLabel>
+  
+</LanguageData>

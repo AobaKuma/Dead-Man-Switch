@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+ <!-- 給範圍內所有人施加Debuff -->
+
+	<AbilityDef ParentName="DMS_AddHediffSelfBase">
+		<defName>DMS_Infrasound</defName>
+		<label>infrasound barrage</label>
+		<description>Cast powerful infrasound waves to interfere with the sensory systems of all creatures within the range.</description>
+		<iconPath>UI/Ability/Infrasound</iconPath>
+		<aiCanUse>true</aiCanUse>
+		<comps>
+		<li Class="CompProperties_AbilityGiveHediff">
+			<compClass>CompAbilityEffect_GiveHediff</compClass>
+			<hediffDef>DMS_InfrasoundWave</hediffDef>
+			<onlyBrain>True</onlyBrain>
+			<onlyApplyToSelf>True</onlyApplyToSelf>
+			<replaceExisting>true</replaceExisting>
+		</li>
+		</comps>
+		<statBases>
+			<Ability_EffectRadius>9.9</Ability_EffectRadius>
+			<Ability_Duration>60</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<onlyManualCast>false</onlyManualCast>
+			<range>9.9</range>
+		</verbProperties>
+	</AbilityDef>
+  
+ <HediffDef>
+	<defName>DMS_InfrasoundWave</defName>
+	<label>infrasound barrage</label>
+	<description>This unit is casting a powerful infrasound waves to interfere with the sensory systems of all creatures within the range.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+	<comps>
+	  <li Class="HediffCompProperties_Disappears">
+		<showRemainingTime>True</showRemainingTime>
+		<disappearsAfterTicks>1800~2000</disappearsAfterTicks>
+	  </li>
+	  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+	  <li Class="HediffCompProperties_GiveHediffsInRange">
+		<range>9.9</range>
+		<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+		<onlyPawnsInSameFaction>false</onlyPawnsInSameFaction>
+		<targetingParameters>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetAnimals>true</canTargetAnimals>
+			<canTargetHumans>true</canTargetHumans>
+			<canTargetMechs>false</canTargetMechs>
+		</targetingParameters>
+		<hediff>DMS_InfrasoundWaveBuff</hediff>
+	  </li>
+	</comps>
+	<isBad>false</isBad>
+	<stages>
+		<li>
+			<statOffsets>
+			  	<ShootingAccuracyPawn>-0.5</ShootingAccuracyPawn>
+			</statOffsets>
+			<capMods>
+				<li>
+					  <capacity>Consciousness</capacity>
+					  <offset>-0.4</offset>
+				</li>
+			</capMods>
+		</li>
+	</stages>
+  </HediffDef>
+
+<!-- 施加的Buff -->
+  <HediffDef>
+	<defName>DMS_InfrasoundWaveBuff</defName>
+	<label>Infrasound</label>
+	<description>Low-frequency sound waves that make living bodies uncomfortable and may cause vomiting and confusion</description>
+	<defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+	<hediffClass>HediffWithComps</hediffClass>
+	<comps>
+	  <li Class="HediffCompProperties_Disappears">
+		<showRemainingTime>false</showRemainingTime>
+	  </li>
+	  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+	<isBad>true</isBad>
+	<stages>
+	  <li>
+		<vomitMtbDays>0.02</vomitMtbDays>
+		<capMods>
+			<li>
+				  <capacity>Consciousness</capacity>
+				  <offset>-0.2</offset>
+			</li>
+			<li>
+				<capacity>Manipulation</capacity>
+				<offset>-0.4</offset>
+			</li>
+			<li>
+				<capacity>Moving</capacity>
+				<offset>-0.2</offset>
+			</li>
+		</capMods>
+	  </li>
+	</stages>
+  </HediffDef>
+</Defs>

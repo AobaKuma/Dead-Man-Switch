@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+
+			<!-- Polyester -->
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Polyester"]/statBases</xpath>
+				<value>
+					<Bulk>0.05</Bulk>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Polyester"]/statBases/StuffPower_Armor_Sharp</xpath>
+				<value>
+					<StuffPower_Armor_Sharp>0.08</StuffPower_Armor_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Polyester"]/statBases/StuffPower_Armor_Blunt</xpath>
+				<value>
+					<StuffPower_Armor_Blunt>0.05</StuffPower_Armor_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Polyester"]/statBases/StuffPower_Armor_Heat</xpath>
+				<value>
+					<StuffPower_Armor_Heat>0.004</StuffPower_Armor_Heat>
+				</value>
+			</li>
+
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="Polyester"]/stuffProps/categories</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Polyester"]/stuffProps</xpath>
+					<value>
+						<categories>
+							<li>SoftArmor</li>
+						</categories>
+					</value>
+				</nomatch>
+				<match Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Polyester"]/stuffProps/categories</xpath>
+					<value>
+						<li>SoftArmor</li>
+					</value>
+				</match>
+			</li>
+
+
+			<!-- Plasfiber -->
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Plasfiber"]/statBases</xpath>
+				<value>
+					<Bulk>0.05</Bulk>
+					<WornBulk>0.8</WornBulk>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Plasfiber"]/statBases/StuffPower_Armor_Sharp</xpath>
+				<value>
+					<StuffPower_Armor_Sharp>0.5</StuffPower_Armor_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Plasfiber"]/statBases/StuffPower_Armor_Blunt</xpath>
+				<value>
+					<StuffPower_Armor_Blunt>0.07</StuffPower_Armor_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Plasfiber"]/statBases/StuffPower_Armor_Heat</xpath>
+				<value>
+					<StuffPower_Armor_Heat>0.03</StuffPower_Armor_Heat>
+					<StuffPower_Armor_Electric>0.07</StuffPower_Armor_Electric>
+				</value>
+			</li>
+
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="Plasfiber"]/stuffProps/categories</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Plasfiber"]/stuffProps</xpath>
+					<value>
+						<categories>
+							<li>SoftArmor</li>
+						</categories>
+					</value>
+				</nomatch>
+				<match Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Plasfiber"]/stuffProps/categories</xpath>
+					<value>
+						<li>SoftArmor</li>
+					</value>
+				</match>
+			</li>
+
+
+			<!-- Ceramics -->
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Ceramics"]/statBases</xpath>
+				<value>
+					<Bulk>0.015</Bulk>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Ceramics"]/stuffProps/categories</xpath>
+				<value>
+					<li>Metallic_Weapon</li>
+					<li>Steeled</li>
+					<li>Stony</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Ceramics"]/statBases/StuffPower_Armor_Sharp</xpath>
+				<value>
+					<StuffPower_Armor_Sharp>7</StuffPower_Armor_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Ceramics"]/statBases/StuffPower_Armor_Blunt</xpath>
+				<value>
+					<StuffPower_Armor_Blunt>2</StuffPower_Armor_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Ceramics"]/statBases/StuffPower_Armor_Heat</xpath>
+				<value>
+					<StuffPower_Armor_Heat>0</StuffPower_Armor_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Ceramics"]/stuffProps/statFactors</xpath>
+				<value>
+					<MeleePenetrationFactor>0.8</MeleePenetrationFactor>
+				</value>
+			</li>
+
+
+			<!-- Tungsteel -->
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Tungsteel"]/statBases</xpath>
+				<value>
+					<Bulk>0.1</Bulk>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Tungsteel"]/stuffProps/categories</xpath>
+				<value>
+					<li>Metallic_Weapon</li>
+					<li>Steeled</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Tungsteel"]/statBases/StuffPower_Armor_Sharp</xpath>
+				<value>
+					<StuffPower_Armor_Sharp>2</StuffPower_Armor_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Tungsteel"]/statBases/StuffPower_Armor_Blunt</xpath>
+				<value>
+					<StuffPower_Armor_Blunt>3</StuffPower_Armor_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Tungsteel"]/statBases/StuffPower_Armor_Heat</xpath>
+				<value>
+					<StuffPower_Armor_Heat>0.02</StuffPower_Armor_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Tungsteel"]/stuffProps/statFactors</xpath>
+				<value>
+					<MeleePenetrationFactor>1.1</MeleePenetrationFactor>
+				</value>
+			</li>
+
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="Tungsteel"]/statBases/SharpDamageMultiplier</xpath>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

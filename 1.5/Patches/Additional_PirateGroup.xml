@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+
+            <li Class="PatchOperationAdd">
+                <xpath>
+                    Defs/FactionDef[@Name="PirateBandBase" or @ParentName="PirateBandBase"]/pawnGroupMakers/li[kindDef="Combat"]/options</xpath>
+                <value>
+                    <DMS_Mech_Raider>8</DMS_Mech_Raider>
+                    <DMS_Mech_Tachanka>1</DMS_Mech_Tachanka>
+                </value>
+            </li>
+
+            <li Class="PatchOperationAdd">
+                <xpath>
+                    Defs/FactionDef[@Name="OutlanderFactionBase"]/pawnGroupMakers/li[kindDef="Trader"]/guards</xpath>
+                <value>
+                    <DMS_Mech_Soldat>4</DMS_Mech_Soldat>
+                    <DMS_Mech_BattleFrame>2</DMS_Mech_BattleFrame>
+                </value>
+            </li>
+
+            <li Class="PatchOperationAdd">
+                <xpath>
+                    Defs/FactionDef[@Name="OutlanderFactionBase"]/pawnGroupMakers/li[kindDef="Trader"]/carriers</xpath>
+                <value>
+                    <DMS_Mech_EscortLifter>3</DMS_Mech_EscortLifter>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>

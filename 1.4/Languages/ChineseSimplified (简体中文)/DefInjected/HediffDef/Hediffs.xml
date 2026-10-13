@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: xeno limb syndrome -->
+  <DMS_BionicShock.label>异肢症候群</DMS_BionicShock.label>
+  <!-- EN: a psychological syndrome that is common to occur in pre-spacer world when having one or more neural machinery bionic prosthesis installed, Due to the lack of biological receptors, the body system will temporarily reject the connection after the nerve is connected.\n\nThe severity of these symptoms can be divided into five levels. -->
+  <DMS_BionicShock.description>由于缺乏生物受体，患者会强烈排斥安装的神经机械仿生假体，这是一种在前太空世界中常见的一种心理症候群。\n\n这些症状的严重程度可分为五个等级。</DMS_BionicShock.description>
+  <!-- EN: bionic syndrome has been cured -->
+  <DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>异肢症候群已被治愈</DMS_BionicShock.comps.HediffComp_RemoveIfOtherHediff.message>
+  <!-- EN: initial -->
+  <DMS_BionicShock.stages.initial.label>初始</DMS_BionicShock.stages.initial.label>
+  <!-- EN: LV.1 initial -->
+  <DMS_BionicShock.stages.LV1_initial.label>初始</DMS_BionicShock.stages.LV1_initial.label>
+  <!-- EN: LV.2 minor -->
+  <DMS_BionicShock.stages.LV2_minor.label>轻微</DMS_BionicShock.stages.LV2_minor.label>
+  <!-- EN: LV.3 serious -->
+  <DMS_BionicShock.stages.LV3_serious.label>严重</DMS_BionicShock.stages.LV3_serious.label>
+  <!-- EN: LV.4 catatonic -->
+  <DMS_BionicShock.stages.LV4_catatonic.label>应激</DMS_BionicShock.stages.LV4_catatonic.label>
+  <!-- EN: LV.5 disabled -->
+  <DMS_BionicShock.stages.LV5_disabled.label>失能</DMS_BionicShock.stages.LV5_disabled.label>
+  
+  <!-- EN: phantom limb syndrome -->
+  <DMS_BionicShockRemove.label>幻肢症候群</DMS_BionicShockRemove.label>
+  <!-- EN: a psychological syndrome that is common to occur in pre-spacer world when removed a neural machinery bionic Prosthesis. -->
+  <DMS_BionicShockRemove.description>患者会觉得被移除神经机械仿生假体依然能够被感觉到。这是一种在前太空世界中常见的一种心理症候群。</DMS_BionicShockRemove.description>
+  <!-- EN: bionic syndrome has been cured -->
+  <DMS_BionicShockRemove.comps.HediffComp_RemoveIfOtherHediff.message>幻肢症候群已被治愈</DMS_BionicShockRemove.comps.HediffComp_RemoveIfOtherHediff.message>
+  <!-- EN: initial -->
+  <DMS_BionicShockRemove.stages.initial.label>轻微</DMS_BionicShockRemove.stages.initial.label>
+  <!-- EN: pain -->
+  <DMS_BionicShockRemove.stages.pain.label>痛苦</DMS_BionicShockRemove.stages.pain.label>
+  
+  <!-- EN: emotional misalignment -->
+  <DMS_FilterShock.label>情感错位症候群</DMS_FilterShock.label>
+  <!-- EN: a psychological syndrome caused by sensory filter shutdown, known as the "price of pawn", will have some mental break but it won't last long. -->
+  <DMS_FilterShock.description>感官过滤器短暂失效时产生的一种心理综合症，俗称“棋子的代价”，会有一些精神上的崩溃但一般不会持续太久。</DMS_FilterShock.description>
+  <!-- EN: catatonic -->
+  <DMS_FilterShock.stages.catatonic.label>应激反应</DMS_FilterShock.stages.catatonic.label>
+  
+  <!-- EN: fatal trigger -->
+  <DMS_MechlinkFatalTrigger.label>失能板机</DMS_MechlinkFatalTrigger.label>
+  <!-- EN: Due to the instability of this device, this safty protocol will automatically eject and destroy the disabled mechlink before it causes damage to the user's brain. -->
+  <DMS_MechlinkFatalTrigger.description>由于装置的不稳定性，本安全协议将会在对用户的大脑造成损害前自动弹出并烧毁失效的机控中枢。</DMS_MechlinkFatalTrigger.description>
+  
+  <!-- EN: kill switch -->
+  <DMS_MechlinkKillSwitch.label>自毁开关</DMS_MechlinkKillSwitch.label>
+  <!-- EN: This device will destruct mechlink by overloading after the death of the user. -->
+  <DMS_MechlinkKillSwitch.description>本安全协议将会在使用者死亡后自动超载烧毁机控中枢</DMS_MechlinkKillSwitch.description>
+  
+  <!-- EN: N.A.C.S. -->
+  <DMS_MechlinkOverload.label>辅助控制系统</DMS_MechlinkOverload.label>
+  <!-- EN: Neural-Auxiliary Compute and Control System, this system with it's unique protocol allow user to connect with not only existing mech techs, but also Automatroid tech. -->
+  <DMS_MechlinkOverload.description>神经辅助运算和控制系统，该系统具有特殊协议允许使用者不仅可以与现有的机械族技术连接，还可以与机兵技术连接。</DMS_MechlinkOverload.description>
+  <!-- EN: low -->
+  <DMS_MechlinkOverload.stages.low.label>负载:低</DMS_MechlinkOverload.stages.low.label>
+  <!-- EN: medium -->
+  <DMS_MechlinkOverload.stages.medium.label>负载:中</DMS_MechlinkOverload.stages.medium.label>
+  <!-- EN: high -->
+  <DMS_MechlinkOverload.stages.high.label>负载:高</DMS_MechlinkOverload.stages.high.label>
+  <!-- EN: very high -->
+  <DMS_MechlinkOverload.stages.very_high.label>负载:极高</DMS_MechlinkOverload.stages.very_high.label>
+  <!-- EN: overloaded -->
+  <DMS_MechlinkOverload.stages.overloaded.label>负载:超载</DMS_MechlinkOverload.stages.overloaded.label>
+  <!-- EN: danger -->
+  <DMS_MechlinkOverload.stages.danger.label>负载:危险</DMS_MechlinkOverload.stages.danger.label>
+  
+  <!-- EN: mechlink rejection -->
+  <DMS_MechlinkRejection.label>机控排异反应</DMS_MechlinkRejection.label>
+  <!-- EN: Due to the limited technology and lack of medical nanomachines, there is some side-effect after installing this mechlink, it will last of a while before implanter's nervous system adjusts to its presence. -->
+  <DMS_MechlinkRejection.description>由于有限的技术与医疗环境，安装这个机控中枢后会有一些副作用，在植入者的神经系统适应它的存在之前会持续一段时间。</DMS_MechlinkRejection.description>
+  <!-- EN: fever -->
+  <DMS_MechlinkRejection.stages.fever.label>免疫反应</DMS_MechlinkRejection.stages.fever.label>
+  
+  <!-- EN: synthetic rejection -->
+  <DMS_SyntheticRejection.label>仿生排异反应</DMS_SyntheticRejection.label>
+  <!-- EN: Due to access to the internal circulatory system, synthetic bionic sometimes produce rejection in the body, which usually does not last long but reduces immunity. -->
+  <DMS_SyntheticRejection.description>由于进入内循环系统，合成仿生有时会在体内产生排斥反应，这种排斥反应通常不会持续很长时间，但会明显降低免疫力。</DMS_SyntheticRejection.description>
+  <!-- EN: bionic syndrome has been cured -->
+  <DMS_SyntheticRejection.comps.HediffComp_RemoveIfOtherHediff.message>仿生排异反应已被治愈</DMS_SyntheticRejection.comps.HediffComp_RemoveIfOtherHediff.message>
+  <!-- EN: fever -->
+  <DMS_SyntheticRejection.stages.fever.label>免疫反应</DMS_SyntheticRejection.stages.fever.label>
+  
+</LanguageData>

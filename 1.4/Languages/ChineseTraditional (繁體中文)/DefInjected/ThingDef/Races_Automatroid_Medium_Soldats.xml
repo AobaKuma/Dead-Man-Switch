@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: grenadier -->
+  <DMS_Mech_Grenadier.label>擲彈兵</DMS_Mech_Grenadier.label>
+  <!-- EN: A biped humanoid robot imitated design from the combat unit of mechanoids, can equipped with weapons that humans can use. \n\n Although the carried battery backpack having a long battery life, but is also makes it unable to fight like a genuine mech walkers without cover. -->
+  <DMS_Mech_Grenadier.description>模仿了機械體作戰單元設計的人形機兵，可以配備人類使用的武器。\n\n雖然攜帶的電池背包具有較長的電池壽命，但也使其無法在沒有掩護的情況下進行戰鬥。</DMS_Mech_Grenadier.description>
+  <!-- EN: head -->
+  <DMS_Mech_Grenadier.tools.head.label>頭部</DMS_Mech_Grenadier.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Grenadier.tools.left_fist.label>左拳</DMS_Mech_Grenadier.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Grenadier.tools.right_fist.label>右拳</DMS_Mech_Grenadier.tools.right_fist.label>
+  
+  <!-- EN: kanonier -->
+  <DMS_Mech_Kanonier.label>炮兵</DMS_Mech_Kanonier.label>
+  <!-- EN: A biped humanoid robot imitated design from the combat unit of mechanoids, can equipped with weapons that humans can use. \n\n Although the carried battery backpack having a long battery life, but is also makes it unable to fight like a genuine mech walkers without cover. -->
+  <DMS_Mech_Kanonier.description>模仿了機械體作戰單元設計的人形機兵，可以裝備人類使用的武器。\n\n雖然攜帶的電池背包具有較長的電池壽命，但也使其無法在沒有掩護的情況下進行戰鬥。</DMS_Mech_Kanonier.description>
+  <!-- EN: head -->
+  <DMS_Mech_Kanonier.tools.head.label>頭部</DMS_Mech_Kanonier.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Kanonier.tools.left_fist.label>左拳</DMS_Mech_Kanonier.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Kanonier.tools.right_fist.label>右拳</DMS_Mech_Kanonier.tools.right_fist.label>
+  
+  <!-- EN: sergeant -->
+  <DMS_Mech_Sergeant.label>軍士</DMS_Mech_Sergeant.label>
+  <!-- EN: As a relay command variant of a mech soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. it can be the mechnitor command relay but due to its weight with reduced fire control system, which can only equip a light weapon for self defense. -->
+  <DMS_Mech_Sergeant.description>作為士兵系列的中繼指揮改裝型，它擁有非常容易辨認的盤形全向雷達和收發天線。它可以作為機械體的指揮中繼，但由於其重量和火控系統的削減，只能裝備輕武器用於自衛。</DMS_Mech_Sergeant.description>
+  <!-- EN: head -->
+  <DMS_Mech_Sergeant.tools.head.label>頭部</DMS_Mech_Sergeant.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Sergeant.tools.left_fist.label>左拳</DMS_Mech_Sergeant.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Sergeant.tools.right_fist.label>右拳</DMS_Mech_Sergeant.tools.right_fist.label>
+  
+  <!-- EN: soldat -->
+  <DMS_Mech_Soldat.label>士兵</DMS_Mech_Soldat.label>
+  <!-- EN: A biped humanoid robot imitated design from the combat unit of mechanoids, can equipped with weapons that humans can use. \n\n Although the carried battery backpack having a long battery life, but is also makes it unable to fight like a genuine mech walkers without cover. -->
+  <DMS_Mech_Soldat.description>模仿了機械體作戰單元設計的人形機兵，可以裝備人類使用的武器。\n\n雖然攜帶的電池背包具有較長的電池壽命，但也使其無法在沒有掩護的情況下進行戰鬥。</DMS_Mech_Soldat.description>
+  <!-- EN: head -->
+  <DMS_Mech_Soldat.tools.head.label>頭部</DMS_Mech_Soldat.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Soldat.tools.left_fist.label>左拳</DMS_Mech_Soldat.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Soldat.tools.right_fist.label>右拳</DMS_Mech_Soldat.tools.right_fist.label>
+  
+</LanguageData>

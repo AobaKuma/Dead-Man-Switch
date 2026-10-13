@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: artifuscle -->
+  <Artifuscle.label>人工肌肉</Artifuscle.label>
+  <!-- EN: a type of prosthetic material made by genetically engineered sauromorph muscle bundles -->
+  <Artifuscle.description>一種由基因工程蜥形肌束製成的假體材料</Artifuscle.description>
+  <!-- EN: By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
+  <Artifuscle.comps.CompStudiable.completedLetterText>通過研究 {PARENT_label} ， {STUDIER_labelShort} 獲得了研究項目 {RESEARCH} 所需的見解。\n\n您的研究人員現在可以使用研究平台開始研究如何實際使用該技術。</Artifuscle.comps.CompStudiable.completedLetterText>
+  <!-- EN: {PARENT_label} studied: {RESEARCH} unlocked -->
+  <Artifuscle.comps.CompStudiable.completedLetterTitle>已研究 {PARENT_label} ： {RESEARCH} 已解鎖</Artifuscle.comps.CompStudiable.completedLetterTitle>
+  
+  <!-- EN: cluster control chipsets -->
+  <ComponentControlChip.label>集群控制晶片組</ComponentControlChip.label>
+  <!-- EN: a chipsets for remote machine controller and the core of industrial machines. -->
+  <ComponentControlChip.description>一種用於遠程機器控制器的晶片組，是工業機器的核心。</ComponentControlChip.description>
+  <!-- EN: By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
+  <ComponentControlChip.comps.CompStudiable.completedLetterText>通過研究 {PARENT_label} ， {STUDIER_labelShort} 獲得了研究項目 {RESEARCH} 所需的見解。\n\n您的研究人員現在可以使用研究平台開始研究如何實際使用該技術。</ComponentControlChip.comps.CompStudiable.completedLetterText>
+  <!-- EN: {PARENT_label} studied: {RESEARCH} unlocked -->
+  <ComponentControlChip.comps.CompStudiable.completedLetterTitle>已研究 {PARENT_label} ： {RESEARCH} 已解鎖</ComponentControlChip.comps.CompStudiable.completedLetterTitle>
+  
+  <!-- EN: fire control system -->
+  <ComponentFireControl.label>火控系統</ComponentFireControl.label>
+  <!-- EN: a chipsets designed for weapon control assist and trajectory tracking. -->
+  <ComponentFireControl.description>設計用於武器控制輔助和軌跡跟蹤的晶片組。</ComponentFireControl.description>
+  <!-- EN: By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
+  <ComponentFireControl.comps.CompStudiable.completedLetterText>通過研究 {PARENT_label} ， {STUDIER_labelShort} 獲得了研究項目 {RESEARCH} 所需的見解。\n\n您的研究人員現在可以使用研究平台開始研究如何實際使用該技術。</ComponentFireControl.comps.CompStudiable.completedLetterText>
+  <!-- EN: {PARENT_label} studied: {RESEARCH} unlocked -->
+  <ComponentFireControl.comps.CompStudiable.completedLetterTitle>已研究 {PARENT_label} ： {RESEARCH} 已解鎖</ComponentFireControl.comps.CompStudiable.completedLetterTitle>
+  
+  <!-- EN: stamponent -->
+  <ComponentStamped.label>沖壓零件</ComponentStamped.label>
+  <!-- EN: Hydraulic integrally formed component. Used in products that require mass production on the assembly line. -->
+  <ComponentStamped.description>液壓一體成型部件。用於需要在裝配線上大規模生產的產品。</ComponentStamped.description>
+  
+  <!-- EN: T/R Component -->
+  <ComponentTransmitter.label>T/R 組件</ComponentTransmitter.label>
+  <!-- EN: Precision electronic components for radar and communication devices. -->
+  <ComponentTransmitter.description>雷達和通信設備的精密電子元件。</ComponentTransmitter.description>
+  <!-- EN: By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
+  <ComponentTransmitter.comps.CompStudiable.completedLetterText>通過研究 {PARENT_label} ， {STUDIER_labelShort} 獲得了研究項目 {RESEARCH} 所需的見解。\n\n您的研究人員現在可以使用研究平台開始研究如何實際使用該技術。</ComponentTransmitter.comps.CompStudiable.completedLetterText>
+  <!-- EN: {PARENT_label} studied: {RESEARCH} unlocked -->
+  <ComponentTransmitter.comps.CompStudiable.completedLetterTitle>已研究 {PARENT_label} ： {RESEARCH} 已解鎖</ComponentTransmitter.comps.CompStudiable.completedLetterTitle>
+  
+  <!-- EN: Ceramics -->
+  <DMS_Ceramics.label>陶瓷</DMS_Ceramics.label>
+  <!-- EN: a military standard composite ceramic plate widely used as Defensive Additions for war machines.\n\n As a military standard material, it's durability is somewhat poor, but it is superior in its protection and light weight. -->
+  <DMS_Ceramics.description>一種軍用標準複合陶瓷板，廣泛用作戰爭機器的防禦附件。\n\n 作為軍用標準材料，其耐用性稍差，但在防護性和重量輕方面具有優勢。</DMS_Ceramics.description>
+  
+  <!-- EN: encrypted transmitter -->
+  <DMS_EncryptedTransmitter.label>加密通訊器</DMS_EncryptedTransmitter.label>
+  
+  <DMS_EncryptedTransmitter.description>殖民地用於緊急呼叫支援的大功率通訊器。當然的這套救援協議的識別碼早已廢棄，因此只有那些脫離指揮的機兵部隊會因此上鉤。</DMS_EncryptedTransmitter.description>
+  <!-- EN: Attract legion threat -->
+  <DMS_EncryptedTransmitter.comps.CompUsable.useLabel>吸引軍士襲擊</DMS_EncryptedTransmitter.comps.CompUsable.useLabel>
+  
+  <!-- EN: wetware computer -->
+  <Neurocomputer.label>濕件計算機</Neurocomputer.label>
+  <!-- EN: an organic computer also be known as an artificial organic brain or a neurocomputer, it's the perfect computer unit source for factions without access to rare metals and precision machining. -->
+  <Neurocomputer.description>有機計算機也被稱為人工有機大腦或神經計算機，對於無法獲得稀有金屬和精密機械加工的派別來說，它是完美的計算機單元源。</Neurocomputer.description>
+  <!-- EN: By studying the {PARENT_label}, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
+  <Neurocomputer.comps.CompStudiable.completedLetterText>通過研究 {PARENT_label} ， {STUDIER_labelShort} 獲得了研究項目 {RESEARCH} 所需的見解。\n\n您的研究人員現在可以使用研究平台開始研究如何實際使用該技術。</Neurocomputer.comps.CompStudiable.completedLetterText>
+  <!-- EN: {PARENT_label} studied: {RESEARCH} unlocked -->
+  <Neurocomputer.comps.CompStudiable.completedLetterTitle>已研究 {PARENT_label} ： {RESEARCH} 已解鎖</Neurocomputer.comps.CompStudiable.completedLetterTitle>
+  
+  <!-- EN: plasticfiber -->
+  <Plasfiber.label>塑鋼纖維</Plasfiber.label>
+  <!-- EN: A type of synthetic fiber made by plasteel, which is airtight and certain degree of sharp-proof performance. However, it does not have much resistance to blunt impact.\n\n Plasticfiber has a importance in the medical field. As a biomimetic surface material, it does not produce rejection reactions from the immune system. -->
+  <Plasfiber.description>一種由塑鋼製成的合成纖維，具有氣密性和一定的防穿刺性能。然而，它對鈍性衝擊的抵抗力並不強。\n\n 塑鋼纖維在醫療領域具有重要意義。作為仿生表面材料，它不會產生免疫系統的排斥反應。</Plasfiber.description>
+  
+  <!-- EN: polyester -->
+  <Polyester.label>聚酯纖維</Polyester.label>
+  <!-- EN: A type of synthetic fiber, which might ugly but still widely used in textile materials such as clothing, bedding, and special fabrics for military industry. -->
+  <Polyester.description>一種合成纖維，雖然不美觀，但仍廣泛用於服裝、床上用品、軍工特種面料等紡織材料。</Polyester.description>
+  
+  <!-- EN: tungsteel -->
+  <Tungsteel.label>鎢鋼</Tungsteel.label>
+  <!-- EN: a military standard alloy, Usually used to manufacture high-performance weapons, armor and special mechanical parts. -->
+  <Tungsteel.description>一種軍用標準合金，通常用於製造高性能武器、裝甲和特殊機械零件。</Tungsteel.description>
+  
+</LanguageData>

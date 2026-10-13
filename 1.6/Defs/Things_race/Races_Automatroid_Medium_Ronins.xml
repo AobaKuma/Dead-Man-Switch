@@ -8,9 +8,9 @@
     <statBases>
       <MoveSpeed>5</MoveSpeed>
       <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
-      <ArmorRating_Sharp>1</ArmorRating_Sharp>
-      <ArmorRating_Heat>0.67</ArmorRating_Heat>
-      <MeleeDodgeChance>1.5</MeleeDodgeChance>
+      <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>
+      <MeleeDodgeChance>15</MeleeDodgeChance>
       <MeleeHitChance>1.2</MeleeHitChance>
       <AimingDelayFactor>0.9</AimingDelayFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
@@ -44,7 +44,7 @@
           <li>Spacer</li>
           <li>Ultra</li>
         </UsableTechLevels>
-        <BypassUsableWeapons />
+        <BypassUsableWeapons/>
       </li>
     </modExtensions>
     <butcherProducts>
@@ -117,7 +117,7 @@
     <race>DMS_Mech_Ronin</race>
     <isFighter>true</isFighter>
     <combatPower>150</combatPower>
-    <lifeStages>
+    <lifeStages>      
       <li>
         <bodyGraphicData>
           <texPath>Things/Automatroid/ronin</texPath>
@@ -128,7 +128,6 @@
             <volume>(0.35,1,0.35)</volume>
             <offset>(0,0,0)</offset>
           </shadowData>
-          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -136,11 +135,11 @@
           <texPath>Things/Automatroid/OldTexture/ronin</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.4</drawSize>
-          <shadowData>
-            <volume>(0.35,1,0.35)</volume>
-            <offset>(0,0,0)</offset>
-          </shadowData>
+        <drawSize>1.4</drawSize>
+        <shadowData>
+          <volume>(0.35,1,0.35)</volume>
+          <offset>(0,0,0)</offset>
+        </shadowData>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -159,12 +158,12 @@
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Gladiator</defName>
     <label>Gladiator</label>
-    <description>A melee specialized variant of the Ronin. The Gladiator keeps the Ronin's mobility and trades frontal plating for a highly articulated frame, reinforced specifically against the blunt impacts of close combat, plus an upgraded melee module and an assault shield.</description>
+    <description>A melee specialized variant of the Ronin. The Gladiator maintains the Ronin's mobility and armor and comes with an upgraded melee combat module and is equipped with an assault shield.</description>
     <statBases>
       <MoveSpeed>5</MoveSpeed>
-      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
-      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.15</ArmorRating_Sharp>
+      <ArmorRating_Heat>1.3</ArmorRating_Heat>
       <MeleeDodgeChance>9</MeleeDodgeChance>
       <MeleeHitChance>4</MeleeHitChance>
       <MeleeCooldownFactor>0.85</MeleeCooldownFactor>
@@ -242,7 +241,7 @@
     <race>DMS_Mech_Gladiator</race>
     <isFighter>true</isFighter>
     <combatPower>150</combatPower>
-    <lifeStages>
+    <lifeStages>      
       <li>
         <bodyGraphicData>
           <texPath>Things/Automatroid/gladiator</texPath>
@@ -253,7 +252,6 @@
             <volume>(0.35,1,0.35)</volume>
             <offset>(0,0,0)</offset>
           </shadowData>
-          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -261,11 +259,11 @@
           <texPath>Things/Automatroid/OldTexture/gladiator</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.4</drawSize>
-          <shadowData>
-            <volume>(0.35,1,0.35)</volume>
-            <offset>(0,0,0)</offset>
-          </shadowData>
+        <drawSize>1.4</drawSize>
+        <shadowData>
+          <volume>(0.35,1,0.35)</volume>
+          <offset>(0,0,0)</offset>
+        </shadowData>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -277,17 +275,17 @@
     </abilities>
   </PawnKindDef>
 
-  <!-- 破城者 Siegebreaker-->
-  <ThingDef ParentName="BaseAutomatroidHumanRace">
+   <!-- 破城者 Siegebreaker-->
+   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Siegebreaker</defName>
     <label>Siegebreaker</label>
     <description>The Siegebreaker comes with top of the line armor making it ideal for sapping and breaching jobs.</description>
     <statBases>
       <StaggerDurationFactor>0.25</StaggerDurationFactor>
       <MoveSpeed>4.2</MoveSpeed>                                                    <!--移動速度-->
-      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>                                     <!--護甲-->
+      <ArmorRating_Blunt>0.92</ArmorRating_Blunt>                                     <!--護甲-->
       <ArmorRating_Sharp>1.25</ArmorRating_Sharp>
-      <ArmorRating_Heat>0.83</ArmorRating_Heat>
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
@@ -313,7 +311,7 @@
         <UsableTechLevels>
           <li>Industrial</li>
         </UsableTechLevels>
-        <BypassUsableWeapons />
+        <BypassUsableWeapons/>
       </li>
     </modExtensions>
     <damageMultipliers>
@@ -342,12 +340,11 @@
           <texPath>Things/Automatroid/siegeBreaker</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.4</drawSize>
-          <shadowData>
-            <volume>(0.35,1,0.35)</volume>
-            <offset>(0,0,0)</offset>
-          </shadowData>
-          <color>(100, 102, 100)</color>
+        <drawSize>1.4</drawSize>
+        <shadowData>
+          <volume>(0.35,1,0.35)</volume>
+          <offset>(0,0,0)</offset>
+        </shadowData>
         </bodyGraphicData>
       </li>
       <li>
@@ -355,11 +352,11 @@
           <texPath>Things/Automatroid/OldTexture/siegeBreaker</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.4</drawSize>
-          <shadowData>
-            <volume>(0.35,1,0.35)</volume>
-            <offset>(0,0,0)</offset>
-          </shadowData>
+        <drawSize>1.4</drawSize>
+        <shadowData>
+          <volume>(0.35,1,0.35)</volume>
+          <offset>(0,0,0)</offset>
+        </shadowData>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -372,7 +369,7 @@
     </abilities>
   </PawnKindDef>
 
-
+    
   <!-- 塔盾手 Protector-->
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Protector</defName>
@@ -381,9 +378,9 @@
     <statBases>
       <StaggerDurationFactor>0.25</StaggerDurationFactor>
       <MoveSpeed>4</MoveSpeed>                                                    <!--移動速度-->
-      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>                                     <!--護甲-->
+      <ArmorRating_Blunt>0.80</ArmorRating_Blunt>                                     <!--護甲-->
       <ArmorRating_Sharp>1.40</ArmorRating_Sharp>
-      <ArmorRating_Heat>0.83</ArmorRating_Heat>
+      <ArmorRating_Heat>1.0</ArmorRating_Heat>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
@@ -413,7 +410,7 @@
           <li>Medieval</li>
           <li>Industrial</li>
         </UsableTechLevels>
-        <BypassUsableWeapons />
+        <BypassUsableWeapons/>
       </li>
     </modExtensions>
     <tools Inherit="False">
@@ -467,8 +464,7 @@
     <label>protector</label>
     <race>DMS_Mech_Protector</race>
     <isFighter>true</isFighter>
-    <maxPerGroup>4</maxPerGroup>
-    <combatPower>300</combatPower>
+    <combatPower>180</combatPower>
     <lifeStages>
       <li>
         <bodyGraphicData>
@@ -480,7 +476,6 @@
             <volume>(0.35,1,0.35)</volume>
             <offset>(0,0,0)</offset>
           </shadowData>
-          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -504,18 +499,18 @@
       <li>DMS_RepairMode</li>
     </abilities>
   </PawnKindDef>
-
+  
 
   <!-- 方陣 phalanx-->
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMS_Mech_Phalanx</defName>
     <label>Phalanx</label>
-    <description>The Phalanx is a cost-reduced mass-production auxiliary built for urban combat. Its sonar suite and part of its plating were deleted to bring the unit price down, so it is slower and thinner-skinned than a Ronin - it is meant to lay down direct fire alongside Ronin squads and to be fielded in numbers, not to lead the assault.</description>
+    <description>The Phalanx is a cheap mass-producible variant specialized for urban combat. It comes packed with assault armor and high mobility package making it a fierce unit in close quarters combat.</description>
     <statBases>
       <MoveSpeed>4.5</MoveSpeed>                                                    <!--移動速度-->
-      <ArmorRating_Blunt>0.6</ArmorRating_Blunt>                                     <!--護甲-->
-      <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
-      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <ArmorRating_Blunt>0.65</ArmorRating_Blunt>                                     <!--護甲-->
+      <ArmorRating_Sharp>1.1</ArmorRating_Sharp>
+      <ArmorRating_Heat>1.2</ArmorRating_Heat>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge><!--充電/培養時產出廢料-->
     </statBases>
@@ -547,7 +542,7 @@
           <li>Medieval</li>
           <li>Industrial</li>
         </UsableTechLevels>
-        <BypassUsableWeapons />
+        <BypassUsableWeapons/>
       </li>
     </modExtensions>
   </ThingDef>
@@ -558,7 +553,7 @@
     <race>DMS_Mech_Phalanx</race>
     <isFighter>true</isFighter>
     <combatPower>120</combatPower>
-    <lifeStages>
+    <lifeStages>      
       <li>
         <bodyGraphicData>
           <texPath>Things/Automatroid/phalanx</texPath>
@@ -569,7 +564,6 @@
             <volume>(0.35,1,0.35)</volume>
             <offset>(0,0,0)</offset>
           </shadowData>
-          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>

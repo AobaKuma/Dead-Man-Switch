@@ -25,8 +25,7 @@
       <li Class="PatchOperationAdd">
         <xpath>
           Defs/ThingDef[
-          defName="DMS_Mech_Soldat" or
-          defName="DMS_Mech_Sergeant"
+          defName="DMS_Mech_Soldat"
           ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/BypassUsableWeapons</xpath>
         <value>
           <li>PCA_Gun_BlackThunderTactical</li>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_Soldat" or
+          defName="DMS_Mech_Ronin"  or
+          defName="DMS_Mech_Siegebreaker" or
+          defName="DMS_Mech_Protector" or
+          defName="DMS_Mech_Phalanx" or
+          defName="DMS_Mech_Arquebusier" or
+          defName="DMS_Mech_Jaeger" or
+          defName="DMS_Mech_Pioneer" or
+          defName="DMS_Mech_Sniper" or
+          defName="DMS_Mech_BattleFrame" or
+          defName="DMS_Mech_Ape"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>AM</li>
+          <li>AMGuns</li>
+          <li>AMHP</li>
+        </value>
+      </li>
+
+      <!-- 鬣蜥 Iguana-->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Iguana" or
+          defName="DMS_Mech_Gecko"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>AM_PKM</li>
+          <li>AM_PKP</li>
+        </value>
+      </li>
+
+    </operations>
+  </Operation>
+</Patch>

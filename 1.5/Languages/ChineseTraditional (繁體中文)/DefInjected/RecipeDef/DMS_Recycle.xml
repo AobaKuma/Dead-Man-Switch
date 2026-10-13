@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: disassemble from automatroid debris -->
+  <DMS_ExtractCompFromSlag.label>拆解機兵殘骸</DMS_ExtractCompFromSlag.label>
+  <!-- EN: Disassemble automatroid debris to extract useful component. -->
+  <DMS_ExtractCompFromSlag.description>拆解機兵殘骸以提取有用的部件。</DMS_ExtractCompFromSlag.description>
+  <!-- EN: disassembling automatroid debris. -->
+  <DMS_ExtractCompFromSlag.jobString>拆解機兵殘骸中...</DMS_ExtractCompFromSlag.jobString>
+  
+  <!-- EN: smelt metal from automatroid debris -->
+  <DMS_ExtractMetalFromSlag.label>熔煉機兵殘骸</DMS_ExtractMetalFromSlag.label>
+  <!-- EN: Use heat and strong electromagnets to extract useful metal from automatroid debris. -->
+  <DMS_ExtractMetalFromSlag.description>使用高溫與強電磁鐵從機兵殘骸中提取有用的金屬。</DMS_ExtractMetalFromSlag.description>
+  <!-- EN: Smelting metal from automatroid debris. -->
+  <DMS_ExtractMetalFromSlag.jobString>熔煉機兵殘骸中...</DMS_ExtractMetalFromSlag.jobString>
+  
+</LanguageData>

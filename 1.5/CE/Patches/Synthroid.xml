@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- ======Lady======-->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Lady"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>4</min>
+							<max>6</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+			<!--patch tools-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Lady"]/tools</xpath>
+				<value>
+					<tools>
+						<li Class="CombatExtended.ToolCE">
+							<label>left fist</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>3</power>
+							<surpriseAttack>
+								<extraMeleeDamages>
+									<li>
+										<def>Stun</def>
+										<amount>5</amount>
+									</li>
+								</extraMeleeDamages>
+							</surpriseAttack>
+							<cooldownTime>1.01</cooldownTime>
+							<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>0.873</armorPenetrationBlunt>
+							<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>right fist</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>3</power>
+							<surpriseAttack>
+								<extraMeleeDamages>
+									<li>
+										<def>Stun</def>
+										<amount>5</amount>
+									</li>
+								</extraMeleeDamages>
+							</surpriseAttack>
+							<cooldownTime>1.01</cooldownTime>
+							<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>0.873</armorPenetrationBlunt>
+							<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Lady"]/statBases</xpath>
+				<value>
+					<CarryWeight>40</CarryWeight>
+					<CarryBulk>40</CarryBulk>
+					<AimingAccuracy>1.35</AimingAccuracy>
+					<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.3</MeleeDodgeChance>
+					<MeleeCritChance>0.25</MeleeCritChance>
+					<MeleeParryChance>0.11</MeleeParryChance>
+					<MaxHitPoints>200</MaxHitPoints>
+					<NightVisionEfficiency>0.85</NightVisionEfficiency>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Lady"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>5</ArmorRating_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Lady"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>4</ArmorRating_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Lady"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="DMS_Mech_Lady"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Lady"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>730</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>10</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Artifuscle>5</Artifuscle>
+							<Tungsteel>5</Tungsteel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>73</MaxOverHeal>
+						<MinArmorPct>0.75</MinArmorPct>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

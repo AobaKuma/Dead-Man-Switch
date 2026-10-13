@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: [PAWN_nameDef] failed as a bandit and was unfortunately captured by a colonial group. However, after realizing the lifestyle and goals of these people while serving a labor sentence, [PAWN_pronoun] decided to stay after being released from prison. -->
+  <DMS_Military01.baseDesc>[PAWN_nameDef]曾经作为一名强盗袭击了殖民团体的某个殖民地并倒楣被俘，但在劳动服刑中认识到这些人的生活方式与目标后，[PAWN_pronoun]决定留了下来。</DMS_Military01.baseDesc>
+  <!-- EN: Reformed bandit -->
+  <DMS_Military01.title>从良土匪</DMS_Military01.title>
+  <!-- EN: bandit -->
+  <DMS_Military01.titleShort>前土匪</DMS_Military01.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] served as a medic in the Armed Forces and retired from military life prematurely after a serious injury. -->
+  <DMS_Military02.baseDesc>[PAWN_nameDef]曾担任过一支武装部队的军医，并在一次重伤后提前从军旅生活中退役。</DMS_Military02.baseDesc>
+  <!-- EN: Retired medic -->
+  <DMS_Military02.title>退役军医</DMS_Military02.title>
+  <!-- EN: medic -->
+  <DMS_Military02.titleShort>军医</DMS_Military02.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] was a security for guarding the bandits and raiders who were captured, Supervising them until they were free to go after serving their sentences. -->
+  <DMS_Military03.baseDesc>[PAWN_nameDef]负责在监狱看管那些被俘后出于人道考虑监禁收押的土匪与强盗袭击者，在监管著他们服刑完毕后这些人的去留便是他们的自由。</DMS_Military03.baseDesc>
+  <!-- EN: Prison security -->
+  <DMS_Military03.title>监狱警卫</DMS_Military03.title>
+  <!-- EN: security -->
+  <DMS_Military03.titleShort>狱警</DMS_Military03.titleShort>
+  
+  <!-- EN: Out of seeing the vastness of this planet, [PAWN_nameDef] became a voluntary militia in the colonial group, moved to various colonial strongholds with the pace of stronghold development, and used the gun on hand to protect himself and [PAWN_pronoun] companions when necessary. -->
+  <DMS_Military04.baseDesc>出于见识这颗星球的广阔，[PAWN_nameDef]成为了殖民团体中的自愿民兵，并随著据点开拓的步伐辗转于各个殖民据点，并在必要时用手上的枪保护自己与同伴。</DMS_Military04.baseDesc>
+  <!-- EN: Voluntary militia -->
+  <DMS_Military04.title>自愿制民兵</DMS_Military04.title>
+  <!-- EN: militia -->
+  <DMS_Military04.titleShort>民兵</DMS_Military04.titleShort>
+  
+  <!-- EN: Since the physical examination was passed by rounded off, [PAWN_nameDef], who had no special skills, followed the enlistment order of the colonial fleet and after receiving simple training, became a substitute and was sent to the ground to assist in the colonization work. -->
+  <DMS_Military05.baseDesc>原先由于身体检测被四舍五入到合格标准，并没有什么特长的[PAWN_nameDef]不得遵循殖民舰队的入伍令在接受简单训练后成为一名替代役人员发配到地面上协助殖民工作。</DMS_Military05.baseDesc>
+  <!-- EN: Reserved colonist -->
+  <DMS_Military05.title>替代役殖民者</DMS_Military05.title>
+  <!-- EN: colonist -->
+  <DMS_Military05.titleShort>替代役</DMS_Military05.titleShort>
+  
+  <!-- EN: Due to the chaotic distribution of the faction-controlled areas in the rimworld, [PAWN_nameDef] job is to accompany the special police to use limited violence to uproot the bandit sites that spread like weeds one by one. -->
+  <DMS_Military06.baseDesc>由于边缘世界派系控制区的杂乱分布，[PAWN_nameDef]的工作就是伴随特殊警察动用有限暴力将那些如同野草般蔓延的强盗站点一个个拔除。</DMS_Military06.baseDesc>
+  <!-- EN: Riot commando -->
+  <DMS_Military06.title>镇暴队突击手</DMS_Military06.title>
+  <!-- EN: commando -->
+  <DMS_Military06.titleShort>突击手</DMS_Military06.titleShort>
+  
+  <!-- EN: During [PAWN_pronoun] long life as a pilot, [PAWN_nameDef] was responsible for transporting people and materials over a large sector, and also learned to solve annoying mechanical and human problems along the way. -->
+  <DMS_Military07.baseDesc>在漫长的驾驶员生活中，[PAWN_nameDef]负责了一大片区域的人员与物资运输，同时也学会了解决一路上的恼人的机械问题与人类问题。</DMS_Military07.baseDesc>
+  <!-- EN: Shuttle pilot -->
+  <DMS_Military07.title>穿梭机驾驶员</DMS_Military07.title>
+  <!-- EN: pilot -->
+  <DMS_Military07.titleShort>驾驶员</DMS_Military07.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] is from a professional pioneering group. To deal with the existential threats during the pioneering period, [PAWN_pronoun] job is to use guns to drive away those things that are harmful to the colonists...if guns can still be used to solve them. -->
+  <DMS_Military08.baseDesc>[PAWN_nameDef]是来自一个职业拓荒团体。为了应对开拓时期的生存威胁，[PAWN_pronoun]的工作就是拿枪驱赶那些对殖民者有害的事物...假如还能够用枪解决。</DMS_Military08.baseDesc>
+  <!-- EN: Armed escort -->
+  <DMS_Military08.title>武装护卫</DMS_Military08.title>
+  <!-- EN: escort -->
+  <DMS_Military08.titleShort>护卫</DMS_Military08.titleShort>
+  
+</LanguageData>

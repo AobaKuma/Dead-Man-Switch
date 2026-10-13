@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Grenadier -->
+  <DMS_Mech_Grenadier.label>擲彈兵</DMS_Mech_Grenadier.label>
+  <!-- EN: A bipedal humanoid robot built in the image of other pre-existing mechanoids. Grenadiers are specialized to use light weapons and grenade launchers.\n\nThe Grenadier has to carry a battery backpack which makes it unable to fight like other mechs without cover. -->
+  <DMS_Mech_Grenadier.description>用於在壕溝與地下隧道網路中進攻與防禦的士兵泛生型號，使用複合攝像頭與專精化的操作系統來強化其使用曲射武器時的彈道計算能力。\n\n適合配備手榴彈或榴彈發射器等爆裂物來對防禦工事與陣地進行清掃。\n\n雖然攜帶的電池背包具有較長的電池壽命，但也使其無法在沒有掩護的情況下進行戰鬥。</DMS_Mech_Grenadier.description>
+  <!-- EN: head -->
+  <DMS_Mech_Grenadier.tools.head.label>頭部</DMS_Mech_Grenadier.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Grenadier.tools.left_fist.label>左拳</DMS_Mech_Grenadier.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Grenadier.tools.right_fist.label>右拳</DMS_Mech_Grenadier.tools.right_fist.label>
+  
+  <!-- EN: Kanonier -->
+  <DMS_Mech_Kanonier.label>炮兵</DMS_Mech_Kanonier.label>
+  <!-- EN: A bipedal humanoid robot built in the image of other pre-existing mechanoids. Kanoniers are specialized to use rocket launchers or recoilless rifles.\n\nThe Kanonier has to carry a battery backpack which makes it unable to fight like other mechs without cover. -->
+  <DMS_Mech_Kanonier.description>一種使用高強度合金作為機體骨架的士兵改裝型，具有更高的出力來裝備火箭筒與無後坐力炮等重武器。\n\n雖然攜帶的電池背包具有較長的電池壽命，但也使其無法在沒有掩護的情況下進行戰鬥。</DMS_Mech_Kanonier.description>
+  <!-- EN: head -->
+  <DMS_Mech_Kanonier.tools.head.label>頭部</DMS_Mech_Kanonier.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Kanonier.tools.left_fist.label>左拳</DMS_Mech_Kanonier.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Kanonier.tools.right_fist.label>右拳</DMS_Mech_Kanonier.tools.right_fist.label>
+  
+  <!-- EN: Sergeant -->
+  <DMS_Mech_Sergeant.label>軍士</DMS_Mech_Sergeant.label>
+  <!-- EN: As a relay command variant of the Soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. Sergeants extend a mechanitor's effective range, but due to the weight of its radar equipment it can only equip a light weapon for self defense. -->
+  <DMS_Mech_Sergeant.description>作為士兵系列的中繼指揮改裝型，它擁有非常容易辨認的盤形全向雷達和收發天線。它可以作為機械體的指揮中繼，但由於其重量和火控系統的削減只能裝備輕武器用於自衛。</DMS_Mech_Sergeant.description>
+  <!-- EN: head -->
+  <DMS_Mech_Sergeant.tools.head.label>頭部</DMS_Mech_Sergeant.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Sergeant.tools.left_fist.label>左拳</DMS_Mech_Sergeant.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Sergeant.tools.right_fist.label>右拳</DMS_Mech_Sergeant.tools.right_fist.label>
+  
+  <!-- EN: Soldat -->
+  <DMS_Mech_Soldat.label>士兵</DMS_Mech_Soldat.label>
+  <!-- EN: A bipedal humanoid robot built in the image of other pre-existing mechanoids. Soldats can be equipped with weapons rated for human use.\n\nThe Soldat has to carry a battery backpack which makes it unable to fight like other mechs without cover. -->
+  <DMS_Mech_Soldat.description>古老的人形機兵型號，能夠追溯至人類開展殖民時代前的內戰時期，用於在開闊平原戰場上協同裝甲集團推進戰線與清理地下工事。出於其設計理念與戰術應用士兵型的生產與維護成本都相當的低廉，但也只能操作較為簡單的武器。\n\n雖然攜帶的電池背包具有較長的電池壽命，但也使其無法在沒有掩護的情況下進行戰鬥。</DMS_Mech_Soldat.description>
+  <!-- EN: head -->
+  <DMS_Mech_Soldat.tools.head.label>頭部</DMS_Mech_Soldat.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Soldat.tools.left_fist.label>左拳</DMS_Mech_Soldat.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Soldat.tools.right_fist.label>右拳</DMS_Mech_Soldat.tools.right_fist.label>
+  
+</LanguageData>

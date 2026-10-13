@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ToolCapacityDef>
+    <defName>DMS_HeavySweep</defName>
+    <label>heavy sweep</label>
+  </ToolCapacityDef>
+
+  <ManeuverDef>
+    <defName>DMS_HeavySweep</defName>
+    <requiredCapacity>DMS_HeavySweep</requiredCapacity>
+    <verb>
+      <verbClass>Fortified.Verb_MeleeSweep</verbClass>
+      <meleeDamageDef>Cut</meleeDamageDef>
+    </verb>
+    <logEntryDef>MeleeAttack</logEntryDef>
+    <combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+    <combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+    <combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+    <combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+  </ManeuverDef>
+</Defs>

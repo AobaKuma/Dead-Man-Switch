@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <!-- 戰棺可以裝備重型武器 -->
+
+      <!-- Dogge-->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Dogge"
+          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>VFEP_WarcasketGun_Autorifle</li><!-- 戰棺自動步槍 -->
+          <!-- <li>VFEP_WarcasketGun_UraniumSlugRifle</li> -->
+        </value>
+      </li>
+
+      <!-- DMS_Mech_Ronin -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Ronin"
+          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>WarcasketBasic</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Ronin"
+          ]/weaponTags</xpath>
+        <value>
+          <li>WarcasketBasic</li>
+        </value>
+      </li>
+      <!-- DMS_Mech_Siegebreaker -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Siegebreaker"
+          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>WarcasketBasic</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Siegebreaker"
+          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>VFEP_WarcasketGun_Slugthrower</li><!-- 戰棺霰彈槍 -->
+          <li>VFEP_WarcasketGun_Minigun</li><!-- 戰棺加特林 -->
+          <li>VFEP_WarcasketGun_GrenadeLauncher</li><!-- 戰棺榴彈槍 -->
+          <li>VFEP_WarcasketGun_HeavyFlamer</li><!-- 戰棺噴火槍 -->
+        </value>
+      </li>
+      <!-- DMS_Mech_Phalanx -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Phalanx"
+          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>WarcasketBasic</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Phalanx"
+          ]/weaponTags</xpath>
+        <value>
+          <li>WarcasketBasic</li>
+        </value>
+      </li>
+
+      <!-- DMS_Mech_Sniper -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Sniper"
+          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>VFEP_WarcasketGun_ChargeLance</li><!-- 戰棺電荷標槍 -->
+          <li>VFEP_WarcasketGun_UraniumSlugRifle</li><!-- 戰棺鈾彈步槍 -->
+        </value>
+      </li>
+
+      <!-- Ape-->
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_Ape"
+          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>WarcasketBasic</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_Ape"
+          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>VFEP_WarcasketGun_HandheldCannon</li><!-- 戰棺手持大砲 -->
+          <li>VFEP_WarcasketGun_ChargeBlaster</li><!-- 戰棺電荷衝擊槍 -->
+        </value>
+      </li>
+
+      <!-- BattleFrames -->
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_BattleFrame"
+          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>WarcasketBasic</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Tachanka"
+          ]/weaponTags</xpath>
+        <value>
+          <li>WarcasketBasic</li>
+        </value>
+      </li>
+
+      <!-- 蜥蜴家-->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Iguana" or
+          defName="DMS_Mech_Gecko" or 
+          defName="DMS_Mech_Tarbosaurus"     
+          ]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>WarcasketBasic</li>
+          <li>WarcasketVeteran</li>
+        </value>
+      </li>
+
+    </operations>
+  </Operation>
+</Patch>

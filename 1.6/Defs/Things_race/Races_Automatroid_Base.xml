@@ -15,8 +15,8 @@
     <caravanRideable>true</caravanRideable>
     <statOffsets>
       <MoveSpeed>-0.2</MoveSpeed>
-      <ComfyTemperatureMin>-46</ComfyTemperatureMin>
-      <ComfyTemperatureMax>4</ComfyTemperatureMax>
+      <ComfyTemperatureMin>-46</ComfyTemperatureMin>      <!--should map to -30C-->
+      <ComfyTemperatureMax>4</ComfyTemperatureMax>      <!--should map to 30C-->
     </statOffsets>
   </LifeStageDef>
 
@@ -81,10 +81,6 @@
       <li Class="Fortified.CompPropertiesInteracte">
         <interacteChance>0.01</interacteChance>
         <interacte>Chitchat</interacte>
-      </li>
-      <li Class="Fortified.CompProperties_Paintable">
-        <defaultColor>(100, 102, 100)</defaultColor>
-        <enableCamoSwitch>true</enableCamoSwitch>
       </li>
     </comps>
     <butcherProducts>
@@ -171,7 +167,9 @@
     </tools>
   </ThingDef>
 
-  <ThingDef Name="BaseAutomatroidHumanRace" ParentName="BaseAutomatroidWalker" Abstract="True" />
+  <ThingDef Name="BaseAutomatroidHumanRace" ParentName="BaseAutomatroidWalker" Abstract="True">
+
+  </ThingDef>
 
   <PawnKindDef Name="BaseAutomatroidKind" ParentName="BaseMechanoidKind" Abstract="True">
     <defaultFactionType>DMS_Legacy</defaultFactionType>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 士兵型 -->
+  <ThingDef Name="BaseMechRace_Soldat" ParentName="BaseAutomatroidHumanRace" Abstract="True">
+    <statBases>
+      <MoveSpeed>4.2</MoveSpeed>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>  <!--能抗-->
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>DMS_Humanoid_Soldat</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
+    </race>
+  </ThingDef>
+
+  <!-- DMS_Mech_Soldat 士兵常規型 -->
+  <ThingDef ParentName="BaseMechRace_Soldat">
+    <defName>DMS_Mech_Soldat</defName>
+    <label>soldat</label>
+    <description>A biped humanoid robot imitated design from the combat unit of mechanoids, can equipped with weapons that humans can use. \n\n Although the carried battery backpack having a long battery life, but is also makes it unable to fight like a genuine mech walkers without cover.</description>
+    <statBases>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">1</BandwidthCost> 
+    </statBases>
+    <modExtensions>
+      <li Class="DMS.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>SimpleGun</li>
+          <li>ShortShots</li>
+          <li>PLA_SimpleGun</li>
+          <li>PLA_SemiAutoRifle</li>
+          <li>CE_SMG</li>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+          <li>PLA_Pistol</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>IndustrialGun</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+      </li>
+      <li Class="DMS.TurretMannableExtension">
+        <mannableByDefault>false</mannableByDefault>
+        <BypassMannable>
+          <li MayRequire="Aoba.Fortress.Industrial">FT_TurretAT</li>
+          <li MayRequire="Aoba.Fortress.Industrial">FT_Maxim4M</li>
+          <li MayRequire="Aoba.Fortress.Industrial">FT_AutoCannon</li>
+          <li MayRequire="Aoba.Fortress.Frontier">FT_GPMG</li>
+          <li MayRequire="Aoba.Fortress.Frontier">FT_HeavyMachinegun</li>
+          <li MayRequire="Aoba.Fortress.Frontier">FT_InfantryAutoCannon</li>
+        </BypassMannable>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_Mech_Soldat</defName>
+    <label>soldat</label>
+    <race>DMS_Mech_Soldat</race>
+    <isFighter>true</isFighter>
+    <combatPower>40</combatPower>                                               <!--威脅點數-->
+    <maxPerGroup>20</maxPerGroup>                                                 <!--單個集群內的數量-->
+    <lifeStages>                                                                 <!--身體圖片-->
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/soldat</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/soldat</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags><!--武器-->
+      <li>SimpleGun</li>
+      <li>ShortShots</li>
+      <li>SurvivalRifle</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_Mech_Soldat_B</defName>
+    <label>vanguard</label>
+    <race>DMS_Mech_Soldat</race>
+    <isFighter>true</isFighter>
+    <combatPower>40</combatPower>
+    <maxPerGroup>20</maxPerGroup>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>18~20</range>
+      </li>
+    </skills>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/vanguard</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/vanguard</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags><!--武器-->
+      <li>A_SAR_LongRifle</li>
+      <li>A_PDW</li>
+    </weaponTags>
+  </PawnKindDef>
+
+
+  <PawnKindDef ParentName="BaseAutomatroidKind"><!--海盜特供型-->
+    <defName>DMS_Mech_Raider</defName>
+    <label>raider</label>
+    <race>DMS_Mech_Soldat</race>
+    <isFighter>true</isFighter>
+    <combatPower>80</combatPower>                                               
+    <maxPerGroup>20</maxPerGroup>
+    <canBeSapper>false</canBeSapper>
+    <aiAvoidCover>true</aiAvoidCover>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Pirate/soldat</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Pirate/soldat</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags><!--武器-->
+      <li>SimpleGun</li>
+      <li>ShortShots</li>
+      <li>WarcasketBasic</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <!-- DMS_Mech_Grenadier 士兵擲彈型 : 能夠使用各類發射器與手榴彈 -->
+  <ThingDef ParentName="BaseMechRace_Soldat">
+    <defName>DMS_Mech_Grenadier</defName>
+    <label>grenadier</label>
+    <description>A biped humanoid robot imitated design from the combat unit of mechanoids, can equipped with weapons that humans can use. \n\n Although the carried battery backpack having a long battery life, but is also makes it unable to fight like a genuine mech walkers without cover.</description>
+    <statBases>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost> 
+    </statBases>
+    <modExtensions>
+      <li Class="DMS.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>SimpleGun</li>
+          <li>Autopistol</li>
+          <li>PLA_Pistol</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>A_MG_GrenadeLauncher</li>
+          <li>A_SR_GrenadeLauncher</li>
+          <li>GrenadeDestructive</li>
+          <li>GrenadeEMP</li>
+          <li>GrenadeSmoke</li>
+          <li>GrenadeFlame</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+      </li>      
+      <li Class="DMS.TurretMannableExtension">
+        <mannableByDefault>false</mannableByDefault>
+        <BypassMannable>
+          <li>Turret_Mortar</li>
+          <li MayRequire="Aoba.Fortress.Industrial">FT_Turret_Mortar</li>
+        </BypassMannable>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_Mech_Grenadier</defName>
+    <label>grenadier</label>
+    <race>DMS_Mech_Grenadier</race>
+    <isFighter>true</isFighter>
+    <combatPower>40</combatPower>                                               <!--威脅點數-->
+    <maxPerGroup>20</maxPerGroup>                                                 <!--單個集群內的數量-->
+    <lifeStages>                                                                 <!--身體圖片-->
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/grenadier</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/grenadier</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags><!--武器--> 
+      <li>GrenadeDestructive</li>
+      <li>GrenadeEMP</li>
+      <li>GrenadeSmoke</li>
+      <li>GrenadeFlame</li>                                                                 
+    </weaponTags>
+    <weaponMoney>570~3000</weaponMoney>
+  </PawnKindDef>
+
+  <!-- DMS_Mech_Kanonier 士兵砲兵型 : 能夠使用末日火箭等各式大威力武器 -->
+  <ThingDef ParentName="BaseMechRace_Soldat">
+    <defName>DMS_Mech_Kanonier</defName>
+    <label>kanonier</label>
+    <description>A biped humanoid robot imitated design from the combat unit of mechanoids, can equipped with weapons that humans can use. \n\n Although the carried battery backpack having a long battery life, but is also makes it unable to fight like a genuine mech walkers without cover.</description>
+    <modExtensions>
+      <li Class="DMS.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>SimpleGun</li>
+          <li>PLA_Pistol</li>
+          <li>Autopistol</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>GunSingleUse</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+      </li>
+      <li Class="DMS.TurretMannableExtension">
+        <mannableByDefault>false</mannableByDefault>
+        <BypassMannable>
+          <li MayRequire="Aoba.Fortress.Industrial">FT_RecoillessGun</li>
+          <li MayRequire="Aoba.Fortress.Industrial">FT_TurretHexMortar</li>
+          <li MayRequire="Aoba.Fortress.Industrial">FT_TurretPrince</li>
+          <li MayRequire="Aoba.Fortress.Industrial">FT_TurretEmpero</li>
+          <li MayRequire="Aoba.Fortress.Industrial.Citadel">FTC_Katyusha_Turret</li>
+          <li MayRequire="Aoba.Fortress.Frontier">FT_RecoillessRifle</li>
+        </BypassMannable>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_Mech_Kanonier</defName>
+    <label>kanonier</label>
+    <race>DMS_Mech_Kanonier</race>
+    <isFighter>true</isFighter>
+    <combatPower>40</combatPower>                                               <!--威脅點數-->
+    <maxPerGroup>20</maxPerGroup>                                                 <!--單個集群內的數量-->
+    <lifeStages>                                                                 <!--身體圖片-->
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/soldat</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/soldat</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>1000~3000</weaponMoney>
+    <weaponTags><!--武器-->
+      <li>GunSingleUse</li>                                                              
+    </weaponTags>
+  </PawnKindDef>
+
+  <!-- DMS_Mech_Sergeant 士兵指揮型 : 只能裝備單手武器 -->
+  <ThingDef ParentName="BaseMechRace_Soldat">
+    <defName>DMS_Mech_Sergeant</defName>
+    <label>sergeant</label>
+    <description>As a relay command variant of a mech soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. it can be the mechnitor command relay but due to its weight with reduced fire control system, which can only equip a light weapon for self defense.</description>
+    <statBases>
+      <MoveSpeed>4</MoveSpeed>                                                    <!--移動速度-->
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>  <!--能抗-->
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <comps>
+      <li Class="DMS.CompProperties_CommandRelay">
+        <maxWorldMapRadius>10</maxWorldMapRadius>
+        <maxRelayRadius>20</maxRelayRadius>
+        <minRelayRadius>5</minRelayRadius>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="DMS.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>CE_OneHandedWeapon</li>
+          <li>CE_AI_Pistol</li>
+          <li>PLA_Pistol</li>
+          <li>DMS_MechWeaponLight</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons>
+          <li MayRequire="ceteam.combatextended">Gun_BinocularsRadio</li>
+        </BypassUsableWeapons>
+      </li>
+    </modExtensions>
+    <killedLeavingsPlayerHostile>
+      <ComponentTransmitter>1</ComponentTransmitter>
+    </killedLeavingsPlayerHostile>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_Mech_Sergeant</defName>
+    <label>sergeant</label>
+    <race>DMS_Mech_Sergeant</race>
+    <isFighter>true</isFighter>
+    <combatPower>75</combatPower>                                               <!--威脅點數-->
+    <maxPerGroup>3</maxPerGroup>                                                 <!--單個襲擊隊伍中的最大數量-->
+    <lifeStages>                                                                 <!--身體圖片-->
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/sergeant</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/sergeant</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>DMS_MechWeaponLight</li>                                                                     <!--武器-->
+    </weaponTags>
+    <abilities>
+      <li>DMS_CallDrop</li>
+      <li>DMS_CallDrop_Falcon</li>
+    </abilities>
+  </PawnKindDef>
+
+</Defs>

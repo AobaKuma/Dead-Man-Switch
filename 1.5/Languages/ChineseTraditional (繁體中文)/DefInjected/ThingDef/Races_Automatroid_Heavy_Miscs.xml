@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Ape -->
+  <DMS_Mech_Ape.label>猿人</DMS_Mech_Ape.label>
+  <!-- EN: A prototype design which tested the feasibility of a large humanoid automatroid capable of equipping heavy weapons. -->
+  <DMS_Mech_Ape.description>這是一個測試類人機兵可行性的原型設計，可裝備並操作重型武器。</DMS_Mech_Ape.description>
+  <!-- EN: head -->
+  <DMS_Mech_Ape.tools.head.label>頭部</DMS_Mech_Ape.tools.head.label>
+  
+  <!-- EN: Hermit Crab -->
+  <DMS_Mech_HermitCrab.label>寄居蟹</DMS_Mech_HermitCrab.label>
+  <!-- EN: These large, expensive, and heavy mobile industrial machines are designed to be an all-in-one unit for colonizing new worlds. Their large and expensive magnetic stabilized shells integrate many complex-axis CNC tools and precision machinery. In a pinch, its precision tools allow it to perform surgical procedures as long as the patient overcomes their fear of a machine weighing several tons acting as their surgeon. -->
+  <DMS_Mech_HermitCrab.description>體型龐大、昂貴且笨重的移動式工業母機，大多是由那些意圖開展太空殖民的世界所設計與製造，在其龐大且昂貴的磁穩筒殼內集成了數量繁雜的復軸數控刀具與微型機械臂，其精密程度能執行外科手術，但前提是患者能克服恐懼接受由一臺重達數噸的機械作為主刀醫生。</DMS_Mech_HermitCrab.description>
+  <!-- EN: head -->
+  <DMS_Mech_HermitCrab.tools.head.label>保護殼</DMS_Mech_HermitCrab.tools.head.label>
+  <!-- EN: laser cutter -->
+  <DMS_Mech_HermitCrab.tools.laser_cutter.label>雷射切割刀</DMS_Mech_HermitCrab.tools.laser_cutter.label>
+  <!-- EN: surgical drill -->
+  <DMS_Mech_HermitCrab.tools.surgical_drill.label>手術鑽</DMS_Mech_HermitCrab.tools.surgical_drill.label>
+  
+</LanguageData>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			
+			<!--DMS_Flameblaster 火焰發射器-->
+			<li Class="PatchOperationRemove">
+				<xpath>
+					Defs/ThingDef[defName="DMS_Flameblaster"]/verbs
+				</xpath>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Flameblaster"]/tools</xpath>
+				<value>
+					<tools Inherit="False">
+						<li Class="CombatExtended.ToolCE">
+							<label>grip</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>3</power>
+							<cooldownTime>1.54</cooldownTime>
+							<chanceFactor>1.5</chanceFactor>
+							<armorPenetrationBlunt>0.755</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>muzzle</label>
+							<capacities>
+								<li>Poke</li>
+							</capacities>
+							<power>3</power>
+							<cooldownTime>1.54</cooldownTime>
+							<armorPenetrationBlunt>0.755</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+						</li>
+					</tools>
+				</value>
+			</li>
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Flameblaster</defName>
+				<statBases>
+					<WorkToMake>8600</WorkToMake>
+					<Mass>10.1</Mass>
+					<Bulk>6.7</Bulk>
+					<SwayFactor>1.0</SwayFactor>
+					<ShotSpread>1.0</ShotSpread>
+					<SightsEfficiency>0.70</SightsEfficiency>
+					<RangedWeapon_Cooldown>0.41</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_DMS_Flamethrower_Napalm</defaultProjectile>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+					<warmupTime>0.5</warmupTime>
+					<minRange>1.5</minRange>
+					<range>16</range>
+					<burstShotCount>10</burstShotCount>
+					<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+					<soundCast>Shot_MiniFlameblaster</soundCast>
+					<soundCastTail>GunTail_Light</soundCastTail>
+					<muzzleFlashScale>9</muzzleFlashScale>
+					<recoilAmount>0</recoilAmount>
+				</Properties>
+				<AmmoUser>
+					<magazineSize>40</magazineSize>
+					<reloadTime>2</reloadTime>
+					<ammoSet>AmmoSet_DMS_Flamethrower</ammoSet>
+				</AmmoUser>
+				<FireModes>
+					<aiAimMode>Snapshot</aiAimMode>
+					<aimedBurstShotCount>5</aimedBurstShotCount>
+				</FireModes>
+				<weaponTags>
+					<li>CE_AI_Pistol</li>
+				</weaponTags>
+			</li>
+	    </operations>	
+    </Operation>
+</Patch>			

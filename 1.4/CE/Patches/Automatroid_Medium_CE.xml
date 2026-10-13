@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Combat Extended</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+	<!-- ========== PawnKind Patches ========== -->
+	<li Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnKindDef[defName="DMS_Mech_Grenadier"]</xpath>
+		<value>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>3</min>
+					<max>5</max>
+				</primaryMagazineCount>
+			</li>
+		</value>
+	</li>
+
+	<li Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnKindDef[defName="DMS_Mech_Siegebreaker"]</xpath>
+		<value>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>3</min>
+					<max>4</max>
+				</primaryMagazineCount>
+				<forcedAmmoCategory>RocketThermobaric</forcedAmmoCategory>
+			</li>
+		</value>
+	</li>
+
+	<li Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnKindDef[defName="DMS_Mech_Kanonier"]</xpath>
+		<value>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>3</min>
+					<max>6</max>
+				</primaryMagazineCount>
+				<forcedSidearm>
+					<sidearmMoney>
+						<min>150</min>
+						<max>350</max>
+					</sidearmMoney>
+					<weaponTags>
+						<li>DMS_MechWeaponLight</li>
+					</weaponTags>
+					<magazineCount>
+						<min>2</min>
+						<max>5</max>
+					</magazineCount>
+				</forcedSidearm>
+			</li>
+		</value>
+	</li>
+
+	<li Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnKindDef[defName="DMS_Mech_Soldat" or 
+			                    defName="DMS_Mech_Sergeant" or
+								defName="DMS_Mech_Arquebusier" or 
+								defName="DMS_Mech_Jaeger" or 
+								defName="DMS_Mech_Pioneer" or 
+								defName="DMS_Mech_Sniper" or 
+								defName="DMS_Mech_Phalanx" or 
+								defName="DMS_Mech_Ronin" or 
+								defName="DMS_Mech_Protector" or
+								defName="DMS_AutomatroidKind_lady"
+								]</xpath>
+		<value>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>4</min>
+					<max>6</max>
+				</primaryMagazineCount>
+			</li>
+		</value>
+	</li>
+
+	<!-- ======Soldat======-->
+	<li Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]/statBases</xpath>
+		<value>
+			<CarryWeight>50</CarryWeight>
+			<CarryBulk>20</CarryBulk>
+			<AimingAccuracy>0.9</AimingAccuracy>
+			<ShootingAccuracyPawn>1.15</ShootingAccuracyPawn>
+			<MeleeDodgeChance>0.11</MeleeDodgeChance>
+			<MeleeCritChance>0.07</MeleeCritChance>
+			<MeleeParryChance>0.06</MeleeParryChance>
+			<MaxHitPoints>200</MaxHitPoints>
+			<NightVisionEfficiency>0.6</NightVisionEfficiency>
+			<ReloadSpeed>1.2</ReloadSpeed>
+		</value>
+	</li>	
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>8</ArmorRating_Blunt>
+		</value>
+	</li>
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>6</ArmorRating_Sharp>
+		</value>
+	</li>
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]/statBases/ArmorRating_Heat</xpath>
+		<value>
+			<ArmorRating_Heat>0.1</ArmorRating_Heat>
+		</value>
+	</li>
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DMS_Mech_Sergeant"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>8</ArmorRating_Blunt>
+		</value>
+	</li>
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DMS_Mech_Sergeant"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>6</ArmorRating_Sharp>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</li>
+
+	<li Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]/comps</xpath>
+		<value>
+			<li Class="CombatExtended.CompProperties_ArmorDurability">
+				<Durability>790</Durability>
+				<Regenerates>true</Regenerates>
+				<RegenInterval>1250</RegenInterval>
+				<RegenValue>5</RegenValue>
+				<Repairable>true</Repairable>
+				<RepairIngredients>
+					<Steel>10</Steel>
+				</RepairIngredients>
+				<RepairTime>300</RepairTime>
+				<RepairValue>200</RepairValue>
+				<CanOverHeal>true</CanOverHeal>
+				<MaxOverHeal>82</MaxOverHeal>
+				<MinArmorPct>0.75</MinArmorPct>
+			</li>
+		</value>
+	</li>
+
+    <!--a bit better aim for grenadier to make sure it can land its shot, also extra bulk due to grenades' and weapon's high bulk-->
+	<li Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DMS_Mech_Grenadier"]/statBases</xpath>
+		<value>
+			<AimingAccuracy>1.2</AimingAccuracy>
+			<ShootingAccuracyPawn>1.25</ShootingAccuracyPawn>
+			<CarryBulk>45</CarryBulk>
+		</value>
+	</li>
+
+    <!--higher capacity for at least 3 single use launchers-->
+	<li Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DMS_Mech_Kanonier"]</xpath>
+		<value>
+			<statBases>
+			    <CarryWeight>60</CarryWeight>
+			    <CarryBulk>40</CarryBulk>
+		    </statBases>
+		</value>
+	</li>
+
+	<!-- ======Lady======-->
+	<!--patch tools-->
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DMS_Automatroid_lady"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>left fist</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>3</power>
+					<surpriseAttack>
+						<extraMeleeDamages>
+							<li>
+								<def>Stun</def>
+								<amount>5</amount>
+							</li>
+						</extraMeleeDamages>
+					</surpriseAttack>
+					<cooldownTime>1.01</cooldownTime>
+					<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+					<armorPenetrationBlunt>0.873</armorPenetrationBlunt>
+					<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>right fist</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>3</power>
+					<surpriseAttack>
+						<extraMeleeDamages>
+							<li>
+								<def>Stun</def>
+								<amount>5</amount>
+							</li>
+						</extraMeleeDamages>
+					</surpriseAttack>
+					<cooldownTime>1.01</cooldownTime>
+					<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+					<armorPenetrationBlunt>0.873</armorPenetrationBlunt>
+					<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+				</li>
+			</tools>
+		</value>
+	</li>
+
+	<li Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DMS_Automatroid_lady"]/statBases</xpath>
+		<value>
+			<CarryWeight>40</CarryWeight>
+			<CarryBulk>40</CarryBulk>
+			<AimingAccuracy>1.35</AimingAccuracy>
+			<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+			<MeleeDodgeChance>0.19</MeleeDodgeChance>
+			<MeleeCritChance>0.18</MeleeCritChance>
+			<MeleeParryChance>0.07</MeleeParryChance>
+			<MaxHitPoints>200</MaxHitPoints>
+			<NightVisionEfficiency>0.85</NightVisionEfficiency>
+		</value>
+	</li>
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DMS_Automatroid_lady"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>5</ArmorRating_Blunt>
+		</value>
+	</li>
+
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DMS_Automatroid_lady"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>4</ArmorRating_Sharp>
+		</value>
+	</li>
+
+	<li Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="DMS_Automatroid_lady"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DMS_Automatroid_lady"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</li>
+
+	<li Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DMS_Automatroid_lady"]/comps</xpath>
+		<value>
+			<li Class="CombatExtended.CompProperties_ArmorDurability">
+				<Durability>730</Durability>
+				<Regenerates>true</Regenerates>
+				<RegenInterval>1250</RegenInterval>
+				<RegenValue>5</RegenValue>
+				<Repairable>true</Repairable>
+				<RepairIngredients>
+					<Steel>5</Steel>
+					<Tungsteel>5</Tungsteel>
+				</RepairIngredients>
+				<RepairTime>300</RepairTime>
+				<RepairValue>200</RepairValue>
+				<CanOverHeal>true</CanOverHeal>
+				<MaxOverHeal>73</MaxOverHeal>
+				<MinArmorPct>0.75</MinArmorPct>
+			</li>
+		</value>
+	</li>
+
+</operations>
+</match>
+</Operation>
+</Patch>

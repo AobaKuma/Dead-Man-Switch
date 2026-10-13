@@ -15,26 +15,12 @@
   <!-- EN: Growing artifuscle. -->
   <DMS_Make_Artifuscle.jobString>Growing artifuscle.</DMS_Make_Artifuscle.jobString>
   
-  <!-- EN: Grow artifuscle x5 (artiprotein) -->
-  <DMS_Make_ArtifuscleFromProtein.label>Grow artifuscle x5 (artiprotein)</DMS_Make_ArtifuscleFromProtein.label>
-  <!-- EN: Substitute artiprotein for the neutroamine and gold demanded by the conventional feedstock. It is in practice the more cost-effective route to artificial muscle, at the price of a far longer growth cycle. -->
-  <DMS_Make_ArtifuscleFromProtein.description>Substitute artiprotein for the neutroamine and gold demanded by the conventional feedstock. It is in practice the more cost-effective route to artificial muscle, at the price of a far longer growth cycle.</DMS_Make_ArtifuscleFromProtein.description>
-  <!-- EN: Growing artifuscle. -->
-  <DMS_Make_ArtifuscleFromProtein.jobString>Growing artifuscle.</DMS_Make_ArtifuscleFromProtein.jobString>
-  
   <!-- EN: Grow artifuscle x100 -->
   <DMS_Make_ArtifuscleMass.label>Grow artifuscle x100</DMS_Make_ArtifuscleMass.label>
   <!-- EN: Grow a large batch of artifuscle. -->
   <DMS_Make_ArtifuscleMass.description>Grow a large batch of artifuscle.</DMS_Make_ArtifuscleMass.description>
   <!-- EN: Growing artifuscle. -->
   <DMS_Make_ArtifuscleMass.jobString>Growing artifuscle.</DMS_Make_ArtifuscleMass.jobString>
-  
-  <!-- EN: Refine artiprotein x5 -->
-  <DMS_Make_Artiprotein.label>Refine artiprotein x25</DMS_Make_Artiprotein.label>
-  <!-- EN: Feed sugars and starches to a controlled enzyme culture and let it assemble protein blocks. The process is slow and power-hungry, but on an orbital station with no room for fields or livestock it is the only stable source of meat nutrition. -->
-  <DMS_Make_Artiprotein.description>Feed sugars and starches to a controlled enzyme culture and let it assemble protein blocks. The process is slow and power-hungry, but on an orbital station with no room for fields or livestock it is the only stable source of meat nutrition.</DMS_Make_Artiprotein.description>
-  <!-- EN: Refining artiprotein. -->
-  <DMS_Make_Artiprotein.jobString>Refining artiprotein.</DMS_Make_Artiprotein.jobString>
   
   <!-- EN: Make ceramics x20 -->
   <DMS_Make_Ceramics.label>Make ceramics x20</DMS_Make_Ceramics.label>
@@ -62,25 +48,18 @@
   <!-- EN: Make a stamponent -->
   <DMS_Make_ComponentStamped.description>Make a stamponent</DMS_Make_ComponentStamped.description>
   <!-- EN: Stamping compoments. -->
-  <DMS_Make_ComponentStamped.jobString>Stamping components.</DMS_Make_ComponentStamped.jobString>
+  <DMS_Make_ComponentStamped.jobString>Stamping compoments.</DMS_Make_ComponentStamped.jobString>
   
   <!-- EN: Make stamponent x4 -->
   <DMS_Make_ComponentStampedMass.label>Make stamponent x4</DMS_Make_ComponentStampedMass.label>
   <!-- EN: Make stamponents. -->
   <DMS_Make_ComponentStampedMass.description>Make stamponents.</DMS_Make_ComponentStampedMass.description>
   <!-- EN: stamping compoments. -->
-  <DMS_Make_ComponentStampedMass.jobString>Stamping components.</DMS_Make_ComponentStampedMass.jobString>
-  
-  <!-- EN: Refine neutroamine x5 -->
-  <DMS_Make_Neutroamine.label>Refine neutroamine x5</DMS_Make_Neutroamine.label>
-  <!-- EN: Synthesize neutroamine from the lipids in meat and the hydrocarbons in chemfuel. The compound is invaluable in medicine, and a synthesis route this cheap would cause no small trouble for the pharmaceutical monopolies of many midworlds once it spreads. -->
-  <DMS_Make_Neutroamine.description>Synthesize neutroamine from the lipids in meat and the hydrocarbons in chemfuel. The compound is invaluable in medicine, and a synthesis route this cheap would cause no small trouble for the pharmaceutical monopolies of many midworlds once it spreads.</DMS_Make_Neutroamine.description>
-  <!-- EN: Refining neutroamine. -->
-  <DMS_Make_Neutroamine.jobString>Refining neutroamine.</DMS_Make_Neutroamine.jobString>
+  <DMS_Make_ComponentStampedMass.jobString>stamping compoments.</DMS_Make_ComponentStampedMass.jobString>
   
   <!-- EN: Make plasfiber x20 -->
   <DMS_Make_Plasfiber.label>Make plasfiber x20</DMS_Make_Plasfiber.label>
-  <!-- EN: Synthesize plasic fibers. -->
+  <!-- EN: Synthesize plasfibers. -->
   <DMS_Make_Plasfiber.description>Synthesize plasfibers.</DMS_Make_Plasfiber.description>
   <!-- EN: Synthesizing. -->
   <DMS_Make_Plasfiber.jobString>Synthesizing.</DMS_Make_Plasfiber.jobString>
@@ -107,23 +86,23 @@
   <DMS_Make_PolyesterMass.jobString>Synthesizing.</DMS_Make_PolyesterMass.jobString>
   
   <!-- EN: Make tungsteel X20 -->
-  <DMS_Make_Tungsteel.label>Make tungsteel x20</DMS_Make_Tungsteel.label>
+  <DMS_Make_Tungsteel.label>Make tungsteel X20</DMS_Make_Tungsteel.label>
   <!-- EN: Sinter a small amount of tungsteel. -->
   <DMS_Make_Tungsteel.description>Sinter a small amount of tungsteel.</DMS_Make_Tungsteel.description>
   <!-- EN: Sintering. -->
   <DMS_Make_Tungsteel.jobString>Sintering.</DMS_Make_Tungsteel.jobString>
   
   <!-- EN: Make tungsteel x 80 -->
-  <DMS_Make_TungsteelMass.label>Make tungsteel x80</DMS_Make_TungsteelMass.label>
+  <DMS_Make_TungsteelMass.label>Make tungsteel x 80</DMS_Make_TungsteelMass.label>
   <!-- EN: Sinter a large amount of tungsteel. -->
   <DMS_Make_TungsteelMass.description>Sinter a large amount of tungsteel.</DMS_Make_TungsteelMass.description>
   <!-- EN: sintering. -->
-  <DMS_Make_TungsteelMass.jobString>Sintering.</DMS_Make_TungsteelMass.jobString>
+  <DMS_Make_TungsteelMass.jobString>sintering.</DMS_Make_TungsteelMass.jobString>
   
   <!-- EN: Synthesize wetware computer -->
   <DMS_Make_WetWare.label>Synthesize wetware computer</DMS_Make_WetWare.label>
   <!-- EN: Synthesize a wetware computer- A high-precision computer that can be produced and used on a large scale. -->
-  <DMS_Make_WetWare.description>Synthesize a wetware computer, a high-precision computer that can be produced and used on a large scale.</DMS_Make_WetWare.description>
+  <DMS_Make_WetWare.description>Synthesize a wetware computer- A high-precision computer that can be produced and used on a large scale.</DMS_Make_WetWare.description>
   <!-- EN: Synthesizing wetware computer. -->
   <DMS_Make_WetWare.jobString>Synthesizing wetware computer.</DMS_Make_WetWare.jobString>
   

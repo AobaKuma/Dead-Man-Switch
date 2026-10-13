@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>AutomatroidWeapon</defName>
+		<label>automatroid weapon</label>
+		<parent>WeaponsRanged</parent>
+	</ThingCategoryDef>
+
+	<ThingDef Name="DMS_AutomatroidGun" ParentName="BaseGun" Abstract="True">
+		<soundInteract>DMS_EquipGear</soundInteract>
+		<thingCategories Inherit="False">
+			<li>AutomatroidWeapon</li>
+		</thingCategories>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<recipeUsers Inherit="False">
+				<li>DMS_TableMachinePrinter</li>
+			</recipeUsers>
+			<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+		</recipeMaker>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToMake>40000</WorkToMake>
+		</statBases>
+		<tradeTags>
+			<li>DMS_WeaponRanged</li>
+		</tradeTags>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef Name="DMS_BaseMakeableGun" ParentName="DMS_AutomatroidGun" Abstract="True">
+		<recipeMaker>
+			<recipeUsers Inherit="False">
+				<li>TableMachining</li>
+				<li>DMS_TableMachinePrinter</li>
+			</recipeUsers>
+		</recipeMaker>
+	</ThingDef>
+
+	<!-- 即使穿著動力外骨骼也沒法操作的重型槍械-->
+	<ThingDef Name="DMS_AutomatroidHeavyGun" ParentName="DMS_AutomatroidGun" Abstract="True">
+		<statBases>
+		    <MaxHitPoints>300</MaxHitPoints>
+			<WorkToMake>80000</WorkToMake>
+	    </statBases>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>DMS_EquipmentHeavy</li>
+		  	</researchPrerequisites>
+		</recipeMaker>
+		<tools Inherit="False">
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>24</power>
+				<cooldownTime>3</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>24</power>
+				<cooldownTime>3</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+</Defs>

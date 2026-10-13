@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Since [PAWN_nameDef] grew up in a gravity-free environment, [PAWN_pronoun] childhood was spent undergoing rehabilitation and gravity exposure treatments. Although these treatments have allowed [PAWN_pronoun] to move regularly in a normal gravity environment, [PAWN_pronoun] physical condition is still far inferior compared to other children of the same age. -->
+  <DMS_CivilianChild01.description>由於成長在無重力環境下[PAWN_nameDef]的童年是在無數的康復訓練與治療中度過的。這些療程雖然讓[PAWN_pronoun]能在重力環境下自如活動了，但體質依然遠不如同齡的孩子</DMS_CivilianChild01.description>
+  <!-- EN: Low G Adjuster -->
+  <DMS_CivilianChild01.title>低重力調整者</DMS_CivilianChild01.title>
+  <!-- EN: Adjuster -->
+  <DMS_CivilianChild01.titleShort>調整者</DMS_CivilianChild01.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] was born out of wedlock in the colonial fleet stationed on the planet's surface, and his biological father is unknown. Fortunately, the soldiers stationed in the camp treated [PAWN_pronoun] as one of their own, allowing [PAWN_pronoun] to have a relatively complete childhood -->
+  <DMS_MilitaryChild01.description>[PAWN_nameDef]出生在殖民艦隊在星球地面上的駐營，生父未知。好在駐營中的士兵們都將[PAWN_pronoun]做為自己的孩子對待讓[PAWN_pronoun]有了一個相對完整的童年。</DMS_MilitaryChild01.description>
+  <!-- EN: Bastard Child -->
+  <DMS_MilitaryChild01.title>駐軍營童</DMS_MilitaryChild01.title>
+  <!-- EN: Child -->
+  <DMS_MilitaryChild01.titleShort>駐軍營童</DMS_MilitaryChild01.titleShort>
+  
+  <!-- EN: Due to his outstanding performance in the Colonial Military Academy, [PAWN_nameDef] was trained as an Officer Cadet during his childhood. [PAWN_nameDef] achieved the rank of Warrant Officer upon reaching adulthood. -->
+  <DMS_OfficerChild01.description>由於在軍校中優異的表現[PAWN_nameDef]從小就接受訓練成為了一名預備役軍官。並在成年之前便已獲得了準尉軍銜。</DMS_OfficerChild01.description>
+  <!-- EN: Officer Cadet -->
+  <DMS_OfficerChild01.title>預備役軍官</DMS_OfficerChild01.title>
+  <!-- EN: Cadet -->
+  <DMS_OfficerChild01.titleFemale>預備役軍官</DMS_OfficerChild01.titleFemale>
+  <!-- EN: Cadet -->
+  <DMS_OfficerChild01.titleShort>預備役軍官</DMS_OfficerChild01.titleShort>
+  <!-- EN: Cadet -->
+  <DMS_OfficerChild01.titleShortFemale>預備役軍官</DMS_OfficerChild01.titleShortFemale>
+  
+  <!-- EN: [PAWN_nameDef] grew up on a colonial planet full of turmoil and used [PAWN_pronoun] flexible skills as messenger on the frontline battlefields full of electromagnetic interference and hostile fire. After the war, [PAWN_pronoun] was able to return to school for an education. -->
+  <DMS_OfficerChild02.description>[PAWN_nameDef]在一個充滿動亂的殖民星球上長大，而[PAWN_pronoun]頻藉著靈活的身手成為一名傳令兵穿梭於充滿電磁干擾的戰場前線。並在戰爭結束後得以回到學校接受教育。</DMS_OfficerChild02.description>
+  <!-- EN: Child Orderly -->
+  <DMS_OfficerChild02.title>戰亂童兵</DMS_OfficerChild02.title>
+  <!-- EN: Orderly -->
+  <DMS_OfficerChild02.titleShort>童兵</DMS_OfficerChild02.titleShort>
+  
+  <!-- EN: [PAWN_nameDef]'s parents were declared Missing in Action during their deployment while they were very young. Due to the Military Martyrdom Clause of the Colonial Fleet, they received a scholarship to support them through the Officer Academy Course. -->
+  <DMS_OfficerChild03.description>[PAWN_nameDef]的雙親在他還有記憶之時便在執行任務時失蹤，出於殖民艦隊的軍烈條款[PAWN_pronoun]得到了一系列的補償以支持[PAWN_pronoun]完成軍官學院的課程。</DMS_OfficerChild03.description>
+  <!-- EN: Son of Martyrs -->
+  <DMS_OfficerChild03.title>烈士後裔</DMS_OfficerChild03.title>
+  <!-- EN: Daughter of Martyrs -->
+  <DMS_OfficerChild03.titleFemale>烈士後裔</DMS_OfficerChild03.titleFemale>
+  <!-- EN: Martyrs' Child -->
+  <DMS_OfficerChild03.titleShort>烈士後裔</DMS_OfficerChild03.titleShort>
+  
+</LanguageData>

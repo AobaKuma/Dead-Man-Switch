@@ -1,0 +1,758 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+  <operations>
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_FindAndDestroy</settingName>
+      <active Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThinkTreeDef[defName =
+          "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+        <value>
+          <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+            <workMode>WVC_FindAndDestroy</workMode>
+            <subNodes>
+              <!-- = -->
+              <li Class="JobGiver_AIFightEnemies">
+                <targetAcquireRadius>65</targetAcquireRadius>
+                <targetKeepRadius>72</targetKeepRadius>
+              </li>
+              <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
+                <subNodes>
+                  <li Class="JobGiver_AIGotoNearestHostile" />
+                </subNodes>
+              </li>
+              <!-- = -->
+              <li Class="JobGiver_SeekAllowedArea" />
+              <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+                <tickInterval>625</tickInterval>
+              </li>
+              <li Class="JobGiver_WanderColony">
+                <maxDanger>Deadly</maxDanger>
+                <reportStringOverride>Patrolling.</reportStringOverride>
+              </li>
+            </subNodes>
+          </li>
+        </value>
+      </active>
+    </li>
+    <!-- =========================================================== -->
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_WaitEnemy</settingName>
+      <active Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThinkTreeDef[defName =
+          "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+        <value>
+          <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+            <workMode>WVC_WaitEnemy</workMode>
+            <subNodes>
+              <!-- = -->
+              <li Class="JobGiver_AIFightEnemies">
+                <targetAcquireRadius>65</targetAcquireRadius>
+                <targetKeepRadius>72</targetKeepRadius>
+              </li>
+              <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
+                <subNodes>
+                  <li Class="JobGiver_AIGotoNearestHostile" />
+                </subNodes>
+              </li>
+              <!-- = -->
+              <li Class="JobGiver_SeekAllowedArea" />
+              <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+                <tickInterval>625</tickInterval>
+              </li>
+              <!-- Go to spot -->
+              <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+              <!-- <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName> -->
+              <!--
+                  <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+              <!-- </li> -->
+              <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                <workModeType>Combat</workModeType>
+                <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
+                <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+              </li>
+              <!-- Shutdown -->
+              <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                <forced>true</forced>
+              </li>
+            </subNodes>
+          </li>
+        </value>
+      </active>
+    </li>
+    <!-- =========================================================== -->
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_WorkAndWaitEnemy</settingName>
+      <active Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThinkTreeDef[defName =
+          "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+        <value>
+          <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+            <workMode>WVC_WorkAndWaitEnemy</workMode>
+            <subNodes>
+              <!-- = -->
+              <li Class="JobGiver_AIFightEnemies">
+                <targetAcquireRadius>65</targetAcquireRadius>
+                <targetKeepRadius>72</targetKeepRadius>
+              </li>
+              <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
+                <subNodes>
+                  <li Class="JobGiver_AIGotoNearestHostile" />
+                </subNodes>
+              </li>
+              <!-- = -->
+              <!-- Charge -->
+              <li Class="JobGiver_SeekAllowedArea" />
+              <li Class="JobGiver_GetEnergy_Charger" />
+              <!-- END Charge -->
+              <li Class="JobGiver_Work">
+                <emergency>true</emergency>
+              </li>
+              <li Class="JobGiver_Work" />
+              <!-- Go to smart charge -->
+              <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+                <tickInterval>625</tickInterval>
+              </li>
+              <!-- Go to spot -->
+              <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+              <!-- <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName> -->
+              <!--
+                  <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+              <!-- </li> -->
+              <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                <workModeType>Combat</workModeType>
+                <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
+                <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+              </li>
+              <!-- Shutdown long -->
+              <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                <forced>true</forced>
+              </li>
+            </subNodes>
+          </li>
+        </value>
+      </active>
+    </li>
+    <!-- =========================================================== -->
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_Ambush</settingName>
+      <active Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThinkTreeDef[defName =
+          "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+        <value>
+          <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+            <workMode>WVC_Ambush</workMode>
+            <subNodes>
+              <li Class="JobGiver_SeekAllowedArea" />
+              <li Class="JobGiver_GetEnergy_Charger" />
+              <li Class="JobGiver_AIFightEnemies">
+                <targetAcquireRadius>65</targetAcquireRadius>
+                <targetKeepRadius>72</targetKeepRadius>
+              </li>
+              <!-- Go to spot -->
+              <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+              <!-- <spotDefName>WVC_IOMSS_Ambush</spotDefName> -->
+              <!-- </li> -->
+              <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                <workModeType>Ambush</workModeType>
+                <spotDefName>WVC_IOMSS_Ambush</spotDefName>
+              </li>
+              <!-- Shutdown -->
+              <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                <forced>true</forced>
+              </li>
+            </subNodes>
+          </li>
+        </value>
+      </active>
+    </li>
+    <!-- =========================================================== -->
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_DefendYourself</settingName>
+      <active Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThinkTreeDef[defName =
+          "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+        <value>
+          <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+            <workMode>WVC_DefendYourself</workMode>
+            <subNodes>
+              <li Class="JobGiver_SeekAllowedArea" />
+              <li Class="JobGiver_GetEnergy_Charger" />
+              <li Class="JobGiver_AIFightEnemies">
+                <targetAcquireRadius>9</targetAcquireRadius>
+                <targetKeepRadius>12</targetKeepRadius>
+              </li>
+              <li Class="WVC_WorkModes.ThinkNode_ConditionalCanRepair">
+                <subNodes>
+                  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                    <workModeType>Safe</workModeType>
+                    <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
+                    <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+                  </li>
+                  <!-- Very-very long shutdown -->
+                  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                    <tickInterval>6000</tickInterval>
+                    <forced>true</forced>
+                  </li>
+                </subNodes>
+              </li>
+              <li Class="JobGiver_WanderColony">
+                <maxDanger>Deadly</maxDanger>
+                <reportStringOverride>Protects itself.</reportStringOverride>
+              </li>
+            </subNodes>
+          </li>
+        </value>
+      </active>
+    </li>
+    <!-- =========================================================== -->
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_WorkAndRecharge</settingName>
+      <active Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThinkTreeDef[defName =
+          "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+        <value>
+          <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+            <workMode>WVC_WorkAndRecharge</workMode>
+            <subNodes>
+              <li Class="JobGiver_SeekAllowedArea" />
+              <li Class="JobGiver_GetEnergy_Charger" />
+              <li Class="JobGiver_Work">
+                <emergency>true</emergency>
+              </li>
+              <li Class="JobGiver_Work" />
+              <li Class="ThinkNode_ConditionalWorkMech">
+                <invert>true</invert>
+                <subNodes>
+                  <li Class="JobGiver_AIFightEnemies">
+                    <targetAcquireRadius>65</targetAcquireRadius>
+                    <targetKeepRadius>72</targetKeepRadius>
+                  </li>
+                </subNodes>
+              </li>
+              <!-- Go to smart charge -->
+              <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+                <tickInterval>625</tickInterval>
+              </li>
+              <!-- Go to spot -->
+              <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+              <!-- <spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName> -->
+              <!--
+                  <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+              <!-- </li> -->
+              <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                <workModeType>Work</workModeType>
+                <spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName>
+                <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+              </li>
+              <!-- Shutdown long -->
+              <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                <forced>true</forced>
+              </li>
+            </subNodes>
+          </li>
+        </value>
+      </active>
+    </li>
+    <!-- =========================================================== -->
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_SafeWorkAndRecharge</settingName>
+      <active Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThinkTreeDef[defName =
+          "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+        <value>
+          <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+            <workMode>WVC_SafeWorkAndRecharge</workMode>
+            <subNodes>
+              <!-- Find Enemy -->
+              <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
+                <subNodes>
+                  <!-- If Danger -->
+                  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+                  <!-- <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName> -->
+                  <!--
+                      <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+                  <!-- </li> -->
+                  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                    <workModeType>Safe</workModeType>
+                    <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
+                    <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+                  </li>
+                  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                    <tickInterval>1500</tickInterval>
+                    <forced>true</forced>
+                  </li>
+                </subNodes>
+              </li>
+              <!-- If Safe -->
+              <li Class="JobGiver_SeekAllowedArea" />
+              <li Class="JobGiver_GetEnergy_Charger" />
+              <li Class="JobGiver_Work">
+                <emergency>true</emergency>
+              </li>
+              <li Class="JobGiver_Work" />
+              <li Class="ThinkNode_ConditionalWorkMech">
+                <invert>true</invert>
+                <subNodes>
+                  <li Class="JobGiver_AIFightEnemies">
+                    <targetAcquireRadius>65</targetAcquireRadius>
+                    <targetKeepRadius>72</targetKeepRadius>
+                  </li>
+                </subNodes>
+              </li>
+              <!-- Go to smart charge -->
+              <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+                <tickInterval>625</tickInterval>
+              </li>
+              <!-- Go to spot -->
+              <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+              <!-- <spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName> -->
+              <!--
+                  <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+              <!-- </li> -->
+              <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                <workModeType>Work</workModeType>
+                <spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName>
+                <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+              </li>
+              <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                <forced>true</forced>
+              </li>
+            </subNodes>
+          </li>
+        </value>
+      </active>
+    </li>
+    <!-- =========================================================== -->
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_EscaortAndRecharge</settingName>
+      <active Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThinkTreeDef[defName =
+          "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+        <value>
+          <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+            <workMode>WVC_EscaortAndRecharge</workMode>
+            <subNodes>
+              <li Class="JobGiver_GetEnergy_Charger" />
+              <!-- <li Class="JobGiver_ExitMapFollowOverseer" /> -->
+              <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+              <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer" />
+              <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+              <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
+            </subNodes>
+          </li>
+        </value>
+      </active>
+    </li>
+    <!-- =========================================================== -->
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_WorkRechargeEscort</settingName>
+      <active Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThinkTreeDef[defName =
+          "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+        <value>
+          <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+            <workMode>WVC_WorkRechargeEscort</workMode>
+            <subNodes>
+              <!-- <li Class="JobGiver_SeekAllowedArea" /> -->
+              <li Class="JobGiver_GetEnergy_Charger" />
+              <li Class="JobGiver_Work">
+                <emergency>true</emergency>
+              </li>
+              <li Class="JobGiver_Work" />
+              <!-- <li Class="JobGiver_ExitMapFollowOverseer" /> -->
+              <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+              <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer" />
+              <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+              <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
+            </subNodes>
+          </li>
+        </value>
+      </active>
+    </li>
+    <!-- =========================================================== -->
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_EscortIfEnemyOnMap</settingName>
+      <active Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThinkTreeDef[defName =
+          "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+        <value>
+          <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+            <workMode>WVC_EscortIfEnemyOnMap</workMode>
+            <subNodes>
+              <!-- <li Class="JobGiver_ExitMapFollowOverseer" /> -->
+              <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
+                <subNodes>
+                  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+                  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer" />
+                  <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+                  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
+                </subNodes>
+              </li>
+              <!-- Go to smart charge -->
+              <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+                <tickInterval>625</tickInterval>
+              </li>
+              <!-- Go to spot -->
+              <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+              <!-- <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName> -->
+              <!--
+                  <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+              <!-- </li> -->
+              <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                <workModeType>Combat</workModeType>
+                <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
+                <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+              </li>
+              <!-- Shutdown short -->
+              <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                <tickInterval>625</tickInterval>
+                <forced>true</forced>
+              </li>
+            </subNodes>
+          </li>
+        </value>
+      </active>
+    </li>
+    <!-- =========================================================== -->
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_EscortIfEnemyWorkAndRecharge</settingName>
+      <active Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <xpath>
+              Defs/ThinkTreeDef[defName =
+              "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+            <value>
+              <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+                <workMode>WVC_EscortIfEnemyWorkAndRecharge</workMode>
+                <subNodes>
+                  <!-- Enemy = true -->
+                  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
+                    <subNodes>
+                      <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+                      <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer" />
+                      <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+                      <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
+                    </subNodes>
+                  </li>
+                  <!-- Enemy = false -->
+                  <li Class="JobGiver_SeekAllowedArea" />
+                  <li Class="JobGiver_GetEnergy_Charger" />
+                  <li Class="JobGiver_Work">
+                    <emergency>true</emergency>
+                  </li>
+                  <li Class="JobGiver_Work" />
+                  <!-- Go to smart charge -->
+                  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+                    <tickInterval>625</tickInterval>
+                  </li>
+                  <!-- Go to spot -->
+                  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+                  <!-- <spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName> -->
+                  <!--
+                      <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+                  <!-- </li> -->
+                  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                    <workModeType>Work</workModeType>
+                    <spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName>
+                    <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+                  </li>
+                  <!-- Shutdown long -->
+                  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                    <forced>true</forced>
+                  </li>
+                </subNodes>
+              </li>
+            </value>
+          </li>
+        </operations>
+      </active>
+    </li>
+    <!-- =========================================================== -->
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_EscortIfDraftedOrDowned</settingName>
+      <active Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <xpath>
+              Defs/ThinkTreeDef[defName =
+              "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+            <value>
+              <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+                <workMode>WVC_EscortIfDraftedOrDowned</workMode>
+                <subNodes>
+                  <!-- Drafted == true -->
+                  <li Class="WVC_WorkModes.ThinkNode_ConditionalDrafted">
+                    <subNodes>
+                      <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+                      <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer" />
+                      <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+                      <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
+                    </subNodes>
+                  </li>
+                  <!-- Drafted == false -->
+                  <!-- Downed == true -->
+                  <li Class="WVC_WorkModes.ThinkNode_ConditionalDowned">
+                    <subNodes>
+                      <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+                      <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer" />
+                      <li Class="JobGiver_AIFightEnemies">
+                        <targetAcquireRadius>65</targetAcquireRadius>
+                        <targetKeepRadius>72</targetKeepRadius>
+                      </li>
+                      <!-- <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" /> -->
+                      <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
+                    </subNodes>
+                  </li>
+                  <!-- Downed == false -->
+                  <li Class="JobGiver_SeekAllowedArea" />
+                  <li Class="JobGiver_GetEnergy_Charger" />
+                  <!-- Go to smart charge -->
+                  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+                    <tickInterval>625</tickInterval>
+                  </li>
+                  <!-- Go to spot -->
+                  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+                  <!-- <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName> -->
+                  <!--
+                      <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+                  <!-- </li> -->
+                  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                    <workModeType>Combat</workModeType>
+                    <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
+                    <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+                  </li>
+                  <!-- Shutdown long -->
+                  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                    <forced>true</forced>
+                  </li>
+                </subNodes>
+              </li>
+            </value>
+          </li>
+        </operations>
+      </active>
+    </li>
+    <!-- =========================================================== -->
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_HiveMindResearching</settingName>
+      <active Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <xpath>
+              Defs/ThinkTreeDef[defName =
+              "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+            <value>
+              <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+                <workMode>WVC_HiveMindResearching</workMode>
+                <subNodes>
+                  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects"> -->
+                  <!-- <invert>true</invert> -->
+                  <!-- <allOfResearchProjects> -->
+                  <!-- <li>WVC_WorkModes_HiveMindResearch</li> -->
+                  <!-- </allOfResearchProjects> -->
+                  <!-- <subNodes> -->
+                  <!-- <li Class="WVC_WorkModes.JobGiver_ChangeMode"> -->
+                  <!-- <workMode>Work</workMode> -->
+                  <!-- </li> -->
+                  <!-- </subNodes> -->
+                  <!-- </li> -->
+                  <li
+                    Class="WVC_WorkModes.ThinkNode_ConditionalWorkModesWithResearchRequirement"
+                    MayRequire="Ludeon.RimWorld.Biotech">
+                    <workMode>Work</workMode>
+                    <workModeResearchRequirementDefs>
+                      <li>WVC_WorkModes_HiveMindResearch</li>
+                    </workModeResearchRequirementDefs>
+                  </li>
+                  <!-- Find Enemy -->
+                  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
+                    <subNodes>
+                      <!-- If Danger -->
+                      <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+                      <!-- <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName> -->
+                      <!--
+                          <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+                      <!-- </li> -->
+                      <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                        <workModeType>Safe</workModeType>
+                        <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
+                        <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+                      </li>
+                      <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                        <tickInterval>1500</tickInterval>
+                        <forced>true</forced>
+                      </li>
+                    </subNodes>
+                  </li>
+                  <!-- If Safe -->
+                  <li Class="JobGiver_SeekAllowedArea" />
+                  <li Class="JobGiver_GetEnergy_Charger" />
+                  <li Class="WVC_WorkModes.ThinkNode_ConditionalCanRepair">
+                    <subNodes>
+                      <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                        <workModeType>Safe</workModeType>
+                        <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
+                        <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+                      </li>
+                      <!-- Very-very long shutdown -->
+                      <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                        <tickInterval>6000</tickInterval>
+                        <forced>true</forced>
+                      </li>
+                    </subNodes>
+                  </li>
+                  <li Class="WVC_WorkModes.JobGiver_MechDoResearch">
+                    <statDef>BandwidthCost</statDef>
+                    <researchFactor>10</researchFactor>
+                  </li>
+                  <li Class="JobGiver_WanderColony">
+                    <maxDanger>Deadly</maxDanger>
+                    <locomotionUrgency>Amble</locomotionUrgency>
+                    <reportStringOverride>Researching.</reportStringOverride>
+                  </li>
+                </subNodes>
+              </li>
+            </value>
+          </li>
+        </operations>
+      </active>
+    </li>
+    <!-- =========================================================== -->
+    <li Class="WVC_WorkModes.PatchOperation_Settings">
+      <settingName>WVC_Scavenging</settingName>
+      <active Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <xpath>
+              Defs/ThinkTreeDef[defName =
+              "DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+            <value>
+              <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+                <workMode>WVC_Scavenging</workMode>
+                <subNodes>
+                  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects"> -->
+                  <!-- <invert>true</invert> -->
+                  <!-- <allOfResearchProjects> -->
+                  <!-- <li>WVC_WorkModes_Scavenging</li> -->
+                  <!-- </allOfResearchProjects> -->
+                  <!-- <subNodes> -->
+                  <!-- <li Class="WVC_WorkModes.JobGiver_ChangeMode"> -->
+                  <!-- <workMode>Work</workMode> -->
+                  <!-- </li> -->
+                  <!-- </subNodes> -->
+                  <!-- </li> -->
+                  <li
+                    Class="WVC_WorkModes.ThinkNode_ConditionalWorkModesWithResearchRequirement"
+                    MayRequire="Ludeon.RimWorld.Biotech">
+                    <workMode>Work</workMode>
+                    <workModeResearchRequirementDefs>
+                      <li>WVC_WorkModes_Scavenging</li>
+                    </workModeResearchRequirementDefs>
+                  </li>
+                  <!-- Find Enemy -->
+                  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
+                    <subNodes>
+                      <!-- If Danger -->
+                      <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+                      <!-- <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName> -->
+                      <!--
+                          <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+                      <!-- </li> -->
+                      <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                        <workModeType>Safe</workModeType>
+                        <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
+                        <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+                      </li>
+                      <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                        <tickInterval>1500</tickInterval>
+                        <forced>true</forced>
+                      </li>
+                    </subNodes>
+                  </li>
+                  <!-- If Safe -->
+                  <li Class="JobGiver_SeekAllowedArea" />
+                  <li Class="JobGiver_GetEnergy_Charger" />
+                  <li Class="WVC_WorkModes.ThinkNode_ConditionalCanRepair">
+                    <subNodes>
+                      <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+                        <workModeType>Safe</workModeType>
+                        <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
+                        <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+                      </li>
+                      <!-- Very-very long shutdown -->
+                      <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+                        <tickInterval>6000</tickInterval>
+                        <forced>true</forced>
+                      </li>
+                    </subNodes>
+                  </li>
+                  <!-- Scavenge -->
+                  <li Class="WVC_WorkModes.ThinkNode_ConditionalAnyScavengeZone">
+                    <subNodes>
+                      <li Class="WVC_WorkModes.JobGiver_GoToScavengeZone" />
+                      <li Class="WVC_WorkModes.JobGiver_ScavengeSpawner">
+                        <statDef>WorkSpeedGlobal</statDef>
+                        <chanceToSuccess>0.02</chanceToSuccess>
+                        <productDefs>
+                          <li>
+                            <productDef>Steel</productDef>
+                            <productCount>1~3</productCount>
+                            <selectionWeight>1.2</selectionWeight>
+                          </li>
+                          <li>
+                            <productDef>WoodLog</productDef>
+                            <productCount>1~2</productCount>
+                            <selectionWeight>0.77</selectionWeight>
+                          </li>
+                          <li>
+                            <productDef>Plasteel</productDef>
+                            <productCount>1~2</productCount>
+                            <selectionWeight>0.18</selectionWeight>
+                          </li>
+                          <li>
+                            <productDef>Silver</productDef>
+                            <productCount>1~3</productCount>
+                            <selectionWeight>0.03</selectionWeight>
+                          </li>
+                          <li>
+                            <productDef>Gold</productDef>
+                            <productCount>1~2</productCount>
+                            <selectionWeight>0.03</selectionWeight>
+                          </li>
+                          <li>
+                            <productDef>ComponentIndustrial</productDef>
+                            <productCount>1~2</productCount>
+                            <selectionWeight>0.02</selectionWeight>
+                          </li>
+                        </productDefs>
+                      </li>
+                      <li Class="WVC_WorkModes.JobGiver_WanderScavenge">
+                        <maxDanger>Deadly</maxDanger>
+                        <locomotionUrgency>Amble</locomotionUrgency>
+                        <reportStringOverride>Scavenging.</reportStringOverride>
+                      </li>
+                    </subNodes>
+                  </li>
+                </subNodes>
+              </li>
+            </value>
+          </li>
+        </operations>
+      </active>
+    </li>
+  </operations>
+  </Operation>
+
+</Patch>

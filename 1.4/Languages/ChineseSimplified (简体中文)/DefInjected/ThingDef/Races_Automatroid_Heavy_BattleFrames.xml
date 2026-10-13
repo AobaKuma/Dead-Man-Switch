@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: battle friend -->
+  <DMS_Mech_BattleFrame.label>战斗伙伴</DMS_Mech_BattleFrame.label>
+  <!-- EN: Designed to be a light infantry fighting unit. battle friend has a considerable load capacity and ability to use most of human equipments, \n which isn't surpised that it has been mass-services by forces and depoly in various environments when it can equip heavy weapon with amount of ammo. -->
+  <DMS_Mech_BattleFrame.description>设计为轻型步兵作战单位。战斗框架拥有相当程度的负载能力，并且能够使用大部分人类装备，\n 当它可以装备大量弹药的重型武器时，已经被部队大规模使用并部署在各种环境中也就不足为奇了。</DMS_Mech_BattleFrame.description>
+  <!-- EN: head -->
+  <DMS_Mech_BattleFrame.tools.head.label>头部</DMS_Mech_BattleFrame.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_BattleFrame.tools.left_fist.label>左拳</DMS_Mech_BattleFrame.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_BattleFrame.tools.right_fist.label>右拳</DMS_Mech_BattleFrame.tools.right_fist.label>
+  
+  <!-- EN: escort lifter -->
+  <DMS_Mech_EscortLifter.label>运输框架</DMS_Mech_EscortLifter.label>
+  <!-- EN: As an early stage mass-production automatroid, even though it's no longer a standard service equipment, there're still lots of them modified to used for transportation purpose. -->
+  <DMS_Mech_EscortLifter.description>战斗框架作为早期批次生产的机兵尽管已不再是标准的现役兵器但仍有很多经过改装后用于运输目的，但由于其重量与削减的火控系统因此只能装备轻武器用于自卫。</DMS_Mech_EscortLifter.description>
+  <!-- EN: head -->
+  <DMS_Mech_EscortLifter.tools.head.label>头部</DMS_Mech_EscortLifter.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_EscortLifter.tools.left_fist.label>左拳</DMS_Mech_EscortLifter.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_EscortLifter.tools.right_fist.label>右拳</DMS_Mech_EscortLifter.tools.right_fist.label>
+  
+  <!-- EN: field command -->
+  <DMS_Mech_FieldCommand.label>中继指挥</DMS_Mech_FieldCommand.label>
+  <!-- EN: a battle friend sub-variant model. it can be the mechnitor command relay but due to its weight with reduced fire control system, which can only equip a light weapon for self defense. -->
+  <DMS_Mech_FieldCommand.description>战斗伙伴的改装型号。能够作为机兵的指挥中继，但由于其重量与削减的火控系统因此只能装备轻武器用于自卫。</DMS_Mech_FieldCommand.description>
+  <!-- EN: head -->
+  <DMS_Mech_FieldCommand.tools.head.label>头部</DMS_Mech_FieldCommand.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_FieldCommand.tools.left_fist.label>左拳</DMS_Mech_FieldCommand.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_FieldCommand.tools.right_fist.label>右拳</DMS_Mech_FieldCommand.tools.right_fist.label>
+  
+  <!-- EN: shaft worker -->
+  <DMS_Mech_ShaftWorker.label>工程驳机</DMS_Mech_ShaftWorker.label>
+  <!-- EN: As an early stage mass-production automatroid, even though it's no longer a standard service equipment, there're still lots of them modified to used for mining and construct purpose. -->
+  <DMS_Mech_ShaftWorker.description>一种被大量用于殖民据点建设与资源开采的作业型战斗框架。具有一定的后勤能力，但由于其重量与削减的火控系统因此只能装备轻武器用于自卫</DMS_Mech_ShaftWorker.description>
+  <!-- EN: head -->
+  <DMS_Mech_ShaftWorker.tools.head.label>头部</DMS_Mech_ShaftWorker.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_ShaftWorker.tools.left_fist.label>左拳</DMS_Mech_ShaftWorker.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_ShaftWorker.tools.right_fist.label>右拳</DMS_Mech_ShaftWorker.tools.right_fist.label>
+  
+</LanguageData>

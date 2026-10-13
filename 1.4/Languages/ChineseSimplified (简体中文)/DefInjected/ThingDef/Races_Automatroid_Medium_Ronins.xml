@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: phalanx -->
+  <DMS_Mech_Phalanx.label>方阵步兵</DMS_Mech_Phalanx.label>
+  <!-- EN: A cost-saving mass-produced variant specialized for urban combat scenarios, packed with assault armor and high mobility, makes it a fierce unit in close quarters. -->
+  <DMS_Mech_Phalanx.description>一种削减了声纳设备以节省成本的量产型辅助机体，专门用于都市战场景为浪人部队提供直射火力掩护与协同攻坚作战，使其成为近距离作战中的凶猛部队。</DMS_Mech_Phalanx.description>
+  <!-- EN: head -->
+  <DMS_Mech_Phalanx.tools.head.label>头部</DMS_Mech_Phalanx.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Phalanx.tools.left_fist.label>左拳</DMS_Mech_Phalanx.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Phalanx.tools.right_fist.label>右拳</DMS_Mech_Phalanx.tools.right_fist.label>
+  
+  <!-- EN: protector -->
+  <DMS_Mech_Protector.label>塔盾手</DMS_Mech_Protector.label>
+  <!-- EN: Designed for peacekeeping operations and riot control need, Protector has overall strong armor around the frame, equip with a huge flash shield and close quater weapons like batons or shotguns. -->
+  <DMS_Mech_Protector.description>守护者专为维和行动和防暴需求而设计，框架周围有整体坚固的盔甲，配有巨大的闪光盾牌和警棍或霰弹枪等近身武器。</DMS_Mech_Protector.description>
+  <!-- EN: ballistic shield -->
+  <DMS_Mech_Protector.tools.ballistic_shield.label>防弹盾</DMS_Mech_Protector.tools.ballistic_shield.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Protector.tools.right_fist.label>右拳</DMS_Mech_Protector.tools.right_fist.label>
+  
+  <!-- UNUSED -->
+  <DMS_Mech_Protector.tools.head.label>头部</DMS_Mech_Protector.tools.head.label>
+  <DMS_Mech_Protector.tools.left_fist.label>左拳</DMS_Mech_Protector.tools.left_fist.label>
+  <DMS_Mech_Protector.tools.right_fist-1.label>右拳</DMS_Mech_Protector.tools.right_fist-1.label>
+  
+  <!-- EN: ronin -->
+  <DMS_Mech_Ronin.label>浪人</DMS_Mech_Ronin.label>
+  <!-- EN: Humanoid mech model specialized for urban combat scenarios, packed with assault armor and high mobility, makes it a fierce unit in close quater. -->
+  <DMS_Mech_Ronin.description>专门用于城市战斗场景的人形机兵，配备了突击装甲和高机动性，使其成为近距离作战的凶猛部队。</DMS_Mech_Ronin.description>
+  <!-- EN: head -->
+  <DMS_Mech_Ronin.tools.head.label>头部</DMS_Mech_Ronin.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Ronin.tools.left_fist.label>左拳</DMS_Mech_Ronin.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Ronin.tools.right_fist.label>右拳</DMS_Mech_Ronin.tools.right_fist.label>
+  
+  <!-- EN: siegebreaker -->
+  <DMS_Mech_Siegebreaker.label>袭城者</DMS_Mech_Siegebreaker.label>
+  <!-- EN: With better armor protection, siegebreaker stands in the most front of the line for sapping and breaching jobs, breaking through enemy defenses. -->
+  <DMS_Mech_Siegebreaker.description>凭借更好的装甲防护，袭城者站在战线的最前线突破敌人防御。</DMS_Mech_Siegebreaker.description>
+  <!-- EN: head -->
+  <DMS_Mech_Siegebreaker.tools.head.label>头部</DMS_Mech_Siegebreaker.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Siegebreaker.tools.left_fist.label>左拳</DMS_Mech_Siegebreaker.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Siegebreaker.tools.right_fist.label>右拳</DMS_Mech_Siegebreaker.tools.right_fist.label>
+  
+</LanguageData>

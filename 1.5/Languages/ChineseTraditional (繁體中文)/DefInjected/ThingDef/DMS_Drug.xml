@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: C-Ration -->
+  <DMS_CombatRation.label>C口糧</DMS_CombatRation.label>
+  <!-- EN: A high energy organic polymer ration, invented during World War III as a nutritional supplement for augmented human troops during combat. For soldiers equipped with nutritional interfaces, it provides enough calories for internal organs to function for a long. But for normal humans, it might cause some slight gastrointestinal discomfort. -->
+  <DMS_CombatRation.description>一種塊狀高能量有機聚合物口糧，在第三次世界大戰期間發明作為戰鬥中增強的人類部隊的營養補充劑與人工肌肉的培養基添加物。對於接受營養接口手術的士兵來說可以一次性補充足夠內臟長時間運作的熱量與多種維生素。\n\n但對於正常人來說，雖然也能有一樣的效果但可能會引起一些輕微的腸胃不適。</DMS_CombatRation.description>
+  <!-- EN: Take {0} -->
+  <DMS_CombatRation.ingestible.ingestCommandString>使用{0}</DMS_CombatRation.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <DMS_CombatRation.ingestible.ingestReportString>使用{0}</DMS_CombatRation.ingestible.ingestReportString>
+  
+  <!-- EN: Neuroglue -->
+  <Neuroglue.label>受體凝膠</Neuroglue.label>
+  <!-- EN: A protein-like receptor gel which connects biological tissues and neural machinery. Neuroglue can effectively block phantom limb syndrome and synthetic rejections.\n\nSuch products have been circulating Rimworld and Midworld for many decades, but any organization claiming to have produced this product has been sanctioned by agents from the Coreworld. They Declare that such a product will increase the bionic level of pirates which isn't safe for regional balance. -->
+  <Neuroglue.description>一種用於中介生物組織與神經機械的類蛋白質受體凝膠，透過靜脈注射進入內循環系統，可以有效的阻斷仿生排異反應與異肢癥候群。也能夠使奈米機械感染良性化。\n\n此類產品已在邊緣世界和中寰世界流通了數十年，但任何聲稱生產該產品的組織都無一不受到了來自核心世界的製裁。他們宣稱這樣的產品會提高海盜的仿生水平並對區域平衡造成嚴重破壞。</Neuroglue.description>
+  <!-- EN: Take {0} -->
+  <Neuroglue.ingestible.ingestCommandString>注射{0}</Neuroglue.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <Neuroglue.ingestible.ingestReportString>注射{0}</Neuroglue.ingestible.ingestReportString>
+  
+</LanguageData>

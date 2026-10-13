@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: [PAWN_nameDef] was a weapons controller at a CIC. Before being temporarily laid off due to a lack of maintenance parts for the control system, [PAWN_pronoun] job was to control the weapons systems of the task force's autonomous robots at the weapons control station to avoid accidents. Senseless killing...and fixing some mechanical issues by the way. -->
+  <DMS_Officer01.baseDesc>[PAWN_nameDef]曾是机动指挥中心的武器管制员，在因为控制系统缺乏维修零件而被暂时遣散前[PAWN_pronoun]的工作就是在武器管制站对特遣小组的自动机兵进行武器系统管制以避免发生无意义的杀戮...顺便处理一些机械问题。</DMS_Officer01.baseDesc>
+  <!-- EN: Weapon systems officer -->
+  <DMS_Officer01.title>兵器管制官</DMS_Officer01.title>
+  <!-- EN: wisso -->
+  <DMS_Officer01.titleShort>管制官</DMS_Officer01.titleShort>
+  
+  <!-- EN: Although it has been more than 3,000 years since humans stepped out of the galaxy, due to the chronology of records and the unavoidable long time of interstellar travel, there are usually errors in everything on the target planet when they arrive. The job of [PAWN_nameDef] is to study everything on this planet, those ecosystems and organisms that change over time and various factors. -->
+  <DMS_Officer02.baseDesc>虽然自人类踏出星系已经3000年有余，但由于纪录的断代与星际旅行无法避免的悠长时间使得当来到目标星球之时上面的一切通常存在误差，[PAWN_nameDef]的工作就是负责研究星球上随著时间与各种因素下变异的生态圈与生物。</DMS_Officer02.baseDesc>
+  <!-- EN: Xeno researcher -->
+  <DMS_Officer02.title>异星研究员</DMS_Officer02.title>
+  <!-- EN: researcher -->
+  <DMS_Officer02.titleShort>研究员</DMS_Officer02.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] works for the medical department of the colonial fleet. Due to some disputes caused during a free medical tour on the surface of the planet, he had to stay briefly on the surface until the problem was resolved. -->
+  <DMS_Officer03.baseDesc>[PAWN_nameDef]为殖民舰队的医疗部门工作，由于在星球表面巡回义诊的时候酿成了一些纠纷因此不得不在问题解决前短暂滞留在地面上。</DMS_Officer03.baseDesc>
+  <!-- EN: Itinerant medic -->
+  <DMS_Officer03.title>巡回义诊医官</DMS_Officer03.title>
+  <!-- EN: medic -->
+  <DMS_Officer03.titleShort>医官</DMS_Officer03.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] works for the technical department of the colonial fleet and makes technical adjustments and optimize Automatroid for the local environment of the colonial planet. If it weren't for on-site research, maybe [PAWN_pronoun] would just stay at home. -->
+  <DMS_Officer04.baseDesc>[PAWN_nameDef]为殖民舰队的技术部门工作，并为现有的机兵针对殖民星球的当地环境进行技术调整与优化。若不是实地考察需要或许[PAWN_pronoun]也不会亲自来到地面上。</DMS_Officer04.baseDesc>
+  <!-- EN: Automatroid engineer -->
+  <DMS_Officer04.title>机兵工程师</DMS_Officer04.title>
+  <!-- EN: engineer -->
+  <DMS_Officer04.titleShort>工程师</DMS_Officer04.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] worked for the diplomatic department of the colonial fleet. Before the previous post was suspended due to the change of regime, [PAWN_pronoun], like other military attachés, was posted to various faction bases on the planet to provide contacts and deliver messages. -->
+  <DMS_Officer05.baseDesc>[PAWN_nameDef]为殖民舰队的外交部门工作，在上一个岗位因为政权更迭而不得中止业务前[PAWN_pronoun]与其他武官一样被派驻到这颗星球上的各个派系基地中提供联系与传递讯息。</DMS_Officer05.baseDesc>
+  <!-- EN: Military attaché -->
+  <DMS_Officer05.title>外交武官</DMS_Officer05.title>
+  <!-- EN: attaché -->
+  <DMS_Officer05.titleShort>外交官</DMS_Officer05.titleShort>
+  
+</LanguageData>

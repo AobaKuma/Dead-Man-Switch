@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			
+			<!-- ========== PawnKind Patches ========== -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>
+					Defs/PawnKindDef[
+					defName="DMS_Mech_Arquebusier" or
+					defName="DMS_Mech_Jaeger" or
+					defName="DMS_Mech_Pioneer" or
+					defName="DMS_Mech_Sniper"
+					]
+				</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>4</min>
+							<max>6</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Jaeger"]/combatPower</xpath>
+				<value>
+					<combatPower>220</combatPower>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Sniper"]/combatPower</xpath>
+				<value>
+					<combatPower>240</combatPower>
+				</value>
+			</li>
+
+			<!-- ======Arquebusier======-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Arquebusier"]/statBases/ShootingAccuracyPawn</xpath>
+				<value>
+					<CarryWeight>50</CarryWeight>
+					<CarryBulk>30</CarryBulk>
+					<AimingAccuracy>1.5</AimingAccuracy>
+					<ShootingAccuracyPawn>1.65</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.15</MeleeDodgeChance>
+					<MeleeCritChance>0.10</MeleeCritChance>
+					<MeleeParryChance>0.09</MeleeParryChance>
+					<MaxHitPoints>200</MaxHitPoints>
+					<NightVisionEfficiency>0.8</NightVisionEfficiency>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Arquebusier"]/statBases/AimingDelayFactor</xpath>
+				<value>
+					<AimingDelayFactor>0.7</AimingDelayFactor>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Arquebusier"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>30</ArmorRating_Blunt>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Arquebusier"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>14</ArmorRating_Sharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Arquebusier"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.2</ArmorRating_Heat>
+				</value>
+			</li>
+
+			<!--Jaeger the fast sneaky hunter-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Jaeger"]/statBases/AimingDelayFactor</xpath>
+				<value>
+					<AimingDelayFactor>0.5</AimingDelayFactor>
+					<ReloadSpeed>1.5</ReloadSpeed>
+				</value>
+			</li>
+
+			<!--Pioneer with better nv capability-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Pioneer"]/statBases</xpath>
+				<value>
+					<NightVisionEfficiency>0.95</NightVisionEfficiency>
+				</value>
+			</li>
+
+			<!--Pioneer as a cheaper scount variant, lower cost, lighter armor-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Pioneer"]/description</xpath>
+				<value>
+					<description>forward reconnaissance variant of Arquebusier. with improved sight sensor equipped, it has better capability in night time operations, capable of hunting if needed.</description>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Pioneer"]/statBases</xpath>
+				<value>
+					<ArmorRating_Blunt>24</ArmorRating_Blunt>
+				</value>
+			</li>
+
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Pioneer"]/statBases</xpath>
+				<value>
+					<ArmorRating_Sharp>12</ArmorRating_Sharp>
+				</value>
+			</li>
+
+			<!--Sniper with the most precision aim, also better optics (higher capacity because muh, big cannon)-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Sniper"]/statBases/ShootingAccuracyPawn</xpath>
+				<value>
+					<CarryWeight>65</CarryWeight>
+					<CarryBulk>50</CarryBulk>
+					<AimingAccuracy>1.8</AimingAccuracy>
+					<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+					<NightVisionEfficiency>0.85</NightVisionEfficiency>
+				</value>
+			</li>
+
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Arquebusier"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="BaseMechRace_Arquebusier"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Arquebusier"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>930</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>5</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>5</Steel>
+							<Tungsteel>5</Tungsteel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>89</MaxOverHeal>
+						<MinArmorPct>0.75</MinArmorPct>
+						<!-- <MinArmorValueSharp>10</MinArmorValueSharp>
+				<MinArmorValueBlunt>22</MinArmorValueBlunt>
+				<MinArmorValueHeat>0.2</MinArmorValueHeat>
+				<MinArmorValueElectric>0.1</MinArmorValueElectric> -->
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Pioneer"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="DMS_Mech_Pioneer"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<!--pioneer's armor has more steel, not fully tungsteel, durability a bit weaker-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Pioneer"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability" Inherit="False">
+						<Durability>810</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>5</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>5</Steel>
+							<Tungsteel>3</Tungsteel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>89</MaxOverHeal>
+						<MinArmorPct>0.65</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+			<!--add partial armor-->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Arquebusier"]</xpath>
+				<value>
+					<li Class="CombatExtended.PartialArmorExt">
+						<stats>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+								<parts>
+									<li>HearingSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+								<parts>
+									<li>HearingSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalHead</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalHead</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalNeck</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalNeck</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalThorax</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalThorax</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalShoulder</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalShoulder</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalArm</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalArm</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalHand</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalHand</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalLeg</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalLeg</li>
+								</parts>
+							</li>
+						</stats>
+					</li>
+				</value>
+			</li>
+
+
+		</operations>
+	</Operation>
+</Patch>

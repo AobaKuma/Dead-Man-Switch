@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Additional Armor Plating -->
+  <DMS_BF_ExtendArmor.label>附加装甲</DMS_BF_ExtendArmor.label>
+  <!-- EN: Composite armor plates designed for battle frame pylons add survivability to the battle frame by protecting it from fragmentation and medium-caliber gunfire. -->
+  <DMS_BF_ExtendArmor.description>一种安装在战斗框架侧面挂架的复合装甲板，可有效抵御破片与中小口径枪械的直接射击并保护其动力部位不受损伤。</DMS_BF_ExtendArmor.description>
+  
+  <!-- EN: Extended Cargo Rack -->
+  <DMS_BF_ExtendCargo.label>加挂货箱</DMS_BF_ExtendCargo.label>
+  <!-- EN: Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants. -->
+  <DMS_BF_ExtendCargo.description>一种安装在战斗框架侧面挂架的金属箱，通常被用於山地区域的长途运输与前线补给小队用来提高运输效率。</DMS_BF_ExtendCargo.description>
+  
+  <!-- EN: Ceramic Plates -->
+  <DMS_CeramicsPlating.label>陶瓷插板</DMS_CeramicsPlating.label>
+  <!-- EN: Disposable ceramic armor that effectively protects the wearer from small arms fire and shrapnel.\n\nAlthough it is an excellent protective armor, it must be completely replaced once damaged. -->
+  <DMS_CeramicsPlating.description>一种抛弃式装甲模块，其排列的防弹陶瓷板可以有效的抑制子弹或聚能射孔弹的动能与热侵蚀伤害从而保证机体不受损伤。 \n\n虽然是优秀的防护装甲但毕竟是一次性的所以一旦损坏就必须重新安装一块新的。</DMS_CeramicsPlating.description>
+  
+  <!-- EN: Nuclear Battery -->
+  <DMS_NuclearBattery.label>裂变电池</DMS_NuclearBattery.label>
+  <!-- EN: The abundant output of installed nuclear powered quantum batteries eliminates the need to recharge. The reactor can be overloaded to produce a chain reaction meltdown comparable to an anti-grain warhead. -->
+  <DMS_NuclearBattery.description>一种结构简单的核裂变电池，常见於许多无人职守的讯号站与灯塔驻防用的机兵上，由六根接近临界质量的柱状高密度铀235与热电偶集成并包裹在一个高强度壳体中。其输出的能量足够让绝大部分型号的机兵运转长达数百年，并且在紧急情况下也可以将机体变为一次性核弹使用。</DMS_NuclearBattery.description>
+  
+  <!-- EN: Reinforced Frame -->
+  <DMS_ReinforcedFrame.label>强化骨架</DMS_ReinforcedFrame.label>
+  <!-- EN: A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy duty replacement parts will significantly increase the weight of the mech and affect its speed. -->
+  <DMS_ReinforcedFrame.description>一种通用性高的的内部结构补强改装件，使用钨钢合金来替换机兵骨架中较易磨损的部位，这可以有效提高在高强度战斗时的耐用性并且能在火力压制下也不受干扰的行动。但作为代价会显着提高机兵的重量与移动速度。</DMS_ReinforcedFrame.description>
+  
+  <!-- EN: Synthetic Tendon -->
+  <DMS_SyntheticTendon.label>合成肌腱</DMS_SyntheticTendon.label>
+  <!-- EN: Biosynthetic muscles attached on the outer layer of mechanical limbs. Synthetic tendons effectively increase output at the cost of additional energy consumption. -->
+  <DMS_SyntheticTendon.description>一种安装在机体腿部出力位置的人工生物合成肌腱，透过外部接口接入机体能源来进行供能，能有效的增加关节出力但同时增加能源消耗。</DMS_SyntheticTendon.description>
+  
+  <!-- EN: Heavy Hydraulic Frame -->
+  <DMS_TB_HeavyHydraulicFrame.label>重型液压框架</DMS_TB_HeavyHydraulicFrame.label>
+  <!-- EN: A heavy hydraulic module and power pack for bipedal mechs to gain the capability to lift heavier objects or mount heavy weapons. -->
+  <DMS_TB_HeavyHydraulicFrame.description>一种适用於重型双足机兵的外置液压骨架和动力包，可以简单的理解为机兵专用的外骨骼系统，能使重型机兵获得更大的战斗负载容量，还可以安装超重型武器。但作为代价会显着提高机兵的重量与降低移动速度。</DMS_TB_HeavyHydraulicFrame.description>
+  <!-- EN: hydraulic frame -->
+  <DMS_TB_HeavyHydraulicFrame.renderNodeProperties.0.debugLabel>重型液压框架</DMS_TB_HeavyHydraulicFrame.renderNodeProperties.0.debugLabel>
+  
+</LanguageData>

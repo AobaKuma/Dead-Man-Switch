@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ChunkSlagSteel">
+    <defName>DMS_ChunkSlag</defName>
+    <label>automatroid debris</label>
+    <description>The remains of a destoryed automatroid. While useless in its current form, it can be smelted to recover resources.</description>
+    <graphicData>
+      <texPath>Things/Wreckages/Debris</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <saveCompressible>false</saveCompressible>
+    <randomizeRotationOnSpawn>true</randomizeRotationOnSpawn>
+    <rotateInShelves>true</rotateInShelves>
+    <filthLeaving>DMS_BrokenCeramics</filthLeaving>
+    <smeltProducts>
+      <Tungsteel>20</Tungsteel>
+      <DMS_Ceramics>10</DMS_Ceramics>
+    </smeltProducts>
+    <butcherProducts>
+      <ComponentStamped>2</ComponentStamped>
+      <Polyester>20</Polyester>
+    </butcherProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="ChunkSlagSteel">
+    <defName>DMS_ChunkSlag_Old</defName>
+    <label>ancient automatroid debris</label>
+    <description>The remains of a destoryed automatroid. While useless in its current form, it can be smelted to recover resources.</description>
+    <graphicData>
+      <texPath>Things/Wreckages/Debris_Old</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <saveCompressible>false</saveCompressible>
+    <randomizeRotationOnSpawn>true</randomizeRotationOnSpawn>
+    <rotateInShelves>true</rotateInShelves>
+    <scatterableOnMapGen>true</scatterableOnMapGen>
+    <smeltProducts>
+      <Tungsteel>10</Tungsteel>
+      <DMS_Ceramics>5</DMS_Ceramics>
+    </smeltProducts>
+    <butcherProducts>
+      <ComponentStamped>1</ComponentStamped>
+      <Polyester>10</Polyester>
+    </butcherProducts>
+  </ThingDef>
+</Defs>	

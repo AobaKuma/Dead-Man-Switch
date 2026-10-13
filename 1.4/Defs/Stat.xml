@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <StatDef>
+		<defName>DMS_UsableWeapons</defName>
+		<label>supported weapons</label>
+		<workerClass>DMS.StatWorker_MechWeapon</workerClass>
+		<description>useable weapons that supported by OS of this model.</description>
+		<category>BasicsPawn</category>
+		<defaultBaseValue>1.0</defaultBaseValue>
+		<minValue>0</minValue>
+	</StatDef>
+</Defs>

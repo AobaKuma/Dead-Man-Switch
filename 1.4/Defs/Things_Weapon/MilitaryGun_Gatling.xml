@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- M214 5.56mm 壁虎的次要武器，也可以被猿人與戰鬥框架裝備-->
+	<ThingDef ParentName="DMS_AutomatroidGun">
+		<defName>DMS_M214Gatlinggun</defName>
+		<label>M214</label>
+		<description>a rapid-firing multiple-barrel firearm chambered in assault rifle rounds.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<weaponTags>
+			<li>A_SuppressWeapon</li>
+			<li>V_Gatling556mm</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_Weapon_M214</texPath>
+			<drawSize>1.25</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToMake>60000</WorkToMake>
+			<AccuracyTouch>0.4</AccuracyTouch>
+			<AccuracyShort>0.3</AccuracyShort>
+			<AccuracyMedium>0.2</AccuracyMedium>
+			<AccuracyLong>0.15</AccuracyLong>
+			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>MultibarrelWeapons</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>75</Tungsteel>
+			<ComponentStamped>5</ComponentStamped>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_AssaultRifle</defaultProjectile>
+				<warmupTime>2</warmupTime>
+				<range>25.9</range>
+				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+				<burstShotCount>30</burstShotCount>
+				<soundCast>Shot_Minigun</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.5,0.5)</drawSize>
+				<offsets>
+					<li>(0.5,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+		</modExtensions>
+	</ThingDef>
+	
+	<!-- GAU-19A 12.7mm 的主武器，也可以被猿人與戰鬥框架裝備-->
+	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
+		<defName>DMS_GAU19Gatlinggun</defName>
+		<label>GAU-19/A "Attacker"</label>
+		<description>a rapid-firing multiple-barrel firearm chambered in heavy machinegun rounds.\n\nThis weapon is designed specially for automatroid use, thus normal human may be unable to use them normally without external assistance equipment or being extra strong.</description>
+		<weaponTags>
+			<li>H_Gatling127mm</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_Weapon_GAU19</texPath>
+			<drawSize>2.25</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>48</Mass>
+			<WorkToMake>80000</WorkToMake>
+			<AccuracyTouch>0.2</AccuracyTouch>
+			<AccuracyShort>0.3</AccuracyShort>
+			<AccuracyMedium>0.25</AccuracyMedium>
+			<AccuracyLong>0.18</AccuracyLong>
+			<RangedWeapon_Cooldown>2.2</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>MultibarrelWeapons</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>120</Tungsteel>
+			<ComponentStamped>8</ComponentStamped>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DMS_Bullet_Kord</defaultProjectile>
+				<warmupTime>3</warmupTime>
+				<range>44.9</range>
+				<ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+				<burstShotCount>15</burstShotCount>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.5,0.5)</drawSize>
+				<offsets>
+					<li>(0.9,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!-- GAU-4 20mm 鬣蜥的主武器-->
+	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
+		<defName>DMS_GAU4Gatlinggun_Hold</defName>
+		<label>GAU-4 "Vulcan"</label>
+		<description>a rapid-firing multiple-barrel firearm chambered in autocannon rounds.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>
+		<weaponTags>
+			<li>DMS_VehicleWeapon</li>
+			<li>H_Gatling20mm</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_Weapon_M61Vulcan_B</texPath>
+			<drawSize>2.75</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>92</Mass>
+			<WorkToMake>100000</WorkToMake>
+			<AccuracyTouch>0.28</AccuracyTouch>
+			<AccuracyShort>0.3</AccuracyShort>
+			<AccuracyMedium>0.5</AccuracyMedium>
+			<AccuracyLong>0.45</AccuracyLong>
+			<RangedWeapon_Cooldown>2.4</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>MultibarrelWeapons</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>225</Tungsteel>
+			<ComponentStamped>10</ComponentStamped>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_AutocannonTurret</defaultProjectile>
+				<warmupTime>3.5</warmupTime>
+				<minRange>8</minRange>
+				<range>37.9</range>
+				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+				<burstShotCount>12</burstShotCount>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.75,0.75)</drawSize>
+				<offsets>
+					<li>(1.3,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+		</modExtensions>
+	</ThingDef>	
+
+	<!--M163(GAU-4陸軍型) Vulcan 20mm 蠵龜的主武器-->
+	<ThingDef ParentName="DMS_AutomatroidTurretGun">
+		<defName>DMS_GAU4Gatlinggun</defName>
+		<label>GAU-4 "Vulcan"</label>
+		<description>a rapid-firing multiple-barrel weapon platfrom chambered in autocannon rounds.</description>
+		<weaponTags>
+			<li>DMS_VehicleWeapon</li>
+			<li>V_Gatling20mm</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_Weapon_M61Vulcan</texPath>
+			<drawSize>2.75</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>92</Mass>
+			<WorkToMake>100000</WorkToMake>
+			<AccuracyTouch>0.28</AccuracyTouch>
+			<AccuracyShort>0.3</AccuracyShort>
+			<AccuracyMedium>0.5</AccuracyMedium>
+			<AccuracyLong>0.55</AccuracyLong>
+			<RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_AutocannonTurret</defaultProjectile>
+				<warmupTime>3.5</warmupTime>
+				<range>25.9</range>
+				<minRange>1.9</minRange>
+				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+				<burstShotCount>12</burstShotCount>
+				<soundCast>Shot_Minigun</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>12</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.75,0.75)</drawSize>
+				<offsets>
+					<li>(1.3,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+		</modExtensions>
+  	</ThingDef>
+
+	<!--Gau-8 Avenger 30mm 駭蜥的主武器-->
+	<ThingDef ParentName="DMS_AutomatroidHeavyGun">
+		<defName>DMS_GAU8Gatlinggun</defName>
+		<label>GAU-8 "Avenger"</label>
+		<description>a rapid-firing multiple-barrel firearm chambered in high-cailber autocannon rounds, deadly and destructive.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate.</description>
+		<weaponTags>
+			<li>V_Gatling30mm</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_Weapon_GAU8</texPath>
+			<drawSize>4</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>281</Mass>
+			<WorkToMake>120000</WorkToMake>
+			<AccuracyTouch>0.58</AccuracyTouch>
+			<AccuracyShort>0.48</AccuracyShort>
+			<AccuracyMedium>0.38</AccuracyMedium>
+			<AccuracyLong>0.28</AccuracyLong>
+			<RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>12</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>DMS_EquipmentHeavy</li>
+				<li>MultibarrelWeapons</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>275</Tungsteel>
+			<ComponentStamped>25</ComponentStamped>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DMS_Bullet_CIWS</defaultProjectile>
+				<warmupTime>4</warmupTime>
+				<minRange>5.9</minRange>
+				<range>49.9</range>
+				<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+				<burstShotCount>12</burstShotCount>
+				<soundCast>Shot_TurretSniper</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>15</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<forcedMissRadius>0.1</forcedMissRadius>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(1.1,1.1)</drawSize>
+				<offsets>
+					<li>(1.7,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+		</modExtensions>
+  	</ThingDef>
+</Defs>

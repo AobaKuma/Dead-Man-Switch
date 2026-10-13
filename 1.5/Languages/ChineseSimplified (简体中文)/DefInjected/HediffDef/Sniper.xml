@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Recon Calibration -->
+  <DMS_RangeFinder.label>侦察校准</DMS_RangeFinder.label>
+  <!-- EN: A large amount of fire control data is being shared with surrounding friendly forces through this unit which temporarily slows down its ability to respond to commands. -->
+  <DMS_RangeFinder.description>通过该装置与周围的友军共享大量火控数据，这将暂时减慢操作系统的反应速度。</DMS_RangeFinder.description>
+  
+  <!-- EN: Received Calibration -->
+  <DMS_RangeFinderBuff.label>接收校准</DMS_RangeFinderBuff.label>
+  <!-- EN: The missile knows where it is at all times. It knows this because it knows where it isn't. By subtracting where it is from where it isn't, or where it isn't from where it is... -->
+  <DMS_RangeFinderBuff.description>导弹在任何时候都知道它的位置。它会知道这一点，因为它知道它不在哪位置。通过从它不在的位置减去它在的位置，或者从它在哪里减去它不在哪里...</DMS_RangeFinderBuff.description>
+  
+  <!-- EN: Precision Marksmanship Mode -->
+  <DMS_SharpShooting.label>精确狙击模式</DMS_SharpShooting.label>
+  <!-- EN: This unit is performing intracate ballistic calculations and cannot move. Once its calculations are complete, it will take a precision shot with deadly accuracy. -->
+  <DMS_SharpShooting.description>让机体处于绝对静止状态，利用内建弹道计算机测量极其详细的射击数据，从而准确击中预定目标。</DMS_SharpShooting.description>
+  
+</LanguageData>

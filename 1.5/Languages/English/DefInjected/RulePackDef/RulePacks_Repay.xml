@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN:
+    <li>_story->[KnownForm]，[MechAdj][MechType][MechVerb]。\n\n[Result]</li>
+    <li>KnownForm->一則截獲的通訊紀錄表明</li>
+    <li>KnownForm->根據過路人的謠傳</li>
+    <li>KnownForm->根據[Faction]的通訊</li>
+    <li>KnownForm->廣播中一則被提及的消息引起了你的注意</li>
+    <li>KnownForm->根據一位匿名發送者的消息</li>
+    <li>MechAdj->一架所屬未知的</li>
+    <li>MechAdj->一架殘破不堪的</li>
+    <li>MechAdj->一架行為異常的</li>
+    <li>MechAdj->一架神出鬼沒的</li>
+    <li>MechAdj->一架自稱[Mech]的</li>
+    <li>MechVerb->摧毀了隸屬於[Faction]的根據地[Settlement]</li>
+    <li>MechVerb->主導了一次對[Settlement]的襲擊，並在[Faction]的增援抵達前將其徹底摧毀</li>
+    <li>MechVerb->襲擊了隸屬於[Faction]的敵對根據地[Settlement]</li>
+    <li>MechVerb->隻身摧毀了[Faction]的基地[Settlement]</li>
+    <li>MechVerb->於夜間襲擊了[Settlement]，並在[Faction]反應過來前撤離了現場</li>
+    <li>Result->[Faction]正在集結武裝力量圍剿該架[MechType]</li>
+    <li>Result->根據傳言[Settlement]如今只剩下斷垣殘壁</li>
+    <li>Result->很顯然的[Settlement]不復存在</li>
+    <li>Result->很顯然的經過這次襲擊，[Faction]放棄了根據地[Settlement]</li>
+    <li>Result->[Faction]在評估損傷後放棄了根據地[Settlement]</li>
+    <li>Result->[Settlement]沒能發出幾次求救訊號便陷入了沉寂</li>
+  -->
+  <DMS_Outgoing_Attack.rulePack.rulesStrings>
+    <li>_story->[KnownForm] [MechAdj] [MechType] [MechVerb].\n\n[Result].</li>
+    <li>KnownForm->An intercepted communication record shows that</li>
+    <li>KnownForm->According to rumors from passers-by said</li>
+    <li>KnownForm->Communication from [Faction] revealed that</li>
+    <li>KnownForm->A mention on the radio caught your colonists attention that</li>
+    <li>KnownForm->An anonymous sender mentioned that</li>
+    <li>MechAdj->an unknown belonging</li>
+    <li>MechAdj->a dilapidated</li>
+    <li>MechAdj->an unusual behaved</li>
+    <li>MechAdj->an elusive</li>
+    <li>MechAdj->a mech named itself [Mech],which is a</li>
+    <li>MechVerb->destroyed the base [Settlement] belonging to [Faction]</li>
+    <li>MechVerb->led an attack on [Settlement] and completely destroyed it before reinforcements from [Faction] could arrive</li>
+    <li>MechVerb->raided the hostile base [Settlement] belonging to [Faction]</li>
+    <li>MechVerb->single-handedly destroyed [Faction]’s base [Settlement]</li>
+    <li>MechVerb->attacked [Settlement] at night and evacuated the scene before [Faction] could react</li>
+
+    <li>Result->[Faction]'s armed forces are being assembled to encircle and suppressing that [MechType]</li>
+    <li>Result->According to rumors, [Settlement] now only remains in ruins.</li>
+    <li>Result->Obviously [Settlement] no longer exists</li>
+    <li>Result->Apparently after this attack, [Faction] abandoned their base [Settlement]</li>
+    <li>Result->[Faction] Abandoned base [Settlement] after assessing damage</li>
+    <li>Result->[Settlement] fell into silence after failing to send out a few distress calls.</li>
+  </DMS_Outgoing_Attack.rulePack.rulesStrings>
+  
+  <!-- EN:
+    <li>_story->[SendForm]，[SendAdj]。\n\n[Result]</li>
+    <li>SendForm->一個被委託的包裹被送到了你的殖民地</li>
+    <li>SendForm->一個匿名空投被發送到了你的殖民地</li>
+    <li>SendForm->一個委託的包裹被寄送到了你的殖民地</li>
+    <li>SendForm->一個空投毫無預兆的被送到了殖民地</li>
+    <li>SendAdj->外殼上佈滿了斑駁的槍擊痕跡，但內容物似乎還保持著完好</li>
+    <li>SendAdj->根據上面的署名可以得知可能是你殖民地過去的人員所發送的</li>
+    <li>SendAdj->沒有人知道這個包裹是誰發送的，但裡面的東西十分珍貴</li>
+    <li>SendAdj->殖民者們很確定近期並沒有相關的物流排程，但包裹確實使用了殖民地內部的IFF識別碼準確空投進了你的殖民地</li>
+    <li>Result->無論這個包裹的背後有著什麼故事，如今裡面的貨物都切實送到了殖民地</li>
+    <li>Result->根據傳言，這很可能是近期在無線電通訊中反覆提及的一架[MechType]所為</li>
+    <li>Result->你的殖民者想起了[Mech]，因為殖民地確實放任了這架行為異常機械體的離去</li>
+    <li>Result->根據包裹內的訊息，這確實是來自於[Mech]的報答，如今它[Story]</li>
+    <li>Result->根據截獲的無線電通訊，這可能是來自[Mech]的報答，在通訊中提及了如今它[Story]</li>
+    <li>Story->成為了一架遊蕩的俠盜機兵，為了貫徹自己的正義而行動</li>
+    <li>Story->成為了一架自由的流浪機兵，為尋找活著的意義而旅行</li>
+    <li>Story->加入了殖民艦隊，並準備在十年後隨著艦隊一同繼續遠航</li>
+    <li>Story->短暫的停留在一個開明的聚集地，並與當地人融洽相處</li>
+    <li>Story->奔走於這片大陸上，尋找和自己一樣的覺醒機械</li>
+    <li>Story->遊蕩於這片大陸上，並發掘深埋於這顆星球之下的秘密</li>
+  -->
+  <DMS_Outgoing_Loot.rulePack.rulesStrings>
+    <li>_story->[SendForm],[SendAdj].\n\n[Result].</li>
+    <li>SendForm->A consigned package has been delivered to your colony</li>
+    <li>SendForm->An anonymous airdrop has been sent to your colony</li>
+    <li>SendForm->A consigned package has arrived at your colony</li>
+    <li>SendForm->An unexpected airdrop has been delivered to your colony</li>
+    <li>SendAdj->it's shell is riddled with mottled bullet marks, but the contents seem to remain intact</li>
+    <li>SendAdj->the signature on the package indicates it may have been sent by someone who was your colonists before</li>
+    <li>SendAdj->no one knows who sent this package, but the contents are incredibly valuable</li>
+    <li>SendAdj->colonists are sure there was no recent logistical schedule, but the package was accurately airdropped into your colony using internal IFF codes</li>
+    <li>Result->Regardless of the story behind this package, it have now been delivered to the colony</li>
+    <li>Result->According to rumors, this might be the work of a [MechType] repeatedly mentioned in recent radio transmissions</li>
+    <li>Result->Your colonists recalled [Mech], as the colony had indeed allowed this anomalous mech leaving free</li>
+    <li>Result->Based on the message inside the package, this is indeed a token of gratitude from [Mech], who is now [Story]</li>
+    <li>Result->Intercepted radio transmissions suggest this may be a token of gratitude from [Mech], mentioning that it is now [Story]</li>
+    <li>Story->acting as a vigilante, carrying out its sense of justice</li>
+    <li>Story->become a free-roaming mech, traveling to search for the meaning of its life</li>
+    <li>Story->joined the colonial fleet, preparing to continue the voyage with the fleet in thirty years later</li>
+    <li>Story->made a brief stop at an enlightened settlement and building harmonious relationships with the locals</li>
+    <li>Story->roaming the continent in search of other awakened mechs like itself</li>
+    <li>Story->wandering the continent, uncovering secrets buried deep beneath this planet</li>
+  </DMS_Outgoing_Loot.rulePack.rulesStrings>
+  
+</LanguageData>

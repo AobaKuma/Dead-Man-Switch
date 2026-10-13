@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: grenade round -->
+  <Bullet_DMS_GrenadeLauncher.label>grenade round</Bullet_DMS_GrenadeLauncher.label>
+  
+  <!-- EN: full-power rifle bullet -->
+  <Bullet_DMS_LightMachineGun.label>full-power rifle bullet</Bullet_DMS_LightMachineGun.label>
+  
+  <!-- EN: Mech AMR -->
+  <DMS_AntiMaterialRifle.label>Mech AMR</DMS_AntiMaterialRifle.label>
+  <!-- EN: A high caliber sniper rifle made to be used by MS-4E Jadger automatroids to destroy armored target at long ranges.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_AntiMaterialRifle.description>A high caliber sniper rifle made to be used by MS-4E Jadger automatroids to destroy armored target at long ranges.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_AntiMaterialRifle.description>
+  <!-- EN: stock -->
+  <DMS_AntiMaterialRifle.tools.stock.label>stock</DMS_AntiMaterialRifle.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_AntiMaterialRifle.tools.barrel.label>barrel</DMS_AntiMaterialRifle.tools.barrel.label>
+  <!-- EN: Mech AMR -->
+  <DMS_AntiMaterialRifle.verbs.Verb_Shoot.label>Mech AMR</DMS_AntiMaterialRifle.verbs.Verb_Shoot.label>
+  
+  <!-- EN: Mech Assault Rifle -->
+  <DMS_AssaultRifle.label>Mech Assault Rifle</DMS_AssaultRifle.label>
+  <!-- EN: An easily mass produced assault rifle designed for mech soldiers equipped with an extra long picatinny rail for all tacticool needs.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_AssaultRifle.description>An easily mass produced assault rifle designed for mech soldiers equipped with an extra long picatinny rail for all tacticool needs.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_AssaultRifle.description>
+  <!-- EN: stock -->
+  <DMS_AssaultRifle.tools.stock.label>stock</DMS_AssaultRifle.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_AssaultRifle.tools.barrel.label>barrel</DMS_AssaultRifle.tools.barrel.label>
+  <!-- EN: Mech Assault Rifle -->
+  <DMS_AssaultRifle.verbs.Verb_Shoot.label>Mech Assault Rifle</DMS_AssaultRifle.verbs.Verb_Shoot.label>
+  
+  <!-- EN: Mech Assault Shotgun -->
+  <DMS_AssaultShotgun.label>Mech Assault Shotgun</DMS_AssaultShotgun.label>
+  <!-- EN: A fully automatic shotgun able to be mass produced with stamped components.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_AssaultShotgun.description>A fully automatic shotgun able to be mass produced with stamped components.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_AssaultShotgun.description>
+  <!-- EN: stock -->
+  <DMS_AssaultShotgun.tools.stock.label>stock</DMS_AssaultShotgun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_AssaultShotgun.tools.barrel.label>barrel</DMS_AssaultShotgun.tools.barrel.label>
+  <!-- EN: Mech Assault Shotgun -->
+  <DMS_AssaultShotgun.verbs.Verb_Shoot.label>Mech Assault Shotgun</DMS_AssaultShotgun.verbs.Verb_Shoot.label>
+  
+  <!-- EN: Mech Grenade Launcher -->
+  <DMS_AutomaticGrenadeLauncher.label>Mech Grenade Launcher</DMS_AutomaticGrenadeLauncher.label>
+  <!-- EN: A handheld automatic grenade launcher for clearing out clustered targets.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_AutomaticGrenadeLauncher.description>A handheld automatic grenade launcher for clearing out clustered targets.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_AutomaticGrenadeLauncher.description>
+  <!-- EN: stock -->
+  <DMS_AutomaticGrenadeLauncher.tools.stock.label>stock</DMS_AutomaticGrenadeLauncher.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_AutomaticGrenadeLauncher.tools.barrel.label>barrel</DMS_AutomaticGrenadeLauncher.tools.barrel.label>
+  <!-- EN: Mech Grenade Launcher -->
+  <DMS_AutomaticGrenadeLauncher.verbs.Verb_Shoot.label>Mech Grenade Launcher</DMS_AutomaticGrenadeLauncher.verbs.Verb_Shoot.label>
+  
+  <!-- EN: Mech Battle Rifle -->
+  <DMS_BattleRifle.label>Mech Battle Rifle</DMS_BattleRifle.label>
+  <!-- EN: A battle rifle built for mech soldiers intended for mech to mech combat.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_BattleRifle.description>A battle rifle built for mech soldiers intended for mech to mech combat.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_BattleRifle.description>
+  <!-- EN: stock -->
+  <DMS_BattleRifle.tools.stock.label>stock</DMS_BattleRifle.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_BattleRifle.tools.barrel.label>barrel</DMS_BattleRifle.tools.barrel.label>
+  <!-- EN: Mech Battle Rifle -->
+  <DMS_BattleRifle.verbs.Verb_Shoot.label>Mech Battle Rifle</DMS_BattleRifle.verbs.Verb_Shoot.label>
+  
+  <!-- EN: Mech LMG -->
+  <DMS_LightMachineGun.label>Mech LMG</DMS_LightMachineGun.label>
+  <!-- EN: A weapon specializing in supression chambered in a large caliber rifle round.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_LightMachineGun.description>A weapon specializing in supression chambered in a large caliber rifle round.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_LightMachineGun.description>
+  <!-- EN: stock -->
+  <DMS_LightMachineGun.tools.stock.label>stock</DMS_LightMachineGun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_LightMachineGun.tools.barrel.label>barrel</DMS_LightMachineGun.tools.barrel.label>
+  <!-- EN: Mech LMG -->
+  <DMS_LightMachineGun.verbs.Verb_Shoot.label>Mech LMG</DMS_LightMachineGun.verbs.Verb_Shoot.label>
+  
+  <!-- EN: Mech Marksman Rifle -->
+  <DMS_MarksmanRifle.label>Mech Marksman Rifle</DMS_MarksmanRifle.label>
+  <!-- EN: An automatic rifle with a free floating barrel to improve accuracy over a distance. Comes equipped from the factory with a three-round-burst option.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_MarksmanRifle.description>An automatic rifle with a free floating barrel to improve accuracy over a distance. Comes equipped from the factory with a three-round-burst option.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_MarksmanRifle.description>
+  <!-- EN: stock -->
+  <DMS_MarksmanRifle.tools.stock.label>stock</DMS_MarksmanRifle.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_MarksmanRifle.tools.barrel.label>barrel</DMS_MarksmanRifle.tools.barrel.label>
+  <!-- EN: Mech Marksman Rifle -->
+  <DMS_MarksmanRifle.verbs.Verb_Shoot.label>Mech Marksman Rifle</DMS_MarksmanRifle.verbs.Verb_Shoot.label>
+  
+  <!-- EN: Mech Semiauto Rifle -->
+  <DMS_SemiAutoRifle.label>Mech Semiauto Rifle</DMS_SemiAutoRifle.label>
+  <!-- EN: A gas blowback semi-automatic rifle used by mech soldiers. \n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_SemiAutoRifle.description>A gas blowback semi-automatic rifle used by mech soldiers. 
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_SemiAutoRifle.description>
+  <!-- EN: stock -->
+  <DMS_SemiAutoRifle.tools.stock.label>stock</DMS_SemiAutoRifle.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_SemiAutoRifle.tools.barrel.label>barrel</DMS_SemiAutoRifle.tools.barrel.label>
+  <!-- EN: Mech Semiauto Rifle -->
+  <DMS_SemiAutoRifle.verbs.Verb_Shoot.label>Mech Semiauto Rifle</DMS_SemiAutoRifle.verbs.Verb_Shoot.label>
+  
+  <!-- EN: Sniper Grenade Launcher -->
+  <DMS_SniperGrenadeLauncher.label>Sniper Grenade Launcher</DMS_SniperGrenadeLauncher.label>
+  <!-- EN: A precision grenade launcher designed to serve as a counter-sniper.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_SniperGrenadeLauncher.description>A precision grenade launcher designed to serve as a counter-sniper.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMS_SniperGrenadeLauncher.description>
+  <!-- EN: stock -->
+  <DMS_SniperGrenadeLauncher.tools.stock.label>stock</DMS_SniperGrenadeLauncher.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_SniperGrenadeLauncher.tools.barrel.label>barrel</DMS_SniperGrenadeLauncher.tools.barrel.label>
+  <!-- EN: Sniper Grenade Launcher -->
+  <DMS_SniperGrenadeLauncher.verbs.Verb_Shoot.label>Sniper Grenade Launcher</DMS_SniperGrenadeLauncher.verbs.Verb_Shoot.label>
+  
+</LanguageData>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <ThingDef ParentName="MakeableDrugPillBase">
+    <defName>Neuroglue</defName>
+    <label>Neuroglue</label>
+    <description>A protein-like receptor gel mediates biological tissues and neural machinery, which can effectively block phantom limb syndrome and synthetic rejection. also block nanomechanical infections.\n\nSuch products have been circulating Rimworld and Midworld for many decades, but any organization claiming to have produced this product has been sanctioned by agents from the Coreworld. They Declare that such a product will increase the bionical level of pirates which isn't safe for regional balance.</description>
+    <possessionCount>10</possessionCount>
+    <descriptionHyperlinks><HediffDef>NeuroglueHigh</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Resource/Neuroglue</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>1000</WorkToMake>
+      <MarketValue>18</MarketValue>
+      <Mass>0.005</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>NeuroglueHigh</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>DMS_Bionics</researchPrerequisite>
+      <recipeUsers>
+        <li>DMS_TableArtifuscle</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Neutroamine>10</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1000</listOrder>
+        <overdoseSeverityOffset>0.08~0.14</overdoseSeverityOffset>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <HediffDef>
+    <defName>NeuroglueHigh</defName>
+    <hediffClass>Hediff_High</hediffClass>
+    <label>receptor gel</label>
+    <description>Receptor gel mediates between biological and mechanical nerves, which can cure the Bionic syndrome with only minor side-effects.</description>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.18</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <painOffset>0.1</painOffset>
+          <makeImmuneTo>
+            <li>DMS_BionicShock</li>
+            <li>DMS_SyntheticRejection</li>
+            <li>DMS_BionicShockRemove</li>
+          </makeImmuneTo>
+        </li>
+      </stages>
+  </HediffDef>
+</Defs>	

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <RecipeDef>
+    <defName>DMS_ExtractMetalFromSlag</defName>
+    <label>smelt metal from automatroid debris</label>
+    <description>Use heat and strong electromagnets to extract useful metal from automatroid debris.</description>
+    <jobString>Smelting metal from automatroid debris.</jobString>
+    <workAmount>600</workAmount>
+    <workSpeedStat>SmeltingSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <recipeUsers>
+      <li>ElectricSmelter</li>
+      <li>DMS_Furnace</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMS_ChunkSlag_Old</li>
+            <li>DMS_ChunkSlag</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <specialProducts>
+      <li>Smelted</li>
+    </specialProducts>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DMS_ChunkSlag_Old</li>
+        <li>DMS_ChunkSlag</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>DMS_ExtractCompFromSlag</defName>
+    <label>disassemble from automatroid debris</label>
+    <description>Disassemble automatroid debris to extract useful component.</description>
+    <jobString>disassembling automatroid debris.</jobString>
+    <workAmount>2400</workAmount>
+    <workSpeedStat>SmeltingSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <recipeUsers>
+      <li>TableMachining</li>
+      <li>DMS_TableMachinePrinter</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMS_ChunkSlag_Old</li>
+            <li>DMS_ChunkSlag</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <specialProducts>
+      <li>Butchery</li>
+    </specialProducts>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DMS_ChunkSlag_Old</li>
+        <li>DMS_ChunkSlag</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+</Defs>	

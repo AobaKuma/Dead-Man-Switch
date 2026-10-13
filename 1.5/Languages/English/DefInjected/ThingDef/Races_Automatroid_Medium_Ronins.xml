@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Gladiator -->
+  <DMS_Mech_Gladiator.label>Gladiator</DMS_Mech_Gladiator.label>
+  <!-- EN: A melee specialized variant of the Ronin. The Gladiator maintains the Ronin's mobility and armor and comes with an upgraded melee combat module and is equipped with an assault shield. -->
+  <DMS_Mech_Gladiator.description>A melee specialized variant of the Ronin. The Gladiator maintains the Ronin's mobility and armor and comes with an upgraded melee combat module and is equipped with an assault shield.</DMS_Mech_Gladiator.description>
+  <!-- EN: assault shield -->
+  <DMS_Mech_Gladiator.tools.assault_shield.label>assault shield</DMS_Mech_Gladiator.tools.assault_shield.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Gladiator.tools.right_fist.label>right fist</DMS_Mech_Gladiator.tools.right_fist.label>
+  
+  <!-- EN: Phalanx -->
+  <DMS_Mech_Phalanx.label>Phalanx</DMS_Mech_Phalanx.label>
+  <!-- EN: The Phalanx is a cheap mass-producable variant specialized for urban combat. It comes packed with assault armor and high mobility package making it a fierce unit in close quarters combat. -->
+  <DMS_Mech_Phalanx.description>The Phalanx is a cheap mass-producable variant specialized for urban combat. It comes packed with assault armor and high mobility package making it a fierce unit in close quarters combat.</DMS_Mech_Phalanx.description>
+  <!-- EN: head -->
+  <DMS_Mech_Phalanx.tools.head.label>head</DMS_Mech_Phalanx.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Phalanx.tools.left_fist.label>left fist</DMS_Mech_Phalanx.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Phalanx.tools.right_fist.label>right fist</DMS_Mech_Phalanx.tools.right_fist.label>
+  
+  <!-- EN: Protector -->
+  <DMS_Mech_Protector.label>Protector</DMS_Mech_Protector.label>
+  <!-- EN: The protector is designed for peacekeeping operations and riot control. This model is equipped with strong armor around its frame and has a huge flash shield to compliment the use of close quater weapons like batons or shotguns. -->
+  <DMS_Mech_Protector.description>The protector is designed for peacekeeping operations and riot control. This model is equipped with strong armor around its frame and has a huge flash shield to compliment the use of close quater weapons like batons or shotguns.</DMS_Mech_Protector.description>
+  <!-- EN: ballistic shield -->
+  <DMS_Mech_Protector.tools.ballistic_shield.label>ballistic shield</DMS_Mech_Protector.tools.ballistic_shield.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Protector.tools.right_fist.label>right fist</DMS_Mech_Protector.tools.right_fist.label>
+  
+  <!-- EN: Ronin -->
+  <DMS_Mech_Ronin.label>Ronin</DMS_Mech_Ronin.label>
+  <!-- EN: A Humanoid mech model specialized for urban combat, this unit is outfitted with assault armor and a mobility package making it a formidible foe in close quaters. -->
+  <DMS_Mech_Ronin.description>A Humanoid mech model specialized for urban combat, this unit is outfitted with assault armor and a mobility package making it a formidible foe in close quaters.</DMS_Mech_Ronin.description>
+  <!-- EN: right arm blade -->
+  <DMS_Mech_Ronin.tools.right_arm_blade.label>right arm blade</DMS_Mech_Ronin.tools.right_arm_blade.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Ronin.tools.right_fist.label>right fist</DMS_Mech_Ronin.tools.right_fist.label>
+  <!-- EN: left arm blade -->
+  <DMS_Mech_Ronin.tools.left_arm_blade.label>left arm blade</DMS_Mech_Ronin.tools.left_arm_blade.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Ronin.tools.left_fist.label>left fist</DMS_Mech_Ronin.tools.left_fist.label>
+  
+  <!-- UNUSED -->
+  <DMS_Mech_Ronin.tools.head.label>head</DMS_Mech_Ronin.tools.head.label>
+  
+  <!-- EN: Siegebreaker -->
+  <DMS_Mech_Siegebreaker.label>Siegebreaker</DMS_Mech_Siegebreaker.label>
+  <!-- EN: The Siegebreaker comes with top of the line armor making it ideal for sapping and breaching jobs. -->
+  <DMS_Mech_Siegebreaker.description>The Siegebreaker comes with top of the line armor making it ideal for sapping and breaching jobs.</DMS_Mech_Siegebreaker.description>
+  <!-- EN: head -->
+  <DMS_Mech_Siegebreaker.tools.head.label>head</DMS_Mech_Siegebreaker.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Siegebreaker.tools.left_fist.label>left fist</DMS_Mech_Siegebreaker.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Siegebreaker.tools.right_fist.label>right fist</DMS_Mech_Siegebreaker.tools.right_fist.label>
+  
+</LanguageData>

@@ -120,9 +120,6 @@
     <stages>
       <li>
         <label>low</label>
-        <statOffsets>
-          <WorkSpeedGlobalOffsetMech>0.20</WorkSpeedGlobalOffsetMech>
-        </statOffsets>
         <capMods>
           <li>
             <capacity>Moving</capacity>
@@ -137,9 +134,6 @@
       <li>
         <label>medium</label>
         <minSeverity>0.5</minSeverity>
-        <statOffsets>
-          <WorkSpeedGlobalOffsetMech>0.15</WorkSpeedGlobalOffsetMech>
-        </statOffsets>
         <capMods>
           <li>
             <capacity>Moving</capacity>
@@ -155,17 +149,11 @@
         <label>high</label>
         <minSeverity>0.90</minSeverity>
         <painOffset>0.1</painOffset>
-        <statOffsets>
-          <WorkSpeedGlobalOffsetMech>0.10</WorkSpeedGlobalOffsetMech>
-        </statOffsets>
       </li>
       <li>
         <label>very high</label>
         <minSeverity>1.2</minSeverity>
         <painOffset>0.2</painOffset>
-        <statOffsets>
-          <WorkSpeedGlobalOffsetMech>0.05</WorkSpeedGlobalOffsetMech>
-        </statOffsets>
         <capMods>
           <li>
             <capacity>Moving</capacity>
@@ -195,8 +183,6 @@
       <li>
         <label>danger</label>
         <minSeverity>1.5</minSeverity>
-        <!-- 神經連結壓到紅線:一具植入體只會記錄一次 (Hediff.recordedTale) -->
-        <tale>DMS_Tale_NeuralOverload</tale>
         <painOffset>0.5</painOffset>
         <capMods>
           <li>
@@ -294,28 +280,39 @@
     </stages>
   </HediffDef>
   
-  <!-- DMS_BionicShock 異肢症，神經機械仿生的臨時副作用
-       嚴重度以整數等級（Hediff_Level）計算：LV.1~LV.5 各對應一個 stage，升到 6 級即死亡。
-       每個神經機械仿生的 HediffGiver_RandomSilent（levelUpIfExists）觸發時若已患病則升一級，
-       裝越多惡化越快；服用 Neuroglue 可降一級，且 NeuroglueHigh 持續期間（makeImmuneTo）會暫停加重。 -->
+  <!-- DMS_BionicShock 異肢症，神經機械仿生的臨時副作用 -->
   <HediffDef>
     <defName>DMS_BionicShock</defName>
-    <hediffClass>Fortified.Hediff_LevelLabel</hediffClass>
+    <hediffClass>HediffWithComps</hediffClass>
     <label>Xeno Limb Syndrome</label>
-    <description>A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for these symptoms. Left untreated, the syndrome will progress to the next level over time and eventually kill the patient. Each dose of neuroglue lowers it by one level and suspends its progression for a while.</description>
+    <description>A syndrome commonly occurring in pre-spacer worlds when one or more neurally interfaced bionics are installed. Due to the lack of biological receptors, the body will temporarily reject the bionic connection to the nervous system.\n\nThere are five classifications of severity for these symptoms.</description>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <minSeverity>0</minSeverity>
     <maxSeverity>6</maxSeverity>
-    <initialSeverity>1</initialSeverity><!-- 初次發作為 LV.1 -->
-    <lethalSeverity>6</lethalSeverity><!-- LV.5 昏迷後再加重一級即腦死 -->
+    <initialSeverity>1</initialSeverity><!-- Severity is bound to level of implant -->
+    <lethalSeverity>5</lethalSeverity>
     <isBad>true</isBad>
     <comps>
+      <li Class="HediffCompProperties_RemoveIfOtherHediff">
+        <hediffs>
+          <li>NeuroglueHigh</li>
+        </hediffs>
+        <message>bionic syndrome has been cured</message>
+        <messageType>PositiveEvent</messageType>
+      </li>
       <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1</severityPerDay>
+      </li>
     </comps>
     <stages>
-      <li><!-- 第一級，患病部位會出現明顯搔癢感 -->
+      <li>
+        <label>Initial</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li><!-- 第一級，患病部位會出現明顯搔癢感，一般來說會隨著時間過去自行消退 -->
         <label>LV.1 Initial</label>
-        <minSeverity>1</minSeverity>
+        <minSeverity>0.04</minSeverity>
         <painOffset>0.15</painOffset>
         <capMods>
           <li>
@@ -330,7 +327,7 @@
       </li>
       <li><!-- 第二級，大腦對患病部位產生排異反應，並對於精神層面上產生影響 -->
         <label>LV.2 Minor</label>
-        <minSeverity>2</minSeverity>
+        <minSeverity>1.2</minSeverity>
         <painOffset>0.30</painOffset>
         <capMods>
           <li>
@@ -345,7 +342,7 @@
       </li>
       <li>  <!-- 第三級，患者會出現明顯的焦慮並反覆希望醫生切除患病部位 -->
         <label>LV.3 Serious</label>
-        <minSeverity>3</minSeverity>
+        <minSeverity>2.35</minSeverity>
         <mentalBreakMtbDays>3.0</mentalBreakMtbDays>
         <painOffset>0.50</painOffset>
         <capMods>
@@ -361,7 +358,7 @@
       </li>
       <li>  <!-- 第四級，患者會進入精神錯亂並試圖自行切除患病部位 -->
         <label>LV.4 Catatonic</label>
-        <minSeverity>4</minSeverity>
+        <minSeverity>3.62</minSeverity>
         <mentalBreakMtbDays>0.25</mentalBreakMtbDays>
         <painOffset>0.90</painOffset>
         <capMods>
@@ -375,9 +372,9 @@
           </li>
         </capMods>
       </li>
-      <li>  <!-- 第五級，患者進入昏迷狀態，再加重一級大腦會自行中止活動，並使患者腦死亡 -->
+      <li>  <!-- 第五級，患者進入昏迷狀態，嚴重時大腦可能會自行中止活動，並使患者腦死亡 -->
         <label>LV.5 Disabled</label>
-        <minSeverity>5</minSeverity>
+        <minSeverity>4.80</minSeverity>
         <lifeThreatening>true</lifeThreatening>
         <capMods>
           <li>
@@ -537,8 +534,6 @@
       <li>
         <label>maximized</label>
         <minSeverity>6</minSeverity>
-        <!-- 校準到頂:機兵與它的槍長在一起了 -->
-        <tale>DMS_Tale_WeaponImprinted</tale>
         <statOffsets>
           <ShootingAccuracyPawn>10</ShootingAccuracyPawn>
           <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">-1</BandwidthCost>

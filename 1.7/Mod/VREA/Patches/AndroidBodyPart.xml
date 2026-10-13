@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/VREAndroids.AndroidSettings[defName="VREA_AndroidSettings"]/androidsShouldNotReceiveHediffs</xpath>
+                <value>
+                    <li>DMS_MechlinkRejection</li>
+                    <li>DMS_SyntheticRejection</li>
+                    <li>DMS_BionicShockRemove</li>
+                    <li>DMS_BionicShock</li>
+                    <li>DMS_FilterShock</li>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<!-- ========== PawnKind Patches ========== -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Grenadier"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>3</min>
+							<max>6</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Kanonier"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>2</min>
+							<max>4</max>
+						</primaryMagazineCount>
+						<forcedSidearm>
+							<sidearmMoney>
+								<min>150</min>
+								<max>350</max>
+							</sidearmMoney>
+							<weaponTags>
+								<li>DMS_MechWeaponLight</li>
+							</weaponTags>
+							<magazineCount>
+								<min>2</min>
+								<max>5</max>
+							</magazineCount>
+						</forcedSidearm>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[
+				    defName="DMS_Mech_Soldat" or
+					defName="DMS_Mech_Sergeant" or
+					defName="DMS_Mech_Raider" or
+					defName="DMS_Mech_Soldat_B"
+					]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>4</min>
+							<max>6</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Soldat"]/combatPower</xpath>
+				<value>
+					<combatPower>80</combatPower>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Soldat_B"]/combatPower</xpath>
+				<value>
+					<combatPower>100</combatPower>
+				</value>
+			</li>
+
+			<!-- ======Soldat======-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]/statBases</xpath>
+				<value>
+					<CarryWeight>50</CarryWeight>
+					<CarryBulk>20</CarryBulk>
+					<AimingAccuracy>0.75</AimingAccuracy>
+					<ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.11</MeleeDodgeChance>
+					<MeleeCritChance>0.07</MeleeCritChance>
+					<MeleeParryChance>0.06</MeleeParryChance>
+					<MaxHitPoints>200</MaxHitPoints>
+					<NightVisionEfficiency>0.5</NightVisionEfficiency>
+					<!--<ReloadSpeed>1.2</ReloadSpeed>-->
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>8</ArmorRating_Blunt>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>6</ArmorRating_Sharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.1</ArmorRating_Heat>
+				</value>
+			</li>
+			<!--
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Sergeant"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>8</ArmorRating_Blunt>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Sergeant"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>6</ArmorRating_Sharp>
+				</value>
+			</li>-->
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="BaseMechRace_Soldat"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>790</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>5</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>10</Steel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>82</MaxOverHeal>
+						<MinArmorPct>0.75</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+			<!--a bit better aim for grenadier to make sure it can land its shot, also extra bulk due to grenades' and weapon's high bulk-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Grenadier"]/statBases</xpath>
+				<value>
+					<AimingAccuracy>1.2</AimingAccuracy>
+					<ShootingAccuracyPawn>1.25</ShootingAccuracyPawn>
+					<CarryBulk>45</CarryBulk>
+				</value>
+			</li>
+
+			<!--patch Grenadier's weapon tag to let it use more CE grenades and launchers-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Grenadier"]/weaponTags</xpath>
+				<value>
+					<li>GunGrenadeLauncher</li>
+                    <li>DMS_Grenadier</li>
+				</value>
+			</li>
+
+			<!--higher capacity for at least 3 single use launchers-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Kanonier"]</xpath>
+				<value>
+					<statBases>
+						<CarryWeight>65</CarryWeight>
+						<CarryBulk>45</CarryBulk>
+					</statBases>
+				</value>
+			</li>
+
+			<!--patch Kanonier's weapon tag to let it use more CE launchers, also remove recoilless due to its immense weight-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Kanonier"]/weaponTags</xpath>
+				<value>
+					<weaponTags>
+						<li>GunSingleUse</li>
+						<li>DMS_Kanon</li>                                                          
+					</weaponTags>
+				</value>
+			</li>
+
+
+		</operations>
+	</Operation>
+</Patch>

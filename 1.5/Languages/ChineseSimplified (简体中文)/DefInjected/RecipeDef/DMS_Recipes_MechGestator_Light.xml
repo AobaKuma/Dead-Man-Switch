@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Gestate Dogge -->
+  <DMS_Make_Dogge.label>组装獒犬</DMS_Make_Dogge.label>
+  <!-- EN: Gestate a Dogge Automatroid. -->
+  <DMS_Make_Dogge.description>组装獒犬，一种四足机枪平台，安装了一挺轻型机枪能够在行进时进行瞄准与射击，通常被用於清剿战场上溃逃的士兵与反游击作战。</DMS_Make_Dogge.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Dogge.jobString>组装机械体中</DMS_Make_Dogge.jobString>
+  
+  <!-- EN: gestate falcon -->
+  <DMS_Make_Falcon.label>组装游隼</DMS_Make_Falcon.label>
+  <!-- EN: Gestate a Falcon Automatroid. -->
+  <DMS_Make_Falcon.description>组装游隼，一种重型三旋翼无人机，可携带轻型机枪或反坦克火箭筒用於空中武装侦察和反坦克打击。</DMS_Make_Falcon.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Falcon.jobString>组装机械体中</DMS_Make_Falcon.jobString>
+  
+  <!-- EN: Gestate Grenadier -->
+  <DMS_Make_Grenadier.label>组装掷弹兵</DMS_Make_Grenadier.label>
+  <!-- EN: Gestate a Grenadier Automatroid. -->
+  <DMS_Make_Grenadier.description>组装掷弹兵，士兵型的曲射火控增强型号，能够装备投掷物与各式发射器。</DMS_Make_Grenadier.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Grenadier.jobString>组装机械体中</DMS_Make_Grenadier.jobString>
+  
+  <!-- EN: Gestate Noctula -->
+  <DMS_Make_Noctula.label>组装夜蝠</DMS_Make_Noctula.label>
+  <!-- EN: Gestate a Noctula Automatroid. -->
+  <DMS_Make_Noctula.description>组装一架匿踪中继无人机，代号“夜蝠”，是游隼的指令中继改装型，具有隐身能力通常用於为猎兵行动时提供指挥链支持。</DMS_Make_Noctula.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Noctula.jobString>组装机械体中</DMS_Make_Noctula.jobString>
+  
+  <!-- EN: Gestate Sergeant -->
+  <DMS_Make_Sergeant.label>组装军士</DMS_Make_Sergeant.label>
+  <!-- EN: Gestate a sergeant Automatroid. -->
+  <DMS_Make_Sergeant.description>组装军士机兵，一种中继控制士兵型用以组织混成机兵战斗集群(CAB)的指挥特化型机兵。</DMS_Make_Sergeant.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Sergeant.jobString>组装机械体中</DMS_Make_Sergeant.jobString>
+  
+  <!-- EN: Gestate Soldat -->
+  <DMS_Make_Soldat.label>组装士兵</DMS_Make_Soldat.label>
+  <!-- EN: Gestate a Soldat Automatroid. -->
+  <DMS_Make_Soldat.description>组装士兵型机兵，一种用於正面战场上与装甲单位协同作战的量产型机兵。</DMS_Make_Soldat.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Soldat.jobString>组装机械体中</DMS_Make_Soldat.jobString>
+  
+</LanguageData>

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: convert component -->
+  <DMS_Convert_ComponentIndustrial.label>加工零件</DMS_Convert_ComponentIndustrial.label>
+  <!-- EN: Convert stamponent into more commonly used standard. -->
+  <DMS_Convert_ComponentIndustrial.description>将冲压机件加工为更加适用于殖民地建设的规格.</DMS_Convert_ComponentIndustrial.description>
+  <!-- EN: Making component. -->
+  <DMS_Convert_ComponentIndustrial.jobString>加工零件中</DMS_Convert_ComponentIndustrial.jobString>
+  
+  <!-- EN: grow artifuscle x25 -->
+  <DMS_Make_Artifuscle.label>栽培人工肌肉 x25</DMS_Make_Artifuscle.label>
+  <!-- EN: grow artificial muscle,uses plasfiber as skin tungsteel as bone, gold as neurofilament and neutroamine as blood -->
+  <DMS_Make_Artifuscle.description>栽培人工肌肉，以塑化纤维作为表皮，用钨钢做骨骼，用金做神经丝，用中性胺做血液。</DMS_Make_Artifuscle.description>
+  <!-- EN: growing artifuscle. -->
+  <DMS_Make_Artifuscle.jobString>栽培人工肌肉中</DMS_Make_Artifuscle.jobString>
+  
+  <!-- EN: grow artifuscle x100 -->
+  <DMS_Make_ArtifuscleMass.label>栽培人工肌肉 x100</DMS_Make_ArtifuscleMass.label>
+  <!-- EN: grow artificial muscle,uses plasfiber as skin tungsteel as bone, gold as neurofilament and neutroamine as blood -->
+  <DMS_Make_ArtifuscleMass.description>栽培人工肌肉，以塑化纤维作为表皮，用钨钢做骨骼，用金做神经丝，用中性胺做血液。</DMS_Make_ArtifuscleMass.description>
+  <!-- EN: growing artifuscle. -->
+  <DMS_Make_ArtifuscleMass.jobString>栽培人工肌肉中</DMS_Make_ArtifuscleMass.jobString>
+  
+  <!-- EN: make ceramics x20 -->
+  <DMS_Make_Ceramics.label>制造防弹陶瓷 x20</DMS_Make_Ceramics.label>
+  <!-- EN: making ceramics. -->
+  <DMS_Make_Ceramics.description>制造防弹陶瓷</DMS_Make_Ceramics.description>
+  <!-- EN: making. -->
+  <DMS_Make_Ceramics.jobString>制造防弹陶瓷中</DMS_Make_Ceramics.jobString>
+  
+  <!-- EN: make ceramics x80 -->
+  <DMS_Make_CeramicsMass.label>制造防弹陶瓷 x80</DMS_Make_CeramicsMass.label>
+  <!-- EN: making ceramics. -->
+  <DMS_Make_CeramicsMass.description>制造防弹陶瓷</DMS_Make_CeramicsMass.description>
+  <!-- EN: making. -->
+  <DMS_Make_CeramicsMass.jobString>制造防弹陶瓷中</DMS_Make_CeramicsMass.jobString>
+  
+  <!-- EN: make component -->
+  <DMS_Make_ComponentIndustrial.label>制作零件</DMS_Make_ComponentIndustrial.label>
+  <!-- EN: Make a component from machinery printer, take longer time and resources. -->
+  <DMS_Make_ComponentIndustrial.description>用机器印表机制造零件，需要很长的时间和资源。</DMS_Make_ComponentIndustrial.description>
+  <!-- EN: Making component. -->
+  <DMS_Make_ComponentIndustrial.jobString>制造零件中</DMS_Make_ComponentIndustrial.jobString>
+  
+  <!-- EN: make stamponent -->
+  <DMS_Make_ComponentStamped.label>制作冲压零件</DMS_Make_ComponentStamped.label>
+  <!-- EN: make stamponent -->
+  <DMS_Make_ComponentStamped.description>制作冲压零件</DMS_Make_ComponentStamped.description>
+  <!-- EN: stamping compoments. -->
+  <DMS_Make_ComponentStamped.jobString>制作零件中</DMS_Make_ComponentStamped.jobString>
+  
+  <!-- EN: make stamponent x4 -->
+  <DMS_Make_ComponentStampedMass.label>制作冲压零件 x4</DMS_Make_ComponentStampedMass.label>
+  <!-- EN: make stamponent -->
+  <DMS_Make_ComponentStampedMass.description>制作冲压零件</DMS_Make_ComponentStampedMass.description>
+  <!-- EN: stamping compoments. -->
+  <DMS_Make_ComponentStampedMass.jobString>制作零件中</DMS_Make_ComponentStampedMass.jobString>
+  
+  <!-- EN: make plasfiber x20 -->
+  <DMS_Make_Plasfiber.label>合成塑钢纤维 x20</DMS_Make_Plasfiber.label>
+  <!-- EN: Synthetic plasfiber. -->
+  <DMS_Make_Plasfiber.description>合成塑钢纤维</DMS_Make_Plasfiber.description>
+  <!-- EN: Synthesising. -->
+  <DMS_Make_Plasfiber.jobString>合成中</DMS_Make_Plasfiber.jobString>
+  
+  <!-- EN: make plasfiber x80 -->
+  <DMS_Make_PlasfiberMass.label>合成塑钢纤维 x80</DMS_Make_PlasfiberMass.label>
+  <!-- EN: Synthetic plasfiber. -->
+  <DMS_Make_PlasfiberMass.description>合成塑钢纤维</DMS_Make_PlasfiberMass.description>
+  <!-- EN: Synthesising. -->
+  <DMS_Make_PlasfiberMass.jobString>合成中</DMS_Make_PlasfiberMass.jobString>
+  
+  <!-- EN: make polyester x50 -->
+  <DMS_Make_Polyester.label>制造聚酯纤维 x50</DMS_Make_Polyester.label>
+  <!-- EN: Synthetic polyester fibers using chemfuel. -->
+  <DMS_Make_Polyester.description>使用化学燃料合成聚酯纤维。</DMS_Make_Polyester.description>
+  <!-- EN: Synthesising. -->
+  <DMS_Make_Polyester.jobString>合成中</DMS_Make_Polyester.jobString>
+  
+  <!-- EN: make polyester x200 -->
+  <DMS_Make_PolyesterMass.label>制造聚酯纤维 x200</DMS_Make_PolyesterMass.label>
+  <!-- EN: Synthetic polyester fibers using chemfuel. -->
+  <DMS_Make_PolyesterMass.description>使用化学燃料合成聚酯纤维。</DMS_Make_PolyesterMass.description>
+  <!-- EN: Synthesising. -->
+  <DMS_Make_PolyesterMass.jobString>合成中</DMS_Make_PolyesterMass.jobString>
+  
+  <!-- EN: make tungsteel X20 -->
+  <DMS_Make_Tungsteel.label>制造钨钢合金 x20</DMS_Make_Tungsteel.label>
+  <!-- EN: sintering tungsteel. -->
+  <DMS_Make_Tungsteel.description>烧结钨钢。</DMS_Make_Tungsteel.description>
+  <!-- EN: sintering. -->
+  <DMS_Make_Tungsteel.jobString>烧结中</DMS_Make_Tungsteel.jobString>
+  
+  <!-- EN: make tungsteel x 80 -->
+  <DMS_Make_TungsteelMass.label>制造钨钢合金 x80</DMS_Make_TungsteelMass.label>
+  <!-- EN: sintering tungsteel. -->
+  <DMS_Make_TungsteelMass.description>烧结钨钢。</DMS_Make_TungsteelMass.description>
+  <!-- EN: sintering. -->
+  <DMS_Make_TungsteelMass.jobString>烧结中</DMS_Make_TungsteelMass.jobString>
+  
+  <!-- EN: grow wetware computer -->
+  <DMS_Make_WetWare.label>栽培生物湿件主机</DMS_Make_WetWare.label>
+  <!-- EN: grow wetware computer, A high-precision computer that can be produced and used on a large scale. -->
+  <DMS_Make_WetWare.description>栽培生物湿件主机，一种可以大规模生产和使用的高精度计算机。</DMS_Make_WetWare.description>
+  <!-- EN: wetware computer. -->
+  <DMS_Make_WetWare.jobString>栽培生物湿件主机中</DMS_Make_WetWare.jobString>
+  
+</LanguageData>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Combat Extended</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName="
+						DMS_Mech_Caretta" or
+						defName="DMS_Mech_Geochelone" or
+						defName="DMS_Mech_Killdozer"
+						]</xpath>
+					<value>
+						<li Class="CombatExtended.RacePropertiesExtensionCE">
+							<bodyShape>Quadruped</bodyShape>
+						</li>
+					</value>
+				</li>
+			<!-- ====== Caretta and Geochelone(both are IFV but first one has 20mm cannon)======-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or
+					defName="DMS_Mech_Geochelone"]/statBases</xpath>
+				<value>
+					<CarryWeight>200</CarryWeight>
+					<CarryBulk>200</CarryBulk>
+					<AimingAccuracy>1</AimingAccuracy>
+					<ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.00</MeleeDodgeChance>
+					<MeleeCritChance>0.18</MeleeCritChance>
+					<MeleeParryChance>0.48</MeleeParryChance>
+					<MaxHitPoints>500</MaxHitPoints>
+					<NightVisionEfficiency>0.8</NightVisionEfficiency>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or
+					defName="DMS_Mech_Geochelone"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>76</ArmorRating_Blunt>
+				</value>
+			</li>
+
+			<!--only torso-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or
+					defName="DMS_Mech_Geochelone"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>40</ArmorRating_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or
+					defName="DMS_Mech_Geochelone"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.2</ArmorRating_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or
+					defName="DMS_Mech_Geochelone"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or
+						defName="DMS_Mech_Geochelone"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or
+					defName="DMS_Mech_Geochelone"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>4250</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>10</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>5</Steel>
+							<Tungsteel>5</Tungsteel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>425</MaxOverHeal>
+						<MinArmorPct>0.8</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or
+					defName="DMS_Mech_Geochelone"]/tools</xpath>
+				<value>
+					<tools Inherit="False">
+						<li Class="CombatExtended.ToolCE">
+							<label>head</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>40</power>
+							<cooldownTime>5.53</cooldownTime>
+							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>43</armorPenetrationBlunt>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+
+			<!-- ====== KillDozer======-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Killdozer"]/statBases</xpath>
+				<value>
+					<CarryWeight>200</CarryWeight> <!--additional armor reduce capacity-->
+					<CarryBulk>140</CarryBulk>
+					<AimingAccuracy>1</AimingAccuracy>
+					<ShootingAccuracyPawn>1.2</ShootingAccuracyPawn> <!--dozer block shot and reduce gun handling(?)-->
+					<MeleeDodgeChance>0.00</MeleeDodgeChance>
+					<MeleeCritChance>0.15</MeleeCritChance>
+					<MeleeParryChance>0.65</MeleeParryChance><!--big dozer big block-->
+					<MaxHitPoints>500</MaxHitPoints>
+					<NightVisionEfficiency>0.8</NightVisionEfficiency>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Killdozer"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>88</ArmorRating_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Killdozer"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>55</ArmorRating_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Killdozer"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.35</ArmorRating_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Killdozer"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="DMS_Mech_Killdozer"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Killdozer"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>4250</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>10</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>5</Steel>
+							<Tungsteel>5</Tungsteel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>425</MaxOverHeal>
+						<MinArmorPct>0.85</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Killdozer"]/tools</xpath>
+				<value>
+					<tools Inherit="False">
+						<li Class="CombatExtended.ToolCE">
+							<label>dozer blade</label>
+							<capacities>
+								<li>Blunt</li>
+								<li>Demolish</li>
+							</capacities>
+							<power>50</power>
+							<cooldownTime>6.2</cooldownTime>
+							<linkedBodyPartsGroup>DozerBlade</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>48</armorPenetrationBlunt>
+						</li>
+					</tools>
+				</value>
+			</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

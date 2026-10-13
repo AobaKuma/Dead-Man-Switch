@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Combat Extended</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+
+				<!-- All Patch-->
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="DMS_BaseCannonBuilding"]/thingClass </xpath>
+					<value>
+						<thingClass>CombatExtended.Building_TurretGunCE</thingClass>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[@Name="DMS_BaseCannonBuilding"]/fillPercent</xpath>
+					<value>
+						<fillPercent>0.85</fillPercent>
+					</value>
+				</li>
+
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="DMS_Turret_Tunguska" or
+                                         defName="DMS_Turret_GateKeeper" or
+                                         defName="DMS_Turret_Okhotnik"
+                                         ]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="DMS_BaseCannonBuilding"]/statBases </xpath>
+					<value>
+						<AimingAccuracy>1.5</AimingAccuracy>
+						<ShootingAccuracyTurret>1.3</ShootingAccuracyTurret>
+					</value>
+				</li>
+
+
+				<!-- ========== Tunguska ========== -->
+
+				<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>DMS_Gun_Tunguska</defName>
+					<statBases>
+						<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+						<SightsEfficiency>1.5</SightsEfficiency>
+						<ShotSpread>0.05</ShotSpread>
+						<SwayFactor>1.87</SwayFactor>
+						<Bulk>221</Bulk>
+					</statBases>
+					<Properties>
+						<recoilAmount>1.43</recoilAmount>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_30x165mm_AP</defaultProjectile>
+						<warmupTime>1.2</warmupTime>
+						<range>86</range>
+                        <minRange>12</minRange>
+						<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+						<burstShotCount>40</burstShotCount>
+						<soundCast>Shot_Autocannon</soundCast>
+						<soundCastTail>GunTail_Heavy</soundCastTail>
+						<targetParams>
+							<canTargetLocations>true</canTargetLocations>
+						</targetParams>
+						<muzzleFlashScale>15</muzzleFlashScale>
+						<recoilPattern>Mounted</recoilPattern>
+					</Properties>
+					<AmmoUser>
+						<magazineSize>480</magazineSize>
+						<reloadTime>20</reloadTime>
+						<ammoSet>AmmoSet_30x165mm</ammoSet>
+					</AmmoUser>
+					<FireModes>
+						<aiUseBurstMode>FALSE</aiUseBurstMode>
+						<aiAimMode>SuppressFire</aiAimMode>
+						<aimedBurstShotCount>20</aimedBurstShotCount>
+					</FireModes>
+				</li>
+
+                <li Class="PatchOperationConditional">
+                    <xpath>Defs/ThingDef[defName="DMS_Gun_Tunguska"]/comps</xpath>
+                    <nomatch Class="PatchOperationAdd">
+                        <xpath>Defs/ThingDef[defName="DMS_Gun_Tunguska"]</xpath>
+                        <value>
+                            <comps />
+                        </value>
+                    </nomatch>
+                </li>
+
+                <!-- GateKeeper -->
+                <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>DMS_Gun_GateKeeper</defName>
+					<statBases>
+						<RangedWeapon_Cooldown>0.45</RangedWeapon_Cooldown>
+						<SightsEfficiency>1.5</SightsEfficiency>
+						<ShotSpread>0.05</ShotSpread>
+						<SwayFactor>1.71</SwayFactor>
+						<Bulk>174</Bulk>
+					</statBases>
+					<Properties>
+						<recoilAmount>1.38</recoilAmount>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_30x173mmNATO_AP</defaultProjectile>
+						<warmupTime>0.8</warmupTime>
+						<range>86</range>
+                        <minRange>9</minRange>
+						<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+						<burstShotCount>70</burstShotCount>
+						<soundCast>Shot_Minigun</soundCast>
+						<soundCastTail>GunTail_Heavy</soundCastTail>
+						<targetParams>
+							<canTargetLocations>true</canTargetLocations>
+						</targetParams>
+						<muzzleFlashScale>15</muzzleFlashScale>
+						<recoilPattern>Mounted</recoilPattern>
+					</Properties>
+					<AmmoUser>
+						<magazineSize>980</magazineSize>
+						<reloadTime>20</reloadTime>
+						<ammoSet>AmmoSet_30x173mmNATO</ammoSet>
+					</AmmoUser>
+					<FireModes>
+                        <noSingleShot>true</noSingleShot>
+						<aiUseBurstMode>FALSE</aiUseBurstMode>
+						<aiAimMode>SuppressFire</aiAimMode>
+						<aimedBurstShotCount>35</aimedBurstShotCount>
+					</FireModes>
+				</li>
+
+
+                <!-- Kord Remote control Turret -->
+                <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+					<defName>DMS_Gun_Kord</defName>
+					<statBases>
+						<RangedWeapon_Cooldown>0.76</RangedWeapon_Cooldown>
+						<SightsEfficiency>1.2</SightsEfficiency>
+						<ShotSpread>0.05</ShotSpread>
+						<SwayFactor>1.59</SwayFactor>
+						<Bulk>43</Bulk>
+					</statBases>
+					<Properties>
+						<recoilAmount>1.47</recoilAmount>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_127x108mm_FMJ</defaultProjectile>
+						<warmupTime>1.4</warmupTime>
+						<range>75</range>
+                        <minRange>3</minRange>
+						<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+						<burstShotCount>8</burstShotCount>
+						<soundCast>Shot_Autocannon</soundCast>
+						<soundCastTail>GunTail_Heavy</soundCastTail>
+						<targetParams>
+							<canTargetLocations>true</canTargetLocations>
+						</targetParams>
+						<muzzleFlashScale>12</muzzleFlashScale>
+						<recoilPattern>Mounted</recoilPattern>
+					</Properties>
+					<AmmoUser>
+						<magazineSize>240</magazineSize>
+						<reloadTime>13</reloadTime>
+						<ammoSet>AmmoSet_127x108mm</ammoSet>
+					</AmmoUser>
+					<FireModes>
+                        <noSingleShot>true</noSingleShot>
+						<aiUseBurstMode>FALSE</aiUseBurstMode>
+						<aiAimMode>SuppressFire</aiAimMode>
+						<aimedBurstShotCount>4</aimedBurstShotCount>
+					</FireModes>
+				</li>
+
+
+			</operations>
+		</match>
+	</Operation>
+</Patch>

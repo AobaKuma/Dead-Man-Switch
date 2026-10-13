@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Install nutrition port -->
+  <DMS_InstallNutrientPort.label>安装营养接口</DMS_InstallNutrientPort.label>
+  <!-- EN: Install a nutrition port. -->
+  <DMS_InstallNutrientPort.description>安装营养接口</DMS_InstallNutrientPort.description>
+  <!-- EN: Installing nutrition port. -->
+  <DMS_InstallNutrientPort.jobString>安装营养接口中</DMS_InstallNutrientPort.jobString>
+  
+  <!-- EN: Install mechaneural arm -->
+  <DMS_InstallProstheticArm.label>安装机械臂</DMS_InstallProstheticArm.label>
+  <!-- EN: Install a neural-mechanical arm. -->
+  <DMS_InstallProstheticArm.description>安装机械臂</DMS_InstallProstheticArm.description>
+  <!-- EN: Installing neural-mechanical arm. -->
+  <DMS_InstallProstheticArm.jobString>安装机械臂中</DMS_InstallProstheticArm.jobString>
+  
+  <!-- EN: Install Mechaneural Visual Sensor -->
+  <DMS_InstallProstheticEye.label>安装机械视觉感测器</DMS_InstallProstheticEye.label>
+  <!-- EN: Install a neuromechanical visual sensor. -->
+  <DMS_InstallProstheticEye.description>安装机械视觉感测器</DMS_InstallProstheticEye.description>
+  <!-- EN: Installing bionic eye. -->
+  <DMS_InstallProstheticEye.jobString>安装机械视觉感测器中</DMS_InstallProstheticEye.jobString>
+  
+  <!-- EN: Install mechaneural kidney -->
+  <DMS_InstallProstheticKidney.label>安装机械透析仪</DMS_InstallProstheticKidney.label>
+  <!-- EN: Install a neural-mechanical kidney. -->
+  <DMS_InstallProstheticKidney.description>安装机械透析仪</DMS_InstallProstheticKidney.description>
+  <!-- EN: Installing neural-mechanical kidney. -->
+  <DMS_InstallProstheticKidney.jobString>安装机械透析仪中</DMS_InstallProstheticKidney.jobString>
+  
+  <!-- EN: Install mechaneural leg -->
+  <DMS_InstallProstheticLeg.label>安装机械腿</DMS_InstallProstheticLeg.label>
+  <!-- EN: Install a neural-mechanical leg. -->
+  <DMS_InstallProstheticLeg.description>安装机械腿</DMS_InstallProstheticLeg.description>
+  <!-- EN: Installing neural-mechanical leg. -->
+  <DMS_InstallProstheticLeg.jobString>安装机械腿中</DMS_InstallProstheticLeg.jobString>
+  
+  <!-- EN: Install mechaneural lung -->
+  <DMS_InstallProstheticLung.label>安装机械肺</DMS_InstallProstheticLung.label>
+  <!-- EN: Install a neural-mechanical lung. -->
+  <DMS_InstallProstheticLung.description>安装机械肺</DMS_InstallProstheticLung.description>
+  <!-- EN: Installing neural-mechanical lung. -->
+  <DMS_InstallProstheticLung.jobString>安装机械肺中</DMS_InstallProstheticLung.jobString>
+  
+  <!-- EN: Install Emotional Neutralizer -->
+  <DMS_InstallSensoryFilter.label>安装感官过滤器</DMS_InstallSensoryFilter.label>
+  <!-- EN: Install an Emotional Neutralizer. -->
+  <DMS_InstallSensoryFilter.description>安装感官过滤器</DMS_InstallSensoryFilter.description>
+  <!-- EN: Installing sensory filter. -->
+  <DMS_InstallSensoryFilter.jobString>安装感官过滤器中</DMS_InstallSensoryFilter.jobString>
+  
+  <!-- EN: Install biosynthetic arm -->
+  <DMS_InstallSyntheticArm.label>安装生物合成臂</DMS_InstallSyntheticArm.label>
+  <!-- EN: Install a biosynthetic arm. -->
+  <DMS_InstallSyntheticArm.description>安装生物合成臂</DMS_InstallSyntheticArm.description>
+  <!-- EN: Installing biosynthetic arm. -->
+  <DMS_InstallSyntheticArm.jobString>安装生物合成臂中</DMS_InstallSyntheticArm.jobString>
+  
+  <!-- EN: Install biosynthetic leg -->
+  <DMS_InstallSyntheticLeg.label>安装生物合成腿</DMS_InstallSyntheticLeg.label>
+  <!-- EN: Install a biosynthetic leg. -->
+  <DMS_InstallSyntheticLeg.description>安装生物合成腿</DMS_InstallSyntheticLeg.description>
+  <!-- EN: Installing neural-mechanical leg. -->
+  <DMS_InstallSyntheticLeg.jobString>安装生物合成腿中</DMS_InstallSyntheticLeg.jobString>
+  
+  <!-- EN: Remove Emotional Neutralizer. -->
+  <DMS_RemoveSensoryFilter.label>移除感官过滤器</DMS_RemoveSensoryFilter.label>
+  <!-- EN: Remove an Emotional Neutralizer. May cause serious mental trauma. -->
+  <DMS_RemoveSensoryFilter.description>移除感官过滤器，这可能会导致短时间的严重精神创伤</DMS_RemoveSensoryFilter.description>
+  <!-- EN: Removing sensory filter. -->
+  <DMS_RemoveSensoryFilter.jobString>移除感官过滤器中</DMS_RemoveSensoryFilter.jobString>
+  
+</LanguageData>

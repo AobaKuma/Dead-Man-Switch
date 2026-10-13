@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Hound charging station -->
+  <DMS_Hound_Base.label>獵犬充電站</DMS_Hound_Base.label>
+  <!-- EN: A station for assembling and recharging Hound. -->
+  <DMS_Hound_Base.description>一個用於獵犬組裝和充電站</DMS_Hound_Base.description>
+  
+  <!-- EN: Hound(Fire Suppress) charging station -->
+  <DMS_Hound_FS_Base.label>獵犬(支援型)充電站</DMS_Hound_FS_Base.label>
+  <!-- EN: A station for assembling and recharging Fire Hound. -->
+  <DMS_Hound_FS_Base.description>一個用於支援型獵犬組裝與整備的平台。</DMS_Hound_FS_Base.description>
+  
+  <!-- EN: Hound(Riot Control) charging station -->
+  <DMS_Hound_RC_Base.label>獵犬(防暴型)充電站</DMS_Hound_RC_Base.label>
+  <!-- EN: A station for assembling and recharging Riot Control Hound. -->
+  <DMS_Hound_RC_Base.description>一個用於防暴型獵犬組裝與整備的平台。</DMS_Hound_RC_Base.description>
+  
+  <!-- EN: automatroid recharger -->
+  <DMS_Recharger.label>機兵充電站</DMS_Recharger.label>
+  <!-- EN: Automatroids can recharge here. During recharge, this recharger produces toxic wastepacks and stores them internally. Haulers must remove the wastepacks from time to time. -->
+  <DMS_Recharger.description>一個用於自動機兵充電的平台。</DMS_Recharger.description>
+  
+  <!-- EN: trashbin charging station -->
+  <DMS_TrashBin_Base.label>垃圾筒充電站</DMS_TrashBin_Base.label>
+  <!-- EN: A station for assembling and recharging trashbin. -->
+  <DMS_TrashBin_Base.description>一個用於垃圾筒組裝與整備的平台。</DMS_TrashBin_Base.description>
+  
+  <!-- EN: verlingbird charging station -->
+  <DMS_VerlingBird_Base.label>槳鳥充電站</DMS_VerlingBird_Base.label>
+  <!-- EN: A station for assembling and recharging verlingbird. -->
+  <DMS_VerlingBird_Base.description>一個用於槳鳥組裝與整備的平台。</DMS_VerlingBird_Base.description>
+  
+</LanguageData>

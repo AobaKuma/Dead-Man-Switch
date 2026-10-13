@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: supported bandwidth -->
+  <DMS_OrbitalService.label>Supported bandwidth</DMS_OrbitalService.label>
+  <!-- EN: Orbital support ships from colonial fleets are providing bandwidth to allied mechanitors -->
+  <DMS_OrbitalService.description>Orbital support ships from colonial fleets provide bandwidth to allied mechanitors</DMS_OrbitalService.description>
+  <!-- EN: none -->
+  <DMS_OrbitalService.stages.none.label>none</DMS_OrbitalService.stages.none.label>
+  <!-- EN: corporal -->
+  <DMS_OrbitalService.stages.corporal.label>corporal</DMS_OrbitalService.stages.corporal.label>
+  <!-- EN: pre-sergeant -->
+  <DMS_OrbitalService.stages.presergeant.label>pre-sergeant</DMS_OrbitalService.stages.presergeant.label>
+  <!-- EN: sergeant -->
+  <DMS_OrbitalService.stages.sergeant.label>sergeant</DMS_OrbitalService.stages.sergeant.label>
+  <!-- EN: warrant officer -->
+  <DMS_OrbitalService.stages.warrant_officer.label>warrant officer</DMS_OrbitalService.stages.warrant_officer.label>
+  <!-- EN: lieutenant -->
+  <DMS_OrbitalService.stages.lieutenant.label>lieutenant</DMS_OrbitalService.stages.lieutenant.label>
+  <!-- EN: captain -->
+  <DMS_OrbitalService.stages.captain.label>captain</DMS_OrbitalService.stages.captain.label>
+  <!-- EN: major -->
+  <DMS_OrbitalService.stages.major.label>major</DMS_OrbitalService.stages.major.label>
+  <!-- EN: colonel -->
+  <DMS_OrbitalService.stages.colonel.label>colonel</DMS_OrbitalService.stages.colonel.label>
+  <!-- EN: brigadier -->
+  <DMS_OrbitalService.stages.brigadier.label>brigadier</DMS_OrbitalService.stages.brigadier.label>
+  
+</LanguageData>

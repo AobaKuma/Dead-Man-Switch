@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Caretta -->
+  <DMS_Mech_Caretta.label>蠵龟</DMS_Mech_Caretta.label>
+  <!-- EN: mobile artillery platform equipped with a rapid fire mortar launcher, designed to bombardment enemy base and ground forces from afar. -->
+  <DMS_Mech_Caretta.description>象龟的泛生型号，作为一种移动式曲射支援平台来为步兵提供即时的火炮支援。搭载了一座2B9矢车菊迫击砲作为其主要武器。</DMS_Mech_Caretta.description>
+  <!-- EN: head -->
+  <DMS_Mech_Caretta.tools.head.label>头部</DMS_Mech_Caretta.tools.head.label>
+  
+  <!-- EN: geochelone -->
+  <DMS_Mech_Geochelone.label>象龟</DMS_Mech_Geochelone.label>
+  <!-- EN: an unmanned all-terrain tracked pulse shield support platform, featuring a diverse range of production models and variants. -->
+  <DMS_Mech_Geochelone.description>一种无人全地形履带式脉冲防护盾支援平台，具有一个小型化的舰载护盾系统来抵挡攻击。有多种生产型号和变型。</DMS_Mech_Geochelone.description>
+  <!-- EN: head -->
+  <DMS_Mech_Geochelone.tools.head.label>头部</DMS_Mech_Geochelone.tools.head.label>
+  
+  <!-- EN: geochelone -->
+  <DMS_Mech_Geochelone_b.label>象龟</DMS_Mech_Geochelone_b.label>
+  <!-- EN: an unmanned all-terrain tracked pulse shield support platform, featuring a diverse range of production models and variants. -->
+  <DMS_Mech_Geochelone_b.description>一种无人全地形履带式脉冲防护盾支援平台，具有一个小型化的舰载护盾系统来抵挡攻击。有多种生产型号和变型。</DMS_Mech_Geochelone_b.description>
+  <!-- EN: head -->
+  <DMS_Mech_Geochelone_b.tools.head.label>头部</DMS_Mech_Geochelone_b.tools.head.label>
+  
+  <!-- EN: killdozer -->
+  <DMS_Mech_Killdozer.label>突击龟</DMS_Mech_Killdozer.label>
+  <!-- EN: An unmanned assault sapper with a dozer blade for fortification breakthrough in the frontline, and the armor on various parts of the body has also been strengthened. -->
+  <DMS_Mech_Killdozer.description>一辆无人的小型突击破障车，前方带有突破用的推土铲，车身各处的装甲也获得了强化。</DMS_Mech_Killdozer.description>
+  <!-- EN: dozer blade -->
+  <DMS_Mech_Killdozer.tools.dozer_blade.label>推土铲</DMS_Mech_Killdozer.tools.dozer_blade.label>
+  
+  <!-- EN: killdozer -->
+  <DMS_Mech_Killdozer_b.label>突击龟</DMS_Mech_Killdozer_b.label>
+  <!-- EN: An unmanned assault sapper with a dozer blade for fortification breakthrough in the frontline, and the armor on various parts of the body has also been strengthened. -->
+  <DMS_Mech_Killdozer_b.description>一辆无人的小型突击破障车，前方带有突破用的推土铲，车身各处的装甲也获得了强化。</DMS_Mech_Killdozer_b.description>
+  <!-- EN: dozer blade -->
+  <DMS_Mech_Killdozer_b.tools.dozer_blade.label>头部</DMS_Mech_Killdozer_b.tools.dozer_blade.label>
+  
+</LanguageData>

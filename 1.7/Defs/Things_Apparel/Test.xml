@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="ApparelArmorHelmetReconBase" Abstract="true">
+		<defName>DMS_AirRaidTest</defName>
+		<label>Air Raid Goggles</label>
+		<description>An optical enhancement device which amplifies existing light in low-light conditions and projects it through the display on to the users eyes. Compatible with most helmets and can be worn stand-alone.</description>
+		<graphicData>
+			<texPath>Things/Apparel/NightVisionGoggles/headgear_icon</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<equippedStatOffsets>
+			<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+		</equippedStatOffsets>
+		<statBases>
+			<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.08</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.1</ArmorRating_Heat>
+			<Insulation_Cold>0</Insulation_Cold>
+			<Insulation_Heat>0</Insulation_Heat>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li MayRequire="Ludeon.RimWorld.Royalty">Gunlink</li>
+				<li>DMS_EquipmentAdvanced</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+			<ComponentSpacer>1</ComponentSpacer>
+			<Plasteel>10</Plasteel>
+		</costList>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/NightVisionGoggles/headgear</wornGraphicPath>
+			<renderSkipFlags>
+				<li>Eyes</li>
+			</renderSkipFlags>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+			<bodyPartGroups Inherit="False">
+				<li>Eyes</li>
+			</bodyPartGroups>
+			<tags Inherit="False">
+				<li>DMS_NVG</li>
+			</tags>
+			<layers Inherit="False">
+				<li>EyeCover</li>
+			</layers>
+		</apparel>
+		<tradeTags>
+			<li>Clothing</li>
+		</tradeTags>
+		<thingSetMakerTags Inherit="False">
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<comps>
+			<li Class="Fortified.CompProperties_AirSupportSummoner">
+				<supportDef>DMS_AirRaidTest</supportDef>
+				<label>autocannon strafe</label>
+			</li>
+			<li Class="Fortified.CompProperties_AirSupportSummoner">
+				<supportDef>DMS_AirRaidTestII</supportDef>
+				<label>rocket barrage</label>
+			</li>
+			<li Class="Fortified.CompProperties_AirSupportSummoner">
+				<supportDef>DMS_AirRaidTestIII</supportDef>
+				<label>rocket barrage from base</label>
+			</li>
+			<li Class="Fortified.CompProperties_AirSupportSummoner">
+				<supportDef>DMS_155mm_Bombard</supportDef>
+				<label>shell barrage from base</label>
+			</li>
+		</comps>
+	</ThingDef>
+</Defs>

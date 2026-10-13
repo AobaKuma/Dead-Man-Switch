@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+<GeneDef>
+    <defName>DMS_Wetware</defName>
+    <label>wetware gestation</label>
+    <labelShortAdj>wetware</labelShortAdj>
+    <description>This is a special directional developmental gene that is designed to cause the embryo to mutate and develop in a predetermined manner during the developmental stage. And grow into a biological wetware computer that is compatible with mechanical interfaces.</description>
+    <geneClass>DMS.Gene_Wetware</geneClass>
+    <iconPath>UI/Gene/Gene_Wetware</iconPath>
+    <displayOrderInCategory>80</displayOrderInCategory>
+    <biostatMet>-15</biostatMet>
+  </GeneDef>
+</Defs>	

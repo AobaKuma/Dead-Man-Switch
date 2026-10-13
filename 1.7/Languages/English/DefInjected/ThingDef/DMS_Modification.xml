@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Additional Armor Plating -->
+  <DMS_BF_ExtendArmor.label>Additional Armor Plating</DMS_BF_ExtendArmor.label>
+  <!-- EN: Composite armor plates designed for battle frame pylons add survivability to the battle frame by protecting it from fragmentation and medium-caliber gunfire. -->
+  <DMS_BF_ExtendArmor.description>Composite armor plates designed for battle frame pylons add survivability to the battle frame by protecting it from fragmentation and medium-caliber gunfire.</DMS_BF_ExtendArmor.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_BF_ExtendArmor.comps.CompUsable.useLabel>Install {0_label}</DMS_BF_ExtendArmor.comps.CompUsable.useLabel>
+  
+  <!-- EN: Extended Cargo Rack -->
+  <DMS_BF_ExtendCargo.label>Extended Cargo Rack</DMS_BF_ExtendCargo.label>
+  <!-- EN: Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants. -->
+  <DMS_BF_ExtendCargo.description>Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants.</DMS_BF_ExtendCargo.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_BF_ExtendCargo.comps.CompUsable.useLabel>Install {0_label}</DMS_BF_ExtendCargo.comps.CompUsable.useLabel>
+  
+  <!-- EN: Recoilless Rifle Rack -->
+  <DMS_BF_RecoillessRifle.label>Recoilless Rifle Rack</DMS_BF_RecoillessRifle.label>
+  <!-- EN: A pair of 65mm recoilless tubes on a shared cradle, built to bolt onto the side pylons of a battle frame. Line units fit it for one reason: a frame's own light armament has no answer to plating or a prepared firing position, and a walking mount can carry the tube into ground a two-man crew would never reach.\n\nLoaded with shaped-charge rockets, the rack defeats armor and fortifications far above the frame's weight class, and its fire control unit reloads a spent tube from carried stores between engagements. The frame pays for it in walking pace, dodging room and cargo allowance, and every backblast marks its position for every observer on the field. -->
+  <DMS_BF_RecoillessRifle.description>A pair of 65mm recoilless tubes on a shared cradle, built to bolt onto the side pylons of a battle frame. Line units fit it for one reason: a frame's own light armament has no answer to plating or a prepared firing position, and a walking mount can carry the tube into ground a two-man crew would never reach.
+
+Loaded with shaped-charge rockets, the rack defeats armor and fortifications far above the frame's weight class, and its fire control unit reloads a spent tube from carried stores between engagements. The frame pays for it in walking pace, dodging room and cargo allowance, and every backblast marks its position for every observer on the field.</DMS_BF_RecoillessRifle.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_BF_RecoillessRifle.comps.CompUsable.useLabel>Install {0_label}</DMS_BF_RecoillessRifle.comps.CompUsable.useLabel>
+  
+  <!-- EN: broken ceramics -->
+  <DMS_BrokenCeramics.label>broken ceramics</DMS_BrokenCeramics.label>
+  
+  <!-- EN: Ceramic Plates -->
+  <DMS_CeramicsPlating.label>Ceramic Plates</DMS_CeramicsPlating.label>
+  <!-- EN: A set of ceramic plates designed to be mounted on to a mech's external shell to provide additional protection. Once damaged, the armor plating must be completely replaced.\n\nThe maximum amount of plating able to be installed on a mech can depend on its body size. -->
+  <DMS_CeramicsPlating.description>A set of ceramic plates designed to be mounted on to a mech's external shell to provide additional protection. Once damaged, the armor plating must be completely replaced.
+
+The maximum amount of plating able to be installed on a mech can depend on its body size.</DMS_CeramicsPlating.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_CeramicsPlating.comps.CompUsable.useLabel>Install {0_label}</DMS_CeramicsPlating.comps.CompUsable.useLabel>
+  
+  <!-- EN: Command Coprocessor -->
+  <DMS_CommandCoprocessor.label>Command Coprocessor</DMS_CommandCoprocessor.label>
+  <!-- EN: An auxiliary processing board fitted alongside a command automatroid's core processor. It takes over the signal multiplexing and unit bookkeeping that would otherwise occupy the main processor, letting the automatroid keep more units on its command chain at once.\n\nThe extra silicon draws power continuously, slightly increasing the automatroid's energy consumption.\n\nOnly command-type automatroids have a processor bus that can accept it. -->
+  <DMS_CommandCoprocessor.description>An auxiliary processing board fitted alongside a command automatroid's core processor. It takes over the signal multiplexing and unit bookkeeping that would otherwise occupy the main processor, letting the automatroid keep more units on its command chain at once.
+
+The extra silicon draws power continuously, slightly increasing the automatroid's energy consumption.
+
+Only command-type automatroids have a processor bus that can accept it.</DMS_CommandCoprocessor.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_CommandCoprocessor.comps.CompUsable.useLabel>Install {0_label}</DMS_CommandCoprocessor.comps.CompUsable.useLabel>
+  
+  <!-- EN: Nuclear Battery -->
+  <DMS_NuclearBattery.label>Nuclear Battery</DMS_NuclearBattery.label>
+  <!-- EN: A nuclear fission reactor powering a quantum battery, this device is commonly found in many unmanned signal stations and defense robots. It consists of six high-density uranium-235 columns with integrated thermocouples all wrapped in a high-strength shell. Its energy is enough to make most models of automatroid operate for decades. -->
+  <DMS_NuclearBattery.description>A simple nuclear fission battery, common in unmanned signal stations and in mechs garrisoning beacons. Six near-critical columns of high-density uranium-235 are integrated with thermocouples and sealed inside a high-strength casing. Its output is enough to keep most models of mech running for hundreds of years, and in an emergency it can also be turned into a one-shot nuclear bomb.</DMS_NuclearBattery.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_NuclearBattery.comps.CompUsable.useLabel>Install {0_label}</DMS_NuclearBattery.comps.CompUsable.useLabel>
+  
+  <!-- EN: Reinforced Frame -->
+  <DMS_ReinforcedFrame.label>Reinforced Frame</DMS_ReinforcedFrame.label>
+  <!-- EN: A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy-duty replacement parts will significantly increase the weight of the mech and affect its speed. -->
+  <DMS_ReinforcedFrame.description>A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy-duty replacement parts will significantly increase the weight of the mech and affect its speed.</DMS_ReinforcedFrame.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_ReinforcedFrame.comps.CompUsable.useLabel>Install {0_label}</DMS_ReinforcedFrame.comps.CompUsable.useLabel>
+  
+  <!-- EN: Synthetic Tendon -->
+  <DMS_SyntheticTendon.label>Synthetic Tendon</DMS_SyntheticTendon.label>
+  <!-- EN: Biosynthetic muscles attached on the outer layer of mechanical limbs. Synthetic tendons effectively increase output at the cost of additional energy consumption. -->
+  <DMS_SyntheticTendon.description>Biosynthetic muscles attached on the outer layer of mechanical limbs. Synthetic tendons effectively increase output at the cost of additional energy consumption.</DMS_SyntheticTendon.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_SyntheticTendon.comps.CompUsable.useLabel>Install {0_label}</DMS_SyntheticTendon.comps.CompUsable.useLabel>
+  
+  <!-- EN: Heavy Hydraulic Frame -->
+  <DMS_TB_HeavyHydraulicFrame.label>Heavy Hydraulic Frame</DMS_TB_HeavyHydraulicFrame.label>
+  <!-- EN: A high durability reinforced hydraulic frame designed as a platform for mounting heavy weapons on Iguanas and Geckos. -->
+  <DMS_TB_HeavyHydraulicFrame.description>An external hydraulic skeleton and power pack for heavy bipedal mechs - essentially an exoskeleton system built for mechs. It gives a heavy mech a much larger combat load capacity and allows superheavy weapons to be mounted, at the cost of a significant increase in weight and a reduction in movement speed.</DMS_TB_HeavyHydraulicFrame.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_TB_HeavyHydraulicFrame.comps.CompUsable.useLabel>Install {0_label}</DMS_TB_HeavyHydraulicFrame.comps.CompUsable.useLabel>
+  
+  <!-- EN: unfinished modification -->
+  <UnfinishedModification.label>unfinished modification</UnfinishedModification.label>
+  <!-- EN: An unfinished modification. -->
+  <UnfinishedModification.description>An unfinished modification.</UnfinishedModification.description>
+  
+</LanguageData>

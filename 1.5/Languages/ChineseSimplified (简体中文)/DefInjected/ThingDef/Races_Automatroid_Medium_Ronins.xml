@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Gladiator -->
+  <DMS_Mech_Gladiator.label>格斗士</DMS_Mech_Gladiator.label>
+  <!-- EN: A melee specialized variant of the Ronin. The Gladiator maintains the Ronin's mobility and armor and comes with an upgraded melee combat module and is equipped with an assault shield. -->
+  <DMS_Mech_Gladiator.description>一种格斗特化的浪人改造型号，其身体结构高度灵活并且加强了对於格斗中的钝击防御，装备有一面灵活的格斗盾牌。</DMS_Mech_Gladiator.description>
+  <!-- EN: assault shield -->
+  <DMS_Mech_Gladiator.tools.assault_shield.label>突击盾</DMS_Mech_Gladiator.tools.assault_shield.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Gladiator.tools.right_fist.label>右拳</DMS_Mech_Gladiator.tools.right_fist.label>
+  
+  <!-- EN: Phalanx -->
+  <DMS_Mech_Phalanx.label>方阵步兵</DMS_Mech_Phalanx.label>
+  <!-- EN: The Phalanx is a cheap mass-producable variant specialized for urban combat. It comes packed with assault armor and high mobility package making it a fierce unit in close quarters combat. -->
+  <DMS_Mech_Phalanx.description>一种削减了声纳设备以节省成本的量产型辅助机体，专门用於都市战场景为浪人部队提供直射火力掩护与协同攻坚作战，使其成为近距离作战中的凶猛部队。</DMS_Mech_Phalanx.description>
+  <!-- EN: head -->
+  <DMS_Mech_Phalanx.tools.head.label>头部</DMS_Mech_Phalanx.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Phalanx.tools.left_fist.label>左拳</DMS_Mech_Phalanx.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Phalanx.tools.right_fist.label>右拳</DMS_Mech_Phalanx.tools.right_fist.label>
+  
+  <!-- EN: Protector -->
+  <DMS_Mech_Protector.label>塔盾手</DMS_Mech_Protector.label>
+  <!-- EN: The protector is designed for peacekeeping operations and riot control. This model is equipped with strong armor around its frame and has a huge flash shield to compliment the use of close quater weapons like batons or shotguns. -->
+  <DMS_Mech_Protector.description>塔盾手专为维和行动和防暴需求而设计，框架周围有整体坚固的盔甲，配有巨大的闪光盾牌和警棍或霰弹枪等近身武器。</DMS_Mech_Protector.description>
+  <!-- EN: ballistic shield -->
+  <DMS_Mech_Protector.tools.ballistic_shield.label>防弹盾</DMS_Mech_Protector.tools.ballistic_shield.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Protector.tools.right_fist.label>右拳</DMS_Mech_Protector.tools.right_fist.label>
+  
+  <!-- UNUSED -->
+  <DMS_Mech_Protector.tools.head.label>头部</DMS_Mech_Protector.tools.head.label>
+  <DMS_Mech_Protector.tools.left_fist.label>左拳</DMS_Mech_Protector.tools.left_fist.label>
+  <DMS_Mech_Protector.tools.right_fist-1.label>右拳</DMS_Mech_Protector.tools.right_fist-1.label>
+  
+  <!-- EN: Ronin -->
+  <DMS_Mech_Ronin.label>浪人</DMS_Mech_Ronin.label>
+  <!-- EN: A Humanoid mech model specialized for urban combat, this unit is outfitted with assault armor and a mobility package making it a formidible foe in close quaters. -->
+  <DMS_Mech_Ronin.description>专门用於城市战斗场景的人形机兵，配备了突击装甲和高机动性，使其成为近距离作战的凶猛部队。</DMS_Mech_Ronin.description>
+  <!-- EN: right arm blade -->
+  <DMS_Mech_Ronin.tools.right_arm_blade.label>右手刃</DMS_Mech_Ronin.tools.right_arm_blade.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Ronin.tools.right_fist.label>右拳</DMS_Mech_Ronin.tools.right_fist.label>
+  <!-- EN: left arm blade -->
+  <DMS_Mech_Ronin.tools.left_arm_blade.label>左手刃</DMS_Mech_Ronin.tools.left_arm_blade.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Ronin.tools.left_fist.label>左拳</DMS_Mech_Ronin.tools.left_fist.label>
+  
+  <!-- UNUSED -->
+  <DMS_Mech_Ronin.tools.head.label>头部</DMS_Mech_Ronin.tools.head.label>
+  
+  <!-- EN: Siegebreaker -->
+  <DMS_Mech_Siegebreaker.label>袭城者</DMS_Mech_Siegebreaker.label>
+  <!-- EN: The Siegebreaker comes with top of the line armor making it ideal for sapping and breaching jobs. -->
+  <DMS_Mech_Siegebreaker.description>凭藉更好的装甲防护，袭城者站在战线的最前线突破敌人防御。</DMS_Mech_Siegebreaker.description>
+  <!-- EN: head -->
+  <DMS_Mech_Siegebreaker.tools.head.label>头部</DMS_Mech_Siegebreaker.tools.head.label>
+  <!-- EN: left fist -->
+  <DMS_Mech_Siegebreaker.tools.left_fist.label>左拳</DMS_Mech_Siegebreaker.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMS_Mech_Siegebreaker.tools.right_fist.label>右拳</DMS_Mech_Siegebreaker.tools.right_fist.label>
+  
+</LanguageData>

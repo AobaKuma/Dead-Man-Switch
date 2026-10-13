@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>	
+	<!-- 隱身 -->
+	<AbilityDef ParentName="DMS_AddHediffSelfBase">
+		<defName>DMS_Camouflage</defName>
+		<label>Active Camouflage</label>
+		<description>Blend into the environment by activating morphic camouflage using nanomechanical coatings.</description>
+		<iconPath>UI/Ability/Camouflage</iconPath>
+		<aiCanUse>true</aiCanUse>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff" MayRequire="Ludeon.RimWorld.Royalty">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>PsychicInvisibility</hediffDef>
+				<onlyBrain>True</onlyBrain>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
+		</comps>
+		<statBases>
+			<Ability_Duration>60</Ability_Duration>
+		</statBases>
+	</AbilityDef>
+</Defs>

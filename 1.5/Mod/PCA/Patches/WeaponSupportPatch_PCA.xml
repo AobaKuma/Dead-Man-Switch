@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+        defName="PCA_Gun_500SWTactical" or
+        defName="PCA_Gun_SWMPTactical"
+        ]/weaponTags</xpath>
+        <value>
+          <li>A_Pistol</li>
+        </value>
+      </li>
+      <!-- Falcon-->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Falcon"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>PCA_Gun_NeopupTactical</li>
+        </value>
+      </li>
+      <!-- Soldats -->
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_Soldat"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>PCA_Gun_BlackThunderTactical</li>
+        </value>
+      </li>
+
+      <!-- DMS_Mech_Ronin -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Ronin"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>          
+          <li>PCA_SpacerMelee</li>
+        </value>
+      </li>
+      <!-- DMS_Mech_Siegebreaker -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Siegebreaker"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>PCA_Gun_500SWTactical</li>
+          <li>PCA_Gun_SWMPTactical</li>
+        </value>
+      </li>
+      <!-- DMS_Mech_Protector -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Protector"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>PCA_Gun_TS12Tactical</li>
+        </value>
+      </li>
+      <!-- DMS_Mech_Phalanx -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Phalanx"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>PCA_Gun_TS12Tactical</li>
+          <li>PCA_Gun_XM556Tactical</li>
+        </value>
+      </li>
+
+      <!-- DMS_Mech_Arquebusier -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Arquebusier"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>PCA_Gun_SRSTactical</li>
+          <li>PCA_Gun_MGASAWTactical</li>
+          <li>PCA_Gun_RM277SAWTactical</li>
+          <li>PCA_Gun_RM338Tactical</li>
+        </value>
+      </li>
+      <!-- DMS_Mech_Jaeger -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Jaeger"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>PCA_Gun_BlackThunderTactical</li>
+          <li>PCA_Gun_SRSTactical</li>
+          <li>PCA_Gun_JaguarTactical</li>
+        </value>
+      </li>
+      <!-- DMS_Mech_Pioneer -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Pioneer"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>PCA_Gun_BlackThunderTactical</li>
+          <li>PCA_Gun_SRSTactical</li>
+          <li>PCA_Gun_TS12Tactical</li>
+          <li>PCA_Gun_MGASAWTactical</li>
+          <li>PCA_Gun_RM277Tactical</li>
+        </value>
+      </li>
+      <!-- DMS_Mech_Sniper -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Sniper"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>PCA_Gun_SRSTactical</li>
+          <li>PCA_Gun_TS12Tactical</li>
+          <li>PCA_Gun_MGASAWTactical</li>
+          <li>PCA_Gun_RM277Tactical</li>
+          <li>PCA_Gun_JaguarTactical</li>
+          <li>PCA_Gun_Anzio20Tactical</li>
+          <li>PCA_Gun_SolothurnTactical</li>
+        </value>
+      </li>
+
+      <!-- Ape-->
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_Ape"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>PCA_Gun_HandheldNeoStrikeTactical</li>
+          <li>PCA_Gun_HandheldVektorTactical</li>
+        </value>
+      </li>
+
+      <!-- BattleFrames -->
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_BattleFrame"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>PCA_Gun_XM556Tactical</li>
+          <li>PCA_Gun_HandheldNeoStrikeTactical</li>
+          <li>PCA_Gun_MGASAWTactical</li>
+          <li>PCA_Gun_RM277SAWTactical</li>
+          <li>PCA_Gun_RM338Tactical</li>
+        </value>
+      </li>
+
+      <!-- 鬣蜥 Iguana-->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Iguana" or
+          defName="DMS_Mech_Gecko"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/BypassUsableWeapons</xpath>
+        <value>
+          <li>PCA_Gun_HandheldNeoStrikeTactical</li>
+          <li>PCA_Gun_HandheldVektorTactical</li>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

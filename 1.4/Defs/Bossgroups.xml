@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- DMS_Mech_Sergeant -->
+  <BossDef>
+    <defName>DMS_Boss_Sergeant</defName>
+    <kindDef>DMS_Mech_Sergeant</kindDef>
+    <appearAfterTicks>720000</appearAfterTicks><!-- 2 years -->
+  </BossDef>
+
+  <BossgroupDef ParentName="BaseBossgroup">
+    <defName>DMS_Sergeant</defName>
+    <boss>DMS_Boss_Sergeant</boss>
+    <waves>
+      <li> <!-- 0 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Soldat_B>3</DMS_Mech_Soldat_B>
+          <DMS_Machine_VerlingBirdA>3</DMS_Machine_VerlingBirdA>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 1 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Grenadier>3</DMS_Mech_Grenadier>
+          <DMS_Mech_Soldat_B>5</DMS_Mech_Soldat_B>
+          <DMS_Machine_VerlingBirdA>4</DMS_Machine_VerlingBirdA>
+        </escorts>
+      </li>
+      <li> <!-- 2 - Repeat starts here -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>12</DMS_Mech_Soldat>    
+          <DMS_Machine_VerlingBirdA>4</DMS_Machine_VerlingBirdA>
+          <DMS_Mech_Grenadier>8</DMS_Mech_Grenadier>
+          
+          <DMS_Mech_Soldat_B>7</DMS_Mech_Soldat_B>
+          <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 3 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Grenadier>10</DMS_Mech_Grenadier>
+          <DMS_Mech_Soldat_B>9</DMS_Mech_Soldat_B>
+          <DMS_Machine_VerlingBirdA>8</DMS_Machine_VerlingBirdA>
+          <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 4 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <DMS_Machine_VerlingBirdA>6</DMS_Machine_VerlingBirdA>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Grenadier>15</DMS_Mech_Grenadier>
+          <DMS_Mech_Soldat_B>9</DMS_Mech_Soldat_B>
+          <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 5 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <DMS_Machine_VerlingBirdA>10</DMS_Machine_VerlingBirdA>
+          <DMS_Mech_Falcon>4</DMS_Mech_Falcon>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Soldat_B>9</DMS_Mech_Soldat_B>
+          <DMS_Mech_Grenadier>15</DMS_Mech_Grenadier>
+          <DMS_Mech_Kanonier>2</DMS_Mech_Kanonier>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 6 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <DMS_Mech_Falcon>8</DMS_Mech_Falcon>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Soldat_B>9</DMS_Mech_Soldat_B>
+          <DMS_Mech_Kanonier>4</DMS_Mech_Kanonier>
+          <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 7 -->
+        <bossCount>3</bossCount>
+        <escorts>
+          <DMS_Mech_Falcon>8</DMS_Mech_Falcon>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Soldat_B>9</DMS_Mech_Soldat_B>
+          <DMS_Mech_Kanonier>6</DMS_Mech_Kanonier>
+          <DMS_Mech_Iguana>3</DMS_Mech_Iguana>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+    </waves>
+    <leaderDescription>This {LEADERKIND_label} was one of machines deployed all over this plants. Tho it has out of command due to the lost of their commander.</leaderDescription>
+    <rewardDef>ComponentTransmitter</rewardDef>
+  </BossgroupDef>
+
+
+  <!-- DMS_Mech_Geochelone -->
+  <BossDef>
+    <defName>DMS_Boss_Geochelone</defName>
+    <kindDef>DMS_Mech_Geochelone</kindDef>
+    <appearAfterTicks>7200000</appearAfterTicks><!-- 2 years -->
+  </BossDef>
+
+  <BossgroupDef ParentName="BaseBossgroup">
+    <defName>DMS_Geochelone</defName>
+    <boss>DMS_Boss_Geochelone</boss>
+    <waves>
+      <li> <!-- 0 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>4</DMS_Mech_Soldat>
+          <DMS_Machine_VerlingBirdA>1</DMS_Machine_VerlingBirdA>
+        </escorts>
+      </li>
+      <li> <!-- 1 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>8</DMS_Mech_Soldat>
+          <DMS_Mech_Grenadier>3</DMS_Mech_Grenadier>
+          <DMS_Machine_VerlingBirdA>2</DMS_Machine_VerlingBirdA>
+        </escorts>
+      </li>
+      <li> <!-- 2 - Repeat starts here -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>12</DMS_Mech_Soldat>    
+          <DMS_Machine_VerlingBirdA>4</DMS_Machine_VerlingBirdA>
+          <DMS_Mech_Grenadier>8</DMS_Mech_Grenadier>
+          <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 3 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Grenadier>10</DMS_Mech_Grenadier>
+          <DMS_Machine_VerlingBirdA>8</DMS_Machine_VerlingBirdA>
+          <DMS_Mech_Kanonier>5</DMS_Mech_Kanonier>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 4 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Machine_VerlingBirdA>12</DMS_Machine_VerlingBirdA>
+          <DMS_Mech_Grenadier>15</DMS_Mech_Grenadier>
+          <DMS_Mech_Kanonier>4</DMS_Mech_Kanonier>
+          <DMS_Mech_Sergeant>1</DMS_Mech_Sergeant>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 5 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <DMS_Machine_VerlingBirdA>24</DMS_Machine_VerlingBirdA>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Grenadier>15</DMS_Mech_Grenadier>
+          <DMS_Mech_Kanonier>4</DMS_Mech_Kanonier>
+          <DMS_Mech_Sergeant>2</DMS_Mech_Sergeant>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 6 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <DMS_Machine_VerlingBirdA>24</DMS_Machine_VerlingBirdA>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Kanonier>8</DMS_Mech_Kanonier>
+          <DMS_Mech_Sergeant>2</DMS_Mech_Sergeant>
+          <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 7 -->
+        <bossCount>3</bossCount>
+        <escorts>
+          <DMS_Machine_VerlingBirdA>24</DMS_Machine_VerlingBirdA>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Kanonier>12</DMS_Mech_Kanonier>
+          <DMS_Mech_Sergeant>2</DMS_Mech_Sergeant>
+          <DMS_Mech_Iguana>3</DMS_Mech_Iguana>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+    </waves>
+    <leaderDescription>This {LEADERKIND_label} was one of machines deployed all over this plants. Tho it has out of command due to the lost of their commander.</leaderDescription>
+    <rewardDef>Neurocomputer</rewardDef>
+  </BossgroupDef>
+
+  <!-- DMS_Mech_Tarbosaurus -->
+
+  <BossDef>
+    <defName>DMS_Boss_Tarbosaurus</defName>
+    <kindDef>DMS_Mech_Tarbosaurus</kindDef>
+    <appearAfterTicks>7200000</appearAfterTicks><!-- 2 years -->
+  </BossDef>
+
+  <BossgroupDef ParentName="BaseBossgroup">
+    <defName>DMS_Tarbosaurus</defName>
+    <boss>DMS_Boss_Tarbosaurus</boss>
+    <waves>
+      <li> <!-- 0 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Iguana>2</DMS_Mech_Iguana>
+          <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
+        </escorts>
+      </li>
+      <li> <!-- 1 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Iguana>3</DMS_Mech_Iguana>
+          <DMS_Mech_Ronin>5</DMS_Mech_Ronin>
+        </escorts>
+      </li>
+      <li> <!-- 2 - Repeat starts here -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Iguana>4</DMS_Mech_Iguana>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Ronin>7</DMS_Mech_Ronin>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 3 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <DMS_Mech_Iguana>6</DMS_Mech_Iguana>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Ronin>10</DMS_Mech_Ronin>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 4 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <DMS_Mech_Iguana>8</DMS_Mech_Iguana>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Ronin>5</DMS_Mech_Ronin>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+      <li> <!-- 5 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <DMS_Mech_Iguana>8</DMS_Mech_Iguana>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Ronin>8</DMS_Mech_Ronin>
+          <DMS_Mech_Sniper>1</DMS_Mech_Sniper>
+        </escorts>
+        <bossApparel>
+          <li><thing>Apparel_HeavyShield</thing></li>
+        </bossApparel>
+      </li>
+    </waves>
+    <leaderDescription>This {LEADERKIND_label} was one of machines deployed all over this plants. Tho it has out of command due to the lost of their commander.</leaderDescription>
+    <rewardDef>ComponentFireControl</rewardDef>
+  </BossgroupDef>
+
+</Defs>

@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[@Name="PLA_BaseGrenade"]</xpath>
+        <value>
+          <weaponTags>
+            <li>VerlingBird_Weapon</li>
+          </weaponTags>
+        </value>
+      </li>
+      <!-- Falcon-->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Falcon"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_SMG</li>
+          <li>PLA_Pistol</li>
+          <li>PLA_RocketLauncher</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Falcon"
+          ]/weaponTags</xpath>
+        <value>
+          <li>PLA_RocketLauncher</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Noctula"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_Pistol</li>
+        </value>
+      </li>
+
+      <!-- Dogge-->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Dogge"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_Pistol</li>
+          <li>PLA_SMG</li>
+          <li>PLA_RocketLauncher</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Dogge"
+          ]/weaponTags</xpath>
+        <value>
+          <li>PLA_SMG</li>
+          <li>PLA_RocketLauncher</li>
+        </value>
+      </li>
+
+      <!-- Soldats -->
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_Soldat"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_SimpleGun</li>
+          <li>PLA_SemiAutoRifle</li>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+          <li>PLA_Pistol</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Soldat"
+          ]/weaponTags</xpath>
+        <value>
+          <li>PLA_SimpleGun</li>
+          <li>PLA_SemiAutoRifle</li>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Sergeant"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_Pistol</li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Grenadier"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_Pistol</li>
+          <li>PLA_GrenadeLauncher</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Grenadier"
+          ]/weaponTags</xpath>
+        <value>
+          <li>PLA_GrenadeLauncher</li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Kanonier"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_Pistol</li>
+          <li>PLA_RocketLauncher</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Kanonier"
+          ]/weaponTags</xpath>
+        <value>
+          <li>PLA_RocketLauncher</li>
+        </value>
+      </li>
+
+      <!-- DMS_Mech_Ronin -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Ronin"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+          <li>PLA_Pistol</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Ronin"
+          ]/weaponTags</xpath>
+        <value>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+        </value>
+      </li>
+      <!-- DMS_Mech_Siegebreaker -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Siegebreaker"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+          <li>PLA_Pistol</li>
+        </value>
+      </li>
+      <!-- DMS_Mech_Protector -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Protector"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+          <li>PLA_Pistol</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Protector"
+          ]/weaponTags</xpath>
+        <value>
+          <li>PLA_Shotgun</li>
+        </value>
+      </li>
+      <!-- DMS_Mech_Phalanx -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Phalanx"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_SimpleGun</li>
+          <li>PLA_SemiAutoRifle</li>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+          <li>PLA_Pistol</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Phalanx"
+          ]/weaponTags</xpath>
+        <value>
+          <li>PLA_SemiAutoRifle</li>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+        </value>
+      </li>
+
+      <!-- DMS_Mech_Arquebusier -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Arquebusier"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_AssaultRifle</li>
+          <li>PLA_Sniper</li>
+          <li>PLA_DMR</li>
+          <li>PLA_Pistol</li>
+          <li>PLA_LMG</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Arquebusier"
+          ]/weaponTags</xpath>
+        <value>
+          <li>PLA_AssaultRifle</li>
+          <li>PLA_Sniper</li>
+          <li>PLA_DMR</li>
+          <li>PLA_LMG</li>
+        </value>
+      </li>
+      <!-- DMS_Mech_Jaeger -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Jaeger"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_AssaultRifle</li>
+          <li>PLA_DMR</li>
+          <li>PLA_Pistol</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Jaeger"
+          ]/weaponTags</xpath>
+        <value>
+          <li>PLA_DMR</li>
+        </value>
+      </li>
+      <!-- DMS_Mech_Pioneer -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Pioneer"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_AssaultRifle</li>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+          <li>PLA_Pistol</li>
+          <li>PLA_RocketLauncher</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Pioneer"
+          ]/weaponTags</xpath>
+        <value>
+          <li>PLA_AssaultRifle</li>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+          <li>PLA_RocketLauncher</li>
+        </value>
+      </li>
+      <!-- DMS_Mech_Sniper -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Sniper"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_AssaultRifle</li>
+          <li>PLA_GrenadeLauncher</li>
+          <li>PLA_Sniper</li>
+          <li>PLA_AMR</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Sniper"
+          ]/weaponTags</xpath>
+        <value>
+          <li>PLA_Sniper</li>
+          <li>PLA_AMR</li>
+        </value>
+      </li>
+
+      <!-- Ape-->
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_Ape"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_AssaultRifle</li>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+          <li>PLA_Pistol</li>
+          <li>PLA_HMG</li>
+        </value>
+      </li>
+
+      <!-- BattleFrames -->
+      <li Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[
+          defName="DMS_Mech_BattleFrame"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_HMG</li>
+          <li>PLA_LMG</li>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+          <li>PLA_Pistol</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_FieldCommand" or
+          defName="DMS_Mech_EscortLifter"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+          <li>PLA_Pistol</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_ShaftWorker"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_Pistol</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[
+          defName="DMS_Mech_Tachanka"
+          ]/weaponTags</xpath>
+        <value>
+          <li>PLA_LMG</li>
+          <li>PLA_HMG</li>
+        </value>
+      </li>
+
+      <!-- 鬣蜥 Iguana-->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[
+          defName="DMS_Mech_Iguana" or
+          defName="DMS_Mech_Gecko"
+          ]/modExtensions/li[@Class="DMS.MechWeaponExtension"]/UsableWeaponTags</xpath>
+        <value>
+          <li>PLA_HMG</li>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

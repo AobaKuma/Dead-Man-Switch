@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<FactionLanguages.DialectDef>
+		<defName>DMS_Fleet_Standard</defName>
+		<label>Colonization standard</label>
+		<!-- 一種能高度無損壓縮訊息的星際通訊用語言，是殖民艦隊用於近光速通訊用的標準編碼協議，其簡化的版本可以直接用於口語與書寫交流。其使用214種部首來組成約5000種常用字元與大約30000種不常用字元，並透過組合字元來進行交流與訊息紀錄。這種語言幾乎沒有文法例外並且可以根據其內部規則自然創造出尚未存在的事物與意義。而組合的名詞庫如今依然在隨著殖民艦隊之間的通訊而緩慢且統一的迭代。 -->
+		<description>A highly lossless interstellar communication language that is used to compress messages. It is the standard coding protocol used by colonial fleets for near-light-speed communications. A simplified version is used by fleet members for oral communication and written records. It uses 214 radicals to form about 5,000 commonly used characters and about 30,000 uncommon characters, and communicates and records information by combining characters. This language has almost no grammatical exceptions and can naturally create things and meanings that do not yet exist based on its internal rules. And its standard rules are still being slowly and uniformly iterated today as communications between colonial fleets occur.</description>
+		<nameMaker>DMS_FleetDialect_Standard</nameMaker>
+		<difficultyByTechLevel>
+			<points>
+				<!-- Undefined -->
+				<li>0, 1</li>
+				<!-- Animal -->
+				<li>1, 0.25</li>
+				<!-- Neolithic -->
+				<li>2, 0.25</li>
+				<!-- Medieval -->
+				<li>3, 0.5</li>
+				<!-- Industrial -->
+				<li>4, 1.25</li>
+				<!-- Spacer -->
+				<li>5, 1.5</li>
+				<!-- Ultra -->
+				<li>6, 2</li>
+				<!-- Archotech -->
+				<li>7, 3</li>
+			</points>
+		</difficultyByTechLevel>
+	</FactionLanguages.DialectDef>
+</Defs>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <TransportShipDef>
+        <defName>DMS_Ship_TransportShuttle</defName>
+        <label>shuttle</label>
+        <shipThing>Shuttle</shipThing>
+        <arrivingSkyfaller>DMS_Ship_TransportShuttleIncoming</arrivingSkyfaller>
+        <leavingSkyfaller>DMS_Ship_TransportShuttleLeaving</leavingSkyfaller>
+        <worldObject>DMS_TravelingTransportShuttle</worldObject>
+        <maxLaunchDistance>70</maxLaunchDistance>
+    </TransportShipDef>
+
+    <ThingDef Name="DMS_ShuttleSkyfallerBase" ParentName="SkyfallerBase" Abstract="True">
+        <size>(5,3)</size>
+        <graphicData>
+            <texPath>Things/Skyfaller/HeavyTransportLifter</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutFlying</shaderType>
+            <drawSize>(7,5)</drawSize>
+        </graphicData>
+        <skyfaller>
+            <movementType>Decelerate</movementType>
+            <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
+            <shadowSize>(5.5,3.5)</shadowSize>
+            <motesPerCell>1</motesPerCell>
+        </skyfaller>
+    </ThingDef>
+    <ThingDef ParentName="DMS_ShuttleSkyfallerBase">
+        <defName>DMS_Ship_TransportShuttleIncoming</defName>
+        <label>heavy transport lifter (incoming)</label>
+        <thingClass>ShuttleIncoming</thingClass>
+        <skyfaller>
+            <anticipationSound>Shuttle_Landing</anticipationSound>
+            <anticipationSoundTicks>250</anticipationSoundTicks>
+            <ticksToImpactRange>200~250</ticksToImpactRange>
+            <angleCurve>
+                <points>
+                    <li>(0,-30)</li>
+                    <li>(1,-90)</li>
+                </points>
+            </angleCurve>
+            <rotationCurve>
+                <points>
+                    <li>(0,30)</li>
+                    <li>(0.5,5)</li>
+                    <li>(0.9,-5)</li>
+                    <li>(0.95,0)</li>
+                </points>
+            </rotationCurve>
+            <zPositionCurve>
+                <points>
+                    <li>(0.95,2.5)</li>
+                    <li>(1,0)</li>
+                </points>
+            </zPositionCurve>
+            <speedCurve>
+                <points>
+                    <li>(0.6,1.0)</li>
+                    <li>(0.95,0.1)</li>
+                </points>
+            </speedCurve>
+        </skyfaller>
+    </ThingDef>
+    <ThingDef ParentName="DMS_ShuttleSkyfallerBase">
+        <defName>DMS_Ship_TransportShuttleLeaving</defName>
+        <label>heavy transport lifter (leaving)</label>
+        <thingClass>FlyShipLeaving</thingClass>
+        <skyfaller>
+            <reversed>true</reversed>
+            <anticipationSound>Shuttle_Leaving</anticipationSound>
+            <anticipationSoundTicks>-10</anticipationSoundTicks>
+            <ticksToImpactRange>-40~-15</ticksToImpactRange>
+            <moteSpawnTime>0.05</moteSpawnTime>
+            <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
+            <shadowSize>(5.5,3.5)</shadowSize>
+            <motesPerCell>1</motesPerCell>
+            <angleCurve>
+                <points>
+                    <li>(0,90)</li>
+                    <li>(1,70)</li>
+                </points>
+            </angleCurve>
+            <rotationCurve>
+                <points>
+                    <li>(0,0)</li>
+                    <li>(0.15,10)</li>
+                    <li>(0.5,-5)</li>
+                </points>
+            </rotationCurve>
+            <zPositionCurve>
+                <points>
+                    <li>(0,0)</li>
+                    <li>(0.08,2)</li>
+                </points>
+            </zPositionCurve>
+            <speedCurve>
+                <points>
+                    <li>(0,0.2)</li>
+                    <li>(0.4,1.0)</li>
+                </points>
+            </speedCurve>
+        </skyfaller>
+    </ThingDef>
+
+    <WorldObjectDef>
+        <defName>DMS_TravelingTransportShuttle</defName>
+        <label>heavy transport lifter</label>
+        <description>A shuttle in flight.</description>
+        <worldObjectClass>TravelingTransportPods</worldObjectClass>
+        <texture>World/WorldObjects/Caravan</texture>
+        <useDynamicDrawer>true</useDynamicDrawer>
+        <expandingIcon>true</expandingIcon>
+        <expandingIconTexture>Things/Skyfaller/HeavyTransportLifter</expandingIconTexture>
+        <expandingIconPriority>60</expandingIconPriority>
+        <expandMore>true</expandMore>
+        <expandingIconColor>(162,164,149)</expandingIconColor>
+        <expandingIconDrawSize>1.6</expandingIconDrawSize>
+        <allowCaravanIncidentsWhichGenerateMap>true</allowCaravanIncidentsWhichGenerateMap>
+        <rotateGraphicWhenTraveling>true</rotateGraphicWhenTraveling>
+    </WorldObjectDef>
+</Defs>

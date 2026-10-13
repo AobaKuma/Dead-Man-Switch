@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_BandNode</defName>
+    <label>process array</label>
+    <description>An array machine processes the received signal and directs to a specific mechanitor. This will add 4 bandwidth to that mechanitor's total bandwidth, allowing them to control more mechanoids.\n\nOnce a process array is constructed, it can be quickly tuned to a mechanitor. However, returning a band node to a different mechanitor takes significantly longer.\n\nThis Device followed the N.A.C.S. protocol to operate, so only Mechlink with the following protocol can revice the service.</description>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <fillPercent>0.7</fillPercent>
+    <graphicData>
+      <texPath>Things/Building/computeArray</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(1.5, 0.35, 1.2)</volume>
+        <offset>(0, 0, 0)</offset>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+    </building>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <designationCategory>DMS_Category</designationCategory>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Mass>500</Mass>
+      <Flammability>0.25</Flammability>
+    </statBases>
+    <size>(2,2)</size>
+    <costList>
+      <Steel>200</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <Neurocomputer>1</Neurocomputer>
+    </costList>
+    <researchPrerequisites>
+      <li>DMS_Mechlink</li>
+    </researchPrerequisites>
+    <comps>
+      <li MayRequire="VanillaExpanded.VFEA" Class="VFEAncients.CompProperties_SolarPowerUp"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>1000</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_BandNode">
+        <hediff>DMS_BandNode</hediff>
+        <untunedEffect>BandNodeUntuned</untunedEffect>
+        <tuningEffect>BandNodeTuning</tuningEffect>
+        <tunedEffect>BandNodeTuned</tunedEffect>
+        <retuningEffect>BandNodeRetuning</retuningEffect>
+        <tuningCompleteSound>BandNodeTuning_Complete</tuningCompleteSound>
+        <powerConsumptionIdle>100</powerConsumptionIdle>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_BandNode</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+  </ThingDef>
+  
+  <HediffDef>
+    <defName>DMS_BandNode</defName>
+    <hediffClass>DMS.Hediff_BandNode</hediffClass>
+    <label>band node (N.A.C.S.)</label>
+    <description>Following the N.A.C.S. protocol, assisted computing array has increased this mechanitor's bandwidth.</description>
+  </HediffDef>
+
+</Defs>

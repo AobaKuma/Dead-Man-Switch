@@ -23,45 +23,10 @@
     <tickerType>Normal</tickerType>
     <designationCategory>DMS_Category</designationCategory>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-    <!-- CompCanBeDormant 需要 / required by CompCanBeDormant -->
-    <receivesSignals>true</receivesSignals>
     <comps>
       <li MayRequire="VanillaExpanded.VFEA" Class="VFEAncients.CompProperties_SolarPowerUp" />
       <li Class="CompProperties_Forbiddable" />
       <li Class="CompProperties_Flickable" />
-      <!-- 休眠：只在地圖生成期、以 NPC 陣營生成時有 npcDormantChance 的機率睡著（DMS.CompCanBeDormant_NPCChance）；
-           玩家蓋的、敵人戰鬥中部署的一律醒著；玩家陣營的砲塔（含佔領來的）永遠視為醒著。睡著時 Building_TurretGun.Active 為 false，不開火也不被自動鎖定。
-           喚醒：警戒掃描器的 FFF_AlertScanner_Triggered 訊號、挨打、殖民者走進 wakeUpCheckRadius、玩家在旁邊施工；
-           醒來時轉播同一訊號叫醒附近的其他休眠砲塔。
-           掛在基底上，所有沿用 <comps> 合併的自動砲塔都會繼承；用 <comps Inherit="false"> 的有人操作砲塔
-           （Vasilek、LMG、AGL、HMG）刻意不套用：它們本來就要有人上機才會開火。
-           Dormancy: only when spawned for an NPC faction during map generation, with npcDormantChance
-           (DMS.CompCanBeDormant_NPCChance); player-built and combat-deployed copies stay awake, and any
-           player-faction turret (including claimed ones) always counts as awake. Asleep,
-           Building_TurretGun.Active is false: no firing, no auto-targeting. Wakes on the alert scanners'
-           FFF_AlertScanner_Triggered signal, on damage, on a colonist inside wakeUpCheckRadius or on nearby
-           player construction, and re-broadcasts the signal to wake neighbouring turrets.
-           Lives on the base so every automatic turret that merges <comps> inherits it; the manned turrets
-           that use <comps Inherit="false"> (Vasilek, LMG, AGL, HMG) deliberately skip it, since they need a
-           gunner to fire anyway. -->
-      <li Class="DMS.CompProperties_CanBeDormant_NPCChance">
-        <npcDormantChance>0.65</npcDormantChance>
-        <wakeUpSignalTag>FFF_AlertScanner_Triggered</wakeUpSignalTag>
-        <maxDistAwakenByOther>25</maxDistAwakenByOther>
-        <wakeUpDelayRange>60~240</wakeUpDelayRange>
-        <canWakeUpFogged>false</canWakeUpFogged>
-      </li>
-      <li Class="CompProperties_WakeUpDormant">
-        <wakeUpSignalTag>FFF_AlertScanner_Triggered</wakeUpSignalTag>
-        <wakeUpOnDamage>true</wakeUpOnDamage>
-        <wakeUpIfAnyTargetClose>true</wakeUpIfAnyTargetClose>
-        <wakeUpCheckRadius>5.9</wakeUpCheckRadius>
-        <wakeUpOnThingConstructedRadius>3</wakeUpOnThingConstructedRadius>
-        <wakeUpWithDelay>true</wakeUpWithDelay>
-        <onlyWakeUpSameFaction>true</onlyWakeUpSameFaction>
-        <activateMessageKey>DMS_DormantTurretWokenUp</activateMessageKey>
-        <activatePluralMessageKey>DMS_DormantTurretWokenUpPlural</activatePluralMessageKey>
-      </li>
     </comps>
     <modExtensions>
       <li Class="Fortified.ForceTargetableExtension" />
@@ -83,89 +48,51 @@
     </researchPrerequisites>
   </ThingDef>
 
-  <!-- 開拓裝備的可建造物共用的下拉選單：應急照明、哨戒砲塔、發射器箱 -->
-  <DesignatorDropdownGroupDef>
-    <defName>DMS_DefenseEquipment</defName>
-    <label>defense equipment</label>
-  </DesignatorDropdownGroupDef>
-
-  <!-- 固定式砲塔共用的下拉選單（哨戒砲塔是隨身開拓裝備，留在 DMS_DefenseEquipment） -->
-  <DesignatorDropdownGroupDef>
-    <defName>DMS_Turrets</defName>
-    <label>turrets</label>
-  </DesignatorDropdownGroupDef>
-
   <!--哨戒砲塔-->
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Sentry</defName>
-    <label>Sentry gun</label>
-    <description>A light automatic turret with a built-in battery, designed to be carried and set up wherever the line needs a gun. On the power grid it charges its internal cell; cut off from the grid it draws on that reserve and keeps firing until the cell runs dry. Switching it off puts it on standby: it stops watching and pours the saved power into the cell instead, charging twice as fast.\n\nIts tripod folds flat, so a drafted operator can pick it up, carry it forward and drop it into position on the spot. A cell charged before departure will keep it standing watch for days.</description>
+    <label>Sentry turret</label>
+    <description>A quick-deployed, disposable remote-controlled turret that can be used continuously for about 12 hours after being deployed. It will automatically shut down after the energy is used up. These type of equipments are usually deployed in urban combat environments to ambush enemies.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Turrets/Tripod</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>1.1</drawSize>
+      <drawSize>1</drawSize>
       <drawOffset>(0,0,-0.1)</drawOffset>
     </graphicData>
     <size>(1,1)</size>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <designationCategory>DMS_Category</designationCategory>
-    <designatorDropdown>DMS_DefenseEquipment</designatorDropdown>
-    <researchPrerequisites>
-      <li>DMS_EquipmentAdvanced</li>
-    </researchPrerequisites>
+    <designationCategory Inherit="false"/>
     <fillPercent>0.7</fillPercent>
     <statBases>
-      <MaxHitPoints>150</MaxHitPoints>
+      <MaxHitPoints>50</MaxHitPoints>
       <Flammability>0.5</Flammability>
-      <WorkToBuild>3000</WorkToBuild>
+      <WorkToBuild>4500</WorkToBuild>
       <Beauty>-2</Beauty>
       <ShootingAccuracyTurret>1</ShootingAccuracyTurret>
-      <Mass>30</Mass>
     </statBases>
-    <comps>
-      <!-- 拾起：把砲塔迷你化後收進操作者的背包，之後可用部署 Gizmo 就地架設 -->
-      <li Class="CompProperties_Usable">
-        <useJob>TriggerObject</useJob>
-        <useLabel>Pick up {0_label}</useLabel>
-      </li>
-      <li Class="CompProperties_UseEffect">
-        <compClass>Fortified.CompMinifyToInventory</compClass>
-      </li>
-      <li Class="Fortified.CompProperties_PowerWithInternalBattery">
-        <basePowerConsumption>40</basePowerConsumption>
-        <chargeRateWatts>40</chargeRateWatts>
-        <internalBatteryMax>200</internalBatteryMax>
-        <standbyChargeFactor>2</standbyChargeFactor>   <!-- 開關關閉時待機：不運作，改以 2 倍速率純充電 -->
-      </li>
-      <li Class="Fortified.CompProperties_PowerColorSwitch">
-        <gridColor>(100,100,100,0)</gridColor>
-        <batteryColor>(200,0,0,0)</batteryColor>
-      </li>
-      <li Class="CompProperties_Glower">
-        <glowRadius>3</glowRadius>
-        <glowColor>(10,10,10,0)</glowColor>
-        <colorPickerEnabled>false</colorPickerEnabled>
-        <darklightToggle>false</darklightToggle>
-      </li>
+    <comps Inherit="false">
+      <li MayRequire="VanillaExpanded.VFEA" Class="VFEAncients.CompProperties_SolarPowerUp" />
+      <li Class="CompProperties_Forbiddable" />
+			<li Class="CompProperties_MechPowerCell">
+				<totalPowerTicks>30000</totalPowerTicks>
+				<killWhenDepleted>false</killWhenDepleted>
+				<labelOverride>Battery power</labelOverride>
+				<tooltipOverride>This turret has a limited battery life. Once it runs out, it will stop working entirely.</tooltipOverride>
+			</li>
     </comps>
     <building>
       <turretGunDef>DMS_SubMachineGunMounted</turretGunDef>
-      <turretTopDrawSize>1.1</turretTopDrawSize>
+      <turretTopDrawSize>1</turretTopDrawSize>
       <turretBurstWarmupTime>0.5</turretBurstWarmupTime>   <!--================冷卻與瞄準時間================-->
       <turretBurstCooldownTime>1</turretBurstCooldownTime>
     </building>
     <costList>
-      <Steel>100</Steel>
+      <Steel>50</Steel>
       <ComponentStamped>1</ComponentStamped>
     </costList>
     <uiIconPath>Things/Turrets/DMS_SentryTurret</uiIconPath>
     <uiIconScale>1.25</uiIconScale>
-    <!-- 可部署：拾起後由 FFF 的 MinifiedThingDeployable 提供部署 Gizmo；內部電池的電量會隨物件一起保留 -->
-    <minifiedDef>FFF_MinifiedTurret</minifiedDef>
-    <thingCategories>
-      <li>BuildingsSecurity</li>
-    </thingCategories>
   </ThingDef>
 
   <!-- <ThingDef ParentName="DMS_BaseCannonBuilding">
@@ -304,7 +231,6 @@
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_GateKeeper</defName>
     <label>Gatekeeper</label>
-    <designatorDropdown>DMS_Turrets</designatorDropdown>
     <description>A large-caliber multi-barreled machine gun turret typically used on spacecraft and maritime ships. It has an extremely high rates of fire and devastating suppression capabilities.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
@@ -354,7 +280,7 @@
       </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>2000</basePowerConsumption>
+        <basePowerConsumption>1000</basePowerConsumption>
       </li>
     </comps>
     <building>
@@ -365,14 +291,14 @@
     </building>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <costList>
-      <Tungsteel>200</Tungsteel>
-      <ComponentStamped>67</ComponentStamped>
+      <Steel>450</Steel>
+      <Tungsteel>300</Tungsteel>
+      <ComponentStamped>15</ComponentStamped>
       <ComponentIndustrial>10</ComponentIndustrial>
       <ComponentFireControl>1</ComponentFireControl>
-      <DMS_GAU8Gatlinggun>1</DMS_GAU8Gatlinggun>
     </costList>
     <researchPrerequisites>
-      <li>DMS_Synthroid</li>
+      <li>DMS_EquipmentElite</li>
       <li>MultibarrelWeapons</li>
     </researchPrerequisites>
     <uiIconPath>Things/Turrets/DMS_GateKeeper</uiIconPath>
@@ -397,15 +323,9 @@
     </statBases>
     <verbs>
       <li>
-        <!-- 掃射 Verb：與手持版 GAU-8 相同，彈著沿目標橫向掃過一條弧線 -->
-        <verbClass>Fortified.Verb_ArcSprayProjectile</verbClass>
-        <sprayWidth>5</sprayWidth>
-        <sprayArching>4</sprayArching>
-        <sprayThicknessCells>3</sprayThicknessCells>
-        <sprayNumExtraCells>30</sprayNumExtraCells> <!-- 要大於或等於發射次數 -->
+        <verbClass>Verb_Shoot</verbClass>
         <defaultProjectile>DMS_Bullet_CIWS</defaultProjectile>
         <requireLineOfSight>true</requireLineOfSight>
-        <hasStandardCommand>true</hasStandardCommand>
         <warmupTime>2.0</warmupTime>
         <minRange>3.9</minRange>
         <range>59.9</range>
@@ -419,6 +339,7 @@
         <targetParams>
           <canTargetLocations>true</canTargetLocations>
         </targetParams>
+        <forcedMissRadius>1.5</forcedMissRadius>
       </li>
     </verbs>
     <comps>
@@ -472,7 +393,6 @@
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_MK44_Navy</defName>
     <label>MK44 BushMaster-II</label>
-    <designatorDropdown>DMS_Turrets</designatorDropdown>
     <description>The 30x173mm MK44 Bushmaster II autocannon, despite its modest 200 RPM rate of fire, achieves reliable defensive performance through good accuracy and adequate lethality.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
@@ -529,10 +449,9 @@
     <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
     <costList>
       <Steel>280</Steel>
-      <Tungsteel>40</Tungsteel>
-      <ComponentStamped>11</ComponentStamped>
+      <Tungsteel>140</Tungsteel>
+      <ComponentStamped>7</ComponentStamped>
       <ComponentIndustrial>6</ComponentIndustrial>
-      <DMS_Gun_MK44_Autocannon>1</DMS_Gun_MK44_Autocannon>
     </costList>
     <researchPrerequisites>
       <li>DMS_EquipmentElite</li>
@@ -594,7 +513,7 @@
       </li>
     </modExtensions>
 
-  </ThingDef>
+  </ThingDef>	
 
   <!--遙控砲塔-->
   <ThingDef ParentName="DMS_BaseCannonBuilding">
@@ -619,8 +538,8 @@
       <Beauty>-2</Beauty>
       <ShootingAccuracyTurret>0.9</ShootingAccuracyTurret>
     </statBases>
-    <designationCategory Inherit="false" />
-    <researchPrerequisites Inherit="false" />
+    <designationCategory Inherit="false"/>
+	<researchPrerequisites Inherit="false"/>
     <comps>
       <li Class="CompProperties_Refuelable">
         <fuelLabel>Shots until barrel change</fuelLabel>
@@ -658,10 +577,9 @@
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <costList>
       <Steel>250</Steel>
-      <Tungsteel>25</Tungsteel>
-      <ComponentStamped>8</ComponentStamped>
+      <Tungsteel>100</Tungsteel>
+      <ComponentStamped>5</ComponentStamped>
       <ComponentIndustrial>5</ComponentIndustrial>
-      <DMS_KordMachineGun MayRequire="Aoba.DeadManSwitch.AncientCorps">1</DMS_KordMachineGun>
     </costList>
     <uiIconPath>Things/Turrets/DMS_5ETs16U</uiIconPath>
     <uiIconScale>1.2</uiIconScale>
@@ -728,7 +646,6 @@
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Vasilek</defName>
     <label>Vasilek</label>
-    <designatorDropdown>DMS_Turrets</designatorDropdown>
     <description>An ancient design of a rapid fire indirect artillery piece capable of firing four mortar rounds in one burst.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
@@ -795,8 +712,8 @@
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <costList>
       <Steel>150</Steel>
-      <Tungsteel>20</Tungsteel>
-      <ComponentStamped>9</ComponentStamped>
+      <Tungsteel>120</Tungsteel>
+      <ComponentStamped>5</ComponentStamped>
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
     <researchPrerequisites>
@@ -858,7 +775,6 @@
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMS_Turret_Dawnblade</defName>
     <label>Dawnblade</label>
-    <designatorDropdown>DMS_Turrets</designatorDropdown>
     <description>MPQFS-85 "Dawnblade" is an onboard multirole quick-firing cannon system. It uses drum magazines and an automatic revolver loader to permit a high rate of sustained fire.\n\nThe armor plating has been removed to allow emplacement to be redeployed as needed for heavy fire support.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
@@ -920,11 +836,10 @@
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <costList>
       <Steel>450</Steel>
-      <Tungsteel>50</Tungsteel>
-      <ComponentStamped>25</ComponentStamped>
+      <Tungsteel>300</Tungsteel>
+      <ComponentStamped>15</ComponentStamped>
       <ComponentIndustrial>10</ComponentIndustrial>
       <ComponentFireControl>2</ComponentFireControl>
-      <DMS_Gun_DawnbladeM>1</DMS_Gun_DawnbladeM>
     </costList>
     <researchPrerequisites>
       <li>DMS_Synthroid</li>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_SurvivalRifle</defName>
+		<label>X Calibre</label>
+		<ammoTypes> 
+			<Ammo_12Gauge_Buck>Bullet_12Gauge_Buck</Ammo_12Gauge_Buck>
+			<Ammo_12Gauge_Slug>Bullet_12Gauge_Slug</Ammo_12Gauge_Slug>
+			<Ammo_12Gauge_Beanbag>Bullet_12Gauge_Beanbag</Ammo_12Gauge_Beanbag>
+			<Ammo_12Gauge_ElectroSlug>Bullet_12Gauge_ElectroSlug</Ammo_12Gauge_ElectroSlug>
+
+			<Ammo_20Gauge_Buck>Bullet_20Gauge_Buck</Ammo_20Gauge_Buck>
+			<Ammo_20Gauge_Slug>Bullet_20Gauge_Slug</Ammo_20Gauge_Slug>
+			<Ammo_20Gauge_Beanbag>Bullet_20Gauge_Beanbag</Ammo_20Gauge_Beanbag>
+			<Ammo_20Gauge_ElectroSlug>Bullet_20Gauge_ElectroSlug</Ammo_20Gauge_ElectroSlug>
+			
+			<Ammo_410Bore_Buck>Bullet_410Bore_Buck</Ammo_410Bore_Buck>
+			<Ammo_410Bore_Slug>Bullet_410Bore_Slug</Ammo_410Bore_Slug>
+			<Ammo_410Bore_Beanbag>Bullet_410Bore_Beanbag</Ammo_410Bore_Beanbag>
+			<Ammo_410Bore_ElectroSlug>Bullet_410Bore_ElectroSlug</Ammo_410Bore_ElectroSlug>
+			
+			<Ammo_44Magnum_FMJ>Bullet_44Magnum_FMJ</Ammo_44Magnum_FMJ>
+			<Ammo_44Magnum_AP>Bullet_44Magnum_AP</Ammo_44Magnum_AP>
+			<Ammo_44Magnum_HP>Bullet_44Magnum_HP</Ammo_44Magnum_HP>
+			
+			<Ammo_45Colt_FMJ>Bullet_45Colt_FMJ</Ammo_45Colt_FMJ>
+			<Ammo_45Colt_AP>Bullet_45Colt_AP</Ammo_45Colt_AP>
+			<Ammo_45Colt_HP>Bullet_45Colt_HP</Ammo_45Colt_HP>
+			
+			<Ammo_22LR_FMJ>Bullet_22LR_FMJ</Ammo_22LR_FMJ>
+			<Ammo_22LR_AP>Bullet_22LR_AP</Ammo_22LR_AP>
+			<Ammo_22LR_HP>Bullet_22LR_HP</Ammo_22LR_HP>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_SurvivalRifle_UB</defName>
+		<label>Intermediate X Calibre</label>
+		<ammoTypes>
+			<Ammo_556x45mmNATO_FMJ>Bullet_556x45mmNATO_FMJ</Ammo_556x45mmNATO_FMJ>
+			<Ammo_556x45mmNATO_AP>Bullet_556x45mmNATO_AP</Ammo_556x45mmNATO_AP>
+			<Ammo_556x45mmNATO_HP>Bullet_556x45mmNATO_HP</Ammo_556x45mmNATO_HP>
+			<Ammo_556x45mmNATO_Incendiary>Bullet_556x45mmNATO_Incendiary</Ammo_556x45mmNATO_Incendiary>
+			<Ammo_556x45mmNATO_HE>Bullet_556x45mmNATO_HE</Ammo_556x45mmNATO_HE>
+			<Ammo_556x45mmNATO_Sabot>Bullet_556x45mmNATO_Sabot</Ammo_556x45mmNATO_Sabot>			
+			
+			<Ammo_545x39mmSoviet_FMJ>Bullet_545x39mmSoviet_FMJ</Ammo_545x39mmSoviet_FMJ>
+			<Ammo_545x39mmSoviet_AP>Bullet_545x39mmSoviet_AP</Ammo_545x39mmSoviet_AP>
+			<Ammo_545x39mmSoviet_HP>Bullet_545x39mmSoviet_HP</Ammo_545x39mmSoviet_HP>
+			<Ammo_545x39mmSoviet_Incendiary>Bullet_545x39mmSoviet_Incendiary</Ammo_545x39mmSoviet_Incendiary>
+			<Ammo_545x39mmSoviet_HE>Bullet_545x39mmSoviet_HE</Ammo_545x39mmSoviet_HE>
+			<Ammo_545x39mmSoviet_Sabot>Bullet_545x39mmSoviet_Sabot</Ammo_545x39mmSoviet_Sabot>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+</Defs>

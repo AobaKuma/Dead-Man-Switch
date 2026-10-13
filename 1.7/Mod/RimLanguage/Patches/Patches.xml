@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>*/FactionLanguages.LanguageFamilyDef[defName="Human"]/factionDialects</xpath>
+				<value>
+					<li>
+						<dialectDef>DMS_Fleet_Standard</dialectDef>
+						<factions>
+							<li>DMS_Army</li>
+							<li MayRequire="aoba.deadmanswitch.ancientcorps">DMS_AncientCorps</li>
+						</factions>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/TraderKindDef[defName="DMS_Caravan_Tech"]/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>LanguageBook</thingDef>
+						<countRange>2~5</countRange>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

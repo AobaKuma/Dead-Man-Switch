@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: army cap -->
+  <DMS_Apparel_ArmyCap.label>军便帽</DMS_Apparel_ArmyCap.label>
+  <!-- EN: a soft cap for service man when combat helmet is not required. -->
+  <DMS_Apparel_ArmyCap.description>在不需要穿戴战斗头盔时，为军人提供的软帽。</DMS_Apparel_ArmyCap.description>
+  
+  <!-- EN: operator helmet -->
+  <DMS_Apparel_ArrayHelmet.label>机控头显</DMS_Apparel_ArrayHelmet.label>
+  <!-- EN: A full-covered helmet designed for field drone operators, Features built-in head-mounted display and neural-connected operating system. can not only increase the control bandwidth but also give full protection. -->
+  <DMS_Apparel_ArrayHelmet.description>专为前线机兵操作员设计的全覆式头盔，内建头戴式显示器和接入式控制系统。不仅可以增加控制带宽还可以给予充分的保护。</DMS_Apparel_ArrayHelmet.description>
+  
+  <!-- EN: beret -->
+  <DMS_Apparel_Beret.label>贝雷帽</DMS_Apparel_Beret.label>
+  <!-- EN: a soft cap for military man when combat helmet is not required. -->
+  <DMS_Apparel_Beret.description>在不需要穿戴战斗头盔时，为军人设计的软帽。</DMS_Apparel_Beret.description>
+  
+  <!-- EN: bionic suit -->
+  <DMS_Apparel_BionicSuit.label>仿生战斗服</DMS_Apparel_BionicSuit.label>
+  <!-- EN: Physical enhancement equipment sewn from artificial muscle fibers. Can effectively increase the wearer's muscle strength and mobility. -->
+  <DMS_Apparel_BionicSuit.description>由人工肌肉纤维缝制而成的体能增强设备。\n可以有效增加佩戴者的肌肉力量和活动能力。</DMS_Apparel_BionicSuit.description>
+  
+  <!-- EN: soft kepi -->
+  <DMS_Apparel_SoftKepi.label>软筒帽</DMS_Apparel_SoftKepi.label>
+  <!-- EN: a soft cap for military man when combat helmet is not required. -->
+  <DMS_Apparel_SoftKepi.description>在不需要穿戴战斗头盔时，为军人设计的软帽。</DMS_Apparel_SoftKepi.description>
+  
+  <!-- EN: tactical helmet -->
+  <DMS_Apparel_TacticalHelmet.label>战术头盔</DMS_Apparel_TacticalHelmet.label>
+  <!-- EN: A lightweight combat helmet with a complex design, reinforced with plasteel. Not effective against blunt weapons. -->
+  <DMS_Apparel_TacticalHelmet.description>一款设计复杂的轻型战斗头盔，采用塑钢强化。对钝器无效。</DMS_Apparel_TacticalHelmet.description>
+  
+  <!-- EN: tactical vest -->
+  <DMS_Apparel_TacticalVest.label>战术装具</DMS_Apparel_TacticalVest.label>
+  <!-- EN: A vest with armor plates inserted on the chest and back. While quite effective at deflecting gunshots and stabbing attacks against the chest, it does nothing to protect the limbs. -->
+  <DMS_Apparel_TacticalVest.description>在胸部和背部插入装甲板的背心。虽然能有效抵挡枪弹和刺向胸部的攻击，但它对保护四肢没有任何作用。</DMS_Apparel_TacticalVest.description>
+  
+</LanguageData>

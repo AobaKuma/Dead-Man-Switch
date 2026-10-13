@@ -9,7 +9,7 @@
       <MoveSpeed>2.5</MoveSpeed>
       <ArmorRating_Sharp>1.5</ArmorRating_Sharp><!--銳抗-->
       <ArmorRating_Blunt>1.3</ArmorRating_Blunt><!--鈍抗-->
-      <ArmorRating_Heat>0.92</ArmorRating_Heat>  <!--能抗-->
+      <ArmorRating_Heat>1.2</ArmorRating_Heat>  <!--能抗-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge>
       <!-- 履帶平台的特色就是用電低。並且被攻擊不減速 -->
@@ -50,34 +50,6 @@
         <drawWithNoSelection>True</drawWithNoSelection>
         <disarmedByEmpForTicks>3000</disarmedByEmpForTicks>
         <gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
-      </li>
-      <!-- 移動時碾壓建築：象龜體型龐大、履帶寬重，能輕易輾過輕型障礙 -->
-      <li Class="Fortified.CompProperties_TrampleBuildings">
-        <radiusMode>BodySize</radiusMode>
-        <bodySizeFactor>0.5</bodySizeFactor>   <!-- 半徑 ≈ 1.5格 -->
-        <damageAmount>60</damageAmount>
-        <armorPenetration>0.75</armorPenetration>
-        <crushItems>false</crushItems>
-      </li>
-      <!-- 近距離恐慌光環：龐大的盾牌平台令敵人感到壓迫 -->
-      <li Class="Fortified.CompProperties_CausePanicInRange">
-        <range>7</range>
-        <tickInterval>300</tickInterval>       <!-- 每5秒掃描一次 -->
-        <chancePerScan>0.15</chancePerScan>
-        <!-- 量級壓迫：以「本機體型 / 目標體型」的比值再乘一層。
-             面對人類等小型目標壓迫感強，面對己方重型單位自然衰減。 -->
-        <useBodySizeModifier>true</useBodySizeModifier>
-        <bodySizeWeight>1</bodySizeWeight>
-        <bodySizeCurve>
-          <points>
-            <li>(0.5, 0.50)</li>
-            <li>(1.0, 1.00)</li>
-            <li>(1.75, 1.25)</li>
-            <li>(2.5, 1.50)</li>
-            <li>(3.5, 1.85)</li>
-            <li>(5.0, 2.00)</li>
-          </points>
-        </bodySizeCurve>
       </li>
     </comps>
     <tools Inherit="False">
@@ -156,6 +128,35 @@
     </comps>
   </ThingDef>
 
+  <ThingDef ParentName="BaseGeochelone">
+    <defName>DMS_Mech_Geochelone_b</defName>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <defaultWeapon>DMS_SubMachineGunMounted</defaultWeapon>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.2</rotationSmoothTime>
+        <drawData>
+          <defaultData>
+            <pivot>(0.5,0.5)</pivot>
+          </defaultData>
+          <dataEast>
+            <offset>(0.5,0,-0.5)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.75,0,0.6)</offset>
+            <rotationOffset>180</rotationOffset>
+          </dataWest>
+          <dataSouth>
+            <offset>(-0.6,0,-0.5)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(0.6,0,0.9)</offset>
+          </dataNorth>
+        </drawData>
+      </li>
+    </comps>
+  </ThingDef>
+
   <PawnKindDef Name="BaseGeocheloneKind" ParentName="BaseAutomatroidKind" Abstract="True">
     <label>geochelone</label>
     <combatPower>420</combatPower>
@@ -173,7 +174,6 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.75</drawSize>
-          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -182,7 +182,6 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.75</drawSize>
-          <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -194,11 +193,33 @@
     <race>DMS_Mech_Geochelone</race>
   </PawnKindDef>
 
-  <!-- 蠵龜Caretta：象龜底盤的曲射支援泛生型號，共用底盤護盾與履帶特性 -->
-  <ThingDef ParentName="BaseGeochelone">
+  <PawnKindDef ParentName="BaseGeocheloneKind">
+    <defName>DMS_Mech_Geochelone_b</defName>
+    <race>DMS_Mech_Geochelone_b</race>
+  </PawnKindDef>
+
+
+  <!-- 蠵龜Caretta  -->
+  <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMS_Mech_Caretta</defName>
     <label>Caretta</label>
-    <description>A Geochelone variant. This mobile artillery platform mounts a rapid fire mortar launcher to bombard enemy bases and ground forces from afar, while retaining the chassis' miniaturised pulse shield.</description>
+    <description>mobile artillery platform equipped with a rapid fire mortar launcher, designed to bombardment enemy base and ground forces from afar.</description>
+    <statBases>
+      <MoveSpeed>2.5</MoveSpeed><!--移動速度-->
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.3</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.2</ArmorRating_Heat>  <!--能抗-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>        <!--帶寬消耗-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <race>
+      <body>DMS_Caterpillar</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>3</baseBodySize>
+      <baseHealthScale>5</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+    </race>
     <comps>
       <li Class="Fortified.CompProperties_VehicleWeapon">
         <defaultWeapon>DMS_Gun_Vasilek_B</defaultWeapon>
@@ -211,6 +232,32 @@
         </drawData>
       </li>
     </comps>
+    <tools Inherit="False">
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>5.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>3</DMS_ChunkSlag>
+      <Steel>24</Steel>
+    </butcherProducts>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Stab</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
   </ThingDef>
 
   <PawnKindDef ParentName="BaseAutomatroidKind">
@@ -231,7 +278,6 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>3.5</drawSize>
-          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -240,7 +286,6 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>3.5</drawSize>
-          <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -251,12 +296,12 @@
   <!-- Killdozer -->
   <ThingDef Name="BaseKillDozer" ParentName="BaseAutomatroidRace" Abstract="True">
     <label>killdozer</label>
-    <description>A heavily built unmanned assault sapper. The frontal dozer blade lets it break through fortifications on the front line, and the armor on various parts of the hull has been reinforced to match. Its bulk exceeds even the Geochelone it was derived from.</description>
+    <description>An unmanned assault sapper with a dozer blade for fortification breakthrough in the frontline, and the armor on various parts of the body has also been strengthened.</description>
     <statBases>
       <MoveSpeed>2.2</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>1.5</ArmorRating_Blunt>                                     <!--護甲-->
       <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
-      <ArmorRating_Heat>0.92</ArmorRating_Heat>
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">7</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
@@ -299,7 +344,7 @@
                 <drawData>
                   <defaultData>
                     <offset>(0,0,0)</offset>
-                  </defaultData>
+                  </defaultData>                  
                   <dataEast>
                     <offset>(0,0,0)</offset>
                   </dataEast>
@@ -318,38 +363,8 @@
             </renderNodeProperties>
           </li>
         </subTurrets>
-      </li>
+      </li>    
     </comps>-->
-    <comps>
-      <!-- 移動時碾壓建築：推土機就是為了衝破防線而生，傷害最高且可粉碎物品 -->
-      <li Class="Fortified.CompProperties_TrampleBuildings">
-        <radiusMode>BodySize</radiusMode>
-        <bodySizeFactor>0.55</bodySizeFactor>  <!-- 半徑 ≈ 1.82格 -->
-        <damageAmount>120</damageAmount>
-        <armorPenetration>1.0</armorPenetration>
-        <crushItems>true</crushItems>
-      </li>
-      <!-- 近距離恐慌光環：推土機衝鋒的景象令守衛者崩潰 -->
-      <li Class="Fortified.CompProperties_CausePanicInRange">
-        <range>7</range>
-        <tickInterval>250</tickInterval>       <!-- 每~4.2秒掃描一次 -->
-        <chancePerScan>0.20</chancePerScan>
-        <!-- 量級壓迫：以「本機體型 / 目標體型」的比值再乘一層。
-             面對人類等小型目標壓迫感強，面對己方重型單位自然衰減。 -->
-        <useBodySizeModifier>true</useBodySizeModifier>
-        <bodySizeWeight>1</bodySizeWeight>
-        <bodySizeCurve>
-          <points>
-            <li>(0.5, 0.50)</li>
-            <li>(1.0, 1.00)</li>
-            <li>(1.75, 1.25)</li>
-            <li>(2.5, 1.50)</li>
-            <li>(3.5, 1.85)</li>
-            <li>(5.0, 2.00)</li>
-          </points>
-        </bodySizeCurve>
-      </li>
-    </comps>
     <tools Inherit="False">
       <li>
         <label>dozer blade</label>
@@ -398,6 +413,51 @@
     </comps>
   </ThingDef>
 
+  <ThingDef ParentName="BaseKillDozer">
+    <defName>DMS_Mech_Killdozer_b</defName>
+    <comps>
+      <li Class="Fortified.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>defense machinegun</ID>
+            <turret>DMS_Gun_Kord_Vehicle</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>3</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawSize>1.5</drawSize>
+                <drawData>
+                  <defaultData>
+                    <offset>(0,0,0)</offset>
+                  </defaultData>
+                  <dataEast>
+                    <offset>(0,0,0)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(0,0,0)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                  <dataSouth>
+                    <offset>(0,0,0)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(0,0,0)</offset>
+                  </dataNorth>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>
+    </comps>
+  </ThingDef>
+
   <PawnKindDef Name="BaseKillDozerKind" ParentName="BaseAutomatroidKind" Abstract="True">
     <label>killdozer</label>
     <isBoss>true</isBoss>
@@ -436,5 +496,10 @@
   <PawnKindDef ParentName="BaseKillDozerKind">
     <defName>DMS_Mech_Killdozer</defName>
     <race>DMS_Mech_Killdozer</race>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseKillDozerKind">
+    <defName>DMS_Mech_Killdozer_b</defName>
+    <race>DMS_Mech_Killdozer_b</race>
   </PawnKindDef>
 </Defs>

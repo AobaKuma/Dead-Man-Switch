@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingStyleDef>
+		<defName>DMS_MeleeWeapon_Club</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/StylePack_C</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>DMS_MeleeWeapon_Knife</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/StylePack_K</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>DMS_MeleeWeapon_Ikwa</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/StylePack_I</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>DMS_MeleeWeapon_Spear</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/StylePack_S</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>DMS_MeleeWeapon_Mace</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/StylePack_M</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>DMS_MeleeWeapon_Gladius</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/StylePack_G</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>DMS_MeleeWeapon_LongSword</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/StylePack_LS</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>DMS_MeleeWeapon_BreachAxe</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/StylePack_BA</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>	
+	
+	<ThingStyleDef MayRequire="Ludeon.RimWorld.Royalty">
+		<defName>DMS_MeleeWeapon_Axe</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/StylePack_A</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+	
+
+	<ThingStyleDef>
+		<defName>Gun_DMSRevolver</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/Revolver</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_DMSMachinePistol</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/Machinepistol</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_DMSAutopistol</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/Autopistol</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_DMSChainShotgun</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/ChainShotgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_DMSPumpShotgun</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/PumpShotgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_DMSHeavySMG</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/HeavySMG</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_DMSLMG</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/LightMachineGun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_DMSAssaultRifle</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/AssaultRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_DMSMinigun</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/Minigun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_DMSSniperRifle</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/SniperRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_DMSBoltActionRifle</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/BoltActionRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_DMSEMPLauncher</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/EMPLauncher</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_DMSSmokeLauncher</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/SmokeLauncher</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_DMSIncendiaryLauncher</defName>
+		<graphicData>
+			<texPath>Things/Style/DMS_Weapons/IncendiaryLauncher</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+</Defs>

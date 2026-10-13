@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Door Buster -->
+  <DMS_DoorBreaker.label>破门锤</DMS_DoorBreaker.label>
+  <!-- EN: A specially design battering ram for mech breachers which has a built-in launcher and explosive ram head. -->
+  <DMS_DoorBreaker.description>这是一种特殊设计的机兵破门锤，具有短距装药发射器与成形装药弹头。</DMS_DoorBreaker.description>
+  <!-- EN: head -->
+  <DMS_DoorBreaker.tools.head.label>锤头</DMS_DoorBreaker.tools.head.label>
+  <!-- EN: barrel -->
+  <DMS_DoorBreaker.tools.barrel.label>锤身</DMS_DoorBreaker.tools.barrel.label>
+  <!-- EN: Door Buster -->
+  <DMS_DoorBreaker.verbs.Verb_Shoot.label>破门锤</DMS_DoorBreaker.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_DoorBreaker.verbs.Verb_ShootCE.label>破门锤</DMS_DoorBreaker.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Machete -->
+  <DMS_Machete.label>机兵开山刀</DMS_Machete.label>
+  <!-- EN: It May look like a normal machete, but this weapon is purpose built for a mech melee combat capability.\n\nWith its high frequency vibrating edge, it can cut through most things with ease. -->
+  <DMS_Machete.description>专门给近战机兵用於在丛林环境作战时开路的重型砍刀。凭藉其刀刃可以轻松砍断大多数东西。</DMS_Machete.description>
+  <!-- EN: handle -->
+  <DMS_Machete.tools.handle.label>手把</DMS_Machete.tools.handle.label>
+  <!-- EN: point -->
+  <DMS_Machete.tools.point.label>刀尖</DMS_Machete.tools.point.label>
+  <!-- EN: edge -->
+  <DMS_Machete.tools.edge.label>刀刃</DMS_Machete.tools.edge.label>
+  
+  <!-- EN: Stun Baton -->
+  <DMS_StunBaton.label>镇暴电棍</DMS_StunBaton.label>
+  <!-- EN: An electric stun baton designed for non-lethal riot control and to Subdue out-of-control machines. It's commonly used by automatroid protectors to secure occupied areas safely without casualties. -->
+  <DMS_StunBaton.description>一种专为非致命性防暴控制和制服失控机兵而设计的电击棍，通常被执行治安任务的塔盾手使用来确保占领区域的安全而不造成人员伤亡。</DMS_StunBaton.description>
+  <!-- EN: handle -->
+  <DMS_StunBaton.tools.handle.label>握把</DMS_StunBaton.tools.handle.label>
+  <!-- EN: point -->
+  <DMS_StunBaton.tools.point.label>棍尖</DMS_StunBaton.tools.point.label>
+  <!-- EN: edge -->
+  <DMS_StunBaton.tools.edge.label>棍身</DMS_StunBaton.tools.edge.label>
+  
+</LanguageData>

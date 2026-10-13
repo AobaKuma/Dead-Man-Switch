@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>DMS_CivilianChild01</defName>
+    <title>Low G Adjuster</title>
+    <titleShort>Adjuster</titleShort>
+    <description>Since [PAWN_nameDef] grew up in a gravity-free environment, [PAWN_pronoun] childhood was spent undergoing rehabilitation and gravity exposure treatments. Although these treatments have allowed [PAWN_pronoun] to move regularly in a normal gravity environment, [PAWN_pronoun] physical condition is still far inferior compared to other children of the same age.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>DMSCommon</li>
+      <li>FleetChild</li>
+    </spawnCategories>
+    <forcedTraits>
+      <Delicate>0</Delicate>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_OfficerChild01</defName>
+    <title>Officer Cadet</title>
+    <titleFemale>Cadet</titleFemale>
+    <titleShort>Cadet</titleShort>
+    <titleShortFemale>Cadet</titleShortFemale>
+    <description>Due to his outstanding performance in the Colonial Military Academy, [PAWN_nameDef] was trained as an Officer Cadet during his childhood. [PAWN_nameDef] achieved the rank of Warrant Officer upon reaching adulthood.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>DMS_Officer</li>
+      <li>FleetChild</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>3</Shooting>
+      <Construction>2</Construction>
+    </skillGains>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_OfficerChild02</defName>
+    <title>Child Orderly</title>
+    <titleShort>Orderly</titleShort>
+    <description>[PAWN_nameDef] grew up on a colonial planet full of turmoil and used [PAWN_pronoun] flexible skills as messenger on the frontline battlefields full of electromagnetic interference and hostile fire. After the war, [PAWN_pronoun] was able to return to school for an education.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>DMS_Officer</li>
+    </spawnCategories>
+    <skillGains>
+      <Social>2</Social>
+    </skillGains>
+    <forcedTraits>
+      <SpeedOffset>2</SpeedOffset>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_OfficerChild03</defName>
+    <title>Son of Martyrs</title>
+    <titleFemale>Daughter of Martyrs</titleFemale>
+    <titleShort>Martyrs' Child</titleShort>
+    <description>[PAWN_nameDef]'s parents were declared Missing in Action during their deployment while they were very young. Due to the Military Martyrdom Clause of the Colonial Fleet, they received a scholarship to support them through the Officer Academy Course.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>DMS_Officer</li>
+      <li>FleetChild</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>3</Shooting>
+      <Intellectual>2</Intellectual>
+      <Social>5</Social>
+    </skillGains>
+    <forcedTraits>
+      <GreatMemory>0</GreatMemory>
+    </forcedTraits>
+  </BackstoryDef>
+  
+  <BackstoryDef>
+    <defName>DMS_MilitaryChild01</defName>
+    <title>Bastard Child</title>
+    <titleShort>Child</titleShort>
+    <description>[PAWN_nameDef] was born out of wedlock in the colonial fleet stationed on the planet's surface, and his biological father is unknown. Fortunately, the soldiers stationed in the camp treated [PAWN_pronoun] as one of their own, allowing [PAWN_pronoun] to have a relatively complete childhood</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>DMS_Officer</li>
+      <li>FleetChild</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>4</Shooting>
+      <Plants>4</Plants>
+    </skillGains>
+  </BackstoryDef>
+
+</Defs>

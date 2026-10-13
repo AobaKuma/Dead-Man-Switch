@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Flameblaster -->
+  <DMS_Flameblaster.label>喷火枪</DMS_Flameblaster.label>
+  <!-- EN: A flame launcher used by mechs that can and will ignite flammable materials within its range.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
+  <DMS_Flameblaster.description>一种机兵使用的火焰发射器，能够有效引燃射程内的可燃物。</DMS_Flameblaster.description>
+  <!-- EN: stock -->
+  <DMS_Flameblaster.tools.stock.label>枪托</DMS_Flameblaster.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Flameblaster.tools.barrel-0.label>枪管</DMS_Flameblaster.tools.barrel-0.label>
+  <!-- EN: barrel -->
+  <DMS_Flameblaster.tools.barrel-1.label>枪管</DMS_Flameblaster.tools.barrel-1.label>
+  <!-- EN: Flameblaster -->
+  <DMS_Flameblaster.verbs.Verb_SpewFire.label>喷火枪</DMS_Flameblaster.verbs.Verb_SpewFire.label>
+  
+  <!-- EN: Kord -->
+  <DMS_Gun_Kord_Vehicle.label>Kord</DMS_Gun_Kord_Vehicle.label>
+  <!-- EN: Kord anti-everything machinegun chambered in death.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
+  <DMS_Gun_Kord_Vehicle.description>一种用於重型单位的大口径车载机枪</DMS_Gun_Kord_Vehicle.description>
+  <!-- EN: Kord -->
+  <DMS_Gun_Kord_Vehicle.verbs.Verb_Shoot.label>Kord</DMS_Gun_Kord_Vehicle.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_Kord_Vehicle.tools.barrel.label>枪管</DMS_Gun_Kord_Vehicle.tools.barrel.label>
+  <DMS_Gun_Kord_Vehicle.tools.muzzle.label>枪口</DMS_Gun_Kord_Vehicle.tools.muzzle.label>
+  <DMS_Gun_Kord_Vehicle.verbs.Verb_ShootCE.label>Kord</DMS_Gun_Kord_Vehicle.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: 2B9A Vasilek -->
+  <DMS_Gun_Vasilek_B.label>2B9A矢车菊</DMS_Gun_Vasilek_B.label>
+  <!-- EN: An ancient design for rapid fire indirect artillery fire. The Vasilek can fire four mortar rounds in one burst. -->
+  <DMS_Gun_Vasilek_B.description>一种古老但有效的速射迫击炮设计，能在一轮射击中快速发射4枚迫击炮弹对目标范围进行覆盖打击。</DMS_Gun_Vasilek_B.description>
+  <!-- EN: 2B9A Vasilek -->
+  <DMS_Gun_Vasilek_B.verbs.Verb_Shoot.label>2B9A矢车菊</DMS_Gun_Vasilek_B.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_Vasilek_B.tools.barrel.label>炮管</DMS_Gun_Vasilek_B.tools.barrel.label>
+  <DMS_Gun_Vasilek_B.tools.muzzle.label>炮口</DMS_Gun_Vasilek_B.tools.muzzle.label>
+  <DMS_Gun_Vasilek_B.verbs.Verb_ShootMortarCE.label>2B9A矢车菊</DMS_Gun_Vasilek_B.verbs.Verb_ShootMortarCE.label>
+  
+  <!-- EN: Mounted HMG -->
+  <DMS_HeavyMachineGunMounted.label>机载重机枪</DMS_HeavyMachineGunMounted.label>
+  <!-- EN: A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
+  <DMS_HeavyMachineGunMounted.description>一种用於机兵或步兵支援平台的重型机枪。\n\n这种武器是专门为挂载使用而设计的，所以只有特定的单位才能装备它。</DMS_HeavyMachineGunMounted.description>
+  <!-- EN: Mounted HMG -->
+  <DMS_HeavyMachineGunMounted.verbs.Verb_Shoot.label>机载重机枪</DMS_HeavyMachineGunMounted.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_HeavyMachineGunMounted.tools.barrel.label>枪管</DMS_HeavyMachineGunMounted.tools.barrel.label>
+  <DMS_HeavyMachineGunMounted.tools.muzzle.label>枪口</DMS_HeavyMachineGunMounted.tools.muzzle.label>
+  <DMS_HeavyMachineGunMounted.verbs.Verb_ShootCE.label>机载重机枪</DMS_HeavyMachineGunMounted.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Mounted LMG -->
+  <DMS_LightMachineGunMounted.label>机载轻机枪</DMS_LightMachineGunMounted.label>
+  <!-- EN: A Supressive weapon chambered in a standard rifle round.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
+  <DMS_LightMachineGunMounted.description>使用全威力步枪子弹的压制性武器。\n\n这种武器是专门为挂载使用而设计的，所以只有特定的单位才能装备它。</DMS_LightMachineGunMounted.description>
+  <!-- EN: Mounted LMG -->
+  <DMS_LightMachineGunMounted.verbs.Verb_Shoot.label>机载轻机枪</DMS_LightMachineGunMounted.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_LightMachineGunMounted.tools.barrel.label>枪管</DMS_LightMachineGunMounted.tools.barrel.label>
+  <DMS_LightMachineGunMounted.tools.muzzle.label>枪口</DMS_LightMachineGunMounted.tools.muzzle.label>
+  <DMS_LightMachineGunMounted.verbs.Verb_ShootCE.label>机载轻机枪</DMS_LightMachineGunMounted.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Close Inbound Defense System -->
+  <DMS_ShotgunGunMounted.label>迫近防御系统</DMS_ShotgunGunMounted.label>
+  <!-- EN: A multi-barrel shotgun designed to suppress enemies at close-range.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
+  <DMS_ShotgunGunMounted.description>一种用於压制近接敌方步兵的多管霰弹炮塔，能在近距离快速反应并连续发射三枚霰弹。</DMS_ShotgunGunMounted.description>
+  <!-- EN: Close Inbound Defense System -->
+  <DMS_ShotgunGunMounted.verbs.Verb_Shoot.label>迫近防御系统</DMS_ShotgunGunMounted.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_ShotgunGunMounted.tools.barrel.label>枪管</DMS_ShotgunGunMounted.tools.barrel.label>
+  <DMS_ShotgunGunMounted.tools.muzzle.label>枪口</DMS_ShotgunGunMounted.tools.muzzle.label>
+  <DMS_ShotgunGunMounted.verbs.Verb_ShootCE.label>迫近防御系统</DMS_ShotgunGunMounted.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Mounted SMG -->
+  <DMS_SubMachineGunMounted.label>机载冲锋枪</DMS_SubMachineGunMounted.label>
+  <!-- EN: A Supressive weapon chambered in pistol rounds.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
+  <DMS_SubMachineGunMounted.description>使用手枪口径子弹的压制性武器。\n\n这种武器是专门为挂载使用而设计的，所以只有特定的单位才能装备它。</DMS_SubMachineGunMounted.description>
+  <!-- EN: Mounted SMG -->
+  <DMS_SubMachineGunMounted.verbs.Verb_Shoot.label>机载冲锋枪</DMS_SubMachineGunMounted.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_SubMachineGunMounted.tools.barrel.label>枪管</DMS_SubMachineGunMounted.tools.barrel.label>
+  <DMS_SubMachineGunMounted.tools.muzzle.label>枪口</DMS_SubMachineGunMounted.tools.muzzle.label>
+  <DMS_SubMachineGunMounted.verbs.Verb_ShootCE.label>安装LMG</DMS_SubMachineGunMounted.verbs.Verb_ShootCE.label>
+  
+</LanguageData>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 火槍手 -->
+  <ThingDef Name="BaseMechRace_Arquebusier" ParentName="BaseAutomatroidHumanRace" Abstract="True">
+    <statBases>
+      <MoveSpeed>4.5</MoveSpeed>
+      <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost> 
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <race>
+      <body>DMS_Humanoid_TypeA</body>
+      <baseBodySize>1.1</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
+      <mechEnabledWorkTypes>
+        <li>Hunting</li>
+      </mechEnabledWorkTypes>
+    </race>
+  </ThingDef>
+
+  <!-- DMS_Mech_Arquebusier 火槍手常規型 -->
+  <ThingDef ParentName="BaseMechRace_Arquebusier">
+    <defName>DMS_Mech_Arquebusier</defName>
+    <label>arquebusier</label>
+    <description>Standard Arquebusier model, has good precision fire capability in all ranges, makes it the backbone of robot army.</description>
+    <modExtensions  Inherit="False">
+      <li Class="DMS.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>DMS_MechWeaponLight</li>
+          <li>A_AR_LongRifle</li>
+          <li>A_SAR_LongRifle</li>
+          <li>A_MG_Light</li>
+          <li>A_MG_Heavy</li>
+          <li>ElephantGun</li>
+          <li>SniperRifle</li>
+          <li>PLA_AssaultRifle</li>
+          <li>PLA_Sniper</li>
+          <li>PLA_DMR</li>
+          <li>PLA_Pistol</li>
+          <li>PLA_LMG</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons>
+          <li MayRequire="ceteam.combatextended">Gun_BinocularsRadio</li>
+          <li MayRequire="vanillaexpanded.vwehw">VWE_Gun_UraniumSlugRifle</li><!-- 重武器拓展鈾彈槍 -->
+          <li MayRequire="oskarpotocki.vfe.pirates">VFEP_WarcasketGun_UraniumSlugRifle</li><!-- 戰棺拓展鈾彈槍 -->
+        </BypassUsableWeapons>
+      </li>
+      <li Class="DMS.TurretMannableExtension"/>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_Mech_Arquebusier</defName>
+    <label>arquebusier</label>
+    <race>DMS_Mech_Arquebusier</race>
+    <isFighter>true</isFighter>
+    <combatPower>180</combatPower>
+    <maxPerGroup>12</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/arquebusier</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/arquebusier</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>A_MG_Light</li>
+      <li>A_DMR_LongRifle</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <!-- DMS_Mech_Jaeger 火槍手獵兵型 速度較快且可以隱身-->
+  <ThingDef ParentName="BaseMechRace_Arquebusier">
+    <defName>DMS_Mech_Jaeger</defName>
+    <label>jaeger</label>
+    <description>an arquebusier variant focuses on stealth action and guerilla deployment for sabotage behind enemy lines. has higher mobility and invisibility.</description>
+    <statBases>
+      <MoveSpeed>5.6</MoveSpeed>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost> 
+    </statBases>
+    <modExtensions Inherit="False">
+      <li Class="DMS.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>DMS_MechWeaponLight</li>
+          <li>A_SR_LongRifle</li>
+          <li>A_DMR_LongRifle</li>
+          <li>A_AR_LongRifle</li>
+          <li>SniperRifle</li>
+          <li>PLA_AssaultRifle</li>
+          <li>PLA_DMR</li>
+          <li>PLA_Pistol</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>false</EnableTechLevelFilter>
+        <BypassUsableWeapons>
+          <li MayRequire="ceteam.combatextended">Gun_BinocularsRadio</li>
+        </BypassUsableWeapons>
+      </li>
+      <li Class="DMS.TurretMannableExtension"/>
+    </modExtensions>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_Mech_Jaeger</defName>
+    <label>jaeger</label>
+    <race>DMS_Mech_Jaeger</race>
+    <isFighter>true</isFighter>
+    <combatPower>200</combatPower>
+    <maxPerGroup>8</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Jaeger</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Jaeger</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>A_SR_LongRifle</li>
+    </weaponTags>
+    <abilities>
+      <li MayRequire="Ludeon.RimWorld.Royalty">DMS_Camouflage</li>
+    </abilities>
+  </PawnKindDef>
+
+  <!-- DMS_Mech_Pioneer 火槍手先鋒型，可以用於狩獵 -->
+  <ThingDef ParentName="BaseMechRace_Arquebusier">
+    <defName>DMS_Mech_Pioneer</defName>
+    <label>pioneer</label>
+    <description>forward reconnaissance variant of Arquebusier. with improved sight sensor equipped, it has better capability in field operations, capable to hunting if needed.</description>
+    <statBases>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost> 
+    </statBases>
+    <modExtensions  Inherit="False">
+      <li Class="DMS.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>DMS_MechWeaponLight</li>
+          <li>A_AR_LongRifle</li>
+          <li>IndustrialGunAdvanced</li>
+          <li>Simple_LongRange</li>
+          <li>A_DMR_LongRifle</li>
+          <li>ElephantGun</li>
+          <li>PLA_AssaultRifle</li>
+          <li>PLA_Shotgun</li>
+          <li>PLA_SMG</li>
+          <li>PLA_Pistol</li>
+          <li>PLA_RocketLauncher</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons>
+          <li MayRequire="ceteam.combatextended">Gun_BinocularsRadio</li>
+        </BypassUsableWeapons>
+      </li>
+      <li Class="DMS.TurretMannableExtension"/>
+    </modExtensions>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_Mech_Pioneer</defName>
+    <label>pioneer</label>
+    <race>DMS_Mech_Pioneer</race>
+    <isFighter>true</isFighter>
+    <combatPower>210</combatPower>
+    <maxPerGroup>8</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Pioneer</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/Pioneer</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>A_AR_LongRifle</li>
+    </weaponTags>
+    <abilities>
+      <!-- <li MayRequire="ceteam.combatextended">DMS_PioneerSpotter</li> -->
+    </abilities>
+  </PawnKindDef>
+
+  <!-- DMS_Mech_Sniper 火槍手狙擊型 -->
+  <ThingDef ParentName="BaseMechRace_Arquebusier">
+    <defName>DMS_Mech_Sniper</defName>
+    <label>sniper</label>
+    <description>Having the improved sight sensor and fire control system, this Arquebusier variant has the best long range fire precision among all other variants.</description>
+    <statBases>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost> 
+    </statBases>
+    <modExtensions Inherit="False">
+      <li Class="DMS.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>DMS_MechWeaponLight</li>
+          <li>SniperRifle</li>
+          <li>A_SC_LongRifle</li>
+          <li>A_SR_LongRifle</li>
+          <li>A_DMR_LongRifle</li>
+          <li>IndustrialGunAdvanced</li>
+          <li>A_SR_GrenadeLauncher</li>
+          <li>PLA_AssaultRifle</li>
+          <li>PLA_GrenadeLauncher</li>
+          <li>PLA_Sniper</li>
+          <li>PLA_AMR</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons>
+          <li MayRequire="vanillaexpanded.vwehw">VWE_Gun_UraniumSlugRifle</li><!-- 重武器拓展鈾彈槍 -->
+          <li MayRequire="oskarpotocki.vfe.pirates">VFEP_WarcasketGun_UraniumSlugRifle</li><!-- 戰棺拓展鈾彈槍 -->
+          <li MayRequire="oskarpotocki.vfe.pirates">VFEP_WarcasketGun_ChargeLance</li><!-- 戰棺拓展電荷標槍 -->
+        </BypassUsableWeapons>
+      </li>
+      <li Class="DMS.TurretMannableExtension"/>
+    </modExtensions>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_Mech_Sniper</defName>
+    <label>sniper</label>
+    <race>DMS_Mech_Sniper</race>
+    <isFighter>true</isFighter>
+    <combatPower>210</combatPower>
+    <maxPerGroup>8</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Sniper</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/Sniper</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>A_SR_GrenadeLauncher</li>
+      <li>A_SR_LongRifle</li>
+      <li>A_SC_LongRifle</li>
+    </weaponTags>
+    <abilities>
+      <li>DMS_SharpShooting</li>
+      <li>DMS_RangeFinder</li>
+    </abilities>
+  </PawnKindDef>
+</Defs>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/AbilityDef[defName="DMS_CallDrop"]/modExtensions</xpath>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

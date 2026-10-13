@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <AbilityDef>
+		<defName>DMS_TarbosaurusJump</defName>
+		<label>Heavy Jump</label>
+		<description>Dense bionic muscles allow this 40-ton metal monster to leap a short distance, crushing everything unfortunate enough to be in its vicinity.</description>
+		<iconPath>UI/Abilities/MechLongJump</iconPath>
+		<cooldownTicksRange>600</cooldownTicksRange>
+		<charges>2</charges>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<hostile>true</hostile>
+		<aiCanUse>true</aiCanUse>
+		<verbProperties>
+		  <verbClass>Fortified.Verb_CastAbilitySpecialJump</verbClass>
+		  <label>jump</label>
+		  <violent>false</violent>
+		  <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+		  <warmupTime>0.5</warmupTime>
+		  <minRange>7.9</minRange>
+		  <range>19.9</range>
+		  <requireLineOfSight>true</requireLineOfSight>
+		  <soundCast>Longjump_Jump</soundCast>
+		  <soundLanding>Longjump_Land</soundLanding>
+		  <flyWithCarriedThing>true</flyWithCarriedThing>
+		  <targetParams>
+			<canTargetLocations>true</canTargetLocations>
+			<canTargetPawns>false</canTargetPawns>
+			<canTargetBuildings>false</canTargetBuildings>
+		  </targetParams>
+		</verbProperties>
+        <modExtensions>
+            <li Class="Fortified.ModExtensionJumper">
+                <pawnFlyer>TaborFlyer</pawnFlyer>
+            </li>
+        </modExtensions>
+	</AbilityDef>
+	
+    <ThingDef ParentName="PawnFlyerBase">
+        <defName>TaborFlyer</defName>
+        <thingClass>Fortified.PawnFlyerWithEffect</thingClass>
+        <modExtensions>
+            <li Class="Fortified.ModExtensionJumper">
+                <compExplosive>
+                    <explosiveRadius>4.9</explosiveRadius>
+                    <explosiveDamageType>Bomb</explosiveDamageType>
+                    <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+                    <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+                    <chanceToStartFire>0.22</chanceToStartFire>
+		  			<doVisualEffects>false</doVisualEffects>
+                    <damageFalloff>true</damageFalloff>
+                    <explosionEffect>ExtinguisherExplosion</explosionEffect>
+                    <explosionSound>Explosion_Bomb</explosionSound>
+                </compExplosive>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+</Defs>

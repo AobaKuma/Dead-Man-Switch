@@ -6,11 +6,9 @@
       <MoveSpeed>4.2</MoveSpeed>
       <ArmorRating_Sharp>0.4</ArmorRating_Sharp><!--銳抗-->
       <ArmorRating_Blunt>0.2</ArmorRating_Blunt><!--鈍抗-->
-      <ArmorRating_Heat>0.33</ArmorRating_Heat>  <!--能抗-->
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>  <!--能抗-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
-      <!-- 外掛電池背包：士兵系列敘述宣稱的「較長的電池壽命」對應的實際數值 -->
-      <MechEnergyUsageFactor MayRequire="Ludeon.Rimworld.Biotech">0.7</MechEnergyUsageFactor>
     </statBases>
     <race>
       <body>DMS_Humanoid_Soldat</body>
@@ -40,6 +38,9 @@
     <defName>DMS_Mech_Soldat</defName>
     <label>Soldat</label>
     <description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Soldat's can be equipped with weapons rated for human use.\n\nThe Soldat has to carry a battery backpack which makes it unable to fight like other mechs without cover.</description>
+    <statBases>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">1</BandwidthCost> 
+    </statBases>
     <modExtensions>
       <li Class="Fortified.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
@@ -54,7 +55,7 @@
         <UsableTechLevels>
           <li>Industrial</li>
         </UsableTechLevels>
-        <BypassUsableWeapons />
+        <BypassUsableWeapons/>
       </li>
       <li Class="Fortified.TurretMannableExtension">
         <mannableByDefault>false</mannableByDefault>
@@ -84,7 +85,6 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
-          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -93,7 +93,6 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
-          <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -101,9 +100,6 @@
       <li>SimpleGun</li>
       <li>IndustrialGun</li>
     </weaponTags>
-    <abilities>
-      <li>DMS_Mothball</li>
-    </abilities>
   </PawnKindDef>
 
   <PawnKindDef ParentName="BaseAutomatroidKind">
@@ -120,7 +116,6 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
-          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -129,7 +124,6 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
-          <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -137,9 +131,6 @@
       <li>A_SAR_LongRifle</li>
       <li>A_PDW</li>
     </weaponTags>
-    <abilities>
-      <li>DMS_Mothball</li>
-    </abilities>
   </PawnKindDef>
 
   <PawnKindDef ParentName="BaseAutomatroidKind"><!--海盜特供型-->
@@ -147,7 +138,7 @@
     <label>raider</label>
     <race>DMS_Mech_Soldat</race>
     <isFighter>true</isFighter>
-    <combatPower>80</combatPower>
+    <combatPower>80</combatPower>                                               
     <maxPerGroup>20</maxPerGroup>
     <canBeSapper>false</canBeSapper>
     <aiAvoidCover>true</aiAvoidCover>
@@ -180,7 +171,7 @@
     <label>Grenadier</label>
     <description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Grenadiers are specialized to use light weapons and grenade launchers.\n\nThe Grenadier has to carry a battery backpack which makes it unable to fight like other mechs without cover.</description>
     <statBases>
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost> 
     </statBases>
     <modExtensions>
       <li Class="Fortified.MechWeaponExtension">
@@ -195,7 +186,6 @@
           <li>GrenadeEMP</li>
           <li>GrenadeSmoke</li>
           <li>GrenadeFlame</li>
-          <li>DMS_Gun_RecoillessLight</li>
         </UsableWeaponTags>
         <BypassUsableWeapons>
           <li>Gun_IncendiaryLauncher</li>
@@ -204,7 +194,7 @@
         <UsableTechLevels>
           <li>Industrial</li>
         </UsableTechLevels>
-      </li>
+      </li>      
       <li Class="Fortified.TurretMannableExtension">
         <mannableByDefault>false</mannableByDefault>
         <BypassMannable>
@@ -214,22 +204,21 @@
       </li>
     </modExtensions>
   </ThingDef>
-
+  
   <PawnKindDef ParentName="BaseAutomatroidKind">
     <defName>DMS_Mech_Grenadier</defName>
     <label>grenadier</label>
     <race>DMS_Mech_Grenadier</race>
     <isFighter>true</isFighter>
-    <combatPower>120</combatPower>
-    <maxPerGroup>20</maxPerGroup>
-    <lifeStages>
+    <combatPower>120</combatPower>                                               <!--威脅點數-->
+    <maxPerGroup>20</maxPerGroup>                                                 <!--單個集群內的數量-->
+    <lifeStages>                                                                 <!--身體圖片-->
       <li>
         <bodyGraphicData>
           <texPath>Things/Automatroid/grenadier</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
-          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -238,19 +227,17 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
-          <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <weaponTags><!--武器-->
+    <weaponTags><!--武器--> 
       <li>GrenadeDestructive</li>
       <li>GrenadeEMP</li>
       <li>GrenadeSmoke</li>
-      <li>GrenadeFlame</li>
+      <li>GrenadeFlame</li>                                                              
     </weaponTags>
     <weaponMoney>570~3000</weaponMoney>
     <abilities>
-      <li>DMS_Mothball</li>
       <li>DMS_FlashLauncher</li>
     </abilities>
   </PawnKindDef>
@@ -288,7 +275,6 @@
       </li>
     </modExtensions>
   </ThingDef>
-
   <PawnKindDef ParentName="BaseAutomatroidKind">
     <defName>DMS_Mech_Kanonier</defName>
     <label>Kanonier</label>
@@ -299,93 +285,55 @@
     <lifeStages>                                                                 <!--身體圖片-->
       <li>
         <bodyGraphicData>
-          <texPath>Things/Automatroid/kanonier</texPath>
+          <texPath>Things/Automatroid/soldat</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
-          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Automatroid/OldTexture/kanonier</texPath>
+          <texPath>Things/Automatroid/OldTexture/soldat</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
-          <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
     <weaponMoney>1700~3000</weaponMoney>
     <weaponTags><!--武器-->
       <li>GunSingleUse</li>
-      <li>DMS_Gun_RecoillessLight</li>
+      <li>DMS_Gun_Recoilless</li>                                                          
     </weaponTags>
-    <abilities>
-      <li>DMS_Mothball</li>
-    </abilities>
   </PawnKindDef>
 
   <!-- DMS_Mech_Sergeant 士兵指揮型 : 只能裝備單手武器 -->
   <ThingDef ParentName="BaseMechRace_Soldat">
     <defName>DMS_Mech_Sergeant</defName>
     <label>Sergeant</label>
-    <thingClass>Fortified.OverseerMech</thingClass>
-    <description>As a relay command variant of the Soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. Sergeants extend a mechanitor's effective range and can be equipped with the same weapons rated for human use as a standard Soldat.</description>
+    <description>As a relay command variant of the Soldat, it has a very recognizable disc-shaped omnidirectional radar and transceiver antenna. Sergeants extend a mechanitor's effective range, but due to the weight of its radar equipment it can only equip a light weapon for self-defense.</description>
     <statBases>
       <MoveSpeed>4</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Sharp>0.35</ArmorRating_Sharp><!--銳抗-->
       <ArmorRating_Blunt>0.2</ArmorRating_Blunt><!--鈍抗-->
-      <ArmorRating_Heat>0.33</ArmorRating_Heat>  <!--能抗-->
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>  <!--能抗-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge><!--充電/培養時產出廢料-->
-      <MechBandwidth>6</MechBandwidth>
-      <MechControlGroups>1</MechControlGroups>
-      <FFF_MechCommandRange>19.9</FFF_MechCommandRange>
-      <EnergyShieldRechargeRate>0.2</EnergyShieldRechargeRate>
-      <EnergyShieldEnergyMax>1</EnergyShieldEnergyMax>
     </statBases>
-    <comps Inherit="False"><!--CompDeadManSwitch shouldn't be present in Overseer mechs-->
-      <li Class="CompProperties_Shield">
-        <blocksRangedWeapons>false</blocksRangedWeapons>
-      </li>
-      <li Class="CompProperties_CanBeDormant">
-        <compClass>CompMechanoid</compClass>
-      </li>
-      <li Class="CompProperties_WakeUpDormant">
-        <wakeUpOnDamage>true</wakeUpOnDamage>
-        <wakeUpCheckRadius>30</wakeUpCheckRadius>
-        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
-      </li>
-      <li MayRequire="Ludeon.RimWorld.Biotech" Class="CompProperties_OverseerSubject">
-        <needsOverseerEffect>MechUncontrolled</needsOverseerEffect>
-        <delayUntilFeralCheck>60000</delayUntilFeralCheck>
-        <feralMtbDays>10</feralMtbDays>
-        <feralCascadeRadialDistance>25</feralCascadeRadialDistance>
-      </li>
-      <li MayRequire="Ludeon.RimWorld.Biotech" Class="CompProperties_MechRepairable" />
-      <!--<li Class="Fortified.CompProperties_CommandRelay">
+    <comps>
+      <li Class="Fortified.CompProperties_CommandRelay">
         <maxWorldMapRadius>10</maxWorldMapRadius>
         <maxRelayRadius>20</maxRelayRadius>
         <minRelayRadius>5</minRelayRadius>
-      </li>-->
-      <li Class="Fortified.CompProperties_Overseer">
-        <selectOverseerIconPath>UI/Icons/DMS_SelectSergeant</selectOverseerIconPath>
-      </li>
-      <li Class="Fortified.CompProperties_Paintable">
-        <defaultColor>(100, 102, 100)</defaultColor>
-        <enableCamoSwitch>true</enableCamoSwitch>
       </li>
     </comps>
     <modExtensions>
       <li Class="Fortified.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
-          <li>SimpleGun</li>
-          <li>ShortShots</li>
-          <li>CE_SMG</li>
+          <li>Autopistol</li>
+          <li>Revolver</li>
           <li>DMS_MechWeaponLight</li>
-          <li>IndustrialGun</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -415,7 +363,6 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
-          <color>(100, 102, 100)</color>
         </bodyGraphicData>
       </li>
       <li>
@@ -424,7 +371,6 @@
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
-          <color>(104, 94, 94)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -432,8 +378,8 @@
       <li>DMS_MechWeaponLight</li>                                                                     <!--武器-->
     </weaponTags>
     <abilities>
-      <li>DMS_Mothball</li>
       <li>DMS_CallDrop</li>
+      <li>DMS_CallDrop_Falcon</li>
     </abilities>
   </PawnKindDef>
 

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Additional Armor Plating -->
+  <DMS_BF_ExtendArmor.label>附加裝甲</DMS_BF_ExtendArmor.label>
+  <!-- EN: Composite armor plates designed for battle frame pylons add survivability to the battle frame by protecting it from fragmentation and medium-caliber gunfire. -->
+  <DMS_BF_ExtendArmor.description>一種安裝在戰鬥框架側面掛架的複合裝甲板，可有效抵禦破片與中小口徑槍械的直接射擊並保護其動力部位不受損傷。</DMS_BF_ExtendArmor.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_BF_ExtendArmor.comps.CompUsable.useLabel>安裝{0}</DMS_BF_ExtendArmor.comps.CompUsable.useLabel>
+  
+  <!-- EN: Extended Cargo Rack -->
+  <DMS_BF_ExtendCargo.label>加掛貨箱</DMS_BF_ExtendCargo.label>
+  <!-- EN: Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants. -->
+  <DMS_BF_ExtendCargo.description>一種安裝在戰鬥框架側面掛架的金屬箱，通常被用於山地區域的長途運輸與前線補給小隊用來提高運輸效率。</DMS_BF_ExtendCargo.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_BF_ExtendCargo.comps.CompUsable.useLabel>安裝{0}</DMS_BF_ExtendCargo.comps.CompUsable.useLabel>
+  
+  <!-- EN: broken ceramics -->
+  <DMS_BrokenCeramics.label>破碎陶瓷</DMS_BrokenCeramics.label>
+  
+  <!-- EN: Ceramic Plates -->
+  <DMS_CeramicsPlating.label>拋棄式陶瓷裝甲</DMS_CeramicsPlating.label>
+  <!-- EN: A set of ceramic plates designed to be mounted on to a mech's external shell to provide additional protection. Once damaged, the armor plating must be completely replaced.\n\nThe maximum amount of plating able to be installed on a mech can depends on its body size. -->
+  <DMS_CeramicsPlating.description>一組拋棄式陶瓷裝甲板與安裝用的支架和工具組等，陶瓷裝甲板可以安裝在機兵的機體上以提供額外的防護，但一經損壞就只能更換新的。 \n\n最大可安裝數量取決於安裝機體的體型。</DMS_CeramicsPlating.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_CeramicsPlating.comps.CompUsable.useLabel>安裝{0}</DMS_CeramicsPlating.comps.CompUsable.useLabel>
+  
+  <!-- EN: Nuclear Battery -->
+  <DMS_NuclearBattery.label>裂變電池</DMS_NuclearBattery.label>
+  <!-- EN: A nuclear fission reactor powering a quantum battery, this device is commonly found in many unmanned signal stations and defense robots. It consists of six high-density uranium-235 columns with integrated thermocouples all wrapped in a high-strength shell. Its energy is enough to make most models of automatroid operate for decades. -->
+  <DMS_NuclearBattery.description>一種結構簡單的核裂變電池，常見於許多無人職守的訊號站與駐防燈塔用的機兵上，由六根接近臨界質量的柱狀高密度鈾235與熱電偶集成並包裹在一個高強度殼體中。其輸出的能量足夠讓絕大部分型號的機兵運轉長達數百年，並且在緊急情況下也可以變為一次性核彈使用。</DMS_NuclearBattery.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_NuclearBattery.comps.CompUsable.useLabel>安裝{0}</DMS_NuclearBattery.comps.CompUsable.useLabel>
+  
+  <!-- EN: Reinforced Frame -->
+  <DMS_ReinforcedFrame.label>強化骨架</DMS_ReinforcedFrame.label>
+  <!-- EN: A set of tungsteel parts made to replace those prone to wearing down, effectively improving reliability and durability during high-intensity combat. These heavy duty replacement parts will significantly increase the weight of the mech and affect its speed. -->
+  <DMS_ReinforcedFrame.description>一系列使用鎢鋼合金來替換機兵骨架中較易磨損部位的強化零組件，可以有效提高在高強度戰鬥時的耐用性並且能在火力壓制下也不受干擾的行動。但作為代價會顯著提高機兵的重量並影響速度。</DMS_ReinforcedFrame.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_ReinforcedFrame.comps.CompUsable.useLabel>安裝{0}</DMS_ReinforcedFrame.comps.CompUsable.useLabel>
+  
+  <!-- EN: Synthetic Tendon -->
+  <DMS_SyntheticTendon.label>合成肌腱</DMS_SyntheticTendon.label>
+  <!-- EN: Biosynthetic muscles attached on the outer layer of mechanical limbs. Synthetic tendons effectively increase output at the cost of additional energy consumption. -->
+  <DMS_SyntheticTendon.description>一種安裝在機體腿部出力位置的人工生物合成肌腱，透過外部接口接入機體能源來進行供能，能有效的增加關節出力但同時增加能源消耗。</DMS_SyntheticTendon.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_SyntheticTendon.comps.CompUsable.useLabel>安裝{0}</DMS_SyntheticTendon.comps.CompUsable.useLabel>
+  
+  <!-- EN: Heavy Hydraulic Frame -->
+  <DMS_TB_HeavyHydraulicFrame.label>重型液壓框架</DMS_TB_HeavyHydraulicFrame.label>
+  <!-- EN: A high durability reinforced hydraulic frame designed as a platform for mounting heavy weapons on Iguanas and Geckos. -->
+  <DMS_TB_HeavyHydraulicFrame.description>一種適用於重型雙足機兵的外置液壓骨架和動力包，可以簡單的理解為機兵專用的外骨骼系統，能使重型機兵獲得更大的戰鬥負載容量，還可以安裝超重型武器。但作為代價會顯著提高機兵的重量與移動速度。</DMS_TB_HeavyHydraulicFrame.description>
+  <!-- EN: Use {0_label} -->
+  <DMS_TB_HeavyHydraulicFrame.comps.CompUsable.useLabel>安裝{0}</DMS_TB_HeavyHydraulicFrame.comps.CompUsable.useLabel>
+  
+  <!-- EN: unfinished modification -->
+  <UnfinishedModification.label>未完成的改裝件</UnfinishedModification.label>
+  <!-- EN: An unfinished modification. -->
+  <UnfinishedModification.description>一個尚未完成的機兵改裝組件</UnfinishedModification.description>
+  
+</LanguageData>

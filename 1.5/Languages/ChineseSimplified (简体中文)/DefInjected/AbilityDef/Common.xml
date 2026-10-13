@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: flashbang barrage -->
+  <DMS_FlashLauncher.label>曲射闪光弹</DMS_FlashLauncher.label>
+  <!-- EN: launch an indirect-fired flashbang grenade to stun the enemy to cover the retreat or assault. -->
+  <DMS_FlashLauncher.description>透过腰间的曲射榴弹筒来抛射闪光弹使敌人短暂致盲，以便安全撤退或让队友进行突击。</DMS_FlashLauncher.description>
+  
+  <!-- EN: bionic longjump -->
+  <DMS_LongJump.label>爆发跳跃</DMS_LongJump.label>
+  <!-- EN: Jump to a distant location using bionic muscles. -->
+  <DMS_LongJump.description>使用人工肌肉的爆发性进行一次长距离的跳跃</DMS_LongJump.description>
+  <!-- EN: jump -->
+  <DMS_LongJump.verbProperties.label>跳跃</DMS_LongJump.verbProperties.label>
+  
+  <!-- EN: launch missile -->
+  <DMS_MissileLauncher.label>攻顶导弹</DMS_MissileLauncher.label>
+  <!-- EN: launch a long range top-down attack missile to destory enemies, the missile takes long time to reload. -->
+  <DMS_MissileLauncher.description>发射一枚制导导弹从上而下的远程曲射打击目标，这种导弹十分致命但需要一定的时间来复装。</DMS_MissileLauncher.description>
+  
+  <!-- EN: fission overload -->
+  <DMS_NuclearOverload.label>临界超载</DMS_NuclearOverload.label>
+  <!-- EN: In order to avoid environmental pollution caused by nuclear battery leakage after the body is severely damaged, the fission battery can be manually overloaded to react the nuclear fuel in an instant, and the external manifestation is a nuclear explosion. \n\nSuch explosion is enough to clean up the unreacted nuclear material, including the surrounding areas. everything of... -->
+  <DMS_NuclearOverload.description>为避免机体重创後核电池泄漏导致的环境污染，裂变电池能够手动过载来在瞬间将核燃料反应，而外在表现来说就是核爆，这样的爆炸足以将尚未反应的核物质连带周围的一切清理一空。</DMS_NuclearOverload.description>
+  <!-- EN: overload the fission battery will result a large scale explosion and destroy this unit. \n\nare you sure to do this? -->
+  <DMS_NuclearOverload.confirmationDialogText>将裂变电池超载将产生一场规模十足的爆炸并导致该单位彻底损失。\n\n你确定要这麽做吗?</DMS_NuclearOverload.confirmationDialogText>
+  <!-- EN: fission overload -->
+  <DMS_NuclearOverload.verbProperties.label>临界超载</DMS_NuclearOverload.verbProperties.label>
+  
+  <!-- EN: self-repair -->
+  <DMS_RepairMode.label>维修模式</DMS_RepairMode.label>
+  <!-- EN: initial self-repair mode to rebuild missing parts by electroactive memory metal, thus all sensors will temporarily work disabled to prevent electrical damage. -->
+  <DMS_RepairMode.description>启动自我修复协议来透过电感应记忆合金来重组损毁的机械部位，所有感测器将暂时停用以防止修复过程中造成的二次损坏。\n\n要注意对於遭受重大受损的机体而言启动本协议具有一定的停机危险性。</DMS_RepairMode.description>
+  <!-- EN: initialize self-repair mode -->
+  <DMS_RepairMode.verbProperties.label>启动维修模式</DMS_RepairMode.verbProperties.label>
+  
+  <!-- EN: particle smoke barrage -->
+  <DMS_SmokeLauncher.label>反电荷烟幕弹</DMS_SmokeLauncher.label>
+  <!-- EN: launch an anti-charged weapon particle smole emitter to nullify incoming charged ammunition in short time. -->
+  <DMS_SmokeLauncher.description>发射载有反电荷粒子的烟雾弹，能够在短时间内有效的拦截范围内的电荷弹。</DMS_SmokeLauncher.description>
+  
+</LanguageData>

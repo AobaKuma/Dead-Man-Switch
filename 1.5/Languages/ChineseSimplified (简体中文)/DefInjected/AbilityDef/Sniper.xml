@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: recon calibration -->
+  <DMS_RangeFinder.label>火控观测</DMS_RangeFinder.label>
+  <!-- EN: Share fire control data with friendly forces within range to improve squad shooting accuracy in a short period. -->
+  <DMS_RangeFinder.description>与范围内的友军共享火控数据，短时间内提高友方射击精度。</DMS_RangeFinder.description>
+  
+  <!-- EN: precise sniping -->
+  <DMS_SharpShooting.label>精确射击</DMS_SharpShooting.label>
+  <!-- EN: Execute highly complex trajectory calculations by using the built-in ballistic computer, improving shooting accuracy in a short period. -->
+  <DMS_SharpShooting.description>利用内建弹道计算机测量极为详细的射击数据，在短时间内大幅提高射击精度。</DMS_SharpShooting.description>
+  
+</LanguageData>

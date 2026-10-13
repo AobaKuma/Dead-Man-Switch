@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" ParentName="BuildingBase">
+    <defName>DMS_PerimeterScanner</defName>
+    <label>perimeter scanner</label>
+    <description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius.</description>
+    <tickerType>Normal</tickerType>
+    <size>(1,1)</size>
+    <graphicData>
+      <texPath>Things/Building/DMS_PerimeterScanner</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.35</fillPercent>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>DMS_Category</designationCategory>
+    <uiOrder>500</uiOrder>
+    <canOverlapZones>false</canOverlapZones>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Flammability>0.7</Flammability>
+      <Mass>20</Mass>
+    </statBases>
+    <costList>
+      <Tungsteel>30</Tungsteel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentStamped>1</ComponentStamped>
+    </costList>
+    <building>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <researchPrerequisites>
+      <li>DMS_UAVBasis</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>Fortified.PlaceWorker_PerimeterScanner</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <comps>
+      <li Class="Fortified.CompProperties_PerimeterScanner">
+        <glowRadius>4.9</glowRadius>
+        <glowColor>(200, 0, 0, 0)</glowColor>
+        <range>11</range>
+        <effecter>DMS_PerimeterScannerAlert</effecter>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>75</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" ParentName="BuildingBase">
+    <defName>DMS_PerimeterScannerTemp</defName>
+    <label>perimeter scanner</label>
+    <description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius.</description>
+    <tickerType>Normal</tickerType>
+    <size>(1,1)</size>
+    <graphicData>
+      <texPath>Things/Building/DMS_PerimeterScannerTemp</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.25</fillPercent>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <canOverlapZones>false</canOverlapZones>
+    <stealable>false</stealable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Flammability>0.7</Flammability>
+      <Mass>20</Mass>
+    </statBases>
+    <building>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <costList>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <Tungsteel>10</Tungsteel>
+    </costList>
+    <placeWorkers>
+      <li>Fortified.PlaceWorker_PerimeterScanner</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <comps>
+      <li Class="Fortified.CompProperties_PerimeterScanner">
+        <glowRadius>4.9</glowRadius>
+        <glowColor>(200, 0, 0, 0)</glowColor>
+        <range>11</range>
+        <effecter>DMS_PerimeterScannerAlert</effecter>
+      </li>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>60000</totalPowerTicks>
+        <killWhenDepleted>true</killWhenDepleted>
+        <labelOverride>Battery power</labelOverride>
+        <tooltipOverride>This perimeter scanner has a limited battery life. Once it runs out, it will stop working entirely.</tooltipOverride>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <!-- ThermalBreacher -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_ThermalBreacher</defName>
+    <label>Thermal breach</label>
+    <description>一次性定向熱蝕裝置，專為突破重型安全門、防爆閘門以及反器材使用設計。啟動後會產生劇烈的高溫金屬熱流，並透過聚焦噴口將能量集中於接觸點。數秒內即可在大多數工業級合金表面形成熔蝕通道。\n\n由於反應過程極不穩定，裝置僅能使用一次。操作員必須在部署後立即撤離安全距離，以避免高溫飛濺物與蒸發金屬造成傷害。</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/ThermalBreacher</texPath>
+      <drawSize>(1.7,1.7)</drawSize>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <blockWind>false</blockWind>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>true</rotatable>
+    <placeWorkers>
+      <li>Fortified.PlaceWorker_ContinuousDamagerRange</li>
+    </placeWorkers>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <minifiedDrawOffset>(0,0,0.2)</minifiedDrawOffset>
+    <overrideMinifiedRot>North</overrideMinifiedRot>
+    <tickerType>Normal</tickerType>
+    <size>(1,1)</size>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>500</WorkToBuild>
+      <Mass>20</Mass>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+    </costList>
+    <building>
+      <isInert>true</isInert>
+    </building>
+    <comps>
+      <!-- Colonist must walk up and interact to arm the device -->
+      <li Class="RimWorld.CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>FFF_ArmThermiteDevice</useLabel>
+        <useDuration>120</useDuration>
+      </li>
+      <li Class="RimWorld.CompProperties_UseEffect">
+        <compClass>Fortified.CompUseEffect_ActivateContinuousDamager</compClass>
+      </li>
+      <li Class="Fortified.CompProperties_ContinuousDamager">
+        <damageDef>Beam</damageDef>
+        <damageAmount>100</damageAmount>
+        <armorPenetration>0.5</armorPenetration>
+        <range>3</range>
+        <durationTicks>3600</durationTicks>
+        <tickInterval>30</tickInterval>
+        <activateSound>Recipe_Cooking</activateSound>
+        <activeEffecter>FFF_Thermite_ActiveSpray</activeEffecter>
+        <hitEffecter>FFF_Thermite_HitBurst</hitEffecter>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 鋁熱劑持續噴發：附著在 parent，方向指向前方格，模擬高溫金屬流 -->
+  <EffecterDef>
+    <defName>FFF_Thermite_ActiveSpray</defName>
+    <children>
+      <!-- 主體火花：高速窄角，模擬鋁熱劑熔融金屬顆粒 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <moteDef>Mote_SparkThrownFastBright</moteDef>
+        <chancePerTick>0.98</chancePerTick>
+        <scale>0.5~1</scale>
+        <speed>6~18</speed>
+        <angle>-0.1~0.1</angle>
+        <airTime>1~5</airTime>
+        <positionRadius>0.08</positionRadius>
+        <positionLerpFactor>0.99</positionLerpFactor>
+        <burstCount>3~8</burstCount>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <!-- 飛散火花：稍寬角，模擬熔渣四濺 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <moteDef>Mote_SparkThrownFast</moteDef>
+        <chancePerTick>0.9</chancePerTick>
+        <scale>0.5~1</scale>
+        <speed>7~10</speed>
+        <angle>-1~4</angle>
+        <airTime>0.08~1</airTime>
+        <positionRadius>0.2</positionRadius>
+        <positionLerpFactor>0.85</positionLerpFactor>
+        <burstCount>5~10</burstCount>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <!-- 白熱核心光暈：模擬反應點超高溫輻射 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>HeatGlow_Intense</fleckDef>
+        <scale>0.1~0.25</scale>
+        <positionRadius>0.1</positionRadius>
+        <burstCount>1~3</burstCount>
+        <positionLerpFactor>0.7</positionLerpFactor>
+      </li>
+      <!-- 白煙：鋁熱劑反應產生 Al₂O₃ 白色煙霧 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>Smoke</fleckDef>
+        <chancePerTick>0.25</chancePerTick>
+        <scale>0.5~0.9</scale>
+        <speed>0.2~1</speed>
+        <angle>75~105</angle>
+        <absoluteAngle>true</absoluteAngle>
+        <positionRadius>0.15</positionRadius>
+        <positionLerpFactor>0.6</positionLerpFactor>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <!-- 鋁熱劑命中持續燃燒：附著在目標格，持續播放熔融金屬濺射 -->
+  <EffecterDef>
+    <defName>FFF_Thermite_HitBurst</defName>
+    <children>
+      <!-- 持續全向高速火花：模擬熔融金屬持續四濺 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <moteDef>Mote_SparkThrownFastBright</moteDef>
+        <chancePerTick>0.85</chancePerTick>
+        <scale>0.14~1</scale>
+        <speed>7~13</speed>
+        <angle>0~360</angle>
+        <airTime>0.08~0.2</airTime>
+        <positionRadius>0.15</positionRadius>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <!-- 持續中速熔渣粒子：填充反應區域密度 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <moteDef>Mote_SparkThrown</moteDef>
+        <!-- <chancePerTick>0.55</chancePerTick> -->
+        <scale>0.18~1</scale>
+        <speed>2.5~5.5</speed>
+        <angle>0~360</angle>
+        <airTime>0.12~0.35</airTime>
+        <positionRadius>0.18</positionRadius>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <!-- 持續閃爍光暈：低機率，間歇性白熱反應 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>YellowSparkFlash</fleckDef>
+        <chancePerTick>0.08</chancePerTick>
+        <scale>0.9~1.4</scale>
+        <positionRadius>0.08</positionRadius>
+      </li>
+      <!-- 持續火焰：低機率，模擬持續燃燒 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>BlastFlame</fleckDef>
+        <chancePerTick>0.9</chancePerTick>
+        <scale>0.4~0.5</scale>
+        <angle>0~360</angle>
+        <positionRadius>0.22</positionRadius>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <!-- 持續白煙：模擬 Al₂O₃ 持續生成 -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>SmokeGrowing</fleckDef>
+        <chancePerTick>0.18</chancePerTick>
+        <scale>0.5~0.85</scale>
+        <speed>0.1~0.3</speed>
+        <angle>70~110</angle>
+        <absoluteAngle>true</absoluteAngle>
+        <positionRadius>0.2</positionRadius>
+      </li>
+    </children>
+  </EffecterDef>
+
+</Defs>

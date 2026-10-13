@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: brigadier -->
+  <DMS_Brigadier.label>准将</DMS_Brigadier.label>
+  <!-- EN: A senior rank above colonel, equivalent to a brigadier general or commodore, typically commanding a brigade of several thousand soldiers.. -->
+  <DMS_Brigadier.description>上校以上的高级军衔，通常指挥一个由数千名士兵组成的旅。</DMS_Brigadier.description>
+  
+  <!-- EN: captain -->
+  <DMS_Captain.label>上尉</DMS_Captain.label>
+  <!-- EN: A commissioned officer rank historically corresponding to the command of a company of soldiers. -->
+  <DMS_Captain.description>具有指挥一个连指挥权的军官军衔。</DMS_Captain.description>
+  
+  <!-- EN: colonel -->
+  <DMS_Colonel.label>上校</DMS_Colonel.label>
+  <!-- EN: A colonel was typically in charge of a regiment in an army. -->
+  <DMS_Colonel.description>上校通常负责军队中的一个团。</DMS_Colonel.description>
+  
+  <!-- EN: corporal -->
+  <DMS_Corporal.label>下士</DMS_Corporal.label>
+  <!-- EN: corporal is the lowest officer rank in the military system, leading a squad or a task forces. -->
+  <DMS_Corporal.description>下士是军事系统中级别最低的军官，领导一个小队或特遣部队。</DMS_Corporal.description>
+  
+  <!-- EN: lieutenant -->
+  <DMS_Lieutenant.label>中尉</DMS_Lieutenant.label>
+  <!-- EN: A commissioned officer rank, which is typically the most senior of junior officer ranks. -->
+  <DMS_Lieutenant.description>委任军官军衔，通常是初级军官军阶中的最高级别。</DMS_Lieutenant.description>
+  
+  <!-- EN: major -->
+  <DMS_Major.label>少校</DMS_Major.label>
+  <!-- EN: A senior military officer rank, major is one rank above captain in armies and air forces, and one rank below colonel. -->
+  <DMS_Major.description>高级军官军衔，陆军和空军少校是上尉以上一级，上校以下一级。</DMS_Major.description>
+  
+  <!-- EN: pre-sergeant -->
+  <DMS_PreSergeant.label>准军士</DMS_PreSergeant.label>
+  <!-- EN: pre-sergeant is a rank specially for outsider enlistment with no formal training, Served as the representative of outsider military forces in the military system. -->
+  <DMS_PreSergeant.description>准军士是一种未经正式训练，专门为外来入伍而设立的军衔，在军事系统中作为外来军事力量的代表。</DMS_PreSergeant.description>
+  
+  <!-- EN: private -->
+  <DMS_Private.label>二等兵</DMS_Private.label>
+  <!-- EN: A private is a soldier, usually with the lowest rank in many armies. Soldiers with the rank of private may be conscripts or they may be professional (career) soldiers.. -->
+  <DMS_Private.description>二等兵是一种士兵，通常是许多军队中军衔最低的士兵。拥有二等兵军衔的士兵可能是应徵入伍者，也可能是专职（职业）士兵。</DMS_Private.description>
+  
+  <!-- EN: Reservist -->
+  <DMS_Reservist.label>预备役</DMS_Reservist.label>
+  <!-- EN: All citizens are reservist. it's not only a duty which also reconize you as a fully-respected individual. Most  citizens earn it while training for military service. The title is also offered to outsiders who act with honor in the eyes of the Armies. -->
+  <DMS_Reservist.description>所有公民都是预备役军人。这不仅是一种义务，也是对您作为一个完全受尊重的人的认可。大多数公民都是在接受军事训练时获得这一称号的。在军队眼中表现光荣的外来者也可获得这一称号。</DMS_Reservist.description>
+  
+  <!-- EN: sergeant -->
+  <DMS_Sergeant.label>军士</DMS_Sergeant.label>
+  <!-- EN: a non-commissioned officer placed above the rank of a corporal. -->
+  <DMS_Sergeant.description>下士以上的非委任军官。</DMS_Sergeant.description>
+  
+  <!-- EN: warrant officer -->
+  <DMS_WarrantOfficer.label>准尉</DMS_WarrantOfficer.label>
+  <!-- EN: The warrant officer is the first title of military officer duty. -->
+  <DMS_WarrantOfficer.description>准尉是军官职务的第一个头衔。</DMS_WarrantOfficer.description>
+  
+</LanguageData>

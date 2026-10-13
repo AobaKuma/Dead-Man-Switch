@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Combat Extended</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+		<operations>		
+			<!--===== 2A38 30mm+ 9M311 =====-->
+            <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+                <defName>DMS_Tarbosaurus_Gun</defName>
+                <statBases>
+                    <Mass>186</Mass>
+                    <Bulk>100</Bulk>
+                    <SwayFactor>1.94</SwayFactor>
+                    <ShotSpread>0.07</ShotSpread>
+                    <SightsEfficiency>1.5</SightsEfficiency>
+                    <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+                </statBases>
+                <Properties>
+				    <recoilAmount>1.49</recoilAmount>
+                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                    <hasStandardCommand>true</hasStandardCommand>
+                    <defaultProjectile>Bullet_30x165mm_AP</defaultProjectile>
+					<burstShotCount>30</burstShotCount>
+					<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+                    <warmupTime>1.35</warmupTime>
+                    <range>75</range>
+                    <soundCast>Shot_Autocannon</soundCast>
+                    <soundCastTail>GunTail_Heavy</soundCastTail>
+                    <muzzleFlashScale>14</muzzleFlashScale>
+                    <recoilPattern>Mounted</recoilPattern>
+                </Properties>
+                <AmmoUser>
+                    <magazineSize>240</magazineSize>
+                    <reloadTime>13</reloadTime>
+                    <ammoSet>AmmoSet_30x165mm</ammoSet>
+                </AmmoUser>
+                <FireModes>
+				    <aiAimMode>Snapshot</aiAimMode>
+					<aimedBurstShotCount>15</aimedBurstShotCount>
+                </FireModes>
+                <weaponTags>
+					<li>CE_AI_Suppressive</li>
+                    <li>NoSwitch</li>
+                </weaponTags>    
+            </li>
+
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="DMS_Tarbosaurus_Gun"]/comps/li[@Class="MVCF.Comps.CompProperties_VerbProps"]/verbProps</xpath>
+                <value>
+                    <verbProps>
+                        <li>
+                            <label>LaunchSAM</label>						
+                            <visualLabel>launch SAM</visualLabel>
+                            <description>launch 9M311 missile</description>
+                            <canBeToggled>true</canBeToggled>
+                            <comps>
+                                <li Class="MVCF.VerbComps.VerbCompProperties_Cooldown">
+                                    <compClass>MVCF.VerbComps.VerbComp_Cooldown</compClass>
+                                    <cooldownTime>15</cooldownTime>
+                                </li>
+                                <li Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable">
+                                    <compClass>MVCF.Reloading.Comps.VerbComp_Reloadable</compClass>
+                                    <AmmoFilter>
+                                        <thingDefs>
+                                            <li>Ammo_9M311_SAM</li>
+                                        </thingDefs>
+                                    </AmmoFilter>
+                                    <ItemsPerShot>1</ItemsPerShot>
+                                    <MaxShots>4</MaxShots>
+                                    <ReloadSound>Reload_Standard</ReloadSound>
+                                    <ReloadTimePerShot>10</ReloadTimePerShot>
+                                </li>
+                            </comps>
+                        </li>
+                    </verbProps>
+                </value>
+            </li>       
+
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="DMS_Tarbosaurus_Gun"]/verbs</xpath>
+                <value>
+                    <verbs>      
+                        <li>
+                            <label>LaunchSAM</label>
+                            <verbClass>CombatExtended.Verb_LaunchProjectileStaticCE</verbClass>
+                            <onlyManualCast>True</onlyManualCast>
+                            <range>89.9</range>
+                            <!-- <forcedMissRadius>0.6</forcedMissRadius> -->
+                            <commandIcon>Things/Icon/Test</commandIcon>
+                            <burstShotCount>1</burstShotCount>
+                            <warmupTime>3.5</warmupTime>
+                            <noiseRadius>4</noiseRadius>
+                            <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+                            <soundCast>Shot_IncendiaryLauncher</soundCast>
+                            <soundCastTail>GunTail_Medium</soundCastTail>
+                            <muzzleFlashScale>14</muzzleFlashScale>
+                            <targetParams>
+                                <canTargetLocations>true</canTargetLocations>
+                            </targetParams>
+                            <defaultProjectile>Bullet_9M311_SAM</defaultProjectile>
+                            <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+                            <hasStandardCommand>true</hasStandardCommand>
+                        </li>
+                    </verbs>
+                </value>
+            </li>
+            
+            <!-- 駭蜥最弱武器:2A38 -->
+            <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+                <defName>DMS_Tarbosaurus_BossGun</defName>
+                <statBases>
+                    <Mass>58</Mass>
+                    <Bulk>40</Bulk>
+                    <SwayFactor>1.94</SwayFactor>
+                    <ShotSpread>0.07</ShotSpread>
+                    <SightsEfficiency>1.5</SightsEfficiency>
+                    <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+                </statBases>
+                <Properties>
+				    <recoilAmount>1.49</recoilAmount>
+                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                    <hasStandardCommand>true</hasStandardCommand>
+                    <defaultProjectile>Bullet_30x165mm_AP</defaultProjectile>
+					<burstShotCount>15</burstShotCount>
+					<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+                    <warmupTime>1.35</warmupTime>
+                    <range>75</range>
+                    <soundCast>Shot_Autocannon</soundCast>
+                    <soundCastTail>GunTail_Heavy</soundCastTail>
+                    <muzzleFlashScale>14</muzzleFlashScale>
+                    <recoilPattern>Mounted</recoilPattern>
+                </Properties>
+                <AmmoUser>
+                    <magazineSize>240</magazineSize>
+                    <reloadTime>13</reloadTime>
+                    <ammoSet>AmmoSet_30x165mm</ammoSet>
+                </AmmoUser>
+                <FireModes>
+				    <aiAimMode>Snapshot</aiAimMode>
+					<aimedBurstShotCount>6</aimedBurstShotCount>
+                </FireModes>
+                <weaponTags>
+                    <li>DMS_Tarbosaurus_Gun</li>
+					<li>CE_AI_Suppressive</li>
+                    <li>NoSwitch</li>
+                </weaponTags>    
+            </li>
+
+            <!-- 無後座力砲 -->
+            <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+                <defName>DMS_Gun_Recoilless</defName>
+                <statBases>
+                    <Mass>80</Mass>
+                    <Bulk>185</Bulk>
+                    <SightsEfficiency>2.00</SightsEfficiency>
+                    <ShotSpread>0.01</ShotSpread>
+                    <SwayFactor>1.55</SwayFactor>
+                    <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
+                </statBases>
+                <Properties>
+				    <recoilAmount>1.49</recoilAmount>
+                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                    <hasStandardCommand>true</hasStandardCommand>
+					<burstShotCount>1</burstShotCount>
+					<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+                    <defaultProjectile>Bullet_SPG9Rocket_HEAT</defaultProjectile>
+                    <warmupTime>2</warmupTime>
+                    <minRange>6.9</minRange>
+                    <range>80</range>
+                    <soundCast>Shot_Autocannon</soundCast>
+                    <muzzleFlashScale>20</muzzleFlashScale>
+                    <targetParams>
+                        <canTargetLocations>true</canTargetLocations>
+                    </targetParams>
+                    <recoilPattern>Mounted</recoilPattern>
+                </Properties>
+                <AmmoUser>
+                    <magazineSize>1</magazineSize>
+                    <reloadTime>3.5</reloadTime>
+                    <ammoSet>AmmoSet_SPG9Rocket</ammoSet>
+                </AmmoUser>
+                <FireModes>
+				    <aiAimMode>AimedShot</aiAimMode>
+                </FireModes>
+            </li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

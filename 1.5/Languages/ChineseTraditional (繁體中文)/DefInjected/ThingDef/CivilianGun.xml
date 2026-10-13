@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: heavy rifle bullet -->
+  <Bullet_DMS_AMR.label>重型步槍彈</Bullet_DMS_AMR.label>
+  
+  <!-- EN: Riot machinegun bullet -->
+  <DMS_Bullet_MiniMachineGun.label>小口徑手槍彈</DMS_Bullet_MiniMachineGun.label>
+  
+  <!-- EN: 20 gauge beanbag -->
+  <DMS_Bullet_RiotRevolver.label>輕型鎮暴霰彈</DMS_Bullet_RiotRevolver.label>
+  
+  <!-- EN: 4 gauge bean bag -->
+  <DMS_Bullet_RiotShotgun.label>鎮暴霰彈</DMS_Bullet_RiotShotgun.label>
+  
+  <!-- EN: Elephant Rifle -->
+  <DMS_ElephantGun.label>獵象槍</DMS_ElephantGun.label>
+  <!-- EN: Single-shot high caliber hunting rifle. While made to hunt big game or stop large hostile lifeforms with sheer kinetic energy, it is also used by early industrial colonies against mechanoids thanks to its simple manufacture requirements. -->
+  <DMS_ElephantGun.description>一種重型大口徑栓動獵槍。雖然它是為了狩獵巨型獵物或用純粹的動能阻止大型敵對生物而製造的。但由於其簡單的製造要求也被早期的工業殖民地用來對付機械體。</DMS_ElephantGun.description>
+  <!-- EN: grip -->
+  <DMS_ElephantGun.tools.grip.label>握把</DMS_ElephantGun.tools.grip.label>
+  <!-- EN: barrel -->
+  <DMS_ElephantGun.tools.barrel.label>槍管</DMS_ElephantGun.tools.barrel.label>
+  <!-- EN: Elephant Rifle -->
+  <DMS_ElephantGun.verbs.Verb_Shoot.label>獵象槍</DMS_ElephantGun.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_ElephantGun.tools.stock-0.label>槍托</DMS_ElephantGun.tools.stock-0.label>
+  <DMS_ElephantGun.tools.muzzle-0.label>槍口</DMS_ElephantGun.tools.muzzle-0.label>
+  <DMS_ElephantGun.tools.stock-1.label>槍托</DMS_ElephantGun.tools.stock-1.label>
+  <DMS_ElephantGun.tools.barrel-1.label>槍管</DMS_ElephantGun.tools.barrel-1.label>
+  <DMS_ElephantGun.tools.muzzle-1.label>槍口</DMS_ElephantGun.tools.muzzle-1.label>
+  <DMS_ElephantGun.verbs.Verb_ShootCE.label>獵象槍</DMS_ElephantGun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Knuckleduster Revolver -->
+  <DMS_KnuckledusterRevolver.label>指虎左輪</DMS_KnuckledusterRevolver.label>
+  <!-- EN: A minature self-defense weapon commonly found on midworlds, it barely takes up any space when folded. Knuckledsters accept multiple calibers and may also used as brassknuckles in a pinch. -->
+  <DMS_KnuckledusterRevolver.description>中寰世界常見的微型自衛武器，摺疊後幾乎不占空間。可使用多種口徑，在緊要關頭也可作為指虎使用。</DMS_KnuckledusterRevolver.description>
+  <!-- EN: grip -->
+  <DMS_KnuckledusterRevolver.tools.grip.label>握把</DMS_KnuckledusterRevolver.tools.grip.label>
+  <!-- EN: blade -->
+  <DMS_KnuckledusterRevolver.tools.blade.label>刀刃</DMS_KnuckledusterRevolver.tools.blade.label>
+  <!-- EN: point -->
+  <DMS_KnuckledusterRevolver.tools.point.label>刀尖</DMS_KnuckledusterRevolver.tools.point.label>
+  <!-- EN: Knuckleduster Revolver -->
+  <DMS_KnuckledusterRevolver.verbs.Verb_Shoot.label>指虎左輪</DMS_KnuckledusterRevolver.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_KnuckledusterRevolver.tools.stock.label>槍托</DMS_KnuckledusterRevolver.tools.stock.label>
+  <DMS_KnuckledusterRevolver.tools.barrel.label>槍管</DMS_KnuckledusterRevolver.tools.barrel.label>
+  <DMS_KnuckledusterRevolver.tools.muzzle.label>槍口</DMS_KnuckledusterRevolver.tools.muzzle.label>
+  <DMS_KnuckledusterRevolver.verbs.Verb_ShootCE.label>指虎左輪</DMS_KnuckledusterRevolver.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Riot LMG -->
+  <DMS_MiniMachineGun.label>鎮暴輕機槍</DMS_MiniMachineGun.label>
+  <!-- EN: Pistol caliber machinegun designed for colony defense. The Riot LMG can cut down unarmored enemy hordes and prisoner riots with ease. -->
+  <DMS_MiniMachineGun.description>手槍口徑機槍，專為殖民地防禦而設計。可以輕松殲滅無裝甲的敵軍和囚犯暴動。</DMS_MiniMachineGun.description>
+  <!-- EN: stock -->
+  <DMS_MiniMachineGun.tools.stock.label>槍托</DMS_MiniMachineGun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_MiniMachineGun.tools.barrel.label>槍管</DMS_MiniMachineGun.tools.barrel.label>
+  <!-- EN: Riot LMG -->
+  <DMS_MiniMachineGun.verbs.Verb_Shoot.label>鎮暴輕機槍</DMS_MiniMachineGun.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_MiniMachineGun.tools.muzzle.label>槍口</DMS_MiniMachineGun.tools.muzzle.label>
+  <DMS_MiniMachineGun.verbs.Verb_ShootCE.label>鎮暴輕機槍</DMS_MiniMachineGun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Riot Revolver -->
+  <DMS_Revolver.label>鎮暴左輪</DMS_Revolver.label>
+  <!-- EN: S double-action revolver designed to load shotgun ammo. It was designed for personal defense purposes but soon became a favored sidearm for mech solders because it can be used against most enemy types at the same time. -->
+  <DMS_Revolver.description>這是一把雙動左輪手槍，可裝填霰彈。它是為個人防衛目的而設計的，但很快就成為機兵的可選武器，因為它可以同時對付大多數類型的敵人。</DMS_Revolver.description>
+  <!-- EN: grip -->
+  <DMS_Revolver.tools.grip.label>握把</DMS_Revolver.tools.grip.label>
+  <!-- EN: barrel -->
+  <DMS_Revolver.tools.barrel.label>槍管</DMS_Revolver.tools.barrel.label>
+  <!-- EN: Riot Revolver -->
+  <DMS_Revolver.verbs.Verb_Shoot.label>鎮暴左輪</DMS_Revolver.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Revolver.tools.stock.label>槍托</DMS_Revolver.tools.stock.label>
+  <DMS_Revolver.tools.muzzle-0.label>槍口</DMS_Revolver.tools.muzzle-0.label>
+  <DMS_Revolver.tools.muzzle-1.label>槍口</DMS_Revolver.tools.muzzle-1.label>
+  <DMS_Revolver.verbs.Verb_ShootCE.label>鎮暴左輪</DMS_Revolver.verbs.Verb_ShootCE.label>
+  <DMS_Revolver.tools.barrel-1.label>槍管</DMS_Revolver.tools.barrel-1.label>
+  
+  <!-- EN: Rifled slug gun -->
+  <DMS_RiotShotgun.label>鎮暴霰彈槍</DMS_RiotShotgun.label>
+  <!-- EN: A high caliber rifled shotgun manufactured with stamped components designed for riot operations and disabling hostile mechs. -->
+  <DMS_RiotShotgun.description>采用沖壓件製造的大口徑膛線霰彈槍，設計用於鎮暴行動和摧毀敵方機械體。</DMS_RiotShotgun.description>
+  <!-- EN: stock -->
+  <DMS_RiotShotgun.tools.stock.label>槍托</DMS_RiotShotgun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_RiotShotgun.tools.barrel.label>槍管</DMS_RiotShotgun.tools.barrel.label>
+  <!-- EN: Rifled slug gun -->
+  <DMS_RiotShotgun.verbs.Verb_Shoot.label>鎮暴霰彈槍</DMS_RiotShotgun.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_RiotShotgun.tools.muzzle-0.label>槍口</DMS_RiotShotgun.tools.muzzle-0.label>
+  <DMS_RiotShotgun.tools.stock-1.label>槍托</DMS_RiotShotgun.tools.stock-1.label>
+  <DMS_RiotShotgun.tools.barrel-1.label>槍管</DMS_RiotShotgun.tools.barrel-1.label>
+  <DMS_RiotShotgun.tools.muzzle-1.label>槍口</DMS_RiotShotgun.tools.muzzle-1.label>
+  <DMS_RiotShotgun.verbs.Verb_ShootCE.label>鎮暴霰彈槍</DMS_RiotShotgun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Survival rifle -->
+  <DMS_SurvivalRifle.label>生存步槍</DMS_SurvivalRifle.label>
+  <!-- EN: Foldable rifle issued to war machine crew members in case of emergency. Accepts multiple common calibers. -->
+  <DMS_SurvivalRifle.description>為機組人員提供的摺疊式生存步槍。以滿足逃生後的生存與自保需要。可接受多種常見口徑彈藥。</DMS_SurvivalRifle.description>
+  <!-- EN: stock -->
+  <DMS_SurvivalRifle.tools.stock.label>槍托</DMS_SurvivalRifle.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_SurvivalRifle.tools.barrel.label>槍管</DMS_SurvivalRifle.tools.barrel.label>
+  <!-- EN: Survival rifle -->
+  <DMS_SurvivalRifle.verbs.Verb_Shoot.label>生存步槍</DMS_SurvivalRifle.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_SurvivalRifle.tools.muzzle-0.label>槍口</DMS_SurvivalRifle.tools.muzzle-0.label>
+  <DMS_SurvivalRifle.tools.stock-1.label>槍托</DMS_SurvivalRifle.tools.stock-1.label>
+  <DMS_SurvivalRifle.tools.barrel-1.label>槍管</DMS_SurvivalRifle.tools.barrel-1.label>
+  <DMS_SurvivalRifle.tools.muzzle-1.label>槍口</DMS_SurvivalRifle.tools.muzzle-1.label>
+  <DMS_SurvivalRifle.verbs.Verb_ShootCE.label>生存步槍</DMS_SurvivalRifle.verbs.Verb_ShootCE.label>
+  
+</LanguageData>

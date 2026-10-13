@@ -11,20 +11,10 @@
   <!-- EN: Side mounted cargo racks suitable for battle frame pylons. The racks increase the carrying capacity of battle frame and their variants. -->
   <DMS_BF_ExtendCargo.description>一種安裝在戰鬥框架側面掛架的金屬箱，通常被用於山地區域的長途運輸與前線補給小隊用來提高運輸效率。</DMS_BF_ExtendCargo.description>
   
-  <!-- EN: Recoilless Rifle Rack -->
-  <DMS_BF_RecoillessRifle.label>無後座力砲掛架</DMS_BF_RecoillessRifle.label>
-  <!-- EN: A pair of 65mm recoilless tubes mounted on the side pylons and tied into the frame's fire control chain, reloaded from the frame's carried stores between engagements.\n\nThe shaped-charge warhead punches through armor and fortification that the frame's own weapon cannot touch, though the jet goes into a single narrow channel and anything standing beside the point of impact walks away. The mass hanging on the pylons costs the frame walking pace, dodging room and cargo allowance. -->
-  <DMS_BF_RecoillessRifle.description>已掛載於側面掛點的雙聯裝65mm無後座力砲，射控單元併入框架的火控鏈，空管由框架自攜的彈藥在交戰間隙重新裝填。\n\n聚能穿甲彈頭能貫穿框架本身武裝完全處理不了的裝甲與工事，但金屬射流只集中在一條窄通道，站在彈著點旁邊的目標往往毫髮無傷。掛架的重量則會讓框架的步速、閃避餘裕與載運能力一併下降。</DMS_BF_RecoillessRifle.description>
-  
   <!-- EN: Ceramic Plates -->
   <DMS_CeramicsPlating.label>陶瓷插板</DMS_CeramicsPlating.label>
   <!-- EN: Disposable ceramic armor that effectively protects the wearer from small arms fire and shrapnel.\n\nAlthough it is an excellent protective armor, it must be completely replaced once damaged. -->
   <DMS_CeramicsPlating.description>一種拋棄式裝甲模塊，其排列的防彈陶瓷板可以有效的抑製子彈或聚能射孔彈的動能與熱侵蝕傷害從而保證機體不受損傷。 \n\n雖然是優秀的防護裝甲但畢竟是一次性的所以一旦損壞就必須重新安裝一塊新的。</DMS_CeramicsPlating.description>
-  
-  <!-- EN: Command Coprocessor -->
-  <DMS_CommandCoprocessor.label>指揮協處理器</DMS_CommandCoprocessor.label>
-  <!-- EN: An auxiliary processing board wired into the core processor. It offloads signal multiplexing and unit bookkeeping from the main processor, increasing the automatroid's control bandwidth at the cost of slightly higher energy consumption. -->
-  <DMS_CommandCoprocessor.description>一塊接入核心處理器的輔助運算板，將訊號多工與單位管理從主處理器卸載出去，提高機兵的控制帶寬，代價是略微增加能源消耗。</DMS_CommandCoprocessor.description>
   
   <!-- EN: Nuclear Battery -->
   <DMS_NuclearBattery.label>裂變電池</DMS_NuclearBattery.label>

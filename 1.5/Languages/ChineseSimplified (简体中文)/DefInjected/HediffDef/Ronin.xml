@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Infrasound Barrage -->
+  <DMS_InfrasoundWave.label>次声波屏障</DMS_InfrasoundWave.label>
+  <!-- EN: This unit is creating waves of infrasound which is interfering with the sensory systems of all creatures within range. -->
+  <DMS_InfrasoundWave.description>这个装置会发出强大的次声波，干扰范围内所有生物的感官系统。</DMS_InfrasoundWave.description>
+  
+  <!-- EN: Infrasound -->
+  <DMS_InfrasoundWaveBuff.label>次声波</DMS_InfrasoundWaveBuff.label>
+  <!-- EN: Low-frequency sound waves that make living bodies uncomfortable, may cause vomiting and confusion. -->
+  <DMS_InfrasoundWaveBuff.description>低频声波会使生物体感到不适，并可能导致呕吐和意识模糊</DMS_InfrasoundWaveBuff.description>
+  
+</LanguageData>

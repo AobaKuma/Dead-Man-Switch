@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: APT shell -->
+  <DMS_Bullet_CIWS.label>穿甲示蹤彈</DMS_Bullet_CIWS.label>
+  
+  <!-- EN: armor piercing shell -->
+  <DMS_Bullet_Dawnblade.label>穿甲彈</DMS_Bullet_Dawnblade.label>
+  
+  <!-- EN: uranium APT shell -->
+  <DMS_Bullet_Kord.label>鈾芯穿甲示蹤彈</DMS_Bullet_Kord.label>
+  
+  <!-- EN: Type 85 Multi-Purpose-Quick-Firing System -->
+  <DMS_Gun_Dawnblade.label>黎明之刃</DMS_Gun_Dawnblade.label>
+  <!-- EN: An automated artillery system widely used on small to medium-sized frigates and corvettes in colonial fleets. -->
+  <DMS_Gun_Dawnblade.description>全稱為八五型多用途速射炮系統 "黎明之刃"，是一種高度自動化的轉膛速射火炮系統，被廣泛應用於殖民艦隊的中小型艦船與殖民地陸基防禦系統上。</DMS_Gun_Dawnblade.description>
+  <!-- EN: Type 85 Multi-Purpose-Quick-Firing System -->
+  <DMS_Gun_Dawnblade.verbs.Verb_Shoot.label>黎明之刃</DMS_Gun_Dawnblade.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_Dawnblade.verbs.Verb_ShootCE.label>黎明之刃</DMS_Gun_Dawnblade.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Gatekeeper -->
+  <DMS_Gun_GateKeeper.label>守門人</DMS_Gun_GateKeeper.label>
+  <!-- EN: A large-caliber multi-barreled autocannon, also known as the GAU-8 "Avenger". Its an ancient practical design with an extremely high rate of fire and a devastating effect on anything unfortunate enough to stand infront of it. -->
+  <DMS_Gun_GateKeeper.description>一種重型加特林機炮，具有極高的射速與毀滅性的壓制能力而被殖民艦隊作為太空船與水面艦艇的迫近防禦系統，也經常隨著殖民活動而安裝在殖民地作為防禦系統的一部分。</DMS_Gun_GateKeeper.description>
+  <!-- EN: Gatekeeper -->
+  <DMS_Gun_GateKeeper.verbs.Verb_Shoot.label>守門人</DMS_Gun_GateKeeper.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_GateKeeper.verbs.Verb_ShootCE.label>守門人</DMS_Gun_GateKeeper.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: kord -->
+  <DMS_Gun_Kord.label>Kord</DMS_Gun_Kord.label>
+  <!-- EN: kord -->
+  <DMS_Gun_Kord.description>現代化重型機槍，具有相當的可靠性</DMS_Gun_Kord.description>
+  <!-- EN: kord -->
+  <DMS_Gun_Kord.verbs.Verb_Shoot.label>Kord</DMS_Gun_Kord.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_Kord.verbs.Verb_ShootCE.label>Kord</DMS_Gun_Kord.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Tunguska -->
+  <DMS_Gun_Tunguska.label>2K22通古斯卡</DMS_Gun_Tunguska.label>
+  <!-- EN: A weapon system including two 2A38 autoaconnons and eight missile launchers. -->
+  <DMS_Gun_Tunguska.description>一種四聯裝彈炮一體防空系統，通常是安裝在地面載具平臺上提供機動防空火力而存在的，具有八具導彈發射器能夠在必要條件下發射威力十足的防禦導彈。</DMS_Gun_Tunguska.description>
+  <!-- EN: Tunguska -->
+  <DMS_Gun_Tunguska.verbs.Verb_Shoot.label>通古斯卡</DMS_Gun_Tunguska.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_Tunguska.verbs.Verb_ShootCE.label>2K22通古斯卡</DMS_Gun_Tunguska.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: 2B9M vasilek -->
+  <DMS_Gun_Vasilek.label>2B9M矢車菊</DMS_Gun_Vasilek.label>
+  <!-- EN: An ancient design of rapid fire indirect artillery piece capabler of firing four mortar rounds in one burst. -->
+  <DMS_Gun_Vasilek.description>一種古老但有效的速射迫擊炮設計，能在一輪射擊中快速發射4枚迫擊炮彈對目標范圍進行覆蓋打擊。</DMS_Gun_Vasilek.description>
+  <!-- EN: 2B9M vasilek -->
+  <DMS_Gun_Vasilek.verbs.Verb_Shoot.label>2B9M矢車菊</DMS_Gun_Vasilek.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_Vasilek.verbs.Verb_ShootMortarCE.label>2B9M矢車菊</DMS_Gun_Vasilek.verbs.Verb_ShootMortarCE.label>
+  
+  <!-- EN: Dawnblade -->
+  <DMS_Turret_Dawnblade.label>黎明之刃</DMS_Turret_Dawnblade.label>
+  <!-- EN: MPQFS-85 "Dawnblade" is an onboard multi-role quick-firing cannon system. It uses drum magazines and an automatic revolver loader to permit a high rate of sustained fire.\n\nThe armor plating has been removed to allow emplacement to be redeployed as needed for heavy fire support. -->
+  <DMS_Turret_Dawnblade.description>一種殖民艦隊廣泛裝備的多用途速射炮系統，使用彈鼓與轉輪裝彈機來實現對中小型高速目標的攔截與打擊。為殖民地防禦提供猛烈的大口徑直射火力支援。</DMS_Turret_Dawnblade.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_Dawnblade.comps.CompRefuelable.fuelGizmoLabel>炮管耐久度</DMS_Turret_Dawnblade.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_Dawnblade.comps.CompRefuelable.fuelLabel>剩余耐久度</DMS_Turret_Dawnblade.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot fire: Needs new reinforced barrel. -->
+  <DMS_Turret_Dawnblade.comps.CompRefuelable.outOfFuelMessage>無法射擊: 需要替換炮管</DMS_Turret_Dawnblade.comps.CompRefuelable.outOfFuelMessage>
+  
+  <!-- EN: Gatekeeper -->
+  <DMS_Turret_GateKeeper.label>守門人</DMS_Turret_GateKeeper.label>
+  <!-- EN: A large-caliber multi-barreled machine gun turret typically used on spacecraft and maritime ships. It has an extremely high rates of fire and devastating suppression capabilities. -->
+  <DMS_Turret_GateKeeper.description>一門安裝了三十毫米多管機炮的重型迫近防禦炮塔，具有極高的射速來在段時間內創造致命且密集的金屬火網。</DMS_Turret_GateKeeper.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_GateKeeper.comps.CompRefuelable.fuelGizmoLabel>炮管耐久度</DMS_Turret_GateKeeper.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_GateKeeper.comps.CompRefuelable.fuelLabel>剩余耐久度</DMS_Turret_GateKeeper.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
+  <DMS_Turret_GateKeeper.comps.CompRefuelable.outOfFuelMessage>無法射擊: 需要替換炮管</DMS_Turret_GateKeeper.comps.CompRefuelable.outOfFuelMessage>
+  
+  <!-- EN: Okhotnik -->
+  <DMS_Turret_Okhotnik.label>獵手</DMS_Turret_Okhotnik.label>
+  <!-- EN: An ancient design of a remote controlled turret widely used on armored vehicles and mech armor platforms. -->
+  <DMS_Turret_Okhotnik.description>一種古老的遙控炮塔設計，廣泛用於裝甲車和機甲平臺。</DMS_Turret_Okhotnik.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_Okhotnik.comps.CompRefuelable.fuelGizmoLabel>炮管耐久度</DMS_Turret_Okhotnik.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_Okhotnik.comps.CompRefuelable.fuelLabel>剩余耐久度</DMS_Turret_Okhotnik.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
+  <DMS_Turret_Okhotnik.comps.CompRefuelable.outOfFuelMessage>無法射擊: 需要替換炮管</DMS_Turret_Okhotnik.comps.CompRefuelable.outOfFuelMessage>
+  
+  <!-- EN: Tunguska -->
+  <DMS_Turret_Tunguska.label>通古斯卡</DMS_Turret_Tunguska.label>
+  <!-- EN: A remote-controlled turret composed of two 2A38 autoaconnon and eight missile launchers. Due to its cheap maintenance and modification costs, it is commonly seen in colonial fleet outposts in rim worlds. -->
+  <DMS_Turret_Tunguska.description>一種彈炮一體防空炮塔，被安裝在固定基座上提供一定程度的火力，能夠發射致命的空地兩用導彈來精確打擊遠距離外的目標。</DMS_Turret_Tunguska.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_Tunguska.comps.CompRefuelable.fuelGizmoLabel>炮管耐久度</DMS_Turret_Tunguska.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_Tunguska.comps.CompRefuelable.fuelLabel>剩余耐久度</DMS_Turret_Tunguska.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
+  <DMS_Turret_Tunguska.comps.CompRefuelable.outOfFuelMessage>無法射擊: 需要替換炮管</DMS_Turret_Tunguska.comps.CompRefuelable.outOfFuelMessage>
+  
+  <!-- EN: Vasilek -->
+  <DMS_Turret_Vasilek.label>矢車菊</DMS_Turret_Vasilek.label>
+  <!-- EN: An ancient design of a rapid fire indirect artillery piece capable of firing four mortar rounds in one burst. -->
+  <DMS_Turret_Vasilek.description>一種古老但有效的速射迫擊炮設計，能在一輪射擊中快速發射4枚迫擊炮彈對目標范圍進行覆蓋打擊。</DMS_Turret_Vasilek.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_Vasilek.comps.CompRefuelable.fuelGizmoLabel>炮管耐久</DMS_Turret_Vasilek.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_Vasilek.comps.CompRefuelable.fuelLabel>炮管壽命</DMS_Turret_Vasilek.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot fire: Needs new reinforced barrel. -->
+  <DMS_Turret_Vasilek.comps.CompRefuelable.outOfFuelMessage>無法射擊 : 需要替換炮管</DMS_Turret_Vasilek.comps.CompRefuelable.outOfFuelMessage>
+  
+</LanguageData>

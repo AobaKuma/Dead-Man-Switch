@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Decoy Radar -->
+  <DMS_DecoyRadar.label>誘餌雷達</DMS_DecoyRadar.label>
+  <!-- EN: A phase array radar. Once activated, it puts out a powerful wave radiation signal which will attract a feral automatroid to attack along with its escorts. If you can defeat it, you can collect the advanced technology from its corpse. The signal pulse burns out the transmitter, so this building can only be used once. -->
+  <DMS_DecoyRadar.description>一種相控陣雷達。當被啟用時，它會發出強大的毫米波輻射信號，吸引重型機兵與護衛隊一起攻擊。如果你能打敗它，你可以從它的屍體上收集特殊技術。信號脈衝會燒壞發射器，所以這座建築只能使用一次。</DMS_DecoyRadar.description>
+  <!-- EN: Attract tarbosaurus threat -->
+  <DMS_DecoyRadar.comps.CompUsable.useLabel>吸引駭蜥襲擊</DMS_DecoyRadar.comps.CompUsable.useLabel>
+  
+  <!-- EN: Decoy Antenna -->
+  <DMS_DecoyRadio.label>誘餌天線</DMS_DecoyRadio.label>
+  <!-- EN: A modified signal transponder which is rigged to send a high power burst transmission. Once activated it puts out a powerful decoy signal which will attract a feral group of automatroid forces to attack your colony. If you can defeat them, you can collect the advanced technology from their corpses. The signal pulse burns out the transmitter, so this building can only be used once. -->
+  <DMS_DecoyRadio.description>經過改裝的信號轉發器。啟動後，它會發出強大的誘餌信號，吸引重型機兵部隊前來攻擊。如果你能打敗它，你可以從它的屍體上收集特殊技術。信號脈衝會燒壞發射器，所以這座建築只能使用一次。</DMS_DecoyRadio.description>
+  <!-- EN: Attract geochelone threat -->
+  <DMS_DecoyRadio.comps.CompUsable.useLabel>吸引象龜襲擊</DMS_DecoyRadio.comps.CompUsable.useLabel>
+  
+</LanguageData>

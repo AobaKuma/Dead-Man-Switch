@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<AbilityDef>
+		<defName>DMS_FlashShock</defName>
+		<label>assault flash</label>
+		<description>Activate assault flash array to temporarily blind the incoming enemy, is usually used when facing large crowds. A riot control team can release them one after another to fully incapacitate the threatening crowd. After use, it will slowly recharge through its battery.</description>
+		<iconPath>UI/Ability/FlashShock</iconPath>
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<warmupStartSound>TurretAcquireTarget</warmupStartSound>
+		<verbProperties>
+		  <verbClass>Verb_CastAbility</verbClass>
+		  <range>7.9</range>
+		  <warmupTime>1</warmupTime>
+		  <soundCast>BulletImpact_Metal</soundCast>
+		  <muzzleFlashScale>120</muzzleFlashScale>
+		  <targetParams>
+			<canTargetLocations>true</canTargetLocations>
+		  </targetParams>
+		</verbProperties>
+		<comps>
+		  <li Class="DMS.CompProperties_AbilityDirectionalExplosion">
+			<range>7.9</range>
+			<lineWidthEnd>8</lineWidthEnd>
+			<explosionDamage>Stun</explosionDamage>
+			<damageAmount>15</damageAmount>
+		  </li>
+		</comps>
+	  </AbilityDef>
+</Defs>

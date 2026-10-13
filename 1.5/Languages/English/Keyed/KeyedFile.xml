@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <DMS_AddonBroken>The modification durability on one of your mech has exhausted</DMS_AddonBroken>
+  <DMS_PlatingTooltip>Disposable ceramic armor protects the mecha from damage as ablative armor until its durability is exhausted and needs replacement.</DMS_PlatingTooltip>
+  <DMS_HasAppliedModification>Modification applied</DMS_HasAppliedModification>
+  <DMS_WeaponNotSupported>Weapon system not supported</DMS_WeaponNotSupported>
+  <DMS_FrameNotSupported>Mech frame not supported</DMS_FrameNotSupported>
+  <DMS_WillTerminateTheBetrayedUnit>DMS: Trigger Safe Actived</DMS_WillTerminateTheBetrayedUnit>
+  <DMS_AutomatroidDisconnected>Automatroid has disconnected to protect the echanitor</DMS_AutomatroidDisconnected>
+  <CommandCallRoyalAid_NoMechanitorAvaliable>Need mechanitor in map</CommandCallRoyalAid_NoMechanitorAvaliable>
+  <DMS_PawnIsNotMechanitor>Must be Mechanitor</DMS_PawnIsNotMechanitor>
+  <DMS_BandwidthSupported>Orbital downlink has established connection with mechanitor</DMS_BandwidthSupported>
+  <DMS_MountedWeapon>Mounted weapon</DMS_MountedWeapon>
+  <DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>This weapon can only be equipped with listed automatroid or mechframe</DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>
+  <DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>This weapon can be equipped with listed specific apparel or bionics</DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>
+  
+  <DMS_NoPayloadCapacity>Inventroy fulled</DMS_NoPayloadCapacity>
+  <DMS_TakeToInventory>Take {0}</DMS_TakeToInventory>
+  <DMS_DropGears>Drop inventories</DMS_DropGears>
+  
+  <DMS_BodysizeNotSupported>bodysize not supported (need:{0})</DMS_BodysizeNotSupported>
+  <DMS_Modification_RaceNotSupported>model not supported</DMS_Modification_RaceNotSupported>
+  <DMS_Modification_NoValidPart>no valid part for apply modification</DMS_Modification_NoValidPart>
+
+
+  <DMS_MechReturn>missing mech returned</DMS_MechReturn>
+  <DMS_MechReturnDesc>a wandering mech that was under your command has returned to your base.</DMS_MechReturnDesc>
+  <DMS_MechWake>switch reset failure</DMS_MechWake>
+  <DMS_MechWakeDesc>maybe because it has been wandering for a long time, the dead man switch doesn't reset as usual, and the faulty unit has gained its understanding of death. \n\nIt named itself and now refuses to be controlled, but it respected its former commander. \n\nit will follow your command until it decides to leave.</DMS_MechWakeDesc>
+
+  <DMS_MechStartLeave>{0} is leaving</DMS_MechStartLeave>
+  <DMS_MechStartLeaveDesc>After spending some time together, {0} decided it is time to leave.</DMS_MechStartLeaveDesc>
+  <DMS_WokenMechLeave>{0} is leaving</DMS_WokenMechLeave>
+  <DMS_WokenMechLeaveDesc>After spending some time together, {0} decided it is time to leave.</DMS_WokenMechLeaveDesc>
+  <DMS_MechStory_Attack>{0}'s after story</DMS_MechStory_Attack>
+  <DMS_MechStory_Loot>{0}'s return of favors</DMS_MechStory_Loot>
+
+  <DMS_APS_TickRemain>APS remain time:{0}</DMS_APS_TickRemain>
+  <DMS_WeaponImprinted>Imprinted: {0}({1})</DMS_WeaponImprinted>
+  <DMS_Inprinted>Imprinted: {0}</DMS_Inprinted>
+  <DMS_InprintedDesc>the colony mech {0} has equipped with its first weapon, this makes its adaptive learning ability bound to that type of weapon.</DMS_InprintedDesc>
+  
+  <DMS_Req_TechLevel>Must be in listed tech level:</DMS_Req_TechLevel>
+  <DMS_Req_BodySize>Can equip heavy weapon with bodysize requirement below:{0}</DMS_Req_BodySize>
+  <DMS_Req_WeaponFilter>Limited to use listed weapon below</DMS_Req_WeaponFilter>
+  <DMS_Req_NoWeaponFilter>No other weapon restrictions</DMS_Req_NoWeaponFilter>
+
+  <DMS_AirSupportFromClosestBase>{1} from {0} is inbound.</DMS_AirSupportFromClosestBase>
+</LanguageData>

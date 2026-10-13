@@ -5,49 +5,18 @@
   <Bullet_DMS_AMR.label>heavy rifle bullet</Bullet_DMS_AMR.label>
   
   <!-- EN: Riot machinegun bullet -->
-  <DMS_Bullet_MiniMachineGun.label>small-caliber pistol bullet</DMS_Bullet_MiniMachineGun.label>
+  <DMS_Bullet_MiniMachineGun.label>Riot machinegun bullet</DMS_Bullet_MiniMachineGun.label>
   
-  <!-- EN: 20 gauge rubber slug -->
-  <DMS_Bullet_RiotRevolver.label>20 gauge rubber slug</DMS_Bullet_RiotRevolver.label>
-  <!-- EN: A 20 gauge rubber slug. It arrives as one heavy impact rather than a spread, which puts someone on the ground and rarely does worse than that. Armor plating shrugs it off entirely. -->
-  <DMS_Bullet_RiotRevolver.description>A 20 gauge rubber slug. It arrives as one heavy impact rather than a spread, which puts someone on the ground and rarely does worse than that. Armor plating shrugs it off entirely.</DMS_Bullet_RiotRevolver.description>
-
-  <!-- EN: 20 gauge buckshot -->
-  <DMS_Bullet_RiotRevolver_Buck.label>20 gauge buckshot</DMS_Bullet_RiotRevolver_Buck.label>
-  <!-- EN: A lethal 20 gauge pellet load. The revolver was never meant to be a fighting weapon, but nobody told the cylinder that. -->
-  <DMS_Bullet_RiotRevolver_Buck.description>A lethal 20 gauge pellet load. The revolver was never meant to be a fighting weapon, but nobody told the cylinder that.</DMS_Bullet_RiotRevolver_Buck.description>
-
-  <!-- EN: 20 gauge slug -->
-  <DMS_Bullet_RiotRevolver_Slug.label>20 gauge slug</DMS_Bullet_RiotRevolver_Slug.label>
-  <!-- EN: A single lead slug loaded to a heavier charge than the cylinder was designed around. It carries much further than shot and will crack a light mech shell, at the price of a wrist that regrets every round. -->
-  <DMS_Bullet_RiotRevolver_Slug.description>A single lead slug loaded to a heavier charge than the cylinder was designed around. It carries much further than shot and will crack a light mech shell, at the price of a wrist that regrets every round.</DMS_Bullet_RiotRevolver_Slug.description>
+  <!-- EN: 20 gauge beanbag -->
+  <DMS_Bullet_RiotRevolver.label>20 gauge beanbag</DMS_Bullet_RiotRevolver.label>
   
-  <!-- EN: 4 gauge rubber slug -->
-  <DMS_Bullet_RiotShotgun.label>4 gauge rubber slug</DMS_Bullet_RiotShotgun.label>
-  <!-- EN: A 4 gauge rubber slug. It delivers a crushing, non-penetrating impact intended to knock down a target without killing them. Ineffective against armor plating. -->
-  <DMS_Bullet_RiotShotgun.description>A 4 gauge rubber slug. It delivers a crushing, non-penetrating impact intended to knock down a target without killing them. Ineffective against armor plating.</DMS_Bullet_RiotShotgun.description>
-  
-  <!-- EN: 4 gauge buckshot -->
-  <DMS_Bullet_RiotShotgun_Buck.label>4 gauge buckshot</DMS_Bullet_RiotShotgun_Buck.label>
-  
-  <!-- EN: A lethal 4 gauge buckshot load. When crowd control is no longer the objective, the same launcher will happily shred flesh instead of bruising it. -->
-  <DMS_Bullet_RiotShotgun_Buck.description>A lethal 4 gauge buckshot load. When crowd control is no longer the objective, the same launcher will happily shred flesh instead of bruising it.</DMS_Bullet_RiotShotgun_Buck.description>
-
-  <!-- EN: 4 gauge EMP shot -->
-  <DMS_Bullet_RiotShotgun_EMP.label>4 gauge EMP shot</DMS_Bullet_RiotShotgun_EMP.label>
-  <!-- EN: A 4 gauge casing carrying a discharge capacitor in place of shot. It dumps its charge into whatever it strikes, seizing up mechanoid systems without leaving a mark on flesh. -->
-  <DMS_Bullet_RiotShotgun_EMP.description>A 4 gauge casing carrying a discharge capacitor in place of shot. It dumps its charge into whatever it strikes, seizing up mechanoid systems without leaving a mark on flesh.</DMS_Bullet_RiotShotgun_EMP.description>
-
-  <!-- EN: 4 gauge breaching round -->
-  <DMS_Bullet_RiotShotgun_Breach.label>4 gauge breaching round</DMS_Bullet_RiotShotgun_Breach.label>
-  <!-- EN: A solid steel breaching slug loaded heavy and meant to be put into a hinge or a lock from arm's length. It transfers everything it has into the structure it strikes, and it does so to exactly one thing at a time. -->
-  <DMS_Bullet_RiotShotgun_Breach.description>A solid steel breaching slug loaded heavy and meant to be put into a hinge or a lock from arm's length. It transfers everything it has into the structure it strikes, and it does so to exactly one thing at a time.</DMS_Bullet_RiotShotgun_Breach.description>
-
+  <!-- EN: 4 gauge bean bag -->
+  <DMS_Bullet_RiotShotgun.label>4 gauge bean bag</DMS_Bullet_RiotShotgun.label>
   
   <!-- EN: Elephant Rifle -->
   <DMS_ElephantGun.label>Elephant Rifle</DMS_ElephantGun.label>
   <!-- EN: Single-shot high caliber hunting rifle. While made to hunt big game or stop large hostile lifeforms with sheer kinetic energy, it is also used by early industrial colonies against mechanoids thanks to its simple manufacture requirements. -->
-  <DMS_ElephantGun.description>A heavy large-caliber bolt-action hunting rifle. Though made to hunt big game or stop large hostile lifeforms with sheer kinetic energy, its simple manufacturing requirements also saw it used against mechanoids by early industrial colonies.</DMS_ElephantGun.description>
+  <DMS_ElephantGun.description>Single-shot high caliber hunting rifle. While made to hunt big game or stop large hostile lifeforms with sheer kinetic energy, it is also used by early industrial colonies against mechanoids thanks to its simple manufacture requirements.</DMS_ElephantGun.description>
   <!-- EN: grip -->
   <DMS_ElephantGun.tools.grip.label>grip</DMS_ElephantGun.tools.grip.label>
   <!-- EN: barrel -->
@@ -56,17 +25,13 @@
   <DMS_ElephantGun.verbs.Verb_Shoot.label>Elephant Rifle</DMS_ElephantGun.verbs.Verb_Shoot.label>
   
   <!-- UNUSED -->
-  <DMS_ElephantGun.tools.stock-0.label>stock</DMS_ElephantGun.tools.stock-0.label>
-  <DMS_ElephantGun.tools.muzzle-0.label>muzzle</DMS_ElephantGun.tools.muzzle-0.label>
-  <DMS_ElephantGun.tools.stock-1.label>stock</DMS_ElephantGun.tools.stock-1.label>
+  <DMS_ElephantGun.tools.stock.label>stock</DMS_ElephantGun.tools.stock.label>
   <DMS_ElephantGun.tools.barrel-1.label>barrel</DMS_ElephantGun.tools.barrel-1.label>
-  <DMS_ElephantGun.tools.muzzle-1.label>muzzle</DMS_ElephantGun.tools.muzzle-1.label>
-  <DMS_ElephantGun.verbs.Verb_ShootCE.label>Elephant Rifle</DMS_ElephantGun.verbs.Verb_ShootCE.label>
   
   <!-- EN: Knuckleduster Revolver -->
   <DMS_KnuckledusterRevolver.label>Knuckleduster Revolver</DMS_KnuckledusterRevolver.label>
-  <!-- EN: A miniature self-defense weapon commonly found on midworld, it barely takes up any space when folded. Knuckleduster accept multiple calibers and may also be used as brass-knuckles in a pinch. -->
-  <DMS_KnuckledusterRevolver.description>A miniature self-defense weapon commonly found on midworlds; it takes up almost no space when folded. It accepts multiple calibers and can also be used as a knuckleduster in a pinch.</DMS_KnuckledusterRevolver.description>
+  <!-- EN: A miniature self-defense weapon commonly found on mid-worlds, it barely takes up any space when folded. Knuckledsters accept multiple calibers and may also be used as brassknuckles in a pinch. -->
+  <DMS_KnuckledusterRevolver.description>A miniature self-defense weapon commonly found on mid-worlds, it barely takes up any space when folded. Knuckledsters accept multiple calibers and may also be used as brassknuckles in a pinch.</DMS_KnuckledusterRevolver.description>
   <!-- EN: grip -->
   <DMS_KnuckledusterRevolver.tools.grip.label>grip</DMS_KnuckledusterRevolver.tools.grip.label>
   <!-- EN: blade -->
@@ -79,8 +44,6 @@
   <!-- UNUSED -->
   <DMS_KnuckledusterRevolver.tools.stock.label>stock</DMS_KnuckledusterRevolver.tools.stock.label>
   <DMS_KnuckledusterRevolver.tools.barrel.label>barrel</DMS_KnuckledusterRevolver.tools.barrel.label>
-  <DMS_KnuckledusterRevolver.tools.muzzle.label>muzzle</DMS_KnuckledusterRevolver.tools.muzzle.label>
-  <DMS_KnuckledusterRevolver.verbs.Verb_ShootCE.label>Knuckleduster Revolver</DMS_KnuckledusterRevolver.verbs.Verb_ShootCE.label>
   
   <!-- EN: Riot LMG -->
   <DMS_MiniMachineGun.label>Riot LMG</DMS_MiniMachineGun.label>
@@ -93,43 +56,23 @@
   <!-- EN: Riot LMG -->
   <DMS_MiniMachineGun.verbs.Verb_Shoot.label>Riot LMG</DMS_MiniMachineGun.verbs.Verb_Shoot.label>
   
-  <!-- UNUSED -->
-  <DMS_MiniMachineGun.tools.muzzle.label>muzzle</DMS_MiniMachineGun.tools.muzzle.label>
-  <DMS_MiniMachineGun.verbs.Verb_ShootCE.label>Riot LMG</DMS_MiniMachineGun.verbs.Verb_ShootCE.label>
-  
   <!-- EN: Riot Revolver -->
   <DMS_Revolver.label>Riot Revolver</DMS_Revolver.label>
   <!-- EN: S double-action revolver designed to load shotgun ammo. It was designed for personal defense purposes but soon became a favored sidearm for mech solders because it can be used against most enemy types at the same time. -->
-  <DMS_Revolver.description>A double-action revolver chambered for shotgun shells. It was designed for personal defense, but soon became a favored sidearm for mech soldiers because it can handle most enemy types at once.</DMS_Revolver.description>
+  <DMS_Revolver.description>S double-action revolver designed to load shotgun ammo. It was designed for personal defense purposes but soon became a favored sidearm for mech solders because it can be used against most enemy types at the same time.</DMS_Revolver.description>
   <!-- EN: grip -->
   <DMS_Revolver.tools.grip.label>grip</DMS_Revolver.tools.grip.label>
   <!-- EN: barrel -->
   <DMS_Revolver.tools.barrel.label>barrel</DMS_Revolver.tools.barrel.label>
   <!-- EN: Riot Revolver -->
-  <DMS_Revolver.verbs.Verb_Shoot_AmmoSwitch.label>Riot Revolver</DMS_Revolver.verbs.Verb_Shoot_AmmoSwitch.label>
-  <!-- 彈種切換 / ammo switch -->
-  <!-- EN: rubber slug -->
-  <DMS_Revolver.comps.CompAmmoSwitch.ammos.0.label>rubber slug</DMS_Revolver.comps.CompAmmoSwitch.ammos.0.label>
-  <!-- EN: A less-lethal slug that bruises and knocks down instead of killing. What the revolver was sold with, and what most of its owners never bother to change. -->
-  <DMS_Revolver.comps.CompAmmoSwitch.ammos.0.description>A less-lethal slug that bruises and knocks down instead of killing. What the revolver was sold with, and what most of its owners never bother to change.</DMS_Revolver.comps.CompAmmoSwitch.ammos.0.description>
-  <!-- EN: buckshot -->
-  <DMS_Revolver.comps.CompAmmoSwitch.ammos.1.label>buckshot</DMS_Revolver.comps.CompAmmoSwitch.ammos.1.label>
-  <!-- EN: A lethal spread of pellets for when the situation stops being a disturbance and starts being a fight. Slightly harder to place than a rubber slug. -->
-  <DMS_Revolver.comps.CompAmmoSwitch.ammos.1.description>A lethal spread of pellets for when the situation stops being a disturbance and starts being a fight. Slightly harder to place than a rubber slug.</DMS_Revolver.comps.CompAmmoSwitch.ammos.1.description>
-  <!-- EN: slug -->
-  <DMS_Revolver.comps.CompAmmoSwitch.ammos.2.label>slug</DMS_Revolver.comps.CompAmmoSwitch.ammos.2.label>
-  <!-- EN: A single lead slug that carries much further than shot and punches through light plating. The heavier charge makes the revolver slower to bring on target. -->
-  <DMS_Revolver.comps.CompAmmoSwitch.ammos.2.description>A single lead slug that carries much further than shot and punches through light plating. The heavier charge makes the revolver slower to bring on target.</DMS_Revolver.comps.CompAmmoSwitch.ammos.2.description>
+  <DMS_Revolver.verbs.Verb_Shoot.label>Riot Revolver</DMS_Revolver.verbs.Verb_Shoot.label>
   
   <!-- UNUSED -->
   <DMS_Revolver.tools.stock.label>stock</DMS_Revolver.tools.stock.label>
-  <DMS_Revolver.tools.muzzle-0.label>muzzle</DMS_Revolver.tools.muzzle-0.label>
-  <DMS_Revolver.tools.muzzle-1.label>muzzle</DMS_Revolver.tools.muzzle-1.label>
-  <DMS_Revolver.verbs.Verb_ShootCE.label>Riot Revolver</DMS_Revolver.verbs.Verb_ShootCE.label>
   <DMS_Revolver.tools.barrel-1.label>barrel</DMS_Revolver.tools.barrel-1.label>
   
   <!-- EN: Rifled slug gun -->
-  <DMS_RiotShotgun.label>Riot Shotgun</DMS_RiotShotgun.label>
+  <DMS_RiotShotgun.label>Rifled slug gun</DMS_RiotShotgun.label>
   <!-- EN: A high caliber rifled shotgun manufactured with stamped components designed for riot operations and disabling hostile mechs. -->
   <DMS_RiotShotgun.description>A high caliber rifled shotgun manufactured with stamped components designed for riot operations and disabling hostile mechs.</DMS_RiotShotgun.description>
   <!-- EN: stock -->
@@ -137,37 +80,16 @@
   <!-- EN: barrel -->
   <DMS_RiotShotgun.tools.barrel.label>barrel</DMS_RiotShotgun.tools.barrel.label>
   <!-- EN: Rifled slug gun -->
-  <DMS_RiotShotgun.verbs.Verb_Shoot_AmmoSwitch.label>Riot Shotgun</DMS_RiotShotgun.verbs.Verb_Shoot_AmmoSwitch.label>
-
-  <!-- 彈種切換 / ammo switch -->
-  <!-- EN: rubber slug -->
-  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.0.label>rubber slug</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.0.label>
-  <!-- EN: A single rubber slug that knocks a target down instead of killing it. The standard round for riot work and for taking prisoners alive. -->
-  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.0.description>A single rubber slug that knocks a target down instead of killing it. The standard round for riot work and for taking prisoners alive.</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.0.description>
-  <!-- EN: buckshot -->
-  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.1.label>buckshot</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.1.label>
-  <!-- EN: A lethal spread of pellets for close work against unarmored flesh. Marginally harder to place than a rubber slug. -->
-  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.1.description>A lethal spread of pellets for close work against unarmored flesh. Marginally harder to place than a rubber slug.</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.1.description>
-  <!-- EN: EMP shot -->
-  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.2.label>EMP shot</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.2.label>
-  <!-- EN: A capacitor slug that discharges on impact, shorting out mechanoid systems instead of destroying them. It does nothing at all to flesh, and the heavy payload cuts the effective range short. -->
-  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.2.description>A capacitor slug that discharges on impact, shorting out mechanoid systems instead of destroying them. It does nothing at all to flesh, and the heavy payload cuts the effective range short.</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.2.description>
-  <!-- EN: breaching round -->
-  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.3.label>breaching round</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.3.label>
-  <!-- EN: A solid slug meant to be fired into a door or a thin wall from arm's length. It will open a way in where nothing else will, and it is close to useless at any other distance. -->
-  <DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.3.description>A solid slug meant to be fired into a door or a thin wall from arm's length. It will open a way in where nothing else will, and it is close to useless at any other distance.</DMS_RiotShotgun.comps.CompAmmoSwitch.ammos.3.description>
-
+  <DMS_RiotShotgun.verbs.Verb_Shoot.label>Rifled slug gun</DMS_RiotShotgun.verbs.Verb_Shoot.label>
+  
   <!-- UNUSED -->
-  <DMS_RiotShotgun.tools.muzzle-0.label>muzzle</DMS_RiotShotgun.tools.muzzle-0.label>
   <DMS_RiotShotgun.tools.stock-1.label>stock</DMS_RiotShotgun.tools.stock-1.label>
   <DMS_RiotShotgun.tools.barrel-1.label>barrel</DMS_RiotShotgun.tools.barrel-1.label>
-  <DMS_RiotShotgun.tools.muzzle-1.label>muzzle</DMS_RiotShotgun.tools.muzzle-1.label>
-  <DMS_RiotShotgun.verbs.Verb_ShootCE.label>Riot Shotgun</DMS_RiotShotgun.verbs.Verb_ShootCE.label>
   
   <!-- EN: Survival rifle -->
   <DMS_SurvivalRifle.label>Survival rifle</DMS_SurvivalRifle.label>
   <!-- EN: Foldable rifle issued to war machine crew members in case of emergency. Accepts multiple common calibers. -->
-  <DMS_SurvivalRifle.description>A folding survival rifle issued to crew members, to cover survival and self-defense needs after bailing out. Accepts multiple common calibers.</DMS_SurvivalRifle.description>
+  <DMS_SurvivalRifle.description>Foldable rifle issued to war machine crew members in case of emergency. Accepts multiple common calibers.</DMS_SurvivalRifle.description>
   <!-- EN: stock -->
   <DMS_SurvivalRifle.tools.stock.label>stock</DMS_SurvivalRifle.tools.stock.label>
   <!-- EN: barrel -->
@@ -176,10 +98,7 @@
   <DMS_SurvivalRifle.verbs.Verb_Shoot.label>Survival rifle</DMS_SurvivalRifle.verbs.Verb_Shoot.label>
   
   <!-- UNUSED -->
-  <DMS_SurvivalRifle.tools.muzzle-0.label>muzzle</DMS_SurvivalRifle.tools.muzzle-0.label>
   <DMS_SurvivalRifle.tools.stock-1.label>stock</DMS_SurvivalRifle.tools.stock-1.label>
   <DMS_SurvivalRifle.tools.barrel-1.label>barrel</DMS_SurvivalRifle.tools.barrel-1.label>
-  <DMS_SurvivalRifle.tools.muzzle-1.label>muzzle</DMS_SurvivalRifle.tools.muzzle-1.label>
-  <DMS_SurvivalRifle.verbs.Verb_ShootCE.label>Survival rifle</DMS_SurvivalRifle.verbs.Verb_ShootCE.label>
   
 </LanguageData>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>DMS_Military01</defName>
+    <title>Reformed bandit</title>
+    <titleShort>bandit</titleShort>
+    <baseDesc>[PAWN_nameDef] failed as a bandit and was unfortunately captured by a colonial group. However, after realizing the lifestyle and goals of these people while serving a labor sentence, [PAWN_pronoun] decided to stay after being released from prison.</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Mili_Standard</li>
+    </spawnCategories>
+    <skillGains>
+      <li><key>Medicine</key><value>4</value></li>
+      <li><key>Shooting</key><value>8</value></li>
+      <li><key>Melee</key><value>12</value></li>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military02</defName>
+    <title>Retired medic</title>
+    <titleShort>medic</titleShort>
+    <baseDesc>[PAWN_nameDef] served as a medic in the Armed Forces and retired from military life prematurely after a serious injury.</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Civil_Expert</li>
+    </spawnCategories>
+    <skillGains>
+      <li><key>Shooting</key><value>8</value></li>
+      <li><key>Medicine</key><value>16</value></li>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military03</defName>
+    <title>Prison security</title>
+    <titleShort>security</titleShort>
+    <baseDesc>[PAWN_nameDef] was a security for guarding the bandits and raiders who were captured, Supervising them until they were free to go after serving their sentences.</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Mili_Standard</li>
+    </spawnCategories>
+    <skillGains>
+      <li><key>Social</key><value>8</value></li>
+      <li><key>Shooting</key><value>8</value></li>
+      <li><key>Melee</key><value>8</value></li>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military04</defName>
+    <title>Voluntary militia</title>
+    <titleShort>militia</titleShort>
+    <baseDesc>Out of seeing the vastness of this planet, [PAWN_nameDef] became a voluntary militia in the colonial group, moved to various colonial strongholds with the pace of stronghold development, and used the gun on hand to protect himself and [PAWN_pronoun] companions when necessary.</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Mili_Standard</li>
+    </spawnCategories>
+    <skillGains>
+      <li><key>Shooting</key><value>12</value></li>
+      <li><key>Medicine</key><value>8</value></li>
+      <li><key>Melee</key><value>4</value></li>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military05</defName>
+    <title>Reserved colonist</title>
+    <titleShort>colonist</titleShort>
+    <baseDesc>Since the physical examination was passed by rounded off, [PAWN_nameDef], who had no special skills, followed the enlistment order of the colonial fleet and after receiving simple training, became a substitute and was sent to the ground to assist in the colonization work.</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Civil_Expert</li>
+    </spawnCategories>
+    <skillGains>
+      <li><key>Shooting</key><value>2</value></li>
+      <li><key>Melee</key><value>2</value></li>      
+      <li><key>Plants</key><value>2</value></li>
+      <li><key>Animals</key><value>2</value></li>
+      <li><key>Crafting</key><value>2</value></li>
+      <li><key>Mining</key><value>2</value></li>
+      <li><key>Construction</key><value>2</value></li>
+      <li><key>Cooking</key><value>2</value></li>
+      <li><key>Medicine</key><value>2</value></li>
+      <li><key>Artistic</key><value>2</value></li>
+      <li><key>Social</key><value>2</value></li>
+      <li><key>Intellectual</key><value>2</value></li>
+    </skillGains>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military06</defName>
+    <title>Riot commando</title>
+    <titleShort>commando</titleShort>
+    <baseDesc>Due to the chaotic distribution of the faction-controlled areas in the rimworld, [PAWN_nameDef] job is to accompany the special police to use limited violence to uproot the bandit sites that spread like weeds one by one.</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Mili_Expert</li>
+    </spawnCategories>
+    <skillGains>
+      <li><key>Shooting</key><value>12</value></li>
+      <li><key>Melee</key><value>12</value></li>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military07</defName>
+    <title>Shuttle pilot</title>
+    <titleShort>pilot</titleShort>
+    <baseDesc>During [PAWN_pronoun] long life as a pilot, [PAWN_nameDef] was responsible for transporting people and materials over a large sector, and also learned to solve annoying mechanical and human problems along the way.</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Mili_Expert</li>
+    </spawnCategories>
+    <skillGains>
+      <li><key>Shooting</key><value>12</value></li>
+      <li><key>Social</key><value>6</value></li>
+      <li><key>Crafting</key><value>6</value></li>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_Military08</defName>
+    <title>Armed escort</title>
+    <titleShort>escort</titleShort>
+    <baseDesc>[PAWN_nameDef] is from a professional pioneering group. To deal with the existential threats during the pioneering period, [PAWN_pronoun] job is to use guns to drive away those things that are harmful to the colonists...if guns can still be used to solve them.</baseDesc>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>DMS_Fighter</li>
+      <li>Mili_Expert</li>
+      <li>Pioneer</li>
+    </spawnCategories>
+    <skillGains>
+      <li><key>Shooting</key><value>15</value></li>
+      <li><key>Melee</key><value>5</value></li>
+      <li><key>Medicine</key><value>4</value></li>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+</Defs>

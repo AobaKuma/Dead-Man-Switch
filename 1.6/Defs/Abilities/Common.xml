@@ -32,6 +32,7 @@
 		</comps>
 	</AbilityDef>
 
+
 	<ThingDef ParentName="BaseBullet">
 		<defName>DMS_Bullet_FlashBang</defName>
 		<label>Flashbang grenade</label>
@@ -304,81 +305,6 @@
 			</targetParams>
 			<forcedMissRadius>0.1</forcedMissRadius>
 		</verbProperties>
-	</AbilityDef>
-
-	<!-- 原地封存：士兵系列把自己折疊進運輸框架，變成休眠建築。
-	     不佔頻寬、可由機械師重新啟動。實作見框架的
-	     Fortified.CompAbilityEffect_DeactivateToCapsule。 -->
-	<AbilityDef>
-		<defName>DMS_Mothball</defName>
-		<label>field mothball</label>
-		<description>Disable system activity on the spot. The unit becomes a dormant storage structure that costs no bandwidth and takes no upkeep, and can be brought back online later by a mechanitor.\n\nStandard practice for garrison units between deployments.</description>
-		<iconPath>UI/Ability/Mothball</iconPath>
-		<cooldownTicksRange>2500</cooldownTicksRange>
-		<showPsycastEffects>false</showPsycastEffects>
-		<showGizmoOnWorldView>false</showGizmoOnWorldView>
-		<aiCanUse>false</aiCanUse>
-		<targetRequired>false</targetRequired>
-		<verbProperties>
-			<verbClass>Verb_CastAbility</verbClass>
-			<label>fold into transport frame</label>
-			<drawAimPie>false</drawAimPie>
-			<warmupTime>3</warmupTime>
-			<violent>false</violent>
-			<targetable>false</targetable>
-			<requireLineOfSight>false</requireLineOfSight>
-			<targetParams>
-				<canTargetSelf>true</canTargetSelf>
-			</targetParams>
-		</verbProperties>
-		<comps>
-			<li Class="Fortified.CompProperties_AbilityDeactivateToCapsule">
-				<playerOnly>true</playerOnly>
-				<allowWhileDrafted>true</allowWhileDrafted>
-				<allowWhileDowned>false</allowWhileDowned>
-				<sendMessage>true</sendMessage>
-			</li>
-		</comps>
-	</AbilityDef>
-
-	<!-- 戰鬥框架無後座力砲掛架的開火能力。
-	     兩管共 2 發裝填，每發各自以 30000 tick（約半天）循環補彈。
-	     彈道沿用輕型無後座力砲的聚能穿甲彈 DMS_Bullet_LRR_HEAT。
-	     CE 環境下由 CE/Patches/RecoillessRack_CE.xml 改成 1 發裝填、
-	     60000 tick 補彈、射程 39.9，並把彈道換成 CE 本體的 Bullet_M72LAW。 -->
-	<AbilityDef>
-		<defName>DMS_BF_RecoillessShot</defName>
-		<label>Recoilless Rifle Shot</label>
-		<description>Fire one of the rack's 65mm shaped-charge rockets. The jet defeats armor and fortification that the frame's own weapon cannot touch, but it goes into a single narrow channel and does little to anything standing beside the point of impact.\n\nSpent tubes are reloaded from the frame's carried stores between engagements.</description>
-		<iconPath>UI/Ability/Missile</iconPath>
-		<aiCanUse>true</aiCanUse>
-		<hostile>true</hostile>
-		<cooldownTicksRange>30000</cooldownTicksRange>
-		<charges>2</charges>
-		<cooldownPerCharge>true</cooldownPerCharge>
-		<verbProperties>
-			<verbClass>Verb_CastAbility</verbClass>
-			<label>fire recoilless rifle</label>
-			<defaultCooldownTime>3</defaultCooldownTime>
-			<onlyManualCast>false</onlyManualCast>
-			<range>29.9</range>
-			<warmupTime>2</warmupTime>
-			<requireLineOfSight>true</requireLineOfSight>
-			<soundCast>RocketswarmLauncher_Fire</soundCast>
-			<soundCastTail>GunTail_Heavy</soundCastTail>
-			<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
-			<ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
-			<targetParams>
-				<canTargetPawns>true</canTargetPawns>
-				<canTargetLocations>true</canTargetLocations>
-				<canTargetBuildings>true</canTargetBuildings>
-			</targetParams>
-		</verbProperties>
-		<comps>
-			<li Class="CompProperties_AbilityLaunchProjectile">
-				<projectileDef>DMS_Bullet_LRR_HEAT</projectileDef>
-			</li>
-		</comps>
 	</AbilityDef>
 
 </Defs>

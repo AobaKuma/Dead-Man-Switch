@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- okay so why VE team not just added it into framework ? -->
+  <WorkGiverDef>
+    <defName>DMS_Mechanoids_RepairMachine</defName>
+    <label>repair machine</label>
+    <giverClass>VFE.Mechanoids.AI.WorkGivers.WorkGiver_RepairMachine</giverClass>
+    <workType>Hauling</workType>
+    <verb>repair</verb>
+    <gerund>repairing</gerund>
+    <priorityInType>140</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>false</prioritizeSustains>
+  </WorkGiverDef>
+  
+  <WorkGiverDef>
+    <defName>DMS_Mechanoids_AttachTurret</defName>
+    <label>attach turret</label>
+    <giverClass>VFE.Mechanoids.AI.WorkGivers.WorkGiver_AttachTurret</giverClass>
+    <workType>Hauling</workType>
+    <verb>attach turret to</verb>
+    <gerund>attaching turret to</gerund>
+    <priorityInType>141</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>false</prioritizeSustains>
+  </WorkGiverDef>
+
+</Defs>

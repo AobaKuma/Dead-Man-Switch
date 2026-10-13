@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>DMS_Army</defName>
+    <label>Colonization Forces</label>
+    <!-- <categoryTag>Empire</categoryTag> 不要加這個，不然官位會亂-->
+    <description>A militarized colonial organization led by AI systems. Their culture is highly based on a military class system. Through a strict responsibility mechanism, anyone can find their places if they proofed their ability. \n\nIt can be determined that behind this colonial force is a huge organization capable of coordinating actions across galaxies even when interstellar voyages take decades.</description>
+    <pawnSingular>serviceman</pawnSingular>
+    <pawnsPlural>servicemens</pawnsPlural>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <canSiege>true</canSiege>
+    <canStageAttacks>true</canStageAttacks>
+    <leaderTitle>sector commander</leaderTitle>
+    <royalFavorLabel>honor</royalFavorLabel>
+    <royalFavorIconPath>UI/Faction/ArmyFavor</royalFavorIconPath>
+    <leaderForceGenerateNewPawn>true</leaderForceGenerateNewPawn>
+    <factionIconPath>UI/Faction/VanguardIcon</factionIconPath>
+    <factionNameMaker>DMS_VanguardFaction</factionNameMaker>
+    <settlementNameMaker>DMS_VanguardBase</settlementNameMaker>
+    <allowedCultures>
+      <li MayRequire="Ludeon.RimWorld.Ideology">DMS_Nara_Culture</li>
+    </allowedCultures>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Collectivist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+    </requiredMemes>
+    <allowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Collectivist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Loyalist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
+    </allowedMemes>
+    <disallowedPrecepts>
+      <li>Slavery_Classic</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Disapproved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Horrible</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Abhorrent</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Abhorrent</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Horrible</li>
+    </disallowedPrecepts>
+    <structureMemeWeights>
+      <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Archist>
+    </structureMemeWeights>
+    <xenotypeSet>
+      <xenotypeChances>
+        <DMS_AndroidSynth MayRequire="vanillaracesexpanded.android">0.8</DMS_AndroidSynth>
+      </xenotypeChances>
+    </xenotypeSet>
+    <techLevel>Spacer</techLevel>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Pioneer</li>
+          <li>FleetChild</li>
+          <li>Researcher</li>
+          <li>Mili_Standard</li>
+          <li>Mili_Expert</li>
+          <li>Civil_Expert</li>
+          <li>DMSCommon</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <apparelStuffFilter>
+      <stuffCategoriesToAllow>
+        <li>Metallic</li>
+        <li>Fabric</li>
+      </stuffCategoriesToAllow>
+      <disallowedThingDefs>
+        <li>Jade</li>
+        <li>Gold</li>
+        <li>Silver</li>
+      </disallowedThingDefs>
+    </apparelStuffFilter>
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+    <settlementTexturePath>UI/Faction/VanguardSite</settlementTexturePath>
+    <colorSpectrum>
+      <li>(0.5, 0.65, 0.5)</li>
+    </colorSpectrum>
+    <fixedLeaderKinds>
+      <li>DMS_Officer_Leader</li>
+    </fixedLeaderKinds>
+    <royalTitleTags MayRequire="Ludeon.RimWorld.Royalty" Inherit="False">
+      <li>DMS_Title</li>
+    </royalTitleTags>
+    <baseTraderKinds>
+      <li>DMS_Base_Army_Standard</li>
+    </baseTraderKinds>
+    <visitorTraderKinds>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <caravanTraderKinds>
+      <li>DMS_Caravan_TraderGeneral</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">DMS_Caravan_TributeCollector</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+      <li>Caravan_Outlander_BulkGoods</li>
+    </caravanTraderKinds>
+		<royalTitleInheritanceWorkerClass>RoyalTitleInheritanceWorker</royalTitleInheritanceWorkerClass>
+		<royalTitleInheritanceRelations>
+		  <li>Child</li>
+		  <li>Spouse</li>
+		  <li>Sibling</li>
+		  <li>HalfSibling</li>
+		  <li>Parent</li>
+		</royalTitleInheritanceRelations>	
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 1)</li> <!--Constant 1 at all points levels-->
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <raidLootMaker>VanguardRaidLootMaker</raidLootMaker>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(500, 100)</li> <!-- Can always use relatively strong pawns, because empire doesn't really have weak ones -->
+        <li>(1000, 150)</li>
+        <li>(2000, 250)</li>
+        <li>(2001, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <!-- Traders -->
+      <li>
+        <kindDef>Trader</kindDef>
+        <commonality>1</commonality>
+        <traders>
+          <DMS_Trader>1</DMS_Trader>
+        </traders>
+        <carriers>
+          <Muffalo>6</Muffalo>
+          <DMS_Mech_EscortLifter>3</DMS_Mech_EscortLifter>
+        </carriers>
+        <guards>
+          <DMS_Civilian>1</DMS_Civilian>
+          <DMS_Mech_Phalanx>5</DMS_Mech_Phalanx>
+          <DMS_Mech_BattleFrame>1</DMS_Mech_BattleFrame>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_MinuteMan_Heavy>2.5</DMS_MinuteMan_Heavy>
+          <DMS_MinuteMan>3</DMS_MinuteMan>
+          <DMS_Security>2</DMS_Security>
+        </guards>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <commonality>1</commonality>
+        <traders>
+          <DMS_Trader>1</DMS_Trader>
+        </traders>
+        <carriers>
+          <DMS_Mech_EscortLifter>10</DMS_Mech_EscortLifter>
+          <Muffalo>6</Muffalo>
+        </carriers>
+        <guards>
+          <DMS_Civilian>3</DMS_Civilian>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Phalanx>2</DMS_Mech_Phalanx>
+          <DMS_Mech_BattleFrame>5</DMS_Mech_BattleFrame>
+          <DMS_Security>3</DMS_Security>
+        </guards>
+      </li>
+      <li>
+        <!-- Normal fights -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <DMS_Machine_VerlingBirdA>3</DMS_Machine_VerlingBirdA>
+          <DMS_Soldier>1</DMS_Soldier>
+          <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
+        </options>
+        <guards>
+          <DMS_Mech_Pioneer>8</DMS_Mech_Pioneer>
+          <DMS_Mech_Jaeger>3.5</DMS_Mech_Jaeger>
+          <DMS_Mech_Protector>3</DMS_Mech_Protector>
+          <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+        </guards>
+      </li>
+      <li>
+        <!-- Normal fights -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
+          <DMS_Mech_Pioneer>5</DMS_Mech_Pioneer>
+          <DMS_Mech_Jaeger>3.5</DMS_Mech_Jaeger>
+          <DMS_Soldier>1</DMS_Soldier>
+          <DMS_Mech_Sniper>2</DMS_Mech_Sniper>
+          <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+          <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
+        </options>
+      </li>
+      <li>
+        <!-- breach fights -->
+        <kindDef>Combat</kindDef>
+        <commonality>10</commonality>
+        <options>       
+          <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
+          <DMS_Mech_Grenadier>6</DMS_Mech_Grenadier>
+          <DMS_Squad_Sniper>2</DMS_Squad_Sniper>
+          <DMS_Mech_Ronin>6</DMS_Mech_Ronin>
+          <DMS_Mech_Protector>5</DMS_Mech_Protector>
+          <DMS_Mech_Siegebreaker>3</DMS_Mech_Siegebreaker>
+          <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
+        </options>
+      </li>
+      <li>
+        <!-- Base defense, mainly ranged with melee mix-ins -->
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <DMS_Squad_ServiceMan>5</DMS_Squad_ServiceMan>
+          <DMS_Police_Melee>5</DMS_Police_Melee>         
+          <DMS_MinuteMan>4</DMS_MinuteMan>
+          <DMS_Police_Pistol>4</DMS_Police_Pistol>
+          <DMS_Police_Ranged>3.5</DMS_Police_Ranged>
+          <DMS_MinuteMan_Heavy>3</DMS_MinuteMan_Heavy>
+          <DMS_Soldier>2</DMS_Soldier>
+      </options>
+      </li>
+      <li>
+        <!-- Base defense, mainly ranged with melee mix-ins -->
+        <kindDef>Settlement</kindDef>
+        <options>
+          <DMS_Mech_BattleFrame>3</DMS_Mech_BattleFrame>
+          <DMS_Squad_ServiceMan>5</DMS_Squad_ServiceMan>
+          <DMS_Police_Melee>5</DMS_Police_Melee>         
+          <DMS_MinuteMan>4</DMS_MinuteMan>
+          <DMS_Police_Pistol>4</DMS_Police_Pistol>
+          <DMS_Police_Ranged>3.5</DMS_Police_Ranged>
+          <DMS_MinuteMan_Heavy>3</DMS_MinuteMan_Heavy>
+          <DMS_Soldier>2</DMS_Soldier>
+      </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Miners</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <DMS_Civilian>2</DMS_Civilian>
+          <DMS_MinuteMan_Heavy>0.5</DMS_MinuteMan_Heavy>
+          <DMS_MinuteMan>1</DMS_MinuteMan>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Hunters</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <DMS_Civilian>2</DMS_Civilian>
+          <DMS_MinuteMan_Heavy>0.5</DMS_MinuteMan_Heavy>
+          <DMS_MinuteMan>1</DMS_MinuteMan>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Loggers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <DMS_Civilian>2</DMS_Civilian>
+          <DMS_MinuteMan_Heavy>0.5</DMS_MinuteMan_Heavy>
+          <DMS_MinuteMan>1</DMS_MinuteMan>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Farmers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <DMS_Civilian>2</DMS_Civilian>
+          <DMS_MinuteMan_Heavy>0.5</DMS_MinuteMan_Heavy>
+          <DMS_MinuteMan>1</DMS_MinuteMan>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>70</configurationListOrderPriority>
+    <disallowedRaidAgeRestrictions>
+      <li MayRequire="Ludeon.RimWorld.Biotech">Children</li>
+    </disallowedRaidAgeRestrictions>
+  </FactionDef>
+
+  <ThingSetMakerDef>
+    <defName>VanguardRaidLootMaker</defName>
+    <root Class="ThingSetMaker_MarketValue">
+      <fixedParams>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+            <li>MedicineUltratech</li>
+            <li>Uranium</li>
+            <li>MealSurvivalPack</li>
+          </thingDefs>
+        </filter>
+      </fixedParams>
+    </root>
+  </ThingSetMakerDef>
+  
+</Defs>

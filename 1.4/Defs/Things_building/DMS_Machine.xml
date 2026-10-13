@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_MachineHound</defName>
+    <label>hound variants</label>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef Name="DMS_BaseChargeStation" ParentName="BuildingBase" Abstract="True">
+    <thingClass>VFE.Mechanoids.Buildings.Building_BedMachine</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Facility_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.9,2.9)</drawSize>
+      <shadowData>
+        <volume>(0.5,0.3,0.7)</volume>
+        <offset>(0,0,-0.15)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.234375,0,0.515625,0.984375)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <tickerType>Rare</tickerType>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+      <bed_humanlike>false</bed_humanlike>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+    </building>
+    <comps>
+      <li MayRequire="VanillaExpanded.VFEA" Class="VFEAncients.CompProperties_SolarPowerUp" />
+      <li Class="CompProperties_Flickable" />
+    </comps>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+      <passability>Standable</passability>
+      <blockWind>false</blockWind>
+      <rotatable>false</rotatable>
+      <fillPercent>0.1</fillPercent>
+      <uiIconScale>0.8</uiIconScale>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>DMS_Category</designationCategory>
+    <researchPrerequisites>
+      <li>DMS_UAVBasis</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <!-- trashbin charge station -->
+  <ThingDef ParentName="DMS_BaseChargeStation">
+    <defName>DMS_TrashBin_Base</defName>
+    <label>trashbin charging station</label>
+    <description>A station for assembling and recharging trashbin.</description>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="VFE.Mechanoids.CompProperties_MachineChargingStation">
+        <pawnToSpawn>DMS_Machine_TrashBin</pawnToSpawn>
+        <extraChargingPower>200</extraChargingPower>
+        <hoursToRecharge>12</hoursToRecharge>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Verling Bird charge station -->
+  <ThingDef ParentName="DMS_BaseChargeStation">
+    <defName>DMS_VerlingBird_Base</defName>
+    <label>verlingbird charging station</label>
+    <description>A station for assembling and recharging verlingbird.</description>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="VFE.Mechanoids.CompProperties_MachineChargingStation">
+        <pawnToSpawn>DMS_Machine_VerlingBird</pawnToSpawn>
+        <extraChargingPower>100</extraChargingPower>
+        <hoursToRecharge>8</hoursToRecharge>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Hound charge station -->
+  <ThingDef ParentName="DMS_BaseChargeStation">
+    <defName>DMS_Hound_Base</defName>
+    <label>Hound charging station</label>
+    <description>A station for assembling and recharging Hound.</description>
+    <designatorDropdown>DMS_MachineHound</designatorDropdown>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="VFE.Mechanoids.CompProperties_MachineChargingStation">
+        <pawnToSpawn>DMS_Machine_Hound</pawnToSpawn>
+        <extraChargingPower>200</extraChargingPower>
+        <hoursToRecharge>24</hoursToRecharge>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Hound(RC) charge station -->
+  <ThingDef ParentName="DMS_BaseChargeStation">
+    <defName>DMS_Hound_RC_Base</defName>
+    <label>Hound(Riot Control) charging station</label>
+    <description>A station for assembling and recharging Riot Control Hound.</description>
+    <designatorDropdown>DMS_MachineHound</designatorDropdown>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="VFE.Mechanoids.CompProperties_MachineChargingStation">
+        <pawnToSpawn>DMS_Machine_Hound_RC</pawnToSpawn>
+        <extraChargingPower>200</extraChargingPower>
+        <hoursToRecharge>24</hoursToRecharge>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>DMS_EquipmentAdvanced</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <!-- Hound(FS) charge station -->
+  <ThingDef ParentName="DMS_BaseChargeStation">
+    <defName>DMS_Hound_FS_Base</defName>
+    <label>Hound(Fire Suppress) charging station</label>
+    <description>A station for assembling and recharging Fire Hound.</description>
+    <designatorDropdown>DMS_MachineHound</designatorDropdown>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="VFE.Mechanoids.CompProperties_MachineChargingStation">
+        <pawnToSpawn>DMS_Machine_Hound_FS</pawnToSpawn>
+        <extraChargingPower>200</extraChargingPower>
+        <hoursToRecharge>24</hoursToRecharge>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>DMS_EquipmentAdvanced</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseMechCharger">
+    <defName>DMS_Recharger</defName>
+    <label>automatroid recharger</label>
+    <description>Automatroids can recharge here. During recharge, this recharger produces toxic wastepacks and stores them internally. Haulers must remove the wastepacks from time to time.</description>
+    <graphicData>
+      <texPath>Things/Building/MechCharger</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5,3)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
+    <designationCategory>DMS_Category</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Mass>40</Mass>
+      <Flammability>0.25</Flammability>
+    </statBases>
+    <size>(3,1)</size>
+    <building>
+      <requiredMechWeightClasses>
+        <li>Light</li>
+        <li>Medium</li>
+        <li>Heavy</li>
+        <li>UltraHeavy</li>
+      </requiredMechWeightClasses>
+      <barDrawData>
+        <north>
+          <preRotationOffset>(-0.01598358,0.0255661)</preRotationOffset>
+          <size>(0.5505219,0.1139069)</size>
+        </north>
+        <south>
+          <preRotationOffset>(0.006927488,-0.02323151)</preRotationOffset>
+          <size>(0.5479813,0.1345978)</size>
+        </south>
+        <east>
+          <preRotationOffset>(0.1157379,-0.006530767)</preRotationOffset>
+          <size>(0.4481201,0.1160278)</size>
+        </east>
+        <west>
+          <preRotationOffset>(-0.1114426,-0.005119322)</preRotationOffset>
+          <size>(0.4646759,0.1281815)</size>
+        </west>
+      </barDrawData>
+    </building>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>DMS_Automatroid</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_ThingContainer">
+        <compClass>CompThingContainer</compClass>
+        <stackLimit>100</stackLimit>
+        <drawContainedThing>false</drawContainedThing>
+        <dropEffecterDef>MechChargerWasteRemoved</dropEffecterDef>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

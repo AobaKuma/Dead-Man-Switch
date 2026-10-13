@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <ThingDef ParentName="BuildingBase" Name="DMS_BossCallerBase" Abstract="True">
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+    </building>
+    <designationCategory>DMS_Category</designationCategory>
+    <uiOrder>2450</uiOrder>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>25</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>3</ChunkSlagSteel>
+    </killedLeavings> 
+    <tickerType>Normal</tickerType>
+    <filthLeaving>Filth_MachineBits</filthLeaving>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_BossCallerBase">
+    <defName>DMS_DecoyRadio</defName>
+    <label>decoy antenna</label>
+    <description>A modified signaling transponder. When activated, it puts out a powerful decoy signal, which will attract an out-command automatroid forces to attack. If you can defeat it, you can collect special technologies from its corpse. The signal pulse burns out the transmitter, so this building can only be used once.</description>
+    <graphicData>
+      <texPath>Things/Building/Facility_Decoy</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(1.7, 0.75, 0.8)</volume>
+        <offset>(0.15, 0, 0)</offset>
+      </shadowData>
+    </graphicData>  
+    <uiIconScale>0.5</uiIconScale>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>DMS_DeadMansSwitch</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerObject</useJob>
+        <useLabel>Attract geochelone threat</useLabel>
+        <useDuration>900</useDuration>
+        <floatMenuFactionIcon>Mechanoid</floatMenuFactionIcon>
+      </li>
+      <li Class="CompProperties_Useable_CallBossgroup">
+        <bossgroupDef>DMS_Geochelone</bossgroupDef>
+        <effecterDef>BurnoutMechlinkBoosterUsed</effecterDef>
+        <prepareEffecterDef>MechBandAntennaPrepared</prepareEffecterDef>
+        <unlockedLetterLabelKey>LetterLabelBossgroupCallerUnlocked</unlockedLetterLabelKey>
+        <unlockedLetterTextKey>LetterBossgroupCallerUnlocked</unlockedLetterTextKey>
+        <delayTicks>120</delayTicks>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf">
+        <delayTicks>120</delayTicks>
+        <spawnLeavings>true</spawnLeavings>
+        <effecterDef>MechbandBuildingDestroyed</effecterDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_BossCallerBase">
+    <defName>DMS_DecoyRadar</defName>
+    <label>decoy radar</label>
+    <description>A phased array radar. When activated, it puts out a powerful Millimeter wave radiation signal, which will attract an automatroid to attack with escorts. If you can defeat it, you can collect special technologies from its corpse. The signal pulse burns out the transmitter, so this building can only be used once.</description>
+    <graphicData>
+      <texPath>Things/Building/Facility_Decoy_B</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(1.7, 0.75, 0.8)</volume>
+        <offset>(0.15, 0, 0)</offset>
+      </shadowData>
+    </graphicData>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <researchPrerequisites>
+      <li>DMS_Hypothesis</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerObject</useJob>
+        <useLabel>Attract tarbosaurus threat</useLabel>
+        <useDuration>900</useDuration>
+        <floatMenuFactionIcon>Mechanoid</floatMenuFactionIcon>
+      </li>
+      <li Class="CompProperties_Useable_CallBossgroup">
+        <bossgroupDef>DMS_Tarbosaurus</bossgroupDef>
+        <effecterDef>BurnoutMechlinkBoosterUsed</effecterDef>
+        <prepareEffecterDef>MechBandAntennaPrepared</prepareEffecterDef>
+        <unlockedLetterLabelKey>LetterLabelBossgroupCallerUnlocked</unlockedLetterLabelKey>
+        <unlockedLetterTextKey>LetterBossgroupCallerUnlocked</unlockedLetterTextKey>
+        <delayTicks>120</delayTicks>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf">
+        <delayTicks>120</delayTicks>
+        <spawnLeavings>true</spawnLeavings>
+        <effecterDef>MechbandBuildingDestroyed</effecterDef>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

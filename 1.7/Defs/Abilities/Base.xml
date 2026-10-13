@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <AbilityGroupDef>
+		<defName>DMS_AutomatroidAbility</defName>
+		<cooldownTicks>7200</cooldownTicks>
+	</AbilityGroupDef>
+
+	<AbilityDef Abstract="True" Name="DMS_AddHediffSelfBase">
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<stunTargetWhileCasting>True</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<groupDef>DMS_AutomatroidAbility</groupDef>
+		<warmupStartSound>FlickSwitch</warmupStartSound>
+		<statBases>
+		  <Ability_Duration>1000</Ability_Duration>
+		</statBases>
+		<verbProperties>
+		  <verbClass>Verb_CastAbility</verbClass>
+		  <warmupTime>0.5</warmupTime>
+		  <drawAimPie>False</drawAimPie>
+		  <requireLineOfSight>False</requireLineOfSight>
+		  <targetParams>
+			<canTargetSelf>true</canTargetSelf>
+			<canTargetPawns>false</canTargetPawns>
+			<canTargetBuildings>false</canTargetBuildings>
+			<canTargetAnimals>false</canTargetAnimals>
+			<canTargetHumans>false</canTargetHumans>
+			<canTargetMechs>false</canTargetMechs>
+		  </targetParams>
+		</verbProperties>
+	</AbilityDef>
+</Defs>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Call artillery bombard -->
+  <DMS_Call_MortarSupport.label>呼叫迫擊砲轟炸</DMS_Call_MortarSupport.label>
+  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depend on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
+  <DMS_Call_MortarSupport.description>向最近的基地請求81毫米迫擊砲支援，他們將向目標位置發射燃燒彈。響應的迫擊砲數量並不固定，且砲擊精度也有一定的浮動。</DMS_Call_MortarSupport.description>
+  
+  <!-- EN: Call artillery bombard -->
+  <DMS_Call_ArtillerySupport.label>呼叫加農砲轟炸</DMS_Call_ArtillerySupport.label>
+  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depend on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
+  <DMS_Call_ArtillerySupport.description>向最近的基地請求155毫米加農砲的砲擊支援。響應的火砲數量並不固定，且砲擊精度也有一定的浮動。</DMS_Call_ArtillerySupport.description>
+
+  <!-- EN: bandwidth support -->
+  <DMS_Bandwidth.label>帶寬支援</DMS_Bandwidth.label>
+  <!-- EN: Apply the access of orbital bandwidth support, the amount of bandwidth is depend on applicant's title. This support will be valid unless death or defection occurs on applicant. -->
+  <DMS_Bandwidth.description>向殖民艦隊申請軌道帶寬支援接入，提供的帶寬大小取決於申請者的官階。除非申請人死亡或叛逃，否則該支持將長期有效。</DMS_Bandwidth.description>
+  
+  <!-- EN: call aerodrone salvo -->
+  <DMS_CallOrbitalSalvo.label>呼叫無人機齊射</DMS_CallOrbitalSalvo.label>
+  <!-- EN: Call a salvo of aerodrone strikes around a target position. -->
+  <DMS_CallOrbitalSalvo.description>呼叫無人機對目標位置周圍進行一次齊射。</DMS_CallOrbitalSalvo.description>
+  
+  <!-- EN: Call recruitment agency -->
+  <DMS_Call_TributeCollector.label>呼叫徵募中介</DMS_Call_TributeCollector.label>
+  <!-- EN: Call for a group of recruitment agency to transfer prisoners of war to the Colonial fleet. -->
+  <DMS_Call_TributeCollector.description>呼叫一支徵募中介小隊來接收殖民地的戰俘。</DMS_Call_TributeCollector.description>
+
+  <!-- EN: call aerodrone strike -->
+  <DMS_CallOrbitalStrike.label>呼叫無人機打擊</DMS_CallOrbitalStrike.label>
+  <!-- EN: Call a single-impact aerodrone strike at a target position. -->
+  <DMS_CallOrbitalStrike.description>呼叫對目標位置進行單次空中打擊。</DMS_CallOrbitalStrike.description>
+  
+  <!-- EN: call transport shuttle -->
+  <DMS_CallTransportShuttle.label>呼叫太空梭</DMS_CallTransportShuttle.label>
+  <!-- EN: Call a shuttle for your own use. It will transport colonists, items, and animals anywhere you like within 70 world tiles. -->
+  <DMS_CallTransportShuttle.description>召喚一艘太空梭供自己使用。它可以將殖民者、物品和動物運送到70個世界格內的任何地方。</DMS_CallTransportShuttle.description>
+  
+  <!-- EN: supply cargo mech -->
+  <DMS_CargoMech.label>擴編後勤機兵</DMS_CargoMech.label>
+  <!-- EN: Apply a cargo lifter mech belong to your side. -->
+  <DMS_CargoMech.description>申請支援一架後勤機兵編入你的部隊。</DMS_CargoMech.description>
+  
+  <!-- EN: combat supply drop -->
+  <DMS_CombatDrop.label>空投應急補給</DMS_CombatDrop.label>
+  <!-- EN: Call for a drop of standard combat supply. -->
+  <DMS_CombatDrop.description>呼叫空投標準應急補給。</DMS_CombatDrop.description>
+  
+  <!-- EN: supply combat mech -->
+  <DMS_CombatMech.label>擴編戰鬥機兵</DMS_CombatMech.label>
+  <!-- EN: Apply a battle friend mech belong to your side. -->
+  <DMS_CombatMech.description>申請支援一架戰鬥機兵編入你的部隊。</DMS_CombatMech.description>
+  
+  <!-- EN: componments drop -->
+  <DMS_CompDrop.label>空投組件</DMS_CompDrop.label>
+  <!-- EN: Call for a drop of stamp componments and wetware computer. -->
+  <DMS_CompDrop.description>呼叫空投組件。</DMS_CompDrop.description>
+  
+  <!-- EN: food supply drop -->
+  <DMS_FoodDrop.label>空投糧食</DMS_FoodDrop.label>
+  <!-- EN: Call for a drop of 20 packaged survival meals. -->
+  <DMS_FoodDrop.description>呼叫空投 20 份生存食品包。</DMS_FoodDrop.description>
+  
+  <!-- EN: combat equipment drop -->
+  <DMS_GearDrop.label>空投戰鬥裝備</DMS_GearDrop.label>
+  <!-- EN: Call for a  set of combat supply and emergency gears. -->
+  <DMS_GearDrop.description>呼叫為戰鬥人員提供的物資空投，包括一套戰術護甲和部分應急裝備。</DMS_GearDrop.description>
+  
+  <!-- EN: call combatant recruit -->
+  <DMS_Join_Combat.label>擴編作戰人員</DMS_Join_Combat.label>
+  <!-- EN: Apply a combatant whose life is on yours. -->
+  <DMS_Join_Combat.description>申請支援一名作戰人員編入你的部隊。</DMS_Join_Combat.description>
+  
+  <!-- EN: call logistic recruit -->
+  <DMS_Join_Logistic.label>擴編後勤新兵</DMS_Join_Logistic.label>
+  <!-- EN: Apply a worker whose life is on yours. -->
+  <DMS_Join_Logistic.description>申請支援一名後勤新兵編入你的部隊。</DMS_Join_Logistic.description>
+  
+  <!-- EN: logistic supply drop -->
+  <DMS_LogiDrop.label>空投後勤供應品</DMS_LogiDrop.label>
+  <!-- EN: Call for a drop of 20 survival pack, 8 medicine and 4 compoment. -->
+  <DMS_LogiDrop.description>呼叫空投20份生存食品包、8個醫療包和4個零件。</DMS_LogiDrop.description>
+  
+  <!-- EN: construct material drop -->
+  <DMS_MaterialDrop.label>空投白銀</DMS_MaterialDrop.label>
+  <!-- EN: Call for a drop of 500 silver and 250 steel. -->
+  <DMS_MaterialDrop.description>呼叫空投 500 白銀。</DMS_MaterialDrop.description>
+  
+  <!-- EN: call heavy unit support -->
+  <DMS_Platoon_AC.label>呼叫排組支援</DMS_Platoon_AC.label>
+  <!-- EN: Call 4 heavy Automatroid to aid you in battle. -->
+  <DMS_Platoon_AC.description>呼叫排組士兵協助作戰。</DMS_Platoon_AC.description>
+  
+  <!-- EN: call squad support -->
+  <DMS_Platoon_MT.label>呼叫班組支援</DMS_Platoon_MT.label>
+  <!-- EN: Call a squad of soldiers to aid you in battle. -->
+  <DMS_Platoon_MT.description>呼叫班組士兵協助作戰。</DMS_Platoon_MT.description>
+  
+  <!-- EN: riot control support -->
+  <DMS_Squad_RC.label>防暴小組支援</DMS_Squad_RC.label>
+  <!-- EN: Call a group of 4 riot control unit to aid you in prison outbreak. -->
+  <DMS_Squad_RC.description>呼叫4名防暴小組協助處理監獄突發事件。</DMS_Squad_RC.description>
+  
+  <!-- EN: urban combat support -->
+  <DMS_Squad_UC.label>城市戰鬥支援</DMS_Squad_UC.label>
+  <!-- EN: Call a group of 4 urban combat unit to aid you in raid or colony defense. -->
+  <DMS_Squad_UC.description>呼叫4名城市戰小組協助進行突襲或殖民地防禦。</DMS_Squad_UC.description>
+  
+  <!-- EN: call worker group -->
+  <DMS_WorkerGroup.label>呼叫工作小組</DMS_WorkerGroup.label>
+  <!-- EN: Call a group of 8 worker to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe. -->
+  <DMS_WorkerGroup.description>呼叫8名工人協助您工作6天。這些工人只能從事一般的勞動任務。您可以像控制自己的殖民者一樣控制他們。但必須保證他們的安全。</DMS_WorkerGroup.description>
+  
+  <!-- EN: call worker team -->
+  <DMS_WorkerTeam.label>呼叫工人團隊</DMS_WorkerTeam.label>
+  <!-- EN: Call a group of 4 worker to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe. -->
+  <DMS_WorkerTeam.description>呼叫4名工人協助您工作6天。這些工人只能從事一般的勞動任務。您可以像控制自己的殖民者一樣控制他們。但必須保證他們的安全。</DMS_WorkerTeam.description>
+  
+  <!-- EN: call dragoon support -->
+  <DMS_Platoon_MD.label>呼叫龍騎兵支援</DMS_Platoon_MD.label>
+  <!-- EN: Call a squad of mobile dragoons to aid you in battle. -->
+  <DMS_Platoon_MD.description>呼叫3架殖民地陸軍序列的 PV-8 "獨眼巨人"龍騎兵協助進行突襲或殖民地防禦。</DMS_Platoon_MD.description>
+  
+</LanguageData>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<FurDef>
+		<defName>DMS_robotSkin</defName>
+		<noGraphic>true</noGraphic>
+		<bodyTypeGraphicPaths>
+			<Male>Things/Synthroid/Body/Synthroid_Male</Male>
+			<Female>Things/Synthroid/Body/Synthroid_Female</Female>
+			<Hulk>Things/Synthroid/Body/Synthroid_Hulk</Hulk>
+			<Fat>Things/Synthroid/Body/Synthroid_Fat</Fat>
+			<Thin>Things/Synthroid/Body/Synthroid_Thin</Thin>
+			<Child>Things/Synthroid/Body/Synthroid_Thin</Child>
+			<Baby>Things/Synthroid/Body/Synthroid_Thin</Baby><!-- Always covered by swaddled graphic -->
+		</bodyTypeGraphicPaths>
+  	</FurDef>
+
+	<HeadTypeDef ParentName="AverageBase">
+		<defName>DMS_robotHeadMale</defName>
+		<graphicPath>Things/Synthroid/Head/Head_Average_Normal</graphicPath>
+		<randomChosen>false</randomChosen>
+		<gender>Male</gender>
+		<requiredGenes>
+			<li>DMS_SyntheticSkin</li>
+		</requiredGenes>
+	</HeadTypeDef>
+	<HeadTypeDef ParentName="AverageBase">
+		<defName>DMS_robotHeadFemale</defName>
+		<graphicPath>Things/Synthroid/Head/Head_Average_Normal</graphicPath>
+		<randomChosen>false</randomChosen>
+		<gender>Female</gender>
+		<requiredGenes>
+			<li>DMS_SyntheticSkin</li>
+		</requiredGenes>
+	</HeadTypeDef>
+
+	<HeadTypeDef ParentName="AverageBase">
+		<defName>DMS_boxHeadMale</defName>
+		<graphicPath>Things/Synthroid/Head/Head_Narrow_Normal</graphicPath>
+		<randomChosen>false</randomChosen>
+		<gender>Male</gender>
+		<requiredGenes>
+			<li>DMS_SyntheticSkin</li>
+		</requiredGenes>
+	</HeadTypeDef>
+	<HeadTypeDef ParentName="AverageBase">
+		<defName>DMS_boxHeadFemale</defName>
+		<graphicPath>Things/Synthroid/Head/Head_Narrow_Normal</graphicPath>
+		<randomChosen>false</randomChosen>
+		<gender>Female</gender>
+		<requiredGenes>
+			<li>DMS_SyntheticSkin</li>
+		</requiredGenes>
+	</HeadTypeDef>
+
+	<VREAndroids.AndroidGeneDef MayRequire="vanillaracesexpanded.android" ParentName="VREA_HardwareBase">
+		<defName>DMS_SyntheticSkin</defName>
+		<label>Plasticfiber skin</label>
+		<description>A plasticfiber synthetic skin that military androids commonly have. It has good protection for the inner mechanisms without affecting mobility, but looks horrifying to people.</description>
+		<iconPath>UI/Gene/Gene_PlasfiberSkin</iconPath>
+		<displayOrderInCategory>22</displayOrderInCategory>
+		<biostatCpx>0</biostatCpx>
+		<labelShortAdj>military</labelShortAdj>
+		<isCoreComponent>false</isCoreComponent>
+		<skinColorOverride>(255, 255, 255)</skinColorOverride>
+		<statOffsets>
+			<SocialImpact>-0.5</SocialImpact>
+			<ArrestSuccessChance>1</ArrestSuccessChance>
+		</statOffsets>
+		<statFactors>
+			<BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+			<IncomingDamageFactor>0.75</IncomingDamageFactor>
+		  </statFactors>
+		<exclusionTags>
+			<li>SkinColorOverride</li>
+			<li>EyeColor</li>
+			<li>AG_Bodies</li>
+			<li>Bodies</li>
+			<li>Body</li>
+			<li>Fur</li>
+		</exclusionTags>
+		<skinIsHairColor>false</skinIsHairColor>
+		<tattoosVisible>false</tattoosVisible>
+		<renderNodeProperties>
+			<li>
+				<debugLabel>Fur</debugLabel>
+				<nodeClass>PawnRenderNode_Fur</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Fur</workerClass>
+				<baseLayer>5</baseLayer>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<colorType>Skin</colorType>
+				<parentTagDef>Body</parentTagDef>
+			</li>
+		</renderNodeProperties>
+		<fur>DMS_robotSkin</fur>
+		<hairTagFilter>
+			<whitelist>true</whitelist>
+			<tags>
+				<li>Bald</li>
+			</tags>
+    	</hairTagFilter>
+		<forcedHeadTypes>
+			<li>DMS_robotHeadMale</li>
+			<li>DMS_robotHeadFemale</li>
+			<li>DMS_boxHeadFemale</li>
+			<li>DMS_boxHeadMale</li>
+		</forcedHeadTypes>
+		<modExtensions Inherit="False">
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
+				<useSkinColorForFur>true</useSkinColorForFur>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+	<XenotypeDef>
+		<defName>DMS_AndroidSynth</defName>
+		<label>Synth</label>
+		<description>Synths are biological hybrids omnics produced by integrating android and robot technologies.</description>
+		<descriptionShort>Synths are biological hybrid omnics produced by integrating android and robot technologies.</descriptionShort>
+		<iconPath>UI/XenotypeIcons/Androidtype_AmIRobot</iconPath>
+		<genes>
+			<li>VREA_MentalBreaksDisabled</li>
+			<li>VREA_JoyDisabled</li>
+			<li>VREA_BeautyDisabled</li>
+			<li>VREA_ComfortDisabled</li>
+			<li>VREA_OutdoorsDisabled</li>
+			<li>VREA_DrugDesireDisabled</li>
+			<li>VREA_RoomSizeDisabled</li>
+			<li>VREA_PainDisabled</li>
+
+			<li>DMS_SyntheticSkin</li>
+
+			<li>VREA_Power</li>
+			<li>VREA_SyntheticBody</li>
+			<li>VREA_NeutroCirculation</li>
+			<li>VREA_SyntheticImmunity</li>
+			<li>VREA_ComponentFreezing</li>
+			<li>VREA_ComponentOverheating</li>
+			<li>VREA_ColdTolerant</li>
+			<li>VREA_HeatTolerant</li>
+			<li>VREA_PsychicallyDeaf</li>
+		</genes>
+	</XenotypeDef>
+
+</Defs>

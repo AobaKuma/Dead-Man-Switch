@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<!-- ========== PawnKind Patches ========== -->
+			 <!--
+			<li Class="PatchOperationAddModExtension">
+				<xpath>
+					Defs/PawnKindDef[
+					defName="DMS_Mech_Geochelone" or
+					defName="DMS_Mech_Killdozer"
+					]
+				</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>5</min>
+							<max>8</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>-->
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Caretta"] </xpath>
+				<value>
+					<inventoryOptions>
+						<skipChance>0</skipChance>
+						<subOptionsChooseOne>
+							<li>
+								<choiceChance>40</choiceChance>
+								<thingDef>Shell_HighExplosive</thingDef>
+								<countRange>
+									<min>20</min>
+									<max>32</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>15</choiceChance>
+								<thingDef>Shell_HighExplosive_HFuzed</thingDef>
+								<countRange>
+									<min>20</min>
+									<max>32</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>30</choiceChance>
+								<thingDef>Shell_Incendiary</thingDef>
+								<countRange>
+									<min>20</min>
+									<max>32</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>10</choiceChance>
+								<thingDef>Shell_EMP</thingDef>
+								<countRange>
+									<min>20</min>
+									<max>32</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>5</choiceChance>
+								<thingDef>Shell_Toxic</thingDef>
+								<countRange>
+									<min>20</min>
+									<max>32</max>
+								</countRange>
+							</li>
+						</subOptionsChooseOne>
+					</inventoryOptions>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Killdozer"] </xpath>
+				<value>
+					<inventoryOptions>
+						<skipChance>0</skipChance>
+						<subOptionsChooseOne>
+							<li>
+								<choiceChance>20</choiceChance>
+								<thingDef>Ammo_127x108mm_FMJ</thingDef>
+								<countRange>
+									<min>240</min>
+									<max>480</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>20</choiceChance>
+								<thingDef>Ammo_127x108mm_AP</thingDef>
+								<countRange>
+									<min>240</min>
+									<max>480</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>20</choiceChance>
+								<thingDef>Ammo_127x108mm_HE</thingDef>
+								<countRange>
+									<min>240</min>
+									<max>480</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>20</choiceChance>
+								<thingDef>Ammo_127x108mm_Incendiary</thingDef>
+								<countRange>
+									<min>240</min>
+									<max>480</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>20</choiceChance>
+								<thingDef>Ammo_127x108mm_Sabot</thingDef>
+								<countRange>
+									<min>240</min>
+									<max>480</max>
+								</countRange>
+							</li>
+						</subOptionsChooseOne>
+					</inventoryOptions>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Caretta"]/combatPower</xpath>
+				<value>
+					<combatPower>360</combatPower>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[@Name="BaseKillDozerKind"]/combatPower</xpath>
+				<value>
+					<combatPower>520</combatPower>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>
+					Defs/PawnKindDef[
+					defName="DMS_Mech_Caretta" or
+					@Name="BaseGeocheloneKind" or
+					@Name="BaseKillDozerKind"
+					]
+				</xpath>
+				<value>
+					<aiAvoidCover>true</aiAvoidCover>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[
+				    defName="DMS_Mech_Caretta" or
+					@Name="BaseGeochelone" or
+					@Name="BaseKillDozer"
+					]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Quadruped</bodyShape>
+					</li>
+				</value>
+			</li>
+			
+			<!-- ====== Caretta and Geochelone(both are IFV but first one has 20mm cannon)
+			            (Actually, one is artillery and the other is shield bearer right now)======-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/statBases</xpath>
+				<value>
+					<CarryWeight>250</CarryWeight>
+					<CarryBulk>200</CarryBulk>
+					<AimingAccuracy>1.2</AimingAccuracy>
+					<ShootingAccuracyPawn>1.6</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.00</MeleeDodgeChance>
+					<MeleeCritChance>0.18</MeleeCritChance>
+					<MeleeParryChance>0.48</MeleeParryChance>
+					<MaxHitPoints>500</MaxHitPoints>
+					<NightVisionEfficiency>0.8</NightVisionEfficiency>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>76</ArmorRating_Blunt>
+				</value>
+			</li>
+
+			<!--only torso-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>40</ArmorRating_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.35</ArmorRating_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>4250</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>10</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>5</Steel>
+							<Tungsteel>5</Tungsteel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>425</MaxOverHeal>
+						<MinArmorPct>0.8</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or @Name="BaseGeochelone"]/tools</xpath>
+				<value>
+					<tools Inherit="False">
+						<li Class="CombatExtended.ToolCE">
+							<label>head</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>40</power>
+							<cooldownTime>5.53</cooldownTime>
+							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>43</armorPenetrationBlunt>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+
+			<!-- ====== KillDozer======-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="BaseKillDozer"]/statBases</xpath>
+				<value>
+					<CarryWeight>180</CarryWeight> <!--additional armor reduce capacity-->
+					<CarryBulk>140</CarryBulk>
+					<AimingAccuracy>1</AimingAccuracy>
+					<ShootingAccuracyPawn>1.2</ShootingAccuracyPawn> <!--dozer block shot and reduce gun handling(?)-->
+					<MeleeDodgeChance>0.00</MeleeDodgeChance>
+					<MeleeCritChance>0.15</MeleeCritChance>
+					<MeleeParryChance>0.65</MeleeParryChance><!--big dozer big block-->
+					<MaxHitPoints>500</MaxHitPoints>
+					<NightVisionEfficiency>0.8</NightVisionEfficiency>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseKillDozer"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>125</ArmorRating_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseKillDozer"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>55</ArmorRating_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseKillDozer"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.5</ArmorRating_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="BaseKillDozer"]/statBases</xpath>
+				<value>
+					<ArmorRating_Electric>0.3</ArmorRating_Electric>
+				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[@Name="BaseKillDozer"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="BaseKillDozer"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="BaseKillDozer"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>4450</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>10</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>5</Steel>
+							<Tungsteel>5</Tungsteel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>425</MaxOverHeal>
+						<MinArmorPct>0.85</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseKillDozer"]/tools</xpath>
+				<value>
+					<tools Inherit="False">
+						<li Class="CombatExtended.ToolCE">
+							<label>dozer blade</label>
+							<capacities>
+								<li>Demolish</li>
+							</capacities>
+							<power>76</power>
+							<cooldownTime>5.8</cooldownTime>
+							<linkedBodyPartsGroup>DozerBlade</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>48</armorPenetrationBlunt>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+
+			<!--add partial armor-->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Caretta" or
+									@Name="BaseGeochelone" or
+									@Name="BaseKillDozer"]</xpath>
+				<value>
+					<li Class="CombatExtended.PartialArmorExt">
+						<stats>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+								<parts>
+									<li>DMS_HeadRadar</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+								<parts>
+									<li>DMS_HeadRadar</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalNeck</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalNeck</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalHead</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalHead</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+								<parts>
+									<li>DMS_HeavyChassis</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+								<parts>
+									<li>DMS_HeavyChassis</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalShoulder</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalShoulder</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalArm</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.6</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalArm</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
+								<parts>
+									<li>MechanicalLeg</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+								<parts>
+									<li>MechanicalLeg</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>1</ArmorRating_Sharp>
+								<parts>
+									<li>DMS_ArmourPlate</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>1</ArmorRating_Blunt>
+								<parts>
+									<li>DMS_ArmourPlate</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>1</ArmorRating_Sharp>
+								<parts>
+									<li>DMS_ArmourPlate_Additional</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>1</ArmorRating_Blunt>
+								<parts>
+									<li>DMS_ArmourPlate_Additional</li>
+								</parts>
+							</li>
+						</stats>
+					</li>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

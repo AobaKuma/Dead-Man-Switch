@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- ========== PawnKind Patches ========== -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_EscortLifter" or
+					defName="DMS_Mech_Tachanka"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>4</min>
+							<max>6</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[
+					defName="DMS_Mech_BattleFrame" or
+					defName="DMS_Mech_ShaftWorker" or
+					defName="DMS_Mech_FieldCommand"
+					]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>5</min>
+							<max>8</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+			<!-- ======Battleframe (early stage of attempt on humanoid mech production)======-->
+			<!-- yet being a weapon platform compatible with all kinds of weapons, it has very bad
+			combat capability, so mainly used for cargo transporting right now -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="BaseBattleFrame"]/statBases</xpath>
+				<value>
+					<CarryWeight>80</CarryWeight>
+					<CarryBulk>50</CarryBulk>
+					<AimingAccuracy>0.75</AimingAccuracy>
+					<ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.01</MeleeDodgeChance>
+					<MeleeCritChance>0.02</MeleeCritChance>
+					<MeleeParryChance>0.05</MeleeParryChance>
+					<MaxHitPoints>200</MaxHitPoints>
+					<NightVisionEfficiency>0.25</NightVisionEfficiency>
+					<ReloadSpeed>0.7</ReloadSpeed>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseBattleFrame"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>14</ArmorRating_Blunt>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseBattleFrame"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>8</ArmorRating_Sharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseBattleFrame"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.08</ArmorRating_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[@Name="BaseBattleFrame"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="BaseBattleFrame"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="BaseBattleFrame"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>1190</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>5</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>10</Steel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>135</MaxOverHeal>
+						<MinArmorPct>0.6</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+			<!--command
+			version has its command devices take up all the capacity-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_FieldCommand"]/statBases</xpath>
+				<value>
+					<CarryWeight>25</CarryWeight>
+					<CarryBulk>10</CarryBulk>
+				</value>
+			</li>
+			<!-- 工程駁機 -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_ShaftWorker"]/statBases</xpath>
+				<value>
+					<CarryWeight>100</CarryWeight>
+					<CarryBulk>80</CarryBulk>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_ShaftWorker"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>16</ArmorRating_Blunt>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_ShaftWorker"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>10</ArmorRating_Sharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_ShaftWorker"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.05</ArmorRating_Heat>
+				</value>
+			</li>
+			<!-- ======Escort Lifter (outlander carrier modified battle frame)======-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_EscortLifter"]/statBases</xpath>
+				<value>
+					<CarryWeight>250</CarryWeight>
+					<CarryBulk>200</CarryBulk>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_EscortLifter"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>16</ArmorRating_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_EscortLifter"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>10</ArmorRating_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_EscortLifter"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.05</ArmorRating_Heat>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

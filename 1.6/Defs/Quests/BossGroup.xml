@@ -2,8 +2,6 @@
 <Defs>
   <QuestScriptDef>
 		<defName>DMS_Boss</defName>
-		<successHistoryEvent>DMS_QuestSuccess_Military</successHistoryEvent>
-		<failedOrExpiredHistoryEvent>DMS_QuestFailed_Military</failedOrExpiredHistoryEvent>
 		<defaultHidden>true</defaultHidden>
 		<autoAccept>true</autoAccept>
 		<questNameRules>

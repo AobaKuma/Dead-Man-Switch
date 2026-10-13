@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<DMS.AirSupportDef>
+		<defName>DMS_AirRaidTest</defName>
+		<label>Air Raid Test</label>
+		<comps>
+			<li Class="DMS.AirSupportComp_SetOriginRandomEdge" />
+			<li Class="DMS.AirSupportComp_StrafeII">
+				<ProjectileDef>Bullet_CASAC</ProjectileDef>
+				<spreadRadius>3</spreadRadius><!-- 散佈 -->
+				<burstCount>50</burstCount><!-- 射擊次數 -->
+				<burstInterval>2</burstInterval><!-- 射擊間隔 -->
+				<singleBurstCount>1</singleBurstCount><!-- 每次射擊數量 -->
+				<delayRange>120~300</delayRange><!-- 從下令到支援抵達之間的間隔Tick -->
+				<lastShotDelayRange>100~180</lastShotDelayRange><!-- 請確保最低值為 burstCount * burstInterval-->
+				<flyByThingDef>DMS_AirRaidFlyBy</flyByThingDef>
+				<soundDef>DMS_Shot_GSh</soundDef>
+				<projOffsets>
+					<li>(0, 0, 1)</li>
+				</projOffsets>
+			</li>
+			<li Class="DMS.AirSupportComp_Effecter">
+				<effecterDef>DMS_LaunchDust_Grenade</effecterDef>
+			</li>
+			<li Class="DMS.AirSupportComp_Sound">
+				<soundDef>DMS_JetFlyBy</soundDef>
+			</li>
+		</comps>
+	</DMS.AirSupportDef>
+
+	<DMS.AirSupportDef>
+		<defName>DMS_AirRaidTestII</defName>
+		<label>Air Raid Test</label>
+		<comps>
+			<li Class="DMS.AirSupportComp_SetOriginRandomEdge">
+			</li>
+			<li Class="DMS.AirSupportComp_StrafeII">
+				<ProjectileDef>Proj_RocketCAS</ProjectileDef>
+				<burstCount>4</burstCount>
+				<burstInterval>30</burstInterval>
+				<singleBurstCount>1</singleBurstCount>
+				<delayRange>120~300</delayRange>
+				<lastShotDelayRange>60~120</lastShotDelayRange>
+				<flyByThingDef>DMS_AirRaidFlyBy</flyByThingDef>
+				<soundDef>RocketswarmLauncher_Fire</soundDef>
+				<projOffsets>
+					<li>(1, 0, 0)</li>
+					<li>(-1, 0, 0)</li>
+				</projOffsets>
+			</li>
+			<li Class="DMS.AirSupportComp_Sound">
+				<soundDef>DMS_JetFlyBy</soundDef>
+			</li>
+		</comps>
+	</DMS.AirSupportDef>
+
+	<DMS.AirSupportDef>
+		<defName>DMS_AirRaidTestIII</defName>
+		<label>Air Raid Test</label>
+		<comps>
+			<li Class="DMS.AirSupportComp_SetOriginFromClosestBase" />
+			<li Class="DMS.AirSupportComp_StrafeII">
+				<ProjectileDef>Proj_RocketCAS</ProjectileDef>
+				<burstCount>4</burstCount>
+				<burstInterval>10</burstInterval>
+				<singleBurstCount>1</singleBurstCount>
+				<delayRange>120~300</delayRange>
+				<lastShotDelayRange>60~120</lastShotDelayRange>
+				<flyByThingDef>DMS_AirRaidFlyBy</flyByThingDef>
+				<soundDef>RocketswarmLauncher_Fire</soundDef>
+				<projOffsets>
+					<li>(1, 0, 0)</li>
+					<li>(-1, 0, 0)</li>
+				</projOffsets>
+			</li>
+			<li Class="DMS.AirSupportComp_Sound">
+				<soundDef>DMS_JetFlyBy</soundDef>
+			</li>
+		</comps>
+	</DMS.AirSupportDef>
+
+	<DMS.AirSupportDef>
+		<defName>DMS_Mortar_Bombard</defName>
+		<label>mortar bombard</label>
+		<comps>
+			<li Class="DMS.AirSupportComp_SetOriginFromClosestBase">
+			</li>
+			<li Class="DMS.AirSupportComp_Bombard">
+				<ProjectileDef>Bullet_Shell_Incendiary</ProjectileDef>
+				<spreadRadius>14</spreadRadius>
+				<burstCount>3~6</burstCount>
+				<burstInterval>2~100</burstInterval>
+				<delayRange>360~400</delayRange>
+				<delayRangeSound>40~50</delayRangeSound>
+				<soundDef>DMS_Shot_DistanceMortar</soundDef>
+			</li>
+		</comps>
+	</DMS.AirSupportDef>
+
+	<DMS.AirSupportDef>
+		<defName>DMS_155mm_Bombard</defName>
+		<label>artillery bombard</label>
+		<comps>
+			<li Class="DMS.AirSupportComp_SetOriginFromClosestBase">
+			</li>
+			<li Class="DMS.AirSupportComp_Bombard">
+				<ProjectileDef>DMS_Bullet_EmperoExplosive</ProjectileDef>
+				<spreadRadius>10</spreadRadius>
+				<burstCount>3~9</burstCount>
+				<burstInterval>2~100</burstInterval>
+				<delayRange>120~300</delayRange>
+				<delayRangeSound>8~10</delayRangeSound>
+				<soundDef>DMS_Shot_DistanceEmpero</soundDef>
+			</li>
+		</comps>
+	</DMS.AirSupportDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>DMS_Bullet_EmperoExplosive</defName>
+		<label>high-explosive shell</label>
+		<graphicData>
+			<texPath>Things/Projectile/ShellHighExplosive</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<thingClass>DMS.Projectile_ConeExplosive</thingClass>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>Projectile</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+		<neverMultiSelect>true</neverMultiSelect>
+		<projectile>
+			<alwaysFreeIntercept>false</alwaysFreeIntercept>
+			<extraDamages>
+				<li>
+					<def>Stun</def>
+					<amount>10</amount>
+					<chance>0.25</chance>
+				</li>
+			</extraDamages>
+			<damageDef>Bomb</damageDef>
+			<!-- damage amount is the damage def default -->
+			<speed>60</speed>
+			<explosionRadius>4.9</explosionRadius>
+			<flyOverhead>true</flyOverhead>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+			<soundAmbient>MortarRound_Ambient</soundAmbient>
+		</projectile>
+		<modExtensions>
+			<li Class="DMS.ExplosiveExtension">
+				<damage>Bullet</damage>
+				<damageAmount>100</damageAmount>
+				<armorPen>2</armorPen>
+				<preExplosionOffset>1</preExplosionOffset>
+				<range>7</range>
+				<swayAngle>60</swayAngle>
+				<doVisualEffects>false</doVisualEffects>
+				<effecterDef>DMS_ImpactDust</effecterDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+	<EffecterDef>
+		<defName>DMS_ImpactDust</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>DustPuff</fleckDef>
+				<burstCount>13</burstCount>
+				<speed>0~0.1</speed>
+				<useTargetAInitialRotation>true</useTargetAInitialRotation>
+				<positionRadiusMin>3</positionRadiusMin>
+				<positionRadius>10</positionRadius>
+				<scale>2~3</scale>
+				<angle>-360~360</angle>
+				<rotationRate>-1~1</rotationRate>
+				<airTime>1~5</airTime>
+				<orbitOrigin>true</orbitOrigin>
+				<fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+				<absoluteAngle>false</absoluteAngle>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>DustPuff</fleckDef>
+				<burstCount>8</burstCount>
+				<speed>-1.5~-1</speed>
+				<useTargetAInitialRotation>true</useTargetAInitialRotation>
+				<positionRadiusMin>1</positionRadiusMin>
+				<positionRadius>3</positionRadius>
+				<scale>2~3</scale>
+				<angle>-180~180</angle>
+				<rotationRate>-1~1</rotationRate>
+				<airTime>1~5</airTime>
+				<orbitOrigin>true</orbitOrigin>
+				<positionLerpFactor>0.9</positionLerpFactor>
+				<fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+				<absoluteAngle>false</absoluteAngle>
+			</li>
+		</children>
+	</EffecterDef>
+
+	<ThingDef ParentName="EtherealThingBase">
+		<defName>DMS_AirRaidFlyBy</defName>
+		<label>sparrow</label>
+		<thingClass>DMS.FlyByThing</thingClass>
+		<drawerType>RealtimeOnly</drawerType>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>Skyfaller</altitudeLayer>
+		<graphicData>
+			<texPath>Things/Skyfaller/DMS_Mech_Sparrow</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawOffset>(0,0,0)</drawOffset>
+			<drawSize>8</drawSize>
+		</graphicData>
+		<skyfaller>
+			<speed>60</speed>
+			<zPositionCurve>
+				<points>
+					<li>(-100,7)</li>
+					<li>(-40,5)</li>
+					<li>(-20,4)</li>
+					<li>(0,4.25)</li>
+					<li>(10,4.5)</li>
+					<li>(20,4.75)</li>
+					<li>(40,5)</li>
+					<li>(100,6)</li>
+				</points>
+			</zPositionCurve>
+		</skyfaller>
+		<comps>
+			<li Class="CompProperties_ThrownFleckEmitter">
+				<compClass>DMS.CompFlyByThrownFleckEmitter</compClass>
+				<fleck>DMS_JetTrail</fleck>
+				<scale>0.25</scale>
+				<emissionInterval>0</emissionInterval>
+				<burstCount>2</burstCount>
+				<offsetMin>(0.5, 0, -0.5)</offsetMin>
+				<offsetMax>(0.5, 0, 0.5)</offsetMax>
+				<rotationRate>-90~90</rotationRate>
+				<!--Actually
+				this reads angle-->
+				<velocityX>179~181</velocityX>
+				<!--Actually
+				this reads speed-->
+				<velocityY>30~60</velocityY>
+			</li>
+			<li Class="CompProperties_ThrownFleckEmitter">
+				<compClass>DMS.CompFlyByThrownFleckEmitter</compClass>
+				<fleck>DMS_JetTrail</fleck>
+				<scale>0.25</scale>
+				<emissionInterval>0</emissionInterval>
+				<burstCount>2</burstCount>
+				<offsetMin>(-0.5, 0, -0.5)</offsetMin>
+				<offsetMax>(-0.5, 0, 0.5)</offsetMax>
+				<rotationRate>-90~90</rotationRate>
+				<!--Actually
+				this reads angle-->
+				<velocityX>179~181</velocityX>
+				<!--Actually
+				this reads speed-->
+				<velocityY>30~60</velocityY>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="DMS.ModExt_FlyByThing">
+				<shadowGraphic>
+					<texPath>Things/Skyfaller/DMS_Mech_Sparrow_S</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<shaderType>Transparent</shaderType>
+					<drawSize>8</drawSize>
+					<drawOffset>(-5,0,0)</drawOffset>
+					<color>(0,0,0,0.25)</color>
+				</shadowGraphic>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_CASAC</defName>
+		<label>autocannon shell</label>
+		<thingClass>DMS.Bullet_ForAirSupport</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(0.5,1.5)</drawSize>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>27</damageAmountBase>
+			<speed>100</speed>
+			<flyOverhead>true</flyOverhead>
+		</projectile>
+		<comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>DMS_LaunchDust_Grenade</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef>
+		<defName>Proj_RocketCAS</defName>
+		<label>rocket</label>
+		<thingClass>Projectile_Explosive</thingClass>
+		<category>Projectile</category>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>Projectile</altitudeLayer>
+		<useHitPoints>False</useHitPoints>
+		<neverMultiSelect>True</neverMultiSelect>
+		<graphicData>
+			<texPath>Things/Projectile/Rocket_Swarm</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.2</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<explosionRadius>2.9</explosionRadius>
+			<speed>100</speed>
+			<damageAmountBase>24</damageAmountBase>
+			<arcHeightFactor>0.4</arcHeightFactor>
+			<soundExplode>Explosion_Rocket</soundExplode>
+		</projectile>
+		<comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>DMS_LaunchDust_Recoilless</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>DMS_JetTrail</defName>
+		<graphicData>
+			<texPath>Things/Mote/Smoke</texPath>
+			<renderInstanced>true</renderInstanced>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0.50</fadeInTime>
+		<solidTime>0</solidTime>
+		<fadeOutTime>2.2</fadeOutTime>
+		<growthRate>2</growthRate>
+		<speedPerTime>-40~-10</speedPerTime>
+		<rotateTowardsMoveDirectionExtraAngle>15</rotateTowardsMoveDirectionExtraAngle>
+	</FleckDef>
+
+</Defs>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Gestate Caretta -->
+  <DMS_Make_Caretta.label>組裝蠵龜</DMS_Make_Caretta.label>
+  <!-- EN: Gestate a caretta mechanoid. -->
+  <DMS_Make_Caretta.description>組裝蠵龜，一種用於在都市戰與圍攻時提供曲射打擊的履帶支援平臺。</DMS_Make_Caretta.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Caretta.jobString>組裝機械體中</DMS_Make_Caretta.jobString>
+  
+  <!-- EN: Gestate Gecko -->
+  <DMS_Make_Gecko.label>組裝壁虎</DMS_Make_Gecko.label>
+  <!-- EN: Gestate a Gecko Automatroid. -->
+  <DMS_Make_Gecko.description>組裝壁虎，一種鬣蜥IFV的都市巷戰用改裝型號，配備有一具火焰噴射器。</DMS_Make_Gecko.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Gecko.jobString>組裝機械體中</DMS_Make_Gecko.jobString>
+  
+  <!-- EN: Gestate Geochelone -->
+  <DMS_Make_Geochelone.label>組裝象龜</DMS_Make_Geochelone.label>
+  <!-- EN: Gestate a Geochelone Automatroid. -->
+  <DMS_Make_Geochelone.description>組裝象龜，一種用於陣地突破用的移動脈衝護盾平臺。</DMS_Make_Geochelone.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Geochelone.jobString>組裝機械體中</DMS_Make_Geochelone.jobString>
+  
+  <!-- EN: Gestate Hermit Crab -->
+  <DMS_Make_HermitCrab.label>組裝寄居蟹</DMS_Make_HermitCrab.label>
+  <!-- EN: Gestate a Hermit Crab Automatroid. -->
+  <DMS_Make_HermitCrab.description>組裝寄居蟹，一種造價高昂但十分有用的多功能工業組裝機</DMS_Make_HermitCrab.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_HermitCrab.jobString>組裝機械體中</DMS_Make_HermitCrab.jobString>
+  
+  <!-- EN: Gestate Iguana -->
+  <DMS_Make_Iguana.label>組裝鬣蜥</DMS_Make_Iguana.label>
+  <!-- EN: Gestate a Iguana Automatroid. -->
+  <DMS_Make_Iguana.description>組裝鬣蜥，一種脫胎自駭蜥設計的重型IFV機兵，裝備有能夠攔截電荷彈的煙幕發射裝置。</DMS_Make_Iguana.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Iguana.jobString>組裝機械體中</DMS_Make_Iguana.jobString>
+  
+  <!-- EN: Gestate Killdozer -->
+  <DMS_Make_Killdozer.label>組裝突擊龜</DMS_Make_Killdozer.label>
+  <!-- EN: Gestate a Killdozer Automatroid. -->
+  <DMS_Make_Killdozer.description>組裝突擊龜，一種罕見的象龜改造型號，被用於在都市戰中推平建築以確保區域凈空的重型履帶平臺</DMS_Make_Killdozer.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Killdozer.jobString>組裝機械體中</DMS_Make_Killdozer.jobString>
+  
+  <!-- EN: Gestate Tarbosaurus -->
+  <DMS_Make_Tarbosaurus.label>組裝駭蜥</DMS_Make_Tarbosaurus.label>
+  <!-- EN: Gestate a Tarbosaurus Automatroid. -->
+  <DMS_Make_Tarbosaurus.description>組裝駭蜥，一種古老但十分強力的超重型機兵。</DMS_Make_Tarbosaurus.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Tarbosaurus.jobString>組裝機械體中</DMS_Make_Tarbosaurus.jobString>
+  
+</LanguageData>

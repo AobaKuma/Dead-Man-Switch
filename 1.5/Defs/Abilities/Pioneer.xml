@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- 衝刺 -->
+	<AbilityDef>
+		<defName>DMS_BurstSprint</defName>
+		<label>Sprint Burst</label>
+		<description>Release accumulated mechanical energy allowing the Pioneer to sprint for a short duration.</description>
+		<iconPath>UI/Ability/Burst</iconPath>
+		<cooldownTicksRange>1800</cooldownTicksRange> <!-- 30 seconds -->
+		<hostile>false</hostile>
+		<groupAbility>true</groupAbility>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<targetRequired>false</targetRequired>
+		<statBases>
+		  <Ability_Duration>15</Ability_Duration>
+		</statBases>
+		<verbProperties>
+		  <verbClass>Verb_CastAbility</verbClass>
+		  <drawAimPie>false</drawAimPie>
+		  <requireLineOfSight>false</requireLineOfSight>
+		  <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+		  <targetable>false</targetable>
+		  <targetParams>
+			<canTargetSelf>true</canTargetSelf>
+		  </targetParams>
+		</verbProperties>
+		<comps>
+		  <li Class="CompProperties_AbilityGiveHediff">
+			<compClass>CompAbilityEffect_GiveHediff</compClass>
+			<hediffDef>DMS_BurstSprint</hediffDef>
+			<onlyApplyToSelf>True</onlyApplyToSelf>
+			<replaceExisting>true</replaceExisting>
+		  </li>
+		</comps>
+	  </AbilityDef>
+
+	  <HediffDef>
+		<defName>DMS_BurstSprint</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Sprint Burst</label>
+		<description>Release accumulated mechanical energy allowing the Pioneer to sprint for a short duration.</description>
+		<everCurableByItem>false</everCurableByItem>
+		<stages>
+		  <li>
+			<statFactors>
+			  <MeleeCooldownFactor>0.7</MeleeCooldownFactor>
+			</statFactors>
+			<statOffsets>
+			  <MoveSpeed>5</MoveSpeed>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_Disappears">
+			<showRemainingTime>true</showRemainingTime>
+		  </li>
+		</comps>
+	  </HediffDef>
+</Defs>

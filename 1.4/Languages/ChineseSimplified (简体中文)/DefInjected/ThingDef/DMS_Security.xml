@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: APT shell -->
+  <DMS_Bullet_CIWS.label>穿甲示踪弹</DMS_Bullet_CIWS.label>
+  
+  <!-- EN: uranium APT shell -->
+  <DMS_Bullet_Kord.label>铀芯穿甲示踪弹</DMS_Bullet_Kord.label>
+  
+  <!-- EN: GateKeeper -->
+  <DMS_Gun_GateKeeper.label>守门人</DMS_Gun_GateKeeper.label>
+  <!-- EN: GateKeeper -->
+  <DMS_Gun_GateKeeper.description>三十毫米多管旋转机枪，具有极高的射速</DMS_Gun_GateKeeper.description>
+  <!-- EN: GateKeeper -->
+  <DMS_Gun_GateKeeper.verbs.Verb_Shoot.label>守门人</DMS_Gun_GateKeeper.verbs.Verb_Shoot.label>
+  
+  <!-- EN: kord -->
+  <DMS_Gun_Kord.label>Kord</DMS_Gun_Kord.label>
+  <!-- EN: kord -->
+  <DMS_Gun_Kord.description>现代化重型机枪，具有相当的可靠性</DMS_Gun_Kord.description>
+  <!-- EN: kord -->
+  <DMS_Gun_Kord.verbs.Verb_Shoot.label>Kord</DMS_Gun_Kord.verbs.Verb_Shoot.label>
+  
+  <!-- EN: Tunguska -->
+  <DMS_Gun_Tunguska.label>通古斯卡</DMS_Gun_Tunguska.label>
+  <!-- EN: Tunguska -->
+  <DMS_Gun_Tunguska.description>四联装弹炮一体防空炮塔</DMS_Gun_Tunguska.description>
+  <!-- EN: Tunguska -->
+  <DMS_Gun_Tunguska.verbs.Verb_Shoot.label>通古斯卡</DMS_Gun_Tunguska.verbs.Verb_Shoot.label>
+  
+  <!-- EN: GateKeeper -->
+  <DMS_Turret_GateKeeper.label>守门人</DMS_Turret_GateKeeper.label>
+  <!-- EN: GateKeeper -->
+  <DMS_Turret_GateKeeper.description>三十毫米多管旋转机枪，具有极高的射速</DMS_Turret_GateKeeper.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_GateKeeper.comps.CompRefuelable.fuelGizmoLabel>炮管耐久度</DMS_Turret_GateKeeper.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_GateKeeper.comps.CompRefuelable.fuelLabel>剩余耐久度</DMS_Turret_GateKeeper.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot shoot: Needs new reinforced barrel -->
+  <DMS_Turret_GateKeeper.comps.CompRefuelable.outOfFuelMessage>无法射击: 需要替换砲管</DMS_Turret_GateKeeper.comps.CompRefuelable.outOfFuelMessage>
+  
+  <!-- EN: Okhotnik -->
+  <DMS_Turret_Okhotnik.label>猎手</DMS_Turret_Okhotnik.label>
+  <!-- EN: an ancient design of remote control turret, widely used on armored vehicle and mechs armor platforms. -->
+  <DMS_Turret_Okhotnik.description>一种古老的遥控炮塔设计，广泛用于装甲车和机甲装甲平台。</DMS_Turret_Okhotnik.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_Okhotnik.comps.CompRefuelable.fuelGizmoLabel>炮管耐久度</DMS_Turret_Okhotnik.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_Okhotnik.comps.CompRefuelable.fuelLabel>剩余耐久度</DMS_Turret_Okhotnik.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot shoot: Needs new reinforced barrel -->
+  <DMS_Turret_Okhotnik.comps.CompRefuelable.outOfFuelMessage>无法射击: 需要替换砲管</DMS_Turret_Okhotnik.comps.CompRefuelable.outOfFuelMessage>
+  
+  <!-- EN: Tunguska -->
+  <DMS_Turret_Tunguska.label>通古斯卡</DMS_Turret_Tunguska.label>
+  <!-- EN: Tunguska -->
+  <DMS_Turret_Tunguska.description>四联装弹炮一体防空炮塔</DMS_Turret_Tunguska.description>
+  <!-- EN: Barrel durability -->
+  <DMS_Turret_Tunguska.comps.CompRefuelable.fuelGizmoLabel>炮管耐久度</DMS_Turret_Tunguska.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- EN: Shots until barrel change -->
+  <DMS_Turret_Tunguska.comps.CompRefuelable.fuelLabel>剩余耐久度</DMS_Turret_Tunguska.comps.CompRefuelable.fuelLabel>
+  <!-- EN: Cannot shoot: Needs new reinforced barrel -->
+  <DMS_Turret_Tunguska.comps.CompRefuelable.outOfFuelMessage>无法射击: 需要替换砲管</DMS_Turret_Tunguska.comps.CompRefuelable.outOfFuelMessage>
+  
+</LanguageData>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>
+					Defs/HediffDef[defName="DMS_ProstheticArm"]/comps/li[@Class="HediffCompProperties_VerbGiver"]/tools</xpath>
+				<value>
+					<tools>
+						<li Class="CombatExtended.ToolCE">
+							<label>fist</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>1</power>
+							<cooldownTime>1.26</cooldownTime>
+							<armorPenetrationBlunt>0.250</armorPenetrationBlunt>
+							<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+							<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>
+					Defs/HediffDef[defName="DMS_SyntheticArm"]/comps/li[@Class="HediffCompProperties_VerbGiver"]/tools</xpath>
+				<value>
+					<tools>
+						<li Class="CombatExtended.ToolCE">
+							<label>fist</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>8</power>
+							<cooldownTime>1.02</cooldownTime>
+							<armorPenetrationBlunt>2.750</armorPenetrationBlunt>
+							<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+							<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/HediffDef[defName="DMS_ProstheticEye"]/stages/li[1]/statOffsets</xpath>
+				<value>
+					<NightVisionEfficiency_Implant>0.4</NightVisionEfficiency_Implant>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

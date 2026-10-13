@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAttributeSet">
+				<xpath>Defs/ThingDef[@Name="Shell_BlasterSmoke_Releasing_Base"]/comps/li[@Class="DMS.CompProperties_AntiBlasterSmoke"]</xpath>
+				<attribute>Class</attribute>
+				<value>DMSCE.CompProperties_AntiBlasterSmoke</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

@@ -19,7 +19,7 @@
     <costList>
       <Steel>300</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
-      <ComponentSpacer>1</ComponentSpacer>
+	    <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <statBases>
       <WorkToBuild>3000</WorkToBuild>
@@ -32,7 +32,8 @@
     <size>(3,3)</size>
     <interactionCellOffset>(0,0,-2)</interactionCellOffset>
     <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
-    <recipes />
+    <recipes>
+    </recipes>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -48,7 +49,6 @@
     <modExtensions>
       <li Class="Fortified.ModExtension_AutoWorkTable">
         <workAmountPerStage>10000</workAmountPerStage>
-        <pullFromLinkedStorage>true</pullFromLinkedStorage>
         <activeMote>DMS_Mote_ReactionChamberActive</activeMote>
         <phaseEffecter_east>DMS_Effect_ReactionChamber</phaseEffecter_east>
         <phaseEffecter_west>DMS_Effect_ReactionChamber</phaseEffecter_west>
@@ -104,7 +104,7 @@
     <size>(3,3)</size>
     <interactionCellOffset>(0,0,-2)</interactionCellOffset>
     <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
-    <recipes />
+    <recipes/>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -128,7 +128,6 @@
     <modExtensions>
       <li Class="Fortified.ModExtension_AutoWorkTable">
         <workAmountPerStage>30000</workAmountPerStage>
-        <pullFromLinkedStorage>true</pullFromLinkedStorage>
         <northOnly>true</northOnly>
         <activeMote>DMS_Mote_SinteringFurnaceActive</activeMote>
         <phaseEffecter_east>DMS_SinteringFurnaceActive_East</phaseEffecter_east>
@@ -174,7 +173,7 @@
     <costList>
       <Steel>250</Steel>
       <ComponentIndustrial>8</ComponentIndustrial>
-      <ComponentSpacer>1</ComponentSpacer>
+	    <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <statBases>
       <WorkToBuild>3000</WorkToBuild>
@@ -182,7 +181,8 @@
       <Flammability>0.25</Flammability>
       <WorkTableWorkSpeedFactor>2.0</WorkTableWorkSpeedFactor>
     </statBases>
-    <recipes />
+	  <recipes>
+	  </recipes>
     <size>(3,2)</size>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
@@ -196,12 +196,10 @@
     </comps>
     <researchPrerequisites>
       <li>DMS_MechBasis</li>
-      <li>DMS_Autofacturer</li>
     </researchPrerequisites>
     <modExtensions>
       <li Class="Fortified.ModExtension_AutoWorkTable">
         <workAmountPerStage>10000</workAmountPerStage>
-        <pullFromLinkedStorage>true</pullFromLinkedStorage>
         <phaseEffecter_east>DMS_Effect_Printer_East</phaseEffecter_east>
         <phaseEffecter_west>DMS_Effect_Printer_West</phaseEffecter_west>
         <phaseEffecter_north>DMS_Effect_Printer_North</phaseEffecter_north>
@@ -216,70 +214,6 @@
       <li Class="Fortified.ModExtension_RecipeInheritance">
         <inheritRecipesFrom>
           <li>ElectricSmithy</li>
-        </inheritRecipesFrom>
-      </li>
-    </modExtensions>
-  </ThingDef>
-
-  <!-- DMS_AutoMill 自動磨床 : 半自動版本的石材加工桌 -->
-  <ThingDef ParentName="DMS_AutofacturerBenchBase">
-    <defName>DMS_AutoMill</defName>
-    <label>Auto mill</label>
-    <!-- 一台以連續進料的方式運轉的自動化石材加工機，只要備妥原料便能無人值守地持續產出石磚。 -->
-    <description>An automated milling bench fed by a continuous feed line. Once loaded with raw chunks it grinds and cuts stone blocks unattended, trading precision for the ability to run without an operator.</description>
-    <graphicData>
-      <texPath>Things/Building/AutoMill</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(5,3)</drawSize>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <designationCategory>DMS_Category</designationCategory>
-    <costList>
-      <Steel>180</Steel>
-      <ComponentIndustrial>4</ComponentIndustrial>
-    </costList>
-    <statBases>
-      <WorkToBuild>2500</WorkToBuild>
-      <MaxHitPoints>400</MaxHitPoints>
-      <Flammability>0.25</Flammability>
-      <Cleanliness>-5</Cleanliness>
-      <WorkTableWorkSpeedFactor>0.75</WorkTableWorkSpeedFactor>
-    </statBases>
-    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-    <size>(3,2)</size>
-    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
-    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
-    <recipes />
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>true</shortCircuitInRain>
-        <basePowerConsumption>500</basePowerConsumption>
-        <idlePowerDraw>30</idlePowerDraw>
-      </li>
-    </comps>
-    <researchPrerequisites>
-      <li>Stonecutting</li>
-      <li>DMS_Material</li>
-    </researchPrerequisites>
-    <modExtensions>
-      <li Class="Fortified.ModExtension_AutoWorkTable">
-        <workAmountPerStage>5000</workAmountPerStage>
-        <pullFromLinkedStorage>true</pullFromLinkedStorage>
-        <autoEjectProducts>true</autoEjectProducts>
-        <phaseEffecter_east>DMS_Effect_Printer_East</phaseEffecter_east>
-        <phaseEffecter_west>DMS_Effect_Printer_West</phaseEffecter_west>
-        <phaseEffecter_north>DMS_Effect_Printer_North</phaseEffecter_north>
-        <phaseEffecter_south>DMS_Effect_Printer_South</phaseEffecter_south>
-      </li>
-      <li Class="Fortified.ModExtension_RecipeInheritance">
-        <inheritRecipesFrom>
-          <li>TableButcher</li>
         </inheritRecipesFrom>
       </li>
     </modExtensions>

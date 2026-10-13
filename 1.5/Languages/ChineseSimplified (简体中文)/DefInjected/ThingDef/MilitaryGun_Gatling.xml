@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: GAU-19/A "Attacker" -->
+  <DMS_GAU19Gatlinggun.label>GAU-19/A "打击者"</DMS_GAU19Gatlinggun.label>
+  <!-- EN: A rapid-firing multiple-barrel firearm chambered in heavy machinegun rounds.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_GAU19Gatlinggun.description>一种使用重机枪子弹的多管武器系统。\n\n这种武器是专门为机兵设计的，因此如果没有外部辅助设备或超强的力量，普通人可能无法正常使用。</DMS_GAU19Gatlinggun.description>
+  <!-- EN: stock -->
+  <DMS_GAU19Gatlinggun.tools.stock.label>枪托</DMS_GAU19Gatlinggun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_GAU19Gatlinggun.tools.barrel.label>枪管</DMS_GAU19Gatlinggun.tools.barrel.label>
+  <!-- EN: GAU-19/A "Attacker" -->
+  <DMS_GAU19Gatlinggun.verbs.Verb_ArcSprayProjectile.label>GAU-19/A "打击者"</DMS_GAU19Gatlinggun.verbs.Verb_ArcSprayProjectile.label>
+  
+  <!-- UNUSED -->
+  <DMS_GAU19Gatlinggun.verbs.Verb_Shoot.label>GAU-19/A "打击者"</DMS_GAU19Gatlinggun.verbs.Verb_Shoot.label>
+  <DMS_GAU19Gatlinggun.tools.muzzle-0.label>枪口</DMS_GAU19Gatlinggun.tools.muzzle-0.label>
+  <DMS_GAU19Gatlinggun.tools.barrel-1.label>枪管</DMS_GAU19Gatlinggun.tools.barrel-1.label>
+  <DMS_GAU19Gatlinggun.tools.muzzle-1.label>枪口</DMS_GAU19Gatlinggun.tools.muzzle-1.label>
+  <DMS_GAU19Gatlinggun.verbs.Verb_ShootCE.label>GAU-19/A "打击者"</DMS_GAU19Gatlinggun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: GAU-4 "Vulcan" -->
+  <DMS_GAU4Gatlinggun.label>GAU-4 "火山"</DMS_GAU4Gatlinggun.label>
+  <!-- EN: A rapid-firing multiple-barrel firearm chambered in autocannon rounds. Precision built to spray death at anything unfortunate enough to be in front of it.\n\nThis weapon is designed specifically for automatroid use, it's so heavy only specific automatroids can operate it. -->
+  <DMS_GAU4Gatlinggun.description>一种使用机炮弹的多管武器系统。</DMS_GAU4Gatlinggun.description>
+  <!-- EN: GAU-4 "Vulcan" -->
+  <DMS_GAU4Gatlinggun.verbs.Verb_ArcSprayProjectile.label>GAU-4 "火山"</DMS_GAU4Gatlinggun.verbs.Verb_ArcSprayProjectile.label>
+  
+  <!-- UNUSED -->
+  <DMS_GAU4Gatlinggun.verbs.Verb_Shoot.label>GAU-4 "火山"</DMS_GAU4Gatlinggun.verbs.Verb_Shoot.label>
+  <DMS_GAU4Gatlinggun.tools.barrel.label>枪管</DMS_GAU4Gatlinggun.tools.barrel.label>
+  <DMS_GAU4Gatlinggun.tools.muzzle.label>枪口</DMS_GAU4Gatlinggun.tools.muzzle.label>
+  <DMS_GAU4Gatlinggun.verbs.Verb_ShootCE.label>GAU-4 "火山"</DMS_GAU4Gatlinggun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: GAU-4 "Vulcan" -->
+  <DMS_GAU4Gatlinggun_Hold.label>GAU-4 "火山"</DMS_GAU4Gatlinggun_Hold.label>
+  <!-- EN: A rapid-firing multiple-barrel firearm chambered in autocannon rounds. Precision built to spray death at anything unfortunate enough to be in front of it.\n\nThis weapon is designed specifically for automatroid use, it's so heavy only specific automatroids can operate it. -->
+  <DMS_GAU4Gatlinggun_Hold.description>一种发射机炮弹的多管武器系统。\n\n这种武器是专门为机兵设计的，因为太重，所以只有特定的机兵才能操作。</DMS_GAU4Gatlinggun_Hold.description>
+  <!-- EN: stock -->
+  <DMS_GAU4Gatlinggun_Hold.tools.stock.label>枪托</DMS_GAU4Gatlinggun_Hold.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_GAU4Gatlinggun_Hold.tools.barrel.label>枪管</DMS_GAU4Gatlinggun_Hold.tools.barrel.label>
+  <!-- EN: GAU-4 "Vulcan" -->
+  <DMS_GAU4Gatlinggun_Hold.verbs.Verb_ArcSprayProjectile.label>GAU-4 "火山"</DMS_GAU4Gatlinggun_Hold.verbs.Verb_ArcSprayProjectile.label>
+  
+  <!-- UNUSED -->
+  <DMS_GAU4Gatlinggun_Hold.verbs.Verb_Shoot.label>GAU-4 "火山"</DMS_GAU4Gatlinggun_Hold.verbs.Verb_Shoot.label>
+  <DMS_GAU4Gatlinggun_Hold.tools.muzzle-0.label>枪口</DMS_GAU4Gatlinggun_Hold.tools.muzzle-0.label>
+  <DMS_GAU4Gatlinggun_Hold.tools.barrel-1.label>枪管</DMS_GAU4Gatlinggun_Hold.tools.barrel-1.label>
+  <DMS_GAU4Gatlinggun_Hold.tools.muzzle-1.label>枪口</DMS_GAU4Gatlinggun_Hold.tools.muzzle-1.label>
+  <DMS_GAU4Gatlinggun_Hold.verbs.Verb_ShootCE.label>GAU-4 "火山"</DMS_GAU4Gatlinggun_Hold.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: GAU-8 "Avenger" -->
+  <DMS_GAU8Gatlinggun.label>GAU-8 "复仇者"</DMS_GAU8Gatlinggun.label>
+  <!-- EN: A rapid-firing multiple-barrel firearm chambered in massive autocannon rounds, deadly and destructive. This cannon was co-opted from ancient aircraft rumored to have been built around it.\n\nThis weapon is designed specifically for automatroid use, and it's so heavy only specific automatroids can wield it. -->
+  <DMS_GAU8Gatlinggun.description>一种重型机载多管武器系统，发射大口径航空用机炮弹，具有十分恐怖的的破坏力与射击速度。\n\n这种武器是专门为自动机兵设计的，因为太重，所以只有特定的机兵才能操作。</DMS_GAU8Gatlinggun.description>
+  <!-- EN: stock -->
+  <DMS_GAU8Gatlinggun.tools.stock.label>枪托</DMS_GAU8Gatlinggun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_GAU8Gatlinggun.tools.barrel.label>枪管</DMS_GAU8Gatlinggun.tools.barrel.label>
+  <!-- EN: GAU-8 "Avenger" -->
+  <DMS_GAU8Gatlinggun.verbs.Verb_ArcSprayProjectile.label>GAU-8 "复仇者"</DMS_GAU8Gatlinggun.verbs.Verb_ArcSprayProjectile.label>
+  
+  <!-- UNUSED -->
+  <DMS_GAU8Gatlinggun.verbs.Verb_Shoot.label>GAU-8 "复仇者"</DMS_GAU8Gatlinggun.verbs.Verb_Shoot.label>
+  <DMS_GAU8Gatlinggun.tools.muzzle-0.label>枪口</DMS_GAU8Gatlinggun.tools.muzzle-0.label>
+  <DMS_GAU8Gatlinggun.tools.barrel-1.label>枪管</DMS_GAU8Gatlinggun.tools.barrel-1.label>
+  <DMS_GAU8Gatlinggun.tools.muzzle-1.label>枪口</DMS_GAU8Gatlinggun.tools.muzzle-1.label>
+  <DMS_GAU8Gatlinggun.verbs.Verb_ShootCE.label>GAU-8 "复仇者"</DMS_GAU8Gatlinggun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: M214 -->
+  <DMS_M214Gatlinggun.label>M214 "微型炮"</DMS_M214Gatlinggun.label>
+  <!-- EN: A multiple-barrel firearm chambered in rifle rounds designed for area denial through immense saturation of fire.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMS_M214Gatlinggun.description>一种发射突击步枪子弹的多管武器系统。\n\n这种武器是专门为机兵设计的，因此如果没有外部辅助设备或超强的力量，普通人可能无法正常使用。</DMS_M214Gatlinggun.description>
+  <!-- EN: stock -->
+  <DMS_M214Gatlinggun.tools.stock.label>枪托</DMS_M214Gatlinggun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_M214Gatlinggun.tools.barrel.label>枪管</DMS_M214Gatlinggun.tools.barrel.label>
+  <!-- EN: M214 -->
+  <DMS_M214Gatlinggun.verbs.Verb_ArcSprayProjectile.label>M214 "微型炮"</DMS_M214Gatlinggun.verbs.Verb_ArcSprayProjectile.label>
+  
+  <!-- UNUSED -->
+  <DMS_M214Gatlinggun.verbs.Verb_Shoot.label>M214 "微型炮"</DMS_M214Gatlinggun.verbs.Verb_Shoot.label>
+  <DMS_M214Gatlinggun.tools.muzzle.label>枪口</DMS_M214Gatlinggun.tools.muzzle.label>
+  <DMS_M214Gatlinggun.verbs.Verb_ShootCE.label>M214 "微型炮"</DMS_M214Gatlinggun.verbs.Verb_ShootCE.label>
+  
+</LanguageData>

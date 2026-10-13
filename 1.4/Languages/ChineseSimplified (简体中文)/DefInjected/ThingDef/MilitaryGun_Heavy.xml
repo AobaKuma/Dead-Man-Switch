@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: heavy machine gun bullet -->
+  <Bullet_DMS_HeavyMachineGun.label>重机枪子弹</Bullet_DMS_HeavyMachineGun.label>
+  
+  <!-- EN: recoilless grenade round -->
+  <DMS_Bullet_RR.label>无后坐力榴弹</DMS_Bullet_RR.label>
+  
+  <!-- EN: recoilless cannon -->
+  <DMS_Gun_Recoilless.label>无后坐力炮</DMS_Gun_Recoilless.label>
+  <!-- EN: A Recoilless cannon designed to snipe the heavy-armed target in range.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate. -->
+  <DMS_Gun_Recoilless.description>一种无后坐力炮，用于狙击射程内的重型武装目标。\n\n这种武器是专门为机兵设计的，因为太重，所以只有特定的机兵才能操作。</DMS_Gun_Recoilless.description>
+  <!-- EN: stock -->
+  <DMS_Gun_Recoilless.tools.stock.label>枪托</DMS_Gun_Recoilless.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Gun_Recoilless.tools.barrel.label>枪管</DMS_Gun_Recoilless.tools.barrel.label>
+  <!-- EN: recoilless cannon -->
+  <DMS_Gun_Recoilless.verbs.Verb_Shoot.label>无后坐力炮</DMS_Gun_Recoilless.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Gun_Recoilless.tools.muzzle-0.label>枪口</DMS_Gun_Recoilless.tools.muzzle-0.label>
+  <DMS_Gun_Recoilless.tools.barrel-1.label>枪管</DMS_Gun_Recoilless.tools.barrel-1.label>
+  <DMS_Gun_Recoilless.tools.muzzle-1.label>枪口</DMS_Gun_Recoilless.tools.muzzle-1.label>
+  
+  <!-- EN: mech HMG -->
+  <DMS_HeavyMachineGun.label>机兵重机枪</DMS_HeavyMachineGun.label>
+  <!-- EN: heavy machine gun for mech soldier or infantry support platform.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate. -->
+  <DMS_HeavyMachineGun.description>重型机枪，用于机械兵或步兵支援平台。\n\n这种武器是专门为机兵设计的，因为太重，所以只有特定的机兵才能操作。</DMS_HeavyMachineGun.description>
+  <!-- EN: stock -->
+  <DMS_HeavyMachineGun.tools.stock.label>枪托</DMS_HeavyMachineGun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_HeavyMachineGun.tools.barrel.label>枪管</DMS_HeavyMachineGun.tools.barrel.label>
+  <!-- EN: mech HMG -->
+  <DMS_HeavyMachineGun.verbs.Verb_Shoot.label>机兵重机枪</DMS_HeavyMachineGun.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_HeavyMachineGun.tools.muzzle-0.label>枪口</DMS_HeavyMachineGun.tools.muzzle-0.label>
+  <DMS_HeavyMachineGun.tools.barrel-1.label>枪管</DMS_HeavyMachineGun.tools.barrel-1.label>
+  <DMS_HeavyMachineGun.tools.muzzle-1.label>枪口</DMS_HeavyMachineGun.tools.muzzle-1.label>
+  <DMS_HeavyMachineGun.verbs.Verb_ShootCE.label>机兵重机枪</DMS_HeavyMachineGun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: mech sniper cannon -->
+  <DMS_SniperCannon.label>机兵狙击炮</DMS_SniperCannon.label>
+  <!-- EN: an ultra heavy rifle calibered with autocannon rounds, has proven the capability to snipe an exostrider in the distance. it is specially designed for long-range anti-mech sniping operation.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate. -->
+  <DMS_SniperCannon.description>一种配备自动加农炮弹的超重型步枪，已证明能够在远处狙击巨黾。它专为远距离反机甲狙击作战而设计。\n\n这种武器是专门为机兵设计的，因为太重，所以只有特定的机兵才能操作。</DMS_SniperCannon.description>
+  <!-- EN: stock -->
+  <DMS_SniperCannon.tools.stock.label>枪托</DMS_SniperCannon.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_SniperCannon.tools.barrel.label>枪管</DMS_SniperCannon.tools.barrel.label>
+  <!-- EN: mech sniper cannon -->
+  <DMS_SniperCannon.verbs.Verb_Shoot.label>机兵狙击炮</DMS_SniperCannon.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_SniperCannon.tools.muzzle-0.label>枪口</DMS_SniperCannon.tools.muzzle-0.label>
+  <DMS_SniperCannon.tools.barrel-1.label>枪管</DMS_SniperCannon.tools.barrel-1.label>
+  <DMS_SniperCannon.tools.muzzle-1.label>枪口</DMS_SniperCannon.tools.muzzle-1.label>
+  <DMS_SniperCannon.verbs.Verb_ShootCE.label>机械狙击炮</DMS_SniperCannon.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: 2A38M -->
+  <DMS_Tarbosaurus_BossGun.label>2A38M</DMS_Tarbosaurus_BossGun.label>
+  <!-- EN: a dual-barrel heavy autocannon for infantry suppress / anti air platform.\n\nThis weapon is designed specially for automatroid use, and it's too heavy so only specific automatroid can operate. -->
+  <DMS_Tarbosaurus_BossGun.description>用于步兵压制/防空平台的双管重型机炮。\n\n这种武器是专门为机兵设计的，因为太重，所以只有特定的机兵才能操作。</DMS_Tarbosaurus_BossGun.description>
+  <!-- EN: stock -->
+  <DMS_Tarbosaurus_BossGun.tools.stock.label>枪托</DMS_Tarbosaurus_BossGun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMS_Tarbosaurus_BossGun.tools.barrel.label>枪管</DMS_Tarbosaurus_BossGun.tools.barrel.label>
+  <!-- EN: 2A38M -->
+  <DMS_Tarbosaurus_BossGun.verbs.Verb_Shoot.label>2A38M</DMS_Tarbosaurus_BossGun.verbs.Verb_Shoot.label>
+  
+  <!-- UNUSED -->
+  <DMS_Tarbosaurus_BossGun.tools.muzzle.label>枪口</DMS_Tarbosaurus_BossGun.tools.muzzle.label>
+  <DMS_Tarbosaurus_BossGun.verbs.Verb_ShootCE.label>2A38M</DMS_Tarbosaurus_BossGun.verbs.Verb_ShootCE.label>
+  
+</LanguageData>

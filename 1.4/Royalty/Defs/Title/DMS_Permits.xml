@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <!-- 物品支援 -->
+
+  <RoyalTitlePermitDef Name="DMS_DropSupplyBase" Abstract="True">
+    <workerClass>RoyalTitlePermitWorker_DropResources</workerClass>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <cooldownDays>30</cooldownDays>
+    <usableOnWorldMap>true</usableOnWorldMap>
+    <royalAid>
+      <targetingRange>39.9</targetingRange>
+    </royalAid>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef ParentName="DropResourcesBase">
+    <defName>DMS_CombatDrop</defName>
+    <label>combat supply drop</label>
+    <description>Call for a drop of standard combat supply.</description>
+    <faction>DMS_Army</faction>
+    <uiPosition>(0,1)</uiPosition>
+    <minTitle>DMS_Private</minTitle>
+    <permitPointCost>1</permitPointCost>
+    <cooldownDays>30</cooldownDays>
+    <royalAid>
+      <itemsToDrop>
+        <MealNutrientPaste>5</MealNutrientPaste>     
+        <MedicineIndustrial>2</MedicineIndustrial>
+      </itemsToDrop>
+      <favorCost>3</favorCost>
+    </royalAid>
+  </RoyalTitlePermitDef>
+  
+  <RoyalTitlePermitDef ParentName="DropResourcesBase">
+    <defName>DMS_LogiDrop</defName>
+    <label>logistic supply drop</label>
+    <description>Call for a drop of 20 survival pack, 8 medicine and 4 compoment.</description>
+    <faction>DMS_Army</faction>
+    <uiPosition>(1,3)</uiPosition> 
+    <minTitle>DMS_Corporal</minTitle>
+    <permitPointCost>1</permitPointCost>
+    <cooldownDays>30</cooldownDays>
+    <royalAid>
+      <itemsToDrop>
+        <Steel>50</Steel>
+        <ComponentIndustrial>4</ComponentIndustrial>  
+      </itemsToDrop>
+      <favorCost>3</favorCost>
+    </royalAid>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef ParentName="DropResourcesBase">
+    <defName>DMS_FoodDrop</defName>
+    <label>food supply drop</label>
+    <description>Call for a drop of 20 packaged survival meals.</description>
+    <faction>DMS_Army</faction>
+    <minTitle>DMS_Corporal</minTitle>
+    <uiPosition>(1,1)</uiPosition>
+    <permitPointCost>1</permitPointCost>
+    <cooldownDays>30</cooldownDays>
+    <prerequisite>DMS_CombatDrop</prerequisite>
+    <royalAid>
+      <itemsToDrop>
+        <MealSurvivalPack>12</MealSurvivalPack>
+      </itemsToDrop>
+      <favorCost>3</favorCost>
+    </royalAid>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef ParentName="DropResourcesBase">
+    <defName>DMS_MaterialDrop</defName>
+    <label>construct material drop</label>
+    <description>Call for a drop of 500 silver and 250 steel.</description>
+    <faction>DMS_Army</faction>
+    <minTitle>DMS_PreSergeant</minTitle>
+    <uiPosition>(2,1)</uiPosition>
+    <permitPointCost>1</permitPointCost>
+    <cooldownDays>30</cooldownDays>
+    <royalAid>
+      <itemsToDrop>
+        <Steel>250</Steel>
+        <Silver>500</Silver>
+      </itemsToDrop>
+      <favorCost>6</favorCost>
+    </royalAid>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef ParentName="DropResourcesBase">
+    <defName>DMS_GearDrop</defName>
+    <label>combat equipment drop</label>
+    <description>Call for a combat supply for a combatant, include a set of tactical armor and emergency gears.</description>
+    <faction>DMS_Army</faction>
+    <minTitle>DMS_WarrantOfficer</minTitle>
+    <uiPosition>(4,1)</uiPosition>
+    <permitPointCost>1</permitPointCost>
+    <cooldownDays>30</cooldownDays>
+    <royalAid>
+      <itemsToDrop>
+        <DMS_Apparel_TacticalHelmet>1</DMS_Apparel_TacticalHelmet>
+        <DMS_Apparel_TacticalVest>1</DMS_Apparel_TacticalVest>
+        <DMS_KnuckledusterRevolver MayRequire="ceteam.combatextended">1</DMS_KnuckledusterRevolver>
+        <DMS_SurvivalRifle>1</DMS_SurvivalRifle>
+      </itemsToDrop>
+      <favorCost>4</favorCost>
+    </royalAid>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef ParentName="DropResourcesBase">
+    <defName>DMS_CompDrop</defName>
+    <label>componments drop</label>
+    <description>Call for a drop of componments.</description>
+    <faction>DMS_Army</faction>
+    <minTitle>DMS_Lieutenant</minTitle>
+    <uiPosition>(5,3)</uiPosition>
+    <permitPointCost>1</permitPointCost>
+    <cooldownDays>30</cooldownDays>
+    <prerequisite>DMS_LogiDrop</prerequisite>
+    <royalAid>
+      <itemsToDrop>
+        <ComponentStamped>15</ComponentStamped>
+        <Neurocomputer>3</Neurocomputer>
+      </itemsToDrop>
+      <favorCost>8</favorCost>
+    </royalAid>
+  </RoyalTitlePermitDef>
+
+  <!-- 臨時人手支援 -->
+
+  <RoyalTitlePermitDef>
+    <defName>DMS_WorkerTeam</defName>
+    <label>call worker team</label>
+    <description>Call a group of 4 worker to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe.</description>
+    <workerClass>RoyalTitlePermitWorker_CallLaborers</workerClass>
+    <minTitle>DMS_PreSergeant</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(2,0)</uiPosition>
+    <royalAid>
+      <favorCost>4</favorCost>
+      <pawnKindDef>DMS_Civilian</pawnKindDef><!-- WIP -->
+      <pawnCount>4</pawnCount>
+      <aidDurationDays>6</aidDurationDays>
+      <itemsToDrop>
+        <MealSurvivalPack>25</MealSurvivalPack>        
+      </itemsToDrop>
+    </royalAid>
+    <cooldownDays>60</cooldownDays>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef>
+    <defName>DMS_WorkerGroup</defName>
+    <label>call worker group</label>
+    <description>Call a group of 8 worker to assist you for 6 days. These workers can only do general labor tasks. You can control them as though they were your own colonists. You are required to keep them safe.</description>
+    <workerClass>RoyalTitlePermitWorker_CallLaborers</workerClass>
+    <minTitle>DMS_Major</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <prerequisite>DMS_WorkerTeam</prerequisite>
+    <uiPosition>(7,0)</uiPosition>
+    <royalAid>
+      <favorCost>8</favorCost>
+      <pawnKindDef>DMS_Civilian</pawnKindDef><!-- WIP -->
+      <pawnCount>8</pawnCount>
+      <aidDurationDays>6</aidDurationDays>
+      <itemsToDrop>
+        <MealSurvivalPack>50</MealSurvivalPack>        
+      </itemsToDrop>
+    </royalAid>
+    <cooldownDays>60</cooldownDays>
+  </RoyalTitlePermitDef>
+
+  <!-- 滴滴拉人 -->
+  <RoyalTitlePermitDef>
+    <defName>DMS_CargoMech</defName>
+    <label>supply cargo mech</label>
+    <description>Apply a cargo lifter mech belong to your side.</description>
+    <workerClass>DMS.RoyalTitlePermitWorker_MechJoin</workerClass>
+    <minTitle>DMS_WarrantOfficer</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(4,4)</uiPosition>
+    <royalAid>
+      <favorCost>8</favorCost>
+      <pawnKindDef>DMS_Mech_EscortLifter</pawnKindDef>
+      <pawnCount>1</pawnCount>
+    </royalAid>
+    <cooldownDays>60</cooldownDays>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef>
+    <defName>DMS_Join_Logistic</defName>
+    <label>call logistic recruit</label>
+    <description>Apply a worker whose life is on yours.</description>
+    <workerClass>DMS.RoyalTitlePermitWorker_PawnJoin</workerClass>
+    <minTitle>DMS_Lieutenant</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(5,4)</uiPosition>
+    <prerequisite>DMS_CargoMech</prerequisite>
+    <royalAid>
+      <favorCost>8</favorCost>
+      <pawnKindDef>DMS_Civilian</pawnKindDef>
+      <pawnCount>1</pawnCount>
+    </royalAid>
+    <cooldownDays>60</cooldownDays>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef>
+    <defName>DMS_CombatMech</defName>
+    <label>supply combat mech</label>
+    <description>Apply a battle friend mech belong to your side.</description>
+    <workerClass>DMS.RoyalTitlePermitWorker_MechJoin</workerClass>
+    <minTitle>DMS_Captain</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(6,4)</uiPosition>
+    <prerequisite>DMS_Join_Logistic</prerequisite>
+    <royalAid>
+      <favorCost>8</favorCost>
+      <pawnKindDef>DMS_Mech_BattleFrame</pawnKindDef><!-- WIP -->
+      <pawnCount>1</pawnCount>
+    </royalAid>
+    <cooldownDays>60</cooldownDays>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef>
+    <defName>DMS_Join_Combat</defName>
+    <label>call combatant recruit</label>
+    <description>Apply a combatant whose life is on yours.</description>
+    <workerClass>DMS.RoyalTitlePermitWorker_PawnJoin</workerClass>
+    <minTitle>DMS_Major</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(7,4)</uiPosition>
+    <prerequisite>DMS_CombatMech</prerequisite>
+    <royalAid>
+      <favorCost>8</favorCost>
+      <pawnKindDef>DMS_Squad_ServiceMan</pawnKindDef><!-- WIP -->
+      <pawnCount>1</pawnCount>
+    </royalAid>
+    <cooldownDays>60</cooldownDays>
+  </RoyalTitlePermitDef>
+
+  <!-- 滴滴打人 -->
+
+  <RoyalTitlePermitDef>
+    <defName>DMS_Squad_RC</defName>
+    <label>riot control support</label>
+    <description>Call a group of 4 riot control unit to aid you in prison outbreak.</description>
+    <workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
+    <minTitle>DMS_Sergeant</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(3,1)</uiPosition>
+    <royalAid>
+      <favorCost>4</favorCost>
+      <pawnKindDef>DMS_Mech_Protector</pawnKindDef>
+      <pawnCount>4</pawnCount>
+      <targetingRange>39.9</targetingRange>
+    </royalAid>
+    <cooldownDays>40</cooldownDays>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef>
+    <defName>DMS_Squad_UC</defName>
+    <label>urban combat support</label>
+    <description>Call a group of 4 urban combat unit to aid you in raid or colony defense.</description>
+    <workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
+    <minTitle>DMS_Sergeant</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(3,2)</uiPosition>
+    <royalAid>
+      <favorCost>4</favorCost>
+      <pawnKindDef>DMS_Mech_Phalanx</pawnKindDef>
+      <pawnCount>4</pawnCount>
+      <targetingRange>39.9</targetingRange>
+    </royalAid>
+    <cooldownDays>40</cooldownDays>
+  </RoyalTitlePermitDef>
+
+
+  <RoyalTitlePermitDef>
+    <defName>DMS_Platoon_MT</defName>
+    <label>call squad support</label>
+    <description>Call a squad of soldiers to aid you in battle.</description>
+    <workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
+    <minTitle>DMS_Colonel</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(0,7)</uiPosition>
+    <royalAid>
+      <favorCost>6</favorCost>
+      <pawnKindDef>DMS_Soldier</pawnKindDef>
+      <pawnCount>16</pawnCount>
+      <targetingRange>39.9</targetingRange>
+    </royalAid>
+    <cooldownDays>30</cooldownDays>
+  </RoyalTitlePermitDef>
+  
+  <RoyalTitlePermitDef>
+    <defName>DMS_Platoon_AC</defName>
+    <label>call heavy unit support</label>
+    <description>Call 4 heavy Automatroid to aid you in battle.</description>
+    <workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
+    <minTitle>DMS_Brigadier</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(1,7)</uiPosition>
+    <royalAid>
+      <favorCost>8</favorCost>
+      <pawnKindDef>DMS_Mech_Gecko</pawnKindDef>
+      <pawnCount>4</pawnCount>
+      <targetingRange>39.9</targetingRange>
+    </royalAid>
+    <cooldownDays>60</cooldownDays>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef>
+    <defName>DMS_CallOrbitalStrike</defName>
+    <label>call aerodrone strike</label>
+    <description>Call a single-impact aerodrone strike at a target position.</description>
+    <workerClass>RoyalTitlePermitWorker_OrbitalStrike</workerClass>
+    <minTitle>DMS_Captain</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <cooldownDays>15</cooldownDays>
+    <uiPosition>(0,5)</uiPosition>
+    <royalAid>
+      <favorCost>6</favorCost>
+      <targetingRange>44.9</targetingRange>
+      <radius>2.9</radius>
+      <explosionRadiusRange>7.9</explosionRadiusRange>
+      <explosionCount>1</explosionCount>
+      <intervalTicks>60</intervalTicks>
+      <warmupTicks>120</warmupTicks>
+    </royalAid>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef>
+    <defName>DMS_CallOrbitalSalvo</defName>
+    <label>call aerodrone salvo</label>
+    <description>Call a salvo of aerodrone strikes around a target position.</description>
+    <workerClass>RoyalTitlePermitWorker_OrbitalStrike</workerClass>
+    <minTitle>DMS_Brigadier</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <prerequisite>DMS_CallOrbitalStrike</prerequisite>
+    <cooldownDays>15</cooldownDays>
+    <uiPosition>(1,5)</uiPosition>
+    <royalAid>
+      <favorCost>8</favorCost>
+      <targetingRange>44.9</targetingRange>
+      <radius>7.9</radius>
+      <explosionRadiusRange>5.9</explosionRadiusRange>
+      <explosionCount>6</explosionCount>
+      <intervalTicks>60</intervalTicks>
+      <warmupTicks>120</warmupTicks>
+    </royalAid>
+  </RoyalTitlePermitDef>
+  
+  
+  <!-- Utility -->
+
+  <RoyalTitlePermitDef>
+    <defName>DMS_CallTransportShuttle</defName>
+    <label>call transport shuttle</label>
+    <description>Call a shuttle for your own use. It will transport colonists, items, and animals anywhere you like within 70 world tiles.</description>
+    <workerClass>RoyalTitlePermitWorker_CallShuttle</workerClass>
+    <minTitle>DMS_Lieutenant</minTitle>
+    <faction>DMS_Army</faction>
+    <permitPointCost>1</permitPointCost>
+    <cooldownDays>40</cooldownDays>
+    <usableOnWorldMap>true</usableOnWorldMap>
+    <uiPosition>(0,6)</uiPosition>
+    <royalAid>
+      <favorCost>8</favorCost>
+      <targetingRange>44.9</targetingRange>
+      <targetingRequireLOS>false</targetingRequireLOS>
+    </royalAid>
+  </RoyalTitlePermitDef>
+  
+</Defs>

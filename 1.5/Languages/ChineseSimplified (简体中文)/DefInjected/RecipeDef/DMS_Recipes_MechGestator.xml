@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Gestate Ape Automatroid -->
+  <DMS_Make_Ape.label>组装猿人</DMS_Make_Ape.label>
+  <!-- EN: Gestate an Ape Automatroid. -->
+  <DMS_Make_Ape.description>组装一架猿人机兵，作为一种技术验证机体。能够很好的同时操控中型与重型的机兵武器</DMS_Make_Ape.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Ape.jobString>组装机械体中</DMS_Make_Ape.jobString>
+  
+  <!-- EN: Gestate Arquebusier -->
+  <DMS_Make_Arquebusier.label>组装火枪手</DMS_Make_Arquebusier.label>
+  <!-- EN: Gestate a arquebusier mechanoid, the standard version of mechanized soldiers with the ability to operate most common weapons. -->
+  <DMS_Make_Arquebusier.description>组装火枪手，一种能够操作大多数常见武器的制式机兵。</DMS_Make_Arquebusier.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Arquebusier.jobString>组装机械体中</DMS_Make_Arquebusier.jobString>
+  
+  <!-- EN: Gestate a Battle Friend Automatroid -->
+  <DMS_Make_BattleFrame.label>组装战斗框架</DMS_Make_BattleFrame.label>
+  <!-- EN: Gestate a battle friend Automatroid. -->
+  <DMS_Make_BattleFrame.description>组装战斗框架，一种具有较高战斗负载与反应速度的多用途框架机器人</DMS_Make_BattleFrame.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_BattleFrame.jobString>组装机械体中</DMS_Make_BattleFrame.jobString>
+  
+  <!-- EN: Gestate an Escort Lifter Automatroid -->
+  <DMS_Make_EscortLifter.label>组装运输框架</DMS_Make_EscortLifter.label>
+  <!-- EN: Gestate an Escort Lifter Automatroid. -->
+  <DMS_Make_EscortLifter.description>组装运输框架，战斗框架的后勤运输改造型号</DMS_Make_EscortLifter.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_EscortLifter.jobString>组装机械体中</DMS_Make_EscortLifter.jobString>
+  
+  <!-- EN: Gestate a Field Command Automatroid -->
+  <DMS_Make_FieldCommand.label>组装中继指挥</DMS_Make_FieldCommand.label>
+  <!-- EN: Gestate a Field Command Automatroid. -->
+  <DMS_Make_FieldCommand.description>组装中继指挥，一种安装了全向天线的机械师中继指挥型号，具有较大的指挥范围于一定的可改装性。</DMS_Make_FieldCommand.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_FieldCommand.jobString>组装机械体中</DMS_Make_FieldCommand.jobString>
+  
+  <!-- EN: Gestate Gladiator -->
+  <DMS_Make_Gladiator.label>组装斗士</DMS_Make_Gladiator.label>
+  <!-- EN: Gestate a gladiator Automatroid. -->
+  <DMS_Make_Gladiator.description>组装斗士，一种在冷兵器格斗战特化的浪人泛生型号。</DMS_Make_Gladiator.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Gladiator.jobString>组装机械体中</DMS_Make_Gladiator.jobString>
+  
+  <!-- EN: Gestate Jaeger -->
+  <DMS_Make_Jaeger.label>组装猎兵</DMS_Make_Jaeger.label>
+  <!-- EN: Gestate a Jaeger Automatroid. -->
+  <DMS_Make_Jaeger.description>组装猎兵，一种火枪手的匿踪作战特化型号</DMS_Make_Jaeger.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Jaeger.jobString>组装机械体中</DMS_Make_Jaeger.jobString>
+  
+  <!-- EN: Gestate Phalanx -->
+  <DMS_Make_Phalanx.label>组装方阵步兵</DMS_Make_Phalanx.label>
+  <!-- EN: Gestate a Phalanx Automatroid. -->
+  <DMS_Make_Phalanx.description>组装方阵步兵，浪人型的低成本量产辅助型号。</DMS_Make_Phalanx.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Phalanx.jobString>组装机械体中</DMS_Make_Phalanx.jobString>
+  
+  <!-- EN: Gestate Pioneer -->
+  <DMS_Make_Pioneer.label>组装先锋</DMS_Make_Pioneer.label>
+  <!-- EN: Gestate a pioneer Automatroid. -->
+  <DMS_Make_Pioneer.description>组装先锋机兵，一种用于辅助狙击手的支援机体。</DMS_Make_Pioneer.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Pioneer.jobString>组装机械体中</DMS_Make_Pioneer.jobString>
+  
+  <!-- EN: Gestate Protector -->
+  <DMS_Make_Protector.label>组装塔盾手</DMS_Make_Protector.label>
+  <!-- EN: Gestate a protector Automatroid. -->
+  <DMS_Make_Protector.description>组装浪人反恐型，集成了反恐防弹盾的攻坚用特殊型号，具有一面厚重的装甲盾且能使用炫光灯来使正面的敌人短暂失明。</DMS_Make_Protector.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Protector.jobString>组装机械体中</DMS_Make_Protector.jobString>
+  
+  <!-- EN: Gestate a Ronin -->
+  <DMS_Make_Ronin.label>组装浪人</DMS_Make_Ronin.label>
+  <!-- EN: Gestate a Ronin Automatroid. -->
+  <DMS_Make_Ronin.description>组装浪人机兵，一种在都市战中使用的人形机兵。使用次声波声纳作为巷战环境中的索敌方式，并能以此干扰生物敌人的感官系统。</DMS_Make_Ronin.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Ronin.jobString>组装机械体中</DMS_Make_Ronin.jobString>
+  
+  <!-- EN: Gestate a Shaft Worker Automatroid -->
+  <DMS_Make_ShaftWorker.label>组装工程驳机</DMS_Make_ShaftWorker.label>
+  <!-- EN: Gestate a shaft worker Automatroid. -->
+  <DMS_Make_ShaftWorker.description>组装工程驳机，一种用于后勤建设与开掘工作的战斗框架后期型改造型号。</DMS_Make_ShaftWorker.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_ShaftWorker.jobString>组装机械体中</DMS_Make_ShaftWorker.jobString>
+  
+  <!-- EN: Gestate Siegebreaker -->
+  <DMS_Make_Siegebreaker.label>组装袭城者</DMS_Make_Siegebreaker.label>
+  <!-- EN: Gestate a siegebreaker Automatroid. -->
+  <DMS_Make_Siegebreaker.description>组装袭城者机兵，一种安装了火箭发动机用以短距突击的重装甲机兵。</DMS_Make_Siegebreaker.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Siegebreaker.jobString>组装机械体中</DMS_Make_Siegebreaker.jobString>
+  
+  <!-- EN: Gestate Sniper -->
+  <DMS_Make_Sniper.label>组装狙击手</DMS_Make_Sniper.label>
+  <!-- EN: Gestate a Sniper Automatroid. -->
+  <DMS_Make_Sniper.description>组装火枪手狙击特化型，一种能够操纵重型狙击炮的长程狙击特化型机兵，本身能够作为一个长距离观测手，也可以单独进行高精度射击。</DMS_Make_Sniper.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Sniper.jobString>组装机械体中</DMS_Make_Sniper.jobString>
+  
+</LanguageData>

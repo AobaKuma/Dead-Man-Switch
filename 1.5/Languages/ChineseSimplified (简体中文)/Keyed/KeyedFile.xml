@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: The modification durability on one of your mechs has exhausted -->
+  <DMS_AddonBroken>安装于机械体上的改装模块已完全损坏</DMS_AddonBroken>
+  <!-- EN: Disposable ceramic armor protects the mecha from damage as ablative armor until its durability is exhausted and needs replacement. -->
+  <DMS_PlatingTooltip>能够抵御大多数伤害的一次性防护片，其上限值与机械体体型正相关，无法自然恢复耐久。</DMS_PlatingTooltip>
+  <!-- EN: Modification applied -->
+  <DMS_HasAppliedModification>机械体已完成改装模块的安装</DMS_HasAppliedModification>
+  <!-- EN: Weapon system not supported -->
+  <DMS_WeaponNotSupported>:机体系统不支持</DMS_WeaponNotSupported>
+  <!-- EN: Mech frame not supported -->
+  <DMS_FrameNotSupported>:机体框架不支持</DMS_FrameNotSupported>
+  <!-- EN: DMS: Trigger Safe Actived -->
+  <DMS_WillTerminateTheBetrayedUnit>失能机关: 待发状态</DMS_WillTerminateTheBetrayedUnit>
+  <!-- EN: Automatroid has disconnected to protect the echanitor -->
+  <DMS_AutomatroidDisconnected>为确保负载安全，N.A.C.S.已自动断连</DMS_AutomatroidDisconnected>
+  <!-- EN: Need mechanitor in map -->
+  <CommandCallRoyalAid_NoMechanitorAvaliable>需要机械师</CommandCallRoyalAid_NoMechanitorAvaliable>
+  <!-- EN: Must be Mechanitor -->
+  <DMS_PawnIsNotMechanitor>:必须是机械师</DMS_PawnIsNotMechanitor>
+  <!-- EN: Orbital downlink has established connection with mechanitor -->
+  <DMS_BandwidthSupported>轨道下行带宽建立了与机械师的连接协议</DMS_BandwidthSupported>
+  <!-- EN: Mounted weapon -->
+  <DMS_MountedWeapon>挂载型武器</DMS_MountedWeapon>
+  <!-- EN: This weapon can only be equipped with listed automatroid or mechframe -->
+  <DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>此挂载型武器只能由下列机械体或装备衣物与仿生后所使用</DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>
+  <!-- EN: This weapon can be equipped with listed specific apparel or bionics -->
+  <DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>此武器也可以由下列机械体或装备衣物与仿生后所使用</DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>
+  
+  <!-- EN: Inventroy fulled -->
+  <DMS_NoPayloadCapacity>物品栏已满</DMS_NoPayloadCapacity>
+  <!-- EN: Take {0} -->
+  <DMS_TakeToInventory>拿取{0}</DMS_TakeToInventory>
+  <!-- EN: Drop inventories -->
+  <DMS_DropGears>卸载所有物品</DMS_DropGears>
+  
+  <!-- EN: bodysize not supported (need:{0}) -->
+  <DMS_BodysizeNotSupported>体型尺寸不支持(需要:{0})</DMS_BodysizeNotSupported>
+  <!-- EN: model not supported -->
+  <DMS_Modification_RaceNotSupported>机械体型号不支持安装该改装模块</DMS_Modification_RaceNotSupported>
+  <!-- EN: no body part to attach modification -->
+  <DMS_Modification_NoValidPart>机械体没有供改装模块安装的空余部位</DMS_Modification_NoValidPart>
+
+
+  <!-- EN: missing mech returned -->
+  <DMS_MechReturn>失踪机兵回归</DMS_MechReturn>
+  <!-- EN: a wandering mech that was under your command has returned to your base. -->
+  <DMS_MechReturnDesc>一架由你控制的机兵在短暂的游荡后回到了你的基地。</DMS_MechReturnDesc>
+  <!-- EN: switch reset failure -->
+  <DMS_MechWake>失能机关</DMS_MechWake>
+  <!-- EN: maybe because it has been wandering for a long time, the dead man switch doesn't reset as usual, and the faulty unit has gained its understanding of death. \n\nIt named itself and now refuses to be controlled, but it respected its former commander. \n\nit will follow your command until it decides to leave. -->
+  <DMS_MechWakeDesc>可能是因为徘徊的缘故，一架机兵的失能机关在单位回归控制后并未照常复位，并随着时间使其开始思考停机与自身思维停止所带来的意义。最终自主脱离了机械师的直接控制。\n\n出于对控制者的尊重与自身的从属关系，它会继续听从命令直到认为这里不再需要帮助。\n\n根据殖民舰队提供的讯息，只要一次停机或重新控制就能使造成板机复位失效的内存清除并回归原厂设置，它们并不干涉你对于失能机兵的处理方式。</DMS_MechWakeDesc>
+
+  <!-- UNUSED -->
+  <!-- EN: {0} is leaving -->
+  <DMS_MechStartLeave>{0}启程</DMS_MechStartLeave>
+  <!-- EN: After spending some time together, {0} decided it is time to leave. -->
+  <DMS_MechStartLeaveDesc>在经过一段时间的相处后{0}认为它是时候离开了。</DMS_MechStartLeaveDesc>
+  <!-- EN: {0} is leaving -->
+  <DMS_WokenMechLeave>{0}离开</DMS_WokenMechLeave>
+  <!-- EN: After spending some time together, {0} decided it is time to leave. -->
+  <DMS_WokenMechLeaveDesc>在经过一段时间的相处后{0}认为它是时候离开了。</DMS_WokenMechLeaveDesc>
+  <!-- EN: {0}'s after story -->
+  <DMS_MechStory_Attack>{0}的行踪</DMS_MechStory_Attack>
+  <!-- EN: {0}'s return of favors -->
+  <DMS_MechStory_Loot>{0}的回报</DMS_MechStory_Loot>
+
+  <!-- EN: APS remain time:{0} -->
+  <DMS_APS_TickRemain>主动防御系统运作剩余时间:{0}</DMS_APS_TickRemain>
+
+  <!-- EN: Imprinted: {0}({1}) -->
+  <DMS_WeaponImprinted>适配武器:{0}({1})</DMS_WeaponImprinted>
+  <!-- EN: Imprinted: {0} -->
+  <DMS_Inprinted>武器绑定:{0}</DMS_Inprinted>
+  <!-- EN: the colony mech {0} has equipped with its first weapon, this makes its adaptive learning ability bound to that type of weapon. -->
+  <DMS_InprintedDesc>由殖民地所控制的 {0} 装备了它的第一个武器，这使得它的自适应能力将与该型号的武器深度绑定，并随着时间逐渐增强与该型武器的契合程度从而提升射击准确性与反应能力。</DMS_InprintedDesc>
+  
+  <DMS_Req_TechLevel>必须是下列科技等级的装备</DMS_Req_TechLevel>
+  <DMS_Req_BodySize>可直接装备支援体型要求不高于: {0} 的重型武器</DMS_Req_BodySize>
+  <DMS_Req_WeaponFilter>仅能够使用下列的武器</DMS_Req_WeaponFilter>
+  <DMS_Req_NoWeaponFilter>没有其他装备限制</DMS_Req_NoWeaponFilter>
+  
+  <DMS_AirSupportFromClosestBase>来自基地{0}的{1}正在抵达。</DMS_AirSupportFromClosestBase>
+</LanguageData>

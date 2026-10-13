@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HediffDef MayRequire="Ludeon.Rimworld.Biotech">
+    <defName>DMS_OrbitalService</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Supported Bandwidth</label>
+    <description>Orbital support ships from colonial fleets are providing bandwidth to allied mechanitors.</description>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+    <initialSeverity>0</initialSeverity>
+    <levelIsQuantity>true</levelIsQuantity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+    </comps>
+    <stages>
+      <li>
+        <label>none</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+        <label>corporal</label>
+        <becomeVisible>true</becomeVisible>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <MechBandwidth>4</MechBandwidth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>pre-sergeant</label>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+          <MechBandwidth>8</MechBandwidth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>sergeant</label>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+          <MechBandwidth>12</MechBandwidth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>warrant officer</label>
+        <minSeverity>4</minSeverity>
+        <statOffsets>
+          <MechBandwidth>16</MechBandwidth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>lieutenant</label>
+        <minSeverity>5</minSeverity>
+        <statOffsets>
+          <MechBandwidth>20</MechBandwidth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>captain</label>
+        <minSeverity>6</minSeverity>
+        <statOffsets>
+          <MechBandwidth>24</MechBandwidth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>major</label>
+        <minSeverity>7</minSeverity>
+        <statOffsets>
+          <MechBandwidth>28</MechBandwidth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>colonel</label>
+        <minSeverity>8</minSeverity>
+        <statOffsets>
+          <MechBandwidth>32</MechBandwidth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>brigadier</label>
+        <minSeverity>9</minSeverity>
+        <statOffsets>
+          <MechBandwidth>36</MechBandwidth>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>
