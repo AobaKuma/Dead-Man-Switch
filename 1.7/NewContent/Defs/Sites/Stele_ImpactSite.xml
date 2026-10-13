@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <!-- ============================================================
+       石碑任務線的兩種站點（任務腳本在 Quests/DMS_Stele.xml）。
+       守軍都由 GenStep_FFFGarrisonedStructure 的 spawnDefenders 依站點威脅點數生成（先鋒殘餘），
+       版面依 useTag 挑選，在 GenStructures/SteleQuests/。
+
+       The stele line's two sites (quest scripts in Quests/DMS_Stele.xml). Both garrisons come from
+       GenStep_FFFGarrisonedStructure's spawnDefenders, scaled by the site's threat points (Legacy remnants);
+       layouts are picked by useTag from GenStructures/SteleQuests/.
+       ============================================================ -->
+
+  <!-- 撞擊地點：墜落的密鑰艙與先鋒搭起的掩體，密鑰在掩體中央。
+       Impact site: the crashed glyph capsule and the shelter the pioneers built over it; the glyph sits inside. -->
   <SitePartDef>
     <defName>DMS_SteleKey_ImpactSite</defName>
     <label>impact site</label>
-    <description>A colonial fleet broadcast antenna.</description>
-    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
-    <expandingIconTexture>UI/Faction/VanguardIcon</expandingIconTexture>
-    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <description>The crash site of a fleet glyph capsule. The pioneers sheltered it where it fell, and Legacy remnants still guard it.</description>
+    <siteTexture>UI/Faction/LegacyIcon</siteTexture>
+    <expandingIconTexture>UI/Faction/LegacyIcon</expandingIconTexture>
     <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
-    <considerEnteringAsAttack>false</considerEnteringAsAttack>
-    <minMapSize>(250, 0, 250)</minMapSize>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <minMapSize>(200, 0, 200)</minMapSize>
     <gravShipsCanLandOn>false</gravShipsCanLandOn>
+    <approachOrderString>Assault {0}</approachOrderString>
+    <approachingReportString>Assaulting {0}.</approachingReportString>
     <tags>
       <li>DMS_SteleKey</li>
     </tags>
@@ -20,13 +37,65 @@
   <GenStepDef>
     <defName>DMS_SteleKey_ImpactSite</defName>
     <linkWithSite>DMS_SteleKey_ImpactSite</linkWithSite>
-    <order>1460</order>
-    <genStep Class="Fortified.Structures.GenStep_FFFStructureDef">
-      <structureDefs>
-        <li>DMS_ImpactSite_A</li>
-      </structureDefs>
-      <forcedFaction>DMS_Legacy</forcedFaction>
-      <allowedRotation>All</allowedRotation>
+    <order>400</order>
+    <genStep Class="Fortified.Structures.GenStep_FFFGarrisonedStructure">
+      <useTag>DMS_SteleImpactSite</useTag>
+      <randomOffset>0~2</randomOffset>
+      <randomRotation>true</randomRotation>
+      <filthTypes>
+        <li>Filth_RubbleBuilding</li>
+        <li>Filth_MachineBits</li>
+        <li>Filth_Ash</li>
+      </filthTypes>
+      <debrisDef>ChunkSlagSteel</debrisDef>
+      <debrisCount>10~16</debrisCount>
+      <scatterRadius>18</scatterRadius>
+      <spawnDefenders>true</spawnDefenders>
+      <defendRadius>16</defendRadius>
+    </genStep>
+  </GenStepDef>
+
+  <!-- 石碑封藏庫：最終站點。石碑在封藏庫正中央，守軍點數 ×1.25（見任務的 pointsFactor）。
+       Stele vault: the final site. The stele stands in the middle of the vault; garrison points ×1.25 (the quest's pointsFactor). -->
+  <SitePartDef>
+    <defName>DMS_SteleVault</defName>
+    <label>stele vault</label>
+    <description>A sealed vault holding a buried stele, guarded by Legacy remnants.</description>
+    <siteTexture>UI/Faction/LegacyIcon</siteTexture>
+    <expandingIconTexture>UI/Faction/LegacyIcon</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <minMapSize>(200, 0, 200)</minMapSize>
+    <!-- 石碑重 500 kg，允許重力艦降落，給有重力艦的玩家一條運回來的路。
+         The stele weighs 500 kg; gravships may land, giving gravship players a way to haul it back. -->
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <approachOrderString>Assault {0}</approachOrderString>
+    <approachingReportString>Assaulting {0}.</approachingReportString>
+    <tags>
+      <li>DMS_SteleVault</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMS_SteleVault</defName>
+    <linkWithSite>DMS_SteleVault</linkWithSite>
+    <order>400</order>
+    <genStep Class="Fortified.Structures.GenStep_FFFGarrisonedStructure">
+      <useTag>DMS_SteleVault</useTag>
+      <randomOffset>0~2</randomOffset>
+      <filthTypes>
+        <li>Filth_RubbleBuilding</li>
+        <li>Filth_RubbleRock</li>
+        <li>Filth_MachineBits</li>
+      </filthTypes>
+      <debrisDef>ChunkSlagSteel</debrisDef>
+      <debrisCount>6~10</debrisCount>
+      <scatterRadius>20</scatterRadius>
+      <spawnDefenders>true</spawnDefenders>
+      <defendRadius>18</defendRadius>
     </genStep>
   </GenStepDef>
 

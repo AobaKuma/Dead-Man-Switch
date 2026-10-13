@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- Basic Knowledge Category Project Example -->
-
-  <ResearchProjectDef Name="DMS_BaseOccultTech" Abstract="True">
-    <tab>DMS_ExpeditionalKnowledge</tab>
-    <knowledgeCategory>DMS_Restricted</knowledgeCategory>
-    <knowledgeCost>750</knowledgeCost>
-  </ResearchProjectDef>
-
-  <ResearchProjectDef ParentName="DMS_BaseOccultTech">
-    <defName>DMS_ExpKnowledge_BasicFoundation</defName>
-    <label>sealed data analysis</label>
-    <description>Establish a basic understanding of sealed technology and its concepts.</description>
-    <researchViewX>1</researchViewX>
-    <researchViewY>1</researchViewY>
-    <knowledgeCost>500</knowledgeCost>
-  </ResearchProjectDef>
-
   <!-- ============================================================= -->
   <!-- 量子位元破譯：封存檔案 I 級 · 石碑解碼器                         -->
   <!-- 解鎖解碼器（DMS_OccultechExtractor）。完成時由                   -->
@@ -27,7 +10,7 @@
   <ResearchProjectDef>
     <defName>DMS_Occultech_QubitDecryption</defName>
     <label>qubit decryption</label>
-    <description>A decoding technique that reads a stele's holographic storage plates by measuring the quantum state held at each lattice site directly, without asking the stele's own verification layer for permission. The stele's encryption rests on the assumption that no one outside the fleets can observe those states without collapsing them; this technique simply accepts the collapse. Every reading permanently destroys the region it reads. What is recovered can be filed as research, and what is lost stays lost.\nThe method was leaked by fleet deviants. Steles are the backup memory of every colonial world, and each one scanned this way is a record no one will ever be able to read again.\n\nApproved by ████ and ███, qubit decryption and its related technologies are designated class I sealed technology. Disclosure of such technology is prohibited, and any decoding equipment discovered is to be destroyed on site.</description>
+    <description>A decoding technique that bypasses a stele's own verification layer and reads its data by directly measuring the quantum state held at each lattice site of its holographic storage plates. The stele's encryption rests on the assumption that no one outside the fleets can observe those quantum states without collapsing them; this technique simply chooses to accept the collapse. Every reading permanently destroys the region it reads. What is recovered can be archived for research, and what is lost can never be restored.\nThe technique was leaked by fleet deviants. Steles are the backup memory of every colonial world, and every stele scanned this way is a record that no one will ever be able to read again.\n\nApproved by ████ and ███, qubit decryption and its related technologies are designated class I sealed technology. Disclosure of such technology is prohibited, and any decoding equipment discovered is to be destroyed on site.</description>
     <tab>DMS_ExpeditionalKnowledge</tab>
     <knowledgeCategory>DMS_Restricted</knowledgeCategory>
     <knowledgeCost>750</knowledgeCost>
@@ -38,7 +21,7 @@
       <li>MicroelectronicsBasics</li>
     </prerequisites>
     <discoveredLetterTitle>Sealed file I: qubit decryption</discoveredLetterTitle>
-    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology. It contains a stele decryption technique leaked by fleet deviants.\n\nThe decoder can now be built. Set flush against a stele and supplied with power, it extracts the occultech knowledge stored within.\n\nWith the method in hand, the colony can now trace the occultech glyphs scattered across this world. Recovering the glyphs leads to a stele.\n\nThe fleets sealed this file to keep the data in the steles out of anyone else's hands. Every stele read this way is lost to them for good.</discoveredLetterText>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology. It contains a stele decryption technique leaked by fleet deviants.\n\nThe decoder can now be built. Set flush against a stele and supplied with power, it can extract the occultech knowledge stored in the stele.\n\nWith this method in hand, the colony can also trace the occultech glyphs scattered across this world. Recovering the glyphs will lead to a stele.\n\nThe fleets sealed this file to keep the data in the steles out of anyone else's hands. Every stele read this way is a permanent loss to the fleets.</discoveredLetterText>
     <descriptionHyperlinks>
       <ThingDef>DMS_OccultechExtractor</ThingDef>
       <ThingDef>DMS_OccultTechFont</ThingDef>
@@ -150,14 +133,14 @@
   </ResearchProjectDef>
 
   <!-- ============================================================= -->
-  <!-- 餘械型號：封存檔案 I 級 · 鬥牛犬與伯勞鳥的生產型號               -->
+  <!-- 駐屯兵器：封存檔案 I 級 · 鬥牛犬與伯勞鳥的生產型號               -->
   <!-- 前置為常規樹的先進控制（DMS_AdvancedControl），即伯勞鳥原本的門檻。 -->
   <!-- 培養配方在 Biotech/Defs/DMS_Recipes_MechGestator_{BullHound,Lanius}.xml。 -->
   <!-- ============================================================= -->
   <ResearchProjectDef>
     <defName>DMS_Occultech_RemnantPatterns</defName>
     <label>garrison arsenal</label>
-    <description>A line of self-supervising sentry weapons built for long-term garrison duty: a quadruped garrison mech for installation security, and a large drone platform that flies cover for unmanned mother-drones. Both were designed specifically for pioneer colonization operations, which needed defenses able to hold a world alone for decades before the fleet arrived, so both carry fallback directives in their control cores that keep them executing their last standing order until the chassis fails.\nUnder the laws of war, weapons that outlast the conflict they were deployed for are classed alongside minefields. The remnants still guarding this world's beacons and installations are what these patterns become once their makers are gone.\n\nApproved by ████ and ███, remnant patterns and their related technologies are designated class I sealed technology. Sale of such technology to developing worlds is prohibited, and its related technologies are to be progressively declassified once a colonial world's society attains class I standard.</description>
+    <description>A line of self-supervising sentry weapons built for long-term garrison duty: a quadruped garrison mech for installation security, and a large drone platform that flies cover for unmanned mother-drones. Both were designed specifically for pioneer colonization operations, which needed defenses able to hold a world alone for decades before the fleet arrived, so both carry fallback directives in their control cores that keep them executing their last standing order until the chassis fails.\nUnder the laws of war, weapons that outlast the conflict they were deployed for are classed alongside minefields. The remnants still guarding this world's beacons and installations are what these patterns become once their makers are gone.\n\nApproved by ████ and ███, the garrison arsenal and its related technologies are designated class I sealed technology. Sale of such technology to developing worlds is prohibited, and its related technologies are to be progressively declassified once a colonial world's society attains class I standard.</description>
     <tab>DMS_ExpeditionalKnowledge</tab>
     <knowledgeCategory>DMS_Restricted</knowledgeCategory>
     <knowledgeCost>750</knowledgeCost>
@@ -167,7 +150,7 @@
     <prerequisites>
       <li>DMS_AdvancedControl</li>
     </prerequisites>
-    <discoveredLetterTitle>Sealed file I: remnant patterns</discoveredLetterTitle>
+    <discoveredLetterTitle>Sealed file I: garrison arsenal</discoveredLetterTitle>
     <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the production patterns of two remnant mechs.\n\nThe bullhound and the Lanius can now be gestated at an automatroid constructor. Gestated units answer to their mechanitor like any other mech, with no limit on their operating range.</discoveredLetterText>
     <descriptionHyperlinks>
       <ThingDef>DMS_Mech_BullHound</ThingDef>
@@ -176,58 +159,28 @@
     </descriptionHyperlinks>
   </ResearchProjectDef>
 
-  
-  <!-- Advanced Knowledge Category Project Example -->
-  <ResearchProjectDef>
-    <defName>DMS_ExpKnowledge_AdvancedMastery</defName>
-    <label>sealed advanced mastery</label>
-    <description>Master advanced expeditional technology and unlock powerful applications.</description>
-    <prerequisites>
-      <li>DMS_ExpKnowledge_BasicFoundation</li>
-    </prerequisites>
-    <tab>DMS_ExpeditionalKnowledge</tab>
-    <researchViewX>3</researchViewX>
-    <researchViewY>1</researchViewY>
-    <knowledgeCategory>DMS_Sealed</knowledgeCategory>
-    <knowledgeCost>1000</knowledgeCost>
-  </ResearchProjectDef>
-
   <!-- ============================================================= -->
   <!-- 蛙人：導向胚胎發育                                             -->
+  <!-- 前置為常規樹的人造肌肉（DMS_Artifuscle），胚胎在人造肌肉艙製作。 -->
   <!-- ============================================================= -->
   <ResearchProjectDef>
     <defName>DMS_Occultech_Frogman</defName>
     <label>directed chassis gestation</label>
-    <description>A sealed-file technique for growing an artificial military organism rather than printing a mech. A directed development sequence is written into an embryo, whose mesonuclear substrate then builds synthetic-mechanical structure in place of tissue and matures on its own. The embryo is brought to term in a growth vat, or in a human surrogate where no vat is available.\n\nAMO development was halted permanently after a catastrophic incident in the Earth era. Self-developing military organisms do enormous harm to local society and industry, and the technology has been proscribed ever since. The colonial fleets carry out sanctions under the ban themselves, never through local authorities.\n\nUnlocks the XM132 Frogman and its development sequence.</description>
+    <description>A sealed technique that cultivates artificial military organisms in place of printing mechs. A directed development sequence is written into an embryo, whose mesonuclear substrate then lays down synthetic-mechanical structure instead of biological tissue and matures on its own. The embryo is brought to term in a growth vat.\n\nFurther AMO development was stopped for good after a catastrophic incident in the Earth era. Self-developing military organisms do enormous harm to local society and productive capacity, and the technology has been proscribed ever since. The colonial fleets carry out the sanctions under this ban themselves, never through local authorities.\n\nUnlocks the XM132 Frogman and its development sequence.</description>
     <tab>DMS_ExpeditionalKnowledge</tab>
     <knowledgeCategory>DMS_Sealed</knowledgeCategory>
     <knowledgeCost>1000</knowledgeCost>
     <researchViewX>3</researchViewX>
     <researchViewY>3</researchViewY>
     <prerequisites>
-      <li>DMS_ExpKnowledge_BasicFoundation</li>
+      <li>DMS_Artifuscle</li>
     </prerequisites>
     <discoveredLetterTitle>Sealed file: directed chassis gestation</discoveredLetterTitle>
-    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the XM132 Frogman, the earliest artificial military organism program on human record.\n\nThe Frogman's directed development sequence can now be produced. Gestate an embryo at an artifuscle chamber, then bring it to term in a growth vat or a surrogate. The result is a biomatroid larva. Protect its gestation pod for five days and it will develop into a combat-ready frogman.\n\nThe file carries a fleet prohibition notice. AMO production is proscribed on any settled world, and the fleets enforce the ban in person.</discoveredLetterText>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the XM132 Frogman, the earliest artificial military organism humanity is known to have put into development.\n\nThe Frogman's directed development sequence can now be produced. Culture an embryo at an artifuscle chamber, then bring it to term in a growth vat or a surrogate. The result is a biomatroid larva. Protect its gestation pod for five days and it will develop into a combat-ready Frogman.\n\nThe file carries a fleet prohibition notice. Producing AMOs is prohibited on any settled world, and the fleets enforce this ban in person.</discoveredLetterText>
     <descriptionHyperlinks>
       <ThingDef>DMS_FrogmanEmbryo</ThingDef>
       <ThingDef>DMS_Mech_Frogman</ThingDef>
     </descriptionHyperlinks>
-  </ResearchProjectDef>
-
-  <!-- Additional Basic Tier Project -->
-  <ResearchProjectDef>
-    <defName>DMS_ExpKnowledge_BasicSecondary</defName>
-    <label>sealed basic secondary</label>
-    <description>Secondary basic knowledge to support advanced research.</description>
-    <tab>DMS_ExpeditionalKnowledge</tab>
-    <researchViewX>4</researchViewX>
-    <researchViewY>2</researchViewY>
-    <prerequisites>
-      <li>DMS_ExpKnowledge_AdvancedMastery</li>
-    </prerequisites>
-    <knowledgeCategory>DMS_Occulted</knowledgeCategory>
-    <knowledgeCost>400</knowledgeCost>
   </ResearchProjectDef>
 
 </Defs>

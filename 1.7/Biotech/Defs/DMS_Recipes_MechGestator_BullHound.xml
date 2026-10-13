@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- 鬥牛犬 BullHound：重型四足駐防機兵，由 I 級封存檔案「餘械型號」解鎖，使用小型培育艙。
+  <!-- 鬥牛犬 BullHound：重型四足駐防機兵，由 I 級封存檔案「駐屯兵器」解鎖，使用小型培育艙。
        兩種型號各一個配方：背掛武裝固定在種族上，培育出來就帶著，不另外消耗武器。
        噴火型多吃一份化合燃料（同壁虎）。
-       BullHound: heavy quadruped garrison mech, unlocked by the class I sealed file "remnant patterns", small gestator.
+       BullHound: heavy quadruped garrison mech, unlocked by the class I sealed file "garrison arsenal", small gestator.
        One recipe per pattern: the back mount is part of the race, so the unit comes out armed and no weapon is consumed.
        The flamer pattern also takes chemfuel (as the Gecko does). -->
   <RecipeDef Name="DMS_BullHoundRecipeBase" ParentName="DMS_HeavyMechanoidRecipe" Abstract="True">

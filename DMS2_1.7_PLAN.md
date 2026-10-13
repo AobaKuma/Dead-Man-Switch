@@ -79,7 +79,7 @@ Dead-Man-Switch/
    ├─ Textures/              # 新版貼圖（DMS2 根目錄的 1,086 個檔案）
    ├─ Defs/ Patches/ Languages/ NewContent/
    ├─ Royalty/ Ideology/ Biotech/
-   ├─ CE/                    # 保留但 v1.7 不載入（CE 尚無 1.7）
+   ├─ CE/                    # Combat Extended 相容（CE 1.6 版可在 1.7 執行，已載入）
    └─ Mod/                   # 各相容模組
 ```
 
@@ -167,7 +167,7 @@ git mv Textures 1.6/Shared/Textures
 	<li IfModActive="Ludeon.RimWorld.Ideology">1.7/Ideology</li>
 	<li IfModActive="Ludeon.RimWorld.Biotech">1.7/Biotech</li>
 
-	<!-- Combat Extended 尚無 1.7 版，1.7/CE 暫不載入 -->
+	<li IfModActive="CETeam.CombatExtended,CETeam.CombatExtended_steam">1.7/CE</li>
 	<li IfModActive="hlx.gestaltengine,hlx.gestaltengine_steam,mlie.gestaltengine,mlie.gestaltengine_steam,mlie.reinforcedmechanoid2,mlie.reinforcedmechanoid2_steam">1.7/Mod/GestaltEngine</li>
 
 	<li IfModActive="vanillaracesexpanded.android,vanillaracesexpanded.android_steam">1.7/Mod/VREA</li>
@@ -241,7 +241,7 @@ grep -c -a ".NETCoreApp,Version=v10.0" 1.7/Assemblies/DMS.dll   # 應 ≥ 1；0 
 | `.rimignore` | 在 `*.zip` 後加 `!Assets.zip`，並新增 `Assets.zip.*`（同 FFF 的做法） |
 | `.gitignore` | 新增 `Assets.zip`、`Assets.zip.*` |
 | `README.md` | 路徑 `1.6/` → `1.7/`、建置需求改為 .NET 10、載入資料夾說明、1.6 凍結政策 |
-| `1.7/CE/` | 保留，等 CE 推出 1.7 後驗證補丁，再加進 `v1.7` |
+| `1.7/CE/` | 2026-10-13 確認 CE 1.6 版可在 1.7 執行，已加進 `v1.7` |
 | `1.7/Mod/*` | 保持條件載入；各相容模組推出 1.7 版時再逐一驗證（它們沒更新前不會被啟用，不影響載入） |
 
 ### 階段 6：測試
@@ -302,7 +302,7 @@ diff <(tr -d '\r' < "$WS/LoadFolders.xml" | sed -n '/<v1.4>/,/<\/v1.6>/p') <(tr 
   ```
 - **1.6 hotfix**：從 `dms-1.8.27-final` 開分支修改，修好後用 `git checkout <hotfix> -- 1.6` 帶回主線（注意不要蓋掉 `1.6/Shared`），再打新標籤。
 - FFF 每次改版時，確認 1.6 XML 引用的 `Fortified.*` 型別仍然存在（可用本次盤點的掃描方式）。
-- CE 推出 1.7 後：驗證 `1.7/CE`，再加進 `v1.7`。
+- CE 推出 1.7 專用版後：重新驗證 `1.7/CE` 的補丁。
 
 ---
 

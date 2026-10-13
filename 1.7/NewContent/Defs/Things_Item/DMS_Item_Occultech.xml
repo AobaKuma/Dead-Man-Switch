@@ -34,7 +34,7 @@
     <defName>DMS_OccultechKey</defName>
     <label>occultech glyph</label>
     <thingClass>DMS.OccultechKey</thingClass>
-    <description>TODO</description>
+    <description>A palm-sized cipher plate in a sealed casing. Each glyph carries one fragment of the authentication key for a stele buried beneath this world. The colonial fleets split every stele's key across several glyphs and scatter them, so no single find can open one.\n\nRead as a full set with qubit decryption, the glyphs resolve where their stele lies and how to break its seal. The reading collapses their quantum states, and the glyphs are spent.</description>
     <graphicData>
       <texPath>Things/Resource/DMS_OccultechGlyph</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -127,7 +127,12 @@
     <comps>
       <li Class="Fortified.CompProperties_UseEffect_DiscoverResearch">
         <researchProjects>
-          <li>DMS_ExpKnowledge_BasicFoundation</li>
+          <li>DMS_Occultech_QubitDecryption</li>
+          <li>DMS_Occultech_BionicSuitHeavy</li>
+          <li>DMS_Occultech_GestaltEngine</li>
+          <li>DMS_Occultech_Biosynthesis</li>
+          <li>DMS_Occultech_Subsonic</li>
+          <li>DMS_Occultech_RemnantPatterns</li>
         </researchProjects>
         <progressAmount>150</progressAmount>
         <fallbackXpAmount>1500</fallbackXpAmount>
@@ -135,7 +140,7 @@
     </comps>
   </ThingDef>
 
-  <!-- 封存級：中階，對應 DMS_Sealed 類別，目前實裝的 Occultech 專案都在這一階 -->
+  <!-- 封存級：中階，對應 DMS_Sealed 類別 -->
   <ThingDef ParentName="DMS_BaseDataCache">
     <defName>DMS_DataCache_Sealed</defName>
     <label>sealed data cache</label>
@@ -152,14 +157,7 @@
     <comps>
       <li Class="Fortified.CompProperties_UseEffect_DiscoverResearch">
         <researchProjects>
-          <li>DMS_ExpKnowledge_AdvancedMastery</li>
-          <li>DMS_Occultech_QubitDecryption</li>
           <li>DMS_Occultech_Frogman</li>
-          <li>DMS_Occultech_BionicSuitHeavy</li>
-          <li>DMS_Occultech_GestaltEngine</li>
-          <li>DMS_Occultech_Biosynthesis</li>
-          <li>DMS_Occultech_Subsonic</li>
-          <li>DMS_Occultech_RemnantPatterns</li>
         </researchProjects>
         <progressAmount>250</progressAmount>
         <fallbackXpAmount>2000</fallbackXpAmount>
@@ -168,6 +166,7 @@
   </ThingDef>
 
   <!-- 禁閉級：最高階，對應 DMS_Occulted 類別。不進物資箱，只從任務獎勵取得。 -->
+  <!-- TODO：目前還沒有 Occulted 類別的專案，暫時解封封存級的蛙人（清單不可為空，否則 ConfigError）。加入禁閉級科技後換掉。 -->
   <ThingDef ParentName="DMS_BaseDataCache">
     <defName>DMS_DataCache_Occulted</defName>
     <label>occulted data cache</label>
@@ -184,7 +183,7 @@
     <comps>
       <li Class="Fortified.CompProperties_UseEffect_DiscoverResearch">
         <researchProjects>
-          <li>DMS_ExpKnowledge_BasicSecondary</li>
+          <li>DMS_Occultech_Frogman</li>
         </researchProjects>
         <progressAmount>400</progressAmount>
         <fallbackXpAmount>3000</fallbackXpAmount>

@@ -1,64 +1,88 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
+  <!-- ============================================================
+       撞擊地點（DMS_SteleImpactSite）：15x15。正中央是先鋒搭在墜落點上的 7x7 鎢鋼掩體，四面各一扇自動門，
+       密鑰在掩體正中央；外圍散落兩塊密鑰艙殘骸（原版 ShipChunk）。守軍與殘渣由 GenStep 生成。
+
+       Impact site (DMS_SteleImpactSite): 15x15. In the middle is the 7x7 tungsteel shelter the pioneers built over
+       the crash point, an autodoor on each side and the glyph in its centre; two pieces of capsule wreckage
+       (vanilla ShipChunk) lie outside. Garrison and debris come from the GenStep.
+
+       座標 / Coordinates: Rect 的 pos 是左下角；Thing 的 pos 是物件位置（2x2 佔 pos 與 pos+1）。
+       Rect pos is the lower-left corner; Thing pos is the thing's position (a 2x2 covers pos and pos+1).
+       ============================================================ -->
   <Fortified.Structures.FFF_StructureDef>
     <defName>DMS_ImpactSite_A</defName>
-    <size>(7, 7)</size>
+    <label>impact site</label>
+    <size>(15, 15)</size>
     <disableSuggestedRoof>True</disableSuggestedRoof>
     <elements>
+
+      <!-- 掩體地面 / Shelter floor -->
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(4, 0, 4)</pos>
+        <size>(7, 7)</size>
+      </li>
+
+      <!-- 掩體牆，四面中間留門 / Shelter walls, a gap mid-side for each door -->
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>Wall</def>
-        <pos>(0, 0, 0)</pos>
+        <pos>(4, 0, 4)</pos>
         <size>(3, 1)</size>
         <stuff>Tungsteel</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>Wall</def>
-        <pos>(0, 0, 6)</pos>
+        <pos>(8, 0, 4)</pos>
         <size>(3, 1)</size>
         <stuff>Tungsteel</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>Wall</def>
-        <pos>(4, 0, 0)</pos>
+        <pos>(4, 0, 10)</pos>
         <size>(3, 1)</size>
         <stuff>Tungsteel</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>Wall</def>
-        <pos>(4, 0, 6)</pos>
+        <pos>(8, 0, 10)</pos>
         <size>(3, 1)</size>
         <stuff>Tungsteel</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>Wall</def>
-        <pos>(0, 0, 1)</pos>
+        <pos>(4, 0, 5)</pos>
         <size>(1, 2)</size>
         <stuff>Tungsteel</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>Wall</def>
-        <pos>(0, 0, 4)</pos>
+        <pos>(4, 0, 8)</pos>
         <size>(1, 2)</size>
         <stuff>Tungsteel</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>Wall</def>
-        <pos>(6, 0, 1)</pos>
+        <pos>(10, 0, 5)</pos>
         <size>(1, 2)</size>
         <stuff>Tungsteel</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>Wall</def>
-        <pos>(6, 0, 4)</pos>
+        <pos>(10, 0, 8)</pos>
         <size>(1, 2)</size>
         <stuff>Tungsteel</stuff>
       </li>
+
+      <!-- 門：東西向牆用 rot 0，南北向牆用 rot 1 / Doors: rot 0 in east-west walls, rot 1 in north-south walls -->
       <li Class="Fortified.Structures.FFF_Element_ThingScatter">
         <def>Autodoor</def>
         <stuff>Tungsteel</stuff>
         <posList>
-          <li>(3, 0, 0)</li>
-          <li>(3, 0, 6)</li>
+          <li>(7, 0, 4)</li>
+          <li>(7, 0, 10)</li>
         </posList>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingScatter">
@@ -66,19 +90,28 @@
         <rot>1</rot>
         <stuff>Tungsteel</stuff>
         <posList>
-          <li>(0, 0, 3)</li>
-          <li>(6, 0, 3)</li>
+          <li>(4, 0, 7)</li>
+          <li>(10, 0, 7)</li>
         </posList>
       </li>
+
+      <!-- 密鑰 / The glyph -->
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>DMS_OccultechKey</def>
-        <pos>(3, 0, 3)</pos>
+        <pos>(7, 0, 7)</pos>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
-        <def>Concrete</def>
-        <pos>(0, 0, 0)</pos>
-        <size>(7, 7)</size>
+
+      <!-- 密鑰艙殘骸 / Capsule wreckage -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>ShipChunk</def>
+        <posList>
+          <li>(1, 0, 11)</li>
+          <li>(12, 0, 1)</li>
+        </posList>
       </li>
     </elements>
+    <tags>
+      <li>DMS_SteleImpactSite</li>
+    </tags>
   </Fortified.Structures.FFF_StructureDef>
 </Defs>

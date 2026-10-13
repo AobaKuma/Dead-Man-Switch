@@ -240,17 +240,24 @@
                 </weaponTags>
             </li>
 
+            <!-- these two inherit tools from DMS_AutomatroidGun; add an empty node so the replace below matches them-->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="DMS_MiniMachineGun" or defName="DMS_SniperGrenadeLauncher"]</xpath>
+                <value>
+                    <tools />
+                </value>
+            </li>
+
             <!-- patch tools-->
             <li Class="PatchOperationReplace">
                 <xpath>
-                    Defs/ThingDef[defName="
-                    DMS_MiniMachineGun" or
+                    Defs/ThingDef[defName="DMS_MiniMachineGun" or
                     defName="DMS_SurvivalRifle" or
                     defName="DMS_ElephantGun" or
                     defName="DMS_SniperGrenadeLauncher"]/tools
                 </xpath>
                 <value>
-                    <tools>
+                    <tools Inherit="False">
                         <li Class="CombatExtended.ToolCE">
                             <label>stock</label>
                             <capacities>

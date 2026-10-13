@@ -94,7 +94,7 @@
 ### 選用相容（透過 `LoadFolders.xml` 條件載入）
 Royalty、Ideology、Odyssey、Combat Extended、Gestalt Engine / Reinforced Mechanoid 2、Vanilla Races Expanded – Android、Vanilla Factions Expanded – Pirates、RimLanguage、Ancient Urban Ruins、PLA Armory、PCA、Ratkin、Monolyn。
 
-> Combat Extended 尚無 1.7 版，`1.7/CE` 目前不載入；CE 推出 1.7 版並驗證補丁後，再加進 `LoadFolders.xml` 的 `v1.7`。
+> Combat Extended 目前沒有 1.7 專用資料夾，但 1.6 版可直接在 1.7 執行，`1.7/CE` 已加進 `LoadFolders.xml` 的 `v1.7`。
 
 ### 不相容
 - `mlie.rebound`
@@ -140,7 +140,7 @@ Dead-Man-Switch/
 │  ├─ Languages/          # English / 繁體中文 / 简体中文
 │  ├─ NewContent/         # 2.0 新內容：金庫、探索建築、站點、說書人、RaidWave…
 │  ├─ Royalty/ Ideology/ Biotech/   # DLC 條件內容
-│  ├─ CE/                 # Combat Extended 相容（CE 尚無 1.7，暫不載入）
+│  ├─ CE/                 # Combat Extended 相容
 │  └─ Mod/                # 其他模組相容（VREA、VFEP、AUR、PLAA、PCA、RK、Monolyn、RimLanguage、GestaltEngine、FTND、SaveOurShip2）
 └─ _Source/
    ├─ DMS/                # 目前的 C# 專案（DMS.csproj）

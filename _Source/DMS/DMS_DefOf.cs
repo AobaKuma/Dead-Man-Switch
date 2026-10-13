@@ -22,6 +22,8 @@ namespace DMS
         public static PawnKindDef DMS_Escort;
         public static ThingDef DMS_Shuttle;
         public static ThingDef DMS_OccultechKey;
+        // 人工肌肉:模組選項可關閉其腐爛(見 Patch_CompRottable_Active)
+        public static ThingDef Artifuscle;
 		public static TransportShipDef DMS_Ship_TransportShuttle;
         public static JobDef DMS_ProcessQuestWorkable;
         // 集群織鳥的無人機投放動作(見 JobDriver_DeployDroneSwarm)

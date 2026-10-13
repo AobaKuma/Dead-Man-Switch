@@ -2,10 +2,10 @@
 <Defs>
 
   <!-- ============================================================
-       鬥牛犬的封存犬舍：研究「餘械型號」之前唯一能取得鬥牛犬的途徑。
+       鬥牛犬的封存犬舍：研究「駐屯兵器」之前唯一能取得鬥牛犬的途徑。
        與其他封存艙一樣是斷電的正規軍封存，機械師可駭入收編；
        但作為駐防犬，警報響起時比其他搖籃更容易自己醒來咬人（triggerChance 較高）。
-       The BullHound kennel: found inside remnant installations, the only way to obtain a bullhound before "remnant patterns" is researched.
+       The BullHound kennel: found inside remnant installations, the only way to obtain a bullhound before "garrison arsenal" is researched.
        Like the other cradles it is a powered-down line-unit mothball a mechanitor can hack, but as the
        installation's watchdog it wakes hostile on an alarm far more readily (higher triggerChance).
        醒來後的 AI 同其他封存艙：警報回應（DMS.LordJob_AlarmResponse），見 DMS_Vault_MechCapsules.xml。

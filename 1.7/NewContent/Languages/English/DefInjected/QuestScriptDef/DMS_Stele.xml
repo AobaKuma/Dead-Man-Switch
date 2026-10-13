@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 石碑主線：[keysCount] 由 DMS.QuestNode_Root_Stele 提供。 -->
+  <DMS_Stele.questNameRules.rulesStrings>
+    <li>questName->The buried stele</li>
+  </DMS_Stele.questNameRules.rulesStrings>
+  <DMS_Stele.questDescriptionRules.rulesStrings>
+    <li>questDescription->With qubit decryption, our researchers can now pick up the faint authentication pulses of occultech glyphs: sealed cipher plates the colonial fleets dropped across this world. Each glyph carries one fragment of the key to a stele buried beneath this world, and the fleets scatter them so that no single find can open one.\n\nRecover [keysCount] glyphs and bring them home. Reading a full set will resolve where the stele lies and how to break its seal. Glyph sites will surface over time, and the Legacy remnants assigned to them are still standing guard.\n\nOnce the stele is home, a decoder set flush against it will extract its knowledge.</li>
+  </DMS_Stele.questDescriptionRules.rulesStrings>
+
+  <!-- 撞擊地點 -->
+  <DMS_SteleKey_ImpactSite.questNameRules.rulesStrings>
+    <li>questName->Impact site</li>
+  </DMS_SteleKey_ImpactSite.questNameRules.rulesStrings>
+  <DMS_SteleKey_ImpactSite.questDescriptionRules.rulesStrings>
+    <li>questDescription->Our receivers have caught the authentication pulse of an occultech glyph. The fleets deliver glyphs to pioneer installations by orbital drop, and this capsule never reached its beacon: it came down hard, and the pioneers sheltered it where it fell. The Legacy remnants assigned to the impact site are still holding it.\n\nThe glyph is inside the shelter at the centre of the site. Take it and bring it home. If we leave it behind, it will be lost with the site.</li>
+  </DMS_SteleKey_ImpactSite.questDescriptionRules.rulesStrings>
+  <DMS_SteleKey_ImpactSite.questContentRules.rulesStrings>
+    <li>letterLabelMapGenerated->Glyph capsule wreckage</li>
+    <li>letterTextMapGenerated->Wreckage from the glyph capsule is strewn around the pioneers' shelter, and the remnants guarding it have already noticed us.\n\nThe glyph is inside the shelter. It only counts once it is home.</li>
+  </DMS_SteleKey_ImpactSite.questContentRules.rulesStrings>
+  <DMS_SteleKey_ImpactSite.questAvailableLetterLabel>Occultech glyph found: Impact site</DMS_SteleKey_ImpactSite.questAvailableLetterLabel>
+
+  <!-- 石碑封藏庫：保留 (retry==True/False) 條件；[steleMass] 由 DMS.QuestNode_Root_SteleVault 提供。 -->
+  <DMS_SteleVault.questNameRules.rulesStrings>
+    <li>questName->Stele vault</li>
+  </DMS_SteleVault.questNameRules.rulesStrings>
+  <DMS_SteleVault.questDescriptionRules.rulesStrings>
+    <li>questDescription(retry==False)->Our researchers have read the full set of occultech glyphs. The reading collapsed their quantum states and the glyphs are spent, but the cipher they held has resolved: a stele lies buried in a sealed vault at the marked location, still guarded by Legacy remnants.\n\n[vaultInstructions]</li>
+    <li>questDescription(retry==True)->The resolved glyph cipher still holds. With the last stele lost, it points to the next one: another sealed vault under Legacy guard, at the marked location.\n\n[vaultInstructions]</li>
+    <li>vaultInstructions->Clear the vault, claim the stele, uninstall it and bring it home. It weighs [steleMass] kg, so plan the transport. If we leave it behind, it will be lost with the site.</li>
+  </DMS_SteleVault.questDescriptionRules.rulesStrings>
+  <DMS_SteleVault.questContentRules.rulesStrings>
+    <li>letterLabelMapGenerated->Stele vault</li>
+    <li>letterTextMapGenerated->The stele stands at the centre of the vault, and the remnants guarding it are already moving.\n\nOnce the area is clear, claim the stele and uninstall it. It must leave this site with us.</li>
+  </DMS_SteleVault.questContentRules.rulesStrings>
+  <DMS_SteleVault.questAvailableLetterLabel>Stele located: Stele vault</DMS_SteleVault.questAvailableLetterLabel>
+
+</LanguageData>

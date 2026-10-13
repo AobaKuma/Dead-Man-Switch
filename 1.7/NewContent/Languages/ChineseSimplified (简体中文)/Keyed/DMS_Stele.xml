@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 石碑任務線 Stele line（_Source/DMS/Quests/Stele/） -->
+  <DMS_Stele_GlyphProgress>已取得密钥：{0} / {1}</DMS_Stele_GlyphProgress>
+  <DMS_Stele_GlyphRecovered>已取得封存技术密钥（{0} / {1}）。</DMS_Stele_GlyphRecovered>
+  <DMS_Stele_GlyphLostLabel>密钥遗失</DMS_Stele_GlyphLostLabel>
+  <DMS_Stele_GlyphLostText>我们没有带走撞击地点的密钥就离开了，它已随着站点一同遗失。\n\n之后还会有其他密钥的信号浮现。</DMS_Stele_GlyphLostText>
+  <DMS_Stele_SteleSecuredLabel>石碑到手</DMS_Stele_SteleSecuredLabel>
+  <DMS_Stele_SteleSecuredText>石碑已经到手。\n\n将它安装在殖民地，并在其正面紧贴建造一台解码器。供给电力之后，解码器便会自行将石碑中的知识提取为封存科技研究。\n\n每一座以此法读取的石碑，对舰队而言都是永久的损失。</DMS_Stele_SteleSecuredText>
+  <DMS_Stele_SteleLostLabel>石碑遗失</DMS_Stele_SteleLostLabel>
+  <DMS_Stele_SteleLostText>石碑没能跟着我们离开封藏库，已经遗失了。\n\n还原出来的密码仍指向其他的埋藏地点，研究员们会在几天内推算出下一座的位置。</DMS_Stele_SteleLostText>
+
+</LanguageData>

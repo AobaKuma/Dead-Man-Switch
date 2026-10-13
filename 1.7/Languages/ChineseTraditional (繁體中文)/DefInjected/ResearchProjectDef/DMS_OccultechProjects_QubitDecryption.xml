@@ -3,7 +3,7 @@
 
   <!-- EN: qubit decryption -->
   <DMS_Occultech_QubitDecryption.label>量子位元破譯</DMS_Occultech_QubitDecryption.label>
-  <!-- EN: A decoding technique that reads a stele's holographic storage plates by measuring the quantum state held at each lattice site directly... -->
+  <!-- EN: A decoding technique that bypasses a stele's own verification layer... -->
   <DMS_Occultech_QubitDecryption.description>一種繞過石碑自身的校驗層，直接量測全像儲存刻錄片中每個晶格位點所保存的量子態來讀取資料的譯碼技術。石碑的加密建立在「艦隊以外的人無法在不使其塌縮的前提下觀測這些量子態」的假設之上，而這項技術選擇直接接受塌縮。每一次讀取都會永久破壞被讀取的區段，還原出來的內容得以歸檔研究，遺失的部分則再也無法復原。\n這項技術由脫序者們所流出。石碑是每顆殖民星球的備用記憶，每一座以此法掃描過的石碑，都是一份再也沒有人能夠讀取的紀錄。\n\n經 ████ 及 ███ 之審批，將量子位元破譯及相關技術列為I級封存技術，禁止揭示此類技術，發現的譯碼設備一律予以就地銷毀。</DMS_Occultech_QubitDecryption.description>
   <!-- EN: Sealed file I: qubit decryption -->
   <DMS_Occultech_QubitDecryption.discoveredLetterTitle>封存檔案 I：量子位元破譯</DMS_Occultech_QubitDecryption.discoveredLetterTitle>

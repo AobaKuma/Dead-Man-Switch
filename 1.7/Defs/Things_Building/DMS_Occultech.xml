@@ -45,6 +45,13 @@
     <!-- 玩家不可建造：只能從石碑任務線（DMS_Stele）取得。 -->
     <designationCategory>FFF_DevCategory</designationCategory>
     <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <!-- 可微縮：石碑封藏庫的石碑要佔領、拆卸後運回據點（500 kg）。不進貿易池。
+         Minifiable: the vault's stele is claimed, uninstalled and hauled home (500 kg). Kept out of trade. -->
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <tradeability>None</tradeability>
     <comps>
       <li Class="CompProperties_Forbiddable" />
       <li Class="Fortified.CompProperties_OccultechSource">

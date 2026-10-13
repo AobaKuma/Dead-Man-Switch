@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!--伯勞鳥 Lanius：中型機體，由 I 級封存檔案「餘械型號」解鎖（該專案前置為先進控制），使用小型培育艙-->
+  <!--伯勞鳥 Lanius：中型機體，由 I 級封存檔案「駐屯兵器」解鎖（該專案前置為先進控制），使用小型培育艙-->
   <RecipeDef ParentName="DMS_MediumMechanoidRecipe">
     <defName>DMS_Make_Lanius</defName>
     <label>Gestate Lanius</label>

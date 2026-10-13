@@ -204,23 +204,13 @@
 
 `1.6/Defs/Research/DMS_OccultechProjects.xml`
 
-### 骨架／佔位專案
+### 實裝專案
 
-這三個是分頁的骨架與範例，目前**沒有實際解鎖物**，主要作為資料匣的解封目標與樹狀結構的錨點：
-
-| defName | 標籤（繁中） | 類別 | 知識成本 | 前置 | 座標 |
-|---|---|---|---|---|---|
-| `DMS_ExpKnowledge_BasicFoundation` | 封存資料解析 | Restricted | 500 | 無 | (1, 1) |
-| `DMS_ExpKnowledge_AdvancedMastery` | 封存進階精通 | Sealed | 1000 | BasicFoundation | (3, 1) |
-| `DMS_ExpKnowledge_BasicSecondary` | 封存基礎輔修 | Occulted | 400 | AdvancedMastery | (4, 2) |
-
-> 抽象父 `DMS_BaseOccultTech` 提供 `tab` / `knowledgeCategory=DMS_Restricted` / `knowledgeCost=750` 預設值，但目前只有 BasicFoundation 繼承它。
-
-### 實裝專案（全部為 Sealed 封存級）
+蛙人是 Sealed 封存級，其餘六個都是 Restricted 管制級。Occulted 禁閉級目前沒有任何專案。
 
 #### 1. `DMS_Occultech_Frogman`：directed chassis gestation／定向機體孕育
 
-- 知識成本 1000，前置 `DMS_ExpKnowledge_BasicFoundation`，座標 (3, 3)
+- 知識成本 1000，類別 Sealed，前置 `DMS_Artifuscle`（常規樹：Artificial Muscle，胚胎在人造肌肉艙製作），座標 (3, 3)
 - **解鎖**：`DMS_Make_FrogmanEmbryo`（人造肌肉艙製造胚胎，智識 8）→ 成長艙或代孕者孕育 → 生物機兵幼體 → 孕育艙 5 天 → XM132 Frogman
 - 設定：AMO（人造軍用生物）在地球紀元的重大事故後被永久禁止，理由是自體發育的軍用生物對當地社會與生產能力危害極大；禁令的制裁由艦隊親自執行，不假手當地政權
 - 相關檔：`1.6/Biotech/Defs/DMS_Frogman_Gestation.xml`
@@ -294,11 +284,11 @@
 
 | defName | 標籤 | 對應類別 | 市價 | 進度 | 退回經驗 | 解封清單 | 取得 |
 |---|---|---|---|---|---|---|---|
-| `DMS_DataCache_Restricted` | restricted technical data cache | 管制 | 300 | 150 | 1500 | BasicFoundation | `RewardStandardMidFreq`、物資箱（權重 3） |
-| `DMS_DataCache_Sealed` | sealed data cache | 封存 | 700 | 250 | 2000 | AdvancedMastery、QubitDecryption、Frogman、BionicSuitHeavy、GestaltEngine、Biosynthesis、Subsonic、RemnantPatterns | `RewardStandardCore`、物資箱（權重 1） |
-| `DMS_DataCache_Occulted` | occulted data cache | 禁忌 | 1400 | 400 | 3000 | BasicSecondary | `RewardStandardLowFreq`，**不進物資箱**，只走任務獎勵 |
+| `DMS_DataCache_Restricted` | restricted technical data cache | 管制 | 300 | 150 | 1500 | QubitDecryption、BionicSuitHeavy、GestaltEngine、Biosynthesis、Subsonic、RemnantPatterns | `RewardStandardMidFreq`、物資箱（權重 3） |
+| `DMS_DataCache_Sealed` | sealed data cache | 封存 | 700 | 250 | 2000 | Frogman | `RewardStandardCore`、物資箱（權重 1） |
+| `DMS_DataCache_Occulted` | occulted data cache | 禁忌 | 1400 | 400 | 3000 | Frogman（暫代，見待辦） | `RewardStandardLowFreq`，**不進物資箱**，只走任務獎勵 |
 
-> ⚠️ 新增 Occultech 專案時，記得把 defName 補進對應等級的 `researchProjects` 清單，否則永遠抽不到。
+> ⚠️ 資料匣依知識類別分配解封清單。新增 Occultech 專案時，記得把 defName 補進對應類別的 `researchProjects` 清單，否則永遠抽不到。清單不可為空，否則載入時報 ConfigError。
 
 物資箱掉落設定見 `1.6/NewContent/Defs/Things_Building/DMS_ExplorationBuildings_Lootbox.xml`。
 
@@ -306,7 +296,7 @@
 
 | Def | 標籤 | 說明 |
 |---|---|---|
-| `DMS_OccultTechFont` | Stele／石碑 | 3×3，6000 HP，不可通行。掛 `Fortified.CompProperties_OccultechSource`，`totalReserve 4000`。本體不需電力、不主動 tick，只被動提供 `TryExtract`。抽乾後保留為可拆除空殼。放在 `FFF_DevCategory`，玩家不可建造，只能從石碑任務線取得 |
+| `DMS_OccultTechFont` | Stele／石碑 | 3×3，6000 HP，不可通行。掛 `Fortified.CompProperties_OccultechSource`，`totalReserve 4000`。本體不需電力、不主動 tick，只被動提供 `TryExtract`。抽乾後保留為可拆除空殼。放在 `FFF_DevCategory`，玩家不可建造，只能從石碑任務線取得。可微縮（500 kg）、`tradeability None`，剩餘儲量隨本體保存 |
 | `DMS_OccultechExtractor` | Decoder／解碼器 | 1×2，可微縮搬運重裝。300W（待機 50W），掛 `Fortified.CompProperties_OccultechExtractor`，`knowledgePerDay 50`，起始類別 `DMS_Restricted`。需研究 `DMS_Occultech_QubitDecryption` |
 
 運作條件三者皆需滿足：**有電** + **正面緊貼未耗盡的知識源** + **該分頁尚有可推進的專案**。任一不滿足即轉待機，不消耗源儲量、只吃待機電。知識透過 `KnowledgeUtility.AddKnowledge` 注入起始類別並依分頁順序向後溢流。**不需要研究員**。
@@ -326,29 +316,67 @@
 
 ## 任務線：石碑與密鑰
 
-`1.6/NewContent/Defs/Quests/DMS_Stele.xml` + `_Source/DMS/Quests/Stele/`
+`1.7/NewContent/Defs/Quests/DMS_Stele.xml` + `_Source/DMS/Quests/Stele/`
+
+流程：研究量子位元破譯 → 主線派發撞擊地點 → 帶回 4 枚密鑰 → 密鑰解讀後用掉、派發石碑封藏庫 → 佔領、拆卸石碑並帶回據點 → 主線成功。
+
+**「帶回」的判定**（`SteleQuestUtility.IsHeldByPlayer`）：物品在玩家據點地圖上（地上、被搬運、在倉庫或微縮箱裡都算），或在玩家商隊裡。運輸艙飛行途中不算，落地後才算。
+
+**「留在站點上」的判定**：原生移除地圖時不會對地上的物品呼叫 `Destroy()`，而是在 `Thing.Notify_MyMapRemoved` 把它們標成 `Destroyed`。因此站點的 `MapRemoved` 訊號到達時，物品還沒 `Destroyed` 就代表被帶走了（商隊、運輸艙、被搬運都算）。
 
 ### `DMS_Stele`（主線，`isRootSpecial` / `autoAccept`，挑戰評級 4）
 
-`DMS.QuestNode_Root_Stele`：
+`DMS.QuestNode_Root_Stele` + `QuestPart_SubquestGenerator_Stele`（`Main.cs`）：
 
 - **觸發**：研究完成 `DMS_Occultech_QubitDecryption` 時由 `ResearchQuestUtility.Notify_ProjectFinished` 派發（接在 `Patch_ResearchManager_FinishProject` 的制裁之後），一局只派發一次。說書人不會抽到它（`isRootSpecial`）
 - 同時只允許一條進行中（`TestRunInt` 檢查）
-- `keysCount = 4`，`maxActiveSubquests = 3`
-- 子任務生成節奏（`QuestPart_SubquestGenerator_Stele`）：首個子任務 MTB 120000 ticks、間隔 300000~480000；後續 MTB 300000 ticks、間隔 900000~1800000
-- 獎勵：`Reward_DefinedThingDef(DMS_OccultTechFont)`：石碑本體
+- `keysCount = 4`、`maxActiveSubquests = 3`、`vaultQuestDef = DMS_SteleVault`
+- **階段一：收集密鑰**（`Stage.CollectingGlyphs`）
+  - 首個撞擊地點 3~5 天後出現（MTB 1 天），之後每 6~12 天一個（MTB 3 天）
+  - 只在「已帶回 + 進行中的撞擊地點 < 4」時派發，不會多發；子任務失敗（密鑰遺失）後自然補發
+  - 任務視窗顯示「已取得密鑰：X / 4」（`ExpiryInfoPart`），密鑰的檢視面板也會顯示
+  - 每 250 ticks 檢查一次；帶回的密鑰達 4 枚即進入階段二
+- **階段二：石碑封藏庫**（`Stage.Vault`）
+  - 銷毀剛好 4 枚已帶回的密鑰（設定：量子位元破譯讀取時量子態塌縮），派發 `DMS_SteleVault`
+  - 封藏庫成功 → 主線成功（`Stage.Done`）
+  - 封藏庫失敗 → 3~5 天後再派一座（描述走 `retry==True` 分支）；找不到地塊時 6 小時後重試
+- 除錯視窗：顯示階段與密鑰數，可「強制下一個撞擊地點」「跳到封藏庫階段（保留密鑰）」「立即再派一座封藏庫」
+- 舊存檔：`keysCount` / `vaultQuestDef` 缺值時從 Def 補上；舊的 `signalKeysFound` 欄位已移除
 
-### `DMS_SteleKey_ImpactSite`（子任務）
+### `DMS_SteleKey_ImpactSite`（撞擊地點子任務，挑戰評級 2）
 
-`DMS.QuestNode_Root_OccultechKey_Site`：
+`DMS.QuestNode_Root_OccultechKey_Site`（`Sub_Site.cs`，共用基底 `QuestNode_Root_SteleSite`）+ `QuestPart_SteleKeySite`（`CommonParts.cs`）：
 
-- 在距殖民地 20~40 格、`Flat`~`SmallHills`、`DMS_Legacy` 派系的地塊生成站點；找不到時走 desperate query 放寬條件
-- 地圖結構 `DMS_ImpactSite_A`（`1.6/NewContent/Defs/GenStructures/SteleQuests/ImpactSite_A.xml`）：7×7 混凝土地面、鎢鋼牆與四面自動門，正中央 (3,0,3) 放置密鑰
-- 獎勵：`DMS_OccultechKey`（occultech glyph／封存技術密鑰）
+- 在距殖民地 20~40 格、`Flat`~`SmallHills` 的地塊生成 `DMS_Legacy` 站點；找不到時走 desperate query 放寬條件
+- 站點 `DMS_SteleKey_ImpactSite`（`Sites/Stele_ImpactSite.xml`）：`GenStep_FFFGarrisonedStructure`，依威脅點數生成先鋒殘餘守軍、鋼渣與殘骸污垢，版面隨機旋轉
+- 版面 `DMS_ImpactSite_A`（tag `DMS_SteleImpactSite`）：15×15，正中央是先鋒搭在墜落點上的 7×7 鎢鋼掩體（四面自動門），密鑰在掩體中央；外圍兩塊密鑰艙殘骸（原版 `ShipChunk`）
+- 地圖生成時記下站點上的密鑰（版面沒放到就在中央附近補生成一枚）
+- **成功**：密鑰被帶回（每 250 ticks 檢查），或離開站點時密鑰被帶走 → 主線發「已取得密鑰（X / 4）」訊息
+- **失敗**：離開時密鑰留在站點上 → 「密鑰遺失」信件，主線之後補發
+- 抵達時發「密鑰艙殘骸」信件（`questContentRules` 的 `letterLabelMapGenerated` / `letterTextMapGenerated`）
+
+### `DMS_SteleVault`（石碑封藏庫，最終站點，挑戰評級 3）
+
+`DMS.QuestNode_Root_SteleVault` + `QuestPart_SteleVault`（`Sub_Vault.cs`）：
+
+- 距殖民地 8~20 格（石碑要運回來），守軍點數 ×1.25（`pointsFactor`）
+- 站點 `DMS_SteleVault`：同樣是 `GenStep_FFFGarrisonedStructure` 守軍；允許重力艦降落，給有重力艦的玩家一條運回來的路
+- 版面 `DMS_SteleVault_A`（tag `DMS_SteleVault`）：17×17，13×13 鎢鋼外牆圍出有屋頂的 11×11 封藏室，石碑面朝南站在正中央，南北各一扇門，南門外一排沙包
+- 石碑以站點派系（先鋒殘餘）生成：玩家要先**佔領**才能**拆卸**（原生 `Designator_Uninstall` 只接受玩家或無派系的建築）
+- **成功**：石碑（含微縮箱裡的）到了玩家據點或商隊，或離開站點時被帶走 → 「石碑到手」信件，主線成功
+- **失敗**：離開時石碑留在站點上，或在站點上被摧毀 → 「石碑遺失」信件，主線 3~5 天後再派一座
+- 描述以語法常數 `retry` 分流首次與重派；`[steleMass]` 由石碑的 Mass 填入
+- 只記失敗事件（`DMS_QuestFailed_Occultech`）；成功事件交給同一刻結束的主線
 
 ### `DMS_OccultechKey`（`_Source/DMS/Quests/Stele/OccultechKey.cs`）
 
-繼承 `ThingWithComps`。`PostPostMake` 時自動尋找進行中的 `DMS_Stele` 任務並向 `QuestPart_SubquestGenerator_Stele.TryAddKey` 註冊；`Destroy` 時反註冊。集滿 `keysCount` 後停止生成子任務。不可交易、不可販售、`stackLimit 1`。
+繼承 `ThingWithComps`。`PostPostMake` 時自動尋找進行中的 `DMS_Stele` 任務並向 `QuestPart_SubquestGenerator_Stele.TryAddKey` 註冊（只在收集階段接受）；`Destroy` 時反註冊。檢視面板顯示收集進度。不可交易、不可販售、`stackLimit 1`。
+
+### 文本
+
+- 任務文本：`NewContent/Languages/<lang>/DefInjected/QuestScriptDef/DMS_Stele.xml`
+- 信件與訊息：`NewContent/Languages/<lang>/Keyed/DMS_Stele.xml`
+- 站點：`Languages/<lang>/DefInjected/SitePartDef/Stele_ImpactSite.xml`（兩個站點都在這份）
 
 ---
 
@@ -371,7 +399,7 @@
 - `DMS_QuestSuccess_Occultech`：sealed technology recovered
 - `DMS_QuestFailed_Occultech`：sealed technology lost
 
-兩者由 `DMS_Stele` 與 `DMS_SteleKey_ImpactSite` 的 `successHistoryEvent` / `failedOrExpiredHistoryEvent` 觸發。
+兩者由 `DMS_Stele` 與 `DMS_SteleKey_ImpactSite` 的 `successHistoryEvent` / `failedOrExpiredHistoryEvent` 觸發；`DMS_SteleVault` 只觸發失敗事件。
 
 ---
 
@@ -382,13 +410,15 @@
 | 路徑 | 內容 |
 |---|---|
 | `1.6/Defs/Research/DMS_OccultechResearchTab.xml` | 分頁、三個知識類別 |
-| `1.6/Defs/Research/DMS_OccultechProjects.xml` | 全部 8 個專案 |
+| `1.6/Defs/Research/DMS_OccultechProjects.xml` | 全部 7 個專案 |
 | `1.6/Defs/Things_Building/DMS_Occultech.xml` | 石碑、解碼器 |
 | `1.6/NewContent/Defs/Things_Item/DMS_Item_Occultech.xml` | 固態零點能、密鑰、三階資料匣 |
 | `1.6/NewContent/Defs/Things_Building/DMS_ExplorationBuildings_Occultech.xml` | 零點能發生器 |
 | `1.6/NewContent/Defs/Things_Building/DMS_ExplorationBuildings_Lootbox.xml` | 資料匣的物資箱掉落 |
-| `1.6/NewContent/Defs/Quests/DMS_Stele.xml` | 石碑主線與撞擊點子任務 |
-| `1.6/NewContent/Defs/GenStructures/SteleQuests/ImpactSite_A.xml` | 撞擊點地圖結構 |
+| `1.7/NewContent/Defs/Quests/DMS_Stele.xml` | 石碑主線、撞擊地點、石碑封藏庫三個任務 |
+| `1.7/NewContent/Defs/Sites/Stele_ImpactSite.xml` | 撞擊地點與石碑封藏庫的站點、GenStep |
+| `1.7/NewContent/Defs/GenStructures/SteleQuests/ImpactSite_A.xml` | 撞擊地點版面 |
+| `1.7/NewContent/Defs/GenStructures/SteleQuests/SteleVault_A.xml` | 石碑封藏庫版面 |
 | `1.6/Defs/Misc/DMS_HistoryEvents.xml` | 任務結算事件、`DMS_OccultechResearched`（制裁的好感度變動理由） |
 | `1.6/Languages/<lang>/Keyed/DMS_Occultech.xml` | 制裁信件與通訊台對話文本（三語） |
 | `_Source/DMS/Occultech/ModExtension_OccultechSanction.cs` | `OccultechTier` 與制裁參數擴充 |
@@ -401,8 +431,10 @@
 | `_Source/DMS/Quests/QuestNode_Root_DMS_FleetNetworkSite.cs` | SAGE 節點任務（追殺期間限定） |
 | `1.6/NewContent/Defs/Quests/DMS_FleetNetworkQuest.xml` | SAGE 節點站點與任務 |
 | `1.6/Ideology/Defs/DMS_Precepts_SealedTech.xml` | 議題、三個教義、兩個心情 |
-| `_Source/DMS/Quests/Stele/Main.cs` | `QuestNode_Root_Stele`、`QuestPart_SubquestGenerator_Stele` |
-| `_Source/DMS/Quests/Stele/Sub_Site.cs` | `QuestNode_Root_OccultechKey_Site` |
+| `_Source/DMS/Quests/Stele/Main.cs` | `QuestNode_Root_Stele`、`QuestPart_SubquestGenerator_Stele`（兩階段主線） |
+| `_Source/DMS/Quests/Stele/Sub_Site.cs` | `QuestNode_Root_SteleSite`（共用基底）、`QuestNode_Root_OccultechKey_Site` |
+| `_Source/DMS/Quests/Stele/Sub_Vault.cs` | `QuestNode_Root_SteleVault`、`QuestPart_SteleVault` |
+| `_Source/DMS/Quests/Stele/CommonParts.cs` | `SteleQuestUtility`、`QuestPart_SteleKeySite`、舊存檔用的 `QuestPart_SteleSubQuestEnd` |
 | `_Source/DMS/Quests/Stele/OccultechKey.cs` | `OccultechKey` ThingClass |
 
 ### 翻譯
@@ -411,8 +443,7 @@ English / 繁體中文 / 简体中文 **三語皆已補齊**：
 
 - `Languages/<lang>/DefInjected/ResearchTabDef/DMS_OccultechResearchTab.xml`
 - `Languages/<lang>/DefInjected/KnowledgeCategoryDef/DMS_OccultechResearchTab.xml`
-- `Languages/<lang>/DefInjected/ResearchProjectDef/DMS_OccultechProjects.xml`
-- `Languages/<lang>/DefInjected/ResearchProjectDef/DMS_OccultechProjects_{Frogman,BionicSuitHeavy,GestaltEngine,Biosynthesis}.xml`
+- `Languages/<lang>/DefInjected/ResearchProjectDef/DMS_OccultechProjects_{QubitDecryption,Frogman,BionicSuitHeavy,GestaltEngine,Biosynthesis,Subsonic,RemnantPatterns}.xml`
 - `Languages/<lang>/DefInjected/ThingDef/DMS_Occultech.xml`
 - `NewContent/Languages/<lang>/DefInjected/ThingDef/DMS_Item_Occultech.xml`
 - `Languages/<lang>/DefInjected/HistoryEventDef/DMS_HistoryEvents.xml`
@@ -457,15 +488,8 @@ English / 繁體中文 / 简体中文 **三語皆已補齊**：
 
 ## 待辦與已知缺口
 
-- `DMS_OccultechKey` 的 `<description>` 仍是 `TODO`
-- `DMS_Stele` 的 `questDescription` 還是從原版 gravcore 任務複製過來的文案（提到 gravship / grav engine），與石碑設定不符
-- `DMS_SteleKey_ImpactSite` 的 `questDescription`、`letterLabelMapGenerated`、`letterTextMapGenerated` 皆為 `TODO`
-- `QuestPart_SubquestGenerator_Stele.Notify_QuestSignalReceived` 內 `AllKeysFound` 判定被註解掉，且還留著 `Log.Message` / `Log.Warning` 除錯輸出；`TryGenerateSubquest` 失敗訊息仍寫成 "gravcore subquest"
-- **集滿 4 把密鑰之後沒有結算邏輯**：`signalKeysFound` 有宣告、有存檔，但沒有任何 QuestPart 監聽它，主線目前只在 `RewardChoice` 給石碑
-- `DMS_ExpKnowledge_BasicFoundation` / `AdvancedMastery` / `BasicSecondary` 三個佔位專案沒有實際解鎖物，描述也是範例文字
-- `DMS_ExpKnowledge_AdvancedMastery` 與 `BasicSecondary` 沒有繼承 `DMS_BaseOccultTech`，欄位是各自重複寫的
-- 目前實裝的 5 個專案**全部是 Sealed 級**；Restricted 與 Occulted 兩欄只有佔位專案。`DMS_DataCache_Occulted` 的解封清單也只有一個 `BasicSecondary`
-- 解碼器的 `knowledgeCategory` 固定為 `DMS_Restricted`，實際能推進的只有靠溢流抵達 Sealed 的部分
+- 石碑任務線尚未在遊戲內實測（站點生成、守軍強度、500 kg 的運輸體驗）
+- Occulted 禁閉級目前沒有任何專案。`DMS_DataCache_Occulted` 暫時解封封存級的蛙人（清單不可為空），加入禁閉級科技後要換掉
 
 ### 制裁機制的已知限制
 

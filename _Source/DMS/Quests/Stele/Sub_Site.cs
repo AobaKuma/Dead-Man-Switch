@@ -1,22 +1,22 @@
-﻿using RimWorld;
+using RimWorld;
 using RimWorld.Planet;
 using RimWorld.QuestGen;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace DMS
 {
-	public class QuestNode_Root_OccultechKey_Site : QuestNode
+	/// <summary>
+	/// 石碑任務線的站點子任務共用部分：在殖民地附近找地塊、以先鋒殘餘生成站點。
+	/// Shared part of the stele line's site subquests: find a tile near the colony and spawn a Legacy site.
+	/// </summary>
+	public abstract class QuestNode_Root_SteleSite : QuestNode
 	{
 		protected List<BiomeDef> allowedBiomes = new List<BiomeDef>();
 
-		private Hilliness minHilliness = Hilliness.Flat;
+		protected Hilliness minHilliness = Hilliness.Flat;
 
-		private Hilliness maxHilliness = Hilliness.SmallHills;
+		protected Hilliness maxHilliness = Hilliness.SmallHills;
 
 		protected IntRange distanceFromColonyRange = new IntRange(20, 40);
 
@@ -28,38 +28,35 @@ namespace DMS
 
 		public FactionDef siteFaction;
 
-		protected override void RunInt()
+		/// <summary>站點威脅點數 = 任務點數 × pointsFactor。Site threat points = quest points × pointsFactor.</summary>
+		public float pointsFactor = 1f;
+
+		protected Faction SiteFaction => siteFaction == null ? null : Find.FactionManager.FirstFactionOfDef(siteFaction);
+
+		/// <summary>生成站點並放上世界地圖；slate 的 "site" 指向它。Generates the site, puts it on the world map and sets slate "site".</summary>
+		protected Site GenerateSite()
 		{
 			Slate slate = QuestGen.slate;
 			Quest quest = QuestGen.quest;
-			if (!TryFindSiteTile(out var tile))
+			if (!TryFindSiteTile(out PlanetTile tile))
 			{
-				Log.Error("Could not find valid site tile for insect lair quest.");
-				return;
+				Log.Error("[DMS] Could not find a valid tile for stele site quest " + QuestGen.Root?.defName);
+				return null;
 			}
-			Faction faction = Find.FactionManager.FirstFactionOfDef(siteFaction);
+			Faction faction = SiteFaction;
 			slate.Set("faction", faction);
-			string inSignal = QuestGenUtility.HardcodedSignalWithQuestID("site.MapRemoved");
+			float points = slate.Get("points", 0f) * pointsFactor;
 			Site site = QuestGen_Sites.GenerateSite(new SitePartDefWithParams[1]
 			{
 				new SitePartDefWithParams(sitePartDefs.RandomElement(), new SitePartParams
 				{
-					points = slate.Get("points", 0f),
-					threatPoints = slate.Get("points", 0f)
+					points = points,
+					threatPoints = points
 				})
 			}, tile, faction, hiddenSitePartsPossible: false, null, WorldObjectDefOf.Site);
 			slate.Set("site", site);
 			quest.SpawnWorldObject(site);
-			QuestPart_Choice.Choice choice = new QuestPart_Choice.Choice();
-			choice.rewards.Add(new Reward_DefinedThingDef(DMS_DefOf.DMS_OccultechKey));
-			quest.RewardChoice().choices.Add(choice);
-			quest.AddPart(new QuestPart_SteleSubQuestEnd()
-			{
-				inSignal = inSignal,
-				signalSteleSubquestCompleted = slate.Get<string>("signalSteleSubquestCompleted"),
-				sendLetter = true,
-				playSound = true
-			});
+			return site;
 		}
 
 		protected virtual bool TryFindSiteTile(out PlanetTile tile)
@@ -69,7 +66,7 @@ namespace DMS
 			{
 				if (!TileFinder.TryFindRandomPlayerTile(out tile2, allowCaravans: true, null, canBeSpace: true))//Some players may use caravan only play
 				{
-					Log.Error("Failed to find a valid root tile for occultech key site.");
+					Log.Error("Failed to find a valid root tile for stele site.");
 					tile = PlanetTile.Invalid;
 					return false;
 				}
@@ -107,11 +104,49 @@ namespace DMS
 
 		protected override bool TestRunInt(Slate slate)
 		{
-			if (!TryFindSiteTile(out var _))
+			if (sitePartDefs.NullOrEmpty())
 			{
 				return false;
 			}
-			return true;
+			if (siteFaction != null && SiteFaction == null)
+			{
+				return false;
+			}
+			return TryFindSiteTile(out _);
+		}
+	}
+
+	/// <summary>
+	/// 撞擊地點：先鋒殘餘守著一處墜落的密鑰艙，密鑰在站點中央的掩體裡。
+	/// Impact site: Legacy remnants hold a crashed glyph capsule; the glyph sits in the shelter at the centre.
+	/// </summary>
+	public class QuestNode_Root_OccultechKey_Site : QuestNode_Root_SteleSite
+	{
+		protected override void RunInt()
+		{
+			Slate slate = QuestGen.slate;
+			Quest quest = QuestGen.quest;
+			Site site = GenerateSite();
+			if (site == null)
+			{
+				return;
+			}
+			string mapGenerated = QuestGenUtility.HardcodedSignalWithQuestID("site.MapGenerated");
+			string mapRemoved = QuestGenUtility.HardcodedSignalWithQuestID("site.MapRemoved");
+
+			QuestPart_Choice.Choice choice = new QuestPart_Choice.Choice();
+			choice.rewards.Add(new Reward_DefinedThingDef(DMS_DefOf.DMS_OccultechKey));
+			quest.RewardChoice().choices.Add(choice);
+
+			quest.AddPart(new QuestPart_SteleKeySite
+			{
+				inSignalEnable = slate.Get<string>("inSignal"),
+				inSignalMapGenerated = mapGenerated,
+				inSignalMapRemoved = mapRemoved,
+				site = site,
+				signalSteleSubquestCompleted = slate.Get<string>("signalSteleSubquestCompleted")
+			});
+			quest.Letter(LetterDefOf.NeutralEvent, mapGenerated, text: "[letterTextMapGenerated]", label: "[letterLabelMapGenerated]");
 		}
 	}
 }
