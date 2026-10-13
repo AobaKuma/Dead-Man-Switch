@@ -343,7 +343,7 @@
 - 除錯視窗：顯示階段與密鑰數，可「強制下一個撞擊地點」「跳到封藏庫階段（保留密鑰）」「立即再派一座封藏庫」
 - 舊存檔：`keysCount` / `vaultQuestDef` 缺值時從 Def 補上；舊的 `signalKeysFound` 欄位已移除
 
-### `DMS_SteleKey_ImpactSite`（撞擊地點子任務，挑戰評級 2）
+### `DMS_SteleKey_ImpactSite`（撞擊地點子任務）
 
 `DMS.QuestNode_Root_OccultechKey_Site`（`Sub_Site.cs`，共用基底 `QuestNode_Root_SteleSite`）+ `QuestPart_SteleKeySite`（`CommonParts.cs`）：
 
@@ -355,7 +355,7 @@
 - **失敗**：離開時密鑰留在站點上 → 「密鑰遺失」信件，主線之後補發
 - 抵達時發「密鑰艙殘骸」信件（`questContentRules` 的 `letterLabelMapGenerated` / `letterTextMapGenerated`）
 
-### `DMS_SteleVault`（石碑封藏庫，最終站點，挑戰評級 3）
+### `DMS_SteleVault`（石碑封藏庫，最終站點）
 
 `DMS.QuestNode_Root_SteleVault` + `QuestPart_SteleVault`（`Sub_Vault.cs`）：
 

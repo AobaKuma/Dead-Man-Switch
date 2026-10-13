@@ -51,7 +51,6 @@
     <successHistoryEvent>DMS_QuestSuccess_Occultech</successHistoryEvent>
     <failedOrExpiredHistoryEvent>DMS_QuestFailed_Occultech</failedOrExpiredHistoryEvent>
     <autoAccept>true</autoAccept>
-    <defaultChallengeRating>2</defaultChallengeRating>
     <questNameRules>
       <rulesStrings>
         <li>questName->Impact site</li>
@@ -85,7 +84,6 @@
     <!-- 成功事件交給主線（同一刻結束），這裡只記失敗。The main line records success (it ends at the same moment); only failure is recorded here. -->
     <failedOrExpiredHistoryEvent>DMS_QuestFailed_Occultech</failedOrExpiredHistoryEvent>
     <autoAccept>true</autoAccept>
-    <defaultChallengeRating>3</defaultChallengeRating>
     <questNameRules>
       <rulesStrings>
         <li>questName->Stele vault</li>
