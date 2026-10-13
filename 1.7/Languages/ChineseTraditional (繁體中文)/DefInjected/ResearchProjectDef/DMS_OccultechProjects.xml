@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: expeditional basic foundation -->
+  <!-- EN: sealed data analysis -->
   <DMS_ExpKnowledge_BasicFoundation.label>封存資料解析</DMS_ExpKnowledge_BasicFoundation.label>
-  <!-- EN: Establish fundamental understanding of expeditional technology and principles. -->
+  <!-- EN: Establish a basic understanding of sealed technology and its concepts. -->
   <DMS_ExpKnowledge_BasicFoundation.description>建立對封存技術及其概念的基本理解。</DMS_ExpKnowledge_BasicFoundation.description>
-  
-  <!-- EN: expeditional advanced mastery -->
-  <DMS_ExpKnowledge_AdvancedMastery.label>遠征進階精通</DMS_ExpKnowledge_AdvancedMastery.label>
-  <!-- EN: Master advanced expeditional technology and unlock powerful applications. -->
-  <DMS_ExpKnowledge_AdvancedMastery.description>精通進階遠征技術，解鎖強大的應用。</DMS_ExpKnowledge_AdvancedMastery.description>
-  
-  <!-- EN: expeditional basic secondary -->
-  <DMS_ExpKnowledge_BasicSecondary.label>遠征基礎輔修</DMS_ExpKnowledge_BasicSecondary.label>
+
+  <!-- EN: sealed basic secondary -->
+  <DMS_ExpKnowledge_BasicSecondary.label>封存基礎輔修</DMS_ExpKnowledge_BasicSecondary.label>
   <!-- EN: Secondary basic knowledge to support advanced research. -->
   <DMS_ExpKnowledge_BasicSecondary.description>用於支援進階研究的次要基礎知識。</DMS_ExpKnowledge_BasicSecondary.description>
   
+  <!-- EN: sealed advanced mastery -->
+  <DMS_ExpKnowledge_AdvancedMastery.label>封存進階精通</DMS_ExpKnowledge_AdvancedMastery.label>
+  <!-- EN: Master advanced expeditional technology and unlock powerful applications. -->
+  <DMS_ExpKnowledge_AdvancedMastery.description>精通進階遠征技術，解鎖強大的應用。</DMS_ExpKnowledge_AdvancedMastery.description>
+  
+
 </LanguageData>

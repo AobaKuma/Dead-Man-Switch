@@ -42,7 +42,8 @@
     <building>
       <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
     </building>
-    <designationCategory>DMS_Category</designationCategory>
+    <!-- 玩家不可建造：只能從石碑任務線（DMS_Stele）取得。 -->
+    <designationCategory>FFF_DevCategory</designationCategory>
     <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     <comps>
       <li Class="CompProperties_Forbiddable" />
@@ -87,6 +88,9 @@
       <destroySound>BuildingDestroyed_Metal_Small</destroySound>
     </building>
     <designationCategory>DMS_Category</designationCategory>
+    <researchPrerequisites>
+      <li>DMS_Occultech_QubitDecryption</li>
+    </researchPrerequisites>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
     <!-- 可移動：允許卸除、搬運後重新安裝於他處。 -->
     <minifiedDef>MinifiedThing</minifiedDef>

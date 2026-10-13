@@ -10,11 +10,44 @@
 
   <ResearchProjectDef ParentName="DMS_BaseOccultTech">
     <defName>DMS_ExpKnowledge_BasicFoundation</defName>
-    <label>expeditional basic foundation</label>
-    <description>Establish fundamental understanding of expeditional technology and principles.</description>
+    <label>sealed data analysis</label>
+    <description>Establish a basic understanding of sealed technology and its concepts.</description>
     <researchViewX>1</researchViewX>
     <researchViewY>1</researchViewY>
     <knowledgeCost>500</knowledgeCost>
+  </ResearchProjectDef>
+
+  <!-- ============================================================= -->
+  <!-- 量子位元破譯：封存檔案 I 級 · 石碑解碼器                         -->
+  <!-- 解鎖解碼器（DMS_OccultechExtractor）。完成時由                   -->
+  <!-- DMS.ModExtension_ResearchQuest 派發石碑任務線（DMS_Stele），     -->
+  <!-- 研究完成前石碑任務線不會出現。石碑本體放在 FFF_DevCategory，     -->
+  <!-- 玩家只能從任務線取得。                                           -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_QubitDecryption</defName>
+    <label>qubit decryption</label>
+    <description>A decoding technique that reads a stele's holographic storage plates by measuring the quantum state held at each lattice site directly, without asking the stele's own verification layer for permission. The stele's encryption rests on the assumption that no one outside the fleets can observe those states without collapsing them; this technique simply accepts the collapse. Every reading permanently destroys the region it reads. What is recovered can be filed as research, and what is lost stays lost.\nThe method was leaked by fleet deviants. Steles are the backup memory of every colonial world, and each one scanned this way is a record no one will ever be able to read again.\n\nApproved by ████ and ███, qubit decryption and its related technologies are designated class I sealed technology. Disclosure of such technology is prohibited, and any decoding equipment discovered is to be destroyed on site.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Restricted</knowledgeCategory>
+    <knowledgeCost>750</knowledgeCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file I: qubit decryption</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology. It contains a stele decryption technique leaked by fleet deviants.\n\nThe decoder can now be built. Set flush against a stele and supplied with power, it extracts the occultech knowledge stored within.\n\nWith the method in hand, the colony can now trace the occultech glyphs scattered across this world. Recovering the glyphs leads to a stele.\n\nThe fleets sealed this file to keep the data in the steles out of anyone else's hands. Every stele read this way is lost to them for good.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_OccultechExtractor</ThingDef>
+      <ThingDef>DMS_OccultTechFont</ThingDef>
+    </descriptionHyperlinks>
+    <modExtensions>
+      <li Class="DMS.ModExtension_ResearchQuest">
+        <quest>DMS_Stele</quest>
+      </li>
+    </modExtensions>
   </ResearchProjectDef>
 
   <!-- ============================================================= -->
@@ -34,7 +67,7 @@
       <li>DMS_Artifuscle</li>
     </prerequisites>
     <discoveredLetterTitle>Sealed file I: enclosed assault frame</discoveredLetterTitle>
-    <discoveredLetterText>Researchers have opened a class I sealed file containing an early prototype of the bionic suit.\n\nThe heavy bionic suit can now be assembled at an artifuscle chamber. It occupies every layer over the torso and lets its pilot carry and fight with weapons no unaided soldier could handle.\n\nIt only works fully closed. Once a pilot is sealed into one it is no longer clothing: it cannot be removed by normal means, and cannot be stripped from anyone still alive. Removal is surgery.\n\nThe fleets sealed this file for a reason. Fielding it openly will be noted.</discoveredLetterText>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology.\n\nThe heavy bionic suit can now be assembled at an artifuscle chamber. It lets its pilot carry and operate heavy weapons no ordinary soldier could handle.\n\nIt only works fully closed. Once a pilot is sealed in, it cannot be taken off by normal means and can only be stripped away destructively through surgery.\n\nThe fleets shelved this technology for a reason.</discoveredLetterText>
     <descriptionHyperlinks>
       <ThingDef>DMS_Apparel_BionicSuitHeavy</ThingDef>
       <RecipeDef>DMS_RemoveBionicSuitHeavy</RecipeDef>
@@ -58,7 +91,7 @@
       <li>DMS_Mechlink</li>
     </prerequisites>
     <discoveredLetterTitle>Sealed file I: cluster command</discoveredLetterTitle>
-    <discoveredLetterText>Researchers have opened a class I sealed file containing the architecture of a cluster command mainframe.\n\nThe central command core can now be built. A single core directs mechs across the entire map without a mechanitor, supplying its own control bandwidth and command groups.\n\nThe fleets keep this file sealed for standing armies and open it only for emergency mobilization. Fielding it in a routine ground deployment will be noted.</discoveredLetterText>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the technical architecture of a cluster command mainframe.\n\nThe central command core can now be built. A single mainframe commands automatroids without a mechanitor, supplying its own control bandwidth and command groups.\n\nBecause the convention caps the personnel that may be committed to a colonial program, the fleets keep this file sealed from standing armies and open it only for emergency mobilization.</discoveredLetterText>
     <descriptionHyperlinks>
       <ThingDef>DMS_GestaltEngine</ThingDef>
     </descriptionHyperlinks>
@@ -81,7 +114,7 @@
       <li>DMS_Artifuscle</li>
     </prerequisites>
     <discoveredLetterTitle>Sealed file I: synthetic biology</discoveredLetterTitle>
-    <discoveredLetterText>Researchers have opened a class I sealed file containing the gene maps and metabolic pathways of a set of engineered culture strains.\n\nArtiprotein can now be refined from crops in a reaction chamber, and neutroamine synthesized from meat and chemfuel. The artifuscle chamber can also grow artificial muscle from artiprotein and tungsteel, with no gold or neutroamine required.\n\nThe fleets did not seal this file over weapons. A colony that synthesizes its own protein and drug precursors stops buying them from anyone. Running these lines will be noted.</discoveredLetterText>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology. It contains the gene maps and metabolic pathways of a set of engineered culture strains.\n\nArtiprotein can now be refined from crops in a reaction chamber, and neutroamine synthesized from meat and chemfuel. The artifuscle chamber can also grow artificial muscle from artiprotein and tungsteel, with no gold or neutroamine required.\n\nThe fleets did not seal this file over weapons. The large-scale spread of synthesis technology would very likely leave the industries it touches with severe structural unemployment for a long time to come.</discoveredLetterText>
     <descriptionHyperlinks>
       <ThingDef>DMS_Artiprotein</ThingDef>
       <ThingDef>Artifuscle</ThingDef>
@@ -107,7 +140,7 @@
       <li>MicroelectronicsBasics</li>
     </prerequisites>
     <discoveredLetterTitle>Sealed file I: infrasonics</discoveredLetterTitle>
-    <discoveredLetterText>Researchers have opened a class I sealed file containing the design principles of tuned infrasound emitters and seismic survey charges.\n\nFour devices can now be produced: an infrasonic module that gives a mech an area panic ability, an infrasonic emitter tower that periodically drives off nearby enemies, infrasonic grenades that reach every living thing in their radius regardless of walls, and a blast scanner that maps deep ore with a mortar-driven shockwave.\n\nThe blast scanner's shockwave carries far into the ground. Whatever sleeps down there will hear it too.\n\nThe fleets sealed this file because of what these devices do to people. Fielding them openly will be noted.</discoveredLetterText>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the design principles of tuned infrasound emitters and seismic survey charges.\n\nFour devices can now be produced: an infrasonic module that gives a mech an area panic ability, an infrasonic emitter tower that periodically drives off nearby enemies, infrasonic grenades that reach every living thing in their radius regardless of walls, and a blast scanner that maps deep ore with a mortar-driven shockwave.\n\nThe blast scanner's shockwave carries far into the ground. Whatever sleeps down there will hear it too.\n\nThe fleets sealed this file because of what these devices do to people. Fielding them openly will be noted.</discoveredLetterText>
     <descriptionHyperlinks>
       <ThingDef>DMS_SubsonicModule</ThingDef>
       <ThingDef>DMS_Building_SubsonicEmitter</ThingDef>
@@ -123,8 +156,8 @@
   <!-- ============================================================= -->
   <ResearchProjectDef>
     <defName>DMS_Occultech_RemnantPatterns</defName>
-    <label>remnant patterns</label>
-    <description>Mech patterns designed to keep fighting with no one left to give the order: a heavy quadruped garrison mech that lies dormant at installation gates until the alarm line wakes it, and a large drone platform that flies cover for unmanned mother-drones. Both were drawn up for the pioneer expeditions, which needed defenses able to hold a world alone for decades before the fleet arrived, and both carry fallback directives that keep them executing their last standing order until the chassis fails.\nUnder the laws of war, weapons that outlast the conflict they were deployed for are classed alongside minefields. The remnants still guarding this world's beacons and installations are what these patterns become once their makers are gone.\n\nApproved by ████ and ███, remnant patterns and their related technologies are designated class I sealed technology. Sale of such technology to developing worlds is prohibited, and its related technologies are to be progressively declassified once a colonial world's society attains class I standard.</description>
+    <label>garrison arsenal</label>
+    <description>A line of self-supervising sentry weapons built for long-term garrison duty: a quadruped garrison mech for installation security, and a large drone platform that flies cover for unmanned mother-drones. Both were designed specifically for pioneer colonization operations, which needed defenses able to hold a world alone for decades before the fleet arrived, so both carry fallback directives in their control cores that keep them executing their last standing order until the chassis fails.\nUnder the laws of war, weapons that outlast the conflict they were deployed for are classed alongside minefields. The remnants still guarding this world's beacons and installations are what these patterns become once their makers are gone.\n\nApproved by ████ and ███, remnant patterns and their related technologies are designated class I sealed technology. Sale of such technology to developing worlds is prohibited, and its related technologies are to be progressively declassified once a colonial world's society attains class I standard.</description>
     <tab>DMS_ExpeditionalKnowledge</tab>
     <knowledgeCategory>DMS_Restricted</knowledgeCategory>
     <knowledgeCost>750</knowledgeCost>
@@ -135,7 +168,7 @@
       <li>DMS_AdvancedControl</li>
     </prerequisites>
     <discoveredLetterTitle>Sealed file I: remnant patterns</discoveredLetterTitle>
-    <discoveredLetterText>Researchers have opened a class I sealed file containing the production patterns of two remnant mechs.\n\nThe bullhound, in both its shotgun and flamer patterns, and the Lanius can now be gestated at an automatroid constructor. Gestated units answer to their mechanitor like any other mech.\n\nThe remnants on this world are what these patterns become when no one is left to stand them down. The fleets sealed this file so that no new ones would be made. Fielding them openly will be noted.</discoveredLetterText>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the production patterns of two remnant mechs.\n\nThe bullhound and the Lanius can now be gestated at an automatroid constructor. Gestated units answer to their mechanitor like any other mech, with no limit on their operating range.</discoveredLetterText>
     <descriptionHyperlinks>
       <ThingDef>DMS_Mech_BullHound</ThingDef>
       <ThingDef>DMS_Mech_BullHound_Flamer</ThingDef>
@@ -147,7 +180,7 @@
   <!-- Advanced Knowledge Category Project Example -->
   <ResearchProjectDef>
     <defName>DMS_ExpKnowledge_AdvancedMastery</defName>
-    <label>expeditional advanced mastery</label>
+    <label>sealed advanced mastery</label>
     <description>Master advanced expeditional technology and unlock powerful applications.</description>
     <prerequisites>
       <li>DMS_ExpKnowledge_BasicFoundation</li>
@@ -165,7 +198,7 @@
   <ResearchProjectDef>
     <defName>DMS_Occultech_Frogman</defName>
     <label>directed chassis gestation</label>
-    <description>A sealed-file technique for growing an artificial military organism rather than printing a mech. A directed development sequence is written into an embryo, whose mesonuclear substrate then builds synthetic-mechanical structure in place of tissue and matures on its own. The embryo is brought to term in a growth vat, or in a human surrogate where no vat is available.\n\nAMO development was halted permanently after a catastrophic incident in the Earth era, and the technology has been proscribed ever since. The stated grounds are the damage a self-developing organism does to local society and industry. The colonial fleets enforce the ban themselves rather than through local authorities. A world found running a production chain is not fined or licensed. It is burned back to the ore.\n\nUnlocks the XM132 Frogman and its development sequence.</description>
+    <description>A sealed-file technique for growing an artificial military organism rather than printing a mech. A directed development sequence is written into an embryo, whose mesonuclear substrate then builds synthetic-mechanical structure in place of tissue and matures on its own. The embryo is brought to term in a growth vat, or in a human surrogate where no vat is available.\n\nAMO development was halted permanently after a catastrophic incident in the Earth era. Self-developing military organisms do enormous harm to local society and industry, and the technology has been proscribed ever since. The colonial fleets carry out sanctions under the ban themselves, never through local authorities.\n\nUnlocks the XM132 Frogman and its development sequence.</description>
     <tab>DMS_ExpeditionalKnowledge</tab>
     <knowledgeCategory>DMS_Sealed</knowledgeCategory>
     <knowledgeCost>1000</knowledgeCost>
@@ -175,7 +208,7 @@
       <li>DMS_ExpKnowledge_BasicFoundation</li>
     </prerequisites>
     <discoveredLetterTitle>Sealed file: directed chassis gestation</discoveredLetterTitle>
-    <discoveredLetterText>Researchers have decoded a sealed expeditional file containing the XM132 development sequence, the earliest artificial military organism on human record.\n\nThe Frogman can now be produced. Gestate an embryo at an artifuscle chamber, then bring it to term in a growth vat or a surrogate. The result is a biomatroid larva. Protect its gestation pod for five days and it will mature into a dormant frogman.\n\nThe file carries a fleet prohibition notice. AMO production is proscribed on any settled world, and the fleets enforce it in person. Outside the fleets, only decoded files and fleet deviants have ever produced one.</discoveredLetterText>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the XM132 Frogman, the earliest artificial military organism program on human record.\n\nThe Frogman's directed development sequence can now be produced. Gestate an embryo at an artifuscle chamber, then bring it to term in a growth vat or a surrogate. The result is a biomatroid larva. Protect its gestation pod for five days and it will develop into a combat-ready frogman.\n\nThe file carries a fleet prohibition notice. AMO production is proscribed on any settled world, and the fleets enforce the ban in person.</discoveredLetterText>
     <descriptionHyperlinks>
       <ThingDef>DMS_FrogmanEmbryo</ThingDef>
       <ThingDef>DMS_Mech_Frogman</ThingDef>
@@ -185,7 +218,7 @@
   <!-- Additional Basic Tier Project -->
   <ResearchProjectDef>
     <defName>DMS_ExpKnowledge_BasicSecondary</defName>
-    <label>expeditional basic secondary</label>
+    <label>sealed basic secondary</label>
     <description>Secondary basic knowledge to support advanced research.</description>
     <tab>DMS_ExpeditionalKnowledge</tab>
     <researchViewX>4</researchViewX>

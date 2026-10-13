@@ -8,7 +8,7 @@ using Verse;
 namespace DMS
 {
     /// <summary>
-    /// 研究完成 → 觸發封存科技制裁。
+    /// 研究完成 → 觸發封存科技制裁，以及研究解鎖的任務線（<see cref="ModExtension_ResearchQuest"/>）。
     /// 掛 postfix 而非 prefix：讓原生把進度寫滿、解鎖物生效、完成信件發完之後才結算，
     /// 這樣制裁信件會排在研究完成信件後面，敘事順序正確。
     /// </summary>
@@ -29,6 +29,15 @@ namespace DMS
             catch (Exception ex)
             {
                 Log.Error($"[DMS] Occultech sanction hook failed for {proj.defName}: {ex}");
+            }
+            // 研究解鎖的任務線（例：量子位元破譯 → 石碑）。排在制裁之後，信件順序為研究完成 → 制裁 → 任務。
+            try
+            {
+                ResearchQuestUtility.Notify_ProjectFinished(proj);
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"[DMS] Research quest hook failed for {proj.defName}: {ex}");
             }
         }
     }

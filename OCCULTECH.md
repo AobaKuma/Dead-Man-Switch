@@ -211,8 +211,8 @@
 | defName | 標籤（繁中） | 類別 | 知識成本 | 前置 | 座標 |
 |---|---|---|---|---|---|
 | `DMS_ExpKnowledge_BasicFoundation` | 封存資料解析 | Restricted | 500 | 無 | (1, 1) |
-| `DMS_ExpKnowledge_AdvancedMastery` | 遠征進階精通 | Sealed | 1000 | BasicFoundation | (3, 1) |
-| `DMS_ExpKnowledge_BasicSecondary` | 遠征基礎輔修 | Occulted | 400 | AdvancedMastery | (4, 2) |
+| `DMS_ExpKnowledge_AdvancedMastery` | 封存進階精通 | Sealed | 1000 | BasicFoundation | (3, 1) |
+| `DMS_ExpKnowledge_BasicSecondary` | 封存基礎輔修 | Occulted | 400 | AdvancedMastery | (4, 2) |
 
 > 抽象父 `DMS_BaseOccultTech` 提供 `tab` / `knowledgeCategory=DMS_Restricted` / `knowledgeCost=750` 預設值，但目前只有 BasicFoundation 繼承它。
 
@@ -222,7 +222,7 @@
 
 - 知識成本 1000，前置 `DMS_ExpKnowledge_BasicFoundation`，座標 (3, 3)
 - **解鎖**：`DMS_Make_FrogmanEmbryo`（人造肌肉艙製造胚胎，智識 8）→ 成長艙或代孕者孕育 → 生物機兵幼體 → 孕育艙 5 天 → XM132 Frogman
-- 設定：AMO（人造軍用生物）在地球紀元的重大事故後被永久禁止，艦隊親自執法，查獲生產鏈的世界不是罰款而是「燒回礦石」
+- 設定：AMO（人造軍用生物）在地球紀元的重大事故後被永久禁止，理由是自體發育的軍用生物對當地社會與生產能力危害極大；禁令的制裁由艦隊親自執行，不假手當地政權
 - 相關檔：`1.6/Biotech/Defs/DMS_Frogman_Gestation.xml`
 
 #### 2. `DMS_Occultech_BionicSuitHeavy`：enclosed assault frame／全閉式突擊骨架
@@ -247,7 +247,7 @@
   - `DMS_Make_Neutroamine`：由肉類與化石油合成純合成藥劑 x5
   - `DMS_Make_ArtifuscleFromProtein`：以人工蛋白＋鎢鋼培養人造肌肉 x5（免黃金與純合成藥劑）
   - 第三個配方（`DMS_Recipe.xml:972` 附近）同屬本專案
-- 設定：封存理由不是武器，而是「能自產蛋白與藥物前驅物的殖民地就不再向任何人採購」
+- 設定：封存理由不是武器，而是人工合成技術大規模擴散後，相關產業長期下來會出現極其嚴重的結構性失業
 
 #### 5. `DMS_Occultech_Subsonic`：infrasonics／次聲波基礎
 
@@ -262,7 +262,7 @@
 - 相關檔：`1.6/NewContent/Defs/Things_Item/DMS_Item_Subsonic.xml`、`1.6/NewContent/Defs/Things_Building/DMS_Buildings_Subsonic.xml`、`_Source/DMS/Subsonic/`
 - 模塊與手雷目前暫用 `ComponentCCC` 與原版 EMP 手雷貼圖（XML 內有 TODO）
 
-#### 6. `DMS_Occultech_RemnantPatterns`：remnant patterns／餘械型號
+#### 6. `DMS_Occultech_RemnantPatterns`：garrison arsenal／駐屯兵器
 
 - 知識成本 750，類別 Restricted，前置 `DMS_AdvancedControl`（常規樹：先進控制），座標 (1, 7)
 - **解鎖**三個機械組裝平臺（`DMS_MechGestatorSmall`）配方，各 3 個培育週期：
@@ -271,8 +271,16 @@
   - `DMS_Make_Lanius`：伯勞鳥（原本掛在常規樹的先進控制底下，現改掛本專案）
 - 鬥牛犬的背掛武裝寫在種族上，培育出來就帶著，配方不消耗武器
 - 復活：兩種鬥牛犬與伯勞鳥都歸在中型機兵復活（`DMS_ResurrectMediumMech`，鋼 50）；鬥牛犬雖是重型，仍刻意放在中型
-- 設定：為先鋒遠征隊設計、在無人下令時仍會持續執行最後指令的型號；戰爭法上與布雷區歸為同類。星球上的先鋒殘餘就是這些型號失去創造者之後的樣子
+- 設定：專為先鋒殖民行動設計、用於長期駐屯的自監管警備兵器，控制核心寫有備援指令，會持續執行最後一道常備命令直到機體損毀；戰爭法上與布雷區歸為同類。星球上的餘械就是這些型號失去創造者之後的樣子
 - 相關檔：`1.7/Biotech/Defs/DMS_Recipes_MechGestator_{BullHound,Lanius}.xml`
+
+#### 7. `DMS_Occultech_QubitDecryption`：qubit decryption／量子位元破譯
+
+- 知識成本 750，類別 Restricted，前置 `MicroelectronicsBasics`（原版：微電子基礎），座標 (1, 2)
+- **解鎖**：`DMS_OccultechExtractor`（解碼器）
+- **派發石碑任務線**：專案掛 `DMS.ModExtension_ResearchQuest`（`quest = DMS_Stele`），研究完成時派發主線。研究完成前石碑任務線不會出現；一局只派發一次（任務管理器裡有過同 root 的任務就不再派發，含已結束者）
+- 設定：直接量測全像儲存刻錄片晶格位點的量子態、接受塌縮來讀取資料，每次讀取都會永久破壞被讀取的區段；由脫序者流出
+- 翻譯：`Languages/<lang>/DefInjected/ResearchProjectDef/DMS_OccultechProjects_QubitDecryption.xml`
 
 ---
 
@@ -287,7 +295,7 @@
 | defName | 標籤 | 對應類別 | 市價 | 進度 | 退回經驗 | 解封清單 | 取得 |
 |---|---|---|---|---|---|---|---|
 | `DMS_DataCache_Restricted` | restricted technical data cache | 管制 | 300 | 150 | 1500 | BasicFoundation | `RewardStandardMidFreq`、物資箱（權重 3） |
-| `DMS_DataCache_Sealed` | sealed data cache | 封存 | 700 | 250 | 2000 | AdvancedMastery、Frogman、BionicSuitHeavy、GestaltEngine、Biosynthesis、Subsonic、RemnantPatterns | `RewardStandardCore`、物資箱（權重 1） |
+| `DMS_DataCache_Sealed` | sealed data cache | 封存 | 700 | 250 | 2000 | AdvancedMastery、QubitDecryption、Frogman、BionicSuitHeavy、GestaltEngine、Biosynthesis、Subsonic、RemnantPatterns | `RewardStandardCore`、物資箱（權重 1） |
 | `DMS_DataCache_Occulted` | occulted data cache | 禁忌 | 1400 | 400 | 3000 | BasicSecondary | `RewardStandardLowFreq`，**不進物資箱**，只走任務獎勵 |
 
 > ⚠️ 新增 Occultech 專案時，記得把 defName 補進對應等級的 `researchProjects` 清單，否則永遠抽不到。
@@ -298,8 +306,8 @@
 
 | Def | 標籤 | 說明 |
 |---|---|---|
-| `DMS_OccultTechFont` | Stele／石碑 | 3×3，6000 HP，不可通行。掛 `Fortified.CompProperties_OccultechSource`，`totalReserve 4000`。本體不需電力、不主動 tick，只被動提供 `TryExtract`。抽乾後保留為可拆除空殼 |
-| `DMS_OccultechExtractor` | Decoder／解碼器 | 1×2，可微縮搬運重裝。300W（待機 50W），掛 `Fortified.CompProperties_OccultechExtractor`，`knowledgePerDay 50`，起始類別 `DMS_Restricted` |
+| `DMS_OccultTechFont` | Stele／石碑 | 3×3，6000 HP，不可通行。掛 `Fortified.CompProperties_OccultechSource`，`totalReserve 4000`。本體不需電力、不主動 tick，只被動提供 `TryExtract`。抽乾後保留為可拆除空殼。放在 `FFF_DevCategory`，玩家不可建造，只能從石碑任務線取得 |
+| `DMS_OccultechExtractor` | Decoder／解碼器 | 1×2，可微縮搬運重裝。300W（待機 50W），掛 `Fortified.CompProperties_OccultechExtractor`，`knowledgePerDay 50`，起始類別 `DMS_Restricted`。需研究 `DMS_Occultech_QubitDecryption` |
 
 運作條件三者皆需滿足：**有電** + **正面緊貼未耗盡的知識源** + **該分頁尚有可推進的專案**。任一不滿足即轉待機，不消耗源儲量、只吃待機電。知識透過 `KnowledgeUtility.AddKnowledge` 注入起始類別並依分頁順序向後溢流。**不需要研究員**。
 
@@ -324,6 +332,7 @@
 
 `DMS.QuestNode_Root_Stele`：
 
+- **觸發**：研究完成 `DMS_Occultech_QubitDecryption` 時由 `ResearchQuestUtility.Notify_ProjectFinished` 派發（接在 `Patch_ResearchManager_FinishProject` 的制裁之後），一局只派發一次。說書人不會抽到它（`isRootSpecial`）
 - 同時只允許一條進行中（`TestRunInt` 檢查）
 - `keysCount = 4`，`maxActiveSubquests = 3`
 - 子任務生成節奏（`QuestPart_SubquestGenerator_Stele`）：首個子任務 MTB 120000 ticks、間隔 300000~480000；後續 MTB 300000 ticks、間隔 900000~1800000
@@ -387,6 +396,7 @@
 | `_Source/DMS/Occultech/GameComponent_OccultechSanction.cs` | 制裁存檔狀態、追殺排程、週期校正 |
 | `_Source/DMS/Occultech/Patch_OccultechSanction.cs` | 四個 Harmony patch（研究完成、好感度封鎖、關係校正、通訊台對話） |
 | `_Source/DMS/Occultech/DebugActions_Occultech.cs` | 除錯入口 |
+| `_Source/DMS/Occultech/ModExtension_ResearchQuest.cs` | 研究完成派發任務線（量子位元破譯 → 石碑） |
 | `_Source/DMS/FacilityServer/CompHuntBreaker.cs` | SAGE 被摧毀時暫停追殺 |
 | `_Source/DMS/Quests/QuestNode_Root_DMS_FleetNetworkSite.cs` | SAGE 節點任務（追殺期間限定） |
 | `1.6/NewContent/Defs/Quests/DMS_FleetNetworkQuest.xml` | SAGE 節點站點與任務 |
@@ -438,6 +448,7 @@ English / 繁體中文 / 简体中文 **三語皆已補齊**：
 | `Patch_Faction_CanChangeGoodwillFor` | 擋下對艦隊的正向好感度變動 |
 | `Patch_FactionRelation_CheckKindThresholds` | 關係等級的即時校正 |
 | `Patch_FactionDialogMaker_FactionDialogFor` | 通訊台的「放棄封存級技術」選項 |
+| `ModExtension_ResearchQuest` / `ResearchQuestUtility` | 掛在 `ResearchProjectDef` 上，研究完成時派發 `quest` 指定的任務線（一局一次）。目前用於量子位元破譯 → `DMS_Stele` |
 
 > `OccultechSanctionUtility.RenounceAll` 需要把單一研究的進度歸零，而原生只提供 `ResetAllProgress()`。
 > 因此 `DMS.csproj` 額外 Publicize 了 `ResearchManager.progress` 與 `ResearchManager.anomalyKnowledge`。

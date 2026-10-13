@@ -14,9 +14,7 @@
   <ThingDef ParentName="DMS_AutomatroidTurretGun">
     <defName>DMS_BullHound_ShotgunMounted</defName>
     <label>bullhound autoshotgun</label>
-    <description>A short-barrelled automatic shotgun fixed to a bullhound's back mount, built to drop intruders at corridor and doorway range.
-
-This weapon is designed specifically for mounted use, so only specific units can equip it.</description>
+    <description>A short-barrelled automatic shotgun fixed to a bullhound's back mount, built to drop intruders at corridor and doorway range.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
     <graphicData>
       <texPath>Things/Automatroid/bullHound_gun</texPath>
       <drawSize>2.6</drawSize>
