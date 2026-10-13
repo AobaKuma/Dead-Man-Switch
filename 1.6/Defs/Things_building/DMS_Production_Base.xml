@@ -107,6 +107,9 @@
         <li>DMS_Hopper</li>
       </relatedBuildCommands>
     </building>
+    <placeWorkers Inherit="false">
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
   </ThingDef>
 
 </Defs>
