@@ -262,6 +262,18 @@
 - 相關檔：`1.6/NewContent/Defs/Things_Item/DMS_Item_Subsonic.xml`、`1.6/NewContent/Defs/Things_Building/DMS_Buildings_Subsonic.xml`、`_Source/DMS/Subsonic/`
 - 模塊與手雷目前暫用 `ComponentCCC` 與原版 EMP 手雷貼圖（XML 內有 TODO）
 
+#### 6. `DMS_Occultech_RemnantPatterns`：remnant patterns／餘械型號
+
+- 知識成本 750，類別 Restricted，前置 `DMS_AdvancedControl`（常規樹：先進控制），座標 (1, 7)
+- **解鎖**三個機械組裝平臺（`DMS_MechGestatorSmall`）配方，各 3 個培育週期：
+  - `DMS_Make_BullHound`：鬥牛犬（霰彈型），鋼 250、鎢鋼 30、零件 8、先進零件 2
+  - `DMS_Make_BullHound_Flamer`：鬥牛犬（噴火型），同上再加化合燃料 30
+  - `DMS_Make_Lanius`：伯勞鳥（原本掛在常規樹的先進控制底下，現改掛本專案）
+- 鬥牛犬的背掛武裝寫在種族上，培育出來就帶著，配方不消耗武器
+- 復活：兩種鬥牛犬與伯勞鳥都歸在中型機兵復活（`DMS_ResurrectMediumMech`，鋼 50）；鬥牛犬雖是重型，仍刻意放在中型
+- 設定：為先鋒遠征隊設計、在無人下令時仍會持續執行最後指令的型號；戰爭法上與布雷區歸為同類。星球上的先鋒殘餘就是這些型號失去創造者之後的樣子
+- 相關檔：`1.7/Biotech/Defs/DMS_Recipes_MechGestator_{BullHound,Lanius}.xml`
+
 ---
 
 ## 知識取得管道
@@ -275,7 +287,7 @@
 | defName | 標籤 | 對應類別 | 市價 | 進度 | 退回經驗 | 解封清單 | 取得 |
 |---|---|---|---|---|---|---|---|
 | `DMS_DataCache_Restricted` | restricted technical data cache | 管制 | 300 | 150 | 1500 | BasicFoundation | `RewardStandardMidFreq`、物資箱（權重 3） |
-| `DMS_DataCache_Sealed` | sealed data cache | 封存 | 700 | 250 | 2000 | AdvancedMastery、Frogman、BionicSuitHeavy、GestaltEngine、Biosynthesis、Subsonic | `RewardStandardCore`、物資箱（權重 1） |
+| `DMS_DataCache_Sealed` | sealed data cache | 封存 | 700 | 250 | 2000 | AdvancedMastery、Frogman、BionicSuitHeavy、GestaltEngine、Biosynthesis、Subsonic、RemnantPatterns | `RewardStandardCore`、物資箱（權重 1） |
 | `DMS_DataCache_Occulted` | occulted data cache | 禁忌 | 1400 | 400 | 3000 | BasicSecondary | `RewardStandardLowFreq`，**不進物資箱**，只走任務獎勵 |
 
 > ⚠️ 新增 Occultech 專案時，記得把 defName 補進對應等級的 `researchProjects` 清單，否則永遠抽不到。

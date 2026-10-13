@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 鬥牛犬 BullHound：重型四足駐防機兵，由 I 級封存檔案「餘械型號」解鎖，使用小型培育艙。
+       兩種型號各一個配方：背掛武裝固定在種族上，培育出來就帶著，不另外消耗武器。
+       噴火型多吃一份化合燃料（同壁虎）。
+       BullHound: heavy quadruped garrison mech, unlocked by the class I sealed file "remnant patterns", small gestator.
+       One recipe per pattern: the back mount is part of the race, so the unit comes out armed and no weapon is consumed.
+       The flamer pattern also takes chemfuel (as the Gecko does). -->
+  <RecipeDef Name="DMS_BullHoundRecipeBase" ParentName="DMS_HeavyMechanoidRecipe" Abstract="True">
+    <researchPrerequisite>DMS_Occultech_RemnantPatterns</researchPrerequisite>
+    <gestationCycles>3</gestationCycles>
+  </RecipeDef>
+
+  <!-- 霰彈型 / shotgun pattern -->
+  <RecipeDef ParentName="DMS_BullHoundRecipeBase">
+    <defName>DMS_Make_BullHound</defName>
+    <label>Gestate bullhound</label>
+    <description>Gestate a bullhound automatroid, a heavy quadruped garrison mech. An enlarged derivative of the Dogge, it trades the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was built to hold gates and corridor junctions against intruders at close range.\n\nThis pattern mounts an automatic shotgun. The mount is fixed and cannot be swapped, the bullhound is slow on open ground, and it demands three points of bandwidth.</description>
+    <products>
+      <DMS_Mech_BullHound>1</DMS_Mech_BullHound>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>ComponentIndustrial</ThingDef>
+      <ThingDef>ComponentStamped</ThingDef>
+      <ThingDef>DMS_Mech_BullHound</ThingDef>
+      <ThingDef>DMS_BullHound_ShotgunMounted</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>250</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- 噴火型 / flamer pattern -->
+  <RecipeDef ParentName="DMS_BullHoundRecipeBase">
+    <defName>DMS_Make_BullHound_Flamer</defName>
+    <label>Gestate bullhound (flamer)</label>
+    <description>Gestate a bullhound automatroid, a heavy quadruped garrison mech. An enlarged derivative of the Dogge, it trades the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was built to hold gates and corridor junctions against intruders at close range.\n\nThis pattern mounts a Flameblaster for clearing corridors, with its plating treated against its own flame. The mount is fixed and cannot be swapped, the bullhound is slow on open ground, and it demands three points of bandwidth.</description>
+    <products>
+      <DMS_Mech_BullHound_Flamer>1</DMS_Mech_BullHound_Flamer>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>ComponentIndustrial</ThingDef>
+      <ThingDef>ComponentStamped</ThingDef>
+      <ThingDef>DMS_Mech_BullHound_Flamer</ThingDef>
+      <ThingDef>DMS_Flameblaster</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>250</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+</Defs>

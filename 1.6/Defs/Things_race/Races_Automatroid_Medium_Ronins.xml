@@ -330,7 +330,10 @@
     <defName>DMS_Mech_Siegebreaker</defName>
     <label>siegebreaker</label>
     <race>DMS_Mech_Siegebreaker</race>
-    <canBeSapper>true</canBeSapper>
+    <!-- 不設 canBeSapper：原版工兵只認類人且採礦 ≥4 的小人（SappersUtility），機兵永遠當不了工兵；
+         設了只會讓工兵襲擊的 CanUsePawn 每隻破城者都拒絕 170 次並報 "didn't pass validator check (post-gear)"。
+         No canBeSapper: vanilla sappers must be humanlike with Mining >= 4 (SappersUtility), so a mech never saps;
+         the flag only made the sapper raid's CanUsePawn reject every siegebreaker and log a validator error. -->
     <isGoodBreacher>true</isGoodBreacher>
     <combatPower>200</combatPower>
     <maxPerGroup>10</maxPerGroup>

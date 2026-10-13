@@ -5,15 +5,18 @@
        鬥牛犬 BullHound：先鋒殘餘設施的駐防用重型四足機兵。
        獒犬（Dogge）的設施防禦放大版：不追求機動，而是把重量花在裝甲與固定武裝上，
        設計目的就是守在走廊與閘門口把入侵者擋下來。
-       只在殘餘設施內以封存搖籃（DMS_MechCapsule_VaultKennel）形式出現、由機械師駭入取得；
-       沒有培養配方、也不出現在先鋒殘餘的襲擊編組裡。
+       野外只在殘餘設施內以封存搖籃（DMS_MechCapsule_VaultKennel）形式出現、由機械師駭入取得；
+       玩家可研究 I 級封存檔案 DMS_Occultech_RemnantPatterns 後自行培養（Biotech/Defs/DMS_Recipes_MechGestator_BullHound.xml）。
+       不出現在先鋒殘餘的襲擊編組裡。
        兩種型號：霰彈型（近程壓制）與噴火型（走廊清掃），固定武裝不可更換。
 
        BullHound: heavy quadruped garrison mech of the Legacy remnant installations.
        A facility-defence enlargement of the Dogge: mobility is traded for plating and
        a fixed weapon mount, built to sit on corridors and gates and stop intruders.
-       Only found inside installations as mothballed kennels (DMS_MechCapsule_VaultKennel)
-       for a mechanitor to hack; no gestation recipe and never part of Legacy raid groups.
+       In the wild it is only found inside installations as mothballed kennels (DMS_MechCapsule_VaultKennel)
+       for a mechanitor to hack; the player can gestate it after the class I sealed file
+       DMS_Occultech_RemnantPatterns (Biotech/Defs/DMS_Recipes_MechGestator_BullHound.xml).
+       Never part of Legacy raid groups.
        Two patterns: shotgun (close suppression) and flamer (corridor clearing); the mount is fixed.
        ============================================================ -->
 

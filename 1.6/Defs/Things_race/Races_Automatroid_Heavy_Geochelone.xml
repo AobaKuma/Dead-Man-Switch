@@ -462,7 +462,8 @@
     <label>killdozer</label>
     <isBoss>true</isBoss>
     <destroyGearOnDrop>true</destroyGearOnDrop>
-    <canBeSapper>true</canBeSapper>
+    <!-- 不設 canBeSapper：機兵當不了原版工兵，理由見 DMS_Mech_Siegebreaker（Races_Automatroid_Medium_Ronins.xml）。
+         No canBeSapper: mechs can't be vanilla sappers, see DMS_Mech_Siegebreaker (Races_Automatroid_Medium_Ronins.xml). -->
     <isGoodBreacher>true</isGoodBreacher>
     <combatPower>480</combatPower>
     <maxPerGroup>4</maxPerGroup>

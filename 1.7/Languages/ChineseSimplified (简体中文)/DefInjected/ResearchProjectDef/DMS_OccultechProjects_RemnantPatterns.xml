@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: remnant patterns -->
+  <DMS_Occultech_RemnantPatterns.label>余械型号</DMS_Occultech_RemnantPatterns.label>
+  <!-- EN: Mech patterns designed to keep fighting with no one left to give the order... -->
+  <DMS_Occultech_RemnantPatterns.description>为了在无人下令时依然持续作战而设计的机兵型号：一种平时在设施闸门前休眠、直到警报线路将其唤醒的重型四足驻防机兵，以及一种为无人母机提供掩护火力的大型无人机平台。两者都是为先锋远征队绘制的型号，先锋们需要能在舰队抵达前独自守住一颗星球数十年的防卫力量，因此两者的控制核心都写入了备援指令，会持续执行最后一道常备命令直到机体损毁为止。\n在战争法之下，比其所部署之冲突存续更久的武器与布雷区归为同类。这颗星球上至今仍在守护灯塔与各处设施的余械，就是这些型号在创造者离去之后的模样。\n\n经 ████ 及 ███ 之审批，将余械型号及相关技术列为I级封存技术，禁止对开发中之星球销售此类技术，并在殖民星球的社会达到I级标准后将其相关技术逐步解密。</DMS_Occultech_RemnantPatterns.description>
+  <!-- EN: Sealed file I: remnant patterns -->
+  <DMS_Occultech_RemnantPatterns.discoveredLetterTitle>封存档案 I：余械型号</DMS_Occultech_RemnantPatterns.discoveredLetterTitle>
+  <!-- EN: Researchers have opened a class I sealed file containing the production patterns of two remnant mechs... -->
+  <DMS_Occultech_RemnantPatterns.discoveredLetterText>研究员打开了一份 I 级封存档案，内容是两种余械机兵的生产型号。\n\n现在可以在机械组装平台组装斗牛犬（霰弹型与喷火型）与伯劳鸟。组装出来的机体会像其他机兵一样听从机械师的指挥。\n\n这颗星球上的余械，就是这些型号在没有人能让它们停下来之后的样子。舰队封存这份档案，就是为了不让新的余械再被造出来。公开动用它们会被记上一笔。</DMS_Occultech_RemnantPatterns.discoveredLetterText>
+
+</LanguageData>
