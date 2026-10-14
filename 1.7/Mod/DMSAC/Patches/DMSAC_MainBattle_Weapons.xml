@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <!-- 古代機兵（AncientCorps）聯動：古機武器的製作配方，全部掛在 II 級封存檔案「主戰規格」底下。
+  <!-- 古代機兵（AncientCorps）聯動：古機武器的製作配方。
        AncientCorps 原本用 <recipeMaker Inherit="False" /> 把這些武器鎖成不可製作，造價（costList）一直都在；
        這裡換成正常的 recipeMaker，工作台、技能與半成品繼承 DMS_AutomatroidGun（機兵武器印表機）。
-       researchPrerequisites 用 Inherit="False" 蓋掉重型武器基底的 DMS_EquipmentHeavy，只需要主戰規格。
-       AncientCorps integration: crafting recipes for the ancient corps' weapons, all under the class II sealed file
-       "main battle specification". AncientCorps locks them with <recipeMaker Inherit="False" /> while keeping
-       their costList; this swaps in a normal recipeMaker so the bench, skill and unfinished thing come from
-       DMS_AutomatroidGun (the automatroid weapon printer). researchPrerequisites uses Inherit="False" to drop the
-       heavy weapon base's DMS_EquipmentHeavy, so only the main battle file is required. -->
+       佐羅賓槍系掛在 I 級「駐屯兵器」；其餘掛在 II 級「主戰規格」，並加上對應的原版槍械科技（正義法槌是次世代兵器），
+       取自 AncientCorps 原本註解掉的 recipeMaker（排氣者比照葉卡捷琳）。
+       刻意不要求精英裝備（DMS_EquipmentElite）與重型裝備（DMS_EquipmentHeavy）：
+       重型武器基底原本會帶 DMS_EquipmentHeavy，所以一律用 Inherit="False" 把整串寫明。
+       AncientCorps integration: crafting recipes for the ancient corps' weapons.
+       AncientCorps locks them with <recipeMaker Inherit="False" /> while keeping their costList; this swaps in a normal
+       recipeMaker so the bench, skill and unfinished thing come from DMS_AutomatroidGun (the automatroid weapon printer).
+       The Zlobin family sits under the class I "garrison arsenal"; the rest sit under the class II "main battle
+       specification" plus a matching vanilla gun tech (the Justice Gavel's is next-gen weapons), taken from the
+       recipeMakers AncientCorps left commented out (the Vykhlop follows the Yekaterin).
+       Elite equipment (DMS_EquipmentElite) and heavy equipment (DMS_EquipmentHeavy) are deliberately not required;
+       the heavy weapon base would bring DMS_EquipmentHeavy along, so every list uses Inherit="False" and spells the
+       whole set out. -->
 
-  <!-- 步兵武器 / infantry weapons -->
+  <!-- 佐羅賓槍系：駐屯兵器 / Zlobin family: garrison arsenal -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[
       defName="DMS_ZlobinRevolver" or
-      defName="DMS_ZlobinRifle" or
-      defName="DMS_VykhlopRifle" or
-      defName="DMS_PKM" or
-      defName="DMS_KS23K" or
-      defName="DMS_YekaterinRifle" or
-      defName="DMS_AtlantGrenadeLauncher"
+      defName="DMS_ZlobinRifle"
       ]/recipeMaker</xpath>
     <value>
       <recipeMaker>
         <researchPrerequisites Inherit="False">
-          <li>DMS_Occultech_MainBattle</li>
+          <li>DMS_Occultech_RemnantPatterns</li>
         </researchPrerequisites>
         <skillRequirements>
           <Crafting>6</Crafting>
@@ -33,14 +35,52 @@
     </value>
   </Operation>
 
-  <!-- 重型武器 / heavy weapons -->
+  <!-- 導氣式：機槍與戰鬥霰彈槍 / gas-operated: machine gun and combat shotgun -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[
+      defName="DMS_PKM" or
+      defName="DMS_KS23K"
+      ]/recipeMaker</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisites Inherit="False">
+          <li>DMS_Occultech_MainBattle</li>
+          <li>GasOperation</li>
+        </researchPrerequisites>
+        <skillRequirements>
+          <Crafting>6</Crafting>
+        </skillRequirements>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <!-- 精密膛線：步槍與榴彈機槍。伊茲馬爾只在 CE 下存在，其餘找得到就不算失敗。
+       Precision rifling: rifles and the grenade launcher. The Izhmal only exists under CE; the others always match. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[
+      defName="DMS_VykhlopRifle" or
+      defName="DMS_YekaterinRifle" or
+      defName="DMS_AtlantGrenadeLauncher" or
+      defName="DMS_Gun_IzhmalRifle"
+      ]/recipeMaker</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisites Inherit="False">
+          <li>DMS_Occultech_MainBattle</li>
+          <li>PrecisionRifling</li>
+        </researchPrerequisites>
+        <skillRequirements>
+          <Crafting>6</Crafting>
+        </skillRequirements>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <!-- 重型：機槍與航空機砲，只需要主戰規格 / heavy: machine gun and aerial autocannon, main battle file only -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[
       defName="DMS_KordMachineGun" or
-      defName="DMS_VladimirovMachineGun" or
-      defName="DMS_AerialAutocannon" or
-      defName="DMS_Gsh30Gatlinggun" or
-      defName="DMS_Gun_JusticeGavel"
+      defName="DMS_AerialAutocannon"
       ]/recipeMaker</xpath>
     <value>
       <recipeMaker>
@@ -54,35 +94,71 @@
     </value>
   </Operation>
 
-  <!-- 只在 CE 下存在的古機武器（AncientCorps 1.6/CE/Defs）。沒有 CE 時找不到節點，所以不算失敗。
-       Ancient weapons that only exist under CE (AncientCorps 1.6/CE/Defs). Without CE nothing matches, which is not a failure. -->
+  <!-- 重型：弗拉基米羅夫重機槍 / heavy: Vladimirov HMG -->
   <Operation Class="PatchOperationReplace">
-    <success>Always</success>
+    <xpath>Defs/ThingDef[defName="DMS_VladimirovMachineGun"]/recipeMaker</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisites Inherit="False">
+          <li>DMS_Occultech_MainBattle</li>
+          <li>PrecisionRifling</li>
+        </researchPrerequisites>
+        <skillRequirements>
+          <Crafting>8</Crafting>
+        </skillRequirements>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <!-- 重型多管：鞭笞者與 YAK-B（YAK-B 只在 CE 下存在）。heavy multi-barrel: Flogger and YAK-B (the YAK-B only exists under CE). -->
+  <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[
-      defName="DMS_Gun_IzhmalRifle" or
-      defName="DMS_GshG762Gatlinggun"
+      defName="DMS_Gsh30Gatlinggun" or
+      defName="DMS_YAKBGatlinggun"
       ]/recipeMaker</xpath>
     <value>
       <recipeMaker>
         <researchPrerequisites Inherit="False">
           <li>DMS_Occultech_MainBattle</li>
+          <li>MultibarrelWeapons</li>
         </researchPrerequisites>
         <skillRequirements>
-          <Crafting>6</Crafting>
+          <Crafting>8</Crafting>
         </skillRequirements>
       </recipeMaker>
     </value>
   </Operation>
+
+  <!-- 正義法槌：駭蜥的戰車炮血統，細分科技用常規樹的次世代兵器。
+       Justice Gavel: descended from the Tarbosaurus tank gun, so its tier tech is the regular tree's next-gen weapons. -->
   <Operation Class="PatchOperationReplace">
-    <success>Always</success>
-    <xpath>Defs/ThingDef[defName="DMS_YAKBGatlinggun"]/recipeMaker</xpath>
+    <xpath>Defs/ThingDef[defName="DMS_Gun_JusticeGavel"]/recipeMaker</xpath>
     <value>
       <recipeMaker>
         <researchPrerequisites Inherit="False">
           <li>DMS_Occultech_MainBattle</li>
+          <li>DMS_Synthroid</li>
         </researchPrerequisites>
         <skillRequirements>
           <Crafting>8</Crafting>
+        </skillRequirements>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <!-- GshG-7.62 只在 CE 下存在，沒有 CE 時找不到節點，所以不算失敗。
+       The GshG-7.62 only exists under CE; without CE nothing matches, which is not a failure. -->
+  <Operation Class="PatchOperationReplace">
+    <success>Always</success>
+    <xpath>Defs/ThingDef[defName="DMS_GshG762Gatlinggun"]/recipeMaker</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisites Inherit="False">
+          <li>DMS_Occultech_MainBattle</li>
+          <li>MultibarrelWeapons</li>
+        </researchPrerequisites>
+        <skillRequirements>
+          <Crafting>6</Crafting>
         </skillRequirements>
       </recipeMaker>
     </value>
@@ -125,11 +201,18 @@
     </value>
   </Operation>
 
-  <!-- 研究說明的超連結補上古機單位。Add the ancient units to the research's description hyperlinks. -->
+  <!-- 研究說明的超連結補上古機。Add the ancient corps entries to the research description hyperlinks. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ResearchProjectDef[defName="DMS_Occultech_RemnantPatterns"]/descriptionHyperlinks</xpath>
+    <value>
+      <ThingDef>DMS_Mech_Molot</ThingDef>
+      <ThingDef>DMS_ZlobinRevolver</ThingDef>
+      <ThingDef>DMS_ZlobinRifle</ThingDef>
+    </value>
+  </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ResearchProjectDef[defName="DMS_Occultech_MainBattle"]/descriptionHyperlinks</xpath>
     <value>
-      <ThingDef>DMS_Mech_Molot</ThingDef>
       <ThingDef>DMS_Mech_Tsvetnik</ThingDef>
       <ThingDef>DMS_Mech_Zabor</ThingDef>
       <ThingDef>DMS_Mech_Gorod</ThingDef>

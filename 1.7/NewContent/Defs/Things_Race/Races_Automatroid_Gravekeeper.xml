@@ -112,6 +112,7 @@
         <EnableWeaponFilter>true</EnableWeaponFilter>
         <UsableWeaponTags>
           <li>DMS_DragoonGun</li>                                                      <!--與機動龍騎兵共用 / shared with the mobile dragoon-->
+          <li>DMS_Dragoon_SG</li>                                                      <!--龍騎兵霰彈槍（MobileDragoon 才有）/ dragoon shotgun, MobileDragoon only-->
           <li>DMS_MechWeaponHeavy</li>
           <li>DMS_MechWeaponTransHeavy</li>
           <li>DMS_MechWeaponUltraHeavy</li>
@@ -330,7 +331,7 @@
        所以這三個 NPC 編制必須留在玩家用的 DMS_Mech_Gravekeeper / DMS_Mech_Gravekeeper_Stugna 之後，
        否則培育出來的會變成 NPC 編制。
        不設 alternateGraphicChance：沒有 alternateGraphics 清單時機率必須是 0，否則 TryGetAlternate 會對 null 取樣。
-         掘墓人 Sepulturero：圓頭（D），無手持武器，靠掃擊拳與駭蜥大跳近戰
+         掘墓人 Sepulturero：圓頭（D），靠掃擊拳與駭蜥大跳近戰
          送葬者 Enterrador：方頭（B，帶發射架），GAU-19 與斯圖格納導彈的反裝甲編制
          守夜人 Velador：三角頭（F），栓動炮與狙擊手的精確射擊
 
@@ -338,9 +339,18 @@
        ⚠ Gestation takes the race's first PawnKind in the DefDatabase (Bill_ProductionMech.CreateProducts), so these three
        must stay after the player kinds DMS_Mech_Gravekeeper / DMS_Mech_Gravekeeper_Stugna, or gestation would produce them.
        No alternateGraphicChance: without an alternateGraphics list the chance must stay 0, or TryGetAlternate samples a null list.
-         Sepulturero: round head (D), no hand weapon, closes in with the sweeping fists and the Tarbosaurus heavy jump
+         Sepulturero: round head (D), closes in with the sweeping fists and the Tarbosaurus heavy jump
          Enterrador: square head (B, with the rack), anti-armour configuration with a GAU-19 and Stugna missiles
          Velador: triangle head (F), bolt cannon and the sniper's precision marksmanship
+
+       武器池：三種編制都會從龍騎兵武器（步槍、榴彈槍，加上 MobileDragoon 的霰彈槍）中抽一把；
+       送葬者與守夜人另外可以抽到各自的招牌武器。原版依 generateCommonality 加權抽選，
+       所以招牌武器大約佔 1/4（沒有 MobileDragoon 時 1/3）。weaponMoney 定在 9999，池裡每一把都買得起。
+       DMS_Dragoon_SG 只是字串，沒有 MobileDragoon 時不會比對到任何武器，不會報錯。
+       Weapon pool: all three draw from the dragoon weapons (rifle, grenade launcher and, with MobileDragoon, the shotgun);
+       the Enterrador and Velador can also draw their signature weapon. Vanilla weights the draw by generateCommonality,
+       so the signature weapon comes up about 1 in 4 (1 in 3 without MobileDragoon). weaponMoney is pinned at 9999 so every
+       weapon in the pool is affordable. DMS_Dragoon_SG is a plain tag string; without MobileDragoon it matches nothing.
        ============================================================ -->
 
   <!-- 掘墓人 / Sepulturero -->
@@ -349,9 +359,11 @@
     <label>Sepulturero</label>
     <race>DMS_Mech_Gravekeeper</race>
     <combatPower>420</combatPower>
-    <!-- 不帶手持武器，全靠近戰。No hand weapon: melee only. -->
-    <weaponTags Inherit="False" />
-    <weaponMoney>0~0</weaponMoney>
+    <weaponTags Inherit="False">
+      <li>DMS_DragoonGun</li>
+      <li>DMS_Dragoon_SG</li>
+    </weaponTags>
+    <weaponMoney>9999~9999</weaponMoney>
     <abilities>
       <li>DMS_TarbosaurusJump</li>
       <li>DMS_RepairMode</li>
@@ -384,8 +396,7 @@
     </lifeStages>
   </PawnKindDef>
 
-  <!-- 送葬者 / Enterrador
-       weaponMoney 定在 9999 確保一定買得起 GAU-19。weaponMoney is pinned at 9999 so the GAU-19 is always affordable. -->
+  <!-- 送葬者 / Enterrador -->
   <PawnKindDef ParentName="DMS_MechGravekeeperKindBase">
     <defName>DMS_Mech_Gravekeeper_Enterrador</defName>
     <label>Enterrador</label>
@@ -393,6 +404,8 @@
     <combatPower>550</combatPower>
     <weaponTags Inherit="False">
       <li>H_Gatling127mm</li>
+      <li>DMS_DragoonGun</li>
+      <li>DMS_Dragoon_SG</li>
     </weaponTags>
     <weaponMoney>9999~9999</weaponMoney>
     <abilities>
@@ -427,8 +440,7 @@
     </lifeStages>
   </PawnKindDef>
 
-  <!-- 守夜人 / Velador
-       weaponMoney 定在 9999 確保一定買得起栓動炮。weaponMoney is pinned at 9999 so the bolt cannon is always affordable. -->
+  <!-- 守夜人 / Velador -->
   <PawnKindDef ParentName="DMS_MechGravekeeperKindBase">
     <defName>DMS_Mech_Gravekeeper_Velador</defName>
     <label>Velador</label>
@@ -436,6 +448,8 @@
     <combatPower>500</combatPower>
     <weaponTags Inherit="False">
       <li>A_SC_LongRifle</li>
+      <li>DMS_DragoonGun</li>
+      <li>DMS_Dragoon_SG</li>
     </weaponTags>
     <weaponMoney>9999~9999</weaponMoney>
     <abilities>

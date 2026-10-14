@@ -7,9 +7,13 @@
        Main battle production is drastically simplified, so it gestates faster than other ultra-heavies and needs
        no artifuscle or spacer parts.
        One recipe per pattern: the Stugna rack is part of the race and also takes a fire control unit and chemfuel
-       (missile propellant). -->
+       (missile propellant).
+       研究：researchPrerequisite 沿用超重型基底的重型機兵（DMS_HeavyAutomatroid）作為細分科技，主戰規格放在 researchPrerequisites。
+       Research: researchPrerequisite keeps the ultra-heavy base's DMS_HeavyAutomatroid as the tier tech; the main battle file goes in researchPrerequisites. -->
   <RecipeDef Name="DMS_GravekeeperRecipeBase" ParentName="DMS_SuperHeavyMechanoidRecipe" Abstract="True">
-    <researchPrerequisite>DMS_Occultech_MainBattle</researchPrerequisite>
+    <researchPrerequisites>
+      <li>DMS_Occultech_MainBattle</li>
+    </researchPrerequisites>
     <gestationCycles>4</gestationCycles>
   </RecipeDef>
 
