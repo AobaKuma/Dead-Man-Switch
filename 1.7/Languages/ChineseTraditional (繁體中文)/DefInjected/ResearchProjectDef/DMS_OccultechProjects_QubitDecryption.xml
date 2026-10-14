@@ -4,9 +4,9 @@
   <!-- EN: qubit decryption -->
   <DMS_Occultech_QubitDecryption.label>量子位元破譯</DMS_Occultech_QubitDecryption.label>
   <!-- EN: A decoding technique that bypasses a stele's own verification layer... -->
-  <DMS_Occultech_QubitDecryption.description>一種繞過石碑自身的校驗層，直接量測全像儲存刻錄片中每個晶格位點所保存的量子態來讀取資料的譯碼技術。石碑的加密建立在「艦隊以外的人無法在不使其塌縮的前提下觀測這些量子態」的假設之上，而這項技術選擇直接接受塌縮。每一次讀取都會永久破壞被讀取的區段，還原出來的內容得以歸檔研究，遺失的部分則再也無法復原。\n這項技術由脫序者們所流出。石碑是每顆殖民星球的備用記憶，每一座以此法掃描過的石碑，都是一份再也沒有人能夠讀取的紀錄。\n\n經 ████ 及 ███ 之審批，將量子位元破譯及相關技術列為I級封存技術，禁止揭示此類技術，發現的譯碼設備一律予以就地銷毀。</DMS_Occultech_QubitDecryption.description>
-  <!-- EN: Sealed file I: qubit decryption -->
-  <DMS_Occultech_QubitDecryption.discoveredLetterTitle>封存檔案 I：量子位元破譯</DMS_Occultech_QubitDecryption.discoveredLetterTitle>
+  <DMS_Occultech_QubitDecryption.description>一種繞過石碑自身的校驗層，直接量測全像儲存刻錄片中每個晶格位點所保存的量子態來讀取資料的譯碼技術。石碑的加密建立在「艦隊以外的人無法在不使其塌縮的前提下觀測這些量子態」的假設之上，而這項技術選擇直接接受塌縮。每一次讀取都會永久破壞被讀取的區段，還原出來的內容得以歸檔研究，遺失的部分則再也無法復原。\n這項技術由脫序者們所流出。石碑是每顆殖民星球的備用記憶，每一座以此法掃描過的石碑，都是一份再也沒有人能夠讀取的紀錄。\n\n經 ████ 及 ███ 之審批，將量子位元破譯及相關技術列為II級封存技術，禁止揭示此類技術，發現的譯碼設備一律予以就地銷毀。</DMS_Occultech_QubitDecryption.description>
+  <!-- EN: Sealed file II: qubit decryption -->
+  <DMS_Occultech_QubitDecryption.discoveredLetterTitle>封存檔案 II：量子位元破譯</DMS_Occultech_QubitDecryption.discoveredLetterTitle>
   <!-- EN: Using the data they have gathered, researchers have finished decoding the sealed technology... -->
   <DMS_Occultech_QubitDecryption.discoveredLetterText>研究員透過集齊的數據完成了封存技術的解譯。內容是一種由脫序者們所流出的石碑破譯技術。\n\n現在可以建造解碼器。將其正面緊貼石碑並供給電力，便能夠將石碑中的封存科技知識提取。\n\n掌握了這套手法之後，殖民地也能夠追查散落在這顆星球上的封存技術密鑰了，尋回密鑰便能找到石碑。\n\n艦隊封存這份檔案，就是為了不讓石碑中的數據落入他人手中。每一座以此法讀取的石碑，對艦隊而言都是永久的損失。</DMS_Occultech_QubitDecryption.discoveredLetterText>
 

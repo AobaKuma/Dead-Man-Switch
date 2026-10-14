@@ -10,7 +10,7 @@
   <!-- EN: Confirm delivery -->
   <DMS_SupplyPod_Deliver>确认交付</DMS_SupplyPod_Deliver>
   <!-- EN: Consume {0}x {1} loaded in this pod and send it away. Anything else loaded will be unloaded first. -->
-  <DMS_SupplyPod_DeliverDesc>消耗货柜中已装载的 {0} 个{1}并将其送离。其余装载物会先卸下。</DMS_SupplyPod_DeliverDesc>
+  <DMS_SupplyPod_DeliverDesc>送出货柜中的 {0} 个{1}，其他装载物会先卸下。</DMS_SupplyPod_DeliverDesc>
   <!-- EN: Not enough loaded: {0} / {1} -->
   <DMS_SupplyPod_NotEnough>装载量不足：{0} / {1}</DMS_SupplyPod_NotEnough>
   <!-- EN: Requested amount already loaded or designated. -->
@@ -25,7 +25,7 @@
   <!-- EN: Delivery deadline -->
   <DMS_SupplyChain_DeadlineTitle>交付期限</DMS_SupplyChain_DeadlineTitle>
   <!-- EN: Time remaining to load the requested cargo into the supply pod. -->
-  <DMS_SupplyChain_DeadlineTip>在期限内将要求的货物装入补给货柜的剩余时间。</DMS_SupplyChain_DeadlineTip>
+  <DMS_SupplyChain_DeadlineTip>将货物装入补给货柜的剩余时间。</DMS_SupplyChain_DeadlineTip>
   <!-- EN: Supply delivery deadline -->
   <DMS_SupplyChain_AlertLabel>补给交付期限</DMS_SupplyChain_AlertLabel>
   <!-- EN: Load {0}x {1} into the supply pod and confirm the delivery before the deadline, or the contract will end. -->
@@ -41,7 +41,7 @@
   <!-- EN: Boarding deadline: {0} -->
   <DMS_CourtMartial_BoardDeadline>登机期限：{0}</DMS_CourtMartial_BoardDeadline>
   <!-- EN: Time remaining for the defendant to board the orbital transport. Deadline: {0}. If it leaves empty, the tribunal arrangement collapses and hostilities resume. -->
-  <DMS_CourtMartial_BoardDeadlineTip>被告登上轨道运输机的剩余时间，期限为 {0}。若运输机空舱离场，军事法庭协议即告破裂，敌对状态将恢复。</DMS_CourtMartial_BoardDeadlineTip>
+  <DMS_CourtMartial_BoardDeadlineTip>被告须在 {0} 前登上轨道运输机；若运输机空舱离场，协议破裂并恢复敌对。</DMS_CourtMartial_BoardDeadlineTip>
   <!-- EN: Trial concludes in: {0} -->
   <DMS_CourtMartial_TrialInfo>庭审结束：{0}</DMS_CourtMartial_TrialInfo>
   <!-- EN: Sentence ends in: {0} -->
@@ -51,7 +51,7 @@
   <!-- EN: Boarding deadline: {0} -->
   <DMS_OfficerTraining_BoardDeadline>登机期限：{0}</DMS_OfficerTraining_BoardDeadline>
   <!-- EN: Time remaining for the trainee to board the orbital transport. Deadline: {0}. If it leaves empty, the course allocation is withdrawn. -->
-  <DMS_OfficerTraining_BoardDeadlineTip>学员登上轨道运输机的剩余时间，期限为 {0}。若运输机空舱离场，受训名额即遭撤销。</DMS_OfficerTraining_BoardDeadlineTip>
+  <DMS_OfficerTraining_BoardDeadlineTip>学员须在 {0} 前登上轨道运输机；若运输机空舱离场，受训名额即遭撤销。</DMS_OfficerTraining_BoardDeadlineTip>
   <!-- EN: Course ends in: {0} -->
   <DMS_OfficerTraining_CourseInfo>结训时间：{0}</DMS_OfficerTraining_CourseInfo>
   <!-- EN: no rank -->

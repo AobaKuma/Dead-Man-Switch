@@ -4,7 +4,7 @@
   <!-- EN: The modification durability on one of your mech has exhausted -->
   <DMS_AddonBroken>安装于机械体上的改装模块已完全损坏</DMS_AddonBroken>
   <!-- EN: Disposable ceramic armor protects the mecha from damage as ablative armor until its durability is exhausted and needs replacement. -->
-  <DMS_PlatingTooltip>能够抵御大多数伤害的一次性防护片，其上限值与机械体体型正相关，无法自然恢复耐久。</DMS_PlatingTooltip>
+  <DMS_PlatingTooltip>可抵御多数伤害的一次性防护片，上限随体型增加，不会自然恢复。</DMS_PlatingTooltip>
   <!-- EN: Modification applied -->
   <DMS_HasAppliedModification>机械体已完成改装模块的安装</DMS_HasAppliedModification>
   <!-- EN: Weapon system not supported -->
@@ -24,9 +24,9 @@
   <!-- EN: Mounted weapon -->
   <DMS_MountedWeapon>挂载型武器</DMS_MountedWeapon>
   <!-- EN: This weapon can only be equipped with listed automatroid or mechframe -->
-  <DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>此挂载型武器只能由下列机械体或装备衣物与仿生后所使用</DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>
+  <DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>仅限下列机械体，或穿戴下列衣物、仿生体后使用</DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>
   <!-- EN: This weapon can be equipped with listed specific apparel or bionics -->
-  <DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>此武器也可以由下列机械体或装备衣物与仿生后所使用</DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>
+  <DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>下列机械体，或穿戴下列衣物、仿生体后也可使用</DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>
   
   <!-- EN: Inventroy fulled -->
   <DMS_NoPayloadCapacity>物品栏已满</DMS_NoPayloadCapacity>
@@ -38,9 +38,9 @@
   <!-- EN: bodysize not supported (need:{0}) -->
   <DMS_BodysizeNotSupported>体型尺寸不支援(需要:{0})</DMS_BodysizeNotSupported>
   <!-- EN: model not supported -->
-  <DMS_Modification_RaceNotSupported>机械体型号不支援安装该改装模块</DMS_Modification_RaceNotSupported>
+  <DMS_Modification_RaceNotSupported>此机型不支援该改装模块</DMS_Modification_RaceNotSupported>
   <!-- EN: no valid part for apply modification -->
-  <DMS_Modification_NoValidPart>机械体没有供改装模块安装的空余部位</DMS_Modification_NoValidPart>
+  <DMS_Modification_NoValidPart>没有可供安装的空余部位</DMS_Modification_NoValidPart>
 
 
   <!-- EN: missing mech returned -->
@@ -66,18 +66,18 @@
   <DMS_MechStory_Loot>{0}的回报</DMS_MechStory_Loot>
 
   <!-- EN: APS remain time:{0} -->
-  <DMS_APS_TickRemain>主动防御系统运作剩余时间:{0}</DMS_APS_TickRemain>
+  <DMS_APS_TickRemain>主动防御系统：剩余 {0}</DMS_APS_TickRemain>
   <!-- EN: Imprinted: {0}({1}) -->
   <DMS_WeaponImprinted>适配武器:{0}({1})</DMS_WeaponImprinted>
   <!-- EN: Imprinted: {0} -->
   <DMS_Inprinted>武器系结:{0}</DMS_Inprinted>
   <!-- EN: the colony mech {0} has equipped with its first weapon, this makes its adaptive learning ability bound to that type of weapon. -->
-  <DMS_InprintedDesc>由殖民地所控制的 {0} 装备了它的第一个武器，这使得它的自适应能力将与该型号的武器深度系结，并将随着时间逐渐增强与该型武器的契合程度从而提升射击准确性与反应能力。</DMS_InprintedDesc>
+  <DMS_InprintedDesc>{0}装备了第一把武器，自适应系统已与该型武器系结，射击精度与反应速度会随时间提升。</DMS_InprintedDesc>
   
   <!-- EN: Must be in listed tech level: -->
   <DMS_Req_TechLevel>必须是下列科技等级的装备</DMS_Req_TechLevel>
   <!-- EN: Can equip heavy weapon with bodysize requirement below:{0} -->
-  <DMS_Req_BodySize>可直接装备支援体型要求不高于: {0} 的重型武器</DMS_Req_BodySize>
+  <DMS_Req_BodySize>可装备体型需求不高于 {0} 的重型武器</DMS_Req_BodySize>
   <!-- EN: Limited to use listed weapon below -->
   <DMS_Req_WeaponFilter>仅能够使用下列的武器</DMS_Req_WeaponFilter>
   <!-- EN: No other weapon restrictions -->

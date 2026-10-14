@@ -9,8 +9,8 @@
   <DMS_LauncherCase_TakeWeapon>Take and equip {0}</DMS_LauncherCase_TakeWeapon>
   <DMS_LauncherCase_Empty>Empty</DMS_LauncherCase_Empty>
 
-  <DMS_AccessKeyTransform_Locked>Locked. Key-cards still required at linked access consoles: {0}</DMS_AccessKeyTransform_Locked>
-  <DMS_AccessKeyTransform_NoConsole>Locked. No access console is linked to it.</DMS_AccessKeyTransform_NoConsole>
+  <DMS_AccessKeyTransform_Locked>Locked: {0} more key-card swipes needed</DMS_AccessKeyTransform_Locked>
+  <DMS_AccessKeyTransform_NoConsole>Locked: no linked access console</DMS_AccessKeyTransform_NoConsole>
   <DMS_AccessKeyTransform_Unlocked>{THING_labelShort} has been unlocked.</DMS_AccessKeyTransform_Unlocked>
 
   <DMS_DormantTurretWokenUp>{WAKER_labelShort} has woken a dormant turret.</DMS_DormantTurretWokenUp>

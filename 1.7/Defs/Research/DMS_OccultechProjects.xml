@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!-- ============================================================= -->
-  <!-- 量子位元破譯：封存檔案 I 級 · 石碑解碼器                         -->
+  <!-- 量子位元破譯：封存檔案 II 級 · 石碑解碼器                        -->
   <!-- 解鎖解碼器（DMS_OccultechExtractor）。完成時由                   -->
   <!-- DMS.ModExtension_ResearchQuest 派發石碑任務線（DMS_Stele），     -->
   <!-- 研究完成前石碑任務線不會出現。石碑本體放在 FFF_DevCategory，     -->
@@ -10,17 +10,17 @@
   <ResearchProjectDef>
     <defName>DMS_Occultech_QubitDecryption</defName>
     <label>qubit decryption</label>
-    <description>A decoding technique that bypasses a stele's own verification layer and reads its data by directly measuring the quantum state held at each lattice site of its holographic storage plates. The stele's encryption rests on the assumption that no one outside the fleets can observe those quantum states without collapsing them; this technique simply chooses to accept the collapse. Every reading permanently destroys the region it reads. What is recovered can be archived for research, and what is lost can never be restored.\nThe technique was leaked by fleet deviants. Steles are the backup memory of every colonial world, and every stele scanned this way is a record that no one will ever be able to read again.\n\nApproved by ████ and ███, qubit decryption and its related technologies are designated class I sealed technology. Disclosure of such technology is prohibited, and any decoding equipment discovered is to be destroyed on site.</description>
+    <description>A decoding technique that bypasses a stele's own verification layer and reads its data by directly measuring the quantum state held at each lattice site of its holographic storage plates. The stele's encryption rests on the assumption that no one outside the fleets can observe those quantum states without collapsing them; this technique simply chooses to accept the collapse. Every reading permanently destroys the region it reads. What is recovered can be archived for research, and what is lost can never be restored.\nThe technique was leaked by fleet deviants. Steles are the backup memory of every colonial world, and every stele scanned this way is a record that no one will ever be able to read again.\n\nApproved by ████ and ███, qubit decryption and its related technologies are designated class II sealed technology. Disclosure of such technology is prohibited, and any decoding equipment discovered is to be destroyed on site.</description>
     <tab>DMS_ExpeditionalKnowledge</tab>
-    <knowledgeCategory>DMS_Restricted</knowledgeCategory>
-    <knowledgeCost>750</knowledgeCost>
+    <knowledgeCategory>DMS_Sealed</knowledgeCategory>
+    <knowledgeCost>1000</knowledgeCost>
     <techLevel>Spacer</techLevel>
-    <researchViewX>1.00</researchViewX>
+    <researchViewX>3.00</researchViewX>
     <researchViewY>2.00</researchViewY>
     <prerequisites>
       <li>MicroelectronicsBasics</li>
     </prerequisites>
-    <discoveredLetterTitle>Sealed file I: qubit decryption</discoveredLetterTitle>
+    <discoveredLetterTitle>Sealed file II: qubit decryption</discoveredLetterTitle>
     <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology. It contains a stele decryption technique leaked by fleet deviants.\n\nThe decoder can now be built. Set flush against a stele and supplied with power, it can extract the occultech knowledge stored in the stele.\n\nWith this method in hand, the colony can also trace the occultech glyphs scattered across this world. Recovering the glyphs will lead to a stele.\n\nThe fleets sealed this file to keep the data in the steles out of anyone else's hands. Every stele read this way is a permanent loss to the fleets.</discoveredLetterText>
     <descriptionHyperlinks>
       <ThingDef>DMS_OccultechExtractor</ThingDef>
@@ -133,14 +133,15 @@
   </ResearchProjectDef>
 
   <!-- ============================================================= -->
-  <!-- 駐屯兵器：封存檔案 I 級 · 鬥牛犬與伯勞鳥的生產型號               -->
+  <!-- 駐屯兵器：封存檔案 I 級 · 鬥牛犬與伯勞鳥的生產型號、FPV 無人機母巢 -->
   <!-- 前置為常規樹的先進控制（DMS_AdvancedControl），即伯勞鳥原本的門檻。 -->
   <!-- 培養配方在 Biotech/Defs/DMS_Recipes_MechGestator_{BullHound,Lanius}.xml。 -->
+  <!-- 母巢（DMS_FPVNest）在 NewContent/Defs/Things_Building/DMS_FPVNest.xml。 -->
   <!-- ============================================================= -->
   <ResearchProjectDef>
     <defName>DMS_Occultech_RemnantPatterns</defName>
     <label>garrison arsenal</label>
-    <description>A line of self-supervising sentry weapons built for long-term garrison duty: a quadruped garrison mech for installation security, and a large drone platform that flies cover for unmanned mother-drones. Both were designed specifically for pioneer colonization operations, which needed defenses able to hold a world alone for decades before the fleet arrived, so both carry fallback directives in their control cores that keep them executing their last standing order until the chassis fails.\nUnder the laws of war, weapons that outlast the conflict they were deployed for are classed alongside minefields. The remnants still guarding this world's beacons and installations are what these patterns become once their makers are gone.\n\nApproved by ████ and ███, the garrison arsenal and its related technologies are designated class I sealed technology. Sale of such technology to developing worlds is prohibited, and its related technologies are to be progressively declassified once a colonial world's society attains class I standard.</description>
+    <description>A line of self-supervising sentry weapons built for long-term garrison duty: a quadruped garrison mech for installation security, a large drone platform that flies cover for unmanned mother-drones, and an automated nest that launches FPV suicide drones at intruders. All three were designed specifically for pioneer colonization operations, which needed defenses able to hold a world alone for decades before the fleet arrived, so all three carry fallback directives in their control cores that keep them executing their last standing order until the chassis fails.\nUnder the laws of war, weapons that outlast the conflict they were deployed for are classed alongside minefields. The remnants still guarding this world's beacons and installations are what these patterns become once their makers are gone.\n\nApproved by ████ and ███, the garrison arsenal and its related technologies are designated class I sealed technology. Sale of such technology to developing worlds is prohibited, and its related technologies are to be progressively declassified once a colonial world's society attains class I standard.</description>
     <tab>DMS_ExpeditionalKnowledge</tab>
     <knowledgeCategory>DMS_Restricted</knowledgeCategory>
     <knowledgeCost>750</knowledgeCost>
@@ -151,11 +152,39 @@
       <li>DMS_AdvancedControl</li>
     </prerequisites>
     <discoveredLetterTitle>Sealed file I: garrison arsenal</discoveredLetterTitle>
-    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the production patterns of two remnant mechs.\n\nThe bullhound and the Lanius can now be gestated at an automatroid constructor. Gestated units answer to their mechanitor like any other mech, with no limit on their operating range.</discoveredLetterText>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the production patterns of two remnant mechs and of the drone hive that garrisoned alongside them.\n\nThe bullhound and the Lanius can now be gestated at an automatroid constructor. Gestated units answer to their mechanitor like any other mech, with no limit on their operating range.\n\nThe FPV drone hive can now be built. Keep it loaded with steel and it will assemble and launch wildfowl suicide drones.</discoveredLetterText>
     <descriptionHyperlinks>
       <ThingDef>DMS_Mech_BullHound</ThingDef>
       <ThingDef>DMS_Mech_BullHound_Flamer</ThingDef>
       <ThingDef>DMS_Mech_Lanius</ThingDef>
+      <ThingDef>DMS_FPVNest</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
+  <!-- ============================================================= -->
+  <!-- 水壓裂解：封存檔案 I 級 · 自動深鑽機                             -->
+  <!-- 前置為原版深鑽機（DeepDrilling）與 Biotech 的污染性發電            -->
+  <!-- （ToxifierGenerator）。佔用量子位元破譯升級後空出的 (1, 2)。       -->
+  <!-- 解鎖 Things_Building/DMS_Occultech.xml 的水壓裂解採礦機。        -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_HydraulicFracturing</defName>
+    <label>hydraulic fracturing</label>
+    <description>Ultra-high-pressure fluid tears the deep bedrock apart and frees the hydrocarbons and rare volatiles trapped in fissures in the crust. Even long after the surface deposits are exhausted, it keeps drawing chemfuel and minerals from underground. The mineral-laden slurry the process discharges, however, leaves severe heavy-metal pollution all around it.\nAs a means of resource extraction its industrial efficiency is extremely high, but spreading the technique across industrial worlds that lack environmental ethics can degrade a planet's living conditions rapidly, to the point that it is no longer habitable.\n\nApproved by ████ and ██, hydraulic fracturing extraction and its related technologies are designated class I sealed technology. Sale of such technology to developing worlds is prohibited, and its related technologies are to be progressively declassified once a colonial world's society attains class I standard.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Restricted</knowledgeCategory>
+    <knowledgeCost>750</knowledgeCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+    <prerequisites>
+      <li>DeepDrilling</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">ToxifierGenerator</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file I: hydraulic fracturing</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: an extraction method that splits deep bedrock open with ultra-high-pressure fluid.\n\nThe hydraulic fracturing rig can now be built. It mines the deep deposits around it automatically and, once they are exhausted, draws chemfuel and steel from the bedrock, at the cost of polluting the surrounding ground.\n\nThe fleets sealed this file so that the worlds it touches would still be fit to live on afterward.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_HydraulicFracturingRig</ThingDef>
     </descriptionHyperlinks>
   </ResearchProjectDef>
 

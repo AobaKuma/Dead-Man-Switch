@@ -121,4 +121,108 @@
     </comps>
   </ThingDef>
 
+  <!-- ============================================================= -->
+  <!-- 水壓裂解採礦機：封存檔案 I 級（DMS_Occultech_HydraulicFracturing） -->
+  <!-- 不需要人操作的 2×2 自動深鑽機（DMS.CompHydraulicFracturing）：    -->
+  <!-- 有電時每 6 小時一份；範圍內有深層礦脈就照原版份量開採，           -->
+  <!-- 採盡後改產化合燃料（3/4）或鋼鐵（1/4）。每份汙染周圍 6 格土地。    -->
+  <!-- ============================================================= -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_HydraulicFracturingRig</defName>
+    <label>hydraulic fracturing rig</label>
+    <description>An automatic deep drill that splits the bedrock with ultra-high-pressure fluid and needs no operator. While powered it produces a portion every 6 hours: deep deposits in range are mined first, then chemfuel or steel is drawn from the bedrock once they run out.\n\nEvery portion pollutes the ground nearby. Can be uninstalled and moved.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Chemfuel</ThingDef>
+      <ThingDef>Steel</ThingDef>
+    </descriptionHyperlinks>
+    <thingClass>Building</thingClass>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <!-- TODO：暫用原版深鑽機貼圖，待補水壓裂解採礦機專用貼圖。Placeholder vanilla deep drill texture until the rig gets its own. -->
+      <texPath>Things/Building/Production/DeepDrill</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(1.6, 1, 1.5)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>0.75</fillPercent>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+    <!-- 掃描深層礦脈的範圍，與 comp 的 scanRadius 一致；汙染範圍由 comp 另外畫。 -->
+    <specialDisplayRadius>3.9</specialDisplayRadius>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <WorkToBuild>15000</WorkToBuild>
+      <Mass>80</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>-40</Beauty>
+      <SellPriceFactor>0.7</SellPriceFactor>
+    </statBases>
+    <costList>
+      <Steel>250</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>DMS_Category</designationCategory>
+    <researchPrerequisites>
+      <li>DMS_Occultech_HydraulicFracturing</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <!-- 放置時顯示深層礦脈；沒有岩床又沒有礦脈的地方不能放。Shows deep deposits while placing. -->
+      <li>PlaceWorker_DeepDrill</li>
+      <li>PlaceWorker_InvalidOverSubstructure</li>
+    </placeWorkers>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <building>
+      <uninstallWork>3000</uninstallWork>
+      <buildingTags>
+        <li>Production</li>
+      </buildingTags>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <repairEffect>Repair</repairEffect>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <comps>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>800</basePowerConsumption>
+        <soundAmbientPowered>GeothermalPlant_Ambience</soundAmbientPowered>
+      </li>
+      <li Class="DMS.CompProperties_HydraulicFracturing">
+        <!-- 6 小時一份，一天 4 份。6 hours per portion, 4 a day. -->
+        <ticksPerPortion>15000</ticksPerPortion>
+        <scanRadius>3.9</scanRadius>
+        <yieldFactor>1</yieldFactor>
+        <fallbackYields>
+          <li>
+            <thingDef>Chemfuel</thingDef>
+            <count>20</count>
+            <weight>3</weight>
+          </li>
+          <li>
+            <thingDef>Steel</thingDef>
+            <count>15</count>
+            <weight>1</weight>
+          </li>
+        </fallbackYields>
+        <!-- 約 700 格，每天汙染 24 格，一個月左右汙染滿。About 700 cells at 24 a day: saturated in about a month. -->
+        <pollutionRadius>14.9</pollutionRadius>
+        <cellsPollutedPerPortion>6</cellsPollutedPerPortion>
+      </li>
+    </comps>
+  </ThingDef>
+
 </Defs>

@@ -4,7 +4,7 @@
   <!-- EN: The modification durability on one of your mech has exhausted -->
   <DMS_AddonBroken>A modification module installed on one of your mechs has been completely worn out</DMS_AddonBroken>
   <!-- EN: Disposable ceramic armor protects the mecha from damage as ablative armor until its durability is exhausted and needs replacement. -->
-  <DMS_PlatingTooltip>A disposable protective layer that resists most damage. Its maximum value scales with the mech's body size, and its durability does not recover naturally.</DMS_PlatingTooltip>
+  <DMS_PlatingTooltip>A disposable layer that absorbs most damage. Its maximum scales with body size, and it does not recover on its own.</DMS_PlatingTooltip>
   <!-- EN: Modification applied -->
   <DMS_HasAppliedModification>Modification module installed on the mech</DMS_HasAppliedModification>
   <!-- EN: Weapon system not supported -->
@@ -24,9 +24,9 @@
   <!-- EN: Mounted weapon -->
   <DMS_MountedWeapon>Mounted weapon</DMS_MountedWeapon>
   <!-- EN: This weapon can only be equipped with listed automatroid or mechframe -->
-  <DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>This mounted weapon can only be used by the following mechs, or by wearing the listed apparel or bionics</DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>
+  <DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>Only usable by the following mechs, or with the listed apparel or bionics</DMS_MountedWeaponCanOnlyBeEquippedBySpecificApparelOrRaces>
   <!-- EN: This weapon can be equipped with listed specific apparel or bionics -->
-  <DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>This weapon can also be used by the following mechs, or by wearing the listed apparel or bionics</DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>
+  <DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>Also usable by the following mechs, or with the listed apparel or bionics</DMS_WeaponCanBeEquippedBySpecificApparelOrRaces>
   
   <!-- EN: Inventroy fulled -->
   <DMS_NoPayloadCapacity>Inventory full</DMS_NoPayloadCapacity>
@@ -38,9 +38,9 @@
   <!-- EN: bodysize not supported (need:{0}) -->
   <DMS_BodysizeNotSupported>Body size not supported (requires: {0})</DMS_BodysizeNotSupported>
   <!-- EN: model not supported -->
-  <DMS_Modification_RaceNotSupported>This mech model does not support this modification module</DMS_Modification_RaceNotSupported>
+  <DMS_Modification_RaceNotSupported>This mech model does not support this module</DMS_Modification_RaceNotSupported>
   <!-- EN: no valid part for apply modification -->
-  <DMS_Modification_NoValidPart>The mech has no free part on which to install the modification module</DMS_Modification_NoValidPart>
+  <DMS_Modification_NoValidPart>No free part to install it on</DMS_Modification_NoValidPart>
 
 
   <!-- EN: missing mech returned -->
@@ -66,18 +66,18 @@
   <DMS_MechStory_Loot>{0}'s repayment</DMS_MechStory_Loot>
 
   <!-- EN: APS remain time:{0} -->
-  <DMS_APS_TickRemain>Active protection system time remaining: {0}</DMS_APS_TickRemain>
+  <DMS_APS_TickRemain>Active protection: {0} left</DMS_APS_TickRemain>
   <!-- EN: Imprinted: {0}({1}) -->
   <DMS_WeaponImprinted>Adapted weapon: {0} ({1})</DMS_WeaponImprinted>
   <!-- EN: Imprinted: {0} -->
   <DMS_Inprinted>Weapon bound: {0}</DMS_Inprinted>
   <!-- EN: the colony mech {0} has equipped with its first weapon, this makes its adaptive learning ability bound to that type of weapon. -->
-  <DMS_InprintedDesc>The colony-controlled {0} has equipped its first weapon. Its adaptive ability is now deeply bound to that type of weapon, and over time its affinity for it will grow, improving shooting accuracy and reaction speed.</DMS_InprintedDesc>
+  <DMS_InprintedDesc>{0} has equipped its first weapon. Its adaptive system is now bound to that weapon type, and its accuracy and reaction speed will improve over time.</DMS_InprintedDesc>
   
   <!-- EN: Must be in listed tech level: -->
   <DMS_Req_TechLevel>Must be equipment of the following tech levels</DMS_Req_TechLevel>
   <!-- EN: Can equip heavy weapon with bodysize requirement below:{0} -->
-  <DMS_Req_BodySize>Can directly equip heavy weapons with a supported body size requirement no higher than: {0}</DMS_Req_BodySize>
+  <DMS_Req_BodySize>Can equip heavy weapons requiring a body size of up to {0}</DMS_Req_BodySize>
   <!-- EN: Limited to use listed weapon below -->
   <DMS_Req_WeaponFilter>Can only use the weapons listed below</DMS_Req_WeaponFilter>
   <!-- EN: No other weapon restrictions -->

@@ -10,7 +10,7 @@
   <!-- EN: Confirm delivery -->
   <DMS_SupplyPod_Deliver>Confirm delivery</DMS_SupplyPod_Deliver>
   <!-- EN: Consume {0}x {1} loaded in this pod and send it away. Anything else loaded will be unloaded first. -->
-  <DMS_SupplyPod_DeliverDesc>Consume {0}x {1} loaded in this pod and send it away. Anything else loaded will be unloaded first.</DMS_SupplyPod_DeliverDesc>
+  <DMS_SupplyPod_DeliverDesc>Send off {0}x {1} from this pod. Anything else loaded is unloaded first.</DMS_SupplyPod_DeliverDesc>
   <!-- EN: Not enough loaded: {0} / {1} -->
   <DMS_SupplyPod_NotEnough>Not enough loaded: {0} / {1}</DMS_SupplyPod_NotEnough>
   <!-- EN: Requested amount already loaded or designated. -->
@@ -25,7 +25,7 @@
   <!-- EN: Delivery deadline -->
   <DMS_SupplyChain_DeadlineTitle>Delivery deadline</DMS_SupplyChain_DeadlineTitle>
   <!-- EN: Time remaining to load the requested cargo into the supply pod. -->
-  <DMS_SupplyChain_DeadlineTip>Time remaining to load the requested cargo into the supply pod.</DMS_SupplyChain_DeadlineTip>
+  <DMS_SupplyChain_DeadlineTip>Time left to load the requested cargo into the supply pod.</DMS_SupplyChain_DeadlineTip>
   <!-- EN: Supply delivery deadline -->
   <DMS_SupplyChain_AlertLabel>Supply delivery deadline</DMS_SupplyChain_AlertLabel>
   <!-- EN: Load {0}x {1} into the supply pod and confirm the delivery before the deadline, or the contract will end. -->
@@ -41,7 +41,7 @@
   <!-- EN: Boarding deadline: {0} -->
   <DMS_CourtMartial_BoardDeadline>Boarding deadline: {0}</DMS_CourtMartial_BoardDeadline>
   <!-- EN: Time remaining for the defendant to board the orbital transport. Deadline: {0}. If it leaves empty, the tribunal arrangement collapses and hostilities resume. -->
-  <DMS_CourtMartial_BoardDeadlineTip>Time remaining for the defendant to board the orbital transport. Deadline: {0}. If it leaves empty, the tribunal arrangement collapses and hostilities resume.</DMS_CourtMartial_BoardDeadlineTip>
+  <DMS_CourtMartial_BoardDeadlineTip>The defendant must board the orbital transport by {0}. If it leaves empty, the tribunal deal collapses and hostilities resume.</DMS_CourtMartial_BoardDeadlineTip>
   <!-- EN: Trial concludes in: {0} -->
   <DMS_CourtMartial_TrialInfo>Trial concludes in: {0}</DMS_CourtMartial_TrialInfo>
   <!-- EN: Sentence ends in: {0} -->
@@ -51,7 +51,7 @@
   <!-- EN: Boarding deadline: {0} -->
   <DMS_OfficerTraining_BoardDeadline>Boarding deadline: {0}</DMS_OfficerTraining_BoardDeadline>
   <!-- EN: Time remaining for the trainee to board the orbital transport. Deadline: {0}. If it leaves empty, the course allocation is withdrawn. -->
-  <DMS_OfficerTraining_BoardDeadlineTip>Time remaining for the trainee to board the orbital transport. Deadline: {0}. If it leaves empty, the course allocation is withdrawn.</DMS_OfficerTraining_BoardDeadlineTip>
+  <DMS_OfficerTraining_BoardDeadlineTip>The trainee must board the orbital transport by {0}. If it leaves empty, the course allocation is withdrawn.</DMS_OfficerTraining_BoardDeadlineTip>
   <!-- EN: Course ends in: {0} -->
   <DMS_OfficerTraining_CourseInfo>Course ends in: {0}</DMS_OfficerTraining_CourseInfo>
   <!-- EN: no rank -->

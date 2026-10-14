@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 水壓裂解採礦機 DMS.CompHydraulicFracturing -->
+  <DMS_HydraulicFracturing_Bedrock>Fracturing bedrock</DMS_HydraulicFracturing_Bedrock>
+  <DMS_HydraulicFracturing_NoRoom>No room for output.</DMS_HydraulicFracturing_NoRoom>
+  <DMS_HydraulicFracturing_Exhausted>{RIG_definite} has exhausted its deep deposits and is now fracturing bedrock.</DMS_HydraulicFracturing_Exhausted>
+  <DMS_HydraulicFracturing_ExhaustedNoFallback>{RIG_definite} has exhausted its deep deposits and stopped: there is no bedrock here.</DMS_HydraulicFracturing_ExhaustedNoFallback>
+
+</LanguageData>

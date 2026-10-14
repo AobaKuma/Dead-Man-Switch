@@ -131,7 +131,7 @@
     <comps>
       <li Class="Fortified.CompProperties_UseEffect_DiscoverResearch">
         <researchProjects>
-          <li>DMS_Occultech_QubitDecryption</li>
+          <li>DMS_Occultech_HydraulicFracturing</li>
           <li>DMS_Occultech_BionicSuitHeavy</li>
           <li>DMS_Occultech_GestaltEngine</li>
           <li>DMS_Occultech_Biosynthesis</li>
@@ -161,6 +161,7 @@
     <comps>
       <li Class="Fortified.CompProperties_UseEffect_DiscoverResearch">
         <researchProjects>
+          <li>DMS_Occultech_QubitDecryption</li>
           <li>DMS_Occultech_Frogman</li>
         </researchProjects>
         <progressAmount>250</progressAmount>
