@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!-- 站台類（Hound / Trashpan / 工程無人機艙）共用的下拉選單；設在 DMS_BaseDronePlatform 上，由子代繼承 -->
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_DronePlatforms</defName>
+    <label>drone platforms</label>
+  </DesignatorDropdownGroupDef>
+
   <ThingDef Name="DMS_BaseDronePlatform" ParentName="BuildingBase" Abstract="True">
     <thingClass>Building</thingClass>
     <tickerType>Rare</tickerType>
@@ -24,6 +30,7 @@
     <uiIconScale>0.8</uiIconScale>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <designationCategory>DMS_Category</designationCategory>
+    <designatorDropdown>DMS_DronePlatforms</designatorDropdown>
     <researchPrerequisites>
       <li>DMS_UAVBasis</li>
     </researchPrerequisites>
