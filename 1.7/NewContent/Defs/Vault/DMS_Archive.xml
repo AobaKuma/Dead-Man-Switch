@@ -256,6 +256,8 @@
         <overwatchKinds>
           <li>DMS_Mech_Gravekeeper_Velador</li>
         </overwatchKinds>
+        <!-- 每隊從上面五個名額裡隨機抽 1~5 架。Each squad draws 1~5 mechs at random from the five slots above. -->
+        <squadSize>1~5</squadSize>
         <squadCount>1</squadCount>
         <!-- 資料檔案庫：為了避開震動與干擾而刻意無人值守的記錄主機，正是守墓人的典型崗位，一定有。
              Data archive: records hosts deliberately left unmanned, away from tremors and interference; the archetypal

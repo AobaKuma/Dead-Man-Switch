@@ -631,7 +631,12 @@
       <damageAmountBase>160</damageAmountBase>
       <armorPenetrationBase>2</armorPenetrationBase>
       <explosionRadius>1.95</explosionRadius>
-      <flyOverhead>true</flyOverhead>
+      <!-- 直射導彈，不能 flyOverhead：原版的高拋投射物落在厚岩頂下會直接消失（不爆炸），落在建造屋頂下則會把屋頂打塌；
+           守墓人主要在地下設施作戰，到處都有屋頂。弧線只是 Projectile_Parabola 的外觀（arcHeightFactor），不影響命中判定。
+           A direct-fire missile, so not flyOverhead: vanilla overhead projectiles vanish without exploding under a thick
+           rock roof and collapse a constructed roof, and gravekeepers mostly fight in roofed underground facilities.
+           The arc is only Projectile_Parabola's drawing (arcHeightFactor); it does not change what gets hit. -->
+      <flyOverhead>false</flyOverhead>
       <explosionRadiusDisplayPadding>3</explosionRadiusDisplayPadding>
       <arcHeightFactor>0.1</arcHeightFactor>
       <soundExplode>Explosion_Rocket</soundExplode>

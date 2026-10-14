@@ -281,25 +281,41 @@ namespace DMS
         private static List<Pawn> SpawnSquad(ModExtension_GravekeeperPatrol ext, Faction faction, Map map, IntVec3 near, LordJob_GravekeeperPatrol job)
         {
             List<Pawn> pawns = new List<Pawn>();
+            foreach (PawnKindDef kind in RollRoster(ext))
+            {
+                if (!CellFinder.TryFindRandomCellNear(near, map, 6,
+                    c => c.Standable(map) && !job.InLobby(c) && !job.InRestricted(c) && c.GetFirstPawn(map) == null,
+                    out IntVec3 cell))
+                {
+                    continue;
+                }
+
+                Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(kind, faction, PawnGenerationContext.NonPlayer, map.Tile));
+                if (pawn == null) continue;
+                GenSpawn.Spawn(pawn, cell, map, Rot4.Random);
+                pawns.Add(pawn);
+            }
+            return pawns;
+        }
+
+        /// <summary>
+        /// 這一隊的成員：完整編制展開成名額，設了 squadSize 就隨機抽其中幾個。抽完照原本的編制順序排，
+        /// 讓排在前面的（掘墓人）優先當領隊。
+        /// This squad's members: the roster expanded into slots, a random subset of them when squadSize is set. The draw
+        /// keeps the roster's order, so the ones listed first (the Sepulturero) still get first pick of the lead.
+        /// </summary>
+        private static List<PawnKindDef> RollRoster(ModExtension_GravekeeperPatrol ext)
+        {
+            List<PawnKindDef> slots = new List<PawnKindDef>();
             foreach (GravekeeperSquadMember member in ext.squad)
             {
                 if (member?.kind == null) continue;
-                for (int i = 0; i < member.count; i++)
-                {
-                    if (!CellFinder.TryFindRandomCellNear(near, map, 6,
-                        c => c.Standable(map) && !job.InLobby(c) && !job.InRestricted(c) && c.GetFirstPawn(map) == null,
-                        out IntVec3 cell))
-                    {
-                        continue;
-                    }
-
-                    Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(member.kind, faction, PawnGenerationContext.NonPlayer, map.Tile));
-                    if (pawn == null) continue;
-                    GenSpawn.Spawn(pawn, cell, map, Rot4.Random);
-                    pawns.Add(pawn);
-                }
+                for (int i = 0; i < member.count; i++) slots.Add(member.kind);
             }
-            return pawns;
+            if (ext.squadSize.max <= 0 || slots.Count == 0) return slots;
+
+            int size = Mathf.Clamp(ext.squadSize.RandomInRange, 1, slots.Count);
+            return Enumerable.Range(0, slots.Count).InRandomOrder().Take(size).OrderBy(i => i).Select(i => slots[i]).ToList();
         }
     }
 }

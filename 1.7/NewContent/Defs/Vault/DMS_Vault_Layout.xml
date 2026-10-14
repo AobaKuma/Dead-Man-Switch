@@ -267,6 +267,8 @@
         <overwatchKinds>
           <li>DMS_Mech_Gravekeeper_Velador</li>
         </overwatchKinds>
+        <!-- 每隊從上面五個名額裡隨機抽 1~5 架。Each squad draws 1~5 mechs at random from the five slots above. -->
+        <squadSize>1~5</squadSize>
         <squadCount>1</squadCount>
         <!-- 軍事儲藏庫：封存的物資庫，部分有守墓人看守，其餘只靠封存艙與設施防務。
              Military vault: mothballed stores; some are kept by gravekeepers, the rest rely on the cradles and fixed defences. -->

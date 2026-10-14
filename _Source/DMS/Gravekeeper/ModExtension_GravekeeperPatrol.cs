@@ -25,6 +25,14 @@ namespace DMS
         /// <summary>一隊的編制，依序生成；第一個能當領隊的成員帶隊。A squad's make-up, spawned in order; the first eligible member leads.</summary>
         public List<GravekeeperSquadMember> squad = new List<GravekeeperSquadMember>();
 
+        /// <summary>
+        /// 每隊的機數。不設（0）就是 <see cref="squad"/> 的完整編制；有設就從完整編制裡隨機抽這麼多架（不重複抽同一個名額），
+        /// 上限是完整編制的總數。
+        /// Mechs per squad. Unset (0) means the full <see cref="squad"/> roster; when set, this many are drawn at random from
+        /// the roster's slots (no slot twice), capped at the roster's total.
+        /// </summary>
+        public IntRange squadSize = IntRange.Zero;
+
         /// <summary>隊數；各隊從路線上錯開的位置出發。Number of squads; each starts from a staggered point on the route.</summary>
         public IntRange squadCount = IntRange.One;
 
@@ -66,6 +74,10 @@ namespace DMS
             else if (squad.Exists(m => m?.kind == null || m.count <= 0))
             {
                 yield return "ModExtension_GravekeeperPatrol.squad has an entry without a kind or with a count below 1.";
+            }
+            if (squadSize.min < 0 || squadSize.max < squadSize.min)
+            {
+                yield return "ModExtension_GravekeeperPatrol.squadSize must be 0 (full roster) or a range like 1~5.";
             }
         }
     }
