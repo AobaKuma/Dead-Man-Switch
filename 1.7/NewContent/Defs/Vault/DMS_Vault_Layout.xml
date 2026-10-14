@@ -272,7 +272,7 @@
         <squadCount>1</squadCount>
         <!-- 軍事儲藏庫：封存的物資庫，部分有守墓人看守，其餘只靠封存艙與設施防務。
              Military vault: mothballed stores; some are kept by gravekeepers, the rest rely on the cradles and fixed defences. -->
-        <chance>0.6</chance>
+        <chance>0.3</chance>
         <engageAlertLevel>0.6</engageAlertLevel>
       </li>
     </modExtensions>

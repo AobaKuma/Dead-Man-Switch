@@ -314,11 +314,11 @@
         </overwatchKinds>
         <!-- 每隊從上面五個名額裡隨機抽 1~5 架。Each squad draws 1~5 mechs at random from the five slots above. -->
         <squadSize>1~5</squadSize>
-        <squadCount>1</squadCount>
+        <squadCount>1~5</squadCount>
         <!-- 指揮綜合體：原本有人駐守的區域指揮中心，防務以常規編制為主，守墓人較少見。
              Command complex: a regional headquarters that was once manned; its defence is mostly the regular garrison,
              so gravekeepers are rarer. -->
-        <chance>0.35</chance>
+        <chance>0.8</chance>
         <engageAlertLevel>0.6</engageAlertLevel>
       </li>
     </modExtensions>

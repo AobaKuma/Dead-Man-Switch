@@ -262,7 +262,7 @@
         <!-- 資料檔案庫：為了避開震動與干擾而刻意無人值守的記錄主機，正是守墓人的典型崗位，一定有。
              Data archive: records hosts deliberately left unmanned, away from tremors and interference; the archetypal
              gravekeeper post, so always. -->
-        <chance>1</chance>
+        <chance>0.5</chance>
         <engageAlertLevel>0.6</engageAlertLevel>
       </li>
     </modExtensions>
