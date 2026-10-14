@@ -241,6 +241,38 @@
         <ventCenterLinks>2~4</ventCenterLinks>
         <ventCenterMaxLegLength>80</ventCenterMaxLegLength>
       </li>
+      <!-- 守墓人巡邏隊（DMS.GravekeeperPatrolPlacement）：五架一組沿走廊樹巡邏、在獎勵房門前停留，能開分區閘門。
+           交戰規則保守：看到入侵者先盤查不開火；被攻擊、入侵者進入管制區（獎勵房、指揮室）或警戒值達 engageAlertLevel 才開火；
+           獎勵房被打開後全設施搜索。不會走進電梯廳。
+           Gravekeeper patrol (DMS.GravekeeperPatrolPlacement): squads of five walk the corridor tree, stop at the treasury
+           door and may open the sector gates. Conservative rules of engagement: an intruder in sight is challenged, not
+           shot; they open fire when attacked, when an intruder enters a restricted room (treasury, command room) or when
+           the alert reaches engageAlertLevel, and sweep the whole facility once the treasury is opened. They never step
+           into the lift lobby. -->
+      <li Class="DMS.ModExtension_GravekeeperPatrol">
+        <squad>
+          <li>
+            <kind>DMS_Mech_Gravekeeper_Sepulturero</kind>
+            <count>2</count>
+          </li>
+          <li>
+            <kind>DMS_Mech_Gravekeeper_Enterrador</kind>
+            <count>2</count>
+          </li>
+          <li>
+            <kind>DMS_Mech_Gravekeeper_Velador</kind>
+            <count>1</count>
+          </li>
+        </squad>
+        <overwatchKinds>
+          <li>DMS_Mech_Gravekeeper_Velador</li>
+        </overwatchKinds>
+        <squadCount>1</squadCount>
+        <!-- 軍事儲藏庫：封存的物資庫，部分有守墓人看守，其餘只靠封存艙與設施防務。
+             Military vault: mothballed stores; some are kept by gravekeepers, the rest rely on the cradles and fixed defences. -->
+        <chance>0.6</chance>
+        <engageAlertLevel>0.6</engageAlertLevel>
+      </li>
     </modExtensions>
   </StructureLayoutDef>
 

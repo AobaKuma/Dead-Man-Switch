@@ -183,7 +183,7 @@ namespace DMS
             VaultCorridorEmbeds.Spawn(plan, map, faction);
 
             // 獎勵房要等所有門都生成完才封得起來。Treasuries can only be sealed once every door exists.
-            VaultTreasuryUtility.SealTreasuries(layoutStructureSketch, map, faction);
+            List<Thing> treasuryDoors = VaultTreasuryUtility.SealTreasuries(layoutStructureSketch, map, faction);
 
             // 設施封鎖中控：每張地圖恰好一座（版面有掛 ModExtension_FacilityLockdown 才放）。
             // Lockdown controller: exactly one per map (only when the layout carries ModExtension_FacilityLockdown).
@@ -193,7 +193,7 @@ namespace DMS
             // 分區閘門：入口房已經填好、出生點已定，才知道控制台該放哪一側。
             // Sector gates: only now, with the entrance filled and the start spot set, do we know
             // which side of each gate the console belongs on.
-            VaultSectorGates.SpawnGates(layout, plan, map, faction, Def.GetModExtension<ModExtension_VaultLayout>());
+            List<Thing> gateDoors = VaultSectorGates.SpawnGates(layout, plan, map, faction, Def.GetModExtension<ModExtension_VaultLayout>());
 
             // 檢修通道網要在閘門之後：挖管道時要避開閘門，也要知道每段走廊屬於哪個分區。
             // Tunnels after the gates: digging has to keep clear of them and know which sector each corridor is.
@@ -205,6 +205,12 @@ namespace DMS
             VaultRoomUtility.RemoveOrphanedAttachments(map);
 
             ChargeInternalBatteries(layoutStructureSketch, map);
+
+            // 守墓人巡邏隊最後放：路線要沿走廊樹走、在獎勵房門前停留、可以開分區閘門，三者都要先定下來。
+            // Gravekeeper patrols go last: the route follows the corridor tree, stops at the treasury door and may open
+            // the sector gates, so all three have to be settled first.
+            GravekeeperPatrolPlacement.Spawn(layoutStructureSketch, plan, map, faction, threatPoints,
+                Def.GetModExtension<ModExtension_GravekeeperPatrol>(), gateDoors, treasuryDoors);
         }
 
         /// <summary>

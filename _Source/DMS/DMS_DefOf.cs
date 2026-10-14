@@ -32,6 +32,11 @@ namespace DMS
         public static JobDef DMS_TakeWeaponFromCase;
         // 設施增援的警報回應勤務：前往崗位、只打看得到的敵人(見 LordJob_AlarmResponse)
         public static DutyDef DMS_AlarmResponse;
+        // 守墓人巡邏隊的勤務與站崗工作(見 LordJob_GravekeeperPatrol)
+        public static DutyDef DMS_GravekeeperPatrol;
+        public static DutyDef DMS_GravekeeperChallenge;
+        public static DutyDef DMS_GravekeeperEngage;
+        public static JobDef DMS_GravekeeperHold;
         public static RulePackDef DMS_QuestDocumentRules;
 
         // 軍法審判判決用(見 QuestPart_CourtVerdict)

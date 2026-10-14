@@ -21,22 +21,24 @@ namespace DMS
     /// </summary>
     public static class VaultSectorGates
     {
-        public static void SpawnGates(StructureLayout layout, VaultLayoutPlan plan, Map map, Faction faction, ModExtension_VaultLayout ext)
+        /// <returns>生成的閘門（守墓人巡邏隊要知道哪些門能開）。The gate doors spawned (the gravekeeper patrol needs to know which it may open).</returns>
+        public static List<Thing> SpawnGates(StructureLayout layout, VaultLayoutPlan plan, Map map, Faction faction, ModExtension_VaultLayout ext)
         {
-            if (plan == null || ext == null || !ext.sectorGates || ext.gateConsoleDef == null) return;
+            List<Thing> doors = new List<Thing>();
+            if (plan == null || ext == null || !ext.sectorGates || ext.gateConsoleDef == null) return doors;
 
             if (ext.gateDoorDef != null && ext.gateWallDef == null)
             {
                 Log.ErrorOnce("[DMS] ModExtension_VaultLayout.gateDoorDef needs a gateWallDef to fill the rest of the junction.", 0x4A81);
-                return;
+                return doors;
             }
             if (ext.gateDoorDef == null)
             {
-                if (ext.gateDoorDefs.NullOrEmpty()) return;
+                if (ext.gateDoorDefs.NullOrEmpty()) return doors;
                 if (!ext.gateDoorDefs.Any(d => d.Size.x == 1))
                 {
                     Log.ErrorOnce("[DMS] ModExtension_VaultLayout.gateDoorDefs needs a 1-wide door or some corridor widths cannot be sealed.", 0x4A7E);
-                    return;
+                    return doors;
                 }
             }
 
@@ -51,8 +53,9 @@ namespace DMS
                 // 入口在這條支道底下的話，控制台要放在支道那一側。
                 // If the entrance hangs somewhere under this branch, the console goes on the branch side.
                 bool consoleOnChildSide = IsInSubtree(plan, entranceCorridor, i);
-                TrySpawnGate(map, child, plan.corridors[child.parent], consoleOnChildSide, faction, ext);
+                TrySpawnGate(map, child, plan.corridors[child.parent], consoleOnChildSide, faction, ext, doors);
             }
+            return doors;
         }
 
         // ── 走廊樹 / Corridor tree ────────────────────────────────────────────
@@ -120,7 +123,7 @@ namespace DMS
         // ── 閘門 / Gate ───────────────────────────────────────────────────────
 
         private static void TrySpawnGate(Map map, VaultLayoutPlan.Corridor child, VaultLayoutPlan.Corridor parent,
-            bool consoleOnChildSide, Faction faction, ModExtension_VaultLayout ext)
+            bool consoleOnChildSide, Faction faction, ModExtension_VaultLayout ext, List<Thing> doors)
         {
             CellRect rect = child.rect;
             bool alongX = !child.horizontal; // 支道垂直 → 路口那排門沿 x 排。Vertical branch → the gate row runs along x.
@@ -179,7 +182,7 @@ namespace DMS
                     if (i >= start && i < start + width) continue;
                     GenSpawn.Spawn(VaultRoomUtility.MakeThing(ext.gateWallDef), cells[i], map, WipeMode.Vanish);
                 }
-                SpawnGateDoor(map, ext.gateDoorDef, cells, start, doorRot, comp);
+                doors.Add(SpawnGateDoor(map, ext.gateDoorDef, cells, start, doorRot, comp));
                 return;
             }
 
@@ -189,13 +192,13 @@ namespace DMS
             {
                 int remaining = cells.Count - index;
                 ThingDef doorDef = ext.gateDoorDefs.Where(d => d.Size.x <= remaining).RandomElement();
-                SpawnGateDoor(map, doorDef, cells, index, doorRot, comp);
+                doors.Add(SpawnGateDoor(map, doorDef, cells, index, doorRot, comp));
                 index += doorDef.Size.x;
             }
         }
 
         /// <summary>在閘門排 index 起放一扇門並連到控制台。Spawns one gate door starting at index and links it to the console.</summary>
-        private static void SpawnGateDoor(Map map, ThingDef doorDef, List<IntVec3> cells, int index, Rot4 doorRot, CompVaultConsole comp)
+        private static Thing SpawnGateDoor(Map map, ThingDef doorDef, List<IntVec3> cells, int index, Rot4 doorRot, CompVaultConsole comp)
         {
             CellRect target = CellRect.FromLimits(cells[index], cells[index + doorDef.Size.x - 1]);
             IntVec3 pos = FindSpawnPosition(target, doorRot, doorDef.Size);
@@ -204,6 +207,7 @@ namespace DMS
             {
                 Log.ErrorOnce($"[DMS] {doorDef.defName} is not an access-link door; the gate will never open.", 0x4A80);
             }
+            return door;
         }
 
         /// <summary>閘門格上的裝飾品清掉，電纜留著。Clear dressing off the gate cells; conduits stay.</summary>

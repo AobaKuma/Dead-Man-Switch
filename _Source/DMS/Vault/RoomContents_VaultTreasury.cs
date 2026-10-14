@@ -46,10 +46,12 @@ namespace DMS
         /// For each treasury in the structure: make sure sealing it can't trap the entrance, place the
         /// console, then swap in sealed doors linked to it. If any step fails the room is left open.
         /// </summary>
-        public static void SealTreasuries(LayoutStructureSketch sketch, Map map, Faction faction)
+        /// <returns>換上的密封門（守墓人巡邏隊以它們判斷獎勵房是否被打開）。The sealed doors fitted (the gravekeeper patrol watches them to tell when the treasury is opened).</returns>
+        public static List<Thing> SealTreasuries(LayoutStructureSketch sketch, Map map, Faction faction)
         {
+            List<Thing> sealedDoors = new List<Thing>();
             List<LayoutRoom> rooms = sketch.structureLayout?.Rooms;
-            if (rooms.NullOrEmpty()) return;
+            if (rooms.NullOrEmpty()) return sealedDoors;
 
             foreach (LayoutRoom treasury in rooms)
             {
@@ -70,8 +72,9 @@ namespace DMS
                     continue;
                 }
 
-                SealDoors(treasury, ext.sealedDoorDef, map, console);
+                SealDoors(treasury, ext.sealedDoorDef, map, console, sealedDoors);
             }
+            return sealedDoors;
         }
 
         /// <summary>
@@ -144,7 +147,7 @@ namespace DMS
         /// 把房間邊界上的每一扇門換成密封門，並掛到控制台底下。
         /// Swaps every door on the room's boundary for a sealed one under the console's control.
         /// </summary>
-        private static void SealDoors(LayoutRoom room, ThingDef sealedDoorDef, Map map, CompVaultConsole console)
+        private static void SealDoors(LayoutRoom room, ThingDef sealedDoorDef, Map map, CompVaultConsole console, List<Thing> sealedDoors)
         {
             List<Building_Door> doors = new List<Building_Door>();
             foreach (CellRect rect in room.rects)
@@ -166,6 +169,7 @@ namespace DMS
                 door.Destroy();
 
                 Thing sealedDoor = GenSpawn.Spawn(ThingMaker.MakeThing(sealedDoorDef), cell, map, rot);
+                sealedDoors.Add(sealedDoor);
                 if (!console.Link(sealedDoor))
                 {
                     Log.Error($"[DMS] {sealedDoorDef.defName} is not an access-link door; the treasury door at {cell} will never open.");
