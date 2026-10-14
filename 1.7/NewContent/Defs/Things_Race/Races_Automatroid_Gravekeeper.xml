@@ -343,7 +343,7 @@
   <!-- 掘墓人的種族：肩上掛壁虎同款噴火槍。Sepulturero race: the Gecko's Flameblaster on the shoulder. -->
   <ThingDef ParentName="DMS_MechGravekeeperBase">
     <defName>DMS_Mech_Gravekeeper_Sepulturero</defName>
-    <label>gravekeeper (Sepulturero)</label>
+    <label>Sepulturero</label>
     <description>A highly intelligent large automatroid, deployed by the colonial fleets specifically to patrol and guard important unmanned installations. Its parts are largely interchangeable with the mobile dragoon's, and it pairs excellent close-quarters combat ability with a formidable weapon system. The gravekeeper's design dates back to the lunar war of independence after the Universal Century, when most of the fighting took place in the narrow, enclosed tunnels of underground cities. Heavily armored mechs like the gravekeeper and the siegebreaker, carrying heavy weapons and able to suppress at close range, became the spearhead of both sides' fight for control of those tunnels.\nBecause of this specialized design, gravekeepers usually hold a defense in groups of five. Since they must patrol unattended installations for centuries, their rules of engagement are more conservative than an ordinary mech's, so that failing mechanisms do not trigger by mistake mid-mission. As a result, they will not leave their installation to engage an enemy on their own.\n\nThis configuration mounts the Gecko's Flameblaster on its shoulder for clearing corridors.</description>
     <comps>
       <!-- 副炮掛在南向畫面左側的肩上（機體的右肩，與斯圖格納型的發射架同一側，避開左手主武器）；面向西時該肩在遠側，畫在機體後方。偏移是估計值，需進遊戲微調。
@@ -483,7 +483,7 @@
        Velador race: the Iguana's machine gun on the shoulder (the mounted HMG; under CE it becomes the mounted LMG, as on the Iguana). -->
   <ThingDef ParentName="DMS_MechGravekeeperBase">
     <defName>DMS_Mech_Gravekeeper_Velador</defName>
-    <label>gravekeeper (Velador)</label>
+    <label>Velador</label>
     <description>A highly intelligent large automatroid, deployed by the colonial fleets specifically to patrol and guard important unmanned installations. Its parts are largely interchangeable with the mobile dragoon's, and it pairs excellent close-quarters combat ability with a formidable weapon system. The gravekeeper's design dates back to the lunar war of independence after the Universal Century, when most of the fighting took place in the narrow, enclosed tunnels of underground cities. Heavily armored mechs like the gravekeeper and the siegebreaker, carrying heavy weapons and able to suppress at close range, became the spearhead of both sides' fight for control of those tunnels.\nBecause of this specialized design, gravekeepers usually hold a defense in groups of five. Since they must patrol unattended installations for centuries, their rules of engagement are more conservative than an ordinary mech's, so that failing mechanisms do not trigger by mistake mid-mission. As a result, they will not leave their installation to engage an enemy on their own.\n\nThis configuration mounts the Iguana's machine gun on its shoulder.</description>
     <comps>
       <!-- 副炮掛在南向畫面左側的肩上（機體的右肩，與斯圖格納型的發射架同一側，避開左手主武器）；面向西時該肩在遠側，畫在機體後方。偏移是估計值，需進遊戲微調。
