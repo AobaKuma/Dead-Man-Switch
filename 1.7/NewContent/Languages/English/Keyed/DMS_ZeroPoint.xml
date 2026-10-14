@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 零點能發生器核心 DMS.CompZeroPointGenerator -->
+  <DMS_ZeroPointGenerator_Charge>Ignited catalyst: {0} / {1} units left ({2} in total)</DMS_ZeroPointGenerator_Charge>
+  <DMS_ZeroPointGenerator_NoCatalyst>No catalyst. Load an antigrain warhead.</DMS_ZeroPointGenerator_NoCatalyst>
+  <DMS_ZeroPointGenerator_NoRoom>No room around the core for its output.</DMS_ZeroPointGenerator_NoRoom>
+  <DMS_ZeroPointGenerator_CatalystSpent>{GENERATOR_definite} has spent its last antigrain catalyst.</DMS_ZeroPointGenerator_CatalystSpent>
+
+  <!-- 零點能反應器 DMS.CompZeroPointReactor -->
+  <DMS_ZeroPointReactor_Core>Core: {0} remaining</DMS_ZeroPointReactor_Core>
+  <DMS_ZeroPointReactor_CoreEmpty>Core: empty</DMS_ZeroPointReactor_CoreEmpty>
+  <DMS_ZeroPointReactor_Total>Total runtime: {0}</DMS_ZeroPointReactor_Total>
+
+  <!-- 現實穩定錨 DMS.CompRealityAnchor -->
+  <DMS_RealityAnchor_Field>In field: {0} (suppressed: {1})</DMS_RealityAnchor_Field>
+  <DMS_RealityAnchor_PsycastBlocked>A reality anchor's field blocks psycasting here.</DMS_RealityAnchor_PsycastBlocked>
+  <DMS_StatRule_Max>{0}: capped at {1}</DMS_StatRule_Max>
+
+</LanguageData>

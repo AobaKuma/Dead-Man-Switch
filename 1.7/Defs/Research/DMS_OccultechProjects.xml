@@ -183,4 +183,37 @@
     </descriptionHyperlinks>
   </ResearchProjectDef>
 
+  <!-- ============================================================= -->
+  <!-- 零點能基礎：封存檔案 III 級 · 固態零點能與現實穩定錨             -->
+  <!-- 唯一的隱匿級專案，完成即永久敵對（見 DMS_OccultechResearchTab）。 -->
+  <!-- 解鎖三座建築，全在 NewContent/Defs/Things_Building/              -->
+  <!-- DMS_ExplorationBuildings_Occultech.xml：                        -->
+  <!--   零點能發生器核心：反粒子彈頭 → 固態零點能（一枚 25 個、約一年）  -->
+  <!--   零點能反應器：一塊固態零點能 = 6000W × 一年                    -->
+  <!--   現實穩定錨：以固態零點能建造，錨場壓制異象實體、能力上限 120%  -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_ZeroPoint</defName>
+    <label>zero-point energy</label>
+    <description>Draws energy from the quantum fluctuations of the vacuum itself. Once the principle is mastered, antiparticles can be consumed to produce solidified zero-point energy, which powers the most advanced machines and weapons. It is the threshold of transcendent technology. But the true cost of harnessing the void is something humanity has yet to fully understand.\n\nAfter the main battle ███ division that landed on planet ████ drove the transcendent machine ████ out of the planet's crust, where it had lain parasitic, in the year ████, colonial fleet ████ compiled a detailed account of how such transcendent beings are constituted and passed it by stele to the other colonial fleets operating in the Andromeda cluster. Because transcendent beings and their applications still contaminate the physical universe in ways that remain largely beyond control, disclosure of such technology to developing worlds is prohibited, and its related preventive technologies are to be declassified once a colonial world's society attains class II standard.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Occulted</knowledgeCategory>
+    <knowledgeCost>1500</knowledgeCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+    <prerequisites>
+      <li>DMS_Occultech_QubitDecryption</li>
+      <li>MultiAnalyzer</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file III: zero-point energy</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the confinement principles behind solidified zero-point energy.\n\nThree devices can now be built. The zero-point generator core uses antigrain warheads as its catalyst and condenses solidified energy out of the vacuum, each warhead yielding 25 units over about a year. The zero-point reactor burns solidified energy for power, each unit supplying 6000 W for a full year. The reality anchor, built with solidified energy, stabilizes the space around it: nothing inside can exceed 120% of its natural limits, psycasts cannot be cast, and anomalous entities are suppressed.\n\nThis file is occulted. The fleets regard the knowledge itself as a contamination, and they will not forgive whoever holds it.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_SolitaryZPM</ThingDef>
+      <ThingDef>DMS_ZeroPointGenerator</ThingDef>
+      <ThingDef>DMS_ZeroPointReactor</ThingDef>
+      <ThingDef>DMS_Anchor</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
 </Defs>

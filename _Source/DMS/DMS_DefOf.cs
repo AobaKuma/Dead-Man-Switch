@@ -47,5 +47,8 @@ namespace DMS
 
         // 追殺期間派發的 SAGE 節點任務（見 1.6/Defs/Misc/DMS_Huntdowns.xml 的 questsOnWave）。
         public static QuestScriptDef DMS_FleetNetworkSite;
+
+        // 現實穩定錨的錨場標記：靈能封鎖與強制現形都看它(見 RealityAnchorUtility.IsAnchored)。
+        public static HediffDef DMS_RealityAnchored;
     }
 }

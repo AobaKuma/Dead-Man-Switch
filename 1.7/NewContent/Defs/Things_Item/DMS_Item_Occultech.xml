@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!-- 固態零點能，一種只有能由玩家透過零點能發生器製造而無法從其他方式獲取的特殊物品，默認在遊戲中隱藏-->
+  <!-- 用途（零點能基礎 DMS_Occultech_ZeroPoint）：零點能反應器的燃料（一個 = 6000W × 一年）、現實穩定錨的建材。 -->
   <ThingDef ParentName="ResourceBase">
     <defName>DMS_SolitaryZPM</defName>
-    <label>solidified enegry</label>
+    <label>solidified zero-point energy</label>
     <description>Physical energy solidified into a stable material state by a confinement field - one of the transcendent technologies whose working principles humanity has managed to decipher, and the power source of most transcendent artifacts. Most existing human technology, however, cannot make direct use of the energy inside it.</description>
     <descriptionHyperlinks>
       <ThingDef>DMS_TableMachinePrinter</ThingDef>
+      <ThingDef>DMS_ZeroPointGenerator</ThingDef>
+      <ThingDef>DMS_ZeroPointReactor</ThingDef>
+      <ThingDef>DMS_Anchor</ThingDef>
     </descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Resource/SolitaryZPM</texPath>
@@ -166,7 +170,6 @@
   </ThingDef>
 
   <!-- 禁閉級：最高階，對應 DMS_Occulted 類別。不進物資箱，只從任務獎勵取得。 -->
-  <!-- TODO：目前還沒有 Occulted 類別的專案，暫時解封封存級的蛙人（清單不可為空，否則 ConfigError）。加入禁閉級科技後換掉。 -->
   <ThingDef ParentName="DMS_BaseDataCache">
     <defName>DMS_DataCache_Occulted</defName>
     <label>occulted data cache</label>
@@ -183,7 +186,7 @@
     <comps>
       <li Class="Fortified.CompProperties_UseEffect_DiscoverResearch">
         <researchProjects>
-          <li>DMS_Occultech_Frogman</li>
+          <li>DMS_Occultech_ZeroPoint</li>
         </researchProjects>
         <progressAmount>400</progressAmount>
         <fallbackXpAmount>3000</fallbackXpAmount>

@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: psychic anchor -->
-  <DMS_Anchor.label>現實穩定錨</DMS_Anchor.label>
-  <DMS_Anchor.description>一種透過反制技術干涉周圍空間不受超凡力量影響的穩定裝置。對於普通人來說就是一個無害的裝飾，但對於靈能者以及超凡造物來說會因為難以建立維度外的連接而無法展現出其應有的超凡性質。</DMS_Anchor.description>
-  
+
   <!-- EN: zero-point generator core -->
   <DMS_ZeroPointGenerator.label>零點能發生器核心</DMS_ZeroPointGenerator.label>
-  <DMS_ZeroPointGenerator.description>一種透過可控釋放反粒子能量來在現實宇宙中鑿出孔隙的複雜裝置，能夠從外部的量子起伏中汲取用之不盡的能量並將其聚合為固態的能量塊來方便儲存與二次加工。\n\n由於邊緣世界普遍缺乏反粒子生產技術，因此大部分時候需要依賴於使用現成的反粒子彈頭來作為裝置運轉的激發觸媒。</DMS_ZeroPointGenerator.description>
-  
+  <DMS_ZeroPointGenerator.description>一種透過可控釋放反粒子能量來在現實宇宙中鑿出孔隙的複雜裝置，能夠從外部的量子起伏中汲取用之不盡的能量並將其聚合為固態的能量塊來方便儲存與二次加工。\n\n由於邊緣世界普遍缺乏反粒子生產技術，因此大部分時候需要依賴於使用現成的反粒子彈頭來作為裝置運轉的激發觸媒。\n\n通電運轉時，每裝填一枚反粒子彈頭作為觸媒可產出 25 個固態零點能，每 2.4 天一個。一枚彈頭約可讓核心運轉一年。</DMS_ZeroPointGenerator.description>
+  <DMS_ZeroPointGenerator.comps.CompRefuelable.fuelLabel>反粒子觸媒</DMS_ZeroPointGenerator.comps.CompRefuelable.fuelLabel>
+  <DMS_ZeroPointGenerator.comps.CompRefuelable.fuelGizmoLabel>反粒子觸媒</DMS_ZeroPointGenerator.comps.CompRefuelable.fuelGizmoLabel>
+
+  <!-- EN: zero-point reactor -->
+  <DMS_ZeroPointReactor.label>零點能反應器</DMS_ZeroPointReactor.label>
+  <DMS_ZeroPointReactor.description>一種以可控的連鎖反應逐步拆解固態零點能的約束場，並將釋放出的能量轉換為電力的發電機。大多數人類技術都無法觸及封存在能量塊內部的能量，這座反應器是少數的例外。\n\n反應器一次裝入一塊，一塊就能讓它全功率運轉整整一年。彈匣最多可存放五塊。</DMS_ZeroPointReactor.description>
+  <DMS_ZeroPointReactor.comps.CompRefuelable.fuelLabel>固態零點能</DMS_ZeroPointReactor.comps.CompRefuelable.fuelLabel>
+  <DMS_ZeroPointReactor.comps.CompRefuelable.fuelGizmoLabel>固態零點能</DMS_ZeroPointReactor.comps.CompRefuelable.fuelGizmoLabel>
+
+  <!-- EN: reality anchor -->
+  <DMS_Anchor.label>現實穩定錨</DMS_Anchor.label>
+  <DMS_Anchor.description>一種透過反制技術干涉周圍空間不受超凡力量影響的穩定裝置。對於普通人來說就是一個無害的裝飾，但對於靈能者以及超凡造物來說會因為難以建立維度外的連接而無法展現出其應有的超凡性質。\n\n通電時會在周圍維持一片穩定場。場內任何生物的能力與身體極限都無法超過常人的 120%，無法施放靈能，隱形也會失效。異象實體與變異體會受到壓制：行動遲緩、力量削弱，也更容易收容。穩定場不分敵我。</DMS_Anchor.description>
+
 </LanguageData>

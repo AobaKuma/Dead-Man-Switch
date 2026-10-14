@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- DMS_RealityAnchored -->
+  <DMS_RealityAnchored.label>reality anchored</DMS_RealityAnchored.label>
+  <DMS_RealityAnchored.description>This creature stands inside a reality anchor's stabilized field. No connection beyond this dimension can form here: its capacities and physical limits cannot exceed 120% of normal, it cannot cast psycasts, and it cannot stay invisible.\n\nThe effect lifts within moments of leaving the field.</DMS_RealityAnchored.description>
+
+  <!-- DMS_RealitySuppressed -->
+  <DMS_RealitySuppressed.label>reality suppressed</DMS_RealitySuppressed.label>
+  <DMS_RealitySuppressed.description>A reality anchor's field is pinning this creature to ordinary physics. The transcendent properties that sustain it are being stripped away: it moves and acts sluggishly, strikes with half its strength and is far easier to hold in containment.\n\nThe effect lifts within moments of leaving the field.</DMS_RealitySuppressed.description>
+
+</LanguageData>
