@@ -9,13 +9,13 @@ namespace DMS
     /// 現實穩定錨：有電時，範圍內的每一個 pawn（不分敵我，含平臺上收容的實體與棺內的人）掛上 fieldHediff，
     /// 異象實體與變異體再加掛 entityHediff。兩者都靠 HediffComp_Disappears 自然消退，離開範圍或停電後很快解除。
     /// 實際套用由 <see cref="MapComponent_RealityAnchor"/> 統一處理，一張地圖每個週期只掃一次 pawn。
-    /// 本體只負責繪製上半部的懸浮錨柱：運作時升起並緩慢浮動，停電時落回底座。
+    /// 上半部的懸浮錨柱由同一建築上的 <see cref="CompFloatingGraphic"/> 繪製。
     /// Reality anchor: while powered, every pawn in range (any faction, including entities held on platforms and
     /// pawns inside caskets) gets fieldHediff, and anomalous entities and mutants also get entityHediff. Both fade
     /// through HediffComp_Disappears, so they lift shortly after the pawn leaves or the anchor loses power. The
     /// application itself happens in <see cref="MapComponent_RealityAnchor"/>, which scans a map's pawns once per
-    /// cycle however many anchors there are. This comp only draws the floating pillar: it rises and drifts while
-    /// running and settles back onto the base when unpowered.
+    /// cycle however many anchors there are. The floating pillar is drawn by a <see cref="CompFloatingGraphic"/>
+    /// on the same building.
     /// </summary>
     public class CompProperties_RealityAnchor : CompProperties
     {
@@ -24,18 +24,6 @@ namespace DMS
         public HediffDef fieldHediff;
 
         public HediffDef entityHediff;
-
-        /// <summary>上半部的懸浮錨柱。The floating upper pillar.</summary>
-        public GraphicData topGraphic;
-
-        /// <summary>錨柱靜止時相對建築中心的位置。Pillar offset from the building centre at rest.</summary>
-        public Vector3 topOffset = Vector3.zero;
-
-        /// <summary>運作時錨柱升起的高度。How far the pillar rises while running.</summary>
-        public float liftHeight = 0.2f;
-
-        /// <summary>運作時的浮動幅度。Drift amplitude while running.</summary>
-        public float bobAmplitude = 0.05f;
 
         public CompProperties_RealityAnchor()
         {
@@ -54,20 +42,12 @@ namespace DMS
                 yield return $"{parentDef.defName}: {fieldHediff.defName} needs HediffComp_Disappears";
             if (entityHediff != null && !entityHediff.HasComp(typeof(HediffComp_Disappears)))
                 yield return $"{parentDef.defName}: {entityHediff.defName} needs HediffComp_Disappears";
-            if (topGraphic != null && parentDef.drawerType != DrawerType.MapMeshAndRealTime)
-                yield return $"{parentDef.defName}: CompRealityAnchor.topGraphic needs drawerType MapMeshAndRealTime";
         }
     }
 
     public class CompRealityAnchor : ThingComp
     {
-        private const float LiftPerTick = 0.01f;
-        private const float BobPeriodTicks = 240f;
-
         private CompPowerTrader power;
-
-        /// <summary>目前升起的高度（只影響繪製，不存檔）。Current lift; drawing only, not saved.</summary>
-        private float lift;
 
         public CompProperties_RealityAnchor Props => (CompProperties_RealityAnchor)props;
 
@@ -79,7 +59,6 @@ namespace DMS
         {
             base.PostSpawnSetup(respawningAfterLoad);
             power = parent.GetComp<CompPowerTrader>();
-            lift = Active ? Props.liftHeight : 0f;
             parent.Map.GetComponent<MapComponent_RealityAnchor>()?.Register(this);
         }
 
@@ -87,29 +66,6 @@ namespace DMS
         {
             base.PostDeSpawn(map, mode);
             map.GetComponent<MapComponent_RealityAnchor>()?.Deregister(this);
-        }
-
-        public override void CompTick()
-        {
-            base.CompTick();
-            if (Props.topGraphic == null) return;
-            lift = Mathf.MoveTowards(lift, Active ? Props.liftHeight : 0f, LiftPerTick);
-        }
-
-        public override void PostDraw()
-        {
-            base.PostDraw();
-            if (Props.topGraphic == null) return;
-
-            Vector3 pos = parent.DrawPos + Props.topOffset;
-            pos.y = AltitudeLayer.BuildingOnTop.AltitudeFor();
-            pos.z += lift;
-            if (Props.liftHeight > 0f && lift > 0f)
-            {
-                float phase = (Find.TickManager.TicksGame + parent.thingIDNumber * 37) / BobPeriodTicks * 2f * Mathf.PI;
-                pos.z += Mathf.Sin(phase) * Props.bobAmplitude * (lift / Props.liftHeight);
-            }
-            Props.topGraphic.Graphic.Draw(pos, Rot4.North, parent);
         }
 
         public override void PostDrawExtraSelectionOverlays()

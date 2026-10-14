@@ -123,7 +123,7 @@
 
   <!-- ============================================================= -->
   <!-- 水壓裂解採礦機：封存檔案 I 級（DMS_Occultech_HydraulicFracturing） -->
-  <!-- 不需要人操作的 2×2 自動深鑽機（DMS.CompHydraulicFracturing）：    -->
+  <!-- 不需要人操作的 3×3 自動深鑽機（DMS.CompHydraulicFracturing）：    -->
   <!-- 有電時每 6 小時一份；範圍內有深層礦脈就照原版份量開採，           -->
   <!-- 採盡後改產化合燃料（3/4）或鋼鐵（1/4）。每份汙染周圍 6 格土地。    -->
   <!-- ============================================================= -->
@@ -136,24 +136,30 @@
       <ThingDef>Steel</ThingDef>
     </descriptionHyperlinks>
     <thingClass>Building</thingClass>
-    <tickerType>Rare</tickerType>
+    <!-- 噴發效果要每 tick 冒蒸氣，所以用 Normal；生產邏輯仍是每 250 ticks 跑一次。 -->
+    <tickerType>Normal</tickerType>
+    <!-- 浮動部件（CompFloatingGraphic）要逐幀繪製。The floating part is drawn every frame. -->
+    <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
-      <!-- TODO：暫用原版深鑽機貼圖，待補水壓裂解採礦機專用貼圖。Placeholder vanilla deep drill texture until the rig gets its own. -->
-      <texPath>Things/Building/Production/DeepDrill</texPath>
+      <!-- 底座框架；鑽塔（_top）由下方 CompProperties_FloatingGraphic 另外畫。The base frame; the derrick (_top) is drawn by the CompProperties_FloatingGraphic below. -->
+      <texPath>Things/Building/DMS_HydraulRig</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(3,3)</drawSize>
+      <drawSize>(4,4)</drawSize>
       <shadowData>
-        <volume>(1.6, 1, 1.5)</volume>
+        <volume>(2.6, 1, 2.6)</volume>
       </shadowData>
     </graphicData>
+    <!-- 底座加鑽塔的合成圖。Base and derrick composited. -->
+    <uiIconPath>Things/Building/DMS_HydraulRig_icon</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
+    <!-- 不可通行的玩家建築必須完全掩蔽（fillPercent 1），否則原版會報 config error；同原版污染性發電機。 -->
     <passability>Impassable</passability>
-    <fillPercent>0.75</fillPercent>
-    <size>(2,2)</size>
+    <fillPercent>1</fillPercent>
+    <size>(3,3)</size>
     <rotatable>false</rotatable>
     <canOverlapZones>false</canOverlapZones>
     <!-- 掃描深層礦脈的範圍，與 comp 的 scanRadius 一致；汙染範圍由 comp 另外畫。 -->
-    <specialDisplayRadius>3.9</specialDisplayRadius>
+    <specialDisplayRadius>6</specialDisplayRadius>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <statBases>
       <MaxHitPoints>400</MaxHitPoints>
@@ -204,7 +210,7 @@
       <li Class="DMS.CompProperties_HydraulicFracturing">
         <!-- 6 小時一份，一天 4 份。6 hours per portion, 4 a day. -->
         <ticksPerPortion>15000</ticksPerPortion>
-        <scanRadius>3.9</scanRadius>
+        <scanRadius>6</scanRadius>
         <yieldFactor>1</yieldFactor>
         <fallbackYields>
           <li>
@@ -221,6 +227,30 @@
         <!-- 約 700 格，每天汙染 24 格，一個月左右汙染滿。About 700 cells at 24 a day: saturated in about a month. -->
         <pollutionRadius>14.9</pollutionRadius>
         <cellsPollutedPerPortion>6</cellsPollutedPerPortion>
+        <!-- 運轉中像蒸氣間歇泉一樣間歇噴發（數值同原版間歇泉），每產出一份也噴一次。
+             Sprays like a steam geyser while running (same numbers as the vanilla geyser), plus once per portion. -->
+        <sprayIntervalTicks>500~2000</sprayIntervalTicks>
+        <sprayDurationTicks>200~500</sprayDurationTicks>
+        <sprayThickness>0.6</sprayThickness>
+        <!-- 鑽塔頂端的孔蓋（鑽塔靜止時），運作中會跟著鑽塔升降。The hatch on top of the derrick at rest; follows the derrick while running. -->
+        <sprayOffset>(0,0,2.4)</sprayOffset>
+        <spraySound>GeyserSpray</spraySound>
+      </li>
+      <!-- 鑽塔：只在實際開採時升起並浮動（CompHydraulicFracturing 回報運作狀態）。
+           與底座同為 384px 畫布、同 4×4 繪製；依 _icon 合成圖對位，鑽塔畫布中心比底座高 128px = 1.333 格。
+           升起高度與浮動幅度是穩定錨原本 3×3 繪製時的數值再乘 4/3。
+           The derrick rises and drifts only while mining (CompHydraulicFracturing reports the state). It shares the
+           base's 384px canvas and 4×4 draw size; aligned against the _icon composite, its canvas centre sits 128px =
+           1.333 cells above the base's. Lift and drift are the reality anchor's old 3×3 values times 4/3. -->
+      <li Class="DMS.CompProperties_FloatingGraphic">
+        <graphic>
+          <texPath>Things/Building/DMS_HydraulRig_top</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>(4,4)</drawSize>
+        </graphic>
+        <offset>(0,0,1.333)</offset>
+        <liftHeight>0.27</liftHeight>
+        <bobAmplitude>0.065</bobAmplitude>
       </li>
     </comps>
   </ThingDef>

@@ -21,13 +21,15 @@ namespace DMS
     /// 水壓裂解採礦機：不需要人操作的自動深鑽井。有電時每 ticksPerPortion 產出一份：
     /// scanRadius 內有深層礦脈就照原版深鑽井的份量開採並扣除礦量；採盡後若地圖有岩床，改從 fallbackYields 加權抽一項。
     /// 每產出一份，就把 pollutionRadius 內最近的 cellsPollutedPerPortion 格土地汙染掉（需要 Biotech）。
-    /// 產物用 ThingPlaceMode.Near 放在建築旁；放不下時保留進度，下一個 TickRare 再試。
+    /// 產物用 ThingPlaceMode.Near 放在建築旁；放不下時保留進度，250 ticks 後再試。
+    /// 運轉中會像原版蒸氣間歇泉一樣間歇噴出蒸氣（每產出一份也噴一次），但不像間歇泉那樣推送熱量。
     /// Hydraulic fracturing rig: an automatic deep drill that needs no operator. While powered it produces one portion
     /// every ticksPerPortion. If a deep deposit lies within scanRadius it mines a vanilla deep-drill portion and draws
     /// the deposit down; once the deposits are gone, and the map has bedrock, it rolls one entry of fallbackYields by
     /// weight instead. Every portion pollutes the nearest cellsPollutedPerPortion cells within pollutionRadius
     /// (needs Biotech). Output goes beside the building through ThingPlaceMode.Near; when there is no room the
-    /// progress is kept and the next TickRare tries again.
+    /// progress is kept and it tries again 250 ticks later. While running it sprays steam on and off like a vanilla
+    /// steam geyser (and once per portion), without the geyser's heat.
     /// </summary>
     public class CompProperties_HydraulicFracturing : CompProperties
     {
@@ -46,6 +48,24 @@ namespace DMS
         public float pollutionRadius = 14.9f;
 
         public int cellsPollutedPerPortion = 6;
+
+        /// <summary>運轉時兩次噴發的間隔（原版間歇泉 500~2000）。Ticks between sprays while running (a vanilla geyser uses 500~2000).</summary>
+        public IntRange sprayIntervalTicks = new IntRange(500, 2000);
+
+        /// <summary>每次噴發的長度（原版間歇泉 200~500）。Length of one spray (a vanilla geyser uses 200~500).</summary>
+        public IntRange sprayDurationTicks = new IntRange(200, 500);
+
+        /// <summary>噴發時每 tick 冒出一團蒸氣的機率（原版間歇泉 0.6）。Chance per tick of a puff while spraying (a vanilla geyser uses 0.6).</summary>
+        public float sprayThickness = 0.6f;
+
+        /// <summary>
+        /// 蒸氣冒出的位置，相對於建築中心（部件靜止時）。建築上有 CompFloatingGraphic 時會跟著部件一起升降。
+        /// Where the puffs come out, relative to the building's center with the part at rest. Follows the part up and
+        /// down when the building has a CompFloatingGraphic.
+        /// </summary>
+        public Vector3 sprayOffset = Vector3.zero;
+
+        public SoundDef spraySound;
 
         public CompProperties_HydraulicFracturing()
         {
@@ -72,12 +92,14 @@ namespace DMS
                         yield return $"{parentDef.defName}: fallbackYields entry {y.thingDef.defName} needs count > 0 and weight > 0";
                 }
             }
-            if (parentDef.tickerType != TickerType.Rare)
-                yield return $"{parentDef.defName}: CompHydraulicFracturing needs tickerType Rare";
+            if (sprayIntervalTicks.min <= 0 || sprayDurationTicks.min <= 0)
+                yield return $"{parentDef.defName}: CompProperties_HydraulicFracturing spray intervals and durations must be > 0";
+            if (parentDef.tickerType != TickerType.Normal)
+                yield return $"{parentDef.defName}: CompHydraulicFracturing needs tickerType Normal";
         }
     }
 
-    public class CompHydraulicFracturing : ThingComp
+    public class CompHydraulicFracturing : ThingComp, IFloatingGraphicDriver
     {
         private static readonly Color PollutionRingColor = new Color(0.6f, 0.75f, 0.2f);
 
@@ -86,7 +108,19 @@ namespace DMS
         /// <summary>上一次產出因為旁邊沒空位而失敗。不存檔，只給檢視字串用。Last attempt found no room; inspect string only, not saved.</summary>
         private bool noRoom;
 
+        /// <summary>
+        /// 有電且有東西可採。每 250 ticks 更新一次，噴發每 tick 只讀這個值，不必每 tick 掃描礦脈。不存檔。
+        /// Powered with something to mine. Refreshed every 250 ticks so the per-tick spray never scans for deposits. Not saved.
+        /// </summary>
+        private bool working;
+
+        // 噴發狀態同原版間歇泉，不存檔。Spray state, not saved, like the vanilla geyser's.
+        private int ticksUntilSpray = -1;
+        private int sprayTicksLeft;
+        private Sustainer spraySustainer;
+
         private CompPowerTrader power;
+        private CompFloatingGraphic floating;
 
         public CompProperties_HydraulicFracturing Props => (CompProperties_HydraulicFracturing)props;
 
@@ -96,10 +130,14 @@ namespace DMS
 
         private bool CanFracture => TryGetDeposit(out _, out _, out _) || HasFallback;
 
+        // 只在實際開採時浮起。The floating part rises only while it is actually mining.
+        public bool FloatingGraphicActive => working;
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
             power = parent.GetComp<CompPowerTrader>();
+            floating = parent.GetComp<CompFloatingGraphic>();
         }
 
         public override void PostExposeData()
@@ -114,18 +152,78 @@ namespace DMS
             // 同原版深鑽井：拆下搬走後進度歸零。Like the vanilla deep drill, progress resets when it is uninstalled.
             progressTicks = 0;
             noRoom = false;
+            working = false;
+            EndSpray();
         }
 
-        public override void CompTickRare()
+        public override void CompTick()
         {
-            base.CompTickRare();
-            if (!parent.Spawned || !Powered || !CanFracture) return;
+            base.CompTick();
+            if (!parent.Spawned) return;
+
+            if (parent.IsHashIntervalTick(GenTicks.TickRareInterval))
+                TickProduction();
+
+            TickSpray();
+        }
+
+        private void TickProduction()
+        {
+            working = Powered && CanFracture;
+            if (!working) return;
 
             progressTicks = Mathf.Min(progressTicks + GenTicks.TickRareInterval, Props.ticksPerPortion);
             if (progressTicks < Props.ticksPerPortion) return;
 
             noRoom = !TryProducePortion();
             if (!noRoom) progressTicks = 0;
+        }
+
+        /// <summary>
+        /// 同原版 IntermittentSteamSprayer 的節奏，但只在運轉中噴發；停電或停工時立刻收住。
+        /// Same rhythm as vanilla's IntermittentSteamSprayer, but only while running; losing power or work stops it at once.
+        /// </summary>
+        private void TickSpray()
+        {
+            if (sprayTicksLeft > 0)
+            {
+                sprayTicksLeft--;
+                if (Rand.Value < Props.sprayThickness)
+                {
+                    Vector3 nozzle = parent.TrueCenter() + Props.sprayOffset;
+                    if (floating != null)
+                        nozzle.z += floating.CurrentRise;
+                    FleckMaker.ThrowAirPuffUp(nozzle, parent.Map);
+                }
+                if (sprayTicksLeft <= 0 || !working)
+                    EndSpray();
+                return;
+            }
+
+            if (!working) return;
+            if (ticksUntilSpray < 0)
+                ticksUntilSpray = Props.sprayIntervalTicks.RandomInRange;
+            if (--ticksUntilSpray <= 0)
+                StartSpray();
+        }
+
+        private void StartSpray()
+        {
+            sprayTicksLeft = Props.sprayDurationTicks.RandomInRange;
+            ticksUntilSpray = -1;
+            if (Props.spraySound != null && spraySustainer == null)
+                spraySustainer = Props.spraySound.TrySpawnSustainer(new TargetInfo(parent.Position, parent.Map));
+        }
+
+        private void EndSpray()
+        {
+            sprayTicksLeft = 0;
+            ticksUntilSpray = -1;
+            if (spraySustainer != null)
+            {
+                spraySustainer.End();
+                spraySustainer = null;
+            }
         }
 
         /// <summary>
@@ -193,6 +291,9 @@ namespace DMS
             }
 
             Pollute();
+            // 排出泥漿時噴一次。A spray goes up with every discharge of slurry.
+            if (sprayTicksLeft <= 0)
+                StartSpray();
             return true;
         }
 

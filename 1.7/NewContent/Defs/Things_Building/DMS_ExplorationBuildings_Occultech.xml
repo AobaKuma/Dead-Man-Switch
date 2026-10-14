@@ -196,13 +196,14 @@
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
       <texPath>Things/Building/DMS_Anchor_base</texPath>
-      <drawSize>(3,3)</drawSize>
+      <!-- 1×1：畫布 384px 中圖案約佔 56%，2×2 繪製時圖案略大於一格。 -->
+      <drawSize>(2,2)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/DMS_Anchor</uiIconPath>
     <uiIconScale>1.5</uiIconScale>
     <fillPercent>0.35</fillPercent>
     <pathCost>90</pathCost>
-    <size>(2,2)</size>
+    <size>(1,1)</size>
     <rotatable>false</rotatable>
     <defaultPlacingRot>0</defaultPlacingRot>
     <specialDisplayRadius>14.9</specialDisplayRadius>
@@ -239,16 +240,20 @@
         <radius>14.9</radius>
         <fieldHediff>DMS_RealityAnchored</fieldHediff>
         <entityHediff>DMS_RealitySuppressed</entityHediff>
-        <!-- 上半部的懸浮錨柱：與 DMS_Anchor.png 同一張畫布，畫布中心比底座中心高 0.75 格。
-             The floating pillar shares DMS_Anchor.png's canvas, whose centre sits 0.75 cells above the base's. -->
-        <topGraphic>
+      </li>
+      <!-- 上半部的懸浮錨柱：與 DMS_Anchor.png 同一張畫布，畫布中心比底座中心高 0.5 格（底座 2×2 繪製時）。
+           尺寸、位移、升起高度與浮動幅度都隨底座從 3×3 等比縮為 2/3。
+           The floating pillar shares DMS_Anchor.png's canvas, whose centre sits 0.5 cells above the base's at a 2×2
+           base. Size, offset, lift and drift were all scaled to 2/3 along with the base. -->
+      <li Class="DMS.CompProperties_FloatingGraphic">
+        <graphic>
           <texPath>Things/Building/DMS_Anchor_top</texPath>
           <graphicClass>Graphic_Single</graphicClass>
-          <drawSize>(3,4.5)</drawSize>
-        </topGraphic>
-        <topOffset>(0,0,0.75)</topOffset>
-        <liftHeight>0.2</liftHeight>
-        <bobAmplitude>0.05</bobAmplitude>
+          <drawSize>(2,3)</drawSize>
+        </graphic>
+        <offset>(0,0,0.5)</offset>
+        <liftHeight>0.13</liftHeight>
+        <bobAmplitude>0.035</bobAmplitude>
       </li>
     </comps>
   </ThingDef>
