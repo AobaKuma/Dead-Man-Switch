@@ -368,3 +368,6 @@ _Source/DMS/.vs/DMS/v17/.suo
 # RimWorld 1.7 asset packs baked on Workshop upload (and their local sidecars)
 Assets.zip
 Assets.zip.*
+
+# RimWorld 1.7 runtime SPIR-V caches the shader compiler writes beside GLSL sources
+*.spv-cache

@@ -90,6 +90,28 @@
         <transmitsPower>true</transmitsPower>
         <soundAmbientPowered>ScannerLongRangeMineral_Ambience</soundAmbientPowered>
       </li>
+      <!-- 產出時核心腔室裡張開的微型黑洞與電弧；何時張開由 CompZeroPointGenerator.SingularityActive 決定。
+           The micro black hole and arcs in the core chamber while producing; CompZeroPointGenerator.SingularityActive
+           decides when it opens. -->
+      <li Class="DMS.CompProperties_SingularityGraphic">
+        <shaderType>DMS_Singularity</shaderType>
+        <arcShaderType>DMS_SingularityArc</arcShaderType>
+        <glitchShaderType>DMS_SingularityGlitch</glitchShaderType>
+        <!-- 貼圖 (512, 445) 的核心腔室：drawOffset 0.5 + (640 − 445) / 256。Core chamber at texture (512, 445). -->
+        <offset>(0, 0, 1.26)</offset>
+        <size>1.5</size>
+        <horizon>0.8</horizon>
+        <color>(0.45, 0.8, 1.0)</color>
+        <arcColor>(0.5, 0.85, 1.0)</arcColor>
+        <!-- 兩臂上四顆藍色發射節點朝向核心的一側，相對奇點中心。
+             The core-facing side of the four blue emitter nodes on the arms, relative to the singularity. -->
+        <arcTargets>
+          <li>(-0.45, 0, 0.5)</li>
+          <li>(-0.72, 0, 0.27)</li>
+          <li>(0.45, 0, 0.5)</li>
+          <li>(0.72, 0, 0.27)</li>
+        </arcTargets>
+      </li>
     </comps>
   </ThingDef>
 

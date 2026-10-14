@@ -48,7 +48,7 @@ namespace DMS
         }
     }
 
-    public class CompZeroPointGenerator : ThingComp
+    public class CompZeroPointGenerator : ThingComp, ISingularityDriver
     {
         private const int RetryTicks = 250;
 
@@ -72,6 +72,14 @@ namespace DMS
 
         /// <summary>充能加上彈匣裡的觸媒，總共還能產出幾個。Charge plus magazine, in units.</summary>
         public int UnitsRemaining => charge + StoredCatalyst * Props.yieldPerCatalyst;
+
+        /// <summary>
+        /// 正在產出：有電、不在真空、還有觸媒可燒，且沒有卡在產物放不下。奇點效果（CompSingularityGraphic）只在這時張開。
+        /// Producing: powered, not in vacuum, catalyst left to burn, and not stalled for lack of room. The singularity
+        /// effect (CompSingularityGraphic) only opens while this holds.
+        /// </summary>
+        public bool SingularityActive => parent.Spawned && Powered && !InVacuum && UnitsRemaining > 0
+            && progressTicks <= Props.ticksPerUnit;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
