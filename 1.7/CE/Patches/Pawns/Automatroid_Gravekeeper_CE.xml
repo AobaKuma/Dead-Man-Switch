@@ -206,6 +206,15 @@
 				</value>
 			</li>
 
+			<!-- 守夜人的肩掛機槍比照鬣蜥：CE 下換成機載輕機槍（見 Weapons/MiliGunsMounted_CE_Replace.xml）。
+			     The Velador's shoulder gun follows the Iguana: under CE it becomes the mounted LMG (see Weapons/MiliGunsMounted_CE_Replace.xml). -->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Gravekeeper_Velador"]/comps/li[@Class="Fortified.CompPropertiesMultipleTurretGun"]/subTurrets/li[ID="General-purpose machine gun"]/turret</xpath>
+				<value>
+					<turret>DMS_LightMachineGunMounted</turret>
+				</value>
+			</li>
+
 			<!-- 斯圖格納導彈換成 CE 版（Defs/DMS_Gravekeeper_CE.xml）。Swap the Stugna missile for its CE version (Defs/DMS_Gravekeeper_CE.xml). -->
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/AbilityDef[defName="DMS_GravekeeperStugna"]/comps/li[@Class="CompProperties_AbilityLaunchProjectile"]/projectileDef</xpath>

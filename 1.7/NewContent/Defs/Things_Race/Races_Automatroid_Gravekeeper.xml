@@ -75,30 +75,6 @@
           </points>
         </bodySizeCurve>
       </li>
-      <!-- 武器握在左手：南向畫在畫面右側（發射架在右肩、畫面左側），
-           面向東時左手在遠側所以畫在機體後方，面向西時在近側畫在前方。
-           The weapon is held in the left hand: screen-right facing south (the rack is on the right
-           shoulder, screen-left); facing east the left hand is the far side and draws behind the body,
-           facing west it is the near side and draws in front. -->
-      <li Class="Fortified.CompProperties_VehicleWeapon">
-        <drawData>
-          <dataSouth>
-            <offset>(0.7,0,0.1)</offset>
-          </dataSouth>
-          <dataNorth>
-            <offset>(-0.7,0,0.1)</offset>
-          </dataNorth>
-          <dataEast>
-            <offset>(0.2,0,0.5)</offset>
-            <layer>-20</layer>
-          </dataEast>
-          <dataWest>
-            <offset>(-0.2,0,-0.2)</offset>
-          </dataWest>
-        </drawData>
-        <turretRotationFollowPawn>true</turretRotationFollowPawn>
-        <rotationSmoothTime>0.12</rotationSmoothTime>
-      </li>
       <li Class="Fortified.CompProperties_MeleeSweep">
         <damageDef>Blunt</damageDef>
         <damage>32</damage>
@@ -121,6 +97,7 @@
           <li>DMS_MechWeaponBreach</li>
           <li>H_Gatling127mm</li>                                                      <!--GAU-19，送葬者 / the Enterrador's-->
           <li>A_SC_LongRifle</li>                                                      <!--栓動炮，守夜人 / the Velador's bolt cannon-->
+          <li>A_Cut_Melee</li>                                                         <!--機兵開山刀，掘墓人 / the Sepulturero's machete-->
           <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
@@ -327,41 +304,104 @@
 
   <!-- ============================================================
        地下設施用的 NPC 守墓人：固定頭部、固定武裝的三種編制。玩家培育不到。
-       ⚠ 培育時取的是「同種族在 DefDatabase 裡的第一個 PawnKind」（Bill_ProductionMech.CreateProducts），
-       所以這三個 NPC 編制必須留在玩家用的 DMS_Mech_Gravekeeper / DMS_Mech_Gravekeeper_Stugna 之後，
-       否則培育出來的會變成 NPC 編制。
+       掘墓人與守夜人肩上多一門副炮，副炮只能掛在種族上，所以兩者各有自己的種族（沒有培育配方）。
+       ⚠ 送葬者與玩家用的斯圖格納型共用種族；培育時取的是「同種族在 DefDatabase 裡的第一個 PawnKind」
+       （Bill_ProductionMech.CreateProducts），所以送葬者必須留在 DMS_Mech_Gravekeeper_Stugna 之後，
+       否則培育出來的會變成送葬者。
        不設 alternateGraphicChance：沒有 alternateGraphics 清單時機率必須是 0，否則 TryGetAlternate 會對 null 取樣。
-         掘墓人 Sepulturero：圓頭（D），靠掃擊拳與駭蜥大跳近戰
-         送葬者 Enterrador：方頭（B，帶發射架），GAU-19 與斯圖格納導彈的反裝甲編制
-         守夜人 Velador：三角頭（F），栓動炮與狙擊手的精確射擊
+         掘墓人 Sepulturero：圓頭（D），近戰與近距離武器，肩掛噴火槍，靠掃擊拳與駭蜥大跳貼身
+         送葬者 Enterrador：方頭（B，帶發射架），重火力與斯圖格納導彈的反裝甲編制
+         守夜人 Velador：三角頭（F），遠距精確武器，肩掛鬣蜥同款機槍，與狙擊手的精確射擊
 
        NPC gravekeepers for the underground installations: three fixed-head, fixed-loadout configurations the player cannot gestate.
-       ⚠ Gestation takes the race's first PawnKind in the DefDatabase (Bill_ProductionMech.CreateProducts), so these three
-       must stay after the player kinds DMS_Mech_Gravekeeper / DMS_Mech_Gravekeeper_Stugna, or gestation would produce them.
+       The Sepulturero and Velador carry a shoulder sub-turret; sub-turrets can only live on a race, so each has its own
+       race (with no gestation recipe).
+       ⚠ The Enterrador shares its race with the player's Stugna pattern. Gestation takes the race's first PawnKind in the
+       DefDatabase (Bill_ProductionMech.CreateProducts), so the Enterrador must stay after DMS_Mech_Gravekeeper_Stugna,
+       or gestation would produce it.
        No alternateGraphicChance: without an alternateGraphics list the chance must stay 0, or TryGetAlternate samples a null list.
-         Sepulturero: round head (D), closes in with the sweeping fists and the Tarbosaurus heavy jump
-         Enterrador: square head (B, with the rack), anti-armour configuration with a GAU-19 and Stugna missiles
-         Velador: triangle head (F), bolt cannon and the sniper's precision marksmanship
+         Sepulturero: round head (D), melee and close-range weapons, a shoulder Flameblaster, closes in with the sweeping
+           fists and the Tarbosaurus heavy jump
+         Enterrador: square head (B, with the rack), anti-armour configuration with heavy weapons and Stugna missiles
+         Velador: triangle head (F), long-range precision weapons, a shoulder machine gun, and the sniper's precision marksmanship
 
-       武器池：三種編制都會從龍騎兵武器（步槍、榴彈槍，加上 MobileDragoon 的霰彈槍）中抽一把；
-       送葬者與守夜人另外可以抽到各自的招牌武器。原版依 generateCommonality 加權抽選，
-       所以招牌武器大約佔 1/4（沒有 MobileDragoon 時 1/3）。weaponMoney 定在 9999，池裡每一把都買得起。
-       DMS_Dragoon_SG 只是字串，沒有 MobileDragoon 時不會比對到任何武器，不會報錯。
-       Weapon pool: all three draw from the dragoon weapons (rifle, grenade launcher and, with MobileDragoon, the shotgun);
-       the Enterrador and Velador can also draw their signature weapon. Vanilla weights the draw by generateCommonality,
-       so the signature weapon comes up about 1 in 4 (1 in 3 without MobileDragoon). weaponMoney is pinned at 9999 so every
-       weapon in the pool is affordable. DMS_Dragoon_SG is a plain tag string; without MobileDragoon it matches nothing.
+       武器池依編制分配，每把武器只屬於一種編制：
+         掘墓人：機兵開山刀、鎮暴霰彈槍（靠它專屬的 DMS_RiotShotgun 標籤）、龍騎兵霰彈槍（MobileDragoon 才有）
+         送葬者：GAU-19、龍騎兵步槍、龍騎兵榴彈槍
+         守夜人：栓動炮、MK44 大毒蛇
+       原版依 generateCommonality 加權抽選，池裡每把大約等機率。weaponMoney 定在 9999，池裡每一把都買得起。
+       DMS_Dragoon_SG 只是字串，沒有 MobileDragoon 時不會比對到任何武器（掘墓人只剩兩把），不會報錯。
+       Weapon pools are split by role, and each weapon belongs to one configuration only:
+         Sepulturero: machete, riot shotgun (through its own DMS_RiotShotgun tag), dragoon shotgun (MobileDragoon only)
+         Enterrador: GAU-19, dragoon rifle, dragoon grenade launcher
+         Velador: bolt cannon, MK44 Bushmaster
+       Vanilla weights the draw by generateCommonality, so each weapon in a pool is about equally likely. weaponMoney is
+       pinned at 9999 so every weapon in the pool is affordable. DMS_Dragoon_SG is a plain tag string; without MobileDragoon
+       it matches nothing (the Sepulturero is left with two weapons).
        ============================================================ -->
+
+  <!-- 掘墓人的種族：肩上掛壁虎同款噴火槍。Sepulturero race: the Gecko's Flameblaster on the shoulder. -->
+  <ThingDef ParentName="DMS_MechGravekeeperBase">
+    <defName>DMS_Mech_Gravekeeper_Sepulturero</defName>
+    <label>gravekeeper (Sepulturero)</label>
+    <description>A highly intelligent large automatroid, deployed by the colonial fleets specifically to patrol and guard important unmanned installations. Its parts are largely interchangeable with the mobile dragoon's, and it pairs excellent close-quarters combat ability with a formidable weapon system. The gravekeeper's design dates back to the lunar war of independence after the Universal Century, when most of the fighting took place in the narrow, enclosed tunnels of underground cities. Heavily armored mechs like the gravekeeper and the siegebreaker, carrying heavy weapons and able to suppress at close range, became the spearhead of both sides' fight for control of those tunnels.\nBecause of this specialized design, gravekeepers usually hold a defense in groups of five. Since they must patrol unattended installations for centuries, their rules of engagement are more conservative than an ordinary mech's, so that failing mechanisms do not trigger by mistake mid-mission. As a result, they will not leave their installation to engage an enemy on their own.\n\nThis configuration mounts the Gecko's Flameblaster on its shoulder for clearing corridors.</description>
+    <comps>
+      <!-- 副炮掛在南向畫面左側的肩上（機體的右肩，與斯圖格納型的發射架同一側，避開左手主武器）；面向西時該肩在遠側，畫在機體後方。偏移是估計值，需進遊戲微調。
+       The sub-turret sits on the shoulder on screen-left facing south (the mech's right shoulder, the same side as the
+       Stugna rack, clear of the left-hand weapon); facing west that shoulder is the far side and draws behind the body.
+       Offsets are estimates and need tuning in game. -->
+      <li Class="Fortified.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>flame thrower</ID>
+            <turret>DMS_Flameblaster</turret>
+            <autoAttack>true</autoAttack>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <drawSize>1.2</drawSize>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <defaultData>
+                    <pivot>(0.4,0.5)</pivot>
+                  </defaultData>
+                  <dataSouth>
+                    <offset>(-0.55,0,0.6)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(0.55,0,0.6)</offset>
+                  </dataNorth>
+                  <dataEast>
+                    <offset>(0.05,0,0.55)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(-0.05,0,0.7)</offset>
+                    <rotationOffset>180</rotationOffset>
+                    <layer>-21</layer>
+                  </dataWest>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>
+    </comps>
+  </ThingDef>
 
   <!-- 掘墓人 / Sepulturero -->
   <PawnKindDef ParentName="DMS_MechGravekeeperKindBase">
     <defName>DMS_Mech_Gravekeeper_Sepulturero</defName>
     <label>Sepulturero</label>
-    <race>DMS_Mech_Gravekeeper</race>
-    <combatPower>420</combatPower>
+    <race>DMS_Mech_Gravekeeper_Sepulturero</race>
+    <combatPower>460</combatPower>
     <weaponTags Inherit="False">
-      <li>DMS_DragoonGun</li>
-      <li>DMS_Dragoon_SG</li>
+      <li>A_Cut_Melee</li>                                                          <!--機兵開山刀 / machete-->
+      <li>DMS_RiotShotgun</li>                                                      <!--鎮暴霰彈槍 / riot shotgun-->
+      <li>DMS_Dragoon_SG</li>                                                       <!--龍騎兵霰彈槍 / dragoon shotgun-->
     </weaponTags>
     <weaponMoney>9999~9999</weaponMoney>
     <abilities>
@@ -403,9 +443,8 @@
     <race>DMS_Mech_Gravekeeper_Stugna</race>
     <combatPower>550</combatPower>
     <weaponTags Inherit="False">
-      <li>H_Gatling127mm</li>
-      <li>DMS_DragoonGun</li>
-      <li>DMS_Dragoon_SG</li>
+      <li>H_Gatling127mm</li>                                                       <!--GAU-19-->
+      <li>DMS_DragoonGun</li>                                                       <!--龍騎兵步槍、榴彈槍 / dragoon rifle and grenade launcher-->
     </weaponTags>
     <weaponMoney>9999~9999</weaponMoney>
     <abilities>
@@ -440,16 +479,69 @@
     </lifeStages>
   </PawnKindDef>
 
+  <!-- 守夜人的種族：肩上掛鬣蜥同款機槍（原版為機載重機槍，CE 下與鬣蜥一樣換成機載輕機槍）。
+       Velador race: the Iguana's machine gun on the shoulder (the mounted HMG; under CE it becomes the mounted LMG, as on the Iguana). -->
+  <ThingDef ParentName="DMS_MechGravekeeperBase">
+    <defName>DMS_Mech_Gravekeeper_Velador</defName>
+    <label>gravekeeper (Velador)</label>
+    <description>A highly intelligent large automatroid, deployed by the colonial fleets specifically to patrol and guard important unmanned installations. Its parts are largely interchangeable with the mobile dragoon's, and it pairs excellent close-quarters combat ability with a formidable weapon system. The gravekeeper's design dates back to the lunar war of independence after the Universal Century, when most of the fighting took place in the narrow, enclosed tunnels of underground cities. Heavily armored mechs like the gravekeeper and the siegebreaker, carrying heavy weapons and able to suppress at close range, became the spearhead of both sides' fight for control of those tunnels.\nBecause of this specialized design, gravekeepers usually hold a defense in groups of five. Since they must patrol unattended installations for centuries, their rules of engagement are more conservative than an ordinary mech's, so that failing mechanisms do not trigger by mistake mid-mission. As a result, they will not leave their installation to engage an enemy on their own.\n\nThis configuration mounts the Iguana's machine gun on its shoulder.</description>
+    <comps>
+      <!-- 副炮掛在南向畫面左側的肩上（機體的右肩，與斯圖格納型的發射架同一側，避開左手主武器）；面向西時該肩在遠側，畫在機體後方。偏移是估計值，需進遊戲微調。
+       The sub-turret sits on the shoulder on screen-left facing south (the mech's right shoulder, the same side as the
+       Stugna rack, clear of the left-hand weapon); facing west that shoulder is the far side and draws behind the body.
+       Offsets are estimates and need tuning in game. -->
+      <li Class="Fortified.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>General-purpose machine gun</ID>
+            <turret>DMS_HeavyMachineGunMounted</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>5</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <drawSize>1.5</drawSize>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <defaultData>
+                    <pivot>(0.4,0.5)</pivot>
+                  </defaultData>
+                  <dataSouth>
+                    <offset>(-0.55,0,0.6)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(0.55,0,0.6)</offset>
+                  </dataNorth>
+                  <dataEast>
+                    <offset>(0.05,0,0.55)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(-0.05,0,0.7)</offset>
+                    <rotationOffset>180</rotationOffset>
+                    <layer>-21</layer>
+                  </dataWest>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>
+    </comps>
+  </ThingDef>
+
   <!-- 守夜人 / Velador -->
   <PawnKindDef ParentName="DMS_MechGravekeeperKindBase">
     <defName>DMS_Mech_Gravekeeper_Velador</defName>
     <label>Velador</label>
-    <race>DMS_Mech_Gravekeeper</race>
-    <combatPower>500</combatPower>
+    <race>DMS_Mech_Gravekeeper_Velador</race>
+    <combatPower>540</combatPower>
     <weaponTags Inherit="False">
-      <li>A_SC_LongRifle</li>
-      <li>DMS_DragoonGun</li>
-      <li>DMS_Dragoon_SG</li>
+      <li>A_SC_LongRifle</li>                                                       <!--栓動炮 / bolt cannon-->
+      <li>DMS_MechWeaponHeavy</li>                                                  <!--MK44 大毒蛇 / MK44 Bushmaster-->
     </weaponTags>
     <weaponMoney>9999~9999</weaponMoney>
     <abilities>

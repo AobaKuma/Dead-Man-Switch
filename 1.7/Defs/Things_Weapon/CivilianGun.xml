@@ -473,6 +473,7 @@
 			<li>A_RC_LongRifle</li>
 			<li>A_SG_LongRifle</li>
 			<li>DMS_MechWeaponShotgun</li>
+			<li>DMS_RiotShotgun</li><!-- 專屬標籤：守墓人「掘墓人」用來只抽到這把 / own tag so the Sepulturero gravekeeper can draw exactly this gun -->
 		</weaponTags>
 		<weaponClasses>
 			<li>Ranged</li>
