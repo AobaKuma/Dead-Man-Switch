@@ -213,6 +213,36 @@
   </ResearchProjectDef>
 
   <!-- ============================================================= -->
+  <!-- 主戰規格：封存檔案 II 級 · 全面戰爭用規格機兵                    -->
+  <!-- 前置為常規樹的簡言之假說（DMS_Hypothesis）。                      -->
+  <!-- 解鎖守墓人兩種型號的培育配方（大型培育艙）：                      -->
+  <!--   種族在 NewContent/Defs/Things_Race/Races_Automatroid_Gravekeeper.xml -->
+  <!--   配方在 Biotech/Defs/DMS_Recipes_MechGestator_Gravekeeper.xml     -->
+  <!-- 古代機兵（AncientCorps）啟用時，Mod/DMSAC 另把古機單位的培育配方   -->
+  <!-- 與古機武器的製作配方掛在本專案底下。                              -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_MainBattle</defName>
+    <label>main battle specification</label>
+    <description>The design and production technology behind the total-war specification mechs and related equipment that the colonial fleets field against planet-scale hostile organizations and harmful entities. The manufacturing process of these mechs has been drastically simplified so that they serve better as high-performance weapons, produced and expended without pause over the course of a total war. Their performance, however, does not come from nowhere.\nAfter the main battle specification leak on colonial world ████, colonial fleets across sector ████ observed similar technology reaching interstellar pirates and spacefaring military regimes through arms dealers. The technology recovery programs each fleet carried out after the incident proved effective, and the main battle specification was sealed again after ████.\n\nTo prevent such an incident from happening again, however, approved by ████ and ██, the main battle specification and its related technologies are designated class II sealed technology. Provision of such technology to developing worlds is prohibited, and outside emergency war mobilization, standing ground-force deployments are to avoid employing it in any military operation.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Sealed</knowledgeCategory>
+    <knowledgeCost>1000</knowledgeCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>4.00</researchViewY>
+    <prerequisites>
+      <li>DMS_Hypothesis</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file II: main battle specification</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the production patterns of the mechs the fleets build to be expended in total war.\n\nThe gravekeeper can now be gestated at a large automatroid constructor, either in its standard pattern or with a Stugna missile rack on its shoulder. Most of its parts are shared with the mobile dragoon.\n\nThe fleets sealed this file again after it leaked to pirates and military regimes, and they will move against anyone who holds it now.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Gravekeeper</ThingDef>
+      <ThingDef>DMS_Mech_Gravekeeper_Stugna</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
+  <!-- ============================================================= -->
   <!-- 零點能基礎：封存檔案 III 級 · 固態零點能與現實穩定錨             -->
   <!-- 唯一的隱匿級專案，完成即永久敵對（見 DMS_OccultechResearchTab）。 -->
   <!-- 解鎖三座建築，全在 NewContent/Defs/Things_Building/              -->

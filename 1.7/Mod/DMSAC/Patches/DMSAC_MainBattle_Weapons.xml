@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- 古代機兵（AncientCorps）聯動：古機武器的製作配方，全部掛在 II 級封存檔案「主戰規格」底下。
+       AncientCorps 原本用 <recipeMaker Inherit="False" /> 把這些武器鎖成不可製作，造價（costList）一直都在；
+       這裡換成正常的 recipeMaker，工作台、技能與半成品繼承 DMS_AutomatroidGun（機兵武器印表機）。
+       researchPrerequisites 用 Inherit="False" 蓋掉重型武器基底的 DMS_EquipmentHeavy，只需要主戰規格。
+       AncientCorps integration: crafting recipes for the ancient corps' weapons, all under the class II sealed file
+       "main battle specification". AncientCorps locks them with <recipeMaker Inherit="False" /> while keeping
+       their costList; this swaps in a normal recipeMaker so the bench, skill and unfinished thing come from
+       DMS_AutomatroidGun (the automatroid weapon printer). researchPrerequisites uses Inherit="False" to drop the
+       heavy weapon base's DMS_EquipmentHeavy, so only the main battle file is required. -->
+
+  <!-- 步兵武器 / infantry weapons -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[
+      defName="DMS_ZlobinRevolver" or
+      defName="DMS_ZlobinRifle" or
+      defName="DMS_VykhlopRifle" or
+      defName="DMS_PKM" or
+      defName="DMS_KS23K" or
+      defName="DMS_YekaterinRifle" or
+      defName="DMS_AtlantGrenadeLauncher"
+      ]/recipeMaker</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisites Inherit="False">
+          <li>DMS_Occultech_MainBattle</li>
+        </researchPrerequisites>
+        <skillRequirements>
+          <Crafting>6</Crafting>
+        </skillRequirements>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <!-- 重型武器 / heavy weapons -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[
+      defName="DMS_KordMachineGun" or
+      defName="DMS_VladimirovMachineGun" or
+      defName="DMS_AerialAutocannon" or
+      defName="DMS_Gsh30Gatlinggun" or
+      defName="DMS_Gun_JusticeGavel"
+      ]/recipeMaker</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisites Inherit="False">
+          <li>DMS_Occultech_MainBattle</li>
+        </researchPrerequisites>
+        <skillRequirements>
+          <Crafting>8</Crafting>
+        </skillRequirements>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <!-- 只在 CE 下存在的古機武器（AncientCorps 1.6/CE/Defs）。沒有 CE 時找不到節點，所以不算失敗。
+       Ancient weapons that only exist under CE (AncientCorps 1.6/CE/Defs). Without CE nothing matches, which is not a failure. -->
+  <Operation Class="PatchOperationReplace">
+    <success>Always</success>
+    <xpath>Defs/ThingDef[
+      defName="DMS_Gun_IzhmalRifle" or
+      defName="DMS_GshG762Gatlinggun"
+      ]/recipeMaker</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisites Inherit="False">
+          <li>DMS_Occultech_MainBattle</li>
+        </researchPrerequisites>
+        <skillRequirements>
+          <Crafting>6</Crafting>
+        </skillRequirements>
+      </recipeMaker>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <success>Always</success>
+    <xpath>Defs/ThingDef[defName="DMS_YAKBGatlinggun"]/recipeMaker</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisites Inherit="False">
+          <li>DMS_Occultech_MainBattle</li>
+        </researchPrerequisites>
+        <skillRequirements>
+          <Crafting>8</Crafting>
+        </skillRequirements>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <!-- 斯圖格納導彈發射器：龍騎兵斯圖格納模組的材料，原本只能撿。造價對齊它固定的 1700 市價。
+       Stugna missile launcher: the ingredient of the dragoon's Stugna module, previously loot-only.
+       The cost is set against its fixed market value of 1700. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DMSAC_StugnaATGM"]</xpath>
+    <value>
+      <recipeMaker>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <workSkill>Crafting</workSkill>
+        <effectWorking>Smith</effectWorking>
+        <soundWorking>Recipe_Smith</soundWorking>
+        <recipeUsers>
+          <li>DMS_TableMachinePrinter</li>
+        </recipeUsers>
+        <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+        <researchPrerequisites>
+          <li>DMS_Occultech_MainBattle</li>
+        </researchPrerequisites>
+        <skillRequirements>
+          <Crafting>6</Crafting>
+        </skillRequirements>
+      </recipeMaker>
+      <costList>
+        <Steel>40</Steel>
+        <Tungsteel>60</Tungsteel>
+        <ComponentStamped>8</ComponentStamped>
+        <Chemfuel>60</Chemfuel>
+      </costList>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DMSAC_StugnaATGM"]/statBases</xpath>
+    <value>
+      <WorkToMake>24000</WorkToMake>
+    </value>
+  </Operation>
+
+  <!-- 研究說明的超連結補上古機單位。Add the ancient units to the research's description hyperlinks. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ResearchProjectDef[defName="DMS_Occultech_MainBattle"]/descriptionHyperlinks</xpath>
+    <value>
+      <ThingDef>DMS_Mech_Molot</ThingDef>
+      <ThingDef>DMS_Mech_Tsvetnik</ThingDef>
+      <ThingDef>DMS_Mech_Zabor</ThingDef>
+      <ThingDef>DMS_Mech_Gorod</ThingDef>
+      <ThingDef>DMS_Mech_Krepost</ThingDef>
+      <ThingDef>DMS_Mech_Pravda</ThingDef>
+    </value>
+  </Operation>
+</Patch>

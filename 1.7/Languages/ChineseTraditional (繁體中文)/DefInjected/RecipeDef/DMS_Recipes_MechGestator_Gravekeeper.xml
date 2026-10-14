@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Gestate gravekeeper -->
+  <DMS_Make_Gravekeeper.label>組裝守墓人</DMS_Make_Gravekeeper.label>
+  <!-- EN: Gestate a gravekeeper automatroid, a main battle ultra-heavy built to... -->
+  <DMS_Make_Gravekeeper.description>組裝一具守墓人機兵，一種用於巡邏與守衛無人設施的主戰規格超重型機兵。它的零件大多與機動龍騎兵通用，擅長近距離戰鬥，並且能使用龍騎兵的重型武器。\n\n此型號未掛載肩部發射架。需要五點頻寬。</DMS_Make_Gravekeeper.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Gravekeeper.jobString>正在組裝機械體</DMS_Make_Gravekeeper.jobString>
+
+  <!-- EN: Gestate gravekeeper (Stugna) -->
+  <DMS_Make_Gravekeeper_Stugna.label>組裝守墓人（斯圖格納型）</DMS_Make_Gravekeeper_Stugna.label>
+  <!-- EN: Gestate a gravekeeper automatroid, a main battle ultra-heavy built to... -->
+  <DMS_Make_Gravekeeper_Stugna.description>組裝一具守墓人機兵，一種用於巡邏與守衛無人設施的主戰規格超重型機兵。它的零件大多與機動龍騎兵通用，擅長近距離戰鬥，並且能使用龍騎兵的重型武器。\n\n此型號的右肩掛載龍騎兵的斯圖格納發射器與兩枚反戰車導彈，每枚導彈在發射一天後補充。發射架會讓它稍微變慢，並且需要五點頻寬。</DMS_Make_Gravekeeper_Stugna.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_Gravekeeper_Stugna.jobString>正在組裝機械體</DMS_Make_Gravekeeper_Stugna.jobString>
+
+</LanguageData>
