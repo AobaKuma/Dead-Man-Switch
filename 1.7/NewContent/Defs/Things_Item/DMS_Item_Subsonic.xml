@@ -151,8 +151,8 @@
       <HediffDef>DMS_SubsonicTrauma</HediffDef>
     </descriptionHyperlinks>
     <graphicData>
-      <!-- TODO: 暫用集群控制晶片組的圖，之後換成專屬貼圖 -->
-      <texPath>Things/Resource/ComponentCCC</texPath>
+      <texPath>Things/Modifications/Infrasonic/icon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
       <MaxHitPoints>80</MaxHitPoints>
@@ -259,8 +259,7 @@
     </descriptionHyperlinks>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <!-- TODO: 暫用原版 EMP 手雷貼圖，之後換成專屬貼圖 -->
-      <texPath>Things/Item/Equipment/WeaponRanged/EMPGrenades</texPath>
+      <texPath>Things/Misc/Grenades_Infrasonic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.3</uiIconScale>
@@ -311,8 +310,7 @@
     <label>infrasonic grenade</label>
     <thingClass>DMS.Projectile_SubsonicGrenade</thingClass>
     <graphicData>
-      <!-- TODO: 暫用原版 EMP 手雷投射物貼圖 -->
-      <texPath>Things/Projectile/GrenadeEMP</texPath>
+      <texPath>Things/Misc/Grenade_Infrasonic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
