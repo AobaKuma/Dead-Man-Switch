@@ -185,7 +185,6 @@
       <HediffDef>DMS_BionicShock</HediffDef>
     </descriptionHyperlinks>
     <graphicData>
-      <!-- TODO: 暫用受體凝膠的貼圖 / placeholder: reuses the neuroglue texture -->
       <texPath>Things/Resource/Epipen_Regen</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>

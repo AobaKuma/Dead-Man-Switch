@@ -14,8 +14,7 @@
     <thingClass>Fortified.ArtificialOrganismHumanlike</thingClass>
     <!-- 封存技術（導向胚胎發育）：不進貿易池 -->
     <tradeability>None</tradeability>
-    <!-- 暫用現成的合成機械體男性素體；補上專屬蛙人素材後改成 Things/Synthroid/Body/Frogman 即可。 -->
-    <uiIconPath>Things/Synthroid/Body/Synthroid_Male_south</uiIconPath>
+    <uiIconPath>Things/Synthroid/icon_frogman</uiIconPath>
     <statBases>
       <MarketValue>2400</MarketValue>
       <MoveSpeed>5.4</MoveSpeed>
