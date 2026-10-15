@@ -226,7 +226,7 @@
       <thinkTreeConstant>DMS_ClusterWeaverConstant</thinkTreeConstant>
       <mechWeightClass>UltraHeavy</mechWeightClass>
       <flightStartChanceOnJobStart>0.025</flightStartChanceOnJobStart>
-      <flightSpeedFactor>1.5</flightSpeedFactor>
+      <flightSpeedFactor>1</flightSpeedFactor><!-- CompFloating already ignores terrain/plant costs, so flight adds no extra speed (vanilla default 2.8) -->
       <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
       <mechFixedSkillLevel>10</mechFixedSkillLevel>
     </race>

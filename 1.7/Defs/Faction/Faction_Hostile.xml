@@ -63,8 +63,8 @@
                 </options>
             </li>
             <li>
-                <!-- Normal fights：機動犬組，鬥牛犬（160 / 170 點，每隊上限 4）在此作重裝前鋒。
-                     Normal fights: the mobile hound group; bullhounds (160 / 170 points, 4 per group at most) lead as heavy pointmen. -->
+                <!-- Normal fights：機動犬組，鬥牛犬與地獄犬（160 / 170 點，每隊各上限 4）在此作重裝前鋒。
+                     Normal fights: the mobile hound group; bullhounds and hellhounds (160 / 170 points, 4 each per group at most) lead as heavy pointmen. -->
                 <kindDef>Combat</kindDef>
                 <commonality>100</commonality>
                 <options>
@@ -89,8 +89,8 @@
                 </options>
             </li>
             <li>
-                <!-- breach fights：近戰突破組，霰彈與噴火型鬥牛犬跟方陣、浪人一起貼上去。
-                     breach fights: the close-assault group; shotgun and flamer bullhounds go in with the phalanxes and ronins. -->
+                <!-- breach fights：近戰突破組，鬥牛犬與地獄犬跟方陣、浪人一起貼上去。
+                     breach fights: the close-assault group; bullhounds and hellhounds go in with the phalanxes and ronins. -->
                 <kindDef>Combat</kindDef>
                 <commonality>10</commonality>
                 <options>
@@ -113,7 +113,7 @@
                  group's priciest (×0.01 at ≤0.2), so a 20-point hyrax can't share a group with a 160-point
                  bullhound or it almost never rolls; the hyraxes get their own group of cheap units. -->
             <li>
-                <!-- 鬥牛犬獵犬群 / Bullhound pack -->
+                <!-- 鬥牛犬與地獄犬獵犬群 / Bullhound and hellhound pack -->
                 <kindDef>DMS_FacilityReinforcement</kindDef>
                 <commonality>35</commonality>
                 <options>

@@ -29,7 +29,7 @@
       <baseHealthScale>1.75</baseHealthScale>
       <mechWeightClass>Medium</mechWeightClass>
       <flightStartChanceOnJobStart>0.025</flightStartChanceOnJobStart>
-      <flightSpeedFactor>1.5</flightSpeedFactor>
+      <flightSpeedFactor>1</flightSpeedFactor>      <!--CompFloating 已無視地形與植物成本，飛行不再額外加速（原版預設 2.8）-->
       <waterCellCost>1</waterCellCost>
       <detritusLeavings>
         <li>

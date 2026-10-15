@@ -17,7 +17,7 @@
   <ThingDef ParentName="FFF_MechCapsule_Medium">
     <defName>DMS_MechCapsule_VaultKennel</defName>
     <label>hibernated bullhound</label>
-    <description>A bullhound garrison automatroid in hibernation mode, clamped into a charging kennel with its back mount still loaded. It was left on watch when the installation was sealed, and its alarm circuit is still live. A mechanitor can attempt to hack and control it.</description>
+    <description>A bullhound or hellhound garrison automatroid in hibernation mode, clamped into a charging kennel with its back mount still loaded. It was left on watch when the installation was sealed, and its alarm circuit is still live. A mechanitor can attempt to hack and control it.</description>
     <!-- 警報響應：同地圖的警戒掃描器觸發時，有 triggerChance 的機率讓機兵敵對啟動；每次警報各自擲骰。
          Alarm response: when an alert scanner on the same map fires, roll triggerChance to wake the mech as a hostile; every alarm rolls again. -->
     <receivesSignals>true</receivesSignals>
