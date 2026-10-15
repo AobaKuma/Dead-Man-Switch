@@ -12,7 +12,7 @@
     FFF_StructureUtility.SpawnTerrain 會在每一格摧毁 isNaturalRock，
     山地站點上會挖出一大片平地，這是刻意保留的行為。
     較轕的替代方案見 DMS_DecoySiteEdgeRuins.xml。
-    DMS_Ruin_A 另帶 FFF_Element_PawnGroup（0~1500 點 DMS_Legacy），
+    DMS_Ruin_A 另帶 FFF_Element_PawnGroup（固定 1 架方陣 + 3 架蹄兔，DMS_Legacy），
     被挑中時會在 GenStep 守軍之外追加敵人。
 
     Scattered ruins. A~I are 29x29, J~M are 19x19; all carry DMS_RuinScattered and are
@@ -22,8 +22,8 @@
     Note: these layouts keep their large TerrainRect courtyards. SpawnTerrain destroys
     isNaturalRock on every cell it paints, so on mountainous maps they will carve out a
     sizeable clearing - that is the accepted trade-off here; see DMS_DecoySiteEdgeRuins.xml
-    for the terrain-light alternative. DMS_Ruin_A also carries a PawnGroup (0~1500 points
-    of DMS_Legacy), adding hostiles beyond the GenStep garrison when it is the one picked.
+    for the terrain-light alternative. DMS_Ruin_A also carries a PawnGroup (a fixed 1 phalanx
+    + 3 hyraxes of DMS_Legacy), adding hostiles beyond the GenStep garrison when it is the one picked.
   -->
   <Fortified.Structures.FFF_StructureDef>
     <defName>DMS_Ruin_A</defName>
@@ -320,15 +320,20 @@
         <pos>(5, 0, 8)</pos>
         <size>(5, 3)</size>
       </li>
+      <!-- 固定編制：1 架方陣 + 3 架蹄兔（180 點）。原本是 0~1500 點隨機抽，不看站點威脅點數，
+           平均約 21 架、最多六十多架，而且不算進任務描述的 [enemiesCount]。
+           Fixed roster: 1 phalanx + 3 hyraxes (180 points). It used to roll 0~1500 points regardless of the
+           site's threat points, about 21 mechs on average and sixty-odd at worst, none of them counted in the
+           quest text's [enemiesCount]. -->
       <li Class="Fortified.Structures.FFF_Element_PawnGroup">
         <factionDef>DMS_Legacy</factionDef>
         <sendSignalRadius>20</sendSignalRadius>
         <pos>(15, 0, 13)</pos>
-        <pointsRange>0~1500</pointsRange>
+        <fixedOptions>true</fixedOptions>
         <lordTag>RoninGroup</lordTag>
         <options>
           <DMS_Mech_Phalanx>1</DMS_Mech_Phalanx>
-          <DMS_Mech_Hyrax>5</DMS_Mech_Hyrax>
+          <DMS_Mech_Hyrax>3</DMS_Mech_Hyrax>
         </options>
       </li>
     </elements>

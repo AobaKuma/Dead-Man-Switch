@@ -111,9 +111,14 @@
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <designationCategory>DMS_Category</designationCategory>
     <designatorDropdown>DMS_DefenseEquipment</designatorDropdown>
-    <researchPrerequisites>
+    <!-- 不繼承基底的 HeavyTurrets（自動砲塔）：輕型砲塔對齊原版迷你砲塔的 GunTurrets，再加開拓裝備。
+         Skip the base's HeavyTurrets (autocannon turret): a light turret sits with the vanilla mini-turret's
+         GunTurrets, plus defense equipment. -->
+    <researchPrerequisites Inherit="false">
+      <li>GunTurrets</li>
       <li>DMS_EquipmentAdvanced</li>
     </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
     <fillPercent>0.7</fillPercent>
     <statBases>
       <MaxHitPoints>150</MaxHitPoints>
@@ -148,12 +153,21 @@
         <colorPickerEnabled>false</colorPickerEnabled>
         <darklightToggle>false</darklightToggle>
       </li>
+      <!-- 與原版砲塔相同，EMP／震撼會讓它停機 -->
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>Stun</li>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
     </comps>
     <building>
       <turretGunDef>DMS_SubMachineGunMounted</turretGunDef>
       <turretTopDrawSize>1.1</turretTopDrawSize>
       <turretBurstWarmupTime>0.5</turretBurstWarmupTime>   <!--================冷卻與瞄準時間================-->
-      <turretBurstCooldownTime>1</turretBurstCooldownTime>
+      <!-- 每輪約 3 秒、4 發 → 原始 DPS 約 13（原版迷你砲塔約 4.7、自動砲塔約 19）。
+           只調砲塔這端；DMS_SubMachineGunMounted 同時是機兵武器，不動槍本身。 -->
+      <turretBurstCooldownTime>2</turretBurstCooldownTime>
     </building>
     <costList>
       <Steel>100</Steel>

@@ -16,8 +16,8 @@
       <ArmorRating_Sharp>0.4</ArmorRating_Sharp>      <!--銳抗-->
       <ArmorRating_Blunt>0.2</ArmorRating_Blunt>      <!--鈍抗-->
       <ArmorRating_Heat>0.5</ArmorRating_Heat>      <!--能抗-->
-      <MaxFlightTime>30</MaxFlightTime>
-      <FlightCooldown>10</FlightCooldown>
+      <MaxFlightTime>20</MaxFlightTime>
+      <FlightCooldown>20</FlightCooldown>
       <AimingDelayFactor>1.1</AimingDelayFactor>
       <StaggerDurationFactor>0.5</StaggerDurationFactor>
       <ControlTakingTime MayRequire="Ludeon.Rimworld.Biotech">8</ControlTakingTime>
@@ -28,7 +28,8 @@
       <baseBodySize>1.5</baseBodySize>
       <baseHealthScale>1.75</baseHealthScale>
       <mechWeightClass>Medium</mechWeightClass>
-      <flightStartChanceOnJobStart>0.05</flightStartChanceOnJobStart>
+      <flightStartChanceOnJobStart>0.025</flightStartChanceOnJobStart>
+      <flightSpeedFactor>1.5</flightSpeedFactor>
       <waterCellCost>1</waterCellCost>
       <detritusLeavings>
         <li>

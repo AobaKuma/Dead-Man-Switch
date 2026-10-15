@@ -80,6 +80,11 @@
     </questDescriptionRules>
     <root Class="DMS.QuestNode_Root_DMS_RandomInstallation">
       <factionDef>DMS_Legacy</factionDef>
+      <!-- 站點點數先經原版遠征曲線（Util_AdjustPointsForDistantFight）壓縮，守軍才跟原版站點任務同一量級；
+           下方各設施的 minPoints 仍以壓縮前的襲擊點數判斷。
+           Site points go through vanilla's distant-fight curve first so the garrison matches vanilla site
+           quests; the installations' minPoints below still check the uncut raid points. -->
+      <adjustPointsForDistantFight>true</adjustPointsForDistantFight>
       <baseTimeoutDays>16</baseTimeoutDays>
       <minTimeoutDays>4</minTimeoutDays>
       <maxTimeoutDays>30</maxTimeoutDays>

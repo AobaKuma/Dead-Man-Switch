@@ -16,6 +16,13 @@ namespace DMS
         /// <summary>只認這些 Boss；留空則同地圖任何 Boss 死亡都算。Only these bosses count; empty means any boss on the map.</summary>
         public List<PawnKindDef> bossKinds;
 
+        /// <summary>
+        /// 地圖上還有其他（非玩家的）Boss 活著就不放行，最後一架倒下才開。關掉則第一架死亡就放行。
+        /// Hold while any other non-player boss on the map is still standing, releasing only when the last one falls.
+        /// Off releases on the first boss death.
+        /// </summary>
+        public bool requireAllBossesDead = true;
+
         public SoundDef releaseSound;
 
         public CompProperties_BossKillRelay()
@@ -25,12 +32,12 @@ namespace DMS
     }
 
     /// <summary>
-    /// Boss 擊殺中繼器：同一張地圖上的 Boss 死亡時（<see cref="BossKilledSignal"/>），放行所有連結到它的門禁 wanter
+    /// Boss 擊殺中繼器：同一張地圖上的 Boss 死亡時（<see cref="BossKilledSignal"/>；預設要等最後一架），放行所有連結到它的門禁 wanter
     /// （密封門、<see cref="Building_AccessKeyTransformer"/> 等）。
     /// 它是門禁系統的 activatable 端，所以 FFF 的 Access link 工具（ExportTool_LinkAccessKeyWanter）可以直接選它；
     /// 跟 <see cref="CompVaultConsole"/> 一樣允許連結多個 wanter，一座中繼器可以封住整個 Boss 房的出入口。
     ///
-    /// The boss-kill relay: when a boss dies on the same map (<see cref="BossKilledSignal"/>), it releases every
+    /// The boss-kill relay: when a boss dies on the same map (<see cref="BossKilledSignal"/>; by default the last one), it releases every
     /// access-key wanter linked to it (sealed doors, <see cref="Building_AccessKeyTransformer"/> and so on).
     /// It is the activatable end of the access-key system, so FFF's access link tool (ExportTool_LinkAccessKeyWanter)
     /// can pick it directly; like <see cref="CompVaultConsole"/> it takes any number of wanters, so one relay can seal
@@ -89,10 +96,29 @@ namespace DMS
             if (!parent.Spawned || !signal.IsFromMap(parent.Map)) return;
 
             signal.args.TryGetArg("SUBJECT", out Pawn boss);
-            if (!Props.bossKinds.NullOrEmpty() && (boss == null || !Props.bossKinds.Contains(boss.kindDef))) return;
+            if (boss == null ? !Props.bossKinds.NullOrEmpty() : !CountsAsBoss(boss)) return;
+            if (Props.requireAllBossesDead && AnyBossStanding(boss)) return;
 
             signal.args.TryGetArg("INSTIGATOR", out Thing instigator);
             Release(instigator as Pawn, boss);
+        }
+
+        private bool CountsAsBoss(Pawn pawn)
+        {
+            return Props.bossKinds.NullOrEmpty() || Props.bossKinds.Contains(pawn.kindDef);
+        }
+
+        /// <summary>地圖上還有沒有別的、站著的非玩家 Boss。Whether another non-player boss still stands on the map.</summary>
+        private bool AnyBossStanding(Pawn except)
+        {
+            IReadOnlyList<Pawn> pawns = parent.Map.mapPawns.AllPawnsSpawned;
+            for (int i = 0; i < pawns.Count; i++)
+            {
+                Pawn p = pawns[i];
+                if (p == except || p.Dead || p.Downed || p.Faction == Faction.OfPlayer) continue;
+                if (BossKilledSignal.IsBoss(p) && CountsAsBoss(p)) return true;
+            }
+            return false;
         }
 
         // ── 放行 / Release ─────────────────────────────────────────────────────

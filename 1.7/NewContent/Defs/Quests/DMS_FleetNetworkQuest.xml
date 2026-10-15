@@ -102,6 +102,11 @@
     </questDescriptionRules>
     <root Class="DMS.QuestNode_Root_DMS_FleetNetworkSite">
       <factionDef>DMS_Legacy</factionDef>
+      <!-- 站點點數先經原版遠征曲線壓縮；minPoints 仍看壓縮前的襲擊點數。追殺令發布時也傳原始襲擊點數
+           （DMS_Huntdowns.xml 不設 siteThreatPoints），否則會被壓兩次。
+           Site points go through vanilla's distant-fight curve; minPoints still checks the uncut raid points.
+           The kill order passes raw raid points too (no siteThreatPoints in DMS_Huntdowns.xml), or they'd be cut twice. -->
+      <adjustPointsForDistantFight>true</adjustPointsForDistantFight>
       <baseTimeoutDays>12</baseTimeoutDays>
       <minTimeoutDays>4</minTimeoutDays>
       <maxTimeoutDays>24</maxTimeoutDays>

@@ -378,6 +378,7 @@
       <li Class="DMS.CompProperties_AlertEffector_CallBattleGroup">
         <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
         <triggerChance>0.5</triggerChance>
+        <minAlertLevel>0.5</minAlertLevel> 
         <oneShot>true</oneShot>
         <raidWaveDef>DMS_RaidWave_FacilityQRF</raidWaveDef>
         <!-- 不受 RaidWave 兩天全域冷卻限制；但呼叫仍會刷新冷卻，玩家信標會跟著進冷卻。
@@ -426,6 +427,7 @@
       <li Class="DMS.CompProperties_AlertEffector_MortarStrike">
         <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
         <triggerChance>0.6</triggerChance>
+        <minAlertLevel>0.8</minAlertLevel> 
         <oneShot>false</oneShot>
         <airSupportDef>DMS_AirSupport_FacilityMortar</airSupportDef>
         <targetSearchRadius>30</targetSearchRadius>
@@ -600,6 +602,7 @@
       <li Class="DMS.CompProperties_AlertEffector_GasVent">
         <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
         <triggerChance>0.8</triggerChance>
+        <minAlertLevel>0.4</minAlertLevel> 
         <oneShot>false</oneShot>
         <gasType>ToxGas</gasType>
         <cellsToFill>60</cellsToFill>

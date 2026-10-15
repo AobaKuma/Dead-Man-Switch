@@ -306,15 +306,26 @@ namespace DMS
         /// </summary>
         private static List<PawnKindDef> RollRoster(ModExtension_GravekeeperPatrol ext)
         {
+            return RollRoster(ext.squad, ext.squadSize.max <= 0 ? 0 : Mathf.Max(1, ext.squadSize.RandomInRange));
+        }
+
+        /// <summary>
+        /// 從編制展開的名額裡隨機抽 size 架（0 = 完整編制），保持編制順序。軍火庫舊址也用這個抽守衛。
+        /// Draws size mechs from the roster's slots (0 = the full roster), keeping the roster's order. The arsenal site
+        /// draws its guards with this too.
+        /// </summary>
+        public static List<PawnKindDef> RollRoster(List<GravekeeperSquadMember> squad, int size)
+        {
             List<PawnKindDef> slots = new List<PawnKindDef>();
-            foreach (GravekeeperSquadMember member in ext.squad)
+            if (squad == null) return slots;
+            foreach (GravekeeperSquadMember member in squad)
             {
                 if (member?.kind == null) continue;
                 for (int i = 0; i < member.count; i++) slots.Add(member.kind);
             }
-            if (ext.squadSize.max <= 0 || slots.Count == 0) return slots;
+            if (size <= 0 || slots.Count == 0) return slots;
 
-            int size = Mathf.Clamp(ext.squadSize.RandomInRange, 1, slots.Count);
+            size = Mathf.Clamp(size, 1, slots.Count);
             return Enumerable.Range(0, slots.Count).InRandomOrder().Take(size).OrderBy(i => i).Select(i => slots[i]).ToList();
         }
     }

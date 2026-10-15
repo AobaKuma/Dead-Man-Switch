@@ -41,6 +41,13 @@ namespace DMS
         /// <summary>要放幾座。How many to place.</summary>
         public IntRange countRange = new IntRange(2, 4);
 
+        /// <summary>
+        /// 選填：站點威脅點數 → 座數（小數部分隨機進位），結果夾在 <see cref="countRange"/> 內。不設或沒有站點時照舊在範圍內隨機。
+        /// Optional: site threat points → count (the fraction rounds randomly), clamped to <see cref="countRange"/>. Unset, or
+        /// without a site, the count stays random within the range.
+        /// </summary>
+        public SimpleCurve countByPoints;
+
         /// <summary>足跡外圍要留幾格空地（與任何建築、彼此之間）。Clear gap around each footprint, in cells.</summary>
         public int minSpacing = 6;
 
@@ -68,7 +75,9 @@ namespace DMS
                 return;
             }
 
-            int count = countRange.RandomInRange;
+            int count = countByPoints != null && parms.sitePart != null
+                ? Mathf.Clamp(GenMath.RoundRandom(countByPoints.Evaluate(parms.sitePart.parms.threatPoints)), countRange.min, countRange.max)
+                : countRange.RandomInRange;
             if (count <= 0) return;
 
             Faction faction = useSiteFaction ? (map.ParentFaction ?? parms.sitePart?.site?.Faction) : null;

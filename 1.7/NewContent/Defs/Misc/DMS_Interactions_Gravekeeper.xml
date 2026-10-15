@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 守墓人盤查入侵者時的對話（DMS.LordToil_GravekeeperPatrol 盤查到新對象時寫進原版社交紀錄，並冒互動泡泡）。
+       機兵沒有原版的社交追蹤器，所以不走 TryInteractWith：沒有想法、沒有社交衝突，只留紀錄與泡泡。
+       workerClass 用原版預設的 InteractionWorker（隨機權重 0），所以永遠不會被選進一般閒聊。
+       泡泡圖示用發起者的派系徽章（symbolSource = InitiatorFaction）。
+       文字照原版互動紀錄的寫法：第三人稱敘述句，動詞與受詞用同義詞清單隨機組合，最常見的句型加權（p=3）。
+
+       What a gravekeeper says when it challenges an intruder (DMS.LordToil_GravekeeperPatrol writes it to the vanilla
+       social log with an interaction bubble whenever it challenges someone new). Mechs have no vanilla interaction
+       tracker, so this doesn't go through TryInteractWith: no thoughts, no social fights, just the log line and the
+       bubble. The default InteractionWorker has a random weight of 0, so it is never picked for ordinary chat. The bubble
+       shows the initiator's faction emblem (symbolSource = InitiatorFaction). The text follows vanilla interaction logs:
+       third-person sentences built from synonym lists, the commonest form weighted (p=3). -->
+  <InteractionDef>
+    <defName>DMS_GravekeeperChallengeTalk</defName>
+    <label>challenge</label>
+    <symbolSource>InitiatorFaction</symbolSource>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry(p=3)->[INITIATOR_nameDef] [challenged] [RECIPIENT_nameDef].</li>
+        <li>r_logentry->[INITIATOR_nameDef] [demanded] [RECIPIENT_nameDef]'s [credential].</li>
+        <li>r_logentry->[INITIATOR_nameDef] ordered [RECIPIENT_nameDef] to [order].</li>
+        <li>r_logentry->[INITIATOR_nameDef] [scanned] [RECIPIENT_nameDef] and found no [credential].</li>
+        <li>r_logentry->[INITIATOR_nameDef] blocked [RECIPIENT_nameDef]'s path and [challenged] [RECIPIENT_objective].</li>
+        <li>r_logentry->[INITIATOR_nameDef] recited a centuries-old security protocol to [RECIPIENT_nameDef].</li>
+
+        <li>challenged(p=3)->challenged</li>
+        <li>challenged->stopped and questioned</li>
+        <li>challenged->interrogated</li>
+        <li>challenged->halted</li>
+        <li>challenged->sternly questioned</li>
+        <li>challenged->ran a security check on</li>
+
+        <li>demanded(p=3)->demanded</li>
+        <li>demanded->asked for</li>
+        <li>demanded->insisted on seeing</li>
+        <li>demanded->requested</li>
+
+        <li>credential->clearance</li>
+        <li>credential->access code</li>
+        <li>credential->identification</li>
+        <li>credential->security pass</li>
+        <li>credential->unit designation</li>
+        <li>credential->authorization</li>
+
+        <li>scanned->scanned</li>
+        <li>scanned->swept a sensor over</li>
+        <li>scanned->checked</li>
+
+        <li>order->halt</li>
+        <li>order->stand still</li>
+        <li>order->withdraw</li>
+        <li>order->state [RECIPIENT_possessive] business</li>
+        <li>order->identify [RECIPIENT_objective]self</li>
+        <li>order->leave the installation</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+</Defs>

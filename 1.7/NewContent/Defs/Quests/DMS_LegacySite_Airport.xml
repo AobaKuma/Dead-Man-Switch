@@ -132,6 +132,8 @@
     <root Class="Fortified.QuestNode_Root_FFF_TimedHostileSite">
       <factionDef>DMS_Legacy</factionDef>
       <sitePartDef>DMS_AirportSite</sitePartDef>
+      <!-- 站點點數先經原版遠征曲線壓縮，守軍跟原版站點任務同一量級。Site points go through vanilla's distant-fight curve first. -->
+      <adjustPointsForDistantFight>true</adjustPointsForDistantFight>
       <baseTimeoutDays>16</baseTimeoutDays>
       <minTimeoutDays>4</minTimeoutDays>
       <maxTimeoutDays>30</maxTimeoutDays>

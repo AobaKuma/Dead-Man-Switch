@@ -215,8 +215,8 @@
       <ArmorRating_Blunt>0.6</ArmorRating_Blunt><!-- Blunt armor -->
       <ArmorRating_Heat>0.5</ArmorRating_Heat>  <!-- Heat armor -->
       <MeleeDodgeChance>2</MeleeDodgeChance>
-      <MaxFlightTime>30</MaxFlightTime>
-      <FlightCooldown>10</FlightCooldown>
+      <MaxFlightTime>20</MaxFlightTime>
+      <FlightCooldown>20</FlightCooldown>
     </statBases>
     <race>
       <body>DMS_Chop</body>
@@ -225,7 +225,8 @@
       <renderTree>DMS_ClusterWeaver</renderTree>
       <thinkTreeConstant>DMS_ClusterWeaverConstant</thinkTreeConstant>
       <mechWeightClass>UltraHeavy</mechWeightClass>
-      <flightStartChanceOnJobStart>0.05</flightStartChanceOnJobStart>
+      <flightStartChanceOnJobStart>0.025</flightStartChanceOnJobStart>
+      <flightSpeedFactor>1.5</flightSpeedFactor>
       <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
       <mechFixedSkillLevel>10</mechFixedSkillLevel>
     </race>

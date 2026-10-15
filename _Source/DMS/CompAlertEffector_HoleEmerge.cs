@@ -50,6 +50,12 @@ namespace DMS
         /// </summary>
         public PawnGroupKindDef groupKind;
 
+        /// <summary>
+        /// 每次觸發最多跳出幾隻，0 為不限；點數湊出更多隻時只留戰力最高的幾隻。
+        /// Most pawns per trigger, 0 for no cap; when the points build more, only the highest combat-power ones stay.
+        /// </summary>
+        public int maxPawns = 0;
+
         /// <summary>拋出用的 flyer，預設落地會短暫暈眩。Flyer used for the leap; the default stuns briefly on landing.</summary>
         public ThingDef flyerDef;
 
@@ -125,7 +131,8 @@ namespace DMS
             Map map = parent.Map;
             Faction faction = AlertResponseUtility.ResolveFaction(this, Props.spawnFactionDef);
             List<Pawn> pawns = AlertResponseUtility.GeneratePawns(faction, map, AlertResponseUtility.AlertLevelPct(map),
-                Props.pawnKinds, Props.countRange, Props.pointsRange, Props.pointsByAlertLevel, Props.groupKind);
+                Props.pawnKinds, Props.countRange, Props.pointsRange, Props.pointsByAlertLevel, Props.groupKind,
+                Props.maxPawns);
             if (pawns.Count == 0) return;
 
             // 洞內生成格：洞的佔地往內縮一圈，3x3 的洞就只剩正中央。

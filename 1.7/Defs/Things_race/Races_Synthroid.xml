@@ -290,7 +290,11 @@
     <label>dogge</label>
     <race>DMS_Mech_Dogge</race>
     <isFighter>true</isFighter>
-    <combatPower>30</combatPower>
+    <!-- 介於 Soldat_B（80）與方陣（120）之間：血量、裝甲與速度都勝過 Soldat，另有背載機槍。
+         原本 30 點讓它在低點數時被當成填充兵大量生成。
+         Between the Soldat_B (80) and the phalanx (120): tougher, better armoured and faster than a Soldat,
+         with a back-mounted machine gun on top. At 30 it was rolled en masse as filler at low points. -->
+    <combatPower>100</combatPower>
     <maxPerGroup>15</maxPerGroup>
     <lifeStages>
       <li>

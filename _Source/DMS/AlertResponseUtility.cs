@@ -192,15 +192,21 @@ namespace DMS
             return pointsRange.LerpThroughRange(alertPct);
         }
 
+        /// <param name="maxPawns">
+        /// 每次最多幾隻，0 為不限。走點數時派系可能湊出更多隻，超過的只留戰力最高的幾隻，其餘丟棄。
+        /// Most pawns per call, 0 for no cap. The points path may build a bigger squad; only the highest
+        /// combat-power ones are kept and the rest are discarded.
+        /// </param>
         public static List<Pawn> GeneratePawns(Faction faction, Map map, float alertPct,
             List<PawnKindDef> pawnKinds, IntRange countRange, FloatRange pointsRange, SimpleCurve pointsByAlertLevel,
-            PawnGroupKindDef groupKind = null)
+            PawnGroupKindDef groupKind = null, int maxPawns = 0)
         {
             List<Pawn> pawns = new List<Pawn>();
 
             if (!pawnKinds.NullOrEmpty())
             {
                 int count = Mathf.RoundToInt(Mathf.Lerp(countRange.min, countRange.max, alertPct));
+                if (maxPawns > 0) count = Mathf.Min(count, maxPawns);
                 for (int i = 0; i < count; i++)
                 {
                     Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(
@@ -228,7 +234,28 @@ namespace DMS
                 tile = map.Tile,
             };
             pawns.AddRange(PawnGroupMakerUtility.GeneratePawns(parms));
-            return pawns;
+            return TrimToMax(pawns, maxPawns);
+        }
+
+        /// <summary>
+        /// 超過 <paramref name="maxPawns"/> 時留下戰力最高的幾隻（同戰力隨機），其餘交給世界丟棄。
+        /// 依戰力取捨，警戒值越高、點數越多時留下的仍然越強。
+        /// Over <paramref name="maxPawns"/>, keeps the highest combat-power pawns (ties at random) and discards
+        /// the rest to the world. Picking by combat power keeps a higher alert level meaning a stronger squad.
+        /// </summary>
+        private static List<Pawn> TrimToMax(List<Pawn> pawns, int maxPawns)
+        {
+            if (maxPawns <= 0 || pawns.Count <= maxPawns) return pawns;
+
+            List<Pawn> kept = pawns.InRandomOrder().OrderByDescending(p => p.kindDef.combatPower).Take(maxPawns).ToList();
+            foreach (Pawn pawn in pawns)
+            {
+                if (!kept.Contains(pawn))
+                {
+                    Find.WorldPawns.PassToWorld(pawn, RimWorld.Planet.PawnDiscardDecideMode.Discard);
+                }
+            }
+            return kept;
         }
 
         /// <summary>

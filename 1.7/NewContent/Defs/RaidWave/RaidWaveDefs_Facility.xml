@@ -11,28 +11,34 @@
     <waves>
       <li>
         <pawns>
+          <DMS_Mech_Ronin>1</DMS_Mech_Ronin>
+          <DMS_Mech_Falcon>1</DMS_Mech_Falcon>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_Ronin>1</DMS_Mech_Ronin>
+          <DMS_Mech_Falcon>2</DMS_Mech_Falcon>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
           <DMS_Mech_Ronin>2</DMS_Mech_Ronin>
           <DMS_Mech_Falcon>2</DMS_Mech_Falcon>
         </pawns>
       </li>
       <li>
         <pawns>
-          <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
+          <DMS_Mech_Protector>1</DMS_Mech_Protector>
+          <DMS_Mech_Ronin>2</DMS_Mech_Ronin>
           <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
         </pawns>
       </li>
       <li>
         <pawns>
-          <DMS_Mech_Protector>1</DMS_Mech_Protector>
-          <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
-          <DMS_Mech_Falcon>4</DMS_Mech_Falcon>
-        </pawns>
-      </li>
-      <li>
-        <pawns>
-          <DMS_Mech_Protector>2</DMS_Mech_Protector>
-          <DMS_Mech_Ronin>4</DMS_Mech_Ronin>
-          <DMS_Mech_Falcon>6</DMS_Mech_Falcon>
+          <DMS_Mech_Lanius>1</DMS_Mech_Lanius>
+          <DMS_Mech_Ronin>2</DMS_Mech_Ronin>
+          <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
         </pawns>
       </li>
     </waves>

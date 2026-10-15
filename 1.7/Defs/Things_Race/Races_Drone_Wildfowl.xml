@@ -83,10 +83,13 @@
     <description>The UAS 1/B "Hunter Bee" nicknamed "wildfowl" is a foldable, small coaxial rotor drone equipped with a plastic explosive charge equivalent to an M67 hand grenade, posing a significant threat when approaching a target in swarms.</description>
     <statBases>
       <MoveSpeed>8</MoveSpeed>
-      <MaxFlightTime>30</MaxFlightTime>
+      <MaxFlightTime>20</MaxFlightTime>
+      <FlightCooldown>20</FlightCooldown>
     </statBases>
     <race>
       <thinkTreeConstant>DMS_FPVDroneConstant</thinkTreeConstant>
+      <flightStartChanceOnJobStart>0.025</flightStartChanceOnJobStart>
+      <flightSpeedFactor>1.5</flightSpeedFactor>
       <baseHealthScale>0.25</baseHealthScale>
       <baseBodySize>0.3</baseBodySize>
       <hasCorpse>true</hasCorpse>

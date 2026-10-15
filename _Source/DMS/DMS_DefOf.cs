@@ -37,6 +37,8 @@ namespace DMS
         public static DutyDef DMS_GravekeeperChallenge;
         public static DutyDef DMS_GravekeeperEngage;
         public static JobDef DMS_GravekeeperHold;
+        // 守墓人盤查時寫進社交紀錄的對話(見 LordToil_GravekeeperPatrol.ChallengeTalk)
+        public static InteractionDef DMS_GravekeeperChallengeTalk;
         public static RulePackDef DMS_QuestDocumentRules;
 
         // 軍法審判判決用(見 QuestPart_CourtVerdict)

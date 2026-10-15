@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 軍火庫舊址。[siteFactionName] / [siteTimeout] 由 QuestNode_Root_FFF_TimedHostileSite 提供，
+       [guardCount] / [guardLabel] 由 DMS.SitePartWorker_ArsenalSite 提供；(*Threat)...(/Threat) 須保留。
+       Old arsenal. [guardCount] / [guardLabel] come from DMS.SitePartWorker_ArsenalSite; keep the (*Threat)...(/Threat) tags. -->
+  <DMS_ArsenalAssault.questNameRules.rulesStrings>
+    <li>questName->The old arsenal</li>
+    <li>questName->[arsenal]</li>
+    <li>arsenal->Abandoned arsenal</li>
+    <li>arsenal->Buried bunkers</li>
+    <li>arsenal->Guarded stores</li>
+  </DMS_ArsenalAssault.questNameRules.rulesStrings>
+  <DMS_ArsenalAssault.questDescriptionRules.rulesStrings>
+    <li>questDescription->Old survey records point to a semi-underground arsenal abandoned by the vanguard colonists, with equipment too awkward to move or past its service life still inside. Its unmanned security still runs, now answering to [siteFactionName].\n\n(*Threat)[guardCount] [guardLabel](/Threat) patrol the site. The bunker seals answer to a tarbosaurus's life signs: call one in with the decoy radar on the central pad and destroy it, then hack each bunker's console to get inside.\n\nThe position holds for [siteTimeout]. Once you enter, the site will summon reinforcements after a countdown.</li>
+  </DMS_ArsenalAssault.questDescriptionRules.rulesStrings>
+
+</LanguageData>

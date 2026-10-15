@@ -31,10 +31,13 @@
       <li>
         <quest>DMS_CourtMartial</quest>
       </li>
+      <!-- 傳原始襲擊點數（不設 siteThreatPoints）：SAGE 任務根節點會自己用原版遠征曲線壓縮，
+           跟隨機任務池發出的同一份任務一致。
+           Raw raid points (no siteThreatPoints): the SAGE quest root cuts them with vanilla's distant-fight
+           curve itself, the same as when the random quest pool offers it. -->
       <li>
         <quest>DMS_FleetNetworkSite</quest>
         <chance>0.35</chance>
-        <siteThreatPoints>true</siteThreatPoints>
       </li>
     </questsOnWave>
   </Fortified.HuntdownDef>

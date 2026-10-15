@@ -101,7 +101,7 @@
   <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
   <DMS_Turret_Okhotnik.comps.CompRefuelable.outOfFuelMessage>无法射击: 需要替换炮管</DMS_Turret_Okhotnik.comps.CompRefuelable.outOfFuelMessage>
   
-  <!-- EN: Sentry turret -->
+  <!-- EN: Sentry gun -->
   <DMS_Turret_Sentry.label>哨戒机枪</DMS_Turret_Sentry.label>
   <!-- EN: A light automatic turret with a built-in battery, designed to be carried and set up wherever the line needs a gun. On the power grid it charges its internal cell; cut off from the grid it draws on that reserve and keeps firing until the cell runs dry. Switching it off puts it on standby: it stops watching and pours the saved power into the cell instead, charging twice as fast.\n\nIts tripod folds flat, so a drafted operator can pick it up, carry it forward and drop it into position on the spot. A cell charged before departure will keep it standing watch for days. -->
   <DMS_Turret_Sentry.description>一种内置电池的轻型自动炮塔，设计成可随身携带、在任何需要火力的位置架设。接上电网时会为内部电池充电；脱离电网后则改以电池供电，持续射击直到电量耗尽。将开关关闭即进入待机：停止警戒，把省下的电力全数灌入电池，充电速度加倍。\n\n三脚架可折叠收拢，征召中的人员能直接将它拾起、带往前线并就地部署。出发前充饱的电池足以让它值守数日。</DMS_Turret_Sentry.description>

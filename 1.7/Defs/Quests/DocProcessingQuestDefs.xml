@@ -40,6 +40,8 @@
     <label>process documents</label>
     <giverClass>DMS.WorkGiver_ProcessQuestWorkable</giverClass>
     <workType>Research</workType>
+    <!-- 與原版 StudyArchotechStructures 相同:研究類別內排在一般研究前;不打擾日常靠的是 JobDriver 每 4000 tick 結束一次工作 -->
+    <!-- Same as vanilla StudyArchotechStructures: ahead of normal research within Research; the JobDriver ending every 4000 ticks is what keeps it from crowding out other work -->
     <priorityInType>110</priorityInType>
     <verb>process</verb>
     <gerund>processing</gerund>

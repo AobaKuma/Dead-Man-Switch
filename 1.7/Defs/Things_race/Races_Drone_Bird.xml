@@ -6,12 +6,16 @@
     <description>A quad-drone built for reconnaissance. It is quite fragile in combat but moves extremely fast. It can be equipped with a small-caliber gun or grenade to provide combat capabilities.</description>
     <statBases>
       <MoveSpeed>8.2</MoveSpeed>
+      <MaxFlightTime>20</MaxFlightTime>
+      <FlightCooldown>20</FlightCooldown>
     </statBases>
     <race>
       <body>DMS_Chop</body>
       <baseBodySize>0.15</baseBodySize>
       <baseHealthScale>0.25</baseHealthScale>
       <mechWeightClass>Light</mechWeightClass>
+      <flightStartChanceOnJobStart>0.025</flightStartChanceOnJobStart>
+      <flightSpeedFactor>1.5</flightSpeedFactor>
       <waterCellCost>1</waterCellCost>
     </race>
     <comps>

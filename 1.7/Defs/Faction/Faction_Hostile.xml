@@ -63,12 +63,15 @@
                 </options>
             </li>
             <li>
-                <!-- Normal fights -->
+                <!-- Normal fights：機動犬組，鬥牛犬（160 / 170 點，每隊上限 4）在此作重裝前鋒。
+                     Normal fights: the mobile hound group; bullhounds (160 / 170 points, 4 per group at most) lead as heavy pointmen. -->
                 <kindDef>Combat</kindDef>
                 <commonality>100</commonality>
                 <options>
                     <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
                     <DMS_Mech_Dogge>1</DMS_Mech_Dogge>
+                    <DMS_Mech_BullHound>2</DMS_Mech_BullHound>
+                    <DMS_Mech_BullHound_Flamer>1</DMS_Mech_BullHound_Flamer>
                     <DMS_Mech_Pioneer>4</DMS_Mech_Pioneer>
                     <DMS_Mech_Iguana>0.5</DMS_Mech_Iguana>
                 </options>
@@ -86,13 +89,16 @@
                 </options>
             </li>
             <li>
-                <!-- breach fights -->
+                <!-- breach fights：近戰突破組，霰彈與噴火型鬥牛犬跟方陣、浪人一起貼上去。
+                     breach fights: the close-assault group; shotgun and flamer bullhounds go in with the phalanxes and ronins. -->
                 <kindDef>Combat</kindDef>
                 <commonality>10</commonality>
                 <options>
                     <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
                     <DMS_Mech_Phalanx>6</DMS_Mech_Phalanx>
                     <DMS_Mech_Ronin>6</DMS_Mech_Ronin>
+                    <DMS_Mech_BullHound>2</DMS_Mech_BullHound>
+                    <DMS_Mech_BullHound_Flamer>2</DMS_Mech_BullHound_Flamer>
                     <DMS_Mech_Protector>1</DMS_Mech_Protector>
                     <DMS_Mech_Siegebreaker>1</DMS_Mech_Siegebreaker>
                     <DMS_Mech_Mammoth>0.5</DMS_Mech_Mammoth>
@@ -118,13 +124,14 @@
                 </options>
             </li>
             <li>
-                <!-- 蹄兔群（蹄兔每隊上限 10，多的點數由其他輕型機補上）/ Hyrax swarm (hyrax is capped at 10 per group; light mechs fill the rest) -->
+                <!-- 蹄兔群（蹄兔每隊上限 10，多的點數由其他輕型機補上）/ Hyrax swarm (hyrax is capped at 10 per group; light mechs fill the rest)
+                     獒犬已調到 100 點，不再放這組：放進來 20 點的蹄兔只剩 ×0.01 權重。
+                     No dogge here since it went up to 100 points: it would drop the 20-point hyrax to ×0.01 weight. -->
                 <kindDef>DMS_FacilityReinforcement</kindDef>
                 <commonality>35</commonality>
                 <options>
                     <DMS_Mech_Hyrax>8</DMS_Mech_Hyrax>
                     <DMS_Mech_Falcon>1</DMS_Mech_Falcon>
-                    <DMS_Mech_Dogge>1</DMS_Mech_Dogge>
                     <DMS_Mech_Soldat>1</DMS_Mech_Soldat>
                 </options>
             </li>

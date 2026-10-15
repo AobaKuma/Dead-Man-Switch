@@ -81,7 +81,7 @@ namespace DMS
         // 初始化文书随机属性
         private void InitializeData()
         {
-            if (workAmount >= 0 && labelOverride != null) return;
+            if (labelOverride != null) return;
 
             // 生成唯一随机种子
             int seed = parent.thingIDNumber;
@@ -93,11 +93,8 @@ namespace DMS
             Rand.PushState(seed ^ 741852963);
             try
             {
-                // 随机设置工作量
-                if (workAmount < 0)
-                {
-                    workAmount = Rand.Range(25f, 300f);
-                }
+                // 工作量不在這裡擲骰:未經任務指定時由 WorkAmount 回退到 XML 的 workAmount,任務則以 QuestNode_SetDocWork 覆寫
+                // No workload roll here: without a quest value WorkAmount falls back to the XML workAmount, and quests override it via QuestNode_SetDocWork
 
                 // 基于上下文生成名称与描述
                 if (labelOverride == null && DMS_DefOf.DMS_QuestDocumentRules != null)
@@ -194,8 +191,9 @@ namespace DMS
             {
                 return "DMS_WorkableCompleted".Translate();
             }
-            // 修正翻译键显示
-            return "DMS_WorkableProgress".Translate() + ": " + progress.ToString("F0") + " / " + WorkAmount.ToString("F0");
+            // 內部以 tick 儲存(研究速度 100% 每 tick 1 點),顯示時換成原版工作量單位(tick ÷ 60 無條件進位),與工作單、建造等處一致
+            // Stored in ticks (1 point per tick at 100% research speed); shown in vanilla work-amount units (ticks ÷ 60, rounded up) to match bills, construction and so on
+            return "DMS_WorkableProgress".Translate() + ": " + progress.ToStringWorkAmount() + " / " + WorkAmount.ToStringWorkAmount();
         }
     }
 

@@ -77,6 +77,18 @@ namespace DMS
         public int calmDownTicks = 2500;
         public int tombPauseTicks = 900;
 
+        /// <summary>
+        /// 看到入侵者就開火，跳過盤查；交戰後的冷卻也不再等設施警戒值降下來。軍火庫舊址的 Boss 巡邏用這個。
+        /// Fire on intruders as soon as they are seen, skipping the challenge; calming down after a fight no longer waits for
+        /// the facility alert to drop either. Used by the arsenal site's boss patrols.
+        /// </summary>
+        public bool engageOnSight;
+
+        // 提示訊息的翻譯鍵，預設是守墓人的文字。Translation keys of the cue messages; the gravekeeper texts by default.
+        public string challengeMessageKey = "DMS_Gravekeeper_Challenge";
+        public string engageMessageKey = "DMS_Gravekeeper_Engage";
+        public string searchMessageKey = "DMS_Gravekeeper_TombOpened";
+
         private HashSet<Thing> gateSet;
 
         public LordJob_GravekeeperPatrol()
@@ -174,6 +186,10 @@ namespace DMS
             Scribe_Values.Look(ref engageAlertLevel, "engageAlertLevel", 0.6f);
             Scribe_Values.Look(ref calmDownTicks, "calmDownTicks", 2500);
             Scribe_Values.Look(ref tombPauseTicks, "tombPauseTicks", 900);
+            Scribe_Values.Look(ref engageOnSight, "engageOnSight");
+            Scribe_Values.Look(ref challengeMessageKey, "challengeMessageKey", "DMS_Gravekeeper_Challenge");
+            Scribe_Values.Look(ref engageMessageKey, "engageMessageKey", "DMS_Gravekeeper_Engage");
+            Scribe_Values.Look(ref searchMessageKey, "searchMessageKey", "DMS_Gravekeeper_TombOpened");
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
@@ -217,6 +233,10 @@ namespace DMS
         public bool challengeAnnounced;
         public int lastQueryMoteTick = -99999;
 
+        /// <summary>上一次盤查對話的對象與時間。Who the last challenge talk was aimed at, and when.</summary>
+        public Pawn challengeTalkTarget;
+        public int lastChallengeTalkTick = -99999;
+
         /// <summary>卡住判定：最近一次離目標更近的時間與距離。Stuck check: when and how close the leader last got.</summary>
         public int progressTick;
         public float bestDistance = float.MaxValue;
@@ -236,6 +256,8 @@ namespace DMS
             Scribe_Values.Look(ref nextSearchTick, "nextSearchTick");
             Scribe_Values.Look(ref challengeAnnounced, "challengeAnnounced");
             Scribe_Values.Look(ref lastQueryMoteTick, "lastQueryMoteTick", -99999);
+            Scribe_References.Look(ref challengeTalkTarget, "challengeTalkTarget");
+            Scribe_Values.Look(ref lastChallengeTalkTick, "lastChallengeTalkTick", -99999);
             Scribe_Values.Look(ref progressTick, "progressTick");
             Scribe_Values.Look(ref bestDistance, "bestDistance", float.MaxValue);
         }
@@ -252,6 +274,10 @@ namespace DMS
         /// <summary>有成員離領隊超過這個距離，領隊停下等。The leader waits when a member is further than this.</summary>
         private const float RegroupDistance = 14f;
         private const int QueryMoteInterval = 150;
+        /// <summary>兩次盤查對話之間至少隔多久（換了對象也一樣）。Minimum gap between challenge talks, even for a new target.</summary>
+        private const int ChallengeTalkMinGap = 300;
+        /// <summary>同一個對象多久後才再盤查一次。How long before the same target is challenged aloud again.</summary>
+        private const int ChallengeTalkRepeatTicks = 2500;
         private const int SearchRetargetTicks = 1500;
 
         private static readonly Color QueryColor = new Color(1f, 0.85f, 0.3f);
@@ -402,7 +428,7 @@ namespace DMS
             {
                 case GravekeeperMode.Patrol:
                 case GravekeeperMode.Challenge:
-                    if (seen != null && (intruderInRestricted || alert >= patrol.engageAlertLevel))
+                    if (seen != null && (patrol.engageOnSight || intruderInRestricted || alert >= patrol.engageAlertLevel))
                     {
                         Engage(spotter);
                     }
@@ -421,7 +447,7 @@ namespace DMS
                     break;
 
                 case GravekeeperMode.Engage:
-                    if (seen == null && Now - d.lastSeenTick > patrol.calmDownTicks && alert < patrol.engageAlertLevel)
+                    if (seen == null && Now - d.lastSeenTick > patrol.calmDownTicks && (patrol.engageOnSight || alert < patrol.engageAlertLevel))
                     {
                         SetMode(GravekeeperMode.Patrol);
                     }
@@ -566,11 +592,38 @@ namespace DMS
                 d.lastQueryMoteTick = Now;
                 MoteMaker.ThrowText(spotter.DrawPos + new Vector3(0f, 0f, 1.6f), map, "?", QueryColor, 2.5f);
             }
+            if (Now - d.lastChallengeTalkTick >= ChallengeTalkMinGap
+                && (d.challengeTalkTarget != intruder || Now - d.lastChallengeTalkTick >= ChallengeTalkRepeatTicks))
+            {
+                d.challengeTalkTarget = intruder;
+                d.lastChallengeTalkTick = Now;
+                ChallengeTalk(spotter, intruder);
+            }
             if (!d.challengeAnnounced)
             {
                 d.challengeAnnounced = true;
-                Messages.Message("DMS_Gravekeeper_Challenge".Translate(intruder.LabelShort), new LookTargets(spotter), MessageTypeDefOf.CautionInput);
+                Messages.Message(Patrol.challengeMessageKey.Translate(intruder.LabelShort), new LookTargets(spotter), MessageTypeDefOf.CautionInput);
             }
+        }
+
+        /// <summary>
+        /// 盤查對話：照原版互動的樣子冒泡泡，並在雙方的社交紀錄留一句（入侵者的「紀錄」分頁看得到）。
+        /// 機兵沒有原版的社交追蹤器，所以不走 TryInteractWith，也就沒有想法與社交衝突。
+        /// The challenge talk: a vanilla-style interaction bubble plus a line in both pawns' social logs (it shows on the
+        /// intruder's Log tab). Mechs have no vanilla interaction tracker, so this skips TryInteractWith, and with it any
+        /// thoughts or social fights.
+        /// </summary>
+        private static void ChallengeTalk(Pawn speaker, Pawn target)
+        {
+            InteractionDef intDef = DMS_DefOf.DMS_GravekeeperChallengeTalk;
+            if (intDef == null || speaker == null || target == null) return;
+
+            Texture2D symbol = intDef.GetSymbol(speaker.Faction, speaker.Ideo);
+            if (symbol != null)
+            {
+                MoteMaker.MakeInteractionBubble(speaker, target, intDef.interactionMote, symbol, intDef.GetSymbolColor(speaker.Faction));
+            }
+            Find.PlayLog.Add(new PlayLogEntry_Interaction(intDef, speaker, target, null));
         }
 
         private void Engage(Pawn spotter)
@@ -581,7 +634,7 @@ namespace DMS
             Pawn cue = spotter ?? Data.leader;
             if (cue != null && cue.Spawned && !cue.Position.Fogged(lord.Map))
             {
-                Messages.Message("DMS_Gravekeeper_Engage".Translate(), new LookTargets(cue), MessageTypeDefOf.ThreatBig);
+                Messages.Message(Patrol.engageMessageKey.Translate(), new LookTargets(cue), MessageTypeDefOf.ThreatBig);
             }
         }
 
@@ -676,7 +729,7 @@ namespace DMS
 
             if (!announced)
             {
-                Messages.Message("DMS_Gravekeeper_TombOpened".Translate(), MessageTypeDefOf.ThreatBig);
+                Messages.Message(Patrol.searchMessageKey.Translate(), MessageTypeDefOf.ThreatBig);
             }
         }
 

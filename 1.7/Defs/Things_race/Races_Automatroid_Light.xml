@@ -11,15 +11,16 @@
       <!--鈍抗-->
       <ArmorRating_Heat>0.25</ArmorRating_Heat>
       <!--能抗-->
-      <MaxFlightTime>30</MaxFlightTime>
-      <FlightCooldown>10</FlightCooldown>
+      <MaxFlightTime>20</MaxFlightTime>
+      <FlightCooldown>20</FlightCooldown>
     </statBases>
     <race>
       <body>DMS_Chop</body>
       <baseBodySize>0.5</baseBodySize>
       <baseHealthScale>0.75</baseHealthScale>
       <mechWeightClass>Light</mechWeightClass>
-      <flightStartChanceOnJobStart>0.05</flightStartChanceOnJobStart>
+      <flightStartChanceOnJobStart>0.025</flightStartChanceOnJobStart>
+      <flightSpeedFactor>1.5</flightSpeedFactor>
       <waterCellCost>1</waterCellCost>
     </race>
     <comps>
