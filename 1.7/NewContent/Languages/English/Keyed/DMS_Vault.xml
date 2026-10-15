@@ -13,6 +13,13 @@
   <DMS_AccessKeyTransform_NoConsole>Locked: no linked access console</DMS_AccessKeyTransform_NoConsole>
   <DMS_AccessKeyTransform_Unlocked>{THING_labelShort} has been unlocked.</DMS_AccessKeyTransform_Unlocked>
 
+  <DMS_BossKillRelay_Released>{RELAY_labelShort} has released its locks.</DMS_BossKillRelay_Released>
+  <DMS_BossKillRelay_ReleasedBy>{BOSS_labelShort}'s life signs have ceased. {RELAY_labelShort} has released its locks.</DMS_BossKillRelay_ReleasedBy>
+  <DMS_BossKillRelay_InspectLocked>Sealed: {0} linked locks open when the guardian unit dies</DMS_BossKillRelay_InspectLocked>
+  <DMS_BossKillRelay_InspectNoLink>No linked locks</DMS_BossKillRelay_InspectNoLink>
+  <DMS_BossKillRelay_InspectReleased>Released</DMS_BossKillRelay_InspectReleased>
+  <DMS_BossKillRelay_InspectBossKinds>Guardian: {0}</DMS_BossKillRelay_InspectBossKinds>
+
   <DMS_DormantTurretWokenUp>{WAKER_labelShort} has woken a dormant turret.</DMS_DormantTurretWokenUp>
   <DMS_DormantTurretWokenUpPlural>{WAKER_labelShort} has woken the dormant turrets.</DMS_DormantTurretWokenUpPlural>
 

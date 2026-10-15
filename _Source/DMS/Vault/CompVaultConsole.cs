@@ -41,10 +41,20 @@ namespace DMS
 
         public Thing ParentThing => parent;
 
+        /// <summary>
+        /// setter 只記錄。走這裡的是 <see cref="AccessKeyLinkUtility.TryLink"/>（Access link 工具），它設定完會自己通知門；
+        /// 這裡再通知一次的話門會多算一張卡，駭入後仍然打不開。生成流程要連門請呼叫 <see cref="Link"/>。
+        /// The setter only records. Its caller is <see cref="AccessKeyLinkUtility.TryLink"/> (the access link tool), which
+        /// notifies the door itself afterwards; notifying here as well makes the door count one card too many and stay
+        /// shut after the hack. Generation code linking a door should call <see cref="Link"/>.
+        /// </summary>
         public Thing LinkedAccessWanter
         {
             get => linkedDoors.Count > 0 ? linkedDoors[0] : null;
-            set => Link(value);
+            set
+            {
+                if (value != null && !linkedDoors.Contains(value)) linkedDoors.Add(value);
+            }
         }
 
         public bool AccessKeyActivated => released;

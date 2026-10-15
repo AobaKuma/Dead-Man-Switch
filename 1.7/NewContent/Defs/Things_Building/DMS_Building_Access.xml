@@ -54,6 +54,7 @@
     <graphicData>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(2,2)</drawSize>
+      <drawOffset>(0,0,0.15)</drawOffset>
     </graphicData>
     <size>(1,1)</size>
     <statBases>
@@ -151,6 +152,28 @@
         <!-- 沒連到任何東西時不收卡，免得鑰匙卡刷進空氣。Refuse the card when nothing is linked, so it isn't swiped into thin air. -->
         <requireAccessWanter>true</requireAccessWanter>
       </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 同一張地圖上的 Boss（PawnKindDef.isBoss）死亡時放行所有連結的門禁 wanter；用 Access link 工具連到密封門。
+       不可摧毀，免得 Boss 戰的爆炸把它炸掉、門永遠打不開。
+       Releases every linked access wanter when a boss (PawnKindDef.isBoss) dies on the same map; link it to sealed
+       doors with the access link tool. Indestructible, so the boss fight can't blow it up and seal the doors for good. -->
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_BossKillRelay</defName>
+    <label>guardian lock relay</label>
+    <description>A security relay slaved to the life signs of the installation's guardian unit. Every door linked to it stays sealed until that signal goes flat.</description>
+    <graphicData>
+      <texPath>Things/Building/MiscMachine/building_A</texPath>
+    </graphicData>
+    <receivesSignals>true</receivesSignals>
+    <useHitPoints>false</useHitPoints>
+    <destroyable>false</destroyable>
+    <building>
+      <isTargetable>false</isTargetable>
+    </building>
+    <comps>
+      <li Class="DMS.CompProperties_BossKillRelay" />
     </comps>
   </ThingDef>
 

@@ -13,6 +13,13 @@
   <DMS_AccessKeyTransform_NoConsole>已鎖定：未連結門禁控制台</DMS_AccessKeyTransform_NoConsole>
   <DMS_AccessKeyTransform_Unlocked>{THING_labelShort}已解鎖。</DMS_AccessKeyTransform_Unlocked>
 
+  <DMS_BossKillRelay_Released>{RELAY_labelShort}已解除封鎖。</DMS_BossKillRelay_Released>
+  <DMS_BossKillRelay_ReleasedBy>{BOSS_labelShort}的生命訊號已中斷，{RELAY_labelShort}已解除封鎖。</DMS_BossKillRelay_ReleasedBy>
+  <DMS_BossKillRelay_InspectLocked>封鎖中：守衛單位死亡後開啟 {0} 道連結的鎖</DMS_BossKillRelay_InspectLocked>
+  <DMS_BossKillRelay_InspectNoLink>未連結任何鎖</DMS_BossKillRelay_InspectNoLink>
+  <DMS_BossKillRelay_InspectReleased>已解除封鎖</DMS_BossKillRelay_InspectReleased>
+  <DMS_BossKillRelay_InspectBossKinds>守衛單位：{0}</DMS_BossKillRelay_InspectBossKinds>
+
   <DMS_DormantTurretWokenUp>{WAKER_labelShort}驚醒了一座休眠中的砲塔。</DMS_DormantTurretWokenUp>
   <DMS_DormantTurretWokenUpPlural>{WAKER_labelShort}驚醒了休眠中的砲塔。</DMS_DormantTurretWokenUpPlural>
 

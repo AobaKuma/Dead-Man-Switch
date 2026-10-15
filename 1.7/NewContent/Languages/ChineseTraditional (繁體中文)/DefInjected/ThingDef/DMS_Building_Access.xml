@@ -11,6 +11,11 @@
   <!-- EN: A multi-purpose computer interface. Built-in reading device accepts key-cards. -->
   <DMS_AccessConsole_Neutral.description>一種多用途電腦介面。內建的讀取裝置可接受鑰匙卡。</DMS_AccessConsole_Neutral.description>
   
+  <!-- EN: guardian lock relay -->
+  <DMS_BossKillRelay.label>守衛連鎖中繼器</DMS_BossKillRelay.label>
+  <!-- EN: A security relay slaved to the life signs of the installation's guardian unit. Every door linked to it stays sealed until that signal goes flat. -->
+  <DMS_BossKillRelay.description>與設施守衛單位生命訊號連動的保安中繼器。連結到它的門會一直保持密封，直到該訊號歸零。</DMS_BossKillRelay.description>
+  
   <!-- EN: console -->
   <DMS_ConsoleDouble_Nara.label>控制台</DMS_ConsoleDouble_Nara.label>
   <!-- EN: A multi-purpose computer interface. -->

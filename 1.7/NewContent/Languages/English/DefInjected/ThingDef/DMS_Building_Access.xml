@@ -11,6 +11,11 @@
   <!-- EN: A multi-purpose computer interface. Built-in reading device accepts key-cards. -->
   <DMS_AccessConsole_Neutral.description>A multi-purpose computer interface. Built-in reading device accepts key-cards.</DMS_AccessConsole_Neutral.description>
   
+  <!-- EN: guardian lock relay -->
+  <DMS_BossKillRelay.label>guardian lock relay</DMS_BossKillRelay.label>
+  <!-- EN: A security relay slaved to the life signs of the installation's guardian unit. Every door linked to it stays sealed until that signal goes flat. -->
+  <DMS_BossKillRelay.description>A security relay slaved to the life signs of the installation's guardian unit. Every door linked to it stays sealed until that signal goes flat.</DMS_BossKillRelay.description>
+  
   <!-- EN: console -->
   <DMS_ConsoleDouble_Nara.label>console</DMS_ConsoleDouble_Nara.label>
   <!-- EN: A multi-purpose computer interface. -->
