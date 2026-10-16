@@ -274,6 +274,25 @@ namespace DMS
         }
 
         /// <summary>
+        /// 與艦隊的關係是否鎖在敵對：隱匿級永久敵對，或殖民地正庇護著被追殺的脫序者（脫序者接納任務）。
+        /// 軍事法庭進行中時不鎖：休戰是審判流程的一部分。
+        /// Whether relations with the fleet are locked hostile: the occulted kill order, or a hunted deviant sheltered by the
+        /// colony (deviant refuge quest). Not while a court-martial is in session; the truce is part of the trial.
+        /// </summary>
+        public static bool HostilityLocked
+        {
+            get
+            {
+                bool permanent = GameComponent_OccultechSanction.CompSafe?.PermanentHostile == true;
+                if (!permanent && DeviantHuntUtility.HarboredDeviant == null)
+                {
+                    return false;
+                }
+                return !CourtMartialOngoing;
+            }
+        }
+
+        /// <summary>
         /// 不走快取的版本。兜底校正（<see cref="EnforceFleetRelation"/>）必須用這個：
         /// 玩家剛按下接受、休戰才生效的那幾十 tick 內，快取可能還停在「沒有審判」，
         /// 校正就會把剛談好的休戰一巴掌打回敵對。
@@ -439,14 +458,11 @@ namespace DMS
             }
 
             // 還沒接受的一般傳票（生成時不是隱匿級審判）改不了刑度，接了也解除不了永久敵對，
-            // 卻會擋住 EnsureCourtMartialOffered 發正確的那一張。撤掉它並立刻補發。
+            // 卻會擋住 EnsureCourtMartialOffered 發正確的那一張。撤掉它並補發（脫序者受庇護時則保留脫序者傳票）。
             // A pending ordinary summons (generated before the kill order) has the wrong terms and can't lift the
             // permanent hostility, yet it would stop EnsureCourtMartialOffered issuing the right one. Withdraw it and
-            // re-offer at once.
-            if (WithdrawOrdinaryCourtMartialOffers())
-            {
-                EnsureCourtMartialOffered();
-            }
+            // re-offer (a summons for a sheltered deviant is kept). See CourtMartialOfferUtility.
+            CourtMartialOfferUtility.RequestRefresh(ensureOffer: false);
 
             string names = collateral.Count > 0
                 ? collateral.Select(f => f.Name).ToCommaList(useAnd: true)
@@ -500,15 +516,18 @@ namespace DMS
 
         // ─────────────────────────────── 關係控制 ───────────────────────────────
 
-        /// <summary>把艦隊打到敵對（繞過自己的守衛）。</summary>
-        public static void SetFleetHostile(Faction fleet)
+        /// <summary>
+        /// 把艦隊打到敵對（繞過自己的守衛）。reason 預設為封存科技研究；脫序者接納任務傳 DMS_HarboredDeviant。
+        /// Knocks the fleet down to hostile, bypassing our own guards. reason defaults to occultech research.
+        /// </summary>
+        public static void SetFleetHostile(Faction fleet, HistoryEventDef reason = null)
         {
             if (fleet == null)
             {
                 return;
             }
             WithGuardSuppressed(() => Fortified.FactionRelationUtility.SetGoodwillAndKind(fleet, -100, FactionRelationKind.Hostile,
-                reason: DMS_DefOf.DMS_OccultechResearched));
+                reason: reason ?? DMS_DefOf.DMS_OccultechResearched));
         }
 
         /// <summary>把艦隊設回指定好感度／關係（供軍事法庭與放棄流程使用）。</summary>
@@ -536,11 +555,17 @@ namespace DMS
             }
 
             // 審判期間的休戰是任務流程的一部分，不校正。
-            if (comp.PermanentHostile && !CourtMartialOngoingUncached)
+            Pawn harbored = DeviantHuntUtility.HarboredDeviant;
+            if ((comp.PermanentHostile || harbored != null) && !CourtMartialOngoingUncached)
             {
                 if (fleet.RelationKindWith(Faction.OfPlayer) != FactionRelationKind.Hostile)
                 {
-                    SetFleetHostile(fleet);
+                    SetFleetHostile(fleet, comp.PermanentHostile ? null : DMS_DefOf.DMS_HarboredDeviant);
+                    if (!comp.PermanentHostile)
+                    {
+                        Messages.Message("DMS_DeviantHunt_GoodwillBlocked".Translate(fleet.Name.Named("FLEET")),
+                            MessageTypeDefOf.NegativeEvent, historical: false);
+                    }
                 }
                 return;
             }
@@ -730,57 +755,28 @@ namespace DMS
             }
         }
 
-        /// <summary>
-        /// 撤掉還沒接受、而且不是隱匿級審判的軍事法庭傳票。回傳是否撤掉了任何一張。
-        /// Withdraws pending court-martial summonses that aren't occultech trials. Returns whether any was withdrawn.
-        /// </summary>
-        private static bool WithdrawOrdinaryCourtMartialOffers()
-        {
-            List<Quest> quests = Find.QuestManager?.QuestsListForReading;
-            if (quests == null)
-            {
-                return false;
-            }
-            bool withdrawn = false;
-            // End 會把任務移入歷史但不改清單長度；保險起見先複製一份再逐一結束。
-            // End moves quests to history without shrinking the list; copy first anyway to be safe.
-            foreach (Quest quest in quests.ToList())
-            {
-                if (quest.root != DMS_DefOf.DMS_CourtMartial || quest.State != QuestState.NotYetAccepted)
-                {
-                    continue;
-                }
-                if (quest.PartsListForReading.OfType<QuestPart_CourtTruce>().Any(p => p.occultechTrial))
-                {
-                    continue;
-                }
-                quest.End(QuestEndOutcome.InvalidPreAcceptance, sendLetter: false);
-                withdrawn = true;
-            }
-            return withdrawn;
-        }
-
         // ─────────────────────────────── 追殺暫停（SAGE） ───────────────────────────────
 
         /// <summary>
-        /// 追殺網路節點（SAGE）被摧毀：永久敵對中就暫停追殺。第一次擲 suspendYears；已在暫停中則疊加
-        /// stackDaysWhileSuspended（小於 0 時再擲一次 suspendYears）。不處於永久敵對時只發中性訊息。
-        /// A tracking-network node (SAGE) was destroyed: suspend the hunt if the kill order is active. The first
-        /// time rolls suspendYears; while already suspended it stacks stackDaysWhileSuspended (or re-rolls
-        /// suspendYears when that is negative). Outside a kill order it only posts a neutral message.
+        /// 追殺網路節點（SAGE）被摧毀：所有依賴追緝網路的艦隊追殺（隱匿級追殺令、脫序者追殺）一起進入真空期，
+        /// 見 <see cref="FleetTrackingUtility"/>。第一次擲 suspendYears；已在真空期則疊加 stackDaysWhileSuspended
+        /// （小於 0 時再擲一次 suspendYears）。沒有任何艦隊追殺時只發中性訊息。
+        /// A tracking-network node (SAGE) was destroyed: every fleet hunt relying on the network (the occultech kill order,
+        /// the deviant hunt) enters one shared blackout, see <see cref="FleetTrackingUtility"/>. The first time rolls
+        /// suspendYears; during a blackout it stacks stackDaysWhileSuspended (or re-rolls suspendYears when negative).
+        /// With no fleet hunt running it only posts a neutral message.
         /// </summary>
         public static void TrySuspendHunt(CompProperties_HuntBreaker props, Thing source, Map map)
         {
-            GameComponent_OccultechSanction comp = GameComponent_OccultechSanction.CompSafe;
             GlobalTargetInfo look = map != null ? new GlobalTargetInfo(source.PositionHeld, map) : GlobalTargetInfo.Invalid;
-            if (comp == null || !comp.PermanentHostile)
+            if (!FleetTrackingUtility.AnyActive)
             {
                 Messages.Message("DMS_HuntBreaker_NoHunt".Translate(source.Named("NODE")), look, MessageTypeDefOf.NeutralEvent);
                 return;
             }
 
-            bool wasSuspended = comp.HuntSuspended;
-            int left = comp.SuspendHunt(props.RollTicks(wasSuspended));
+            bool wasSuspended = FleetTrackingUtility.InBlackout;
+            int left = FleetTrackingUtility.SuspendAll(props.RollTicks(wasSuspended));
 
             if (wasSuspended)
             {
@@ -790,11 +786,24 @@ namespace DMS
             }
 
             Faction fleet = Fleet;
-            Find.LetterStack.ReceiveLetter(
-                "DMS_HuntBreaker_SuspendedLabel".Translate(),
-                "DMS_HuntBreaker_SuspendedText".Translate(source.Named("NODE"), (fleet?.Name ?? "?").Named("FLEET"),
-                    left.ToStringTicksToPeriod().Named("DURATION")),
-                LetterDefOf.PositiveEvent, look);
+            NamedArgument node = source.Named("NODE");
+            NamedArgument fleetName = (fleet?.Name ?? "?").Named("FLEET");
+            NamedArgument duration = left.ToStringTicksToPeriod().Named("DURATION");
+            bool deviantHunt = Fortified.HuntdownUtility.IsActive(DMS_DefOf.DMS_DeviantHunt);
+            string text;
+            if (deviantHunt && !DeviantHuntUtility.KillOrderRunning)
+            {
+                text = "DMS_HuntBreaker_SuspendedTextDeviant".Translate(node, fleetName, duration);
+            }
+            else
+            {
+                text = "DMS_HuntBreaker_SuspendedText".Translate(node, fleetName, duration);
+                if (deviantHunt)
+                {
+                    text += "\n\n" + "DMS_HuntBreaker_SuspendedDeviantLine".Translate();
+                }
+            }
+            Find.LetterStack.ReceiveLetter("DMS_HuntBreaker_SuspendedLabel".Translate(), text, LetterDefOf.PositiveEvent, look);
         }
 
         public static void SendHuntResumedLetter()

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS_DeviantRefuge.questNameRules.rulesStrings>
+    <li>questName->The Deviant</li>
+    <li>questName->Deviant refuge: [deviant_nameFull]</li>
+    <li>questName->A defector from the fleet</li>
+  </DMS_DeviantRefuge.questNameRules.rulesStrings>
+
+  <DMS_DeviantRefuge.questDescriptionRules.rulesStrings>
+    <li>questDescription->Someone calling [deviant_objective]self [deviant_nameFull] is hailing us on a private band. [deviant_pronoun] served on the rolls of [fleetName] until [deviant_pronoun] watched the fleet let a war that could have been avoided run its course in the name of its rules, and walked away. Now [deviant_pronoun] is wanted by the fleet and asks to settle at [map_definite].\n\n[deviant_nameDef] carries an encrypted archive copied out of the fleet's databanks. Given a few days, [deviant_pronoun] says, [deviant_pronoun] can restore its contents for us.\n\nBeware: the moment the archive is restored, [fleetName] will learn that we are sheltering [deviant_nameDef] and demand [deviant_objective] back. If we refuse, the fleet will turn hostile and keep sending hunters after [deviant_objective] until [deviant_pronoun] dies or is banished from the colony.\n\nOnly accept if you are ready to make an enemy of [fleetName].</li>
+  </DMS_DeviantRefuge.questDescriptionRules.rulesStrings>
+
+</LanguageData>

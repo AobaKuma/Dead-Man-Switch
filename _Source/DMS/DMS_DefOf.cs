@@ -57,5 +57,15 @@ namespace DMS
 
         // 現實穩定錨的錨場標記：靈能封鎖與強制現形都看它(見 RealityAnchorUtility.IsAnchored)。
         public static HediffDef DMS_RealityAnchored;
+
+        // 脫序者接納任務與其追殺(見 Quests/Deviant/)。叛逃者開局的玩家派系不會收到這個任務。
+        // The deviant refuge quest and its huntdown (see Quests/Deviant/). A deviant-start colony never gets the quest.
+        public static QuestScriptDef DMS_DeviantRefuge;
+        public static Fortified.HuntdownDef DMS_DeviantHunt;
+        public static FactionDef DMS_Deviants;
+        public static HistoryEventDef DMS_HarboredDeviant;
+        // 引渡要求的選擇信件與交出時的好感度理由。The extradition choice letter and the goodwill reason for handing over.
+        public static LetterDef DMS_DeviantExtradition;
+        public static HistoryEventDef DMS_ExtraditedDeviant;
     }
 }

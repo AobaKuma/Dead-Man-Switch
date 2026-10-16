@@ -40,6 +40,11 @@
         <chance>0.35</chance>
       </li>
     </questsOnWave>
+    <!-- 依賴艦隊 SAGE 追緝網路：摧毀 SAGE 節點的真空期一併暫停所有帶此標記的追殺（含脫序者追殺）。
+         Relies on the fleet's SAGE tracking network: a SAGE blackout suspends every hunt carrying this marker. -->
+    <modExtensions>
+      <li Class="DMS.ModExtension_FleetTracking" />
+    </modExtensions>
   </Fortified.HuntdownDef>
 
 </Defs>

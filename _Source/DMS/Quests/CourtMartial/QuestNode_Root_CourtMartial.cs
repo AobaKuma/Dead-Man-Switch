@@ -92,9 +92,13 @@ namespace DMS
         /// QuestGen_Get.GetMap rolls comes first, then every other player home. TestRun and Run each calling GetMap
         /// roll separately, so with several homes TestRun could pass while Run lands on a map with no usable defendant.
         /// </summary>
-        private static bool TryFindMapAndDefendant(Slate slate, Faction fleet, out Map map, out Pawn defendant)
+        private static bool TryFindMapAndDefendant(Slate slate, Faction fleet, CourtTrialKind kind, out Map map, out Pawn defendant)
         {
             defendant = null;
+            if (kind == CourtTrialKind.Deviant)
+            {
+                return TryFindDeviantDefendant(slate, out map, out defendant);
+            }
             if (slate.TryGet("map", out map) && map != null)
             {
                 defendant = FindDefendant(fleet, map);
@@ -120,6 +124,32 @@ namespace DMS
             return false;
         }
 
+        /// <summary>
+        /// 受庇護脫序者的審判：被告只能是脫序者本人，且必須是玩家據點上已生成、非任務借住者的自由殖民者。
+        /// 不在據點（商隊、遠征）時沒有被告，等追殺下一波再試；不會改審別人，否則結案後關係鎖又會把關係打回敵對。
+        /// Trying the sheltered deviant: only the deviant, spawned on a player home as a free colonist and not a quest
+        /// lodger. Away from home there is no defendant and the next hunt wave tries again; nobody else is tried instead,
+        /// since the relation lock would knock the result straight back to hostile.
+        /// </summary>
+        private static bool TryFindDeviantDefendant(Slate slate, out Map map, out Pawn defendant)
+        {
+            map = null;
+            defendant = DeviantHuntUtility.HarboredDeviant;
+            if (defendant == null || !defendant.Spawned || !defendant.IsFreeColonist || QuestUtility.IsQuestLodger(defendant)
+                || !defendant.Map.IsPlayerHome)
+            {
+                defendant = null;
+                return false;
+            }
+            if (slate.TryGet("map", out Map slateMap) && slateMap != null && slateMap != defendant.Map)
+            {
+                defendant = null;
+                return false;
+            }
+            map = defendant.Map;
+            return true;
+        }
+
         protected override bool TestRunInt(Slate slate)
         {
             // 不要求 Royalty:本任務的 Def 已移出 1.6/Royalty/，無 DLC 時仍會載入。
@@ -129,7 +159,7 @@ namespace DMS
             if (transportShipDef?.shipThing == null) return false;
             Faction fleet = Fleet;
             if (fleet == null || !fleet.HostileTo(Faction.OfPlayer)) return false;
-            return TryFindMapAndDefendant(slate, fleet, out _, out _);
+            return TryFindMapAndDefendant(slate, fleet, CourtMartialOfferUtility.ExpectedKind, out _, out _);
         }
 
         protected override void RunInt()
@@ -137,7 +167,11 @@ namespace DMS
             Slate slate = QuestGen.slate;
             Quest quest = QuestGen.quest;
             Faction fleet = Fleet;
-            if (!TryFindMapAndDefendant(slate, fleet, out Map map, out Pawn defendant))
+            // 審判種類在生成時決定：受庇護的脫序者優先，其次隱匿級（D6-B，分開審判）。
+            // The trial kind is fixed at generation: the sheltered deviant first, then the occult trial (D6-B).
+            CourtTrialKind kind = CourtMartialOfferUtility.ExpectedKind;
+            bool deviantTrial = kind == CourtTrialKind.Deviant;
+            if (!TryFindMapAndDefendant(slate, fleet, kind, out Map map, out Pawn defendant))
             {
                 // 生成時才發現沒有可用被告(TestRun 之後殖民地狀況變了):明確報錯，不要在後面 NRE。
                 // No usable defendant at generation time (the colony changed since TestRun): fail loudly, not with an NRE later.
@@ -158,14 +192,20 @@ namespace DMS
             // 被告沒有可褫奪的軍銜時整段語意都對不上。用 grammar 常數挑另一組文本
             // (見 questDescriptionRules 的 defendantRanked 條件),條件與 QuestPart_CourtVerdict
             // 的 demoted 判定完全一致,敘述承諾的降階就一定會發生。
+            // 脫序者審判另用 defendantRanked==Deviant 的三則文本，結尾的 [killOrderNote] 依 killOrder 說明結案後的關係。
+            // A deviant trial uses the defendantRanked==Deviant texts; their closing [killOrderNote] follows killOrder.
+            bool killOrder = GameComponent_OccultechSanction.CompSafe?.PermanentHostile ?? false;
             QuestGen.AddQuestDescriptionConstants(new Dictionary<string, string>
             {
-                { "defendantRanked", seniority > 0 ? "True" : "False" },
+                { "defendantRanked", deviantTrial ? "Deviant" : seniority > 0 ? "True" : "False" },
+                { "killOrder", killOrder ? "True" : "False" },
             });
 
             // 隱匿級永久敵對下的審判:刑期固定一年,無罪判定與盟友判定一律關閉。
             // 這是永久敵對唯一的解除途徑,不能靠官階高就輕輕放過。
-            bool occultechTrial = GameComponent_OccultechSanction.CompSafe?.PermanentHostile ?? false;
+            // 脫序者受庇護時先審脫序者（一般刑度），隱匿級審判等結案後另發（D6-B）。
+            // While the deviant is sheltered they are tried first on ordinary terms; the occult trial comes afterwards (D6-B).
+            bool occultechTrial = kind == CourtTrialKind.Occult;
             float trialAllyChance = baseAllyChance;
             float trialAcquitChance = baseAcquitChance;
             float trialAcquitPerSocial = acquitChancePerSocialLevel;
@@ -179,6 +219,13 @@ namespace DMS
                 trialAcquitChance = 0f;
                 trialAcquitPerSocial = 0f;
                 trialAcquitPerSeniority = 0f;
+            }
+            if (deviantTrial)
+            {
+                // 脫序者審判不會升為盟友（QuestPart_CourtTruce.AllyBlocked 也擋）；無罪判定照常。
+                // A deviant trial never ends in an alliance (AllyBlocked blocks it too); acquittal stays possible.
+                trialAllyChance = 0f;
+                trialAllyPerSocial = 0f;
             }
 
             // 憲兵指揮部士官(敵對陣營,不能限制非敵對)
@@ -235,6 +282,7 @@ namespace DMS
                 allyChancePerSocialLevel = trialAllyPerSocial,
                 allyGoodwill = allyGoodwill,
                 occultechTrial = occultechTrial,
+                deviantTrial = deviantTrial,
             });
 
             // 2. 接受→穿梭機降落
@@ -302,6 +350,7 @@ namespace DMS
                 acquitChancePerSocialLevel = trialAcquitPerSocial,
                 acquitChancePerSeniority100 = trialAcquitPerSeniority,
                 maxAcquitChance = occultechTrial ? 0f : maxAcquitChance,
+                deviantTrial = deviantTrial,
             });
 
             // 5b. 有罪→服刑倒數→刑滿歸還

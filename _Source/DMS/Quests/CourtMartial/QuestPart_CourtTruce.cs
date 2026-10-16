@@ -31,6 +31,14 @@ namespace DMS
         /// </summary>
         public bool occultechTrial;
 
+        /// <summary>
+        /// 這是否為受庇護脫序者的審判（被告即脫序者）。不會升為盟友；結案時若隱匿級追殺令仍在，關係直接回到敵對，
+        /// 並補發隱匿級傳票（D6-B，分開審判）。見 CourtMartialOfferUtility。
+        /// Whether this tries the sheltered deviant. Never ends in an alliance; if the occultech kill order still stands when
+        /// the case closes, relations go straight back to hostile and an occult summons follows (D6-B, separate trials).
+        /// </summary>
+        public bool deviantTrial;
+
         private bool resolved;
 
         private const int CheckIntervalTicks = 250;
@@ -74,9 +82,16 @@ namespace DMS
                 resolved = true;
                 ResolveOccultech();
                 ResolveBoundHuntdowns();
-                SetGoodwillAndRelation(
-                    AllyBlocked ? 0 : allyGoodwill,
-                    AllyBlocked ? FactionRelationKind.Neutral : FactionRelationKind.Ally);
+                if (KillOrderOutlivesTrial)
+                {
+                    ReturnToKillOrder();
+                }
+                else
+                {
+                    SetGoodwillAndRelation(
+                        AllyBlocked ? 0 : allyGoodwill,
+                        AllyBlocked ? FactionRelationKind.Neutral : FactionRelationKind.Ally);
+                }
                 Complete();
                 return;
             }
@@ -85,6 +100,16 @@ namespace DMS
                 resolved = true;
                 ResolveOccultech();
                 ResolveBoundHuntdowns();
+                if (KillOrderOutlivesTrial)
+                {
+                    ReturnToKillOrder();
+                    Find.LetterStack.ReceiveLetter(
+                        SupplyChainText.Resolve(CourtMartialText.Pack, "returnDeviantKillOrderLetterLabel", LetterVars()),
+                        SupplyChainText.Resolve(CourtMartialText.Pack, "returnDeviantKillOrderLetterText", LetterVars()),
+                        LetterDefOf.NeutralEvent, defendant, faction, quest);
+                    Complete();
+                    return;
+                }
                 bool ally = !AllyBlocked && Rand.Chance(AllyChance);
                 if (ally)
                     SetGoodwillAndRelation(allyGoodwill, FactionRelationKind.Ally);
@@ -116,7 +141,27 @@ namespace DMS
         /// 封存科技制裁是否擋下盟友結局:隱匿級審判本身只能回到中立,持有未放棄的封存級技術
         /// 時也一樣(必須先向艦隊申報放棄)。宣判 part 用它挑無罪信件的文本。
         /// </summary>
-        public bool AllyBlocked => occultechTrial || OccultechSanctionUtility.IsAllyLocked;
+        public bool AllyBlocked => occultechTrial || deviantTrial || OccultechSanctionUtility.IsAllyLocked;
+
+        /// <summary>
+        /// 脫序者審判結案時隱匿級追殺令仍在（以結案當下為準：審判期間可能才研究完隱匿級技術）。
+        /// A deviant trial closing while the occultech kill order still stands, judged at closing time (the occulted
+        /// research may have finished during the trial).
+        /// </summary>
+        public bool KillOrderOutlivesTrial =>
+            deviantTrial && GameComponent_OccultechSanction.CompSafe?.PermanentHostile == true;
+
+        /// <summary>
+        /// 脫序者的案子結了，追殺令還在：休戰結束，直接設回敵對（不經中立，守衛下一輪也會這樣做），並補發隱匿級傳票。
+        /// 傳票延到下一個檢查週期：此刻這場審判仍是進行中。
+        /// The deviant's case is closed but the kill order stands: the truce ends, straight back to hostile (the guard would
+        /// do it next round anyway), and an occult summons follows next check, since this trial still counts as ongoing now.
+        /// </summary>
+        private void ReturnToKillOrder()
+        {
+            SetGoodwillAndRelation(-100, FactionRelationKind.Hostile);
+            CourtMartialOfferUtility.RequestRefresh(ensureOffer: true);
+        }
 
         /// <summary>隱匿級審判服刑期滿:解除永久敵對。必須在調整好感度之前執行。</summary>
         private void ResolveOccultech()
@@ -187,6 +232,7 @@ namespace DMS
             Scribe_Values.Look(ref allyChancePerSocialLevel, "allyChancePerSocialLevel", 0.03f);
             Scribe_Values.Look(ref allyGoodwill, "allyGoodwill", 75);
             Scribe_Values.Look(ref occultechTrial, "occultechTrial");
+            Scribe_Values.Look(ref deviantTrial, "deviantTrial");
             Scribe_Values.Look(ref resolved, "resolved");
         }
     }

@@ -79,6 +79,11 @@ namespace DMS
                 + $"  fleet: {fleet?.Name ?? "<none>"} goodwill={fleet?.GoodwillWith(Faction.OfPlayer)} "
                 + $"relation={fleet?.RelationKindWith(Faction.OfPlayer)}\n"
                 + $"  permanentHostile={comp.PermanentHostile} courtMartialOngoing={OccultechSanctionUtility.CourtMartialOngoing}\n"
+                // 脫序者接納任務的關係鎖與永久敵對分開：permanentHostile 只屬於隱匿級追殺令。
+                // The deviant lock is separate from permanentHostile, which only belongs to the occultech kill order.
+                + $"  harbored deviant={DeviantHuntUtility.HarboredDeviant?.LabelShort ?? "<none>"} "
+                + $"deviantHunt={(Fortified.HuntdownUtility.IsActive(DMS_DefOf.DMS_DeviantHunt) ? "active" : "inactive")} "
+                + $"hostilityLocked={OccultechSanctionUtility.HostilityLocked}\n"
                 + $"  allyLocked={OccultechSanctionUtility.IsAllyLocked}\n"
                 + $"  highest fleet rank: {holder?.LabelShort ?? "<none>"} (seniority {seniority})\n"
                 + $"  held renounceable: {OccultechSanctionUtility.HeldRenounceableProjects().Select(p => p.defName).ToCommaList(useAnd: false)}\n"
@@ -102,6 +107,56 @@ namespace DMS
         private static void EndHuntSuspension()
         {
             GameComponent_OccultechSanction.CompSafe?.EndHuntSuspensionNow();
+        }
+
+        [DebugAction("DMS", "Deviant: 立即發出任務 / Offer deviant quest now",
+            actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void OfferDeviantQuest()
+        {
+            QuestScriptDef root = DMS_DefOf.DMS_DeviantRefuge;
+            float points = StorytellerUtility.DefaultThreatPointsNow(Find.CurrentMap);
+            if (!root.CanRun(points, Find.CurrentMap))
+            {
+                Messages.Message("[DMS] Deviant quest can't run (deviant start, no fleet, no walk-in spot, or a deviant hunt is already active).",
+                    MessageTypeDefOf.RejectInput, historical: false);
+                return;
+            }
+            QuestUtility.GenerateQuestAndMakeAvailable(root, points);
+        }
+
+        [DebugAction("DMS", "Deviant: 立即發出引渡要求 / Issue extradition demand now",
+            actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void DeviantHandoverNow()
+        {
+            // 把進行中任務的還原倒數直接走完，艦隊隨即要求引渡。Run out the restoration countdown; the extradition demand follows.
+            QuestPart_Delay delay = Find.QuestManager.QuestsListForReading
+                .Where(q => q.root == DMS_DefOf.DMS_DeviantRefuge && q.State == QuestState.Ongoing)
+                .SelectMany(q => q.PartsListForReading.OfType<QuestPart_Delay>())
+                .FirstOrDefault(d => d.State == QuestPartState.Enabled);
+            if (delay == null)
+            {
+                Messages.Message("[DMS] No deviant restoration is counting down (accept the quest first).",
+                    MessageTypeDefOf.RejectInput, historical: false);
+                return;
+            }
+            delay.DebugForceEnd();
+        }
+
+        [DebugAction("DMS", "Deviant: 狀態 / Dump status",
+            actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void DumpDeviantStatus()
+        {
+            Fortified.HuntdownInstance hunt = Fortified.HuntdownUtility.GetInstance(DMS_DefOf.DMS_DeviantHunt);
+            Map map = Find.CurrentMap;
+            GameComponent_DeviantLegacy legacy = GameComponent_DeviantLegacy.CompSafe;
+            Log.Message(
+                "[DMS] Deviant status\n"
+                + $"  harbored deviant: {DeviantHuntUtility.HarboredDeviant?.LabelShort ?? "<none>"}\n"
+                + $"  deviant hunt: {(hunt == null ? "<inactive>" : $"bound={hunt.boundPawn?.LabelShort ?? "<null>"} maps={hunt.timers.Count} suspendedLeft={hunt.SuspendedTicksLeft.ToStringTicksToPeriod()}")}\n"
+                + $"  next wave on current map: {Fortified.HuntdownUtility.TicksUntilNextWave(DMS_DefOf.DMS_DeviantHunt, map)} ticks\n"
+                + $"  kill order running={DeviantHuntUtility.KillOrderRunning} blackoutLeft={FleetTrackingUtility.BlackoutTicksLeft.ToStringTicksToPeriod()}\n"
+                + $"  hostility locked={OccultechSanctionUtility.HostilityLocked} expected trial={CourtMartialOfferUtility.ExpectedKind}\n"
+                + $"  pending grants: {(legacy == null ? "<no component>" : legacy.PendingGrants.Select(p => $"{p.defName} (missing: {DeviantTechUtility.MissingPrerequisites(p)})").ToCommaList(useAnd: false))}");
         }
 
         [DebugAction("DMS", "Occultech: 派發 SAGE 節點任務 / Offer SAGE node quest",

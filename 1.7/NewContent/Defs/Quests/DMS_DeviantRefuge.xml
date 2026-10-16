@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================= -->
+  <!-- 脫序者接納任務。設計見 Plans/DMS_脫序者接納任務_實作計畫.md。       -->
+  <!-- 第 15 天由說書人 comp 提供一次（Patches/DMS_DeviantRefuge_Storyteller.xml）。 -->
+  <!-- 接受 → 脫序者步行進場並加入 → 5 天後交付封存檔案：量子位元破譯＋2 項 I 級，  -->
+  <!-- 同時與殖民艦隊敵對並啟動綁定脫序者的追殺 DMS_DeviantHunt。               -->
+  <!-- Deviant refuge quest. Offered once on day 15; the deviant joins, and five days later hands over -->
+  <!-- qubit decryption plus two class I files, turning the fleet hostile and starting DMS_DeviantHunt. -->
+  <!-- ============================================================= -->
+  <QuestScriptDef>
+    <defName>DMS_DeviantRefuge</defName>
+    <!-- 不進隨機任務池：IncidentDef.questScriptDef 要求 rootSelectionWeight 為 0。 -->
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <isRootSpecial>true</isRootSpecial>
+    <expireDaysRange>3~5</expireDaysRange>
+    <defaultChallengeRating>3</defaultChallengeRating>
+    <successHistoryEvent>DMS_QuestSuccess_Occultech</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Occultech</failedOrExpiredHistoryEvent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->The Deviant</li>
+        <li>questName->Deviant refuge: [deviant_nameFull]</li>
+        <li>questName->A defector from the fleet</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->Someone calling [deviant_objective]self [deviant_nameFull] is hailing us on a private band. [deviant_pronoun] served on the rolls of [fleetName] until [deviant_pronoun] watched the fleet let a war that could have been avoided run its course in the name of its rules, and walked away. Now [deviant_pronoun] is wanted by the fleet and asks to settle at [map_definite].\n\n[deviant_nameDef] carries an encrypted archive copied out of the fleet's databanks. Given a few days, [deviant_pronoun] says, [deviant_pronoun] can restore its contents for us.\n\nBeware: the moment the archive is restored, [fleetName] will learn that we are sheltering [deviant_nameDef] and demand [deviant_objective] back. If we refuse, the fleet will turn hostile and keep sending hunters after [deviant_objective] until [deviant_pronoun] dies or is banished from the colony.\n\nOnly accept if you are ready to make an enemy of [fleetName].</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="DMS.QuestNode_Root_DeviantRefuge">
+      <fleetFactionDef>DMS_Army</fleetFactionDef>
+      <deviantKind>DMS_CrewMember</deviantKind>
+      <!-- 加入後幾天交付。Days from joining to the handover. -->
+      <handoverDays>5</handoverDays>
+      <!-- 接受後這段時間內沒有加入（找不到可進場的地圖）就判失敗。 -->
+      <arrivalTimeoutDays>1</arrivalTimeoutDays>
+      <guaranteedProjects>
+        <li>DMS_Occultech_QubitDecryption</li>
+      </guaranteedProjects>
+      <randomCategory>DMS_Restricted</randomCategory>
+      <randomCount>2</randomCount>
+      <huntdown>DMS_DeviantHunt</huntdown>
+      <!-- 引渡要求：還原完成的同時艦隊要求交人，選擇交給玩家。拒絕（或期限內不答覆）＝上面的封存檔案＋敵對＋追殺。
+           Extradition demand: as the archive is restored the fleet demands the deviant; the player chooses. Refusing (or
+           staying silent) gives the files above plus hostility and the hunt. -->
+      <extraditionDecisionDays>2</extraditionDecisionDays>
+      <extraditionGoodwill>25</extraditionGoodwill>
+      <!-- 皇權 DLC：交出時一名殖民者領受的艦隊榮譽（下士一級約 10）。Royalty: fleet honor for one colonist (about one corporal step). -->
+      <extraditionHonor>10</extraditionHonor>
+      <extraditionMoodPenalty>true</extraditionMoodPenalty>
+    </root>
+  </QuestScriptDef>
+
+  <!-- 引渡要求的選擇信件（DMS.ChoiceLetter_DeviantExtradition）。The extradition demand's choice letter. -->
+  <LetterDef ParentName="CustomChoiceLetterBase">
+    <defName>DMS_DeviantExtradition</defName>
+    <letterClass>DMS.ChoiceLetter_DeviantExtradition</letterClass>
+  </LetterDef>
+
+  <!-- 由 BaseStoryteller 的 StorytellerCompProperties_RefiringUniqueQuest 觸發，不進隨機事件池。
+       Fired by the RefiringUniqueQuest comp patched into BaseStoryteller; baseChance 0 keeps it out of the random pool. -->
+  <IncidentDef ParentName="GiveQuestBase">
+    <defName>DMS_GiveQuest_DeviantRefuge</defName>
+    <label>deviant refuge</label>
+    <questScriptDef>DMS_DeviantRefuge</questScriptDef>
+    <baseChance>0</baseChance>
+  </IncidentDef>
+
+  <!-- 脫序者追殺（Fortified.HuntdownDef）。由 QuestPart_DeviantHandover 啟動並綁定脫序者；
+       脫序者死亡、離開派系、被綁架或在軍事法庭受審結案時結束。SAGE 節點的真空期同樣適用（ModExtension_FleetTracking）。
+       Started by QuestPart_DeviantHandover and bound to the deviant; ends when they die, leave, are kidnapped, or stand
+       trial. SAGE blackouts apply too (ModExtension_FleetTracking). -->
+  <Fortified.HuntdownDef>
+    <defName>DMS_DeviantHunt</defName>
+    <label>deviant pursuit</label>
+    <workerClass>DMS.HuntdownWorker_Deviant</workerClass>
+    <faction>DMS_Army</faction>
+    <followGravship>true</followGravship>
+    <retargetPlayerHome>true</retargetPlayerHome>
+    <repeatWhileStaying>true</repeatWhileStaying>
+    <stopWhenBoundPawnLost>true</stopWhenBoundPawnLost>
+    <!-- 預警延遲 0：FFF 的倒數警報只在預警之後顯示，延遲 0 讓警報從交付當下（以及每一輪重新排程起）就一直在右側倒數。
+         不發預警信件：交付信件已說明追殺，每一輪再發一封只是噪音。襲擊 5~8 天。
+         Warning delay 0: FFF only shows the countdown alert once warned, so this keeps it on screen from the handover
+         (and from every reschedule). No warning letter: the handover letter already announces the hunt. Raids every 5~8 days. -->
+    <warningDelayRange>0~0</warningDelayRange>
+    <sendWarningLetter>false</sendWarningLetter>
+    <raidDelayRange>300000~480000</raidDelayRange>
+    <criticalAlertLeadTicks>60000</criticalAlertLeadTicks>
+    <waves>
+      <li>
+        <pointsMultiplier>1.0</pointsMultiplier>
+        <minPoints>300</minPoints>
+      </li>
+    </waves>
+    <questsOnWave>
+      <!-- 脫序者受庇護期間的軍事法庭只審脫序者（QuestNode_Root_CourtMartial），結案即結束追殺。
+           While the deviant is sheltered the court-martial only tries the deviant; closing the case ends the hunt. -->
+      <li>
+        <quest>DMS_CourtMartial</quest>
+      </li>
+      <li>
+        <quest>DMS_FleetNetworkSite</quest>
+        <chance>0.35</chance>
+      </li>
+    </questsOnWave>
+    <alertLabel>Deviant hunt</alertLabel>
+    <alertLabelCritical>Hunters arriving any moment</alertLabelCritical>
+    <alertExplanation>{0} is hunting the deviant the colony took in. The hunting party arrives when the countdown ends.\n\nThe hunt continues for as long as the deviant stays with the colony.</alertExplanation>
+    <alertExplanationCritical>The hunting party from {0} could arrive at any moment. Prepare for battle.</alertExplanationCritical>
+    <modExtensions>
+      <li Class="DMS.ModExtension_FleetTracking" />
+    </modExtensions>
+  </Fortified.HuntdownDef>
+
+</Defs>

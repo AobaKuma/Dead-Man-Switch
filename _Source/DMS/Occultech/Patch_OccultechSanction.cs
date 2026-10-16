@@ -39,6 +39,17 @@ namespace DMS
             {
                 Log.Error($"[DMS] Research quest hook failed for {proj.defName}: {ex}");
             }
+            // 脫序者交付、等前置完成的封存檔案。排在最後：這項研究的信件與制裁先發完，解譯信件才接在後面。
+            // Sealed files the deviant handed over that were waiting on prerequisites. Last, so their decode letters follow
+            // this project's own letters and sanction.
+            try
+            {
+                DeviantTechUtility.Notify_ProjectFinished(proj);
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"[DMS] Deviant pending-grant hook failed for {proj.defName}: {ex}");
+            }
         }
     }
 
@@ -46,6 +57,7 @@ namespace DMS
     /// 封鎖對殖民艦隊的正向好感度變動。
     ///
     /// - 永久敵對（隱匿級）：一律擋下，只能靠軍事法庭解除。
+    /// - 庇護被追殺的脫序者（脫序者接納任務）：同樣擋下，直到脫序者不在或受審結案。
     /// - 持有未放棄的封存級技術：好感度已達盟友門檻下緣時擋下，讓關係停在中立。
     ///
     /// 制裁機制自己改關係時會先設 <see cref="OccultechSanctionUtility.GuardSuppressed"/>，不受此限。
@@ -70,7 +82,8 @@ namespace DMS
             {
                 return;
             }
-            if (comp.PermanentHostile && !OccultechSanctionUtility.CourtMartialOngoing)
+            // 隱匿級永久敵對，或正庇護著被追殺的脫序者。Occulted kill order, or a hunted deviant being sheltered.
+            if (OccultechSanctionUtility.HostilityLocked)
             {
                 __result = false;
                 return;
@@ -110,7 +123,7 @@ namespace DMS
             {
                 return;
             }
-            if (comp.PermanentHostile && !OccultechSanctionUtility.CourtMartialOngoing)
+            if (OccultechSanctionUtility.HostilityLocked)
             {
                 __instance.kind = FactionRelationKind.Hostile;
                 return;
@@ -152,6 +165,11 @@ namespace DMS
                 {
                     // 永久敵對期間艦隊根本不受理申報：出路只有軍事法庭。
                     opt.Disable("DMS_Occultech_RenounceBlockedPermanent".Translate());
+                }
+                else if (DeviantHuntUtility.HarboredDeviant != null)
+                {
+                    // 正庇護著被追殺的脫序者時同樣不受理。Nor while a hunted deviant is being sheltered.
+                    opt.Disable("DMS_Occultech_RenounceBlockedDeviant".Translate());
                 }
                 else
                 {
