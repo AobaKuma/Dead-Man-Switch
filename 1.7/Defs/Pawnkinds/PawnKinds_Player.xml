@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnKindDef Name="DMS_PlayerPawnBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>DMS_Colony</defaultFactionType>
+    <chemicalAddictionChance>0</chemicalAddictionChance>
+    <backstoryCryptosleepCommonality>0.95</backstoryCryptosleepCommonality>
+    <gearHealthRange>1</gearHealthRange>
+    <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+    <invNutrition>0</invNutrition>
+    <combatPower>30</combatPower>
+    <isFighter>false</isFighter>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <apparelIgnorePollution MayRequire="Ludeon.RimWorld.Biotech">true</apparelIgnorePollution>
+    <forceNormalGearQuality>true</forceNormalGearQuality>
+    <initialWillRange>0</initialWillRange>
+    <initialResistanceRange>0~1</initialResistanceRange>
+    <humanPregnancyChance>0.05</humanPregnancyChance>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+    <backstoryCategories>
+      <li>DMSCommon</li>
+      <li>FleetChild</li>
+    </backstoryCategories>
+    <!--<titleRequired MayRequire="Ludeon.RimWorld.Royalty">DMS_Reservist</titleRequired>-->
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMS_PlayerPawnBase">
+    <defName>DMS_PlayerColonist</defName>
+    <label>colonist</label>
+    <apparelMoney>350~600</apparelMoney>
+    <apparelRequired>
+      <li>DMS_Apparel_UnitSuit</li>
+    </apparelRequired>
+    <techHediffsChance>0.03</techHediffsChance>
+    <techHediffsMoney>150~900</techHediffsMoney>
+    <techHediffsTags>
+      <li>Simple</li>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+    <techHediffsDisallowTags>
+      <li>PainCauser</li>
+    </techHediffsDisallowTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMS_PlayerPawnBase">
+    <defName>DMS_Mechanitor</defName>
+    <label>mechanitor</label>
+    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
+    <backstoryCategories>
+      <li>Mili_Standard</li>
+      <li>Mili_Expert</li>
+    </backstoryCategories>
+    <apparelMoney>1000~4000</apparelMoney>
+    <titleRequired MayRequire="Ludeon.RimWorld.Royalty">DMS_WarrantOfficer</titleRequired>
+    <apparelTags>
+      <li>DMS_Tactical</li>
+      <li>DMS_TacticalArray</li>
+    </apparelTags>
+    <apparelRequired>
+      <li>DMS_Apparel_TacticalVest</li>
+      <li>DMS_Apparel_PowerSkeleton</li>
+      <li>DMS_Apparel_BionicSuit</li>
+    </apparelRequired>
+    <weaponMoney>900~1200</weaponMoney>
+    <weaponTags>
+      <li>A_PDW</li>
+    </weaponTags>
+    <forceWeaponQuality>Masterwork</forceWeaponQuality>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+    <techHediffsTags>
+      <li>DMS_BM_Bionic</li>
+      <li>Advanced</li>
+      <li>AdvancedWeapon</li>
+    </techHediffsTags>
+    <techHediffsRequired>
+      <li>Painstopper</li>
+      <li>DMS_ProstheticEye</li>
+      <li>DMS_SyntheticLeg</li>
+    </techHediffsRequired>
+    <biocodeWeaponChance>1</biocodeWeaponChance>
+    <combatEnhancingDrugsChance>0.5</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>1~2</combatEnhancingDrugsCount>
+    <requiredWorkTags>
+      <li>Intellectual</li>
+      <li>Crafting</li>
+      <li>Shooting</li>
+    </requiredWorkTags>
+    <disallowedTraits>
+      <li>BodyPurist</li>
+    </disallowedTraits>
+    <disallowedTraitsWithDegree>
+      <PsychicSensitivity>-1</PsychicSensitivity>
+      <PsychicSensitivity>-2</PsychicSensitivity>
+    </disallowedTraitsWithDegree>
+    <modExtensions>
+      <li Class="Fortified.DefaultTilteFactionExtension">
+        <faction>DMS_Army</faction>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  
+</Defs>

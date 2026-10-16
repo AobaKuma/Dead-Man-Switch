@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 古代機兵（AncientCorps）聯動：古機單位的培育配方。
+       磨坊掛在 I 級封存檔案「駐屯兵器」底下（同鬥牛犬，只要駐屯兵器）；
+       其餘五種掛在 II 級「主戰規格」底下，並保留重量級基底原本的細分科技：
+       researchPrerequisite 沿用基底（重型 DMS_BattleFrame、超重型 DMS_HeavyAutomatroid），主戰規格放在 researchPrerequisites。
+       只在 AncientCorps 啟用時載入（LoadFolders.xml → 1.7/Mod/DMSAC）。
+       重型走小型培育艙、超重型走大型培育艙；培育時取該種族的第一個 PawnKind（基本型號），
+       武器照 PawnKind 的 weaponTags 生成，跟其他 DMS 機兵一樣。
+       海盜改裝的籬笆（DMS_Mech_Zabor_Pirate）不開放。復活清單由 AncientCorps 自己的 Additional_Resurrect.xml 處理。
+       AncientCorps integration: gestation recipes for the ancient corps units.
+       The Molot sits under the class I sealed file "garrison arsenal" (like the bullhound, garrison arsenal only);
+       the other five sit under the class II "main battle specification" and keep their weight-class base's tier tech:
+       researchPrerequisite stays the base's (heavy DMS_BattleFrame, ultra-heavy DMS_HeavyAutomatroid) and the main battle
+       file goes in researchPrerequisites.
+       Only loaded when AncientCorps is active (LoadFolders.xml → 1.7/Mod/DMSAC).
+       Heavy units use the small gestator, ultra-heavies the large one. Gestation takes the race's first PawnKind
+       (the base pattern) and arms it from that kind's weaponTags, like every other DMS mech.
+       The pirate-modified Zabor (DMS_Mech_Zabor_Pirate) stays unbuildable. AncientCorps' own Additional_Resurrect.xml
+       already covers resurrection. -->
+  <RecipeDef Name="DMSAC_HeavyRecipeBase" ParentName="DMS_HeavyMechanoidRecipe" Abstract="True">
+    <researchPrerequisites>
+      <li>DMS_Occultech_MainBattle</li>
+    </researchPrerequisites>
+    <gestationCycles>3</gestationCycles>
+  </RecipeDef>
+
+  <RecipeDef Name="DMSAC_UltraHeavyRecipeBase" ParentName="DMS_SuperHeavyMechanoidRecipe" Abstract="True">
+    <researchPrerequisites>
+      <li>DMS_Occultech_MainBattle</li>
+    </researchPrerequisites>
+    <gestationCycles>6</gestationCycles>
+  </RecipeDef>
+
+  <!-- BR-3 磨坊 / BR-3 Molot：駐屯兵器 / garrison arsenal -->
+  <RecipeDef ParentName="DMS_HeavyMechanoidRecipe">
+    <defName>DMSAC_Make_Molot</defName>
+    <label>Gestate BR-3 "Molot"</label>
+    <description>Gestate a BR-3 "Molot", the infantry combat platform of the ancient corps. Its production pattern survives among the garrison arsenal files.</description>
+    <researchPrerequisite>DMS_Occultech_RemnantPatterns</researchPrerequisite>
+    <gestationCycles>3</gestationCycles>
+    <products>
+      <DMS_Mech_Molot>1</DMS_Mech_Molot>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Molot</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- SR-4/2B9 花圃 / SR-4/2B9 Tsvetnik -->
+  <RecipeDef ParentName="DMSAC_HeavyRecipeBase">
+    <defName>DMSAC_Make_Tsvetnik</defName>
+    <label>Gestate SR-4/2B9 "Tsvetnik"</label>
+    <description>Gestate an SR-4/2B9 "Tsvetnik", the mortar carrier of the ancient corps. Its production pattern was drawn up under the same main battle specification as the gravekeeper.</description>
+    <products>
+      <DMS_Mech_Tsvetnik>1</DMS_Mech_Tsvetnik>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Tsvetnik</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>220</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- BR-4U 籬笆 / BR-4U Zabor -->
+  <RecipeDef ParentName="DMSAC_HeavyRecipeBase">
+    <defName>DMSAC_Make_Zabor</defName>
+    <label>Gestate BR-4U "Zabor"</label>
+    <description>Gestate a BR-4U "Zabor", the ancient corps' mechanical infantry with extra frontal armor. Its production pattern was drawn up under the same main battle specification as the gravekeeper.</description>
+    <gestationCycles>4</gestationCycles>
+    <products>
+      <DMS_Mech_Zabor>1</DMS_Mech_Zabor>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Zabor</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>250</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>80</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- BR-4 城邦 / BR-4 Gorod -->
+  <RecipeDef ParentName="DMSAC_HeavyRecipeBase">
+    <defName>DMSAC_Make_Gorod</defName>
+    <label>Gestate BR-4 "Gorod"</label>
+    <description>Gestate a BR-4 "Gorod", the heavily armored mechanical infantry of the ancient corps. Its production pattern was drawn up under the same main battle specification as the gravekeeper.</description>
+    <gestationCycles>4</gestationCycles>
+    <products>
+      <DMS_Mech_Gorod>1</DMS_Mech_Gorod>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Gorod</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>300</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- BR-6 稜堡 / BR-6 Krepost -->
+  <RecipeDef ParentName="DMSAC_UltraHeavyRecipeBase">
+    <defName>DMSAC_Make_Krepost</defName>
+    <label>Gestate BR-6 "Krepost"</label>
+    <description>Gestate a BR-6 "Krepost", the huge walker the ancient corps fielded as a bridgehead and mobile battery. Its production pattern was drawn up under the same main battle specification as the gravekeeper.</description>
+    <products>
+      <DMS_Mech_Krepost>1</DMS_Mech_Krepost>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>ComponentFireControl</ThingDef>
+      <ThingDef>DMS_Mech_Krepost</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>300</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>180</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentFireControl</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- 2S95 真理 / 2S95 Pravda -->
+  <RecipeDef ParentName="DMSAC_UltraHeavyRecipeBase">
+    <defName>DMSAC_Make_Pravda</defName>
+    <label>Gestate 2S95 "Pravda"</label>
+    <description>Gestate a 2S95 "Pravda", the all-terrain assault gun the ancient corps built to shell fortifications from long range. Its production pattern was drawn up under the same main battle specification as the gravekeeper.</description>
+    <products>
+      <DMS_Mech_Pravda>1</DMS_Mech_Pravda>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>ComponentFireControl</ThingDef>
+      <ThingDef>DMS_Mech_Pravda</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>350</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>160</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentFireControl</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+</Defs>

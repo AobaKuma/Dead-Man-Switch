@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    情境音樂的 transition（見 Plans/DMS_Music_Transitions_實作計畫.md 3.1、第 6 節）。
+    - 全部使用 DMS.MusicTransition_DMS：所屬狀態取自 sequence 上的 ModExtension_DMSMusicSequence，
+      只在 GameComponent_DMSMusic 選出該狀態時成立。
+    - 不設 dangerRequirement（原版危險旗標是全域的）。
+    - 只有封鎖倒數設 overridesInterruptions：刻意切斷 OrbitalCombat、HorrorMonolithAdvanced、HorrorCombat；
+      優先值 280 仍低於 CorpseAttack（600）與 MetalHell（999）。
+
+    Situational-music transitions (see Plans/DMS_Music_Transitions_實作計畫.md 3.1 and section 6).
+    - All use DMS.MusicTransition_DMS: the state comes from the sequence's ModExtension_DMSMusicSequence, and the
+      transition holds only while GameComponent_DMSMusic picks that state.
+    - No dangerRequirement (vanilla's danger flag is global).
+    - Only the lockdown countdown sets overridesInterruptions: it deliberately cuts OrbitalCombat,
+      HorrorMonolithAdvanced and HorrorCombat; priority 280 stays below CorpseAttack (600) and MetalHell (999).
+  -->
+
+  <MusicTransitionDef>
+    <defName>DMS_InstallationExplore</defName>
+    <workerType>DMS.MusicTransition_DMS</workerType>
+    <sequence>DMS_InstallationExplore</sequence>
+    <priority>110</priority>
+  </MusicTransitionDef>
+
+  <MusicTransitionDef>
+    <defName>DMS_FacilityExplore</defName>
+    <workerType>DMS.MusicTransition_DMS</workerType>
+    <sequence>DMS_FacilityExplore</sequence>
+    <priority>120</priority>
+  </MusicTransitionDef>
+
+  <MusicTransitionDef>
+    <defName>DMS_Aftermath</defName>
+    <workerType>DMS.MusicTransition_DMS</workerType>
+    <sequence>DMS_Aftermath</sequence>
+    <priority>140</priority>
+  </MusicTransitionDef>
+
+  <MusicTransitionDef>
+    <defName>DMS_SecurityAlert</defName>
+    <workerType>DMS.MusicTransition_DMS</workerType>
+    <sequence>DMS_SecurityAlert</sequence>
+    <priority>160</priority>
+  </MusicTransitionDef>
+
+  <MusicTransitionDef>
+    <defName>DMS_FacilityTrapped</defName>
+    <workerType>DMS.MusicTransition_DMS</workerType>
+    <sequence>DMS_FacilityTrapped</sequence>
+    <priority>180</priority>
+  </MusicTransitionDef>
+
+  <MusicTransitionDef>
+    <defName>DMS_InstallationCombat</defName>
+    <workerType>DMS.MusicTransition_DMS</workerType>
+    <sequence>DMS_InstallationCombat</sequence>
+    <priority>220</priority>
+  </MusicTransitionDef>
+
+  <MusicTransitionDef>
+    <defName>DMS_BossCombat</defName>
+    <workerType>DMS.MusicTransition_DMS</workerType>
+    <sequence>DMS_BossCombat</sequence>
+    <priority>240</priority>
+  </MusicTransitionDef>
+
+  <MusicTransitionDef>
+    <defName>DMS_LockdownCountdown</defName>
+    <workerType>DMS.MusicTransition_DMS</workerType>
+    <sequence>DMS_LockdownCountdown</sequence>
+    <priority>280</priority>
+    <overridesInterruptions>true</overridesInterruptions>
+  </MusicTransitionDef>
+
+</Defs>

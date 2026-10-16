@@ -1,0 +1,193 @@
+using RimWorld;
+using UnityEngine;
+using Verse;
+
+namespace DMS
+{
+    /// <summary>
+    /// 休戰與外交結算:
+    /// - 啟用(接受任務)時:艦隊→中立(好感度歸零)。
+    /// - 期間監控:若關係再度轉為敵對(玩家挑釁),發出 outSignalTruceBroken。
+    /// - 收到 inSignalSuccess(被告歸還):按被告社交/交談能力擲盟友判定,
+    ///   成功→盟友(好感度 allyGoodwill),失敗→維持中立;發出結案信件。
+    /// - 收到 inSignalFail(背叛/被告死亡/休戰破裂):恢復敵對,發出信件。
+    /// </summary>
+    public class QuestPart_CourtTruce : QuestPartActivable
+    {
+        public Faction faction;
+        public Pawn defendant;
+        public string inSignalSuccess;
+        public string inSignalAcquitted;   // 無罪釋放:不擲骰,直接盟友
+        public string inSignalFail;
+        public string outSignalTruceBroken;
+
+        public float baseAllyChance = 0.15f;
+        public float allyChancePerSocialLevel = 0.03f;
+        public int allyGoodwill = 75;
+
+        /// <summary>
+        /// 這是否為封存科技隱匿級的永久敵對審判。為 true 時:服刑期滿歸還即解除永久敵對並回到
+        /// 中立,且無論擲骰結果都不會升為盟友(見 OccultechSanctionUtility.EndPermanentHostility)。
+        /// </summary>
+        public bool occultechTrial;
+
+        private bool resolved;
+
+        private const int CheckIntervalTicks = 250;
+
+        protected override void Enable(SignalArgs receivedArgs)
+        {
+            base.Enable(receivedArgs);
+            // 任務此刻才轉為 Ongoing：先讓關係守衛看到審判開始，再談休戰。
+            // The quest has only just become Ongoing: let the relation guards see the trial before the truce is set.
+            OccultechSanctionUtility.InvalidateCourtCache();
+            SetGoodwillAndRelation(0, FactionRelationKind.Neutral);
+        }
+
+        // Publicizer 把原版的 protected 開成 public，覆寫必須跟著 public。Publicizer opens it up, so the override is public too.
+        public override void Complete(SignalArgs signalArgs)
+        {
+            base.Complete(signalArgs);
+            OccultechSanctionUtility.InvalidateCourtCache();
+        }
+
+        public override void QuestPartTick()
+        {
+            base.QuestPartTick();
+            if (resolved || faction == null) return;
+            if (Find.TickManager.TicksGame % CheckIntervalTicks != 0) return;
+            if (faction.RelationKindWith(Faction.OfPlayer) == FactionRelationKind.Hostile)
+            {
+                // 玩家在休戰期間再次挑起敵對
+                Find.SignalManager.SendSignal(new Signal(outSignalTruceBroken));
+            }
+        }
+
+        public override void Notify_QuestSignalReceived(Signal signal)
+        {
+            base.Notify_QuestSignalReceived(signal);
+            if (resolved) return;
+
+            if (inSignalAcquitted != null && signal.tag == inSignalAcquitted)
+            {
+                // 無罪釋放:直接盟友(信件由宣判 part 發出)。封存科技制裁下不得升為盟友。
+                resolved = true;
+                ResolveOccultech();
+                ResolveBoundHuntdowns();
+                SetGoodwillAndRelation(
+                    AllyBlocked ? 0 : allyGoodwill,
+                    AllyBlocked ? FactionRelationKind.Neutral : FactionRelationKind.Ally);
+                Complete();
+                return;
+            }
+            if (signal.tag == inSignalSuccess)
+            {
+                resolved = true;
+                ResolveOccultech();
+                ResolveBoundHuntdowns();
+                bool ally = !AllyBlocked && Rand.Chance(AllyChance);
+                if (ally)
+                    SetGoodwillAndRelation(allyGoodwill, FactionRelationKind.Ally);
+                else
+                    SetGoodwillAndRelation(0, FactionRelationKind.Neutral);
+
+                Find.LetterStack.ReceiveLetter(
+                    SupplyChainText.Resolve(CourtMartialText.Pack,
+                        ally ? "returnAllyLetterLabel" : "returnNeutralLetterLabel", LetterVars()),
+                    SupplyChainText.Resolve(CourtMartialText.Pack,
+                        ally ? "returnAllyLetterText" : "returnNeutralLetterText", LetterVars()),
+                    ally ? LetterDefOf.PositiveEvent : LetterDefOf.NeutralEvent,
+                    defendant, faction, quest);
+                Complete();
+            }
+            else if (signal.tag == inSignalFail)
+            {
+                resolved = true;
+                SetGoodwillAndRelation(-100, FactionRelationKind.Hostile);
+                Find.LetterStack.ReceiveLetter(
+                    SupplyChainText.Resolve(CourtMartialText.Pack, "betrayLetterLabel", LetterVars()),
+                    SupplyChainText.Resolve(CourtMartialText.Pack, "betrayLetterText", LetterVars()),
+                    LetterDefOf.NegativeEvent, null, faction, quest);
+                Complete();
+            }
+        }
+
+        /// <summary>
+        /// 封存科技制裁是否擋下盟友結局:隱匿級審判本身只能回到中立,持有未放棄的封存級技術
+        /// 時也一樣(必須先向艦隊申報放棄)。宣判 part 用它挑無罪信件的文本。
+        /// </summary>
+        public bool AllyBlocked => occultechTrial || OccultechSanctionUtility.IsAllyLocked;
+
+        /// <summary>隱匿級審判服刑期滿:解除永久敵對。必須在調整好感度之前執行。</summary>
+        private void ResolveOccultech()
+        {
+            if (occultechTrial)
+            {
+                OccultechSanctionUtility.EndPermanentHostility();
+            }
+        }
+
+        /// <summary>
+        /// 被告若是某個追緝綁定的角色（例如叛逃者開局的主角），審判結案即撤銷該追緝。
+        /// 休戰破裂或被告死亡時不會走到這裡，追緝照常繼續。
+        /// If the defendant is the pawn a huntdown is bound to (e.g. the Deviant start's lead), the concluded trial
+        /// ends that huntdown. A broken truce or a dead defendant never gets here, so the hunt carries on.
+        /// </summary>
+        private void ResolveBoundHuntdowns()
+        {
+            if (defendant == null) return;
+            if (Fortified.HuntdownUtility.StopAllBoundTo(defendant) > 0)
+            {
+                Messages.Message("DMS_CourtMartial_HuntdownEnded".Translate(defendant.Named("DEFENDANT")),
+                    defendant, MessageTypeDefOf.PositiveEvent);
+            }
+        }
+
+        public float AllyChance
+        {
+            get
+            {
+                if (defendant == null || defendant.Dead) return 0f;
+                int social = defendant.skills?.GetSkill(SkillDefOf.Social)?.Level ?? 0;
+                float talking = defendant.health?.capacities?.GetLevel(PawnCapacityDefOf.Talking) ?? 0f;
+                return Mathf.Clamp01((baseAllyChance + allyChancePerSocialLevel * social) * talking);
+            }
+        }
+
+        private string[] LetterVars()
+        {
+            return new[]
+            {
+                "defendantName", defendant?.LabelShort ?? "?",
+                "issuerFactionName", faction?.Name ?? "?",
+            };
+        }
+
+        private void SetGoodwillAndRelation(int targetGoodwill, FactionRelationKind kind)
+        {
+            if (faction == null) return;
+            // 繞過封存科技的關係守衛:軍事法庭本來就是制裁機制認可的出路,
+            // 否則休戰協議會被自己的永久敵對封鎖打回去。
+            // 直接設定確切值:TryAffectGoodwillWith 會溢出、可能被拒絕,見 Fortified.FactionRelationUtility。
+            // Set the exact value: TryAffectGoodwillWith overshoots and can be refused, see Fortified.FactionRelationUtility.
+            OccultechSanctionUtility.WithGuardSuppressed(() =>
+                Fortified.FactionRelationUtility.SetGoodwillAndKind(faction, targetGoodwill, kind));
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_References.Look(ref faction, "faction");
+            Scribe_References.Look(ref defendant, "defendant");
+            Scribe_Values.Look(ref inSignalSuccess, "inSignalSuccess");
+            Scribe_Values.Look(ref inSignalAcquitted, "inSignalAcquitted");
+            Scribe_Values.Look(ref inSignalFail, "inSignalFail");
+            Scribe_Values.Look(ref outSignalTruceBroken, "outSignalTruceBroken");
+            Scribe_Values.Look(ref baseAllyChance, "baseAllyChance", 0.15f);
+            Scribe_Values.Look(ref allyChancePerSocialLevel, "allyChancePerSocialLevel", 0.03f);
+            Scribe_Values.Look(ref allyGoodwill, "allyGoodwill", 75);
+            Scribe_Values.Look(ref occultechTrial, "occultechTrial");
+            Scribe_Values.Look(ref resolved, "resolved");
+        }
+    }
+}

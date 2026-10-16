@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: zero-point generator core -->
+  <DMS_ZeroPointGenerator.label>零点能发生器核心</DMS_ZeroPointGenerator.label>
+  <DMS_ZeroPointGenerator.description>一种通过可控释放反粒子能量来在现实宇宙中凿出孔隙的复杂装置，能够从外部的量子起伏中汲取用之不尽的能量并将其聚合为固态的能量块来方便储存与二次加工。\n\n由于边缘世界普遍缺乏反粒子生产技术，因此大部分时候需要依赖于使用现成的反粒子弹头来作为装置运转的激发催化剂。\n\n通电运转时，每装填一枚反粒子弹头作为催化剂可产出 25 个固态零点能，每 2.4 天一个。一枚弹头约可让核心运转一年。</DMS_ZeroPointGenerator.description>
+  <DMS_ZeroPointGenerator.comps.CompRefuelable.fuelLabel>反粒子催化剂</DMS_ZeroPointGenerator.comps.CompRefuelable.fuelLabel>
+  <DMS_ZeroPointGenerator.comps.CompRefuelable.fuelGizmoLabel>反粒子催化剂</DMS_ZeroPointGenerator.comps.CompRefuelable.fuelGizmoLabel>
+
+  <!-- EN: zero-point reactor -->
+  <DMS_ZeroPointReactor.label>零点能反应堆</DMS_ZeroPointReactor.label>
+  <DMS_ZeroPointReactor.description>一种以可控的连锁反应逐步拆解固态零点能的约束场，并将释放出的能量转换为电力的发电机。大多数人类技术都无法触及封存在能量块内部的能量，这座反应堆是少数的例外。\n\n反应堆一次装入一块，一块就能让它全功率运转整整一年。弹匣最多可存放五块。</DMS_ZeroPointReactor.description>
+  <DMS_ZeroPointReactor.comps.CompRefuelable.fuelLabel>固态零点能</DMS_ZeroPointReactor.comps.CompRefuelable.fuelLabel>
+  <DMS_ZeroPointReactor.comps.CompRefuelable.fuelGizmoLabel>固态零点能</DMS_ZeroPointReactor.comps.CompRefuelable.fuelGizmoLabel>
+
+  <!-- EN: reality anchor -->
+  <DMS_Anchor.label>现实稳定锚</DMS_Anchor.label>
+  <DMS_Anchor.description>一种通过反制技术干涉周围空间不受超凡力量影响的稳定装置。对于普通人来说就是一个无害的装饰，但对于灵能者以及超凡造物来说会因为难以建立维度外的连接而无法展现出其应有的超凡性质。\n\n通电时会在周围维持一片稳定场。场内任何生物的能力与身体极限都无法超过常人的 120%，无法施放灵能，隐形也会失效。异象实体与变异体会受到压制：行动迟缓、力量削弱，也更容易收容。稳定场不分敌我。</DMS_Anchor.description>
+
+</LanguageData>

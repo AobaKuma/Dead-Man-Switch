@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ============================================================= -->
+  <!-- 量子位元破譯：封存檔案 II 級 · 石碑解碼器                        -->
+  <!-- 解鎖解碼器（DMS_OccultechExtractor）。完成時由                   -->
+  <!-- DMS.ModExtension_ResearchQuest 派發石碑任務線（DMS_Stele），     -->
+  <!-- 研究完成前石碑任務線不會出現。石碑本體放在 FFF_DevCategory，     -->
+  <!-- 玩家只能從任務線取得。                                           -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_QubitDecryption</defName>
+    <label>qubit decryption</label>
+    <description>A decoding technique that bypasses a stele's own verification layer and reads its data by directly measuring the quantum state held at each lattice site of its holographic storage plates. The stele's encryption rests on the assumption that no one outside the fleets can observe those quantum states without collapsing them; this technique simply chooses to accept the collapse. Every reading permanently destroys the region it reads. What is recovered can be archived for research, and what is lost can never be restored.\nThe technique was leaked by fleet deviants. Steles are the backup memory of every colonial world, and every stele scanned this way is a record that no one will ever be able to read again.\n\nApproved by ████ and ███, qubit decryption and its related technologies are designated class II sealed technology. Disclosure of such technology is prohibited, and any decoding equipment discovered is to be destroyed on site.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Sealed</knowledgeCategory>
+    <knowledgeCost>1000</knowledgeCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file II: qubit decryption</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology. It contains a stele decryption technique leaked by fleet deviants.\n\nThe decoder can now be built. Set flush against a stele and supplied with power, it can extract the occultech knowledge stored in the stele.\n\nWith this method in hand, the colony can also trace the occultech glyphs scattered across this world. Recovering the glyphs will lead to a stele.\n\nThe fleets sealed this file to keep the data in the steles out of anyone else's hands. Every stele read this way is a permanent loss to the fleets.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_OccultechExtractor</ThingDef>
+      <ThingDef>DMS_OccultTechFont</ThingDef>
+    </descriptionHyperlinks>
+    <modExtensions>
+      <li Class="DMS.ModExtension_ResearchQuest">
+        <quest>DMS_Stele</quest>
+      </li>
+    </modExtensions>
+  </ResearchProjectDef>
+
+  <!-- ============================================================= -->
+  <!-- 重型仿生服：封存檔案 I 級 · 密閉突擊外骨骼                       -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_BionicSuitHeavy</defName>
+    <label>enclosed assault frame</label>
+    <description>A load-bearing frame anchored directly into the pilot's skeleton, driven by artificial muscle bundles that only draw at full closure. It allows a single soldier to carry and operate armament far beyond their own muscular limit. Because closure is a precondition of output, the device cannot be released by any conventional means once sealed, and separation of the pilot must be performed surgically.\nThis inability to self-release classifies the device, under the laws of war, as restraining equipment upon its own pilot. The positive applications of its skeletal anchoring and load-transfer principles to prosthetic rehabilitation are nonetheless equally present.\n\nApproved by ███████ and ███, the enclosed assault frame and its related technologies are designated class I sealed technology. Sale of such technology to developing worlds is prohibited, and its related technologies are to be progressively declassified once a colonial world's society attains class I standard.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Restricted</knowledgeCategory>
+    <knowledgeCost>750</knowledgeCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <prerequisites>
+      <li>DMS_Artifuscle</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file I: enclosed assault frame</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology.\n\nThe heavy bionic suit can now be assembled at an artifuscle chamber. It lets its pilot carry and operate heavy weapons no ordinary soldier could handle.\n\nIt only works fully closed. Once a pilot is sealed in, it cannot be taken off by normal means and can only be stripped away destructively through surgery.\n\nThe fleets shelved this technology for a reason.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Apparel_BionicSuitHeavy</ThingDef>
+      <RecipeDef>DMS_RemoveBionicSuitHeavy</RecipeDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
+  <!-- ============================================================= -->
+  <!-- 集群司令：封存檔案 I 級 · 設施級機兵指揮主機              -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_GestaltEngine</defName>
+    <label>cluster command</label>
+    <description>A facility-scale computer assembled from arrays of microelectronic chips and the power system that drives them. Even a bare mainframe with no attached subsystems commands and coordinates mechs as capably as a human mechanitor. Technology of this kind was already in wide use in humanity's wars against itself long before it reached the stars, and after the expansion it was deployed in bulk on interstellar terraforming programs, bringing countless barren worlds to life.\n\nApproved by ████ and ██, cluster command and its related technologies are designated class I sealed technology. Provision of such technology to developing worlds is prohibited, and outside emergency war mobilization, standing ground-force deployments are to avoid employing it in any military operation.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Restricted</knowledgeCategory>
+    <knowledgeCost>750</knowledgeCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>4.00</researchViewY>
+    <prerequisites>
+      <li>DMS_Mechlink</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file I: cluster command</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the technical architecture of a cluster command mainframe.\n\nThe central command core can now be built. A single mainframe commands automatroids without a mechanitor, supplying its own control bandwidth and command groups.\n\nBecause the convention caps the personnel that may be committed to a colonial program, the fleets keep this file sealed from standing armies and open it only for emergency mobilization.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_GestaltEngine</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
+  <!-- ============================================================= -->
+  <!-- 合成生物學：封存檔案 I 級 · 工程菌株有機合成                     -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_Biosynthesis</defName>
+    <label>synthetic biology</label>
+    <description>Cultured strains built from the ground up, engineered to reassemble simple nutrients and mineral feedstock into complex organic macromolecules. They synthesize neutroamine, edible artiprotein and comparable organic polymers at far higher efficiency than any conventional process, and require neither fields nor livestock to do it.\n\nApproved by █████ and ███, synthetic biology and its related technologies are designated class I sealed technology. Provision of such technology to developing worlds is prohibited, and derived biosynthesis lines are to be operated only within orbital installations and fleet supply nodes.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Restricted</knowledgeCategory>
+    <knowledgeCost>750</knowledgeCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>5.00</researchViewY>
+    <prerequisites>
+      <li>DMS_Artifuscle</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file I: synthetic biology</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology. It contains the gene maps and metabolic pathways of a set of engineered culture strains.\n\nArtiprotein can now be refined from crops in a reaction chamber, and neutroamine synthesized from meat and chemfuel. The artifuscle chamber can also grow artificial muscle from artiprotein and tungsteel, with no gold or neutroamine required.\n\nThe fleets did not seal this file over weapons. The large-scale spread of synthesis technology would very likely leave the industries it touches with severe structural unemployment for a long time to come.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Artiprotein</ThingDef>
+      <ThingDef>Artifuscle</ThingDef>
+      <ThingDef>Neutroamine</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
+  <!-- ============================================================= -->
+  <!-- 次聲波基礎：封存檔案 I 級 · 次聲波與震波技術                     -->
+  <!-- 前置為原版微電子基礎（MicroelectronicsBasics）。                  -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_Subsonic</defName>
+    <label>infrasonics</label>
+    <description>A tuned infrasound device is enough to inflict severe, irreversible damage on the sensory systems of the living things around it, along with pain intense enough to cause shock. The development of infrasonic weapons has therefore been prohibited under the laws of war. The positive applications of infrasonic technology to medicine and geological survey are nonetheless equally present.\n\nApproved by ████ and ██, infrasonics and its related technologies are designated class I sealed technology. Sale of such technology to developing worlds is prohibited, and its related technologies are to be progressively declassified once a colonial world's society attains class I standard.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Restricted</knowledgeCategory>
+    <knowledgeCost>750</knowledgeCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>6.00</researchViewY>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file I: infrasonics</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the design principles of tuned infrasound emitters and seismic survey charges.\n\nFour devices can now be produced: an infrasonic module that gives a mech an area panic ability, an infrasonic emitter tower that periodically drives off nearby enemies, infrasonic grenades that reach every living thing in their radius regardless of walls, and a blast scanner that maps deep ore with a mortar-driven shockwave.\n\nThe blast scanner's shockwave carries far into the ground. Whatever sleeps down there will hear it too.\n\nThe fleets sealed this file because of what these devices do to people. Fielding them openly will be noted.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_SubsonicModule</ThingDef>
+      <ThingDef>DMS_Building_SubsonicEmitter</ThingDef>
+      <ThingDef>DMS_Weapon_GrenadeSubsonic</ThingDef>
+      <ThingDef>DMS_Building_BlastScanner</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
+  <!-- ============================================================= -->
+  <!-- 駐屯兵器：封存檔案 I 級 · 鬥牛犬與伯勞鳥的生產型號、FPV 無人機母巢 -->
+  <!-- 前置為常規樹的先進控制（DMS_AdvancedControl），即伯勞鳥原本的門檻。 -->
+  <!-- 培養配方在 Biotech/Defs/DMS_Recipes_MechGestator_{BullHound,Lanius}.xml。 -->
+  <!-- 母巢（DMS_FPVNest）在 NewContent/Defs/Things_Building/DMS_FPVNest.xml。 -->
+  <!-- 古代機兵（AncientCorps）啟用時，Mod/DMSAC 另掛上佐羅賓槍系與磨坊。  -->
+  <!-- 本專案是 II 級「主戰規格」的前置。                                -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_RemnantPatterns</defName>
+    <label>garrison arsenal</label>
+    <description>A line of self-supervising sentry weapons built for long-term garrison duty: a quadruped garrison mech for installation security, a large drone platform that flies cover for unmanned mother-drones, and an automated nest that launches FPV suicide drones at intruders. All three were designed specifically for pioneer colonization operations, which needed defenses able to hold a world alone for decades before the fleet arrived, so all three carry fallback directives in their control cores that keep them executing their last standing order until the chassis fails.\nUnder the laws of war, weapons that outlast the conflict they were deployed for are classed alongside minefields. The remnants still guarding this world's beacons and installations are what these patterns become once their makers are gone.\n\nApproved by ████ and ███, the garrison arsenal and its related technologies are designated class I sealed technology. Sale of such technology to developing worlds is prohibited, and its related technologies are to be progressively declassified once a colonial world's society attains class I standard.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Restricted</knowledgeCategory>
+    <knowledgeCost>750</knowledgeCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>7.00</researchViewY>
+    <prerequisites>
+      <li>DMS_AdvancedControl</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file I: garrison arsenal</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the production patterns of two remnant mechs and of the drone hive that garrisoned alongside them.\n\nThe bullhound, its flamer pattern the hellhound, and the Lanius can now be gestated at an automatroid constructor. Gestated units answer to their mechanitor like any other mech, with no limit on their operating range.\n\nThe FPV drone hive can now be built. Keep it loaded with steel and it will assemble and launch wildfowl suicide drones.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_BullHound</ThingDef>
+      <ThingDef>DMS_Mech_BullHound_Flamer</ThingDef>
+      <ThingDef>DMS_Mech_Lanius</ThingDef>
+      <ThingDef>DMS_FPVNest</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
+  <!-- ============================================================= -->
+  <!-- 水壓裂解：封存檔案 I 級 · 自動深鑽機                             -->
+  <!-- 前置為原版深鑽機（DeepDrilling）與 Biotech 的污染性發電            -->
+  <!-- （ToxifierGenerator）。佔用量子位元破譯升級後空出的 (1, 2)。       -->
+  <!-- 解鎖 Things_Building/DMS_Occultech.xml 的水壓裂解採礦機。        -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_HydraulicFracturing</defName>
+    <label>hydraulic fracturing</label>
+    <description>Ultra-high-pressure fluid tears the deep bedrock apart and frees the hydrocarbons and rare volatiles trapped in fissures in the crust. Even long after the surface deposits are exhausted, it keeps drawing chemfuel and minerals from underground. The mineral-laden slurry the process discharges, however, leaves severe heavy-metal pollution all around it.\nAs a means of resource extraction its industrial efficiency is extremely high, but spreading the technique across industrial worlds that lack environmental ethics can degrade a planet's living conditions rapidly, to the point that it is no longer habitable.\n\nApproved by ████ and ██, hydraulic fracturing extraction and its related technologies are designated class I sealed technology. Sale of such technology to developing worlds is prohibited, and its related technologies are to be progressively declassified once a colonial world's society attains class I standard.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Restricted</knowledgeCategory>
+    <knowledgeCost>750</knowledgeCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+    <prerequisites>
+      <li>DeepDrilling</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">ToxifierGenerator</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file I: hydraulic fracturing</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: an extraction method that splits deep bedrock open with ultra-high-pressure fluid.\n\nThe hydraulic fracturing rig can now be built. It mines the deep deposits around it automatically and, once they are exhausted, draws chemfuel and steel from the bedrock, at the cost of polluting the surrounding ground.\n\nThe fleets sealed this file so that the worlds it touches would still be fit to live on afterward.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_HydraulicFracturingRig</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
+  <!-- ============================================================= -->
+  <!-- 蛙人：導向胚胎發育                                             -->
+  <!-- 前置為 I 級的合成生物學（DMS_Occultech_Biosynthesis，其前置為     -->
+  <!-- 常規樹的人造肌肉），胚胎在人造肌肉艙製作。                        -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_Frogman</defName>
+    <label>directed chassis gestation</label>
+    <description>A sealed technique that cultivates artificial military organisms in place of printing mechs. A directed development sequence is written into an embryo, whose mesonuclear substrate then lays down synthetic-mechanical structure instead of biological tissue and matures on its own. The embryo is brought to term in a growth vat.\n\nFurther AMO development was stopped for good after a catastrophic incident in the Earth era. Self-developing military organisms do enormous harm to local society and productive capacity, and the technology has been proscribed ever since. The colonial fleets carry out the sanctions under this ban themselves, never through local authorities.\n\nUnlocks the XM132 Frogman and its development sequence.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Sealed</knowledgeCategory>
+    <knowledgeCost>1000</knowledgeCost>
+    <researchViewX>3</researchViewX>
+    <researchViewY>3</researchViewY>
+    <prerequisites>
+      <li>DMS_Occultech_Biosynthesis</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file: directed chassis gestation</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the XM132 Frogman, the earliest artificial military organism humanity is known to have put into development.\n\nThe Frogman's directed development sequence can now be produced. Culture an embryo at an artifuscle chamber, then bring it to term in a growth vat or a surrogate. The result is a biomatroid larva. Protect its gestation pod for five days and it will develop into a combat-ready Frogman.\n\nThe file carries a fleet prohibition notice. Producing AMOs is prohibited on any settled world, and the fleets enforce this ban in person.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_FrogmanEmbryo</ThingDef>
+      <ThingDef>DMS_Mech_Frogman</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
+  <!-- ============================================================= -->
+  <!-- 主戰規格：封存檔案 II 級 · 全面戰爭用規格機兵                    -->
+  <!-- 前置為 I 級的駐屯兵器（DMS_Occultech_RemnantPatterns）與常規樹的  -->
+  <!-- 簡言之假說（DMS_Hypothesis）；與駐屯兵器同一列 (·, 7)。           -->
+  <!-- 解鎖守墓人兩種型號的培育配方（大型培育艙）：                      -->
+  <!--   種族在 NewContent/Defs/Things_Race/Races_Automatroid_Gravekeeper.xml -->
+  <!--   配方在 Biotech/Defs/DMS_Recipes_MechGestator_Gravekeeper.xml     -->
+  <!-- 古代機兵（AncientCorps）啟用時，Mod/DMSAC 另把古機單位的培育配方   -->
+  <!-- 與古機武器的製作配方掛在本專案底下（佐羅賓槍系與磨坊掛在駐屯兵器）。 -->
+  <!-- 本專案解鎖的每個配方都另外要求對應的細分科技：                    -->
+  <!--   機體看重量級（重型 DMS_BattleFrame、超重型 DMS_HeavyAutomatroid）-->
+  <!--   武器看 AncientCorps 原本註解掉的原版槍械科技（不要求裝備學）    -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_MainBattle</defName>
+    <label>main battle specification</label>
+    <description>The design and production technology behind the total-war specification mechs and related equipment that the colonial fleets field against planet-scale hostile organizations and harmful entities. The manufacturing process of these mechs has been drastically simplified so that they serve better as high-performance weapons, produced and expended without pause over the course of a total war. Their performance, however, does not come from nowhere.\nAfter the main battle specification leak on colonial world ████, colonial fleets across sector ████ observed similar technology reaching interstellar pirates and spacefaring military regimes through arms dealers. The technology recovery programs each fleet carried out after the incident proved effective, and the main battle specification was sealed again after ████.\n\nTo prevent such an incident from happening again, however, approved by ████ and ██, the main battle specification and its related technologies are designated class II sealed technology. Provision of such technology to developing worlds is prohibited, and outside emergency war mobilization, standing ground-force deployments are to avoid employing it in any military operation.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Sealed</knowledgeCategory>
+    <knowledgeCost>1000</knowledgeCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>7.00</researchViewY>
+    <prerequisites>
+      <li>DMS_Occultech_RemnantPatterns</li>
+      <li>DMS_Hypothesis</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file II: main battle specification</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the production patterns of the mechs the fleets build to be expended in total war.\n\nThe gravekeeper can now be gestated at a large automatroid constructor, either in its standard pattern or with a Stugna missile rack on its shoulder. Most of its parts are shared with the mobile dragoon.\n\nThe fleets sealed this file again after it leaked to pirates and military regimes, and they will move against anyone who holds it now.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Gravekeeper</ThingDef>
+      <ThingDef>DMS_Mech_Gravekeeper_Stugna</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
+  <!-- ============================================================= -->
+  <!-- 零點能基礎：封存檔案 III 級 · 固態零點能與現實穩定錨             -->
+  <!-- 唯一的隱匿級專案，完成即永久敵對（見 DMS_OccultechResearchTab）。 -->
+  <!-- 解鎖三座建築，全在 NewContent/Defs/Things_Building/              -->
+  <!-- DMS_ExplorationBuildings_Occultech.xml：                        -->
+  <!--   零點能發生器核心：反粒子彈頭 → 固態零點能（一枚 25 個、約一年）  -->
+  <!--   零點能反應器：一塊固態零點能 = 6000W × 一年                    -->
+  <!--   現實穩定錨：以固態零點能建造，錨場壓制異象實體、能力上限 120%  -->
+  <!-- ============================================================= -->
+  <ResearchProjectDef>
+    <defName>DMS_Occultech_ZeroPoint</defName>
+    <label>zero-point energy</label>
+    <description>Draws energy from the quantum fluctuations of the vacuum itself. Once the principle is mastered, antiparticles can be consumed to produce solidified zero-point energy, which powers the most advanced machines and weapons. It is the threshold of transcendent technology. But the true cost of harnessing the void is something humanity has yet to fully understand.\n\nAfter the main battle ███ division that landed on planet ████ drove the transcendent machine ████ out of the planet's crust, where it had lain parasitic, in the year ████, colonial fleet ████ compiled a detailed account of how such transcendent beings are constituted and passed it by stele to the other colonial fleets operating in the Andromeda cluster. Because transcendent beings and their applications still contaminate the physical universe in ways that remain largely beyond control, disclosure of such technology to developing worlds is prohibited, and its related preventive technologies are to be declassified once a colonial world's society attains class II standard.</description>
+    <tab>DMS_ExpeditionalKnowledge</tab>
+    <knowledgeCategory>DMS_Occulted</knowledgeCategory>
+    <knowledgeCost>1500</knowledgeCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+    <prerequisites>
+      <li>DMS_Occultech_QubitDecryption</li>
+      <li>MultiAnalyzer</li>
+    </prerequisites>
+    <discoveredLetterTitle>Sealed file III: zero-point energy</discoveredLetterTitle>
+    <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the confinement principles behind solidified zero-point energy.\n\nThree devices can now be built. The zero-point generator core uses antigrain warheads as its catalyst and condenses solidified energy out of the vacuum, each warhead yielding 25 units over about a year. The zero-point reactor burns solidified energy for power, each unit supplying 6000 W for a full year. The reality anchor, built with solidified energy, stabilizes the space around it: nothing inside can exceed 120% of its natural limits, psycasts cannot be cast, and anomalous entities are suppressed.\n\nThis file is occulted. The fleets regard the knowledge itself as a contamination, and they will not forgive whoever holds it.</discoveredLetterText>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_SolitaryZPM</ThingDef>
+      <ThingDef>DMS_ZeroPointGenerator</ThingDef>
+      <ThingDef>DMS_ZeroPointReactor</ThingDef>
+      <ThingDef>DMS_Anchor</ThingDef>
+    </descriptionHyperlinks>
+  </ResearchProjectDef>
+
+</Defs>

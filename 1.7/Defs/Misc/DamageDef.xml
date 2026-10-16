@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- 反建築用爆破傷害: 對建築(尤其是不可通行的牆體)的破壞倍率遠高於一般爆炸, 對人員殺傷則與一般爆炸相當 -->
+	<DamageDef ParentName="Bomb">
+		<defName>DMS_Damage_Demolition</defName>
+		<label>demolition blast</label>
+		<deathMessage>{0} has been killed by a demolition charge.</deathMessage>
+		<buildingDamageFactorImpassable>12</buildingDamageFactorImpassable>
+		<buildingDamageFactorPassable>7</buildingDamageFactorPassable>
+		<plantDamageFactor>2</plantDamageFactor>
+		<explosionHeatEnergyPerCell>2</explosionHeatEnergyPerCell>
+	</DamageDef>
+
+</Defs>

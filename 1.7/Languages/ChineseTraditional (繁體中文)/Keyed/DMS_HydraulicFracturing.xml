@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 水壓裂解採礦機 DMS.CompHydraulicFracturing -->
+  <DMS_HydraulicFracturing_Bedrock>裂解岩床中</DMS_HydraulicFracturing_Bedrock>
+  <DMS_HydraulicFracturing_NoRoom>周圍無處放置產出。</DMS_HydraulicFracturing_NoRoom>
+  <DMS_HydraulicFracturing_Exhausted>{RIG_definite}已採盡深層礦脈，改為裂解岩床。</DMS_HydraulicFracturing_Exhausted>
+  <DMS_HydraulicFracturing_ExhaustedNoFallback>{RIG_definite}已採盡深層礦脈；此處沒有岩床，已停止運轉。</DMS_HydraulicFracturing_ExhaustedNoFallback>
+
+</LanguageData>

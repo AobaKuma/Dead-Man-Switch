@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: frogman embryo -->
+  <DMS_FrogmanEmbryo.label>frogman embryo</DMS_FrogmanEmbryo.label>
+  <!-- EN: A directed embryo carrying the XM132 development sequence... -->
+  <DMS_FrogmanEmbryo.description>A directed embryo carrying the XM132 development sequence. It is inert on its own. Brought to term by a human surrogate or cultured in a growth vat, it produces a biomatroid larva rather than a child.\n\nThe sequence overrides development completely, so the surrogate passes on none of her own genes. The mesonuclear substrate needs a host only for warmth and a blood supply, and colonial fleet doctrine used growth vats wherever they were available. Possession of a single embryo is enough to justify an interdiction.</DMS_FrogmanEmbryo.description>
+
+  <!-- EN: gestation pod -->
+  <DMS_SynthFormingPod.label>gestation pod</DMS_SynthFormingPod.label>
+  <!-- EN: A biomatroid larva sealed inside the mineral pod it formed around itself after birth... -->
+  <DMS_SynthFormingPod.description>A biomatroid larva sealed inside the mineral pod it formed around itself after birth. Development continues inside: muscle bundles lay down over the frame, the outer seal cures, and the control lattice organizes itself. The mesonuclear substrate runs the whole process on its own, and needs no power, feedstock or supervision.\n\nThe pod swells as the larva matures, and flexes in wind. It cannot defend itself, and breaking it destroys the biomatroid inside. It is light enough to be uninstalled and carried elsewhere.</DMS_SynthFormingPod.description>
+
+  <!-- EN: dormant frogman -->
+  <DMS_MechCapsule_Frogman.label>dormant frogman</DMS_MechCapsule_Frogman.label>
+  <!-- EN: A newly matured XM132 Frogman, still folded inside the capsule it developed in... -->
+  <DMS_MechCapsule_Frogman.description>A newly matured XM132 Frogman, still folded inside the capsule it developed in. The organism is complete and sealed, but has never received a control signal. A mechanitor can take control of it. Anyone else can only break the capsule open and scrap what is inside.</DMS_MechCapsule_Frogman.description>
+
+</LanguageData>

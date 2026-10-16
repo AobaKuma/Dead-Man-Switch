@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       封存科技 / Sealed technology
+       消費 DMS_QuestSuccess_Occultech(石碑與撞擊點任務)。
+
+       Forbidden 這一檔跟模組現有的封存科技敘述是同一個立場:
+       那些 def 的收尾本來就是一段「經 ███ 及 ██ 之審批,列為
+       I 級封存技術」的公文。做一個信仰站在審批者那一邊,自洽。
+       ============================================================ -->
+
+  <IssueDef>
+    <defName>DMS_Issue_SealedTech</defName>
+    <label>sealed technology</label>
+    <iconPath>UI/Issues/Research</iconPath>
+  </IssueDef>
+
+  <!-- ── 崇尚:挖出封存科技是使命 ──────────────────────────────── -->
+  <PreceptDef>
+    <defName>DMS_SealedTech_Venerated</defName>
+    <issue>DMS_Issue_SealedTech</issue>
+    <label>venerated</label>
+    <description>To unlock the unknown is the human instinct that drives progress.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>800</displayOrderInImpact>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_QuestSuccess_Occultech</eventDef>
+        <thought>DMS_Thought_Occultech_Venerated</thought>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>DMS_QuestSuccess_Occultech</eventDef>
+        <points>8</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ── 可接受:有用就拿(預設) ──────────────────────────────── -->
+  <PreceptDef>
+    <defName>DMS_SealedTech_Acceptable</defName>
+    <issue>DMS_Issue_SealedTech</issue>
+    <label>acceptable</label>
+    <description>Sealed technology is useful, but its risks still deserve caution.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>500</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <comps>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>DMS_QuestSuccess_Occultech</eventDef>
+        <points>3</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ── 禁忌:那些東西被封起來是有理由的 ──────────────────────── -->
+  <PreceptDef>
+    <defName>DMS_SealedTech_Forbidden</defName>
+    <issue>DMS_Issue_SealedTech</issue>
+    <label>forbidden</label>
+    <description>Sealed technology was shelved for a reason, and we should never dig it back up.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>900</displayOrderInImpact>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DMS_QuestSuccess_Occultech</eventDef>
+        <thought>DMS_Thought_Occultech_Forbidden</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ============================ 心情 ============================ -->
+
+  <ThoughtDef>
+    <defName>DMS_Thought_Occultech_Venerated</defName>
+    <durationDays>15</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>sealed technology unlocked</label>
+        <description>We unlocked a piece of sealed technology that had been shelved and forgotten. Let them come and explain why we should not have.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DMS_Thought_Occultech_Forbidden</defName>
+    <durationDays>15</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>sealed technology unlocked</label>
+        <description>We unlocked a piece of sealed technology that had been locked away. I hope we have not made an even worse mistake.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

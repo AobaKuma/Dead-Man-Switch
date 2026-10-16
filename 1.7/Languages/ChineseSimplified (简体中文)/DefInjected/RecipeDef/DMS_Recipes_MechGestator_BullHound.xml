@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Gestate bullhound -->
+  <DMS_Make_BullHound.label>组装斗牛犬</DMS_Make_BullHound.label>
+  <!-- EN: Gestate a bullhound automatroid, a heavy quadruped garrison mech... -->
+  <DMS_Make_BullHound.description>组装一具斗牛犬机兵，一种重型四足驻防机兵。它是獒犬的放大衍生型，舍弃了前者靠人工肌肉换来的灵活，换上厚重的装甲与固定的背部挂架，被设计用来在近距离把入侵者挡在闸门与走廊路口之外。\n\n此型号搭载一具自动霰弹枪。挂架为固定式无法更换，在开阔地带行动迟缓，并且需要三点带宽。</DMS_Make_BullHound.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_BullHound.jobString>正在组装机械体</DMS_Make_BullHound.jobString>
+
+  <!-- EN: Gestate hellhound -->
+  <DMS_Make_BullHound_Flamer.label>组装地狱犬</DMS_Make_BullHound_Flamer.label>
+  <!-- EN: Gestate a hellhound automatroid, the flamer pattern of the bullhound... -->
+  <DMS_Make_BullHound_Flamer.description>组装一具地狱犬机兵，即斗牛犬的喷火型，一种重型四足驻防机兵。它是獒犬的放大衍生型，舍弃了前者靠人工肌肉换来的灵活，换上厚重的装甲与固定的背部挂架，被设计用来在近距离把入侵者挡在闸门与走廊路口之外。\n\n此型号搭载一具用于清扫走廊的喷火器，装甲经过防火处理以承受自身的火焰。挂架为固定式无法更换，在开阔地带行动迟缓，并且需要三点带宽。</DMS_Make_BullHound_Flamer.description>
+  <!-- EN: Gestating mech. -->
+  <DMS_Make_BullHound_Flamer.jobString>正在组装机械体</DMS_Make_BullHound_Flamer.jobString>
+
+</LanguageData>

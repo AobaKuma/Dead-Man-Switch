@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       守墓人 Gravekeeper：主戰規格的超重型人形機兵，殖民艦隊用來巡邏與守衛重要無人設施。
+       零件與機動龍騎兵高度通用：右肩的發射架就是龍騎兵的斯圖格納發射器。
+       玩家研究 II 級封存檔案 DMS_Occultech_MainBattle 後可在大型培育艙培養
+       （Biotech/Defs/DMS_Recipes_MechGestator_Gravekeeper.xml）。
+       不出現在任何派系的襲擊編組裡。
+       兩種型號，各自是獨立的種族（培育時取該種族的第一個 PawnKind）：
+         標準型 DMS_Mech_Gravekeeper：無肩部發射架，貼圖 D/E/F
+         斯圖格納型 DMS_Mech_Gravekeeper_Stugna：右肩兩枚反戰車導彈（技能 DMS_GravekeeperStugna），貼圖 A/B/C
+       三種頭部外觀以原版 alternateGraphics 隨機分配（依 thingIDNumber 固定，不會跳圖）。
+       D/E/F 沒有西向貼圖，Graphic_Multi 會鏡像東向；A/B/C 的發射架不對稱，所以四向都有。
+
+       Gravekeeper: main battle ultra-heavy humanoid the fleets posted to patrol and guard
+       important unmanned installations. Its parts are largely shared with the mobile dragoon;
+       the shoulder rack is the dragoon's Stugna launcher.
+       The player can gestate it in the large gestator after the class II sealed file
+       DMS_Occultech_MainBattle (Biotech/Defs/DMS_Recipes_MechGestator_Gravekeeper.xml).
+       Never part of any faction's raid groups.
+       Two patterns, each its own race (gestation takes the race's first PawnKind):
+         standard DMS_Mech_Gravekeeper: no shoulder rack, textures D/E/F
+         Stugna DMS_Mech_Gravekeeper_Stugna: two anti-tank missiles on the right shoulder
+           (ability DMS_GravekeeperStugna), textures A/B/C
+       The three heads are assigned by vanilla alternateGraphics (seeded by thingIDNumber, so stable).
+       D/E/F have no west texture and Graphic_Multi mirrors east; the A/B/C rack is asymmetric, so it has all four.
+       ============================================================ -->
+
+  <ThingDef Name="DMS_MechGravekeeperBase" ParentName="BaseAutomatroidRace" Abstract="True">
+    <statBases>
+      <MoveSpeed>3.4</MoveSpeed>
+      <ArmorRating_Sharp>1.35</ArmorRating_Sharp>                                   <!--銳抗-->
+      <ArmorRating_Blunt>0.9</ArmorRating_Blunt>                                    <!--鈍抗-->
+      <ArmorRating_Heat>0.9</ArmorRating_Heat>                                      <!--能抗-->
+      <StaggerDurationFactor>0.1</StaggerDurationFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>         <!--帶寬消耗-->
+      <ControlTakingTime MayRequire="Ludeon.Rimworld.Biotech">12</ControlTakingTime>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <race>
+      <body>DMS_Humanoid_Soldat</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>2.8</baseBodySize>
+      <baseHealthScale>4.2</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+      <detritusLeavings>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>7</texOverrideIndex>
+          <spawnChance>0.3</spawnChance>
+        </li>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>4</texOverrideIndex>
+          <spawnChance>0.3</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <comps>
+      <!-- 隧道戰的近距離壓制：比駭蜥小一圈。Close-range tunnel suppression: one step below the Tarbosaurus. -->
+      <li Class="Fortified.CompProperties_CausePanicInRange">
+        <range>6</range>
+        <tickInterval>300</tickInterval>
+        <chancePerScan>0.15</chancePerScan>
+        <useBodySizeModifier>true</useBodySizeModifier>
+        <bodySizeWeight>1</bodySizeWeight>
+        <bodySizeCurve>
+          <points>
+            <li>(0.5, 0.50)</li>
+            <li>(1.0, 1.00)</li>
+            <li>(1.75, 1.25)</li>
+            <li>(2.8, 1.60)</li>
+            <li>(5.0, 2.00)</li>
+          </points>
+        </bodySizeCurve>
+      </li>
+      <li Class="Fortified.CompProperties_MeleeSweep">
+        <damageDef>Blunt</damageDef>
+        <damage>32</damage>
+        <armorPenetration>0.45</armorPenetration>
+        <radius>2.5</radius>
+        <angle>150</angle>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>DMS_DragoonGun</li>                                                      <!--與機動龍騎兵共用 / shared with the mobile dragoon-->
+          <li>DMS_Dragoon_SG</li>                                                      <!--龍騎兵霰彈槍（MobileDragoon 才有）/ dragoon shotgun, MobileDragoon only-->
+          <li>DMS_MechWeaponHeavy</li>
+          <li>DMS_MechWeaponTransHeavy</li>
+          <li>DMS_MechWeaponUltraHeavy</li>
+          <li>DMS_Tarbosaurus_Gun</li>
+          <li>DMS_MechWeaponShotgun</li>
+          <li>DMS_MechWeaponBreach</li>
+          <li>H_Gatling127mm</li>                                                      <!--GAU-19，送葬者 / the Enterrador's-->
+          <li>A_SC_LongRifle</li>                                                      <!--栓動炮，守夜人 / the Velador's bolt cannon-->
+          <li>A_Cut_Melee</li>                                                         <!--機兵開山刀，掘墓人 / the Sepulturero's machete-->
+          <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+      </li>
+    </modExtensions>
+    <!-- 拳擊走掃擊機動，命中時由 MeleeSweep 對扇形範圍追加傷害。Fists use the sweep maneuver, so MeleeSweep adds the arc damage. -->
+    <tools Inherit="False">
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>DMS_HeavySweep</li>
+        </capacities>
+        <power>26</power>
+        <cooldownTime>2.8</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>DMS_HeavySweep</li>
+        </capacities>
+        <power>26</power>
+        <cooldownTime>2.8</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>18</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.7</multiplier>
+      </li>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.7</multiplier>
+      </li>
+    </damageMultipliers>
+    <butcherProducts>
+      <Steel>80</Steel>
+      <Tungsteel>30</Tungsteel>
+      <DMS_ChunkSlag>3</DMS_ChunkSlag>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </butcherProducts>
+    <killedLeavingsPlayerHostile>
+      <ComponentFireControl>1</ComponentFireControl>
+    </killedLeavingsPlayerHostile>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+  </ThingDef>
+
+  <PawnKindDef Name="DMS_MechGravekeeperKindBase" ParentName="BaseAutomatroidKind" Abstract="True">
+    <isFighter>true</isFighter>
+    <!-- 五架一組執行防禦任務。Gravekeepers hold a defense in groups of five. -->
+    <maxPerGroup>5</maxPerGroup>
+    <weaponTags>
+      <li>DMS_DragoonGun</li>
+      <li>DMS_MechWeaponHeavy</li>
+    </weaponTags>
+    <weaponMoney>3000~9999</weaponMoney>
+  </PawnKindDef>
+
+  <!-- ===== 標準型 / standard pattern ===== -->
+  <ThingDef ParentName="DMS_MechGravekeeperBase">
+    <defName>DMS_Mech_Gravekeeper</defName>
+    <label>gravekeeper</label>
+    <description>A highly intelligent large automatroid, deployed by the colonial fleets specifically to patrol and guard important unmanned installations. Its parts are largely interchangeable with the mobile dragoon's, and it pairs excellent close-quarters combat ability with a formidable weapon system. The gravekeeper's design dates back to the lunar war of independence after the Universal Century, when most of the fighting took place in the narrow, enclosed tunnels of underground cities. Heavily armored mechs like the gravekeeper and the siegebreaker, carrying heavy weapons and able to suppress at close range, became the spearhead of both sides' fight for control of those tunnels.\nBecause of this specialized design, gravekeepers usually hold a defense in groups of five. Since they must patrol unattended installations for centuries, their rules of engagement are more conservative than an ordinary mech's, so that failing mechanisms do not trigger by mistake mid-mission. As a result, they will not leave their installation to engage an enemy on their own.\n\nThis pattern carries no shoulder rack.</description>
+  </ThingDef>
+
+  <PawnKindDef ParentName="DMS_MechGravekeeperKindBase">
+    <defName>DMS_Mech_Gravekeeper</defName>
+    <label>gravekeeper</label>
+    <race>DMS_Mech_Gravekeeper</race>
+    <combatPower>400</combatPower>
+    <abilities>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Gravekeeper/gravekeeper_D</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.4</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.45)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Gravekeeper/gravekeeper_D</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.4</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.45)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <!-- 三種頭部各 1/3：基底貼圖佔 1/3，其餘兩張分掉 2/3。Three heads at a third each: the base texture keeps 1/3, the two alternates share 2/3. -->
+    <alternateGraphicChance>0.667</alternateGraphicChance>
+    <alternateGraphics>
+      <li>
+        <texPath>Things/Automatroid/Gravekeeper/gravekeeper_E</texPath>
+      </li>
+      <li>
+        <texPath>Things/Automatroid/Gravekeeper/gravekeeper_F</texPath>
+      </li>
+    </alternateGraphics>
+  </PawnKindDef>
+
+  <!-- ===== 斯圖格納型 / Stugna pattern =====
+       右肩的發射架畫在身體貼圖裡，所以導彈做成技能而不是 SubTurret。
+       The shoulder rack is baked into the body texture, so the missiles are an ability rather than a sub-turret. -->
+  <ThingDef ParentName="DMS_MechGravekeeperBase">
+    <defName>DMS_Mech_Gravekeeper_Stugna</defName>
+    <label>gravekeeper (Stugna)</label>
+    <description>A highly intelligent large automatroid, deployed by the colonial fleets specifically to patrol and guard important unmanned installations. Its parts are largely interchangeable with the mobile dragoon's, and it pairs excellent close-quarters combat ability with a formidable weapon system. The gravekeeper's design dates back to the lunar war of independence after the Universal Century, when most of the fighting took place in the narrow, enclosed tunnels of underground cities. Heavily armored mechs like the gravekeeper and the siegebreaker, carrying heavy weapons and able to suppress at close range, became the spearhead of both sides' fight for control of those tunnels.\nBecause of this specialized design, gravekeepers usually hold a defense in groups of five. Since they must patrol unattended installations for centuries, their rules of engagement are more conservative than an ordinary mech's, so that failing mechanisms do not trigger by mistake mid-mission. As a result, they will not leave their installation to engage an enemy on their own.\n\nThis pattern carries the mobile dragoon's Stugna launcher on its right shoulder, racked with two anti-tank guided missiles.</description>
+    <statBases>
+      <!-- 發射架的重量。The weight of the rack. -->
+      <MoveSpeed>3.1</MoveSpeed>
+    </statBases>
+  </ThingDef>
+
+  <PawnKindDef ParentName="DMS_MechGravekeeperKindBase">
+    <defName>DMS_Mech_Gravekeeper_Stugna</defName>
+    <label>gravekeeper (Stugna)</label>
+    <race>DMS_Mech_Gravekeeper_Stugna</race>
+    <combatPower>480</combatPower>
+    <abilities>
+      <li>DMS_GravekeeperStugna</li>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Gravekeeper/gravekeeper_A</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.4</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.45)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Gravekeeper/gravekeeper_A</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.4</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.45)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <alternateGraphicChance>0.667</alternateGraphicChance>
+    <alternateGraphics>
+      <li>
+        <texPath>Things/Automatroid/Gravekeeper/gravekeeper_B</texPath>
+      </li>
+      <li>
+        <texPath>Things/Automatroid/Gravekeeper/gravekeeper_C</texPath>
+      </li>
+    </alternateGraphics>
+  </PawnKindDef>
+
+  <!-- ============================================================
+       地下設施用的 NPC 守墓人：固定頭部、固定武裝的三種編制。玩家培育不到。
+       掘墓人與守夜人肩上多一門副炮，副炮只能掛在種族上，所以兩者各有自己的種族（沒有培育配方）。
+       ⚠ 送葬者與玩家用的斯圖格納型共用種族；培育時取的是「同種族在 DefDatabase 裡的第一個 PawnKind」
+       （Bill_ProductionMech.CreateProducts），所以送葬者必須留在 DMS_Mech_Gravekeeper_Stugna 之後，
+       否則培育出來的會變成送葬者。
+       不設 alternateGraphicChance：沒有 alternateGraphics 清單時機率必須是 0，否則 TryGetAlternate 會對 null 取樣。
+         掘墓人 Sepulturero：圓頭（D），近戰與近距離武器，肩掛噴火槍，靠掃擊拳與駭蜥大跳貼身
+         送葬者 Enterrador：方頭（B，帶發射架），重火力與斯圖格納導彈的反裝甲編制
+         守夜人 Velador：三角頭（F），遠距精確武器，肩掛鬣蜥同款機槍，與狙擊手的精確射擊
+
+       NPC gravekeepers for the underground installations: three fixed-head, fixed-loadout configurations the player cannot gestate.
+       The Sepulturero and Velador carry a shoulder sub-turret; sub-turrets can only live on a race, so each has its own
+       race (with no gestation recipe).
+       ⚠ The Enterrador shares its race with the player's Stugna pattern. Gestation takes the race's first PawnKind in the
+       DefDatabase (Bill_ProductionMech.CreateProducts), so the Enterrador must stay after DMS_Mech_Gravekeeper_Stugna,
+       or gestation would produce it.
+       No alternateGraphicChance: without an alternateGraphics list the chance must stay 0, or TryGetAlternate samples a null list.
+         Sepulturero: round head (D), melee and close-range weapons, a shoulder Flameblaster, closes in with the sweeping
+           fists and the Tarbosaurus heavy jump
+         Enterrador: square head (B, with the rack), anti-armour configuration with heavy weapons and Stugna missiles
+         Velador: triangle head (F), long-range precision weapons, a shoulder machine gun, and the sniper's precision marksmanship
+
+       武器池依編制分配，每把武器只屬於一種編制：
+         掘墓人：機兵開山刀、鎮暴霰彈槍（靠它專屬的 DMS_RiotShotgun 標籤）、龍騎兵霰彈槍（MobileDragoon 才有）
+         送葬者：GAU-19、龍騎兵步槍、龍騎兵榴彈槍
+         守夜人：栓動炮、MK44 大毒蛇
+       原版依 generateCommonality 加權抽選，池裡每把大約等機率。weaponMoney 定在 9999，池裡每一把都買得起。
+       DMS_Dragoon_SG 只是字串，沒有 MobileDragoon 時不會比對到任何武器（掘墓人只剩兩把），不會報錯。
+       Weapon pools are split by role, and each weapon belongs to one configuration only:
+         Sepulturero: machete, riot shotgun (through its own DMS_RiotShotgun tag), dragoon shotgun (MobileDragoon only)
+         Enterrador: GAU-19, dragoon rifle, dragoon grenade launcher
+         Velador: bolt cannon, MK44 Bushmaster
+       Vanilla weights the draw by generateCommonality, so each weapon in a pool is about equally likely. weaponMoney is
+       pinned at 9999 so every weapon in the pool is affordable. DMS_Dragoon_SG is a plain tag string; without MobileDragoon
+       it matches nothing (the Sepulturero is left with two weapons).
+       ============================================================ -->
+
+  <!-- 掘墓人的種族：肩上掛壁虎同款噴火槍。Sepulturero race: the Gecko's Flameblaster on the shoulder. -->
+  <ThingDef ParentName="DMS_MechGravekeeperBase">
+    <defName>DMS_Mech_Gravekeeper_Sepulturero</defName>
+    <label>Sepulturero</label>
+    <description>A highly intelligent large automatroid, deployed by the colonial fleets specifically to patrol and guard important unmanned installations. Its parts are largely interchangeable with the mobile dragoon's, and it pairs excellent close-quarters combat ability with a formidable weapon system. The gravekeeper's design dates back to the lunar war of independence after the Universal Century, when most of the fighting took place in the narrow, enclosed tunnels of underground cities. Heavily armored mechs like the gravekeeper and the siegebreaker, carrying heavy weapons and able to suppress at close range, became the spearhead of both sides' fight for control of those tunnels.\nBecause of this specialized design, gravekeepers usually hold a defense in groups of five. Since they must patrol unattended installations for centuries, their rules of engagement are more conservative than an ordinary mech's, so that failing mechanisms do not trigger by mistake mid-mission. As a result, they will not leave their installation to engage an enemy on their own.\n\nThis configuration mounts the Gecko's Flameblaster on its shoulder for clearing corridors.</description>
+    <comps>
+      <!-- 副炮掛在南向畫面左側的肩上（機體的右肩，與斯圖格納型的發射架同一側，避開左手主武器）；面向西時該肩在遠側，畫在機體後方。偏移是估計值，需進遊戲微調。
+       The sub-turret sits on the shoulder on screen-left facing south (the mech's right shoulder, the same side as the
+       Stugna rack, clear of the left-hand weapon); facing west that shoulder is the far side and draws behind the body.
+       Offsets are estimates and need tuning in game. -->
+      <li Class="Fortified.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>flame thrower</ID>
+            <turret>DMS_Flameblaster</turret>
+            <autoAttack>true</autoAttack>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <drawSize>1.2</drawSize>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <defaultData>
+                    <pivot>(0.4,0.5)</pivot>
+                  </defaultData>
+                  <dataSouth>
+                    <offset>(-0.55,0,0.6)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(0.55,0,0.6)</offset>
+                  </dataNorth>
+                  <dataEast>
+                    <offset>(0.05,0,0.55)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(-0.05,0,0.7)</offset>
+                    <rotationOffset>180</rotationOffset>
+                    <layer>-21</layer>
+                  </dataWest>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 掘墓人 / Sepulturero -->
+  <PawnKindDef ParentName="DMS_MechGravekeeperKindBase">
+    <defName>DMS_Mech_Gravekeeper_Sepulturero</defName>
+    <label>Sepulturero</label>
+    <race>DMS_Mech_Gravekeeper_Sepulturero</race>
+    <combatPower>460</combatPower>
+    <weaponTags Inherit="False">
+      <li>A_Cut_Melee</li>                                                          <!--機兵開山刀 / machete-->
+      <li>DMS_RiotShotgun</li>                                                      <!--鎮暴霰彈槍 / riot shotgun-->
+      <li>DMS_Dragoon_SG</li>                                                       <!--龍騎兵霰彈槍 / dragoon shotgun-->
+    </weaponTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <abilities>
+      <li>DMS_TarbosaurusJump</li>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Gravekeeper/gravekeeper_D</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.4</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.45)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Gravekeeper/gravekeeper_D</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.4</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.45)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- 送葬者 / Enterrador -->
+  <PawnKindDef ParentName="DMS_MechGravekeeperKindBase">
+    <defName>DMS_Mech_Gravekeeper_Enterrador</defName>
+    <label>Enterrador</label>
+    <race>DMS_Mech_Gravekeeper_Stugna</race>
+    <combatPower>550</combatPower>
+    <weaponTags Inherit="False">
+      <li>H_Gatling127mm</li>                                                       <!--GAU-19-->
+      <li>DMS_DragoonGun</li>                                                       <!--龍騎兵步槍、榴彈槍 / dragoon rifle and grenade launcher-->
+    </weaponTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <abilities>
+      <li>DMS_GravekeeperStugna</li>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Gravekeeper/gravekeeper_B</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.4</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.45)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Gravekeeper/gravekeeper_B</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.4</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.45)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- 守夜人的種族：肩上掛鬣蜥同款機槍（原版為機載重機槍，CE 下與鬣蜥一樣換成機載輕機槍）。
+       Velador race: the Iguana's machine gun on the shoulder (the mounted HMG; under CE it becomes the mounted LMG, as on the Iguana). -->
+  <ThingDef ParentName="DMS_MechGravekeeperBase">
+    <defName>DMS_Mech_Gravekeeper_Velador</defName>
+    <label>Velador</label>
+    <description>A highly intelligent large automatroid, deployed by the colonial fleets specifically to patrol and guard important unmanned installations. Its parts are largely interchangeable with the mobile dragoon's, and it pairs excellent close-quarters combat ability with a formidable weapon system. The gravekeeper's design dates back to the lunar war of independence after the Universal Century, when most of the fighting took place in the narrow, enclosed tunnels of underground cities. Heavily armored mechs like the gravekeeper and the siegebreaker, carrying heavy weapons and able to suppress at close range, became the spearhead of both sides' fight for control of those tunnels.\nBecause of this specialized design, gravekeepers usually hold a defense in groups of five. Since they must patrol unattended installations for centuries, their rules of engagement are more conservative than an ordinary mech's, so that failing mechanisms do not trigger by mistake mid-mission. As a result, they will not leave their installation to engage an enemy on their own.\n\nThis configuration mounts the Iguana's machine gun on its shoulder.</description>
+    <comps>
+      <!-- 副炮掛在南向畫面左側的肩上（機體的右肩，與斯圖格納型的發射架同一側，避開左手主武器）；面向西時該肩在遠側，畫在機體後方。偏移是估計值，需進遊戲微調。
+       The sub-turret sits on the shoulder on screen-left facing south (the mech's right shoulder, the same side as the
+       Stugna rack, clear of the left-hand weapon); facing west that shoulder is the far side and draws behind the body.
+       Offsets are estimates and need tuning in game. -->
+      <li Class="Fortified.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>General-purpose machine gun</ID>
+            <turret>DMS_HeavyMachineGunMounted</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>5</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <drawSize>1.5</drawSize>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <defaultData>
+                    <pivot>(0.4,0.5)</pivot>
+                  </defaultData>
+                  <dataSouth>
+                    <offset>(-0.55,0,0.6)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(0.55,0,0.6)</offset>
+                  </dataNorth>
+                  <dataEast>
+                    <offset>(0.05,0,0.55)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(-0.05,0,0.7)</offset>
+                    <rotationOffset>180</rotationOffset>
+                    <layer>-21</layer>
+                  </dataWest>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 守夜人 / Velador -->
+  <PawnKindDef ParentName="DMS_MechGravekeeperKindBase">
+    <defName>DMS_Mech_Gravekeeper_Velador</defName>
+    <label>Velador</label>
+    <race>DMS_Mech_Gravekeeper_Velador</race>
+    <combatPower>540</combatPower>
+    <weaponTags Inherit="False">
+      <li>A_SC_LongRifle</li>                                                       <!--栓動炮 / bolt cannon-->
+      <li>DMS_MechWeaponHeavy</li>                                                  <!--MK44 大毒蛇 / MK44 Bushmaster-->
+    </weaponTags>
+    <weaponMoney>9999~9999</weaponMoney>
+    <abilities>
+      <li>DMS_SharpShooting</li>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Gravekeeper/gravekeeper_F</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.4</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.45)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Gravekeeper/gravekeeper_F</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.4</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.45)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- ===== 斯圖格納導彈 / Stugna missiles =====
+       與龍騎兵的斯圖格納發射器同樣兩發，但機兵沒有彈藥可裝填，改成每發獨立冷卻一天。
+       導彈與彈藥在 AncientCorps 裡，所以這裡另做一枚只用 DMS 核心與 FFF 資源的導彈。
+       Two missiles like the dragoon's Stugna launcher, but a mech has no ammo to reload, so each
+       charge recovers on its own after a day. The dragoon's missile and ammo live in AncientCorps,
+       so this missile only uses DMS core and FFF assets. -->
+  <AbilityDef>
+    <defName>DMS_GravekeeperStugna</defName>
+    <label>Stugna missile</label>
+    <description>Fire one of the two Stugna anti-tank guided missiles racked on the shoulder launcher. The shaped charge punches through heavy armor, but locking on takes time and needs a clear line of sight. Each missile is replaced a day after it is fired.</description>
+    <iconPath>UI/Ability/Missile</iconPath>
+    <aiCanUse>true</aiCanUse>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <charges>2</charges>
+    <cooldownPerCharge>true</cooldownPerCharge>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <minRange>6.9</minRange>
+      <range>44.9</range>
+      <warmupTime>3</warmupTime>
+      <ai_AvoidFriendlyFireRadius>4</ai_AvoidFriendlyFireRadius>
+      <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+      <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+      <ai_TargetHasRangedAttackScoreOffset>50</ai_TargetHasRangedAttackScoreOffset>
+      <soundCast>RocketswarmLauncher_Fire</soundCast>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+      </targetParams>
+      <requireLineOfSight>true</requireLineOfSight>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>DMS_Bullet_GravekeeperStugna</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_GravekeeperStugna</defName>
+    <label>Stugna missile</label>
+    <graphicData>
+      <texPath>Things/Ammo/76mm9M311Missile/Projectile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>1.25</drawSize>
+    </graphicData>
+    <thingClass>Fortified.Projectile_Parabola_ConeExplosive</thingClass>
+    <projectile>
+      <damageDef>FFF_ShapeChargeBullet</damageDef>
+      <speed>80</speed>
+      <damageAmountBase>160</damageAmountBase>
+      <armorPenetrationBase>2</armorPenetrationBase>
+      <explosionRadius>1.95</explosionRadius>
+      <!-- 直射導彈，不能 flyOverhead：原版的高拋投射物落在厚岩頂下會直接消失（不爆炸），落在建造屋頂下則會把屋頂打塌；
+           守墓人主要在地下設施作戰，到處都有屋頂。弧線只是 Projectile_Parabola 的外觀（arcHeightFactor），不影響命中判定。
+           A direct-fire missile, so not flyOverhead: vanilla overhead projectiles vanish without exploding under a thick
+           rock roof and collapse a constructed roof, and gravekeepers mostly fight in roofed underground facilities.
+           The arc is only Projectile_Parabola's drawing (arcHeightFactor); it does not change what gets hit. -->
+      <flyOverhead>false</flyOverhead>
+      <explosionRadiusDisplayPadding>3</explosionRadiusDisplayPadding>
+      <arcHeightFactor>0.1</arcHeightFactor>
+      <soundExplode>Explosion_Rocket</soundExplode>
+    </projectile>
+    <comps>
+      <li Class="Fortified.CompProperties_AfterBurner">
+        <lifeTime>60</lifeTime>
+        <ExhaustFleck>DMS_Fleck_RocketFlame</ExhaustFleck>
+        <ExhaustCurve>
+          <points>
+            <li>(0,3)</li>
+            <li>(0.15,2)</li>
+            <li>(0.5,1)</li>
+          </points>
+        </ExhaustCurve>
+        <SmokeFleck>DMS_Fleck_RocketSmokeTrail</SmokeFleck>
+        <SmokeCurve>
+          <points>
+            <li>(0,3)</li>
+            <li>(0.5,1)</li>
+            <li>(0.9,1)</li>
+            <li>(1,0.5)</li>
+          </points>
+        </SmokeCurve>
+      </li>
+      <li Class="CompProperties_ProjectileEffecter">
+        <effecterDef>DMS_LaunchDust_Recoilless</effecterDef>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.ExplosiveExtension">
+        <preExplosionOffset>1.5</preExplosionOffset>
+        <effecterDef>FFF_Effecter_Penetrate_Sabot</effecterDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: blaster screen shell -->
+  <DMS_Bullet_BlasterSmoke.label>反電荷煙幕彈</DMS_Bullet_BlasterSmoke.label>
+  
+  <!-- EN: Blaster Screen Shell -->
+  <Shell_BlasterSmoke.label>反電荷煙幕彈</Shell_BlasterSmoke.label>
+  <!-- EN: An artillery shell containing reagents that generate an active-particle field which triggers charged ammo's detonation mid-flight. These shells are a preferred countermeasure while fighting against mech legions and mid-world megacorps. Does not effect other projectiles. -->
+  <Shell_BlasterSmoke.description>裝有特殊粒子的煙霧彈，在受到撞擊時會產生一種帶電粒子場，可以使電荷彈藥在半空中觸發燒毀，使其成為對抗機械軍團或中寰世界巨型企業與星際帝國時的完美對策。然而這種裝備在邊緣世界並不普及，不僅因為需要它們的人通常沒有能力生產它們，且並不能夠攔截傳統槍械的子彈。</Shell_BlasterSmoke.description>
+  
+  <!-- EN: blaster screen shell -->
+  <Shell_BlasterSmoke_Releasing.label>反電荷煙幕彈</Shell_BlasterSmoke_Releasing.label>
+  
+  <!-- EN: blaster screen shell -->
+  <Shell_BlasterSmoke_Releasing_Water.label>反電荷煙幕彈</Shell_BlasterSmoke_Releasing_Water.label>
+  
+  <!-- EN: perimeter scanner -->
+  <DMS_PerimeterScanner.label>周界掃描器</DMS_PerimeterScanner.label>
+  <!-- EN: A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius. -->
+  <DMS_PerimeterScanner.description>一種能偵測隱形生物的掃描器。當偵測到半徑範圍內存在靈能隱形的物體時，裝置會發出警報。</DMS_PerimeterScanner.description>
+  
+  <!-- EN: perimeter scanner -->
+  <DMS_PerimeterScannerTemp.label>周界掃描器</DMS_PerimeterScannerTemp.label>
+  <!-- EN: A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius. -->
+  <DMS_PerimeterScannerTemp.description>一種能偵測隱形生物的掃描器。當偵測到半徑範圍內存在靈能隱形的物體時，裝置會發出警報。</DMS_PerimeterScannerTemp.description>
+  
+  <!-- EN: Thermal breach -->
+  <DMS_ThermalBreacher.label>熱蝕破門裝置</DMS_ThermalBreacher.label>
+  <DMS_ThermalBreacher.description>一種專為突破重型安全門的一次性定向熱蝕裝置，為破拆以及反器材使用設計。啟動後會產生劇烈的高溫金屬熱流，並透過聚焦噴口將能量集中於接觸點。數秒內即可在大多數工業級合金表面形成熔蝕通道。\n\n由於反應過程極不穩定，裝置僅能使用一次。操作員必須在部署後立即撤離安全距離，以避免高溫飛濺物與蒸發金屬造成傷害。</DMS_ThermalBreacher.description>
+  
+</LanguageData>

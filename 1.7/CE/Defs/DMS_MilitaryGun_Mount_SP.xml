@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!--
+		【已棄用 / DEPRECATED】本檔的 CE 專用下掛砲塔 Def 已不再被任何機兵或補丁使用。
+		CE 下機兵改為直接使用原版下掛武器 Def（CE 屬性見 Patches/Weapons/MiliGuns*_CE.xml），
+		供彈 comp 統一由 Patches/Patch_SubTurretAmmo_CE.xml 補上。僅保留作為數值參考，請勿再引用這些 defName。
+		This file is no longer used: the CE-only sub-turret defs below are not referenced by any mech or patch.
+		Mechs use the vanilla-side mounted weapon defs under CE instead; ammo comps come from Patch_SubTurretAmmo_CE.xml.
+		Kept for reference only; do not reference these defNames.
+	-->
+	<!-- ==================== 邪道流下挂武器 ==================== -->
+
+	<!-- ==壁虎下挂喷火器== -->
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>DMS_Gecko_FlameTurret</defName>
+		<label>Flame Turret</label>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_Flameblaster</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.75</drawSize>
+		</graphicData>
+		<description>A flamethrower used by mechs that will ignite flammable materials within its range.</description>
+		<statBases>
+			<SightsEfficiency>1</SightsEfficiency>
+			<ShotSpread>1.0</ShotSpread>
+			<SwayFactor>1.0</SwayFactor>
+			<RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+			<Mass>10</Mass>
+		</statBases>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>0</recoilAmount>
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_DMS_Flamethrower_Napalm</defaultProjectile>
+				<warmupTime>0.75</warmupTime>
+				<range>16</range>
+				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<burstShotCount>10</burstShotCount>
+				<soundCast>Shot_MiniFlameblaster</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<recoilPattern>Mounted</recoilPattern>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CombatExtended.CompProperties_Charges">
+				<chargeSpeeds>
+					<li>30</li>
+				</chargeSpeeds>
+			</li>
+			<!-- 彈藥消耗：燃料由機兵自身載運，10 個爆發量 -->
+			<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+				<ammoSet>AmmoSet_DMS_Flamethrower</ammoSet>
+				<defaultAmmoPickUp>100</defaultAmmoPickUp>
+				<startingAmmoRange>50~100</startingAmmoRange>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>MountedWeapon</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!-- ==鬣蜥下挂轻机枪== -->
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>DMS_Iguana_SubMachineGun</defName>
+		<label>Light Machinegun Turret</label>
+		<graphicData>
+			<texPath>Things/Turrets/DMS_Gun_LMG</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<description>A weapon specializing in suppression chambered in a pistol caliber round.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
+		<statBases>
+			<SightsEfficiency>1</SightsEfficiency>
+			<ShotSpread>0.06</ShotSpread>
+			<SwayFactor>1.16</SwayFactor>
+			<RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+			<Mass>10</Mass>
+		</statBases>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>0.90</recoilAmount>
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_556x45mmNATO_FMJ</defaultProjectile>
+				<warmupTime>0.7</warmupTime>
+				<range>28</range>
+				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+				<burstShotCount>10</burstShotCount>
+				<soundCast>Shot_MachinePistol</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<recoilPattern>Mounted</recoilPattern>
+			</li>
+		</verbs>
+		<comps>
+			<!-- 彈藥消耗：5.56×45mm NATO，10 個爆發量 -->
+			<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+				<ammoSet>AmmoSet_556x45mmNATO</ammoSet>
+				<defaultAmmoPickUp>100</defaultAmmoPickUp>
+				<startingAmmoRange>50~100</startingAmmoRange>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>MountedWeapon</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!--==下掛加特林==-->
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>DMS_SubTurret_127Gatling</defName>
+		<label>Mounted GAU-19/A</label>
+		<description>A multibarrel turret mounted on shoulder.</description>
+		<graphicData>
+			<texPath>Things/Weapons/DMS_Weapon_GAU19_Old</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<SightsEfficiency>1</SightsEfficiency>
+			<ShotSpread>0.06</ShotSpread>
+			<SwayFactor>1.16</SwayFactor>
+			<RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+			<Mass>10</Mass>
+		</statBases>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>0.95</recoilAmount>
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
+				<burstShotCount>30</burstShotCount>
+				<ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+				<warmupTime>1</warmupTime>
+				<range>78</range>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>12</muzzleFlashScale>
+				<recoilPattern>Mounted</recoilPattern>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>MountedWeapon</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!-- ==骇蜥下挂重机枪== -->
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>DMS_Tarbosaurus_SubMachineGun</defName>
+		<label>Heavy Machinegun turret</label>
+		<graphicData>
+			<texPath>Things/Turrets/DMS_Gun_HMG</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<description>A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
+		<statBases>
+			<SightsEfficiency>1</SightsEfficiency>
+			<ShotSpread>0.06</ShotSpread>
+			<SwayFactor>1.86</SwayFactor>
+			<RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+			<Mass>10</Mass>
+		</statBases>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>1.25</recoilAmount>
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
+				<warmupTime>2.2</warmupTime>
+				<range>55</range>
+				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+				<burstShotCount>10</burstShotCount>
+				<soundCast>50Cal_Browning</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<recoilPattern>Mounted</recoilPattern>
+			</li>
+		</verbs>
+		<comps>
+			<!-- 彈藥消耗：.50 BMG，10 個爆發量 -->
+			<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+				<ammoSet>AmmoSet_50BMG</ammoSet>
+				<defaultAmmoPickUp>100</defaultAmmoPickUp>
+				<startingAmmoRange>50~100</startingAmmoRange>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>MountedWeapon</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!-- ==骇蜥迫近防御系统== -->
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>DMS_Tarbosaurus_ShotgunGun</defName>
+		<label>Close Inbound Defense System</label>
+		<graphicData>
+			<texPath>Things/Turrets/DMS_Gun_CIDS</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<description>A multi-barrel shotgun turret designed to suppress enemies at close-range.</description>
+		<statBases>
+			<SightsEfficiency>0.7</SightsEfficiency>
+			<ShotSpread>0.15</ShotSpread>
+			<SwayFactor>1.36</SwayFactor>
+			<RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+			<Mass>10</Mass>
+		</statBases>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>2.60</recoilAmount>
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_12Gauge_Buck</defaultProjectile>
+				<warmupTime>1.2</warmupTime>
+				<range>12</range>
+				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<burstShotCount>3</burstShotCount>
+				<soundCast>Shot_Shotgun_NoRack</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<recoilPattern>Mounted</recoilPattern>
+			</li>
+		</verbs>
+		<comps>
+			<!-- 彈藥消耗：12 Gauge，10 個爆發量 -->
+			<li Class="FortifiedCE.CompProperties_TurretProjectileCE">
+				<ammoSet>AmmoSet_12Gauge</ammoSet>
+				<defaultAmmoPickUp>30</defaultAmmoPickUp>
+				<startingAmmoRange>15~30</startingAmmoRange>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>MountedWeapon</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!-- ==推土機車載機槍== -->
+	<ThingDef ParentName="BaseAutoTurretGun">
+		<defName>DMS_Dozer_KordMG</defName>
+		<label>Kord HMG turret</label>
+		<graphicData>
+			<texPath>Things/Turrets/DMS_Gun_Kord</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<description>heavy machine gun for mech soldier or infantry support platform.\n\nThis weapon is designed specially for mounted use, so only specific unit can equip it.</description>
+		<statBases>
+			<SightsEfficiency>1</SightsEfficiency>
+			<ShotSpread>0.06</ShotSpread>
+			<SwayFactor>1.46</SwayFactor>
+			<RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+			<Mass>10</Mass>
+		</statBases>
+		<verbs>
+			<li Class="CombatExtended.VerbPropertiesCE">
+				<recoilAmount>1.25</recoilAmount>
+				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_127x108mm_FMJ</defaultProjectile>
+				<warmupTime>2.4</warmupTime>
+				<range>75</range>
+				<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+				<burstShotCount>12</burstShotCount>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>12</muzzleFlashScale>
+				<recoilPattern>Mounted</recoilPattern>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>MountedWeapon</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+</Defs>

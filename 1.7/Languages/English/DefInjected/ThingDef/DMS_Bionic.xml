@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Nutrition port -->
+  <DMS_NutrientPort.label>Nutrition port</DMS_NutrientPort.label>
+  <!-- EN: A total overhaul of the patient's digestive system, replacing it with a fueling port and nutrient storage. -->
+  <DMS_NutrientPort.description>A series of surgeries that completely rebuild the patient's digestive system, replacing it with a fueling port and nutrient storage for greater capacity and processing efficiency - at the cost of a greatly reduced ability to digest natural food.</DMS_NutrientPort.description>
+  
+  <!-- EN: Mechaneural Arm -->
+  <DMS_ProstheticArm.label>Mechaneural Arm</DMS_ProstheticArm.label>
+  <!-- EN: An advanced artificial arm. Features Silenced mini-servos which provide great strength while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way. -->
+  <DMS_ProstheticArm.description>A mass-produced mechanical arm essentially identical to those fitted on humanoid mechs. It connects to biological nerves through a biogel relay and is driven by mechanical ligaments and micro-motors. Apart from being rather stiff, it is basically superior to the original.</DMS_ProstheticArm.description>
+  
+  <!-- EN: Mechaneural Visual Sensor -->
+  <DMS_ProstheticEye.label>Mechaneural Visual Sensor</DMS_ProstheticEye.label>
+  <!-- EN: An artificial light receiver with an integrated nerve-link. The sensor is equipped with night vision and aim assistance making it superior to its biological counterpart. -->
+  <DMS_ProstheticEye.description>A visible-light receiver with a neural link, featuring night vision and aiming assistance. Probably better than the original... maybe?</DMS_ProstheticEye.description>
+  
+  <!-- EN: Mechaneural kidney -->
+  <DMS_ProstheticKidney.label>Mechaneural kidney</DMS_ProstheticKidney.label>
+  <!-- EN: A biocompatible liquid filter implant that filters impurities and waste products out of the blood through osmotic pressure to ensure the acid-base balance of the implantee's internal circulatory system. -->
+  <DMS_ProstheticKidney.description>A biocompatible liquid filter implant that filters impurities and waste products out of the blood through osmotic pressure to ensure the acid-base balance of the implantee's internal circulatory system.</DMS_ProstheticKidney.description>
+  
+  <!-- EN: Mechaneural leg -->
+  <DMS_ProstheticLeg.label>Mechaneural leg</DMS_ProstheticLeg.label>
+  <!-- EN: An advanced artificial leg. With its biogel nerve-link, powerful mini-servos, and lattice-dust healing system, it is better than a biological leg in almost every way. -->
+  <DMS_ProstheticLeg.description>A mass-produced mechanical leg essentially identical to those fitted on humanoid mechs. It connects to biological nerves through a biogel relay and is driven by mechanical ligaments and micro-motors. Apart from being rather stiff, it is basically superior to the original.</DMS_ProstheticLeg.description>
+  
+  <!-- EN: Mechaneural lung -->
+  <DMS_ProstheticLung.label>Mechaneural lung</DMS_ProstheticLung.label>
+  <!-- EN: A plasteel fiber-based membrane lung prosthesis. It works like an artificial lung. During World War III, due to the lack of protective equipment, most soldiers were exposed to highly concentrated nuclear, biological, and chemical pollution, which caused massive ulceration and paralysis of respiratory organs. These types of prostheses were widely used in the military and gradually perfected through frontline surgeries and rehabilitation efforts for disabled soldiers. -->
+  <DMS_ProstheticLung.description>A membrane-oxygenation artificial organ based on plasteel fiber, working on the same principle as the surgical heart-lung machine known as E.C.M.O.\n\nDuring the Third World War, a lack of adequate protective equipment left large numbers of soldiers on every side exposed to intense nuclear, biological and chemical contamination, producing many casualties with ulcerated or failed organs. These internal organ replacements saw wide use in the military and were gradually perfected through frontline surgery and the resocialization treatment of disabled veterans.</DMS_ProstheticLung.description>
+  
+  <!-- EN: Biomechanical neurochord -->
+  <DMS_ProstheticSpine.label>Biomechanical neurochord</DMS_ProstheticSpine.label>
+  <!-- EN: An advanced biomechanical spine which works as a sub-brain which is compatible with other prostheses sharing the reflex nerves. -->
+  <DMS_ProstheticSpine.description>An advanced biomechanical spinal segment with a degree of modular stacking capability to improve control over prosthetics. It is compatible with other prosthetics through shared reflex nerves, and can also serve as an auxiliary brain array that reduces brain load and relieves fatigue.</DMS_ProstheticSpine.description>
+  <!-- EN: Implant {0_label} -->
+  <DMS_ProstheticSpine.comps.CompUsableImplant.useLabel>Implant {0_label}</DMS_ProstheticSpine.comps.CompUsableImplant.useLabel>
+  
+  <!-- EN: Emotion Filter -->
+  <DMS_SensoryFilter.label>Emotion Filter</DMS_SensoryFilter.label>
+  <!-- EN: An emotion filter which screens most non-essential emotions out of the patient's brain, but leaves basic essential emotionality relatively intact. This allows the patient to still form relationships with others while stile being a perfect soldier during war. While better than an Emotional Neutralizer, the filter is still inhumane. -->
+  <DMS_SensoryFilter.description>A cerebral secretion filter that screens out specific emotional feedback so the implantee is no longer affected by certain instinctive needs, while retaining enough emotion for normal interaction with others. It was designed to turn its user into a perfect soldier in war. Performing this surgery is still regarded as an inhumane felony today.</DMS_SensoryFilter.description>
+  
+  <!-- EN: Biosynthetic arm -->
+  <DMS_SyntheticArm.label>Biosynthetic arm</DMS_SyntheticArm.label>
+  <!-- EN: An advanced artificial arm composed of synthetic muscles and plasfiber skin grown on bone made by tungsteel. -->
+  <DMS_SyntheticArm.description>An advanced artificial arm composed of synthetic muscle and plasfiber skin grown on a tungsteel skeleton.</DMS_SyntheticArm.description>
+  
+  <!-- EN: Biosynthetic leg -->
+  <DMS_SyntheticLeg.label>Biosynthetic leg</DMS_SyntheticLeg.label>
+  <!-- EN: An advanced artificial leg. With its biogel nerve-link, powerful mini-servos, and lattice-dust healing system, it is better than a biological leg in almost every way. -->
+  <DMS_SyntheticLeg.description>An advanced artificial leg composed of synthetic muscle and plasfiber skin grown on a tungsteel skeleton.</DMS_SyntheticLeg.description>
+  
+  <!-- EN: Biosynthetic eye -->
+  <DMS_SyntheticEye.label>Biosynthetic eye</DMS_SyntheticEye.label>
+  <!-- EN: A compact compound eye cultured on an artifuscle framework. Its three primary lenses each carry receptors for a different band of the spectrum, and a micro-processor merges their input into visual signals the brain can understand, giving it far greater visual capability than a natural eye. -->
+  <DMS_SyntheticEye.description>A compact compound eye cultured on an artifuscle framework. Its three primary lenses each carry receptors for a different band of the spectrum, and a micro-processor merges their input into visual signals the brain can understand, giving it far greater visual capability than a natural eye.</DMS_SyntheticEye.description>
+  
+  <!-- EN: Biosynthetic heart -->
+  <DMS_SyntheticHeart.label>Biosynthetic heart</DMS_SyntheticHeart.label>
+  <!-- EN: A heart grown from engineered sauropsid cardiac muscle around a plasfiber valve lattice, designed for augmented soldiers whose oxygen demand had long outstripped what a natural heart could deliver. Its tireless beat comes at the price of occasional immune rejection. -->
+  <DMS_SyntheticHeart.description>A heart grown from engineered sauropsid cardiac muscle around a plasfiber valve lattice, designed for augmented soldiers whose oxygen demand had long outstripped what a natural heart could deliver. Its tireless beat comes at the price of occasional immune rejection.</DMS_SyntheticHeart.description>
+  
+  <!-- EN: Biosynthetic lung -->
+  <DMS_SyntheticLung.label>Biosynthetic lung</DMS_SyntheticLung.label>
+  <!-- EN: A cultured lung whose alveoli are lined with an artificial filtration membrane. Unlike the mechanical membrane lung, it breathes exactly like living tissue, and filters out part of the airborne toxins before they reach the bloodstream. -->
+  <DMS_SyntheticLung.description>A cultured lung whose alveoli are lined with an artificial filtration membrane. Unlike the mechanical membrane lung, it breathes exactly like living tissue, and filters out part of the airborne toxins before they reach the bloodstream.</DMS_SyntheticLung.description>
+  
+  <!-- EN: Biosynthetic kidney -->
+  <DMS_SyntheticKidney.label>Biosynthetic kidney</DMS_SyntheticKidney.label>
+  <!-- EN: A cultured kidney whose nephrons are reinforced with synthetic filter fibers. It cleans the blood faster than natural tissue and noticeably speeds up the body's immune response to infection. -->
+  <DMS_SyntheticKidney.description>A cultured kidney whose nephrons are reinforced with synthetic filter fibers. It cleans the blood faster than natural tissue and noticeably speeds up the body's immune response to infection.</DMS_SyntheticKidney.description>
+  
+  <!-- EN: Biosynthetic liver -->
+  <DMS_SyntheticLiver.label>Biosynthetic liver</DMS_SyntheticLiver.label>
+  <!-- EN: A liver grown on a porous artifuscle framework and seeded with engineered enzyme cultures. It breaks down toxins and spoiled food far more efficiently than a natural liver. -->
+  <DMS_SyntheticLiver.description>A liver grown on a porous artifuscle framework and seeded with engineered enzyme cultures. It breaks down toxins and spoiled food far more efficiently than a natural liver.</DMS_SyntheticLiver.description>
+  
+</LanguageData>

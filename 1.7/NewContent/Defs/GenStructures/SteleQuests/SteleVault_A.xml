@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       石碑封藏庫（DMS_SteleVault）：17x17。13x13 鎢鋼外牆圍出 11x11 的封藏室（有屋頂），
+       石碑（3x3，繪製 7x7）面朝南站在正中央；南北各一扇門，南門外一排沙包。守軍由 GenStep 生成。
+       石碑以站點派系（先鋒殘餘）生成，玩家要先佔領才能拆卸。
+
+       Stele vault (DMS_SteleVault): 17x17. A 13x13 tungsteel shell encloses an 11x11 roofed vault room with the
+       stele (3x3, drawn 7x7) standing in the middle facing south; a door north and south, sandbags outside the
+       south door. Garrison from the GenStep. The stele spawns under the site faction (Legacy), so the player has
+       to claim it before uninstalling.
+
+       座標 / Coordinates: Rect 的 pos 是左下角；Thing 的 pos 是物件位置（3x3 的石碑以中央格為準）。
+       Rect pos is the lower-left corner; Thing pos is the thing's position (the 3x3 stele is centred on it).
+       ============================================================ -->
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMS_SteleVault_A</defName>
+    <label>stele vault</label>
+    <size>(17, 17)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+
+      <!-- 地面 / Floors -->
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(0, 0, 0)</pos>
+        <size>(17, 17)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>MetalTile</def>
+        <pos>(3, 0, 3)</pos>
+        <size>(11, 11)</size>
+      </li>
+
+      <!-- 外牆，南北中間留門 / Shell walls, a gap mid-side north and south for the doors -->
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(2, 0, 2)</pos>
+        <size>(6, 1)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(9, 0, 2)</pos>
+        <size>(6, 1)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(2, 0, 14)</pos>
+        <size>(6, 1)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(9, 0, 14)</pos>
+        <size>(6, 1)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(2, 0, 3)</pos>
+        <size>(1, 11)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>Wall</def>
+        <pos>(14, 0, 3)</pos>
+        <size>(1, 11)</size>
+        <stuff>Tungsteel</stuff>
+      </li>
+
+      <!-- 門 / Doors -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Door</def>
+        <rot>0</rot>
+        <stuff>Steel</stuff>
+        <posList>
+          <li>(8, 0, 2)</li>
+          <li>(8, 0, 14)</li>
+        </posList>
+      </li>
+
+      <!-- 屋頂 / Roof -->
+      <li Class="Fortified.Structures.FFF_Element_RoofRect">
+        <def>RoofConstructed</def>
+        <pos>(3, 0, 3)</pos>
+        <size>(11, 11)</size>
+      </li>
+
+      <!-- 石碑 / The stele -->
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_OccultTechFont</def>
+        <pos>(8, 0, 8)</pos>
+        <rot>2</rot>
+      </li>
+
+      <!-- 南門外的沙包 / Sandbags outside the south door -->
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>Sandbags</def>
+        <posList>
+          <li>(6, 0, 0)</li>
+          <li>(7, 0, 0)</li>
+          <li>(9, 0, 0)</li>
+          <li>(10, 0, 0)</li>
+        </posList>
+      </li>
+    </elements>
+    <tags>
+      <li>DMS_SteleVault</li>
+    </tags>
+  </Fortified.Structures.FFF_StructureDef>
+</Defs>

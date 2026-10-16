@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: walker-track hybrid -->
+  <DMS_Uca.label>walker-track hybrid</DMS_Uca.label>
+  <!-- EN: control core -->
+  <DMS_Uca.corePart.parts.control_core.customLabel>control core</DMS_Uca.corePart.parts.control_core.customLabel>
+  <!-- EN: main battery -->
+  <DMS_Uca.corePart.parts.main_battery.customLabel>main battery</DMS_Uca.corePart.parts.main_battery.customLabel>
+  <!-- EN: visual sensor -->
+  <DMS_Uca.corePart.parts.visual_sensor.customLabel>visual sensor</DMS_Uca.corePart.parts.visual_sensor.customLabel>
+  <!-- EN: infrared sensor -->
+  <DMS_Uca.corePart.parts.infrared_sensor.customLabel>infrared sensor</DMS_Uca.corePart.parts.infrared_sensor.customLabel>
+  <!-- EN: hearing sensor -->
+  <DMS_Uca.corePart.parts.hearing_sensor.customLabel>hearing sensor</DMS_Uca.corePart.parts.hearing_sensor.customLabel>
+  <!-- EN: manipulator arm -->
+  <DMS_Uca.corePart.parts.manipulator_arm.customLabel>manipulator arm</DMS_Uca.corePart.parts.manipulator_arm.customLabel>
+  <!-- EN: left walker track -->
+  <DMS_Uca.corePart.parts.left_walker_track.customLabel>left walker track</DMS_Uca.corePart.parts.left_walker_track.customLabel>
+  <!-- EN: right walker track -->
+  <DMS_Uca.corePart.parts.right_walker_track.customLabel>right walker track</DMS_Uca.corePart.parts.right_walker_track.customLabel>
+  <!-- EN: left track shoe -->
+  <DMS_Uca.corePart.parts.left_walker_track.parts.left_track_shoe.customLabel>left track shoe</DMS_Uca.corePart.parts.left_walker_track.parts.left_track_shoe.customLabel>
+  <!-- EN: right track shoe -->
+  <DMS_Uca.corePart.parts.right_walker_track.parts.right_track_shoe.customLabel>right track shoe</DMS_Uca.corePart.parts.right_walker_track.parts.right_track_shoe.customLabel>
+
+  <!-- EN: quad-track -->
+  <DMS_Erima.label>quad-track</DMS_Erima.label>
+  <!-- EN: control core -->
+  <DMS_Erima.corePart.parts.control_core.customLabel>control core</DMS_Erima.corePart.parts.control_core.customLabel>
+  <!-- EN: main battery -->
+  <DMS_Erima.corePart.parts.main_battery.customLabel>main battery</DMS_Erima.corePart.parts.main_battery.customLabel>
+  <!-- EN: visual sensor -->
+  <DMS_Erima.corePart.parts.visual_sensor.customLabel>visual sensor</DMS_Erima.corePart.parts.visual_sensor.customLabel>
+  <!-- EN: multispectral sensor -->
+  <DMS_Erima.corePart.parts.multispectral_sensor.customLabel>multispectral sensor</DMS_Erima.corePart.parts.multispectral_sensor.customLabel>
+  <!-- EN: hearing sensor -->
+  <DMS_Erima.corePart.parts.hearing_sensor.customLabel>hearing sensor</DMS_Erima.corePart.parts.hearing_sensor.customLabel>
+  <!-- EN: harvest arm -->
+  <DMS_Erima.corePart.parts.harvest_arm.customLabel>harvest arm</DMS_Erima.corePart.parts.harvest_arm.customLabel>
+  <!-- EN: seeding arm -->
+  <DMS_Erima.corePart.parts.seeding_arm.customLabel>seeding arm</DMS_Erima.corePart.parts.seeding_arm.customLabel>
+  <!-- EN: front left track -->
+  <DMS_Erima.corePart.parts.front_left_track.customLabel>front left track</DMS_Erima.corePart.parts.front_left_track.customLabel>
+  <!-- EN: front right track -->
+  <DMS_Erima.corePart.parts.front_right_track.customLabel>front right track</DMS_Erima.corePart.parts.front_right_track.customLabel>
+  <!-- EN: rear left track -->
+  <DMS_Erima.corePart.parts.rear_left_track.customLabel>rear left track</DMS_Erima.corePart.parts.rear_left_track.customLabel>
+  <!-- EN: rear right track -->
+  <DMS_Erima.corePart.parts.rear_right_track.customLabel>rear right track</DMS_Erima.corePart.parts.rear_right_track.customLabel>
+  <!-- EN: front left drive wheel -->
+  <DMS_Erima.corePart.parts.front_left_track.parts.front_left_drive_wheel.customLabel>front left drive wheel</DMS_Erima.corePart.parts.front_left_track.parts.front_left_drive_wheel.customLabel>
+  <!-- EN: front right drive wheel -->
+  <DMS_Erima.corePart.parts.front_right_track.parts.front_right_drive_wheel.customLabel>front right drive wheel</DMS_Erima.corePart.parts.front_right_track.parts.front_right_drive_wheel.customLabel>
+  <!-- EN: rear left drive wheel -->
+  <DMS_Erima.corePart.parts.rear_left_track.parts.rear_left_drive_wheel.customLabel>rear left drive wheel</DMS_Erima.corePart.parts.rear_left_track.parts.rear_left_drive_wheel.customLabel>
+  <!-- EN: rear right drive wheel -->
+  <DMS_Erima.corePart.parts.rear_right_track.parts.rear_right_drive_wheel.customLabel>rear right drive wheel</DMS_Erima.corePart.parts.rear_right_track.parts.rear_right_drive_wheel.customLabel>
+
+</LanguageData>

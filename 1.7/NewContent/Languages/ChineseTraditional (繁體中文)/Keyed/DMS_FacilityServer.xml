@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 伺服主機駭入（DMS.CompServerHackable） -->
+  <DMS_ServerHack_Stage>駭入階段：{0} / {1}</DMS_ServerHack_Stage>
+  <DMS_ServerHack_Depleted>資料已全數提取</DMS_ServerHack_Depleted>
+  <DMS_ServerHack_AlarmWarning>每次開始駭入都會觸發設施警報</DMS_ServerHack_AlarmWarning>
+  <DMS_ServerHack_AlarmTripped>{HACKER_nameDef}開始駭入{SERVER_definite}，設施警報已被觸發！</DMS_ServerHack_AlarmTripped>
+  <DMS_ServerHack_AlarmTrippedNoHacker>有人正在駭入{SERVER_definite}，設施警報已被觸發！</DMS_ServerHack_AlarmTrippedNoHacker>
+  <DMS_ServerHack_StageLetterLabel>資料提取：{SERVER_label}</DMS_ServerHack_StageLetterLabel>
+  <DMS_ServerHack_StageLetterText>我們從{SERVER_definite}的底層儲存區中提取出了{REWARD_labelShort}。\n\n駭入進度：{DONE} / {TOTAL}。若要繼續提取，必須重新開始駭入，這會再次觸發設施警報。</DMS_ServerHack_StageLetterText>
+
+  <!-- 追殺暫停（DMS.CompHuntBreaker） -->
+  <DMS_HuntBreaker_InspectActive>摧毀此節點可暫時中斷殖民艦隊的追殺</DMS_HuntBreaker_InspectActive>
+  <DMS_HuntBreaker_InspectSuspended>追殺已中斷，預計{0}後恢復</DMS_HuntBreaker_InspectSuspended>
+  <DMS_HuntBreaker_NoHunt>{NODE_definite}已被摧毀。它所連接的追緝網路陷入一片寂靜，但殖民艦隊目前並未追緝我們。</DMS_HuntBreaker_NoHunt>
+  <DMS_HuntBreaker_Extended>{NODE_definite}已被摧毀，追緝網路的重建時間被進一步延後：追殺預計在{DURATION}後恢復。</DMS_HuntBreaker_Extended>
+  <DMS_HuntBreaker_SuspendedLabel>追殺中斷</DMS_HuntBreaker_SuspendedLabel>
+  <DMS_HuntBreaker_SuspendedText>{NODE_definite}已被摧毀。\n\n失去這個節點後，{FLEET}在星球上的雷達追蹤與導航網路出現了大面積的空白，他們已經無法掌握我們的位置，追殺行動被迫中止。\n\n但這只是暫時的。SAGE 網路內的其他計算機遲早會接手這個節點的工作，預計約{DURATION}後追殺就會重新開始。\n\n請注意：我們與艦隊的永久敵對狀態並未因此解除。</DMS_HuntBreaker_SuspendedText>
+  <DMS_HuntBreaker_ResumedLabel>追緝網路恢復</DMS_HuntBreaker_ResumedLabel>
+  <DMS_HuntBreaker_ResumedText>SAGE 網路內的另一台計算機已經升格為主機，{FLEET}的追緝網路重新上線了。\n\n他們再次掌握了我們的位置，追殺行動即將恢復。</DMS_HuntBreaker_ResumedText>
+
+  <!-- 毒氣釋放口（DMS.CompAlertEffector_GasVent） -->
+  <DMS_GasVent_Warning>{VENT_definite}發出嘶嘶聲：毒氣即將噴出！</DMS_GasVent_Warning>
+  <DMS_GasVent_Charges>毒氣存量：{0} / {1}</DMS_GasVent_Charges>
+  <DMS_GasVent_Arming>正在加壓</DMS_GasVent_Arming>
+  <DMS_GasVent_Releasing>正在釋放毒氣</DMS_GasVent_Releasing>
+
+  <!-- SAGE 節點站點 -->
+  <DMS_SageNode_EntryCountdownLabel>SAGE 節點：援軍倒數</DMS_SageNode_EntryCountdownLabel>
+  <DMS_SageNode_EntryCountdownText>SAGE 節點的戰略防空網已經鎖定我們的位置。{0}後，艦隊的快速反應部隊就會抵達。</DMS_SageNode_EntryCountdownText>
+  <DMS_SageNode_ExpiredLabel>SAGE 節點失聯</DMS_SageNode_ExpiredLabel>
+  <DMS_SageNode_ExpiredText>SAGE 網路完成了例行的節點輪換，我們掌握的座標已經失效。</DMS_SageNode_ExpiredText>
+  <DMS_SageNode_ClearedLabel>SAGE 節點已肅清</DMS_SageNode_ClearedLabel>
+  <DMS_SageNode_ClearedText>守衛 SAGE 節點的機兵已經被清除。賢者主機仍在運作：可以先駭入提取它的戰略資料庫，再將它徹底摧毀。</DMS_SageNode_ClearedText>
+
+</LanguageData>

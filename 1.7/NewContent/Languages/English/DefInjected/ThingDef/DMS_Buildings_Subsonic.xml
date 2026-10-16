@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- DMS_Building_SubsonicEmitter -->
+  <DMS_Building_SubsonicEmitter.label>infrasonic emitter</DMS_Building_SubsonicEmitter.label>
+  <DMS_Building_SubsonicEmitter.description>A tower-mounted array of tuned infrasound emitters. While powered, it periodically releases a burst of infrasound that passes through walls and reaches every hostile living creature within range, wracking them with nausea and pain and sending many into a panic. It only fires when enemies are in range. Mechs are unaffected.</DMS_Building_SubsonicEmitter.description>
+
+  <!-- DMS_Building_BlastScanner -->
+  <DMS_Building_BlastScanner.label>blast scanner</DMS_Building_BlastScanner.label>
+  <DMS_Building_BlastScanner.description>A precision geological survey device. A mortar shell loaded into its charge chamber drives a seismic shockwave deep into the ground, and the device reads the returning echoes to map ore deposits far below the surface. One charge maps several deep deposits at once.\n\nSurveying this way is never quiet. The shockwave all but inevitably wakes insect colonies dormant underground, and they tend to dig their way out close to whatever disturbed them.\n\nLoad a high-explosive shell, then light the fuse. The device needs time to recalibrate between charges.</DMS_Building_BlastScanner.description>
+  <DMS_Building_BlastScanner.comps.CompRefuelable.fuelLabel>charge</DMS_Building_BlastScanner.comps.CompRefuelable.fuelLabel>
+  <DMS_Building_BlastScanner.comps.CompRefuelable.fuelGizmoLabel>Charge</DMS_Building_BlastScanner.comps.CompRefuelable.fuelGizmoLabel>
+  <DMS_Building_BlastScanner.comps.CompRefuelable.outOfFuelMessage>No charge loaded</DMS_Building_BlastScanner.comps.CompRefuelable.outOfFuelMessage>
+
+</LanguageData>

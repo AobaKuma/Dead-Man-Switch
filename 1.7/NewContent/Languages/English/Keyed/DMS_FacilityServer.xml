@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 伺服主機駭入（DMS.CompServerHackable）/ Server hacking -->
+  <DMS_ServerHack_Stage>Hack stage: {0} / {1}</DMS_ServerHack_Stage>
+  <DMS_ServerHack_Depleted>All data extracted</DMS_ServerHack_Depleted>
+  <DMS_ServerHack_AlarmWarning>Every hacking attempt sets off the facility alarm</DMS_ServerHack_AlarmWarning>
+  <DMS_ServerHack_AlarmTripped>{HACKER_nameDef} has started hacking {SERVER_definite}. The facility alarm has been tripped!</DMS_ServerHack_AlarmTripped>
+  <DMS_ServerHack_AlarmTrippedNoHacker>Someone is hacking {SERVER_definite}. The facility alarm has been tripped!</DMS_ServerHack_AlarmTrippedNoHacker>
+  <DMS_ServerHack_StageLetterLabel>Data extracted: {SERVER_label}</DMS_ServerHack_StageLetterLabel>
+  <DMS_ServerHack_StageLetterText>We pulled {REWARD_labelShort} out of the lower storage of {SERVER_definite}.\n\nHack progress: {DONE} / {TOTAL}. Extracting more means starting the hack again, which will set off the facility alarm again.</DMS_ServerHack_StageLetterText>
+
+  <!-- 追殺暫停（DMS.CompHuntBreaker）/ Hunt suspension -->
+  <DMS_HuntBreaker_InspectActive>Destroying this node will break off the colony fleet's hunt for a while</DMS_HuntBreaker_InspectActive>
+  <DMS_HuntBreaker_InspectSuspended>Hunt broken off; expected to resume in {0}</DMS_HuntBreaker_InspectSuspended>
+  <DMS_HuntBreaker_NoHunt>{NODE_definite} has been destroyed. The tracking network it fed has gone quiet, but the colony fleet is not hunting us right now.</DMS_HuntBreaker_NoHunt>
+  <DMS_HuntBreaker_Extended>{NODE_definite} has been destroyed, pushing the tracking network's recovery back even further: the hunt should resume in about {DURATION}.</DMS_HuntBreaker_Extended>
+  <DMS_HuntBreaker_SuspendedLabel>Hunt broken off</DMS_HuntBreaker_SuspendedLabel>
+  <DMS_HuntBreaker_SuspendedText>{NODE_definite} has been destroyed.\n\nWithout it, {FLEET}'s radar tracking and navigation network on this planet has a gaping hole in it. They have lost track of us, and the hunt has been called off.\n\nThis will not last. Another computer on the SAGE network will take over the node's work sooner or later; the hunt should start again in about {DURATION}.\n\nNote: our permanent hostility with the fleet has not been lifted.</DMS_HuntBreaker_SuspendedText>
+  <DMS_HuntBreaker_ResumedLabel>Tracking network restored</DMS_HuntBreaker_ResumedLabel>
+  <DMS_HuntBreaker_ResumedText>Another computer on the SAGE network has been promoted to host, and {FLEET}'s tracking network is back online.\n\nThey know where we are again. The hunt is about to resume.</DMS_HuntBreaker_ResumedText>
+
+  <!-- 毒氣釋放口（DMS.CompAlertEffector_GasVent）/ Gas vent -->
+  <DMS_GasVent_Warning>{VENT_definite} is hissing: toxic gas incoming!</DMS_GasVent_Warning>
+  <DMS_GasVent_Charges>Gas charges: {0} / {1}</DMS_GasVent_Charges>
+  <DMS_GasVent_Arming>Pressurizing</DMS_GasVent_Arming>
+  <DMS_GasVent_Releasing>Releasing gas</DMS_GasVent_Releasing>
+
+  <!-- SAGE 節點站點 / SAGE node site -->
+  <DMS_SageNode_EntryCountdownLabel>SAGE node: reinforcements inbound</DMS_SageNode_EntryCountdownLabel>
+  <DMS_SageNode_EntryCountdownText>The SAGE node's strategic air-defense grid has locked onto our position. In {0}, the fleet's quick-reaction force will arrive.</DMS_SageNode_EntryCountdownText>
+  <DMS_SageNode_ExpiredLabel>SAGE node lost</DMS_SageNode_ExpiredLabel>
+  <DMS_SageNode_ExpiredText>The SAGE network has completed a routine node rotation. The coordinates we had are no longer valid.</DMS_SageNode_ExpiredText>
+  <DMS_SageNode_ClearedLabel>SAGE node cleared</DMS_SageNode_ClearedLabel>
+  <DMS_SageNode_ClearedText>The machines guarding the SAGE node have been wiped out. The SAGE core itself is still running: hack it to pull what you can from its strategic database, then destroy it for good.</DMS_SageNode_ClearedText>
+
+</LanguageData>

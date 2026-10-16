@@ -1,14 +1,30 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
+  <!--
+    DMS 2.0 只建置 RimWorld 1.7（.NET 10 / Waylith / Harmony 3）→ 1.7/Assemblies，並定義 RW_1_7。
+    1.4～1.6 凍結在 1.8.27（標籤 dms-1.8.27-final），1.6/Assemblies/DMS.dll 不再由本專案產生。
+    1.7 沒有參考組件套件，直接參考遊戲本體的 DLL；預設假設本模組位於 <RimWorld>/Mods/<模組>/，
+    遊戲裝在別處時以 -p:RimWorldDir=<遊戲目錄>\ 覆寫。
+    DMS 2.0 builds for RimWorld 1.7 only (.NET 10 / Waylith / Harmony 3) into 1.7/Assemblies and defines RW_1_7.
+    1.4–1.6 are frozen at 1.8.27 (tag dms-1.8.27-final); this project no longer produces 1.6/Assemblies/DMS.dll.
+    1.7 has no reference-assembly package, so the game's own DLLs are referenced; override the game path
+    with -p:RimWorldDir=<game dir>\ when the mod is not under <RimWorld>/Mods/<mod>/.
+  -->
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net472</TargetFramework>
-    <OutputPath>$(MSBuildThisFileDirectory)/../../1.6/Assemblies</OutputPath>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputPath>$(MSBuildThisFileDirectory)/../../1.7/Assemblies</OutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>10.0</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
     <BaseOutputPath></BaseOutputPath>
+    <DefineConstants>$(DefineConstants);RW_1_7</DefineConstants>
+    <!-- 遊戲只載入 Assemblies 內的 .dll，不需要 DMS.deps.json。The game only loads the .dll, so no deps.json. -->
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <RimWorldDir Condition="'$(RimWorldDir)' == ''">$(MSBuildThisFileDirectory)..\..\..\..\</RimWorldDir>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -23,81 +39,52 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4565-beta" />
-    <PackageReference Include="Lib.Harmony" Version="2.4.1" />
+    <!-- ExcludeAssets=runtime：只取編譯期的 0Harmony 參考，不要把 0Harmony.dll 複製到 1.7/Assemblies/。
+         Harmony 由 brrainz.harmony 提供（About.xml 已列為硬相依），版本與其 1.7 資料夾內的 0Harmony.dll 相同。
+         Compile-time reference only; brrainz.harmony (a hard dependency) ships the same 3.0.0-rc.2 in its 1.7 folder. -->
+    <PackageReference Include="Lib.Harmony" Version="3.0.0-rc.2" ExcludeAssets="runtime" />
 
     <Publicize Include="Assembly-CSharp:RimWorld.CompTargetable.selectedTarget" />
     <Publicize Include="Assembly-CSharp:RimWorld.LordToil_Siege.SetAsDefender" />
+    <Publicize Include="Assembly-CSharp:RimWorld.QuestPartActivable.Complete" />
+    <Publicize Include="Assembly-CSharp:RimWorld.QuestPart_LendColonistsToFaction.Complete" />
+    <!-- Patch_Recipe_ImplantEmbryo_ApplyOnPawn 需要沿用原版的手術失敗判定。 -->
+    <Publicize Include="Assembly-CSharp:RimWorld.Recipe_Surgery.CheckSurgeryFail" />
+    <!-- OccultechSanctionUtility.RenounceAll 需要把單一研究的進度歸零；
+         原生只提供 ResetAllProgress()，沒有 per-project 的清除方法。 -->
+    <Publicize Include="Assembly-CSharp:RimWorld.ResearchManager.progress" />
+    <Publicize Include="Assembly-CSharp:RimWorld.ResearchManager.anomalyKnowledge" />
+    <!-- CompServerHackable：多階段駭入要在階段之間重置原版 CompHackable 的私有狀態，並讀 lastHackTick 判定「新的一次駭入」。
+         CompServerHackable resets vanilla CompHackable's private state between stages and reads lastHackTick
+         to detect each new hacking session. -->
+    <Publicize Include="Assembly-CSharp:RimWorld.CompHackable.progress" />
+    <Publicize Include="Assembly-CSharp:RimWorld.CompHackable.hacked" />
+    <Publicize Include="Assembly-CSharp:RimWorld.CompHackable.lastHackTick" />
+    <Publicize Include="Assembly-CSharp:RimWorld.CompHackable.lastUser" />
+    <Publicize Include="Assembly-CSharp:RimWorld.CompHackable.progressLastLockout" />
+    <Publicize Include="Assembly-CSharp:RimWorld.CompHackable.sentLetter" />
 
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\_Fortified-Framework\_Sources\Reference\0Harmony.dll</HintPath>
+    <!-- 1.7 的 UnityEngine.* 型別全部由 UnityStubs 提供。UnityStubs provides every UnityEngine.* type on 1.7. -->
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldDir)Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\..\_Fortified-Framework\_Sources\Reference\UnityEngine.dll</HintPath>
+    <Reference Include="UnityStubs">
+      <HintPath>$(RimWorldDir)UnityStubs.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\_Fortified-Framework\_Sources\Reference\UnityEngine.CoreModule.dll</HintPath>
+    <Reference Include="Waylith">
+      <HintPath>$(RimWorldDir)Waylith.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>..\..\..\_Fortified-Framework\_Sources\Reference\UnityEngine.IMGUIModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\..\..\_Fortified-Framework\_Sources\Reference\UnityEngine.TextRenderingModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\_Fortified-Framework\_Sources\Reference\UnityEngine.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Update="System">
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Update="System.Core">
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Update="System.Data">
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Update="System.Drawing">
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Update="System.IO.Compression.FileSystem">
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Update="System.Numerics">
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Update="System.Runtime.Serialization">
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Update="System.Xml">
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Update="System.Xml.Linq">
+    <!-- QuestNode_Root_DMS_RandomFactionTimedSite 等繼承或呼叫 FFF 的型別。
+         About.xml 已將 AOBA.Framework 列為硬相依，所以這個組件參考不會新增額外的相依關係。
+         Required by QuestNode_Root_DMS_RandomFactionTimedSite and others. AOBA.Framework is
+         already a hard modDependency, so this adds no new requirement. -->
+    <Reference Include="Fortified">
+      <HintPath>..\..\..\_Fortified-Framework\1.7\Assemblies\Fortified.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

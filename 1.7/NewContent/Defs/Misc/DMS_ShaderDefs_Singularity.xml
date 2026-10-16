@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ==================================================================== -->
+  <!-- 零點能奇點（DMS.CompSingularityGraphic）用的著色器。                   -->
+  <!-- 1.7（Waylith）從 NewContent/Shaders 讀 GLSL 原始碼並在執行期編譯；      -->
+  <!-- 檔名全域共用，所以一律加 DMS_ 前綴，避免蓋掉原版或其他模組的同名檔。   -->
+  <!-- Shaders for the zero-point singularity (DMS.CompSingularityGraphic).  -->
+  <!-- 1.7 (Waylith) compiles the GLSL in NewContent/Shaders at runtime.     -->
+  <!-- File names are resolved globally, hence the DMS_ prefix.              -->
+  <!-- ==================================================================== -->
+
+  <!-- 黑洞本體：抓取場景做重力透鏡。與原版 MoteGlowDistortBackground 共用同一個 DistortionBackground 抓取點，
+       不額外多拷一次畫面。Lensing grabs the scene through the same DistortionBackground grab point as vanilla's
+       MoteGlowDistortBackground, so it costs no extra screen copy. -->
+  <ShaderDef>
+    <defName>DMS_Singularity</defName>
+    <shaderProgram>
+      <vertexShaderFileName>DMS_Singularity.vert.glsl</vertexShaderFileName>
+      <fragmentShaderFileName>DMS_Singularity.frag.glsl</fragmentShaderFileName>
+      <flipTextureST>false</flipTextureST>
+      <transparent>true</transparent>
+      <depthWrite>false</depthWrite>
+      <cullMode>None</cullMode>
+      <renderQueue>3151</renderQueue>
+      <sceneGrab>
+        <name>DistortionBackground</name>
+        <queue>3151</queue>
+      </sceneGrab>
+    </shaderProgram>
+  </ShaderDef>
+
+  <!-- 電弧：排在黑洞之後畫，才不會被透鏡蓋掉。Arcs draw after the hole so the lensing never covers them. -->
+  <ShaderDef>
+    <defName>DMS_SingularityArc</defName>
+    <shaderProgram>
+      <vertexShaderFileName>DMS_Singularity.vert.glsl</vertexShaderFileName>
+      <fragmentShaderFileName>DMS_SingularityArc.frag.glsl</fragmentShaderFileName>
+      <flipTextureST>false</flipTextureST>
+      <blendMode>Additive</blendMode>
+      <depthWrite>false</depthWrite>
+      <cullMode>None</cullMode>
+      <renderQueue>3160</renderQueue>
+    </shaderProgram>
+  </ShaderDef>
+
+  <!-- 彩蛋故障：自己的抓取點排在黑暗（3180）之後，所以黑洞、電弧與夜色都一起故障。只在發作時有東西用到它，
+       平常不會多拷一次畫面。不做深度測試，蓋滿視野的方塊才不會被較高的圖層擋住。
+       Easter-egg glitch: its own grab sits after the darkness pass (3180), so the hole, arcs and night shading all
+       glitch with it. Nothing uses it outside an episode, so it costs no screen copy otherwise. Depth testing is off
+       so higher layers never punch holes in the view-sized quad. -->
+  <ShaderDef>
+    <defName>DMS_SingularityGlitch</defName>
+    <shaderProgram>
+      <vertexShaderFileName>DMS_Singularity.vert.glsl</vertexShaderFileName>
+      <fragmentShaderFileName>DMS_SingularityGlitch.frag.glsl</fragmentShaderFileName>
+      <flipTextureST>false</flipTextureST>
+      <transparent>true</transparent>
+      <depthTest>false</depthTest>
+      <depthWrite>false</depthWrite>
+      <cullMode>None</cullMode>
+      <renderQueue>3190</renderQueue>
+      <sceneGrab>
+        <name>DMS_SingularityGlitch</name>
+        <queue>3190</queue>
+      </sceneGrab>
+    </shaderProgram>
+  </ShaderDef>
+
+  <ShaderTypeDef>
+    <defName>DMS_Singularity</defName>
+    <shaderPath>Map/DMS_Singularity</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>DMS_SingularityArc</defName>
+    <shaderPath>Map/DMS_SingularityArc</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>DMS_SingularityGlitch</defName>
+    <shaderPath>Map/DMS_SingularityGlitch</shaderPath>
+  </ShaderTypeDef>
+</Defs>

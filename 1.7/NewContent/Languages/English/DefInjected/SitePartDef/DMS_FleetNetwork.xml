@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DMS_SageNodeSite.label>SAGE node</DMS_SageNodeSite.label>
+  <DMS_SageNodeSite.description>A strategic command host on the colony fleet's tracking network, guarded by Legacy remnant machines.</DMS_SageNodeSite.description>
+  <DMS_SageNodeSite.approachOrderString>Assault {0}</DMS_SageNodeSite.approachOrderString>
+  <DMS_SageNodeSite.approachingReportString>Assaulting {0}.</DMS_SageNodeSite.approachingReportString>
+  <DMS_SageNodeSite.arrivedLetter>You have arrived at the SAGE node. Sentry towers cover the approaches, and the node is wired for fire support.</DMS_SageNodeSite.arrivedLetter>
+
+</LanguageData>

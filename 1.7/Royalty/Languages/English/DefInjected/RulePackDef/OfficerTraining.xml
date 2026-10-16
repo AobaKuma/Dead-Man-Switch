@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS_OfficerTrainingLetters.rulePack.rulesStrings>
+    <li>arrivedLetterLabel->Personnel transport arrived</li>
+    <li>arrivedLetterLabel->Personnel transport landed</li>
+    <li>arrivedLetterText->The orbital transport requisitioned by [askerName] has landed. [traineeName] must board it for the [courseName] at the [issuerFactionName] training centre.</li>
+    <li>graduateLetterLabel->Graduated: [traineeName]</li>
+    <li>graduateLetterLabel->[traineeName] commissioned [newTitle]</li>
+    <li>graduateLetterText->[traineeName] has completed the [courseName] and is being returned by drop pod, promoted from [oldTitle] to [newTitle] by order of [issuerFactionName].\n\nThe course record notes a marked improvement in [skillName].</li>
+    <li>graduateNoTraitLetterLabel->Graduated: [traineeName]</li>
+    <li>graduateNoTraitLetterLabel->[traineeName] commissioned [newTitle]</li>
+    <li>graduateNoTraitLetterText->[traineeName] has completed the [courseName] and is being returned by drop pod, promoted from [oldTitle] to [newTitle] by order of [issuerFactionName].\n\nThe instructors found nothing in [traineeName]'s discipline worth correcting, so they spent the time on the syllabus instead. The [skillName] instruction on record runs well past the standard for the grade.</li>
+    <li>capturedLetterLabel->[traineeName] detained by [issuerFactionName]</li>
+    <li>capturedLetterLabel->Trainee detained</li>
+    <li>capturedLetterText->[issuerFactionName] went to war with [playerFactionName] while [traineeName] was still at the training establishment. The service education command has handed [traineeName] over to the provost.\n\n[traineeName] is not coming back on a transport. Getting [traineeName] out is our problem now.</li>
+    <li>abortLetterLabel->Course allocation withdrawn</li>
+    <li>abortLetterText->Hostilities with [issuerFactionName] have voided the course allocation for [traineeName]. The transport has been recalled.</li>
+    <li>missedLetterLabel->Transport left empty</li>
+    <li>missedLetterText->The transport requisitioned by [askerName] has departed. [issuerFactionName] has struck [traineeName] from the roll for this run of the officer training course; the promotion will have to wait for another opportunity.</li>
+  </DMS_OfficerTrainingLetters.rulePack.rulesStrings>
+
+</LanguageData>

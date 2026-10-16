@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    義體／器官的「特殊機制」條目。hediffGivers 不在 InfoDisplay 的來源列舉範圍內，
+    因此以 Fortified.InfoDisplayExtension 手動掛在 HediffDef 與物品 ThingDef 上。
+    翻譯：Languages/<語言>/DefInjected/Fortified.FFF_InfoDef/DMS_InfoDefs_Bionic.xml
+  -->
+
+  <!-- 神經機械仿生：隨機觸發異肢症，已患病則升級 -->
+  <Fortified.FFF_InfoDef>
+    <defName>DMS_Info_BionicShock</defName>
+    <label>xeno limb syndrome</label>
+    <description>Neurally interfaced prostheses have no biological receptors, so the nervous system never fully accepts them. Every installed prosthesis periodically triggers xeno limb syndrome: the first episode starts at LV.1, and each later episode pushes the existing syndrome up one level. The more prostheses a patient carries, the faster it worsens.\n\nThe syndrome has five levels, progressing from itching and pain through mental breaks to coma. Worsening beyond LV.5 is fatal.\n\nTreatment: each dose of neuroglue lowers the syndrome by one level, curing it outright at LV.1. While neuroglue is in effect, the syndrome cannot worsen.</description>
+    <displayPriority>900</displayPriority>
+    <hyperlinks>
+      <HediffDef>DMS_BionicShock</HediffDef>
+      <ThingDef>Neuroglue</ThingDef>
+      <HediffDef>NeuroglueHigh</HediffDef>
+    </hyperlinks>
+  </Fortified.FFF_InfoDef>
+
+  <!-- 生物合成義體／器官：隨機觸發合成排斥 -->
+  <Fortified.FFF_InfoDef>
+    <defName>DMS_Info_SyntheticRejection</defName>
+    <label>synthetic rejection</label>
+    <description>The host's immune system never fully accepts biosynthetic tissue. Each installed biosynthetic part independently triggers synthetic rejection, on average once every 40 days.\n\nAn episode lasts 5 days, bringing fever and pain, slightly dulled consciousness and severely impaired blood filtration.\n\nTreatment: a single dose of neuroglue cures it at once, and any episode that begins while neuroglue is in effect clears up immediately.</description>
+    <displayPriority>900</displayPriority>
+    <hyperlinks>
+      <HediffDef>DMS_SyntheticRejection</HediffDef>
+      <ThingDef>Neuroglue</ThingDef>
+      <HediffDef>NeuroglueHigh</HediffDef>
+    </hyperlinks>
+  </Fortified.FFF_InfoDef>
+
+  <!-- 受體凝膠：療效總覽 -->
+  <Fortified.FFF_InfoDef>
+    <defName>DMS_Info_Neuroglue</defName>
+    <label>neuroglue therapy</label>
+    <description>Each dose takes effect immediately:\n - xeno limb syndrome is lowered by one level, or cured outright at LV.1.\n\nWhile neuroglue is in effect (about 5.5 days):\n - xeno limb syndrome cannot worsen;\n - synthetic rejection and phantom limb syndrome are cured, and clear up immediately if they recur;\n - the patient cannot contract fibrous or sensory mechanites.\n\nSide effect: mild pain for the duration.</description>
+    <displayPriority>900</displayPriority>
+    <hyperlinks>
+      <HediffDef>NeuroglueHigh</HediffDef>
+      <HediffDef>DMS_BionicShock</HediffDef>
+      <HediffDef>DMS_SyntheticRejection</HediffDef>
+      <HediffDef>DMS_BionicShockRemove</HediffDef>
+      <HediffDef>FibrousMechanites</HediffDef>
+      <HediffDef>SensoryMechanites</HediffDef>
+    </hyperlinks>
+  </Fortified.FFF_InfoDef>
+
+</Defs>

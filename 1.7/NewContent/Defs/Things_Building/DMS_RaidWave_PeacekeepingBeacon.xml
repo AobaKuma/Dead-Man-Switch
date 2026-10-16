@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="DMS_BossCallerBase">
+    <defName>DMS_RaidWaveBeacon_PeacekeepingOperators</defName>
+    <label>peacekeeping distress beacon</label>
+    <description>A tampered emergency transponder repurposed to broadcast a false peacekeeping distress call. Once activated, it summons a Legacy remnant peacekeeping detachment: Protector shieldbearers screening a Ronin spearhead, with Falcon marksmen providing overwatch, to storm the signal's origin. The burst burns out the transmitter, so this building can only be used once.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Protector</ThingDef>
+      <ThingDef>DMS_Mech_Ronin</ThingDef>
+      <ThingDef>DMS_Mech_Falcon</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Building/Facility_Base</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(1.2, 0.6, 0.6)</volume>
+        <offset>(0.1, 0, 0)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>DMS_DeadMansSwitch</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerObject</useJob>
+        <useLabel>Call in peacekeeping operators</useLabel>
+        <useDuration>900</useDuration>
+        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
+      </li>
+      <li Class="Fortified.CompProperties_UseEffect_CallRaidWave">
+        <raidWaveDef>DMS_RaidWave_PeacekeepingOperators</raidWaveDef>
+        <effecterDef>BurnoutMechlinkBoosterUsed</effecterDef>
+      </li>
+      <li Class="Fortified.CompProperties_UseEffect_GiveTimedSiteQuest">
+        <quest>DMS_DecoySiteAssault</quest>
+        <baseTimeoutDays>16</baseTimeoutDays>
+        <minTimeoutDays>4</minTimeoutDays>
+        <maxTimeoutDays>30</maxTimeoutDays>
+        <onlyOneActive>true</onlyOneActive>
+        <alreadyActiveKey>DMS_DecoySite_AlreadyActive</alreadyActiveKey>
+        <cannotFindSiteKey>DMS_DecoySite_CannotFindSite</cannotFindSiteKey>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf">
+        <delayTicks>120</delayTicks>
+        <spawnKilledLeavings>true</spawnKilledLeavings>
+        <effecterDef>MechbandBuildingDestroyed</effecterDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

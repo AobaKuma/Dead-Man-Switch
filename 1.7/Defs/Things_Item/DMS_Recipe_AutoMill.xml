@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 自動磨床專用的批量切石配方。
+       一次吃下 4 塊石礦並輸出 80 塊石磚，讓磨床可以無人值守地跑很久。
+       數值與文本對齊原版 Core/Defs/RecipeDefs/Recipes_Production.xml 的 MakeStoneBlocksBase：
+       單次切石 workAmount 1600、targetCountAdjustment 20，這裡都乘以 4。 -->
+  <RecipeDef Name="DMS_AutoMillBulkCutBase" Abstract="True">
+    <jobString>Cutting stone blocks from 4 chunks.</jobString>
+    <workAmount>6400</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>CutStone</effectWorking>
+    <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+    <targetCountAdjustment>80</targetCountAdjustment>
+    <workSkill>Crafting</workSkill>
+    <workSkillLearnFactor>0</workSkillLearnFactor>
+    <!-- 磨床本身負責切削，殖民者只是上下料，因此歸類為搬運工作。
+         需搭配 DMS_Operate_Haul（workType 為 Hauling 的 WorkGiver）。 -->
+    <requiredGiverWorkType>Hauling</requiredGiverWorkType>
+    <allowMixingIngredients>false</allowMixingIngredients>
+    <recipeUsers>
+      <li>DMS_AutoMill</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <!-- 混合進料：任何石礦皆可，產物由石礦自身的 butcherProducts 決定，因此支援模組石材。
+       沿用原版 Make_StoneBlocksAny 的 workerCounterClass，「持續生產到 X 個」才數得出石磚總量。 -->
+  <RecipeDef ParentName="DMS_AutoMillBulkCutBase">
+    <defName>DMS_AutoMill_CutBlocksAny_x4</defName>
+    <label>make any stone blocks x4</label>
+    <description>Cut 4 rock chunks into usable stone blocks.</description>
+    <workerCounterClass>RecipeWorkerCounter_MakeStoneBlocks</workerCounterClass>
+    <displayPriority>100</displayPriority>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>StoneChunks</li>
+          </categories>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>StoneChunks</li>
+      </categories>
+    </fixedIngredientFilter>
+    <specialProducts>
+      <li>StoneBlocks</li>
+    </specialProducts>
+  </RecipeDef>
+
+  <!-- 以下為原版五種石材的專用批量配方，產物寫死，對應 Various_Stone.xml 的 Make_StoneBlocks* 。 -->
+  <RecipeDef ParentName="DMS_AutoMillBulkCutBase">
+    <defName>DMS_AutoMill_CutBlocksSandstone_x4</defName>
+    <label>make sandstone blocks x4</label>
+    <description>Cuts 4 sandstone chunks into usable blocks.</description>
+    <displayPriority>110</displayPriority>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ChunkSandstone</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ChunkSandstone</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BlocksSandstone>80</BlocksSandstone>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef ParentName="DMS_AutoMillBulkCutBase">
+    <defName>DMS_AutoMill_CutBlocksGranite_x4</defName>
+    <label>make granite blocks x4</label>
+    <description>Cuts 4 granite chunks into usable blocks.</description>
+    <displayPriority>111</displayPriority>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ChunkGranite</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ChunkGranite</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BlocksGranite>80</BlocksGranite>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef ParentName="DMS_AutoMillBulkCutBase">
+    <defName>DMS_AutoMill_CutBlocksLimestone_x4</defName>
+    <label>make limestone blocks x4</label>
+    <description>Cuts 4 limestone chunks into usable blocks.</description>
+    <displayPriority>112</displayPriority>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ChunkLimestone</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ChunkLimestone</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BlocksLimestone>80</BlocksLimestone>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef ParentName="DMS_AutoMillBulkCutBase">
+    <defName>DMS_AutoMill_CutBlocksSlate_x4</defName>
+    <label>make slate blocks x4</label>
+    <description>Cuts 4 slate chunks into usable blocks.</description>
+    <displayPriority>113</displayPriority>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ChunkSlate</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ChunkSlate</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BlocksSlate>80</BlocksSlate>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef ParentName="DMS_AutoMillBulkCutBase">
+    <defName>DMS_AutoMill_CutBlocksMarble_x4</defName>
+    <label>make marble blocks x4</label>
+    <description>Cuts 4 marble chunks into usable blocks.</description>
+    <displayPriority>114</displayPriority>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ChunkMarble</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ChunkMarble</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BlocksMarble>80</BlocksMarble>
+    </products>
+  </RecipeDef>
+
+</Defs>

@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase" Name="DMS_BuildingBase" Abstract="True">
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.75</fillPercent>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <statBases>
+      <MaxHitPoints>800</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>25</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>3</ChunkSlagSteel>
+    </killedLeavings>
+    <tickerType>Normal</tickerType>
+    <filthLeaving>Filth_MachineBits</filthLeaving>
+  </ThingDef>
+
+  <ThingDef Name="DMS_AlertBuildingBase" Abstract="True" ParentName="DMS_BuildingBase">
+    <category>Building</category>
+    <pathCost>50</pathCost>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <receivesSignals>true</receivesSignals>
+    <building>
+      <claimable>false</claimable>
+      <!-- 變電箱被關閉時，關掉帶這個標籤、離它最近且還開著的一座（見 DMS_SubstationCabinet 的 flickOffBuildingTag）。
+           When a substation is shut down, the nearest still-on building with this tag is switched off
+           (see flickOffBuildingTag on DMS_SubstationCabinet). -->
+      <buildingTags>
+        <li>DMS_AlertBuilding</li>
+      </buildingTags>
+    </building>
+    <!-- EMP / Stun 癱瘓（搭配 CompCanBeDormant 停止掃描） -->
+    <comps>
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>EMP</li>
+          <li>Stun</li>
+        </affectedDamageDefs>
+      </li>
+      <li Class="CompProperties_CanBeDormant">
+        <startsDormant>false</startsDormant>
+      </li>
+      <!-- 開關：被變電箱關掉後斷電離線。不可佔領，玩家沒有開關按鈕，關掉就不會再開。
+           Power switch: once a substation flicks it off it loses power and goes offline. Unclaimable, so the
+           player never gets the toggle and it stays off. -->
+      <li Class="CompProperties_Flickable" />
+    </comps>
+  </ThingDef>
+
+  <!-- FPV 機庫 -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_FPVNest</defName>
+    <label>FPV nest</label>
+    <designatorDropdown>DMS_FPVStations</designatorDropdown>
+    <description>An automated drone nest used for facility defense. When alerted by the facility's other sensors, it automatically launches FPV drones to drive off or kill intruders, and it will also release drones to fight back when attacked. It is connected to the facility's underground logistics system below, so its expended drone stock is automatically replenished over time.</description>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_HangerSmall</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <li Class="Fortified.CompProperties_AlertEffector_ReleaseEntity">
+        <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
+        <triggerChance>0.6</triggerChance>
+        <oneShot>true</oneShot>
+        <pawnKindDef>DMS_Drone_Wildfowl</pawnKindDef>
+        <countToSpawn>4</countToSpawn>
+        <targetSearchRadius>40</targetSearchRadius>
+        <scatterAroundParent>true</scatterAroundParent>
+        <scatterRadius>3</scatterRadius>
+        <spawnSound>DroneTrapSpring</spawnSound>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- FPV 設施：完好版在此，廢墟版在 Decoration.xml -->
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_FPVStations</defName>
+    <label>FPV stations</label>
+  </DesignatorDropdownGroupDef>
+
+  <!-- FPV 機庫 -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_FPVHanger</defName>
+    <label>FPV hangar</label>
+    <designatorDropdown>DMS_FPVStations</designatorDropdown>
+    <description>An automated drone hangar used for facility defense. When alerted by the facility's other sensors, it automatically launches FPV drones to drive off or kill intruders, and it will also release drones to fight back when attacked. It is connected to the facility's underground logistics system below, so its expended drone stock is automatically replenished over time.</description>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_HangerLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,5)</drawSize>
+      <drawOffset>(0,0.05,0)</drawOffset>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <staticSunShadowHeight>0.7</staticSunShadowHeight>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <li Class="Fortified.CompProperties_AlertEffector_ReleaseEntity">
+        <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
+        <triggerChance>0.6</triggerChance>
+        <!-- 可重複觸發 -->
+        <oneShot>false</oneShot>
+        <pawnKindDef>DMS_Drone_VerlingBrid</pawnKindDef>
+        <countToSpawn>5</countToSpawn>
+        <targetSearchRadius>40</targetSearchRadius>
+        <scatterAroundParent>true</scatterAroundParent>
+        <scatterRadius>3</scatterRadius>
+        <spawnSound>DroneTrapSpring</spawnSound>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 監視器 （每120tick監視5x25的正面空間，受LOS影響，如果有敵對陣營的Pawn出現在範圍內就會觸發警報並進入冷卻時間） -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_Camera</defName>
+    <label>camera</label>
+    <description>A surveillance camera that monitors a long, narrow corridor for intruders. Connected to the local alert counter. Cut power or hit it with an EMP to disable it safely before dismantling.</description>
+    <!-- <description>安裝在牆壁上的閉路監控攝像頭，其連接著一套自動化的安全系統使其在偵測到非法闖入者十能夠激活設施內的安全措施迎擊入侵者。</description> -->
+    <graphicData>
+      <texPath>Things/Building/camera</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.5,1.5)</drawSize>
+      <drawOffsetNorth>(0,0,0.5)</drawOffsetNorth>
+    </graphicData>
+    <passability>Standable</passability>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <building>
+      <isInert>false</isInert>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+      <li>Fortified.PlaceWorker_AlertScanner</li>
+    </placeWorkers>
+    <terrainAffordanceNeeded IsNull="True" />
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <!-- 掃描器：5 寬 × 21 長矩形，受 LOS 影響 -->
+      <li Class="Fortified.CompProperties_AlertScanner">
+        <scanWidth>5</scanWidth>
+        <scanHeight>21</scanHeight>
+        <requireLOS>true</requireLOS>
+        <scanRotationOffset>2</scanRotationOffset>
+        <checkInterval>250</checkInterval>
+        <rearmInterval>2500</rearmInterval>
+        <attackTriggerChance>0.6</attackTriggerChance>
+        <triggerCountdown>60</triggerCountdown>
+        <alertIncrement>20</alertIncrement>
+        <watchingEffecter>FFF_Scanner_Idle</watchingEffecter>      <!-- 正常掃描中（藍光閃爍） -->
+        <detectionEffecter>FFF_Scanner_Alert</detectionEffecter>   <!-- 偵測到威脅（紅光警報） -->
+        <triggerEffector>FFF_Scanner_Trigger</triggerEffector>
+        <signalString>FFF_AlertScanner_Triggered</signalString>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 震動傳感器 （每300Tick監視5x5範圍內的全方向，不受LOS影響，相機靠近的時候有音效，敵對陣營的PAWN在範圍內會有體型x10%的機率觸發警報，並進入冷卻時間，期間間歇閃紅燈） -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_Sensor</defName>
+    <label>seismic sensor</label>
+    <description>A passive sensor installed along pipes and secondary passageways. The larger the thing entering its range, the more likely it is to trip the alarm.</description>
+    <graphicData>
+      <texPath>Things/Building/Facility_Decoy</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <placeWorkers>
+      <li>Fortified.PlaceWorker_AlertScanner</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <li Class="Fortified.CompProperties_AlertScanner">
+        <radius>2.9</radius>
+        <requireLOS>false</requireLOS>
+        <checkInterval>250</checkInterval>
+        <rearmInterval>3000</rearmInterval>
+        <attackTriggerChance>0.4</attackTriggerChance>
+        <triggerCountdown>30</triggerCountdown>
+        <alertIncrement>15</alertIncrement>
+        <signalString>FFF_AlertScanner_Triggered</signalString>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+  <!-- 哨戒塔：完好版在此，廢墟版在 Decoration.xml -->
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_SentryTowers</defName>
+    <label>sentry towers</label>
+  </DesignatorDropdownGroupDef>
+
+  <!-- 大型無人哨塔 （每300Tick監視半徑30格LOS範圍內的Pawn） -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_Scanner_Large</defName>
+    <label>large sentry tower</label>
+    <designatorDropdown>DMS_SentryTowers</designatorDropdown>
+    <!-- 一種長期自持運行的無人警戒平台，具有多種類型的傳感器來監控大片範圍內的可疑活動。一旦被驚動到就會廣播警報訊號來讓周圍的自動化防禦設施啟動迎敵。 -->
+    <description>A tall observation tower with automated sensors. Detects hostiles within a wide radius. Disable with EMP or power cut before attempting to dismantle.</description>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_ScannerLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,7)</drawSize>
+      <drawOffset>(0,0,2)</drawOffset>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <placeWorkers>
+      <li>Fortified.PlaceWorker_AlertScanner</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <!-- 掃描器：半徑 14 圓形，受 LOS 影響 -->
+      <li Class="Fortified.CompProperties_AlertScanner">
+        <radius>14</radius>
+        <requireLOS>true</requireLOS>
+        <checkInterval>250</checkInterval>
+        <rearmInterval>1800</rearmInterval>
+        <attackTriggerChance>0.7</attackTriggerChance>
+        <triggerCountdown>0</triggerCountdown>
+        <alertIncrement>25</alertIncrement>
+        <signalString>FFF_AlertScanner_Triggered</signalString>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 小型無人哨塔 （每250Tick監視半徑5格LOS範圍內的Pawn） -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_Scanner_Small</defName>
+    <label>small sentry tower</label>
+    <designatorDropdown>DMS_SentryTowers</designatorDropdown>
+    <description>An unmanned sentry platform built for long-term unattended operation, fitted with multiple types of sensors to monitor a wide area for suspicious activity. Once an intruder enters its range, it broadcasts an alert that activates the automated defenses to engage.</description>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_ScannerSmall</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <uiIconScale>0.5</uiIconScale>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <!-- 掃描器：半徑 4 圓形，受 LOS 影響 -->
+      <li Class="Fortified.CompProperties_AlertScanner">
+        <radius>4.9</radius>
+        <requireLOS>true</requireLOS>
+        <checkInterval>250</checkInterval>
+        <rearmInterval>1800</rearmInterval>
+        <attackTriggerChance>0.7</attackTriggerChance>
+        <triggerCountdown>0</triggerCountdown>
+        <alertIncrement>10</alertIncrement>
+        <watchingEffecter>FFF_Scanner_Idle</watchingEffecter>      <!-- 正常掃描中（藍光閃爍） -->
+        <detectionEffecter>FFF_Scanner_Alert</detectionEffecter>   <!-- 偵測到威脅（紅光警報） -->
+        <triggerEffector>FFF_Scanner_Trigger</triggerEffector>
+        <signalString>FFF_AlertScanner_Triggered</signalString>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ══════════════════════════════════════════════════════════
+       警報呼叫器（AlertCaller）：收到掃描器的警報後對外呼叫支援，本身不偵測。
+       貼圖已含底座，直接用單張圖；1x1 佔地。
+       Alert callers: respond to scanner alarms by calling in outside support; they do no detecting
+       of their own. Textures already include the pedestal; 1x1 footprint.
+       ══════════════════════════════════════════════════════════ -->
+
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_Uplinks</defName>
+    <label>uplinks</label>
+  </DesignatorDropdownGroupDef>
+
+  <!-- 戰鬥群呼叫器：警報後走 FFF RaidWave 系統呼叫 DMS_RaidWave_FacilityQRF，由 quest 負責延遲
+       （最少 2500~5000 tick）、遠處空投、進攻 lord 與信件；每次呼叫波次升級。一次性。
+       Battle-group caller: on alarm, summons DMS_RaidWave_FacilityQRF through FFF's RaidWave system;
+       the quest handles the delay (2500~5000 ticks minimum), distant drop pods, assault lord and
+       letters, escalating a wave per call. One-shot. -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_AlertCaller_BattleGroup</defName>
+    <label>reinforcement uplink</label>
+    <designatorDropdown>DMS_Uplinks</designatorDropdown>
+    <description>An armored uplink terminal tied into the facility's alert network. When the sensors trip, it transmits the intruders' position to the nearest quick-reaction force, which arrives by drop pod shortly after to sweep the area. The transmitter burns out after a single call. Cut power or hit it with an EMP to disable it before dismantling.</description>
+    <graphicData>
+      <texPath>Things/Building/AlertCaller/battleGroup</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(0.9, 0.5, 0.9)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.6</uiIconScale>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="DMS.CompProperties_AlertEffector_CallBattleGroup">
+        <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
+        <triggerChance>0.5</triggerChance>
+        <minAlertLevel>0.5</minAlertLevel> 
+        <oneShot>true</oneShot>
+        <raidWaveDef>DMS_RaidWave_FacilityQRF</raidWaveDef>
+        <!-- 不受 RaidWave 兩天全域冷卻限制；但呼叫仍會刷新冷卻，玩家信標會跟著進冷卻。
+             Ignores RaidWave's two-day global cooldown; the call still stamps it, so player beacons go on cooldown. -->
+        <respectCooldown>false</respectCooldown>
+        <callSound>FlickSwitch</callSound>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 砲擊呼叫器：警報後挑半徑 30 內一名敵人，把位置交給 FFF AirSupport 系統執行 DMS_AirSupport_FacilityMortar
+       （邊緣飛入、3~6 發高爆彈、散布半徑 6、延遲 240~360 tick）。厚屋頂（地下）下打不到，只適合地表站點。可重複觸發。
+       Fire-support caller: on alarm, picks one hostile within 30 cells and hands its position to FFF's
+       AirSupport system running DMS_AirSupport_FacilityMortar (edge fly-in, 3~6 HE shells, spread 6,
+       240~360 tick delay). Thick roofs (underground) block it, so surface sites only. Repeatable. -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_AlertCaller_Mortar</defName>
+    <label>fire support uplink</label>
+    <designatorDropdown>DMS_Uplinks</designatorDropdown>
+    <description>A ranging dome tied into the facility's alert network. When the sensors trip, it fixes the intruders' position and relays fire missions to an off-map mortar battery, which walks high-explosive shells onto anything hostile nearby. It has no ammunition of its own and keeps calling as long as it has power and a target. Cut power or hit it with an EMP to disable it before dismantling.</description>
+    <graphicData>
+      <texPath>Things/Building/AlertCaller/mortar</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(0.9, 0.5, 0.9)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="DMS.CompProperties_AlertEffector_MortarStrike">
+        <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
+        <triggerChance>0.6</triggerChance>
+        <minAlertLevel>0.8</minAlertLevel> 
+        <oneShot>false</oneShot>
+        <airSupportDef>DMS_AirSupport_FacilityMortar</airSupportDef>
+        <targetSearchRadius>30</targetSearchRadius>
+        <callSound>FlickSwitch</callSound>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 發射器箱：掛在牆上的應急箱，裡面放一具輕型無後座力砲。武器走 CompRefuelable 存放：設施生成的箱子生來就裝好，
+       玩家蓋的從空箱開始，殖民者把輕型無後座力砲放進去就能補裝；燃料條 gizmo 上的勾選框決定要不要自動補裝。
+       右鍵可以直接取出裝備（原本的主武器收進背包）；箱子空了貼圖換成 building_empty。
+       Launcher case: a wall-mounted emergency case holding one light recoilless rifle. The weapon is stored
+       through CompRefuelable: facility cases spawn stocked, player-built ones start empty and are restocked
+       by a colonist loading a light recoilless rifle; the checkbox on the fuel-bar gizmo decides whether they
+       do it automatically. Right-click takes the weapon out and equips it (the previous primary goes into the
+       inventory); the graphic swaps to building_empty once the case is empty. -->
+  <ThingDef ParentName="DMS_BuildingBase">
+    <defName>DMS_Building_LauncherCase</defName>
+    <label>launcher case</label>
+    <description>A wall-mounted emergency case holding a single light recoilless rifle, ready to be grabbed when the facility comes under attack. Anyone can pull the rifle out and shoulder it; the case then sits empty until someone loads a fresh one into it.</description>
+    <thingClass>DMS.Building_RefuelableGraphic</thingClass>
+    <designationCategory>DMS_Category</designationCategory>
+    <designatorDropdown>DMS_DefenseEquipment</designatorDropdown>
+    <researchPrerequisites>
+      <li>DMS_EquipmentAdvanced</li>
+    </researchPrerequisites>
+    <category>Building</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/LauncherCase/building</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>2</drawSize>
+      <drawOffsetNorth>(0,0,0.4)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/LauncherCase/icon</uiIconPath>
+    <passability>Standable</passability>
+    <rotatable>true</rotatable>
+    <fillPercent>0</fillPercent>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <size>(1,1)</size>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Mass>8</Mass>
+      <Flammability>0.3</Flammability>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+    </killedLeavings>
+    <building>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <terrainAffordanceNeeded IsNull="True" />
+    <modExtensions>
+      <li Class="DMS.ModExtension_RefuelableGraphic">
+        <emptyGraphicData>
+          <texPath>Things/Building/LauncherCase/building_empty</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+          <drawOffsetNorth>(0,0,0.4)</drawOffsetNorth>
+          <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
+          <damageData>
+            <enabled>false</enabled>
+          </damageData>
+        </emptyGraphicData>
+      </li>
+    </modExtensions>
+    <comps>
+      <!-- 存放：一具輕型無後座力砲 = 一格。initialFuelPercent 0 → 玩家蓋的是空箱，
+           拆除或炸毀時裡面沒拿走的武器會掉出來（CompRefuelable 只在 initialFuelPercent 為 0 時掉燃料）；
+           設施生成的箱子由 CompWeaponCase.preloadWhenNotPlayerOwned 在生成時裝滿。
+           Storage: one light recoilless rifle = one slot. initialFuelPercent 0 → player-built cases start
+           empty, and a weapon still inside drops out when the case is deconstructed or destroyed
+           (CompRefuelable only drops fuel when initialFuelPercent is 0); facility cases are filled on spawn by
+           CompWeaponCase.preloadWhenNotPlayerOwned. -->
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>1</fuelCapacity>
+        <initialFuelPercent>0</initialFuelPercent>
+        <fuelFilter>
+          <thingDefs>
+            <li>DMS_Gun_RecoillessLight</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>Recoilless rifle</fuelLabel>
+        <fuelGizmoLabel>Recoilless rifle</fuelGizmoLabel>
+        <outOfFuelMessage>No recoilless rifle loaded</outOfFuelMessage>
+        <fuelIconPath>Things/Weapons/DMS_RecoillessRifle_Light</fuelIconPath>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <showFuelGizmo>true</showFuelGizmo>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <initialAllowAutoRefuel>true</initialAllowAutoRefuel>
+        <autoRefuelPercent>0</autoRefuelPercent>
+        <targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+        <drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <hideGizmosIfNotPlayerFaction>true</hideGizmosIfNotPlayerFaction>
+        <functionsInVacuum>true</functionsInVacuum>
+      </li>
+      <li Class="DMS.CompProperties_WeaponCase">
+        <preloadWhenNotPlayerOwned>true</preloadWhenNotPlayerOwned>
+        <takeTicks>90</takeTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ══════════════════════════════════════════════════════════
+       毒氣釋放口（GasVent）：地板格柵，收到警報後預警 2 秒、再噴 12 秒毒氣。存量 3 發、每天回補 1 發。
+       不分敵我，但守軍是機兵，毒氣實際上只傷得到入侵者；沒有 Biotech 時由 DMS.MapComponent_DMSToxGasFallback
+       補上毒素累積。斷電或 EMP 會讓它停下，連噴到一半的也一樣。室外無屋頂時毒氣很快散掉，所以只放室內。
+       Gas vent: a floor grate. On alarm it warns for 2 seconds, then vents tox gas for 12. Three charges, one
+       refilled per day. Indiscriminate, but the garrison is mechanical, so in practice only intruders choke;
+       without Biotech, DMS.MapComponent_DMSToxGasFallback supplies the toxic buildup. Power loss or an EMP stops
+       it, even mid-release. Gas disperses fast under open sky, so it belongs indoors.
+       ══════════════════════════════════════════════════════════ -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_GasVent</defName>
+    <label>gas vent</label>
+    <description>A floor grate wired into the facility's alert network. When the alarm sounds, it hisses for a moment and then floods the area with toxic gas. The facility's mechanical garrison doesn't breathe; anyone else had better have a gas mask. It holds enough for a few releases and slowly refills from a tank below. Cut its power or hit it with an EMP to shut it down, even in the middle of a release.</description>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_GasVent</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <!-- 地板格柵：可站立、不擋路、不當掩體。A floor grate: standable, no path cost, no cover. -->
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <pathCost>0</pathCost>
+    <fillPercent>0</fillPercent>
+    <blockWind>false</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <building>
+      <isEdifice>false</isEdifice>
+      <claimable>false</claimable>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="DMS.CompProperties_AlertEffector_GasVent">
+        <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
+        <triggerChance>0.8</triggerChance>
+        <minAlertLevel>0.4</minAlertLevel> 
+        <oneShot>false</oneShot>
+        <gasType>ToxGas</gasType>
+        <cellsToFill>60</cellsToFill>
+        <durationSeconds>12</durationSeconds>
+        <warmupTicks>120</warmupTicks>
+        <cooldownTicks>600</cooldownTicks>
+        <maxCharges>3</maxCharges>
+        <rechargeTicks>60000</rechargeTicks>
+        <warmupEffecter>FFF_Scanner_Alert</warmupEffecter>
+        <!-- 原版 Core 的毒氣噴發特效（含嘶聲）。Vanilla Core's tox-gas release effecter (with its hiss). -->
+        <releasingEffecter>ToxGasReleasing</releasingEffecter>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ══════════════════════════════════════════════════════════
+       警戒次聲波塔（SubsonicEmitter_Security）：玩家版次聲波塔（DMS_Building_SubsonicEmitter）的設施版本。
+       平時待機不發聲；收到警報後作動約一小時，期間範圍內有入侵者就間歇放次聲波脈衝，再次警報會重新計時。
+       只打與設施陣營敵對的生物，機兵守軍免疫。斷電、EMP 會讓它停火。放在哨站旁靠牆（見 ModExtension_VaultSecurity）。
+       Security infrasonic emitter: the facility version of the player's tower. Silent on standby; an alarm engages
+       it for about an hour, during which it pulses whenever intruders are in range, and each new alarm restarts
+       the clock. Only creatures hostile to the facility are hit, and the mech garrison is immune. Power loss or an
+       EMP silences it. Placed against the wall beside checkpoints (see ModExtension_VaultSecurity).
+       ══════════════════════════════════════════════════════════ -->
+  <ThingDef ParentName="DMS_AlertBuildingBase">
+    <defName>DMS_Building_SubsonicEmitter_Security</defName>
+    <label>security infrasonic emitter</label>
+    <description>A tower-mounted infrasound array wired into the facility's alert network. It stays silent until the alarm sounds, then for about an hour releases burst after burst of infrasound through the walls at every intruder within range, wracking them with nausea and pain and sending many into a panic. The facility's mechanical garrison is unaffected. Cut its power or hit it with an EMP to silence it.</description>
+    <descriptionHyperlinks>
+      <HediffDef>DMS_SubsonicTrauma</HediffDef>
+      <ThingDef>DMS_Building_SubsonicEmitter</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_SubsonicEmitter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(0.6,0.8,0.6)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconScale>1.2</uiIconScale>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <fillPercent>0.4</fillPercent>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <specialDisplayRadius>9.9</specialDisplayRadius>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+    </statBases>
+    <costList>
+      <Steel>80</Steel>
+      <ComponentStamped>4</ComponentStamped>
+    </costList>
+    <building>
+      <claimable>false</claimable>
+      <ai_combatDangerous>true</ai_combatDangerous>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="DMS.CompProperties_AlertEffector_SubsonicEmitter">
+        <listenSignal>FFF_AlertScanner_Triggered</listenSignal>
+        <triggerChance>1</triggerChance>
+        <oneShot>false</oneShot>
+        <activeTicks>2500</activeTicks>
+        <firstPulseDelayTicks>120</firstPulseDelayTicks>
+        <intervalTicks>600~900</intervalTicks>
+        <pulse>
+          <radius>9.9</radius>
+          <hediff>DMS_SubsonicTrauma</hediff>
+          <severity>0.25</severity>
+          <panicChance>0.3</panicChance>
+          <!-- FFF 的暫時恐慌：短暫原地逃竄後恢復，不會像原版 PanicFlee 那樣跑出地圖、讓玩家永久失去小人。
+               FFF's temporary panic: a brief scramble then recovery, instead of vanilla PanicFlee running off the map for good. -->
+          <mentalState>FFF_FleeInPlace</mentalState>
+          <earDamageDef>DMS_InfrasoundRupture</earDamageDef>
+          <earDamage>2</earDamage>
+          <hostileOnly>true</hostileOnly>
+          <ignoreWalls>true</ignoreWalls>
+          <fleck>PsycastAreaEffect</fleck>
+          <sound>Explosion_EMP</sound>
+        </pulse>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ══════════════════════════════════════════════════════════
+       設施封鎖中控（LockdownController）：只放在地下口袋地圖。警戒值滿 100% 時倒數 1 分鐘，封死地下出入口。
+       駭入即解除（警報前也可以先駭）；被摧毀時直接死鎖設施，只能由地表的人對入口電梯做緊急解鎖。
+       自帶電池，斷電無效；EMP 只能暫停倒數。邏輯全在 FFF（Fortified.CompFacilityLockdownController /
+       MapComponent_FacilityLockdown），出入口要掛 Fortified.CompProperties_FacilityLockdownGate。
+       不繼承 DMS_AlertBuildingBase：那個父類帶 CompCanBeDormant，中控必須永遠清醒。
+       Lockdown controller: underground pocket maps only. At 100% alert it counts down one minute, then seals
+       the lifts. Hacking it lifts the lockdown (and can be done before any alarm); destroying it seals the
+       facility for good, leaving only an emergency override from the surface. Self-powered; EMP only pauses
+       the countdown. The logic lives in FFF; the lifts carry Fortified.CompProperties_FacilityLockdownGate.
+       Not a DMS_AlertBuildingBase child: that base brings CompCanBeDormant, and the controller never sleeps.
+       ══════════════════════════════════════════════════════════ -->
+  <ThingDef ParentName="DMS_BuildingBase">
+    <defName>DMS_Building_LockdownController</defName>
+    <label>lockdown controller</label>
+    <description>An emergency control unit that coordinates the blast gates at a buried facility's entrances. Once it completes a lockdown, the lifts in and out stop working. The unit is built to fail safe: if it is destroyed, the facility seals itself completely, and the doors can then only be opened with help from outside.\n\nIt engages when the facility's alert level reaches its maximum and seals the exits one minute later. Hacking it lifts the lockdown, and it can be hacked ahead of time. It runs on the facility's radioisotope cells, so cutting power does nothing; an EMP will only pause the countdown.</description>
+    <category>Building</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <!-- TODO：專屬貼圖 LockdownController_north/_south/_east 補上前，暫用變電箱。
+           TODO: placeholder (substation cabinet) until LockdownController_north/_south/_east exist. -->
+      <texPath>Things/Building/DistributionBox/building</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <!-- 南北向貼圖是橫的，佔地 2x1（轉東西向變 1x2）；互動格在正面，背面靠牆，跟配電櫃同一套朝向。
+         The north/south art is landscape, so 2x1 (1x2 turned east/west); the interaction cell is in front and the
+         back goes to the wall, the same convention as the substation cabinet. -->
+    <size>(2,1)</size>
+    <rotatable>true</rotatable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <fillPercent>0.7</fillPercent>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+    </building>
+    <comps>
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+      <li Class="CompProperties_Hackable">
+        <defence>4000</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <intellectualSkillPrerequisite>6</intellectualSkillPrerequisite>
+        <!-- 鎖定短：駭入失手時仍有機會在一天寬限內解開。Short lockout: a botched hack can still be retried within the one-day grace. -->
+        <lockoutDurationHoursRange>2~4</lockoutDurationHoursRange>
+        <glowIfHacked>false</glowIfHacked>
+      </li>
+      <li Class="Fortified.CompProperties_FacilityLockdownController">
+        <checkInterval>60</checkInterval>
+        <countdownEffecter>FFF_Scanner_Alert</countdownEffecter>
+        <lockedEffecter>FFF_Scanner_Trigger</lockedEffecter>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(255,60,40,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

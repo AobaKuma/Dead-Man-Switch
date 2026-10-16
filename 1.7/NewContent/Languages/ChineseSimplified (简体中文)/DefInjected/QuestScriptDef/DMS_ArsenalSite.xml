@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 軍火庫舊址。[siteFactionName] / [siteTimeout] 由 QuestNode_Root_FFF_TimedHostileSite 提供，
+       [guardCount] / [guardLabel] 由 DMS.SitePartWorker_ArsenalSite 提供；(*Threat)...(/Threat) 須保留。
+       Old arsenal. [guardCount] / [guardLabel] come from DMS.SitePartWorker_ArsenalSite; keep the (*Threat)...(/Threat) tags. -->
+  <DMS_ArsenalAssault.questNameRules.rulesStrings>
+    <li>questName->军火库旧址</li>
+    <li>questName->[arsenal]</li>
+    <li>arsenal->废弃军火库</li>
+    <li>arsenal->地下洞库</li>
+    <li>arsenal->被看守的库存</li>
+  </DMS_ArsenalAssault.questNameRules.rulesStrings>
+  <DMS_ArsenalAssault.questDescriptionRules.rulesStrings>
+    <li>questDescription->旧的勘测记录指向一处先锋殖民者遗弃的半地下化洞库设施，里面仍留有不易运输或超出使用年限的装备。设施的无人安保系统仍在运作，如今听命于[siteFactionName]。\n\n站点由(*Threat)[guardCount]架[guardLabel](/Threat)巡视。洞库的封锁与骇蜥的生命信号联动：用停机坪上的诱饵雷达将其召唤过来并击毁，再骇入各洞库的安全控制台才能进入。\n\n位置情报还能维持 [siteTimeout]。进入站点后，监控协议会在倒数结束时召来敌方增援。</li>
+  </DMS_ArsenalAssault.questDescriptionRules.rulesStrings>
+
+</LanguageData>

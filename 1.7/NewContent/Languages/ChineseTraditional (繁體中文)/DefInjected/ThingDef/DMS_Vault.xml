@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DMS_VaultElevator.label>貨運電梯</DMS_VaultElevator.label>
+  <DMS_VaultElevator.description>通往地下設施的入口。電梯仍然有電，但需要駭入上鎖的控制系統來控制電梯升降。</DMS_VaultElevator.description>
+
+  <DMS_VaultElevator_Sealed.label>封閉的貨運電梯</DMS_VaultElevator_Sealed.label>
+  <DMS_VaultElevator_Sealed.description>一台埋在地下的貨運電梯的地表平台，被裝甲封板鎖住。豎井控制系統連接到附近的門禁控制台；在那裡刷鑰匙卡即可收回封板並叫上車廂。</DMS_VaultElevator_Sealed.description>
+
+  <DMS_VaultElevatorExit.label>貨運電梯車廂</DMS_VaultElevatorExit.label>
+  <DMS_VaultElevatorExit.description>一台通往上方地表平台的電梯車廂。</DMS_VaultElevatorExit.description>
+
+  <DMS_MechCapsule_VaultInfantry.label>封存中的機兵</DMS_MechCapsule_VaultInfantry.label>
+  <DMS_MechCapsule_VaultInfantry.description>一具處於休眠狀態的機兵。任何警報都會使其重新激活，但在沒有啟動的狀態下機械師可以嘗試駭入並控制它。</DMS_MechCapsule_VaultInfantry.description>
+
+  <DMS_MechCapsule_VaultAssault.label>封存中的機兵</DMS_MechCapsule_VaultAssault.label>
+  <DMS_MechCapsule_VaultAssault.description>一具處於休眠狀態的機兵。任何警報都會使其重新激活，但在沒有啟動的狀態下機械師可以嘗試駭入並控制它。</DMS_MechCapsule_VaultAssault.description>
+
+  <DMS_MechCapsule_VaultFrame.label>封存中的戰鬥框架</DMS_MechCapsule_VaultFrame.label>
+  <DMS_MechCapsule_VaultFrame.description>一具處於休眠狀態的戰鬥框架。任何警報都會使其重新激活，但在沒有啟動的狀態下機械師可以嘗試駭入並控制它。</DMS_MechCapsule_VaultFrame.description>
+
+</LanguageData>

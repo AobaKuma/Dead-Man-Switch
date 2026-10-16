@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- 伯勞鳥 Lanius：中型飛行火力平台。
+	     Lanius: medium flying fire-support platform, pitched between the Falcon and the Soldat. -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[@Name="DMS_MechLaniusBase"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>QuadrupedLow</bodyShape>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="DMS_MechLaniusBase"]/statBases</xpath>
+				<value>
+					<CarryWeight>120</CarryWeight> <!-- 無後座力砲 67kg + 火箭彈 / enough for the 67kg recoilless rifle plus rockets -->
+					<CarryBulk>100</CarryBulk>  <!-- 無後座力砲體積 51.3 / recoilless rifle bulk is 51.3 -->
+					<AimingAccuracy>0.8</AimingAccuracy>
+					<ShootingAccuracyPawn>0.9</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.5</MeleeDodgeChance>
+					<MeleeCritChance>0.04</MeleeCritChance>
+					<MeleeParryChance>0.01</MeleeParryChance>
+					<MaxHitPoints>250</MaxHitPoints>
+					<NightVisionEfficiency>0.65</NightVisionEfficiency>
+					<ReloadSpeed>0.9</ReloadSpeed>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="DMS_MechLaniusBase"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>5</ArmorRating_Blunt>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="DMS_MechLaniusBase"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>6</ArmorRating_Sharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="DMS_MechLaniusBase"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.1</ArmorRating_Heat>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="DMS_MechLaniusBase"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>540</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>5</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>10</Steel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>82</MaxOverHeal>
+						<MinArmorPct>0.75</MinArmorPct>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="DMS_MechLaniusBase"]/tools</xpath>
+				<value>
+					<tools Inherit="False">
+						<li Class="CombatExtended.ToolCE">
+							<label>ram</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>12</power>
+							<cooldownTime>3.0</cooldownTime>
+							<armorPenetrationBlunt>8.0</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+							<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+							<chanceFactor>0.3</chanceFactor>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+			<!-- 彈匣數量（補丁先於繼承展開，所以要分別加在兩個實體 kind 上）。
+			     Magazine counts (patches run before inheritance, so each concrete kind gets its own). -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Lanius"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>3</min>
+							<max>5</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+			<!-- 無後座力砲型：單發武器，彈匣少。The recoilless pattern fires one rocket per magazine, so fewer magazines. -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Lanius_RR"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>1</min>
+							<max>2</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+
+			<!-- 武器：CE 的 AI 武器標籤。Weapons: CE AI weapon tags. -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Lanius"]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
+				<value>
+					<li>CE_MachineGun</li>
+					<li>CE_AI_LMG</li>
+					<li>CE_AI_Grenade</li>
+					<li>CE_AI_AR</li>
+					<li>CE_AI_SR</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Lanius"]/weaponTags</xpath>
+				<value>
+					<li>CE_AI_LMG</li>
+					<li>CE_AI_Grenade</li>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- 格蕾西亞專屬的任務發布管道。這裡刻意不寫 <questScriptDef>：原版
+       IncidentDef.ConfigErrors 會擋掉「questScriptDef 指向一個 rootSelectionWeight
+       不為 0 的任務」，也就是一個任務不能同時進隨機池又被事件直接點名。實際要發
+       哪個任務改由 DMS.StorytellerComp_FavoredQuest 在 GenerateParms 裡塞進
+       parms.questScriptDef，IncidentWorker_GiveQuest 會照樣接受。
+       baseChance 0 表示它不會進隨機事件池，只由那個 comp 觸發。
+
+       Greysia's own quest channel. <questScriptDef> is deliberately omitted:
+       vanilla IncidentDef.ConfigErrors rejects pointing at a quest that also has
+       a non-zero rootSelectionWeight, because a quest may not be both random-pool
+       and incident-driven. DMS.StorytellerComp_FavoredQuest supplies the quest
+       through parms.questScriptDef instead, which IncidentWorker_GiveQuest
+       accepts. baseChance 0 keeps it out of the random incident pool. -->
+  <IncidentDef ParentName="GiveQuestBase">
+    <defName>DMS_GiveQuest_Favored</defName>
+    <label>fleet contract</label>
+    <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+  </IncidentDef>
+
+</Defs>

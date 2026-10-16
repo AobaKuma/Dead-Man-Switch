@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       儲存庫房間的填充用預製塊，全部由 DMS 既有的廢棄建築組成。
+       Room filler prefabs, built entirely from DMS's existing ruined buildings.
+
+       座標約定：<position> 給的是 Thing.Position。奇數尺寸的物件以該格為中心，
+       偶數尺寸的物件從該格往 +x / +z 延伸。
+       Coordinates are Thing.Position: odd-sized things centre on the cell,
+       even-sized things extend towards +x / +z.
+       ============================================================ -->
+
+  <!-- 殘骸堆：整間屋子被翻過一遍之後剩下的東西。
+       Wreck scatter: what's left after the place was picked over. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_WreckScatter</defName>
+    <size>(5,5)</size>
+    <things>
+      <DMS_Wreckage_SentryGun>
+        <chance>0.6</chance>
+        <positions>
+          <li>(2, 0, 0)</li>
+          <li>(3, 0, 3)</li>
+        </positions>
+      </DMS_Wreckage_SentryGun>
+      <DMS_Wreckage_Ronin>
+        <chance>0.5</chance>
+        <position>(0, 0, 1)</position>
+      </DMS_Wreckage_Ronin>
+      <DMS_HoundBaseDestroyed>
+        <chance>0.6</chance>
+        <position>(4, 0, 2)</position>
+      </DMS_HoundBaseDestroyed>
+      <DMS_Building_Scanner_SmallDestoryed>
+        <chance>0.5</chance>
+        <position>(1, 0, 4)</position>
+      </DMS_Building_Scanner_SmallDestoryed>
+      <DMS_TrashBinBaseDestroyed>
+        <chance>0.6</chance>
+        <position>(0, 0, 3)</position>
+      </DMS_TrashBinBaseDestroyed>
+    </things>
+  </PrefabDef>
+
+  <!-- 報廢機台列：3x1 的機械與配電機組並排。
+       Dead machine row: 3x1 machine and power units side by side. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_MachineRow</defName>
+    <size>(5,5)</size>
+    <things>
+      <DMS_Building_Machine_MediumDestoryed>
+        <positions>
+          <li>(2, 0, 0)</li>
+          <li>(2, 0, 2)</li>
+        </positions>
+      </DMS_Building_Machine_MediumDestoryed>
+      <DMS_Building_Eletric_MediumDestoryed>
+        <chance>0.75</chance>
+        <position>(2, 0, 4)</position>
+      </DMS_Building_Eletric_MediumDestoryed>
+    </things>
+  </PrefabDef>
+
+  <!-- 還在運轉的機房一角。少數幾台沒壞的機器，用來對比整體的荒廢。
+       A corner that still runs: a few intact units to contrast with the decay. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_MachineRow_Live</defName>
+    <size>(5,3)</size>
+    <things>
+      <DMS_Building_Machine_Medium>
+        <position>(2, 0, 0)</position>
+      </DMS_Building_Machine_Medium>
+      <DMS_Building_Eletric_Medium>
+        <chance>0.8</chance>
+        <position>(2, 0, 2)</position>
+      </DMS_Building_Eletric_Medium>
+    </things>
+  </PrefabDef>
+
+  <!-- 通風機組，靠牆放。Vent bank, hugs a wall. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_VentBank</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <DMS_Building_VentMedium>
+        <position>(2, 0, 0)</position>
+      </DMS_Building_VentMedium>
+    </things>
+  </PrefabDef>
+
+  <!-- 長廊牆邊的殘骸：被推到牆角的報廢哨戒砲與垃圾桶，不擋路。
+       Hall debris pushed against the wall: a dead sentry and a bin; never blocks the lane. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_HallDebris</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(3,1)</size>
+    <things>
+      <DMS_Wreckage_SentryGun>
+        <chance>0.6</chance>
+        <position>(0, 0, 0)</position>
+      </DMS_Wreckage_SentryGun>
+      <DMS_TrashBinBaseDestroyed>
+        <chance>0.5</chance>
+        <position>(2, 0, 0)</position>
+      </DMS_TrashBinBaseDestroyed>
+      <DMS_Building_Scanner_SmallDestoryed>
+        <chance>0.3</chance>
+        <position>(1, 0, 0)</position>
+      </DMS_Building_Scanner_SmallDestoryed>
+    </things>
+  </PrefabDef>
+
+  <!-- 壁掛配電箱，靠牆放。每座都是 3000W 電源，一組兩片就很夠了。
+       Wall-mounted substation cabinets. Each is a 3000W source, so two per bank is plenty. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_SubstationBank</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <DMS_SubstationCabinet_Wall>
+        <positions>
+          <li>(1, 0, 0)</li>
+          <li>(3, 0, 0)</li>
+        </positions>
+      </DMS_SubstationCabinet_Wall>
+    </things>
+  </PrefabDef>
+
+  <!-- 實驗機具殘骸。Ruined lab equipment. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_LabWreck</defName>
+    <size>(6,5)</size>
+    <things>
+      <DMS_LabReactorDestroyed>
+        <position>(1, 0, 1)</position>
+      </DMS_LabReactorDestroyed>
+      <DMS_LabFurnaceDestroyed>
+        <chance>0.8</chance>
+        <position>(4, 0, 1)</position>
+      </DMS_LabFurnaceDestroyed>
+      <DMS_TableArtifuscleDestroyed>
+        <chance>0.7</chance>
+        <position>(2, 0, 4)</position>
+      </DMS_TableArtifuscleDestroyed>
+    </things>
+  </PrefabDef>
+
+  <!-- 破損貨櫃堆。Breached container stack. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_CrateCluster</defName>
+    <size>(5,5)</size>
+    <things>
+      <DMS_LogisticContainerDestroyed>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(3, 0, 3)</li>
+        </positions>
+      </DMS_LogisticContainerDestroyed>
+      <DMS_Wreckage_Chunk>
+        <chance>0.6</chance>
+        <position>(0, 0, 3)</position>
+      </DMS_Wreckage_Chunk>
+    </things>
+  </PrefabDef>
+
+  <!-- 未完成的機兵殘骸。An automatroid that never left the line. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_RoninWreck</defName>
+    <size>(3,3)</size>
+    <things>
+      <DMS_Wreckage_Ronin>
+        <position>(1, 0, 1)</position>
+      </DMS_Wreckage_Ronin>
+      <DMS_HoundBaseDestroyed>
+        <chance>0.6</chance>
+        <position>(0, 0, 0)</position>
+      </DMS_HoundBaseDestroyed>
+      <DMS_TrashBinBaseDestroyed>
+        <chance>0.6</chance>
+        <position>(2, 0, 2)</position>
+      </DMS_TrashBinBaseDestroyed>
+    </things>
+  </PrefabDef>
+
+  <!-- 地板開口：往更深的層數看下去。A floor opening onto the levels below. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_FloorHole</defName>
+    <size>(5,5)</size>
+    <things>
+      <DMS_Hole_5x5Empty>
+        <position>(2, 0, 2)</position>
+      </DMS_Hole_5x5Empty>
+    </things>
+  </PrefabDef>
+
+  <!-- ============================================================
+       裝飾家具 / Decorative furniture
+       靠牆的預製塊：最上排（z 最大）貼牆，面向房內的東西要加 relativeRotation Opposite，
+       跟原版 AncientLockers_Row 一樣。
+       Edge prefabs: the top row (max z) sits against the wall; things that should face the room
+       take relativeRotation Opposite, as vanilla's AncientLockers_Row does.
+       ============================================================ -->
+
+  <!-- 置物櫃列：三連櫃配兩個單櫃。Locker row: a bank flanked by two singles. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_LockerRow</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <DMS_Personallocker_Large>
+        <position>(2, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_Personallocker_Large>
+      <DMS_Personallocker>
+        <chance>0.7</chance>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(4, 0, 0)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_Personallocker>
+    </things>
+  </PrefabDef>
+
+  <!-- 被翻過的置物櫃列。The same row after someone went through it. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_LockerRow_Ruined</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <DMS_Personallocker_LargeDestroyed>
+        <position>(2, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_Personallocker_LargeDestroyed>
+      <DMS_PersonallockerDestroyed>
+        <chance>0.6</chance>
+        <position>(0, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_PersonallockerDestroyed>
+      <DMS_Personallocker>
+        <chance>0.5</chance>
+        <position>(4, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_Personallocker>
+    </things>
+  </PrefabDef>
+
+  <!-- 靠牆的休息角：兩張長椅夾一台飲水機。Rest nook: two benches around a water dispenser. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_RestNook</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <DMS_Benches>
+        <position>(0, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_Benches>
+      <DMS_Waterdispenser>
+        <chance>0.8</chance>
+        <position>(2, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_Waterdispenser>
+      <DMS_Benches>
+        <chance>0.8</chance>
+        <position>(3, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_Benches>
+    </things>
+  </PrefabDef>
+
+  <!-- 廢棄的休息角。The rest nook, years later. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_RestNook_Ruined</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <DMS_BenchesDestroyed>
+        <position>(1, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_BenchesDestroyed>
+      <DMS_WaterdispenserDestroyed>
+        <chance>0.7</chance>
+        <position>(3, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_WaterdispenserDestroyed>
+      <DMS_AirpurifierDestroyed>
+        <chance>0.5</chance>
+        <position>(4, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_AirpurifierDestroyed>
+    </things>
+  </PrefabDef>
+
+  <!-- 房間中央的小花圃：四角花盆，中間空氣清淨機。
+       Planter island for the middle of a room: pots at the corners, a purifier in the centre. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_Garden</defName>
+    <size>(3,3)</size>
+    <things>
+      <DMS_Hydroponics_Flowerpot>
+        <chance>0.85</chance>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+          <li>(0, 0, 2)</li>
+          <li>(2, 0, 2)</li>
+        </positions>
+      </DMS_Hydroponics_Flowerpot>
+      <DMS_Airpurifier>
+        <chance>0.6</chance>
+        <position>(1, 0, 1)</position>
+      </DMS_Airpurifier>
+    </things>
+  </PrefabDef>
+
+  <!-- 枯掉的花圃。The planter island after the water stopped. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_Garden_Ruined</defName>
+    <size>(3,3)</size>
+    <things>
+      <DMS_Hydroponics_FlowerpotDestroyed>
+        <chance>0.7</chance>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+          <li>(0, 0, 2)</li>
+          <li>(2, 0, 2)</li>
+        </positions>
+      </DMS_Hydroponics_FlowerpotDestroyed>
+      <DMS_AirpurifierDestroyed>
+        <chance>0.5</chance>
+        <position>(1, 0, 1)</position>
+      </DMS_AirpurifierDestroyed>
+    </things>
+  </PrefabDef>
+
+  <!-- 對坐的長椅：兩張面對面，兩端擺花盆。Lounge: two benches facing each other, pots at the ends. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_Lounge</defName>
+    <size>(4,3)</size>
+    <things>
+      <DMS_Benches>
+        <position>(1, 0, 0)</position>
+      </DMS_Benches>
+      <DMS_Benches>
+        <position>(1, 0, 2)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_Benches>
+      <DMS_Hydroponics_Flowerpot>
+        <chance>0.7</chance>
+        <positions>
+          <li>(0, 0, 1)</li>
+          <li>(3, 0, 1)</li>
+        </positions>
+      </DMS_Hydroponics_Flowerpot>
+    </things>
+  </PrefabDef>
+
+  <!-- ============================================================
+       大型房間用的重型殘骸 / Heavy wrecks for the large bays
+       ============================================================ -->
+
+  <!-- 報廢的裝甲車與旁邊的零碎。A dead armoured vehicle and the bits around it. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_VehicleWreck</defName>
+    <size>(5,5)</size>
+    <things>
+      <DMS_Building_MK44NavyDestoryed>
+        <position>(1, 0, 1)</position>
+      </DMS_Building_MK44NavyDestoryed>
+      <DMS_Wreckage_Chunk>
+        <chance>0.6</chance>
+        <position>(3, 0, 3)</position>
+      </DMS_Wreckage_Chunk>
+      <DMS_Wreckage_SentryGun>
+        <chance>0.5</chance>
+        <position>(0, 0, 4)</position>
+      </DMS_Wreckage_SentryGun>
+      <DMS_TrashBinBaseDestroyed>
+        <chance>0.4</chance>
+        <position>(4, 0, 0)</position>
+      </DMS_TrashBinBaseDestroyed>
+    </things>
+  </PrefabDef>
+
+  <!-- 三種 3x3 重型殘骸，各自獨立成預製塊，讓房間可以隨機抽到不同組合。
+       Three 3x3 heavy wrecks as separate prefabs so a bay can roll any mix of them. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_HeavyWreck_Gatekeeper</defName>
+    <size>(3,3)</size>
+    <things>
+      <DMS_Building_GatekeeperDestoryed>
+        <position>(1, 0, 1)</position>
+      </DMS_Building_GatekeeperDestoryed>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>DMS_Prefab_HeavyWreck_Launcher</defName>
+    <size>(3,3)</size>
+    <things>
+      <DMS_Building_MissileLauncherDestoryed>
+        <position>(1, 0, 1)</position>
+      </DMS_Building_MissileLauncherDestoryed>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>DMS_Prefab_HeavyWreck_Radar</defName>
+    <size>(3,3)</size>
+    <things>
+      <DMS_Building_RadarDestoryed>
+        <position>(1, 0, 1)</position>
+      </DMS_Building_RadarDestoryed>
+    </things>
+  </PrefabDef>
+
+  <!-- ============================================================
+       物資箱 / Supply crates
+       可開啟的 DMS 小型物資箱（Fortified.Building_SurplusContainer）。
+       白箱是隨機內容，其餘依色帶對應內容物。
+       Openable DMS small crates. White ones roll a random table; the rest are colour-coded.
+       ============================================================ -->
+
+  <!-- 房間裡的一疊物資箱。A stack of crates out on the floor. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_SupplyCache</defName>
+    <size>(3,2)</size>
+    <things>
+      <DMS_CrateSmall_Material>
+        <chance>0.8</chance>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(1, 0, 0)</li>
+        </positions>
+      </DMS_CrateSmall_Material>
+      <DMS_CrateSmall_Parts>
+        <chance>0.5</chance>
+        <position>(2, 0, 0)</position>
+      </DMS_CrateSmall_Parts>
+      <DMS_CrateSmall_Ration>
+        <chance>0.5</chance>
+        <position>(0, 0, 1)</position>
+      </DMS_CrateSmall_Ration>
+      <DMS_CrateSmall_Prosthetic>
+        <chance>0.25</chance>
+        <position>(1, 0, 1)</position>
+      </DMS_CrateSmall_Prosthetic>
+      <DMS_CrateSmall_SmallArms>
+        <chance>0.35</chance>
+        <position>(2, 0, 1)</position>
+      </DMS_CrateSmall_SmallArms>
+    </things>
+  </PrefabDef>
+
+  <!-- 靠牆排開的物資箱。Crates lined up against a wall. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_SupplyCache_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(4,1)</size>
+    <things>
+      <DMS_CrateSmall_Material>
+        <chance>0.8</chance>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(1, 0, 0)</li>
+        </positions>
+      </DMS_CrateSmall_Material>
+      <DMS_CrateSmall_Ration>
+        <chance>0.5</chance>
+        <position>(2, 0, 0)</position>
+      </DMS_CrateSmall_Ration>
+      <DMS_CrateSmall_Parts>
+        <chance>0.4</chance>
+        <position>(3, 0, 0)</position>
+      </DMS_CrateSmall_Parts>
+    </things>
+  </PrefabDef>
+
+  <!-- ============================================================
+       室內陳設 / Interior furnishings
+       只用 Core 與 DMS 的建築，不引用任何 DLC 的 def。
+       靠牆的預製塊照上面的約定：最上排貼牆，面向房內的東西加 relativeRotation Opposite；
+       朝南的偶數寬物件從 position 往 -x 延伸（2x1 放在 x 佔 x-1..x）。
+       Core and DMS buildings only; no DLC defs. Edge prefabs follow the convention above: the top row
+       sits against the wall and things facing the room take relativeRotation Opposite. A south-facing
+       even-width thing extends towards -x (a 2x1 at x covers x-1..x).
+       ============================================================ -->
+
+  <!-- 值班桌：靠牆一組報廢的雙聯控制台加一台門禁終端，前面一張椅子。
+       Duty desk: a dead double console and an access terminal against the wall, a chair in front. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_ConsoleDesk_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(3,2)</size>
+    <things>
+      <DMS_ConsoleDouble_Destroyed>
+        <position>(1, 0, 1)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_ConsoleDouble_Destroyed>
+      <DMS_AccessConsole_Destroyed>
+        <chance>0.6</chance>
+        <position>(2, 0, 1)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_AccessConsole_Destroyed>
+      <DiningChair>
+        <chance>0.7</chance>
+        <position>(1, 0, 0)</position>
+        <stuff>Steel</stuff>
+      </DiningChair>
+    </things>
+  </PrefabDef>
+
+  <!-- 控制台列：指揮室牆邊一整排報廢的操作台。
+       Console bank: a whole row of dead operator stations along a command room wall. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_ConsoleBank_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <DMS_ConsoleDouble_Destroyed>
+        <position>(1, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_ConsoleDouble_Destroyed>
+      <DMS_ConsoleSingle_Destroyed>
+        <chance>0.6</chance>
+        <position>(2, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_ConsoleSingle_Destroyed>
+      <DMS_ConsoleDouble_Destroyed>
+        <chance>0.7</chance>
+        <position>(4, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_ConsoleDouble_Destroyed>
+    </things>
+  </PrefabDef>
+
+  <!-- 上下舖兩排，每排三張遠古床（Core）。少一兩張是被拆走了。
+       Two rows of three ancient beds (Core). A missing one or two were hauled off. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_BunkRows</defName>
+    <size>(5,4)</size>
+    <things>
+      <AncientBed>
+        <chance>0.8</chance>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+          <li>(4, 0, 0)</li>
+          <li>(0, 0, 2)</li>
+          <li>(2, 0, 2)</li>
+          <li>(4, 0, 2)</li>
+        </positions>
+      </AncientBed>
+    </things>
+  </PrefabDef>
+
+  <!-- 食堂長桌：1x2 鋼桌配四張凳子，排法照原版 TableWithStools_1x2。
+       Mess table: a 1x2 steel table and four stools, laid out like vanilla's TableWithStools_1x2. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_MessTable</defName>
+    <rotations>North</rotations>
+    <size>(3,2)</size>
+    <things>
+      <Table1x2c>
+        <position>(1, 0, 0)</position>
+        <stuff>Steel</stuff>
+      </Table1x2c>
+      <Stool>
+        <chance>0.66</chance>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+          <li>(0, 0, 1)</li>
+          <li>(2, 0, 1)</li>
+        </positions>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Stool>
+    </things>
+  </PrefabDef>
+
+  <!-- 廚房設備列：冰箱、爐台、烤箱、水槽、微波爐（全是 Core 的遠古廚具，1x1 不轉向）。
+       Galley: fridge, stove, oven, sink and microwave (Core ancient kitchenware, 1x1, never rotated). -->
+  <PrefabDef>
+    <defName>DMS_Prefab_Galley_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <AncientRefrigerator>
+        <position>(0, 0, 0)</position>
+      </AncientRefrigerator>
+      <AncientStove>
+        <position>(1, 0, 0)</position>
+      </AncientStove>
+      <AncientOven>
+        <chance>0.7</chance>
+        <position>(2, 0, 0)</position>
+      </AncientOven>
+      <AncientKitchenSink>
+        <position>(3, 0, 0)</position>
+      </AncientKitchenSink>
+      <AncientMicrowave>
+        <chance>0.6</chance>
+        <position>(4, 0, 0)</position>
+      </AncientMicrowave>
+    </things>
+  </PrefabDef>
+
+  <!-- 醫療工作站：靠牆一座報廢的人工肌肉培養槽、一台空氣清淨機，偶爾留下一箱義體。
+       Med station: a dead artifuscle chamber and an air purifier against the wall, sometimes a crate of prosthetics. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_MedStation_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(5,1)</size>
+    <things>
+      <DMS_TableArtifuscleDestroyed>
+        <position>(1, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_TableArtifuscleDestroyed>
+      <DMS_AirpurifierDestroyed>
+        <chance>0.6</chance>
+        <position>(3, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_AirpurifierDestroyed>
+      <DMS_CrateSmall_Prosthetic>
+        <chance>0.3</chance>
+        <position>(4, 0, 0)</position>
+      </DMS_CrateSmall_Prosthetic>
+    </things>
+  </PrefabDef>
+
+  <!-- 維修工作台：靠牆一台報廢的機械列印機，前面一張凳子。工作台類不轉向，正面本來就朝房內。
+       Maintenance bench: a dead machinery printer against the wall with a stool in front. Benches keep
+       their default rotation; their front already faces the room. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_MaintenanceBench_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(3,3)</size>
+    <things>
+      <DMS_TableMachinePrinterDestroyed>
+        <position>(1, 0, 1)</position>
+      </DMS_TableMachinePrinterDestroyed>
+      <Stool>
+        <chance>0.5</chance>
+        <position>(1, 0, 0)</position>
+        <stuff>Steel</stuff>
+      </Stool>
+    </things>
+  </PrefabDef>
+
+  <!-- 被撬開的保全貨櫃。A security container someone already pried open. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_SecurityContainer_Ruined</defName>
+    <size>(3,3)</size>
+    <things>
+      <DMS_ContainerNaraDestroyed>
+        <position>(1, 0, 1)</position>
+      </DMS_ContainerNaraDestroyed>
+    </things>
+  </PrefabDef>
+
+  <!-- 報廢卡車（Core）與散落的引擎零件。卡車 2x4：長度 4 的那一邊從 position 往回 1 格，所以 z 放 1。
+       A rusted truck (Core) with engine parts strewn about. The truck is 2x4; its 4-long side starts one cell
+       behind the position, hence z = 1. -->
+  <PrefabDef>
+    <defName>DMS_Prefab_TruckWreck</defName>
+    <size>(5,5)</size>
+    <things>
+      <AncientRustedTruck>
+        <position>(1, 0, 1)</position>
+      </AncientRustedTruck>
+      <AncientRustedEngineBlock>
+        <chance>0.6</chance>
+        <position>(4, 0, 1)</position>
+      </AncientRustedEngineBlock>
+      <AncientWheel>
+        <chance>0.6</chance>
+        <positions>
+          <li>(4, 0, 3)</li>
+          <li>(0, 0, 4)</li>
+        </positions>
+      </AncientWheel>
+    </things>
+  </PrefabDef>
+
+  <!-- 報廢運兵車（Core）。A rusted troop carrier (Core). -->
+  <PrefabDef>
+    <defName>DMS_Prefab_TroopCarrierWreck</defName>
+    <size>(5,5)</size>
+    <things>
+      <AncientRustedJeep>
+        <position>(2, 0, 2)</position>
+      </AncientRustedJeep>
+      <AncientWheel>
+        <chance>0.5</chance>
+        <position>(0, 0, 1)</position>
+      </AncientWheel>
+      <AncientRustedEngineBlock>
+        <chance>0.5</chance>
+        <position>(4, 0, 3)</position>
+      </AncientRustedEngineBlock>
+    </things>
+  </PrefabDef>
+
+</Defs>

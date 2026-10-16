@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ==================================================================== -->
+  <!-- 封存檔案 III 級：零點能基礎（DMS_Occultech_ZeroPoint）的建築類解鎖物。 -->
+  <!-- 數值約定：一枚反粒子彈頭 = 25 個固態零點能（約一年）；                -->
+  <!--           一個固態零點能 = 反應器 6000W 運轉一年。                    -->
+  <!-- 發生器與反應器的 CompRefuelable 都只當「整枚／整塊」的彈匣用           -->
+  <!-- （fuelConsumptionRate 0），實際消耗由 DMS 的 comp 一次取一整個，       -->
+  <!-- 原版向上取整的補充邏輯才不會多塞一個而白白浪費。                      -->
+  <!-- ==================================================================== -->
+
+  <!-- 零點能發生器核心：反粒子彈頭 → 固態零點能（DMS.CompZeroPointGenerator） -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_ZeroPointGenerator</defName>
+    <label>zero-point generator core</label>
+    <thingClass>Building</thingClass>
+    <description>A complex device that punches a hole in real space through the controlled release of antigrain energy, drawing inexhaustible energy from the quantum fluctuations outside and condensing it into solid energy blocks for convenient storage and further processing.\n\nSince the rim generally lacks antigrain production technology, the device usually has to rely on ready-made antigrain warheads as the catalyst that starts it running.\n\nWhile powered, each antigrain warhead loaded as catalyst yields 25 units of solidified zero-point energy, one every 2.4 days. A single warhead keeps the core running for about a year.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_SolitaryZPM</ThingDef>
+      <ThingDef>Shell_AntigrainWarhead</ThingDef>
+    </descriptionHyperlinks>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/ZPM_Generator</texPath>
+      <drawSize>(4,5)</drawSize>
+      <drawOffset>(0,0,0.5)</drawOffset>
+    </graphicData>
+    <fillPercent>0.65</fillPercent>
+    <pathCost>90</pathCost>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <defaultPlacingRot>0</defaultPlacingRot>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <WorkToBuild>40000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>-10</Beauty>
+    </statBases>
+    <costList>
+      <Plasteel>150</Plasteel>
+      <Tungsteel>200</Tungsteel>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <researchPrerequisites>
+      <li>DMS_Occultech_ZeroPoint</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>DMS_Category</designationCategory>
+    <building>
+      <claimable>true</claimable>
+      <paintable>false</paintable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <comps>
+      <li Class="DMS.CompProperties_ZeroPointGenerator">
+        <thingToSpawn>DMS_SolitaryZPM</thingToSpawn>
+        <yieldPerCatalyst>25</yieldPerCatalyst>
+        <!-- 2.4 天一個 × 25 = 60 天：一枚彈頭剛好一年。2.4 days × 25 = 60 days: exactly one warhead a year. -->
+        <ticksPerUnit>144000</ticksPerUnit>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <!-- 只當彈匣：消耗由 CompZeroPointGenerator 一次點燃一整枚。Magazine only; the generator ignites one whole warhead at a time. -->
+        <fuelConsumptionRate>0</fuelConsumptionRate>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelCapacity>5.0</fuelCapacity>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>2</initialConfigurableTargetFuelLevel>
+        <fuelFilter>
+          <thingDefs>
+            <li>Shell_AntigrainWarhead</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>Antigrain catalyst</fuelLabel>
+        <fuelGizmoLabel>Antigrain catalyst</fuelGizmoLabel>
+        <initialFuelPercent>0</initialFuelPercent>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <functionsInVacuum>false</functionsInVacuum>
+        <!-- 彈匣空了但還有充能時仍在運轉，缺燃料圖示改由 CompZeroPointGenerator 判斷。 -->
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>5000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+        <soundAmbientPowered>ScannerLongRangeMineral_Ambience</soundAmbientPowered>
+      </li>
+      <!-- 產出時核心腔室裡張開的微型黑洞與電弧；何時張開由 CompZeroPointGenerator.SingularityActive 決定。
+           The micro black hole and arcs in the core chamber while producing; CompZeroPointGenerator.SingularityActive
+           decides when it opens. -->
+      <li Class="DMS.CompProperties_SingularityGraphic">
+        <shaderType>DMS_Singularity</shaderType>
+        <arcShaderType>DMS_SingularityArc</arcShaderType>
+        <glitchShaderType>DMS_SingularityGlitch</glitchShaderType>
+        <!-- 貼圖 (512, 445) 的核心腔室：drawOffset 0.5 + (640 − 445) / 256。Core chamber at texture (512, 445). -->
+        <offset>(0, 0, 1.26)</offset>
+        <size>1.5</size>
+        <horizon>0.8</horizon>
+        <color>(0.45, 0.8, 1.0)</color>
+        <arcColor>(0.5, 0.85, 1.0)</arcColor>
+        <!-- 兩臂上四顆藍色發射節點朝向核心的一側，相對奇點中心。
+             The core-facing side of the four blue emitter nodes on the arms, relative to the singularity. -->
+        <arcTargets>
+          <li>(-0.45, 0, 0.5)</li>
+          <li>(-0.72, 0, 0.27)</li>
+          <li>(0.45, 0, 0.5)</li>
+          <li>(0.72, 0, 0.27)</li>
+        </arcTargets>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 零點能反應器：燒固態零點能發電（DMS.CompZeroPointReactor） -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_ZeroPointReactor</defName>
+    <label>zero-point reactor</label>
+    <thingClass>Building</thingClass>
+    <description>A generator that unravels the confinement field of solidified zero-point energy in a controlled cascade and converts what it releases into electricity. Most human technology cannot touch the energy locked inside a block; this reactor is one of the few exceptions.\n\nIt loads one block at a time, and a single block keeps it running at full output for a whole year. The magazine holds five.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_SolitaryZPM</ThingDef>
+    </descriptionHyperlinks>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <!-- 只有 _north（4×3）與 _east（3×4）：南向沿用北向，西向由東向鏡像。
+           Only _north (4×3) and _east (3×4): south reuses north, west mirrors east. -->
+      <texPath>Things/Building/ZPM_Reactor</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,3)</drawSize>
+      <shadowData>
+        <volume>(2.8,1,1.8)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.9</fillPercent>
+    <pathCost>50</pathCost>
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <blockWind>true</blockWind>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(3,2)</size>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>15000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>-10</Beauty>
+    </statBases>
+    <costList>
+      <Plasteel>100</Plasteel>
+      <Tungsteel>80</Tungsteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <researchPrerequisites>
+      <li>DMS_Occultech_ZeroPoint</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>DMS_Category</designationCategory>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+      <li Class="DMS.CompProperties_ZeroPointReactor">
+        <basePowerConsumption>-6000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+        <!-- 一塊 = 一年（60 天）。One block = one year (60 days). -->
+        <ticksPerFuelUnit>3600000</ticksPerFuelUnit>
+        <soundAmbientProducingPower>ShipReactor_Ambience</soundAmbientProducingPower>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Refuelable">
+        <!-- 只當彈匣：消耗由 CompZeroPointReactor 一次裝入一整塊。Magazine only; the reactor loads one whole block at a time. -->
+        <fuelConsumptionRate>0</fuelConsumptionRate>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelCapacity>5.0</fuelCapacity>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>2</initialConfigurableTargetFuelLevel>
+        <fuelFilter>
+          <thingDefs>
+            <li>DMS_SolitaryZPM</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>Solidified energy</fuelLabel>
+        <fuelGizmoLabel>Solidified energy</fuelGizmoLabel>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <canEjectFuel>true</canEjectFuel>
+        <!-- 彈匣空了但爐心還在燒時仍在發電，缺燃料圖示改由 CompZeroPointReactor 判斷。 -->
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Stunnable">
+        <useLargeEMPEffecter>true</useLargeEMPEffecter>
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 現實穩定錨：錨場壓制異象實體、能力值上限 120%（DMS.CompRealityAnchor） -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMS_Anchor</defName>
+    <label>reality anchor</label>
+    <thingClass>Building</thingClass>
+    <description>A stabilization device that uses counter-technology to keep the surrounding space free from the influence of transcendent forces. To an ordinary person it is nothing more than a harmless decoration, but psycasters and transcendent artifacts find it hard to establish connections beyond this dimension in its presence, and cannot manifest their transcendent properties.\n\nWhile powered, it holds a stabilized field around itself. Inside it, no creature's capacities or physical limits can exceed 120% of normal, psycasts cannot be cast and invisibility fails. Anomalous entities and mutants are suppressed: slowed, weakened and far easier to contain. The field makes no distinction between friend and foe.</description>
+    <descriptionHyperlinks>
+      <HediffDef>DMS_RealityAnchored</HediffDef>
+      <HediffDef>DMS_RealitySuppressed</HediffDef>
+    </descriptionHyperlinks>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/DMS_Anchor_base</texPath>
+      <!-- 1×1：畫布 384px 中圖案約佔 56%，2×2 繪製時圖案略大於一格。 -->
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/DMS_Anchor</uiIconPath>
+    <uiIconScale>1.5</uiIconScale>
+    <fillPercent>0.35</fillPercent>
+    <pathCost>90</pathCost>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <defaultPlacingRot>0</defaultPlacingRot>
+    <specialDisplayRadius>14.9</specialDisplayRadius>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <WorkToBuild>25000</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <DMS_SolitaryZPM>5</DMS_SolitaryZPM>
+      <Plasteel>100</Plasteel>
+      <Tungsteel>120</Tungsteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <researchPrerequisites>
+      <li>DMS_Occultech_ZeroPoint</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>DMS_Category</designationCategory>
+    <building>
+      <claimable>true</claimable>
+      <paintable>false</paintable>
+    </building>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>1200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="DMS.CompProperties_RealityAnchor">
+        <radius>14.9</radius>
+        <fieldHediff>DMS_RealityAnchored</fieldHediff>
+        <entityHediff>DMS_RealitySuppressed</entityHediff>
+      </li>
+      <!-- 上半部的懸浮錨柱：與 DMS_Anchor.png 同一張畫布，畫布中心比底座中心高 0.5 格（底座 2×2 繪製時）。
+           尺寸、位移、升起高度與浮動幅度都隨底座從 3×3 等比縮為 2/3。
+           The floating pillar shares DMS_Anchor.png's canvas, whose centre sits 0.5 cells above the base's at a 2×2
+           base. Size, offset, lift and drift were all scaled to 2/3 along with the base. -->
+      <li Class="DMS.CompProperties_FloatingGraphic">
+        <graphic>
+          <texPath>Things/Building/DMS_Anchor_top</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>(2,3)</drawSize>
+        </graphic>
+        <offset>(0,0,0.5)</offset>
+        <liftHeight>0.13</liftHeight>
+        <bobAmplitude>0.035</bobAmplitude>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ==================================================================== -->
+  <!-- 錨場 hediff：由 MapComponent_RealityAnchor 每 90 ticks 續期 180 ticks， -->
+  <!-- 離開錨場或停電後三秒內自然消退。                                     -->
+  <!-- 能力值上限與係數寫在 DMS.ModExtension_HediffStatRules，stat 以字串指定、 -->
+  <!-- 執行期解析：DLC 的能力值在沒有 DLC 時直接略過，不會報交叉引用錯誤。   -->
+  <!-- ==================================================================== -->
+
+  <!-- 錨場：所有人。能力上限 120%，並以 DMS_DefOf 供靈能封鎖與強制現形判定。 -->
+  <HediffDef>
+    <defName>DMS_RealityAnchored</defName>
+    <label>reality anchored</label>
+    <description>This creature stands inside a reality anchor's stabilized field. No connection beyond this dimension can form here: its capacities and physical limits cannot exceed 120% of normal, it cannot cast psycasts, and it cannot stay invisible.\n\nThe effect lifts within moments of leaving the field.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.55, 0.75, 1)</defaultLabelColor>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>180</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Consciousness</capacity><setMax>1.2</setMax></li>
+          <li><capacity>Sight</capacity><setMax>1.2</setMax></li>
+          <li><capacity>Hearing</capacity><setMax>1.2</setMax></li>
+          <li><capacity>Moving</capacity><setMax>1.2</setMax></li>
+          <li><capacity>Manipulation</capacity><setMax>1.2</setMax></li>
+          <li><capacity>Talking</capacity><setMax>1.2</setMax></li>
+          <li><capacity>Eating</capacity><setMax>1.2</setMax></li>
+          <li><capacity>Breathing</capacity><setMax>1.2</setMax></li>
+          <li><capacity>BloodFiltration</capacity><setMax>1.2</setMax></li>
+          <li><capacity>BloodPumping</capacity><setMax>1.2</setMax></li>
+          <li><capacity>Metabolism</capacity><setMax>1.2</setMax></li>
+        </capMods>
+      </li>
+    </stages>
+    <modExtensions>
+      <!-- 只壓以 100% 為常人基準、且不隨技能成長的能力值；技能型工作速度不受影響，普通人察覺不到。
+           Only stats whose normal baseline is 100% and that do not scale with skill; skilled work is untouched,
+           so an ordinary person never notices. -->
+      <li Class="DMS.ModExtension_HediffStatRules">
+        <rules>
+          <li><stat>PsychicSensitivity</stat><max>1.2</max></li>
+          <li><stat>WorkSpeedGlobal</stat><max>1.2</max></li>
+          <li><stat>MeleeDamageFactor</stat><max>1.2</max></li>
+          <li><stat>ImmunityGainSpeed</stat><max>1.2</max></li>
+          <li><stat>InjuryHealingFactor</stat><max>1.2</max></li>
+        </rules>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <!-- 錨場：異象實體與變異體額外掛這個。行動、操作、意識上限壓低，近戰傷害減半，收容門檻減半。 -->
+  <HediffDef>
+    <defName>DMS_RealitySuppressed</defName>
+    <label>reality suppressed</label>
+    <description>A reality anchor's field is pinning this creature to ordinary physics. The transcendent properties that sustain it are being stripped away: it moves and acts sluggishly, strikes with half its strength and is far easier to hold in containment.\n\nThe effect lifts within moments of leaving the field.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.55, 0.75, 1)</defaultLabelColor>
+    <isBad>true</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>180</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Consciousness</capacity><setMax>0.8</setMax></li>
+          <li><capacity>Moving</capacity><setMax>0.6</setMax></li>
+          <li><capacity>Manipulation</capacity><setMax>0.6</setMax></li>
+        </capMods>
+        <statFactors>
+          <MeleeDamageFactor>0.5</MeleeDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="DMS.ModExtension_HediffStatRules">
+        <rules>
+          <!-- Anomaly 的收容門檻；沒有 Anomaly 時執行期略過。Anomaly's containment threshold; skipped at runtime without it. -->
+          <li><stat>MinimumContainmentStrength</stat><factor>0.5</factor></li>
+        </rules>
+      </li>
+    </modExtensions>
+  </HediffDef>
+</Defs>

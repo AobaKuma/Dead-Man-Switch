@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SAGE 節點任務：[fleetName] 由 DMS.QuestNode_Root_DMS_FleetNetworkSite 提供；保留 (installation==…) 條件與 (*Threat) 標色。
+       SAGE node quest: [fleetName] comes from DMS.QuestNode_Root_DMS_FleetNetworkSite; keep the (installation==…) conditions and (*Threat) tags. -->
+  <DMS_FleetNetworkSite.questNameRules.rulesStrings>
+    <li>questName(installation==DMS_SageNodeSite)->SAGE</li>
+    <li>questName(installation==DMS_SageNodeSite)->Blind the [sage]</li>
+    <li>sage->SAGE node</li>
+    <li>sage->strategic host</li>
+    <li>sage->air-defense host</li>
+  </DMS_FleetNetworkSite.questNameRules.rulesStrings>
+  <DMS_FleetNetworkSite.questDescriptionRules.rulesStrings>
+    <li>questDescription(installation==DMS_SageNodeSite)->We have found the host that is coordinating [fleetName]'s hunt for us: a SAGE node, the distributed strategic command computer the fleet uses for planetary air defense and to tie together the radar and navigation networks across several continents. Its rack array is guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat), and it is wired into a full facility alarm system with fire support.\n\nThe SAGE core can be hacked two or three times. Each run pulls technical blueprints, sealed data caches or access keys out of its strategic database, and each run will set off the facility's alarm again. Destroying it will cripple the fleet's hunt; within a year or two another computer on the SAGE network will be promoted to host and pick up where it left off.\n\nThe node's coordinates hold for [siteTimeout], until the network rotates its hosts.\n\nCaution: it is a hostile installation. Once you enter, its monitoring protocol will summon enemy reinforcements after a countdown, and the node can call in mortar fire.</li>
+  </DMS_FleetNetworkSite.questDescriptionRules.rulesStrings>
+
+</LanguageData>
