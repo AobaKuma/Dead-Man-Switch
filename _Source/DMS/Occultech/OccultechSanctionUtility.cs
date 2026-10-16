@@ -667,7 +667,8 @@ namespace DMS
                 parms.faction = fleet;
                 parms.forced = true;
                 parms.points = Mathf.Max(minPoints, parms.points * Mathf.Max(0.01f, pointsFactor));
-                return IncidentDefOf.RaidEnemy.Worker.TryExecute(parms);
+                // 登記為情境音樂的追殺遭遇（選曲用）。Registered as a huntdown encounter for situational music (song selection).
+                return DMSMusicEventBridge.FireAndRegisterHuntdown(map, fleet, () => IncidentDefOf.RaidEnemy.Worker.TryExecute(parms));
             }
             catch (Exception ex)
             {

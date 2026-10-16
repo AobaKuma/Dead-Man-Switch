@@ -19,6 +19,15 @@ namespace DMS
             return base.CanFireWave(map) && !OccultechSanctionUtility.CourtMartialOngoing;
         }
 
+        /// <summary>
+        /// 發動一波追殺，並把這波襲擊登記為情境音樂的追殺遭遇（選曲用的追殺標記）。
+        /// Fires a hunt wave and registers the raid as a huntdown encounter for situational music (the huntdown song tag).
+        /// </summary>
+        public override bool TryFireWave(Map map, HuntdownWave wave)
+        {
+            return DMSMusicEventBridge.FireAndRegisterHuntdown(map, Faction, () => base.TryFireWave(map, wave));
+        }
+
         /// <summary>追殺的是殖民地本身：地圖不再是玩家據點時改追別處。The hunt targets the colony: drop maps that stop being home.</summary>
         public override bool StillHunted(Map map)
         {

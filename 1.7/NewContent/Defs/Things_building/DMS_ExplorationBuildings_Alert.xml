@@ -31,6 +31,12 @@
     <receivesSignals>true</receivesSignals>
     <building>
       <claimable>false</claimable>
+      <!-- 變電箱被關閉時，關掉帶這個標籤、離它最近且還開著的一座（見 DMS_SubstationCabinet 的 flickOffBuildingTag）。
+           When a substation is shut down, the nearest still-on building with this tag is switched off
+           (see flickOffBuildingTag on DMS_SubstationCabinet). -->
+      <buildingTags>
+        <li>DMS_AlertBuilding</li>
+      </buildingTags>
     </building>
     <!-- EMP / Stun 癱瘓（搭配 CompCanBeDormant 停止掃描） -->
     <comps>
@@ -43,6 +49,10 @@
       <li Class="CompProperties_CanBeDormant">
         <startsDormant>false</startsDormant>
       </li>
+      <!-- 開關：被變電箱關掉後斷電離線。不可佔領，玩家沒有開關按鈕，關掉就不會再開。
+           Power switch: once a substation flicks it off it loses power and goes offline. Unclaimable, so the
+           player never gets the toggle and it stays off. -->
+      <li Class="CompProperties_Flickable" />
     </comps>
   </ThingDef>
 

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    情境音樂的序列（見 Plans/DMS_Music_Transitions_實作計畫.md 第 6 節）。
+    - 全部使用 DMS.MusicSequenceWorker_DMS：依情境與遭遇標記選曲、換圖或讓位時提前結束。
+    - 每個序列都明確設定 fadeoutLastSongDuration（進入時淡出前曲）與 overrideFadeout（離開時淡出），
+      原版預設都是 10 秒。
+    - 不設 endOnDanger／endOnNoDanger：原版危險旗標是全域的，會干擾 DMS 的判斷。
+    - placeholder=true 的序列使用暫代曲目，正式資產完成前不算驗收通過。
+
+    Situational-music sequences (see Plans/DMS_Music_Transitions_實作計畫.md section 6).
+    - All use DMS.MusicSequenceWorker_DMS: songs by context and encounter tag, early end on a map change or yield.
+    - Every sequence sets fadeoutLastSongDuration (fading the previous song on entry) and overrideFadeout (fading on
+      exit) explicitly; vanilla defaults both to 10 seconds.
+    - No endOnDanger/endOnNoDanger: vanilla's danger flag is global and would fight DMS's own rules.
+    - Sequences marked placeholder=true use stand-in songs and do not pass acceptance until the real assets exist.
+  -->
+
+  <!-- 地表探索。暫代：主曲 Abandoned Radar Station 缺檔，先用 Sealed Machinery。
+       Surface exploration. Stand-in: the theme Abandoned Radar Station is missing, Sealed Machinery fills in. -->
+  <MusicSequenceDef>
+    <defName>DMS_InstallationExplore</defName>
+    <workerType>DMS.MusicSequenceWorker_DMS</workerType>
+    <loop>true</loop>
+    <minTimeToPlay>30</minTimeToPlay>
+    <fadeoutLastSongDuration>5</fadeoutLastSongDuration>
+    <overrideFadeout>5</overrideFadeout>
+    <useTransitionForLifetime>true</useTransitionForLifetime>
+    <songs>
+      <li>DMS_Music_SealedMachinery</li>
+    </songs>
+    <modExtensions>
+      <li Class="DMS.ModExtension_DMSMusicSequence">
+        <state>InstallationExplore</state>
+        <placeholder>true</placeholder>
+      </li>
+    </modExtensions>
+  </MusicSequenceDef>
+
+  <!-- 地下探索。Underground exploration. -->
+  <MusicSequenceDef>
+    <defName>DMS_FacilityExplore</defName>
+    <workerType>DMS.MusicSequenceWorker_DMS</workerType>
+    <loop>true</loop>
+    <minTimeToPlay>30</minTimeToPlay>
+    <fadeoutLastSongDuration>5</fadeoutLastSongDuration>
+    <overrideFadeout>5</overrideFadeout>
+    <useTransitionForLifetime>true</useTransitionForLifetime>
+    <songs>
+      <li>DMS_Music_SealedMachinery</li>
+    </songs>
+    <modExtensions>
+      <li Class="DMS.ModExtension_DMSMusicSequence">
+        <state>FacilityExplore</state>
+      </li>
+    </modExtensions>
+  </MusicSequenceDef>
+
+  <!-- 餘波：單次、播完即止，不循環。暫代：還沒有 20–35 秒短曲，先播 Sealed Machinery 的前 35 秒。
+       Aftermath: once, no loop. Stand-in: no 20–35 s cue yet, so the first 35 s of Sealed Machinery play. -->
+  <MusicSequenceDef>
+    <defName>DMS_Aftermath</defName>
+    <workerType>DMS.MusicSequenceWorker_DMS</workerType>
+    <loop>false</loop>
+    <fadeoutLastSongDuration>3</fadeoutLastSongDuration>
+    <overrideFadeout>3</overrideFadeout>
+    <useTransitionForLifetime>false</useTransitionForLifetime>
+    <songs>
+      <li>DMS_Music_SealedMachinery</li>
+    </songs>
+    <modExtensions>
+      <li Class="DMS.ModExtension_DMSMusicSequence">
+        <state>Aftermath</state>
+        <maxSongSeconds>35</maxSongSeconds>
+        <placeholder>true</placeholder>
+      </li>
+    </modExtensions>
+  </MusicSequenceDef>
+
+  <!-- 警戒：盤查、搜索初期、近期警戒上升、增援或 Boss 接近。Alert: challenges, fresh sweeps, alert rises, approaching reinforcements or bosses. -->
+  <MusicSequenceDef>
+    <defName>DMS_SecurityAlert</defName>
+    <workerType>DMS.MusicSequenceWorker_DMS</workerType>
+    <loop>true</loop>
+    <minTimeToPlay>15</minTimeToPlay>
+    <fadeoutLastSongDuration>3</fadeoutLastSongDuration>
+    <overrideFadeout>4</overrideFadeout>
+    <useTransitionForLifetime>true</useTransitionForLifetime>
+    <songs>
+      <li>DMS_Music_CameraCaughtYa</li>
+    </songs>
+    <modExtensions>
+      <li Class="DMS.ModExtension_DMSMusicSequence">
+        <state>SecurityAlert</state>
+      </li>
+    </modExtensions>
+  </MusicSequenceDef>
+
+  <!-- 受困：初期與地下探索共用 Sealed Machinery。Trapped: shares Sealed Machinery with underground exploration for now. -->
+  <MusicSequenceDef>
+    <defName>DMS_FacilityTrapped</defName>
+    <workerType>DMS.MusicSequenceWorker_DMS</workerType>
+    <loop>true</loop>
+    <minTimeToPlay>10</minTimeToPlay>
+    <fadeoutLastSongDuration>3</fadeoutLastSongDuration>
+    <overrideFadeout>3</overrideFadeout>
+    <useTransitionForLifetime>true</useTransitionForLifetime>
+    <songs>
+      <li>DMS_Music_SealedMachinery</li>
+    </songs>
+    <modExtensions>
+      <li Class="DMS.ModExtension_DMSMusicSequence">
+        <state>FacilityTrapped</state>
+      </li>
+    </modExtensions>
+  </MusicSequenceDef>
+
+  <!--
+    一般交戰：地表 Garrisions in Action、地下 Guns Up。追殺襲擊改用 Occultech Huntdown。
+    友方參戰變奏（Allied Marching Precision）缺檔；主戰師變奏（Black Knight Remix）待 D2，兩者都還沒接入。
+    Regular combat: Garrisions in Action on the surface, Guns Up underground; huntdown raids switch to Occultech
+    Huntdown. The allied variant (Allied Marching Precision) is missing and the main-battle variant (Black Knight
+    Remix) waits on D2, so neither is wired in yet.
+  -->
+  <MusicSequenceDef>
+    <defName>DMS_InstallationCombat</defName>
+    <workerType>DMS.MusicSequenceWorker_DMS</workerType>
+    <loop>true</loop>
+    <fadeoutLastSongDuration>2</fadeoutLastSongDuration>
+    <overrideFadeout>4</overrideFadeout>
+    <pausedVolumeFactor>0.5</pausedVolumeFactor>
+    <useTransitionForLifetime>true</useTransitionForLifetime>
+    <songs>
+      <li>DMS_Music_GarrisionsInAction</li>
+    </songs>
+    <modExtensions>
+      <li Class="DMS.ModExtension_DMSMusicSequence">
+        <state>InstallationCombat</state>
+        <facilitySongs>
+          <li>DMS_Music_GunsUp</li>
+        </facilitySongs>
+        <variants>
+          <li>
+            <tag>Huntdown</tag>
+            <song>DMS_Music_OccultechHuntdown</song>
+          </li>
+        </variants>
+      </li>
+    </modExtensions>
+  </MusicSequenceDef>
+
+  <!-- Boss 交戰：遭遇有指定變奏（ModExtension_BossSong）時優先，否則 Servo in precise。
+       Boss combat: the encounter's own variant (ModExtension_BossSong) first, otherwise Servo in precise. -->
+  <MusicSequenceDef>
+    <defName>DMS_BossCombat</defName>
+    <workerType>DMS.MusicSequenceWorker_DMS</workerType>
+    <loop>true</loop>
+    <fadeoutLastSongDuration>2</fadeoutLastSongDuration>
+    <overrideFadeout>4</overrideFadeout>
+    <pausedVolumeFactor>0.5</pausedVolumeFactor>
+    <useTransitionForLifetime>true</useTransitionForLifetime>
+    <songs>
+      <li>DMS_Music_ServoInPrecise</li>
+    </songs>
+    <modExtensions>
+      <li Class="DMS.ModExtension_DMSMusicSequence">
+        <state>BossCombat</state>
+        <useEncounterSong>true</useEncounterSong>
+      </li>
+    </modExtensions>
+  </MusicSequenceDef>
+
+  <!-- 封鎖倒數。暫代：還沒有專曲，先用 Camera caught ya（計畫的急迫變奏來源）。
+       Lockdown countdown. Stand-in: no dedicated track yet, Camera caught ya (the planned source of an urgent variant) fills in. -->
+  <MusicSequenceDef>
+    <defName>DMS_LockdownCountdown</defName>
+    <workerType>DMS.MusicSequenceWorker_DMS</workerType>
+    <loop>true</loop>
+    <minTimeToPlay>0</minTimeToPlay>
+    <fadeoutLastSongDuration>1</fadeoutLastSongDuration>
+    <overrideFadeout>2</overrideFadeout>
+    <useTransitionForLifetime>true</useTransitionForLifetime>
+    <songs>
+      <li>DMS_Music_CameraCaughtYa</li>
+    </songs>
+    <modExtensions>
+      <li Class="DMS.ModExtension_DMSMusicSequence">
+        <state>LockdownCountdown</state>
+        <placeholder>true</placeholder>
+      </li>
+    </modExtensions>
+  </MusicSequenceDef>
+
+</Defs>

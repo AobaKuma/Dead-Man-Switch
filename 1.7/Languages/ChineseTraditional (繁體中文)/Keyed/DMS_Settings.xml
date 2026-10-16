@@ -5,4 +5,8 @@
   <DMS_Settings_ArtifuscleRots>人工肌肉會腐爛</DMS_Settings_ArtifuscleRots>
   <DMS_Settings_ArtifuscleRotsDesc>關閉後，人工肌肉不會再腐爛，也不需要冷藏。立即生效；已經腐爛的人工肌肉會維持腐爛狀態。</DMS_Settings_ArtifuscleRotsDesc>
 
+  <!-- 模組選項:情境音樂 -->
+  <DMS_Settings_SituationalMusic>情境音樂</DMS_Settings_SituationalMusic>
+  <DMS_Settings_SituationalMusicDesc>在 DMS 站點與地下設施，以及 DMS Boss 遭遇與追殺襲擊期間播放 DMS 配樂：探索、警戒、交戰、Boss 戰、封鎖與戰後餘波。關閉後由原版與其他模組決定音樂。立即生效。</DMS_Settings_SituationalMusicDesc>
+
 </LanguageData>

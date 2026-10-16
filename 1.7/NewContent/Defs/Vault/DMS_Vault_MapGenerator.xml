@@ -25,6 +25,12 @@
       <!-- DMS_VaultStructure 由 DMS_VaultElevator 動態插入 / injected by the portal -->
       <li>Fog</li>
     </genSteps>
+    <modExtensions>
+      <!-- 情境音樂：地下設施。Situational music context: underground facility. -->
+      <li Class="DMS.ModExtension_DMSMusicContext">
+        <context>Facility</context>
+      </li>
+    </modExtensions>
   </MapGeneratorDef>
 
   <!-- 取代原版 GenStep_AncientStockpile：同樣的流程，但沒有 OdysseyActive 閘門。
@@ -71,6 +77,12 @@
       <li>DMS_UndergroundHallStructure</li>
       <li>Fog</li>
     </genSteps>
+    <modExtensions>
+      <!-- 情境音樂：地下設施。Situational music context: underground facility. -->
+      <li Class="DMS.ModExtension_DMSMusicContext">
+        <context>Facility</context>
+      </li>
+    </modExtensions>
   </MapGeneratorDef>
 
   <GenStepDef>

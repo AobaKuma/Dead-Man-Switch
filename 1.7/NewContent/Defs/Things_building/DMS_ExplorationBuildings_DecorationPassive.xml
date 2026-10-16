@@ -11,7 +11,7 @@
     <defName>DMS_SubstationCabinet</defName>
     <label>substation cabinet</label>
     <designatorDropdown>DMS_SubstationCabinets</designatorDropdown>
-    <description>A ruggedised metal cabinet that taps an underground power conduit and distributes electricity to surface equipment. The high-voltage internals make shut-down hazardous – only an operator with solid technical knowledge (Intellectual 8+) can safely cut power; anyone less experienced risks a serious electrical burn. An EMP strike will temporarily disable the cabinet without ongoing danger.</description>
+    <description>A ruggedised metal cabinet that taps an underground power conduit and distributes electricity to surface equipment. The high-voltage internals make shut-down hazardous – only an operator with solid technical knowledge (Intellectual 8+) can safely cut power; anyone less experienced risks a serious electrical burn. An EMP strike will temporarily disable the cabinet without ongoing danger. Once shut down it cannot be restarted, and the nearest facility security device loses power along with it.</description>
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
@@ -56,6 +56,9 @@
         <safeShutdownSkillLevel>10</safeShutdownSkillLevel>
         <shockChance>0.45</shockChance>
         <shockDamageAmount>18</shockDamageAmount>
+        <!-- 關閉時順手關掉最近一座還開著的設施警報建築（DMS_AlertBuildingBase 帶這個標籤）。
+             Shutting it down also switches off the nearest alert building still on (DMS_AlertBuildingBase carries the tag). -->
+        <flickOffBuildingTag>DMS_AlertBuilding</flickOffBuildingTag>
       </li>
       <li Class="CompProperties_Hackable">
         <defence>2000</defence>
@@ -83,7 +86,7 @@
   <ThingDef ParentName="FFF_SubstationCabinet">
     <defName>DMS_SubstationCabinet_Wall</defName>
     <label>wall substation panel</label>
-    <description>A compact substation panel mounted flush against a wall, routing underground power to surface equipment. Like its cabinet counterpart, shutting it down safely requires real technical skill: anyone less experienced risks a severe electrical burn from the exposed high-voltage contacts. Vulnerable to EMP.</description>
+    <description>A compact substation panel mounted flush against a wall, routing underground power to surface equipment. Like its cabinet counterpart, shutting it down safely requires real technical skill: anyone less experienced risks a severe electrical burn from the exposed high-voltage contacts. Vulnerable to EMP. Once shut down it cannot be restarted, and the nearest facility security device loses power along with it.</description>
     <graphicData>
       <texPath>Things/Building/DistributionBox_Wall/building</texPath>
       <graphicClass>Graphic_Multi</graphicClass>

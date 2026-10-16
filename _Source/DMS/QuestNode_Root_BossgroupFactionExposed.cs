@@ -86,6 +86,9 @@ namespace DMS
                 maxDelay = MaxDelayTicksRange.RandomInRange,
                 inSignalEnable = QuestGen.slate.Get<string>("inSignal"),
                 song = bossgroupDef.GetModExtension<ModExtension_BossSong>()?.GetSong(),
+                // 情境音樂的 Boss 遭遇登記（護衛另記，不算 Boss）。Registers the boss encounter for situational music (escorts kept apart).
+                musicBosses = list3.ToList(),
+                musicEscorts = list2.ToList(),
             };
             questPart_BossgroupArrives.outSignalsCompleted.Add(text);
             quest.AddPart(questPart_BossgroupArrives);

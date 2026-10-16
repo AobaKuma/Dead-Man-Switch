@@ -32,6 +32,12 @@
     <tags>
       <li>DMS_SteleKey</li>
     </tags>
+    <modExtensions>
+      <!-- 情境音樂：地表站點。Situational music context: surface installation. -->
+      <li Class="DMS.ModExtension_DMSMusicContext">
+        <context>Installation</context>
+      </li>
+    </modExtensions>
   </SitePartDef>
 
   <GenStepDef>
@@ -77,6 +83,12 @@
     <tags>
       <li>DMS_SteleVault</li>
     </tags>
+    <modExtensions>
+      <!-- 情境音樂：地表站點。Situational music context: surface installation. -->
+      <li Class="DMS.ModExtension_DMSMusicContext">
+        <context>Installation</context>
+      </li>
+    </modExtensions>
   </SitePartDef>
 
   <GenStepDef>

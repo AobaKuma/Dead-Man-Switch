@@ -28,6 +28,10 @@
         <entryLetterLabelKey>DMS_SiteStation_EntryCountdownLabel</entryLetterLabelKey>
         <entryLetterTextKey>DMS_SiteStation_EntryCountdownText</entryLetterTextKey>
       </li>
+      <!-- 情境音樂：地表站點。Situational music context: surface installation. -->
+      <li Class="DMS.ModExtension_DMSMusicContext">
+        <context>Installation</context>
+      </li>
     </modExtensions>
     <!-- 世界地圖上用先鋒殘餘的陣營圖標，套陣營色。The Legacy faction icon on the world map, tinted with the faction colour. -->
     <siteTexture>UI/Faction/LegacyIcon</siteTexture>

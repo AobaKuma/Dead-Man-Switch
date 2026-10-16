@@ -225,7 +225,7 @@ DMS 只有四個 Boss 入口，全部經原版 `RimWorld.BossgroupWorker.Resolve
 
 - 「主戰師」的實體定義：待第 11 節 D2。決策前 `Black Knight Remix` 不接入自動選曲。
 - Multiplayer 1.7 版的行為：發布後重查 `AsyncTimeComp` 的 Push/Pop 與 patch 清單。降級：沿用 1.6 的結論與 5.2 的限制（不在 tick 內呼叫音樂 API、窗口在 `MapComponentTick` 內換算）。
-- 附帶發現（不屬本計畫範圍，列為後續）：`QuestPart_BossgroupArrives.QuestPartTick()` 在 `mapParent.Map` 為 null（玩家已離開站點但站點仍在）時，會在 `ShouldSummonNow(null)` 拋 NullReferenceException，由 `Quest.QuestTick()` 每 2500 tick 記錄一次錯誤，直到 `maxDelay` 強制投放到玩家據點。DMS 子類別覆寫 `QuestPartTick()` 時可一併防護。
+- 附帶發現（已於 Phase 3 修正）：`QuestPart_BossgroupArrives.QuestPartTick()` 在 `mapParent.Map` 為 null（玩家已離開站點但站點仍在）時，會在 `ShouldSummonNow(null)` 拋 NullReferenceException，由 `Quest.QuestTick()` 每 2500 tick 記錄一次錯誤，直到 `maxDelay` 強制投放到玩家據點。`QuestPart_BossgroupArrivesWithMusic` 已覆寫 `QuestPartTick()`，沒有地圖時只等強制抵達。
 
 ## 3. 狀態模型
 
@@ -261,7 +261,7 @@ DMS 只有四個 Boss 入口，全部經原版 `RimWorld.BossgroupWorker.Resolve
 4. 有交戰或停戰緩衝：`InstallationCombat`。
 5. 設施仍受困：`FacilityTrapped`。
 6. 有警戒原因或警戒緩衝：`SecurityAlert`。
-7. 在餘波窗口內且本客戶端尚未播放過該危機的餘波：`Aftermath`。
+7. 在餘波窗口內、本客戶端看著該危機發生且尚未播放過它的餘波：`Aftermath`。
 8. 依地圖類型：`FacilityExplore` 或 `InstallationExplore`。
 9. 其他情況：`None`，交還原版。
 
@@ -278,10 +278,13 @@ DMS 只有四個 Boss 入口，全部經原版 `RimWorld.BossgroupWorker.Resolve
 | 守墓人接敵（音樂用） | `lastSeenTick` 在 600 ticks 內，且模式為 `Engage`／`Search` | game ticks | 交戰原因；獨立於 AI 的 `calmDownTicks`，不改 AI |
 | 增援接近警戒 | 剩餘 1800 ticks | game ticks | 1 倍速約 30 秒。地表站點讀 `TimedDetectionRaids.TicksLeftToSendRaids`；設施 QRF 讀 `QuestPart_RaidWaveArrives` 的預計抵達 tick（見 2.2） |
 | Boss 接近警戒 | 預計抵達前 1800 ticks | game ticks | 預計抵達 = `EnableTick + minDelay` 之後第一個 2500 hash 邊界（見 2.2）；`ShouldSummonNow` 為 false（訪客等阻擋）時不編造時間，維持 Pending |
+| 增援抵達 | `RaidsSentCount` 增加後 2500 ticks | game ticks | 地表站點限時增援剛進場、尚未開火時的警戒原因 |
+| 友方參戰標記 | `DMS_Army` 的 `LordJob_AssistColony` 成員在 600 ticks 內出手 | game ticks | 只供選曲，不構成交戰原因 |
 | 交戰紀錄窗口 | 最後交戰後 600 ticks | game ticks | `Verb.TryCastNextBurstShot` prefix 寫入的最後交戰 tick；窗口內為交戰原因，之後才開始停戰緩衝 |
 | 停戰緩衝 | 12 秒 | 未暫停的實際時間 | 從最後有效交戰／危險解除起算 |
 | 警戒緩衝 | 15 秒 | 未暫停的實際時間 | 所有原因都解除後才起算 |
-| 餘波窗口 | 危機結束後 2500 ticks 內可開始 | game ticks | 曲長 20–35 秒；每個危機每個客戶端最多一次 |
+| 餘波窗口 | 危機結束後 5000 ticks 內可開始 | game ticks | 曲長 20–35 秒；3 倍速下停戰緩衝（12 秒）加淡出（4 秒）約 2900 ticks，所以不用 2500。只播給看著該危機發生的客戶端，每個危機最多一次 |
+| Boss 倒下 | 最後一架登記 Boss 失去資格時 | game ticks | 擊殺前的射擊不再計入交戰窗口，客戶端停戰緩衝同時結束；沒有護衛繼續開火就直接進入餘波，不在 Boss 曲後再接一段一般交戰曲 |
 | 遊戲端原因更新 | 每 60 ticks | `MapComponentTick` | 加上關鍵事件立即標髒；實際成本再量測 |
 | 淡入淡出 | 見第 6 節 | sequence 欄位 | 對應 `fadeoutLastSongDuration`、`overrideFadeout`、`fadeInDuration` |
 
@@ -320,12 +323,12 @@ DMS 只有四個 Boss 入口，全部經原版 `RimWorld.BossgroupWorker.Resolve
 
 將遭遇拆成 `Pending → Approaching → Active → Resolved`，取消則為 `Cancelled`。
 
-- 生成時（`QuestNode_Root_BossgroupFactionExposed.RunInt()`）登記唯一遭遇 ID、召喚地圖、Boss 實體參照；護衛另記，不當成 Boss。召喚地圖只是暫定目標。
-- Pending 不播放 Boss 曲；Approaching（預計抵達前 1800 tick，由 `QuestPart_BossgroupArrivesWithMusic` 覆寫 `QuestPartTick()` 發布，見 2.2）只提供警戒原因。
-- 抵達訊號（`QuestPart_BossgroupArrivesWithMusic.Complete()`，在 `base.Complete()` 之後、清空 `bosses` 之前）把目標地圖更新為 Boss 的 `MapHeld`：玩家已離開站點時會改投玩家據點。此時 Boss 仍在空投艙內，約 230–310 tick 後 `Spawned` 才轉 Active。
+- 生成時（`QuestNode_Root_BossgroupFactionExposed.RunInt()`）在 `QuestPart_BossgroupArrivesWithMusic` 登記 Boss 實體參照（`musicBosses`）；護衛另記（`musicEscorts`），不當成 Boss。遭遇以該任務部件識別，召喚地圖只是暫定目標。
+- Pending 不播放 Boss 曲；Approaching（預計抵達前 1800 tick，由 `DMSMusicEventBridge` 以部件的公開欄位推算，見 2.2）只提供警戒原因。
+- 抵達後（部件狀態轉為 Disabled）以 Boss 的 `MapHeld` 為準：玩家已離開站點時會改投玩家據點。此時 Boss 仍在空投艙內，算「即將抵達」；約 230–310 tick 後 `Spawned` 才轉 Active。
 - Active 要求敵對、已啟動、未死亡、未失能且仍位於有效遭遇地圖。
-- 死亡：重用 `DMS_BossKilled` 訊號（以 MAP 過濾），並以已登記的 Boss 參照過濾：`isBoss` 也涵蓋一般編組中的玳瑁、駭蜥與推土機（見 2.2）。比照 `CompBossKillRelay.requireAllBossesDead` 只在最後一架登記 Boss 失去資格時解除。
-- 離場、轉友方、永久失能、遭遇取消（站點被摧毀時任務以 `mapParent.Destroyed` 結束）：訊號不涵蓋，於 `MapComponentTick` 輪詢。
+- 死亡、離場、轉友方、倒地：每次刷新輪詢已登記的 Boss 參照（不訂閱 `DMS_BossKilled`；`isBoss` 也涵蓋一般編組中的玳瑁、駭蜥與推土機，見 2.2，所以只認登記的參照）。最後一架登記 Boss 失去資格時 Boss 狀態才解除。
+- 遭遇取消：站點被摧毀或 Boss 全部陣亡時任務結束，進行中任務的掃描就不再讀到它。
 - 暫時 EMP／短暫暈眩不當作永久擊敗。仍有護衛交火則回一般交戰。
 - 不能只用 PawnKind 或任務是否存在判斷；不能依賴會被清空的 `QuestPart_Bossgroup.bosses`。
 - 封存科技追殺襲擊沿用同一套遭遇登記（以 lord 參照代替 Boss 參照，見 2.2），只提供選曲標記與交戰地圖旗標，不進入 `BossCombat`。
@@ -337,19 +340,25 @@ DMS 只有四個 Boss 入口，全部經原版 `RimWorld.BossgroupWorker.Resolve
 
 | 位置 | 職責 |
 |---|---|
-| `_Source/DMS/Music/DMSMusicState.cs` | enum、snapshot、原因旗標、純狀態選擇規則 |
-| `_Source/DMS/Music/MapComponent_DMSMusicState.cs` | 遊戲端：事件登記、警戒上升與接敵 tick、Boss 遭遇、危機起訖、存檔與恢復 |
+| `_Source/DMS/Music/DMSMusicState.cs` | enum、輸入與結論（`DMSMusicInputs`／`DMSMusicFacts`）、原因旗標、時間門檻、唯一狀態選擇器；不依賴 RimWorld |
+| `_Source/DMS/Music/DMSMusicGameState.cs` | 遊戲端 tick 紀錄與窗口換算、危機編號；不依賴 RimWorld |
+| `_Source/DMS/Music/DMSMusicClientState.cs` | 客戶端聽感緩衝、觀察過的危機與已播餘波；不依賴 RimWorld |
+| `_Source/DMS/Music/MapComponent_DMSMusicState.cs` | 遊戲端：讀取地圖、事件登記、Boss 遭遇、存檔與恢復 |
+| `_Source/DMS.MusicTests/` | 狀態規則測試（只連結上面三個不依賴 RimWorld 的檔案；在該資料夾執行 `dotnet run`） |
 | `_Source/DMS/Music/GameComponent_DMSMusic.cs` | 客戶端：觀看地圖變更偵測、未暫停時間累計、聽感緩衝、餘波播放紀錄；不存檔 |
 | `_Source/DMS/Music/DMSMusicContextUtility.cs` | 由 `Site.parts`／`Map.generatorDef` 推導 context 並快取 |
 | `_Source/DMS/Music/ModExtension_DMSMusicContext.cs` | context 與曲庫設定 |
 | `_Source/DMS/Music/MusicTransition_DMS.cs` | 原版 transition 基底及八種 worker；只讀 snapshot |
 | `_Source/DMS/Music/MusicSequenceWorker_DMS.cs` | 覆寫 `ShouldEnd()`（context 不符時立即結束）與 `SelectSong()`（依 context／變奏選曲、空曲庫保護） |
 | `_Source/DMS/Music/DMSMusicEventBridge.cs` | 事件接入。Harmony：`Verb.TryCastNextBurstShot` prefix（交戰）、`MusicManagerPlay.ForcePlaySong` postfix（強制播放開始）。輪詢：`TimedDetectionRaids`（站點增援）、`QuestPart_RaidWaveArrives`（FFF 信標波次）、`MapComponent_FacilityLockdown.State`、`MapComponent_AlertCounter.AlertLevel`、守墓人 `Mode`／`lastSeenTick`、友方 `LordJob_AssistColony` 成員的 `lastAttackTargetTick`、私有 `songWasForced`（FieldRef） |
-| `_Source/DMS/QuestNode_Root_BossgroupFactionExposed.cs`、`QuestPart_BossgroupArrivesWithMusic.cs` | 生成時登記 Boss 遭遇；覆寫 `QuestPartTick()` 發布預計抵達 tick；`Complete()` 更新實際投放地圖並停止呼叫 `ForcePlaySong` |
+| `_Source/DMS/QuestNode_Root_BossgroupFactionExposed.cs`、`QuestPart_BossgroupArrivesWithMusic.cs` | 生成時在任務部件登記 Boss 與護衛（存檔欄位 `musicBosses`／`musicEscorts`，舊存檔補建）；不再呼叫 `ForcePlaySong`；`QuestPartTick()` 在沒有地圖時避開原版的 NullReferenceException |
 | `_Source/DMS/CompAlertEffector_CallBattleGroup.cs`（`BattleGroupCallUtility.TryCall`） | DMS 警報呼叫 QRF 後直接登記增援 |
 | `_Source/DMS/Occultech/HuntdownWorker_Occultech.cs`、`OccultechSanctionUtility.cs` | 覆寫 `TryFireWave()`、修改 `TryFireFleetRaid()`：呼叫前後比對 lord，登記追殺遭遇 |
 | `_Source/DMS/Music/DMSMusicDebugActions.cs` | 狀態顯示、事件注入、清除及診斷 |
-| `_Source/DMS/DMS_Mod.cs` | `DMS_Settings` 新增情境音樂開關 |
+| `_Source/DMS/Music/DMSMusicDebugInjection.cs` | 開發者注入的測試事件（不存檔、不依賴 RimWorld，測試專案也連結） |
+| `_Source/DMS/Music/ModExtension_DMSMusicSequence.cs` | sequence 所屬狀態、地下曲庫、遭遇變奏、單曲時限與暫代標記 |
+| `_Source/Tools/check_music_defs.py` | 音樂 defs 與音檔的自動檢查（見 10.1） |
+| `_Source/DMS/DMS_Mod.cs` | `DMS_Settings` 新增情境音樂開關（`situationalMusic`） |
 | `1.7/NewContent/Defs/Misc/Music/Music_Transitions.xml` | 八個 transition definitions |
 | `1.7/NewContent/Defs/Misc/Music/Music_Sequences.xml` | 八個 sequence definitions，`workerType` 指向 `MusicSequenceWorker_DMS` |
 | `1.7/NewContent/Defs/Misc/Music/Music_Songs.xml` | 正式 SongDef，全部 `playOnMap=false` |
@@ -364,7 +373,7 @@ DMS 只有四個 Boss 入口，全部經原版 `RimWorld.BossgroupWorker.Resolve
 - **存檔（`MapComponent_DMSMusicState`，遊戲端）**：已登記遭遇（Boss 參照、追殺 lord 參照、增援記錄）、危機 ID 與結束 tick、警戒上升 tick、最後交戰 tick、上次看到的 `RaidsSentCount`。全部在同步的 tick 流程內寫入。
 - **不存檔（`GameComponent_DMSMusic`，客戶端）**：context 快取、聽感緩衝、未暫停時間累計、本客戶端已播放的餘波危機 ID、上一個觀看地圖、外部強制曲記錄（曲目與開始時間）。音樂端不得改寫遊戲端狀態，也不使用 `Verse.Rand` 做純播放用途的決策。
 - 組件存在不代表該地圖為 DMS。所有新欄位必須有安全預設；讀檔後清理 null／destroyed／跨地圖參照，重算狀態。
-- 讀檔時若仍在餘波窗口內，該餘波可能再播一次；窗口只有 2500 ticks，接受此行為。
+- 客戶端只記錄「看著發生的危機」，讀檔後紀錄為空，所以讀檔前的危機不會補播餘波。
 
 ### 5.2 Worker 責任
 
@@ -425,11 +434,13 @@ DMS 只有四個 Boss 入口，全部經原版 `RimWorld.BossgroupWorker.Resolve
 
 ### 7.1 現有音樂盤點
 
-2026-10-15 盤點：`Sounds/DMS_Music/` 內共有 **12 首 MP3**（合計約 59 MB，單檔 3.7–7.3 MB），檔名已全部改為英文，以下為實際檔名。尚未建立任何 SongDef，也尚未進行聆聽、時長、響度、循環接點或遊戲解碼驗收。英文檔名保留原拼寫；`clipPath` 須與檔名大小寫完全一致；建議 defName 為未建立的實作名稱。
+2026-10-15 盤點：`Sounds/DMS_Music/` 內共有 **12 首 MP3**（合計約 59 MB，單檔 3.7–7.3 MB），檔名已全部改為英文，以下為實際檔名。英文檔名保留原拼寫；`clipPath` 須與檔名大小寫完全一致。
+
+2026-10-16 更新：音檔已重新編碼（合計約 20 MB），`Abandoned Radar Station.mp3` 與 `Allied Marching Precision.mp3` 已從資料夾移除，目前 **10 首**。Phase 4 已為這 10 首建立 SongDef（`1.7/NewContent/Defs/Misc/Music/Music_Songs.xml`）；缺檔的兩首沒有 SongDef，補回檔案後再加。仍未進行聆聽、時長、響度、循環接點或遊戲解碼驗收。
 
 | 現有檔案（相對模組根目錄） | `clipPath` | 建議 SongDef.defName | 計畫用途 | 接入方式與待辦 |
 |---|---|---|---|---|
-| `Sounds/DMS_Music/Abandoned Radar Station.mp3` | `DMS_Music/Abandoned Radar Station` | `DMS_Music_AbandonedRadarStation` | `DMS_InstallationExplore` 主曲 | 地表探索；驗證長時間聆聽與循環 |
+| `Sounds/DMS_Music/Abandoned Radar Station.mp3`（**缺檔**） | `DMS_Music/Abandoned Radar Station` | `DMS_Music_AbandonedRadarStation`（未建立） | `DMS_InstallationExplore` 主曲 | 地表探索；目前以 `Sealed Machinery` 暫代。補回檔案後建立 SongDef 並替換序列曲目 |
 | `Sounds/DMS_Music/Sealed Machinery.mp3` | `DMS_Music/Sealed Machinery` | `DMS_Music_SealedMachinery` | `DMS_FacilityExplore` 主曲；`DMS_FacilityTrapped` 初期共用 | 受困可先使用同曲；若氣氛不足再輸出較暗變奏 |
 | `Sounds/DMS_Music/Camera caught ya.mp3` | `DMS_Music/Camera caught ya` | `DMS_Music_CameraCaughtYa` | `DMS_SecurityAlert` 主曲 | 警戒、盤查、搜索、增援接近；優先評估能否製作封鎖倒數變奏 |
 | `Sounds/DMS_Music/Garrisions in Action.mp3` | `DMS_Music/Garrisions in Action` | `DMS_Music_GarrisionsInAction` | `DMS_InstallationCombat` 地表曲庫 | 保留原檔名 `Garrisions`；不在本次計畫中更名 |
@@ -439,7 +450,7 @@ DMS 只有四個 Boss 入口，全部經原版 `RimWorld.BossgroupWorker.Resolve
 | `Sounds/DMS_Music/Obsolete Systems.mp3` | `DMS_Music/Obsolete Systems` | `DMS_Music_ObsoleteSystems` | 系統甦醒／封存揭露事件曲預留 | 不作為平靜探索或勝利餘波的預設；需另確認一次性事件與播放仲裁後啟用 |
 | `Sounds/DMS_Music/Sage in the war room.mp3` | `DMS_Music/Sage in the war room` | `DMS_Music_SageInTheWarRoom` | SAGE 節點／地下指揮設施候選曲 | 聆聽後再選定曲庫，未驗收前不加入任何播放清單 |
 | `Sounds/DMS_Music/Black Knight Remix.mp3` | `DMS_Music/Black Knight Remix` | `DMS_Music_BlackKnight` | 主戰師相關遭遇的交戰／Boss 曲庫變奏 | 已查證：專案內沒有「主戰師」的 Def／事件來源（見 2.2）。D2 決定對應的實體標記前不接入自動選曲；不以顯示名稱或曲名猜測 |
-| `Sounds/DMS_Music/Allied Marching Precision.mp3` | `DMS_Music/Allied Marching Precision` | `DMS_Music_MarchingPrecision` | 友方 DMS 部隊實際參戰時的交戰變奏 | 友方抵達本身不算交戰。標記：地圖上有 `DMS_Army` 的 `LordJob_AssistColony`，且其成員的 `lastAttackTargetTick` 在窗口內（見 2.2）；地下設施叫不到許可援軍 |
+| `Sounds/DMS_Music/Allied Marching Precision.mp3`（**缺檔**） | `DMS_Music/Allied Marching Precision` | `DMS_Music_MarchingPrecision`（未建立） | 友方 DMS 部隊實際參戰時的交戰變奏 | 友方抵達本身不算交戰。標記：地圖上有 `DMS_Army` 的 `LordJob_AssistColony`，且其成員的 `lastAttackTargetTick` 在窗口內（見 2.2）；地下設施叫不到許可援軍 |
 | `Sounds/DMS_Music/Occultech Huntdown.mp3` | `DMS_Music/Occultech Huntdown` | `DMS_Music_OccultechHuntdown` | 封存科技追殺的高壓交戰變奏 | 僅對已登記的追殺 lord（`HuntdownWorker_Occultech.TryFireWave`／`TryFireFleetRaid` 呼叫前後比對，見 2.2）在當前地圖構成有效戰鬥時啟用；只會發生在玩家據點。`PermanentHostile` 與研究狀態不單獨觸發，普通 `DMS_Army` 襲擊不使用 |
 
 新增三首變奏的用途依曲名制定，均待聆聽驗證；事件介面已查證（見 2.2），其中主戰師待 D2。不轉為任意傷亡、血量或威脅點數門檻。
@@ -468,12 +479,12 @@ SongDef 範本（所有 DMS 曲目都必須 `playOnMap=false`，避免進入原�
 
 | 曲庫 | 主要用途 | 現有覆蓋與剩餘工作 |
 |---|---|---|
-| Explore | 地表／地下探索 | 已有 `Abandoned Radar Station`、`Sealed Machinery`；分地表／地下選曲 |
+| Explore | 地表／地下探索 | 已有 `Sealed Machinery`；地表主曲 `Abandoned Radar Station` 缺檔，暫以 `Sealed Machinery` 代替 |
 | Alert | 盤查、搜索、接近事件 | 已有 `Camera caught ya`；驗收警戒強度與循環 |
-| Combat | 站點與地下交戰 | 已有 `Garrisions in Action`、`Guns Up`；`Dormant automata` 為事件／備選；`Black Knight Remix`、`Allied Marching Precision`、`Occultech Huntdown` 為具條件的遭遇變奏 |
+| Combat | 站點與地下交戰 | 已有 `Garrisions in Action`、`Guns Up`；`Dormant automata` 為事件／備選；`Occultech Huntdown` 已接入追殺變奏；`Black Knight Remix` 待 D2；`Allied Marching Precision` 缺檔 |
 | Boss | 重型機兵與無人機母艦 | 已有 `Servo in precise`；主戰師／追殺標記的 Boss 遭遇可選對應變奏，不將友方曲視為敵對 Boss 預設 |
-| Lockdown | 封鎖倒數 | 尚無專曲；可由 `Camera caught ya` 製作急迫變奏，或另製新曲 |
-| Aftermath | 危機後餘波 | 尚無短曲；需製作 20–35 秒短段，或由探索曲裁切合適片段 |
+| Lockdown | 封鎖倒數 | 尚無專曲，暫以 `Camera caught ya` 代替；可由它製作急迫變奏，或另製新曲 |
+| Aftermath | 危機後餘波 | 尚無短曲，暫以 `Sealed Machinery` 前 35 秒代替；需製作 20–35 秒短段，或由探索曲裁切合適片段 |
 
 受困使用 Explore 的低沉變奏或同一首暗色探索曲；不額外要求第七套主曲庫。
 
@@ -516,61 +527,135 @@ SongDef 範本（所有 DMS 曲目都必須 `playOnMap=false`，避免進入原�
 
 ### Phase 1：純狀態規則與資料
 
-- [ ] 實作 enum、context、snapshot、原因旗標及唯一狀態選擇器。
-- [ ] 實作警戒上升窗口、守墓人接敵窗口、停戰／警戒緩衝（未暫停實際時間）、危機 ID 與餘波窗口。
-- [ ] 區分遊戲端（存檔、tick）與客戶端（不存檔、實際時間）狀態；加入存檔欄位與舊檔安全預設。
-- [ ] 以合成 snapshot 驗證優先序、多原因解除與 `Lost`／`Disarmed` 行為。
+- [x] 實作 enum、context、snapshot、原因旗標及唯一狀態選擇器（`DMSMusicState.cs`）。
+- [x] 實作警戒上升窗口、守墓人接敵窗口、停戰／警戒緩衝（未暫停實際時間）、危機 ID 與餘波窗口（`DMSMusicGameState.cs`、`DMSMusicClientState.cs`）。
+- [x] 區分遊戲端（存檔、tick）與客戶端（不存檔、實際時間）狀態；加入存檔欄位與舊檔安全預設（`MapComponent_DMSMusicState`、`GameComponent_DMSMusic`）。
+- [x] 以合成 snapshot 驗證優先序、多原因解除與 `Lost`／`Disarmed` 行為（`_Source/DMS.MusicTests`，101 項檢查通過；以突變測試確認會抓到規則錯誤）。
 
 完成條件：相同輸入永遠產生相同狀態，不依查詢次數改變結果。
 
+完成紀錄（2026-10-16）：
+- `MapComponent_DMSMusicState.ReadInputs()` 目前回傳空輸入，每張地圖都回報「無情境」，結果一律交還原版；來源讀取在 Phase 2 接入。
+- 實作時修正的規則：餘波窗口由 2500 改為 5000 ticks（3 倍速下停戰緩衝加淡出約 2900 ticks）；餘波只播給看著危機發生的客戶端，讀檔後不補播；Boss 全部倒下時擊殺射擊不計入交戰窗口，沒有護衛繼續交火就直接進入餘波。見 3.3。
+- 編譯：`DMS.csproj` 0 錯誤，新檔無警告；測試專案 0 警告。
+
 ### Phase 2：地圖分類與狀態來源
 
-- [ ] 為 DMS 地表 `SitePartDef` 與地下 `MapGeneratorDef` 掛 context，驗證推導結果與地表／地下切換。
-- [ ] 以舊存檔驗證 context 推導（不需補建資料）。
-- [ ] 讀取 FFF 警戒（上升偵測）及封鎖公開狀態。
-- [ ] 接入守墓人盤查／搜索／交戰模式與 `lastSeenTick`。
-- [ ] 接入增援倒數（`TimedDetectionRaids`、`QuestPart_RaidWaveArrives`）、`Verb.TryCastNextBurstShot` 交戰 hook 與友方參戰標記；持續威脅效果先以警戒原因處理（見 2.1、2.2）。
-- [ ] 加入未知地圖降級。
+- [x] 為 9 個 DMS 地表 `SitePartDef` 與 4 個地下 `MapGeneratorDef` 掛 context（`ModExtension_DMSMusicContext`、`DMSMusicContextUtility`）。
+- [ ] 為 `DMS_SageNodeSite`（`DMS_FleetNetworkQuest.xml`）、`DMS_AirportSite`（`DMS_LegacySite_Airport.xml`）、`DMS_ArsenalSite`（`DMS_LegacySite_Arsenal.xml`）掛 context：這三個檔案仍在修改中，暫不動；在各自 `SitePartDef` 的 `<modExtensions>` 加入下方片段即可。
+- [ ] 遊戲內驗證推導結果與地表／地下切換。
+- [ ] 以舊存檔驗證 context 推導（設計上只讀存檔已有的 `Site.parts`／`Map.generatorDef`，不需補建資料）。
+- [x] 讀取 FFF 警戒（上升偵測、空域封鎖）及封鎖公開狀態。
+- [x] 接入守墓人盤查／搜索／交戰模式與 `lastSeenTick`。
+- [x] 接入增援倒數（`TimedDetectionRaids`、`QuestPart_RaidWaveArrives`）、`Verb.TryCastNextBurstShot` 交戰 hook 與友方參戰標記；持續威脅效果先以警戒原因處理（目前只有空域封鎖，見 2.1、2.2）。
+- [x] 加入未知地圖降級。
 
 完成條件：開發者畫面可看見正確原因與狀態，但此階段不播放音樂。
 
+待掛 context 的三個站點使用的片段：
+
+```xml
+      <!-- 情境音樂：地表站點。Situational music context: surface installation. -->
+      <li Class="DMS.ModExtension_DMSMusicContext">
+        <context>Installation</context>
+      </li>
+```
+
+完成紀錄（2026-10-16）：
+- 新增 `ModExtension_DMSMusicContext.cs`、`DMSMusicContextUtility.cs`、`DMSMusicEventBridge.cs`（來源讀取與 `Verb.TryCastNextBurstShot` prefix）、`DMSMusicDebugActions.cs`；`MapComponent_DMSMusicState` 改由 `DMSMusicEventBridge.ReadInputs()` 讀取來源，讀取出錯時保留上次結論並只記錄一次錯誤。
+- 開發者面板：開發者模式 → Debug actions →「DMS」→「Music: 狀態面板 / Toggle state overlay」，在畫面左上角顯示觀看地圖的狀態、原因、封鎖、警戒值、增援倒數、危機編號與緩衝剩餘時間。
+- 只有 DMS 地圖（之後加上有登記遭遇的地圖）會讀取完整來源與記錄交火；其他地圖只讀警戒值，結果一律交還原版。
+- 抵達時間計算放在不依賴 RimWorld 的 `DMSMusicTiming.TicksUntilArrival()`，與原版一樣以 int 溢位計算 hash 邊界，已加入測試（共 109 項通過）。
+- Multiplayer 非同步時間下，任務部件以世界時間觸發，而快速反應部隊的預計抵達是在地圖 tick 內以地圖時間換算，兩者可能有偏差；只影響警戒提前量，不影響同步。
+- 編譯 0 錯誤；遊戲內尚未驗證。
+
 ### Phase 3：Boss 遭遇遷移
 
-- [ ] 生成時登記 Boss 實體，抵達訊號時更新實際投放地圖，spawn 後轉 Active。
-- [ ] 覆蓋四個入口（誘餌天線／誘餌雷達／誘餌發射器／加密發報器），含在基地建造誘餌與改投玩家據點的情況。
-- [ ] 登記封存科技追殺 lord（`HuntdownWorker_Occultech.TryFireWave`、`TryFireFleetRaid`）。
-- [ ] 以 `DMS_BossKilled` 處理死亡（以已登記 Boss 參照過濾，排除一般編組的 `isBoss` 單位）；輪詢處理離場、轉友方、永久失能與取消；短暫 EMP 不解除。
-- [ ] 不改動原任務清單清空行為；以獨立資料追蹤音樂。
-- [ ] `QuestPart_BossgroupArrivesWithMusic` 停止呼叫 `ForcePlaySong`；保留 `song` 欄位讀檔相容。
-- [ ] `ModExtension_BossSong` 目前無 XML 使用：改為提供 Boss 曲庫變奏給 `SelectSong()`，或標記為廢棄；空清單安全降級。
+- [x] 生成時登記 Boss 實體，抵達後以 Boss 實際所在地圖為準，spawn 後轉 Active。
+- [x] 覆蓋四個入口（誘餌天線／誘餌雷達／誘餌發射器／加密發報器），含在基地建造誘餌與改投玩家據點的情況：四個 BossgroupDef 都繼承 `BaseBossgroupNonMechanitor` 的 `<quest>DMS_Boss</quest>`，全部經 `QuestNode_Root_BossgroupFactionExposed.RunInt()` 登記；遊戲內尚未逐一驗證。
+- [x] 登記封存科技追殺 lord（`HuntdownWorker_Occultech.TryFireWave`、`TryFireFleetRaid`）：已於 Phase 4 與選曲一起完成。
+- [x] 死亡、離場、轉友方、倒地與取消一律輪詢已登記的 Boss 參照判斷（排除一般編組的 `isBoss` 單位）；短暫 EMP 仍算啟動。
+- [x] 不改動原任務清單清空行為；以獨立資料追蹤音樂。
+- [x] `QuestPart_BossgroupArrivesWithMusic` 停止呼叫 `ForcePlaySong`；保留 `song` 欄位讀檔相容。
+- [x] `ModExtension_BossSong`：改為提供這次遭遇的 Boss 曲變奏（召喚時選定、記在 `song`，Phase 4 由 `SelectSong()` 使用）；空清單回傳 null，改用通用 Boss 曲。
 
 完成條件：Boss 抵達只登記一次，切換地圖不搶曲，任務結束不殘留。
 
+完成紀錄（2026-10-16）：
+- 遭遇紀錄直接放在 `QuestPart_BossgroupArrivesWithMusic`（新存檔欄位 `musicBosses`、`musicEscorts`），隨任務存檔；`DMSMusicEventBridge` 每次刷新掃描進行中、根節點為 `QuestNode_Root_BossgroupFactionExposed` 的任務。任務結束就不再被讀取，`Cleanup()` 也會清空清單，所以不會殘留；不需要另外的全域登記表。
+- 抵達前：目標為召喚地圖，依原版規則推算預計抵達時間，接近 1800 tick 內為警戒原因。抵達後：以 Boss 的 `MapHeld` 為準（含改投玩家據點）；還在空投艙內為「即將抵達」，生成後、敵對、未倒地、未休眠才算啟動。
+- 死亡改以輪詢 `pawn.Dead` 判斷（最多延遲一次刷新，60 tick），沒有訂閱 `DMS_BossKilled`：輪詢同時涵蓋離場、轉友方與倒地，規則只有一套。
+- 一般地圖上的遭遇：Boss 倒下、任務結束後，護衛的交火與餘波仍由 DMS 接手，直到危機結束且餘波窗口關閉（`DMSMusicFacts.Relevant` 納入危機與餘波，`DMSMusicGameState.Tracking()` 讓沒有情境的地圖在這段期間繼續完整讀取）。
+- 舊存檔：`musicBosses` 為 null 時，只從同一任務的 `QuestPart_Bossgroup` 補建（抵達前用 `bosses`，抵達後以 Boss 種類從 `pawns` 挑出），不會把其他同型機體當成 Boss。
+- 附帶修正：玩家離開站點（站點仍在）時，原版 `QuestPartTick()` 以 null 地圖呼叫 `ShouldSummonNow` 而每 2500 tick 拋 NullReferenceException；子類別改為沒有地圖時只等最長延遲的強制抵達。
+- 測試 120 項通過；編譯 0 錯誤；遊戲內尚未驗證。
+
 ### Phase 4：Transitions、Sequences 與資產
 
-- [ ] 實作 `MusicSequenceWorker_DMS`（`ShouldEnd()`、`SelectSong()`、空曲庫保護）與八種 transition worker。
-- [ ] 建立八個 transition 與八個 sequence；依第 6 節設定淡入淡出、`minTimeToPlay`、`pausedVolumeFactor` 與 `overridesInterruptions`。
-- [ ] 為現有十二首音檔建立 SongDef（`playOnMap=false`）；只將已驗收且用途確定的曲目加入有效播放清單。
-- [ ] 驗證新增三首變奏的選曲條件、Boss 優先與選曲穩定性。
+- [x] 實作 `MusicSequenceWorker_DMS`（`ShouldEnd()`、`SelectSong()`、缺檔與空曲庫保護）與 transition worker（八個 transition 共用 `MusicTransition_DMS`，狀態取自 sequence 的 `ModExtension_DMSMusicSequence`）。
+- [x] 建立八個 transition 與八個 sequence；依第 6 節設定淡入淡出、`minTimeToPlay`、`pausedVolumeFactor` 與 `overridesInterruptions`（`1.7/NewContent/Defs/Misc/Music/`）。
+- [x] 為現存的 10 首音檔建立 SongDef（`playOnMap=false`）；`Abandoned Radar Station`、`Allied Marching Precision` 缺檔，不建立 SongDef。
+- [ ] 遊戲內驗證變奏的選曲條件、Boss 優先與選曲穩定性（選曲順序已有測試）。
 - [ ] 完成封鎖倒數變奏／專曲與戰後餘波短曲，記錄所用來源與播放版本。
+- [ ] 補回地表探索主曲 `Abandoned Radar Station`，換掉暫代曲。
 - [ ] 先以有效開發曲目驗證，再換上正式資產。
 - [ ] 驗證升級、降級空檔、中斷、同狀態不重播及一次性餘波。
-- [ ] 實作觀看地圖切換時主動呼叫 `CheckTransitions()`；驗證暫停中切換地圖。
-- [ ] 實作外部強制播放偵測與讓位。
+- [x] 實作觀看地圖切換時主動呼叫 `CheckTransitions()`；[ ] 遊戲內驗證暫停中切換地圖。
+- [x] 實作外部強制播放偵測與讓位。
+- [x] 登記封存科技追殺襲擊（Phase 3 延後項目）。
 - [ ] 確認無 DLC 的載入不出現缺失引用；有 DLC 時依 3.1 驗證共存。
 
 完成條件：完整狀態路徑能聽到正確曲目，沒有缺檔或 defs 解析錯誤。
 
+完成紀錄（2026-10-16）：
+- 新增 `MusicTransition_DMS.cs`、`MusicSequenceWorker_DMS.cs`、`ModExtension_DMSMusicSequence.cs`，以及 `Music_Songs.xml`、`Music_Sequences.xml`、`Music_Transitions.xml`。
+- 暫代曲目（序列標 `placeholder=true`，開發者面板顯示 `[PLACEHOLDER]`，不算驗收通過）：
+
+  | 序列 | 暫代曲目 | 等待的正式資產 |
+  |---|---|---|
+  | `DMS_InstallationExplore` | `Sealed Machinery` | `Abandoned Radar Station`（缺檔） |
+  | `DMS_Aftermath` | `Sealed Machinery` 前 35 秒（`maxSongSeconds`，到時淡出） | 20–35 秒餘波短曲 |
+  | `DMS_LockdownCountdown` | `Camera caught ya` | 封鎖倒數專曲或急迫變奏 |
+
+- 選曲：一般交戰地表 `Garrisions in Action`、地下 `Guns Up`；追殺襲擊改用 `Occultech Huntdown`。友方參戰變奏缺檔、主戰師變奏待 D2，都沒有接入。Boss 交戰先用遭遇指定曲（`ModExtension_BossSong`，目前沒有任何 BossgroupDef 設定），否則 `Servo in precise`。
+- `GameComponent_DMSMusic`：狀態或觀看地圖改變、DMS 序列淡出完成、外部強制曲結束時主動呼叫 `CheckTransitions()`（淡出中與強制曲播放中不呼叫）；以私有 `songWasForced`（`AccessTools.FieldRefAccess`）判斷強制曲，讀不到時改比對 `ForcePlaySong` postfix 記下的曲目；餘波一被觸發就記為已播放。
+- 封存科技追殺：`HuntdownWorker_Occultech.TryFireWave()` 與 `OccultechSanctionUtility.TryFireFleetRaid()` 以 `DMSMusicEventBridge.FireAndRegisterHuntdown()` 比對發動前後的 lord，登記到 `MapComponent_DMSMusicState`（存檔欄位 `huntdownLords`，lord 解散後自動移除）。登記的襲擊仍在地圖上時，這張地圖有遭遇並帶追殺選曲標記。
+- 檢查：`_Source/Tools/check_music_defs.py`（10 首曲目、8 個序列、8 個 transition，0 個問題；以改壞的副本確認能抓到大小寫、淡出欄位與 `dangerRequirement` 錯誤）；測試 135 項通過；編譯 0 錯誤。
+- 遊戲內尚未驗證；模組裡的 `1.7/Assemblies/DMS.dll` 沒有被這些建置覆寫，需自行建置後測試。
+
 ### Phase 5：設定、診斷、效能與驗收
 
-- [ ] `DMS_Settings` 新增情境音樂開關，補三語 Keyed 翻譯；關閉時所有 DMS worker 回傳 false。
-- [ ] 提供目前地圖、狀態、原因、Boss 數、封鎖狀態與緩衝顯示。
-- [ ] 提供注入／清除音樂測試事件的開發者工具，不直接改動正式任務獎勵或守軍。
-- [ ] 日誌僅在狀態改變或例外時輸出，避免每次查詢洗版。
-- [ ] 執行第 9 節情境矩陣與相關建置檢查。
-- [ ] 比較多地圖、多機兵情境下的更新成本，確認無每幀任務全掃描（含暫停在 60 倍數 tick 時的每幀查詢）。
+- [x] `DMS_Settings` 新增情境音樂開關（`situationalMusic`，預設開啟），補三語 Keyed 翻譯；關閉時讓位（`DMSMusicYield.Disabled`），所有 DMS worker 回傳 false，正在播的 DMS 序列立即淡出。
+- [x] 提供目前地圖、狀態、原因、Boss 數、封鎖狀態與緩衝顯示（Phase 2 的狀態面板，Phase 4、5 補上播放曲目、暫代標示、追殺 lord 與注入內容）。
+- [x] 提供注入／清除音樂測試事件的開發者工具，不直接改動正式任務獎勵或守軍。
+- [x] 日誌僅在狀態改變或例外時輸出，避免每次查詢洗版。
+- [ ] 執行第 9 節情境矩陣與相關建置檢查（遊戲內，待進行）。
+- [x] 確認無每幀任務全掃描（含暫停在 60 倍數 tick 時的每幀查詢），見下方成本分析。
+- [ ] 以「Music: 量測更新成本」在多地圖、多機兵的存檔中量測實際數字（遊戲內，待進行）。
 
 完成條件：驗收矩陣通過，正式曲庫就位，未解限制與版本相依已記錄。
+
+完成紀錄（2026-10-16）：
+- 設定只影響本機播放；遊戲端狀態照常計算，所以 Multiplayer 各端可以各自開關。
+- 開發者工具（開發者模式 → Debug actions →「DMS」）：
+  - 「Music: 狀態面板 / Toggle state overlay」：左上角面板。
+  - 「Music: 注入測試事件 / Inject test event」：開火一次、守墓人接敵、警戒上升、盤查／搜索（切換）、增援或 Boss 在 1800 tick 後抵達（到時自動轉為一波增援或一架啟動中的 Boss）、Boss ±1、覆寫封鎖階段、覆寫情境、切換選曲標記。注入資料（`DMSMusicDebugInjection`，不存檔）只疊加在音樂輸入上。
+  - 「Music: 清除測試事件 / Clear test events」：拿掉注入，並清掉這張地圖所有事件窗口（含真實事件）與客戶端緩衝，地圖立刻回到基準。
+  - 「Music: 輸出狀態 / Log state」、「Music: 記錄狀態變化 / Toggle state-change log」（預設關閉）、「Music: 量測更新成本 / Measure refresh cost」。
+  - 注入與清除從介面直接修改遊戲端紀錄，Multiplayer 下會不同步，只供單人測試。
+- 平常不輸出任何日誌：只有刷新例外（每張地圖一次）、`songWasForced` 讀取失敗（一次），以及開發者開啟的狀態變化記錄。
+- 測試 145 項通過（新增注入與清除）；編譯 0 錯誤。
+
+成本分析（依程式碼；實際數字待遊戲內量測）：
+
+| 時機 | 內容 | 成本 |
+|---|---|---|
+| 每幀 | `GameComponent_DMSMusic`：強制曲旗標、觀看地圖組件（換地圖才重查）、客戶端緩衝、狀態選擇 | 常數時間，不掃描任務、lord 或 pawn |
+| 每幀（僅在事件時） | 狀態或地圖改變、淡出完成、強制曲結束時呼叫一次 `CheckTransitions()` | 等同原版一次 60 tick 檢查；DLC transition 會掃描地圖與 pawn，所以只在事件時呼叫 |
+| 原版每 60 tick（暫停停在 60 倍數 tick 時為每幀） | `MusicTransition_DMS.IsTransitionSatisfied()` | 常數時間；只有狀態吻合的那一個會檢查序列曲目（數首） |
+| 每張地圖每 60 tick | 情境推導、警戒值、Boss 遭遇（全部任務一輪，只看狀態與根節點）、追殺 lord | O(任務數)，每個任務一次列舉比較 |
+| DMS／遭遇地圖每 60 tick | 玩家單位、封鎖、lord（守墓人與友方）、增援倒數、進行中任務的部件 | O(玩家 pawn + lord + 友方成員 + 進行中任務部件) |
+| 每發攻擊 | `Verb.TryCastNextBurstShot` prefix | 單一地圖快取比較加一個布林值；只有 DMS 相關地圖才做敵我判斷 |
 
 ## 9. 驗收矩陣
 
@@ -600,6 +685,7 @@ SongDef 範本（所有 DMS 曲目都必須 `playOnMap=false`，避免進入原�
 | 多 Boss 擊倒其中一架 | 其餘仍有效時保持 Boss 曲 |
 | Boss 暫時 EMP | 不播放戰後餘波 |
 | Boss 死亡但護衛仍交火 | 淡出後轉一般交戰（有降級空檔），之後才允許餘波 |
+| 最後一架 Boss 死亡，沒有護衛繼續交火 | 直接進入餘波，不先接一段一般交戰曲 |
 | Boss 轉友方／離圖 | 解除 Boss 狀態，依現存威脅重新判斷 |
 | 已確認的主戰師遭遇實際交戰 | 待 D2 決策；決策前不選用 Black Knight Remix，未標記的一般重型單位不誤觸發 |
 | 友方 DMS 部隊抵達但尚未參戰 | 不單獨觸發 Allied Marching Precision 或交戰狀態 |
@@ -622,7 +708,8 @@ SongDef 範本（所有 DMS 曲目都必須 `playOnMap=false`，避免進入原�
 | 暫停中切換地圖 | 不等解除暫停即退出／切換 DMS 序列 |
 | 切回仍在交戰的站點 | 恢復對應狀態，不重播召喚開場 |
 | Boss／倒數／受困期間存讀檔 | 狀態正確恢復，無重複事件與懸空參照 |
-| 餘波窗口內存讀檔 | 餘波最多再播一次（已接受的限制） |
+| 餘波窗口內存讀檔 | 不補播讀檔前危機的餘波 |
+| 危機在玩家觀看其他地圖時發生並結束 | 切回後不播餘波 |
 | 更新前舊存檔與已生成地下圖 | 由 `Site.parts`／`generatorDef` 正確識別；無法識別者交還原版且不報錯 |
 | 暫停、1／2／3 倍速 | 遊戲倒數依 ticks；聽感緩衝暫停時不前進；無高速切歌 |
 | Anomaly `HorrorTension` 進行中，於 DMS 站點探索 | DMS 探索讓位；事件結束後恢復 |
@@ -640,8 +727,8 @@ SongDef 範本（所有 DMS 曲目都必須 `playOnMap=false`，避免進入原�
 
 ### 10.1 自動檢查
 
-- 對狀態選擇器寫有意義的測試：優先序、警戒上升窗口、多警戒原因、守墓人模式與接敵窗口、Boss 多實體、一次性餘波、舊檔預設與 `Lost` 退出。
-- XML 檢查：唯一 defName、worker 型別存在、sequence／song 引用有效、音檔存在且大小寫一致、曲庫非空、所有 DMS SongDef `playOnMap=false`、每個 DMS sequence 都設定了 `fadeoutLastSongDuration` 與 `overrideFadeout`、DMS transition 未設 `dangerRequirement`。
+- 對狀態選擇器寫有意義的測試：優先序、警戒上升窗口、多警戒原因、守墓人模式與接敵窗口、Boss 多實體、一次性餘波、舊檔預設與 `Lost` 退出。已在 `_Source/DMS.MusicTests` 實作（在該資料夾執行 `dotnet run`，結束碼 0 為全部通過）；之後每個階段修改狀態規則都要同步補測試並重跑。
+- XML 檢查：唯一 defName、worker 型別存在、sequence／song 引用有效、音檔存在且大小寫一致、曲庫非空、所有 DMS SongDef `playOnMap=false`、每個 DMS sequence 都設定了 `fadeoutLastSongDuration` 與 `overrideFadeout`、DMS transition 未設 `dangerRequirement`。已實作為 `python -I _Source/Tools/check_music_defs.py .`（在模組根目錄執行，結束碼 0 為通過）；更換音檔或修改音樂 defs 後都要重跑。
 - 在已有還原資產的環境可先執行 `dotnet build _Source/DMS/DMS.csproj -c Release --no-restore`；缺少還原資產時先正常 restore，再建置。記錄實際結果。
 - 注意建置會更新 `1.7/Assemblies/DMS.dll`；僅在正式實作階段執行，保留並辨識原有二進位變更。
 - 編譯成功不能替代遊戲內音訊、地圖切換、暫停與存讀檔驗證。
@@ -650,8 +737,8 @@ SongDef 範本（所有 DMS 曲目都必須 `playOnMap=false`，避免進入原�
 
 - [ ] C# 與 XML 實作、必要的窄範圍 hook。
 - [ ] 正式音樂檔與清楚的 SongDef 對照。
-- [ ] 已停止呼叫 `ForcePlaySong`，外部強制播放可正確讓位。
-- [ ] 設定開關與三語翻譯。
+- [ ] 已停止呼叫 `ForcePlaySong`，外部強制播放可正確讓位（程式已完成，待遊戲內驗證讓位）。
+- [x] 設定開關與三語翻譯。
 - [ ] 新檔與舊檔的驗收記錄。
 - [ ] 原版 DLC 與特殊音樂相容記錄（含 3.1 所列不可中斷序列的實測結果）。
 - [ ] 音樂授權確認與音檔版本控制方式。

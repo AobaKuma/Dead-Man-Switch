@@ -16,6 +16,10 @@
         <entryLetterLabelKey>DMS_DecoySite_EntryCountdownLabel</entryLetterLabelKey>
         <entryLetterTextKey>DMS_DecoySite_EntryCountdownText</entryLetterTextKey>
       </li>
+      <!-- 情境音樂：地表站點。Situational music context: surface installation. -->
+      <li Class="DMS.ModExtension_DMSMusicContext">
+        <context>Installation</context>
+      </li>
     </modExtensions>
     <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
     <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>

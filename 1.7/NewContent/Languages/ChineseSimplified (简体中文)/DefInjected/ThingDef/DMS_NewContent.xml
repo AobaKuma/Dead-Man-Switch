@@ -296,7 +296,7 @@
 
   <!-- EN: A ruggedised metal cabinet that taps an underground power conduit and distributes electricity to surface equipment. The high-voltage internals make shut-down hazardous - only an operator with solid technical knowledge (Intellectual 8+) can safely cut power; anyone less experienced risks a serious electrical burn. An EMP strike will temporarily disable the cabinet without ongoing danger. -->
 
-  <DMS_SubstationCabinet.description>一座从地下输电管线取电并向地表设备配电的加固金属柜。其内部的高压组件使关停作业十分危险：只有具备扎实技术知识（智识8+）的操作者才能安全切断电源，经验不足者可能遭受严重的电灼伤。EMP打击可暂时瘫痪变电柜，且不会造成后续危险。</DMS_SubstationCabinet.description>
+  <DMS_SubstationCabinet.description>一座从地下输电管线取电并向地表设备配电的加固金属柜。其内部的高压组件使关停作业十分危险：只有具备扎实技术知识（智识8+）的操作者才能安全切断电源，经验不足者可能遭受严重的电灼伤。EMP打击可暂时瘫痪变电柜，且不会造成后续危险。关停后无法重新启动，离它最近的一座设施警报装置也会跟着断电。</DMS_SubstationCabinet.description>
 
 
 
@@ -306,7 +306,7 @@
 
   <!-- EN: A compact substation panel mounted flush against a wall, routing underground power to surface equipment. Like its cabinet counterpart, shutting it down safely requires real technical skill - anyone less experienced risks a severe electrical burn from the exposed high-voltage contacts. Vulnerable to EMP. -->
 
-  <DMS_SubstationCabinet_Wall.description>一块紧贴墙面安装的小型变电盘，将地下电力输送至地表设备。与变电柜一样，安全关停需要真正的技术能力，经验不足者可能被外露的高压触点严重灼伤。易受EMP影响。</DMS_SubstationCabinet_Wall.description>
+  <DMS_SubstationCabinet_Wall.description>一块紧贴墙面安装的小型变电盘，将地下电力输送至地表设备。与变电柜一样，安全关停需要真正的技术能力，经验不足者可能被外露的高压触点严重灼伤。易受EMP影响。关停后无法重新启动，离它最近的一座设施警报装置也会跟着断电。</DMS_SubstationCabinet_Wall.description>
 
 
 
