@@ -14,6 +14,7 @@ namespace DMS
         }
         public static FactionDef DMS_Army;
         public static QuestScriptDef DMS_PromotionCeremony;
+        [MayRequireRoyalty]
         public static QuestScriptDef DMS_OfficerTraining;
         public static QuestScriptDef DMS_Stele;
         // 軍事法庭:封存科技隱匿級的永久敵對只能靠它解除(見 OccultechSanctionUtility)。

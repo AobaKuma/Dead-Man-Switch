@@ -172,7 +172,7 @@
         <range>3</range>
         <durationTicks>3600</durationTicks>
         <tickInterval>30</tickInterval>
-        <activateSound>Recipe_Cooking</activateSound>
+        <activateSound>Recipe_CookMeal</activateSound>
         <activeEffecter>FFF_Thermite_ActiveSpray</activeEffecter>
         <hitEffecter>FFF_Thermite_HitBurst</hitEffecter>
       </li>

@@ -89,7 +89,7 @@
         <targetSearchRadius>40</targetSearchRadius>
         <scatterAroundParent>true</scatterAroundParent>
         <scatterRadius>3</scatterRadius>
-        <spawnSound>DroneTrapSpring</spawnSound>
+        <spawnSound MayRequire="Ludeon.RimWorld.Odyssey">DroneTrapSpring</spawnSound>
       </li>
     </comps>
   </ThingDef>
@@ -135,7 +135,7 @@
         <targetSearchRadius>40</targetSearchRadius>
         <scatterAroundParent>true</scatterAroundParent>
         <scatterRadius>3</scatterRadius>
-        <spawnSound>DroneTrapSpring</spawnSound>
+        <spawnSound MayRequire="Ludeon.RimWorld.Odyssey">DroneTrapSpring</spawnSound>
       </li>
     </comps>
   </ThingDef>

@@ -999,7 +999,7 @@
           <li>(44, 0, 34)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter" MayRequire="Ludeon.RimWorld.Royalty">
         <def>ShipLandingBeacon</def>
         <posList>
           <li>(36, 0, 24)</li>
@@ -2979,7 +2979,7 @@
           <li>(51, 0, 41)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Ideology">
         <def>AncientCommsConsole</def>
         <pos>(4, 0, 16)</pos>
         <rot>1</rot>
@@ -5277,7 +5277,7 @@
         <def>CommsConsole</def>
         <pos>(14, 0, 38)</pos>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter" MayRequire="Ludeon.RimWorld.Ideology">
         <def>Loudspeaker</def>
         <rot>3</rot>
         <posList>
@@ -5300,7 +5300,7 @@
         <pos>(38, 0, 38)</pos>
         <stuff>Steel</stuff>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
+      <li Class="Fortified.Structures.FFF_Element_Thing" MayRequire="Ludeon.RimWorld.Ideology">
         <def>Lectern</def>
         <pos>(20, 0, 39)</pos>
         <stuff>DMS_Ceramics</stuff>
@@ -5346,7 +5346,7 @@
           <li>(18, 0, 40)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter" MayRequire="Ludeon.RimWorld.Ideology">
         <def>PlantPot_Bonsai</def>
         <stuff>Steel</stuff>
         <posList>
@@ -6072,7 +6072,7 @@
         <pos>(32, 0, 41)</pos>
         <size>(8, 4)</size>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect" MayRequire="Ludeon.RimWorld.Royalty">
         <def>CarpetFineRed</def>
         <pos>(19, 0, 38)</pos>
         <size>(3, 2)</size>
@@ -14368,7 +14368,7 @@
           <li>(11, 0, 24)</li>
         </posList>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter" MayRequire="Ludeon.RimWorld.Ideology">
         <def>PlantPot_Bonsai</def>
         <stuff>Steel</stuff>
         <posList>
