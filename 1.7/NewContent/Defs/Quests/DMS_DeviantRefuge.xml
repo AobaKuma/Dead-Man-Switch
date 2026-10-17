@@ -33,7 +33,7 @@
     </questDescriptionRules>
     <root Class="DMS.QuestNode_Root_DeviantRefuge">
       <fleetFactionDef>DMS_Army</fleetFactionDef>
-      <deviantKind>DMS_CrewMember</deviantKind>
+      <deviantKind>DMS_Deviant</deviantKind>
       <!-- 加入後幾天交付。Days from joining to the handover. -->
       <handoverDays>5</handoverDays>
       <!-- 接受後這段時間內沒有加入（找不到可進場的地圖）就判失敗。 -->
@@ -54,6 +54,134 @@
       <extraditionMoodPenalty>true</extraditionMoodPenalty>
     </root>
   </QuestScriptDef>
+
+  <!-- 脫序者本人：外觀與裝備同艦隊船員；成年背景從下面六則變體隨機一則，每則都是智識 +18。
+       任務節點以 onlyUseForcedBackstories 生成，原版 25% 的固定傳記（solid bio）不會蓋掉背景；這個旗標同時關掉洗牌，
+       所以童年把船員的童年池（FleetChild 類別的四則）逐一列出。原版 20 歲以下不給成年背景，所以年齡下限 25。
+       The deviant: a fleet crew member whose adulthood is one of the six variants below, each with +18 Intellectual.
+       The quest node generates with onlyUseForcedBackstories so vanilla's 25% solid bio roll cannot replace them; the
+       flag also turns off shuffling, so the childhood lists the crew's own pool (the four FleetChild ones). Vanilla gives
+       no adulthood below 20, hence the minimum age. -->
+  <PawnKindDef ParentName="DMS_CrewMemberBase">
+    <defName>DMS_Deviant</defName>
+    <label>deviant</label>
+    <minGenerationAge>25</minGenerationAge>
+    <maxGenerationAge>45</maxGenerationAge>
+    <fixedChildBackstories>
+      <li>DMS_CivilianChild01</li>
+      <li>DMS_OfficerChild01</li>
+      <li>DMS_OfficerChild03</li>
+      <li>DMS_MilitaryChild01</li>
+    </fixedChildBackstories>
+    <fixedAdultBackstories>
+      <li>DMS_DeviantAdult01</li>
+      <li>DMS_DeviantAdult02</li>
+      <li>DMS_DeviantAdult03</li>
+      <li>DMS_DeviantAdult04</li>
+      <li>DMS_DeviantAdult05</li>
+      <li>DMS_DeviantAdult06</li>
+    </fixedAdultBackstories>
+  </PawnKindDef>
+
+  <!-- 六則成年變體：各自因艦隊的規定或上級的漠視而違紀脫離。不洗牌，只給 DMS_Deviant。
+       都是智識 +18，副技能各不相同。射擊／近戰被 PawnKind 鎖在 4~8，背景加成會被蓋掉，所以不加這兩項。
+       Six adulthood variants, each breaking with the fleet over its rules or its indifference. Not shuffleable.
+       All give +18 Intellectual with their own secondary skills; none touches Shooting or Melee, which the
+       PawnKind pins to 4~8 and would override. -->
+  <BackstoryDef>
+    <defName>DMS_DeviantAdult01</defName>
+    <title>Think Tank Analyst</title>
+    <titleShort>Analyst</titleShort>
+    <description>[PAWN_nameDef] was one of the senior analysts at the fleet's intelligence think tank. After confirming vital intelligence that could have prevented a war and getting nowhere reporting it to command, [PAWN_pronoun] gravely broke regulations and took the files to try to stop the war in person. The war still claimed many lives.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>false</shuffleable>
+    <skillGains>
+      <Intellectual>18</Intellectual>
+      <Social>5</Social>
+      <Plants>-2</Plants>
+    </skillGains>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_DeviantAdult02</defName>
+    <title>Signals Interpreter</title>
+    <titleShort>Interpreter</titleShort>
+    <description>[PAWN_nameDef] translated intercepted, encrypted local communications for fleet intelligence. The two warring factions had in fact drafted the same ceasefire terms, but fleet command would not let the locals realize their encryption was useless against the fleet, so the fighting went on until neither side could fight any longer. After that, [PAWN_nameDef] made up [PAWN_possessive] mind.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>false</shuffleable>
+    <skillGains>
+      <Intellectual>18</Intellectual>
+      <Artistic>3</Artistic>
+      <Social>2</Social>
+    </skillGains>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_DeviantAdult03</defName>
+    <title>Fleet Epidemic Officer</title>
+    <titleShort>Epidemic Officer</titleShort>
+    <description>[PAWN_nameDef] tracked outbreaks for the fleet's medical department. After a fever spread between two factions and left the dead strewn everywhere, and with [PAWN_possessive] superiors unmoved, [PAWN_nameDef] defected to the surface with the files, hoping to heal the people of the rim with restricted medical technology from the sealed archives.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>false</shuffleable>
+    <skillGains>
+      <Intellectual>18</Intellectual>
+      <Medicine>6</Medicine>
+    </skillGains>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_DeviantAdult04</defName>
+    <title>Orbital Survey Analyst</title>
+    <titleShort>Analyst</titleShort>
+    <description>[PAWN_nameDef] interpreted weather survey data on colonial worlds for the fleet. After foreseeing a megadrought a full season ahead, [PAWN_nameDef] took the archive, survey data included, broke the accords to land on the colony world without leave, and tried to trade the intelligence for the locals' support.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>false</shuffleable>
+    <skillGains>
+      <Intellectual>18</Intellectual>
+      <Plants>4</Plants>
+      <Mining>2</Mining>
+    </skillGains>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_DeviantAdult05</defName>
+    <title>SAGE Maintenance Technician</title>
+    <titleShort>Maintenance Chief</titleShort>
+    <description>[PAWN_nameDef] was one of the maintenance team leads for the SAGE system. After watching a border clash predicted by the node in [PAWN_possessive] charge grow into all-out war, [PAWN_nameDef] vanished with the node's archive during a routine ground inspection.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>false</shuffleable>
+    <skillGains>
+      <Intellectual>18</Intellectual>
+      <Crafting>4</Crafting>
+      <Construction>3</Construction>
+    </skillGains>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMS_DeviantAdult06</defName>
+    <title>Refugee Protector</title>
+    <titleShort>Protector</titleShort>
+    <description>[PAWN_nameDef] was once a promising young officer in the colonial fleet. While carrying out [PAWN_possessive] missions, [PAWN_nameDef] took in many local refugees and orphans, but on finding that [PAWN_possessive] supplies could not feed them all, [PAWN_pronoun] turned to forbidden biotechnology for personal reasons.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>false</shuffleable>
+    <skillGains>
+      <Intellectual>18</Intellectual>
+      <Cooking>4</Cooking>
+      <Social>2</Social>
+    </skillGains>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+  </BackstoryDef>
 
   <!-- 引渡要求的選擇信件（DMS.ChoiceLetter_DeviantExtradition）。The extradition demand's choice letter. -->
   <LetterDef ParentName="CustomChoiceLetterBase">

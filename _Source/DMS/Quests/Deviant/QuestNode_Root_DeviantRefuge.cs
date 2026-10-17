@@ -68,10 +68,12 @@ namespace DMS
             }
 
             // 比照 QuestNode_GeneratePawn：生成為艦隊成員、交給任務保留，接受時才加入。
+            // onlyUseForcedBackstories：跳過原版 25% 的固定傳記，背景一律用 deviantKind 的固定背景。
             // As QuestNode_GeneratePawn does: generated as a fleet member, kept by the quest, joining on acceptance.
+            // onlyUseForcedBackstories skips vanilla's 25% solid bio roll, so deviantKind's fixed backstories always apply.
             Pawn deviant = PawnGenerator.GeneratePawn(new PawnGenerationRequest(deviantKind, fleet,
                 PawnGenerationContext.NonPlayer, map.Tile, mustBeCapableOfViolence: true, forbidAnyTitle: true,
-                developmentalStages: DevelopmentalStage.Adult));
+                developmentalStages: DevelopmentalStage.Adult, onlyUseForcedBackstories: true));
             QuestGen.AddToGeneratedPawns(deviant);
             if (!deviant.IsWorldPawn())
             {

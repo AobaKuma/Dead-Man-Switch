@@ -110,7 +110,7 @@
 
 - `DMS_Army` 未覆寫自然好感，沿用 `FactionBase` 預設。
 - 原版 `Faction.CheckReachNaturalGoodwill()`：好感低於「自然好感 −50」時累加計時器，滿 3000000 才 `TryAffectGoodwillWith(+≤10, reason: ReachNaturalGoodwill)`。**經過 `CanChangeGoodwillFor`，所以 DMS 守衛擋得住。**
-- 艦隊船員 PawnKind：`DMS_CrewMember`（`DMS_CivilianBase`，`defaultFactionType=DMS_Army`，背景 `FleetChild`／`Mili_Standard`／`Mili_Expert`）。
+- 艦隊船員 PawnKind：`DMS_CrewMember`（脫序者另用繼承它、背景固定的 `DMS_Deviant`，見 9.3；`DMS_CivilianBase`，`defaultFactionType=DMS_Army`，背景 `FleetChild`／`Mili_Standard`／`Mili_Expert`）。
 
 ### 2.8 SAGE 追殺中斷（已查證，DMS）
 
@@ -128,7 +128,7 @@
 | `ApplyKnowledge(proj)` 完成行為 | 2.1 | 對話框、無信件、前置未完成也寫入；不採用 |
 | 自然好感回復 | 2.7 | 經 `TryAffectGoodwillWith`，守衛有效 |
 | 被綁架者派系 | 2.6 | 派系不變，用 `PawnUtility.IsKidnappedPawn` |
-| 艦隊船員 PawnKind | 2.7 | `DMS_CrewMember` |
+| 艦隊船員 PawnKind | 2.7 | `DMS_CrewMember`（脫序者用 `DMS_Deviant`，9.3） |
 | `NewContent/Patches/` 載入 | 2.5 | 會載入 |
 | 歷史事件 reason | 3.4 | 新增 `DMS_HarboredDeviant` |
 
@@ -311,7 +311,7 @@ Complete(proj):
 
 ### 3.10 脫序者 pawn
 
-- `PawnGenerationRequest(DMS_CrewMember, faction: 艦隊, NonPlayer, tile)`，`ForbidAnyTitle = true`，成年、必須能使用暴力（`mustBeCapableOfViolence`）。
+- `PawnGenerationRequest(DMS_Deviant, faction: 艦隊, NonPlayer, tile)`，`ForbidAnyTitle = true`，成年、必須能使用暴力（`mustBeCapableOfViolence`）、只用固定背景（`onlyUseForcedBackstories`，9.3）。
 - 比照 `QuestNode_GeneratePawn`：`QuestGen.AddToGeneratedPawns` ＋ `PassToWorld`；slate key `deviant`。
 - 任務 tag `deviant`（`QuestGenUtility.HardcodedTargetQuestTagWithQuestID`），`sigJoined = deviant.ChangedFactionToPlayer`。
 - `QuestPart_PawnsArrive`：`joinPlayer=true`、`EdgeWalkIn`、`spawnNear=walkInSpot`、自訂信件 `DMS_DeviantRefuge_ArrivedLabel/Text`；加 `QuestPart_Choice`＋`Reward_Pawn`（不隱藏細節），任務視窗可檢視脫序者。
@@ -477,3 +477,24 @@ slate 變數：`[deviant_nameFull]`、`[deviant_nameDef]`、`[deviant_pronoun]`�
 文本：任務描述的警告句改為「得知……並要求引渡。若我們拒絕，艦隊便會展開敵對行動……」（三語）；最後一句「只有在你準備好與艦隊為敵時才接受」保留原樣。
 
 建議的第一輪遊戲內驗證順序：V6 → V34 → V35 → V36（或 V37）→ V8／V9 → V10 → V15 → V17 → V23／V24／V24a → V7 → V29；另開一局跑 V38／V39。開發者動作「Deviant: 立即發出任務」與「Deviant: 立即發出引渡要求」可跳過第 15 天與 5 天的等待。
+
+### 9.3 脫序者的固定背景（2026-10-17）
+
+脫序者改用專用 PawnKind `DMS_Deviant`（繼承 `DMS_CrewMember`，為此在 `Pawnkind_Civilian.xml` 給它加上 `Name="DMS_CrewMemberBase"`），外觀、裝備、射擊／近戰範圍與船員相同。成年背景從六則不洗牌的變體隨機一則（定義與 PawnKind 同在 `DMS_DeviantRefuge.xml`），每則都是**智識 +18**，副技能各不相同；射擊／近戰被 PawnKind 鎖在 4~8，背景加成會被蓋掉，所以變體不加這兩項。繁中文本為準，英文與簡中依繁中回寫。
+
+| 變體 | 標題 | 副技能（另加智識 +18） | 故事 |
+|---|---|---|---|
+| `DMS_DeviantAdult01` | 智庫分析員 | 社交 +5、種植 −2 | 情報智庫的高級分析員，能阻止戰爭的情報上報無果，違規帶著檔案想親自阻止，戰爭仍死了很多人 |
+| `DMS_DeviantAdult02` | 通訊譯員 | 藝術 +3、社交 +2 | 兩個交戰陣營擬好相同的停火條件，高層不願讓當地人知道加密對艦隊無效，戰到雙方無力再戰 |
+| `DMS_DeviantAdult03` | 艦隊防疫官 | 醫療 +6 | 熱病在兩個陣營間屍橫遍野，上級無動於衷，帶著檔案叛逃到地面，想用管制的封存醫療技術救人 |
+| `DMS_DeviantAdult04` | 軌道測繪分析員 | 種植 +4、採礦 +2 | 提前一季預見超級旱災，違反公約私自登陸，想用情報換取當地人支持 |
+| `DMS_DeviantAdult05` | SAGE維護技師 | 手工 +4、建造 +3 | SAGE 維護組長，負責節點預測的邊境衝突演變成全面戰爭，在地面巡檢時帶著檔案消失 |
+| `DMS_DeviantAdult06` | 難民庇護者 | 烹飪 +4、社交 +2 | 被寄予厚望的年輕軍官，收留難民與孤兒，物資不夠時出於私心動用被禁止的生物技術 |
+
+童年沒有專屬背景，沿用船員的童年池：`FleetChild` 類別的 `DMS_CivilianChild01`、`DMS_OfficerChild01`、`DMS_OfficerChild03`、`DMS_MilitaryChild01`。`onlyUseForcedBackstories` 會連童年的洗牌一起關掉，所以這四則逐一列在 `fixedChildBackstories`；之後新增 `FleetChild` 童年背景時要一併加進來。
+
+名字與性別仍隨機，文本只用 `[PAWN_*]` 代詞。原版限制與對應處理：
+
+- 20 歲以下不給成年背景（`GiveShuffledBioTo`），智識 +18 在成年背景上 → `minGenerationAge 25`、`maxGenerationAge 45`。
+- `GiveAppropriateBioAndNameTo` 有 25% 先試固定傳記（solid bio），成功就整組蓋掉 → 任務節點的 `PawnGenerationRequest` 加 `onlyUseForcedBackstories: true`。
+- 實際智識等級（`FinalLevelOfSkill`：0~4 隨機＋18×1~1.4，再乘年齡係數並經 `LevelFinalAdjustmentCurve` 壓縮，上限 20；`DMS_OfficerChild03` 另有童年智識 +2）：模擬 25~45 歲約 15~20 級，17~20 級約 88%，中位數 19。
