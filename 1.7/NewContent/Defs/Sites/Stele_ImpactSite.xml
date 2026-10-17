@@ -3,20 +3,24 @@
 
   <!-- ============================================================
        石碑任務線的兩種站點（任務腳本在 Quests/DMS_Stele.xml）。
-       守軍都由 GenStep_FFFGarrisonedStructure 的 spawnDefenders 依站點威脅點數生成（先鋒殘餘），
-       版面依 useTag 挑選，在 GenStructures/SteleQuests/。
+       守軍（先鋒殘餘）都有一支由 GenStep_FFFGarrisonedStructure 的 spawnDefenders 依站點威脅點數生成；
+       撞擊地點的版面另外在各房間放了固定點數的 PawnGroupInRoom。版面依 useTag 挑選，在 GenStructures/SteleQuests/。
 
-       The stele line's two sites (quest scripts in Quests/DMS_Stele.xml). Both garrisons come from
-       GenStep_FFFGarrisonedStructure's spawnDefenders, scaled by the site's threat points (Legacy remnants);
-       layouts are picked by useTag from GenStructures/SteleQuests/.
+       The stele line's two sites (quest scripts in Quests/DMS_Stele.xml). Each garrison (Legacy remnants) has one
+       group from GenStep_FFFGarrisonedStructure's spawnDefenders, scaled by the site's threat points; the impact-site
+       layout also places fixed-point PawnGroupInRoom squads in its rooms. Layouts are picked by useTag from
+       GenStructures/SteleQuests/.
        ============================================================ -->
 
-  <!-- 撞擊地點：墜落的密鑰艙與先鋒搭起的掩體，密鑰在掩體中央。
-       Impact site: the crashed glyph capsule and the shelter the pioneers built over it; the glyph sits inside. -->
+  <!-- 撞擊地點：密鑰艙在設施上空解體、砸成的殘骸廢墟（198x198，地圖至少 250）。密鑰封在廢墟裡的密鑰伺服器
+       （DMS_OccultechPedestal），駭入才會吐出來；開始駭入會喚醒全站守軍（伺服器的 alarmSignal = 守軍的 lordTag）。
+       Impact site: the wreck field left when the glyph capsule broke apart over an installation (198x198, map at
+       least 250). The glyph is sealed in a glyph server (DMS_OccultechPedestal) in the ruins and only comes out when
+       it is hacked; starting the hack wakes the whole garrison (the server's alarmSignal is the garrison's lordTag). -->
   <SitePartDef>
     <defName>DMS_SteleKey_ImpactSite</defName>
     <label>impact site</label>
-    <description>The crash site of a fleet glyph capsule. The pioneers sheltered it where it fell, and Legacy remnants still guard it.</description>
+    <description>A pioneer installation wrecked by a falling fleet glyph capsule. The glyph is sealed in a server among the ruins, and Legacy remnants still guard it.</description>
     <siteTexture>UI/Faction/LegacyIcon</siteTexture>
     <expandingIconTexture>UI/Faction/LegacyIcon</expandingIconTexture>
     <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
@@ -25,7 +29,7 @@
     <requiresFaction>true</requiresFaction>
     <wantsThreatPoints>true</wantsThreatPoints>
     <considerEnteringAsAttack>true</considerEnteringAsAttack>
-    <minMapSize>(200, 0, 200)</minMapSize>
+    <minMapSize>(250, 0, 250)</minMapSize>
     <gravShipsCanLandOn>false</gravShipsCanLandOn>
     <approachOrderString>Assault {0}</approachOrderString>
     <approachingReportString>Assaulting {0}.</approachingReportString>

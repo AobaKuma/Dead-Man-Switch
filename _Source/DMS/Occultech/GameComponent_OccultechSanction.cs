@@ -68,25 +68,28 @@ namespace DMS
         /// <summary>追殺令的 HuntdownDef（隱匿級制裁設定上的 huntdown）。The kill order's HuntdownDef.</summary>
         public static HuntdownDef HuntDef => OccultechSanctionUtility.OccultedSanction?.huntdown;
 
-        /// <summary>追殺是否正被暫停（SAGE 被摧毀）。Whether the hunt is currently suspended (a SAGE was destroyed).</summary>
-        public bool HuntSuspended => HuntDef != null && HuntdownUtility.IsSuspended(HuntDef);
+        /// <summary>
+        /// 艦隊追緝網路是否在真空期（SAGE 被摧毀）。所有艦隊追殺共用同一個真空期，見 FleetTrackingUtility。
+        /// Whether the fleet tracking network is in a blackout (a SAGE was destroyed); shared by every fleet hunt.
+        /// </summary>
+        public bool HuntSuspended => FleetTrackingUtility.InBlackout;
 
-        /// <summary>距離追殺恢復還有幾 tick；未暫停為 0。Ticks until the hunt resumes; 0 when not suspended.</summary>
-        public int HuntResumeTicksLeft => HuntDef == null ? 0 : HuntdownUtility.SuspendedTicksLeft(HuntDef);
+        /// <summary>距離追殺恢復還有幾 tick；未暫停為 0。Ticks until the hunts resume; 0 when not suspended.</summary>
+        public int HuntResumeTicksLeft => FleetTrackingUtility.BlackoutTicksLeft;
 
         /// <summary>
-        /// 暫停追殺；已在暫停中時疊加在目前的結束時間之後。回傳暫停後的剩餘 ticks。
-        /// Suspends the hunt; while already suspended, stacks onto the current end. Returns the ticks left.
+        /// 暫停所有艦隊追殺；已在暫停中時疊加在目前的結束時間之後。回傳暫停後的剩餘 ticks。
+        /// Suspends every fleet hunt; while already suspended, stacks onto the current end. Returns the ticks left.
         /// </summary>
         public int SuspendHunt(int ticks)
         {
-            return HuntDef == null ? 0 : HuntdownUtility.Suspend(HuntDef, ticks);
+            return FleetTrackingUtility.SuspendAll(ticks);
         }
 
-        /// <summary>除錯用：讓暫停在下一次檢查時結束。Debug: end the suspension at the next check.</summary>
+        /// <summary>除錯用：讓所有艦隊追殺的暫停在下一次檢查時結束。Debug: end every fleet hunt's suspension at the next check.</summary>
         public void EndHuntSuspensionNow()
         {
-            if (HuntDef != null) HuntdownUtility.ResumeNow(HuntDef);
+            FleetTrackingUtility.ResumeAllNow();
         }
 
         /// <summary>連坐敵對的派系（唯讀；僅供顯示）。</summary>
@@ -157,7 +160,10 @@ namespace DMS
         public void BeginPermanentHostility()
         {
             permanentHostile = true;
-            if (HuntDef != null) HuntdownUtility.Start(HuntDef, source: "Occultech");
+            if (HuntDef == null) return;
+            HuntdownUtility.Start(HuntDef, source: "Occultech");
+            // 脫序者追殺正在 SAGE 真空期時，追殺令一起等。If the deviant hunt is in a SAGE blackout, the kill order waits too.
+            FleetTrackingUtility.InheritBlackout(HuntDef);
         }
 
         /// <summary>解除永久敵對（軍事法庭服刑期滿）。連坐派系的關係不會一併恢復。</summary>

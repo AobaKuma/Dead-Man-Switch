@@ -14,11 +14,11 @@
     <li>questName->撞擊地點</li>
   </DMS_SteleKey_ImpactSite.questNameRules.rulesStrings>
   <DMS_SteleKey_ImpactSite.questDescriptionRules.rulesStrings>
-    <li>questDescription->我們的接收器捕捉到了一枚封存技術密鑰的認證脈衝。艦隊以軌道投放的方式將密鑰送往先鋒們的設施，但這枚密鑰艙沒能抵達它的燈塔，而是重重地墜落在地，先鋒們只好就地為它搭起了掩體。被指派看守撞擊地點的先鋒殘餘至今仍駐守在那裡。\n\n密鑰就放在站點中央的掩體內。將它帶回殖民地；若是留在原地，它就會隨著站點一同遺失。</li>
+    <li>questDescription->我們的接收器捕捉到了一枚封存技術密鑰的認證脈衝。艦隊以軌道投放的方式將密鑰送往先鋒們的設施，但這枚密鑰艙的落速太快，在它要送達的設施上空解體，殘骸把整座設施砸成了廢墟。先鋒們從殘骸中挖出密鑰，將它封進廢墟深處的一台密鑰伺服主機。被指派看守這處站點的先鋒殘餘至今仍駐守在那裡。\n\n找到密鑰伺服主機並駭入它來釋出密鑰，再將密鑰帶回殖民地。一旦開始駭入，全站的守軍都會被驚動；若伺服主機遭到摧毀，密鑰也會隨之損毀。若是將密鑰留在原地，它就會隨著站點一同遺失。</li>
   </DMS_SteleKey_ImpactSite.questDescriptionRules.rulesStrings>
   <DMS_SteleKey_ImpactSite.questContentRules.rulesStrings>
     <li>letterLabelMapGenerated->密鑰艙殘骸</li>
-    <li>letterTextMapGenerated->密鑰艙的殘骸散落在先鋒們搭起的掩體周圍，看守它的先鋒殘餘已經察覺到我們了。\n\n密鑰就在掩體裡。只有帶回殖民地才算真正取得。</li>
+    <li>letterTextMapGenerated->密鑰艙的殘骸散落在整座設施廢墟之中，看守它的先鋒殘餘仍堅守在各自的崗位上。\n\n密鑰封在廢墟裡的密鑰伺服主機中，駭入它會驚動全站的守軍。只有帶回殖民地才算真正取得。</li>
   </DMS_SteleKey_ImpactSite.questContentRules.rulesStrings>
   <!-- EN: Occultech glyph found: Impact site -->
   <DMS_SteleKey_ImpactSite.questAvailableLetterLabel>發現封存技術密鑰：撞擊地點</DMS_SteleKey_ImpactSite.questAvailableLetterLabel>

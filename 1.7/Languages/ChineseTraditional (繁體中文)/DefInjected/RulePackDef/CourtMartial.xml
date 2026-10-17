@@ -26,6 +26,14 @@
 
     <li>betrayLetterLabel->法庭協議破裂</li>
     <li>betrayLetterText->與[issuerFactionName]的軍事法庭協議已經破裂。憲兵指揮部宣告審理程序作廢，[issuerFactionName]恢復了對我們的敵對狀態。</li>
+
+    <!-- 脫序者被告。實作前不會被選中，見計畫 3.7。 -->
+    <li>acquitDeviantLetterText->出乎意料，[defendantName]在法庭上展開了極具說服力的辯護。[issuerFactionName]領航廳採信了其脫離艦隊的理由，駁回了全部指控，追殺[defendantName]的命令也隨之撤回。\n\n艦隊的讓步僅止於此：雙方關係恢復中立。[defendantName]正由空投艙送返。</li>
+    <li>verdictLetterDeviantText->[issuerFactionName]領航廳已宣判。[defendantName]曾列於艦隊名冊之上，卻選擇了離開；如今已無軍銜可褫奪，只剩脫離艦隊與洩密之罪需要承擔：懲處定為拘禁[detentionDays]天，即刻執行。\n\n服刑期間的食宿與醫療由艦隊負擔。刑期服滿之後，對[defendantName]的追殺即告結束。</li>
+    <!-- 脫序者審判結案時隱匿級追殺令仍在（D6-B）。見計畫 3.7。 -->
+    <li>acquitDeviantKillOrderLetterText->出乎意料，[defendantName]在法庭上展開了極具說服力的辯護。[issuerFactionName]領航廳採信了其脫離艦隊的理由，駁回了全部指控，追殺[defendantName]的命令也隨之撤回。\n\n然而，關於隱匿級技術的追殺令依然有效。休戰隨著結案而結束，[issuerFactionName]再度與我們為敵。[defendantName]正由空投艙送返。</li>
+    <li>returnDeviantKillOrderLetterLabel->[defendantName]歸來：追殺令仍在</li>
+    <li>returnDeviantKillOrderLetterText->[defendantName]已服刑期滿，由空投艙送返，[issuerFactionName]也撤銷了對[defendantName]的追殺。\n\n但關於隱匿級技術的追殺令依然有效。休戰隨著結案而結束，[issuerFactionName]再度與我們為敵。要解除追殺令，還得另外接受一場軍事法庭審判。</li>
   </DMS_CourtMartialLetters.rulePack.rulesStrings>
 
 </LanguageData>

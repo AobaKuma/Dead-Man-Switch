@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS_DeviantRefuge.questNameRules.rulesStrings>
+    <li>questName->脫序者</li>
+    <li>questName->接納脫序者：[deviant_nameFull]</li>
+    <li>questName->來自艦隊的叛離者</li>
+  </DMS_DeviantRefuge.questNameRules.rulesStrings>
+
+  <DMS_DeviantRefuge.questDescriptionRules.rulesStrings>
+    <li>questDescription->一名自稱[deviant_nameFull]的人正透過私人頻段向我們呼叫。[deviant_pronoun]曾是[fleetName]的在編人員，但現在[deviant_pronoun]遭到艦隊通緝，希望能在[map_definite]落腳。\n\n[deviant_nameDef]帶著一份從艦隊資料庫中複製出來的加密檔案。[deviant_pronoun]表示只要給[deviant_objective]幾天時間，就能把其中的內容還原給我們。\n\n注意：在檔案還原完畢的同時[fleetName]將得知[deviant_nameDef]被我們所庇護的消息並要求引渡。若我們拒絕，艦隊便會展開敵對行動，並且會為了[deviant_objective]持續派兵追殺，直到[deviant_pronoun]死去或被逐出殖民地為止。\n\n只有在你準備好與[fleetName]為敵時才接受。</li>
+  </DMS_DeviantRefuge.questDescriptionRules.rulesStrings>
+
+</LanguageData>

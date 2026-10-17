@@ -26,6 +26,9 @@ namespace DMS
         public float acquitChancePerSeniority100 = 0.05f;
         public float maxAcquitChance = 0.75f;
 
+        /// <summary>被告是受庇護的脫序者：不降職，判決與無罪信件改用脫序者版本。The defendant is the sheltered deviant.</summary>
+        public bool deviantTrial;
+
         private bool done;
 
         public float AcquitChance
@@ -57,12 +60,16 @@ namespace DMS
                 // 持有未放棄的封存級技術時休戰 part 只會給中立,信件不能宣稱結為盟友。
                 // Acquittal: no demotion; the truce part gets the signal (straight to ally), then the early return.
                 // While unrenounced sealed tech is held the truce part only grants neutral, so the letter mustn't claim an alliance.
-                bool allyBlocked = quest.PartsListForReading.OfType<QuestPart_CourtTruce>().FirstOrDefault()?.AllyBlocked
-                    ?? OccultechSanctionUtility.IsAllyLocked;
+                QuestPart_CourtTruce truce = quest.PartsListForReading.OfType<QuestPart_CourtTruce>().FirstOrDefault();
+                bool allyBlocked = truce?.AllyBlocked ?? OccultechSanctionUtility.IsAllyLocked;
+                // 脫序者審判：信件依結案時追殺令是否仍在分流，與休戰 part 的處理一致。
+                // Deviant trial: the letter follows whether the kill order still stands, as the truce part does.
+                string acquitTextKey = deviantTrial
+                    ? (truce?.KillOrderOutlivesTrial == true ? "acquitDeviantKillOrderLetterText" : "acquitDeviantLetterText")
+                    : (allyBlocked ? "acquitNoAllyLetterText" : "acquitLetterText");
                 Find.LetterStack.ReceiveLetter(
                     SupplyChainText.Resolve(CourtMartialText.Pack, "acquitLetterLabel", LetterVars("", "")),
-                    SupplyChainText.Resolve(CourtMartialText.Pack,
-                        allyBlocked ? "acquitNoAllyLetterText" : "acquitLetterText", LetterVars("", "")),
+                    SupplyChainText.Resolve(CourtMartialText.Pack, acquitTextKey, LetterVars("", "")),
                     LetterDefOf.PositiveEvent, null, faction, quest);
                 TaleRecorder.RecordTale(DMS_DefOf.DMS_Tale_Acquitted, defendant);
                 Find.SignalManager.SendSignal(new Signal(outSignalAcquitted));
@@ -73,14 +80,16 @@ namespace DMS
             // 有罪:降一級,進入服刑。
             // 被告可能根本沒有軍銜：無 Royalty DLC，或 FindDefendant 走了市場價值 fallback。
             // 這種情況沒有階可降，改用不提降職的判決文本，否則信件會出現「由 ? 降職為 ?」。
+            // 脫序者審判不降職：判決書寫的是逃離與洩密，不是軍銜。A deviant trial doesn't demote; it judges desertion, not rank.
             RoyalTitleDef current = defendant.royalty?.GetCurrentTitle(faction);
-            bool demoted = current != null && current.seniority > 0;
+            bool demoted = !deviantTrial && current != null && current.seniority > 0;
             string oldTitle = current?.GetLabelFor(defendant) ?? "?";
             if (demoted)
                 defendant.royalty.ReduceTitle(faction);
             string newTitle = defendant.royalty?.GetCurrentTitle(faction)?.GetLabelFor(defendant) ?? oldTitle;
 
-            string verdictTextKey = demoted ? "verdictLetterText" : "verdictLetterNoDemotionText";
+            string verdictTextKey = deviantTrial ? "verdictLetterDeviantText"
+                : demoted ? "verdictLetterText" : "verdictLetterNoDemotionText";
             Find.LetterStack.ReceiveLetter(
                 SupplyChainText.Resolve(CourtMartialText.Pack, "verdictLetterLabel", LetterVars(oldTitle, newTitle)),
                 SupplyChainText.Resolve(CourtMartialText.Pack, verdictTextKey, LetterVars(oldTitle, newTitle)),
@@ -130,6 +139,7 @@ namespace DMS
             Scribe_Values.Look(ref acquitChancePerSocialLevel, "acquitChancePerSocialLevel", 0.02f);
             Scribe_Values.Look(ref acquitChancePerSeniority100, "acquitChancePerSeniority100", 0.05f);
             Scribe_Values.Look(ref maxAcquitChance, "maxAcquitChance", 0.75f);
+            Scribe_Values.Look(ref deviantTrial, "deviantTrial");
             Scribe_Values.Look(ref done, "done");
         }
     }

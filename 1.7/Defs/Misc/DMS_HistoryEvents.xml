@@ -69,6 +69,20 @@
     <label>occultech research decoded</label>
   </HistoryEventDef>
 
+  <!-- 脫序者接納任務交付時艦隊轉為敵對的理由（QuestPart_DeviantHandover）。同樣不讓 precept 消費。
+       Reason recorded when the fleet turns hostile at the deviant handover. Likewise not consumed by any precept. -->
+  <HistoryEventDef>
+    <defName>DMS_HarboredDeviant</defName>
+    <label>harbored a fleet deviant</label>
+  </HistoryEventDef>
+
+  <!-- 脫序者接納任務中交出脫序者時，艦隊好感度上升的理由（QuestPart_DeviantExtradition）。
+       Reason for the fleet goodwill gain when the deviant is handed over. -->
+  <HistoryEventDef>
+    <defName>DMS_ExtraditedDeviant</defName>
+    <label>extradited a fleet deviant</label>
+  </HistoryEventDef>
+
   <!-- ── 行為事件 ─────────────────────────────────────────────── -->
 
   <!-- 合成／培養出來的食物的 ingestible.ateEvent,目前掛在

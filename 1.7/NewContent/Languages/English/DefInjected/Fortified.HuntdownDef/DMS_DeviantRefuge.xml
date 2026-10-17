@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <DMS_DeviantHunt.label>deviant pursuit</DMS_DeviantHunt.label>
+  <DMS_DeviantHunt.alertLabel>Deviant hunt</DMS_DeviantHunt.alertLabel>
+  <DMS_DeviantHunt.alertLabelCritical>Hunters arriving any moment</DMS_DeviantHunt.alertLabelCritical>
+  <DMS_DeviantHunt.alertExplanation>{0} is hunting the deviant the colony took in. The hunting party arrives when the countdown ends.\n\nThe hunt continues for as long as the deviant stays with the colony.</DMS_DeviantHunt.alertExplanation>
+  <DMS_DeviantHunt.alertExplanationCritical>The hunting party from {0} could arrive at any moment. Prepare for battle.</DMS_DeviantHunt.alertExplanationCritical>
+
+</LanguageData>

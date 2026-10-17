@@ -13,6 +13,9 @@
   <DMS_SageCore.label>贤者</DMS_SageCore.label>
   <DMS_SageCore.description>一种分布式计算的战略指挥计算机，能够根据使用需求无上限的扩充辅机并提升计算能力，被殖民舰队用于殖民星球上的战略防空以及连接数个大陆上的无数雷达追踪及导航网络。将其摧毁必然会对殖民舰队在星球上的追缉行动造成严重的影响，但在一两年内整个SAGE网络内的另一台计算机就会升格为主机继续执行任务。\n\n它的底层储存区保留着部分战略数据库的副本，骇入时整个设施的警报系统都会被牵动。</DMS_SageCore.description>
 
+  <DMS_OccultechPedestal.label>密钥伺服主机</DMS_OccultechPedestal.label>
+  <DMS_OccultechPedestal.description>一台先锋们为了保管封存技术密钥而搭建的重型晶体管电脑。密钥就封在它的读取槽里，主机至今仍在反复进行认证，我们的接收器捕捉到的正是这道脉冲。内部的放射性电池足以让它运作多年，还有余裕为周围的防御设施供电。\n\n只有破解伺服主机的锁定，密钥才会被释出。骇入会触发整个站点的警报，因此在开始骇入之前最好做充足的防御准备。若伺服主机先被摧毁，封在里面的密钥也会一同损毁。</DMS_OccultechPedestal.description>
+
   <DMS_Building_GasVent.label>毒气释放口</DMS_Building_GasVent.label>
   <DMS_Building_GasVent.description>安装在地板上、连接着设施警报网络的格栅。警报响起时，它会先发出短暂的嘶嘶声，接着朝周围喷出大量毒气。设施里的机械守军不需要呼吸，其他人最好戴着防毒面具。它的存量足够释放数次，并会从下方的储气槽慢慢补充。切断电源或以EMP瘫痪就能让它停下，即使正在喷发中也一样。</DMS_Building_GasVent.description>
   <DMS_Building_SubsonicEmitter_Security.label>警戒次声波塔</DMS_Building_SubsonicEmitter_Security.label>

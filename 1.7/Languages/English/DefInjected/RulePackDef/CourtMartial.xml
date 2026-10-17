@@ -21,6 +21,14 @@ The fleet will cover room, board and medical care for the duration.</li>
     <li>returnNeutralLetterText->[defendantName] has served the sentence and been returned by drop pod.\n\n[issuerFactionName] considers the incident formally closed. Relations remain neutral: the ceasefire holds, but no warmth came of it.</li>
     <li>betrayLetterLabel->Tribunal terms violated</li>
     <li>betrayLetterText->The court-martial arrangement with [issuerFactionName] has collapsed. The military police command has declared the proceedings void, and [issuerFactionName] has resumed hostilities against us.</li>
+
+    <!-- 脫序者被告。實作前不會被選中，見計畫 3.7。 -->
+    <li>acquitDeviantLetterText->Against expectations, [defendantName] mounted a compelling defense before the tribunal. The Navigation Hall of [issuerFactionName] has accepted the reasons behind the desertion and dismissed the charges, and the order to hunt [defendantName] down is withdrawn.\n\nThe fleet will go no further than that: relations return to neutral. [defendantName] is being returned by drop pod.</li>
+    <li>verdictLetterDeviantText->The Navigation Hall of [issuerFactionName] has pronounced sentence. [defendantName] once stood on the fleet's rolls and walked away from them; there is no rank left to strip, only the desertion and the leak to answer for: [detentionDays] days of detention, effective immediately.\n\nThe fleet will cover room, board and medical care for the duration. When the sentence is served, the hunt for [defendantName] ends.</li>
+    <!-- 脫序者審判結案時隱匿級追殺令仍在（D6-B）。見計畫 3.7。 -->
+    <li>acquitDeviantKillOrderLetterText->Against expectations, [defendantName] mounted a compelling defense before the tribunal. The Navigation Hall of [issuerFactionName] has accepted the reasons behind the desertion and dismissed the charges, and the order to hunt [defendantName] down is withdrawn.\n\nThe kill order over the occulted technology still stands, however. The truce ended with the case, and [issuerFactionName] is hostile to us again. [defendantName] is being returned by drop pod.</li>
+    <li>returnDeviantKillOrderLetterLabel->[defendantName] returned: kill order stands</li>
+    <li>returnDeviantKillOrderLetterText->[defendantName] has served the sentence and been returned by drop pod, and [issuerFactionName] has called off the hunt for [defendantName].\n\nThe kill order over the occulted technology still stands. The truce ended with the case, and [issuerFactionName] is hostile to us again. Lifting the kill order will take a separate court-martial.</li>
   </DMS_CourtMartialLetters.rulePack.rulesStrings>
 
 </LanguageData>

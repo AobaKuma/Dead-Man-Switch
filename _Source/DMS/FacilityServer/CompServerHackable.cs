@@ -64,6 +64,10 @@ namespace DMS
         /// </summary>
         private const int SessionGapTicks = 60;
 
+        /// <summary>每階段獎勵放下後送出的任務目標訊號（"{questTag}.HackReward"，REWARD = 放下的物品）。
+        /// Quest target signal sent once a stage's reward is placed ("{questTag}.HackReward", REWARD = the placed thing).</summary>
+        public const string HackRewardSignal = "HackReward";
+
         private int stagesTotal = -1;
         private int stagesDone;
         private bool pendingNextStage;
@@ -163,6 +167,10 @@ namespace DMS
 
             IntVec3 cell = parent.def.hasInteractionCell ? parent.InteractionCell : parent.Position;
             if (!GenPlace.TryPlaceThing(reward, cell, parent.Map, ThingPlaceMode.Near, out Thing placed)) return;
+
+            // 任務目標訊號：有 questTags 的主機（例：撞擊地點的密鑰伺服器）讓任務接到吐出來的物品。
+            // Quest target signal: lets a quest that tagged this server (e.g. the impact site's glyph server) pick up the reward.
+            QuestUtility.SendQuestTargetSignals(parent.questTags, HackRewardSignal, parent.Named("SUBJECT"), placed.Named("REWARD"));
 
             Find.LetterStack.ReceiveLetter(
                 "DMS_ServerHack_StageLetterLabel".Translate(parent.Named("SERVER")),

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- ===== Deviant refuge quest (DMS_DeviantRefuge). Design: Plans/DMS_脫序者接納任務_實作計畫.md ===== -->
+
+  <!-- Accepted: the deviant walks in and joins -->
+  <DMS_DeviantRefuge_ArrivedLabel>Deviant arrived</DMS_DeviantRefuge_ArrivedLabel>
+  <DMS_DeviantRefuge_ArrivedText>{DEVIANT_nameFull} has arrived and joined the colony.\n\n{DEVIANT_pronoun} has begun restoring the encrypted archive, which should take {DAYS} days. Until then, {FLEET} does not know {DEVIANT_nameDef} is here.</DMS_DeviantRefuge_ArrivedText>
+
+  <!-- Quest tab countdown -->
+  <DMS_DeviantRefuge_HandoverInfo>Archive restoration: {0}</DMS_DeviantRefuge_HandoverInfo>
+  <DMS_DeviantRefuge_HandoverInfoTip>The encrypted archive will be restored on {0}, and the colonial fleet will then demand the deviant's extradition.</DMS_DeviantRefuge_HandoverInfoTip>
+
+  <!-- Day 5: handover -->
+  <DMS_DeviantRefuge_HandoverLabel>Sealed files restored</DMS_DeviantRefuge_HandoverLabel>
+  <DMS_DeviantRefuge_HandoverText>{DEVIANT_nameFull} has kept {DEVIANT_possessive} word and handed over the restored encrypted files:\n\n{GRANTED}\n\nAt the same moment, {FLEET} has come to regard us as harboring a defector, and has turned hostile.\n\nThe fleet will not let it go. As long as {DEVIANT_nameDef} stays with the colony, hunting parties will keep coming.</DMS_DeviantRefuge_HandoverText>
+  <!-- A court-martial is still in session at the handover: the research is granted, hostility and the hunt wait for the trial to end -->
+  <DMS_DeviantRefuge_HandoverTextDeferred>{DEVIANT_nameFull} has kept {DEVIANT_possessive} word and handed over the restored encrypted files:\n\n{GRANTED}\n\n{FLEET} has learned that we are sheltering {DEVIANT_nameDef}, but a court-martial is still in session and the fleet is holding its guns during the truce. The moment the trial ends, relations will turn hostile, and the hunting parties will follow.</DMS_DeviantRefuge_HandoverTextDeferred>
+  <DMS_DeviantRefuge_DeferredInfo>Hostility takes effect once the court-martial ends</DMS_DeviantRefuge_DeferredInfo>
+  <DMS_DeviantRefuge_HostilityLabel>Fleet turns hostile</DMS_DeviantRefuge_HostilityLabel>
+  <DMS_DeviantRefuge_HostilityText>The court-martial is over, and the truce with it. {FLEET} has turned hostile, citing our harboring of a defector.\n\nThe fleet will not let it go. As long as {DEVIANT_nameDef} stays with the colony, hunting parties will keep coming.</DMS_DeviantRefuge_HostilityText>
+
+  <!-- Extradition demand (QuestPart_DeviantExtraditionDemand / QuestPart_DeviantExtradition) -->
+  <DMS_DeviantExtradition_LetterLabel>Extradition demand: {DEVIANT_nameDef}</DMS_DeviantExtradition_LetterLabel>
+  <DMS_DeviantExtradition_LetterText>{DEVIANT_nameFull} has finished restoring the archive, but at the same moment {FLEET} has learned that we are sheltering {DEVIANT_nameDef}. The military police command has served us a formal extradition demand.\n\nHand {DEVIANT_objective} over:\n{REWARDS}\nThe fleet will confiscate the encrypted archive.\n\nRefuse: {DEVIANT_nameDef} hands the restored files over to us, and {FLEET} turns hostile and keeps sending hunters after {DEVIANT_objective} until {DEVIANT_pronoun} dies or is banished from the colony.\n\nIf we give no answer within {DAYS}, the fleet will take it as a refusal.</DMS_DeviantExtradition_LetterText>
+  <DMS_DeviantExtradition_RewardGoodwill>- +{AMOUNT} goodwill with {FLEET}</DMS_DeviantExtradition_RewardGoodwill>
+  <DMS_DeviantExtradition_RewardHonor>- {AMOUNT} {HONOR} for a colonist of our choosing, toward a fleet rank</DMS_DeviantExtradition_RewardHonor>
+  <DMS_DeviantExtradition_RewardMood>- Our colonists will be upset at having handed over one of their own</DMS_DeviantExtradition_RewardMood>
+  <DMS_DeviantExtradition_Extradite>Hand over {DEVIANT_nameDef}</DMS_DeviantExtradition_Extradite>
+  <DMS_DeviantExtradition_Refuse>Refuse extradition</DMS_DeviantExtradition_Refuse>
+  <DMS_DeviantExtradition_DeadlineInfo>Extradition answer due: {0}</DMS_DeviantExtradition_DeadlineInfo>
+  <DMS_DeviantExtradition_DeadlineInfoTip>If we give no answer in time, the fleet will take it as a refusal.</DMS_DeviantExtradition_DeadlineInfoTip>
+  <DMS_DeviantExtradition_SilenceMessage>We never answered {FLEET}'s extradition demand. The fleet has taken it as a refusal.</DMS_DeviantExtradition_SilenceMessage>
+  <DMS_DeviantExtradition_DoneLabel>Extradited: {DEVIANT_nameDef}</DMS_DeviantExtradition_DoneLabel>
+  <DMS_DeviantExtradition_DoneText>A fleet orbital transport has taken {DEVIANT_nameFull} away, along with the encrypted archive. {FLEET} has acknowledged our cooperation.\n\nNo one knows what awaits {DEVIANT_objective} now.</DMS_DeviantExtradition_DoneText>
+  <DMS_DeviantExtradition_HonorLabel>Who receives the {HONOR}?</DMS_DeviantExtradition_HonorLabel>
+  <DMS_DeviantExtradition_HonorText>{FLEET} credits us with the extradition and offers {AMOUNT} {HONOR}. Who should receive it?</DMS_DeviantExtradition_HonorText>
+  <!-- One line of {GRANTED} -->
+  <DMS_DeviantRefuge_GrantedLine>- {PROJECT}</DMS_DeviantRefuge_GrantedLine>
+  <DMS_DeviantRefuge_PendingLine>- {PROJECT} (data received; decoded automatically once {PREREQS} is researched)</DMS_DeviantRefuge_PendingLine>
+  <DMS_DeviantRefuge_AlreadyHeldLine>- {PROJECT} (already known to the colony)</DMS_DeviantRefuge_AlreadyHeldLine>
+  <DMS_DeviantRefuge_NothingGranted>(nothing in the archive was new to the colony)</DMS_DeviantRefuge_NothingGranted>
+
+  <!-- Pending grant decoded once prerequisites finish -->
+  <DMS_DeviantRefuge_PendingDecodedLabel>Archive decoded: {PROJECT}</DMS_DeviantRefuge_PendingDecodedLabel>
+  <DMS_DeviantRefuge_PendingDecodedText>With the prerequisite research complete, our researchers can finally read the {PROJECT} file the deviant left behind.</DMS_DeviantRefuge_PendingDecodedText>
+
+  <!-- Failure before the handover -->
+  <DMS_DeviantRefuge_FailedDiedLabel>Deviant died</DMS_DeviantRefuge_FailedDiedLabel>
+  <DMS_DeviantRefuge_FailedDiedText>{DEVIANT_nameFull} died before the restoration was finished, and the encrypted archive lost the only key that could read it.\n\nThe fleet never learned {DEVIANT_pronoun} had been here.</DMS_DeviantRefuge_FailedDiedText>
+  <DMS_DeviantRefuge_FailedLeftLabel>Deviant left</DMS_DeviantRefuge_FailedLeftLabel>
+  <DMS_DeviantRefuge_FailedLeftText>{DEVIANT_nameFull} left the colony before the restoration was finished, taking the encrypted archive along.</DMS_DeviantRefuge_FailedLeftText>
+  <DMS_DeviantRefuge_FailedKidnappedLabel>Deviant kidnapped</DMS_DeviantRefuge_FailedKidnappedLabel>
+  <DMS_DeviantRefuge_FailedKidnappedText>{DEVIANT_nameFull} was carried off before the restoration was finished, and the encrypted archive went missing along with {DEVIANT_objective}.</DMS_DeviantRefuge_FailedKidnappedText>
+  <DMS_DeviantRefuge_FailedNoArrivalLabel>Deviant never arrived</DMS_DeviantRefuge_FailedNoArrivalLabel>
+  <DMS_DeviantRefuge_FailedNoArrivalText>{DEVIANT_nameFull} never made it to the colony, and we have heard nothing from {DEVIANT_objective} since.</DMS_DeviantRefuge_FailedNoArrivalText>
+
+  <!-- Hunt ended -->
+  <DMS_DeviantHunt_EndedDiedLabel>Hunt over</DMS_DeviantHunt_EndedDiedLabel>
+  <DMS_DeviantHunt_EndedDiedText>{DEVIANT_nameFull} is dead. {FLEET} has struck the defector from its rolls, and no more hunters will come.\n\nThe hostility with the fleet does not end with it.</DMS_DeviantHunt_EndedDiedText>
+  <DMS_DeviantHunt_EndedLeftLabel>Hunt over</DMS_DeviantHunt_EndedLeftLabel>
+  <DMS_DeviantHunt_EndedLeftText>{DEVIANT_nameFull} is no longer with the colony. {FLEET} has moved its hunt elsewhere and will stop sending hunters after us.\n\nThe hostility with the fleet does not end with it.</DMS_DeviantHunt_EndedLeftText>
+
+  <!-- Relation lock -->
+  <DMS_DeviantHunt_GoodwillBlocked>The colony still harbors a deviant hunted by {FLEET}. Relations with the fleet cannot improve.</DMS_DeviantHunt_GoodwillBlocked>
+  <!-- Comms console "renounce sealed technology" disabled reason -->
+  <DMS_Occultech_RenounceBlockedDeviant>We are still sheltering a deviant the fleet is hunting. They will not accept any declaration from us.</DMS_Occultech_RenounceBlockedDeviant>
+
+  <!-- SAGE node destroyed (DMS.CompHuntBreaker): deviant hunt branch. Same arguments as DMS_HuntBreaker_SuspendedText. -->
+  <DMS_HuntBreaker_SuspendedTextDeviant>{NODE_definite} has been destroyed.\n\nWithout it, {FLEET}'s radar tracking and navigation network on this planet has a gaping hole in it. They have lost track of the deviant, and the hunt has been called off.\n\nThis will not last. Another computer on the SAGE network will take over the node's work sooner or later; the hunt should start again in about {DURATION}.\n\nNote: as long as we shelter the deviant, our hostility with the fleet will not be lifted.</DMS_HuntBreaker_SuspendedTextDeviant>
+  <!-- Appended to DMS_HuntBreaker_SuspendedText when the occultech kill order and the deviant hunt are both running -->
+  <DMS_HuntBreaker_SuspendedDeviantLine>The hunt we brought on ourselves by sheltering the deviant has been broken off as well, and will resume at the same time.</DMS_HuntBreaker_SuspendedDeviantLine>
+
+</LanguageData>

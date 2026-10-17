@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- 脫序者接納任務：第 15 天（已過 14 天）提供一次。所有原版說書人與格蕾西亞都繼承 BaseStoryteller，
+       且 <comps> 未設 Inherit="False"（只有 Tutor 例外），patch 抽象父類即可涵蓋。
+       RefiringUniqueQuest 而非 SingleOnceFixed：後者只在剛好那一個 1000 tick 間隔檢查，中途加入模組或當下
+       TestRun 失敗就永遠不會再觸發；前者在讀舊檔後會持續嘗試到成功。refireEveryDays < 0：過期或拒絕後不補發。
+       Deviant refuge: offered once from day 15 (14 days passed). Every vanilla storyteller and Greysia inherit
+       BaseStoryteller without Inherit="False" on <comps> (Tutor aside), so patching the abstract parent covers them.
+       RefiringUniqueQuest rather than SingleOnceFixed: the latter checks one exact interval only, so a mid-game install
+       or a failed TestRun would lose the quest for good. A negative refireEveryDays means no re-offer after it ends. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps</xpath>
+    <value>
+      <li Class="StorytellerCompProperties_RefiringUniqueQuest">
+        <incident>DMS_GiveQuest_DeviantRefuge</incident>
+        <minDaysPassed>14</minDaysPassed>
+        <refireEveryDays>-1</refireEveryDays>
+        <allowedTargetTags>
+          <li>World</li>
+        </allowedTargetTags>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

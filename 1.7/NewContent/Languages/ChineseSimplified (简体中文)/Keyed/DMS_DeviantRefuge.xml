@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- ===== 脱序者接纳任务（DMS_DeviantRefuge）。设计见 Plans/DMS_脫序者接納任務_實作計畫.md ===== -->
+
+  <!-- 接受后，脱序者进场并加入 -->
+  <DMS_DeviantRefuge_ArrivedLabel>脱序者抵达</DMS_DeviantRefuge_ArrivedLabel>
+  <DMS_DeviantRefuge_ArrivedText>{DEVIANT_nameFull}已经抵达并加入了殖民地。\n\n{DEVIANT_pronoun}开始着手还原那份加密档案，预计需要{DAYS}天。在那之前，{FLEET}还不知道{DEVIANT_nameDef}在这里。</DMS_DeviantRefuge_ArrivedText>
+
+  <!-- 任务页倒计时 -->
+  <DMS_DeviantRefuge_HandoverInfo>档案还原：{0}</DMS_DeviantRefuge_HandoverInfo>
+  <DMS_DeviantRefuge_HandoverInfoTip>加密档案将于{0}还原完成，届时殖民舰队将要求引渡脱序者。</DMS_DeviantRefuge_HandoverInfoTip>
+
+  <!-- 第 5 天：交付 -->
+  <DMS_DeviantRefuge_HandoverLabel>封存档案已还原</DMS_DeviantRefuge_HandoverLabel>
+  <DMS_DeviantRefuge_HandoverText>{DEVIANT_nameFull}履行了约定，将还原的加密技术档案交到我们手上：\n\n{GRANTED}\n\n就在同一时刻，{FLEET}已将我们视为窝藏叛离者的势力，双方关系转为敌对。\n\n舰队不会就此罢休。只要{DEVIANT_nameDef}还在殖民地，追杀部队就会一波接一波地前来。</DMS_DeviantRefuge_HandoverText>
+  <!-- 交付时军事法庭仍在审理：研究照样授予，敌对与追杀延到审判结束 -->
+  <DMS_DeviantRefuge_HandoverTextDeferred>{DEVIANT_nameFull}履行了约定，将还原的加密技术档案交到我们手上：\n\n{GRANTED}\n\n{FLEET}已经得知我们庇护了{DEVIANT_nameDef}，但军事法庭的审理仍在进行，休战期间舰队按兵不动。审判一结束，双方就会转为敌对，追杀部队也会随之而来。</DMS_DeviantRefuge_HandoverTextDeferred>
+  <DMS_DeviantRefuge_DeferredInfo>敌对将在军事法庭审理结束后生效</DMS_DeviantRefuge_DeferredInfo>
+  <DMS_DeviantRefuge_HostilityLabel>舰队转为敌对</DMS_DeviantRefuge_HostilityLabel>
+  <DMS_DeviantRefuge_HostilityText>军事法庭的审理已经结束，休战也随之告终。{FLEET}以窝藏叛离者为由，与我们转为敌对。\n\n舰队不会就此罢休。只要{DEVIANT_nameDef}还在殖民地，追杀部队就会一波接一波地前来。</DMS_DeviantRefuge_HostilityText>
+
+  <!-- 引渡要求（QuestPart_DeviantExtraditionDemand／QuestPart_DeviantExtradition） -->
+  <DMS_DeviantExtradition_LetterLabel>舰队引渡要求：{DEVIANT_nameDef}</DMS_DeviantExtradition_LetterLabel>
+  <DMS_DeviantExtradition_LetterText>{DEVIANT_nameFull}完成了档案还原，但就在同一时刻，{FLEET}也得知了{DEVIANT_nameDef}受到我们庇护的消息。舰队宪兵指挥部已向我们发出正式的引渡要求。\n\n交出{DEVIANT_objective}：\n{REWARDS}\n那份加密档案将被舰队收走。\n\n拒绝引渡：{DEVIANT_nameDef}会把还原的档案交给我们，{FLEET}将与我们敌对，并且会为了{DEVIANT_objective}持续派兵追杀，直到{DEVIANT_pronoun}死去或被逐出殖民地为止。\n\n若{DAYS}内没有答复，舰队将视为拒绝。</DMS_DeviantExtradition_LetterText>
+  <DMS_DeviantExtradition_RewardGoodwill>- 与{FLEET}的好感度 +{AMOUNT}</DMS_DeviantExtradition_RewardGoodwill>
+  <DMS_DeviantExtradition_RewardHonor>- {AMOUNT}点{HONOR}，由我们指定的一名殖民者领受，可用于晋升舰队军衔</DMS_DeviantExtradition_RewardHonor>
+  <DMS_DeviantExtradition_RewardMood>- 殖民者会因为交出了同伴而心情低落</DMS_DeviantExtradition_RewardMood>
+  <DMS_DeviantExtradition_Extradite>交出{DEVIANT_nameDef}</DMS_DeviantExtradition_Extradite>
+  <DMS_DeviantExtradition_Refuse>拒绝引渡</DMS_DeviantExtradition_Refuse>
+  <DMS_DeviantExtradition_DeadlineInfo>引渡答复期限：{0}</DMS_DeviantExtradition_DeadlineInfo>
+  <DMS_DeviantExtradition_DeadlineInfoTip>期限内没有答复，舰队将视为拒绝引渡。</DMS_DeviantExtradition_DeadlineInfoTip>
+  <DMS_DeviantExtradition_SilenceMessage>我们没有回复{FLEET}的引渡要求，舰队视之为拒绝。</DMS_DeviantExtradition_SilenceMessage>
+  <DMS_DeviantExtradition_DoneLabel>引渡完成：{DEVIANT_nameDef}</DMS_DeviantExtradition_DoneLabel>
+  <DMS_DeviantExtradition_DoneText>舰队的轨道运输机带走了{DEVIANT_nameFull}，连同那份加密档案。{FLEET}对我们的配合表示认可。\n\n没有人知道{DEVIANT_pronoun}接下来会面对什么。</DMS_DeviantExtradition_DoneText>
+  <DMS_DeviantExtradition_HonorLabel>谁来领受这份{HONOR}？</DMS_DeviantExtradition_HonorLabel>
+  <DMS_DeviantExtradition_HonorText>{FLEET}将这次引渡记为我们的功劳，愿意授予{AMOUNT}点{HONOR}。由谁领受？</DMS_DeviantExtradition_HonorText>
+  <!-- {GRANTED} 的每一行 -->
+  <DMS_DeviantRefuge_GrantedLine>- {PROJECT}</DMS_DeviantRefuge_GrantedLine>
+  <DMS_DeviantRefuge_PendingLine>- {PROJECT}（数据已取得，完成{PREREQS}之后自动解译）</DMS_DeviantRefuge_PendingLine>
+  <DMS_DeviantRefuge_AlreadyHeldLine>- {PROJECT}（殖民地早已掌握）</DMS_DeviantRefuge_AlreadyHeldLine>
+  <DMS_DeviantRefuge_NothingGranted>（档案中没有殖民地尚未掌握的内容）</DMS_DeviantRefuge_NothingGranted>
+
+  <!-- 待授予的项目在前置完成后自动解译 -->
+  <DMS_DeviantRefuge_PendingDecodedLabel>档案解译完成：{PROJECT}</DMS_DeviantRefuge_PendingDecodedLabel>
+  <DMS_DeviantRefuge_PendingDecodedText>前置研究已经完成，研究员终于读懂了脱序者留下的{PROJECT}档案。</DMS_DeviantRefuge_PendingDecodedText>
+
+  <!-- 交付前失败 -->
+  <DMS_DeviantRefuge_FailedDiedLabel>脱序者死亡</DMS_DeviantRefuge_FailedDiedLabel>
+  <DMS_DeviantRefuge_FailedDiedText>{DEVIANT_nameFull}在完成还原之前死去了，那份加密档案也随之失去读取的钥匙。\n\n舰队始终不知道{DEVIANT_pronoun}曾经来过这里。</DMS_DeviantRefuge_FailedDiedText>
+  <DMS_DeviantRefuge_FailedLeftLabel>脱序者离开</DMS_DeviantRefuge_FailedLeftLabel>
+  <DMS_DeviantRefuge_FailedLeftText>{DEVIANT_nameFull}在完成还原之前离开了殖民地，连同那份加密档案一起。</DMS_DeviantRefuge_FailedLeftText>
+  <DMS_DeviantRefuge_FailedKidnappedLabel>脱序者遭绑架</DMS_DeviantRefuge_FailedKidnappedLabel>
+  <DMS_DeviantRefuge_FailedKidnappedText>{DEVIANT_nameFull}在完成还原之前被绑走了，那份加密档案也随之下落不明。</DMS_DeviantRefuge_FailedKidnappedText>
+  <DMS_DeviantRefuge_FailedNoArrivalLabel>脱序者未能抵达</DMS_DeviantRefuge_FailedNoArrivalLabel>
+  <DMS_DeviantRefuge_FailedNoArrivalText>{DEVIANT_nameFull}始终没能抵达殖民地，我们再也没有收到{DEVIANT_objective}的消息。</DMS_DeviantRefuge_FailedNoArrivalText>
+
+  <!-- 追杀结束 -->
+  <DMS_DeviantHunt_EndedDiedLabel>追杀结束</DMS_DeviantHunt_EndedDiedLabel>
+  <DMS_DeviantHunt_EndedDiedText>{DEVIANT_nameFull}死了。{FLEET}在名册上注销了这名叛离者，追杀部队不会再来。\n\n与舰队的敌对状态并不会因此解除。</DMS_DeviantHunt_EndedDiedText>
+  <DMS_DeviantHunt_EndedLeftLabel>追杀结束</DMS_DeviantHunt_EndedLeftLabel>
+  <DMS_DeviantHunt_EndedLeftText>{DEVIANT_nameFull}已经不在殖民地。{FLEET}的追杀目标随之转移，不会再针对我们派兵。\n\n与舰队的敌对状态并不会因此解除。</DMS_DeviantHunt_EndedLeftText>
+
+  <!-- 关系锁 -->
+  <DMS_DeviantHunt_GoodwillBlocked>殖民地仍收留着被{FLEET}追杀的脱序者，与舰队的关系无法改善。</DMS_DeviantHunt_GoodwillBlocked>
+  <!-- 通讯台“放弃封存级技术”停用理由 -->
+  <DMS_Occultech_RenounceBlockedDeviant>我们仍收留着舰队追杀中的脱序者，他们不受理任何申报。</DMS_Occultech_RenounceBlockedDeviant>
+
+  <!-- SAGE 节点被摧毁（DMS.CompHuntBreaker）：脱序者追杀的分支。参数同 DMS_HuntBreaker_SuspendedText。 -->
+  <DMS_HuntBreaker_SuspendedTextDeviant>{NODE_definite}已被摧毁。\n\n失去这个节点后，{FLEET}在星球上的雷达追踪与导航网络出现了大面积的空白，他们已经无法掌握脱序者的位置，追杀行动被迫中止。\n\n但这只是暂时的。SAGE 网络内的其他计算机迟早会接手这个节点的工作，预计约{DURATION}后追杀就会重新开始。\n\n请注意：只要我们仍收留着脱序者，与舰队的敌对状态就不会解除。</DMS_HuntBreaker_SuspendedTextDeviant>
+  <!-- 隐匿级追杀令与脱序者追杀同时进行时，接在 DMS_HuntBreaker_SuspendedText 之后 -->
+  <DMS_HuntBreaker_SuspendedDeviantLine>收留脱序者所招来的追杀也一并中断，并会在同一时间恢复。</DMS_HuntBreaker_SuspendedDeviantLine>
+
+</LanguageData>

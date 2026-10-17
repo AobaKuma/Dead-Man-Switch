@@ -31,9 +31,10 @@ namespace DMS
     }
 
     /// <summary>
-    /// 殖民艦隊追緝網路上的節點（SAGE）。被打爛時暫停隱匿級的追殺；不解除永久敵對。
-    /// A node in the colony fleet's tracking network (SAGE). Destroying it suspends the Occulted-tier hunt;
-    /// it does not end the kill order.
+    /// 殖民艦隊追緝網路上的節點（SAGE）。被打爛時所有艦隊追殺（隱匿級追殺令、脫序者追殺）一起進入真空期；
+    /// 不解除敵對。見 FleetTrackingUtility。
+    /// A node in the colony fleet's tracking network (SAGE). Destroying it puts every fleet hunt (the occultech kill
+    /// order, the deviant hunt) into one blackout; it ends no hostility. See FleetTrackingUtility.
     /// </summary>
     public class CompHuntBreaker : ThingComp
     {
@@ -49,10 +50,9 @@ namespace DMS
 
         public override string CompInspectStringExtra()
         {
-            GameComponent_OccultechSanction comp = GameComponent_OccultechSanction.CompSafe;
-            if (comp == null || !comp.PermanentHostile) return null;
-            return comp.HuntSuspended
-                ? "DMS_HuntBreaker_InspectSuspended".Translate(comp.HuntResumeTicksLeft.ToStringTicksToPeriod())
+            if (!FleetTrackingUtility.AnyActive) return null;
+            return FleetTrackingUtility.InBlackout
+                ? "DMS_HuntBreaker_InspectSuspended".Translate(FleetTrackingUtility.BlackoutTicksLeft.ToStringTicksToPeriod())
                 : "DMS_HuntBreaker_InspectActive".Translate();
         }
     }

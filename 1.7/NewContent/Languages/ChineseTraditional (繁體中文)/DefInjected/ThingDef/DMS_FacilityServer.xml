@@ -13,6 +13,9 @@
   <DMS_SageCore.label>賢者</DMS_SageCore.label>
   <DMS_SageCore.description>一種分布式計算的戰略指揮計算機，能夠根據使用需求無上限的擴充輔機並提升計算能力，被殖民艦隊用於殖民星球上的戰略防空以及連接數個大陸上的無數雷達追蹤及導航網路。將其摧毀必然會對殖民艦隊在星球上的追緝行動造成嚴重的影響，但在一兩年內整個SAGE網路內的另一台計算機就會升格為主機繼續接手任務規劃。\n\n它的底層儲存區保留著部分戰略資料庫的副本，駭入時整個設施的警報系統都會被牽動。</DMS_SageCore.description>
 
+  <DMS_OccultechPedestal.label>密鑰伺服主機</DMS_OccultechPedestal.label>
+  <DMS_OccultechPedestal.description>一台先鋒們為了保管封存技術密鑰而搭建的重型電晶體電腦。密鑰就封在它的讀取槽裡，主機至今仍在反覆進行認證，我們的接收器捕捉到的正是這道脈衝。內部的放射性電池足以讓它運作多年，還有餘裕為周圍的防禦設施供電。\n\n只有破解伺服主機的鎖定，密鑰才會被釋出。駭入會觸發整個站點的警報，因此在開始駭入之前最好做充足的防禦準備。若伺服主機先被摧毀，封在裡面的密鑰也會一同損毀。</DMS_OccultechPedestal.description>
+
   <DMS_Building_GasVent.label>毒氣釋放口</DMS_Building_GasVent.label>
   <DMS_Building_GasVent.description>安裝在地板上、連接著設施警報網路的格柵。警報響起時，它會先發出短暫的嘶嘶聲，接著朝周圍噴出大量毒氣。設施裡的機械守軍不需要呼吸，其他人最好戴著防毒面具。它的存量足夠釋放數次，並會從下方的儲氣槽慢慢補充。切斷電源或以EMP癱瘓就能讓它停下，即使正在噴發中也一樣。</DMS_Building_GasVent.description>
   

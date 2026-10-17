@@ -2,11 +2,11 @@
 <Defs>
 
   <!-- ══════════════════════════════════════════════════════════
-       電晶體電腦：設施伺服核心、設施數據輔機、站點伺服主機、賢者 SAGE。
-       可駭入的三台用 DMS.CompProperties_ServerHackable（多階段駭入、每次開工都拉設施警報、每階段掉一件獎勵）；
+       電晶體電腦：設施伺服核心、設施數據輔機、站點伺服主機、賢者 SAGE、密鑰伺服器。
+       可駭入的四台用 DMS.CompProperties_ServerHackable（多階段駭入、每次開工都拉設施警報、每階段掉一件獎勵）；
        SAGE 另掛 DMS.CompProperties_HuntBreaker，打爛時暫停殖民艦隊的隱匿級追殺。
-       Transistor computers: facility server core, facility data rack, site server and SAGE.
-       The three hackable ones use DMS.CompProperties_ServerHackable (multi-stage hacking, every session trips
+       Transistor computers: facility server core, facility data rack, site server, SAGE and glyph server.
+       The four hackable ones use DMS.CompProperties_ServerHackable (multi-stage hacking, every session trips
        the facility alarm, one reward per stage); SAGE also carries DMS.CompProperties_HuntBreaker, which
        suspends the colony fleet's Occulted-tier hunt when it is destroyed.
        ══════════════════════════════════════════════════════════ -->
@@ -256,6 +256,65 @@
       <li Class="DMS.CompProperties_HuntBreaker">
         <suspendYears>1~2</suspendYears>
         <stackDaysWhileSuspended>15</stackDaysWhileSuspended>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 密鑰伺服器：只出現在石碑任務線的撞擊地點版面（GenStructures/SteleQuests/），一次駭入吐出一枚封存技術密鑰，
+       任務靠 CompServerHackable 的獎勵訊號接住它（DMS.QuestPart_SteleKeySite）。伺服器先被摧毀，密鑰就跟著損毀、子任務失敗。
+       兼作配電：輸出電力給附近的砲塔。警報訊號 = 版面守軍的 lordTag（DMS_SteleKeyGroup），開始駭入就喚醒全站守軍。
+       Glyph server: only in the stele line's impact-site layout (GenStructures/SteleQuests/). One hack releases one
+       occultech glyph, which the quest catches through CompServerHackable's reward signal (DMS.QuestPart_SteleKeySite).
+       If the server is destroyed first, the glyph goes with it and the subquest fails.
+       Doubles as a power source for the turrets around it. The alarm signal is the layout garrison's lordTag
+       (DMS_SteleKeyGroup), so starting a hack wakes the whole site's garrison. -->
+  <ThingDef ParentName="DMS_ServerBuildingBase">
+    <defName>DMS_OccultechPedestal</defName>
+    <label>glyph server</label>
+    <description>A heavy transistor computer the pioneers built to hold an occultech glyph. The glyph sits sealed in its reader slot, and the machine still runs its authentication cycle: that is the pulse our receivers pick up. A radioisotope cell inside keeps it running for years, with power to spare for the defenses around it.\n\nThe glyph only comes out once the server's lock is broken. Hacking it will set off the whole site's alarm, so prepare your defenses before you start. If the server is destroyed first, the glyph inside goes with it.</description>
+    <graphicData>
+      <texPath>Things/Building/AlertCaller/DMS_OccultechPedestal</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <shadowData>
+        <volume>(2.8, 0.8, 2.8)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <hasInteractionCell>false</hasInteractionCell>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <Mass>700</Mass>
+    </statBases>
+    <comps>
+      <li Class="Fortified.CompProperties_SubstationPower">
+        <basePowerConsumption>-5000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+        <safeShutdownSkillLevel>0</safeShutdownSkillLevel>
+        <shockChance>0</shockChance>
+      </li>
+      <li Class="DMS.CompProperties_ServerHackable">
+        <defence>6000</defence>
+        <defencePerStage>6000</defencePerStage>
+        <stageCount>1</stageCount>
+        <effectHacking>HackingTerminal</effectHacking>
+        <intellectualSkillPrerequisite>6</intellectualSkillPrerequisite>
+        <lockoutDurationHoursRange>6~12</lockoutDurationHoursRange>
+        <glowIfHacked>false</glowIfHacked>
+        <alertIncrement>100</alertIncrement>
+        <alarmSound>FlickSwitch</alarmSound>
+        <alarmSignal>DMS_SteleKeyGroup</alarmSignal>
+        <fallbackThing>DMS_OccultechKey</fallbackThing>
+        <rewards>
+          <li>
+            <kind>Thing</kind>
+            <thingDef>DMS_OccultechKey</thingDef>
+            <weight>999</weight>
+            <maxPerBuilding>1</maxPerBuilding>
+          </li>
+        </rewards>
       </li>
     </comps>
   </ThingDef>

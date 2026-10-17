@@ -88,13 +88,26 @@ namespace DMS
 
         public float UnpausedTime => unpausedTime;
 
+        /// <summary>
+        /// 遊戲場景的音樂管理器；主選單場景（Root_Entry）也可能有 Game 在跑組件更新，那時為 null。
+        /// <c>Find.MusicManagerPlay</c> 直接強制轉型 Root_Play，在那裡會丟例外。
+        ///
+        /// The play scene's music manager; null in the entry scene (Root_Entry), which can also hold a Game and run
+        /// component updates. <c>Find.MusicManagerPlay</c> hard-casts to Root_Play and throws there.
+        /// </summary>
+        public static MusicManagerPlay PlayMusic => (Current.Root as Root_Play)?.musicManagerPlay;
+
         public override void GameComponentUpdate()
         {
+            MusicManagerPlay music = PlayMusic;
+            if (music == null)
+            {
+                return;
+            }
             if (!Find.TickManager.Paused)
             {
                 unpausedTime += Mathf.Min(Time.deltaTime, MaxFrameSeconds);
             }
-            MusicManagerPlay music = Find.MusicManagerPlay;
             bool forced = ForcedSongPlaying(music);
             Refresh(music, forced);
             DriveTransitions(music, forced);

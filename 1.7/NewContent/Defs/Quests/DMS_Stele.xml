@@ -5,16 +5,17 @@
        石碑任務線（程式在 _Source/DMS/Quests/Stele/）。
        1. DMS_Stele：主線。研究「量子位元破譯」完成時由 DMS.ModExtension_ResearchQuest 派發（一局一次），
           說書人不會抽到。陸續派發撞擊地點子任務，直到帶回 keysCount 枚密鑰。
-       2. DMS_SteleKey_ImpactSite：撞擊地點。先鋒殘餘守著墜落的密鑰艙；帶走密鑰即成功，
-          留在站點上（隨地圖消失）即失敗，主線之後會補發。
+       2. DMS_SteleKey_ImpactSite：撞擊地點。先鋒殘餘守著密鑰艙砸毀的設施廢墟，密鑰封在密鑰伺服器裡，駭入才會吐出來；
+          帶走密鑰即成功，留在站點上（隨地圖消失）或伺服器先被摧毀即失敗，主線之後會補發。
        3. DMS_SteleVault：石碑封藏庫。密鑰集齊後解讀並用掉，派發這個最終站點；
           把石碑（可微縮，500 kg）帶回據點即主線成功。石碑遺失時 3~5 天後指出下一座。
 
        Stele line (code in _Source/DMS/Quests/Stele/).
        1. DMS_Stele: main line. Issued once per game by DMS.ModExtension_ResearchQuest when qubit decryption is
           researched; never picked by the storyteller. Issues impact-site subquests until keysCount glyphs are home.
-       2. DMS_SteleKey_ImpactSite: Legacy remnants hold a crashed glyph capsule. Taking the glyph succeeds; leaving
-          it behind (it vanishes with the map) fails and the main line issues another later.
+       2. DMS_SteleKey_ImpactSite: Legacy remnants hold the installation a glyph capsule wrecked; the glyph is sealed
+          in a glyph server and only comes out when it is hacked. Taking the glyph succeeds; leaving it behind (it
+          vanishes with the map) or destroying the server first fails, and the main line issues another later.
        3. DMS_SteleVault: the glyphs are read and spent, then this final site is issued. Bringing the stele
           (minifiable, 500 kg) home completes the line. A lost stele points to the next vault in 3~5 days.
        ============================================================ -->
@@ -58,13 +59,13 @@
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->Our receivers have caught the authentication pulse of an occultech glyph. The fleets deliver glyphs to pioneer installations by orbital drop, and this capsule never reached its beacon: it came down hard, and the pioneers sheltered it where it fell. The Legacy remnants assigned to the impact site are still holding it.\n\nThe glyph is inside the shelter at the centre of the site. Take it and bring it home. If we leave it behind, it will be lost with the site.</li>
+        <li>questDescription->Our receivers have caught the authentication pulse of an occultech glyph. The fleets deliver glyphs to pioneer installations by orbital drop, and this capsule came in far too hard: it broke apart over the installation it was meant for and buried it in wreckage. The pioneers dug the glyph out of the debris and sealed it in a glyph server deep in the ruins. The Legacy remnants assigned to the site are still holding it.\n\nFind the glyph server and hack it to release the glyph, then bring the glyph home. Starting the hack will alert the whole garrison, and if the server is destroyed, the glyph goes with it. If we leave the glyph behind, it will be lost with the site.</li>
       </rulesStrings>
     </questDescriptionRules>
     <questContentRules>
       <rulesStrings>
         <li>letterLabelMapGenerated->Glyph capsule wreckage</li>
-        <li>letterTextMapGenerated->Wreckage from the glyph capsule is strewn around the pioneers' shelter, and the remnants guarding it have already noticed us.\n\nThe glyph is inside the shelter. It only counts once it is home.</li>
+        <li>letterTextMapGenerated->Wreckage from the glyph capsule lies strewn across the ruined installation, and the remnants guarding it are still at their posts.\n\nThe glyph is sealed in the glyph server inside the ruins. Hacking it will alert the whole garrison. The glyph only counts once it is home.</li>
       </rulesStrings>
     </questContentRules>
     <questAvailableLetterLabel>Occultech glyph found: Impact site</questAvailableLetterLabel>

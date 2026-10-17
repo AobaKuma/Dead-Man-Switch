@@ -117,8 +117,11 @@ namespace DMS
 	}
 
 	/// <summary>
-	/// 撞擊地點：先鋒殘餘守著一處墜落的密鑰艙，密鑰在站點中央的掩體裡。
-	/// Impact site: Legacy remnants hold a crashed glyph capsule; the glyph sits in the shelter at the centre.
+	/// 撞擊地點：先鋒殘餘守著密鑰艙砸毀的設施殘骸，密鑰封在殘骸裡的密鑰伺服器中，駭入才會吐出來
+	/// （追蹤見 <see cref="QuestPart_SteleKeySite"/>）。
+	/// Impact site: Legacy remnants hold the wreck of the installation the glyph capsule crashed into; the glyph is
+	/// sealed in a glyph server in the wreckage and only comes out when it is hacked (tracked by
+	/// <see cref="QuestPart_SteleKeySite"/>).
 	/// </summary>
 	public class QuestNode_Root_OccultechKey_Site : QuestNode_Root_SteleSite
 	{
