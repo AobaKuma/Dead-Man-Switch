@@ -172,9 +172,6 @@
       <DMS_ChunkSlag>3</DMS_ChunkSlag>
       <ComponentIndustrial>3</ComponentIndustrial>
     </butcherProducts>
-    <killedLeavingsPlayerHostile>
-      <ComponentFireControl>1</ComponentFireControl>
-    </killedLeavingsPlayerHostile>
     <castEdgeShadows>false</castEdgeShadows>
     <staticSunShadowHeight>0</staticSunShadowHeight>
   </ThingDef>
