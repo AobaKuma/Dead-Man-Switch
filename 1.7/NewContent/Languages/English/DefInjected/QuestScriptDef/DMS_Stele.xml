@@ -14,11 +14,11 @@
     <li>questName->Impact site</li>
   </DMS_SteleKey_ImpactSite.questNameRules.rulesStrings>
   <DMS_SteleKey_ImpactSite.questDescriptionRules.rulesStrings>
-    <li>questDescription->Our receivers have caught the authentication pulse of an occultech glyph. The fleets deliver glyphs to pioneer installations by orbital drop, and this capsule never reached its beacon: it came down hard, and the pioneers sheltered it where it fell. The Legacy remnants assigned to the impact site are still holding it.\n\nThe glyph is inside the shelter at the centre of the site. Take it and bring it home. If we leave it behind, it will be lost with the site.</li>
+    <li>questDescription->Our receivers have caught the authentication pulse of an occultech glyph. The fleets deliver glyphs to pioneer installations by orbital drop, and this capsule came in far too hard: it broke apart over the installation it was meant for and buried it in wreckage. The pioneers dug the glyph out of the debris and sealed it in a glyph server deep in the ruins. The Legacy remnants assigned to the site are still holding it.\n\nFind the glyph server and hack it to release the glyph, then bring the glyph home. Starting the hack will alert the whole garrison, and if the server is destroyed, the glyph goes with it. If we leave the glyph behind, it will be lost with the site.</li>
   </DMS_SteleKey_ImpactSite.questDescriptionRules.rulesStrings>
   <DMS_SteleKey_ImpactSite.questContentRules.rulesStrings>
     <li>letterLabelMapGenerated->Glyph capsule wreckage</li>
-    <li>letterTextMapGenerated->Wreckage from the glyph capsule is strewn around the pioneers' shelter, and the remnants guarding it have already noticed us.\n\nThe glyph is inside the shelter. It only counts once it is home.</li>
+    <li>letterTextMapGenerated->Wreckage from the glyph capsule lies strewn across the ruined installation, and the remnants guarding it are still at their posts.\n\nThe glyph is sealed in the glyph server inside the ruins. Hacking it will alert the whole garrison. The glyph only counts once it is home.</li>
   </DMS_SteleKey_ImpactSite.questContentRules.rulesStrings>
   <DMS_SteleKey_ImpactSite.questAvailableLetterLabel>Occultech glyph found: Impact site</DMS_SteleKey_ImpactSite.questAvailableLetterLabel>
 

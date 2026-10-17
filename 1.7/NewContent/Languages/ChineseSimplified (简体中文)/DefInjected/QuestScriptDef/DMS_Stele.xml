@@ -14,11 +14,11 @@
     <li>questName->撞击地点</li>
   </DMS_SteleKey_ImpactSite.questNameRules.rulesStrings>
   <DMS_SteleKey_ImpactSite.questDescriptionRules.rulesStrings>
-    <li>questDescription->我们的接收器捕捉到了一枚封存技术密钥的认证脉冲。舰队以轨道投放的方式将密钥送往先锋们的设施，但这枚密钥舱没能抵达它的灯塔，而是重重地坠落在地，先锋们只好就地为它搭起了掩体。被指派看守撞击地点的先锋残余至今仍驻守在那里。\n\n密钥就放在站点中央的掩体内。将它带回殖民地；若是留在原地，它就会随着站点一同遗失。</li>
+    <li>questDescription->我们的接收器捕捉到了一枚封存技术密钥的认证脉冲。舰队以轨道投放的方式将密钥送往先锋们的设施，但这枚密钥舱的落速太快，在它要送达的设施上空解体，残骸把整座设施砸成了废墟。先锋们从残骸中挖出密钥，将它封进废墟深处的一台密钥伺服主机。被指派看守这处站点的先锋残余至今仍驻守在那里。\n\n找到密钥伺服主机并骇入它来释出密钥，再将密钥带回殖民地。一旦开始骇入，全站的守军都会被惊动；若伺服主机遭到摧毁，密钥也会随之损毁。若是将密钥留在原地，它就会随着站点一同遗失。</li>
   </DMS_SteleKey_ImpactSite.questDescriptionRules.rulesStrings>
   <DMS_SteleKey_ImpactSite.questContentRules.rulesStrings>
     <li>letterLabelMapGenerated->密钥舱残骸</li>
-    <li>letterTextMapGenerated->密钥舱的残骸散落在先锋们搭起的掩体周围，看守它的先锋残余已经察觉到我们了。\n\n密钥就在掩体里。只有带回殖民地才算真正取得。</li>
+    <li>letterTextMapGenerated->密钥舱的残骸散落在整座设施废墟之中，看守它的先锋残余仍坚守在各自的岗位上。\n\n密钥封在废墟里的密钥伺服主机中，骇入它会惊动全站的守军。只有带回殖民地才算真正取得。</li>
   </DMS_SteleKey_ImpactSite.questContentRules.rulesStrings>
   <!-- EN: Occultech glyph found: Impact site -->
   <DMS_SteleKey_ImpactSite.questAvailableLetterLabel>发现封存技术密钥：撞击地点</DMS_SteleKey_ImpactSite.questAvailableLetterLabel>

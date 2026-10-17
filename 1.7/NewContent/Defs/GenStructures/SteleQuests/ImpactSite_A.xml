@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <!-- ============================================================
+       撞擊地點（DMS_SteleImpactSite）：198x198，密鑰艙在設施上空解體後留下的殘骸廢墟，遍地彈坑與毀損艙壁。
+       密鑰封在西南區的密鑰伺服器（DMS_OccultechPedestal，(69, 62)），由守墓人、700 點守軍與 MK44 砲塔看守；
+       任務靠伺服器吐出密鑰的訊號追蹤（DMS.QuestPart_SteleKeySite），版面裡不直接放密鑰。
+       各房間的 PawnGroupInRoom 共用 lordTag DMS_SteleKeyGroup：伺服器的警報訊號就是它，開始駭入會喚醒全部守軍。
+       西北角另有一間由方陣守著、以門禁控制台開啟的封閉儲藏室。
+
+       Impact site (DMS_SteleImpactSite): 198x198, the wreck field left when the glyph capsule broke apart over an
+       installation, cratered and strewn with broken hull plating. The glyph is sealed in the glyph server
+       (DMS_OccultechPedestal, (69, 62)) in the south-west block, guarded by a gravekeeper, a 700-point squad and an
+       MK44 turret; the quest tracks the glyph through the server's release signal (DMS.QuestPart_SteleKeySite), so
+       the layout places no glyph itself. Every room's PawnGroupInRoom shares the lordTag DMS_SteleKeyGroup, which is
+       also the server's alarm signal: starting the hack wakes the whole garrison. A Phalanx-guarded storeroom behind
+       a sealed door linked to an access console sits in the north-west corner.
+       ============================================================ -->
   <Fortified.Structures.FFF_StructureDef>
     <defName>DMS_ImpactSite_A</defName>
     <size>(198, 198)</size>

@@ -49,11 +49,13 @@ namespace DMS
 		}
 
 		/// <summary>
-		/// 版面沒有放出指定物件時的保底：在地圖中央附近找空地生成一個。
-		/// Fallback when the layout failed to place the thing: spawn one on clear ground near the map centre.
+		/// 版面沒有放出指定物件時的保底：在 near（預設地圖中央）附近找空地生成一個。
+		/// Fallback when the layout failed to place the thing: spawn one on clear ground near <paramref name="near"/>
+		/// (the map centre by default).
 		/// </summary>
-		public static Thing SpawnFallback(ThingDef def, Map map, Faction faction = null)
+		public static Thing SpawnFallback(ThingDef def, Map map, Faction faction = null, IntVec3? near = null)
 		{
+			IntVec3 root = near ?? map.Center;
 			Thing thing = ThingMaker.MakeThing(def);
 			if (faction != null)
 			{
@@ -71,20 +73,26 @@ namespace DMS
 				}
 				return true;
 			}
-			if (!CellFinder.TryFindRandomCellNear(map.Center, map, 30, Fits, out IntVec3 spot))
+			if (!CellFinder.TryFindRandomCellNear(root, map, 30, Fits, out IntVec3 spot))
 			{
-				spot = CellFinder.RandomClosewalkCellNear(map.Center, map, 30);
+				spot = CellFinder.RandomClosewalkCellNear(root, map, 30);
 			}
 			return GenSpawn.Spawn(thing, spot, map, Rot4.North, WipeMode.VanishOrMoveAside);
 		}
 	}
 
 	/// <summary>
-	/// 撞擊地點子任務：地圖生成時記下站點上的密鑰；密鑰被玩家帶走即成功，
-	/// 玩家離開時密鑰還留在站點上（隨地圖一起消失）即失敗。主線會在之後補發新的訊號。
+	/// 撞擊地點子任務：密鑰封在站點的密鑰伺服器裡（DMS_OccultechPedestal，見 GenStructures/SteleQuests/），
+	/// 駭入才會吐出來。地圖生成時替伺服器掛上任務標籤，從 <see cref="CompServerHackable"/> 的獎勵訊號接住密鑰；
+	/// 密鑰被玩家帶走即成功。玩家離開時密鑰還留在站點上（隨地圖一起消失），或地圖還在時伺服器／密鑰已被摧毀，
+	/// 即失敗，主線會在之後補發新的訊號。版面直接放密鑰（舊版面）也照樣追蹤。
 	///
-	/// Impact site subquest: records the site's glyph when the map generates. Taking the glyph succeeds;
-	/// leaving it behind (it vanishes with the map) fails, and the main line will issue another signal later.
+	/// Impact site subquest: the glyph is sealed in the site's glyph server (DMS_OccultechPedestal, see
+	/// GenStructures/SteleQuests/) and only comes out when it is hacked. On map generation the server gets a quest tag
+	/// and the glyph is caught from <see cref="CompServerHackable"/>'s reward signal; taking the glyph succeeds.
+	/// Leaving it behind (it vanishes with the map), or the server or glyph being destroyed while the map still exists,
+	/// fails, and the main line will issue another signal later. A glyph placed directly by the layout (the old
+	/// layout) is still tracked.
 	/// </summary>
 	public class QuestPart_SteleKeySite : QuestPartActivable
 	{
@@ -98,7 +106,19 @@ namespace DMS
 
 		private List<Thing> keys = new List<Thing>();
 
+		/// <summary>還沒吐出密鑰的密鑰伺服器。Glyph servers that have not released their glyph yet.</summary>
+		private List<Thing> servers = new List<Thing>();
+
+		/// <summary>地圖生成後已記下密鑰／伺服器；在此之前不判定遺失。Set once the map's glyphs/servers are recorded; nothing counts as lost before.</summary>
+		private bool recorded;
+
 		private bool resolved;
+
+		/// <summary>
+		/// 伺服器的任務標籤；由任務 ID 推得，不必存檔，舊存檔裡尚未生成地圖的子任務也適用。
+		/// The servers' quest tag; derived from the quest ID so nothing is saved and subquests from old saves work too.
+		/// </summary>
+		private string ServerTag => "Quest" + quest.id + ".glyphServer";
 
 		protected override void ProcessQuestSignal(Signal signal)
 		{
@@ -111,6 +131,19 @@ namespace DMS
 			{
 				RecordKeys();
 			}
+			else if (signal.tag == ServerTag + "." + CompServerHackable.HackRewardSignal)
+			{
+				signal.args.TryGetArg("SUBJECT", out Thing server);
+				signal.args.TryGetArg("REWARD", out Thing reward);
+				if (reward?.def == DMS_DefOf.DMS_OccultechKey)
+				{
+					servers.Remove(server);
+					if (!keys.Contains(reward))
+					{
+						keys.Add(reward);
+					}
+				}
+			}
 			else if (signal.tag == inSignalMapRemoved)
 			{
 				// 地圖移除時留在上面的物品會被標成 Destroyed，還活著的就是被帶走了。
@@ -121,7 +154,7 @@ namespace DMS
 				}
 				else
 				{
-					Fail();
+					Fail(destroyed: false);
 				}
 			}
 		}
@@ -135,23 +168,52 @@ namespace DMS
 			}
 			keys.Clear();
 			keys.AddRange(map.listerThings.ThingsOfDef(DMS_DefOf.DMS_OccultechKey));
-			if (keys.Count == 0)
+			servers.Clear();
+			servers.AddRange(map.listerThings.ThingsOfDef(DMS_DefOf.DMS_OccultechPedestal));
+			foreach (Thing server in servers)
 			{
-				Log.Warning("[DMS] Impact site generated without an occultech glyph; spawning one near the map centre.");
+				QuestUtility.AddQuestTag(server, ServerTag);
+			}
+			if (keys.Count == 0 && servers.Count == 0)
+			{
+				Log.Warning("[DMS] Impact site generated without an occultech glyph or glyph server; spawning a glyph near the map centre.");
 				keys.Add(SteleQuestUtility.SpawnFallback(DMS_DefOf.DMS_OccultechKey, map));
 			}
+			recorded = true;
 		}
 
 		public override void QuestPartTick()
 		{
 			base.QuestPartTick();
-			if (resolved || keys.Count == 0 || !SteleQuestUtility.IsCheckTick(quest))
+			if (resolved || !recorded || !SteleQuestUtility.IsCheckTick(quest))
 			{
 				return;
 			}
 			if (keys.Any(SteleQuestUtility.IsHeldByPlayer))
 			{
 				Succeed();
+				return;
+			}
+			// 地圖移除另由訊號處理（那時地圖上的東西都會變成 Destroyed）。Map removal is the signal's job (everything on it reads as Destroyed then).
+			Map map = site?.Map;
+			if (map == null)
+			{
+				return;
+			}
+			for (int i = servers.Count - 1; i >= 0; i--)
+			{
+				Thing server = servers[i];
+				if (server != null && !server.Destroyed && server.TryGetComp<CompServerHackable>() is CompServerHackable comp && comp.FullyHacked)
+				{
+					// 駭完卻沒接到密鑰（附近放不下）：在伺服器旁補一枚。Hacked but no glyph came through (nowhere to put it): drop one beside the server.
+					Log.Warning("[DMS] Glyph server was hacked without releasing a glyph; spawning one beside it.");
+					servers.RemoveAt(i);
+					keys.Add(SteleQuestUtility.SpawnFallback(DMS_DefOf.DMS_OccultechKey, map, near: server.Position));
+				}
+			}
+			if (!keys.Any(k => k != null && !k.Destroyed) && !servers.Any(s => s != null && !s.Destroyed))
+			{
+				Fail(destroyed: true);
 			}
 		}
 
@@ -164,11 +226,12 @@ namespace DMS
 			quest.End(QuestEndOutcome.Success, sendLetter: false);
 		}
 
-		private void Fail()
+		private void Fail(bool destroyed)
 		{
 			resolved = true;
 			NotifyParent();
-			Find.LetterStack.ReceiveLetter("DMS_Stele_GlyphLostLabel".Translate(), "DMS_Stele_GlyphLostText".Translate(),
+			Find.LetterStack.ReceiveLetter("DMS_Stele_GlyphLostLabel".Translate(),
+				(destroyed ? "DMS_Stele_GlyphDestroyedText" : "DMS_Stele_GlyphLostText").Translate(),
 				LetterDefOf.NegativeEvent, null, null, quest);
 			Complete();
 			quest.End(QuestEndOutcome.Fail, sendLetter: false);
@@ -190,11 +253,17 @@ namespace DMS
 			Scribe_References.Look(ref site, "site");
 			Scribe_Values.Look(ref signalSteleSubquestCompleted, "signalSteleSubquestCompleted");
 			Scribe_Values.Look(ref resolved, "resolved", defaultValue: false);
+			Scribe_Values.Look(ref recorded, "recorded", defaultValue: false);
 			Scribe_Collections.Look(ref keys, "keys", saveDestroyedThings: false, lookMode: LookMode.Reference);
+			Scribe_Collections.Look(ref servers, "servers", saveDestroyedThings: false, lookMode: LookMode.Reference);
 			if (Scribe.mode == LoadSaveMode.PostLoadInit)
 			{
 				keys ??= new List<Thing>();
 				keys.RemoveAll(k => k == null);
+				servers ??= new List<Thing>();
+				servers.RemoveAll(s => s == null);
+				// 舊存檔沒有 recorded：已記下密鑰就視為已記錄。Old saves lack recorded: tracked glyphs mean the map was recorded.
+				recorded |= keys.Count > 0;
 			}
 		}
 

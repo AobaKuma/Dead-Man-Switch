@@ -22,6 +22,8 @@ namespace DMS
         public static PawnKindDef DMS_Escort;
         public static ThingDef DMS_Shuttle;
         public static ThingDef DMS_OccultechKey;
+        // 撞擊地點的密鑰伺服器：駭入才吐出密鑰(見 QuestPart_SteleKeySite)
+        public static ThingDef DMS_OccultechPedestal;
         // 人工肌肉:模組選項可關閉其腐爛(見 Patch_CompRottable_Active)
         public static ThingDef Artifuscle;
 		public static TransportShipDef DMS_Ship_TransportShuttle;
