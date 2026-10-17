@@ -289,6 +289,7 @@
     <defName>DMS_Mech_Dogge</defName>
     <label>dogge</label>
     <race>DMS_Mech_Dogge</race>
+    <weaponMoney>1800~4000</weaponMoney>
     <isFighter>true</isFighter>
     <!-- 介於 Soldat_B（80）與方陣（120）之間：血量、裝甲與速度都勝過 Soldat，另有背載機槍。
          原本 30 點讓它在低點數時被當成填充兵大量生成。

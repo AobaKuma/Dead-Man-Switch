@@ -112,6 +112,7 @@ namespace DMS
         }
     }
 
+    [StaticConstructorOnStartup]
     public class CompSingularityGraphic : ThingComp
     {
         private struct Arc

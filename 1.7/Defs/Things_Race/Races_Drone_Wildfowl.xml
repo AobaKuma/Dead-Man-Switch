@@ -98,9 +98,6 @@
         <li>
           <def>MechanoidFullyFormed</def>
           <minAge>0</minAge>
-          <soundWounded MayRequire="Ludeon.RimWorld.Odyssey">Pawn_Hunter_Wounded</soundWounded>
-          <soundDeath MayRequire="Ludeon.RimWorld.Odyssey">Pawn_Hunter_Death</soundDeath>
-          <soundCall MayRequire="Ludeon.RimWorld.Odyssey">Pawn_Hunter_Call</soundCall>
         </li>
       </lifeStageAges>
     </race>

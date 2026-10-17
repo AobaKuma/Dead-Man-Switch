@@ -22,5 +22,6 @@
 		<li IfModActive="solaris.ratkinracemod,solaris.ratkinracemod_steam">1.7/Mod/RK</li>
 		<li IfModActive="ASEL.MonolynRace,ASEL.MonolynRace_steam">1.7/Mod/Monolyn</li>
 		<li>1.7/NewContent</li>
+		<li IfModActive="Ludeon.RimWorld.Odyssey">1.7/Odyssey</li>
 	</v1.7>
 </loadFolders>

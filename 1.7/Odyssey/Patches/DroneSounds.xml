@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Load only with Odyssey: 1.7 creates undefined SoundDefs even for optional references. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DMS_Drone_Wildfowl"]/race/lifeStageAges/li</xpath>
+    <value>
+      <soundWounded>Pawn_Hunter_Wounded</soundWounded>
+      <soundDeath>Pawn_Hunter_Death</soundDeath>
+      <soundCall>Pawn_Hunter_Call</soundCall>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DMS_Building_FPVNest" or defName="DMS_Building_FPVHanger"]/comps/li[@Class="Fortified.CompProperties_AlertEffector_ReleaseEntity"]</xpath>
+    <value>
+      <spawnSound>DroneTrapSpring</spawnSound>
+    </value>
+  </Operation>
+</Patch>
