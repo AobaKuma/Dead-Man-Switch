@@ -25,19 +25,18 @@
     <requiresFaction>true</requiresFaction>
     <wantsThreatPoints>true</wantsThreatPoints>
     <considerEnteringAsAttack>true</considerEnteringAsAttack>
-    <minMapSize>(200, 0, 200)</minMapSize>
+    <minMapSize>(250, 0, 250)</minMapSize>
     <gravShipsCanLandOn>false</gravShipsCanLandOn>
     <approachOrderString>Assault {0}</approachOrderString>
     <approachingReportString>Assaulting {0}.</approachingReportString>
     <tags>
       <li>DMS_SteleKey</li>
     </tags>
-    <modExtensions>
-      <!-- 情境音樂：地表站點。Situational music context: surface installation. -->
+    <!--<modExtensions>
       <li Class="DMS.ModExtension_DMSMusicContext">
         <context>Installation</context>
       </li>
-    </modExtensions>
+    </modExtensions>-->
   </SitePartDef>
 
   <GenStepDef>
@@ -83,12 +82,11 @@
     <tags>
       <li>DMS_SteleVault</li>
     </tags>
-    <modExtensions>
-      <!-- 情境音樂：地表站點。Situational music context: surface installation. -->
+    <!--<modExtensions>
       <li Class="DMS.ModExtension_DMSMusicContext">
         <context>Installation</context>
       </li>
-    </modExtensions>
+    </modExtensions>-->
   </SitePartDef>
 
   <GenStepDef>

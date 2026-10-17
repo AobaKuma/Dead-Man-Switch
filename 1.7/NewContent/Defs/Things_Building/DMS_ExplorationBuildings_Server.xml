@@ -260,4 +260,57 @@
     </comps>
   </ThingDef>
 
+  <!-- Glyph server: 1 hack for occultech glyph. Only in the
+       stele questline sites; transmits power so nearby turrets would work. -->
+  <ThingDef ParentName="DMS_ServerBuildingBase">
+    <defName>DMS_OccultechPedestal</defName>
+    <label>glyph server</label>
+    <description>A sizable transistor computer. Old but extremely reliable, machines like this serve as paperless office and records hosts throughout the colony fleet's facilities. A special radioisotope cell inside keeps it running for years without anyone tending it.\n\nThe lower data layers of these server cores usually hold backups of important technical blueprints and access key records. Breaking into it will inevitably set off the whole facility's alarm response, so it is best to prepare your defenses before you start hacking.</description>
+    <graphicData>
+      <texPath>Things/Building/AlertCaller/DMS_OccultechPedestal</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <shadowData>
+        <volume>(2.8, 0.8, 2.8)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <hasInteractionCell>false</hasInteractionCell>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <Mass>700</Mass>
+    </statBases>
+    <comps>
+      <li Class="Fortified.CompProperties_SubstationPower">
+        <basePowerConsumption>-5000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+        <safeShutdownSkillLevel>0</safeShutdownSkillLevel>
+        <shockChance>0</shockChance>
+      </li>
+      <li Class="DMS.CompProperties_ServerHackable">
+        <defence>6000</defence>
+        <defencePerStage>6000</defencePerStage>
+        <stageCount>1</stageCount>
+        <effectHacking>HackingTerminal</effectHacking>
+        <intellectualSkillPrerequisite>6</intellectualSkillPrerequisite>
+        <lockoutDurationHoursRange>6~12</lockoutDurationHoursRange>
+        <glowIfHacked>false</glowIfHacked>
+        <alertIncrement>100</alertIncrement>
+        <alarmSound>FlickSwitch</alarmSound>
+        <alarmSignal>DMS_AlertGlyphUnsealed</alarmSignal>
+        <fallbackThing>DMS_OccultechKey</fallbackThing>
+        <rewards>
+          <li>
+            <kind>Thing</kind>
+            <thingDef>DMS_OccultechKey</thingDef>
+            <weight>999</weight>
+            <maxPerBuilding>1</maxPerBuilding>
+          </li>
+        </rewards>
+      </li>
+    </comps>
+  </ThingDef>
+
 </Defs>
