@@ -190,7 +190,7 @@ namespace DMS
             text.Clear();
             Map map = Find.CurrentMap;
             text.AppendLine($"DMS music: {music.State}  (yield {music.Yield})");
-            MusicManagerPlay manager = Find.MusicManagerPlay;
+            MusicManagerPlay manager = GameComponent_DMSMusic.PlayMusic;
             if (manager != null)
             {
                 MusicSequenceDef sequence = manager.TriggeredTransition?.def?.sequence;
