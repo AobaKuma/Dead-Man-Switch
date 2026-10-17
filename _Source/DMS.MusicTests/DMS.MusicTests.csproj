@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    情境音樂狀態規則的測試。只連結 DMS/Music 下不依賴 RimWorld 的檔案，不需要遊戲組件。
+    執行：在本資料夾執行 dotnet run，全部通過時結束碼為 0。
+    Tests for the situational-music state rules. Links only the RimWorld-free files under DMS/Music, so no game
+    assemblies are needed. Run dotnet run in this folder; the exit code is 0 when everything passes.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>10.0</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <RootNamespace>DMS.MusicTests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\DMS\Music\DMSMusicState.cs" Link="Linked\DMSMusicState.cs" />
+    <Compile Include="..\DMS\Music\DMSMusicGameState.cs" Link="Linked\DMSMusicGameState.cs" />
+    <Compile Include="..\DMS\Music\DMSMusicClientState.cs" Link="Linked\DMSMusicClientState.cs" />
+    <Compile Include="..\DMS\Music\DMSMusicDebugInjection.cs" Link="Linked\DMSMusicDebugInjection.cs" />
+    <Compile Include="*.cs" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- ============ 軍火庫舊址 Old arsenal ============ -->
+  <!-- EN: old arsenal -->
+  <DMS_ArsenalSite.label>軍火庫舊址</DMS_ArsenalSite.label>
+  <!-- EN: A semi-underground bunker complex once run by the vanguard colonists stationed in this region. As their mission changed, the bunkers were emptied over several relocations and then abandoned; what was left inside is equipment too awkward to move or past its service life, and some of those stores may still be there. The unmanned security system is still running, though, so breaking in carries risks no one can predict.\n\nThe facility is patrolled by one to five gravekeepers. The bunker seals are slaved to the life signs of an old but still devastating ultra-heavy bipedal automatroid: the decoy radar on the central pad can call a tarbosaurus in, and if we want to strip the bunkers it has to be destroyed first. -->
+  <DMS_ArsenalSite.description>一個半地下化的洞庫設施，曾經由那些在此地區駐紮的先鋒殖民者們所管理。不過隨著任務性質的調整，這些洞庫在經歷幾次搬遷移出大部分物資之後便被廢棄，剩下部分不易運輸或超出使用年限的裝備遺留在內。一些被留下的物資可能仍留在原地。但無人安保系統仍處於運作狀態，因此如果闖入其中可能依然會有無法預期的風險。\n\n這個設施由一至五架守墓人所巡視。洞庫的封鎖與一架老舊但仍極具破壞力與威脅性的超重型雙足機兵的生命訊號連動：停機坪上的誘餌雷達可以把駭蜥召喚過來，如果想要進入洞庫內部搜刮物資那麼我們必然需要先將其殲滅。</DMS_ArsenalSite.description>
+  <!-- EN: You have arrived at the old arsenal. A fence of steel posts and barbed wire rings the compound; inside, watchtowers cover the roads between the bunkers and the wrecks of old outbuildings, and gravekeepers walk their rounds.\n\nThe bunker seals answer to a tarbosaurus's life signs. The decoy radar on the central pad can call one in; the seals release once it is destroyed. -->
+  <DMS_ArsenalSite.arrivedLetter>你已抵達軍火庫舊址。一圈由鋼牆立柱與鐵絲網組成的圍欄圍住了整座設施；圍欄內，監視塔控制著洞庫之間的道路與散落的舊建築殘骸，守墓人在其間巡視。\n\n洞庫的封鎖與駭蜥的生命訊號連動。停機坪上的誘餌雷達可以召喚一架過來；把牠擊毀，封鎖就會解除。</DMS_ArsenalSite.arrivedLetter>
+
+</LanguageData>

@@ -86,6 +86,9 @@ namespace DMS
                 maxDelay = MaxDelayTicksRange.RandomInRange,
                 inSignalEnable = QuestGen.slate.Get<string>("inSignal"),
                 song = bossgroupDef.GetModExtension<ModExtension_BossSong>()?.GetSong(),
+                // 情境音樂的 Boss 遭遇登記（護衛另記，不算 Boss）。Registers the boss encounter for situational music (escorts kept apart).
+                musicBosses = list3.ToList(),
+                musicEscorts = list2.ToList(),
             };
             questPart_BossgroupArrives.outSignalsCompleted.Add(text);
             quest.AddPart(questPart_BossgroupArrives);
@@ -99,13 +102,15 @@ namespace DMS
             var FactionColored = faction.NameColored.ToString().Named("FACTION");
 
 
-            quest.Letter(LetterDefOf.NeutralEvent, null, null, label: LetterLabelBossgroupSummoned.Formatted(BossLabelCap),
-                text: LetterBossgroupSummoned.Formatted(FactionColored), relatedFaction: faction);
+            // Don't use .Formatted() here: it runs GenText.CapitalizeSentences, which turns
+            // "sent. [escortees0_label]" into "[Escortees0_label]" and breaks grammar resolution.
+            quest.Letter(LetterDefOf.NeutralEvent, null, null, label: Substitute(LetterLabelBossgroupSummoned, BossLabelCap),
+                text: Substitute(LetterBossgroupSummoned, FactionColored), relatedFaction: faction);
             quest.Letter(LetterDefOf.Bossgroup,
-                label: LetterLabelBossgroupArrived.Formatted(BossLabelCap),
+                label: Substitute(LetterLabelBossgroupArrived, BossLabelCap),
                 inSignal: text,
                 chosenPawnSignal: null,
-                text: LetterBossgroupArrived.Formatted(FactionColored, bossgroupDef.LeaderDescription.Named("LEADERDESC"), BossLabel, faction.def.pawnsPlural.Named("PAWNPURAL"), bossgroupDef.GetWaveDescription(waveIndex).Named("WAVEDESC"))
+                text: Substitute(LetterBossgroupArrived, FactionColored, bossgroupDef.LeaderDescription.Named("LEADERDESC"), BossLabel, faction.def.pawnsPlural.Named("PAWNPURAL"), bossgroupDef.GetWaveDescription(waveIndex).Named("WAVEDESC"))
                 , relatedFaction: faction, useColonistsOnMap: null, useColonistsFromCaravanArg: false, signalListenMode: QuestPart.SignalListenMode.OngoingOnly, lookTargets: enumerable);
             QuestPart_Bossgroup questPart_Bossgroup = new QuestPart_Bossgroup();
             questPart_Bossgroup.pawns.AddRange(enumerable);
@@ -115,7 +120,7 @@ namespace DMS
             questPart_Bossgroup.stageLocation = intVec;
             questPart_Bossgroup.inSignal = text;
             quest.AddPart(questPart_Bossgroup);
-            quest.Alert(AlertBossgroupIncoming.Formatted(BossLabelCap),AlertBossgroupIncomingDesc.Formatted(BossLabel), null, critical: true, getLookTargetsFromSignal: false, null, text);
+            quest.Alert(Substitute(AlertBossgroupIncoming, BossLabelCap), Substitute(AlertBossgroupIncomingDesc, BossLabel), null, critical: true, getLookTargetsFromSignal: false, null, text);
             string inSignal4 = QuestGenUtility.HardcodedSignalWithQuestID("escortees.KilledLeavingsLeft");
             quest.ThingAnalyzed(thingDef, delegate
             {
@@ -129,6 +134,17 @@ namespace DMS
                 QuestGen_End.End(quest, QuestEndOutcome.Unknown);
             }, QuestGenUtility.HardcodedSignalWithQuestID("escortees.Killed"));
             quest.End(QuestEndOutcome.Unknown, 0, null, QuestGenUtility.HardcodedSignalWithQuestID("mapParent.Destroyed"));
+        }
+
+        // Plain {NAME} replacement that leaves [grammar] tokens untouched for later quest text resolution.
+        private static string Substitute(string text, params NamedArgument[] args)
+        {
+            if (text.NullOrEmpty()) return text;
+            foreach (NamedArgument arg in args)
+            {
+                text = text.Replace("{" + arg.label + "}", arg.arg?.ToString() ?? string.Empty);
+            }
+            return text;
         }
 
         protected override bool TestRunInt(Slate slate)

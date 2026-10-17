@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       軍火庫舊址：Boss 站點。半地下化的洞庫設施，由一隊 1~5 架守墓人巡視（依站點威脅點數，每 200 點一架）。
+       Boss 是雙足超重型機兵駭蜥（Tarbosaurus）：不在地圖上，玩家要用停機坪上的誘餌雷達（DMS_DecoyRadar）召喚來擊敗。
+       地圖（DMS.GenStep_ArsenalSite，order 400）：
+         核心 = 中央 Boss 停機坪（DMS_Arsenal_Boss）+ 1~3 座洞庫（DMS_Arsenal_A，主結構，至少一座），入口都朝停機坪；
+         次要 = 1~6 座大型監視塔（標籤 DMS_ArsenalWatchtower），各自由變電箱供電；
+         規整的水泥道路（環路 + 輻射道 + 監視塔支線），地圖外圈一整圈鋼牆立柱 + 鐵絲網圍欄，主幹道處留大門。
+       另由 DMS.DMS_GenStep_ScatterStructures（order 1400）隨機散布 3~8 座廢墟衛星結構（標籤 DMS_RuinSatellite）。
+       洞庫、監視塔、廢墟的數量都依站點威脅點數，點數低時結構較少。
+       站點威脅點數是任務點數經原版遠征曲線（Util_AdjustPointsForDistantFight）壓縮後的值；下方各曲線的 x 值
+       300 / 425 / 700 / 800 / 900 / 970 就是原本 1000 / 2000 / 3000 / 4000 / 5000 / 6000 點在沒有重力引擎時壓縮的結果，
+       所以商隊遠征看到的規模與壓縮前相同，帶重力引擎的殖民地點數壓得較少、規模較大。
+       洞庫的密封門同時連到安全控制台（駭入）與 Boss 擊殺中繼器（召來的駭蜥死亡才放行；守墓人不是 Boss，殺了不算）。
+       任務成功 = 站點所有敵人被擊敗（守墓人、通電的砲塔、警報召來的援軍）；召喚駭蜥是為了打開洞庫，跟機場召喚織鳥一樣。
+
+       Old arsenal: a boss site. A semi-underground bunker complex walked by one squad of 1~5 gravekeepers (one per 200
+       site threat points). The boss, the bipedal ultra-heavy tarbosaurus, is not on the map: the player calls it in with the
+       decoy radar (DMS_DecoyRadar) on the pad. Map (DMS.GenStep_ArsenalSite, order 400):
+         core = the boss pad (DMS_Arsenal_Boss) in the middle and 1~3 bunkers (DMS_Arsenal_A, the main structure, always
+         at least one) facing it;
+         secondary = 1~6 large watchtowers (tag DMS_ArsenalWatchtower), each on its own substation cabinet;
+         orderly concrete roads (a ring, spokes and watchtower branches) and a steel-post-and-barbed-wire fence round
+         the whole map with a gate on the trunk road.
+       DMS.DMS_GenStep_ScatterStructures (order 1400) adds 3~8 random ruin satellites (tag DMS_RuinSatellite).
+       Bunker, watchtower and ruin counts all follow the site's threat points, so low-point sites get fewer structures.
+       Site threat points are the quest points cut by vanilla's distant-fight curve (Util_AdjustPointsForDistantFight);
+       the x values 300 / 425 / 700 / 800 / 900 / 970 in the curves below are what the old 1000 / 2000 / 3000 / 4000 /
+       5000 / 6000 points become without a grav engine, so a caravan assault sees the same scale as before, and a
+       colony with a grav engine (cut less) gets a bigger site.
+       Each bunker's sealed door is linked to both its security console (hack) and its boss-kill relay (released when
+       the summoned tarbosaurus dies; gravekeepers are not bosses and don't count). The quest succeeds when every hostile
+       at the site is defeated (gravekeepers, powered turrets and whatever the alarms call in); calling the tarbosaurus is
+       how the bunkers get opened, like calling the weaver at the airfield.
+       ============================================================ -->
+
+  <SitePartDef>
+    <defName>DMS_ArsenalSite</defName>
+    <label>old arsenal</label>
+    <description>A semi-underground bunker complex once run by the vanguard colonists stationed in this region. As their mission changed, the bunkers were emptied over several relocations and then abandoned; what was left inside is equipment too awkward to move or past its service life, and some of those stores may still be there. The unmanned security system is still running, though, so breaking in carries risks no one can predict.\n\nThe facility is patrolled by one to five gravekeepers. The bunker seals are slaved to the life signs of an old but still devastating ultra-heavy bipedal automatroid: the decoy radar on the central pad can call a tarbosaurus in, and if we want to strip the bunkers it has to be destroyed first.</description>
+    <workerClass>DMS.SitePartWorker_ArsenalSite</workerClass>
+    <modExtensions>
+      <!-- Boss 戰需要時間，倒數比一般站點寬鬆。A boss fight takes time; looser countdown than the other sites. -->
+      <li Class="Fortified.FFF_TimedSiteExtension">
+        <baseEntryHours>48</baseEntryHours>
+        <minEntryHours>12</minEntryHours>
+        <maxEntryHours>96</maxEntryHours>
+        <entryLetterLabelKey>DMS_Arsenal_EntryCountdownLabel</entryLetterLabelKey>
+        <entryLetterTextKey>DMS_Arsenal_EntryCountdownText</entryLetterTextKey>
+      </li>
+      <!-- 守墓人分隊：編制與地下儲藏庫相同（掘墓人 2、送葬者 2、守夜人 1，守夜人殿後），
+           每 200 站點威脅點數一架，1~5 架：400 以下 1 架，1000 以上 5 架；從五個名額裡隨機抽，掘墓人優先帶隊。
+           沒有重力引擎時約等於壓縮前的每 1000 點一架（425→2、700→3、800→4），只有第 5 架要到約 6400 點才出現。
+           交戰規則照守墓人：先盤查不開火，被打、有人闖進洞庫或設施警戒值達 0.6 才開火。
+           The gravekeeper squad: the same roster as the underground vault (2 Sepulturero, 2 Enterrador, 1 Velador
+           trailing behind), one per 200 site threat points, 1~5: one below 400, five from 1000; drawn at random from
+           the five slots, a Sepulturero leading when there is one. Without a grav engine that is roughly the old one per
+           1000 uncut points (425→2, 700→3, 800→4); only the fifth now waits until about 6400. Gravekeeper rules of engagement: challenge first and
+           hold fire until attacked, someone enters a bunker or the facility alert reaches 0.6. -->
+      <li Class="DMS.ModExtension_ArsenalSite">
+        <squad>
+          <li>
+            <kind>DMS_Mech_Gravekeeper_Sepulturero</kind>
+            <count>2</count>
+          </li>
+          <li>
+            <kind>DMS_Mech_Gravekeeper_Enterrador</kind>
+            <count>2</count>
+          </li>
+          <li>
+            <kind>DMS_Mech_Gravekeeper_Velador</kind>
+            <count>1</count>
+          </li>
+        </squad>
+        <overwatchKinds>
+          <li>DMS_Mech_Gravekeeper_Velador</li>
+        </overwatchKinds>
+        <pointsPerGuard>200</pointsPerGuard>
+        <guardCount>1~5</guardCount>
+        <labelKind>DMS_Mech_Gravekeeper</labelKind>
+        <sightRange>26</sightRange>
+        <engageAlertLevel>0.6</engageAlertLevel>
+        <calmDownTicks>2500</calmDownTicks>
+        <postPauseTicks>600</postPauseTicks>
+        <challengeMessageKey>DMS_ArsenalPatrol_Challenge</challengeMessageKey>
+        <searchMessageKey>DMS_ArsenalPatrol_Search</searchMessageKey>
+      </li>
+    </modExtensions>
+    <siteTexture>UI/Faction/LegacyIcon</siteTexture>
+    <expandingIconTexture>UI/Faction/LegacyIcon</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <minThreatPoints>800</minThreatPoints>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <approachOrderString>Assault {0}</approachOrderString>
+    <approachingReportString>Assaulting {0}.</approachingReportString>
+    <arrivedLetter>You have arrived at the old arsenal. A fence of steel posts and barbed wire rings the compound; inside, watchtowers cover the roads between the bunkers and the wrecks of old outbuildings, and gravekeepers walk their rounds.\n\nThe bunker seals answer to a tarbosaurus's life signs. The decoy radar on the central pad can call one in; the seals release once it is destroyed.</arrivedLetter>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <tags>
+      <li>DMS_ArsenalSite</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMS_ArsenalSiteLayout</defName>
+    <linkWithSite>DMS_ArsenalSite</linkWithSite>
+    <order>400</order>
+    <genStep Class="DMS.GenStep_ArsenalSite">
+      <bossPadDef>DMS_Arsenal_Boss</bossPadDef>
+      <bunkerDef>DMS_Arsenal_A</bunkerDef>
+      <!-- 規模依站點威脅點數（小數部分隨機進位），點數低時結構較少，但主結構（洞庫）至少一座。
+           x 值是壓縮後的點數（對照見檔頭）：洞庫 300 點 1 座 → 700 點 2 座 → 900 點以上 3 座；
+           監視塔 300 點 1 座 → 425 / 700 / 800 / 900 各多一座 → 970 點以上 6 座。
+           Scale follows the site's threat points (the fraction rounds randomly): fewer structures at low points, but always
+           at least one main structure (bunker). The x values are cut points (see the header): bunkers 1 at 300 → 2 at
+           700 → 3 from 900; watchtowers 1 at 300, one more at each of 425 / 700 / 800 / 900, 6 from 970. -->
+      <bunkerCount>1~3</bunkerCount>
+      <bunkersByPoints>
+        <points>
+          <li>(300, 1)</li>
+          <li>(425, 1.5)</li>
+          <li>(700, 2)</li>
+          <li>(800, 2.5)</li>
+          <li>(900, 3)</li>
+        </points>
+      </bunkersByPoints>
+      <bunkerGap>14</bunkerGap>
+      <towerTag>DMS_ArsenalWatchtower</towerTag>
+      <towerCount>1~6</towerCount>
+      <towersByPoints>
+        <points>
+          <li>(300, 1)</li>
+          <li>(425, 2)</li>
+          <li>(700, 3)</li>
+          <li>(800, 4)</li>
+          <li>(900, 5)</li>
+          <li>(970, 6)</li>
+        </points>
+      </towersByPoints>
+      <towerRadiusPct>0.32</towerRadiusPct>
+      <towerMinRadius>55</towerMinRadius>
+      <towerSpacing>8</towerSpacing>
+      <roadTerrain>Concrete</roadTerrain>
+      <roadWidth>3</roadWidth>
+      <fencePostDef>Wall</fencePostDef>
+      <fencePostStuff>Steel</fencePostStuff>
+      <fenceWireDef>DMS_Building_BarbedWire</fenceWireDef>
+      <!-- 要小於 FFF 的邊緣安全帶（8~20 格），散布的廢墟結構才會全在圍欄內。
+           Keep it inside FFF's edge band (8~20 cells) so the scattered ruins all land inside the fence. -->
+      <fenceInset>6</fenceInset>
+      <gateWidth>7</gateWidth>
+    </genStep>
+  </GenStepDef>
+
+  <!-- 3~8 座廢墟衛星結構（DMS_RuinSat_*，Ruin_Satellites.xml），在主結構、道路、植物都就位後才挑空地放（避開水泥路與保留區域）。
+       座數依站點威脅點數（壓縮後，對照見檔頭）：300 點 3 座 → 900 點以上 8 座。
+       3~8 ruin satellites (DMS_RuinSat_* in Ruin_Satellites.xml), placed once the layout, roads and plants are in
+       (clear of the concrete and reserved rects). Count by site threat points (cut, see the header): 3 at 300 → 8 from 900. -->
+  <GenStepDef>
+    <defName>DMS_ArsenalSiteRuins</defName>
+    <linkWithSite>DMS_ArsenalSite</linkWithSite>
+    <order>1400</order>
+    <genStep Class="DMS.DMS_GenStep_ScatterStructures">
+      <tag>DMS_RuinSatellite</tag>
+      <countRange>3~8</countRange>
+      <countByPoints>
+        <points>
+          <li>(300, 3)</li>
+          <li>(425, 4.25)</li>
+          <li>(700, 5.5)</li>
+          <li>(800, 6.75)</li>
+          <li>(900, 8)</li>
+        </points>
+      </countByPoints>
+      <minSpacing>6</minSpacing>
+      <randomRotation>true</randomRotation>
+      <attemptsPerPiece>80</attemptsPerPiece>
+      <useSiteFaction>true</useSiteFaction>
+    </genStep>
+  </GenStepDef>
+
+  <!-- ==================== 任務腳本 Quest script ==================== -->
+
+  <QuestScriptDef>
+    <defName>DMS_ArsenalAssault</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Military</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Military</failedOrExpiredHistoryEvent>
+    <!-- 隨機任務；門檻設高，讓它只在殖民地扛得住一架 Tarbosaurus 時出現。
+         Random quest; the high floor keeps it away until the colony can take a tarbosaurus. -->
+    <rootSelectionWeight>0.4</rootSelectionWeight>
+    <rootMinPoints>1000</rootMinPoints>
+    <expireDaysRange>4~8</expireDaysRange>
+    <sendAvailableLetter>true</sendAvailableLetter>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->The old arsenal</li>
+        <li>questName->[arsenal]</li>
+        <li>arsenal->Abandoned arsenal</li>
+        <li>arsenal->Buried bunkers</li>
+        <li>arsenal->Guarded stores</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->Old survey records point to a semi-underground arsenal abandoned by the vanguard colonists, with equipment too awkward to move or past its service life still inside. Its unmanned security still runs, now answering to [siteFactionName].\n\n(*Threat)[guardCount] [guardLabel](/Threat) patrol the site. The bunker seals answer to a tarbosaurus's life signs: call one in with the decoy radar on the central pad and destroy it, then hack each bunker's console to get inside.\n\nThe position holds for [siteTimeout]. Once you enter, the site will summon reinforcements after a countdown.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="Fortified.QuestNode_Root_FFF_TimedHostileSite">
+      <factionDef>DMS_Legacy</factionDef>
+      <sitePartDef>DMS_ArsenalSite</sitePartDef>
+      <!-- 站點點數先經原版遠征曲線壓縮；上方各曲線已照壓縮後的點數調過。
+           Site points go through vanilla's distant-fight curve; the curves above are tuned to the cut points. -->
+      <adjustPointsForDistantFight>true</adjustPointsForDistantFight>
+      <baseTimeoutDays>16</baseTimeoutDays>
+      <minTimeoutDays>4</minTimeoutDays>
+      <maxTimeoutDays>30</maxTimeoutDays>
+      <expiredLetterLabelKey>DMS_Arsenal_ExpiredLabel</expiredLetterLabelKey>
+      <expiredLetterTextKey>DMS_Arsenal_ExpiredText</expiredLetterTextKey>
+      <clearedLetterLabelKey>DMS_Arsenal_ClearedLabel</clearedLetterLabelKey>
+      <clearedLetterTextKey>DMS_Arsenal_ClearedText</clearedLetterTextKey>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

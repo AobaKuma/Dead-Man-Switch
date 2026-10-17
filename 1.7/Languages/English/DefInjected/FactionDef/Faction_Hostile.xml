@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Colonization legacies -->
+  <DMS_Legacy.label>Pioneer Remnants</DMS_Legacy.label>
+  <!-- EN: Automatroid remnants from colonization pioneers, guardians crafted to protect light towers on this planet.\n\nHowever, after decades of waiting, most pioneers never lived to see the fleet arrive, and their creations still wandered their long-gone homeland, following their pre-programmed procedures. -->
+  <DMS_Legacy.description>Mechs left on this planet by the pioneer colonists and by other colonial fleets that once stopped here - a mechanized force built to guard the countless beacons operating on the planet and to protect all manner of secret facilities.\n\nWith no one left in control, these mechs still faithfully carry out the last orders they were given, and will keep doing so until they shut down.</DMS_Legacy.description>
+
+  <!-- EN: {0} from {1} are attacking your {2}. -->
+  <DMS_Legacy.messageDefendersAttacking>{0} from {1} are attacking your {2}.</DMS_Legacy.messageDefendersAttacking>
+  <!-- EN: legacy -->
+  <DMS_Legacy.pawnSingular>remnant</DMS_Legacy.pawnSingular>
+  <!-- EN: legacies -->
+  <DMS_Legacy.pawnsPlural>remnants</DMS_Legacy.pawnsPlural>
+  
+</LanguageData>

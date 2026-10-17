@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 石碑主線：[keysCount] 由 DMS.QuestNode_Root_Stele 提供。 -->
+  <DMS_Stele.questNameRules.rulesStrings>
+    <li>questName->深埋的石碑</li>
+  </DMS_Stele.questNameRules.rulesStrings>
+  <DMS_Stele.questDescriptionRules.rulesStrings>
+    <li>questDescription->掌握了量子比特破译之后，研究员们终于能够捕捉到封存技术密钥微弱的认证脉冲。这些密钥是殖民舰队投放在这颗星球各处的加密刻录片，每一枚都只承载着某座深埋于这颗星球地底的石碑的部分密钥。舰队刻意将它们分散各地，让任何单一的发现都无法打开石碑。\n\n寻回[keysCount]枚密钥并带回殖民地。解读一整组密钥，便能还原出石碑的埋藏位置与解封方式。带有密钥的地点会陆续浮现，而被指派看守它们的先锋残余至今仍在执行任务。\n\n将石碑带回殖民地后，把解码器正面紧贴石碑，便能从中提取封存科技知识。</li>
+  </DMS_Stele.questDescriptionRules.rulesStrings>
+
+  <!-- 撞擊地點 -->
+  <DMS_SteleKey_ImpactSite.questNameRules.rulesStrings>
+    <li>questName->撞击地点</li>
+  </DMS_SteleKey_ImpactSite.questNameRules.rulesStrings>
+  <DMS_SteleKey_ImpactSite.questDescriptionRules.rulesStrings>
+    <li>questDescription->我们的接收器捕捉到了一枚封存技术密钥的认证脉冲。舰队以轨道投放的方式将密钥送往先锋们的设施，但这枚密钥舱没能抵达它的灯塔，而是重重地坠落在地，先锋们只好就地为它搭起了掩体。被指派看守撞击地点的先锋残余至今仍驻守在那里。\n\n密钥就放在站点中央的掩体内。将它带回殖民地；若是留在原地，它就会随着站点一同遗失。</li>
+  </DMS_SteleKey_ImpactSite.questDescriptionRules.rulesStrings>
+  <DMS_SteleKey_ImpactSite.questContentRules.rulesStrings>
+    <li>letterLabelMapGenerated->密钥舱残骸</li>
+    <li>letterTextMapGenerated->密钥舱的残骸散落在先锋们搭起的掩体周围，看守它的先锋残余已经察觉到我们了。\n\n密钥就在掩体里。只有带回殖民地才算真正取得。</li>
+  </DMS_SteleKey_ImpactSite.questContentRules.rulesStrings>
+  <!-- EN: Occultech glyph found: Impact site -->
+  <DMS_SteleKey_ImpactSite.questAvailableLetterLabel>发现封存技术密钥：撞击地点</DMS_SteleKey_ImpactSite.questAvailableLetterLabel>
+
+  <!-- 石碑封藏庫：保留 (retry==True/False) 條件；[steleMass] 由 DMS.QuestNode_Root_SteleVault 提供。 -->
+  <DMS_SteleVault.questNameRules.rulesStrings>
+    <li>questName->石碑封藏库</li>
+  </DMS_SteleVault.questNameRules.rulesStrings>
+  <DMS_SteleVault.questDescriptionRules.rulesStrings>
+    <li>questDescription(retry==False)->研究员们解读了整组封存技术密钥。读取让密钥的量子态坍缩，这些密钥已经用尽，但它们所承载的密码已经还原：一座石碑就埋藏在标记位置的封藏库中，至今仍由先锋残余看守。\n\n[vaultInstructions]</li>
+    <li>questDescription(retry==True)->还原出来的密码依然有效。在上一座石碑遗失之后，它指向了下一座：标记位置上的另一座封藏库，同样由先锋残余看守。\n\n[vaultInstructions]</li>
+    <li>vaultInstructions->肃清封藏库、占领石碑，再将其拆卸并带回殖民地。石碑重达[steleMass]公斤，请事先规划好运输方式。若是将它留在原地，它就会随着站点一同遗失。</li>
+  </DMS_SteleVault.questDescriptionRules.rulesStrings>
+  <DMS_SteleVault.questContentRules.rulesStrings>
+    <li>letterLabelMapGenerated->石碑封藏库</li>
+    <li>letterTextMapGenerated->石碑就矗立在封藏库的正中央，看守它的先锋残余已经开始行动。\n\n肃清周边之后，占领并拆卸石碑。它必须跟着我们离开这里。</li>
+  </DMS_SteleVault.questContentRules.rulesStrings>
+  <!-- EN: Stele located: Stele vault -->
+  <DMS_SteleVault.questAvailableLetterLabel>石碑定位：石碑封藏库</DMS_SteleVault.questAvailableLetterLabel>
+
+</LanguageData>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: impact site -->
+  <DMS_SteleKey_ImpactSite.label>impact site</DMS_SteleKey_ImpactSite.label>
+  <!-- EN: The crash site of a fleet glyph capsule. The pioneers sheltered it where it fell, and Legacy remnants still guard it. -->
+  <DMS_SteleKey_ImpactSite.description>The crash site of a fleet glyph capsule. The pioneers sheltered it where it fell, and Legacy remnants still guard it.</DMS_SteleKey_ImpactSite.description>
+  <DMS_SteleKey_ImpactSite.approachOrderString>Assault {0}</DMS_SteleKey_ImpactSite.approachOrderString>
+  <DMS_SteleKey_ImpactSite.approachingReportString>Assaulting {0}.</DMS_SteleKey_ImpactSite.approachingReportString>
+
+  <!-- EN: stele vault -->
+  <DMS_SteleVault.label>stele vault</DMS_SteleVault.label>
+  <!-- EN: A sealed vault holding a buried stele, guarded by Legacy remnants. -->
+  <DMS_SteleVault.description>A sealed vault holding a buried stele, guarded by Legacy remnants.</DMS_SteleVault.description>
+  <DMS_SteleVault.approachOrderString>Assault {0}</DMS_SteleVault.approachOrderString>
+  <DMS_SteleVault.approachingReportString>Assaulting {0}.</DMS_SteleVault.approachingReportString>
+
+</LanguageData>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: ruined access console -->
+  <DMS_AccessConsole_Destroyed.label>ruined access console</DMS_AccessConsole_Destroyed.label>
+  <!-- EN: A ruined multi-purpose computer interface. It's circuits and displays have corroded beyond repair. -->
+  <DMS_AccessConsole_Destroyed.description>A ruined multi-purpose computer interface. Its circuits and displays have corroded beyond repair.</DMS_AccessConsole_Destroyed.description>
+  
+  <!-- EN: ruined console -->
+  <DMS_ConsoleDouble_Destroyed.label>ruined console</DMS_ConsoleDouble_Destroyed.label>
+  <!-- EN: A ruined multi-purpose computer interface. It's circuits and displays have corroded beyond repair. -->
+  <DMS_ConsoleDouble_Destroyed.description>A ruined multi-purpose computer interface. Its circuits and displays have corroded beyond repair.</DMS_ConsoleDouble_Destroyed.description>
+  
+  <!-- EN: ruined console -->
+  <DMS_ConsoleSingle_Destroyed.label>ruined console</DMS_ConsoleSingle_Destroyed.label>
+  <!-- EN: A ruined multi-purpose computer interface. It's circuits and displays have corroded beyond repair. -->
+  <DMS_ConsoleSingle_Destroyed.description>A ruined multi-purpose computer interface. Its circuits and displays have corroded beyond repair.</DMS_ConsoleSingle_Destroyed.description>
+  
+  <!-- EN: ruined security container -->
+  <DMS_ContainerNaraDestroyed.label>ruined security container</DMS_ContainerNaraDestroyed.label>
+  <!-- EN: A breached armored cargo container. Whatever supplies it once held were looted or destroyed long ago, leaving only the torn shell. Breaking it down yields some metal scrap. -->
+  <DMS_ContainerNaraDestroyed.description>A breached armored cargo container. Whatever supplies it once held were looted or destroyed long ago, leaving only the torn shell. Breaking it down yields some metal scrap.</DMS_ContainerNaraDestroyed.description>
+  
+  <!-- EN: ruined heavy shield generator -->
+  <DMS_LargeShieldGeneratorDestroyed.label>ruined heavy shield generator</DMS_LargeShieldGeneratorDestroyed.label>
+  <!-- EN: A ruined ultra-class energy shield generator. It's energy coils and projection circuits have corroded beyond repair. Breaking it down yields some metal scrap. -->
+  <DMS_LargeShieldGeneratorDestroyed.description>A ruined ultra-class energy shield generator. Its energy coils and projection circuits have corroded beyond repair. Breaking it down yields some metal scrap.</DMS_LargeShieldGeneratorDestroyed.description>
+  
+  <!-- EN: ruined perimeter scanner -->
+  <DMS_PerimeterScannerDestroyed.label>ruined perimeter scanner</DMS_PerimeterScannerDestroyed.label>
+  <!-- EN: The wreck of a perimeter scanner. Its sensor is broken and platform have corroded beyond repair. -->
+  <DMS_PerimeterScannerDestroyed.description>The wreck of a perimeter scanner. Its sensor is broken and its platform has corroded beyond repair.</DMS_PerimeterScannerDestroyed.description>
+  
+  <!-- EN: ruined ship door -->
+  <DMS_ShipDoorDestroyed.label>ruined ship door</DMS_ShipDoorDestroyed.label>
+  <!-- EN: A ruined heavily-reinforced door made of large spaceship. -->
+  <DMS_ShipDoorDestroyed.description>A ruined, heavily reinforced door taken from a large spaceship.</DMS_ShipDoorDestroyed.description>
+  
+  <!-- EN: ruined ship hull -->
+  <DMS_ShipWallDestroyed.label>ruined ship hull</DMS_ShipWallDestroyed.label>
+  <!-- EN: A ruined heavily-reinforced wall of large spaceship. -->
+  <DMS_ShipWallDestroyed.description>A ruined, heavily reinforced hull section taken from a large spaceship.</DMS_ShipWallDestroyed.description>
+  
+</LanguageData>

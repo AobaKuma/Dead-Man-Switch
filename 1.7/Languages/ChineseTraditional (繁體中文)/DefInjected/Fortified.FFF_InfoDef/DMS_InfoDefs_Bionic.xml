@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: xeno limb syndrome -->
+  <DMS_Info_BionicShock.label>異肢癥候群</DMS_Info_BionicShock.label>
+  <!-- EN: Neurally interfaced prostheses have no biological receptors, so the nervous system never fully accepts them. Every installed prosthesis periodically triggers xeno limb syndrome: the first episode starts at LV.1, and each later episode pushes the existing syndrome up one level. The more prostheses a patient carries, the faster it worsens.\n\nThe syndrome has five levels, progressing from itching and pain through mental breaks to coma. Worsening beyond LV.5 is fatal.\n\nTreatment: each dose of neuroglue lowers the syndrome by one level, curing it outright at LV.1. While neuroglue is in effect, the syndrome cannot worsen. -->
+  <DMS_Info_BionicShock.description>神經機械義體缺乏生物受體，始終無法被神經系統完全接納。每個已安裝的義體都會定期誘發異肢癥候群：首次發作為 LV.1，此後每次發作都會使現有病症加重一級。安裝的義體越多，惡化得越快。\n\n病症共分五級，症狀由搔癢、疼痛逐步發展為精神崩潰，最終陷入昏迷；LV.5 後若再加重即告死亡。\n\n治療：每劑受體凝膠可使病症減輕一級，LV.1 時則直接痊癒；藥效持續期間，病症不會加重。</DMS_Info_BionicShock.description>
+  
+  <!-- EN: synthetic rejection -->
+  <DMS_Info_SyntheticRejection.label>仿生排異反應</DMS_Info_SyntheticRejection.label>
+  <!-- EN: The host's immune system never fully accepts biosynthetic tissue. Each installed biosynthetic part independently triggers synthetic rejection, on average once every 40 days.\n\nAn episode lasts 5 days, bringing fever and pain, slightly dulled consciousness and severely impaired blood filtration.\n\nTreatment: a single dose of neuroglue cures it at once, and any episode that begins while neuroglue is in effect clears up immediately. -->
+  <DMS_Info_SyntheticRejection.description>宿主的免疫系統始終無法完全接納生物合成組織。每個已安裝的生物合成義體或器官都會各自觸發仿生排異反應，平均約每 40 天一次。\n\n每次發作持續 5 天，期間伴隨發燒與疼痛，意識略微下降，血液過濾能力大幅受損。\n\n治療：單劑受體凝膠即可立即治癒；藥效持續期間發生的排異反應也會隨即消退。</DMS_Info_SyntheticRejection.description>
+  
+  <!-- EN: neuroglue therapy -->
+  <DMS_Info_Neuroglue.label>受體凝膠療效</DMS_Info_Neuroglue.label>
+  <!-- EN: Each dose takes effect immediately:\n - xeno limb syndrome is lowered by one level, or cured outright at LV.1.\n\nWhile neuroglue is in effect (about 5.5 days):\n - xeno limb syndrome cannot worsen;\n - synthetic rejection and phantom limb syndrome are cured, and clear up immediately if they recur;\n - the patient cannot contract fibrous or sensory mechanites.\n\nSide effect: mild pain for the duration. -->
+  <DMS_Info_Neuroglue.description>每劑注射後立即生效：\n - 異肢癥候群減輕一級，LV.1 時則直接痊癒。\n\n藥效持續期間（約 5.5 天）：\n - 異肢癥候群不會加重；\n - 治癒仿生排異反應與幻肢癥候群，復發時亦會隨即消退；\n - 不會染上肌肉細胞機械化或感官細胞機械化。\n\n副作用：藥效持續期間伴有輕微疼痛。</DMS_Info_Neuroglue.description>
+  
+</LanguageData>

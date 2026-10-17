@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: C-Ration -->
+  <DMS_CombatRation.label>C-Ration</DMS_CombatRation.label>
+  <!-- EN: A high energy organic polymer ration, invented during World War III as a nutritional supplement for augmented human troops during combat. For soldiers equipped with nutritional interfaces, it provides enough calories for internal organs to function for a long. But for normal humans, it might cause some slight gastrointestinal discomfort. -->
+  <DMS_CombatRation.description>A block of high-energy organic polymer ration, invented during the Third World War as a nutritional supplement for augmented human troops in combat and as an additive for artificial muscle culture media. For soldiers fitted with a nutrition port, a single ration provides enough calories and vitamins to keep their organs running for a long time.\n\nFor an ordinary person it works just as well, but may cause some mild gastrointestinal discomfort.</DMS_CombatRation.description>
+  <!-- EN: Take {0} -->
+  <DMS_CombatRation.ingestible.ingestCommandString>Take {0}</DMS_CombatRation.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <DMS_CombatRation.ingestible.ingestReportString>Taking {0}.</DMS_CombatRation.ingestible.ingestReportString>
+  
+  <!-- EN: Neuroglue -->
+  <Neuroglue.label>Neuroglue</Neuroglue.label>
+  <!-- EN: A protein-like receptor gel which connects biological tissues and neural machinery. Neuroglue can effectively block phantom limb syndrome and synthetic rejections, and each dose eases xeno limb syndrome by one level.\n\nSuch products have been circulating Rimworld and Midworld for many decades, but any organization claiming to have produced this product has been sanctioned by agents from the Coreworld. They Declare that such a product will increase the bionic level of pirates which isn't safe for regional balance. -->
+  <Neuroglue.description>A protein-like receptor gel that mediates between biological tissue and neural machinery. Injected intravenously into the circulatory system, it effectively blocks synthetic rejection and phantom limb syndrome, and each dose lowers xeno limb syndrome by one level. It can also render nanite infections benign.\n\nProducts like this have circulated on rimworlds and midworlds for decades, but every organization claiming to produce it has been sanctioned by the core worlds, who declare that such a product would raise the bionic level of pirates and seriously disrupt regional balance.</Neuroglue.description>
+  <!-- EN: Take {0} -->
+  <Neuroglue.ingestible.ingestCommandString>Inject {0}</Neuroglue.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <Neuroglue.ingestible.ingestReportString>Injecting {0}.</Neuroglue.ingestible.ingestReportString>
+  
+
+  <!-- EN: combat regeneration serum -->
+  <DMS_CombatRegenSerum.label>combat regeneration serum</DMS_CombatRegenSerum.label>
+  <!-- EN: A highly concentrated neuro-targeted agent laden with stem cells. It lets the body regrow missing parts to their original state within two to three days, but the process burns through enormous amounts of energy, so the patient must eat far more than usual to keep up. The pain of regrowth and the risk of rejection take a heavy toll on the subject's mental health, which is why agents of this kind are rarely seen on the rim.\n\nNon-addictive. Each dose carries a chance of triggering level 3 xeno limb syndrome. -->
+  <DMS_CombatRegenSerum.description>A highly concentrated neuro-targeted agent laden with stem cells. It lets the body regrow missing parts to their original state within two to three days, but the process burns through enormous amounts of energy, so the patient must eat far more than usual to keep up. The pain of regrowth and the risk of rejection take a heavy toll on the subject's mental health, which is why agents of this kind are rarely seen on the rim.\n\nNon-addictive. Each dose carries a chance of triggering level 3 xeno limb syndrome.</DMS_CombatRegenSerum.description>
+  <!-- EN: Take {0} -->
+  <DMS_CombatRegenSerum.ingestible.ingestCommandString>Inject {0}</DMS_CombatRegenSerum.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <DMS_CombatRegenSerum.ingestible.ingestReportString>Injecting {0}.</DMS_CombatRegenSerum.ingestible.ingestReportString>
+  
+  <!-- EN: sensibility blocker -->
+  <DMS_SensibilityBlocker.label>sensibility blocker</DMS_SensibilityBlocker.label>
+  <!-- EN: A highly concentrated neuro-targeted agent that suppresses the receptors behind affective thought. Outwardly, the subject's aversion to their surroundings all but vanishes for as long as it lasts, which once made it a standard combat drug for exoskeleton pilots on long missions. Subjects keep a complete memory of the experience after it wears off, however, and once it was found to cause possible sensory loss its use was gradually banned.\n\nTemporarily suspends secondary needs such as beauty, comfort, outdoors, indoors and space, and negates the mood penalties of environment-related thoughts. -->
+  <DMS_SensibilityBlocker.description>A highly concentrated neuro-targeted agent that suppresses the receptors behind affective thought. Outwardly, the subject's aversion to their surroundings all but vanishes for as long as it lasts, which once made it a standard combat drug for exoskeleton pilots on long missions. Subjects keep a complete memory of the experience after it wears off, however, and once it was found to cause possible sensory loss its use was gradually banned.\n\nTemporarily suspends secondary needs such as beauty, comfort, outdoors, indoors and space, and negates the mood penalties of environment-related thoughts.</DMS_SensibilityBlocker.description>
+  <!-- EN: Take {0} -->
+  <DMS_SensibilityBlocker.ingestible.ingestCommandString>Inject {0}</DMS_SensibilityBlocker.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <DMS_SensibilityBlocker.ingestible.ingestReportString>Injecting {0}.</DMS_SensibilityBlocker.ingestible.ingestReportString>
+  
+</LanguageData>

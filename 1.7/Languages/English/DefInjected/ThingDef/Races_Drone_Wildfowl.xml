@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  
+  <!-- EN: wildfowl -->
+  <DMS_Drone_Wildfowl.label>wildfowl</DMS_Drone_Wildfowl.label>
+  <!-- EN: The UAS 1/B "Hunter Bee" nicknamed "wildfowl" is a foldable, small coaxial rotor drone equipped with a plastic explosive charge equivalent to an M67 hand grenade, posing a significant threat when approaching a target in swarms. -->
+  <DMS_Drone_Wildfowl.description>The UAS 1/B "Hunter Bee" nicknamed "wildfowl" is a foldable, small coaxial rotor drone equipped with a plastic explosive charge equivalent to an M67 hand grenade, posing a significant threat when approaching a target in swarms.</DMS_Drone_Wildfowl.description>
+  <!-- EN: Battery power -->
+  <DMS_Drone_Wildfowl.comps.CompMechPowerCell.labelOverride>Battery power</DMS_Drone_Wildfowl.comps.CompMechPowerCell.labelOverride>
+  <!-- EN: Drones have limited battery life. When the battery runs dry, the drone dies. -->
+  <DMS_Drone_Wildfowl.comps.CompMechPowerCell.tooltipOverride>Drones have limited battery life. When the battery runs dry, the drone dies.</DMS_Drone_Wildfowl.comps.CompMechPowerCell.tooltipOverride>
+  <!-- EN: flabellum -->
+  <DMS_Drone_Wildfowl.tools.flabellum.label>flabellum</DMS_Drone_Wildfowl.tools.flabellum.label>
+
+</LanguageData>

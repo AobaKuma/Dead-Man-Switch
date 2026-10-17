@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: lifter platform -->
+  <DMS_LifterPlatform.label>lifter platform</DMS_LifterPlatform.label>
+  <!-- EN: The landing platform of a mobile lifter, left behind after the pod lifted off. It is of no further use to its owners and can be deconstructed for materials. -->
+  <DMS_LifterPlatform.description>The landing platform of a mobile lifter, left behind after the pod lifted off. It is of no further use to its owners and can be deconstructed for materials.</DMS_LifterPlatform.description>
+
+  <!-- EN: mobile crew lifter -->
+  <DMS_MobileCrewLifter.label>mobile crew lifter</DMS_MobileCrewLifter.label>
+  <!-- EN: A self-fuelled crew lifter built on a detachable landing platform. It needs no launch pad and its tank is filled with the chemfuel used in construction: load it and launch it anywhere within range. After landing, the pod can lift off once more for a return flight, leaving the platform behind. Carry spare chemfuel if the destination has no way to refuel. -->
+  <DMS_MobileCrewLifter.description>A self-fuelled crew lifter built on a detachable landing platform. It needs no launch pad and its tank is filled with the chemfuel used in construction: load it and launch it anywhere within range. After landing, the pod can lift off once more for a return flight, leaving the platform behind. Carry spare chemfuel if the destination has no way to refuel.</DMS_MobileCrewLifter.description>
+
+  <!-- EN: spent crew pod -->
+  <DMS_LifterCrewPod.label>spent crew pod</DMS_LifterCrewPod.label>
+  <!-- EN: The crew pod of a mobile crew lifter, spent after its return flight. Without its platform it cannot launch again, but it can be deconstructed for materials, and any chemfuel left in its tank is recovered along with them. -->
+  <DMS_LifterCrewPod.description>The crew pod of a mobile crew lifter, spent after its return flight. Without its platform it cannot launch again, but it can be deconstructed for materials, and any chemfuel left in its tank is recovered along with them.</DMS_LifterCrewPod.description>
+
+  <!-- EN: mobile crew lifter -->
+  <DMS_ActiveCrewLifter.label>mobile crew lifter</DMS_ActiveCrewLifter.label>
+  <!-- EN: crew pod -->
+  <DMS_ActiveCrewPod.label>crew pod</DMS_ActiveCrewPod.label>
+
+  <!-- EN: mobile crew lifter (incoming) -->
+  <DMS_CrewLifterIncoming.label>mobile crew lifter (incoming)</DMS_CrewLifterIncoming.label>
+  <!-- EN: mobile crew lifter (leaving) -->
+  <DMS_CrewLifterLeaving.label>mobile crew lifter (leaving)</DMS_CrewLifterLeaving.label>
+  <!-- EN: crew pod (incoming) -->
+  <DMS_CrewPodIncoming.label>crew pod (incoming)</DMS_CrewPodIncoming.label>
+  <!-- EN: crew pod (leaving) -->
+  <DMS_CrewPodLeaving.label>crew pod (leaving)</DMS_CrewPodLeaving.label>
+
+</LanguageData>

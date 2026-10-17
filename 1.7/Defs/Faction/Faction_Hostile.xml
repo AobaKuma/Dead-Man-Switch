@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+    <FactionDef ParentName="FactionBase">
+        <defName>DMS_Legacy</defName>
+        <label>Colonization legacies</label>
+        <!-- 他們是先鋒殖民者們在這顆星球上留下的造物，為保護燈塔與無數先鋒們所親手創造的家園而被製造出來的護衛者。\n\n然而在數十年的等待中大多數的先鋒們並沒能活著等來艦隊到來的那一天，而他們的造物依然在遵循著設定好的程序遊蕩在早已不在的故鄉當中。 -->
+        <description>Automatroid remnants from colonization pioneers, guardians crafted to protect light towers on this planet.\n\nHowever, after decades of waiting, most pioneers never lived to see the fleet arrive, and their creations still wandered their long-gone homeland, following their pre-programmed procedures.</description>
+        <pawnSingular>remnant</pawnSingular>
+        <pawnsPlural>remnants</pawnsPlural>
+        <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+        <requiredCountAtGameStart>1</requiredCountAtGameStart>
+        <maxCountAtGameStart>1</maxCountAtGameStart>
+        <canStageAttacks>true</canStageAttacks>
+        <factionIconPath>UI/Faction/LegacyIcon</factionIconPath>
+        <factionNameMaker>DMS_LegacyFaction</factionNameMaker>
+        <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+        <allowedArrivalTemperatureRange>-100~200</allowedArrivalTemperatureRange>
+        <arrivalLayerWhitelist>
+            <li>Surface</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Orbit</li>
+        </arrivalLayerWhitelist>
+        <techLevel>Spacer</techLevel>
+        <humanlikeFaction>false</humanlikeFaction>
+        <hidden>true</hidden>
+        <autoFlee>false</autoFlee>
+        <canUseAvoidGrid>true</canUseAvoidGrid>
+        <earliestRaidDays>120</earliestRaidDays>
+        <configurationListOrderPriority>70</configurationListOrderPriority>
+        <hostileToFactionlessHumanlikes>false</hostileToFactionlessHumanlikes>
+        <permanentEnemyToEveryoneExcept>
+            <li>DMS_Army</li>
+            <li MayRequire="aoba.deadmanswitch.ancientcorps">DMS_AncientCorps</li>
+        </permanentEnemyToEveryoneExcept>
+        <colorSpectrum>
+            <li>(0.65, 0.5, 0.5)</li>
+        </colorSpectrum>
+        <maxPawnCostPerTotalPointsCurve>
+            <points>
+                <li>(400,200)</li>
+                <li>(900,300)</li>
+                <li>(100000,10000)</li>
+            </points>
+        </maxPawnCostPerTotalPointsCurve>
+        <raidCommonalityFromPointsCurve>
+            <points>
+                <li>(0, 0)</li>
+                <li>(100000,0.25)</li>
+            </points>
+        </raidCommonalityFromPointsCurve>
+        <raidLootMaker>VanguardRaidLootMaker</raidLootMaker>
+        <pawnGroupMakers>
+            <li>
+                <!-- Normal fights -->
+                <kindDef>Combat</kindDef>
+                <commonality>100</commonality>
+                <options>
+                    <DMS_Mech_Falcon>5</DMS_Mech_Falcon>
+                    <DMS_Mech_Soldat_B>5</DMS_Mech_Soldat_B>
+                    <DMS_Mech_Pioneer>8</DMS_Mech_Pioneer>
+                    <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+                    <DMS_Mech_Iguana>0.5</DMS_Mech_Iguana>
+                </options>
+            </li>
+            <li>
+                <!-- Normal fights：機動犬組，鬥牛犬與地獄犬（160 / 170 點，每隊各上限 4）在此作重裝前鋒。
+                     Normal fights: the mobile hound group; bullhounds and hellhounds (160 / 170 points, 4 each per group at most) lead as heavy pointmen. -->
+                <kindDef>Combat</kindDef>
+                <commonality>100</commonality>
+                <options>
+                    <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
+                    <DMS_Mech_Dogge>1</DMS_Mech_Dogge>
+                    <DMS_Mech_BullHound>2</DMS_Mech_BullHound>
+                    <DMS_Mech_BullHound_Flamer>1</DMS_Mech_BullHound_Flamer>
+                    <DMS_Mech_Pioneer>4</DMS_Mech_Pioneer>
+                    <DMS_Mech_Iguana>0.5</DMS_Mech_Iguana>
+                </options>
+            </li>
+            <li>
+                <!-- Normal fights -->
+                <kindDef>Combat</kindDef>
+                <commonality>10</commonality>
+                <options>
+                    <DMS_Mech_Dogge>1</DMS_Mech_Dogge>
+                    <DMS_Mech_Sniper>1</DMS_Mech_Sniper>
+                    <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+                    <DMS_Mech_Iguana>0.5</DMS_Mech_Iguana>
+                    <DMS_Mech_Tarbosaurus>0.25</DMS_Mech_Tarbosaurus>
+                </options>
+            </li>
+            <li>
+                <!-- breach fights：近戰突破組，鬥牛犬與地獄犬跟方陣、浪人一起貼上去。
+                     breach fights: the close-assault group; bullhounds and hellhounds go in with the phalanxes and ronins. -->
+                <kindDef>Combat</kindDef>
+                <commonality>10</commonality>
+                <options>
+                    <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
+                    <DMS_Mech_Phalanx>6</DMS_Mech_Phalanx>
+                    <DMS_Mech_Ronin>6</DMS_Mech_Ronin>
+                    <DMS_Mech_BullHound>2</DMS_Mech_BullHound>
+                    <DMS_Mech_BullHound_Flamer>2</DMS_Mech_BullHound_Flamer>
+                    <DMS_Mech_Protector>1</DMS_Mech_Protector>
+                    <DMS_Mech_Siegebreaker>1</DMS_Mech_Siegebreaker>
+                    <DMS_Mech_Mammoth>0.5</DMS_Mech_Mammoth>
+                </options>
+            </li>
+
+            <!-- 地下設施洞口增援（DMS_FacilityReinforcement）：以鬥牛犬與蹄兔為主，其餘機兵權重調低。
+                 原版會依「單價 / 本隊最貴單價」壓低便宜機種的權重（≤0.2 倍時 ×0.01），
+                 所以 20 點的蹄兔不能跟 160 點的鬥牛犬放在同一組，否則幾乎抽不到；蹄兔另開一組只配便宜機種。
+                 Underground facility hole reinforcements (DMS_FacilityReinforcement): mostly bullhounds and
+                 hyraxes, other mechs weighted down. Vanilla scales a cheap option's weight by its cost over the
+                 group's priciest (×0.01 at ≤0.2), so a 20-point hyrax can't share a group with a 160-point
+                 bullhound or it almost never rolls; the hyraxes get their own group of cheap units. -->
+            <li>
+                <!-- 鬥牛犬與地獄犬獵犬群 / Bullhound and hellhound pack -->
+                <kindDef>DMS_FacilityReinforcement</kindDef>
+                <commonality>35</commonality>
+                <options>
+                    <DMS_Mech_BullHound>4</DMS_Mech_BullHound>
+                    <DMS_Mech_BullHound_Flamer>3</DMS_Mech_BullHound_Flamer>
+                    <DMS_Mech_Phalanx>0.5</DMS_Mech_Phalanx>
+                    <DMS_Mech_Ronin>0.5</DMS_Mech_Ronin>
+                </options>
+            </li>
+            <li>
+                <!-- 蹄兔群（蹄兔每隊上限 10，多的點數由其他輕型機補上）/ Hyrax swarm (hyrax is capped at 10 per group; light mechs fill the rest)
+                     獒犬已調到 100 點，不再放這組：放進來 20 點的蹄兔只剩 ×0.01 權重。
+                     No dogge here since it went up to 100 points: it would drop the 20-point hyrax to ×0.01 weight. -->
+                <kindDef>DMS_FacilityReinforcement</kindDef>
+                <commonality>35</commonality>
+                <options>
+                    <DMS_Mech_Hyrax>8</DMS_Mech_Hyrax>
+                    <DMS_Mech_Falcon>1</DMS_Mech_Falcon>
+                    <DMS_Mech_Soldat>1</DMS_Mech_Soldat>
+                </options>
+            </li>
+            <li>
+                <!-- 一般混編 / Mixed -->
+                <kindDef>DMS_FacilityReinforcement</kindDef>
+                <commonality>20</commonality>
+                <options>
+                    <DMS_Mech_BullHound>4</DMS_Mech_BullHound>
+                    <DMS_Mech_BullHound_Flamer>2</DMS_Mech_BullHound_Flamer>
+                    <DMS_Mech_Falcon>1.5</DMS_Mech_Falcon>
+                    <DMS_Mech_Soldat_B>1.5</DMS_Mech_Soldat_B>
+                    <DMS_Mech_Pioneer>2</DMS_Mech_Pioneer>
+                    <DMS_Mech_Arquebusier>1</DMS_Mech_Arquebusier>
+                    <DMS_Mech_Iguana>0.2</DMS_Mech_Iguana>
+                </options>
+            </li>
+            <li>
+                <!-- 突破混編 / Breach -->
+                <kindDef>DMS_FacilityReinforcement</kindDef>
+                <commonality>10</commonality>
+                <options>
+                    <DMS_Mech_BullHound>4</DMS_Mech_BullHound>
+                    <DMS_Mech_BullHound_Flamer>3</DMS_Mech_BullHound_Flamer>
+                    <DMS_Mech_Phalanx>2</DMS_Mech_Phalanx>
+                    <DMS_Mech_Ronin>2</DMS_Mech_Ronin>
+                    <DMS_Mech_Protector>0.5</DMS_Mech_Protector>
+                    <DMS_Mech_Siegebreaker>0.5</DMS_Mech_Siegebreaker>
+                    <DMS_Mech_Mammoth>0.2</DMS_Mech_Mammoth>
+                </options>
+            </li>
+        </pawnGroupMakers>
+    </FactionDef>
+</Defs>

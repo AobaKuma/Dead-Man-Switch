@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 零點能發生器核心 DMS.CompZeroPointGenerator -->
+  <DMS_ZeroPointGenerator_Charge>催化剂：{0} / {1}（总计 {2}）</DMS_ZeroPointGenerator_Charge>
+  <DMS_ZeroPointGenerator_NoCatalyst>没有催化剂，请装填反粒子弹头。</DMS_ZeroPointGenerator_NoCatalyst>
+  <DMS_ZeroPointGenerator_NoRoom>周围无处放置产出。</DMS_ZeroPointGenerator_NoRoom>
+  <DMS_ZeroPointGenerator_CatalystSpent>{GENERATOR_definite}的催化剂已耗尽。</DMS_ZeroPointGenerator_CatalystSpent>
+
+  <!-- 零點能反應器 DMS.CompZeroPointReactor -->
+  <DMS_ZeroPointReactor_Core>堆芯：剩余 {0}</DMS_ZeroPointReactor_Core>
+  <DMS_ZeroPointReactor_CoreEmpty>堆芯：空</DMS_ZeroPointReactor_CoreEmpty>
+  <DMS_ZeroPointReactor_Total>总运转时间：{0}</DMS_ZeroPointReactor_Total>
+
+  <!-- 現實穩定錨 DMS.CompRealityAnchor -->
+  <DMS_RealityAnchor_Field>场内：{0}（受压制：{1}）</DMS_RealityAnchor_Field>
+  <DMS_RealityAnchor_PsycastBlocked>现实稳定锚场内无法施放灵能。</DMS_RealityAnchor_PsycastBlocked>
+  <DMS_StatRule_Max>{0}：上限 {1}</DMS_StatRule_Max>
+
+</LanguageData>

@@ -137,7 +137,7 @@ namespace DMS
 
         /// <summary>
         /// 這個 Prefix 直接接管了原版的 ApplyBirthOutcome,所以原版的 GaveBirth 軼事
-        /// 也不會被記錄 —— 機兵路線的軼事必須自己補。
+        /// 也不會被記錄，機兵路線的軼事必須自己補。
         ///
         /// 培育艙路線沒有代孕者(birtherPawn 為 null),沒有 pawn 可以掛,所以不記錄。
         /// </summary>

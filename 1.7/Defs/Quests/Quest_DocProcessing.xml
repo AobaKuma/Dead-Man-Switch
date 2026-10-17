@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <QuestScriptDef>
+    <defName>DMS_ProcessDocumentQuest</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Logistics</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Logistics</failedOrExpiredHistoryEvent>
+    <rootSelectionWeight>0.6</rootSelectionWeight>
+    <rootMinPoints>300</rootMinPoints>
+    <expireDaysRange>4~8</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <!-- 原版風格:短名詞片語 -->
+        <li>questName->Document processing: [docType]</li>
+        <li>questName->Records backlog: [docType]</li>
+        <li>questName->Filing contract: [docType]</li>
+        <li>docType->supply ledgers</li>
+        <li>docType->casualty reports</li>
+        <li>docType->maintenance logs</li>
+        <li>docType->audit files</li>
+        <li>docType->intel digests</li>
+        <li>docType->requisition forms</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <!-- 敘事信件風格:
+             段1: 艦隊副官[asker]轉交積壓文書,部門狀況=[docReason],內容物=[docContents]
+             段2: 機制: 空投至信標附近,指派具研究能力人員逐份核對歸檔
+             段3: 條件: 文件損毀即終止合約;全部處理完畢後付酬 -->
+        <li>questDescription->[asker_nameFull], an adjutant of the Colonial Fleet, has forwarded us a batch of backlogged paperwork for processing. Their clerical division is [docReason], and the overflow is being contracted out to frontier settlements. The batch consists mostly of [docContents].\n\nIf we accept, the documents will arrive by drop pod near our trade beacons or colony center. Personnel with suitable research capabilities must verify and file each one.\n\n[asker_nameDef] was explicit about one condition: the fleet expects every document back intact. If any document is destroyed, the contract ends immediately. Payment will follow once the entire batch is processed.</li>
+
+        <li>docReason->short-handed after the latest personnel rotation</li>
+        <li>docReason->months behind following an archive system failure</li>
+        <li>docReason->buried under a season's worth of frontline reporting</li>
+        <li>docReason->scrambling to close the books before a fleet audit</li>
+
+        <li>docContents->supply manifests, ammunition expenditure records and drone maintenance logs</li>
+        <li>docContents->casualty notices and after-action reports, some still smelling of gun smoke</li>
+        <li>docContents->classified files we are expected to process without reading</li>
+        <li>docContents->requisition forms, repair orders and letters that were never sent</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetMap" />
+        <li Class="QuestNode_GeneratePawn">
+          <kindDef>DMS_Officer_Leader</kindDef>
+          <storeAs>asker</storeAs>
+          <faction>DMS_Army</faction>
+          <allowPregnant>false</allowPregnant>
+        </li>
+        <li Class="QuestNode_EvaluateSimpleCurve">
+          <value>$points</value>
+          <storeAs>documentCount</storeAs>
+          <curve>
+            <points>
+              <li>300, 2</li>
+              <li>10000, 30</li>
+            </points>
+          </curve>
+          <roundRandom>true</roundRandom>
+        </li>
+        <!-- 每顆星 ≈ 3 天處理時間:一名研究速度 100% 的人員每天約有半天在工作 → 3 × 60000 × 0.5 = 90000 -->
+        <li Class="DMS.QuestNode_DocWorkload">
+          <documentCount>$documentCount</documentCount>
+          <workPerStar>90000</workPerStar>
+          <storeAs>docWork</storeAs>
+          <pointsToChallengeRatingCurve>
+            <points>
+              <li>(100, 1)</li>
+              <li>(1200, 1)</li>
+              <li>(1800, 2)</li>
+              <li>(4000, 2)</li>
+              <li>(5000, 3)</li>
+            </points>
+          </pointsToChallengeRatingCurve>
+        </li>
+        <li Class="QuestNode_Set">
+          <name>rewardValue</name>
+          <!-- 報酬依星級:每顆星(≈3 天處理時間)1000 -->
+          <value>$($challengeRating * 1000)</value>
+        </li>
+        <li Class="QuestNode_LoopCount">
+          <loopCount>$documentCount</loopCount>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_GenerateThing">
+                <def>DMS_QuestDocument</def>
+                <storeAs>tempDoc</storeAs>
+              </li>
+              <li Class="DMS.QuestNode_SetDocWork">
+                <thing>$tempDoc</thing>
+                <workAmount>$docWork</workAmount>
+              </li>
+              <li Class="QuestNode_DropPods">
+                <contents>$tempDoc</contents>
+                <joinPlayer>true</joinPlayer>
+                <useTradeDropSpot>true</useTradeDropSpot>
+                <sendStandardLetter>false</sendStandardLetter>
+              </li>
+              <li Class="QuestNode_AddTag">
+                <targets>$tempDoc</targets>
+                <tag>DMS_DocTarget</tag>
+              </li>
+            </nodes>
+          </node>
+        </li>
+        <li Class="DMS.QuestNode_RandomLetter">
+          <labelKey>DMS_DocQuest_ArrivedLabel</labelKey>
+          <textKeys>
+            <li>DMS_DocQuest_ArrivedText1</li>
+            <li>DMS_DocQuest_ArrivedText2</li>
+            <li>DMS_DocQuest_ArrivedText3</li>
+          </textKeys>
+          <letterDef>PositiveEvent</letterDef>
+        </li>
+        <li Class="QuestNode_Signal">
+          <inSignal>DMS_DocTarget.Destroyed</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="DMS.QuestNode_RandomLetter">
+                <labelKey>DMS_DocQuest_DestroyedLabel</labelKey>
+                <textKeys>
+                  <li>DMS_DocQuest_DestroyedText1</li>
+                  <li>DMS_DocQuest_DestroyedText2</li>
+                  <li>DMS_DocQuest_DestroyedText3</li>
+                </textKeys>
+                <letterDef>NegativeEvent</letterDef>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+        <li Class="DMS.QuestNode_TrackDoc">
+          <inSignalProcess>DMS_DocTarget.Processed</inSignalProcess>
+          <outSignalComplete>AllDocsProcessed</outSignalComplete>
+          <targetCount>$documentCount</targetCount>
+        </li>
+        <li Class="QuestNode_GiveRewards">
+          <inSignal>AllDocsProcessed</inSignal>
+          <parms>
+            <allowGoodwill>true</allowGoodwill>
+            <allowRoyalFavor>true</allowRoyalFavor>
+          </parms>
+          <useDifficultyFactor>true</useDifficultyFactor>
+        </li>
+        <li Class="QuestNode_Signal">
+          <inSignal>AllDocsProcessed</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="DMS.QuestNode_RandomLetter">
+                <labelKey>DMS_DocQuest_CompleteLabel</labelKey>
+                <textKeys>
+                  <li>DMS_DocQuest_CompleteText1</li>
+                  <li>DMS_DocQuest_CompleteText2</li>
+                  <li>DMS_DocQuest_CompleteText3</li>
+                </textKeys>
+                <letterDef>PositiveEvent</letterDef>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Success</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+</Defs>

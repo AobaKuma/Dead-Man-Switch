@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using UnityEngine;
@@ -37,6 +38,18 @@ namespace DMS
 
         protected override StructureLayout GetStructureLayout(StructureGenParams parms, CellRect rect)
         {
+            // 有走廊房型就走「先開通道、再掛房間」的自家產生器（輪廓不是方形）；
+            // 沒設 corridorDef 才退回原版的矩形切割。
+            // With a corridor def, use our corridor-first generator (non-rectangular footprint);
+            // without one, fall back to vanilla's rectangle splitting.
+            LayoutRoomDef corridor = Def.corridorDef;
+            int expansion = corridor?.GetModExtension<ModExtension_VaultSecurity>()?.corridorExpansion ?? 2;
+
+            if (corridor != null)
+            {
+                return VaultLayoutGenerator.Generate(parms, rect, corridor, expansion, Def.GetModExtension<ModExtension_VaultLayout>());
+            }
+
             return RoomLayoutGenerator.GenerateRandomLayout(
                 sketch: parms.sketch,
                 container: rect,
@@ -45,10 +58,10 @@ namespace DMS
                 areaPrunePercent: 0.25f,
                 canRemoveRooms: true,
                 generateDoors: false,
-                corridor: null,
-                corridorExpansion: 2,
+                corridor: corridor,
+                corridorExpansion: expansion,
                 maxMergeRoomsRange: new IntRange(2, 4),
-                corridorShapes: CorridorShape.All,
+                corridorShapes: Def.corridorShapes,
                 canDisconnectRooms: false);
         }
 
@@ -62,10 +75,194 @@ namespace DMS
             }
         }
 
+        protected override StructureLayout GenerateStructure(StructureGenParams parms)
+        {
+            StructureLayout layout = base.GenerateStructure(parms);
+            if (Def.corridorDef != null)
+            {
+                // 先把入口檢查點的門照結構重排（會封掉側牆上的門），再替失去出口的房間補走廊門。
+                // Lay the entrance checkpoints' doors out from their structure first (sealing side-wall doors), then
+                // give any room that lost its exit a corridor door.
+                VaultLayoutGenerator.Plans.TryGetValue(layout, out VaultLayoutPlan plan);
+                VaultCheckpointUtility.FixDoors(layout, plan, Def.corridorDef);
+                EnsureCorridorDoors(layout);
+            }
+            return layout;
+        }
+
+        /// <summary>
+        /// 原版的門是照鄰接圖開的，偶爾會漏掉某間房；每間房至少要有一扇門通到走廊，
+        /// 漏掉的就在它跟走廊共用的牆上直接開一扇。
+        /// Vanilla places doors from the neighbourhood graph and occasionally misses a room; every
+        /// room needs at least one door onto the corridor, so cut one in the shared wall when it does.
+        /// </summary>
+        private void EnsureCorridorDoors(StructureLayout layout)
+        {
+            List<LayoutRoom> corridors = layout.Rooms.Where(r => r.requiredDef == Def.corridorDef).ToList();
+            if (corridors.Count == 0) return;
+
+            foreach (LayoutRoom room in layout.Rooms)
+            {
+                if (room.requiredDef == Def.corridorDef || room.connections.Count > 0) continue;
+                if (!TryConnect(room))
+                {
+                    Log.Warning($"[DMS] Vault room {room.id} shares no wall with a corridor; it may be unreachable.");
+                }
+            }
+
+            bool TryConnect(LayoutRoom room)
+            {
+                foreach (LayoutRoom corridor in corridors)
+                {
+                    foreach (CellRect rect in room.rects)
+                    {
+                        foreach (CellRect corridorRect in corridor.rects)
+                        {
+                            if (!TryCutDoor(layout, rect, corridorRect, out IntVec3 cell)) continue;
+
+                            layout.Add(cell, RoomLayoutCellType.Door);
+                            room.connections.Add(corridor);
+                            corridor.connections.Add(room);
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+        }
+
+        /// <summary>在兩個矩形共用的牆線上挑最靠中間、適合開門的一格。Pick the most central door-worthy cell on the shared wall.</summary>
+        private static bool TryCutDoor(StructureLayout layout, CellRect room, CellRect corridor, out IntVec3 cell)
+        {
+            cell = IntVec3.Invalid;
+            float best = float.MaxValue;
+            IntVec3 centre = corridor.CenterCell;
+
+            foreach (IntVec3 edge in room.EdgeCells)
+            {
+                if (room.IsCorner(edge) || !corridor.Contains(edge) || !layout.IsGoodForDoor(edge)) continue;
+
+                float dist = centre.DistanceTo(edge);
+                if (dist < best)
+                {
+                    best = dist;
+                    cell = edge;
+                }
+            }
+
+            return cell.IsValid;
+        }
+
         protected override void PostLayoutFlushedToSketch(LayoutStructureSketch parms)
         {
             base.PostLayoutFlushedToSketch(parms);
             ReplaceDoors(parms.layoutSketch);
+
+            // 房型已指派、房間還沒填：把電梯廳調到走廊邊並裝上捲門（在隨機換自動門之後，免得被換掉）。
+            // Room types are set but nothing is filled yet: put the lobby on a corridor and fit its rolling door
+            // (after the random autodoor swap so it isn't swapped out).
+            if (Def.corridorDef != null)
+            {
+                VaultEntranceDoor.Apply(parms, Def.corridorDef, Def.GetModExtension<ModExtension_VaultLayout>());
+            }
+        }
+
+        public override void Spawn(LayoutStructureSketch layoutStructureSketch, Map map, IntVec3 pos,
+            float? threatPoints = null, List<Thing> allSpawnedThings = null, bool roofs = true,
+            bool canReuseSketch = false, Faction faction = null)
+        {
+            base.Spawn(layoutStructureSketch, map, pos, threatPoints, allSpawnedThings, roofs, canReuseSketch, faction);
+
+            StructureLayout layout = layoutStructureSketch.structureLayout;
+            VaultLayoutPlan plan = VaultLayoutGenerator.TakePlan(layout);
+            plan?.MoveToMap(layout.container);
+
+            // 走廊與房間都生成完了，才在走廊空牆上嵌結構；要在閘門與檢修通道之前，它們才會避開。
+            // Corridors and rooms are up, so the embeds go into the bare corridor wall now; before the gates and tunnels
+            // so those keep clear of them.
+            VaultCorridorEmbeds.Spawn(plan, map, faction);
+
+            // 獎勵房要等所有門都生成完才封得起來。Treasuries can only be sealed once every door exists.
+            List<Thing> treasuryDoors = VaultTreasuryUtility.SealTreasuries(layoutStructureSketch, map, faction);
+
+            // 設施封鎖中控：每張地圖恰好一座（版面有掛 ModExtension_FacilityLockdown 才放）。
+            // Lockdown controller: exactly one per map (only when the layout carries ModExtension_FacilityLockdown).
+            FacilityLockdownPlacement.PlaceController(layoutStructureSketch, map, faction,
+                Def.GetModExtension<ModExtension_FacilityLockdown>());
+
+            // 分區閘門：入口房已經填好、出生點已定，才知道控制台該放哪一側。
+            // Sector gates: only now, with the entrance filled and the start spot set, do we know
+            // which side of each gate the console belongs on.
+            List<Thing> gateDoors = VaultSectorGates.SpawnGates(layout, plan, map, faction, Def.GetModExtension<ModExtension_VaultLayout>());
+
+            // 檢修通道網要在閘門之後：挖管道時要避開閘門，也要知道每段走廊屬於哪個分區。
+            // Tunnels after the gates: digging has to keep clear of them and know which sector each corridor is.
+            SpawnPower(layout, plan, map, faction);
+
+            // 檢查點改寫牆面、檢修通道開口、閘門都會拆牆，掛在上面的燈與配電盤等不會自己消失；最後統一清掉。
+            // Checkpoint wall rewrites, tunnel hatches and gates all take walls down without what hangs on them;
+            // sweep the orphans once at the end.
+            VaultRoomUtility.RemoveOrphanedAttachments(map);
+
+            ChargeInternalBatteries(layoutStructureSketch, map);
+
+            // 守墓人巡邏隊最後放：路線要沿走廊樹走、在獎勵房門前停留、可以開分區閘門，三者都要先定下來。
+            // Gravekeeper patrols go last: the route follows the corridor tree, stops at the treasury door and may open
+            // the sector gates, so all three have to be settled first.
+            GravekeeperPatrolPlacement.Spawn(layoutStructureSketch, plan, map, faction, threatPoints,
+                Def.GetModExtension<ModExtension_GravekeeperPatrol>(), gateDoors, treasuryDoors);
+        }
+
+        /// <summary>
+        /// 走廊的電源：有 ModExtension_VaultTunnels 就挖檢修通道網、配電盤放在管道裡；一座都沒放成就退回走廊牆上。
+        /// 之後把密封的伺服機房接上走廊電網。
+        /// Corridor power: with ModExtension_VaultTunnels, dig the tunnel network with the substations in it; if none
+        /// went in, fall back to the corridor wall. Then tie the sealed server halls into the corridor grid.
+        /// </summary>
+        private void SpawnPower(StructureLayout layout, VaultLayoutPlan plan, Map map, Faction faction)
+        {
+            ModExtension_VaultTunnels tunnels = Def.GetModExtension<ModExtension_VaultTunnels>();
+            if (tunnels == null) return;
+
+            Faction defenders = faction ?? VaultRoomUtility.DefenderFaction;
+            int substations = VaultMaintenanceTunnels.Spawn(layout, plan, map, defenders, tunnels, Def.wallDef, Def.terrainDef);
+
+            LayoutRoom corridor = layout.Rooms.FirstOrDefault(r => r.requiredDef == Def.corridorDef);
+            if (substations == 0)
+            {
+                Log.Warning("[DMS] No maintenance tunnel could be dug; hanging the substation on the corridor wall instead.");
+                VaultMaintenanceTunnels.SpawnCorridorSubstation(map, corridor, tunnels.substationDef, tunnels.conduitDef, defenders);
+            }
+
+            List<CellRect> corridorInteriors = corridor?.rects.Select(r => r.ContractedBy(1)).ToList() ?? new List<CellRect>();
+            foreach (LayoutRoom room in layout.Rooms)
+            {
+                if (VaultRoomUtility.HasWorker(room, typeof(RoomContents_ArchiveServerHall)))
+                {
+                    RoomContents_ArchiveServerHall.ConnectPower(map, room, corridorInteriors, defenders);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 結構裡所有帶內建電池的東西（牆上的應急燈、哨戒砲……）生成時電量都是 0，
+        /// 整片掃一遍充滿，讓設施一進來就是亮的、砲塔就是醒的。
+        /// Everything with an internal battery (wall emergency lamps, sentries, …) spawns at zero
+        /// charge; sweep the structure once so the place is lit and armed on arrival.
+        /// </summary>
+        private static void ChargeInternalBatteries(LayoutStructureSketch sketch, Map map)
+        {
+            CellRect container = sketch.structureLayout.container.ClipInsideMap(map);
+            foreach (IntVec3 cell in container)
+            {
+                List<Thing> things = cell.GetThingList(map);
+                for (int i = 0; i < things.Count; i++)
+                {
+                    // 多格建築會被掃到好幾次；充電是冪等的，無所謂。
+                    // Multi-cell things get visited more than once; charging is idempotent.
+                    VaultRoomUtility.ChargeInternalBattery(things[i], 1f);
+                }
+            }
         }
 
         private void ReplaceDoors(LayoutSketch sketch)

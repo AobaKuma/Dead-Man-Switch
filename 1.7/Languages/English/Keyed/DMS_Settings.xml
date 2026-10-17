@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 模組選項:人工肌肉是否會腐爛 -->
+  <DMS_Settings_ArtifuscleRots>Artifuscle rots</DMS_Settings_ArtifuscleRots>
+  <DMS_Settings_ArtifuscleRotsDesc>When disabled, Artifuscle no longer rots and does not need to be refrigerated. Takes effect immediately. Artifuscle that has already rotted stays rotted.</DMS_Settings_ArtifuscleRotsDesc>
+
+  <!-- 模組選項:情境音樂 -->
+  <DMS_Settings_SituationalMusic>Situational music</DMS_Settings_SituationalMusic>
+  <DMS_Settings_SituationalMusicDesc>Play DMS music at DMS sites and underground facilities, and during DMS boss encounters and huntdown raids: exploration, alerts, combat, boss fights, lockdowns and aftermaths. When disabled, music is left to the base game and other mods. Takes effect immediately.</DMS_Settings_SituationalMusicDesc>
+
+</LanguageData>

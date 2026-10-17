@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 石碑任務線 Stele line（_Source/DMS/Quests/Stele/） -->
+  <DMS_Stele_GlyphProgress>Glyphs recovered: {0} / {1}</DMS_Stele_GlyphProgress>
+  <DMS_Stele_GlyphRecovered>Occultech glyph recovered ({0} / {1}).</DMS_Stele_GlyphRecovered>
+  <DMS_Stele_GlyphLostLabel>Glyph lost</DMS_Stele_GlyphLostLabel>
+  <DMS_Stele_GlyphLostText>We left the impact site without its glyph, and it was lost with the site.\n\nAnother glyph signal will surface in time.</DMS_Stele_GlyphLostText>
+  <DMS_Stele_SteleSecuredLabel>Stele secured</DMS_Stele_SteleSecuredLabel>
+  <DMS_Stele_SteleSecuredText>The stele is ours.\n\nInstall it at the colony and build a decoder flush against its front. Once powered, the decoder extracts the stele's knowledge into occultech research on its own.\n\nEvery stele read this way is lost to the fleets for good.</DMS_Stele_SteleSecuredText>
+  <DMS_Stele_SteleLostLabel>Stele lost</DMS_Stele_SteleLostLabel>
+  <DMS_Stele_SteleLostText>The stele did not leave the vault with us, and it is lost.\n\nThe resolved glyph cipher still points to other burial sites. Our researchers will work out the next one within a few days.</DMS_Stele_SteleLostText>
+
+</LanguageData>

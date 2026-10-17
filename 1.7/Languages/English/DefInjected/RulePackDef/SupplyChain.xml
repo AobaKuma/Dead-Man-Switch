@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 發包單位名稱:中文重組為「第N[形容][職能][編制]」/「艦隊[形容][職能][編制]N」 -->
+  <DMS_SupplyChainIssuer.rulePack.rulesStrings>
+    <li>r_name->[ordinal] [UnitAdj] [UnitType] [Scale]</li>
+    <li>r_name->Fleet [UnitAdj] [UnitType] [Scale] [numHead][numTail]</li>
+    <li>ordinal->1st</li>
+    <li>ordinal->2nd</li>
+    <li>ordinal->3rd</li>
+    <li>ordinal->4th</li>
+    <li>ordinal->6th</li>
+    <li>ordinal->8th</li>
+    <li>ordinal->11th</li>
+    <li>ordinal->12th</li>
+    <li>ordinal->13th</li>
+    <li>ordinal->21st</li>
+    <li>ordinal->22nd</li>
+    <li>ordinal->33rd</li>
+    <li>ordinal->42nd</li>
+    <li>ordinal->51st</li>
+    <li>ordinal->73rd</li>
+    <li>ordinal->98th</li>
+    <li>ordinal->101st</li>
+    <li>ordinal->104th</li>
+    <li>ordinal->156th</li>
+    <li>numHead-></li>
+    <li>numHead->1</li>
+    <li>numHead->2</li>
+    <li>numHead->3</li>
+    <li>numHead->4</li>
+    <li>numHead->5</li>
+    <li>numHead->7</li>
+    <li>numHead->9</li>
+    <li>numHead->10</li>
+    <li>numHead->15</li>
+    <li>numTail->1</li>
+    <li>numTail->2</li>
+    <li>numTail->3</li>
+    <li>numTail->5</li>
+    <li>numTail->8</li>
+    <li>UnitAdj->Forward</li>
+    <li>UnitAdj->Orbital</li>
+    <li>UnitAdj->Vanguard</li>
+    <li>UnitAdj->Expeditionary</li>
+    <li>UnitAdj->Frontier</li>
+    <li>UnitType->Logistics</li>
+    <li>UnitType->Quartermaster</li>
+    <li>UnitType->Sustainment</li>
+    <li>UnitType->Provisioning</li>
+    <li>Scale->Platoon</li>
+    <li>Scale->Detachment</li>
+    <li>Scale->Company</li>
+    <li>Scale->Section</li>
+  </DMS_SupplyChainIssuer.rulePack.rulesStrings>
+
+  <DMS_SupplyChainLetters.rulePack.rulesStrings>
+    <li>stageLetterLabel->Supply delivery [stage]/[totalStages]</li>
+    <li>stageLetterLabel->Delivery requested: [categoryLabel]</li>
+    <li>stageLetterText->[stageOpen]\n\nLoad [count]x [categoryLabel] into the pod and confirm the delivery before the deadline. Payment will arrive by drop pod once the delivery is confirmed.</li>
+    <li>stageOpen->[issuerUnit] has requested the next delivery of your supply contract. A cargo pod is inbound.</li>
+    <li>stageOpen->The next delivery of your supply contract with [issuerUnit] has begun. A cargo pod will land near your colony shortly.</li>
+    <li>paymentLetterLabel->Payment arrived</li>
+    <li>paymentLetterLabel->Delivery payment</li>
+    <li>paymentLetterText->[payOpen]</li>
+    <li>payOpen->The delivery has been confirmed by [issuerUnit]. Payment has arrived by drop pod.</li>
+    <li>payOpen->[issuerUnit] has confirmed your delivery. Payment has arrived by drop pod, as agreed.</li>
+    <li>intervalMessage->Delivery confirmed. [issuerUnit] will request the next delivery in about [days] days.</li>
+    <li>intervalMessage->Delivery confirmed. The next cargo pod from [issuerUnit] will arrive in about [days] days.</li>
+  </DMS_SupplyChainLetters.rulePack.rulesStrings>
+
+</LanguageData>

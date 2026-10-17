@@ -21,8 +21,8 @@ namespace DMS
     /// 人造機兵胚胎。
     ///
     /// 刻意繼承 <see cref="HumanEmbryo"/>：這樣就能直接沿用原版胚胎的兩條發育路線
-    /// ——人工移植（Command_Action → RecipeDefOf.ImplantEmbryo）與培育艙
-    /// （Building_GrowthVat.SelectEmbryo，其型別為 HumanEmbryo）——不必自己重寫
+    /// 也就是人工移植（Command_Action → RecipeDefOf.ImplantEmbryo）與培育艙
+    /// （Building_GrowthVat.SelectEmbryo，其型別為 HumanEmbryo），不必自己重寫
     /// 一整套 UI 與工作流程。
     ///
     /// 與原版的差異只有一點：基因組在 PostMake 就被寫死，而不是從父母繼承。

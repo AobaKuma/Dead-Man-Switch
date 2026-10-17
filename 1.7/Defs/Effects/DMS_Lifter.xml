@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ======================= 升降艙起飛/著陸特效 ======================= -->
+  <!-- 不需要自訂 C#:Skyfaller 是 ThingWithComps,直接掛原版 comp
+         CompProperties_Effecter            → 生成時 SpawnAttached (觸發一次 *Triggered 子效果) 後每 tick EffectTick,跟隨 DrawPos
+         CompProperties_SpawnEffecterOnDestroy → 降落 skyfaller 撞地後 Destroy 時於落點觸發一次
+       時序用 SubEffecterDef 自帶的 initialDelayTicks / lifespanMaxTicks 控制;
+       落點揚塵用 spawnLocType RandomCellOnTarget (取 skyfaller 的地面格) 而非跟著空中的 DrawPos。
+       全部使用 Core Fleck,不依賴 DLC。 -->
+
+  <!-- 飛行全程共用:艙體下方噴焰 + 向下噴出的尾煙 (跟隨 DrawPos) -->
+  <EffecterDef Name="DMS_LifterFlightBase" Abstract="True">
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <spawnLocType>OnSource</spawnLocType>
+        <fleckDef>HeatGlow</fleckDef>
+        <chancePerTick>0.35</chancePerTick>
+        <positionOffset>(0, -0.1, -0.9)</positionOffset>
+        <positionRadius>0.3</positionRadius>
+        <scale>3.4~5</scale>
+        <absoluteAngle>true</absoluteAngle>
+        <airTime>0.4~1</airTime>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <spawnLocType>OnSource</spawnLocType>
+        <fleckDef>Smoke</fleckDef>
+        <chancePerTick>0.9</chancePerTick>
+        <burstCount>1~2</burstCount>
+        <positionOffset>(0, 0, -1.1)</positionOffset>
+        <positionRadius>0.7</positionRadius>
+        <angle>165~195</angle>
+        <absoluteAngle>true</absoluteAngle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <speed>0.5~2</speed>
+        <scale>1.6~2.6</scale>
+        <rotationRate>-3~3</rotationRate>
+        <airTime>0.4~1</airTime>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <!-- 起飛 (離場 skyfaller 的 CompEffecter):
+       *Triggered = 生成瞬間點火閃光/火花/濃煙;揚塵只維持前 90 tick (lifespanMaxTicks);噴焰尾煙繼承自 Base -->
+  <EffecterDef ParentName="DMS_LifterFlightBase">
+    <defName>DMS_LifterLaunch</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <spawnLocType>RandomCellOnTarget</spawnLocType>
+        <fleckDef>HeatGlow</fleckDef>
+        <burstCount>3~5</burstCount>
+        <positionRadius>1</positionRadius>
+        <scale>2~2.6</scale>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <spawnLocType>RandomCellOnTarget</spawnLocType>
+        <fleckDef>MicroSparks</fleckDef>
+        <burstCount>12~15</burstCount>
+        <positionRadius>1</positionRadius>
+        <angle>0~360</angle>
+        <absoluteAngle>true</absoluteAngle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <speed>0.4~1</speed>
+        <scale>3~4.5</scale>
+        <airTime>0.5~1</airTime>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <spawnLocType>RandomCellOnTarget</spawnLocType>
+        <fleckDef>Smoke</fleckDef>
+        <burstCount>12~16</burstCount>
+        <positionRadiusMin>0.8</positionRadiusMin>
+        <positionRadius>2</positionRadius>
+        <angle>0~360</angle>
+        <absoluteAngle>true</absoluteAngle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <speed>1.5~3</speed>
+        <scale>2.5~10</scale>
+        <rotationRate>-3~3</rotationRate>
+        <airTime>1~2</airTime>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <spawnLocType>RandomCellOnTarget</spawnLocType>
+        <fleckDef>DustPuffThick</fleckDef>
+        <lifespanMaxTicks>90</lifespanMaxTicks>
+        <chancePerTick>0.7</chancePerTick>
+        <burstCount>3~5</burstCount>
+        <positionRadiusMin>1</positionRadiusMin>
+        <positionRadius>2.5</positionRadius>
+        <angle>-100~-90</angle>
+        <absoluteAngle>true</absoluteAngle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <speed>0.8~8</speed>
+        <scale>2~3.5</scale>
+        <rotationRate>-5~5</rotationRate>
+        <airTime>1~2</airTime>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <spawnLocType>RandomCellOnTarget</spawnLocType>
+        <fleckDef>DustPuffThick</fleckDef>
+        <lifespanMaxTicks>90</lifespanMaxTicks>
+        <chancePerTick>0.7</chancePerTick>
+        <burstCount>3~5</burstCount>
+        <positionRadiusMin>1</positionRadiusMin>
+        <positionRadius>2.5</positionRadius>
+        <angle>90~100</angle>
+        <absoluteAngle>true</absoluteAngle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <speed>0.8~8</speed>
+        <scale>2~3.5</scale>
+        <rotationRate>-5~5</rotationRate>
+        <airTime>1~2</airTime>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <!-- 降落 (降落 skyfaller 的 CompEffecter):
+       噴焰尾煙繼承自 Base;落點揚塵延遲 100 tick 才開始 (initialDelayTicks),搭配 ticksToImpactRange 固定 160 → 最後 60 tick 揚塵 -->
+  <EffecterDef ParentName="DMS_LifterFlightBase">
+    <defName>DMS_LifterDescent</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <spawnLocType>RandomCellOnTarget</spawnLocType>
+        <fleckDef>DustPuffThick</fleckDef>
+        <initialDelayTicks>100</initialDelayTicks>
+        <chancePerTick>0.7</chancePerTick>
+        <burstCount>1~2</burstCount>
+        <positionRadiusMin>1</positionRadiusMin>
+        <positionRadius>2.5</positionRadius>
+        <angle>0~360</angle>
+        <absoluteAngle>true</absoluteAngle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <speed>0.8~2</speed>
+        <scale>2~3.5</scale>
+        <rotationRate>-2~2</rotationRate>
+        <airTime>1~2</airTime>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <spawnLocType>RandomCellOnTarget</spawnLocType>
+        <fleckDef>DustPuff</fleckDef>
+        <initialDelayTicks>100</initialDelayTicks>
+        <chancePerTick>0.4</chancePerTick>
+        <positionRadiusMin>0.5</positionRadiusMin>
+        <positionRadius>1.8</positionRadius>
+        <angle>0~360</angle>
+        <absoluteAngle>true</absoluteAngle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <speed>1~2.5</speed>
+        <scale>1.5~2.5</scale>
+        <airTime>1~1.5</airTime>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <!-- 著陸瞬間 (降落 skyfaller 的 CompSpawnEffecterOnDestroy):衝擊波 + 環狀塵土 + 碎屑 -->
+  <EffecterDef>
+    <defName>DMS_LifterTouchdown</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <spawnLocType>OnSource</spawnLocType>
+        <fleckDef>DustPuffThick</fleckDef>
+        <burstCount>14~18</burstCount>
+        <positionRadiusMin>0.8</positionRadiusMin>
+        <positionRadius>2</positionRadius>
+        <angle>0~360</angle>
+        <absoluteAngle>true</absoluteAngle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <speed>2~4.5</speed>
+        <scale>2.5~4</scale>
+        <rotationRate>-3~3</rotationRate>
+        <airTime>1~2</airTime>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <spawnLocType>OnSource</spawnLocType>
+        <fleckDef>DirtBits</fleckDef>
+        <burstCount>8~12</burstCount>
+        <positionRadius>1.5</positionRadius>
+        <angle>0~360</angle>
+        <absoluteAngle>true</absoluteAngle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <speed>3~6</speed>
+        <scale>0.8~1.4</scale>
+        <airTime>0.6~1.2</airTime>
+      </li>
+    </children>
+  </EffecterDef>
+
+</Defs>

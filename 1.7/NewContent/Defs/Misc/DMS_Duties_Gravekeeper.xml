@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 守墓人巡邏隊的勤務（由 DMS.LordJob_GravekeeperPatrol 依狀態分派）。
+       每一種勤務都先檢查「是不是站在電梯廳裡」，在的話先走出來：電梯廳是守墓人不跨過的界線。
+       最後一個節點都是站崗（DMS_GravekeeperHold），保證勤務一定給得出工作，
+       不然會落到機兵思考樹後面的 AI 戰鬥節點，打破「不開第一槍」。
+       Duties for the gravekeeper patrol (assigned by DMS.LordJob_GravekeeperPatrol according to its state).
+       Every duty first checks whether the pawn stands in the lift lobby and walks it out: the lobby is the line
+       gravekeepers do not cross. Each ends in standing watch (DMS_GravekeeperHold) so the duty always yields a job;
+       otherwise the mech think tree would fall through to its AI fight node and break the hold-fire rule. -->
+
+  <!-- 巡邏：領隊的焦點是路線點，其他成員的焦點是領隊（勤務半徑＝跟隨距離）。不戰鬥。
+       Patrol: the leader's focus is a route point, everyone else's is the leader (duty radius = follow distance). No fighting. -->
+  <DutyDef>
+    <defName>DMS_GravekeeperPatrol</defName>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="DMS.JobGiver_GravekeeperLeaveLobby" />
+        <li Class="DMS.JobGiver_GravekeeperMove">
+          <locomotionUrgency>Walk</locomotionUrgency>
+          <arriveRadius>2</arriveRadius>
+          <expiryInterval>150</expiryInterval>
+        </li>
+        <li Class="DMS.JobGiver_GravekeeperHold">
+          <expiryInterval>90</expiryInterval>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <!-- 盤查：原地停下、面向入侵者，不開火。Challenge: halt and face the intruder without firing. -->
+  <DutyDef>
+    <defName>DMS_GravekeeperChallenge</defName>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="DMS.JobGiver_GravekeeperLeaveLobby" />
+        <li Class="DMS.JobGiver_GravekeeperHold">
+          <expiryInterval>60</expiryInterval>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <!-- 交戰與搜索：只打看得到的目標（同 DMS_AlarmResponse），沒有目標就往焦點（最後看到入侵者的位置、搜索點或領隊）壓。
+       Engage and search: fight only what is in sight (as DMS_AlarmResponse); with nothing to shoot, close on the focus
+       (the intruder's last known cell, the search point or the leader). -->
+  <DutyDef>
+    <defName>DMS_GravekeeperEngage</defName>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="DMS.JobGiver_GravekeeperLeaveLobby" />
+        <li Class="DMS.JobGiver_GravekeeperFight">
+          <targetAcquireRadius>40</targetAcquireRadius>
+          <targetKeepRadius>50</targetKeepRadius>
+          <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+          <chaseTarget>true</chaseTarget>
+        </li>
+        <li Class="DMS.JobGiver_GravekeeperMove">
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <arriveRadius>3</arriveRadius>
+          <expiryInterval>120</expiryInterval>
+        </li>
+        <li Class="DMS.JobGiver_GravekeeperHold">
+          <expiryInterval>60</expiryInterval>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <!-- 站崗：停在原地、面向勤務焦點，什麼都不打（原版 Wait 會自動近戰相鄰的敵人）。
+       Standing watch: stay put, face the duty focus, attack nothing (vanilla Wait melees adjacent enemies on its own). -->
+  <JobDef>
+    <defName>DMS_GravekeeperHold</defName>
+    <driverClass>DMS.JobDriver_GravekeeperHold</driverClass>
+    <reportString>standing watch.</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+</Defs>

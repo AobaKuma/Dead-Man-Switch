@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 模组选项:人工肌肉是否会腐烂 -->
+  <DMS_Settings_ArtifuscleRots>人工肌肉会腐烂</DMS_Settings_ArtifuscleRots>
+  <DMS_Settings_ArtifuscleRotsDesc>关闭后，人工肌肉不会再腐烂，也不需要冷藏。立即生效；已经腐烂的人工肌肉会保持腐烂状态。</DMS_Settings_ArtifuscleRotsDesc>
+
+  <!-- 模组选项:情境音乐 -->
+  <DMS_Settings_SituationalMusic>情境音乐</DMS_Settings_SituationalMusic>
+  <DMS_Settings_SituationalMusicDesc>在 DMS 站点与地下设施，以及 DMS Boss 遭遇与追杀袭击期间播放 DMS 配乐：探索、警戒、交战、Boss 战、封锁与战后余波。关闭后由原版与其他模组决定音乐。立即生效。</DMS_Settings_SituationalMusicDesc>
+
+</LanguageData>

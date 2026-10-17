@@ -24,7 +24,7 @@ namespace DMS
     /// 挑選順序 / Selection order:
     ///   1. factionDefs 白名單中、世界上確實有實體的派系（維持任務敘述的調性）
     ///   2. 白名單全部落空時，若 autoDiscoverPermanentEnemies 為 true，
-    ///      退回「永久敵對的人形派系」——實務上就是各家海盜
+    ///      退回「永久敵對的人形派系」，實務上就是各家海盜
     /// </summary>
     public class QuestNode_Root_DMS_RandomFactionTimedSite : Fortified.QuestNode_Root_FFF_TimedHostileSite
     {
@@ -105,10 +105,10 @@ namespace DMS
 
         /// <summary>
         /// 父類的 TestRunInt 會檢查寫死的 factionDef，這裡改成檢查「有沒有任何候選」。
-        /// 刻意不在測試階段動用 Rand —— 這個方法在任務挑選期間會被反覆呼叫。
+        /// 刻意不在測試階段動用 Rand：這個方法在任務挑選期間會被反覆呼叫。
         ///
         /// The base checks its hard-coded factionDef; we check whether any candidate
-        /// exists instead. Deliberately no Rand here — this runs repeatedly during
+        /// exists instead. Deliberately no Rand here: this runs repeatedly during
         /// quest selection.
         /// </summary>
         protected override bool TestRunInt(Slate slate)

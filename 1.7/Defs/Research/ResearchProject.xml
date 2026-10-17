@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchTabDef>
+    <defName>DMS_Tab</defName>
+    <label>Dead Man Switch</label>
+    <generalTitle>Nara Industries Engineering</generalTitle>
+    <generalDescription>Nara Industries is made up of countless colonial fleets that travel endlessly between star systems developing new worlds; nobody knows what motivates them. Their colonial fleets tend to spread technology to every living world they moor at, justified as the advancement of human civilization, forcing the local population to complete the selection process of the Great Filter amid the turbulence of that progress, and to complete it fast.</generalDescription>
+  </ResearchTabDef>
+
+  <ResearchProjectDef Name="DMS_BaseTech" Abstract="True">
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <techLevel>Industrial</techLevel>
+    <tab>DMS_Tab</tab>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_UAVBasis</defName>
+    <label>Foundational drone tech</label>
+    <description>Uses simple control logic and signal transceivers to unlock basic mechanical units.</description>
+    <baseCost>200</baseCost>
+    <requiredResearchBuilding Inherit="False" />
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Machining</li>
+    </prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>3.20</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->Hive network and drone warfare</li>
+        <li>subject->automata of the war</li>
+        <li>subject->lidar lock-on</li>
+
+        <li>subject_story->survived in a highly unmanned military conflict zone</li>
+        <li>subject_story->works as a supervisor for unmanned transportation systems in a warehouse</li>
+        <li>subject_story->performed drone attack during the war against mechanoids</li>
+        <li>subject_story->established a special service team composed of mech dogs and quickly achieved outstanding results</li>
+        <li>subject_story->participated in a semiconductor industrial revolution at a midworld planet</li>
+
+        <li>subject_gerund->optimizing machine learning algorithms</li>
+        <li>subject_gerund->advocating for limits on autonomous weapons</li>
+        <li>subject_gerund->exploring the possibility of autonomous weapons</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_Material</defName>
+    <label>Material Engineering</label>
+    <description>"A perfect material can be calculated through scientific method" - one of the major breakthroughs mankind has ever achieved.</description>
+    <baseCost>1000</baseCost>
+    <requiredResearchBuilding Inherit="False" />
+    <prerequisites>
+      <li>DMS_UAVBasis</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>2.50</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->emerging materials</li>
+        <li>subject->advanced materials</li>
+        <li>subject->military-grade materials</li>
+
+        <li>subject_story->completed the periodic table of chemical elements</li>
+        <li>subject_story->calculated the alloy material ratio of high-strength materials through neutron number</li>
+        <li>subject_story->describes the influence of high pressure environment applied on material</li>
+        <li>subject_story->summarized the metal crystal phase prediction under gravity-free conditions</li>
+        <li>subject_story->experimented with gravity-free metal processing and contribute to materials science</li>
+
+        <li>subject_gerund->improving the production process</li>
+        <li>subject_gerund->calculating perfect material ratio</li>
+        <li>subject_gerund->testing the defensive performance of different materials against emerging thermal weapons</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_Autofacturer</defName>
+    <label>mass production</label>
+    <!-- 透過改進的生產工藝使得材料的加工生產流程能夠盡可能自動化與規模化。 -->
+    <description>Through improved production technology, the material processing and production process can be automated and scaled as much as possible.</description>
+    <baseCost>3000</baseCost>
+    <requiredResearchBuilding Inherit="False" />
+    <teachConcept>DMS_Autofacturer</teachConcept>
+    <prerequisites>
+      <li>DMS_Material</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>1.90</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_Plasfiber</defName>
+    <label>Artificial Fiber</label>
+    <description>Unlocks the production of artificial fibers. Each of these man-made fabrics has its own advantages and drawbacks.</description>
+    <baseCost>1250</baseCost>
+    <requiredResearchBuilding Inherit="False" />
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_Material</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->artificial fiber</li>
+        <li>subject->chemical industries</li>
+        <li>subject->acrylic Genesis</li>
+
+        <li>subject_story->explained the importance of the chemical industry to the production of synthetic fibers</li>
+        <li>subject_story->summarized the improvement effect of composite fiber blending process on fabric strength</li>
+        <li>subject_story->described the production revolution of traditional textile industry</li>
+        <li>subject_story->summarized the synthetic production under gravity-free conditions</li>
+        <li>subject_story->facilitated the connection between the genetics industry and the chemical industry</li>
+
+        <li>subject_gerund->synthesising organic compound</li>
+        <li>subject_gerund->improving the production process</li>
+        <li>subject_gerund->advancing the improvement of fabric industries</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech" MayRequire="Ludeon.Rimworld.Biotech">
+    <defName>DMS_Automatroid</defName>
+    <label>Automatroid Basis</label>
+    <description>These machines are called automatroids because they are not merely a weapon - they are an automatic weapon capable of judging and destroying a target on their own.\n\nA weapon this morally appalling should never have been accepted under normal circumstances, but it was used so widely by every power during the Third World War that it became an ordinary and unavoidable part of the battlefield long ago.</description>
+    <baseCost>1000</baseCost>
+    <requiredResearchBuilding Inherit="False" />
+    <techLevel>Industrial</techLevel>
+    <teachConcept>DMS_WeaponSystems</teachConcept>
+    <prerequisites>
+      <li>DMS_UAVBasis</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>3.90</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->autonomous Weapons</li>
+        <li>subject->Killer Robot</li>
+        <li>subject->automatroid</li>
+
+        <li>subject_story->predicted the consequences of a large number of unregulated loitering weapons are considerable</li>
+        <li>subject_story->discussed the contribution of pre-trained models to mechanical automation</li>
+        <li>subject_story->described the relationship between humans and drones is no longer just a relationship between tools and users</li>
+        <li>subject_story->condemned the rejection of the treaty in 2026 AD which intended to regulate the development of killer robots</li>
+        <li>subject_story->collected a large amount of historical documents before The Next Generation War</li>
+
+        <li>subject_gerund->participating in the technological iteration of autonomous robots</li>
+        <li>subject_gerund->reverse engineering from technical data from the decrypt data.</li>
+        <li>subject_gerund->reviewing the technical relevance between mechanoids and automatroids</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_MechBasis</defName>
+    <label>Mecha Gear</label>
+    <description>"Mecha gear" is a term covering the design patterns of modern mechanical engineering. It began as mockery of the exaggerated, unrealistic designs found in science fiction.\n\n After millennia of invention and refinement, however, advanced materials have become the foundation that puts those designs into practice.</description>
+    <baseCost>1500</baseCost>
+    <requiredResearchBuilding Inherit="False" />
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_Material</li>
+      <li>DMS_Automatroid</li>
+      <li>Prosthetics</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>3.20</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->mecha gear</li>
+        <li>subject->from science fiction to practical engineering</li>
+        <li>subject->standing on the horizon</li>
+
+        <li>subject_story->explained the substantial optimization of the flexible self-locking structure for the durability of omnidirectional joints.</li>
+        <li>subject_story->summarized the improvement of reciprocating motion structures using electromagnetic bearings</li>
+        <li>subject_story->described how multi-level, nested cushioning gears absorb and reuse impact forces during high-intensity activities</li>
+        <li>subject_story->served as a military advisor in the military</li>
+
+        <li>subject_gerund->improving the production process</li>
+        <li>subject_gerund->working for an automatroid manufacturing complex</li>
+        <li>subject_gerund->piloting a heavy exoskeleton to operate military missions</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <!-- 軍團是一系列以大規模集群作戰為目的設計的機兵系列，他們大多都有只著極為簡易的武器操作系統，但明確的分工與廉價的生產成本使得他們成為了生產規模最為可觀的戰鬥兵器。-->
+  <ResearchProjectDef ParentName="DMS_BaseTech" MayRequire="Ludeon.Rimworld.Biotech">
+    <defName>DMS_Legion</defName>
+    <label>Legion</label>
+    <description>A series of automatroids designed for large-scale warfare. Most of them carry only a simple weapon control system, but their clear division of labor and low production cost make them the most impressive combat weapon ever fielded in terms of sheer scale of service.</description>
+    <baseCost>500</baseCost>
+    <requiredResearchBuilding Inherit="False" />
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_Automatroid</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>4.50</researchViewY>
+    <techprintCount>2</techprintCount>
+    <heldByFactionCategoryTags>
+      <li>DMS</li>
+    </heldByFactionCategoryTags>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->metallic tide</li>
+        <li>subject->the marching tide</li>
+        <li>subject->Legion on march</li>
+
+        <li>subject_story->commanded a Legion company to defend the Zaporizhzhia energy center during the Third Europa War</li>
+        <li>subject_story->developed the doctrine of machine-armor coordination based on war experience</li>
+        <li>subject_story->recovered this technology from the buried ancient facility in a rimworld planet</li>
+        <li>subject_story->researching and optimizing this technology to make use of it</li>
+        <li>subject_story->obtained part of this technology during the encounter with outlaw militants</li>
+
+        <li>subject_gerund->operating a Legion task force</li>
+        <li>subject_gerund->serving as a commander in the war</li>
+        <li>subject_gerund->improving the production process</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_Prosthetic</defName>
+    <label>Neural Prosthesis</label>
+    <description>Neural prosthetics are semi-organic bionic limbs designed specifically for wounded and disabled soldiers. The adaptation training they demand is all but negligible. Out of concern for durability and mass production, however, they do not work as efficiently as the original limb.</description>
+    <baseCost>750</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_MechBasis</li>
+    </prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>4.50</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->nerves-accessed</li>
+        <li>subject->artificial nerve</li>
+        <li>subject->bipedal machinery</li>
+
+        <li>subject_story->realized the vulnerability of human flesh in the battlefield</li>
+        <li>subject_story->provided medical care to the disabled by converting mechanical remain into prosthetic limbs</li>
+        <li>subject_story->lamented that humans had to transform themselves to adapt to the increasingly mechanized warfare</li>
+        <li>subject_story->lost most of the body parts due to exploded bomb while scavenging at a battlefield site</li>
+        <li>subject_story->collected a large amount of historical documents before The Next Generation War</li>
+
+        <li>subject_gerund->making prosthetic surgery affordable for every disabled person in Rimworld</li>
+        <li>subject_gerund->helping every disabled person to stand up again</li>
+        <li>subject_gerund->providing battlefield medical guidance in the Colonial Fleet Humanitarian Support Organization</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <!-- T1 -->
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_DeadMansSwitch</defName>
+    <label>Dead Man's Switch</label>
+    <description>The dead man's switch is a mechanical safety mechanism intended to automatically terminate active equipment the moment its operator is incapacitated.\n\nBefore mankind explored space, they found that this mechanism would eventually let an artificial intelligence understand, to some degree... the meaning of death.\n That discovery carried mankind into a new era of history...\n\n the era of the fifth-level artificial intelligence.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+      <li>DMS_AdvancedControl</li>
+    </prerequisites>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>3.20</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->Halted problem</li>
+        <li>subject->Solution unsolved</li>
+        <li>subject->bipedal machinery</li>
+
+        <li>subject_story->quoted algorithm engineer Yánzhi Jiang's overview: "Machines cannot judge whether they can get results within a limited time, and humans cannot either."</li>
+        <li>subject_story->completed the historical collection of Earth's Space era on a glitterworld</li>
+        <li>subject_story->participated in the Ordo Historia's investigation and research project on the Colonial Fleet</li>
+        <li>subject_story->collected a large amount of historical documents before The Next Generation War</li>
+
+        <li>subject_gerund->reinventing this technology by investigating ancient databases</li>
+        <li>subject_gerund->thinking about the meaning of lifeform and the loneliness of mankind</li>
+        <li>subject_gerund->exploring human possibilities and how to avoid repeating past mistakes of mechanoid again</li>
+      </rulesStrings>
+    </generalRules>
+    <requiredAnalyzed>
+      <li>ComponentControlChip</li>
+    </requiredAnalyzed>
+    <discoveredLetterTitle>About: Special Components</discoveredLetterTitle>
+    <discoveredLetterText>Some automatroids require specific critical components, and those components cannot be manufactured inside a gravity well.\n\n The colonial fleet has told us we are free to lure in and destroy any automatroid that has left the chain of command in order to obtain them.</discoveredLetterText>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_Artifuscle</defName>
+    <label>Artificial Muscle</label>
+    <description>Artifuscle is a prosthetic material grown from genetically engineered stock: bundles of sauropsid muscle fiber sheathed in artificial biological fiber, which gives it a very high compatibility with living tissue. It did not take long for the arms manufacturers to realize what biological-mechanical hybrid technology meant for the future.</description>
+    <baseCost>750</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>SterileMaterials</li>
+      <li>DMS_Plasfiber</li>
+    </prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->bio-machine symbiosis</li>
+        <li>subject->nerves and wiring</li>
+        <li>subject->biological machinery</li>
+
+        <li>subject_story->analyzed this technology in depth and received a severe warning from the Colonial Fleet</li>
+        <li>subject_story->achieved artificial synthesis of life under limited conditions by reverse engineering the technology</li>
+        <li>subject_story->completed the historical collection of Earth's Space era on a glitterworld</li>
+        <li>subject_story->participated in the Ordo Historia's investigation and research project on the Colonial Fleet</li>
+        <li>subject_story->collected a large amount of historical documents before The Next Generation War</li>
+
+        <li>subject_gerund->reinventing this technology by investigating ancient databases</li>
+        <li>subject_gerund->thinking about the blurred line between organic and mechanic</li>
+        <li>subject_gerund->investigating hidden truth the Colonial Fleet tried hard to conceal behind this technology</li>
+      </rulesStrings>
+    </generalRules>
+    <techprintCount>2</techprintCount>
+    <heldByFactionCategoryTags>
+      <li>DMS</li>
+    </heldByFactionCategoryTags>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_EquipmentBasis</defName>
+    <label>Pioneer Equipment</label>
+    <description>Uniforms and equipment designed mainly for colonial use, including sealed suits for surviving hostile environments.</description>
+    <baseCost>200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <requiredResearchBuilding Inherit="False" />
+    <prerequisites>
+      <li>ComplexClothing</li>
+    </prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>5.50</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- T2 -->
+
+  <ResearchProjectDef ParentName="DMS_BaseTech" MayRequire="Ludeon.Rimworld.Biotech">
+    <defName>DMS_Mechlink</defName>
+    <label>Cluster Transceiver</label>
+    <description>The cluster transceiver is a method humans developed for controlling automatroids in war. For those automatroids that have developed self-awareness, of course, the method is not a comfortable one.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>DMS_AdvancedControl</li>
+      <li>SterileMaterials</li>
+    </prerequisites>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>3.80</researchViewY>
+    <requiredAnalyzed>
+      <li>ComponentTransmitter</li>
+    </requiredAnalyzed>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->cluster control</li>
+        <li>subject->harmony of cluster behavior</li>
+        <li>subject->grand mechanized theory</li>
+
+        <li>subject_story->participated in the Ordo Historia's investigation and research project on the Colonial Fleet</li>
+        <li>subject_story->believes that developing drone autonomy is the key to breaking away from the tool-like relationship between humans and machines and unlocking their potential</li>
+        <li>subject_story->recreated the technology based on a recovered Sakalava super-heavy mech</li>
+        <li>subject_story->realizing long-distance anti-interference control through artificially induced psychic reactions</li>
+        <li>subject_story->discovered that machines controlled by psychic reactions would retain part of the consciousness of the operator</li>
+
+        <li>subject_gerund->recovering ancient autonomous weapons</li>
+        <li>subject_gerund->reverse engineering from ancient technology</li>
+        <li>subject_gerund->exploring the relationship between collectivity and autonomy</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_EquipmentAdvanced</defName>
+    <label>Defense Equipment</label>
+    <description>Equipment for colony defense and riot control.</description>
+    <baseCost>750</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Gunsmithing</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>5.50</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_EquipmentElite</defName>
+    <label>Military Equipment</label>
+    <description>Equipment designed primarily for automatroid use. Most of it is heavy enough that it is unsuitable for a human to handle.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Gunsmithing</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>5.50</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_EquipmentHeavy</defName>
+    <label>Heavy Weaponry</label>
+    <description>Special equipment built around heavy automatroids and specialized models. No matter how strong a human is, they simply cannot lift it, so it is unsuitable for human use.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Gunsmithing</li>
+    </prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>5.50</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech" MayRequire="Ludeon.Rimworld.Biotech">
+    <defName>DMS_BattleFrame</defName>
+    <label>Battle Friends</label>
+    <description>The records are old enough that we have never established whether their proper designation was "battle frames" or "battle friends". Either way they are automatroids, serving as a frame for operating equipment or as a companion in a fight.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_MechBasis</li>
+    </prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>3.80</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_Hybrid</defName>
+    <label>Hybrid Engineering</label>
+    <description>Biological-mechanical hybrid technology was established during the Third World War. Mercenaries from some of the belligerent nations founded an armed state made up of military personnel, meant to secure rights for mercenaries whom the humanitarian conventions had never protected, and used drones and synthetic prosthetics to return discharged wounded veterans to the battlefield.\n\nThe world's militaries soon recognized what biomechanical hybrids meant for modern warfare, and armed their own forces with them.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_DeadMansSwitch</li>
+      <li>DMS_Artifuscle</li>
+    </prerequisites>
+    <researchViewX>7.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+    <requiredAnalyzed>
+      <li>Artifuscle</li>
+    </requiredAnalyzed>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_Bionics</defName>
+    <label>Biosynthetic Prosthetics</label>
+    <description>As automatroid and bionic engineering advanced, manufacturing bionic automatroids with biological-mechanical hybrid technology became possible.</description>
+    <baseCost>1250</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_Artifuscle</li>
+    </prerequisites>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>1.70</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_OrganSurgery</defName>
+    <label>Organ Replacement</label>
+    <description>Mankind gave up a great deal in that long war... and even where the loss could later be made good, some things were gone forever.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_Hybrid</li>
+      <li>DMS_Hypothesis</li>
+    </prerequisites>
+    <researchViewX>8.00</researchViewX>
+    <researchViewY>2.20</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- T3 -->
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_Hypothesis</defName>
+    <label>Wetware Hypothesis</label>
+    <description>After the discovery of the dead man's switch, AI algorithm engineer Yanzhi Jiang proposed a hypothetical solution to the halting problem...\n\nAnd working around that conjecture, we seem to be drawing closer and closer to the so-called universal machine.</description>
+    <baseCost>3000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>DMS_DeadMansSwitch</li>
+      <li>MultiAnalyzer</li>
+    </prerequisites>
+    <researchViewX>7.00</researchViewX>
+    <researchViewY>3.20</researchViewY>
+    <requiredAnalyzed>
+      <li>Neurocomputer</li>
+    </requiredAnalyzed>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->in short Hypothesis</li>
+        <li>subject->the solution</li>
+        <li>subject->wetware machinery</li>
+
+        <li>subject_story->quoted algorithm engineer Yánzhi Jiang's overview: "The meaning of life is carrying information of its iteration, information about genes and traits, reaction to the environment, and mindless thoughts on everything"</li>
+        <li>subject_story->analyzed this technology in depth and received a severe warning from the Colonial Fleet</li>
+        <li>subject_story->achieved artificial synthesis of life under limited conditions by reverse engineering the technology</li>
+        <li>subject_story->learned about a method to mass produce wetware through biological cultivation</li>
+        <li>subject_story->collected a large amount of historical documents before The Next Generation War</li>
+
+        <li>subject_gerund->escaping from the pursuit and assassination of countless colonial fleets</li>
+        <li>subject_gerund->thinking about the blurred line between organic and mechanic</li>
+        <li>subject_gerund->investigating hidden truth the Colonial Fleet tried hard to conceal behind this technology</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_HeavyAutomatroid</defName>
+    <label>Heavy Automatroid</label>
+    <description>These heavy machines once stood ready for total war between nations. Fortunately, war on that scale does not happen often.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_Hypothesis</li>
+    </prerequisites>
+    <researchViewX>9.00</researchViewX>
+    <researchViewY>3.20</researchViewY>
+    <requiredAnalyzed>
+      <li>ComponentFireControl</li>
+    </requiredAnalyzed>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_HumanoidEngineering</defName>
+    <label>Ergonomics</label>
+    <description>Humanoid automatroids are humanoid because, compared to other animals, a human is an exceptionally cooperative test subject for training a neural network in a wide range of tactical movements. Humanoid automatroids trained and produced this way also inherit compatibility with human environments and human tools.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_DeadMansSwitch</li>
+    </prerequisites>
+    <researchViewX>7.00</researchViewX>
+    <researchViewY>3.80</researchViewY>
+    <techprintCount>2</techprintCount>
+    <heldByFactionCategoryTags>
+      <li>DMS</li>
+    </heldByFactionCategoryTags>
+  </ResearchProjectDef>
+
+  <!--特化機兵 -->
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_Ronin</defName>
+    <label>Specialized design</label>
+    <!-- 在冷戰時代結束以後，微電子技術的飛速突破使得機兵的構型與技術整合不再高度受限於無定形神經電路的制約。在這之後機兵設計能以更低的研製成本分化出不同的特化型號，適應新時代戰爭中所需要的複雜需求。 -->
+    <description>Following the end of the Cold War, rapid breakthroughs in microelectronics freed automatroid configuration and systems integration from the constraints of amorphous neural circuitry. From then on automatroid designs could branch into specialized models at a lower development cost, meeting the low-intensity but complicated demands of the new era of warfare - counter-terrorism, policing actions and the like.</description>
+    <baseCost>2500</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_HumanoidEngineering</li>
+    </prerequisites>
+    <researchViewX>8.00</researchViewX>
+    <researchViewY>3.80</researchViewY>
+    <techprintCount>2</techprintCount>
+    <heldByFactionCategoryTags>
+      <li>DMS</li>
+    </heldByFactionCategoryTags>
+
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_Synthroid</defName>
+    <label>Next-Gen Weaponry</label>
+    <description>The arms race centered on biological-mechanical hybrids continued all the way to the Fourth World War, and had reached unimaginable heights long before anyone recognized the problem.\n\nWhat followed were the so-called next-generation weapons and the next-generation war they brought with them - a war that very nearly ended Earth.</description>
+    <baseCost>6000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>DMS_Hybrid</li>
+      <li>DMS_HeavyAutomatroid</li>
+    </prerequisites>
+    <researchViewX>11.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+  </ResearchProjectDef>
+
+
+  <!--先進控制系統：集群控制鏈路與超重型旋翼機兵 -->
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_AdvancedControl</defName>
+    <label>Advanced control</label>
+    <description>In the millennium, when printed circuits became widespread, the improvement in computing power and density of microelectronics laid the foundation for more advanced cluster control link integration, and brought possibilities for more intelligent production lines and automatroid designs.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_MechBasis</li>
+    </prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>3.20</researchViewY>
+  </ResearchProjectDef>
+</Defs>

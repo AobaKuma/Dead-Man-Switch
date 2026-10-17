@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 軍火庫舊址（DMS_ArsenalAssault）。Old arsenal site. -->
+  <DMS_Arsenal_ExpiredLabel>軍火庫舊址已失去蹤跡</DMS_Arsenal_ExpiredLabel>
+  <DMS_Arsenal_ExpiredText>軍火庫舊址的勘測紀錄已經過時，那處設施的位置就此失去蹤跡。</DMS_Arsenal_ExpiredText>
+  <DMS_Arsenal_ClearedLabel>軍火庫舊址已肅清</DMS_Arsenal_ClearedLabel>
+  <DMS_Arsenal_ClearedText>巡視軍火庫舊址的守墓人已經倒下，設施的防禦也已全數沉寂。\n\n洞庫的封鎖仍未解除。用停機坪上的誘餌雷達把駭蜥召喚過來並將其擊毀，再駭入每座洞庫的安全控制台，就能打開防爆門，看看裡面還留下了什麼。</DMS_Arsenal_ClearedText>
+  <DMS_Arsenal_EntryCountdownLabel>軍火庫舊址：增援即將抵達</DMS_Arsenal_EntryCountdownLabel>
+  <DMS_Arsenal_EntryCountdownText>你已進入軍火庫舊址。無人安保網路已經標記了你的存在。\n\n敵方增援將於 {0} 後抵達。在那之前解決守墓人、召喚並擊毀駭蜥，進入洞庫。</DMS_Arsenal_EntryCountdownText>
+  <DMS_ArsenalPatrol_Challenge>守墓人停下來盤查{0}。除非遭到攻擊、有人闖入洞庫、洞庫的封鎖被打破，或設施警戒值升高，守墓人不會開火。</DMS_ArsenalPatrol_Challenge>
+  <DMS_ArsenalPatrol_Search>一座洞庫的封鎖被打破了。守墓人正在掃蕩整座設施。</DMS_ArsenalPatrol_Search>
+
+</LanguageData>

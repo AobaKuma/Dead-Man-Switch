@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- FPV 無人機母巢：設施版 FPV 機巢（DMS_Building_FPVNest）的玩家版，由封存檔案 I 級「駐屯兵器」解鎖。
+       設施版靠警報訊號一次放出四架野禽；玩家版改走 FFF 的無人機平台（同獵犬平台）：裝填鋼鐵、手動部署、收回退料。
+       研究前置寫 Inherit="False"，免得父類的 DMS_UAVBasis 被併進來，研究頁上兩個專案都列出它。
+       FPV drone hive: the player version of the facility FPV nest (DMS_Building_FPVNest), unlocked by the class I
+       sealed file "garrison arsenal". The facility nest releases four wildfowl on an alert signal; this one runs on
+       FFF's drone platform like the hound station: load steel, deploy by hand, recall for a refund.
+       researchPrerequisites uses Inherit="False" so the parent's DMS_UAVBasis isn't merged in and listed as a second unlock. -->
+  <ThingDef ParentName="DMS_BaseDronePlatform">
+    <defName>DMS_FPVNest</defName>
+    <label>FPV drone hive</label>
+    <description>A garrison drone nest built from sealed pioneer patterns. Load it with steel and it assembles wildfowl, coaxial-rotor suicide drones that hunt down hostiles and detonate against them, and launches them in salvos of up to four.\n\nUnlike the facility nests still guarding this world's installations, it has no underground logistics line to restock it, so it must be fed by hand. Recalled drones return their steel; drones that run their batteries flat are lost.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Drone_Wildfowl</ThingDef>
+    </descriptionHyperlinks>
+    <size>(1,1)</size>
+    <fillPercent>0.75</fillPercent>
+    <uiIconScale>0.5</uiIconScale>
+    <staticSunShadowHeight>0.35</staticSunShadowHeight>
+    <graphicData>
+      <texPath>Things/Building/DMS_Building_HangerSmall</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <!-- 貼圖 3x3 繪製、機巢本體只佔中間那一條。The 3x3 art only fills the middle strip. -->
+        <rect>(0.32,0.29,0.36,0.65)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <WorkToBuild>8000</WorkToBuild>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Mass>30</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <Steel>120</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>DMS_Occultech_RemnantPatterns</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <!-- 每架 15 鋼（同集群織鳥的彈艙），一批最多四架（同設施版），庫存上限 16 架份。
+           15 steel a drone (as in the cluster weaver's bay), up to four per salvo (as the facility nest), stock for 16. -->
+      <li Class="Fortified.CompProperties_MechPlatform">
+        <gizmoIconPath>UI/Ability/Drone_Send_bird</gizmoIconPath>
+        <fixedIngredient>Steel</fixedIngredient>
+        <costPerPawn>15</costPerPawn>
+        <cooldownTicks>2500</cooldownTicks>
+        <maxPawnsToSpawn>4</maxPawnsToSpawn>
+        <startingIngredientCount>60</startingIngredientCount>
+        <maxIngredientCount>240</maxIngredientCount>
+        <spawnPawnKind>DMS_Drone_Wildfowl</spawnPawnKind>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

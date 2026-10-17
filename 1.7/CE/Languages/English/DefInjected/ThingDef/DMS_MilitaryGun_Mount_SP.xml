@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Flame Turret -->
+  <DMS_Gecko_FlameTurret.label>flamethrower</DMS_Gecko_FlameTurret.label>
+  <!-- EN: A flame launcher used by mechs that can effectively ignite flammable materials within a range -->
+  <DMS_Gecko_FlameTurret.description>A flame projector used by mechs. It effectively ignites anything flammable within its range.</DMS_Gecko_FlameTurret.description>
+  <!-- EN: Flame Turret -->
+  <DMS_Gecko_FlameTurret.verbs.Verb_ShootCE.label>flamethrower</DMS_Gecko_FlameTurret.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: light MachineGun turret -->
+  <DMS_Iguana_SubMachineGun.label>mounted light machine gun</DMS_Iguana_SubMachineGun.label>
+  <!-- EN: Supressive weapon chambered in pistol caliber round.\n\nThis weapon is designed specially for mounted use, so only specific unit can equip it. -->
+  <DMS_Iguana_SubMachineGun.description>A suppressive weapon chambered in full-power rifle rounds.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</DMS_Iguana_SubMachineGun.description>
+  <!-- EN: light MachineGun turret -->
+  <DMS_Iguana_SubMachineGun.verbs.Verb_ShootCE.label>mounted light machine gun</DMS_Iguana_SubMachineGun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: close inbound defense system -->
+  <DMS_Tarbosaurus_ShotgunGun.label>close-in defense system</DMS_Tarbosaurus_ShotgunGun.label>
+  <!-- EN: a multi-barrel turret designed to suppress enemies in close-range. -->
+  <DMS_Tarbosaurus_ShotgunGun.description>A multi-barrel shotgun turret for suppressing enemy infantry at close quarters. It reacts quickly at short range and fires three shells in succession.</DMS_Tarbosaurus_ShotgunGun.description>
+  <!-- EN: close inbound defense system -->
+  <DMS_Tarbosaurus_ShotgunGun.verbs.Verb_ShootCE.label>close-in defense system</DMS_Tarbosaurus_ShotgunGun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Heavy MachineGun turret -->
+  <DMS_Tarbosaurus_SubMachineGun.label>mounted heavy machine gun</DMS_Tarbosaurus_SubMachineGun.label>
+  <!-- EN: heavy machine gun for mech soldier or infantry support platform.\n\nThis weapon is designed specially for mounted use, so only specific unit can equip it. -->
+  <DMS_Tarbosaurus_SubMachineGun.description>A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</DMS_Tarbosaurus_SubMachineGun.description>
+  <!-- EN: Heavy MachineGun turret -->
+  <DMS_Tarbosaurus_SubMachineGun.verbs.Verb_ShootCE.label>mounted heavy machine gun</DMS_Tarbosaurus_SubMachineGun.verbs.Verb_ShootCE.label>
+  
+  <!-- EN: Mounted GAU-19/A -->
+  <DMS_SubTurret_127Gatling.label>mounted GAU-19/A</DMS_SubTurret_127Gatling.label>
+  <!-- EN: A multibarrel turret mounted on shoulder. -->
+  <DMS_SubTurret_127Gatling.description>A multi-barrel machine gun turret mounted on the shoulder.</DMS_SubTurret_127Gatling.description>
+  
+  <!-- EN: Kord HMG turret -->
+  <DMS_Dozer_KordMG.label>Kord HMG turret</DMS_Dozer_KordMG.label>
+  <!-- EN: heavy machine gun for mech soldier or infantry support platform.
+
+This weapon is designed specially for mounted use, so only specific unit can equip it. -->
+  <DMS_Dozer_KordMG.description>A heavy machine gun for mech soldiers or infantry support platforms.
+
+This weapon is designed specifically for mounted use, so only specific units can equip it.</DMS_Dozer_KordMG.description>
+  
+</LanguageData>

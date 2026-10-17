@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- 鬥牛犬 BullHound：介於獒犬（Dogge）與人猿（Ape）之間的重型四足駐防犬。
+	     BullHound: heavy quadruped garrison hound, pitched between the Dogge and the Ape. -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[@Name="DMS_MechBullHoundBase"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>QuadrupedLow</bodyShape>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="DMS_MechBullHoundBase"]/statBases</xpath>
+				<value>
+					<CarryWeight>120</CarryWeight>
+					<CarryBulk>90</CarryBulk>
+					<AimingAccuracy>0.5</AimingAccuracy>
+					<ShootingAccuracyPawn>0.7</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.5</MeleeDodgeChance>
+					<MeleeCritChance>0.08</MeleeCritChance>
+					<MeleeParryChance>0.02</MeleeParryChance>
+					<MaxHitPoints>300</MaxHitPoints>
+					<NightVisionEfficiency>0.4</NightVisionEfficiency>
+					<SmokeSensitivity>0</SmokeSensitivity>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="DMS_MechBullHoundBase"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>16</ArmorRating_Blunt>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="DMS_MechBullHoundBase"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>11</ArmorRating_Sharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="DMS_MechBullHoundBase"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.12</ArmorRating_Heat>
+				</value>
+			</li>
+			<!-- 噴火型自身覆寫的熱抗換算成 CE 尺度。The flamer pattern's own heat-armour override, on the CE scale. -->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_BullHound_Flamer"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.3</ArmorRating_Heat>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="DMS_MechBullHoundBase"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>720</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>5</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>15</Steel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>250</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>120</MaxOverHeal>
+						<MinArmorPct>0.75</MinArmorPct>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="DMS_MechBullHoundBase"]/tools</xpath>
+				<value>
+					<tools Inherit="False">
+						<li Class="CombatExtended.ToolCE">
+							<label>jaws</label>
+							<capacities>
+								<li>Bite</li>
+							</capacities>
+							<power>18</power>
+							<cooldownTime>2.0</cooldownTime>
+							<armorPenetrationSharp>3.0</armorPenetrationSharp>
+							<armorPenetrationBlunt>6.0</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+							<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+							<chanceFactor>0.7</chanceFactor>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>ram</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>14</power>
+							<cooldownTime>2.6</cooldownTime>
+							<armorPenetrationBlunt>12.0</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+							<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+							<chanceFactor>0.3</chanceFactor>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SAGE 節點任務：[fleetName] 由 DMS.QuestNode_Root_DMS_FleetNetworkSite 提供；保留 (installation==…) 條件與 (*Threat) 標色。 -->
+  <DMS_FleetNetworkSite.questNameRules.rulesStrings>
+    <li>questName(installation==DMS_SageNodeSite)->賢者</li>
+    <li>questName(installation==DMS_SageNodeSite)->致盲[sage]</li>
+    <li>sage->SAGE 節點</li>
+    <li>sage->戰略主機</li>
+    <li>sage->防空主機</li>
+  </DMS_FleetNetworkSite.questNameRules.rulesStrings>
+  <DMS_FleetNetworkSite.questDescriptionRules.rulesStrings>
+    <li>questDescription(installation==DMS_SageNodeSite)->我們找到了正在協調[fleetName]追殺行動的主機：一座 SAGE 節點。那是艦隊用於星球戰略防空、並串連數個大陸上雷達與導航網路的分布式戰略指揮計算機。它的機櫃陣列由(*Threat)[enemiesCount]名[enemiesLabel](/Threat)看守，並連接著一整套附帶火力支援的設施警報系統。\n\n賢者主機可以駭入兩到三次，每一次都能從它的戰略資料庫中提取出科技藍圖、封存技術匣或訪問密鑰，而每一次都會再度觸發設施警報。將它摧毀能重創艦隊的追緝行動，但在一兩年內，SAGE 網路中的另一台計算機就會升格為主機繼續執行任務。\n\n在網路完成主機輪換之前，節點座標在[siteTimeout]內有效。\n\n注意：這是一座敵對設施。一旦進入，它的監控協議就會在倒數結束後呼叫敵方援軍，而且節點能夠呼叫迫擊砲火力支援。</li>
+  </DMS_FleetNetworkSite.questDescriptionRules.rulesStrings>
+
+</LanguageData>

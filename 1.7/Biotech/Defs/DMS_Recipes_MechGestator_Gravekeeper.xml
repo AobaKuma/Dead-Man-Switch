@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 守墓人 Gravekeeper：主戰規格的超重型人形機兵，由 II 級封存檔案「主戰規格」解鎖，使用大型培育艙。
+       主戰規格的生產流程被大幅簡化，所以培育週期比同級的超重型短，也不需要人造肌肉或太空零件。
+       兩種型號各一個配方：斯圖格納型的發射架寫在種族上，多吃一份射控組件與化合燃料（導彈推進劑）。
+       Gravekeeper: main battle ultra-heavy humanoid, unlocked by the class II sealed file "main battle specification", large gestator.
+       Main battle production is drastically simplified, so it gestates faster than other ultra-heavies and needs
+       no artifuscle or spacer parts.
+       One recipe per pattern: the Stugna rack is part of the race and also takes a fire control unit and chemfuel
+       (missile propellant).
+       研究：researchPrerequisite 沿用超重型基底的重型機兵（DMS_HeavyAutomatroid）作為細分科技，主戰規格放在 researchPrerequisites。
+       Research: researchPrerequisite keeps the ultra-heavy base's DMS_HeavyAutomatroid as the tier tech; the main battle file goes in researchPrerequisites. -->
+  <RecipeDef Name="DMS_GravekeeperRecipeBase" ParentName="DMS_SuperHeavyMechanoidRecipe" Abstract="True">
+    <researchPrerequisites>
+      <li>DMS_Occultech_MainBattle</li>
+    </researchPrerequisites>
+    <gestationCycles>4</gestationCycles>
+  </RecipeDef>
+
+  <!-- 標準型 / standard pattern -->
+  <RecipeDef ParentName="DMS_GravekeeperRecipeBase">
+    <defName>DMS_Make_Gravekeeper</defName>
+    <label>Gestate gravekeeper</label>
+    <description>Gestate a gravekeeper automatroid, a main battle ultra-heavy built to patrol and guard unmanned installations. Its parts are largely shared with the mobile dragoon, it fights well at close quarters, and it can wield the dragoon's heavy weapons.\n\nThis pattern carries no shoulder rack. It demands five points of bandwidth.</description>
+    <products>
+      <DMS_Mech_Gravekeeper>1</DMS_Mech_Gravekeeper>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>DMS_Mech_Gravekeeper</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>300</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>16</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- 斯圖格納型 / Stugna pattern -->
+  <RecipeDef ParentName="DMS_GravekeeperRecipeBase">
+    <defName>DMS_Make_Gravekeeper_Stugna</defName>
+    <label>Gestate gravekeeper (Stugna)</label>
+    <description>Gestate a gravekeeper automatroid, a main battle ultra-heavy built to patrol and guard unmanned installations. Its parts are largely shared with the mobile dragoon, it fights well at close quarters, and it can wield the dragoon's heavy weapons.\n\nThis pattern carries the dragoon's Stugna launcher on its right shoulder with two anti-tank guided missiles, each replaced a day after it is fired. The rack slows it down a little, and it demands five points of bandwidth.</description>
+    <products>
+      <DMS_Mech_Gravekeeper_Stugna>1</DMS_Mech_Gravekeeper_Stugna>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>ComponentFireControl</ThingDef>
+      <ThingDef>DMS_Mech_Gravekeeper_Stugna</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>300</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>16</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentFireControl</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+</Defs>

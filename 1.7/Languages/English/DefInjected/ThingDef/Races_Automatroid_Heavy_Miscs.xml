@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Ape -->
+  <DMS_Mech_Ape.label>Ape</DMS_Mech_Ape.label>
+  <!-- EN: A prototype design which tested the feasibility of a large humanoid automatroid capable of equipping heavy weapons. -->
+  <DMS_Mech_Ape.description>A prototype design which tested the feasibility of a large humanoid automatroid capable of equipping heavy weapons.</DMS_Mech_Ape.description>
+  <!-- EN: head -->
+  <DMS_Mech_Ape.tools.head.label>head</DMS_Mech_Ape.tools.head.label>
+  
+  <!-- EN: Hermit Crab -->
+  <DMS_Mech_HermitCrab.label>Hermit Crab</DMS_Mech_HermitCrab.label>
+  <!-- EN: These large, expensive, and heavy mobile industrial machines are designed to be an all-in-one unit for colonizing new worlds. Their large and expensive magnetic stabilized shells integrate many complex-axis CNC tools and precision machinery. In a pinch, its precision tools allow it to perform surgical procedures as long as the patient overcomes their fear of a machine weighing several tons acting as their surgeon. The shell also houses an engineering drone bay, letting it carry and deploy uca and erima work drones in the field. -->
+  <DMS_Mech_HermitCrab.description>A huge, expensive and cumbersome mobile industrial mother machine, mostly designed and built by worlds intent on space colonization. Its huge, expensive magnetically stabilized cylindrical shell integrates a bewildering number of multi-axis CNC tools and micro manipulators. The same magnetic field doubles as a short-range ballistic interception barrier - a by-product its manufacturers are happy to advertise. It is precise enough to perform surgery, provided the patient can overcome their fear of having a machine weighing several tons as their surgeon. The shell also houses an engineering drone bay, letting it carry and deploy uca and erima work drones in the field.</DMS_Mech_HermitCrab.description>
+  <!-- EN: head -->
+  <DMS_Mech_HermitCrab.tools.head.label>head</DMS_Mech_HermitCrab.tools.head.label>
+  <!-- EN: laser cutter -->
+  <DMS_Mech_HermitCrab.tools.laser_cutter.label>laser cutter</DMS_Mech_HermitCrab.tools.laser_cutter.label>
+  <!-- EN: surgical drill -->
+  <DMS_Mech_HermitCrab.tools.surgical_drill.label>surgical drill</DMS_Mech_HermitCrab.tools.surgical_drill.label>
+  
+</LanguageData>

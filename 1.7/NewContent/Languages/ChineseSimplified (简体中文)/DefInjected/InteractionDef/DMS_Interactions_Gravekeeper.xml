@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: challenge -->
+  <DMS_GravekeeperChallengeTalk.label>盘查</DMS_GravekeeperChallengeTalk.label>
+  <!-- [INITIATOR_nameDef] = 守墓人，[RECIPIENT_nameDef] = 被盘查的入侵者。句型照原版互动记录（第三人称、句尾“。”）。
+       [INITIATOR_nameDef] is the gravekeeper, [RECIPIENT_nameDef] the intruder; phrased like the vanilla interaction logs. -->
+  <DMS_GravekeeperChallengeTalk.logRulesInitiator.rulesStrings>
+    <li>r_logentry(p=3)->[INITIATOR_nameDef][challenged][RECIPIENT_nameDef]。</li>
+    <li>r_logentry->[INITIATOR_nameDef][demanded][RECIPIENT_nameDef]出示[credential]。</li>
+    <li>r_logentry->[INITIATOR_nameDef]命令[RECIPIENT_nameDef][order]。</li>
+    <li>r_logentry->[INITIATOR_nameDef][scanned][RECIPIENT_nameDef]，却找不到任何[credential]。</li>
+    <li>r_logentry->[INITIATOR_nameDef]挡住[RECIPIENT_nameDef]的去路，并[challenged][RECIPIENT_objective]。</li>
+    <li>r_logentry->[INITIATOR_nameDef]向[RECIPIENT_nameDef]宣读了一段数百年前的安保条例。</li>
+
+    <li>challenged(p=3)->盘查了</li>
+    <li>challenged->拦下并盘问了</li>
+    <li>challenged->审问了</li>
+    <li>challenged->喝止了</li>
+    <li>challenged->厉声质问了</li>
+    <li>challenged->例行盘查了</li>
+
+    <li>demanded(p=3)->要求</li>
+    <li>demanded->强硬地要求</li>
+    <li>demanded->坚持要</li>
+    <li>demanded->命令</li>
+
+    <li>credential->授权</li>
+    <li>credential->通行码</li>
+    <li>credential->身份证明</li>
+    <li>credential->通行证</li>
+    <li>credential->部队番号</li>
+    <li>credential->识别码</li>
+
+    <li>scanned->扫描了</li>
+    <li>scanned->用传感器扫过</li>
+    <li>scanned->检查了</li>
+
+    <li>order->停下</li>
+    <li>order->站在原地不动</li>
+    <li>order->撤离</li>
+    <li>order->说明来意</li>
+    <li>order->表明身份</li>
+    <li>order->离开设施</li>
+  </DMS_GravekeeperChallengeTalk.logRulesInitiator.rulesStrings>
+
+</LanguageData>

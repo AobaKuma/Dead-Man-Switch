@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 軍火庫舊址（DMS_ArsenalAssault）。Old arsenal site. -->
+  <DMS_Arsenal_ExpiredLabel>Arsenal trail gone cold</DMS_Arsenal_ExpiredLabel>
+  <DMS_Arsenal_ExpiredText>The survey records on the old arsenal have gone stale. The site's position is lost.</DMS_Arsenal_ExpiredText>
+  <DMS_Arsenal_ClearedLabel>Arsenal secured</DMS_Arsenal_ClearedLabel>
+  <DMS_Arsenal_ClearedText>The gravekeepers walking the old arsenal are down and the site's defences have fallen silent.\n\nThe bunker seals still hold. Use the decoy radar on the central pad to call a tarbosaurus here and destroy it, then hack each bunker's security console to open its blast door and see what was left behind.</DMS_Arsenal_ClearedText>
+  <DMS_Arsenal_EntryCountdownLabel>Old arsenal: reinforcements inbound</DMS_Arsenal_EntryCountdownLabel>
+  <DMS_Arsenal_EntryCountdownText>You have entered the old arsenal. Its unmanned security network has flagged your presence.\n\nEnemy reinforcements will arrive in {0}. Deal with the gravekeepers, call in and destroy the tarbosaurus, and get into the bunkers before then.</DMS_Arsenal_EntryCountdownText>
+  <DMS_ArsenalPatrol_Challenge>A gravekeeper has stopped to challenge {0}. Gravekeepers hold fire unless they are attacked, an intruder enters a bunker, a bunker seal is broken or the facility alert runs high.</DMS_ArsenalPatrol_Challenge>
+  <DMS_ArsenalPatrol_Search>A bunker seal has been broken. The gravekeepers are sweeping the compound.</DMS_ArsenalPatrol_Search>
+
+</LanguageData>

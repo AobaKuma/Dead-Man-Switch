@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- DMS_SubsonicModule -->
+  <DMS_SubsonicModule.label>infrasonic module</DMS_SubsonicModule.label>
+  <DMS_SubsonicModule.description>A tuned infrasound emitter array packaged to bolt onto a mech's hull and draw from its power cell. On command it releases a single burst of infrasound around the mech. Living enemies caught in it are wracked with nausea and pain, and many break and flee outright. Mechs are unaffected.\n\nThe emitter draws power continuously, slightly increasing the mech's energy consumption.</DMS_SubsonicModule.description>
+
+  <!-- DMS_Weapon_GrenadeSubsonic -->
+  <DMS_Weapon_GrenadeSubsonic.label>infrasonic grenades</DMS_Weapon_GrenadeSubsonic.label>
+  <DMS_Weapon_GrenadeSubsonic.description>Grenades that release a single burst of tuned infrasound instead of shrapnel. Infrasound passes through walls and cover alike, so the burst reaches every living creature in its radius, friend or foe, wracking them with nausea and pain and sending many into a panic. Buildings and mechs are unaffected.</DMS_Weapon_GrenadeSubsonic.description>
+  <DMS_Weapon_GrenadeSubsonic.verbs.0.label>throw infrasonic grenade</DMS_Weapon_GrenadeSubsonic.verbs.0.label>
+
+  <!-- DMS_Proj_GrenadeSubsonic -->
+  <DMS_Proj_GrenadeSubsonic.label>infrasonic grenade</DMS_Proj_GrenadeSubsonic.label>
+
+</LanguageData>

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -8,6 +9,10 @@ namespace DMS
     // 研究文书的工作驱动
     public class JobDriver_ProcessQuestWorkable : JobDriver
     {
+        // 每段工作的長度,與原版研究(JobDriver_Research.JobEndInterval)相同;時間到就結束工作,讓小人重新檢查工作優先度
+        // Length of one work segment, same as vanilla research (JobDriver_Research.JobEndInterval); the job then ends so the pawn re-checks its work priorities
+        private const int JobEndInterval = 4000;
+
         private Thing TargetDoc => job.GetTarget(TargetIndex.A).Thing;
         private Thing TargetBench => job.GetTarget(TargetIndex.B).Thing;
 
@@ -50,9 +55,27 @@ namespace DMS
             workToil.WithEffect(EffecterDefOf.Research, TargetIndex.B);
             // 头部显示进度条
             workToil.WithProgressBar(TargetIndex.A, () => WorkableComp?.ProgressPercent ?? 0f, false, -0.5f);
-            workToil.defaultCompleteMode = ToilCompleteMode.Never;
+            // 一般工作分段進行,進度存在文書上不會遺失;玩家強制指派時則一路做到這份文書完成
+            // Normal work runs in segments and the progress stays on the document; a player-forced job keeps going until this document is done
+            if (job.playerForced)
+            {
+                workToil.defaultCompleteMode = ToilCompleteMode.Never;
+            }
+            else
+            {
+                workToil.defaultCompleteMode = ToilCompleteMode.Delay;
+                workToil.defaultDuration = JobEndInterval;
+            }
             workToil.activeSkill = () => SkillDefOf.Intellectual;
             yield return workToil;
+
+            // 段落結束時把文書放在研究台旁,下次掃描會優先撿回同一份,而不是換拿倉庫裡的另一份
+            // At the end of a segment, set the document down by the bench so the next scan picks the same one back up instead of fetching another from storage
+            yield return Toils_General.Do(delegate
+            {
+                if (pawn.carryTracker.CarriedThing != null)
+                    pawn.carryTracker.TryDropCarriedThing(pawn.Position, ThingPlaceMode.Near, out _);
+            });
         }
     }
 
@@ -60,7 +83,11 @@ namespace DMS
     // 分配工作
     public class WorkGiver_ProcessQuestWorkable : WorkGiver_Scanner
     {
-        public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForGroup(ThingRequestGroup.HaulableAlways);
+        public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
+        {
+            return CompQuestWorkable.GetOwnerThingDefs().Where(thingDef => thingDef.alwaysHaulable).SelectMany(pawn.Map.listerThings.ThingsOfDef);
+        }
+
         public override PathEndMode PathEndMode => PathEndMode.ClosestTouch;
 
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)

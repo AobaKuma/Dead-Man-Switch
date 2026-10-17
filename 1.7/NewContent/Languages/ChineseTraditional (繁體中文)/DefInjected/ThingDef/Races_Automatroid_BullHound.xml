@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: bullhound -->
+  <DMS_Mech_BullHound.label>鬥牛犬</DMS_Mech_BullHound.label>
+  <!-- EN: A heavy quadruped automatroid built for garrison duty. An enlarged derivative of the Dogge, it gives up the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was posted at gates and corridor junctions of remnant installations to stop intruders at close range.
+
+This pattern mounts an automatic shotgun. The mount is fixed and cannot be swapped. -->
+  <DMS_Mech_BullHound.description>一種為設施駐防任務打造的中型四足機兵。其具備厚重裝甲與固定的背部掛架，被部署在設施內用於驅趕與殲滅入侵者。
+
+本型號掛載一挺自動霰彈槍。掛架為固定式，無法更換。</DMS_Mech_BullHound.description>
+  <!-- EN: jaws -->
+  <DMS_Mech_BullHound.tools.jaws.label>顎部</DMS_Mech_BullHound.tools.jaws.label>
+  <!-- EN: ram -->
+  <DMS_Mech_BullHound.tools.ram.label>衝撞</DMS_Mech_BullHound.tools.ram.label>
+
+  <!-- EN: hellhound -->
+  <DMS_Mech_BullHound_Flamer.label>地獄犬</DMS_Mech_BullHound_Flamer.label>
+  <!-- EN: A heavy quadruped automatroid built for garrison duty. An enlarged derivative of the Dogge, it gives up the artificial-muscle agility of its smaller cousin for thick plating and a fixed back mount, and was posted at gates and corridor junctions of remnant installations to stop intruders at close range.
+
+This pattern mounts a Flameblaster for clearing corridors, with its plating treated against its own flame. The mount is fixed and cannot be swapped. -->
+  <DMS_Mech_BullHound_Flamer.description>一種為設施駐防任務打造的中型四足機兵。其具備厚重裝甲與固定的背部掛架，被部署在設施內用於驅趕與殲滅入侵者。
+
+本型號掛載火焰發射器用於清掃走廊，裝甲亦針對自身火焰做了防護處理。掛架為固定式，無法更換。</DMS_Mech_BullHound_Flamer.description>
+  <!-- EN: jaws -->
+  <DMS_Mech_BullHound_Flamer.tools.jaws.label>顎部</DMS_Mech_BullHound_Flamer.tools.jaws.label>
+  <!-- EN: ram -->
+  <DMS_Mech_BullHound_Flamer.tools.ram.label>衝撞</DMS_Mech_BullHound_Flamer.tools.ram.label>
+
+</LanguageData>

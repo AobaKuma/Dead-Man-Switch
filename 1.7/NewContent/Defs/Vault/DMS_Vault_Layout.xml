@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- DMS 軍事儲存庫的建築版面。
+       大廳長廊串起隨機房間，一半的門換成自動門。結構材質全部走 Core + DMS，不需要 DLC。
+       Corridor-and-rooms layout; half the doors become autodoors. Core + DMS only. -->
+  <StructureLayoutDef>
+    <defName>DMS_MilitaryVault</defName>
+    <workerClass>DMS.DMS_LayoutWorker_Vault</workerClass>
+    <canHaveMultipleLayoutsInRoom>true</canHaveMultipleLayoutsInRoom>
+    <clearRoomsEntirely>true</clearRoomsEntirely>
+    <minRoomWidth>8</minRoomWidth>
+    <minRoomHeight>8</minRoomHeight>
+
+    <!-- 大廳長廊：先開通道、再沿通道掛房間（DMS.VaultLayoutGenerator）。主幹 + 支道，
+         房間貼在每段走廊兩側與盡頭，沒掛到房間的地方留成岩層，整體輪廓不是方形。
+         走廊寬度與警戒設施見 DMS_VaultMainHall；房間尺寸與支道數量見下方 ModExtension_VaultLayout。
+         Main hall: corridors first, rooms hung along them (DMS.VaultLayoutGenerator). A spine plus
+         branches, rooms on both sides and at every dead end; whatever is left stays rock, so the
+         footprint is not a rectangle. Width and security fixtures live on DMS_VaultMainHall; room
+         sizes and branch counts in ModExtension_VaultLayout below. -->
+    <corridorDef>DMS_VaultMainHall</corridorDef>
+
+    <!-- 結構 / Structure -->
+    <!-- 牆用 DMS_SuperWall：不可破壞、不可拆，玩家只能走門（含駭入控制台開的閘門與獎勵房），
+         不能挖牆繞過分區與密封門。非 stuff 建材，所以不設 wallStuffDef。
+         Walls are DMS_SuperWall: indestructible and non-deconstructible, so the player has to go through
+         doors (including the console-opened gates and treasury) instead of tunnelling around them.
+         Not made from stuff, hence no wallStuffDef. -->
+    <wallDef>DMS_SuperWall</wallDef>
+    <doorDef>Door</doorDef>
+    <doorStuffDef>Steel</doorStuffDef>
+    <wallLampDef>DMS_EmergencyLamp</wallLampDef>
+    <terrainDef>MetalTile</terrainDef>
+    <!-- 牆不可破壞，就不做隨機損傷（wallDamageRange 留預設 Invalid）。
+         Indestructible walls take no random damage; wallDamageRange stays at its Invalid default. -->
+
+    <roomDefs>
+      <!-- 必定出現 / Guaranteed -->
+      <DMS_VaultEntranceHall>
+        <countRange>1</countRange>
+      </DMS_VaultEntranceHall>
+      <DMS_VaultArmory>
+        <countRange>1~2</countRange>
+      </DMS_VaultArmory>
+      <DMS_VaultMechBay>
+        <countRange>1</countRange>
+      </DMS_VaultMechBay>
+      <!-- 獎勵房：密封門要駭入安全控制台才開（見 DMS_Vault_Treasury.xml）。
+           Treasury: sealed doors that open only after hacking the security console. -->
+      <DMS_VaultTreasury>
+        <countRange>1</countRange>
+      </DMS_VaultTreasury>
+
+      <!-- 加權出現 / Weighted -->
+      <DMS_VaultCommandRoom>0.8</DMS_VaultCommandRoom>
+      <DMS_VaultGarrisonQuarters>1</DMS_VaultGarrisonQuarters>
+      <DMS_VaultPowerPlant>0.8</DMS_VaultPowerPlant>
+      <DMS_VaultWreckHall>1</DMS_VaultWreckHall>
+      <!-- 生活區（純裝飾）。Living quarters (decoration only). -->
+      <DMS_VaultMessHall>0.6</DMS_VaultMessHall>
+      <DMS_VaultInfirmary>0.5</DMS_VaultInfirmary>
+
+      <!-- 大型房間：只有面積夠大的合併房間抽得到（見各 def 的 areaSizeRange）。
+           Large rooms: only merged rooms big enough qualify (see each def's areaSizeRange). -->
+      <DMS_VaultAtrium>1</DMS_VaultAtrium>
+      <DMS_VaultVehicleBay>0.8</DMS_VaultVehicleBay>
+    </roomDefs>
+
+    <!-- 欄位名的拼字沿用原版（junkScaterrers），不是筆誤。
+         Field name matches vanilla's spelling; not a typo on our side. -->
+    <junkScaterrers>
+      <Filth_Trash>
+        <groupsPerHundredCells>0~3</groupsPerHundredCells>
+        <itemsPerGroup>2~4</itemsPerGroup>
+        <groupDistRange>3~5</groupDistRange>
+      </Filth_Trash>
+      <Filth_BlastMark>
+        <groupsPerHundredCells>-1~2</groupsPerHundredCells>
+        <itemsPerGroup>1~2</itemsPerGroup>
+      </Filth_BlastMark>
+      <Filth_MachineBits>
+        <groupsPerHundredCells>0~2</groupsPerHundredCells>
+        <itemsPerGroup>2~4</itemsPerGroup>
+        <groupDistRange>2~4</groupDistRange>
+      </Filth_MachineBits>
+      <Filth_RubbleRock>
+        <groupsPerHundredCells>2~4</groupsPerHundredCells>
+        <itemsPerGroup>3~8</itemsPerGroup>
+        <groupDistRange>3~5</groupDistRange>
+        <minGroups>1</minGroups>
+      </Filth_RubbleRock>
+      <Granite>
+        <groupsPerHundredCells>1~2</groupsPerHundredCells>
+        <itemsPerGroup>3~8</itemsPerGroup>
+        <groupDistRange>1~2</groupDistRange>
+        <minGroups>1</minGroups>
+      </Granite>
+    </junkScaterrers>
+
+    <modExtensions>
+      <li Class="DMS.ModExtension_VaultLayout">
+        <!-- 房間含牆的寬（沿走廊）與深（離開走廊）。必出房間都要 9x9，下限別低於 9。
+             Room width (along the corridor) and depth (away from it), walls included.
+             Required rooms need 9x9, so keep the minimum at 9 or above. -->
+        <roomWidthRange>9~14</roomWidthRange>
+        <roomDepthRange>9~14</roomDepthRange>
+        <!-- 至少兩條支道，分區閘門才有意義。At least two branches so the sector gates mean something. -->
+        <branchCountRange>1~2</branchCountRange>
+        <!-- 十字樞紐：主幹上的交叉寬走廊，兩側長支道，每一臂都是分區閘門。
+             Cross hubs: wide crossings on the spine with a branch off each side and a sector gate at every arm. -->
+        <hubCountRange>1~2</hubCountRange>
+        <!-- 兩座樞紐中心至少隔 40 格，中間留岩層給通風中樞。Two hubs at least 40 apart, leaving rock for the vent centre. -->
+        <hubSpacing>40</hubSpacing>
+        <!-- 直線走廊最長 100 格（含牆），超過就轉折。Straight corridors at most 100 cells (walls included); past that they bend. -->
+        <maxStraightLength>100</maxStraightLength>
+        <hubSize>17</hubSize>
+        <hubArmWidth>11</hubArmWidth>
+        <hubBranchChance>0.85</hubBranchChance>
+        <subBranchChance>0.35</subBranchChance>
+        <branchSpacing>18</branchSpacing>
+        <!-- 相鄰房合併成大房（中庭 / 車輛庫靠這個）。Neighbours merge into big rooms (atrium / vehicle bay need this). -->
+        <mergeChance>0.25</mergeChance>
+        <!-- 沿走廊留空的機率，讓輪廓更不規則。Chance to leave a gap, for a more ragged outline. -->
+        <gapChance>0.12</gapChance>
+        <endRooms>true</endRooms>
+        <!-- 分區間隙：不同分區的房間與走廊之間至少隔 6 格岩層，每條支道起頭因此是一段兩側不掛房間的連絡走廊。
+             6 格是原版自動接線的範圍，壁掛燈、配電盤之類的用電設施就搆不到隔壁分區的電纜。
+             Sector gap: at least 6 cells of rock between different sectors' rooms and corridors, so every branch
+             starts with a stretch of bare link corridor. 6 is vanilla's auto-connect range, so wall lamps,
+             substations and other powered fixtures can't reach the next sector's conduit. -->
+        <sectorGap>6</sectorGap>
+        <!-- 入口檢查點：每間沿走廊的房間有這個機率在門前夾一間 8x6 的警衛站，房間往外推 5 格，只能穿過檢查點進出。
+             Entrance checkpoints: each room along a corridor has this chance of an 8x6 guard post in front of it;
+             the room is pushed 5 cells out and can only be reached through the checkpoint. -->
+        <checkpointRoomDef>DMS_VaultCheckpoint</checkpointRoomDef>
+        <checkpointChance>0.35</checkpointChance>
+        <!-- 電梯廳一定直接貼著走廊，用捲門接出去：由寬到窄試，放得下的第一種就用。
+             The lift lobby always sits right on a corridor and opens onto it through a rolling door, tried widest first. -->
+        <entranceDoorDefs>
+          <li>DMS_RollingDoor_Triple</li>
+          <li>DMS_RollingDoor_Double</li>
+          <li>DMS_RollingDoor_Single</li>
+        </entranceDoorDefs>
+        <!-- 走廊嵌入結構：房間掛完後，沿走廊沒掛房間的空牆往岩層裡嵌（預設朝北：z = 0 那排落在走廊牆線上）。
+             Corridor embeds: once the rooms are hung, set into the rock along bare corridor wall (north by default: the
+             z = 0 row lands on the corridor's wall line). -->
+        <embedStructures>
+          <li>DMS_Embed_A</li>
+          <li>DMS_Embed_B</li>
+          <li>DMS_Embed_C</li>
+          <li>DMS_Embed_D</li>
+        </embedStructures>
+        <embedChance>0.5</embedChance>
+
+        <!-- 分區閘門：每條支道與母走廊的路口封一排：5 格寬的走廊中間一扇 1x3 密封門、兩側各一格強化牆；
+             閘門旁放一台控制台，駭入即開。控制台一律放在從入口走得到的那一側。
+             Sector gates: each branch's junction with its parent is sealed with one row: a 1x3 sealed door in
+             the middle of the 5-wide corridor with a reinforced wall cell either side, and a console beside it
+             that opens it when hacked. The console always sits on the side the entrance can reach. -->
+        <sectorGates>true</sectorGates>
+        <gateChance>1</gateChance>
+        <!-- 1x3 密封門置中，兩側補強化牆。A 1x3 sealed door in the middle, reinforced wall either side. -->
+        <gateDoorDef>DMS_SealedRollingDoor_Triple</gateDoorDef>
+        <gateWallDef>DMS_SuperWall</gateWallDef>
+        <gateConsoleDef>DMS_VaultGateConsole</gateConsoleDef>
+      </li>
+      <!-- 一半的門換成自動門，讀起來像還有備援電力的設施。
+           Half the doors become autodoors, so the place reads as still partly powered. -->
+      <li Class="DMS.ModExtension_VaultDoors">
+        <reinforcedDoorDef>Autodoor</reinforcedDoorDef>
+        <reinforcedDoorStuff>Steel</reinforcedDoorStuff>
+        <reinforcedDoorRatio>0.5</reinforcedDoorRatio>
+      </li>
+      <!-- 設施封鎖中控：警戒值滿時倒數封死電梯（邏輯在 FFF）。依序偏好指揮室、動力室，不放電梯廳、走廊與獎勵房。
+           Lockdown controller: seals the lifts after a countdown once the alert maxes out (logic in FFF). Prefers the
+           command room, then the power room; never the lobby, a corridor or the treasury. -->
+      <li Class="DMS.ModExtension_FacilityLockdown">
+        <controllerDef>DMS_Building_LockdownController</controllerDef>
+        <preferredRooms>
+          <li>DMS_VaultCommandRoom</li>
+          <li>DMS_VaultPowerPlant</li>
+        </preferredRooms>
+      </li>
+      <!-- 檢修通道網（通風管道）：在岩層裡挖 1 格寬的管道，把同一分區的設備間（必接）與其他一般房間（機率）串起來，
+           接回該分區的走廊一兩處，並延伸出一間只能從管道進入的密室。所有開口都是原版通風口：不能走，要打破或拆掉才進得去。
+           走廊的配電盤掛在密室裡，電纜沿管道穿過通風口接到走廊中線。管道各自只開口到同一分區，但可能經由連接管道跨分區相通（見 crossSectorChance）。
+           Maintenance tunnels (vent ducts): 1-wide ducts dug through the rock linking a sector's equipment rooms
+           (always) and other ordinary rooms (by chance), opening onto that sector's corridor in one or two places and
+           running on to a secret room reachable only from the duct. Every opening is a vanilla vent: not walkable,
+           break or deconstruct it to get through. The corridor's substation hangs in the secret room, its conduit
+           running under the vents to the corridor strip. Each network only opens onto its own sector, but link ducts may
+           join sectors (see crossSectorChance). -->
+      <li Class="DMS.ModExtension_VaultTunnels">
+        <equipmentRooms>
+          <li>DMS_VaultPowerPlant</li>
+        </equipmentRooms>
+        <extraRoomChance>0.35</extraRoomChance>
+        <otherSectorChance>0.5</otherSectorChance>
+        <secretRoomSize>6~8</secretRoomSize>
+        <!-- 密室裡靠牆擺一座主動式通風口與一兩台設施機器。One active vent and a machine or two against the secret room's walls. -->
+        <secretRoomFixtures>
+          <li>
+            <defs>
+              <li>DMS_Building_VentSmall</li>
+              <li>DMS_Building_VentMedium</li>
+              <li>DMS_Building_VentLarge</li>
+            </defs>
+            <count>1</count>
+          </li>
+          <li>
+            <defs>
+              <li>DMS_Building_Machine_Medium</li>
+              <li>DMS_Building_Eletric_Medium</li>
+            </defs>
+            <count>1~2</count>
+          </li>
+        </secretRoomFixtures>
+        <floorDef>Concrete</floorDef>
+        <hatchDef>Vent</hatchDef>
+        <conduitDef>HiddenConduit</conduitDef>
+        <substationDef>DMS_SubstationCabinet_Wall</substationDef>
+        <corridorLinks>1~2</corridorLinks>
+        <maxLegLength>45</maxLegLength>
+        <!-- 跨分區連通：每個管道網有這個機率再挖一段管道，接到最近的別的分區網路；多出一條繞過閘門的路（兩頭仍要打破通風口）。
+             Cross-sector links: each duct network has this chance of one more duct to the nearest other sector's
+             network, adding a way round the gates (still behind breakable vents at either end). -->
+        <crossSectorChance>0.5</crossSectorChance>
+        <!-- 通風中樞：遠離主結構、埋在岩層裡的一座結構，從它的牆上拉通風管道到各分區（接進該分區的管道網，沒有就接到房間或走廊），
+             跟主結構之間只有這些管道相連，兩頭都是通風口。中樞裡的配電櫃也會替它接到的網路供電。
+             Vent centre: a structure buried in the rock well away from the main structure, with vent ducts from its walls
+             out to the sectors (into a sector's duct network, else to one of its rooms or its corridor). Those ducts are its
+             only link to the main structure, with a vent at either end. Its substation cabinet powers the networks it joins. -->
+        <ventCenterStructures>
+          <li>DMS_Room_VentCenter_A</li>
+          <li>DMS_Room_VentCenter_B</li>
+          <li>DMS_Room_VentCenter_C</li>
+        </ventCenterStructures>
+        <ventCenterChance>1</ventCenterChance>
+        <ventCenterDistance>6~24</ventCenterDistance>
+        <ventCenterLinks>2~4</ventCenterLinks>
+        <ventCenterMaxLegLength>80</ventCenterMaxLegLength>
+      </li>
+      <!-- 守墓人巡邏隊（DMS.GravekeeperPatrolPlacement）：五架一組沿走廊樹巡邏、在獎勵房門前停留，能開分區閘門。
+           交戰規則保守：看到入侵者先盤查不開火；被攻擊、入侵者進入管制區（獎勵房、指揮室）或警戒值達 engageAlertLevel 才開火；
+           獎勵房被打開後全設施搜索。不會走進電梯廳。
+           Gravekeeper patrol (DMS.GravekeeperPatrolPlacement): squads of five walk the corridor tree, stop at the treasury
+           door and may open the sector gates. Conservative rules of engagement: an intruder in sight is challenged, not
+           shot; they open fire when attacked, when an intruder enters a restricted room (treasury, command room) or when
+           the alert reaches engageAlertLevel, and sweep the whole facility once the treasury is opened. They never step
+           into the lift lobby. -->
+      <li Class="DMS.ModExtension_GravekeeperPatrol">
+        <squad>
+          <li>
+            <kind>DMS_Mech_Gravekeeper_Sepulturero</kind>
+            <count>2</count>
+          </li>
+          <li>
+            <kind>DMS_Mech_Gravekeeper_Enterrador</kind>
+            <count>2</count>
+          </li>
+          <li>
+            <kind>DMS_Mech_Gravekeeper_Velador</kind>
+            <count>1</count>
+          </li>
+        </squad>
+        <overwatchKinds>
+          <li>DMS_Mech_Gravekeeper_Velador</li>
+        </overwatchKinds>
+        <!-- 每隊從上面五個名額裡隨機抽 1~5 架。Each squad draws 1~5 mechs at random from the five slots above. -->
+        <squadSize>1~5</squadSize>
+        <squadCount>1</squadCount>
+        <!-- 軍事儲藏庫：封存的物資庫，部分有守墓人看守，其餘只靠封存艙與設施防務。
+             Military vault: mothballed stores; some are kept by gravekeepers, the rest rely on the cradles and fixed defences. -->
+        <chance>0.3</chance>
+        <engageAlertLevel>0.6</engageAlertLevel>
+      </li>
+    </modExtensions>
+  </StructureLayoutDef>
+
+</Defs>

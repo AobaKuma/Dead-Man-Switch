@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       石碑任務線（程式在 _Source/DMS/Quests/Stele/）。
+       1. DMS_Stele：主線。研究「量子位元破譯」完成時由 DMS.ModExtension_ResearchQuest 派發（一局一次），
+          說書人不會抽到。陸續派發撞擊地點子任務，直到帶回 keysCount 枚密鑰。
+       2. DMS_SteleKey_ImpactSite：撞擊地點。先鋒殘餘守著墜落的密鑰艙；帶走密鑰即成功，
+          留在站點上（隨地圖消失）即失敗，主線之後會補發。
+       3. DMS_SteleVault：石碑封藏庫。密鑰集齊後解讀並用掉，派發這個最終站點；
+          把石碑（可微縮，500 kg）帶回據點即主線成功。石碑遺失時 3~5 天後指出下一座。
+
+       Stele line (code in _Source/DMS/Quests/Stele/).
+       1. DMS_Stele: main line. Issued once per game by DMS.ModExtension_ResearchQuest when qubit decryption is
+          researched; never picked by the storyteller. Issues impact-site subquests until keysCount glyphs are home.
+       2. DMS_SteleKey_ImpactSite: Legacy remnants hold a crashed glyph capsule. Taking the glyph succeeds; leaving
+          it behind (it vanishes with the map) fails and the main line issues another later.
+       3. DMS_SteleVault: the glyphs are read and spent, then this final site is issued. Bringing the stele
+          (minifiable, 500 kg) home completes the line. A lost stele points to the next vault in 3~5 days.
+       ============================================================ -->
+
+  <QuestScriptDef>
+    <defName>DMS_Stele</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Occultech</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Occultech</failedOrExpiredHistoryEvent>
+    <isRootSpecial>true</isRootSpecial>
+    <autoAccept>true</autoAccept>
+    <defaultChallengeRating>4</defaultChallengeRating>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->The buried stele</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->With qubit decryption, our researchers can now pick up the faint authentication pulses of occultech glyphs: sealed cipher plates the colonial fleets dropped across this world. Each glyph carries one fragment of the key to a stele buried beneath this world, and the fleets scatter them so that no single find can open one.\n\nRecover [keysCount] glyphs and bring them home. Reading a full set will resolve where the stele lies and how to break its seal. Glyph sites will surface over time, and the Legacy remnants assigned to them are still standing guard.\n\nOnce the stele is home, a decoder set flush against it will extract its knowledge.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="DMS.QuestNode_Root_Stele">
+      <steleDef>DMS_OccultTechFont</steleDef>
+      <keysCount>4</keysCount>
+      <vaultQuestDef>DMS_SteleVault</vaultQuestDef>
+      <subquestDefs>
+        <li>DMS_SteleKey_ImpactSite</li>
+      </subquestDefs>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>DMS_SteleKey_ImpactSite</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Occultech</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Occultech</failedOrExpiredHistoryEvent>
+    <autoAccept>true</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Impact site</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->Our receivers have caught the authentication pulse of an occultech glyph. The fleets deliver glyphs to pioneer installations by orbital drop, and this capsule never reached its beacon: it came down hard, and the pioneers sheltered it where it fell. The Legacy remnants assigned to the impact site are still holding it.\n\nThe glyph is inside the shelter at the centre of the site. Take it and bring it home. If we leave it behind, it will be lost with the site.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <questContentRules>
+      <rulesStrings>
+        <li>letterLabelMapGenerated->Glyph capsule wreckage</li>
+        <li>letterTextMapGenerated->Wreckage from the glyph capsule is strewn around the pioneers' shelter, and the remnants guarding it have already noticed us.\n\nThe glyph is inside the shelter. It only counts once it is home.</li>
+      </rulesStrings>
+    </questContentRules>
+    <questAvailableLetterLabel>Occultech glyph found: Impact site</questAvailableLetterLabel>
+    <questAvailableLetterTextIsDescription>true</questAvailableLetterTextIsDescription>
+    <canOccurOnAllPlanetLayers>true</canOccurOnAllPlanetLayers>
+    <root Class="DMS.QuestNode_Root_OccultechKey_Site">
+      <layer>Surface</layer>
+      <sitePartDefs>
+        <li>DMS_SteleKey_ImpactSite</li>
+      </sitePartDefs>
+      <siteFaction>DMS_Legacy</siteFaction>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>DMS_SteleVault</defName>
+    <!-- 成功事件交給主線（同一刻結束），這裡只記失敗。The main line records success (it ends at the same moment); only failure is recorded here. -->
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Occultech</failedOrExpiredHistoryEvent>
+    <autoAccept>true</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Stele vault</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription(retry==False)->Our researchers have read the full set of occultech glyphs. The reading collapsed their quantum states and the glyphs are spent, but the cipher they held has resolved: a stele lies buried in a sealed vault at the marked location, still guarded by Legacy remnants.\n\n[vaultInstructions]</li>
+        <li>questDescription(retry==True)->The resolved glyph cipher still holds. With the last stele lost, it points to the next one: another sealed vault under Legacy guard, at the marked location.\n\n[vaultInstructions]</li>
+        <li>vaultInstructions->Clear the vault, claim the stele, uninstall it and bring it home. It weighs [steleMass] kg, so plan the transport. If we leave it behind, it will be lost with the site.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <questContentRules>
+      <rulesStrings>
+        <li>letterLabelMapGenerated->Stele vault</li>
+        <li>letterTextMapGenerated->The stele stands at the centre of the vault, and the remnants guarding it are already moving.\n\nOnce the area is clear, claim the stele and uninstall it. It must leave this site with us.</li>
+      </rulesStrings>
+    </questContentRules>
+    <questAvailableLetterLabel>Stele located: Stele vault</questAvailableLetterLabel>
+    <questAvailableLetterTextIsDescription>true</questAvailableLetterTextIsDescription>
+    <canOccurOnAllPlanetLayers>true</canOccurOnAllPlanetLayers>
+    <root Class="DMS.QuestNode_Root_SteleVault">
+      <layer>Surface</layer>
+      <!-- 石碑要運回來，站點放近一點。The stele has to be hauled back, so keep the vault close. -->
+      <distanceFromColonyRange>8~20</distanceFromColonyRange>
+      <pointsFactor>1.25</pointsFactor>
+      <sitePartDefs>
+        <li>DMS_SteleVault</li>
+      </sitePartDefs>
+      <siteFaction>DMS_Legacy</siteFaction>
+      <steleDef>DMS_OccultTechFont</steleDef>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

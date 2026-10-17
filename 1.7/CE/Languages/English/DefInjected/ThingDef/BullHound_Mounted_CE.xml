@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- CE 下鬥牛犬霰彈型改為 KS-23，覆寫 NewContent 的翻譯。Under CE the bullhound shotgun becomes a KS-23; overrides the NewContent translation. -->
+  <!-- EN: mounted KS-23 -->
+  <DMS_BullHound_ShotgunMounted.label>mounted KS-23</DMS_BullHound_ShotgunMounted.label>
+  <!-- EN: A KS-23 carbine shotgun fixed to a bullhound's back mount. Its 23x75mmR shells are built to stop intruders in corridors and doorways outright.
+
+This weapon is designed specifically for mounted use, so only specific units can equip it. -->
+  <DMS_BullHound_ShotgunMounted.description>A KS-23 carbine shotgun fixed to a bullhound's back mount. Its 23x75mmR shells are built to stop intruders in corridors and doorways outright.
+
+This weapon is designed specifically for mounted use, so only specific units can equip it.</DMS_BullHound_ShotgunMounted.description>
+
+</LanguageData>

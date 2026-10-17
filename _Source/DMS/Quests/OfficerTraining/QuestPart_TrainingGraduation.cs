@@ -50,7 +50,7 @@ namespace DMS
             RoyalTitleDef target = newTitle;
             if (trainee.royalty != null && (target == null || (current != null && current.seniority >= target.seniority)))
             {
-                // 受訓期間榮譽又漲了,或目標階級已經拿到手 —— 重算一次
+                // 受訓期間榮譽又漲了,或目標階級已經拿到手，重算一次
                 target = trainee.royalty.GetTitleAwardedWhenUpdating(faction, trainee.royalty.GetFavor(faction));
             }
             if (trainee.royalty != null && target != null && (current == null || target.seniority > current.seniority))

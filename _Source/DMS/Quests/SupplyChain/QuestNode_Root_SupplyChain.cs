@@ -22,6 +22,7 @@ namespace DMS
         public List<SupplyCategoryOption> categoryPool;
         public QuestScriptDef subquestDef;
         public RulePackDef issuerNamePack;   // 發包單位名稱生成規則
+        public PawnKindDef askerKind;        // 後勤調度員的 PawnKind(null 則由陣營隨機)
 
         // 難度點數 → 挑戰等級(任務面板骷髏數,1~3)
         public SimpleCurve pointsToChallengeRatingCurve;
@@ -32,8 +33,12 @@ namespace DMS
         public float countGrowthPerStage = 1.6f;      // 每階段數量成長倍率
         // 難度點數 → 第一階段要求的總市值
         public SimpleCurve pointsToRequestValueCurve;
-        public float rewardMarkup = 1.35f;            // 報酬 = 該階段要求總市值 × markup
+        public float rewardMarkup = 1.35f;            // 報酬 = 實際交付市值 × markup
         public float rewardGrowthPerStage = 1.1f;     // 每階段額外報酬加成(數量成長之外的溢價)
+        // 實際交付市值的計價上限 = 合約估值 × factor,避免用高價品灌報酬
+        public float rewardValueCapFactor = 1.5f;
+        // 每階段要求數量的載重上限 = 補給艙載重 × fraction ÷ 類別中位單重
+        public float massCapacityUseFraction = 0.9f;
         // 完成獎勵:全部階段完成時,按合約貨物總市值 × factor 給予原版式獎勵選項
         public float completionBonusFactor = 0.4f;
         public FactionDef giverFactionDef;            // 好感度獎勵選項的發包陣營(可空)
@@ -48,27 +53,39 @@ namespace DMS
                 || QuestGen_Get.GetMap(false, null) == null
                 || !categoryPool.Any(o => MedianUnitValue(o.category) > 0f))
                 return false;
-            // 調度員可自動生成(canGeneratePawn),只需陣營存在且非敵對
+            // 調度員可自動生成(canGeneratePawn),只需陣營存在、未被殲滅且非敵對
             Faction f = giverFactionDef != null
                 ? Find.FactionManager.FirstFactionOfDef(giverFactionDef)
                 : null;
-            return f != null && !f.HostileTo(Faction.OfPlayer);
+            return f != null && !f.defeated && !f.HostileTo(Faction.OfPlayer);
         }
 
         /// <summary>類別內可交易物品的中位市值(對奢侈品離群值穩健)。無有效物品時回傳 0。</summary>
-        public static float MedianUnitValue(ThingCategoryDef cat)
+        public static float MedianUnitValue(ThingCategoryDef cat) => MedianStat(cat, StatDefOf.MarketValue);
+
+        /// <summary>類別內可交易物品的中位單重(kg)。無有效物品時回傳 0。</summary>
+        public static float MedianUnitMass(ThingCategoryDef cat) => MedianStat(cat, StatDefOf.Mass);
+
+        private static float MedianStat(ThingCategoryDef cat, StatDef stat)
         {
             if (cat == null) return 0f;
             List<float> vals = new List<float>();
             foreach (ThingDef d in cat.DescendantThingDefs)
             {
                 if (d.category != ThingCategory.Item || !d.PlayerAcquirable) continue;
-                float v = d.BaseMarketValue;
+                float v = d.GetStatValueAbstract(stat);
                 if (v > 0f) vals.Add(v);
             }
             if (vals.Count == 0) return 0f;
             vals.Sort();
             return vals[vals.Count / 2];
+        }
+
+        /// <summary>子任務補給艙的載重上限(kg);讀不到時回傳 0(不設限)。</summary>
+        private float PodMassCapacity()
+        {
+            ThingDef pod = (subquestDef?.root as QuestNode_Root_SupplyDelivery)?.podDef;
+            return pod?.GetCompProperties<CompProperties_Transporter>()?.massCapacity ?? 0f;
         }
 
         protected override void RunInt()
@@ -100,8 +117,17 @@ namespace DMS
                 ? pointsToRequestValueCurve.Evaluate(points)
                 : points * 2f;
             float unitValue = MedianUnitValue(pick.category);
-            int baseCount = UnityEngine.Mathf.Max(1,
-                UnityEngine.Mathf.RoundToInt(requestValue / unitValue * pick.countFactor));
+
+            // 單階段數量上限:別讓後期階段超過補給艙載重(依類別中位單重估算)
+            int maxCountPerStage = int.MaxValue;
+            float unitMass = MedianUnitMass(pick.category);
+            float massCap = PodMassCapacity();
+            if (unitMass > 0f && massCap > 0f)
+                maxCountPerStage = UnityEngine.Mathf.Max(1,
+                    UnityEngine.Mathf.FloorToInt(massCap * massCapacityUseFraction / unitMass));
+
+            int baseCount = UnityEngine.Mathf.Clamp(
+                UnityEngine.Mathf.RoundToInt(requestValue / unitValue * pick.countFactor), 1, maxCountPerStage);
 
             slate.Set("category", pick.category);
             slate.Set("categoryLabel", pick.category.label);
@@ -109,12 +135,14 @@ namespace DMS
             slate.Set("firstCount", baseCount);
             slate.Set("deadlineDays", stageDeadlineDays);
 
-            // 全部階段的大約需求總量(取概數供文本使用)
+            // 全部階段的大約需求總量(取概數供文本使用)與合約貨物總市值
             int approxTotalCount = 0;
+            float totalCargoValue = 0f;
             for (int s = 0; s < totalStages; s++)
             {
-                approxTotalCount += UnityEngine.Mathf.Max(1,
-                    UnityEngine.Mathf.RoundToInt(baseCount * UnityEngine.Mathf.Pow(countGrowthPerStage, s)));
+                int stageCount = QuestPart_SupplyChainGenerator.StageCount(baseCount, countGrowthPerStage, s, maxCountPerStage);
+                approxTotalCount += stageCount;
+                totalCargoValue += stageCount * unitValue;
             }
             if (approxTotalCount >= 100)
                 approxTotalCount = approxTotalCount / 10 * 10;
@@ -122,8 +150,8 @@ namespace DMS
                 approxTotalCount = approxTotalCount / 5 * 5;
             slate.Set("approxTotalCount", approxTotalCount);
 
-            // 後勤調度員:原版 GetPawn 優先取該陣營現有 WorldPawn,
-            // 沒有合適人選時自動生成一名並送入世界池(canGeneratePawn)。
+            // 後勤調度員:只從自由的 WorldPawn 中挑(排除地圖上的訪客/囚犯),
+            // 沒有合適人選時以 askerKind 自動生成一名並送入世界池(canGeneratePawn)。
             // slate "asker" 讓描述規則可用 [asker_nameFull]/[asker_pronoun]/[asker_possessive]
             Faction giverFaction = giverFactionDef != null
                 ? Find.FactionManager.FirstFactionOfDef(giverFactionDef)
@@ -133,15 +161,17 @@ namespace DMS
             {
                 asker = QuestGen_Pawns.GetPawn(quest, new QuestGen_Pawns.GetPawnParms
                 {
+                    mustBeOfKind = askerKind,
                     mustBeOfFaction = giverFaction,
+                    mustBeWorldPawn = true,
                     canGeneratePawn = true,
                     ifWorldPawnThenMustBeFree = true,
                     mustBeNonHostileToPlayer = true,
                 });
             }
             slate.Set("asker", asker);
-            slate.Set("issuerFactionName",
-                giverFaction?.Name ?? "DMS_SupplyChain_FallbackIssuer".Translate().ToString());
+            string issuerFactionName = giverFaction?.Name ?? "DMS_SupplyChain_FallbackIssuer".Translate().ToString();
+            slate.Set("issuerFactionName", issuerFactionName);
 
             // 發包單位名稱在生成時決定一次,貫穿描述與所有階段信件
             string issuerUnit = issuerNamePack != null
@@ -157,16 +187,18 @@ namespace DMS
             {
                 inSignalEnable = slate.Get<string>("inSignal"),
                 issuerUnit = issuerUnit,
-                issuerFactionName = giverFaction?.Name ?? "DMS_SupplyChain_FallbackIssuer".Translate().ToString(),
+                issuerFactionName = issuerFactionName,
                 challengeRating = challengeRating,
                 category = pick.category,
                 subquestDef = subquestDef,
                 totalStages = totalStages,
                 baseCount = baseCount,
                 countGrowth = countGrowthPerStage,
+                maxCountPerStage = maxCountPerStage,
                 unitValue = unitValue,
                 rewardMarkup = rewardMarkup,
                 rewardGrowth = rewardGrowthPerStage,
+                rewardValueCapFactor = rewardValueCapFactor,
                 stageDeadlineDays = stageDeadlineDays,
                 deadlineDaysPerStage = deadlineDaysPerStage,
                 stageIntervalTicksRange = new IntRange(
@@ -179,32 +211,9 @@ namespace DMS
             };
             quest.AddPart(generator);
 
-            // 三種結局:全部完成=成功 / 中途截止但有完成階段=結算成功 / 一階段都沒完成=失敗
-            quest.AddPart(new QuestPart_QuestEnd
-            {
-                inSignal = chainCompleted,
-                outcome = QuestEndOutcome.Success,
-            });
-            quest.AddPart(new QuestPart_QuestEnd
-            {
-                inSignal = chainSettled,
-                outcome = QuestEndOutcome.Success,
-            });
-            quest.AddPart(new QuestPart_QuestEnd
-            {
-                inSignal = chainAllFailed,
-                outcome = QuestEndOutcome.Fail,
-            });
-
             // ===== 完成獎勵選項 (原版 QuestPart_Choice) =====
-            // 貨物總市值 = Σ 各階段要求數量 × 中位單價
-            float totalCargoValue = 0f;
-            for (int s = 0; s < totalStages; s++)
-            {
-                int stageCount = UnityEngine.Mathf.Max(1,
-                    UnityEngine.Mathf.RoundToInt(baseCount * UnityEngine.Mathf.Pow(countGrowthPerStage, s)));
-                totalCargoValue += stageCount * unitValue;
-            }
+            // 必須排在 QuestPart_QuestEnd 之前:QuestPart 預設只在任務 Ongoing 時收訊號,
+            // 若 QuestEnd 先處理 chainCompleted,後面的獎勵 part 會被跳過而永遠不發放。
             float bonusValue = totalCargoValue * completionBonusFactor;
 
             // 原版 GiveRewards 在 giverFaction != null 時會直接評估 asker.royalty,
@@ -223,6 +232,29 @@ namespace DMS
                 "DMS_SupplyChain_BonusLetterLabel".Translate(),
                 "DMS_SupplyChain_BonusLetterText".Translate(),
                 asker: asker);
+
+            // 三種結局:全部完成=成功 / 中途截止但有完成階段=結案(未知結果) / 一階段都沒完成=失敗
+            quest.AddPart(new QuestPart_QuestEnd
+            {
+                inSignal = chainCompleted,
+                outcome = QuestEndOutcome.Success,
+                sendLetter = true,
+                playSound = true,
+            });
+            quest.AddPart(new QuestPart_QuestEnd
+            {
+                inSignal = chainSettled,
+                outcome = QuestEndOutcome.Unknown,
+                sendLetter = true,
+                playSound = true,
+            });
+            quest.AddPart(new QuestPart_QuestEnd
+            {
+                inSignal = chainAllFailed,
+                outcome = QuestEndOutcome.Fail,
+                sendLetter = true,
+                playSound = true,
+            });
         }
     }
 }

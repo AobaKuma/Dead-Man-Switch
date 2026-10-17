@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    情境音樂的曲目（見 Plans/DMS_Music_Transitions_實作計畫.md 第 7 節）。
+    - clipPath 相對於模組根目錄的 Sounds/，大小寫必須與檔名完全一致。
+    - 全部 playOnMap=false：只由 DMS 的 sequence 播放，不進入原版的一般輪播。
+    - 只為實際存在的音檔建立 SongDef。Abandoned Radar Station（地表探索主曲）與 Allied Marching Precision
+      （友方參戰變奏）目前缺檔，補上檔案後再加回。
+    - 尚未聆聽驗收：時長、響度（volume）與循環接點待確認。
+
+    Situational-music songs (see Plans/DMS_Music_Transitions_實作計畫.md section 7).
+    - clipPath is relative to the mod root's Sounds/, with exactly the file's casing.
+    - All playOnMap=false: only DMS sequences play them; they never join vanilla's general rotation.
+    - SongDefs exist only for files that exist. Abandoned Radar Station (the surface exploration theme) and Allied
+      Marching Precision (the allied variant) are missing; add them back once the files return.
+    - Not yet listened through: length, loudness (volume) and loop points are unchecked.
+  -->
+
+  <SongDef>
+    <defName>DMS_Music_SealedMachinery</defName>
+    <label>Sealed Machinery</label>
+    <clipPath>DMS_Music/Sealed Machinery</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
+
+  <SongDef>
+    <defName>DMS_Music_CameraCaughtYa</defName>
+    <label>Camera caught ya</label>
+    <clipPath>DMS_Music/Camera caught ya</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
+
+  <SongDef>
+    <defName>DMS_Music_GarrisionsInAction</defName>
+    <label>Garrisions in Action</label>
+    <clipPath>DMS_Music/Garrisions in Action</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
+
+  <SongDef>
+    <defName>DMS_Music_GunsUp</defName>
+    <label>Guns Up</label>
+    <clipPath>DMS_Music/Guns Up</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
+
+  <SongDef>
+    <defName>DMS_Music_ServoInPrecise</defName>
+    <label>Servo in precise</label>
+    <clipPath>DMS_Music/Servo in precise</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
+
+  <SongDef>
+    <defName>DMS_Music_OccultechHuntdown</defName>
+    <label>Occultech Huntdown</label>
+    <clipPath>DMS_Music/Occultech Huntdown</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
+
+  <!-- 以下已建立 SongDef，但尚未放進任何播放清單（用途待定）。Defined, but in no playlist yet (use undecided). -->
+
+  <!-- 主戰師變奏：第 11 節 D2 決定標記前不接入自動選曲。Main-battle variant: kept out of selection until decision D2. -->
+  <SongDef>
+    <defName>DMS_Music_BlackKnight</defName>
+    <label>Black Knight Remix</label>
+    <clipPath>DMS_Music/Black Knight Remix</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
+
+  <!-- 伏擊開場候選／交戰備選。Ambush opener candidate / spare combat track. -->
+  <SongDef>
+    <defName>DMS_Music_DormantAutomata</defName>
+    <label>Dormant automata</label>
+    <clipPath>DMS_Music/Dormant automata</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
+
+  <!-- 系統甦醒／封存揭露事件曲預留。Reserved for a system-awakening / sealed-tech reveal cue. -->
+  <SongDef>
+    <defName>DMS_Music_ObsoleteSystems</defName>
+    <label>Obsolete Systems</label>
+    <clipPath>DMS_Music/Obsolete Systems</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
+
+  <!-- SAGE 節點／指揮設施候選曲，聆聽後再分類。SAGE node / command facility candidate, to be sorted after listening. -->
+  <SongDef>
+    <defName>DMS_Music_SageInTheWarRoom</defName>
+    <label>Sage in the war room</label>
+    <clipPath>DMS_Music/Sage in the war room</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
+
+</Defs>

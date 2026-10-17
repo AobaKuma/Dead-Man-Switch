@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DMS_VaultConsole.label>security console</DMS_VaultConsole.label>
+  <DMS_VaultConsole.description>The vault's access-control terminal. The sealed storage doors answer only to this console, and its credentials expired along with the unit that owned the place. Hack it to release the doors.</DMS_VaultConsole.description>
+  <DMS_VaultConsole.comps.0.notHackedInspectString>Hack to release the sealed storage doors.</DMS_VaultConsole.comps.0.notHackedInspectString>
+  <DMS_VaultConsole.comps.0.hackedInspectString>Storage doors released.</DMS_VaultConsole.comps.0.hackedInspectString>
+  <DMS_VaultConsole.comps.0.hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</DMS_VaultConsole.comps.0.hackedMessage>
+  <DMS_VaultConsole.comps.0.hackedLetterLabel>Storage doors released</DMS_VaultConsole.comps.0.hackedLetterLabel>
+  <DMS_VaultConsole.comps.0.hackedLetterText>Someone has broken into the vault's access-control system. The sealed storage doors are open.</DMS_VaultConsole.comps.0.hackedLetterText>
+
+  <DMS_VaultGateConsole.label>gate console</DMS_VaultGateConsole.label>
+  <DMS_VaultGateConsole.description>The control terminal for a sector gate. The gate's sealed doors answer only to this console, and its credentials expired along with the unit that owned the place. Hack it to open the gate.</DMS_VaultGateConsole.description>
+  <DMS_VaultGateConsole.comps.0.notHackedInspectString>Hack to open the sector gate.</DMS_VaultGateConsole.comps.0.notHackedInspectString>
+  <DMS_VaultGateConsole.comps.0.hackedInspectString>Sector gate open.</DMS_VaultGateConsole.comps.0.hackedInspectString>
+  <DMS_VaultGateConsole.comps.0.hackedMessage>{HACKER_labelShort} has opened the sector gate.</DMS_VaultGateConsole.comps.0.hackedMessage>
+
+</LanguageData>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Decoy Radar -->
+  <DMS_DecoyRadar.label>Decoy Radar</DMS_DecoyRadar.label>
+  <!-- EN: A phase array radar. Once activated, it puts out a powerful wave radiation signal which will attract a feral automatroid to attack along with its escorts. If you can defeat it, you can collect the advanced technology from its corpse. The signal pulse burns out the transmitter, so this building can only be used once. -->
+  <DMS_DecoyRadar.description>A phase array radar. Once activated, it puts out a powerful wave radiation signal which will attract a feral automatroid to attack along with its escorts. If you can defeat it, you can collect the advanced technology from its corpse. The signal pulse burns out the transmitter, so this building can only be used once.</DMS_DecoyRadar.description>
+  <!-- EN: Attract tarbosaurus threat -->
+  <DMS_DecoyRadar.comps.CompUsable.useLabel>Attract tarbosaurus threat</DMS_DecoyRadar.comps.CompUsable.useLabel>
+  
+  <!-- EN: Decoy Antenna -->
+  <DMS_DecoyRadio.label>Decoy Antenna</DMS_DecoyRadio.label>
+  <!-- EN: A modified signal transponder which is rigged to send a high power burst transmission. Once activated it puts out a powerful decoy signal which will attract a feral group of automatroid forces to attack your colony. If you can defeat them, you can collect the advanced technology from their corpses. The signal pulse burns out the transmitter, so this building can only be used once. -->
+  <DMS_DecoyRadio.description>A modified signal transponder which is rigged to send a high power burst transmission. Once activated it puts out a powerful decoy signal which will attract a feral group of automatroid forces to attack your colony. If you can defeat them, you can collect the advanced technology from their corpses. The signal pulse burns out the transmitter, so this building can only be used once.</DMS_DecoyRadio.description>
+  <!-- EN: Attract geochelone threat -->
+  <DMS_DecoyRadio.comps.CompUsable.useLabel>Attract geochelone threat</DMS_DecoyRadio.comps.CompUsable.useLabel>
+  
+  <!-- EN: Decoy radio -->
+  <DMS_DecoyTransmitter.label>Decoy radio</DMS_DecoyTransmitter.label>
+  <!-- EN: A high-powered radio, used fake radio signals to lure away the automated defense systems that still exist on the planet. Once activated, it puts out a powerful wave radiation signal which will attract ultra heavy automatroid to attack along with its escorts. If you can defeat it, you can collect the advanced technology from its corpse. The signal pulse burns out the transmitter, so this building can only be used once. -->
+  <DMS_DecoyTransmitter.description>A high-powered radio that uses fake radio signals to lure the automated defense systems still active on the planet. Once activated, it puts out a powerful wave radiation signal which will attract an ultra-heavy automatroid to attack along with its escorts. If you can defeat it, you can collect advanced technology from its wreckage. The signal pulse burns out the transmitter, so this building can only be used once.</DMS_DecoyTransmitter.description>
+  <!-- EN: Attract cluster weaver threat -->
+  <DMS_DecoyTransmitter.comps.CompUsable.useLabel>Attract cluster weaver threat</DMS_DecoyTransmitter.comps.CompUsable.useLabel>
+
+</LanguageData>

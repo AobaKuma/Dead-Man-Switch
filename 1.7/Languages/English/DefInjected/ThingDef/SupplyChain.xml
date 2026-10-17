@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: supply pod -->
+  <DMS_SupplyDropPod.label>supply pod</DMS_SupplyDropPod.label>
+  <!-- EN: A cargo pod dropped by a logistics contractor. Load the requested supplies into it and confirm delivery before the deadline. -->
+  <DMS_SupplyDropPod.description>A cargo pod dropped by a logistics contractor. Load the requested supplies into it and confirm delivery before the deadline.</DMS_SupplyDropPod.description>
+
+  <!-- EN: supply pod (incoming) -->
+  <DMS_SupplyPodIncoming.label>supply pod (incoming)</DMS_SupplyPodIncoming.label>
+  <!-- EN: supply pod (leaving) -->
+  <DMS_SupplyPodLeaving.label>supply pod (leaving)</DMS_SupplyPodLeaving.label>
+
+</LanguageData>

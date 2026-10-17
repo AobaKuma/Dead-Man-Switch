@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DMS_VaultElevator.label>freight elevator</DMS_VaultElevator.label>
+  <DMS_VaultElevator.description>The entrance to a buried military storage vault. The lift still has power, but its controls are locked. Hack it to bring the car up.</DMS_VaultElevator.description>
+
+  <DMS_VaultElevator_Sealed.label>sealed freight elevator</DMS_VaultElevator_Sealed.label>
+  <DMS_VaultElevator_Sealed.description>The surface pad of a buried freight elevator, locked down under an armored cover plate. The shaft controls are tied to a nearby access console; swipe a key-card there to retract the cover and bring the car up.</DMS_VaultElevator_Sealed.description>
+
+  <DMS_VaultElevatorExit.label>freight elevator car</DMS_VaultElevatorExit.label>
+  <DMS_VaultElevatorExit.description>A lift car which links to the surface pad above.</DMS_VaultElevatorExit.description>
+
+  <DMS_MechCapsule_VaultInfantry.label>mothballed mech</DMS_MechCapsule_VaultInfantry.label>
+  <DMS_MechCapsule_VaultInfantry.description>A line infantry automatroid in hibernation mode, sealed in a storage cradle. The vault lost power before anyone came to collect it. A mechanitor can attempt to hack and control it.</DMS_MechCapsule_VaultInfantry.description>
+
+  <DMS_MechCapsule_VaultAssault.label>mothballed mech</DMS_MechCapsule_VaultAssault.label>
+  <DMS_MechCapsule_VaultAssault.description>An assault-pattern automatroid in hibernation mode, clamped into a maintenance cradle with its actuator bays still open. The vault was sealed before the servicing was finished. A mechanitor can attempt to hack and control it.</DMS_MechCapsule_VaultAssault.description>
+
+  <DMS_MechCapsule_VaultFrame.label>mothballed battle frame</DMS_MechCapsule_VaultFrame.label>
+  <DMS_MechCapsule_VaultFrame.description>A battle frame in hibernation mode, pinned into a service gantry for long-term storage. Its command authentication expired with the unit that owned it. A mechanitor can attempt to hack and control it.</DMS_MechCapsule_VaultFrame.description>
+
+</LanguageData>

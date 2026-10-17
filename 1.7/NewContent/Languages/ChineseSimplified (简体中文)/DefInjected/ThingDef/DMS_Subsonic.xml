@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: infrasonic module -->
+  <DMS_SubsonicModule.label>次声波改装模块</DMS_SubsonicModule.label>
+  <DMS_SubsonicModule.description>一组经过调谐的次声波发生器阵列，封装成可直接锁上机兵外壳并从其电池取电的模块。接到命令时，它会以机兵为中心释放一次次声波。范围内的敌对生物会被恶心与剧痛折磨，其中不少会当场崩溃逃窜。机械体不受影响。\n\n发生器会持续耗电，使机兵的能量消耗略微增加。</DMS_SubsonicModule.description>
+
+  <!-- EN: infrasonic grenades -->
+  <DMS_Weapon_GrenadeSubsonic.label>次声波手雷</DMS_Weapon_GrenadeSubsonic.label>
+  <DMS_Weapon_GrenadeSubsonic.description>以一次调谐次声波取代破片的手雷。次声波能同样穿透墙壁与掩体，因此会直接作用于范围内的每一个生物，不分敌我，使其恶心、剧痛，并让不少人陷入恐慌。对建筑与机械体无效。</DMS_Weapon_GrenadeSubsonic.description>
+  <DMS_Weapon_GrenadeSubsonic.verbs.0.label>投掷次声波手雷</DMS_Weapon_GrenadeSubsonic.verbs.0.label>
+
+  <!-- EN: infrasonic grenade -->
+  <DMS_Proj_GrenadeSubsonic.label>次声波手雷</DMS_Proj_GrenadeSubsonic.label>
+
+  <!-- EN: infrasonic emitter -->
+  <DMS_Building_SubsonicEmitter.label>次声波塔</DMS_Building_SubsonicEmitter.label>
+  <DMS_Building_SubsonicEmitter.description>架设在塔上的调谐次声波发生器阵列。通电时会间歇性地释放一次次声波，穿透墙壁作用于范围内所有敌对生物，使其恶心、剧痛，并让不少人陷入恐慌。范围内没有敌人时不会发射。机械体不受影响。</DMS_Building_SubsonicEmitter.description>
+
+  <!-- EN: blast scanner -->
+  <DMS_Building_BlastScanner.label>爆破勘探装置</DMS_Building_BlastScanner.label>
+  <DMS_Building_BlastScanner.description>一种用于地质勘探用的精密机器，具有一个由迫击炮弹驱动的装置来发射震波并接收回波探明地下的矿藏位置。一次装药可以同时探明数处深层矿脉。\n\n但使用这种装置勘探几乎必然会惊动地下休眠的虫群，而它们往往会从惊扰它们的东西附近钻出地面。\n\n装入一发高爆炮弹后点燃引信即可。每次引爆后装置需要时间重新校准。</DMS_Building_BlastScanner.description>
+  <DMS_Building_BlastScanner.comps.CompRefuelable.fuelLabel>炸药</DMS_Building_BlastScanner.comps.CompRefuelable.fuelLabel>
+  <DMS_Building_BlastScanner.comps.CompRefuelable.fuelGizmoLabel>炸药</DMS_Building_BlastScanner.comps.CompRefuelable.fuelGizmoLabel>
+  <DMS_Building_BlastScanner.comps.CompRefuelable.outOfFuelMessage>未装填炸药</DMS_Building_BlastScanner.comps.CompRefuelable.outOfFuelMessage>
+
+</LanguageData>

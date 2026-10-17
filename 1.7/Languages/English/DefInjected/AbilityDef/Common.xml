@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Recoilless Rifle Shot -->
+  <DMS_BF_RecoillessShot.label>Recoilless Rifle Shot</DMS_BF_RecoillessShot.label>
+  <!-- EN: Fire one of the rack's 65mm shaped-charge rockets. The jet defeats armor and fortification that the frame's own weapon cannot touch, but it goes into a single narrow channel and does little to anything standing beside the point of impact.\n\nSpent tubes are reloaded from the frame's carried stores between engagements. -->
+  <DMS_BF_RecoillessShot.description>Fire one of the rack's 65mm shaped-charge rockets. The jet defeats armor and fortification that the frame's own weapon cannot touch, but it goes into a single narrow channel and does little to anything standing beside the point of impact.
+
+Spent tubes are reloaded from the frame's carried stores between engagements.</DMS_BF_RecoillessShot.description>
+  <!-- EN: fire recoilless rifle -->
+  <DMS_BF_RecoillessShot.verbProperties.label>fire recoilless rifle</DMS_BF_RecoillessShot.verbProperties.label>
+  
+  <!-- EN: Flashbang barrage -->
+  <DMS_FlashLauncher.label>Flashbang barrage</DMS_FlashLauncher.label>
+  <!-- EN: Launch an indirect-fired flashbang to stun the enemy. -->
+  <DMS_FlashLauncher.description>Fires a flashbang grenade from a launcher tube, briefly blinding every enemy in the target area. A very useful active module for covering a safe withdrawal or letting squadmates push an assault.</DMS_FlashLauncher.description>
+  
+  <!-- EN: Bionic Longjump -->
+  <DMS_LongJump.label>Bionic Longjump</DMS_LongJump.label>
+  <!-- EN: Jump to a distant location using bionic muscles. -->
+  <DMS_LongJump.description>Jump to a distant location using bionic muscles.</DMS_LongJump.description>
+  <!-- EN: jump -->
+  <DMS_LongJump.verbProperties.label>jump</DMS_LongJump.verbProperties.label>
+  
+  <!-- EN: Launch Missile -->
+  <DMS_MissileLauncher.label>Top-Attack Missile</DMS_MissileLauncher.label>
+  <!-- EN: Launch a long range guided missile with a high explosive payload. -->
+  <DMS_MissileLauncher.description>Launch a guided missile that arcs in from long range and strikes the target from above. Extremely lethal, but it takes some time to reload.</DMS_MissileLauncher.description>
+  
+  <!-- EN: Fission Overload -->
+  <DMS_NuclearOverload.label>Fission Overload</DMS_NuclearOverload.label>
+  <!-- EN: In order to avoid catastrophic environmental pollution or capture by the enemy, the fission battery can be manually forced into a meltdown. \n\nA meltdown will cause all unreacted nuclear material to atomize instantly, causing a violent explosive reaction. -->
+  <DMS_NuclearOverload.description>To prevent environmental contamination from a leaking nuclear battery after the unit is badly damaged, the fission battery can be manually overloaded to react its nuclear fuel in an instant - which, from the outside, looks exactly like a nuclear detonation. The blast is enough to sweep away the unreacted nuclear material along with everything around it.</DMS_NuclearOverload.description>
+  <!-- EN: Overloading the fission battery will create a devastating explosion and destroy this unit. \n\nAre you sure to do this? -->
+  <DMS_NuclearOverload.confirmationDialogText>Overloading the fission battery will create a devastating explosion and destroy this unit. 
+
+Are you sure to do this?</DMS_NuclearOverload.confirmationDialogText>
+  <!-- EN: fission overload -->
+  <DMS_NuclearOverload.verbProperties.label>fission overload</DMS_NuclearOverload.verbProperties.label>
+  
+  <!-- EN: Self-Repair -->
+  <DMS_RepairMode.label>Self-Repair</DMS_RepairMode.label>
+  <!-- EN: Initialize self-repair mode to rebuild missing parts, all sensors will temporarily be disabled to prevent electrical damage. -->
+  <DMS_RepairMode.description>Initiates a self-repair protocol that uses electro-responsive memory alloy to rebuild damaged mechanical parts. All sensors are temporarily disabled to prevent secondary damage during the repair process.\n\nNote that for a badly damaged unit, initiating this protocol carries some risk of shutdown.</DMS_RepairMode.description>
+  <!-- EN: initialize self-repair mode -->
+  <DMS_RepairMode.verbProperties.label>initialize self-repair mode</DMS_RepairMode.verbProperties.label>
+  
+  <!-- EN: Particle Smoke Barrage -->
+  <DMS_SmokeLauncher.label>Particle Smoke Barrage</DMS_SmokeLauncher.label>
+  <!-- EN: Launch an antiparticle smoke screen to interfere with incoming charged munitions. -->
+  <DMS_SmokeLauncher.description>Launch an antiparticle smoke screen to interfere with incoming charged munitions.</DMS_SmokeLauncher.description>
+  
+  <!-- EN: strafing -->
+  <DMS_Strafing.label>strafing</DMS_Strafing.label>
+  <!-- EN: Concentrate firepower to conduct a strafing attack in a specific direction. -->
+  <DMS_Strafing.description>Concentrate firepower to conduct a strafing attack in a specific direction.</DMS_Strafing.description>
+  
+
+  <!-- EN: field mothball -->
+  <DMS_Mothball.label>field mothball</DMS_Mothball.label>
+  <!-- EN: Disable system activity on the spot. The unit becomes a dormant storage structure that costs no bandwidth and takes no upkeep, and can be brought back online later by a mechanitor.\n\nStandard practice for garrison units between deployments. -->
+  <DMS_Mothball.description>Disable system activity on the spot. The unit becomes a dormant storage structure that costs no bandwidth and takes no upkeep, and can be brought back online later by a mechanitor.
+
+Standard practice for garrison units between deployments.</DMS_Mothball.description>
+  <!-- EN: fold into transport frame -->
+  <DMS_Mothball.verbProperties.label>fold into transport frame</DMS_Mothball.verbProperties.label>
+
+</LanguageData>

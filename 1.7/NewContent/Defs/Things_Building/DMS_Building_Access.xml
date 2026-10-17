@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="Wall">
+    <defName>DMS_SuperWall</defName>
+    <label>reinforced wall</label>
+    <description>An armored heavily-reinforced wall.</description>
+    <uiIconPath>Things/Building/Linked/DMS_SuperWall_MenuIcon</uiIconPath>
+    <graphicData>
+      <texPath>Things/Building/Linked/DMS_SuperWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(100,100,100)</color>
+    </graphicData>
+    <building>
+      <paintable>false</paintable>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <neverBuildable>true</neverBuildable>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <isAirtight>true</isAirtight>
+      <isStuffableAirtight>false</isStuffableAirtight>
+    </building>
+    <stuffCategories Inherit="False"/>
+    <costStuffCount>0</costStuffCount>
+    <useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <MaxHitPoints>999999</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <MeditationFocusStrength>0</MeditationFocusStrength>
+    </statBases>
+    <comps Inherit="False"/>
+    <designationCategory>FFF_DevCategory</designationCategory>
+  </ThingDef>
+
+  <DesignatorDropdownGroupDef>
+    <defName>DMS_Consoles</defName>
+    <label>consoles</label>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef ParentName="BuildingBase" Name="DMS_ConsoleBase" Abstract="True">
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <thingClass>Building</thingClass>
+    <tickerType>Normal</tickerType>
+    <category>Building</category>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <designatorDropdown>DMS_Consoles</designatorDropdown>
+    <pathCost>45</pathCost>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <drawOffset>(0,0,0.15)</drawOffset>
+    </graphicData>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <isTargetable>true</isTargetable>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <deconstructible>false</deconstructible>
+      <neverBuildable>true</neverBuildable>
+      <paintable>false</paintable>
+    </building>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <fillPercent>0.35</fillPercent>
+    <useHitPoints>true</useHitPoints>
+    <passability>PassThroughOnly</passability>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <holdsRoof>true</holdsRoof>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_ConsoleSingle_Nara</defName>
+    <label>console</label>
+    <description>A multi-purpose computer interface.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_ConsoleSingle_Nara</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_ConsoleDouble_Nara</defName>
+    <label>console</label>
+    <description>A multi-purpose computer interface.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_ConsoleDouble_Nara</texPath>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <size>(2,1)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_AccessConsole_Nara</defName>
+    <label>access console</label>
+    <description>A multi-purpose computer interface. Built-in reading device accepts key-cards.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_AccessConsole_Nara</texPath>
+    </graphicData>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
+    <comps>
+      <li Class="Fortified.CompProperties_AccessKeyActivatable">
+        <accessKeyDef>DMS_AccessKey_Nara</accessKeyDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_ConsoleSingle_Neutral</defName>
+    <label>console</label>
+    <description>A multi-purpose computer interface.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_ConsoleSingle_Neutral</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_ConsoleDouble_Neutral</defName>
+    <label>console</label>
+    <description>A multi-purpose computer interface.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_ConsoleDouble_Neutral</texPath>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <size>(2,1)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_AccessConsole_Neutral</defName>
+    <label>access console</label>
+    <description>A multi-purpose computer interface. Built-in reading device accepts key-cards.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_AccessConsole_Neutral</texPath>
+    </graphicData>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
+    <comps>
+      <li Class="Fortified.CompProperties_AccessKeyActivatable">
+        <accessKeyDef>DMS_AccessKey_Neutrals</accessKeyDef>
+        <!-- 沒連到任何東西時不收卡，免得鑰匙卡刷進空氣。Refuse the card when nothing is linked, so it isn't swiped into thin air. -->
+        <requireAccessWanter>true</requireAccessWanter>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- 同一張地圖上的 Boss（PawnKindDef.isBoss）全數死亡時（最後一架倒下）放行所有連結的門禁 wanter；用 Access link 工具連到密封門。
+       不可摧毀，免得 Boss 戰的爆炸把它炸掉、門永遠打不開。
+       Releases every linked access wanter once the bosses (PawnKindDef.isBoss) on the same map are all dead (when the
+       last one falls); link it to sealed doors with the access link tool. Indestructible, so the boss fight can't blow it
+       up and seal the doors for good. -->
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_BossKillRelay</defName>
+    <label>guardian lock relay</label>
+    <description>A security relay slaved to the life signs of the installation's guardian unit. Every door linked to it stays sealed until that signal goes flat.</description>
+    <graphicData>
+      <texPath>Things/Building/MiscMachine/building_A</texPath>
+    </graphicData>
+    <receivesSignals>true</receivesSignals>
+    <useHitPoints>false</useHitPoints>
+    <destroyable>false</destroyable>
+    <building>
+      <isTargetable>false</isTargetable>
+    </building>
+    <comps>
+      <li Class="DMS.CompProperties_BossKillRelay" />
+    </comps>
+  </ThingDef>
+
+  <!-- Sealed doors(technically not rolling, but use same mechanic) -->
+
+  <ThingDef Name="DMS_BaseSealedRollingDoor" ParentName="BuildingBase">
+    <defName>DMS_SealedRollingDoor_Single</defName>
+    <label>sealed door</label>
+    <description>A sealed armored door.</description>
+    <thingClass>Fortified.Building_RollingDoor_AccessLink</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Door/DMS_SealedRollingDoorSingle</texPath>
+      <drawOffset>(0,0,0)</drawOffset>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <uiIconPath>Things/Building/Door/DMS_SealedRollingDoorSingle_north</uiIconPath>
+    <category>Building</category>
+    <altitudeLayer>DoorMoveable</altitudeLayer>
+    <designationCategory>FFF_DevCategory</designationCategory>
+    <designatorDropdown>DMS_RollingDoors</designatorDropdown>
+    <fillPercent>1</fillPercent>
+    <useHitPoints>false</useHitPoints>
+    <destroyable>false</destroyable>
+    <statBases>
+      <Flammability>0</Flammability>
+      <DoorOpenSpeed>0.3</DoorOpenSpeed>
+    </statBases>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <rotatable>true</rotatable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <holdsRoof>true</holdsRoof>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <drawerType>RealtimeOnly</drawerType>
+    <building>
+      <isInert>true</isInert>
+      <canPlaceOverWall>true</canPlaceOverWall>
+      <soundDoorOpenPowered>Door_OpenPowered</soundDoorOpenPowered>
+      <soundDoorClosePowered>Door_ClosePowered</soundDoorClosePowered>
+      <soundDoorOpenManual>Door_OpenManual</soundDoorOpenManual>
+      <soundDoorCloseManual>Door_CloseManual</soundDoorCloseManual>
+      <ai_chillDestination>false</ai_chillDestination>
+      <unpoweredDoorCloseSpeedFactor>0.2</unpoweredDoorCloseSpeedFactor>
+      <poweredDoorCloseSpeedFactor>0.2</poweredDoorCloseSpeedFactor>
+      <paintable>true</paintable>
+      <neverBuildable>true</neverBuildable>
+      <claimable>false</claimable>
+      <draftAttackNonDeconstructable>false</draftAttackNonDeconstructable>
+      <deconstructible>false</deconstructible>
+    </building>
+    <comps>
+      <li Class="CompProperties_Forbiddable">
+        <allowNonPlayer>true</allowNonPlayer>
+      </li>
+    </comps>
+    <uiOrder>11</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_BaseSealedRollingDoor">
+    <defName>DMS_SealedRollingDoor_Double</defName>
+    <graphicData>
+      <texPath>Things/Building/Door/DMS_SealedRollingDoorDouble</texPath>
+      <drawSize>(2,1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/Door/DMS_SealedRollingDoorDouble_north</uiIconPath>
+    <size>(2,1)</size>
+    <uiOrder>12</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_BaseSealedRollingDoor">
+    <defName>DMS_SealedRollingDoor_Triple</defName>
+    <graphicData>
+      <texPath>Things/Building/Door/DMS_SealedRollingDoorTriple</texPath>
+      <drawSize>(3,1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/Door/DMS_SealedRollingDoorTriple_north</uiIconPath>
+    <size>(3,1)</size>
+    <uiOrder>13</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_BaseSealedRollingDoor">
+    <defName>DMS_SealedRollingDoor_Quadruple</defName>
+    <graphicData>
+      <texPath>Things/Building/Door/DMS_SealedRollingDoorQuadruple</texPath>
+      <drawSize>(4,1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/Door/DMS_SealedRollingDoorQuadruple_north</uiIconPath>
+    <size>(4,1)</size>
+    <uiOrder>14</uiOrder>
+  </ThingDef>
+
+</Defs>
