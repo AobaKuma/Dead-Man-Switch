@@ -46,6 +46,7 @@
     <building>
       <isInert>false</isInert>
       <canPlaceOverWall>false</canPlaceOverWall>
+      <neverBuildable>true</neverBuildable>
     </building>
     <designationCategory>FFF_DevCategory</designationCategory>
     <comps>

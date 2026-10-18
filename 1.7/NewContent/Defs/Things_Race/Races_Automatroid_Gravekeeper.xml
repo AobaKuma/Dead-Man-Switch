@@ -41,9 +41,12 @@
     <race>
       <body>DMS_Humanoid_Soldat</body>
       <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
-      <baseBodySize>2.8</baseBodySize>
+      <baseBodySize>2.5</baseBodySize>
       <baseHealthScale>4.2</baseHealthScale>
       <mechWeightClass>UltraHeavy</mechWeightClass>
+      <mechEnabledWorkTypes>
+        <li>Warden</li>
+      </mechEnabledWorkTypes>
       <detritusLeavings>
         <li>
           <def>DMS_ChunkSlag</def>
@@ -91,8 +94,6 @@
           <li>DMS_Dragoon_SG</li>                                                      <!--龍騎兵霰彈槍（MobileDragoon 才有）/ dragoon shotgun, MobileDragoon only-->
           <li>DMS_MechWeaponHeavy</li>
           <li>DMS_MechWeaponTransHeavy</li>
-          <li>DMS_MechWeaponUltraHeavy</li>
-          <li>DMS_Tarbosaurus_Gun</li>
           <li>DMS_MechWeaponShotgun</li>
           <li>DMS_MechWeaponBreach</li>
           <li>H_Gatling127mm</li>                                                      <!--GAU-19，送葬者 / the Enterrador's-->
@@ -245,7 +246,7 @@
        The shoulder rack is baked into the body texture, so the missiles are an ability rather than a sub-turret. -->
   <ThingDef ParentName="DMS_MechGravekeeperBase">
     <defName>DMS_Mech_Gravekeeper_Stugna</defName>
-    <label>gravekeeper (Stugna)</label>
+    <label>Enterrador</label>
     <description>A highly intelligent large automatroid, deployed by the colonial fleets specifically to patrol and guard important unmanned installations. Its parts are largely interchangeable with the mobile dragoon's, and it pairs excellent close-quarters combat ability with a formidable weapon system. The gravekeeper's design dates back to the lunar war of independence after the Universal Century, when most of the fighting took place in the narrow, enclosed tunnels of underground cities. Heavily armored mechs like the gravekeeper and the siegebreaker, carrying heavy weapons and able to suppress at close range, became the spearhead of both sides' fight for control of those tunnels.\nBecause of this specialized design, gravekeepers usually hold a defense in groups of five. Since they must patrol unattended installations for centuries, their rules of engagement are more conservative than an ordinary mech's, so that failing mechanisms do not trigger by mistake mid-mission. As a result, they will not leave their installation to engage an enemy on their own.\n\nThis pattern carries the mobile dragoon's Stugna launcher on its right shoulder, racked with two anti-tank guided missiles.</description>
     <statBases>
       <!-- 發射架的重量。The weight of the rack. -->
@@ -255,7 +256,7 @@
 
   <PawnKindDef ParentName="DMS_MechGravekeeperKindBase">
     <defName>DMS_Mech_Gravekeeper_Stugna</defName>
-    <label>gravekeeper (Stugna)</label>
+    <label>Enterrador</label>
     <race>DMS_Mech_Gravekeeper_Stugna</race>
     <combatPower>480</combatPower>
     <abilities>

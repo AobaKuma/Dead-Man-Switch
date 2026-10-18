@@ -76,8 +76,8 @@
   <!-- 斯圖格納型 / Stugna pattern -->
   <RecipeDef ParentName="DMS_GravekeeperRecipeBase">
     <defName>DMS_Make_Gravekeeper_Stugna</defName>
-    <label>Gestate gravekeeper (Stugna)</label>
-    <description>Gestate a gravekeeper automatroid, a main battle ultra-heavy built to patrol and guard unmanned installations. Its parts are largely shared with the mobile dragoon, it fights well at close quarters, and it can wield the dragoon's heavy weapons.\n\nThis pattern carries the dragoon's Stugna launcher on its right shoulder with two anti-tank guided missiles, each replaced a day after it is fired. The rack slows it down a little, and it demands five points of bandwidth.</description>
+    <label>Gestate Enterrador</label>
+    <description>Gestate an Enterrador automatroid, a main battle ultra-heavy built to patrol and guard unmanned installations. Its parts are largely shared with the mobile dragoon, it fights well at close quarters, and it can wield the dragoon's heavy weapons.\n\nThis pattern carries the dragoon's Stugna launcher on its right shoulder with two anti-tank guided missiles, each replaced a day after it is fired. The rack slows it down a little, and it demands five points of bandwidth.</description>
     <products>
       <DMS_Mech_Gravekeeper_Stugna>1</DMS_Mech_Gravekeeper_Stugna>
     </products>

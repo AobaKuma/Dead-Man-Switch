@@ -7,6 +7,8 @@
     <fillPercent>0.75</fillPercent>
     <building>
       <ai_chillDestination>false</ai_chillDestination>
+      <!-- A hidden developer category alone does not prevent the Build Copy gizmo. -->
+      <neverBuildable>true</neverBuildable>
     </building>
     <designationCategory>FFF_DevCategory</designationCategory>
     <statBases>
@@ -501,6 +503,8 @@
       <isInert>true</isInert>
       <isEdifice>false</isEdifice>
       <isAttachment>true</isAttachment>
+      <!-- Launcher cases are also available through normal player research. -->
+      <neverBuildable>false</neverBuildable>
     </building>
     <placeWorkers>
       <li>Placeworker_AttachedToWall</li>
