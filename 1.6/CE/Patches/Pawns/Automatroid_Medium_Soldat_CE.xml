@@ -197,6 +197,26 @@
 				</value>
 			</li>-->
 
+			<!--fix Sergeant Comp change missing CE comps in DMS2-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Sergeant"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_Inventory" />
+					<li Class="CombatExtended.CompProperties_TacticalManager" />
+					<li>
+						<compClass>CombatExtended.CompPawnGizmo</compClass>
+					</li>
+					<li>
+						<compClass>CombatExtended.CompAmmoGiver</compClass>
+					</li>
+					<li Class="CombatExtended.CompProperties_MechAmmo">
+						<gizmoIconSetMagCount>UI/Buttons/SetMagCount</gizmoIconSetMagCount>
+						<gizmoIconTakeAmmoNow>UI/Buttons/TakeAmmoNow</gizmoIconTakeAmmoNow>
+					</li>
+				</value>
+			</li>
+
+
 
 		</operations>
 	</Operation>
