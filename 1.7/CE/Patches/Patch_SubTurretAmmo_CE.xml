@@ -11,6 +11,10 @@
 	  defaultAmmoPickUp = 自動補給時的目標攜行量（約 10 個爆發量）
 	  startingAmmoRange = 生成（含敵對）機兵時隨機給予的初始彈量
 
+	  共用武器 Def 上的 CompAmmoUser 仍供正常裝備的車載武器使用。
+	  DMS.Patch_SubTurretCEAmmo 在子砲塔初始化時，只移除該武器實例的 CE 彈匣與 verb 快取，
+	  避免背包供彈與 CE 換彈同時運作；新生成與讀檔還原的副砲都會處理。
+
 	本檔處理在 CE 下被當作子砲塔使用的武器（原版 Def，CE 屬性見 Patches/Weapons/MiliGuns*_CE.xml）。
 -->
 <Patch>
