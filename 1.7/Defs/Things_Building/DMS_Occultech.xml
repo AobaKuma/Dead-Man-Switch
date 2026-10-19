@@ -62,6 +62,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_OccultechExtractor</defName>
+    <uiOrder>5000</uiOrder>
     <label>Decoder</label>
     <description>A destructive decoding rig. It fires a high-energy laser through the holographic storage plates inside a stele and analyzes the scattered spectrum to read the data within: the only way for factions outside the colonial fleets to access a stele's contents. Set it flush against a stele and supply power, and it will continuously extract the knowledge and file it into your expeditional research, no researcher required. Extraction stops if the stele runs dry, power is lost, or no stele is in front of it. It can be uninstalled and reinstalled elsewhere.</description>
     <graphicData>
@@ -129,6 +130,7 @@
   <!-- ============================================================= -->
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_HydraulicFracturingRig</defName>
+    <uiOrder>5010</uiOrder>
     <label>hydraulic fracturing rig</label>
     <description>An automatic deep drill that splits the bedrock with ultra-high-pressure fluid and needs no operator. While powered it produces a portion every 6 hours: deep deposits in range are mined first, then chemfuel or steel is drawn from the bedrock once they run out.\n\nEvery portion pollutes the ground nearby. Can be uninstalled and moved.</description>
     <descriptionHyperlinks>

@@ -128,6 +128,7 @@
   <!-- Wall lamp -->
   <ThingDef ParentName="LampBase">
     <defName>DMS_EmergencyLamp</defName>
+    <uiOrder>4000</uiOrder>
     <label>emergency lighting</label>
     <description>An emergency lighting system that automatically switches to its internal battery only when grid power is lost, glowing red for extended periods to maintain a minimum level of illumination even during an outage.</description>
     <designationCategory>DMS_Category</designationCategory>

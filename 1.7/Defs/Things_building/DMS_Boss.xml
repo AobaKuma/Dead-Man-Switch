@@ -28,6 +28,7 @@
 
   <ThingDef ParentName="DMS_BossCallerBase">
     <defName>DMS_DecoyRadio</defName>
+    <uiOrder>6000</uiOrder>
     <label>Decoy Antenna</label>
     <description>A modified signal transponder which is rigged to send a high power burst transmission. Once activated it puts out a powerful decoy signal which will attract a feral group of automatroid forces to attack your colony. If you can defeat them, you can collect the advanced technology from their corpses. The signal pulse burns out the transmitter, so this building can only be used once.</description>
     <descriptionHyperlinks>
@@ -73,6 +74,7 @@
 
   <ThingDef ParentName="DMS_BossCallerBase">
     <defName>DMS_DecoyRadar</defName>
+    <uiOrder>6010</uiOrder>
     <label>Decoy Radar</label>
     <description>A phase array radar. Once activated, it puts out a powerful wave radiation signal which will attract a feral automatroid to attack along with its escorts. If you can defeat it, you can collect the advanced technology from its corpse. The signal pulse burns out the transmitter, so this building can only be used once.</description>
     <descriptionHyperlinks>
@@ -118,6 +120,7 @@
 
   <ThingDef ParentName="DMS_BossCallerBase">
     <defName>DMS_DecoyTransmitter</defName>
+    <uiOrder>6020</uiOrder>
     <label>Decoy radio</label>
     <description>A high-powered radio, used fake radio signals to lure away the automated defense systems that still exist on the planet. Once activated, it puts out a powerful wave radiation signal which will attract ultra heavy automatroid to attack along with its escorts. If you can defeat it, you can collect the advanced technology from its corpse. The signal pulse burns out the transmitter, so this building can only be used once.</description>
     <descriptionHyperlinks>

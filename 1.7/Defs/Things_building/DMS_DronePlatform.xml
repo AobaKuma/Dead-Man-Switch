@@ -44,6 +44,7 @@
   <!-- trashbin charge station -->
   <ThingDef ParentName="DMS_BaseDronePlatform">
     <defName>DMS_TrashBin_Base</defName>
+    <uiOrder>2000</uiOrder>
     <label>Trashpan Station</label>
     <description>A station for storaging and recharging trashpan units.</description>
     <uiIconScale>0.75</uiIconScale>
@@ -95,6 +96,7 @@
   <!-- hound charge station -->
   <ThingDef ParentName="DMS_BaseDronePlatform">
     <defName>DMS_Hound_Base</defName>
+    <uiOrder>2010</uiOrder>
     <label>Hound Station</label>
     <description>A station for storaging and recharging hound units.</description>
     <uiIconScale>0.75</uiIconScale>
@@ -146,6 +148,7 @@
 
   <ThingDef ParentName="BaseMechCharger">
     <defName>DMS_Recharger</defName>
+    <uiOrder>2050</uiOrder>
     <label>Automatroid Recharger</label>
     <description>Automatroids can recharge here. During the charging cycle, toxic wastepacks are produced and stored internally. Haulers must remove the wastepacks from time to time.</description>
     <graphicData>

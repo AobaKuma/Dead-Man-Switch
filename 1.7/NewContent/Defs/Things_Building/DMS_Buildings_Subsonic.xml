@@ -8,6 +8,7 @@
   <!-- 次聲波塔：有電時間歇性地對範圍內敵對生物放次聲波脈衝（DMS.CompSubsonicEmitter） -->
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_Building_SubsonicEmitter</defName>
+    <uiOrder>3090</uiOrder>
     <label>infrasonic emitter</label>
     <description>A tower-mounted array of tuned infrasound emitters. While powered, it periodically releases a burst of infrasound that passes through walls and reaches every hostile living creature within range, wracking them with nausea and pain and sending many into a panic. It only fires when enemies are in range. Mechs are unaffected.</description>
     <descriptionHyperlinks>
@@ -84,6 +85,7 @@
   <!-- 爆破探勘裝置：裝填一發高爆迫擊砲彈、點火引爆後探明深層礦脈，高機率驚醒地下蟲群（DMS.CompBlastScanner） -->
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_Building_BlastScanner</defName>
+    <uiOrder>3010</uiOrder>
     <label>blast scanner</label>
     <description>A precision geological survey device. A mortar shell loaded into its charge chamber drives a seismic shockwave deep into the ground, and the device reads the returning echoes to map ore deposits far below the surface. One charge maps several deep deposits at once.\n\nSurveying this way is never quiet. The shockwave all but inevitably wakes insect colonies dormant underground, and they tend to dig their way out close to whatever disturbed them.\n\nLoad a high-explosive shell, then light the fuse. The device needs time to recalibrate between charges.</description>
     <graphicData>

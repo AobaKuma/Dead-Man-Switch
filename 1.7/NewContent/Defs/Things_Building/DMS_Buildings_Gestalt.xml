@@ -3,6 +3,7 @@
 
 	<ThingDef ParentName="BuildingBase">
 		<defName>DMS_GestaltEngine</defName>
+		<uiOrder>2070</uiOrder>
 		<label>central command core</label>
 		<description>A command core used to coordinate large-scaled automatroid squads, it have the ability to independently command and support an entire combined combat brigade without any further assist.</description>
 		<thingClass>Fortified.Building_Overseer</thingClass>
@@ -130,6 +131,7 @@
 
   <ThingDef ParentName="DMS_GestaltFacilityBase">
     <defName>DMS_Gestalt_CommandArray</defName>
+    <uiOrder>2080</uiOrder>
     <label>command array</label>
     <description>Increases bandwidth when placed near central command core. Each central command core can only use eight command arrays.</description>
     <graphicData>
@@ -170,6 +172,7 @@
 
   <ThingDef ParentName="DMS_GestaltFacilityBase">
     <defName>DMS_Gestalt_Transmitter</defName>
+    <uiOrder>2090</uiOrder>
     <label>command transmitter</label>
     <description>Increases command range and provides additional control group when placed near central command core. Each central command core can only use four command transmitters.</description>
     <graphicData>

@@ -456,6 +456,7 @@
        inventory); the graphic swaps to building_empty once the case is empty. -->
   <ThingDef ParentName="DMS_BuildingBase">
     <defName>DMS_Building_LauncherCase</defName>
+    <uiOrder>3080</uiOrder>
     <label>launcher case</label>
     <description>A wall-mounted emergency case holding a single light recoilless rifle, ready to be grabbed when the facility comes under attack. Anyone can pull the rifle out and shoulder it; the case then sits empty until someone loads a fresh one into it.</description>
     <thingClass>DMS.Building_RefuelableGraphic</thingClass>

@@ -9,6 +9,7 @@
        researchPrerequisites uses Inherit="False" so the parent's DMS_UAVBasis isn't merged in and listed as a second unlock. -->
   <ThingDef ParentName="DMS_BaseDronePlatform">
     <defName>DMS_FPVNest</defName>
+    <uiOrder>3070</uiOrder>
     <label>FPV drone hive</label>
     <description>A garrison drone nest built from sealed pioneer patterns. Load it with steel and it assembles wildfowl, coaxial-rotor suicide drones that hunt down hostiles and detonate against them, and launches them in salvos of up to four.\n\nUnlike the facility nests still guarding this world's installations, it has no underground logistics line to restock it, so it must be fed by hand. Recalled drones return their steel; drones that run their batteries flat are lost.</description>
     <descriptionHyperlinks>

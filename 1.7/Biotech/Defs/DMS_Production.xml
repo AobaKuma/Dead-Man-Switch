@@ -50,6 +50,7 @@
 
   <ThingDef ParentName="MechGestatorBase">
     <defName>DMS_MechGestatorSmall</defName>
+    <uiOrder>2030</uiOrder>
     <label>Automatroid Constructor</label>
     <description>A massive piece of industrial equipment used to assemble light and medium Automatroids.</description>
     <designationCategory>DMS_Category</designationCategory>
@@ -185,6 +186,7 @@
 
   <ThingDef ParentName="MechGestatorBase">
     <defName>DMS_MechGestatorLarge</defName>
+    <uiOrder>2040</uiOrder>
     <label>Large Automatroid Constructor</label>
     <description>A giant piece of industrial equipment used to assemble large Automatroids.</description>
     <designationCategory>DMS_Category</designationCategory>

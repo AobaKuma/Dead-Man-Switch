@@ -12,6 +12,7 @@
   <!-- 零點能發生器核心：反粒子彈頭 → 固態零點能（DMS.CompZeroPointGenerator） -->
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_ZeroPointGenerator</defName>
+    <uiOrder>5020</uiOrder>
     <label>zero-point generator core</label>
     <thingClass>Building</thingClass>
     <description>A complex device that punches a hole in real space through the controlled release of antigrain energy, drawing inexhaustible energy from the quantum fluctuations outside and condensing it into solid energy blocks for convenient storage and further processing.\n\nSince the rim generally lacks antigrain production technology, the device usually has to rely on ready-made antigrain warheads as the catalyst that starts it running.\n\nWhile powered, each antigrain warhead loaded as catalyst yields 25 units of solidified zero-point energy, one every 2.4 days. A single warhead keeps the core running for about a year.</description>
@@ -118,6 +119,7 @@
   <!-- 零點能反應器：燒固態零點能發電（DMS.CompZeroPointReactor） -->
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_ZeroPointReactor</defName>
+    <uiOrder>5030</uiOrder>
     <label>zero-point reactor</label>
     <thingClass>Building</thingClass>
     <description>A generator that unravels the confinement field of solidified zero-point energy in a controlled cascade and converts what it releases into electricity. Most human technology cannot touch the energy locked inside a block; this reactor is one of the few exceptions.\n\nIt loads one block at a time, and a single block keeps it running at full output for a whole year. The magazine holds five.</description>
@@ -206,6 +208,7 @@
   <!-- 現實穩定錨：錨場壓制異象實體、能力值上限 120%（DMS.CompRealityAnchor） -->
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_Anchor</defName>
+    <uiOrder>5040</uiOrder>
     <label>reality anchor</label>
     <thingClass>Building</thingClass>
     <description>A stabilization device that uses counter-technology to keep the surrounding space free from the influence of transcendent forces. To an ordinary person it is nothing more than a harmless decoration, but psycasters and transcendent artifacts find it hard to establish connections beyond this dimension in its presence, and cannot manifest their transcendent properties.\n\nWhile powered, it holds a stabilized field around itself. Inside it, no creature's capacities or physical limits can exceed 120% of normal, psycasts cannot be cast and invisibility fails. Anomalous entities and mutants are suppressed: slowed, weakened and far easier to contain. The field makes no distinction between friend and foe.</description>

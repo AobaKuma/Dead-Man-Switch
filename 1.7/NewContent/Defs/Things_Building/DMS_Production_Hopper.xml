@@ -8,6 +8,7 @@
        ModExtension_AutoWorkTable.pullFromLinkedStorage 要開，否則料斗只是個普通的儲存架。 -->
   <ThingDef ParentName="BuildingBase">
     <defName>DMS_Hopper</defName>
+    <uiOrder>1090</uiOrder>
     <label>feed hopper</label>
     <description>A gravity-fed bulk hopper with a powered auger in its base to move the coarse material that a normal conveyor line cannot handle, such as stone chunks, slag and mech wreckage.\n\nAutonomous production buildings linked to this hopper draw material straight out of it, so nothing has to be carried in by hand. Cutting the power stops the feed.</description>
     <thingClass>Building_Storage</thingClass>

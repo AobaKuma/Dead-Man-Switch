@@ -2,6 +2,7 @@
 <Defs>
   <ThingDef ParentName="DMS_AutofacturerBenchBase">
     <defName>DMS_ReactionChamber</defName>
+    <uiOrder>1040</uiOrder>
     <label>Pressure Chamber</label>
     <!-- 巨大的工業生產設備,用於在常溫常壓環境下製造出高壓環境來使材料發生交互反應. -->
     <description>A massive industrial-grade vacuum chamber used to create a high-pressure environment to create mineral alloys.</description>
@@ -75,6 +76,7 @@
 
   <ThingDef ParentName="DMS_AutofacturerBenchBase">
     <defName>DMS_Furnace</defName>
+    <uiOrder>1050</uiOrder>
     <label>Sintering Furnace</label>
     <!--巨大的工業生產設備,用於在封閉空間中製造超高溫環境來使金屬或陶瓷燒結,也可以用來熔煉金屬.  -->
     <description>A massive industrial furnace used to heat metals and minerals to a near liquid form to create advanced alloys. Can also be used to smelt metals.</description>
@@ -157,6 +159,7 @@
   <!-- DMS_TableMachinePrinter -->
   <ThingDef ParentName="DMS_AutofacturerBenchBase">
     <defName>DMS_TableMachinePrinter</defName>
+    <uiOrder>1060</uiOrder>
     <label>Machinery Printer</label>
     <description>A composite metal printer which can manufacture and assemble metal products and weapons through cold forging in order to mass-produce machinery.</description>
     <graphicData>
@@ -224,6 +227,7 @@
   <!-- DMS_AutoMill 自動磨床 : 半自動版本的石材加工桌 -->
   <ThingDef ParentName="DMS_AutofacturerBenchBase">
     <defName>DMS_AutoMill</defName>
+    <uiOrder>1070</uiOrder>
     <label>Auto mill</label>
     <!-- 一台以連續進料的方式運轉的自動化石材加工機，只要備妥原料便能無人值守地持續產出石磚。 -->
     <description>An automated milling bench fed by a continuous feed line. Once loaded with raw chunks it grinds and cuts stone blocks unattended, trading precision for the ability to run without an operator.</description>
