@@ -167,6 +167,18 @@
 
 
 			<!-- ========== Wildfowl (FPV suicide drone) ========== -->
+			<!-- Match CE's frag grenade payload; CE's CompHunterDrone patch releases these on detonation. -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Drone_Wildfowl"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_Fragments">
+						<fragments>
+							<Fragment_Small>40</Fragment_Small>
+						</fragments>
+					</li>
+				</value>
+			</li>
+
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/ThingDef[defName="DMS_Drone_Wildfowl"]</xpath>
 				<value>
