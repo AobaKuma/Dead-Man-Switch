@@ -7,11 +7,11 @@ using Verse.AI;
 namespace DMS
 {
     /// <summary>
-    /// 接敵時才放無人機。
+    /// 接敵時放無人機；沒有戰鬥目標時可投放野禽破門。
     ///
     /// 框架原本給 NPC 平台的是「上場就按碼表一直放」，母艦還在半張地圖外
     /// 就把彈艙倒光，等真的打起來反而沒東西可投。這個節點把投放綁在
-    /// 「已經有敵人進入投放半徑、而且空中的機數還不夠」兩個條件上。
+    /// 「敵人進入投放半徑或有可接近的敵對門、而且空中的機數還不夠」上。
     ///
     /// 搭配 CompProperties_MechPlatform 的 npcAutoDeploy=false 使用。
     /// </summary>
@@ -66,6 +66,11 @@ namespace DMS
                 || !pawn.Position.InHorDistOf(target.Position, radius))
             {
                 target = CarrierAIUtility.FindNearbyHostile(pawn, radius);
+            }
+            if (target == null)
+            {
+                // 門不受投放半徑限制，讓野禽先行破門。
+                target = CarrierAIUtility.FindHostileDoor(pawn);
             }
             if (target == null)
             {

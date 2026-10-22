@@ -141,7 +141,7 @@
   <!-- 集群織鳥的常駐思考樹：母艦滯空投放準則。
        它沒有裝甲，火力來自兩具自動副砲塔與整艙自殺無人機，所以不該壓上去互射。
        這裡讓敵方陣營的母艦停在自身射程邊緣、盡量落在對方槍夠不到的距離，
-       接敵才開艙放野禽；等彈艙見底、空中也沒有自機無人機時整段條件失效，
+       接敵或發現可接近的敵對陣營門時開艙放野禽；等彈艙見底、空中也沒有自機無人機時整段條件失效，
        母艦改回一般機兵交戰行為正面壓上，戰鬥才不會被無限風箏拖住。
        玩家收編的個體不受影響，仍走原本的機兵指令流程。 -->
   <ThinkTreeDef>
@@ -157,9 +157,10 @@
           <subNodes>
             <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
               <subNodes>
-                <!-- 地圖上真的有威脅時才接管；行軍、集結、撤離仍交給陣營勤務。 -->
+                <!-- 附近有威脅或地圖上有可接近的敵對門時接管。 -->
                 <li Class="DMS.ThinkNode_ConditionalHostileWithin">
                   <reachFactor>1.6</reachFactor>
+                  <includeHostileDoors>true</includeHostileDoors>
                   <subNodes>
                     <!-- 還有貨可投（或空中還有自機無人機）才走滯空準則。 -->
                     <li Class="DMS.ThinkNode_ConditionalDronePayload">

@@ -256,5 +256,31 @@ namespace DMS
                 null, 0f, radius, IntVec3.Invalid, float.MaxValue, canBashDoors: false,
                 canTakeTargetsCloserThanEffectiveMinRange: true);
         }
+
+        /// <summary>無戰鬥目標時，找地圖上最近且可接近的敵對陣營門。</summary>
+        public static Building_Door FindHostileDoor(Pawn pawn)
+        {
+            if (pawn.Map == null || pawn.Faction == null)
+            {
+                return null;
+            }
+            Building_Door best = null;
+            float bestDistance = float.MaxValue;
+            foreach (Thing thing in pawn.Map.listerThings.ThingsInGroup(ThingRequestGroup.BuildingArtificial))
+            {
+                if (thing is not Building_Door door || door.Faction == null
+                    || !door.Faction.HostileTo(pawn.Faction))
+                {
+                    continue;
+                }
+                float distance = door.Position.DistanceToSquared(pawn.Position);
+                if (distance < bestDistance && pawn.CanReach(door, PathEndMode.Touch, Danger.Deadly))
+                {
+                    best = door;
+                    bestDistance = distance;
+                }
+            }
+            return best;
+        }
     }
 }

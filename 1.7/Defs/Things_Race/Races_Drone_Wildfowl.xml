@@ -34,6 +34,7 @@
               <invert>true</invert>
               <subNodes>
                 <li Class="JobGiver_AIGotoNearestHostile" />
+                <li Class="DMS.JobGiver_DroneAttackHostileDoor" />
               </subNodes>
             </li>
             <li Class="Fortified.JobGiver_WanderNearPlatform" />
@@ -112,6 +113,9 @@
       </li>
     </tools>
     <comps>
+      <li Class="Fortified.CompProperties_Floating">
+        <canCrossWater>true</canCrossWater>
+      </li>
       <li Class="Fortified.CompProperties_Drone">
         <returnToDraftPlatformJob>FFF_ReturnToDronePlatform</returnToDraftPlatformJob>
       </li>

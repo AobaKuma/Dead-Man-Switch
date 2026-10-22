@@ -20,12 +20,15 @@ namespace DMS
         /// <summary>一把遠程武裝都找不到時採用的射程。</summary>
         public float fallbackReach = 25f;
 
+        public bool includeHostileDoors;
+
         public override ThinkNode DeepCopy(bool resolve = true)
         {
             ThinkNode_ConditionalHostileWithin obj = (ThinkNode_ConditionalHostileWithin)base.DeepCopy(resolve);
             obj.radius = radius;
             obj.reachFactor = reachFactor;
             obj.fallbackReach = fallbackReach;
+            obj.includeHostileDoors = includeHostileDoors;
             return obj;
         }
 
@@ -37,7 +40,8 @@ namespace DMS
             }
             float reach = CarrierAIUtility.EffectiveReach(pawn, fallbackReach);
             float r = Mathf.Max(radius, reach * reachFactor);
-            return CarrierAIUtility.FindNearbyHostile(pawn, r) != null;
+            return CarrierAIUtility.FindNearbyHostile(pawn, r) != null
+                || (includeHostileDoors && CarrierAIUtility.FindHostileDoor(pawn) != null);
         }
     }
 }
