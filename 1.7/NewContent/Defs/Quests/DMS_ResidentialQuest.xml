@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>DMS_ResidentialSite</defName>
+    <label>abandoned residential district</label>
+    <description>An abandoned residential compound occupied by remnant forces. Its decoy antenna can lure a geochelone.</description>
+    <workerClass>Fortified.SitePartWorker_FFF_TimedHostileSite</workerClass>
+    <modExtensions>
+      <!-- 進入站點後的增援倒數設定（難度縮放：小時 ÷ threatScale）。
+           Post-entry reinforcement countdown (hours ÷ threatScale). -->
+      <li Class="Fortified.FFF_TimedSiteExtension">
+        <baseEntryHours>36</baseEntryHours>
+        <minEntryHours>8</minEntryHours>
+        <maxEntryHours>72</maxEntryHours>
+        <entryLetterLabelKey>DMS_DecoySite_EntryCountdownLabel</entryLetterLabelKey>
+        <entryLetterTextKey>DMS_DecoySite_EntryCountdownText</entryLetterTextKey>
+      </li>
+      <!-- 情境音樂：地表站點。Situational music context: surface installation. -->
+      <li Class="DMS.ModExtension_DMSMusicContext">
+        <context>Installation</context>
+      </li>
+    </modExtensions>
+    <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>300</minThreatPoints>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <!-- 由 SitePartWorker_FFF_TimedHostileSite 自行以難度縮放啟動倒數。
+         The worker starts its own difficulty-scaled countdown. -->
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <approachOrderString>Assault {0}</approachOrderString>
+    <approachingReportString>Assaulting {0}.</approachingReportString>
+    <arrivedLetter>You have arrived at the residential district. Defeat its garrison and activate the decoy antenna to lure a geochelone. Enemy reinforcements will arrive after the monitoring countdown.</arrivedLetter>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <tags>
+      <li>DMS_DecoySite</li>
+    </tags>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>DMS_ResidentialSiteStructure</defName>
+    <linkWithSite>DMS_ResidentialSite</linkWithSite>
+    <order>400</order>
+    <genStep Class="Fortified.Structures.GenStep_FFFGarrisonedStructure">
+      <!-- 透過 IFFF 從帶此標籤的結構中隨機挑選生成。
+           Picks a random IFFF structure carrying this tag. -->
+      <useTag>DMS_DecoySite</useTag>
+      <randomOffset>0~3</randomOffset>
+      <filthTypes>
+        <li>Filth_RubbleBuilding</li>
+        <li>Filth_MachineBits</li>
+        <li>Filth_Ash</li>
+      </filthTypes>
+      <centerpieceDef>DMS_DecoyRadio</centerpieceDef>
+      <debrisDef>ChunkSlagSteel</debrisDef>
+      <debrisCount>8~14</debrisCount>
+      <scatterRadius>24</scatterRadius>
+      <lootMaker>MapGen_DefaultStockpile</lootMaker>
+      <spawnDefenders>true</spawnDefenders>
+      <defendRadius>16</defendRadius>
+      <satelliteScatter>
+        <li>
+          <tag>DMS_DecoySiteEdgeRuin</tag>
+          <count>1</count>
+          <radiusPct>0.22</radiusPct>
+          <minRadius>26</minRadius>
+          <minSpacing>6</minSpacing>
+        </li>
+        <li>
+          <tag>DMS_RuinSatellite</tag>
+          <count>4</count>
+          <radiusPct>0.16</radiusPct>
+          <minRadius>20</minRadius>
+          <minSpacing>4</minSpacing>
+        </li>
+        <li>
+          <tag>DMS_RuinScattered</tag>
+          <count>1</count>
+          <radiusPct>0.32</radiusPct>
+          <minRadius>40</minRadius>
+          <minSpacing>6</minSpacing>
+        </li>
+      </satelliteScatter>
+    </genStep>
+  </GenStepDef>
+  <!-- ==================== 任務腳本 Quest script ==================== -->
+  <QuestScriptDef>
+    <defName>DMS_ResidentialAssault</defName>
+    <successHistoryEvent>DMS_QuestSuccess_Military</successHistoryEvent>
+    <failedOrExpiredHistoryEvent>DMS_QuestFailed_Military</failedOrExpiredHistoryEvent>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>true</sendAvailableLetter>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName-&gt;Abandoned residential district</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription-&gt;The counter-terrorism distress signal revealed a [siteFactionName] residential compound.\n\n(*Threat)[enemiesCount] [enemiesLabel](/Threat) guard the district. Use its decoy antenna to lure a geochelone.\n\nThe location remains available for [siteTimeout]. Entering starts the reinforcement countdown.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="Fortified.QuestNode_Root_FFF_TimedHostileSite">
+      <factionDef>DMS_Legacy</factionDef>
+      <sitePartDef>DMS_ResidentialSite</sitePartDef>
+      <baseTimeoutDays>16</baseTimeoutDays>
+      <minTimeoutDays>4</minTimeoutDays>
+      <maxTimeoutDays>30</maxTimeoutDays>
+      <expiredLetterLabelKey>DMS_DecoySite_ExpiredLabel</expiredLetterLabelKey>
+      <expiredLetterTextKey>DMS_DecoySite_ExpiredText</expiredLetterTextKey>
+      <clearedLetterLabelKey>DMS_DecoySite_ClearedLabel</clearedLetterLabelKey>
+      <clearedLetterTextKey>DMS_DecoySite_ClearedText</clearedLetterTextKey>
+    </root>
+  </QuestScriptDef>
+</Defs>

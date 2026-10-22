@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <Fortified.RaidWaveDef>
+    <label>peacekeeping unit</label>
     <defName>DMS_RaidWave_PeacekeepingOperators</defName>
     <factionDef>DMS_Legacy</factionDef>
     <repeatWaveStartIndex>3</repeatWaveStartIndex>
@@ -9,12 +10,14 @@
         <pawns>
           <DMS_Mech_Ronin>1</DMS_Mech_Ronin>
           <DMS_Mech_Falcon>1</DMS_Mech_Falcon>
+          <DMS_Mech_Protector>1</DMS_Mech_Protector>
         </pawns>
       </li>
       <li>
         <pawns>
           <DMS_Mech_Ronin>1</DMS_Mech_Ronin>
           <DMS_Mech_Falcon>2</DMS_Mech_Falcon>
+          <DMS_Mech_Protector>1</DMS_Mech_Protector>
         </pawns>
       </li>
       <li>
@@ -36,6 +39,92 @@
           <DMS_Mech_Protector>3</DMS_Mech_Protector>
           <DMS_Mech_Ronin>8</DMS_Mech_Ronin>
           <DMS_Mech_Falcon>4</DMS_Mech_Falcon>
+        </pawns>
+      </li>
+    </waves>
+  </Fortified.RaidWaveDef>
+  <Fortified.RaidWaveDef>
+    <label>counter-terrorism unit</label>
+    <defName>DMS_RaidWave_CounterTerrorism</defName>
+    <factionDef>DMS_Legacy</factionDef>
+    <repeatWaveStartIndex>3</repeatWaveStartIndex>
+    <waves>
+      <li>
+        <pawns>
+          <DMS_Mech_Jaeger>1</DMS_Mech_Jaeger>
+          <DMS_Mech_Hyrax>1</DMS_Mech_Hyrax>
+          <DMS_Mech_Gladiator>1</DMS_Mech_Gladiator>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_Jaeger>1</DMS_Mech_Jaeger>
+          <DMS_Mech_Hyrax>2</DMS_Mech_Hyrax>
+          <DMS_Mech_Gladiator>1</DMS_Mech_Gladiator>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_Gladiator>1</DMS_Mech_Gladiator>
+          <DMS_Mech_Jaeger>2</DMS_Mech_Jaeger>
+          <DMS_Mech_Hyrax>3</DMS_Mech_Hyrax>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_Gladiator>2</DMS_Mech_Gladiator>
+          <DMS_Mech_Jaeger>6</DMS_Mech_Jaeger>
+          <DMS_Mech_Hyrax>4</DMS_Mech_Hyrax>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_Gladiator>3</DMS_Mech_Gladiator>
+          <DMS_Mech_Jaeger>8</DMS_Mech_Jaeger>
+          <DMS_Mech_Hyrax>4</DMS_Mech_Hyrax>
+        </pawns>
+      </li>
+    </waves>
+  </Fortified.RaidWaveDef>
+  <Fortified.RaidWaveDef>
+    <label>infantry combat squad</label>
+    <defName>DMS_RaidWave_Infantry</defName>
+    <factionDef>DMS_Legacy</factionDef>
+    <repeatWaveStartIndex>3</repeatWaveStartIndex>
+    <waves>
+      <li>
+        <pawns>
+          <DMS_Mech_Gecko>1</DMS_Mech_Gecko>
+          <DMS_Mech_Dogge>1</DMS_Mech_Dogge>
+          <DMS_Mech_BattleFrame>1</DMS_Mech_BattleFrame>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_Gecko>1</DMS_Mech_Gecko>
+          <DMS_Mech_Dogge>2</DMS_Mech_Dogge>
+          <DMS_Mech_BattleFrame>1</DMS_Mech_BattleFrame>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_BattleFrame>1</DMS_Mech_BattleFrame>
+          <DMS_Mech_Gecko>2</DMS_Mech_Gecko>
+          <DMS_Mech_Dogge>3</DMS_Mech_Dogge>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_BattleFrame>2</DMS_Mech_BattleFrame>
+          <DMS_Mech_Gecko>6</DMS_Mech_Gecko>
+          <DMS_Mech_Dogge>4</DMS_Mech_Dogge>
+        </pawns>
+      </li>
+      <li>
+        <pawns>
+          <DMS_Mech_BattleFrame>3</DMS_Mech_BattleFrame>
+          <DMS_Mech_Gecko>8</DMS_Mech_Gecko>
+          <DMS_Mech_Dogge>4</DMS_Mech_Dogge>
         </pawns>
       </li>
     </waves>
