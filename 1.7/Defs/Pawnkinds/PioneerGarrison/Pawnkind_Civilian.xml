@@ -188,6 +188,10 @@
   <PawnKindDef ParentName="DMS_CivilianBase">
     <defName>DMS_MinuteMan</defName>
     <label>minute man</label>
+    <isFighter>true</isFighter>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
     <itemQuality>Normal</itemQuality>
     <weaponTags Inherit="False">
       <li>Simple_LongRange</li>
@@ -215,6 +219,10 @@
   <PawnKindDef ParentName="DMS_CivilianBase">
     <defName>DMS_MinuteMan_Heavy</defName>
     <label>heavy minute man</label>
+    <isFighter>true</isFighter>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
     <itemQuality>Normal</itemQuality>
     <weaponTags Inherit="False">
       <li>ElephantGun</li>
@@ -241,6 +249,10 @@
   <PawnKindDef ParentName="DMS_CivilianBase">
     <defName>DMS_Security</defName>
     <label>Garrison guard</label>
+    <isFighter>true</isFighter>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
     <itemQuality>Normal</itemQuality>
     <weaponTags Inherit="False">
       <li>A_RC_Pistol</li>

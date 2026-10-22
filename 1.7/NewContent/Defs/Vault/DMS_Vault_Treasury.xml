@@ -47,6 +47,10 @@
         <hackedLetterText>Someone has broken into the vault's access-control system. The sealed storage doors are open.</hackedLetterText>
         <hackedLetterDef>PositiveEvent</hackedLetterDef>
       </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(0,235,31,0)</glowColor>
+      </li>
     </comps>
   </ThingDef>
 
@@ -78,6 +82,10 @@
         <notHackedInspectString>Hack to open the sector gate.</notHackedInspectString>
         <hackedInspectString>Sector gate open.</hackedInspectString>
         <hackedMessage>{HACKER_labelShort} has opened the sector gate.</hackedMessage>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(0,235,31,0)</glowColor>
       </li>
     </comps>
   </ThingDef>

@@ -328,9 +328,10 @@
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>4</drawSize>
       <drawOffset>(0,0,0)</drawOffset>
+      <drawRotated>false</drawRotated>
     </graphicData>
     <size>(3,3)</size>
-    <rotatable>false</rotatable>
+    <rotatable>true</rotatable>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <statBases>   <!--================血量與重量工作量================-->
       <MaxHitPoints>2000</MaxHitPoints>
@@ -497,9 +498,10 @@
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>2.8</drawSize>
       <drawOffset>(0,0,0)</drawOffset>
+      <drawRotated>false</drawRotated>
     </graphicData>
     <size>(2,2)</size>
-    <rotatable>false</rotatable>
+    <rotatable>true</rotatable>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <fillPercent>0.7</fillPercent>
     <statBases>
@@ -885,9 +887,10 @@
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>4</drawSize>
       <drawOffset>(0,0,0)</drawOffset>
+      <drawRotated>false</drawRotated>
     </graphicData>
     <size>(3,3)</size>
-    <rotatable>false</rotatable>
+    <rotatable>true</rotatable>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <statBases>   <!--================血量與重量工作量================-->
       <MaxHitPoints>2000</MaxHitPoints>

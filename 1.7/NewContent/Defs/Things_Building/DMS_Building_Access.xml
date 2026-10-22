@@ -112,6 +112,10 @@
       <li Class="Fortified.CompProperties_AccessKeyActivatable">
         <accessKeyDef>DMS_AccessKey_Nara</accessKeyDef>
       </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(0,235,31,0)</glowColor>
+      </li>
     </comps>
   </ThingDef>
 
@@ -151,6 +155,10 @@
         <accessKeyDef>DMS_AccessKey_Neutrals</accessKeyDef>
         <!-- 沒連到任何東西時不收卡，免得鑰匙卡刷進空氣。Refuse the card when nothing is linked, so it isn't swiped into thin air. -->
         <requireAccessWanter>true</requireAccessWanter>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(0,235,31,0)</glowColor>
       </li>
     </comps>
   </ThingDef>
