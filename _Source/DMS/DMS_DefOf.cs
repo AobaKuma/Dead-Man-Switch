@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -70,5 +70,8 @@ namespace DMS
         // 引渡要求的選擇信件與交出時的好感度理由。The extradition choice letter and the goodwill reason for handing over.
         public static LetterDef DMS_DeviantExtradition;
         public static HistoryEventDef DMS_ExtraditedDeviant;
+
+        // 具名封存匣封條上的檔名規則包（見 Occultech/ArchiveCasketUtility）。
+        public static RulePackDef DMS_ArchiveCasketName;
     }
 }

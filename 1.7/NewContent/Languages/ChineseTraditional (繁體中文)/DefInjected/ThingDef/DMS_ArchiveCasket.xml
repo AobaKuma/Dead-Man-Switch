@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN:
+    <DMS_ArchiveCasket.label>attested archive casket</DMS_ArchiveCasket.label>
+    <DMS_ArchiveCasket.description>A machined block of composite, one seam, sealed under a confinement field. Inside is not a fragment but one whole file: a complete sealed technology, waiting to be read.
+
+The fleets never made these. They only left them behind, in facility server storage and in the strategic database under a SAGE core, still stamped with the name of a custodian who stopped coming.</DMS_ArchiveCasket.description>
+    <DMS_ArchiveCasket.comps.CompUsable.useLabel>Unseal {0_label}</DMS_ArchiveCasket.comps.CompUsable.useLabel>
+  -->
+
+  <DMS_ArchiveCasket.label>具名封存匣</DMS_ArchiveCasket.label>
+  <DMS_ArchiveCasket.description>一塊單體切削的複合材料，只有一道接縫，接縫在約束場下封合。裡面不是碎片，而是一份完整的檔案：一項完整的封存技術，只等著有人讀它。\n\n艦隊從來不製造這種匣子，只是把它留下：留在設施伺服核心的儲存層裡，或留在賢者核心的戰略資料庫裡，封條上還刻著一個不會再回來的保管人的名字。</DMS_ArchiveCasket.description>
+  <DMS_ArchiveCasket.comps.CompUsable.useLabel>解封{0_label}</DMS_ArchiveCasket.comps.CompUsable.useLabel>
+
+</LanguageData>

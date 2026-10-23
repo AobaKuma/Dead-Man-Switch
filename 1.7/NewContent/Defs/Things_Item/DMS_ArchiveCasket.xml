@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================================================================== -->
+  <!-- 具名封存匣：整份封存檔案，不是碎片                                    -->
+  <!--                                                                      -->
+  <!-- 與三種封存資料匣的分工：                                              -->
+  <!--   資料匣（管制／封存／禁忌）＝ 碎片，使用時才抽一份檔案，只給部分進度。 -->
+  <!--   具名封存匣＝ 完整檔案，取得時就抽定（見 DMS.Item_ArchiveCasket      -->
+  <!--   .PostMake），使用時直接完成該專案，不給部分進度。                   -->
+  <!--                                                                      -->
+  <!-- 取得（不可製作）：                                                    -->
+  <!--   1. SAGE（DMS_SageCore）駭入獎勵池，權重 1、每棟上限 1。             -->
+  <!--   2. 設施資料庫地圖的伺服核心（DMS_FacilityServerCore），同上。        -->
+  <!--   兩個池子的其他項目權重是 3~5，所以匣子是兩邊最稀有的一格；           -->
+  <!--   磁帶庫貨架（DMS_ArchiveShelfLoot）刻意不放，那裡只放管制級碎片。    -->
+  <!--   tradeability None：艦隊的具名檔案不流通，玩家也不能拿來套利。        -->
+  <!--                                                                      -->
+  <!-- 匣裡可選的檔案清單在下方 comps 的 researchProjects，只收 I／II 級。   -->
+  <!-- III 級（隱匿級）刻意不列入：隱匿級檔案只有石碑與脫序者兩條路，        -->
+  <!-- 封存匣不該成為繞過制裁與追殺的第三條。之後新增 I／II 級封存專案時，    -->
+  <!-- 記得把 defName 補進清單（抽不到的項目不會報錯，只會讓池子變小）。      -->
+  <!-- ==================================================================== -->
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMS_ArchiveCasket</defName>
+    <label>attested archive casket</label>
+    <thingClass>DMS.Item_ArchiveCasket</thingClass>
+    <description>A machined block of composite, one seam, sealed under a confinement field. Inside is not a fragment but one whole file: a complete sealed technology, waiting to be read.
+
+The fleets never made these. They only left them behind, in facility server storage and in the strategic database under a SAGE core, still stamped with the name of a custodian who stopped coming.</description>
+    <graphicData>
+      <texPath>Things/Misc/DataCache</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.35</drawSize>
+      <color>(0.94, 0.91, 0.80)</color>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <!-- 每一顆匣子都有自己的檔名與檔案，不能疊。One file and one designation each: no stacking. -->
+    <stackLimit>1</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <intricate>true</intricate>
+    <techLevel>Spacer</techLevel>
+    <tradeability>None</tradeability>
+    <genericMarketSellable>false</genericMarketSellable>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <Mass>1.5</Mass>
+      <!-- 一份完整的封存檔案：約等於 II 級資料匣的三倍價值，但不可製作、不可交易。
+           One whole file: about three times a sealed cache, and neither craftable nor tradeable. -->
+      <MarketValue>6000</MarketValue>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <comps>
+      <!-- ResourceBase 已經給了 CompProperties_Forbiddable，這裡只補使用相關的。 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Unseal {0_label}</useLabel>
+        <!-- 比資料匣久：撕開封條等於一次把整份檔案讀完。 -->
+        <useDuration>2400</useDuration>
+        <showUseGizmo>true</showUseGizmo>
+      </li>
+      <!-- 檔案清單只收 I／II 級（見檔頭說明）。 -->
+      <li Class="DMS.CompProperties_UseEffect_UnsealArchive">
+        <researchProjects>
+          <li>DMS_Occultech_HydraulicFracturing</li>
+          <li>DMS_Occultech_BionicSuitHeavy</li>
+          <li>DMS_Occultech_GestaltEngine</li>
+          <li>DMS_Occultech_Biosynthesis</li>
+          <li>DMS_Occultech_Subsonic</li>
+          <li>DMS_Occultech_RemnantPatterns</li>
+          <li>DMS_Occultech_QubitDecryption</li>
+          <li>DMS_Occultech_Frogman</li>
+          <li>DMS_Occultech_MainBattle</li>
+        </researchProjects>
+        <fallbackXpAmount>3000</fallbackXpAmount>
+        <letterDef>PositiveEvent</letterDef>
+      </li>
+      <!-- orderPriority -1000（CompProperties_UseEffectDestroySelf 的預設值）：
+           一定跑在解封效果之後，解封失敗時物品仍會消耗一次，與資料匣一致。 -->
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+  </ThingDef>
+
+</Defs>

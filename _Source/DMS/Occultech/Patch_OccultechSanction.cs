@@ -50,6 +50,18 @@ namespace DMS
             {
                 Log.Error($"[DMS] Deviant pending-grant hook failed for {proj.defName}: {ex}");
             }
+            // 追殺間隔隨研究收緊（微電子基礎完成前 28~32 天，完成後 5~7 天）。只換 def 上的值：
+            // 已經在倒數的那一波維持原樣，下一波排程時才用新間隔。
+            // Hunt intervals tighten with research (28~32 days before MicroelectronicsBasics, 5~7 after). Only the def
+            // value changes: a wave already counting down keeps its time, and the next one scheduled uses the new range.
+            try
+            {
+                HuntIntervalUtility.RefreshAll();
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"[DMS] Hunt interval hook failed for {proj.defName}: {ex}");
+            }
         }
     }
 

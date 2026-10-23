@@ -88,7 +88,8 @@ namespace DMS
                 + $"  highest fleet rank: {holder?.LabelShort ?? "<none>"} (seniority {seniority})\n"
                 + $"  held renounceable: {OccultechSanctionUtility.HeldRenounceableProjects().Select(p => p.defName).ToCommaList(useAnd: false)}\n"
                 + $"  collateral factions: {comp.CollateralFactions.Select(f => f.Name).ToCommaList(useAnd: false)}\n"
-                + $"  huntSuspended={comp.HuntSuspended} resumesIn={comp.HuntResumeTicksLeft.ToStringTicksToPeriod()}");
+                + $"  huntSuspended={comp.HuntSuspended} resumesIn={comp.HuntResumeTicksLeft.ToStringTicksToPeriod()}\n"
+                + $"  kill order interval: {HuntIntervalUtility.Describe(GameComponent_OccultechSanction.HuntDef)}");
         }
 
         [DebugAction("DMS", "Occultech: 暫停追殺一年 / Suspend hunt (1 year)",
@@ -154,6 +155,7 @@ namespace DMS
                 + $"  harbored deviant: {DeviantHuntUtility.HarboredDeviant?.LabelShort ?? "<none>"}\n"
                 + $"  deviant hunt: {(hunt == null ? "<inactive>" : $"bound={hunt.boundPawn?.LabelShort ?? "<null>"} maps={hunt.timers.Count} suspendedLeft={hunt.SuspendedTicksLeft.ToStringTicksToPeriod()}")}\n"
                 + $"  next wave on current map: {Fortified.HuntdownUtility.TicksUntilNextWave(DMS_DefOf.DMS_DeviantHunt, map)} ticks\n"
+                + $"  hunt interval: {HuntIntervalUtility.Describe(DMS_DefOf.DMS_DeviantHunt)}\n"
                 + $"  kill order running={DeviantHuntUtility.KillOrderRunning} blackoutLeft={FleetTrackingUtility.BlackoutTicksLeft.ToStringTicksToPeriod()}\n"
                 + $"  hostility locked={OccultechSanctionUtility.HostilityLocked} expected trial={CourtMartialOfferUtility.ExpectedKind}\n"
                 + $"  pending grants: {(legacy == null ? "<no component>" : legacy.PendingGrants.Select(p => $"{p.defName} (missing: {DeviantTechUtility.MissingPrerequisites(p)})").ToCommaList(useAnd: false))}");

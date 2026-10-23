@@ -212,12 +212,15 @@
     <repeatWhileStaying>true</repeatWhileStaying>
     <stopWhenBoundPawnLost>true</stopWhenBoundPawnLost>
     <!-- 預警延遲 0：FFF 的倒數警報只在預警之後顯示，延遲 0 讓警報從交付當下（以及每一輪重新排程起）就一直在右側倒數。
-         不發預警信件：交付信件已說明追殺，每一輪再發一封只是噪音。襲擊 5~8 天。
+         不發預警信件：交付信件已說明追殺，每一輪再發一封只是噪音。
+         襲擊間隔與追殺令共用同一條研究線：微電子基礎完成前 28~32 天，完成後 5~7 天。
          Warning delay 0: FFF only shows the countdown alert once warned, so this keeps it on screen from the handover
-         (and from every reschedule). No warning letter: the handover letter already announces the hunt. Raids every 5~8 days. -->
+         (and from every reschedule). No warning letter: the handover letter already announces the hunt.
+         The interval follows the same research line as the kill order: 28~32 days until MicroelectronicsBasics is
+         finished, 5~7 afterwards. -->
     <warningDelayRange>0~0</warningDelayRange>
     <sendWarningLetter>false</sendWarningLetter>
-    <raidDelayRange>300000~480000</raidDelayRange>
+    <raidDelayRange>1680000~1920000</raidDelayRange>
     <criticalAlertLeadTicks>60000</criticalAlertLeadTicks>
     <waves>
       <li>
@@ -242,6 +245,13 @@
     <alertExplanationCritical>The hunting party from {0} could arrive at any moment. Prepare for battle.</alertExplanationCritical>
     <modExtensions>
       <li Class="DMS.ModExtension_FleetTracking" />
+      <!-- 與追殺令同一條研究線：微電子基礎完成前 28~32 天，完成後 5~7 天（DMS.HuntIntervalUtility）。
+           Same research line as the kill order: 28~32 days until MicroelectronicsBasics is finished, 5~7 afterwards. -->
+      <li Class="DMS.ModExtension_HuntIntervalByResearch">
+        <research>MicroelectronicsBasics</research>
+        <intervalBefore>1680000~1920000</intervalBefore>
+        <intervalAfter>300000~420000</intervalAfter>
+      </li>
     </modExtensions>
   </Fortified.HuntdownDef>
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- ==================================================================== -->
+  <!-- 具名封存匣                                                           -->
+  <!-- 由 DMS.CompUseEffect_UnsealArchive / DMS.Item_ArchiveCasket 发出。     -->
+  <!-- ==================================================================== -->
+
+  <!-- 物品标签：{0} 物品名, {1} 封条上的档名 -->
+  <DMS_ArchiveCasket_LabelFormat>{0}「{1}」</DMS_ArchiveCasket_LabelFormat>
+
+  <!-- 检视说明：{0} 档案名, {1} 分级（管制／封存） -->
+  <DMS_ArchiveCasket_Contents>内含档案：{0}（{1}级）</DMS_ArchiveCasket_Contents>
+
+  <!-- 当场解封。{0} 档案名 -->
+  <DMS_ArchiveCasket_UnsealedLabel>封存匣已解封：{0}</DMS_ArchiveCasket_UnsealedLabel>
+
+  <!-- {PAWN} 使用者, {CASKET} 封存匣全名, {PROJECT} 档案名 -->
+  <DMS_ArchiveCasket_UnsealedText>{PAWN}破开了{CASKET}的接缝。里面是一份完整的封存技术，内容是{PROJECT}，也就是舰队一直拆成碎片保存的那一份。\n\n这项技术现在属于我们了。下一次有人要为那份档案签收时，舰队会发现架上已经空了。</DMS_ArchiveCasket_UnsealedText>
+
+  <!-- 前置未完成，档案暂时搁置。{0} 档案名 -->
+  <DMS_ArchiveCasket_PendingLabel>封存档案待解译：{0}</DMS_ArchiveCasket_PendingLabel>
+
+  <!-- {PAWN} 使用者, {CASKET} 封存匣全名, {PROJECT} 档案名, {PREREQS} 尚未完成的前置 -->
+  <DMS_ArchiveCasket_PendingText>{PAWN}破开了{CASKET}的接缝。匣里的档案是完整的，却压在我们还没有的基础上：{PREREQS}尚未完成。研究员能记的先记下来，其余的搁着——基础一补齐，这份档案会整个读出来。</DMS_ArchiveCasket_PendingText>
+
+  <!-- 待解译的档案可以读了。{0} 档案名 -->
+  <DMS_ArchiveCasket_DecodedLabel>封存档案解译完成：{0}</DMS_ArchiveCasket_DecodedLabel>
+
+  <!-- {PROJECT} 档案名 -->
+  <DMS_ArchiveCasket_DecodedText>基础补齐了，从封存匣里取出的那份档案终于能一路读到底。{PROJECT}现在属于我们了。</DMS_ArchiveCasket_DecodedText>
+
+  <!-- 匣里的档案已经被开启过。{CASKET} 档名, {PAWN} 使用者 -->
+  <DMS_ArchiveCasket_AlreadyOpenText>{CASKET}里的档案早就被开启过了，匣里只剩下封条。{PAWN}仍然从残留的编码里整理出一点东西。</DMS_ArchiveCasket_AlreadyOpenText>
+
+  <!-- 匣里从头到尾没有完整档案。{CASKET} 档名, {PAWN} 使用者 -->
+  <DMS_ArchiveCasket_EmptyText>{CASKET}里从来就没有完整档案：用来封合它的碎片，已经还原不出任何一份。{PAWN}仍然从残留的编码里整理出一点东西。</DMS_ArchiveCasket_EmptyText>
+
+</LanguageData>

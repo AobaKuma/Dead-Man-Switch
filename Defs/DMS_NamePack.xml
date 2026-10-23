@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <RulePackDef><!-- 遺物陣營名稱生成 -->
     <defName>DMS_LegacyFaction</defName>
@@ -413,6 +413,40 @@
         <li>Code->Yankee</li>
         <li>Code->Zulu</li>
 
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef><!-- 具名封存匣封條上的檔名生成 -->
+    <defName>DMS_ArchiveCasketName</defName>
+    <rulePack>
+      <rulesStrings>
+        <!-- Silent Tide / Last Ledger -->
+        <li>r_name->[Adj] [Noun]</li>
+
+        <li>Adj->Silent</li>
+        <li>Adj->Hollow</li>
+        <li>Adj->Last</li>
+        <li>Adj->Cold</li>
+        <li>Adj->Still</li>
+        <li>Adj->Late</li>
+        <li>Adj->Low</li>
+        <li>Adj->Pale</li>
+        <li>Adj->Quiet</li>
+        <li>Adj->Bitter</li>
+
+        <li>Noun->Tide</li>
+        <li>Noun->Ledger</li>
+        <li>Noun->Choir</li>
+        <li>Noun->Beacon</li>
+        <li>Noun->Vigil</li>
+        <li>Noun->Cradle</li>
+        <li>Noun->Anchor</li>
+        <li>Noun->Requiem</li>
+        <li>Noun->Lattice</li>
+        <li>Noun->Sextant</li>
+        <li>Noun->Toll</li>
+        <li>Noun->Threshold</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>

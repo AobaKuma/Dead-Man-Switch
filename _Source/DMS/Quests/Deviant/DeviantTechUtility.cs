@@ -52,6 +52,30 @@ namespace DMS
         }
 
         /// <summary>
+        /// 具名封存匣解封：探明後直接完成；前置未完成則比照脫序者交付，先登記待解譯，前置補齊時自動完成。
+        /// 與 <see cref="Grant"/> 只差一件事：不呼叫 MarkSanctioned——封存匣不是任務，制裁照常由
+        /// FinishProject 的 postfix 結算。
+        /// Unsealing a casket: reveal, then finish. Unmet prerequisites hold the file pending exactly as a deviant
+        /// handover does. The one difference from Grant() is that the generic sanction is not skipped: a casket is
+        /// not a quest, so the ordinary consequences apply.
+        /// </summary>
+        public static DeviantGrantResult GrantFromCasket(ResearchProjectDef proj)
+        {
+            if (proj == null || proj.IsFinished)
+            {
+                return DeviantGrantResult.AlreadyHeld;
+            }
+            ResearchDiscoveryUtility.ForceDiscover(proj, suppressLetter: true);
+            if (!proj.PrerequisitesCompleted)
+            {
+                GameComponent_DeviantLegacy.CompSafe?.AddPendingCasket(proj);
+                return DeviantGrantResult.Pending;
+            }
+            Complete(proj);
+            return DeviantGrantResult.Granted;
+        }
+
+        /// <summary>
         /// 完成一個前置已齊的專案。無 Anomaly 時原版 FinishProject 不寫知識型專案的進度，必須先寫進 FFF 的知識存放區，
         /// 制裁與任務線的 postfix 才讀得到 IsFinished。
         /// Finishes a project whose prerequisites are done. Without Anomaly vanilla FinishProject writes no progress for a
@@ -110,14 +134,16 @@ namespace DMS
 
         /// <summary>
         /// 解譯前置已齊的待授予專案。完成一項可能讓另一項的前置也齊了，所以重複掃描到沒有進展為止；
-        /// 巢狀的 FinishProject 會再進 postfix，靠重入旗標擋下。
+        /// 巢狀的 FinishProject 會再進 postfix，靠重入旗標擋下。兩份清單（脫序者交付／具名封存匣）走同一段
+        /// 邏輯，只有完成信件的措辭不同。
         /// Decodes pending projects whose prerequisites are done, rescanning until nothing changes since one may unlock
-        /// another; the nested FinishProject re-enters the postfix and is stopped by the reentrancy flag.
+        /// another; the nested FinishProject re-enters the postfix and is stopped by the reentrancy flag. Both lists
+        /// (deviant handovers, casket unsealings) share this loop and differ only in the letter wording.
         /// </summary>
         public static void CheckPending()
         {
             GameComponent_DeviantLegacy legacy = GameComponent_DeviantLegacy.CompSafe;
-            if (legacy == null || legacy.PendingGrants.Count == 0 || checkingPending)
+            if (legacy == null || !legacy.AnyPending || checkingPending)
             {
                 return;
             }
@@ -132,26 +158,36 @@ namespace DMS
                 while (progressed)
                 {
                     progressed = false;
-                    foreach (ResearchProjectDef proj in legacy.PendingGrants.ToList())
+                    foreach (bool fromCasket in new[] { false, true })
                     {
-                        if (proj.IsFinished)
+                        List<ResearchProjectDef> pending = fromCasket ? legacy.PendingCasketGrants : legacy.PendingGrants;
+                        foreach (ResearchProjectDef proj in pending.ToList())
                         {
-                            // 玩家自行研究完成；制裁在授予時已標記，不會重複。The player finished it; already marked as sanctioned.
+                            if (proj.IsFinished)
+                            {
+                                // 玩家自行研究完成；制裁在授予時已標記，不會重複。The player finished it; already marked as sanctioned.
+                                legacy.RemovePending(proj);
+                                continue;
+                            }
+                            if (!proj.PrerequisitesCompleted)
+                            {
+                                continue;
+                            }
+                            // 先移除再完成，巢狀呼叫看不到它。Remove before finishing so a nested call can't see it.
                             legacy.RemovePending(proj);
-                            continue;
+                            Complete(proj);
+                            string labelKey = fromCasket
+                                ? "DMS_ArchiveCasket_DecodedLabel"
+                                : "DMS_DeviantRefuge_PendingDecodedLabel";
+                            string textKey = fromCasket
+                                ? "DMS_ArchiveCasket_DecodedText"
+                                : "DMS_DeviantRefuge_PendingDecodedText";
+                            Find.LetterStack.ReceiveLetter(
+                                labelKey.Translate(proj.LabelCap.Named("PROJECT")),
+                                textKey.Translate(proj.LabelCap.Named("PROJECT")),
+                                LetterDefOf.PositiveEvent);
+                            progressed = true;
                         }
-                        if (!proj.PrerequisitesCompleted)
-                        {
-                            continue;
-                        }
-                        // 先移除再完成，巢狀呼叫看不到它。Remove before finishing so a nested call can't see it.
-                        legacy.RemovePending(proj);
-                        Complete(proj);
-                        Find.LetterStack.ReceiveLetter(
-                            "DMS_DeviantRefuge_PendingDecodedLabel".Translate(proj.LabelCap.Named("PROJECT")),
-                            "DMS_DeviantRefuge_PendingDecodedText".Translate(proj.LabelCap.Named("PROJECT")),
-                            LetterDefOf.PositiveEvent);
-                        progressed = true;
                     }
                 }
             }

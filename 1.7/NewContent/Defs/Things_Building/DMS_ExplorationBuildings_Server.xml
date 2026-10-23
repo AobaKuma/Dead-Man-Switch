@@ -52,11 +52,11 @@
     </comps>
   </ThingDef>
 
-  <!-- 設施伺服核心：3~4 次駭入，獎勵為科技藍圖／封存技術匣／訪問密鑰。只出現在地下的設施檔案庫，
+  <!-- 設施伺服核心：3~4 次駭入，獎勵為科技藍圖／封存技術匣／具名封存匣／訪問密鑰。只出現在地下的設施檔案庫，
        空投穿不過岩頂，所以不設保底援軍，警報交給地板開口、FPV 巢與毒氣釋放口。
-       Facility server core: 3~4 hacks for techprints / sealed data caches / access keys. Only in the
-       underground data archive; drop pods can't get through the rock, so no fallback wave: the floor
-       openings, FPV nests and gas vents answer the alarm. -->
+       Facility server core: 3~4 hacks for techprints / sealed data caches / attested archive caskets /
+       access keys. Only in the underground data archive; drop pods can't get through the rock, so no
+       fallback wave: the floor openings, FPV nests and gas vents answer the alarm. -->
   <ThingDef ParentName="DMS_ServerBuildingBase">
     <defName>DMS_FacilityServerCore</defName>
     <label>facility server core</label>
@@ -89,15 +89,25 @@
         <alarmSound>FlickSwitch</alarmSound>
         <fallbackThing>DMS_DataCache_Restricted</fallbackThing>
         <rewards>
+          <!-- 藍圖權重 3（原 5）：技術匣才是這個池子的主題，藍圖退成配角。
+               Techprints down to 3 (from 5): the data caches are the point of this pool. -->
           <li>
             <kind>Techprint</kind>
-            <weight>5</weight>
+            <weight>3</weight>
           </li>
           <li>
             <kind>Thing</kind>
             <thingDef>DMS_DataCache_Sealed</thingDef>
             <weight>3</weight>
             <maxPerBuilding>2</maxPerBuilding>
+          </li>
+          <!-- 具名封存匣：設施檔案庫的伺服核心才有，權重 1、每棟上限 1。
+               The attested archive casket: archive server cores only, weight 1, at most one each. -->
+          <li>
+            <kind>Thing</kind>
+            <thingDef>DMS_ArchiveCasket</thingDef>
+            <weight>1</weight>
+            <maxPerBuilding>1</maxPerBuilding>
           </li>
           <li>
             <kind>AccessKey</kind>
@@ -173,9 +183,10 @@
         <!-- 無 Royalty 時退回密鑰，遵守「不含技術匣」。Without Royalty, fall back to a key: still no data cache. -->
         <fallbackThing>DMS_AccessKey_Neutrals</fallbackThing>
         <rewards>
+          <!-- 藍圖權重 3（原 5）：站點伺服器的內容以密鑰為主。Techprints down to 3 (from 5). -->
           <li>
             <kind>Techprint</kind>
-            <weight>5</weight>
+            <weight>3</weight>
           </li>
           <li>
             <kind>AccessKey</kind>
@@ -190,12 +201,13 @@
     </comps>
   </ThingDef>
 
-  <!-- 賢者 SAGE：2~3 次駭入，獎勵同設施伺服核心，另有低權重的禁忌級技術匣。打爛時暫停追殺：首次 1~2 年，
-       已在暫停中則每座再加 15 天。南北向貼圖是橫的，所以佔地 3x1（轉東西向變 1x3，drawSize 也會跟著對調）。
-       貼圖缺 west，Graphic_Multi 會用 east 翻轉。
-       SAGE: 2~3 hacks, the core's reward pool plus a rare occulted data cache. Destroying it suspends the hunt:
-       1~2 years the first time, +15 days per further node while already suspended. The north/south art is
-       landscape, so the footprint is 3x1 (1x3 east/west; drawSize swaps with it). No west texture; east is mirrored. -->
+  <!-- 賢者 SAGE：2~3 次駭入，獎勵同設施伺服核心，另有低權重的禁忌級技術匣與具名封存匣。
+       打爛時暫停追殺：首次 1~2 年，已在暫停中則每座再加 15 天。南北向貼圖是橫的，
+       所以佔地 3x1（轉東西向變 1x3，drawSize 也會跟著對調）。貼圖缺 west，Graphic_Multi 會用 east 翻轉。
+       SAGE: 2~3 hacks, the core's reward pool plus a rare occulted data cache and a rare attested archive
+       casket. Destroying it suspends the hunt: 1~2 years the first time, +15 days per further node while
+       already suspended. The north/south art is landscape, so the footprint is 3x1 (1x3 east/west;
+       drawSize swaps with it). No west texture; east is mirrored. -->
   <ThingDef ParentName="DMS_ServerBuildingBase">
     <defName>DMS_SageCore</defName>
     <label>SAGE</label>
@@ -227,9 +239,11 @@
         <alarmSound>FlickSwitch</alarmSound>
         <fallbackThing>DMS_DataCache_Restricted</fallbackThing>
         <rewards>
+          <!-- 藍圖權重 2（原 4）：SAGE 的價值在資料庫，不在藍圖。
+               Techprints down to 2 (from 4): the point of a SAGE is its database, not its blueprints. -->
           <li>
             <kind>Techprint</kind>
-            <weight>4</weight>
+            <weight>2</weight>
           </li>
           <li>
             <kind>Thing</kind>
@@ -240,6 +254,14 @@
           <li>
             <kind>Thing</kind>
             <thingDef>DMS_DataCache_Occulted</thingDef>
+            <weight>1</weight>
+            <maxPerBuilding>1</maxPerBuilding>
+          </li>
+          <!-- 具名封存匣：與禁忌資料匣同為最稀有的一格，權重 1、每棟上限 1。
+               The attested archive casket: rarest slot alongside the occulted cache, weight 1, one each. -->
+          <li>
+            <kind>Thing</kind>
+            <thingDef>DMS_ArchiveCasket</thingDef>
             <weight>1</weight>
             <maxPerBuilding>1</maxPerBuilding>
           </li>

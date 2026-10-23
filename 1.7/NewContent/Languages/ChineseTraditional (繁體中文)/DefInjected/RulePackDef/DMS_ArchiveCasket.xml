@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 具名封存匣的檔名：兩個字的艦隊檔案代號（靜潮、末鐘、空帳……）。
+       The casket designations are two-character archive codenames rather than translated English words. -->
+  <DMS_ArchiveCasketName.rulePack.rulesStrings>
+    <li>r_name->[First][Second]</li>
+
+    <li>First->靜</li>
+    <li>First->空</li>
+    <li>First->殘</li>
+    <li>First->末</li>
+    <li>First->寒</li>
+    <li>First->沉</li>
+    <li>First->暗</li>
+    <li>First->孤</li>
+    <li>First->長</li>
+    <li>First->遠</li>
+
+    <li>Second->潮</li>
+    <li>Second->帳</li>
+    <li>Second->燈</li>
+    <li>Second->渡</li>
+    <li>Second->礎</li>
+    <li>Second->夜</li>
+    <li>Second->龕</li>
+    <li>Second->鐘</li>
+    <li>Second->碑</li>
+    <li>Second->符</li>
+  </DMS_ArchiveCasketName.rulePack.rulesStrings>
+
+</LanguageData>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- ==================================================================== -->
+  <!-- Attested archive casket                                              -->
+  <!-- Sent by DMS.CompUseEffect_UnsealArchive / DMS.Item_ArchiveCasket.     -->
+  <!-- ==================================================================== -->
+
+  <!-- Item label: {0} item name, {1} designation stamped on the seal -->
+  <DMS_ArchiveCasket_LabelFormat>{0} ({1})</DMS_ArchiveCasket_LabelFormat>
+
+  <!-- Inspect line: {0} file name, {1} classification (restricted / sealed) -->
+  <DMS_ArchiveCasket_Contents>Contains: {0} ({1} file)</DMS_ArchiveCasket_Contents>
+
+  <!-- Unsealed at once. {0} file name -->
+  <DMS_ArchiveCasket_UnsealedLabel>Archive casket opened: {0}</DMS_ArchiveCasket_UnsealedLabel>
+
+  <!-- {PAWN} user, {CASKET} full casket label, {PROJECT} file name -->
+  <DMS_ArchiveCasket_UnsealedText>{PAWN} breaks the seam on {CASKET}. The file inside is one whole sealed technology, the file for {PROJECT} that the fleets have been keeping in pieces.\n\nThe technology is ours now. The next time anyone signs for that file, the fleets will find the shelf empty.</DMS_ArchiveCasket_UnsealedText>
+
+  <!-- Prerequisites unmet: held pending. {0} file name -->
+  <DMS_ArchiveCasket_PendingLabel>Archive file pending: {0}</DMS_ArchiveCasket_PendingLabel>
+
+  <!-- {PAWN} user, {CASKET} casket name, {PROJECT} file name, {PREREQS} missing prerequisites -->
+  <DMS_ArchiveCasket_PendingText>{PAWN} breaks the seam on {CASKET}. The file inside is whole, but it sits on foundations we do not have yet: {PREREQS}. The researchers take down what they can and shelve the rest; once the groundwork catches up, the file will be read out in full.</DMS_ArchiveCasket_PendingText>
+
+  <!-- Pending file becomes readable. {0} file name -->
+  <DMS_ArchiveCasket_DecodedLabel>Archive file decoded: {0}</DMS_ArchiveCasket_DecodedLabel>
+
+  <!-- {PROJECT} file name -->
+  <DMS_ArchiveCasket_DecodedText>With the groundwork finally in place, the file taken out of the casket can be read end to end. {PROJECT} is ours.</DMS_ArchiveCasket_DecodedText>
+
+  <!-- The file was already opened. {CASKET} designation, {PAWN} user -->
+  <DMS_ArchiveCasket_AlreadyOpenText>The file in {CASKET} was opened long ago; only the seal is left. {PAWN} still works a little out of the residual encoding.</DMS_ArchiveCasket_AlreadyOpenText>
+
+  <!-- The casket never held a whole file. {CASKET} designation, {PAWN} user -->
+  <DMS_ArchiveCasket_EmptyText>{CASKET} never held a whole file: the fragments it was sealed from no longer resolve into one. {PAWN} still works a little out of the residual encoding.</DMS_ArchiveCasket_EmptyText>
+
+</LanguageData>

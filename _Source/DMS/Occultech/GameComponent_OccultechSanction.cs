@@ -153,9 +153,10 @@ namespace DMS
         }
 
         /// <summary>
-        /// 啟動永久敵對與追殺令。追殺已在進行（含暫停中）時維持原狀；第一次追殺落在任一玩家據點、4~7 天後。
+        /// 啟動永久敵對與追殺令。追殺已在進行（含暫停中）時維持原狀；第一次追殺落在任一玩家據點，
+        /// 間隔見 DMS_Huntdowns.xml（微電子基礎完成前 28~32 天，完成後 5~7 天）。
         /// Begins permanent hostility and the kill order. A running (or suspended) hunt is left as is; the first hunt
-        /// lands on a player home after the def's raid delay.
+        /// lands on a player home after the def's raid delay (28~32 days before MicroelectronicsBasics, 5~7 after).
         /// </summary>
         public void BeginPermanentHostility()
         {
@@ -225,11 +226,15 @@ namespace DMS
 
         /// <summary>
         /// 讀檔後讓追殺令與永久敵對狀態一致，並轉換舊存檔的排程（下一次追殺、SAGE 暫停）。
+        /// 追殺間隔也在此重新依研究狀態套用：def 上的值不是存檔內容，換一個存檔就要重算。
         /// After loading, keep the kill order in step with permanent hostility and convert an old save's schedule.
+        /// The hunt interval is re-applied from the research state here too: the def value is not part of a save, so
+        /// loading a different colony must recompute it.
         /// </summary>
         public override void LoadedGame()
         {
             base.LoadedGame();
+            HuntIntervalUtility.RefreshAll();
             HuntdownDef def = HuntDef;
             if (def == null) return;
 
@@ -253,6 +258,16 @@ namespace DMS
             }
             legacyNextHuntTick = -1;
             legacyHuntSuspendedUntilTick = -1;
+        }
+
+        /// <summary>
+        /// 新遊戲：套用追殺間隔（開局若有起始研究，Def 上的預設值可能已經不是正確的那一邊）。
+        /// New game: apply the hunt intervals (starting research can already put the def on the wrong side).
+        /// </summary>
+        public override void StartedNewGame()
+        {
+            base.StartedNewGame();
+            HuntIntervalUtility.RefreshAll();
         }
     }
 }

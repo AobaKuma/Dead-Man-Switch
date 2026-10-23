@@ -3,9 +3,11 @@
 
   <!-- 封存科技隱匿級的追殺令（Fortified.HuntdownDef）。由 GameComponent_OccultechSanction 在永久敵對時啟動、
        軍事法庭結案時結束；SAGE 被摧毀時暫停（CompHuntBreaker）。
-       每 4~7 天對任一玩家據點發動一次艦隊襲擊，並確保手上有一份軍事法庭傳票、有機會派發 SAGE 節點任務。
+       在原版微電子基礎（MicroelectronicsBasics）完成前每 28~32 天對任一玩家據點發動一次艦隊襲擊，完成後收緊到
+       每 5~7 天；並確保手上有一份軍事法庭傳票、有機會派發 SAGE 節點任務。
        Occulted-tier kill order. Started on permanent hostility, ended by the court-martial, suspended by SAGE kills.
-       Every 4~7 days a fleet raid hits a player home; each hunt also offers a court-martial and sometimes a SAGE site. -->
+       Before vanilla MicroelectronicsBasics is finished a fleet raid hits a player home every 28~32 days, tightening to
+       every 5~7 days afterwards; each hunt also offers a court-martial and sometimes a SAGE site. -->
   <Fortified.HuntdownDef>
     <defName>DMS_OccultechHunt</defName>
     <label>occultech kill order</label>
@@ -17,8 +19,11 @@
     <sendWarningLetter>false</sendWarningLetter>
     <showAlert>false</showAlert>
     <warningDelayRange>0~0</warningDelayRange>
-    <!-- 4~7 天 4~7 days -->
-    <raidDelayRange>240000~420000</raidDelayRange>
+    <!-- 微電子基礎完成前 28~32 天。完成後由 ModExtension_HuntIntervalByResearch 換成 5~7 天（DMS.HuntIntervalUtility）；
+         這裡填的是「完成前」的值，也是套用失效時的後備。
+         28~32 days before MicroelectronicsBasics is finished. Afterwards ModExtension_HuntIntervalByResearch swaps in
+         5~7 days (DMS.HuntIntervalUtility); this is both the before-research value and the fallback. -->
+    <raidDelayRange>1680000~1920000</raidDelayRange>
     <waves>
       <li>
         <pointsMultiplier>1.25</pointsMultiplier>
@@ -44,6 +49,15 @@
          Relies on the fleet's SAGE tracking network: a SAGE blackout suspends every hunt carrying this marker. -->
     <modExtensions>
       <li Class="DMS.ModExtension_FleetTracking" />
+      <!-- 追殺間隔依研究收緊：微電子基礎完成前 28~32 天，完成後 5~7 天。
+           值在讀檔與研究完成時由 DMS.HuntIntervalUtility 套用，只影響之後排出的那一波。
+           The interval tightens with research: 28~32 days until MicroelectronicsBasics is finished, 5~7 afterwards.
+           DMS.HuntIntervalUtility applies it on load and on research completion; only the next wave scheduled changes. -->
+      <li Class="DMS.ModExtension_HuntIntervalByResearch">
+        <research>MicroelectronicsBasics</research>
+        <intervalBefore>1680000~1920000</intervalBefore>
+        <intervalAfter>300000~420000</intervalAfter>
+      </li>
     </modExtensions>
   </Fortified.HuntdownDef>
 
