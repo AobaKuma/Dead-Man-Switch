@@ -4,6 +4,7 @@
   <!-- ==================================================================== -->
   <!-- 具名封存匣                                                           -->
   <!-- 由 DMS.CompUseEffect_UnsealArchive / DMS.Item_ArchiveCasket 發出。     -->
+  <!-- 信件刻意壓在一到兩句，不寫成長篇報告。                                 -->
   <!-- ==================================================================== -->
 
   <!-- 物品標籤：{0} 物品名, {1} 封條上的檔名 -->
@@ -13,27 +14,27 @@
   <DMS_ArchiveCasket_Contents>內含檔案：{0}（{1}級）</DMS_ArchiveCasket_Contents>
 
   <!-- 當場解封。{0} 檔案名 -->
-  <DMS_ArchiveCasket_UnsealedLabel>封存匣已解封：{0}</DMS_ArchiveCasket_UnsealedLabel>
+  <DMS_ArchiveCasket_UnsealedLabel>封存匣已開啟：{0}</DMS_ArchiveCasket_UnsealedLabel>
 
   <!-- {PAWN} 使用者, {CASKET} 封存匣全名, {PROJECT} 檔案名 -->
-  <DMS_ArchiveCasket_UnsealedText>{PAWN}破開了{CASKET}的接縫。裡面是一份完整的封存技術，內容是{PROJECT}，也就是艦隊一直拆成碎片保存的那一份。\n\n這項技術現在屬於我們了。下一次有人要為那份檔案簽收時，艦隊會發現架上已經空了。</DMS_ArchiveCasket_UnsealedText>
+  <DMS_ArchiveCasket_UnsealedText>{PAWN}開啟了{CASKET}。裡面是一份完整的檔案，{PROJECT}，沒有碎片，也不需要破譯。這項技術是我們的了。</DMS_ArchiveCasket_UnsealedText>
 
-  <!-- 前置未完成，檔案暫予擱置。{0} 檔案名 -->
-  <DMS_ArchiveCasket_PendingLabel>封存檔案待解譯：{0}</DMS_ArchiveCasket_PendingLabel>
+  <!-- 前置未完成，檔案暫存。{0} 檔案名 -->
+  <DMS_ArchiveCasket_PendingLabel>檔案暫存：{0}</DMS_ArchiveCasket_PendingLabel>
 
   <!-- {PAWN} 使用者, {CASKET} 封存匣全名, {PROJECT} 檔案名, {PREREQS} 尚未完成的前置 -->
-  <DMS_ArchiveCasket_PendingText>{PAWN}破開了{CASKET}的接縫。匣裡的檔案是完整的，卻壓在我們還沒有的基礎上：{PREREQS}尚未完成。研究員能記的先記下來，其餘的擱著——基礎一補齊，這份檔案會整個讀出來。</DMS_ArchiveCasket_PendingText>
+  <DMS_ArchiveCasket_PendingText>{PAWN}開啟了{CASKET}：匣裡是{PROJECT}，得先完成{PREREQS}。研究員先把它擱著。</DMS_ArchiveCasket_PendingText>
 
-  <!-- 待解譯的檔案可以讀了。{0} 檔案名 -->
-  <DMS_ArchiveCasket_DecodedLabel>封存檔案解譯完成：{0}</DMS_ArchiveCasket_DecodedLabel>
+  <!-- 暫存的檔案可以讀了。{0} 檔案名 -->
+  <DMS_ArchiveCasket_DecodedLabel>檔案已解譯：{0}</DMS_ArchiveCasket_DecodedLabel>
 
   <!-- {PROJECT} 檔案名 -->
-  <DMS_ArchiveCasket_DecodedText>基礎補齊了，從封存匣裡取出的那份檔案終於能一路讀到底。{PROJECT}現在屬於我們了。</DMS_ArchiveCasket_DecodedText>
+  <DMS_ArchiveCasket_DecodedText>基礎齊了：{PROJECT}現在是我們的了。</DMS_ArchiveCasket_DecodedText>
 
-  <!-- 匣裡的檔案已經被開啟過。{CASKET} 檔名, {PAWN} 使用者 -->
-  <DMS_ArchiveCasket_AlreadyOpenText>{CASKET}裡的檔案早就被開啟過了，匣裡只剩下封條。{PAWN}仍然從殘留的編碼裡整理出一點東西。</DMS_ArchiveCasket_AlreadyOpenText>
+  <!-- 早就被開過。{CASKET} 檔名, {PAWN} 使用者 -->
+  <DMS_ArchiveCasket_AlreadyOpenText>{CASKET}早就被開過了。{PAWN}仍從殘留編碼裡整理出一點東西。</DMS_ArchiveCasket_AlreadyOpenText>
 
-  <!-- 匣裡從頭到尾沒有完整檔案。{CASKET} 檔名, {PAWN} 使用者 -->
-  <DMS_ArchiveCasket_EmptyText>{CASKET}裡從來就沒有完整檔案：用來封合它的碎片，已經還原不出任何一份。{PAWN}仍然從殘留的編碼裡整理出一點東西。</DMS_ArchiveCasket_EmptyText>
+  <!-- 匣裡空的。{CASKET} 檔名, {PAWN} 使用者 -->
+  <DMS_ArchiveCasket_EmptyText>{CASKET}裡什麼也沒有。{PAWN}仍從殘留編碼裡整理出一點東西。</DMS_ArchiveCasket_EmptyText>
 
 </LanguageData>
