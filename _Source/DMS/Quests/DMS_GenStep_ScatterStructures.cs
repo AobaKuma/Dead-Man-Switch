@@ -62,6 +62,13 @@ namespace DMS
         /// </summary>
         public bool useSiteFaction = true;
 
+        /// <summary>
+        /// 選填：建築一律交給這個派系，不看站點或地圖的派系（站點可能被玩家接手或沒有派系）。設定時優先於 useSiteFaction。
+        /// Optional: buildings always go to this faction, whatever the site's or map's faction (a site can be taken over
+        /// by the player or lack one). Takes precedence over useSiteFaction.
+        /// </summary>
+        public FactionDef forcedFaction;
+
         public override int SeedPart => 1487215233;
 
         public override void Generate(Map map, GenStepParams parms)
@@ -80,7 +87,8 @@ namespace DMS
                 : countRange.RandomInRange;
             if (count <= 0) return;
 
-            Faction faction = useSiteFaction ? (map.ParentFaction ?? parms.sitePart?.site?.Faction) : null;
+            Faction faction = forcedFaction != null ? Find.FactionManager.FirstFactionOfDef(forcedFaction) : null;
+            if (faction == null && useSiteFaction) faction = map.ParentFaction ?? parms.sitePart?.site?.Faction;
             CellRect usable = FFF_StructureUtility.UsableRect(map);
             if (usable.Width <= 0 || usable.Height <= 0) return;
 
