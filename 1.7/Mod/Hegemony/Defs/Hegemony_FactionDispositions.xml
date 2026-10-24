@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       Hegemony - Faction Territories and Vassalage 2 相容
+       Hegemony 只認明確映射的 meme,未映射的 meme 一律中性。
+       DMS 只有一個 meme,這裡給它一份策略偏好。
+
+       數值是「偏離 1 的加量」,不是最終倍率(trade=0.3 → 約 x1.3)。
+       DMS_Army 的 requiredMemes(Collectivist/Transhumanist/HumanPrimacy)
+       已由 Hegemony 本體映射,這裡只補軍隊性格,不重複那些經濟加成。
+
+       meme 欄位是字串,缺 Ideology 時不會報錯;MayRequire 只是讓
+       沒有 Ideology 的玩家在 Hegemony 定義編輯器裡看不到這條空映射。
+       ============================================================ -->
+  <FactionTerritories2.FactionDispositionDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>DMS_FT2_Disposition_meme_ChainOfCommand</defName>
+    <label>chain of command faction influence</label>
+    <description>A regimented army: holds its ground, supports its allies and garrisons what it takes rather than burning it.</description>
+    <meme>DMS_Meme_ChainOfCommand</meme>
+
+    <!-- 聚落效果 / settlement effects -->
+    <defence>0.1</defence>
+    <construction>-0.04</construction>
+    <!-- 紀律與秩序:Hegemony 只在幸福度跌破門檻時擲反叛,加幸福度讓更少聚落落到門檻下。
+         反叛機率本身另由 Hegemony_Memes.xml 的 RebellionModifierExtension 打折。
+         Discipline and order: Hegemony only rolls rebellion below a happiness threshold, so this keeps fewer towns
+         under it. The chance itself is reduced separately by RebellionModifierExtension in Hegemony_Memes.xml. -->
+    <happiness>2</happiness>
+
+    <!-- 策略傾向 / strategic tendencies -->
+    <aggression>0.2</aggression>
+    <support>0.25</support>
+    <expansion>0.15</expansion>
+    <diplomacy>-0.05</diplomacy>
+
+    <!-- 勝利處置:佔領駐軍優先,不屠城 / victory choice: occupy, don't raze -->
+    <vassalise>1.5</vassalise>
+    <plunder>-0.2</plunder>
+    <raze>-0.4</raze>
+
+    <buildingTags>
+      <li><tag>military</tag><weight>1</weight></li>
+      <li><tag>defence</tag><weight>0.5</weight></li>
+      <li><tag>logistics</tag><weight>0.4</weight></li>
+      <li><tag>authoritarian</tag><weight>0.3</weight></li>
+      <li><tag>mech</tag><weight>0.3</weight></li>
+      <!-- DMS 專屬聚落建築,見 Hegemony_Buildings.xml / DMS settlement buildings -->
+      <li><tag>dms</tag><weight>1.5</weight></li>
+      <li><tag>luxury</tag><weight>-0.3</weight></li>
+    </buildingTags>
+  </FactionTerritories2.FactionDispositionDef>
+
+</Defs>

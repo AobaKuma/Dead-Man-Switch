@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: tungsteel foundry -->
+  <DMS_FT2_TungsteelFoundry.label>tungsteel foundry</DMS_FT2_TungsteelFoundry.label>
+  <!-- EN: Alloys local metal into tungsteel for armour plating and heavy frames. Taxes can send tungsteel home. -->
+  <DMS_FT2_TungsteelFoundry.description>Alloys local metal into tungsteel for armour plating and heavy frames. Taxes can send tungsteel home.</DMS_FT2_TungsteelFoundry.description>
+  <!-- EN: salvage smelter / bloomery forge / tungsteel foundry / integrated alloy complex / metallurgy industrial park / foundry cluster -->
+  <DMS_FT2_TungsteelFoundry.tierLabels>
+    <li>salvage smelter</li>
+    <li>bloomery forge</li>
+    <li>tungsteel foundry</li>
+    <li>integrated alloy complex</li>
+    <li>metallurgy industrial park</li>
+    <li>foundry cluster</li>
+  </DMS_FT2_TungsteelFoundry.tierLabels>
+
+  <!-- EN: component stamping plant -->
+  <DMS_FT2_StampingPlant.label>component stamping plant</DMS_FT2_StampingPlant.label>
+  <!-- EN: Mass-produces cheap stamped components for field equipment. Taxes can send components home. -->
+  <DMS_FT2_StampingPlant.description>Mass-produces cheap stamped components for field equipment. Taxes can send components home.</DMS_FT2_StampingPlant.description>
+  <!-- EN: salvage parts bench / die-press shop / component stamping plant / component production complex / component industrial park / component factory cluster -->
+  <DMS_FT2_StampingPlant.tierLabels>
+    <li>salvage parts bench</li>
+    <li>die-press shop</li>
+    <li>component stamping plant</li>
+    <li>component production complex</li>
+    <li>component industrial park</li>
+    <li>component factory cluster</li>
+  </DMS_FT2_StampingPlant.tierLabels>
+
+  <!-- EN: artiprotein vats -->
+  <DMS_FT2_ArtiproteinVats.label>artiprotein vats</DMS_FT2_ArtiproteinVats.label>
+  <!-- EN: Cultures artificial protein independent of soil and weather. Taxes can send artiprotein home. -->
+  <DMS_FT2_ArtiproteinVats.description>Cultures artificial protein independent of soil and weather. Taxes can send artiprotein home.</DMS_FT2_ArtiproteinVats.description>
+  <!-- EN: ration fermenting pit / brewing vats / artiprotein vats / protein culture complex / food production park / food factory cluster -->
+  <DMS_FT2_ArtiproteinVats.tierLabels>
+    <li>ration fermenting pit</li>
+    <li>brewing vats</li>
+    <li>artiprotein vats</li>
+    <li>protein culture complex</li>
+    <li>food production park</li>
+    <li>food factory cluster</li>
+  </DMS_FT2_ArtiproteinVats.tierLabels>
+
+  <!-- EN: synthetic fibre mill -->
+  <DMS_FT2_SyntheticFibreMill.label>synthetic fibre mill</DMS_FT2_SyntheticFibreMill.label>
+  <!-- EN: Spins polyester and, with spacer technology, plasfiber for uniforms and webbing. Taxes can send fabric home. -->
+  <DMS_FT2_SyntheticFibreMill.description>Spins polyester and, with spacer technology, plasfiber for uniforms and webbing. Taxes can send fabric home.</DMS_FT2_SyntheticFibreMill.description>
+  <!-- EN: salvage cordage shed / weaving shed / synthetic fibre mill / textile production complex / textile industrial park / textile mill cluster -->
+  <DMS_FT2_SyntheticFibreMill.tierLabels>
+    <li>salvage cordage shed</li>
+    <li>weaving shed</li>
+    <li>synthetic fibre mill</li>
+    <li>textile production complex</li>
+    <li>textile industrial park</li>
+    <li>textile mill cluster</li>
+  </DMS_FT2_SyntheticFibreMill.tierLabels>
+
+  <!-- EN: field supply depot -->
+  <DMS_FT2_FieldSupplyDepot.label>field supply depot</DMS_FT2_FieldSupplyDepot.label>
+  <!-- EN: Stockpiles combat rations and field medicine for the garrison. Taxes can send military supplies home. -->
+  <DMS_FT2_FieldSupplyDepot.description>Stockpiles combat rations and field medicine for the garrison. Taxes can send military supplies home.</DMS_FT2_FieldSupplyDepot.description>
+  <!-- EN: supply cache / quartermaster's store / field supply depot / logistics complex / logistics park / depot cluster -->
+  <DMS_FT2_FieldSupplyDepot.tierLabels>
+    <li>supply cache</li>
+    <li>quartermaster's store</li>
+    <li>field supply depot</li>
+    <li>logistics complex</li>
+    <li>logistics park</li>
+    <li>depot cluster</li>
+  </DMS_FT2_FieldSupplyDepot.tierLabels>
+
+</LanguageData>

@@ -17,8 +17,7 @@
     - Sequences marked placeholder=true use stand-in songs and do not pass acceptance until the real assets exist.
   -->
 
-  <!-- 地表探索。暫代：主曲 Abandoned Radar Station 缺檔，先用 Sealed Machinery。
-       Surface exploration. Stand-in: the theme Abandoned Radar Station is missing, Sealed Machinery fills in. -->
+  <!-- 地表探索。Surface exploration. -->
   <MusicSequenceDef>
     <defName>DMS_InstallationExplore</defName>
     <workerType>DMS.MusicSequenceWorker_DMS</workerType>
@@ -28,12 +27,11 @@
     <overrideFadeout>5</overrideFadeout>
     <useTransitionForLifetime>true</useTransitionForLifetime>
     <songs>
-      <li>DMS_Music_SealedMachinery</li>
+      <li>DMS_Music_AbandonedRadarStation</li>
     </songs>
     <modExtensions>
       <li Class="DMS.ModExtension_DMSMusicSequence">
         <state>InstallationExplore</state>
-        <placeholder>true</placeholder>
       </li>
     </modExtensions>
   </MusicSequenceDef>
@@ -117,11 +115,11 @@
   </MusicSequenceDef>
 
   <!--
-    一般交戰：地表 Garrisions in Action、地下 Guns Up。追殺襲擊改用 Occultech Huntdown。
-    友方參戰變奏（Allied Marching Precision）缺檔；主戰師變奏（Black Knight Remix）待 D2，兩者都還沒接入。
-    Regular combat: Garrisions in Action on the surface, Guns Up underground; huntdown raids switch to Occultech
-    Huntdown. The allied variant (Allied Marching Precision) is missing and the main-battle variant (Black Knight
-    Remix) waits on D2, so neither is wired in yet.
+    一般交戰：地表 Garrisions in Action、地下 Guns Up。重型追殺改用 Occultech Huntdown，友方 DMS 部隊參戰時改用
+    Allied Marching Precision（兩者同時成立時追殺優先）。
+    Regular combat: Garrisions in Action on the surface, Guns Up underground. Heavy huntdowns switch to Occultech
+    Huntdown and allied DMS troops joining the fight switch to Allied Marching Precision (the huntdown wins when both
+    apply).
   -->
   <MusicSequenceDef>
     <defName>DMS_InstallationCombat</defName>
@@ -145,13 +143,17 @@
             <tag>Huntdown</tag>
             <song>DMS_Music_OccultechHuntdown</song>
           </li>
+          <li>
+            <tag>AlliedEngaged</tag>
+            <song>DMS_Music_MarchingPrecision</song>
+          </li>
         </variants>
       </li>
     </modExtensions>
   </MusicSequenceDef>
 
-  <!-- Boss 交戰：遭遇有指定變奏（ModExtension_BossSong）時優先，否則 Servo in precise。
-       Boss combat: the encounter's own variant (ModExtension_BossSong) first, otherwise Servo in precise. -->
+  <!-- Boss 交戰：遭遇有指定變奏（ModExtension_BossSong）時優先，否則 Guns Up。
+       Boss combat: the encounter's own variant (ModExtension_BossSong) first, otherwise Guns Up. -->
   <MusicSequenceDef>
     <defName>DMS_BossCombat</defName>
     <workerType>DMS.MusicSequenceWorker_DMS</workerType>
@@ -161,7 +163,7 @@
     <pausedVolumeFactor>0.5</pausedVolumeFactor>
     <useTransitionForLifetime>true</useTransitionForLifetime>
     <songs>
-      <li>DMS_Music_ServoInPrecise</li>
+      <li>DMS_Music_GunsUp</li>
     </songs>
     <modExtensions>
       <li Class="DMS.ModExtension_DMSMusicSequence">

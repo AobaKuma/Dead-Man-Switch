@@ -66,6 +66,7 @@ namespace DMS
                 issuerUnit = issuerUnit,
                 stage = slate.Get<int>("stage", 1),
                 totalStages = slate.Get<int>("totalStages", 1),
+                destination = slate.Get<RimWorld.Planet.Settlement>("destination"),
             });
 
             // 期限

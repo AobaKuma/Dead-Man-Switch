@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Hegemony - Faction Territories and Vassalage 2 的選用橋接組件。
+    只由 LoadFolders.xml 的 1.7/Mod/Hegemony 載入(IfModActive jaeger972.factionterritories2),
+    主 DMS.dll 不引用 Hegemony,沒裝 Hegemony 的玩家不會遇到 TypeLoad 錯誤。
+    Hegemony 預設在 Steam 工作坊路徑;裝在別處時以 -p:HegemonyDir=<模組目錄>\ 覆寫。
+    Optional bridge assembly for Hegemony. Loaded only from 1.7/Mod/Hegemony via LoadFolders.xml,
+    so the main DMS.dll never references Hegemony. Override -p:HegemonyDir=<mod dir>\ when
+    Hegemony is not in the default Steam Workshop folder.
+  -->
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>DMS.Hegemony</AssemblyName>
+    <RootNamespace>DMS.Hegemony</RootNamespace>
+    <OutputPath>$(MSBuildThisFileDirectory)/../../1.7/Mod/Hegemony/Assemblies</OutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <LangVersion>10.0</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <DefineConstants>$(DefineConstants);RW_1_7</DefineConstants>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <DebugType>none</DebugType>
+    <RimWorldDir Condition="'$(RimWorldDir)' == ''">$(MSBuildThisFileDirectory)..\..\..\..\</RimWorldDir>
+    <HegemonyDir Condition="'$(HegemonyDir)' == ''">$(RimWorldDir)..\..\workshop\content\294100\3825320105\</HegemonyDir>
+    <!-- 實作 DMS.dll 的 IFleetSettlementBridge;遊戲鎖住 1.7/Assemblies 時可改指 DMS 的 obj 輸出。
+         Implements DMS.dll's IFleetSettlementBridge; point at DMS's obj output while the game locks 1.7/Assemblies. -->
+    <DMSAssembly Condition="'$(DMSAssembly)' == ''">$(MSBuildThisFileDirectory)..\..\1.7\Assemblies\DMS.dll</DMSAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="3.0.0-rc.2" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldDir)Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityStubs">
+      <HintPath>$(RimWorldDir)UnityStubs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Waylith">
+      <HintPath>$(RimWorldDir)Waylith.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DMS">
+      <HintPath>$(DMSAssembly)</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <!-- 1.7 版 Hegemony 組件在模組根目錄的 Assemblies。The 1.7 Hegemony build lives in the root Assemblies folder. -->
+    <Reference Include="FactionTerritories2">
+      <HintPath>$(HegemonyDir)Assemblies\FactionTerritories2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

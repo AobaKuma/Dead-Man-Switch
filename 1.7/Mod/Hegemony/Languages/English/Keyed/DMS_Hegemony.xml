@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- 軍事法庭:Hegemony 強制敵對時無法休戰 / Court-martial blocked by Hegemony-forced hostility -->
+  <DMS_Hegemony_HostilityLocked>{0} and {1} are bound by a Hegemony war or betrayal. A court-martial truce cannot hold until it ends.</DMS_Hegemony_HostilityLocked>
+
+  <!-- 補給鏈交付 / Supply chain delivery -->
+  <DMS_Hegemony_SupplyStored>The cargo reached {0}. Supplies worth {1} were added to its stores.</DMS_Hegemony_SupplyStored>
+  <DMS_Hegemony_SupplyIssued>The cargo reached {0} and was issued straight to its garrison.</DMS_Hegemony_SupplyIssued>
+
+  <!-- 援軍 / Military aid -->
+  <DMS_Hegemony_AidStrength>Aid dispatched from {0}, {1} tiles away. Force strength: {2}.</DMS_Hegemony_AidStrength>
+  <DMS_Hegemony_AidNoGarrison>{0} has no garrison within reach. Only a reduced force can be spared: {1}.</DMS_Hegemony_AidNoGarrison>
+
+</LanguageData>

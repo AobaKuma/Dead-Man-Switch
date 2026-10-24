@@ -342,11 +342,11 @@ namespace DMS
         }
 
         /// <summary>
-        /// 登記的封存科技追殺襲擊仍在地圖上：這張地圖有遭遇（交火會被記錄），並加上選曲用的追殺標記。
+        /// 登記的封存科技追殺襲擊仍在地圖上：這張地圖有遭遇（交火會被記錄）；其中有重型追殺時再加上選曲用的追殺標記。
         /// 永久敵對或研究狀態本身不會觸發；只有 DMS 自己發動、已登記的那幾支襲擊算數。
-        /// A registered Occultech huntdown raid is still on the map: the map has an encounter (fire gets recorded) and the
-        /// huntdown song tag. Permanent hostility or research state alone never triggers it; only the raids DMS fired and
-        /// registered count.
+        /// A registered Occultech huntdown raid is still on the map: the map has an encounter (fire gets recorded), plus the
+        /// huntdown song tag when one of them is a heavy hunt. Permanent hostility or research state alone never
+        /// triggers it; only the raids DMS fired and registered count.
         /// </summary>
         private static void ReadHuntdowns(MapComponent_DMSMusicState comp, ref DMSMusicInputs inputs)
         {
@@ -357,10 +357,35 @@ namespace DMS
                 if (lord != null && lord.ownedPawns.Count > 0 && lord.faction != null && lord.faction.HostileTo(Faction.OfPlayer))
                 {
                     inputs.hasEncounter = true;
-                    inputs.songTags |= DMSMusicSongTag.Huntdown;
-                    return;
+                    if (comp.IsHeavyHuntdown(lord))
+                    {
+                        inputs.songTags |= DMSMusicSongTag.Huntdown;
+                        return;
+                    }
                 }
             }
+        }
+
+        /// <summary>
+        /// 這支追殺是否出動了足夠的鬣蜥級重型機兵（見 <see cref="DMSMusicTuning.HuntdownSongHeavyPower"/>）。
+        /// Whether this hunt fielded enough Iguana-class heavies (see <see cref="DMSMusicTuning.HuntdownSongHeavyPower"/>).
+        /// </summary>
+        public static bool IsHeavyHuntdown(Lord lord)
+        {
+            int heavies = 0;
+            List<Pawn> pawns = lord?.ownedPawns;
+            if (pawns != null)
+            {
+                for (int i = 0; i < pawns.Count; i++)
+                {
+                    if ((pawns[i]?.kindDef?.combatPower ?? 0f) >= DMSMusicTuning.HuntdownSongHeavyPower
+                        && ++heavies >= DMSMusicTuning.HuntdownSongMinHeavies)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         /// <summary>

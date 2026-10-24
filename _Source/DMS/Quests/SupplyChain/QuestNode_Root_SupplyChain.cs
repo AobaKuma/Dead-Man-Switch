@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using RimWorld.Planet;
 using RimWorld.QuestGen;
 using Verse;
 
@@ -81,6 +82,30 @@ namespace DMS
             return vals[vals.Count / 2];
         }
 
+        /// <summary>
+        /// 收貨據點對這個類別的需求:取類別內按市值均勻分布的至多 5 種物品,平均它們的需求係數。
+        /// 沒有收貨據點時一律為 1(等機率)。
+        /// The receiving town's demand for a category: the mean demand of up to 5 items spread evenly by market value.
+        /// Always 1 (equal odds) without a receiving town.
+        /// </summary>
+        private static float CategoryDemand(Settlement destination, ThingCategoryDef cat)
+        {
+            if (destination == null || cat == null) return 1f;
+            List<ThingDef> defs = cat.DescendantThingDefs
+                .Where(d => d.category == ThingCategory.Item && d.PlayerAcquirable && d.BaseMarketValue > 0f)
+                .OrderBy(d => d.BaseMarketValue)
+                .ToList();
+            if (defs.Count == 0) return 1f;
+            const int samples = 5;
+            int n = System.Math.Min(samples, defs.Count);
+            float total = 0f;
+            for (int i = 0; i < n; i++)
+            {
+                total += FleetSettlementBridge.Demand(destination, defs[i * defs.Count / n]);
+            }
+            return total / n;
+        }
+
         /// <summary>子任務補給艙的載重上限(kg);讀不到時回傳 0(不設限)。</summary>
         private float PodMassCapacity()
         {
@@ -95,10 +120,18 @@ namespace DMS
             Map map = QuestGen_Get.GetMap(false, null);
             slate.Set("map", map);
 
-            // 只從能算出單價的類別中挑選
+            Faction giverFaction = giverFactionDef != null
+                ? Find.FactionManager.FirstFactionOfDef(giverFactionDef)
+                : null;
+            // 有外部橋接時,貨物送往離殖民地最近的艦隊據點(見 FleetSettlementBridge);沒有就照舊交付後銷毀。
+            // With an external bridge the cargo goes to the fleet town nearest the colony; otherwise it is destroyed as before.
+            Settlement destination = FleetSettlementBridge.SupplyDestination(giverFaction, map.Tile);
+
+            // 只從能算出單價的類別中挑選;有收貨據點時,據點越缺的類別越容易被要求
+            // Only categories with a unit value; with a receiving town, what it lacks most is asked for most often
             SupplyCategoryOption pick = categoryPool
                 .Where(o => MedianUnitValue(o.category) > 0f)
-                .RandomElement();
+                .RandomElementByWeight(o => CategoryDemand(destination, o.category));
 
             // 要求數量 = 難度點數映射的要求總市值 ÷ 類別中位單價
             float points = slate.Get<float>("points", 300f);
@@ -153,9 +186,6 @@ namespace DMS
             // 後勤調度員:只從自由的 WorldPawn 中挑(排除地圖上的訪客/囚犯),
             // 沒有合適人選時以 askerKind 自動生成一名並送入世界池(canGeneratePawn)。
             // slate "asker" 讓描述規則可用 [asker_nameFull]/[asker_pronoun]/[asker_possessive]
-            Faction giverFaction = giverFactionDef != null
-                ? Find.FactionManager.FirstFactionOfDef(giverFactionDef)
-                : null;
             Pawn asker = null;
             if (giverFaction != null)
             {
@@ -205,6 +235,8 @@ namespace DMS
                     (int)(stageIntervalDaysRange.min * GenDate.TicksPerDay),
                     (int)(stageIntervalDaysRange.max * GenDate.TicksPerDay)),
                 mapParent = map.Parent,
+                destination = destination,
+                destinationFaction = destination?.Faction,
                 signalChainCompleted = chainCompleted,
                 signalChainSettled = chainSettled,
                 signalChainAllFailed = chainAllFailed,

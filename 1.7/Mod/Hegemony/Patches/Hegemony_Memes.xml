@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <!-- ============================================================
+       指揮鏈降低 Hegemony 聚落反叛機率 / Chain of command lowers Hegemony rebellion chance
+       DMS.Hegemony.RebellionModifierExtension(見 _Source/DMS.Hegemony)讓統治派系主要意識形態帶有此 meme 時,
+       聚落跌破幸福門檻後的反叛機率再乘上 chanceFactor。奴隸起義不受影響。
+       meme 在 1.7/Ideology 才載入;沒有 Ideology 時 xpath 找不到目標,所以用 Conditional 靜默略過。
+       The meme only loads from 1.7/Ideology; without Ideology the xpath has no target, so the Conditional skips quietly.
+       ============================================================ -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/MemeDef[defName="DMS_Meme_ChainOfCommand"]</xpath>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>Defs/MemeDef[defName="DMS_Meme_ChainOfCommand"]</xpath>
+      <value>
+        <li Class="DMS.Hegemony.RebellionModifierExtension">
+          <chanceFactor>0.5</chanceFactor>
+        </li>
+      </value>
+    </match>
+  </Operation>
+
+</Patch>

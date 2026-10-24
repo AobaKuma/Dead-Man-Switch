@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: tungsteel foundry -->
+  <DMS_FT2_TungsteelFoundry.label>钨钢冶炼厂</DMS_FT2_TungsteelFoundry.label>
+  <!-- EN: Alloys local metal into tungsteel for armour plating and heavy frames. Taxes can send tungsteel home. -->
+  <DMS_FT2_TungsteelFoundry.description>将本地金属冶炼成钨钢，供装甲板与重型框架使用。税收可将钨钢送回殖民地。</DMS_FT2_TungsteelFoundry.description>
+  <!-- EN: salvage smelter / bloomery forge / tungsteel foundry / integrated alloy complex / metallurgy industrial park / foundry cluster -->
+  <DMS_FT2_TungsteelFoundry.tierLabels>
+    <li>拾荒熔炉</li>
+    <li>块炼锻炉</li>
+    <li>钨钢冶炼厂</li>
+    <li>钨钢复合冶炼设施</li>
+    <li>冶金产业园区</li>
+    <li>冶金工厂群</li>
+  </DMS_FT2_TungsteelFoundry.tierLabels>
+
+  <!-- EN: component stamping plant -->
+  <DMS_FT2_StampingPlant.label>冲压零件厂</DMS_FT2_StampingPlant.label>
+  <!-- EN: Mass-produces cheap stamped components for field equipment. Taxes can send components home. -->
+  <DMS_FT2_StampingPlant.description>大量生产廉价的冲压零件，供野战装备使用。税收可将零件送回殖民地。</DMS_FT2_StampingPlant.description>
+  <!-- EN: salvage parts bench / die-press shop / component stamping plant / component production complex / component industrial park / component factory cluster -->
+  <DMS_FT2_StampingPlant.tierLabels>
+    <li>拾荒零件台</li>
+    <li>模压工坊</li>
+    <li>冲压零件厂</li>
+    <li>零件复合生产设施</li>
+    <li>零件生产园区</li>
+    <li>零件工厂群</li>
+  </DMS_FT2_StampingPlant.tierLabels>
+
+  <!-- EN: artiprotein vats -->
+  <DMS_FT2_ArtiproteinVats.label>人造蛋白槽</DMS_FT2_ArtiproteinVats.label>
+  <!-- EN: Cultures artificial protein independent of soil and weather. Taxes can send artiprotein home. -->
+  <DMS_FT2_ArtiproteinVats.description>培养人造蛋白，不受土壤与天候影响。税收可将人造蛋白送回殖民地。</DMS_FT2_ArtiproteinVats.description>
+  <!-- EN: ration fermenting pit / brewing vats / artiprotein vats / protein culture complex / food production park / food factory cluster -->
+  <DMS_FT2_ArtiproteinVats.tierLabels>
+    <li>口粮发酵坑</li>
+    <li>酿造槽</li>
+    <li>人造蛋白槽</li>
+    <li>蛋白复合培养设施</li>
+    <li>食品生产园区</li>
+    <li>食品工厂群</li>
+  </DMS_FT2_ArtiproteinVats.tierLabels>
+
+  <!-- EN: synthetic fibre mill -->
+  <DMS_FT2_SyntheticFibreMill.label>化纤纺织厂</DMS_FT2_SyntheticFibreMill.label>
+  <!-- EN: Spins polyester and, with spacer technology, plasfiber for uniforms and webbing. Taxes can send fabric home. -->
+  <DMS_FT2_SyntheticFibreMill.description>纺制聚酯纤维，具备太空科技后亦可生产等离子纤维，供军服与织带使用。税收可将布料送回殖民地。</DMS_FT2_SyntheticFibreMill.description>
+  <!-- EN: salvage cordage shed / weaving shed / synthetic fibre mill / textile production complex / textile industrial park / textile mill cluster -->
+  <DMS_FT2_SyntheticFibreMill.tierLabels>
+    <li>拾荒绳索棚</li>
+    <li>织布棚</li>
+    <li>化纤纺织厂</li>
+    <li>纺织复合生产设施</li>
+    <li>纺织产业园区</li>
+    <li>纺织工厂群</li>
+  </DMS_FT2_SyntheticFibreMill.tierLabels>
+
+  <!-- EN: field supply depot -->
+  <DMS_FT2_FieldSupplyDepot.label>前线补给站</DMS_FT2_FieldSupplyDepot.label>
+  <!-- EN: Stockpiles combat rations and field medicine for the garrison. Taxes can send military supplies home. -->
+  <DMS_FT2_FieldSupplyDepot.description>为驻军囤积作战口粮与野战医疗用品。税收可将军需品送回殖民地。</DMS_FT2_FieldSupplyDepot.description>
+  <!-- EN: supply cache / quartermaster's store / field supply depot / logistics complex / logistics park / depot cluster -->
+  <DMS_FT2_FieldSupplyDepot.tierLabels>
+    <li>补给藏匿点</li>
+    <li>军需官仓库</li>
+    <li>前线补给站</li>
+    <li>后勤复合设施</li>
+    <li>后勤园区</li>
+    <li>仓储基地群</li>
+  </DMS_FT2_FieldSupplyDepot.tierLabels>
+
+</LanguageData>

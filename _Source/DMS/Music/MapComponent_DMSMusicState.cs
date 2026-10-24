@@ -29,6 +29,10 @@ namespace DMS
         // Raid lords registered as Occultech huntdowns (at DMS's own firing points); dropped once the lord is gone.
         private List<Lord> huntdownLords = new List<Lord>();
 
+        // 其中登記時出動足夠鬣蜥級重型機兵的 lord（帶追殺選曲標記，見 DMSMusicTuning.HuntdownSongHeavyPower）。
+        // Those that fielded enough Iguana-class heavies at registration (they carry the huntdown song tag; see DMSMusicTuning.HuntdownSongHeavyPower).
+        private List<Lord> heavyHuntdownLords = new List<Lord>();
+
         // 開火 hook 每發都要查組件；同一幀的射擊幾乎都在同一張地圖，單一快取就夠。
         // The firing hook looks the component up on every shot; shots in a frame are nearly always on one map.
         private static Map cachedMap;
@@ -60,7 +64,17 @@ namespace DMS
             if (lord != null && !huntdownLords.Contains(lord))
             {
                 huntdownLords.Add(lord);
+                if (DMSMusicEventBridge.IsHeavyHuntdown(lord))
+                {
+                    heavyHuntdownLords.Add(lord);
+                }
             }
+        }
+
+        /// <summary>這支追殺登記時是否為重型追殺。Whether this huntdown was a heavy hunt when registered.</summary>
+        public bool IsHeavyHuntdown(Lord lord)
+        {
+            return heavyHuntdownLords.Contains(lord);
         }
 
         public static MapComponent_DMSMusicState For(Map map)
@@ -139,6 +153,7 @@ namespace DMS
         private void PruneHuntdownLords()
         {
             huntdownLords.RemoveAll(lord => lord == null || !map.lordManager.lords.Contains(lord));
+            heavyHuntdownLords.RemoveAll(lord => !huntdownLords.Contains(lord));
         }
 
         public override void ExposeData()
@@ -150,10 +165,17 @@ namespace DMS
                 PruneHuntdownLords();
             }
             Scribe_Collections.Look(ref huntdownLords, "huntdownLords", LookMode.Reference);
+            Scribe_Collections.Look(ref heavyHuntdownLords, "heavyHuntdownLords", LookMode.Reference);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 huntdownLords ??= new List<Lord>();
                 huntdownLords.RemoveAll(lord => lord == null);
+                if (heavyHuntdownLords == null)
+                {
+                    // 加入重型門檻前的存檔：以目前剩下的成員判斷。Saves from before the heavy gate: judge from the members left.
+                    heavyHuntdownLords = huntdownLords.FindAll(DMSMusicEventBridge.IsHeavyHuntdown);
+                }
+                heavyHuntdownLords.RemoveAll(lord => lord == null || !huntdownLords.Contains(lord));
             }
             Scribe_Values.Look(ref state.lastEvaluatedTick, "lastEvaluatedTick", DMSMusicTuning.Never);
             Scribe_Values.Look(ref state.lastAlertLevel, "lastAlertLevel");

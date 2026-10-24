@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: {0} and {1} are bound by a Hegemony war or betrayal. A court-martial truce cannot hold until it ends. -->
+  <DMS_Hegemony_HostilityLocked>{0}与{1}正处于霸权战争或背叛状态。在此结束前，军事法庭的休战无法维持。</DMS_Hegemony_HostilityLocked>
+
+  <!-- EN: The cargo reached {0}. Supplies worth {1} were added to its stores. -->
+  <DMS_Hegemony_SupplyStored>货物已送抵{0}，价值{1}的物资已存入当地库存。</DMS_Hegemony_SupplyStored>
+  <!-- EN: The cargo reached {0} and was issued straight to its garrison. -->
+  <DMS_Hegemony_SupplyIssued>货物已送抵{0}，直接配发给当地驻军。</DMS_Hegemony_SupplyIssued>
+
+  <!-- EN: Aid dispatched from {0}, {1} tiles away. Force strength: {2}. -->
+  <DMS_Hegemony_AidStrength>援军由{1}格外的{0}出发。兵力：{2}。</DMS_Hegemony_AidStrength>
+  <!-- EN: {0} has no garrison within reach. Only a reduced force can be spared: {1}. -->
+  <DMS_Hegemony_AidNoGarrison>{0}附近没有可调动的驻军，只能抽出部分兵力：{1}。</DMS_Hegemony_AidNoGarrison>
+
+</LanguageData>

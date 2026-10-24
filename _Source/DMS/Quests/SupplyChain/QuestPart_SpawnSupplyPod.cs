@@ -22,6 +22,8 @@ namespace DMS
         public string issuerUnit;
         public int stage = 1;        // 本階段序號(1-based),供階段開始信件使用
         public int totalStages = 1;
+        // 收貨的艦隊據點(見 FleetSettlementBridge);null 時照舊銷毀交付物。Receiving fleet town; null keeps the old destroy.
+        public Settlement destination;
 
         private Thing pod;
         private bool spawned;
@@ -76,6 +78,7 @@ namespace DMS
             {
                 comp.requestedCategory = category;
                 comp.requestedCount = count;
+                comp.destination = destination;
             }
             QuestUtility.AddQuestTag(pod, questTagToAdd);
 
@@ -137,6 +140,7 @@ namespace DMS
             Scribe_Values.Look(ref issuerUnit, "issuerUnit");
             Scribe_Values.Look(ref stage, "stage", 1);
             Scribe_Values.Look(ref totalStages, "totalStages", 1);
+            Scribe_References.Look(ref destination, "destination");
             Scribe_References.Look(ref pod, "pod");
             Scribe_Values.Look(ref spawned, "spawned");
         }

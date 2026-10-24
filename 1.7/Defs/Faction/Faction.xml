@@ -28,6 +28,7 @@
             <li MayRequire="Ludeon.RimWorld.Ideology">Collectivist</li>
             <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
             <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">DMS_Meme_ChainOfCommand</li>
         </requiredMemes>
         <allowedMemes>
             <li MayRequire="Ludeon.RimWorld.Ideology">Collectivist</li>

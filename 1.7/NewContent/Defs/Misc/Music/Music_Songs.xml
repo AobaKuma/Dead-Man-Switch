@@ -5,17 +5,22 @@
     情境音樂的曲目（見 Plans/DMS_Music_Transitions_實作計畫.md 第 7 節）。
     - clipPath 相對於模組根目錄的 Sounds/，大小寫必須與檔名完全一致。
     - 全部 playOnMap=false：只由 DMS 的 sequence 播放，不進入原版的一般輪播。
-    - 只為實際存在的音檔建立 SongDef。Abandoned Radar Station（地表探索主曲）與 Allied Marching Precision
-      （友方參戰變奏）目前缺檔，補上檔案後再加回。
+    - 只為實際存在的音檔建立 SongDef。
     - 尚未聆聽驗收：時長、響度（volume）與循環接點待確認。
 
     Situational-music songs (see Plans/DMS_Music_Transitions_實作計畫.md section 7).
     - clipPath is relative to the mod root's Sounds/, with exactly the file's casing.
     - All playOnMap=false: only DMS sequences play them; they never join vanilla's general rotation.
-    - SongDefs exist only for files that exist. Abandoned Radar Station (the surface exploration theme) and Allied
-      Marching Precision (the allied variant) are missing; add them back once the files return.
+    - SongDefs exist only for files that exist.
     - Not yet listened through: length, loudness (volume) and loop points are unchecked.
   -->
+
+  <SongDef>
+    <defName>DMS_Music_AbandonedRadarStation</defName>
+    <label>Abandoned Radar Station</label>
+    <clipPath>DMS_Music/Abandoned Radar Station</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
 
   <SongDef>
     <defName>DMS_Music_SealedMachinery</defName>
@@ -46,28 +51,44 @@
   </SongDef>
 
   <SongDef>
-    <defName>DMS_Music_ServoInPrecise</defName>
-    <label>Servo in precise</label>
-    <clipPath>DMS_Music/Servo in precise</clipPath>
-    <playOnMap>false</playOnMap>
-  </SongDef>
-
-  <SongDef>
     <defName>DMS_Music_OccultechHuntdown</defName>
     <label>Occultech Huntdown</label>
     <clipPath>DMS_Music/Occultech Huntdown</clipPath>
     <playOnMap>false</playOnMap>
   </SongDef>
 
-  <!-- 以下已建立 SongDef，但尚未放進任何播放清單（用途待定）。Defined, but in no playlist yet (use undecided). -->
+  <SongDef>
+    <defName>DMS_Music_MarchingPrecision</defName>
+    <label>Allied Marching Precision</label>
+    <clipPath>DMS_Music/Allied Marching Precision</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
 
-  <!-- 主戰師變奏：第 11 節 D2 決定標記前不接入自動選曲。Main-battle variant: kept out of selection until decision D2. -->
+  <!-- 集群織鳥的 Boss 曲變奏（DMS_ClusterWeaver 的 ModExtension_BossSong）。Cluster Weaver boss variant (ModExtension_BossSong on DMS_ClusterWeaver). -->
+  <SongDef>
+    <defName>DMS_Music_RadarOstinato</defName>
+    <label>Radar Ostinato</label>
+    <clipPath>DMS_Music/Radar Ostinato</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
+
+  <!-- 駭蜥的 Boss 曲變奏（DMS_Tarbosaurus 的 ModExtension_BossSong）。Tarbosaurus boss variant (ModExtension_BossSong on DMS_Tarbosaurus). -->
   <SongDef>
     <defName>DMS_Music_BlackKnight</defName>
     <label>Black Knight Remix</label>
     <clipPath>DMS_Music/Black Knight Remix</clipPath>
     <playOnMap>false</playOnMap>
   </SongDef>
+
+  <!-- 中士的 Boss 曲變奏（DMS_Sergeant 的 ModExtension_BossSong）。Sergeant boss variant (ModExtension_BossSong on DMS_Sergeant). -->
+  <SongDef>
+    <defName>DMS_Music_ServoInPrecise</defName>
+    <label>Servo in precise</label>
+    <clipPath>DMS_Music/Servo in precise</clipPath>
+    <playOnMap>false</playOnMap>
+  </SongDef>
+
+  <!-- 以下已建立 SongDef，但尚未放進任何播放清單（用途待定）。Defined, but in no playlist yet (use undecided). -->
 
   <!-- 伏擊開場候選／交戰備選。Ambush opener candidate / spare combat track. -->
   <SongDef>

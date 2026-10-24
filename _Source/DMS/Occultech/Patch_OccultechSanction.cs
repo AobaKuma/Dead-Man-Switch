@@ -221,11 +221,16 @@ namespace DMS
     /// <summary>關係守衛共用的配對判定。放在獨立類別避免每個 patch 各寫一份。</summary>
     internal static class OccultechRelationGuard
     {
-        /// <summary>這兩個派系是否恰好是「玩家 ↔ 殖民艦隊」。</summary>
+        /// <summary>
+        /// 這兩個派系是否恰好是「玩家 ↔ 殖民艦隊」。臨時派系不算:Hegemony 的使節任務會用艦隊的 def 建一個
+        /// temporary 代理派系,它不是艦隊本身,不該被制裁鎖成敵對。
+        /// Whether these are exactly player ↔ fleet. Temporary factions don't count: Hegemony envoy missions create a
+        /// temporary proxy with the fleet's def, which is not the fleet and must not be locked hostile by the sanction.
+        /// </summary>
         public static bool IsPlayerFleetPair(Faction a, Faction b, out Faction fleet)
         {
             fleet = null;
-            if (a == null || b == null || a == b)
+            if (a == null || b == null || a == b || a.temporary || b.temporary)
             {
                 return false;
             }

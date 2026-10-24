@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       Hegemony 聚落建築 / Hegemony settlement buildings
+       這些是 Hegemony 的抽象聚落建築(不是地圖上的 ThingDef)。
+       全部用一般產出欄位,刻意不佔用 special 角色:同一個 special
+       給兩個建築用會撞到 Hegemony 的角色查找假設。
+
+       resources:附庸繳實物貢品時,用哪些物品折價繳納
+                 (依 BaseMarketValue 換算數量,只認 Food/Materials/Prosperity)。
+       siteGoods:每天直接放進聚落實體庫存的物品(數量 × 等級 × 勞動係數),
+                 會出現在聚落商店與補給/戰利品裡。
+
+       BuildingDef 沒有派系限制欄位,任何派系都能蓋;
+       自訂 tag「dms」由指揮鏈 meme 加權,讓 DMS 系派系更偏好。
+       有科技門檻的一般建築解鎖後從等級 1 起跳,單級產量比基礎建築高。
+       ============================================================ -->
+
+  <!-- 鎢鋼冶煉廠 / tungsteel foundry -->
+  <FactionTerritories2.BuildingDef>
+    <defName>DMS_FT2_TungsteelFoundry</defName>
+    <tags><li>industry</li><li>military</li><li>mining</li><li>dms</li></tags>
+    <label>tungsteel foundry</label>
+    <description>Alloys local metal into tungsteel for armour plating and heavy frames. Taxes can send tungsteel home.</description>
+    <minimumTech>Industrial</minimumTech>
+    <materialCost>600</materialCost>
+    <prosperityCost>150</prosperityCost>
+    <initialChance>0.15</initialChance>
+    <dailyMaterials>60</dailyMaterials>
+    <materialOutput>Metal</materialOutput>
+    <resources>
+      <li><thing>Tungsteel</thing><category>Materials</category><minimumTech>Industrial</minimumTech><weight>3</weight></li>
+      <li><thing>Steel</thing><category>Materials</category><minimumTech>Industrial</minimumTech><weight>1</weight></li>
+    </resources>
+    <siteGoods>
+      <li><thing>Tungsteel</thing><amount>2</amount></li>
+    </siteGoods>
+    <tierLabels>
+      <li>salvage smelter</li>
+      <li>bloomery forge</li>
+      <li>tungsteel foundry</li>
+      <li>integrated alloy complex</li>
+      <li>metallurgy industrial park</li>
+      <li>foundry cluster</li>
+    </tierLabels>
+  </FactionTerritories2.BuildingDef>
+
+  <!-- 沖壓零件廠 / stamped component plant -->
+  <FactionTerritories2.BuildingDef>
+    <defName>DMS_FT2_StampingPlant</defName>
+    <tags><li>industry</li><li>dms</li></tags>
+    <label>component stamping plant</label>
+    <description>Mass-produces cheap stamped components for field equipment. Taxes can send components home.</description>
+    <minimumTech>Industrial</minimumTech>
+    <materialCost>750</materialCost>
+    <prosperityCost>200</prosperityCost>
+    <initialChance>0.1</initialChance>
+    <dailyMaterials>40</dailyMaterials>
+    <materialOutput>IndustrialComponents</materialOutput>
+    <resources>
+      <li><thing>ComponentStamped</thing><category>Materials</category><minimumTech>Industrial</minimumTech><weight>3</weight></li>
+      <li><thing>ComponentIndustrial</thing><category>Materials</category><minimumTech>Industrial</minimumTech><weight>1</weight></li>
+    </resources>
+    <siteGoods>
+      <li><thing>ComponentStamped</thing><amount>0.1</amount></li>
+    </siteGoods>
+    <tierLabels>
+      <li>salvage parts bench</li>
+      <li>die-press shop</li>
+      <li>component stamping plant</li>
+      <li>component production complex</li>
+      <li>component industrial park</li>
+      <li>component factory cluster</li>
+    </tierLabels>
+  </FactionTerritories2.BuildingDef>
+
+  <!-- 人造蛋白槽 / artiprotein vats -->
+  <FactionTerritories2.BuildingDef>
+    <defName>DMS_FT2_ArtiproteinVats</defName>
+    <tags><li>food</li><li>industry</li><li>dms</li></tags>
+    <label>artiprotein vats</label>
+    <description>Cultures artificial protein independent of soil and weather. Taxes can send artiprotein home.</description>
+    <minimumTech>Industrial</minimumTech>
+    <materialCost>600</materialCost>
+    <prosperityCost>150</prosperityCost>
+    <initialChance>0.1</initialChance>
+    <ignoreNegativeFoodModifiers>true</ignoreNegativeFoodModifiers>
+    <dailyFood>50</dailyFood>
+    <resources>
+      <li><thing>DMS_Artiprotein</thing><category>Food</category><minimumTech>Industrial</minimumTech><weight>1</weight></li>
+    </resources>
+    <tierLabels>
+      <li>ration fermenting pit</li>
+      <li>brewing vats</li>
+      <li>artiprotein vats</li>
+      <li>protein culture complex</li>
+      <li>food production park</li>
+      <li>food factory cluster</li>
+    </tierLabels>
+  </FactionTerritories2.BuildingDef>
+
+  <!-- 化纖紡織廠 / synthetic fibre mill -->
+  <FactionTerritories2.BuildingDef>
+    <defName>DMS_FT2_SyntheticFibreMill</defName>
+    <tags><li>industry</li><li>trade</li><li>civilian</li><li>dms</li></tags>
+    <label>synthetic fibre mill</label>
+    <description>Spins polyester and, with spacer technology, plasfiber for uniforms and webbing. Taxes can send fabric home.</description>
+    <minimumTech>Industrial</minimumTech>
+    <materialCost>500</materialCost>
+    <prosperityCost>120</prosperityCost>
+    <initialChance>0.1</initialChance>
+    <dailyProsperity>50</dailyProsperity>
+    <resources>
+      <li><thing>Polyester</thing><category>Prosperity</category><minimumTech>Industrial</minimumTech><weight>2</weight></li>
+      <li><thing>Plasfiber</thing><category>Prosperity</category><minimumTech>Spacer</minimumTech><weight>1</weight></li>
+    </resources>
+    <siteGoods>
+      <li><thing>Polyester</thing><amount>3</amount></li>
+    </siteGoods>
+    <tierLabels>
+      <li>salvage cordage shed</li>
+      <li>weaving shed</li>
+      <li>synthetic fibre mill</li>
+      <li>textile production complex</li>
+      <li>textile industrial park</li>
+      <li>textile mill cluster</li>
+    </tierLabels>
+  </FactionTerritories2.BuildingDef>
+
+  <!-- 前線補給站 / field supply depot -->
+  <FactionTerritories2.BuildingDef>
+    <defName>DMS_FT2_FieldSupplyDepot</defName>
+    <tags><li>military</li><li>logistics</li><li>medical</li><li>dms</li></tags>
+    <label>field supply depot</label>
+    <description>Stockpiles combat rations and field medicine for the garrison. Taxes can send military supplies home.</description>
+    <minimumTech>Industrial</minimumTech>
+    <materialCost>700</materialCost>
+    <prosperityCost>200</prosperityCost>
+    <initialChance>0.1</initialChance>
+    <defence>0.2</defence>
+    <dailyProsperity>30</dailyProsperity>
+    <resources>
+      <li><thing>DMS_CombatRation</thing><category>Prosperity</category><minimumTech>Industrial</minimumTech><weight>3</weight></li>
+      <li><thing>Neuroglue</thing><category>Prosperity</category><minimumTech>Industrial</minimumTech><weight>2</weight></li>
+      <li><thing>DMS_CombatRegenSerum</thing><category>Prosperity</category><minimumTech>Spacer</minimumTech><weight>1</weight></li>
+    </resources>
+    <siteGoods>
+      <li><thing>DMS_CombatRation</thing><amount>1</amount></li>
+    </siteGoods>
+    <tierLabels>
+      <li>supply cache</li>
+      <li>quartermaster's store</li>
+      <li>field supply depot</li>
+      <li>logistics complex</li>
+      <li>logistics park</li>
+      <li>depot cluster</li>
+    </tierLabels>
+  </FactionTerritories2.BuildingDef>
+
+</Defs>

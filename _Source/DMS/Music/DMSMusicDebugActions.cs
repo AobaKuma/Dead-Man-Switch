@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using LudeonTK;
 using RimWorld;
@@ -221,7 +222,7 @@ namespace DMS
             text.AppendLine($"context {facts.context}, player {facts.playerPresent}, encounter {facts.hasEncounter}, relevant {facts.Relevant}");
             text.AppendLine($"reasons {facts.reasons}");
             text.AppendLine($"lockdown {facts.lockdown}, bosses {facts.activeBosses}, alert {facts.alertLevel:F1}, tags {facts.songTags}, boss song {comp.EncounterSong?.defName ?? "-"}");
-            text.AppendLine($"huntdown lords {comp.HuntdownLords.Count}");
+            text.AppendLine($"huntdown lords {comp.HuntdownLords.Count} (heavy {comp.HuntdownLords.Where(comp.IsHeavyHuntdown).Count()}, ≥{DMSMusicTuning.HuntdownSongMinHeavies}× power {DMSMusicTuning.HuntdownSongHeavyPower:F0})");
             text.AppendLine($"reinforcements in {facts.reinforcementTicksLeft}, boss in {facts.bossTicksUntilArrival}");
             text.AppendLine($"last combat {Ago(game.lastCombatTick, tick)}, alert rise {Ago(game.lastAlertRiseTick, tick)}, sweep start {Ago(game.searchStartTick, tick)}");
             text.AppendLine($"crisis #{facts.crisisId} active {facts.crisisActive}, aftermath #{facts.aftermathCrisisId}");

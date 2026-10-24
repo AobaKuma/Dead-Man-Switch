@@ -130,6 +130,17 @@ namespace DMS
         /// </summary>
         public const int AftermathWindowTicks = 5000;
 
+        /// <summary>
+        /// 追殺襲擊發動時，要有至少 <see cref="HuntdownSongMinHeavies"/> 架 combatPower 達到這個值（鬣蜥 DMS_Mech_Iguana 的 300）
+        /// 的重型機兵，才加上追殺選曲標記；較弱的追殺仍算遭遇，播一般交戰曲。
+        /// A huntdown raid gets the huntdown song tag only when it fires with at least <see cref="HuntdownSongMinHeavies"/>
+        /// heavies of this combatPower or more (the Iguana, DMS_Mech_Iguana, at 300); weaker hunts still count as
+        /// encounters and play the regular combat music.
+        /// </summary>
+        public const float HuntdownSongHeavyPower = 300f;
+
+        public const int HuntdownSongMinHeavies = 4;
+
         public const float CeasefireSeconds = 12f;
         public const float AlertHoldSeconds = 15f;
 

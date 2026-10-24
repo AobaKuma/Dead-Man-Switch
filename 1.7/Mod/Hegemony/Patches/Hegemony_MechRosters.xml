@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <!-- ============================================================
+       Hegemony 機兵名單 / Hegemony mech rosters
+       DMS.Hegemony.MechRosterExtension(見 _Source/DMS.Hegemony)讓這個派系的
+       Hegemony AI 聚落只規劃與製造名單內的機兵,不再退回原版 Militor/Lancer/Centipede。
+       權重是生產比例;依 DMS_Army 戰鬥編組的權重取整,
+       省略運輸用的護航升降機與 Boss 級重型機兵。
+       Weights are production proportions, rounded from DMS_Army's combat group weights;
+       the escort lifter and boss-class heavies are left out.
+       ============================================================ -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/FactionDef[defName="DMS_Army"]</xpath>
+    <value>
+      <li Class="DMS.Hegemony.MechRosterExtension">
+        <roster>
+          <li><kind>DMS_Mech_Soldat_B</kind><weight>6</weight></li>
+          <li><kind>DMS_Mech_Dogge</kind><weight>4</weight></li>
+          <li><kind>DMS_Mech_Arquebusier</kind><weight>3</weight></li>
+          <li><kind>DMS_Mech_Falcon</kind><weight>3</weight></li>
+          <li><kind>DMS_Mech_Pioneer</kind><weight>2</weight></li>
+          <li><kind>DMS_Mech_Phalanx</kind><weight>2</weight></li>
+          <li><kind>DMS_Mech_Jaeger</kind><weight>2</weight></li>
+          <li><kind>DMS_Mech_Grenadier</kind><weight>2</weight></li>
+          <li><kind>DMS_Mech_Ronin</kind><weight>2</weight></li>
+          <li><kind>DMS_Mech_BattleFrame</kind><weight>2</weight></li>
+          <li><kind>DMS_Mech_Protector</kind><weight>1</weight></li>
+          <li><kind>DMS_Mech_Sniper</kind><weight>1</weight></li>
+          <li><kind>DMS_Mech_Iguana</kind><weight>1</weight></li>
+        </roster>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

@@ -159,6 +159,10 @@ namespace DMS
             if (transportShipDef?.shipThing == null) return false;
             Faction fleet = Fleet;
             if (fleet == null || !fleet.HostileTo(Faction.OfPlayer)) return false;
+            // 外部模組鎖住的敵對(Hegemony 背叛/殲滅戰/正式戰爭)休戰也解不開:開審只會在 250 tick 內被判休戰破裂。
+            // Hostility an external mod locks (Hegemony betrayal/annihilation/formal war) can't be truced: the trial would
+            // be ruled a broken truce within 250 ticks.
+            if (FleetSettlementBridge.HostilityLock(fleet, Faction.OfPlayer) != null) return false;
             return TryFindMapAndDefendant(slate, fleet, CourtMartialOfferUtility.ExpectedKind, out _, out _);
         }
 
@@ -267,6 +271,9 @@ namespace DMS
             shuttleComp.requiredPawns.Add(defendant);
             shuttleComp.acceptColonists = false;
             QuestUtility.AddQuestTag(shuttle, shuttleTag);
+
+            // 0. 已發出的傳票:外部模組事後鎖住敵對時擋下接受。Already-issued summons: block acceptance if an external lock appears later.
+            quest.AddPart(new QuestPart_RequirementsToAccept_NoExternalHostility { faction = fleet });
 
             // 1. 接受→休戰(外交結算也在此 part)
             quest.AddPart(new QuestPart_CourtTruce

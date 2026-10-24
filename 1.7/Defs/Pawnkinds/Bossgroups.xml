@@ -116,6 +116,13 @@
       </li>
     </waves>
     <rewardDef>ComponentTransmitter</rewardDef>
+    <modExtensions>
+      <li Class="DMS.ModExtension_BossSong">
+        <songDefs>
+          <li>DMS_Music_ServoInPrecise</li>
+        </songDefs>
+      </li>
+    </modExtensions>
   </BossgroupDef>
 
   <!-- DMS_Mech_Geochelone -->
@@ -290,6 +297,13 @@
       </li>
     </waves>
     <rewardDef>ComponentFireControl</rewardDef>
+    <modExtensions>
+      <li Class="DMS.ModExtension_BossSong">
+        <songDefs>
+          <li>DMS_Music_BlackKnight</li>
+        </songDefs>
+      </li>
+    </modExtensions>
   </BossgroupDef>
 
 
@@ -372,6 +386,13 @@
       </li>
     </waves>
     <rewardDef>ComponentControlChip</rewardDef>
+    <modExtensions>
+      <li Class="DMS.ModExtension_BossSong">
+        <songDefs>
+          <li>DMS_Music_RadarOstinato</li>
+        </songDefs>
+      </li>
+    </modExtensions>
   </BossgroupDef>
 
 </Defs>

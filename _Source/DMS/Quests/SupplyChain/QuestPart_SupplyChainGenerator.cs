@@ -16,6 +16,9 @@ namespace DMS
         public ThingCategoryDef category;
         public QuestScriptDef subquestDef;
         public MapParent mapParent;
+        // 收貨的艦隊據點(見 FleetSettlementBridge);null 時交付物照舊銷毀。Receiving fleet town; null keeps the old destroy.
+        public Settlement destination;
+        public Faction destinationFaction;
         public string issuerUnit;
         public string issuerFactionName;
         public int challengeRating = 1;
@@ -158,6 +161,9 @@ namespace DMS
             slate.Set("issuerUnit", issuerUnit);
             slate.Set("issuerFactionName", issuerFactionName);
             slate.Set("challengeRating", challengeRating);
+            // 據點在階段之間被毀或易主就不再送過去。Stop routing to a town destroyed or lost between stages.
+            if (destination != null && !destination.Destroyed && destination.Faction == destinationFaction)
+                slate.Set("destination", destination);
 
             activeSubquest = QuestUtility.GenerateQuestAndMakeAvailable(subquestDef, slate);
             if (activeSubquest == null)
@@ -186,6 +192,8 @@ namespace DMS
             Scribe_Values.Look(ref issuerFactionName, "issuerFactionName");
             Scribe_Values.Look(ref challengeRating, "challengeRating", 1);
             Scribe_References.Look(ref mapParent, "mapParent");
+            Scribe_References.Look(ref destination, "destination");
+            Scribe_References.Look(ref destinationFaction, "destinationFaction");
             Scribe_Values.Look(ref totalStages, "totalStages");
             Scribe_Values.Look(ref baseCount, "baseCount");
             Scribe_Values.Look(ref countGrowth, "countGrowth");

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -29,6 +30,8 @@ namespace DMS
     {
         public ThingCategoryDef requestedCategory;
         public int requestedCount;
+        // 收貨的艦隊據點(見 FleetSettlementBridge);null 時交付物照舊銷毀。Receiving fleet town; null keeps the old destroy.
+        public Settlement destination;
         private bool sent;
 
         public new CompProperties_SupplyRequest Props => (CompProperties_SupplyRequest)props;
@@ -174,15 +177,26 @@ namespace DMS
             // 消耗要求數量的符合物品,並累計實際交付市值(品質/耐久/汙損都反映在 MarketValue)
             int toConsume = requestedCount;
             float deliveredValue = 0f;
+            float creditedValue = 0f;
+            // 收貨據點仍在時,能入帳的整疊存進它的儲備,其餘照舊銷毀。While the receiving town stands, creditable stacks go
+            // into its reserves; the rest is destroyed as before.
+            Settlement receiver = destination != null && !destination.Destroyed ? destination : null;
             List<Thing> matching = innerContainer.Where(Matches).ToList();
             for (int i = 0; i < matching.Count && toConsume > 0; i++)
             {
                 int take = Mathf.Min(toConsume, matching[i].stackCount);
                 Thing taken = innerContainer.Take(matching[i], take);
                 toConsume -= take;
-                deliveredValue += taken.MarketValue * taken.stackCount;
-                taken.Destroy();
+                float value = taken.MarketValue * taken.stackCount;
+                deliveredValue += value;
+                // 入帳成功時整疊已被消耗,不可再 Destroy。A successful credit consumed the stack; don't destroy it again.
+                if (receiver != null && FleetSettlementBridge.TryDeliver(receiver, taken))
+                    creditedValue += value;
+                else if (!taken.Destroyed)
+                    taken.Destroy();
             }
+            if (receiver != null)
+                FleetSettlementBridge.Delivered(receiver.Faction, receiver, deliveredValue, creditedValue);
             // 任務端以 VALUE 計算報酬;子任務結束時的 Cleanup 會經 SendAway 把本艙送走
             QuestUtility.SendQuestTargetSignals(parent.questTags, "Delivered",
                 parent.Named("SUBJECT"), deliveredValue.Named("VALUE"));
@@ -229,6 +243,7 @@ namespace DMS
             base.PostExposeData();
             Scribe_Defs.Look(ref requestedCategory, "requestedCategory");
             Scribe_Values.Look(ref requestedCount, "requestedCount");
+            Scribe_References.Look(ref destination, "destination");
             Scribe_Values.Look(ref sent, "sent");
         }
     }
