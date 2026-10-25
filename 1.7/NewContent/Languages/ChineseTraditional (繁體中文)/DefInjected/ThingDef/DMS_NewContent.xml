@@ -15,13 +15,13 @@
 
   <!-- EN: camera -->
   <DMS_Building_Camera.label>監視器</DMS_Building_Camera.label>
-  <!-- EN: A surveillance camera that monitors a long, narrow corridor for intruders. Connected to the local alert counter. Cut power or hit it with an EMP to disable it safely before dismantling. -->
-  <DMS_Building_Camera.description>一種用於監視狹長通道、偵測入侵者的監控攝影機，連接著當地的警戒系統。先切斷電源或以EMP將其癱瘓，即可在拆除前安全地使其失效。</DMS_Building_Camera.description>
+  <!-- EN: A surveillance camera that monitors a long, narrow corridor for intruders. Connected to the local alert counter. It cannot see through smoke or spot camouflaged intruders. Cut power or hit it with an EMP to disable it safely before dismantling. -->
+  <DMS_Building_Camera.description>一種用於監視狹長通道、偵測入侵者的監控攝影機，連接著當地的警戒系統。它無法看穿煙霧，也看不見隱身的入侵者。先切斷電源或以EMP將其癱瘓，即可在拆除前安全地使其失效。</DMS_Building_Camera.description>
 
   <!-- EN: seismic sensor -->
   <DMS_Building_Sensor.label>震動傳感器</DMS_Building_Sensor.label>
-  <!-- EN: A passive sensor installed along pipes and secondary passageways. The larger the thing entering its range, the more likely it is to trip the alarm. -->
-  <DMS_Building_Sensor.description>一種安裝在各類管道及次要通道的被動傳感器，越大的東西進入其範圍內就越容易引起警報。</DMS_Building_Sensor.description>
+  <!-- EN: A passive sensor installed along pipes and secondary passageways. The larger the thing entering its range, the more likely it is to trip the alarm. It feels footsteps rather than seeing them, so smoke and camouflage won't fool it, but anything flying overhead goes unnoticed. -->
+  <DMS_Building_Sensor.description>一種安裝在各類管道及次要通道的被動傳感器，越大的東西進入其範圍內就越容易引起警報。它靠地面震動而非視覺偵測，煙霧和隱身都騙不過它，但從上方飛過的單位不會被察覺。</DMS_Building_Sensor.description>
 
   <!-- EN: large sentry tower -->
   <DMS_Building_Scanner_Large.label>大型無人哨塔</DMS_Building_Scanner_Large.label>

@@ -32,9 +32,9 @@
 
   <DMS_Building_Camera.label>监视器</DMS_Building_Camera.label>
 
-  <!-- EN: A surveillance camera that monitors a long, narrow corridor for intruders. Connected to the local alert counter. Cut power or hit it with an EMP to disable it safely before dismantling. -->
+  <!-- EN: A surveillance camera that monitors a long, narrow corridor for intruders. Connected to the local alert counter. It cannot see through smoke or spot camouflaged intruders. Cut power or hit it with an EMP to disable it safely before dismantling. -->
 
-  <DMS_Building_Camera.description>一种用于监视狭长通道、侦测入侵者的监控摄像机，连接着当地的警戒系统。先切断电源或以EMP将其瘫痪，即可在拆除前安全地使其失效。</DMS_Building_Camera.description>
+  <DMS_Building_Camera.description>一种用于监视狭长通道、侦测入侵者的监控摄像机，连接着当地的警戒系统。它无法看穿烟雾，也看不见隐身的入侵者。先切断电源或以EMP将其瘫痪，即可在拆除前安全地使其失效。</DMS_Building_Camera.description>
 
 
 
@@ -42,9 +42,9 @@
 
   <DMS_Building_Sensor.label>震动传感器</DMS_Building_Sensor.label>
 
-  <!-- EN: A passive sensor installed along pipes and secondary passageways. The larger the thing entering its range, the more likely it is to trip the alarm. -->
+  <!-- EN: A passive sensor installed along pipes and secondary passageways. The larger the thing entering its range, the more likely it is to trip the alarm. It feels footsteps rather than seeing them, so smoke and camouflage won't fool it, but anything flying overhead goes unnoticed. -->
 
-  <DMS_Building_Sensor.description>一种安装在各类管道及次要通道的被动传感器，越大的东西进入其范围内就越容易引起警报。</DMS_Building_Sensor.description>
+  <DMS_Building_Sensor.description>一种安装在各类管道及次要通道的被动传感器，越大的东西进入其范围内就越容易引起警报。它靠地面震动而非视觉侦测，烟雾和隐身都骗不过它，但从上方飞过的单位不会被察觉。</DMS_Building_Sensor.description>
 
 
 

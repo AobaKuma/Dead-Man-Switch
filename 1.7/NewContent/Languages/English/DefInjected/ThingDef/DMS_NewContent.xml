@@ -15,13 +15,13 @@
 
   <!-- EN: camera -->
   <DMS_Building_Camera.label>camera</DMS_Building_Camera.label>
-  <!-- EN: A surveillance camera that monitors a long, narrow corridor for intruders. Connected to the local alert counter. Cut power or hit it with an EMP to disable it safely before dismantling. -->
-  <DMS_Building_Camera.description>A surveillance camera that monitors a long, narrow corridor for intruders. Connected to the local alert counter. Cut power or hit it with an EMP to disable it safely before dismantling.</DMS_Building_Camera.description>
+  <!-- EN: A surveillance camera that monitors a long, narrow corridor for intruders. Connected to the local alert counter. It cannot see through smoke or spot camouflaged intruders. Cut power or hit it with an EMP to disable it safely before dismantling. -->
+  <DMS_Building_Camera.description>A surveillance camera that monitors a long, narrow corridor for intruders. Connected to the local alert counter. It cannot see through smoke or spot camouflaged intruders. Cut power or hit it with an EMP to disable it safely before dismantling.</DMS_Building_Camera.description>
 
   <!-- EN: seismic sensor -->
   <DMS_Building_Sensor.label>seismic sensor</DMS_Building_Sensor.label>
-  <!-- EN: A passive sensor installed along pipes and secondary passageways. The larger the thing entering its range, the more likely it is to trip the alarm. -->
-  <DMS_Building_Sensor.description>A passive sensor installed along pipes and secondary passageways. The larger the thing entering its range, the more likely it is to trip the alarm.</DMS_Building_Sensor.description>
+  <!-- EN: A passive sensor installed along pipes and secondary passageways. The larger the thing entering its range, the more likely it is to trip the alarm. It feels footsteps rather than seeing them, so smoke and camouflage won't fool it, but anything flying overhead goes unnoticed. -->
+  <DMS_Building_Sensor.description>A passive sensor installed along pipes and secondary passageways. The larger the thing entering its range, the more likely it is to trip the alarm. It feels footsteps rather than seeing them, so smoke and camouflage won't fool it, but anything flying overhead goes unnoticed.</DMS_Building_Sensor.description>
 
   <!-- EN: large sentry tower -->
   <DMS_Building_Scanner_Large.label>large sentry tower</DMS_Building_Scanner_Large.label>

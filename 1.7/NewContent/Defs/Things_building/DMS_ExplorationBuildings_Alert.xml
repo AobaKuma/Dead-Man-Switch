@@ -144,7 +144,7 @@
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_Camera</defName>
     <label>camera</label>
-    <description>A surveillance camera that monitors a long, narrow corridor for intruders. Connected to the local alert counter. Cut power or hit it with an EMP to disable it safely before dismantling.</description>
+    <description>A surveillance camera that monitors a long, narrow corridor for intruders. Connected to the local alert counter. It cannot see through smoke or spot camouflaged intruders. Cut power or hit it with an EMP to disable it safely before dismantling.</description>
     <!-- <description>安裝在牆壁上的閉路監控攝像頭，其連接著一套自動化的安全系統使其在偵測到非法闖入者十能夠激活設施內的安全措施迎擊入侵者。</description> -->
     <graphicData>
       <texPath>Things/Building/camera</texPath>
@@ -199,11 +199,13 @@
     </comps>
   </ThingDef>
 
-  <!-- 震動傳感器 （每300Tick監視5x5範圍內的全方向，不受LOS影響，相機靠近的時候有音效，敵對陣營的PAWN在範圍內會有體型x10%的機率觸發警報，並進入冷卻時間，期間間歇閃紅燈） -->
+  <!-- 震動傳感器 （每300Tick監視5x5範圍內的全方向，不受LOS影響，相機靠近的時候有音效，敵對陣營的PAWN在範圍內會有體型x10%的機率觸發警報，並進入冷卻時間，期間間歇閃紅燈）
+       靠地面震動偵測：煙霧與隱身都騙不過它，但偵測不到飛行單位。
+       Detects ground vibration: smoke and camouflage don't fool it, but flying units go unnoticed. -->
   <ThingDef ParentName="DMS_AlertBuildingBase">
     <defName>DMS_Building_Sensor</defName>
     <label>seismic sensor</label>
-    <description>A passive sensor installed along pipes and secondary passageways. The larger the thing entering its range, the more likely it is to trip the alarm.</description>
+    <description>A passive sensor installed along pipes and secondary passageways. The larger the thing entering its range, the more likely it is to trip the alarm. It feels footsteps rather than seeing them, so smoke and camouflage won't fool it, but anything flying overhead goes unnoticed.</description>
     <graphicData>
       <texPath>Things/Building/Facility_Decoy</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -231,6 +233,8 @@
       <li Class="Fortified.CompProperties_AlertScanner">
         <radius>2.9</radius>
         <requireLOS>false</requireLOS>
+        <detectsInvisible>true</detectsInvisible>
+        <detectsFlying>false</detectsFlying>
         <checkInterval>250</checkInterval>
         <rearmInterval>3000</rearmInterval>
         <attackTriggerChance>0.4</attackTriggerChance>
