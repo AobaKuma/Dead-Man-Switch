@@ -256,8 +256,9 @@
       <ComponentIndustrial>8</ComponentIndustrial>
       <ComponentControlChip>1</ComponentControlChip>
     </costList>
-    <!-- 繼承 DMS_UAVBasis，並要求完成集群控制科技。 -->
-    <researchPrerequisites>
+    <!-- 只要求集群控制科技；Inherit="False" 不併入父類的 DMS_UAVBasis。
+         Only needs the cluster control project; Inherit="False" keeps the parent's DMS_UAVBasis out. -->
+    <researchPrerequisites Inherit="False">
       <li>DMS_Mechlink</li>
     </researchPrerequisites>
     <comps>

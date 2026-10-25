@@ -26,7 +26,7 @@
       <ComponentIndustrial>4</ComponentIndustrial>
     </costList>
     <researchPrerequisites>
-      <li>DMS_AdvancedControl</li>
+      <li>DMS_DeadMansSwitch</li>
     </researchPrerequisites>
     <comps>
       <li Class="CompProperties_Usable">
@@ -42,19 +42,18 @@
             <raidWave>DMS_RaidWave_PeacekeepingOperators</raidWave>
             <quest>DMS_AirportAssault</quest>
             <!-- Optional: omit researchPrerequisites to keep this option unlocked. All listed projects are required. -->
-            <researchPrerequisites><li>DMS_DeadMansSwitch</li></researchPrerequisites>
           </li>
           <li>
             <labelKey>DMS_RaidGroup_CounterTerrorism</labelKey>
             <raidWave>DMS_RaidWave_CounterTerrorism</raidWave>
             <quest>DMS_ResidentialAssault</quest>
-            <researchPrerequisites><li>DMS_Hypothesis</li></researchPrerequisites>
+            <researchPrerequisites><li>DMS_AdvancedControl</li></researchPrerequisites>
           </li>
           <li>
             <labelKey>DMS_RaidGroup_Infantry</labelKey>
             <raidWave>DMS_RaidWave_Infantry</raidWave>
             <quest>DMS_ArsenalAssault</quest>
-            <researchPrerequisites><li>DMS_HeavyAutomatroid</li></researchPrerequisites>
+            <researchPrerequisites><li>DMS_Hypothesis</li></researchPrerequisites>
           </li>
         </groups>
       </li>

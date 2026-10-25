@@ -257,6 +257,60 @@
     </children>
   </EffecterDef>
 
+  <!-- 導彈鎖定的瞄準光束與目標掃描圈，從古代軍團的反坦克導彈移植過來（defName 與貼圖路徑相同，兩邊同時載入時由後載入的古代軍團覆蓋，內容一致）。
+       Missile lock-on aim beam and target scan ring, ported from Ancient Corps' ATGM. Same defNames and texture paths, so
+       when both load, Ancient Corps (loaded later) overrides these with identical copies. -->
+  <ThingDef ParentName="MoteBase">
+    <defName>DMS_Missile_Aim</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.15</fadeInTime>
+      <fadeOutTime>0.3</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/DMS_Missile_Aim</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteHellfireCannon_Aim</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/Cloudy_C</_DistortionTex>
+        <_NumFrames>10</_NumFrames>
+        <_FramesPerSec>1.35</_FramesPerSec>
+        <_DistortionScrollSpeed>1.35</_DistortionScrollSpeed>
+        <_Intensity>3</_Intensity>
+        <_DistortionScale>0.082</_DistortionScale>
+      </shaderParameters>
+      <drawSize>(3, 0.9)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>DMS_Missile_Target</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.5</fadeInTime>
+      <fadeOutTime>0.3</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/DMS_Missile_Target</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteHellfireCannon_Target</shaderType>
+      <shaderParameters>
+        <_ScanTex>/Things/Mote/DMS_Missile_Scan</_ScanTex>
+        <_ScanMask>/Things/Mote/DMS_Missile_Scan_Mask</_ScanMask>
+      </shaderParameters>
+      <drawSize>(8, 8)</drawSize>
+    </graphicData>
+  </ThingDef>
+
   <!-- 維修模式 -->
   <EffecterDef>
     <defName>DMS_Sustainer_EMP</defName>

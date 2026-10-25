@@ -391,4 +391,22 @@
       </li>
     </subSounds>
   </SoundDef>
+
+  <!-- 導彈發射音，從古代軍團的 DMS_AC_Shot_GuidedMissile 移植。
+       Guided missile launch, ported from Ancient Corps' DMS_AC_Shot_GuidedMissile. -->
+  <SoundDef>
+    <defName>DMS_Shot_GuidedMissile</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>DMS_Effect/GuidedMissile_Shot</clipPath>
+          </li>
+        </grains>
+        <volumeRange>40~40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
 </Defs>

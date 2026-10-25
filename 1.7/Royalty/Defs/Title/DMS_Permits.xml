@@ -393,7 +393,8 @@
     <workerClass>DMS.RoyalTitlePermitWorker_RewardShuttle</workerClass>
     <minTitle>DMS_Major</minTitle>
     <faction>DMS_Army</faction>
-    <permitPointCost>3</permitPointCost>
+    <!-- 原版權限點按前置鏈累加扣除:升降艙 2 + 此項 1 = 3,與 1.8.27 單獨 3 點一致 -->
+    <permitPointCost>1</permitPointCost>
     <uiPosition>(6,5)</uiPosition>
     <prerequisite>DMS_Call_MobileLifter</prerequisite>
     <royalAid>

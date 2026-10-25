@@ -593,12 +593,19 @@
       <verbClass>Verb_CastAbility</verbClass>
       <minRange>6.9</minRange>
       <range>44.9</range>
-      <warmupTime>3</warmupTime>
+      <!-- 鎖定前搖照古代軍團的反坦克導彈：4 秒、瞄準光束、目標掃描圈、鎖定音，原版 Stance_Warmup 會自己畫。
+           Lock-on windup copied from Ancient Corps' ATGM: 4 seconds with the aim beam, target scan ring and lock-on tone,
+           all drawn by vanilla Stance_Warmup. -->
+      <warmupTime>4</warmupTime>
+      <aimingLineMote>DMS_Missile_Aim</aimingLineMote>
+      <aimingLineMoteFixedLength>15.9</aimingLineMoteFixedLength>
+      <aimingTargetMote>DMS_Missile_Target</aimingTargetMote>
+      <soundAiming>DMS_Ability_LockOn</soundAiming>
       <ai_AvoidFriendlyFireRadius>4</ai_AvoidFriendlyFireRadius>
       <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
       <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
       <ai_TargetHasRangedAttackScoreOffset>50</ai_TargetHasRangedAttackScoreOffset>
-      <soundCast>RocketswarmLauncher_Fire</soundCast>
+      <soundCast>DMS_Shot_GuidedMissile</soundCast>
       <targetParams>
         <canTargetPawns>true</canTargetPawns>
         <canTargetLocations>true</canTargetLocations>
