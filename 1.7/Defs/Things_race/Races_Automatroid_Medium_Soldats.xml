@@ -4,7 +4,7 @@
   <ThingDef Name="BaseMechRace_Soldat" ParentName="BaseAutomatroidHumanRace" Abstract="True">
     <statBases>
       <MoveSpeed>4.2</MoveSpeed>
-      <ArmorRating_Sharp>0.4</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Sharp>0.35</ArmorRating_Sharp><!--銳抗-->
       <ArmorRating_Blunt>0.2</ArmorRating_Blunt><!--鈍抗-->
       <ArmorRating_Heat>0.33</ArmorRating_Heat>  <!--能抗-->
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
@@ -40,6 +40,13 @@
     <defName>DMS_Mech_Soldat</defName>
     <label>Soldat</label>
     <description>A bipedal humanoid robot built in the image of other pre-existing mechanoids. Soldat's can be equipped with weapons rated for human use.\n\nThe Soldat has to carry a battery backpack which makes it unable to fight like other mechs without cover.</description>
+    <race>
+      <mechFixedSkillLevel>6</mechFixedSkillLevel><!--Closer to humanlikes of the same power-->
+    </race>
+    <statBases>
+      <AimingDelayFactor>1.15</AimingDelayFactor><!--Small debuff to make them less viable in 1v1 with regular humans and better automatroids-->
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">1</BandwidthCost>
+    </statBases>
     <modExtensions>
       <li Class="Fortified.MechWeaponExtension">
         <EnableWeaponFilter>true</EnableWeaponFilter>

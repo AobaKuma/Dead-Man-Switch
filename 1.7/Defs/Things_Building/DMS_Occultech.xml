@@ -105,6 +105,9 @@
     <thingCategories>
       <li>BuildingsMisc</li>
     </thingCategories>
+    <placeWorkers>
+      <li>Fortified.PlaceWorker_ShowOccultechExtractorConnection</li>
+    </placeWorkers>
     <comps>
       <li Class="CompProperties_Forbiddable" />
       <li Class="CompProperties_Flickable" />
@@ -118,6 +121,7 @@
       <li Class="Fortified.CompProperties_OccultechExtractor">
         <knowledgePerDay>50</knowledgePerDay>
         <knowledgeCategory>DMS_Restricted</knowledgeCategory>
+        <extractionRect>(0,2,0,2)</extractionRect>
       </li>
     </comps>
   </ThingDef>

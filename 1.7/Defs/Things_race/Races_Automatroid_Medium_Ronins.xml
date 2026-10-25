@@ -517,16 +517,18 @@
     <statBases>
       <MoveSpeed>4.5</MoveSpeed>                                                    <!--移動速度-->
       <ArmorRating_Blunt>0.6</ArmorRating_Blunt>                                     <!--護甲-->
-      <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+      <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
       <ArmorRating_Heat>0.5</ArmorRating_Heat>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>        <!--帶寬消耗-->
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+      <AimingDelayFactor>1.15</AimingDelayFactor><!--Small debuff to make them less viable in 1v1 with regular humans and better automatroids-->
     </statBases>
     <race>
       <body>DMS_Humanoid_TypeB</body>                                                      <!--身體(另外的def)-->
       <baseBodySize>1.1</baseBodySize>
       <baseHealthScale>1.32</baseHealthScale>
       <mechWeightClass>Medium</mechWeightClass>
+      <mechFixedSkillLevel>6</mechFixedSkillLevel><!--Tough but dumb(small head after all)-->
     </race>
     <modExtensions>
       <li Class="Fortified.MechWeaponExtension">

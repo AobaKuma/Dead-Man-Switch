@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ResearchTabDef>
-    <defName>DMS_Tab</defName>
-    <label>Dead Man Switch</label>
-    <generalTitle>Nara Industries Engineering</generalTitle>
-    <generalDescription>Nara Industries is made up of countless colonial fleets that travel endlessly between star systems developing new worlds; nobody knows what motivates them. Their colonial fleets tend to spread technology to every living world they moor at, justified as the advancement of human civilization, forcing the local population to complete the selection process of the Great Filter amid the turbulence of that progress, and to complete it fast.</generalDescription>
-  </ResearchTabDef>
 
   <ResearchProjectDef Name="DMS_BaseTech" Abstract="True">
     <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -332,7 +326,7 @@
       <li>ComplexClothing</li>
     </prerequisites>
     <researchViewX>0.00</researchViewX>
-    <researchViewY>5.50</researchViewY>
+    <researchViewY>5.70</researchViewY>
   </ResearchProjectDef>
 
   <!-- T2 -->
@@ -379,9 +373,10 @@
     <techLevel>Industrial</techLevel>
     <prerequisites>
       <li>Gunsmithing</li>
+      <li>DMS_EquipmentBasis</li>
     </prerequisites>
     <researchViewX>1.00</researchViewX>
-    <researchViewY>5.50</researchViewY>
+    <researchViewY>5.00</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech">
@@ -392,9 +387,10 @@
     <techLevel>Industrial</techLevel>
     <prerequisites>
       <li>Gunsmithing</li>
+      <li>DMS_EquipmentBasis</li>
     </prerequisites>
-    <researchViewX>2.00</researchViewX>
-    <researchViewY>5.50</researchViewY>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>5.70</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech">
@@ -405,9 +401,10 @@
     <techLevel>Industrial</techLevel>
     <prerequisites>
       <li>Gunsmithing</li>
+      <li>DMS_EquipmentElite</li>
     </prerequisites>
-    <researchViewX>3.00</researchViewX>
-    <researchViewY>5.50</researchViewY>
+    <researchViewX>2.00</researchViewX>
+  <researchViewY>5.70</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech" MayRequire="Ludeon.Rimworld.Biotech">

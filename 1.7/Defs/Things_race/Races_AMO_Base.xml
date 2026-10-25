@@ -10,6 +10,7 @@
       <li>ITab_Pawn_Gear</li>
       <li>ITab_Pawn_Log</li>
     </inspectorTabs>
+    <hiddenWhileUndiscovered>true</hiddenWhileUndiscovered><!--To prevent player from knowing them from useable weapons list-->
     <statBases>
       <MarketValue>2000</MarketValue>
       <MoveSpeed>5</MoveSpeed>

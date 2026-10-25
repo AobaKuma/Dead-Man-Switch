@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!--Move DMS tab here so it goes first in order-->
+  <ResearchTabDef>
+    <defName>DMS_Tab</defName>
+    <label>Dead Man Switch</label>
+    <generalTitle>Nara Industries Engineering</generalTitle>
+    <generalDescription>Nara Industries is made up of countless colonial fleets that travel endlessly between star systems developing new worlds; nobody knows what motivates them. Their colonial fleets tend to spread technology to every living world they moor at, justified as the advancement of human civilization, forcing the local population to complete the selection process of the Great Filter amid the turbulence of that progress, and to complete it fast.</generalDescription>
+  </ResearchTabDef>
+  
   <!-- Occultech 多類別研究分頁（框架:Fortified.ModExtension_UniqueResearchTab） -->
   <ResearchTabDef>
     <defName>DMS_ExpeditionalKnowledge</defName>
