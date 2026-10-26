@@ -6,7 +6,12 @@
        FPV drone hive: the player version of the facility FPV nest (DMS_Building_FPVNest), unlocked by the class I
        sealed file "garrison arsenal". The facility nest releases four wildfowl on an alert signal; this one runs on
        FFF's drone platform like the hound station: load steel, deploy by hand, recall for a refund.
-       researchPrerequisites uses Inherit="False" so the parent's DMS_UAVBasis isn't merged in and listed as a second unlock. -->
+       researchPrerequisites uses Inherit="False" so the parent's DMS_UAVBasis isn't merged in and listed as a second unlock.
+       必須跟 DMS_DronePlatform.xml 放在同一個資料夾、排在它後面：下拉選單的預設項是最先載入的那一個（不看 uiOrder），
+       點下拉按鈕會直接選中預設項、不檢查研究。放在 NewContent 時它會先載入，變成預設項而被提前建造。
+       Must sit in the same folder as DMS_DronePlatform.xml and sort after it: a dropdown's default entry is whichever
+       loads first (uiOrder is ignored), and clicking the dropdown selects that entry without a research check. From
+       NewContent it loaded first, became the default and could be built before its research. -->
   <ThingDef ParentName="DMS_BaseDronePlatform">
     <defName>DMS_FPVNest</defName>
     <uiOrder>3070</uiOrder>

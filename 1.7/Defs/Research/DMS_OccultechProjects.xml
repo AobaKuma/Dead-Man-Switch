@@ -136,7 +136,7 @@
   <!-- 駐屯兵器：封存檔案 I 級 · 鬥牛犬與伯勞鳥的生產型號、FPV 無人機母巢 -->
   <!-- 前置為常規樹的先進控制（DMS_AdvancedControl），即伯勞鳥原本的門檻。 -->
   <!-- 培養配方在 Biotech/Defs/DMS_Recipes_MechGestator_{BullHound,Lanius}.xml。 -->
-  <!-- 母巢（DMS_FPVNest）在 NewContent/Defs/Things_Building/DMS_FPVNest.xml。 -->
+  <!-- 母巢（DMS_FPVNest）在 Defs/Things_Building/DMS_FPVNest.xml。 -->
   <!-- 古代機兵（AncientCorps）啟用時，Mod/DMSAC 另掛上佐羅賓槍系與磨坊。  -->
   <!-- 本專案是 II 級「主戰規格」的前置。                                -->
   <!-- ============================================================= -->
