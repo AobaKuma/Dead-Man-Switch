@@ -107,7 +107,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>75</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
@@ -133,6 +133,9 @@
         <!-- 鬥牛犬雖是重型，復活歸在中型（與伯勞鳥同屬「駐屯兵器」）。Bullhounds are heavy but resurrect as medium, alongside the Lanius. -->
         <li>Corpse_DMS_Mech_BullHound</li>
         <li>Corpse_DMS_Mech_BullHound_Flamer</li>
+        <!-- 戰鬥框架與小猛瑪改由中型配方復活。BattleFrame and tiny mammoth use the medium resurrection recipe. -->
+        <li>Corpse_DMS_Mech_BattleFrame</li>
+        <li>Corpse_DMS_Mech_Mammoth</li>
       </thingDefs>
     </fixedIngredientFilter>
   </RecipeDef>
@@ -153,23 +156,48 @@
       <li>
         <filter>
           <thingDefs>
-            <li>Steel</li>
+            <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>50</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>Corpse_DMS_Mech_BattleFrame</li>
+        <li>Corpse_DMS_Mech_Iguana</li>
+        <li>Corpse_DMS_Mech_Gecko</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="BaseMechanoidResurrectionRecipe">
+    <defName>DMS_ResurrectHeavyMechSmall</defName>
+    <label>Resurrect Heavy Automatroid</label>
+    <description>Resurrect a friendly automatroid from the heavyweight class. So long as the automatroid's body is not completely destroyed, it can be resurrected.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Corpses</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Corpse_DMS_Mech_Ape</li>
         <li>Corpse_DMS_Mech_EscortLifter</li>
         <li>Corpse_DMS_Mech_FieldCommand</li>
         <li>Corpse_DMS_Mech_ShaftWorker</li>
-
-        <li>Corpse_DMS_Mech_Ape</li>
-        <li>Corpse_DMS_Mech_Mammoth</li>
-        <li>Corpse_DMS_Mech_Iguana</li>
-        <li>Corpse_DMS_Mech_Gecko</li>
       </thingDefs>
     </fixedIngredientFilter>
   </RecipeDef>

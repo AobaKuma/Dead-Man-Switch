@@ -146,6 +146,7 @@
     <recipes>
       <li>DMS_ResurrectLightMech</li>
       <li>DMS_ResurrectMediumMech</li>
+      <li>DMS_ResurrectHeavyMechSmall</li>
     </recipes>
     <comps>
       <li MayRequire="VanillaExpanded.VFEA" Class="VFEAncients.CompProperties_SolarPowerUp" />

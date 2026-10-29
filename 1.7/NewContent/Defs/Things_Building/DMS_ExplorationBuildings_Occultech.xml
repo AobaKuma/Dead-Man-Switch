@@ -319,6 +319,9 @@
           <li><capacity>BloodPumping</capacity><setMax>1.2</setMax></li>
           <li><capacity>Metabolism</capacity><setMax>1.2</setMax></li>
         </capMods>
+        <statFactors>
+          <PsychicSensitivity>0</PsychicSensitivity>
+        </statFactors>
       </li>
     </stages>
     <modExtensions>

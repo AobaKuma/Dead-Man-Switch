@@ -371,3 +371,6 @@ Assets.zip.*
 
 # RimWorld 1.7 runtime SPIR-V caches the shader compiler writes beside GLSL sources
 *.spv-cache
+
+.rimsearcher/*
+!.rimsearcher/README.md
