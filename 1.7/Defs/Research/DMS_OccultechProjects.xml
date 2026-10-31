@@ -220,7 +220,7 @@
   <!-- 前置為 I 級的駐屯兵器（DMS_Occultech_RemnantPatterns）與常規樹的  -->
   <!-- 簡言之假說（DMS_Hypothesis）；與駐屯兵器同一列 (·, 7)。           -->
   <!-- 解鎖守墓人兩種型號的培育配方（大型培育艙）：                      -->
-  <!--   種族在 NewContent/Defs/Things_Race/Races_Automatroid_Gravekeeper.xml -->
+  <!--   種族在 Defs/Things_Race/Races_Automatroid_Gravekeeper.xml -->
   <!--   配方在 Biotech/Defs/DMS_Recipes_MechGestator_Gravekeeper.xml     -->
   <!-- 古代機兵（AncientCorps）啟用時，Mod/DMSAC 另把古機單位的培育配方   -->
   <!-- 與古機武器的製作配方掛在本專案底下（佐羅賓槍系與磨坊掛在駐屯兵器）。 -->
@@ -253,7 +253,7 @@
   <!-- ============================================================= -->
   <!-- 零點能基礎：封存檔案 III 級 · 固態零點能與現實穩定錨             -->
   <!-- 唯一的隱匿級專案，完成即永久敵對（見 DMS_OccultechResearchTab）。 -->
-  <!-- 解鎖三座建築，全在 NewContent/Defs/Things_Building/              -->
+  <!-- 解鎖三座建築，全在 Defs/Things_Building/                        -->
   <!-- DMS_ExplorationBuildings_Occultech.xml：                        -->
   <!--   零點能發生器核心：反粒子彈頭 → 固態零點能（一枚 25 個、約一年）  -->
   <!--   零點能反應器：一塊固態零點能 = 6000W × 一年                    -->

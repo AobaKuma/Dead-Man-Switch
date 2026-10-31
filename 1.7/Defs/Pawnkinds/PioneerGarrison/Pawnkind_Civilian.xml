@@ -115,7 +115,7 @@
   </PawnKindDef>
 
 
-  <!-- Name 供脫序者接納任務的 DMS_Deviant 繼承（NewContent/Defs/Quests/DMS_DeviantRefuge.xml）。 -->
+  <!-- Name 供脫序者接納任務的 DMS_Deviant 繼承（Defs/Quests/DMS_DeviantRefuge.xml）。 -->
   <PawnKindDef ParentName="DMS_CivilianBase" Name="DMS_CrewMemberBase">
     <defName>DMS_CrewMember</defName>
     <label>crew member</label>

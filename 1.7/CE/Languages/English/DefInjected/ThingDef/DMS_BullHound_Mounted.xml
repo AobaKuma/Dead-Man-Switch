@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
-  <!-- CE 下鬥牛犬霰彈型改為 KS-23，覆寫 NewContent 的翻譯。Under CE the bullhound shotgun becomes a KS-23; overrides the NewContent translation. -->
+  <!-- CE 下鬥牛犬霰彈型改為 KS-23，與 1.7 的翻譯同名，開 CE 時取代它（語言檔依相對路徑去重，CE 資料夾先載入）。Under CE the bullhound shotgun becomes a KS-23; shares the 1.7 file name so it replaces that translation (language files dedupe by relative path and 1.7/CE loads first). -->
   <!-- EN: mounted KS-23 -->
   <DMS_BullHound_ShotgunMounted.label>mounted KS-23</DMS_BullHound_ShotgunMounted.label>
   <!-- EN: A KS-23 carbine shotgun fixed to a bullhound's back mount. Its 23x75mmR shells are built to stop intruders in corridors and doorways outright.

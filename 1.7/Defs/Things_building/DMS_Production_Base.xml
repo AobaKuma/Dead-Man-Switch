@@ -99,10 +99,10 @@
   </ThingDef>
 
   <!-- 自動工作台共用的下拉選單；設在 DMS_AutofacturerBenchBase 上，由子代（含 CE 的彈藥打印機）繼承。
-       下拉選單依 Def 載入順序加入元素，第一個就是預設圖示，所以自動磨床放在 NewContent（比 1.7/Defs 和 1.7/CE 先載入）。
+       原版下拉選單依 Def 載入順序取第一個當預設圖示，這個選單改由 DMS.Patch_AutofacturerDropdownOrder 依 uiOrder 重排。
        Shared dropdown for the automated workbenches; set on DMS_AutofacturerBenchBase so every child (CE's ammo printer
-       included) inherits it. A dropdown adds its entries in def load order and shows the first one, so the auto mill lives
-       in NewContent, which loads before both 1.7/Defs and 1.7/CE. -->
+       included) inherits it. Vanilla shows whichever entry loads first; DMS.Patch_AutofacturerDropdownOrder re-sorts this
+       one by uiOrder instead. -->
   <DesignatorDropdownGroupDef>
     <defName>DMS_Autofacturers</defName>
     <label>automated workbenches</label>

@@ -2,10 +2,10 @@
 <Defs>
   <!-- ==================================================================== -->
   <!-- 零點能奇點（DMS.CompSingularityGraphic）用的著色器。                   -->
-  <!-- 1.7（Waylith）從 NewContent/Shaders 讀 GLSL 原始碼並在執行期編譯；      -->
+  <!-- 1.7（Waylith）從 1.7/Shaders 讀 GLSL 原始碼並在執行期編譯；             -->
   <!-- 檔名全域共用，所以一律加 DMS_ 前綴，避免蓋掉原版或其他模組的同名檔。   -->
   <!-- Shaders for the zero-point singularity (DMS.CompSingularityGraphic).  -->
-  <!-- 1.7 (Waylith) compiles the GLSL in NewContent/Shaders at runtime.     -->
+  <!-- 1.7 (Waylith) compiles the GLSL in 1.7/Shaders at runtime.            -->
   <!-- File names are resolved globally, hence the DMS_ prefix.              -->
   <!-- ==================================================================== -->
 
