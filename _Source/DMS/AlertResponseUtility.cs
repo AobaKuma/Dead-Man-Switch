@@ -218,23 +218,52 @@ namespace DMS
 
             if (faction == null) return pawns;
 
-            // 派系沒有指定種類的 pawnGroupMaker 時退回 Combat，免得產生失敗。
-            // Fall back to Combat when the faction has no maker of the requested kind, so generation doesn't fail.
-            if (groupKind == null || faction.def.pawnGroupMakers.NullOrEmpty()
-                || !faction.def.pawnGroupMakers.Any(m => m.kindDef == groupKind))
-            {
-                groupKind = PawnGroupKindDefOf.Combat;
-            }
-
             PawnGroupMakerParms parms = new PawnGroupMakerParms
             {
-                groupKind = groupKind,
+                groupKind = groupKind ?? PawnGroupKindDefOf.Combat,
                 faction = faction,
                 points = PointsFor(alertPct, pointsRange, pointsByAlertLevel),
                 tile = map.Tile,
             };
-            pawns.AddRange(PawnGroupMakerUtility.GeneratePawns(parms));
+            if (!TryChooseGroupMaker(parms, out PawnGroupMaker maker)) return pawns;
+            pawns.AddRange(maker.GeneratePawns(parms));
             return TrimToMax(pawns, maxPawns);
+        }
+
+        /// <summary>
+        /// 挑兵力表：派系自己的 groupKind 表；派系沒有這種表時，借防守派系（DMS_Legacy）的同種表，
+        /// 兵仍屬原派系（陣營、敵對關係與 lord 都不變）。不退回派系自己的 Combat：Combat 是各子模組加兵的公共池
+        /// （例如 Taktikmagier 把軍術士加進 DMS_Army 的 Combat），設施增援另開 groupKind 就是為了不跟它混在一起。
+        /// Picks the squad table: the faction's own maker of the groupKind. A faction without one borrows the defender
+        /// faction's (DMS_Legacy) maker of that kind, the pawns still belonging to the original faction (allegiance,
+        /// hostility and lord unchanged). Never the faction's own Combat: that is the pool every submod adds to
+        /// (Taktikmagier puts its magiers into DMS_Army's Combat, for one), and facility squads have their own
+        /// groupKind precisely to stay out of it.
+        /// </summary>
+        private static bool TryChooseGroupMaker(PawnGroupMakerParms parms, out PawnGroupMaker maker)
+        {
+            FactionDef source = parms.faction.def;
+            List<PawnGroupMaker> makers = MakersOf(source, parms.groupKind);
+            if (makers.Count == 0)
+            {
+                source = VaultRoomUtility.DefenderFaction?.def;
+                makers = MakersOf(source, parms.groupKind);
+                Log.WarningOnce($"[DMS] Facility squad for {parms.faction.def.defName}: it has no {parms.groupKind.defName} pawn group, "
+                    + $"borrowing {source?.defName ?? "no one"}'s.", ("DMS_FacilitySquadBorrow" + parms.faction.def.defName + parms.groupKind.defName).GetHashCode());
+            }
+
+            if (makers.Where(m => m.CanGenerateFrom(parms)).TryRandomElementByWeight(m => m.commonality, out maker)) return true;
+
+            Log.WarningOnce($"[DMS] Facility squad for {parms.faction.def.defName}: no {parms.groupKind.defName} pawn group of "
+                + $"{source?.defName ?? "any faction"} can be built from {parms.points:F0} points; nothing emerges.",
+                ("DMS_FacilitySquadEmpty" + parms.faction.def.defName + parms.groupKind.defName).GetHashCode());
+            return false;
+        }
+
+        private static List<PawnGroupMaker> MakersOf(FactionDef def, PawnGroupKindDef kind)
+        {
+            if (def?.pawnGroupMakers == null) return new List<PawnGroupMaker>();
+            return def.pawnGroupMakers.Where(m => m.kindDef == kind).ToList();
         }
 
         /// <summary>

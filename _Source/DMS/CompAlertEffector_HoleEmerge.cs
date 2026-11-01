@@ -45,8 +45,10 @@ namespace DMS
         public FactionDef spawnFactionDef;
 
         /// <summary>
-        /// 走點數時用派系的哪一種 pawnGroupMaker；null 或派系沒有這種就用 Combat。
-        /// Which of the faction's pawnGroupMakers the points path uses; null, or a faction without one, means Combat.
+        /// 走點數時用派系的哪一種 pawnGroupMaker；null 用 Combat。派系沒有這種表時借 DMS_Legacy 的同種表，
+        /// 不會退回派系自己的 Combat（見 AlertResponseUtility.TryChooseGroupMaker）。
+        /// Which of the faction's pawnGroupMakers the points path uses; null means Combat. A faction without one borrows
+        /// DMS_Legacy's table of that kind, never its own Combat (see AlertResponseUtility.TryChooseGroupMaker).
         /// </summary>
         public PawnGroupKindDef groupKind;
 
