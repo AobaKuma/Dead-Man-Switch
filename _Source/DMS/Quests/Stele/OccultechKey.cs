@@ -38,6 +38,16 @@ namespace DMS
 			}
 		}
 
+		public override bool CanStackWith(Thing other)
+		{
+			return false;
+		}
+
+		public override bool TryAbsorbStack(Thing other, bool respectStackLimit)
+		{
+			return false;
+		}
+
 		public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
 		{
 			base.Destroy(mode);
