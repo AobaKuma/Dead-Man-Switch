@@ -115,6 +115,32 @@ namespace DMS
             return result;
         }
 
+        /// <summary>
+        /// 授予一批脫序者交付的檔案，回傳信件用的清單（每項一行；沒有專案時為空字串）。
+        /// Grants a batch of the deviant's files and returns the letter list, one line each (empty with no projects).
+        /// </summary>
+        public static string GrantAndDescribe(IEnumerable<ResearchProjectDef> projects)
+        {
+            List<string> lines = new List<string>();
+            foreach (ResearchProjectDef proj in projects)
+            {
+                switch (Grant(proj))
+                {
+                    case DeviantGrantResult.Pending:
+                        lines.Add("DMS_DeviantRefuge_PendingLine".Translate(proj.LabelCap.Named("PROJECT"),
+                            MissingPrerequisites(proj).Named("PREREQS")).Resolve());
+                        break;
+                    case DeviantGrantResult.AlreadyHeld:
+                        lines.Add("DMS_DeviantRefuge_AlreadyHeldLine".Translate(proj.LabelCap.Named("PROJECT")).Resolve());
+                        break;
+                    default:
+                        lines.Add("DMS_DeviantRefuge_GrantedLine".Translate(proj.LabelCap.Named("PROJECT")).Resolve());
+                        break;
+                }
+            }
+            return string.Join("\n", lines);
+        }
+
         /// <summary>尚未完成的前置（含隱藏前置）名稱。Labels of the prerequisites still unfinished, hidden ones included.</summary>
         public static string MissingPrerequisites(ResearchProjectDef proj)
         {

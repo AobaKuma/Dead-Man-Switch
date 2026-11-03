@@ -49,8 +49,31 @@ namespace DMS
         }
 
         /// <summary>
-        /// 目前受庇護、被艦隊追殺的脫序者；沒有時為 null。關係鎖與軍事法庭都看它。
+        /// 追殺用的判定：脫序者是否真的不在殖民地手上。比 <see cref="IsLost"/> 寬：被逮捕成囚犯的，以及被流放但還沒走出
+        /// 地圖的，都還能重新招募。追殺一結束就不會再開始，若這兩種也算結束，流放或逮捕後再招募就能留人又甩掉追殺。
+        /// Whether the deviant is truly out of the colony's hands, for the hunt. Looser than <see cref="IsLost"/>: an arrested
+        /// prisoner, or an exile who hasn't walked off the map, can still be recruited back. A stopped hunt never restarts,
+        /// so ending it on either would let the player banish or arrest, re-recruit, and keep the deviant with no hunt.
+        /// </summary>
+        public static bool IsOutOfReach(Pawn pawn, out DeviantLostReason reason)
+        {
+            if (!IsLost(pawn, out reason))
+            {
+                return false;
+            }
+            if (reason == DeviantLostReason.Left && (pawn.IsPrisonerOfColony || (pawn.Faction == null && pawn.Spawned)))
+            {
+                reason = DeviantLostReason.None;
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 目前受庇護、被艦隊追殺的脫序者；沒有時為 null。關係鎖與軍事法庭都看它。囚犯與尚未離開的流放者也算，
+        /// 軍事法庭另外要求被告是自由殖民者。
         /// The sheltered deviant the fleet is hunting, or null. The relation lock and the court-martial both read this.
+        /// Prisoners and exiles still on the map count; the court-martial separately requires a free colonist as defendant.
         /// </summary>
         public static Pawn HarboredDeviant
         {
@@ -59,7 +82,7 @@ namespace DMS
                 if (Current.Game == null) return null;
                 HuntdownInstance instance = HuntdownUtility.GetInstance(DMS_DefOf.DMS_DeviantHunt);
                 if (instance == null || !instance.hasBoundPawn) return null;
-                return IsLost(instance.boundPawn, out _) ? null : instance.boundPawn;
+                return IsOutOfReach(instance.boundPawn, out _) ? null : instance.boundPawn;
             }
         }
 

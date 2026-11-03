@@ -24,6 +24,8 @@ namespace DMS
         public int goodwillReward;
         public int honorReward;
         public bool moodPenalty;
+        public KnowledgeCategoryDef keptCategory;
+        public int keptCount;
         public string outSignalDecided;
         public string outSignalExtradite;
         public string outSignalRefuse;
@@ -89,6 +91,11 @@ namespace DMS
         {
             List<string> lines = new List<string>();
             string fleetName = fleet?.Name ?? "?";
+            // 檔案全都研究完了就不承諾。Promise no file when none are left to research.
+            if (DeviantTechUtility.PickRandom(keptCategory, keptCount, null).Count > 0)
+            {
+                lines.Add("DMS_DeviantExtradition_RewardKept".Translate(fleetName.Named("FLEET")));
+            }
             if (goodwillReward != 0)
             {
                 lines.Add("DMS_DeviantExtradition_RewardGoodwill".Translate(fleetName.Named("FLEET"), goodwillReward.Named("AMOUNT")));
@@ -125,6 +132,8 @@ namespace DMS
             Scribe_Values.Look(ref goodwillReward, "goodwillReward");
             Scribe_Values.Look(ref honorReward, "honorReward");
             Scribe_Values.Look(ref moodPenalty, "moodPenalty");
+            Scribe_Defs.Look(ref keptCategory, "keptCategory");
+            Scribe_Values.Look(ref keptCount, "keptCount");
             Scribe_Values.Look(ref outSignalDecided, "outSignalDecided");
             Scribe_Values.Look(ref outSignalExtradite, "outSignalExtradite");
             Scribe_Values.Look(ref outSignalRefuse, "outSignalRefuse");

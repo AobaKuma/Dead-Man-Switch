@@ -23,6 +23,7 @@
   <!-- 引渡要求（QuestPart_DeviantExtraditionDemand／QuestPart_DeviantExtradition） -->
   <DMS_DeviantExtradition_LetterLabel>舰队引渡要求：{DEVIANT_nameDef}</DMS_DeviantExtradition_LetterLabel>
   <DMS_DeviantExtradition_LetterText>{DEVIANT_nameFull}完成了档案还原，但就在同一时刻，{FLEET}也得知了{DEVIANT_nameDef}受到我们庇护的消息。舰队宪兵指挥部已向我们发出正式的引渡要求。\n\n交出{DEVIANT_objective}：\n{REWARDS}\n那份加密档案将被舰队收走。\n\n拒绝引渡：{DEVIANT_nameDef}会把还原的档案交给我们，{FLEET}将与我们敌对，并且会为了{DEVIANT_objective}持续派兵追杀，直到{DEVIANT_pronoun}死去或被逐出殖民地为止。\n\n若{DAYS}内没有答复，舰队将视为拒绝。</DMS_DeviantExtradition_LetterText>
+  <DMS_DeviantExtradition_RewardKept>- {FLEET}会从还原的档案中随机解禁一份交给我们</DMS_DeviantExtradition_RewardKept>
   <DMS_DeviantExtradition_RewardGoodwill>- 与{FLEET}的好感度 +{AMOUNT}</DMS_DeviantExtradition_RewardGoodwill>
   <DMS_DeviantExtradition_RewardHonor>- {AMOUNT}点{HONOR}，由我们指定的一名殖民者领受，可用于晋升舰队军衔</DMS_DeviantExtradition_RewardHonor>
   <DMS_DeviantExtradition_RewardMood>- 殖民者会因为交出了同伴而心情低落</DMS_DeviantExtradition_RewardMood>
@@ -33,6 +34,7 @@
   <DMS_DeviantExtradition_SilenceMessage>我们没有回复{FLEET}的引渡要求，舰队视之为拒绝。</DMS_DeviantExtradition_SilenceMessage>
   <DMS_DeviantExtradition_DoneLabel>引渡完成：{DEVIANT_nameDef}</DMS_DeviantExtradition_DoneLabel>
   <DMS_DeviantExtradition_DoneText>舰队的轨道运输机带走了{DEVIANT_nameFull}，连同那份加密档案。{FLEET}对我们的配合表示认可。\n\n没有人知道{DEVIANT_pronoun}接下来会面对什么。</DMS_DeviantExtradition_DoneText>
+  <DMS_DeviantExtradition_DoneTextKept>舰队的轨道运输机带走了{DEVIANT_nameFull}，连同那份加密档案。{FLEET}对我们的配合表示认可。\n\n作为回报，舰队从还原的档案中解禁了一份交给我们：\n\n{GRANTED}\n\n没有人知道{DEVIANT_pronoun}接下来会面对什么。</DMS_DeviantExtradition_DoneTextKept>
   <DMS_DeviantExtradition_HonorLabel>谁来领受这份{HONOR}？</DMS_DeviantExtradition_HonorLabel>
   <DMS_DeviantExtradition_HonorText>{FLEET}将这次引渡记为我们的功劳，愿意授予{AMOUNT}点{HONOR}。由谁领受？</DMS_DeviantExtradition_HonorText>
   <!-- {GRANTED} 的每一行 -->

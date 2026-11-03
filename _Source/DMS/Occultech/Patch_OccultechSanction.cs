@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using RimWorld;
+using RimWorld.Planet;
 using Verse;
 
 namespace DMS
@@ -114,10 +115,59 @@ namespace DMS
     ///
     /// <see cref="Patch_Faction_CanChangeGoodwillFor"/> 已經擋掉大部分來源，本 patch 處理
     /// 「一次大額好感度直接跨過門檻」以及其他模組繞過 CanChangeGoodwillFor 的情況。
+    ///
+    /// 被鎖住的轉換必須在 prefix 擋下，不能等原版跑完才在 postfix 改回：原版一改 kind 就呼叫
+    /// Notify_RelationKindChanged，通知雙方的 Lord 並中斷其成員的工作，而 GoodwillSituationManager
+    /// 每 1000 ticks 就會重跑一次判定。若事後才改回，關係每次都會白翻一輪，授勳官的儀式工作也會一直被
+    /// 中斷重來，授勳永遠讀不完條（好感度 ≥ 75 且持有封存科技時）。
+    ///
+    /// A locked transition has to be stopped in the prefix, not reverted in the postfix: vanilla calls
+    /// Notify_RelationKindChanged as soon as it changes kind, which interrupts the jobs of both factions' lord pawns, and
+    /// GoodwillSituationManager re-runs this check every 1000 ticks. Reverting afterwards flipped the relation on every
+    /// pass and kept restarting the bestower's ceremony job, so the bestowing never finished (goodwill ≥ 75 with occultech held).
     /// </summary>
     [HarmonyPatch(typeof(FactionRelation), nameof(FactionRelation.CheckKindThresholds))]
     public static class Patch_FactionRelation_CheckKindThresholds
     {
+        /// <summary>原版的盟友門檻。Vanilla's ally threshold.</summary>
+        private const int AllyThreshold = OccultechSanctionUtility.AllyGoodwillCeiling + 1;
+
+        [HarmonyPrefix]
+        public static bool Prefix(FactionRelation __instance, Faction faction, bool canSendLetter, string reason,
+            GlobalTargetInfo lookTarget, out bool sentLetter)
+        {
+            sentLetter = false;
+            if (OccultechSanctionUtility.GuardSuppressed || __instance == null
+                || !OccultechRelationGuard.IsPlayerFleetPair(faction, __instance.other, out _)
+                || GameComponent_OccultechSanction.CompSafe == null)
+            {
+                return true;
+            }
+
+            // 鎖在敵對且已經是敵對：好感度再高也不轉中立。Locked hostile and already hostile: stays so at any goodwill.
+            if (OccultechSanctionUtility.HostilityLocked)
+            {
+                return __instance.kind != FactionRelationKind.Hostile;
+            }
+
+            if (__instance.kind == FactionRelationKind.Ally || !OccultechSanctionUtility.IsAllyLocked
+                || faction.GoodwillWith(__instance.other) < AllyThreshold)
+            {
+                return true;
+            }
+
+            // 原版到這裡只會升盟友；被鎖時改成最多到中立。敵對轉中立是真的變動，照常通知。
+            // All vanilla would do here is promote to ally; while locked, go no further than neutral.
+            // Hostile to neutral is a real change, so it still notifies.
+            if (__instance.kind == FactionRelationKind.Hostile)
+            {
+                __instance.kind = FactionRelationKind.Neutral;
+                faction.Notify_RelationKindChanged(__instance.other, FactionRelationKind.Hostile, canSendLetter, reason,
+                    lookTarget, out sentLetter);
+            }
+            return false;
+        }
+
         [HarmonyPostfix]
         public static void Postfix(FactionRelation __instance, Faction faction)
         {

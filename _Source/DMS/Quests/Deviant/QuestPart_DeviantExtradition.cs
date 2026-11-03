@@ -7,14 +7,15 @@ using Verse;
 namespace DMS
 {
     /// <summary>
-    /// 交出脫序者：艦隊帶走脫序者並收走那份加密檔案（不授予任何研究、不敵對、不追殺）。
+    /// 交出脫序者：艦隊帶走脫序者並收走那份加密檔案（不敵對、不追殺）。
+    /// - 艦隊作為回報解禁 keptCount 份隨機檔案；與拒絕時相同，由任務承擔後果，不結算通用制裁。
     /// - 殖民者因交出同伴而心情低落（原版「放逐殖民者」的想法，可關閉）。
     /// - 艦隊好感度提升。
     /// - 皇權 DLC：一份榮譽，由玩家在原版的選人信件中指定領受者（ChoiceLetter_ChoosePawn → QuestPart_GiveRoyalFavor）。
     ///   有榮譽要分配時任務等到選完才結束（outSignalHonorChosen）；沒有時直接送 outSignalDone。
     ///
-    /// Handing the deviant over: the fleet takes them and the encrypted archive (no research, no hostility, no hunt).
-    /// Colonists take vanilla's "colonist banished" mood hit (optional); fleet goodwill rises; with Royalty, honor goes to
+    /// Handing the deviant over: the fleet takes them and the encrypted archive (no hostility, no hunt). In return the
+    /// fleet releases keptCount random files, with no generic sanction, as on a refusal. Colonists take vanilla's "colonist banished" mood hit (optional); fleet goodwill rises; with Royalty, honor goes to
     /// a colonist the player picks in vanilla's choose-pawn letter. With honor to hand out the quest ends once it's picked
     /// (outSignalHonorChosen); otherwise outSignalDone ends it at once.
     /// </summary>
@@ -26,6 +27,9 @@ namespace DMS
         public int goodwillReward;
         public int honorReward;
         public bool moodPenalty = true;
+        /// <summary>艦隊作為回報解禁的檔案（隨機）。Files the fleet releases in return, picked at random.</summary>
+        public KnowledgeCategoryDef keptCategory;
+        public int keptCount;
         public string outSignalDone;
         public string outSignalHonorChosen;
         public string outSignalFailed;
@@ -46,9 +50,12 @@ namespace DMS
             }
 
             string fleetName = fleet?.Name ?? "?";
+            string kept = DeviantTechUtility.GrantAndDescribe(DeviantTechUtility.PickRandom(keptCategory, keptCount, null));
             // 先記下名字：交出之後 pawn 不在地圖上。Capture the letter text before the pawn leaves.
             TaggedString doneLabel = "DMS_DeviantExtradition_DoneLabel".Translate(deviant.Named("DEVIANT"));
-            TaggedString doneText = "DMS_DeviantExtradition_DoneText".Translate(deviant.Named("DEVIANT"), fleetName.Named("FLEET"));
+            TaggedString doneText = kept.Length > 0
+                ? "DMS_DeviantExtradition_DoneTextKept".Translate(deviant.Named("DEVIANT"), fleetName.Named("FLEET"), kept.Named("GRANTED"))
+                : "DMS_DeviantExtradition_DoneText".Translate(deviant.Named("DEVIANT"), fleetName.Named("FLEET"));
 
             if (moodPenalty)
             {
@@ -125,6 +132,8 @@ namespace DMS
             Scribe_Values.Look(ref goodwillReward, "goodwillReward");
             Scribe_Values.Look(ref honorReward, "honorReward");
             Scribe_Values.Look(ref moodPenalty, "moodPenalty", true);
+            Scribe_Defs.Look(ref keptCategory, "keptCategory");
+            Scribe_Values.Look(ref keptCount, "keptCount");
             Scribe_Values.Look(ref outSignalDone, "outSignalDone");
             Scribe_Values.Look(ref outSignalHonorChosen, "outSignalHonorChosen");
             Scribe_Values.Look(ref outSignalFailed, "outSignalFailed");

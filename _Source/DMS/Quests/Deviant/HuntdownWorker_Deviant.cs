@@ -42,7 +42,7 @@ namespace DMS
 
         public override bool BoundPawnLost(Pawn pawn)
         {
-            if (!DeviantHuntUtility.IsLost(pawn, out DeviantLostReason reason))
+            if (!DeviantHuntUtility.IsOutOfReach(pawn, out DeviantLostReason reason))
             {
                 return false;
             }

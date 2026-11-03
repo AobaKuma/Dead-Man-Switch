@@ -49,8 +49,10 @@
            staying silent) gives the files above plus hostility and the hunt. -->
       <extraditionDecisionDays>2</extraditionDecisionDays>
       <extraditionGoodwill>25</extraditionGoodwill>
-      <!-- 皇權 DLC：交出時一名殖民者領受的艦隊榮譽（下士一級約 10）。Royalty: fleet honor for one colonist (about one corporal step). -->
-      <extraditionHonor>10</extraditionHonor>
+      <!-- 交出時隨機保留的 randomCategory 檔案數。Files of randomCategory kept on a handover, picked at random. -->
+      <extraditionKeptCount>1</extraditionKeptCount>
+      <!-- 皇權 DLC：交出時一名殖民者領受的艦隊榮譽。Royalty: fleet honor for one colonist. -->
+      <extraditionHonor>25</extraditionHonor>
       <extraditionMoodPenalty>true</extraditionMoodPenalty>
     </root>
   </QuestScriptDef>

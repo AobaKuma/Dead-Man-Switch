@@ -23,6 +23,7 @@
   <!-- Extradition demand (QuestPart_DeviantExtraditionDemand / QuestPart_DeviantExtradition) -->
   <DMS_DeviantExtradition_LetterLabel>Extradition demand: {DEVIANT_nameDef}</DMS_DeviantExtradition_LetterLabel>
   <DMS_DeviantExtradition_LetterText>{DEVIANT_nameFull} has finished restoring the archive, but at the same moment {FLEET} has learned that we are sheltering {DEVIANT_nameDef}. The military police command has served us a formal extradition demand.\n\nHand {DEVIANT_objective} over:\n{REWARDS}\nThe fleet will confiscate the encrypted archive.\n\nRefuse: {DEVIANT_nameDef} hands the restored files over to us, and {FLEET} turns hostile and keeps sending hunters after {DEVIANT_objective} until {DEVIANT_pronoun} dies or is banished from the colony.\n\nIf we give no answer within {DAYS}, the fleet will take it as a refusal.</DMS_DeviantExtradition_LetterText>
+  <DMS_DeviantExtradition_RewardKept>- {FLEET} will release one of the restored files to us, chosen at random</DMS_DeviantExtradition_RewardKept>
   <DMS_DeviantExtradition_RewardGoodwill>- +{AMOUNT} goodwill with {FLEET}</DMS_DeviantExtradition_RewardGoodwill>
   <DMS_DeviantExtradition_RewardHonor>- {AMOUNT} {HONOR} for a colonist of our choosing, toward a fleet rank</DMS_DeviantExtradition_RewardHonor>
   <DMS_DeviantExtradition_RewardMood>- Our colonists will be upset at having handed over one of their own</DMS_DeviantExtradition_RewardMood>
@@ -33,6 +34,7 @@
   <DMS_DeviantExtradition_SilenceMessage>We never answered {FLEET}'s extradition demand. The fleet has taken it as a refusal.</DMS_DeviantExtradition_SilenceMessage>
   <DMS_DeviantExtradition_DoneLabel>Extradited: {DEVIANT_nameDef}</DMS_DeviantExtradition_DoneLabel>
   <DMS_DeviantExtradition_DoneText>A fleet orbital transport has taken {DEVIANT_nameFull} away, along with the encrypted archive. {FLEET} has acknowledged our cooperation.\n\nNo one knows what awaits {DEVIANT_objective} now.</DMS_DeviantExtradition_DoneText>
+  <DMS_DeviantExtradition_DoneTextKept>A fleet orbital transport has taken {DEVIANT_nameFull} away, along with the encrypted archive. {FLEET} has acknowledged our cooperation.\n\nIn return, the fleet has released one of the restored files to us:\n\n{GRANTED}\n\nNo one knows what awaits {DEVIANT_objective} now.</DMS_DeviantExtradition_DoneTextKept>
   <DMS_DeviantExtradition_HonorLabel>Who receives the {HONOR}?</DMS_DeviantExtradition_HonorLabel>
   <DMS_DeviantExtradition_HonorText>{FLEET} credits us with the extradition and offers {AMOUNT} {HONOR}. Who should receive it?</DMS_DeviantExtradition_HonorText>
   <!-- One line of {GRANTED} -->

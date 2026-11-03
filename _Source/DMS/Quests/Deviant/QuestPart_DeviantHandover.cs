@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Fortified;
 using RimWorld;
 using Verse;
@@ -95,28 +94,8 @@ namespace DMS
             projects.AddRange(guaranteedProjects.Where(p => p != null));
             projects.AddRange(DeviantTechUtility.PickRandom(randomCategory, randomCount, projects));
 
-            StringBuilder lines = new StringBuilder();
-            foreach (ResearchProjectDef proj in projects)
-            {
-                DeviantGrantResult result = DeviantTechUtility.Grant(proj);
-                TaggedString line;
-                switch (result)
-                {
-                    case DeviantGrantResult.Pending:
-                        line = "DMS_DeviantRefuge_PendingLine".Translate(proj.LabelCap.Named("PROJECT"),
-                            DeviantTechUtility.MissingPrerequisites(proj).Named("PREREQS"));
-                        break;
-                    case DeviantGrantResult.AlreadyHeld:
-                        line = "DMS_DeviantRefuge_AlreadyHeldLine".Translate(proj.LabelCap.Named("PROJECT"));
-                        break;
-                    default:
-                        line = "DMS_DeviantRefuge_GrantedLine".Translate(proj.LabelCap.Named("PROJECT"));
-                        break;
-                }
-                if (lines.Length > 0) lines.Append('\n');
-                lines.Append(line.Resolve());
-            }
-            return lines.Length > 0 ? lines.ToString() : "DMS_DeviantRefuge_NothingGranted".Translate().ToString();
+            string lines = DeviantTechUtility.GrantAndDescribe(projects);
+            return lines.Length > 0 ? lines : "DMS_DeviantRefuge_NothingGranted".Translate().ToString();
         }
 
         /// <summary>
@@ -127,7 +106,7 @@ namespace DMS
         private void ApplyHostility()
         {
             OccultechSanctionUtility.SetFleetHostile(fleet, DMS_DefOf.DMS_HarboredDeviant);
-            if (huntdown != null && !DeviantHuntUtility.IsLost(deviant, out _))
+            if (huntdown != null && !DeviantHuntUtility.IsOutOfReach(deviant, out _))
             {
                 Map map = deviant.MapHeld != null && deviant.MapHeld.IsPlayerHome ? deviant.MapHeld : Find.AnyPlayerHomeMap;
                 HuntdownUtility.Start(huntdown, map, source: "Quest_" + quest.id, boundPawn: deviant);

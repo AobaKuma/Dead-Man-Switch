@@ -15,14 +15,16 @@ namespace DMS
     /// 選擇交給玩家（脫序要由玩家自己實踐）：
     /// - 拒絕（或期限內不答覆）：保證專案（量子位元破譯）＋ randomCount 項 randomCategory（I 級）專案，與艦隊敵對，
     ///   啟動綁定脫序者的追殺。
-    /// - 交出：檔案沒收；艦隊好感度，皇權 DLC 下另有一份艦隊榮譽；殖民者因交出同伴心情低落。
+    /// - 交出：檔案沒收，但隨機保留 extraditionKeptCount 項 randomCategory 專案；艦隊好感度，皇權 DLC 下另有一份艦隊榮譽；
+    ///   殖民者因交出同伴心情低落。
     /// 做出選擇前脫序者死亡、離開派系或被綁架即失敗，沒有任何後果。
     ///
     /// Deviant refuge quest; design and flow checks in Plans/DMS_脫序者接納任務_實作計畫.md.
     /// Accept → a fleet crewman walks in and joins → handoverDays later the archive is restored and the fleet demands
     /// extradition. The choice is the player's: refuse (or stay silent) for the guaranteed projects plus randomCount
-    /// projects of randomCategory, fleet hostility and a huntdown bound to the deviant; or hand them over for goodwill,
-    /// Royalty honor and a mood hit, the archive seized. Losing the deviant before the choice fails with no consequences.
+    /// projects of randomCategory, fleet hostility and a huntdown bound to the deviant; or hand them over for
+    /// extraditionKeptCount random projects of randomCategory, goodwill, Royalty honor and a mood hit, the archive seized.
+    /// Losing the deviant before the choice fails with no consequences.
     /// </summary>
     public class QuestNode_Root_DeviantRefuge : QuestNode
     {
@@ -40,7 +42,9 @@ namespace DMS
         public float extraditionDecisionDays = 2f;
         public int extraditionGoodwill = 25;
         /// <summary>皇權 DLC 啟用時給一名殖民者的艦隊榮譽。Fleet honor for one colonist when Royalty is active.</summary>
-        public int extraditionHonor = 10;
+        public int extraditionHonor = 25;
+        /// <summary>交出時保留的 randomCategory 檔案數（隨機）。Files of randomCategory kept on a handover, picked at random.</summary>
+        public int extraditionKeptCount = 1;
         /// <summary>交出時殖民者得到原版「放逐殖民者」的心情懲罰。Colonists take vanilla's "colonist banished" mood hit.</summary>
         public bool extraditionMoodPenalty = true;
 
@@ -157,6 +161,8 @@ namespace DMS
                 goodwillReward = extraditionGoodwill,
                 honorReward = honor,
                 moodPenalty = extraditionMoodPenalty,
+                keptCategory = randomCategory,
+                keptCount = extraditionKeptCount,
                 outSignalDecided = sigDecided,
                 outSignalExtradite = sigExtradite,
                 outSignalRefuse = sigRefuse,
@@ -172,6 +178,8 @@ namespace DMS
                 goodwillReward = extraditionGoodwill,
                 honorReward = honor,
                 moodPenalty = extraditionMoodPenalty,
+                keptCategory = randomCategory,
+                keptCount = extraditionKeptCount,
                 outSignalDone = sigExtradited,
                 outSignalHonorChosen = sigHonorChosen,
                 outSignalFailed = sigFailed,
