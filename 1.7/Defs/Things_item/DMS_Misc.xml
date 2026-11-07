@@ -81,6 +81,8 @@
           <li>Bullet_ChargeRifle</li>
           <li>Bullet_ChargeLance</li>
           <li>Bullet_CataphractCentipede_SR</li>
+          <li MayRequire="melondove.wolfeinrace">Bullet_WolfeinChargedMedium</li>
+          <li MayRequire="melondove.wolfeinrace">Bullet_WolfeinChargedSmall</li>
         </interceptThings>
         <ignoreThings>
           <li>DMS_Bullet_BlasterSmoke</li>
