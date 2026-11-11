@@ -28,6 +28,8 @@
         <hideUntilDiscovered>true</hideUntilDiscovered>
         <discoveryLetter>true</discoveryLetter>
       </li>
+      <!-- 第一個專案被探明前，整個分頁只顯示「尚未發現此研究」，看不到任何（未知研究）節點。 -->
+      <li Class="DMS.ModExtension_HideTabUntilDiscovered" />
     </modExtensions>
   </ResearchTabDef>
 

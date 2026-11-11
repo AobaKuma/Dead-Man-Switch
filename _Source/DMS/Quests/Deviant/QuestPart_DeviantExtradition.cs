@@ -42,7 +42,7 @@ namespace DMS
             if (signal.tag != inSignal || done) return;
             done = true;
 
-            if (DeviantHuntUtility.IsLost(deviant, out DeviantLostReason reason))
+            if (DeviantHuntUtility.IsOutOfReach(deviant, out DeviantLostReason reason))
             {
                 DeviantHuntUtility.SendFailedLetter(deviant, DeviantHuntUtility.FailedSuffix(reason), quest);
                 Find.SignalManager.SendSignal(new Signal(outSignalFailed));
@@ -57,12 +57,15 @@ namespace DMS
                 ? "DMS_DeviantExtradition_DoneTextKept".Translate(deviant.Named("DEVIANT"), fleetName.Named("FLEET"), kept.Named("GRANTED"))
                 : "DMS_DeviantExtradition_DoneText".Translate(deviant.Named("DEVIANT"), fleetName.Named("FLEET"));
 
-            if (moodPenalty)
+            // 被逮捕的脫序者仍屬殖民地，照樣給；已流放（還沒走出地圖）的在流放時已經給過。
+            // An arrested deviant still belongs to the colony and gets it; an exile still on the map already got it when banished.
+            if (moodPenalty && deviant.Faction == Faction.OfPlayer)
             {
                 // 必須在脫序者還屬於殖民地時給：原版依「誰認識這名殖民者」分發想法。Must run while they still belong to the colony.
                 PawnDiedOrDownedThoughtsUtility.TryGiveThoughts(deviant, null, PawnDiedOrDownedThoughtsKind.Banished);
             }
-            HandOver();
+            // 與追殺期間的場外逮捕同一套收押。The same custody as an off-map capture during the hunt.
+            DeviantCustodyUtility.TakeIntoCustody(deviant, fleet);
 
             if (goodwillReward != 0 && fleet != null)
             {
@@ -85,34 +88,6 @@ namespace DMS
             choose.pawns.AddRange(receivers);
             choose.chosenPawnSignal = outSignalHonorChosen;
             Find.LetterStack.ReceiveLetter(choose);
-        }
-
-        /// <summary>
-        /// 把脫序者交給艦隊：從商隊或地圖移出、解除床位、改屬艦隊、交給世界 pawn。
-        /// Hands the deviant to the fleet: out of the caravan or off the map, beds released, fleet faction, to world pawns.
-        /// </summary>
-        private void HandOver()
-        {
-            Caravan caravan = deviant.GetCaravan();
-            if (caravan != null)
-            {
-                CaravanInventoryUtility.MoveAllInventoryToSomeoneElse(deviant, caravan.PawnsListForReading);
-                caravan.RemovePawn(deviant);
-            }
-            if (deviant.Spawned)
-            {
-                deviant.DeSpawn();
-            }
-            else
-            {
-                deviant.holdingOwner?.Remove(deviant);
-            }
-            deviant.ownership?.UnclaimAll();
-            deviant.SetFaction(fleet);
-            if (!deviant.IsWorldPawn())
-            {
-                Find.WorldPawns.PassToWorld(deviant);
-            }
         }
 
         /// <summary>可領受榮譽的殖民者（不含任務借住者）。Colonists who can receive the honor, quest lodgers excluded.</summary>

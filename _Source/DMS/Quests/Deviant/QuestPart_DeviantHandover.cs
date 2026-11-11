@@ -36,7 +36,7 @@ namespace DMS
             base.Enable(receivedArgs);
 
             // 交付前監控每 250 tick 才看一次；這一刻再驗一次。The watch only polls every 250 ticks; check once more now.
-            if (DeviantHuntUtility.IsLost(deviant, out DeviantLostReason reason))
+            if (DeviantHuntUtility.IsOutOfReach(deviant, out DeviantLostReason reason))
             {
                 DeviantHuntUtility.SendFailedLetter(deviant, DeviantHuntUtility.FailedSuffix(reason), quest);
                 Find.SignalManager.SendSignal(new Signal(outSignalFailed));
@@ -106,11 +106,19 @@ namespace DMS
         private void ApplyHostility()
         {
             OccultechSanctionUtility.SetFleetHostile(fleet, DMS_DefOf.DMS_HarboredDeviant);
-            if (huntdown != null && !DeviantHuntUtility.IsOutOfReach(deviant, out _))
+            // 活要見人，死要收屍：人還活著就啟動追殺，即使此刻不在殖民地手上（追殺會休眠到他回來）；
+            // 審判期間死了就盯著屍體，被復活再啟動。
+            // Seen alive or buried: start the hunt while the deviant lives, even if away right now (it sleeps until they
+            // return); if they died during the trial, watch the body and start the hunt on a revival.
+            if (huntdown != null && !DeviantHuntUtility.IsGoneForGood(deviant))
             {
                 Map map = deviant.MapHeld != null && deviant.MapHeld.IsPlayerHome ? deviant.MapHeld : Find.AnyPlayerHomeMap;
                 HuntdownUtility.Start(huntdown, map, source: "Quest_" + quest.id, boundPawn: deviant);
                 FleetTrackingUtility.InheritBlackout(huntdown);
+            }
+            else if (huntdown != null && deviant != null && deviant.Dead)
+            {
+                GameComponent_DeviantLegacy.CompSafe?.WatchForRevival(deviant);
             }
             // 撤掉被告不是脫序者的待接受傳票，換成指名脫序者的。Swap pending summonses for one naming the deviant.
             CourtMartialOfferUtility.RequestRefresh(ensureOffer: false);

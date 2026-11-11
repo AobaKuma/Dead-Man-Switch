@@ -59,9 +59,17 @@
 
   <!-- Hunt ended -->
   <DMS_DeviantHunt_EndedDiedLabel>Hunt over</DMS_DeviantHunt_EndedDiedLabel>
-  <DMS_DeviantHunt_EndedDiedText>{DEVIANT_nameFull} is dead. {FLEET} has struck the defector from its rolls, and no more hunters will come.\n\nThe hostility with the fleet does not end with it.</DMS_DeviantHunt_EndedDiedText>
+  <DMS_DeviantHunt_EndedDiedText>{DEVIANT_nameFull} is dead. {FLEET} has struck the defector from its rolls, and no more hunters will come.\n\nThe hostility with the fleet does not end with it.\n\nShould {DEVIANT_nameDef} ever be brought back to life, the hunt begins again.</DMS_DeviantHunt_EndedDiedText>
   <DMS_DeviantHunt_EndedLeftLabel>Hunt over</DMS_DeviantHunt_EndedLeftLabel>
   <DMS_DeviantHunt_EndedLeftText>{DEVIANT_nameFull} is no longer with the colony. {FLEET} has moved its hunt elsewhere and will stop sending hunters after us.\n\nThe hostility with the fleet does not end with it.</DMS_DeviantHunt_EndedLeftText>
+  <DMS_DeviantHunt_AwayLabel>Hunt on hold: {DEVIANT_nameDef}</DMS_DeviantHunt_AwayLabel>
+  <DMS_DeviantHunt_AwayText>{DEVIANT_nameFull} is no longer in the colony's hands. {FLEET} has stopped sending hunters after us for now, but the defector has not been struck from its rolls: alive, {DEVIANT_pronoun} is still wanted.\n\nShould {DEVIANT_nameDef} return to the colony, the hunt resumes. Once {DEVIANT_pronoun} leaves the map, the fleet will take {DEVIANT_objective} off-map.</DMS_DeviantHunt_AwayText>
+  <DMS_DeviantHunt_ReturnedLabel>Hunt resumed: {DEVIANT_nameDef}</DMS_DeviantHunt_ReturnedLabel>
+  <DMS_DeviantHunt_ReturnedText>{DEVIANT_nameFull} is back with the colony, and {FLEET} knows it. The hunt resumes: expect hunters again.\n\nRelations with the fleet are locked hostile for as long as we shelter {DEVIANT_objective}.</DMS_DeviantHunt_ReturnedText>
+  <DMS_DeviantHunt_CapturedLabel>Deviant apprehended: {DEVIANT_nameDef}</DMS_DeviantHunt_CapturedLabel>
+  <DMS_DeviantHunt_CapturedText>{FLEET} reports that {DEVIANT_nameFull} has been apprehended. Out of our hands and out of our sight, {DEVIANT_pronoun} was easy prey for the fleet's trackers; {DEVIANT_nameDef} is now in fleet custody and will answer to a military tribunal.\n\nThe hunt is over. The hostility with the fleet does not end with it.</DMS_DeviantHunt_CapturedText>
+  <DMS_DeviantHunt_RevivedLabel>Hunt reopened: {DEVIANT_nameDef}</DMS_DeviantHunt_RevivedLabel>
+  <DMS_DeviantHunt_RevivedText>{DEVIANT_nameFull} has come back from the dead. {FLEET} wanted proof of a body, and it no longer has one: the defector is back on its rolls and the hunt begins again.</DMS_DeviantHunt_RevivedText>
 
   <!-- Relation lock -->
   <DMS_DeviantHunt_GoodwillBlocked>The colony still harbors a deviant hunted by {FLEET}. Relations with the fleet cannot improve.</DMS_DeviantHunt_GoodwillBlocked>

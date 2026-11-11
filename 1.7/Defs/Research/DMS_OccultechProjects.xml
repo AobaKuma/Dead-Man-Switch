@@ -107,7 +107,7 @@
 
   <!-- ============================================================= -->
   <!-- 次聲波基礎：封存檔案 I 級 · 次聲波與震波技術                     -->
-  <!-- 前置為原版微電子基礎（MicroelectronicsBasics）。                  -->
+  <!-- 無前置研究；只能由資料匣／封存匣探明（ModExtension_RequireForceDiscovery）。 -->
   <!-- ============================================================= -->
   <ResearchProjectDef>
     <defName>DMS_Occultech_Subsonic</defName>
@@ -119,9 +119,6 @@
     <techLevel>Industrial</techLevel>
     <researchViewX>1.00</researchViewX>
     <researchViewY>6.00</researchViewY>
-    <prerequisites>
-      <li>MicroelectronicsBasics</li>
-    </prerequisites>
     <discoveredLetterTitle>Sealed file I: infrasonics</discoveredLetterTitle>
     <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: the design principles of tuned infrasound emitters and seismic survey charges.\n\nFour devices can now be produced: an infrasonic module that gives a mech an area panic ability, an infrasonic emitter tower that periodically drives off nearby enemies, infrasonic grenades that reach every living thing in their radius regardless of walls, and a blast scanner that maps deep ore with a mortar-driven shockwave.\n\nThe blast scanner's shockwave carries far into the ground. Whatever sleeps down there will hear it too.\n\nThe fleets sealed this file because of what these devices do to people. Fielding them openly will be noted.</discoveredLetterText>
     <descriptionHyperlinks>
@@ -130,6 +127,10 @@
       <ThingDef>DMS_Weapon_GrenadeSubsonic</ThingDef>
       <ThingDef>DMS_Building_BlastScanner</ThingDef>
     </descriptionHyperlinks>
+    <modExtensions>
+      <!-- 無前置研究：不自動探明，只能由資料匣／封存匣等強制探明。 -->
+      <li Class="DMS.ModExtension_RequireForceDiscovery" />
+    </modExtensions>
   </ResearchProjectDef>
 
   <!-- ============================================================= -->
@@ -165,8 +166,8 @@
 
   <!-- ============================================================= -->
   <!-- 水壓裂解：封存檔案 I 級 · 自動深鑽機                             -->
-  <!-- 前置為原版深鑽機（DeepDrilling）與 Biotech 的污染性發電            -->
-  <!-- （ToxifierGenerator）。佔用量子位元破譯升級後空出的 (1, 2)。       -->
+  <!-- 無前置研究；只能由資料匣／封存匣探明（ModExtension_RequireForceDiscovery）。 -->
+  <!-- 佔用量子位元破譯升級後空出的 (1, 2)。                            -->
   <!-- 解鎖 Things_Building/DMS_Occultech.xml 的水壓裂解採礦機。        -->
   <!-- ============================================================= -->
   <ResearchProjectDef>
@@ -179,15 +180,15 @@
     <techLevel>Industrial</techLevel>
     <researchViewX>1.00</researchViewX>
     <researchViewY>2.00</researchViewY>
-    <prerequisites>
-      <li>DeepDrilling</li>
-      <li MayRequire="Ludeon.RimWorld.Biotech">ToxifierGenerator</li>
-    </prerequisites>
     <discoveredLetterTitle>Sealed file I: hydraulic fracturing</discoveredLetterTitle>
     <discoveredLetterText>Using the data they have gathered, researchers have finished decoding the sealed technology: an extraction method that splits deep bedrock open with ultra-high-pressure fluid.\n\nThe hydraulic fracturing rig can now be built. It mines the deep deposits around it automatically and, once they are exhausted, draws chemfuel and steel from the bedrock, at the cost of polluting the surrounding ground.\n\nThe fleets sealed this file so that the worlds it touches would still be fit to live on afterward.</discoveredLetterText>
     <descriptionHyperlinks>
       <ThingDef>DMS_HydraulicFracturingRig</ThingDef>
     </descriptionHyperlinks>
+    <modExtensions>
+      <!-- 無前置研究：不自動探明，只能由資料匣／封存匣等強制探明。 -->
+      <li Class="DMS.ModExtension_RequireForceDiscovery" />
+    </modExtensions>
   </ResearchProjectDef>
 
   <!-- ============================================================= -->

@@ -59,9 +59,17 @@
 
   <!-- 追殺結束 -->
   <DMS_DeviantHunt_EndedDiedLabel>追殺結束</DMS_DeviantHunt_EndedDiedLabel>
-  <DMS_DeviantHunt_EndedDiedText>{DEVIANT_nameFull}死了。{FLEET}在名冊上註銷了這名叛離者，追殺部隊不會再來。\n\n與艦隊的敵對狀態並不會因此解除。</DMS_DeviantHunt_EndedDiedText>
+  <DMS_DeviantHunt_EndedDiedText>{DEVIANT_nameFull}死了。{FLEET}在名冊上註銷了這名叛離者，追殺部隊不會再來。\n\n與艦隊的敵對狀態並不會因此解除。\n\n若{DEVIANT_nameDef}日後被復活，追殺將重新開始。</DMS_DeviantHunt_EndedDiedText>
   <DMS_DeviantHunt_EndedLeftLabel>追殺結束</DMS_DeviantHunt_EndedLeftLabel>
   <DMS_DeviantHunt_EndedLeftText>{DEVIANT_nameFull}已經不在殖民地。{FLEET}的追殺目標隨之轉移，不會再針對我們派兵。\n\n與艦隊的敵對狀態並不會因此解除。</DMS_DeviantHunt_EndedLeftText>
+  <DMS_DeviantHunt_AwayLabel>追殺暫緩：{DEVIANT_nameDef}</DMS_DeviantHunt_AwayLabel>
+  <DMS_DeviantHunt_AwayText>{DEVIANT_nameFull}已經不在殖民地手上。{FLEET}暫時不再對我們派出追殺部隊，但這名叛離者並沒有從名冊上註銷：活要見人，{DEVIANT_pronoun}仍在通緝之列。\n\n只要{DEVIANT_nameDef}回到殖民地，追殺就會恢復。一旦{DEVIANT_pronoun}離開地圖，艦隊就會在場外將{DEVIANT_objective}逮捕。</DMS_DeviantHunt_AwayText>
+  <DMS_DeviantHunt_ReturnedLabel>追殺恢復：{DEVIANT_nameDef}</DMS_DeviantHunt_ReturnedLabel>
+  <DMS_DeviantHunt_ReturnedText>{DEVIANT_nameFull}回到了殖民地，{FLEET}也已經知道了。追殺恢復，追殺部隊會再次前來。\n\n只要我們繼續收留{DEVIANT_objective}，與艦隊的關係就鎖定在敵對。</DMS_DeviantHunt_ReturnedText>
+  <DMS_DeviantHunt_CapturedLabel>脫序者落網：{DEVIANT_nameDef}</DMS_DeviantHunt_CapturedLabel>
+  <DMS_DeviantHunt_CapturedText>{FLEET}通報：{DEVIANT_nameFull}已被順利逮捕歸案。離開了殖民地的庇護，{DEVIANT_pronoun}輕易就落入艦隊追緝部隊手中；{DEVIANT_nameDef}現由艦隊收押，將接受軍事法庭審判。\n\n追殺就此結束，但與艦隊的敵對狀態並不會因此解除。</DMS_DeviantHunt_CapturedText>
+  <DMS_DeviantHunt_RevivedLabel>追殺重啟：{DEVIANT_nameDef}</DMS_DeviantHunt_RevivedLabel>
+  <DMS_DeviantHunt_RevivedText>{DEVIANT_nameFull}死而復生。{FLEET}要的是死要見屍，如今這具屍體已不復存在：叛離者重新列回名冊，追殺再次開始。</DMS_DeviantHunt_RevivedText>
 
   <!-- 關係鎖 -->
   <DMS_DeviantHunt_GoodwillBlocked>殖民地仍收留著被{FLEET}追殺的脫序者，與艦隊的關係無法改善。</DMS_DeviantHunt_GoodwillBlocked>

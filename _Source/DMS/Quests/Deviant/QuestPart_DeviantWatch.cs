@@ -6,12 +6,13 @@ namespace DMS
     /// <summary>
     /// 交付前的監控（接受時啟用，交付時停用）。每 250 tick 輪詢：
     /// - 尚未加入：逾時（找不到可進場的地圖）→ 失敗。
-    /// - 已加入：脫序者死亡、離開派系或被綁架 → 依原因發信，失敗。
-    /// 用輪詢而不是原版任務訊號：pawn 死亡時送出的訊號依路徑而異，輪詢與追殺用的是同一個判定。
+    /// - 已加入：脫序者死亡、離開派系或被綁架 → 依原因發信，失敗。被逮捕成囚犯、或被流放但還沒走出地圖不算（還能再招募）。
+    /// 用輪詢而不是原版任務訊號：pawn 死亡時送出的訊號依路徑而異，輪詢與追殺用的是同一個判定（IsOutOfReach）。
     ///
     /// Watch before the handover (enabled on accept, disabled at the handover), polled every 250 ticks: not joined in
-    /// time → fail; joined and then dead, gone from the faction or kidnapped → letter by reason, fail. Polling rather
-    /// than vanilla signals, whose names on pawn death vary; the same check drives the huntdown.
+    /// time → fail; joined and then dead, gone from the faction or kidnapped → letter by reason, fail. Arrested, or
+    /// banished but still on the map, doesn't count: they can be recruited back. Polling rather than vanilla signals,
+    /// whose names on pawn death vary; the same check (IsOutOfReach) drives the huntdown.
     /// </summary>
     public class QuestPart_DeviantWatch : QuestPartActivable
     {
@@ -43,7 +44,7 @@ namespace DMS
                 return;
             }
 
-            if (DeviantHuntUtility.IsLost(deviant, out DeviantLostReason reason))
+            if (DeviantHuntUtility.IsOutOfReach(deviant, out DeviantLostReason reason))
             {
                 Fail(DeviantHuntUtility.FailedSuffix(reason));
             }

@@ -7,13 +7,17 @@ namespace DMS
     /// <summary>
     /// 脫序者追殺（DMS_DeviantHunt）的行為。排程、真空期與伴隨任務都由 Fortified Huntdown 處理。
     ///
-    /// 隱匿級追殺令進行中、或軍事法庭審理中時，這個追殺不追蹤任何地圖：計時直接移除，事後重新排程。
-    /// 不用 CanFireWave 擋：那會讓地圖每輪重新排程並再發一次預警信件，玩家會一直收到不會兌現的預警。
+    /// 隱匿級追殺令進行中、軍事法庭審理中、或脫序者還活著但不在殖民地手上時，這個追殺不追蹤任何地圖：計時直接移除，
+    /// 事後重新排程。不用 CanFireWave 擋：那會讓地圖每輪重新排程並再發一次預警信件，玩家會一直收到不會兌現的預警。
+    /// 活要見人，死要收屍：追殺只在脫序者死亡或永久消失時結束（<see cref="DeviantHuntUtility.IsGoneForGood"/>），
+    /// 放逐、被綁架都只是休眠；死亡後若被復活，由 <see cref="GameComponent_DeviantLegacy"/> 重新啟動追殺。
     ///
     /// Behaviour of the deviant hunt (DMS_DeviantHunt). Scheduling, blackouts and quest offers come from Fortified Huntdown.
-    /// While the occultech kill order runs or a court-martial is in session, this hunt tracks no map: its timers are
-    /// dropped and rescheduled afterwards. CanFireWave is not used for this because it reschedules the map every round
-    /// and sends another warning letter each time, for raids that never come.
+    /// While the occultech kill order runs, a court-martial is in session, or the deviant is alive but away from the
+    /// colony, this hunt tracks no map: its timers are dropped and rescheduled afterwards. CanFireWave is not used for
+    /// this because it reschedules the map every round and sends another warning letter each time, for raids that never
+    /// come. Seen alive or buried: the hunt only ends when the deviant dies or is gone for good; banishment or a kidnapping
+    /// only puts it to sleep, and a resurrection after death restarts it (<see cref="GameComponent_DeviantLegacy"/>).
     /// </summary>
     public class HuntdownWorker_Deviant : HuntdownWorker
     {
@@ -21,7 +25,8 @@ namespace DMS
         private Pawn lostPawn;
         private DeviantLostReason lostReason;
 
-        private static bool Dormant => DeviantHuntUtility.KillOrderRunning || OccultechSanctionUtility.CourtMartialOngoing;
+        private static bool Dormant => DeviantHuntUtility.KillOrderRunning || OccultechSanctionUtility.CourtMartialOngoing
+            || DeviantHuntUtility.BoundDeviantAway;
 
         public override bool CanTrackMap(Map map)
         {
@@ -42,12 +47,12 @@ namespace DMS
 
         public override bool BoundPawnLost(Pawn pawn)
         {
-            if (!DeviantHuntUtility.IsOutOfReach(pawn, out DeviantLostReason reason))
+            if (!DeviantHuntUtility.IsGoneForGood(pawn))
             {
                 return false;
             }
             lostPawn = pawn;
-            lostReason = reason;
+            lostReason = pawn != null && pawn.Dead ? DeviantLostReason.Died : DeviantLostReason.Left;
             return true;
         }
 
@@ -70,8 +75,13 @@ namespace DMS
             {
                 return;
             }
-            string fleet = Faction?.Name ?? "?";
             bool died = reason == DeviantLostReason.Died;
+            if (died)
+            {
+                // 死要收屍：屍體還在就可能被復活，盯著它。Buried, not forgotten: a body can be revived, so keep watching it.
+                GameComponent_DeviantLegacy.CompSafe?.WatchForRevival(pawn);
+            }
+            string fleet = Faction?.Name ?? "?";
             Find.LetterStack.ReceiveLetter(
                 (died ? "DMS_DeviantHunt_EndedDiedLabel" : "DMS_DeviantHunt_EndedLeftLabel").Translate(),
                 (died ? "DMS_DeviantHunt_EndedDiedText" : "DMS_DeviantHunt_EndedLeftText")

@@ -38,7 +38,7 @@ namespace DMS
         protected override void Enable(SignalArgs receivedArgs)
         {
             base.Enable(receivedArgs);
-            if (DeviantHuntUtility.IsLost(deviant, out DeviantLostReason reason))
+            if (DeviantHuntUtility.IsOutOfReach(deviant, out DeviantLostReason reason))
             {
                 DeviantHuntUtility.SendFailedLetter(deviant, DeviantHuntUtility.FailedSuffix(reason), quest);
                 Find.SignalManager.SendSignal(new Signal(outSignalFailed));

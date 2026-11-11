@@ -17,7 +17,7 @@ namespace DMS
     ///   啟動綁定脫序者的追殺。
     /// - 交出：檔案沒收，但隨機保留 extraditionKeptCount 項 randomCategory 專案；艦隊好感度，皇權 DLC 下另有一份艦隊榮譽；
     ///   殖民者因交出同伴心情低落。
-    /// 做出選擇前脫序者死亡、離開派系或被綁架即失敗，沒有任何後果。
+    /// 做出選擇前脫序者死亡、離開派系或被綁架即失敗，沒有任何後果；被逮捕或流放後還在地圖上不算（見 DeviantHuntUtility.IsOutOfReach）。
     ///
     /// Deviant refuge quest; design and flow checks in Plans/DMS_脫序者接納任務_實作計畫.md.
     /// Accept → a fleet crewman walks in and joins → handoverDays later the archive is restored and the fleet demands
