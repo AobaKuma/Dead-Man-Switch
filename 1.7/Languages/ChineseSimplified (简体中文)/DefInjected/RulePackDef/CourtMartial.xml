@@ -50,6 +50,8 @@
     <li>betrayLetterLabel->法庭协议破裂</li>
 
     <li>betrayLetterText->与[issuerFactionName]的军事法庭协议已经破裂。宪兵指挥部宣告审理程序作废，[issuerFactionName]恢复了对我们的敌对状态。</li>
+    <li>betrayHeldLetterText->与[issuerFactionName]的军事法庭协议已经破裂。宪兵指挥部宣告审理程序作废，[issuerFactionName]恢复了对我们的敌对状态。\n\n休战破裂时[defendantName]仍在舰队手上。[issuerFactionName]不会再把[defendantName]送回来。</li>
+    <li>betrayHeldHuntEndedLetterText->与[issuerFactionName]的军事法庭协议已经破裂。宪兵指挥部宣告审理程序作废，[issuerFactionName]恢复了对我们的敌对状态。\n\n休战破裂时[defendantName]仍在舰队手上。[issuerFactionName]不会再把[defendantName]送回来；人既已收押，舰队撤销了追杀，但敌对状态不会解除。</li>
 
 
     <!-- 脱序者被告。实作前不会被选中，见计划 3.7。 -->

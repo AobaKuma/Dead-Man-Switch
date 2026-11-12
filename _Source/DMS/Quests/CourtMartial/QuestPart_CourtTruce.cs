@@ -129,9 +129,16 @@ namespace DMS
             {
                 resolved = true;
                 SetGoodwillAndRelation(-100, FactionRelationKind.Hostile);
+                // 先記下信件內容：收押後被告改屬艦隊。Build the letter first: custody changes the defendant's faction.
+                string[] vars = LetterVars();
+                string betrayTextKey = "betrayLetterText";
+                if (DefendantHeld)
+                {
+                    betrayTextKey = KeepDefendant() ? "betrayHeldHuntEndedLetterText" : "betrayHeldLetterText";
+                }
                 Find.LetterStack.ReceiveLetter(
-                    SupplyChainText.Resolve(CourtMartialText.Pack, "betrayLetterLabel", LetterVars()),
-                    SupplyChainText.Resolve(CourtMartialText.Pack, "betrayLetterText", LetterVars()),
+                    SupplyChainText.Resolve(CourtMartialText.Pack, "betrayLetterLabel", vars),
+                    SupplyChainText.Resolve(CourtMartialText.Pack, betrayTextKey, vars),
                     LetterDefOf.NegativeEvent, null, faction, quest);
                 Complete();
             }
@@ -186,6 +193,47 @@ namespace DMS
                 Messages.Message("DMS_CourtMartial_HuntdownEnded".Translate(defendant.Named("DEFENDANT")),
                     defendant, MessageTypeDefOf.PositiveEvent);
             }
+        }
+
+        /// <summary>
+        /// 被告此刻在艦隊手上：借出 part 啟用中、被告在名單上且還活著。登機前失敗（逾時、穿梭機被毀）時借出 part 尚未啟用。
+        /// The fleet holds the defendant right now: lend part enabled, defendant on its list and alive. A failure before
+        /// boarding (deadline, destroyed shuttle) never enables the lend part.
+        /// </summary>
+        private bool DefendantHeld
+        {
+            get
+            {
+                if (defendant == null || defendant.Dead) return false;
+                foreach (QuestPart part in quest.PartsListForReading)
+                {
+                    if (part is QuestPart_LendColonistsToFaction lend && lend.State == QuestPartState.Enabled
+                        && lend.LentColonistsListForReading.Contains(defendant))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 休戰在收押期間破裂：艦隊不放人。被告改由艦隊收押（<see cref="DeviantCustodyUtility"/>，與場外逮捕同一條路），
+        /// 否則他會以玩家派系的世界 pawn 永遠懸著：脫序者不算離開，場外逮捕不會觸發，也不在地圖上，脫序者審判生不出來，
+        /// 關係就卡死在敵對。綁定在被告身上的追殺隨之結束（活要見人），與艦隊的敵對不解除。回傳是否結束了追殺。
+        /// The truce broke while the defendant was held: the fleet keeps them. They go into fleet custody
+        /// (<see cref="DeviantCustodyUtility"/>, the same path as the off-map capture); otherwise they'd hang forever as a
+        /// player-faction world pawn: a deviant wouldn't count as away so no capture fires, and being off every map no
+        /// deviant trial can be generated, deadlocking hostility. Hunts bound to the defendant end (seen alive); hostility
+        /// stays. Returns whether a hunt ended.
+        /// </summary>
+        private bool KeepDefendant()
+        {
+            DeviantCustodyUtility.TakeIntoCustody(defendant, faction);
+            // 不經 BoundPawnLost，worker 不會另發結束信件。Not through BoundPawnLost, so the worker sends no letter of its own.
+            bool huntEnded = Fortified.HuntdownUtility.StopAllBoundTo(defendant) > 0;
+            CourtMartialOfferUtility.RequestRefresh(ensureOffer: false);
+            return huntEnded;
         }
 
         public float AllyChance

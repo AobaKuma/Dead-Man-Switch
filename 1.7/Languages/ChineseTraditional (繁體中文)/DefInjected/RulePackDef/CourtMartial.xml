@@ -26,6 +26,8 @@
 
     <li>betrayLetterLabel->法庭協議破裂</li>
     <li>betrayLetterText->與[issuerFactionName]的軍事法庭協議已經破裂。憲兵指揮部宣告審理程序作廢，[issuerFactionName]恢復了對我們的敵對狀態。</li>
+    <li>betrayHeldLetterText->與[issuerFactionName]的軍事法庭協議已經破裂。憲兵指揮部宣告審理程序作廢，[issuerFactionName]恢復了對我們的敵對狀態。\n\n休戰破裂時[defendantName]仍在艦隊手上。[issuerFactionName]不會再把[defendantName]送回來。</li>
+    <li>betrayHeldHuntEndedLetterText->與[issuerFactionName]的軍事法庭協議已經破裂。憲兵指揮部宣告審理程序作廢，[issuerFactionName]恢復了對我們的敵對狀態。\n\n休戰破裂時[defendantName]仍在艦隊手上。[issuerFactionName]不會再把[defendantName]送回來；人既已收押，艦隊撤銷了追殺，但敵對狀態不會解除。</li>
 
     <!-- 脫序者被告。實作前不會被選中，見計畫 3.7。 -->
     <li>acquitDeviantLetterText->出乎意料，[defendantName]在法庭上展開了極具說服力的辯護。[issuerFactionName]領航廳採信了其脫離艦隊的理由，駁回了全部指控，追殺[defendantName]的命令也隨之撤回。\n\n艦隊的讓步僅止於此：雙方關係恢復中立。[defendantName]正由空投艙送返。</li>

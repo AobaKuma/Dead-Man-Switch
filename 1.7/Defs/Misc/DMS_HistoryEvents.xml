@@ -27,7 +27,8 @@
   </HistoryEventDef>
 
   <!-- ── 任務結算:後勤與文書 ──────────────────────────────────── -->
-  <!-- DMS_SupplyChain / DMS_SupplyChain_Delivery / DMS_ProcessDocumentQuest -->
+  <!-- DMS_SupplyChain(子任務不記錄)/ DMS_ProcessDocumentQuest。軍事行動 precept 只認這一組。
+       Recorded by the supply chain and document quests; the military operations precept listens to this pair only. -->
   <HistoryEventDef>
     <defName>DMS_QuestSuccess_Logistics</defName>
     <label>supply contract fulfilled</label>

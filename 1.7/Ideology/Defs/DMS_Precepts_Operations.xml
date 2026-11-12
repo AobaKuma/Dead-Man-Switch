@@ -3,11 +3,15 @@
 
   <!-- ============================================================
        軍事行動 / Military operations
-       消費 DMS_QuestSuccess_Military、DMS_QuestFailed_Military、
+       消費 DMS_QuestSuccess_Logistics、DMS_QuestFailed_Logistics、
        DMS_CalledFireSupport。
+       任務相關的心情與成長點只限補給合約(DMS_SupplyChain)與
+       文書處理(DMS_ProcessDocumentQuest),
+       其他戰鬥任務記錄的 DMS_QuestSuccess/Failed_Military 不計入。
+       Quest-driven effects are scoped to the supply chain and document quests only.
 
        注意事項:
-       1. DMS_QuestSuccess_Military / DMS_QuestFailed_Military 由
+       1. DMS_QuestSuccess_Logistics / DMS_QuestFailed_Logistics 由
           QuestScriptDef 的 successHistoryEvent 記錄,事件裡沒有 Doer。
           沒有 Doer 時 IdeoUtility 會通知「所有自由殖民者」,所以
           KnowsMemoryThought 會全體生效，但也因此不能用
@@ -37,11 +41,11 @@
     </associatedMemes>
     <comps>
       <li Class="PreceptComp_KnowsMemoryThought">
-        <eventDef>DMS_QuestSuccess_Military</eventDef>
+        <eventDef>DMS_QuestSuccess_Logistics</eventDef>
         <thought>DMS_Thought_OperationSuccess_Venerated</thought>
       </li>
       <li Class="PreceptComp_KnowsMemoryThought">
-        <eventDef>DMS_QuestFailed_Military</eventDef>
+        <eventDef>DMS_QuestFailed_Logistics</eventDef>
         <thought>DMS_Thought_OperationFailed_Venerated</thought>
       </li>
       <li Class="PreceptComp_KnowsMemoryThought">
@@ -49,7 +53,7 @@
         <thought>DMS_Thought_FireSupport_Venerated</thought>
       </li>
       <li Class="PreceptComp_DevelopmentPoints">
-        <eventDef>DMS_QuestSuccess_Military</eventDef>
+        <eventDef>DMS_QuestSuccess_Logistics</eventDef>
         <points>4</points>
       </li>
     </comps>
@@ -70,11 +74,11 @@
     </associatedMemes>
     <comps>
       <li Class="PreceptComp_KnowsMemoryThought">
-        <eventDef>DMS_QuestFailed_Military</eventDef>
+        <eventDef>DMS_QuestFailed_Logistics</eventDef>
         <thought>DMS_Thought_OperationFailed_Necessary</thought>
       </li>
       <li Class="PreceptComp_DevelopmentPoints">
-        <eventDef>DMS_QuestSuccess_Military</eventDef>
+        <eventDef>DMS_QuestSuccess_Logistics</eventDef>
         <points>2</points>
       </li>
     </comps>
